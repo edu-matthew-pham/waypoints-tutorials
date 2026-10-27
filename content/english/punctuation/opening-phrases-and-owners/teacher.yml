@@ -1,0 +1,47 @@
+summary: "Students learn that a comma follows a long phrase that opens a sentence and is not needed when the same phrase comes at the end, and that the apostrophe goes on the last name for something shared and on each name for things owned separately. They choose commas, sort sentences, catch a missing comma, match owner phrases and write a newsletter item."
+time: 45
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 5 min · Practise 6 min · Make and own writing 14 min"
+goals:
+  - I can find a phrase that opens a sentence.
+  - I can put a comma after a long opening phrase.
+  - I can tell when the same phrase needs no comma.
+  - I can show one shared owner and separate owners with an apostrophe.
+struggle: "Students put the comma after the first word or two of the phrase. Ask 'where does the main part of the sentence start?' and put the comma just before it."
+before: |
+  Do the Try board yourself: three sentences, comma or none.
+
+  The one idea: the comma marks where the opening phrase ends and the main part starts. This lesson covers AC9E5LA09 nodes 1 to 3 (commas with fronted prepositional phrases, apostrophes for plural possession, and multiple possession and joint ownership).
+
+  ACARA says **fronted prepositional phrase**; the lesson says **a phrase that opens the sentence** and names the idea once here.
+
+  Short openers (At dawn, In May) are often written without a comma, and style guides differ. The boards use long phrases only, so the answer is not arguable. Students can discuss short ones in class.
+
+  Joint ownership: Ben and Ava's boat means one boat they share. Ben's and Ava's boats means each has their own. The plural possessive (the teachers' room) was introduced in the last lesson and appears here in the match task.
+
+  The board counts commas and apostrophes. It cannot tell whether a comma is in the right place.
+
+  The sentences are made up for the lesson.
+running:
+  - "Predict: ask where the sentence's main part starts, before choosing."
+  - "Try: ask what changes when the phrase moves to the end."
+  - "Worked example: sort the sentences, then read each aloud. Where do you pause?"
+  - "Vary: say each phrase aloud and ask how many things there are."
+  - "Make: partners point to each opening phrase and the comma after it."
+stuck:
+  - see: "A student puts a comma before 'after' in a sentence where the phrase is at the end."
+    ask: "Is the phrase at the start or at the end?"
+    fix: "At the end it needs no comma."
+  - see: "A student writes 'Mia's and Ravi's robot' for one shared robot."
+    ask: "How many robots do they have?"
+    fix: "One robot they share: the apostrophe goes on the last name, Mia and Ravi's robot."
+stretch: "Find a sentence in a class novel that starts with a long phrase. Move the phrase to the end. What does the reader notice first now?"
+support: "A sentence strip cut in two: the opening phrase, a comma, and the main part."
+leads: |
+  Next in Punctuation for meaning: the three jobs of a comma, and what goes wrong when one is missing.
+exit:
+  q: "Add the comma and the apostrophe: Under the old jetty by the beach Mia and Ravi found their dads boat."
+  a: "Under the old jetty by the beach, Mia and Ravi found their dad's boat. (Their dad's boat: one dad owns it.)"
+explain: |
+  A long phrase at the start of a sentence is followed by a comma. The same phrase at the end needs none.
+
+  For owners, the apostrophe goes on the last name for one shared thing, and on each name for things owned separately.

@@ -1,0 +1,29 @@
+inquiry:
+  q: "Does a word that ends in s always need an apostrophe?"
+  prompts:
+    - "Read 'two giraffes' and 'the giraffe's neck'. What does each s mean?"
+    - "Where have you seen a stray apostrophe on a sign?"
+  notes: "A plain plural has no apostrophe. The apostrophe is for missing letters or for an owner."
+activities:
+  - at: predict
+    kind: activity
+    title: "Whose is it?"
+    minutes: 5
+    do: |
+      Hold up an object and say who owns it ('Ava's pencil case'). Students write the phrase, then change the owner to two people and write it again.
+    notes: "Notice where the apostrophe moves."
+  - at: make
+    kind: discussion
+    title: "Point to the job"
+    minutes: 5
+    do: |
+      Partners point to each apostrophe in a scene and say its job: letters left out, or an owner.
+    notes: "A word with no job for its apostrophe is a plain plural."
+questions:
+  - at: investigate
+    title: "Which job?"
+    type: question
+    q: "In 'the children's books', which job does the apostrophe do?"
+    options: ["It shows the books belong to the children", "It stands in for missing letters", "It shows the word is plural"]
+    answer: 0
+    explain: "The books belong to the children, so the apostrophe shows ownership."

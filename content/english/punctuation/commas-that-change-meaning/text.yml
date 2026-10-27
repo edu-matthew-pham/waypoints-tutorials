@@ -1,0 +1,63 @@
+# Texts for "Commas that change meaning" (cohesion parts label the job of each comma; the sentence board's punct
+# mode chooses a comma or none; write mode counts a recount).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: inline
+roles: list opening speech
+role list: List
+role opening: Opening clause
+role speech: Speech
+s list: We packed torches, maps and rope.
+para:
+s opening: When the bell rang, the class lined up.
+para:
+s speech: Ben said, 'Follow me.'
+para:
+s list: The shop sells bread, milk and eggs.
+para:
+s opening: Because the creek was high, we turned back.
+para:
+s speech: Ava asked, 'Is the path open?'
+# endregion
+
+# region: vary
+widget: sentence
+mode: punct
+p: We packed torches[[{,|nothing}=,]] maps and rope.
+p: When the rain stopped[[{,|nothing}=,]] we climbed out of the tent.
+p: Ben said[[{,|nothing}=,]] 'Follow me.'
+p: The tired hikers[[{,|nothing}=nothing]] sat down.
+# endregion
+
+# region: practise
+widget: sentence
+mode: punct
+p: Mia bought apples[[{,|nothing}=,]] pears and plums.
+p: Because the track was steep[[{,|nothing}=,]] we walked slowly.
+p: The creek[[{,|nothing}=nothing]] rose quickly.
+p: Ava asked[[{,|nothing}=,]] 'Is the path open?'
+p: Although it was late[[{,|nothing}=,]] the shop stayed open.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: commas quotes
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: commas quotes
+p: On Friday our class walked to the creek. When we arrived, Mia unpacked torches, maps and rope. 'Stay together,' said our teacher. After a short rest, we headed back to school.
+# endregion
+
+# region: explain-pic
+widget: sentence
+mode: punct
+answer: on
+p: When the bell rang[[{,|nothing}=,]] the class lined up.
+# endregion

@@ -1,0 +1,8 @@
+# Nib's trip report for the "stray apostrophe" task, one sentence per line.
+
+# region: nib
+We visited the zoo on Friday.
+Max's group saw two giraffe's near the gate.
+The keepers' van was parked outside.
+It was a day we won't forget.
+# endregion

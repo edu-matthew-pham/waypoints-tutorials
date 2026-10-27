@@ -582,5 +582,9 @@
   "shape-miscount": {"home": "english/sentences/compound-complex", "text": "A dependent clause is counted as a second main clause, because any joining word seems to make two equal parts, so a complex sentence is labelled compound."},
   "one-shape": {"home": "english/sentences/choose-the-shape", "text": "A writer uses one sentence shape throughout, or the longest, because long feels more grown-up, so the key point is buried when the reader needs it at a glance."},
   "tense-slip": {"home": "english/sentences/steady-tense", "text": "A verb slips into another tense in the middle of a recount because the writer is picturing the scene as it happens, so the time seems to jump."},
-  "choppy-pair": {"home": "english/sentences/say-more-in-fewer", "text": "Two sentences about the same thing are left as two, repeating the noun, because folding feels harder than stopping and starting again."}
+  "choppy-pair": {"home": "english/sentences/say-more-in-fewer", "text": "Two sentences about the same thing are left as two, repeating the noun, because folding feels harder than stopping and starting again."},
+  "apostrophe-plural": {"home": "english/punctuation/apostrophes-and-speech", "text": "An apostrophe is put on a plain plural because any word ending in s looks as if it needs one, so a word that only means more than one is treated as an owner."},
+  "opening-phrase-comma": {"home": "english/punctuation/opening-phrases-and-owners", "text": "A long phrase at the start of a sentence is left without a comma, because the reader can follow it without a pause and the writer does not hear where the main part starts."},
+  "comma-as-pause": {"home": "english/punctuation/commas-that-change-meaning", "text": "A comma goes wherever the voice pauses, even between a subject and its verb, so the writer splits a sentence where it should stay whole."},
+  "colon-mid-clause": {"home": "english/punctuation/colons-and-brackets", "text": "A colon goes wherever a list or reason follows, even in the middle of a clause such as after 'because', so the writer splits a clause that is not yet complete."}
 }

@@ -1,0 +1,45 @@
+summary: "Students learn three jobs for a comma: separating items in a list, ending an opening clause, and introducing speech. They also learn that a comma is not a breath mark. They label each job, sort commas that belong from commas that do not, spot a comma that splits a subject from its verb, choose commas on boards and write a short recount."
+time: 45
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 5 min · Practise 6 min · Make and own writing 14 min"
+goals:
+  - I can name three jobs for a comma.
+  - I can put a comma after an opening clause.
+  - I can leave a comma out between a subject and its verb.
+  - I can check the commas in my own writing.
+struggle: "Students put commas where they pause. Ask 'what is this comma doing: a list, an opening clause or speech?' If they cannot name a job, the comma probably does not belong."
+before: |
+  Do the Try board yourself: six sentences, label the job.
+
+  The one idea: a comma has a job in the structure of the sentence. It is not a breath mark. This lesson covers AC9E6LA09 nodes 1 and 2.
+
+  The hook, 'Let's eat, Grandma', shows a fourth job: marking the person being spoken to (direct address). The lesson names three jobs; you can name the fourth in discussion.
+
+  The lesson avoids the comma before the last 'and' in a list (the Oxford comma). Australian style usually leaves it out, but some writers use it. No board item depends on it.
+
+  The comma after an opening clause is not usually needed when the clause comes last. The lesson sticks to the opening position, so there is no debate.
+
+  The sentences are made up for the lesson.
+running:
+  - "Predict: ask where the main clause starts, before choosing."
+  - "Try: ask 'what would happen without the comma?'"
+  - "Worked example: for each comma in the sort, ask 'what is the job?'. If nobody can say, it does not belong."
+  - "Vary: say each sentence aloud first, then name the structure."
+  - "Make: partners find each comma and say its job."
+stuck:
+  - see: "A student puts a comma after 'The tired hikers' because they paused."
+    ask: "What is the subject here, and what is its verb?"
+    fix: "A subject and its verb stay together. The pause is not a reason for a comma."
+  - see: "A student leaves the comma out after 'When the bell rang'."
+    ask: "Can 'When the bell rang' stand alone?"
+    fix: "It cannot. A clause that cannot stand alone and opens the sentence is followed by a comma."
+stretch: "Write two sentences that look the same but mean different things because of a comma, such as 'Call me, Ava' and 'Call me Ava'."
+support: "A sentence strip cut at the comma, so students see two pieces: the clause that opens, and the main clause."
+leads: |
+  Next in Punctuation for meaning: colons and brackets.
+exit:
+  q: "Add the commas: When we got to the beach Ava packed towels sunscreen and snacks."
+  a: "When we got to the beach, Ava packed towels, sunscreen and snacks."
+explain: |
+  A comma follows a clause that opens a sentence, separates the items in a list, and comes before speech.
+
+  It is not a breath mark: never put one between a subject and its verb.

@@ -1,0 +1,29 @@
+inquiry:
+  q: "What is a comma for, if it is not for breathing?"
+  prompts:
+    - "Read a sentence aloud twice, pausing in different places. Does the meaning change?"
+    - "Where does a comma change what the sentence says?"
+  notes: "The comma follows the structure: list, opening clause, speech. Where people pause varies."
+activities:
+  - at: predict
+    kind: activity
+    title: "Pause or comma?"
+    minutes: 5
+    do: |
+      Read 'The bus was late' with a long pause after 'bus'. Ask: does it need a comma there?
+    notes: "A pause is not a reason. The subject and verb stay together."
+  - at: make
+    kind: discussion
+    title: "Name the job"
+    minutes: 5
+    do: |
+      Partners find each comma in the recount and name its job.
+    notes: "If a comma has no job, ask whether it belongs."
+questions:
+  - at: investigate
+    title: "Which comma?"
+    type: question
+    q: "Which sentence has its comma in the right place?"
+    options: ["Because the track was wet, we walked slowly.", "Because the track, was wet we walked slowly.", "Because the track was wet we, walked slowly."]
+    answer: 0
+    explain: "The comma follows the whole opening clause."

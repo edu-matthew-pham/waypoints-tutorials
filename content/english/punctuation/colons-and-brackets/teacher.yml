@@ -1,0 +1,45 @@
+summary: "Students learn that a colon follows a complete main clause and introduces a list, an explanation or a quotation, and that brackets hold extra information a sentence could do without. They label colon uses, sort colons that belong from colons that split a clause, spot a misplaced colon, test bracketed parts, build a bracketed sentence and write an information note."
+time: 45
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 5 min · Practise 6 min · Make and own writing 14 min"
+goals:
+  - I can use a colon after a complete clause to introduce a list or an explanation.
+  - I can leave a colon out when the words before it are not a sentence.
+  - I can put extra information in brackets.
+  - I can test a colon or brackets in my own writing.
+struggle: "Students use a colon after a verb or after 'because'. Ask them to cover the colon and what follows. If what is left is not a whole sentence, the colon does not belong."
+before: |
+  Do the Try board yourself: six sentences, label what the colon introduces.
+
+  The one idea: a colon needs a complete clause before it, and brackets hold what the sentence can do without. This lesson covers AC9E7LA09 nodes 1 and 2.
+
+  Style guides differ on a colon after a verb that leads into a list (for example 'The kit includes: a lens and a tube'). Many writers use it, especially before a bulleted list. The lesson teaches the common school rule, a complete clause before the colon, and the boards avoid the arguable case: the sort and the practise board use only 'because', 'that' and 'need', where the clause is clearly unfinished.
+
+  For quotations, a colon suits written words (a sign, a poster). For spoken words with 'said', the last lesson's comma is usual. Both appear in the Try board; the task is only to name what the colon introduces.
+
+  Brackets: other writers use commas or dashes for an aside. The lesson teaches brackets and the cover-it test.
+
+  The sentences are made up for the lesson.
+running:
+  - "Predict: ask 'is that a whole sentence?', before choosing."
+  - "Try: ask what the first part promised."
+  - "Worked example: for each sentence in the sort, cover the colon and what follows."
+  - "Vary: cover the bracketed part and read what is left."
+  - "Make: partners cover the colon, then the brackets, and read what is left."
+stuck:
+  - see: "A student writes 'We need: rope and a torch.'"
+    ask: "Is 'We need' a whole sentence?"
+    fix: "It is not. Leave the colon out: We need rope and a torch."
+  - see: "A student puts important words in brackets, such as 'The race (was cancelled).'"
+    ask: "Cover the bracketed part. What is left?"
+    fix: "Brackets hold extra information. Words the sentence needs stay outside."
+stretch: "Write a sentence where the part in brackets could instead go between commas. When would you choose brackets?"
+support: "A sentence strip with the colon on a card, so students can cover the colon and what follows."
+leads: |
+  Next in Punctuation for meaning: semicolons and dashes.
+exit:
+  q: "Add a colon or brackets: Mia had one job to hold the rope. The oval near the school was flooded."
+  a: "Mia had one job: to hold the rope. The oval (near the school) was flooded."
+explain: |
+  A colon follows a complete main clause and introduces a list, an explanation or a quotation.
+
+  Brackets hold extra information. If you cover it, the sentence still makes sense.

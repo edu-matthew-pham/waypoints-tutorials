@@ -191,7 +191,7 @@
       var lens = sentenceList(text).map(words);
       v.n_commas = count(text, /,/g); v.n_semicolons = count(text, /;/g); v.n_colons = count(text, /:/g);
       v.n_dashes = count(text, /[–—]|\s-\s|--/g); v.n_brackets = count(text, /\(/g);
-      v.n_apostrophes = count(text, /['’]/g); v.n_quotes = count(text, /(^|[\s(])['‘“"]/g);
+      v.n_apostrophes = count(text, /[a-z]['’][a-z]/gi) + count(text, /s['’](?=[\s.,;:!?)]|$)/gi); v.n_quotes = count(text, /(^|[\s(])['‘“"]/g);
       v.n_joiners = SUBORD.filter(function (c) { return low.indexOf(' ' + c + ' ') >= 0; }).length;
       v.n_who = count(low, / (who|which|whose) /g);
       v.n_short = lens.filter(function (n) { return n <= 5; }).length; v.n_long = lens.filter(function (n) { return n >= 15; }).length;

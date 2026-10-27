@@ -1,0 +1,43 @@
+# Texts for "Apostrophes and speech marks" (cohesion gaps choose words with apostrophes; the sentence board's punct
+# mode chooses speech punctuation and write mode counts a scene).
+
+# region: run
+widget: cohesion
+p: We [[{didn't|did'nt|didnt}=didn't]] hear the bell.
+p: Our teacher lost her pen. Where is the [[{teachers|teacher's|teachers'}=teacher's]] pen?
+p: Three girls left their bags. The [[{girls|girl's|girls'}=girls']] bags are under the tree.
+# endregion
+
+# region: vary
+widget: sentence
+mode: punct
+p: 'We can start now[[{,|.|?}=,]]' said Mia[[{,|.|:}=,]] 'if everyone is here.'
+p: Ben called out[[{,|.|:}=,]] 'Wait for me!'
+p: 'Where are the oars[[{?|,|.}=?]]' asked Ravi.
+# endregion
+
+# region: practise
+widget: cohesion
+p: Two dogs live behind the shop. Mia [[{hasn't|has'nt|hasnt}=hasn't]] seen the [[{dogs|dog's|dogs'}=dogs']] kennel yet.
+p: The puppy wagged [[{it's|its|its'}=its]] tail because [[{it's|its|its'}=it's]] nearly dinner time.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: quotes apostrophes
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: quotes apostrophes
+p: The bus was late again. 'I can't wait any longer,' said Zoe. Her brother's bag sat on the bench beside her. 'We'll walk,' he said, 'if it doesn't rain.'
+# endregion
+
+# region: explain-pic
+widget: cohesion
+answer: on
+p: One cat: the [[{cat's|cats'|cats}=cat's]] bowl. Two cats: the [[{cat's|cats'|cats}=cats']] bowl.
+# endregion

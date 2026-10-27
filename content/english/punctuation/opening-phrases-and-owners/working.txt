@@ -1,0 +1,8 @@
+# Nib's camp diary for the "missing comma" task, one sentence per line.
+
+# region: nib
+We left school at three.
+On the long bus ride to the camp we sang every song we knew.
+Mia sat beside the window.
+After a lot of noise, the bus went quiet.
+# endregion

@@ -1,0 +1,29 @@
+inquiry:
+  q: "How does a colon help a reader?"
+  prompts:
+    - "What does the first part of a sentence promise before a colon?"
+    - "What happens if the first part is not a whole sentence?"
+  notes: "The colon promises the detail. The cover test shows when it belongs."
+activities:
+  - at: predict
+    kind: activity
+    title: "Cover the colon"
+    minutes: 5
+    do: |
+      Write 'We stayed home because: it was raining.' on the board. Cover the colon and what follows. Is what is left a sentence?
+    notes: "It is not, so the colon does not belong."
+  - at: make
+    kind: discussion
+    title: "Cover and read"
+    minutes: 5
+    do: |
+      Partners cover the colon and read what is left, then cover the bracketed part and read what is left.
+    notes: "Both tests ask whether the rest still stands."
+questions:
+  - at: investigate
+    title: "Which colon?"
+    type: question
+    q: "Which sentence has its colon in the right place?"
+    options: ["Ben had one wish: to see the sea.", "Ben wished to: see the sea.", "Ben wished: to see the sea."]
+    answer: 0
+    explain: "'Ben had one wish' is a whole sentence that promises what the wish is."

@@ -1,0 +1,49 @@
+summary: "Students learn that an apostrophe either stands in for missing letters or shows who owns something, and that speech marks wrap spoken words with the closing punctuation inside. They choose words with apostrophes, match contractions, catch a stray apostrophe, choose speech punctuation, sort out its and it's and write a short scene with talk."
+time: 45
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 6 min · Practise 6 min · Make and own writing 15 min"
+goals:
+  - I can say what an apostrophe is doing in a word.
+  - I can put the apostrophe in the right place for one owner and for more than one.
+  - I can tell a plain plural from an owner.
+  - I can punctuate speech, including a said tag.
+struggle: "Students add an apostrophe to every word ending in s. Ask 'is a letter missing, does someone own something, or does it just mean more than one?' before they write it."
+before: |
+  Do the Try board yourself: three gaps, three choices each.
+
+  The one idea: an apostrophe has two jobs, and a plain plural is not one of them. This lesson covers AC9E3LA11 nodes 1 and 2 (contractions, possession) and AC9E4LA12 nodes 1 and 2 (quotation marks, and the comma and capital letter conventions around a said tag). It stays at Years 3 to 4 level, so it can be skipped with a class that is secure.
+
+  Speech marks: the site uses single marks (the Australian style). Whether a class uses single or double is a style choice; keep one. The comma before a said tag sits inside the closing mark, and speech that continues after the speaker is named carries on in lower case.
+
+  The board's counts: the apostrophe count looks for apostrophes inside a word or after a final s, and does not count speech marks. It can miscount a closing speech mark after an s, so it is a rough aid.
+
+  All sentences are made up for the lesson.
+running:
+  - "Predict: ask for the reason, 'whose bone is it?', before showing the answer."
+  - "Try: after choosing, ask what the apostrophe would mean in the other choices."
+  - "Worked example: Nib's report. Ask what 'giraffe's' would mean if you took the apostrophe literally."
+  - "Vary: read each sentence aloud and ask where the speaker's voice stops."
+  - "Make: partners point to each apostrophe and say its job."
+stuck:
+  - see: "A student writes 'the girl's bags' for three girls."
+    ask: "How many girls own the bags?"
+    fix: "More than one owner: the apostrophe goes after the s, girls'."
+  - see: "A student writes 'it's tail' for the puppy's tail."
+    ask: "Can you say it is tail?"
+    fix: "Its tail has no apostrophe, like his and hers. It's means it is."
+  - see: "A student puts the comma outside the closing speech mark."
+    ask: "Is the comma part of what was said?"
+    fix: "It ends the spoken words, so it goes inside."
+stretch: "Take a paragraph from a class novel with speech in it and find every apostrophe and every said tag. What job does each do?"
+support: "A two-column card: letters left out on one side, owner on the other, with three examples each."
+leads: |
+  Next in Punctuation for meaning: commas after long opening phrases, and shared owners (Ben and Ava's boat).
+exit:
+  q: "Fix the punctuation: the childrens toys were all over the floor and Mia said dont step on them"
+  a: "The children's toys were all over the floor, and Mia said, 'Don't step on them.' (Children's: the apostrophe goes before the s because children is already plural. A full answer needs the capital letters, the comma, the speech marks and the full stop.)"
+explain: |
+  An apostrophe has two jobs.
+
+  - **Letters left out:** don't, can't, they're.
+  - **Who owns it:** the dog's bone (one dog), the dogs' bone (more than one).
+
+  Speech marks wrap the exact words, with the comma, question mark or exclamation mark inside the closing mark.

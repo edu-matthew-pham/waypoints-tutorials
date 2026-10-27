@@ -1,0 +1,8 @@
+# Nib's excursion note for the "misplaced colon" task, one sentence per line.
+
+# region: nib
+Our class will visit the museum on Friday.
+Please bring one thing: a drink bottle.
+We are going to the museum because: it opens early on Fridays.
+Remember the rule: stay with your group.
+# endregion

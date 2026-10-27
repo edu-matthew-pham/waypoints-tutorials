@@ -1,0 +1,65 @@
+# Texts for "Colons and brackets" (cohesion parts label what each colon introduces; the sentence board's build
+# mode puts a bracketed detail in; punct mode chooses a mark; write mode counts a note).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: inline
+roles: list explanation quotation
+role list: A list
+role explanation: An explanation
+role quotation: A quotation
+s list: The camp has three rules: be kind, be safe and be on time.
+para:
+s explanation: The match was cancelled: the oval was flooded.
+para:
+s quotation: The sign said: 'Keep off the grass.'
+para:
+s list: Our class has two pets: a rabbit and a guinea pig.
+para:
+s explanation: Nib learned a lesson: always pack a raincoat.
+para:
+s quotation: The poster read: 'Join the school choir today.'
+# endregion
+
+# region: vary
+widget: sentence
+mode: build
+before: Build a sentence about Ravi. The detail about the captain is extra.
+tile a: Ravi
+tile b: (our team captain)
+tile c: scored twice.
+decoy d: (scored twice)
+ans: a b c
+# endregion
+
+# region: practise
+widget: sentence
+mode: punct
+p: Ava bought four things[[{:|,|nothing}=:]] bread, milk, eggs and rice.
+p: Nib had one problem[[{:|,|nothing}=:]] he forgot his hat.
+p: We need[[{:|,|nothing}=nothing]] rope and a torch.
+p: Our new rule is clear[[{:|,|nothing}=:]] no phones in class.
+p: The picnic is on Friday because[[{:|,|nothing}=nothing]] the oval is booked on Thursday.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: colons brackets
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: colons brackets
+p: Our class excursion is on Friday. Please bring three things: a hat, a drink bottle and sunscreen. The bus (booked by Mr Lee) leaves at nine. We will return by three.
+# endregion
+
+# region: explain-pic
+widget: sentence
+mode: punct
+answer: on
+p: Mia packed three things[[{:|,|nothing}=:]] rope, a torch and a map.
+# endregion

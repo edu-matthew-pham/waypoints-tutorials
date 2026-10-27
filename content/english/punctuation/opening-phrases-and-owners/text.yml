@@ -1,0 +1,47 @@
+# Texts for "Opening phrases and shared owners" (the sentence board's punct mode chooses a comma or none; cohesion
+# gaps choose owner words; write mode counts a newsletter item).
+
+# region: run
+widget: sentence
+mode: punct
+p: After the long walk through the bush[[{,|nothing}=,]] we ate lunch.
+p: We ate lunch[[{,|nothing}=nothing]] after the long walk through the bush.
+p: Under the old bridge by the river[[{,|nothing}=,]] a family of ducks nested.
+# endregion
+
+# region: vary
+widget: cohesion
+p: Mia and Ravi built one robot together. It is [[{Mia and Ravi's|Mia's and Ravi's|Mias and Ravis}=Mia and Ravi's]] robot.
+p: Zoe has a kite and Kai has a kite. They are [[{Zoe and Kai's|Zoe's and Kai's|Zoes and Kais}=Zoe's and Kai's]] kites.
+# endregion
+
+# region: practise
+widget: sentence
+mode: punct
+p: At the end of the long hot afternoon[[{,|nothing}=,]] the swimmers climbed out.
+p: The swimmers climbed out[[{,|nothing}=nothing]] at the end of the long hot afternoon.
+p: Inside the dusty box under the bed[[{,|nothing}=,]] Ava found her diary.
+p: Ava found her diary[[{,|nothing}=nothing]] inside the dusty box under the bed.
+p: On a rainy morning in the middle of July[[{,|nothing}=,]] the whole class visited the museum.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: commas apostrophes
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: commas apostrophes
+p: On Thursday morning our class visited the botanic gardens. Beside the lily pond near the entrance, we sketched the water plants. Mia and Ravi's drawing of the frog won the class prize. After a long day in the sun, everyone slept on the bus ride home.
+# endregion
+
+# region: explain-pic
+widget: sentence
+mode: punct
+answer: on
+p: Across the paddock behind the school[[{,|nothing}=,]] a mob of kangaroos grazed.
+# endregion

@@ -1607,7 +1607,7 @@ Vary, Practise, Make).
     (`commas semicolons colons dashes brackets apostrophes quotes joiners who short long`). It counts only and says so
     on the board; it never judges the writing. Values for `when:`: build `n_tiles`, `n_placed`, `n_decoys_used`,
     `in_order`, `first_ok`, `has_<id>`, `first_<id>`; punct `n_slots`, `n_set`, `n_right`, `n_wrong`, `slot_N`; write
-    `is_written`, `n_commas`, `n_semicolons`, `n_colons`, `n_dashes`, `n_brackets`, `n_apostrophes`, `n_quotes` (opening
+    `is_written`, `n_commas`, `n_semicolons`, `n_colons`, `n_dashes`, `n_brackets`, `n_apostrophes` (apostrophes inside a word, such as don't or dog's, and after a final s, such as girls'; quotation marks are not counted, though a closing quote after an s can be), `n_quotes` (opening
     quotation marks), `n_joiners` (different joining words from a fixed list, such as because, when, although, if, until, counted wherever they appear in the text), `n_who` (who, which, whose only; not that),
     `n_short` (sentences of 5 words or fewer), `n_long` (15 or more), `longest`, `shortest`; always `n_words` and
     `n_sentences`. Labelling parts of a sentence and choosing a word still use the cohesion board (parts mode, gaps and

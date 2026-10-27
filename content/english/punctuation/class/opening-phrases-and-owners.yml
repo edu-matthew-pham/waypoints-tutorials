@@ -1,0 +1,29 @@
+inquiry:
+  q: "Why does a comma help after a long opening phrase?"
+  prompts:
+    - "Read a sentence with a long opener aloud, with and without the comma. Where do you pause?"
+    - "Does a short opener need one?"
+  notes: "The comma marks where the main part begins. For short openers, writers often skip it."
+activities:
+  - at: predict
+    kind: activity
+    title: "Find the break"
+    minutes: 5
+    do: |
+      Read a sentence with a long opener aloud, pausing at the break. Students put a finger up where they heard the pause.
+    notes: "The pause comes just before the main part starts."
+  - at: make
+    kind: discussion
+    title: "Point and say"
+    minutes: 5
+    do: |
+      Partners point to each opening phrase and the comma after it, and say what each apostrophe shows.
+    notes: "A missing comma is a good place to ask 'where does the main part start?'."
+questions:
+  - at: investigate
+    title: "Shared or separate?"
+    type: question
+    q: "Kai and Sam each have a bike. Which phrase shows that?"
+    options: ["Kai's and Sam's bikes", "Kai and Sam's bike", "Kais and Sams bikes"]
+    answer: 0
+    explain: "They each have their own, so each name has its own apostrophe, and bikes is plural."
