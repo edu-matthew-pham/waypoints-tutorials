@@ -2,17 +2,17 @@
 order: 3
 unit: core
 title: Commas that change meaning
-summary: "A comma does a job in the structure of a sentence: it separates the items in a list, it ends a dependent clause that opens a sentence, and it sets off the words that introduce speech. It is not a place to take a breath. A comma in the wrong place, or a missing one, can change what a sentence says."
+summary: "A comma does a job in the structure of a sentence: it separates the items in a list, it follows a clause that cannot stand alone and opens a sentence, and it sets off the words that introduce speech. It is not a place to take a breath. A comma in the wrong place, or a missing one, can change what a sentence says."
 language: maths
 node: [AC9E6LA09 n1, AC9E6LA09 n2]
-explainPicture: { ref: text.yml#explain-pic, caption: "The comma ends the opening clause, 'When the bell rang'. The main clause starts after it." }
+explainPicture: { ref: text.yml#explain-pic, caption: "The comma ends the words that open the sentence. The main part starts after it." }
 hook: "'Let's eat Grandma.' One comma decides whether it is dinner or a disaster."
 ---
 A comma has a few clear jobs:
 
 - **In a list:** it stands in for *and* between items. *We saw emus, kangaroos and wombats.*
 - **After an opening clause:** a clause that cannot stand alone and starts the sentence is followed by a comma. *If it rains, the picnic moves inside.*
-- **With speech:** a comma comes between the words that introduce speech and the speech itself. *Ben said, 'Follow me.'*
+- **With speech:** a comma comes between the words that introduce speech and the speech itself. *Ava said, 'Come this way.'*
 
 A comma is **not** a breath mark. You cannot put one wherever you would pause when reading aloud. A comma between the subject and its verb (*The bus, was late.*) splits a sentence in a place where it should stay whole.
 
@@ -25,7 +25,7 @@ check:
   type: predict
   q: "'When the bell rang the class lined up.' Where does the comma go?"
   options: ["After rang", "After bell", "After class", "After lined"]
-  actual: "After rang. 'When the bell rang' cannot stand alone, so it is a dependent clause. The comma comes after it, just before the main clause 'the class lined up'."
+  actual: "After rang. 'When the bell rang' cannot stand alone, so it is not a whole sentence. The comma comes after it, just before the main clause 'the class lined up'."
 ```
 
 ## Try: what is each comma for?
@@ -36,7 +36,7 @@ insight: "Labelling the job of each comma shows that a comma has a reason, and t
 try: { playground: board, starter: "text.yml#run", height: 460 }
 hint: ["Look at the words just before and after the comma. What is the comma separating?", "Does the sentence start with a clause that cannot stand alone? Does it have a list, or someone speaking?"]
 smaller:
-  check: { type: question, q: "'We packed torches, maps and rope.' What does the comma do?", options: ["It separates the items in a list", "It marks where to breathe", "It ends an opening clause"], answer: 0, feedback: [null, "A comma is not for breathing. It does a job in the sentence.", "There is no opening clause here: the sentence starts with the main clause."], explain: "The comma takes the place of 'and' between torches and maps." }
+  check: { type: question, q: "'Pack your hat, boots and gloves.' What does the comma do?", options: ["It separates the items in a list", "It marks where to breathe", "It ends an opening clause"], answer: 0, feedback: [null, "A comma is not for breathing. It does a job in the sentence.", "There is no opening clause here: the sentence starts with the main clause."], explain: "The comma takes the place of 'and' between torches and maps." }
 check: { type: board, text: "Label what the comma in each sentence does: list, opening clause or speech.", when: "n_right = 6 and n_wrong = 0", explain: "Torches and maps are separated, so that comma is in a list. 'When the bell rang' and 'Because the creek was high' cannot stand alone, so a comma follows each. 'Ben said,' and 'Ava asked,' introduce speech." }
 ```
 
@@ -69,9 +69,9 @@ tasks:
   - check:
       type: question
       q: "Which is the best rule for where a comma goes?"
-      options: ["Wherever you would pause to breathe when you read the sentence aloud", "Where the structure calls for one: between list items, after an opening clause, and with speech", "After every fourth or fifth word, so that no sentence gets too long"]
+      options: ["Wherever you would pause to breathe when you read the sentence aloud to a friend", "Where the structure calls for one: list items, opening clauses and speech", "After every fourth or fifth word, so that no sentence runs on for too long"]
       answer: 1
-      feedback: [null, null, "Length does not decide it. The same sentence needs the same commas whether it is long or short."]
+      feedback: ["Breathing varies from person to person, so it cannot decide where a comma goes.", null, "Length does not decide it. The same sentence needs the same commas whether it is long or short."]
       explain: "Commas follow the structure of the sentence. Pausing to breathe is not a reason, because people pause in different places."
 ```
 

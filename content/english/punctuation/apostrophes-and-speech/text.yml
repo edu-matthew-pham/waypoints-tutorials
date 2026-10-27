@@ -11,8 +11,8 @@ p: Three girls left their bags. The [[{girls|girl's|girls'}=girls']] bags are un
 # region: vary
 widget: sentence
 mode: punct
-p: 'We can start now[[{,|.|?}=,]]' said Mia[[{,|.|:}=,]] 'if everyone is here.'
-p: Ben called out[[{,|.|:}=,]] 'Wait for me!'
+p: 'We can start now[[{,|.|?}=,]]' said Mia[[{nothing|,|.}=,]] 'if everyone is here.'
+p: Ben shouted[[{nothing|,}=,]] 'Wait for me!'
 p: 'Where are the oars[[{?|,|.}=?]]' asked Ravi.
 # endregion
 

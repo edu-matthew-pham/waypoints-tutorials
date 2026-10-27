@@ -6,7 +6,7 @@ summary: "A colon comes after a complete main clause and introduces what the cla
 language: maths
 node: [AC9E7LA09 n1, AC9E7LA09 n2]
 explainPicture: { ref: text.yml#explain-pic, caption: "The first part is a whole sentence on its own. The colon promises that a list comes next." }
-hook: "'I have one rule: no spoilers.' What does the colon promise the reader?"
+hook: "What does a colon promise the reader that a comma does not?"
 ---
 A **colon** (:) follows a complete main clause and says *here comes the detail*:
 
@@ -30,7 +30,7 @@ insight: "Predicting which mark follows a complete clause shows students that th
 check:
   type: predict
   q: "'The coach had one rule be on time.' Which mark goes after 'rule'?"
-  options: ["A colon", "A comma", "A bracket", "No mark"]
+  options: ["A colon", "A comma", "A question mark", "No mark"]
   actual: "A colon. 'The coach had one rule' is a complete sentence, and it promises something: what the rule is. The colon introduces it."
 ```
 
@@ -42,7 +42,7 @@ insight: "Labelling what each colon introduces shows that it always promises som
 try: { playground: board, starter: "text.yml#run", height: 460 }
 hint: ["Read the words after the colon. Are they items, a reason or detail, or someone's words?", "What did the first part promise?"]
 smaller:
-  check: { type: question, q: "'I have one wish: to win.' What does the colon introduce?", options: ["A list of wishes", "The detail the first part promised", "Someone's spoken words"], answer: 1, feedback: ["There is only one wish, and 'to win' is not a list.", null, "Nobody is quoted here."], explain: "The first part promises a wish. The words after the colon say what it is." }
+  check: { type: question, q: "'I have one wish: to win.' What does the colon introduce?", options: ["A list", "An explanation", "A quotation"], answer: 1, feedback: ["There is only one wish, and 'to win' is not a list of things.", null, "Nobody is quoted here."], explain: "The first part promises a wish. The words after the colon say what it is." }
 check: { type: board, text: "Label what each colon introduces: a list, an explanation or a quotation.", when: "n_right = 6 and n_wrong = 0", explain: "Two sentences have a list after the colon, two give the explanation, and two quote written words: the sign and the poster." }
 ```
 

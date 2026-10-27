@@ -24,6 +24,6 @@ questions:
     title: "Which comma?"
     type: question
     q: "Which sentence has its comma in the right place?"
-    options: ["Because the track was wet, we walked slowly.", "Because the track, was wet we walked slowly.", "Because the track was wet we, walked slowly."]
-    answer: 0
+    options: ["Because the track, was wet we walked slowly.", "Because the track was wet, we walked slowly.", "Because the track was wet we, walked slowly."]
+    answer: 1
     explain: "The comma follows the whole opening clause."

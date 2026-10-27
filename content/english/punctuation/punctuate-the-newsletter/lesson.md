@@ -17,9 +17,9 @@ stage: predict
 insight: "Thinking about which mark the newsletter needs most makes students link each job to its mark before fixing."
 check:
   type: predict
-  q: "Nib's newsletter has a list, an owner, a quotation, an opening clause and two related clauses. Which mark will it need most often?"
+  q: "Nib's newsletter has a list, an opening clause and a quotation. Which one mark do all three of those need?"
   options: ["The comma", "The colon", "The semicolon", "The apostrophe"]
-  actual: "The comma. It is needed for the list, after the opening clause and before the quotation. The apostrophe, colon and semicolon each do one job here."
+  actual: "The comma. It separates list items, follows an opening clause and comes before the quotation. The colon and the semicolon each do one of these jobs at most, and the apostrophe does none of them."
 ```
 
 ## Part 1: apostrophes
@@ -58,7 +58,7 @@ check: { type: board, text: "Choose the mark for each box.", when: "n_right = 5 
 stage: make
 insight: "Punctuating a whole paragraph makes students decide each mark in context, as they do in extended writing."
 try: { playground: board, starter: "text.yml#make", height: 460 }
-hint: ["Where does each sentence end? Put the capital letters and full stops in first.", "Which words are an extra detail about Mrs Tran? Which words are Ravi's own, and what do they promise?"]
+hint: ["Where does each sentence end? Put the capital letters and full stops in first.", "Read it aloud. Where does your voice stop, and where does a reader need help to follow the meaning?"]
 check: { type: board, text: "Punctuate the paragraph: at least four sentences, at least four commas, a colon and speech marks.", when: "n_sentences >= 4 and n_commas >= 4 and n_colons >= 1 and n_quotes >= 1", explain: "Your paragraph has sentences, commas, a colon and speech marks. Swap with a partner and ask them to find each comma and say its job." }
 ```
 

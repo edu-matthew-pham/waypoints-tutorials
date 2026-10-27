@@ -36,8 +36,8 @@ support: "Ask students to punctuate one sentence at a time and read it aloud bef
 leads: |
   This ends Punctuation for meaning. Later phases return to punctuation in longer texts.
 exit:
-  q: "Punctuate: Last week our class visited the museum Ava asked can we see the dinosaurs"
-  a: "Last week, our class visited the museum. Ava asked, 'Can we see the dinosaurs?'"
+  q: "Punctuate: On the last day of term our class visited the museum Ava asked can we see the dinosaurs"
+  a: "On the last day of term, our class visited the museum. Ava asked, 'Can we see the dinosaurs?'"
 explain: |
   Put each mark where its job is: apostrophes for owners and short forms, commas for lists, opening clauses and speech, colons and semicolons for whole clauses.
 

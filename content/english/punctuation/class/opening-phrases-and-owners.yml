@@ -24,6 +24,6 @@ questions:
     title: "Shared or separate?"
     type: question
     q: "Kai and Sam each have a bike. Which phrase shows that?"
-    options: ["Kai's and Sam's bikes", "Kai and Sam's bike", "Kais and Sams bikes"]
-    answer: 0
+    options: ["Kai and Sam's bike", "Kais and Sams bikes", "Kai's and Sam's bikes"]
+    answer: 2
     explain: "They each have their own, so each name has its own apostrophe, and bikes is plural."

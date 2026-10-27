@@ -31,7 +31,7 @@ insight: "Predicting where the comma goes shows students that the break comes af
 check:
   type: predict
   q: "'After the storm on Tuesday night the creek rose.' Where does the comma go?"
-  options: ["After night", "After storm", "After After", "After creek"]
+  options: ["After night", "After storm", "After Tuesday", "After creek"]
   actual: "After night. 'After the storm on Tuesday night' is the whole opening phrase, and the main part, 'the creek rose', starts after it."
 ```
 

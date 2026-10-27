@@ -12,9 +12,9 @@ p: Ava and Ben built a stall together. It is [[{Ava and Ben's|Ava's and Ben's|Av
 widget: sentence
 mode: punct
 p: On Friday afternoon at the school oval[[{,|nothing}=,]] our team will play its final match.
-p: Please bring a hat[[{,|nothing}=,]] a drink bottle and sunscreen.
+p: Please bring a hat[[{nothing|,}=,]] a drink bottle and sunscreen.
 p: When the whistle blows[[{,|nothing}=,]] everyone must return to class.
-p: Mr Lee said[[{,|nothing}=,]] 'Walk to the hall.'
+p: Mr Lee said[[{nothing|,}=,]] 'Walk to the hall.'
 p: The new library[[{,|nothing}=nothing]] opens on Monday.
 # endregion
 
@@ -23,7 +23,7 @@ widget: sentence
 mode: punct
 p: The school fair has three stalls[[{:|;|,|nothing}=:]] cakes, books and plants.
 p: We need[[{:|;|,|nothing}=nothing]] volunteers for the cake stall.
-p: The hall was packed[[{:|;|,|nothing}=;]] there was no room left.
+p: Ava swept the stage[[{:|;|,|nothing}=;]] Ben set out the chairs.
 p: The reason was clear[[{:|;|,|nothing}=:]] the cakes had sold out.
 p: Because the sun was strong[[{:|;|,|nothing}=,]] we moved the stalls into the shade.
 # endregion

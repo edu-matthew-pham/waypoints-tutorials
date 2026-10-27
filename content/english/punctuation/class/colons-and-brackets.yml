@@ -10,7 +10,7 @@ activities:
     title: "Cover the colon"
     minutes: 5
     do: |
-      Write 'We stayed home because: it was raining.' on the board. Cover the colon and what follows. Is what is left a sentence?
+      Write 'We were late because: the bus broke down.' on the board. Cover the colon and what follows. Is what is left a sentence?
     notes: "It is not, so the colon does not belong."
   - at: make
     kind: discussion
@@ -24,6 +24,6 @@ questions:
     title: "Which colon?"
     type: question
     q: "Which sentence has its colon in the right place?"
-    options: ["Ben had one wish: to see the sea.", "Ben wished to: see the sea.", "Ben wished: to see the sea."]
-    answer: 0
+    options: ["Ben wished to: see the sea.", "Ben wished: to see the sea.", "Ben had one wish: to see the sea."]
+    answer: 2
     explain: "'Ben had one wish' is a whole sentence that promises what the wish is."

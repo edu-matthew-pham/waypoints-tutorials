@@ -2,11 +2,11 @@
 order: 1
 unit: warmup
 title: Apostrophes and speech marks
-summary: "An apostrophe does one of two jobs: it stands in for letters that were left out (don't), or it shows who owns something (the dog's bone). Speech marks wrap the words someone said, and the comma or question mark that ends them goes inside. Getting these right lets a reader see at a glance what was said, who said it and who owns what."
+summary: "An apostrophe does one of two jobs: it stands in for letters that were left out (don't), or it shows who owns something. Speech marks wrap the words someone said, and the comma or question mark that ends them goes inside. Getting these right lets a reader see at a glance what was said, who said it and who owns what."
 language: maths
 node: [AC9E3LA11 n1, AC9E3LA11 n2, AC9E4LA12 n1, AC9E4LA12 n2]
 explainPicture: { ref: text.yml#explain-pic, caption: "The apostrophe goes straight after the owner. One cat owns the bowl, so it sits before the s. Two cats share it, so it sits after the s." }
-hook: "'The dogs bone' or 'the dog's bone'. What does the apostrophe tell you?"
+hook: "Same letters, different meaning: one dog or two? What can an apostrophe tell you?"
 ---
 An **apostrophe** (') does one of two jobs.
 
@@ -67,7 +67,7 @@ tasks:
   - check:
       type: question
       q: "'We can start now,' said Mia. Where does the comma go, and why?"
-      options: ["Inside the closing speech mark, because it ends the spoken words", "Outside the closing speech mark, because the sentence carries on", "After said, because that is where the speaker is named", "No comma is needed"]
+      options: ["Inside the closing speech mark, because it ends the spoken words", "Outside the closing speech mark, because the whole sentence carries on after it", "After said, because that is where the speaker is named in the sentence", "No comma is needed, because said Mia already tells the reader who spoke"]
       answer: 0
       feedback: [null, "The comma belongs with the spoken words, so it goes inside.", "Said comes after the comma, not before it.", "Without it the spoken words run straight into 'said Mia'."]
       explain: "The comma ends the spoken words, so it sits inside the closing speech mark. Then the speaker is named in lower case."

@@ -39,7 +39,7 @@ insight: "Labelling each mark by its job shows how a semicolon, a pair of dashes
 try: { playground: board, starter: "text.yml#run", height: 460 }
 hint: ["Could each side of the mark stand alone as a sentence?", "Are there two dashes around some words, or one dash before the end?"]
 smaller:
-  check: { type: question, q: "'Ava loves swimming; Ben prefers running.' Why can a semicolon join these two parts?", options: ["Each part could stand alone as a sentence", "The second part is an aside", "The first part cannot stand alone"], answer: 0, feedback: [null, "An aside could be taken out. 'Ben prefers running' is a main clause of its own.", "'Ava loves swimming' is a whole sentence."], explain: "Both parts are main clauses, and the two ideas are closely related." }
+  check: { type: question, q: "'The rain stopped; the game restarted.' Why can a semicolon join these two parts?", options: ["Each part could stand alone as a sentence", "The second part is an aside", "The first part cannot stand alone"], answer: 0, feedback: [null, "An aside could be taken out. 'The game restarted' is a main clause of its own.", "'Ava loves swimming' is a whole sentence."], explain: "Both parts are main clauses, and the two ideas are closely related." }
 check: { type: board, text: "Label what the mark in each sentence does: semicolon, pair of dashes or single dash.", when: "n_right = 6 and n_wrong = 0", explain: "A semicolon joins two main clauses. A pair of dashes sets off an aside. A single dash adds a pause or a surprise." }
 ```
 

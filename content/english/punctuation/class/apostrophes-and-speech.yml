@@ -24,6 +24,6 @@ questions:
     title: "Which job?"
     type: question
     q: "In 'the children's books', which job does the apostrophe do?"
-    options: ["It shows the books belong to the children", "It stands in for missing letters", "It shows the word is plural"]
-    answer: 0
+    options: ["It stands in for missing letters", "It shows the books belong to the children", "It shows the word is plural"]
+    answer: 1
     explain: "The books belong to the children, so the apostrophe shows ownership."

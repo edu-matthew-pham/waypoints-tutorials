@@ -17,6 +17,6 @@ questions:
     title: "Which is best?"
     type: question
     q: "Which sentence is punctuated best?"
-    options: ["Ravi said, 'We need flour, eggs and sugar.'", "Ravi said 'We need, flour, eggs and sugar.'", "Ravi said; 'We need flour eggs and sugar.'"]
-    answer: 0
+    options: ["Ravi said 'We need, flour, eggs and sugar.'", "Ravi said, 'We need flour, eggs and sugar.'", "Ravi said; 'We need flour eggs and sugar.'"]
+    answer: 1
     explain: "A comma comes before the speech and between the first items of the list."
