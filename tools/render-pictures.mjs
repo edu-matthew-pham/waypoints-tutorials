@@ -371,7 +371,7 @@ async function drawBoard(page, j) {
   // Any board content counts as started (#board > *): widgets built from plain HTML (decode, pixels) have no svg.
   // What to photograph: the machine's row, a growing pattern's figure, a formula (with its shape and working), or the board.
   const sel = /widget:\s*cohesion/.test(j.code) ? '.co-paper' : /widget:\s*sentence/.test(j.code) ? '.se-paper' : /widget:\s*wordchoice/.test(j.code) ? '.wc-paper' : /widget:\s*formula/.test(j.code) ? '.rulebox' : /widget:\s*machine/.test(j.code) ? '#mrow' : /widget:\s*pattern/.test(j.code) ? '.patfig' : /widget:\s*rule/.test(j.code) ? '#gpanel' : '#board';
-  await page.waitForSelector({ '.co-paper': '.co-paper .co-p', '.se-paper': '.se-paper > *', '#mrow': '#mrow .mbox', '.patfig': '.patsvg line, .patsvg circle', '#gpanel': '.rulebox', '.rulebox': '.rulebox .rulework', '#board': '#board svg, #board canvas.wpcv, #board > *' }[sel], { timeout: 20000, state: 'attached' });
+  await page.waitForSelector({ '.co-paper': '.co-paper .co-p', '.se-paper': '.se-paper > *', '.wc-paper': '.wc-paper > *', '#mrow': '#mrow .mbox', '.patfig': '.patsvg line, .patsvg circle', '#gpanel': '.rulebox', '.rulebox': '.rulebox .rulework', '#board': '#board svg, #board canvas.wpcv, #board > *' }[sel], { timeout: 20000, state: 'attached' });
   await page.waitForTimeout(400);
   if (await page.locator('#error').isVisible()) throw new Error(`${j.id}: the board did not start: ${await page.locator('#error').innerText()}`);
   const shot = (await page.locator(sel).screenshot()).toString('base64');

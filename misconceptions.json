@@ -590,5 +590,9 @@
   "comma-splice": {"home": "english/punctuation/semicolons-and-dashes", "text": "A comma is enough to join two sentences, so the writer sticks two main clauses together with a comma alone."},
   "one-register": {"home": "english/words/same-message-different-words", "text": "Writing the same way to everyone, without noticing that a friend and a principal need different words."},
   "synonyms-interchangeable": {"home": "english/words/shades-of-meaning", "text": "A synonym can be swapped in for any similar word, so the shade or strength of meaning is ignored."},
-  "command-to-authority": {"home": "english/words/words-and-roles", "text": "Giving an order to someone in charge, because the writer does not notice that a request is expected."}
+  "command-to-authority": {"home": "english/words/words-and-roles", "text": "Giving an order to someone in charge, because the writer does not notice that a request is expected."},
+  "polite-is-formal": {"home": "english/words/slang-to-formal", "text": "Treating a friendly, polite line as formal, because being kind and being official are not told apart."},
+  "familiarity-only": {"home": "english/words/who-is-it-for", "text": "Choosing words using only how well the reader is known, and leaving out that the reader has authority."},
+  "language-judged": {"home": "english/words/words-that-show-who-you-are", "text": "Judging a person's character from how they speak, when every way of speaking is valid for its group."},
+  "insider-language": {"home": "english/words/words-that-build-roles", "text": "Using a group's acronyms and special words with a newcomer without explaining them, so the newcomer is left out."}
 }

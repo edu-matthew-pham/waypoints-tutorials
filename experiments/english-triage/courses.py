@@ -32,7 +32,7 @@ course('punctuation', 'Punctuation for meaning', 'How writing works', '6-8', 'bu
        'Commas that change meaning, colons, brackets, semicolons and dashes, each tried on sentences where the mark matters.',
        warm=all_nodes(code(5, 'LA09'), code(3, 'LA11'), code(4, 'LA12')), ext=all_nodes(code(10, 'LA09')))
 
-course('words', 'Language for people and situations', 'How writing works', '6-8', 'planned', 1, 'new: word choice board (swap a word, place it on a scale)',
+course('words', 'Language for people and situations', 'How writing works', '6-8', 'built', 1, 'wordchoice (scale, swap) with cohesion chain and parts',
        all_nodes(code(6, 'LA01'), code(7, 'LA01'), code(8, 'LA01')),
        'Formality and register, language and identity, language that builds group roles, and words with shades of meaning (formal, intense, positive or negative).',
        warm=all_nodes(code(4, 'LA01'), code(5, 'LA01'), code(4, 'LA11')) + nodes(code(5, 'LA08'), 1),

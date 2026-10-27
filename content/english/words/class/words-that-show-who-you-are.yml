@@ -1,0 +1,29 @@
+inquiry:
+  q: "What do your words say about the groups you belong to?"
+  prompts:
+    - "Think of a club, team or class that has its own words."
+    - "What could a newcomer not follow?"
+  notes: "Made-up or school examples only. No student is asked about family or background."
+activities:
+  - at: predict
+    kind: activity
+    title: "Invent a club"
+    minutes: 5
+    do: |
+      In groups, invent a club and write three words only its members would use. Swap with another group and guess what the words mean.
+    notes: "Made-up clubs keep it light and personal details out."
+  - at: investigate
+    kind: discussion
+    title: "Different voices, all valid"
+    minutes: 5
+    do: |
+      Ask: why might two people speak differently and both be right? Collect reasons without naming real groups.
+    notes: "Redirect any ranking of ways of speaking to 'what works for whom'."
+questions:
+  - at: investigate
+    title: "What does speech show?"
+    type: question
+    q: "What can the way someone speaks tell you?"
+    options: ["Which groups or places they might belong to", "Whether they are clever or kind", "Whether they speak 'correctly'"]
+    answer: 0
+    explain: "Speech can hint at groups and places. It tells you nothing about character."

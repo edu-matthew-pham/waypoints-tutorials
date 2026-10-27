@@ -1,0 +1,29 @@
+inquiry:
+  q: "Why do we word things differently for different people?"
+  prompts:
+    - "Ask a friend, a coach and a principal for the same thing."
+    - "What changes, and why?"
+  notes: "Familiarity and power are two separate cues."
+activities:
+  - at: predict
+    kind: activity
+    title: "One request, three readers"
+    minutes: 5
+    do: |
+      Pairs act out asking for a day off to a friend, a coach and a principal. The class names what changed each time.
+    notes: "Listen for greetings, please and could."
+  - at: investigate
+    kind: discussion
+    title: "Warm and respectful"
+    minutes: 5
+    do: |
+      Ask: can words be warm and respectful at once? Collect examples from the class.
+    notes: "Aim for 'yes, because there are two cues'."
+questions:
+  - at: investigate
+    title: "Which cue?"
+    type: question
+    q: "A student calls the principal 'Ms Chen' even though they chat often. Which cue explains it?"
+    options: ["Familiarity", "Power", "Neither"]
+    answer: 1
+    explain: "The principal has authority, so the student is respectful even though they know each other."

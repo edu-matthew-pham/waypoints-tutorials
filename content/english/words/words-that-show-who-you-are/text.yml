@@ -1,0 +1,69 @@
+# Texts for "Words that show who you are" (parts labels club jargon; swap chooses wording for a newcomer;
+# chain colours sailing words; write counts quotes).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: inline
+roles: sailing chess drama
+role sailing: Sailing club
+role chess: Chess club
+role drama: Drama club
+s sailing: Check the tide before we launch the dinghy.
+para:
+s chess: He opened with a gambit and lost a knight.
+para:
+s drama: Hit your mark and wait for the cue.
+para:
+s sailing: We will tack when we reach the buoy.
+para:
+s chess: She castled early to keep her king safe.
+para:
+s drama: The understudy knows every line.
+# endregion
+
+# region: vary
+widget: wordchoice
+mode: swap
+bands: Only the group knows | Anyone can follow
+before: Choose the wording a newcomer can follow.
+p: The skipper told the newcomer, "Hold the [[{painter@1|rope at the front@2}=rope at the front]] while I start."
+p: The coach told the new player, "Meet at [[{the sports field gate@2|the old spot@1}=the sports field gate]] after school."
+# endregion
+
+# region: practise
+widget: cohesion
+mode: chain
+colours: 1
+p: At the club, the [[skipper#a]] checked the [[tide#a]] and the [[rigging#a]] before the [[dinghies#a]] were launched. Afterwards everyone had lunch and talked about school.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: quotes
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: quotes
+p: Mia stood at the edge of the stage. 'Hit your mark,' said the director. 'I know,' whispered Mia. She waited for the cue and stepped into the light.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: inline
+answer: on
+roles: sailing chess drama
+role sailing: Sailing club
+role chess: Chess club
+role drama: Drama club
+s sailing: We will tack at the buoy.
+para:
+s chess: She castled early.
+para:
+s drama: Wait for your cue.
+# endregion

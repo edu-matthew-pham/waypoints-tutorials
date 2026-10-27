@@ -1604,12 +1604,12 @@ Vary, Practise, Make).
     space before it joins the word before; one with a space before and none after joins the next word (an opening
     bracket); a mark with spaces both sides stands alone (a dash). `nothing` means no mark. Slots start unset. `mode:
     write`: a text box, with `p:` lines as a starting text and `counts:` naming extra counts to show
-    (`commas semicolons colons dashes brackets apostrophes quotes joiners who short long`). It counts only and says so
+    (`commas semicolons colons dashes brackets apostrophes quotes joiners who short long contractions exclaims modals first`). It counts only and says so
     on the board; it never judges the writing. Values for `when:`: build `n_tiles`, `n_placed`, `n_decoys_used`,
     `in_order`, `first_ok`, `has_<id>`, `first_<id>`; punct `n_slots`, `n_set`, `n_right`, `n_wrong`, `slot_N`; write
     `is_written`, `n_commas`, `n_semicolons`, `n_colons`, `n_dashes`, `n_brackets`, `n_apostrophes` (apostrophes inside a word, such as don't or dog's, and after a final s, such as girls'; quotation marks are not counted, though a closing quote after an s can be), `n_quotes` (opening
     quotation marks), `n_joiners` (different joining words from a fixed list, such as because, when, although, if, until, counted wherever they appear in the text), `n_who` (who, which, whose only; not that),
-    `n_short` (sentences of 5 words or fewer), `n_long` (15 or more), `longest`, `shortest`; always `n_words` and
+    `n_short` (sentences of 5 words or fewer), `n_long` (15 or more), `longest`, `shortest`, `n_contractions` (short forms such as don't, it's, we'll), `n_exclaims` (exclamation marks), `n_modals` (would, might, probably and similar), `n_first` (I, me, my, we, us, our); always `n_words` and
     `n_sentences`. Labelling parts of a sentence and choosing a word still use the cohesion board (parts mode, gaps and
     chain mode). `answer: on` (read-only, for Explain-it-to-me pictures) works as on the cohesion board. `npm run
     check-sentence` tests the widget, then every sentence board in a lesson: it builds, the check fails at the start
@@ -1617,6 +1617,16 @@ Vary, Practise, Make).
     `answer: on`, and no step does. Counts are rough aids: say in the step and teacher notes that the student's own
     writing is judged by the student, a partner or the teacher, and that if an answer is defensible it is marked
     correct or left out.
+  - `widget: wordchoice` (English › Language for people and situations, 28 Oct 2026): word choice on a scale.
+    Common: `bands: A | B | C` (2 to 7 labels), `before:`, `answer: on` (read-only, for Explain-it-to-me pictures).
+    `mode: scale`: `word a: text = 2` places a word in a band; `= 2/3` accepts either band (use it where a careful
+    student could argue two, otherwise leave the item out). The student clicks a word, then a band. Values: `n_words`,
+    `n_placed`, `n_right`, `n_wrong`, `w_<id>`. `mode: swap`: `p:` lines with slots `[[{mate@1|colleague@3}=colleague]]`,
+    where `@n` is the band the choice sits in; the board shows where the chosen word sits and reads the sentence back.
+    Values: `n_slots`, `n_set`, `n_right`, `n_wrong`, `slot_N`, `band_N`. Tone and word-chain tasks use the cohesion
+    board's chain and parts modes. `npm run check-wordchoice` tests the widget and every wordchoice board in a lesson
+    (it starts, the check fails at the start and passes solved, explain pictures say `answer: on`). Like the sentence
+    board, it never judges a student's own writing.
 - **Maths cards** (`snippets/maths.json`, for the course named by its `course:`): the words and methods of the course,
   one card each, with `label`, `code` (TeX, shown typeset), `hint` (may use `$...$`), `unit` (the unit whose cheat sheet
   lists it) and optionally `board` (a board setup, drawn as the card's picture by `npm run render`) with `shows` (its

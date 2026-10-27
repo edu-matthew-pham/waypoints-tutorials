@@ -1,0 +1,53 @@
+# Texts for the challenge "Rewrite the notice" (scale, swap, chain, write).
+
+# region: scale
+widget: wordchoice
+mode: scale
+bands: Slang | Colloquial | Conversational | Formal
+word a: Oval's heaps too wet, so training's in the gym. = 2
+word b: Bring ya runners. = 1/2
+word c: Training starts at four. = 3
+word d: Cheers, Nib. = 2
+word e: Parents are invited to attend. = 4
+word f: We regret any inconvenience. = 4
+# endregion
+
+# region: swap
+widget: wordchoice
+mode: swap
+bands: Slang | Colloquial | Conversational | Formal
+before: Choose the formal wording for each gap.
+p: Training has been [[{bumped@1|moved@3|relocated@4}=relocated]] to the gym.
+p: The oval is [[{heaps wet@2|too wet@3|unsuitable for use@4}=unsuitable for use]] after the rain.
+# endregion
+
+# region: chain
+widget: cohesion
+mode: chain
+colours: 1
+p: [[Hey#a]] everyone, the oval is [[heaps#a]] too wet, so training is in the gym. Bring [[ya#a]] runners and a drink bottle. [[Cheers#a]], Nib. P.S. [[No worries#a]] if you are late.
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+counts: contractions exclaims
+start: "Hey everyone! The oval's heaps too wet, so training's in the gym on Thursday at four. Bring ya runners and a drink bottle. No worries if you're late. Cheers, Nib"
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+counts: contractions exclaims
+p: Training has been relocated to the gym on Thursday at four, because the oval is unsuitable for use. Students are asked to bring their runners and a drink bottle. Parents are invited to attend. We regret any inconvenience.
+# endregion
+
+# region: explain-pic
+widget: wordchoice
+mode: scale
+answer: on
+bands: Text to a friend | Notice to parents
+word a: Oval's heaps wet, so we're in the gym. = 1
+word b: Training has been relocated to the gym because the oval is unsuitable for use. = 2
+# endregion

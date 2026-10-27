@@ -1,0 +1,29 @@
+inquiry:
+  q: "How do words build roles in a group?"
+  prompts:
+    - "Think of a team, club or class with its own words."
+    - "Who do those words include? Who might they leave out?"
+  notes: "Made-up examples only. No student is asked about their own groups."
+activities:
+  - at: predict
+    kind: activity
+    title: "Explain it to a newcomer"
+    minutes: 5
+    do: |
+      In pairs, one student plays a newcomer to Reef Watch and the other explains one of the Try board lines in plain words.
+    notes: "Listen for explaining an acronym once."
+  - at: investigate
+    kind: discussion
+    title: "Boss, equal or helper?"
+    minutes: 5
+    do: |
+      Read three lines aloud with different pronouns. The class says which role each builds.
+    notes: "Point to the word that decides each time."
+questions:
+  - at: investigate
+    title: "Which role?"
+    type: question
+    q: "'Let us split the survey.' Which role does the speaker build?"
+    options: ["Boss", "Equal", "Helper"]
+    answer: 1
+    explain: "Let us and a shared task place the speaker beside the others."

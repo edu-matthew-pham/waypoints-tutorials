@@ -1,0 +1,56 @@
+# Texts for "Who is it for?" (scale places situations; swap chooses a greeting; write counts).
+
+# region: run
+widget: wordchoice
+mode: scale
+bands: Casual | Respectful | Formal
+word a: Chatting with your cousin = 1
+word b: Asking a new classmate to share a table = 1/2
+word c: Asking your coach about training = 2
+word d: Writing to your teacher about homework = 2
+word e: Writing to the mayor = 3
+word f: Speaking to a judge = 3
+# endregion
+
+# region: vary
+widget: wordchoice
+mode: swap
+bands: Casual | Respectful | Formal
+before: Choose the greeting that fits each reader.
+p: Emailing a principal you have never met: "[[{Hey@1|Hi@2|Dear Ms Chen,@3}=Dear Ms Chen,]] I am writing about the school fair."
+p: Texting your cousin: "[[{Dear Cousin,@3|Hey!@1|Greetings,@3}=Hey!]] Are you coming on Saturday?"
+# endregion
+
+# region: practise
+widget: wordchoice
+mode: scale
+bands: Casual | Respectful | Formal
+word a: Your younger sibling = 1
+word b: A neighbour you know a little = 2
+word c: A coach you like = 2
+word d: A librarian you have never met = 2/3
+word e: A government minister = 3
+word f: A school council committee reading your proposal = 3
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+p: Hey Sam, are you free after school? I found a good spot for the project. Hi Coach, I hope you are well. Could I please miss training on Thursday? Dear Ms Chen, I am writing to ask about the school fair. I would like to run a stall that raises money for the library.
+# endregion
+
+# region: explain-pic
+widget: wordchoice
+mode: scale
+answer: on
+bands: Close friend | Coach you know well | Stranger in charge
+word a: Hey, want to come? = 1
+word b: Hi Coach, could I please come? = 2
+word c: Dear Madam, may I attend? = 3
+# endregion

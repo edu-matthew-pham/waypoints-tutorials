@@ -1,0 +1,8 @@
+# Nib's formal letter to Mr Hall (the "casual thank-you" task).
+
+# region: nib
+Dear Mr Hall,
+I am writing to report on the canteen survey.
+Thanks a heap for letting us run it, it was great!
+The results are attached.
+# endregion

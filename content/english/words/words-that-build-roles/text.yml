@@ -1,0 +1,71 @@
+# Texts for "Words that build roles" (parts labels kinds of word; swap welcomes newcomers; scale boss/equal/helper;
+# write counts first-person pronouns).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: inline
+roles: acronym specialist address pronoun
+role acronym: Acronym
+role specialist: Specialist term
+role address: Form of address
+role pronoun: Inclusive pronoun
+s acronym: Add your numbers to the RWL sheet.
+para:
+s specialist: Count the polyps on each colony.
+para:
+s address: Morning, Skipper.
+para:
+s pronoun: We will survey the north reef today.
+para:
+s acronym: Bring your PPE to the briefing.
+para:
+s specialist: Record the transect depth.
+para:
+s address: Thanks, Dr Lee.
+para:
+s pronoun: Let us log it together.
+# endregion
+
+# region: vary
+widget: wordchoice
+mode: swap
+bands: Leaves newcomers out | Welcomes newcomers
+before: Choose the wording that welcomes a newcomer.
+p: Email to a new volunteer: "[[{Bring your PPE.@1|Bring your mask and gloves (called PPE).@2}=Bring your mask and gloves (called PPE).]]"
+p: At the wharf: "[[{Obviously you know where the transect starts.@1|I will show you where the transect starts.@2}=I will show you where the transect starts.]]"
+# endregion
+
+# region: practise
+widget: wordchoice
+mode: scale
+bands: Acts as the boss | Acts as an equal | Acts as a helper
+word a: Do this now. = 1
+word b: Shall we start with the north reef? = 2
+word c: Could I carry that for you? = 3
+word d: Move over, I will do it. = 1
+word e: What do you think we should do? = 2
+word f: Tell me what you need and I will get it. = 3
+# endregion
+
+# region: make
+widget: sentence
+mode: write
+# endregion
+
+# region: make-solution
+widget: sentence
+mode: write
+as: student
+p: We are starting a chess club at lunchtime on Tuesdays. Everyone is welcome, including people who have never played. I will bring spare boards and show you the basics. Our first game is next week in the library.
+# endregion
+
+# region: explain-pic
+widget: wordchoice
+mode: scale
+answer: on
+bands: Boss | Equal | Helper
+word a: Leave it to me. = 1
+word b: Let us do it together. = 2
+word c: Can I help with that? = 3
+# endregion

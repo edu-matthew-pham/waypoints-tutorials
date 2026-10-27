@@ -1,0 +1,35 @@
+summary: "The challenge. Students move Nib's notice up the scale in four parts: place the sentences, choose formal wording, colour the informal words and rewrite the whole notice formally, then check a real message of their own."
+time: 45
+timing: "Predict 3 min · Parts 1 to 3 15 min · Part 4 15 min · Own writing 10 min"
+goals:
+  - I can place sentences on the scale from slang to formal.
+  - I can choose formal wording for a reader.
+  - I can find informal words in a notice.
+  - I can rewrite a message so it fits its readers.
+struggle: "Students fix the slang but keep short forms, or make the notice stiff and unfriendly. Ask 'who is reading, and what do they need to know?'."
+before: |
+  Do Part 4 yourself first: rewrite Nib's notice for parents.
+
+  This challenge covers AC9E6LA01 node 3: select language to suit a context, applying the scale and the reader cues from the course. The student text uses 'how formal the words are' and does not name **register**.
+
+  Part 1 accepts two bands for 'Bring ya runners.' because a careful student can argue slang or colloquial. Part 2 has a single formal answer per gap.
+
+  The Part 4 check counts short forms, exclamation marks and sentences. It cannot judge whether the wording fits; a partner or you should.
+
+  The notice and names are made up for the lesson.
+running:
+  - "Parts 1 to 3: ask which word gave each sentence away."
+  - "Part 4: partners underline any word they would not say to the principal."
+stuck:
+  - see: "A student keeps 'No worries' because it is polite."
+    ask: "Polite or formal?"
+    fix: "It is polite and relaxed. A formal notice would say 'We regret any inconvenience'."
+stretch: "Rewrite the notice a second time for students in Year 3."
+support: "A list of Nib's informal words with a blank beside each for a formal replacement."
+leads: |
+  End of the course. Students can return to any lesson from the course page.
+exit:
+  q: "Name one thing you changed in the notice and why."
+  a: "Any change that moves a word or short form up the scale to fit parents, such as 'heaps' to 'unsuitable for use'."
+explain: |
+  Move a message up the scale to fit its readers: swap slang and short forms for exact words and full forms.

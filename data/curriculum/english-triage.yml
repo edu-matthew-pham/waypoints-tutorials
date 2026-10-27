@@ -265,9 +265,9 @@ courses:
   title: Language for people and situations
   pathway: How writing works
   years: 6-8
-  status: planned
+  status: built
   wave: 1
-  board: 'new: word choice board (swap a word, place it on a scale)'
+  board: wordchoice (scale, swap) with cohesion chain and parts
   summary: Formality and register, language and identity, language that builds group roles, and words with shades of meaning
     (formal, intense, positive or negative).
 - id: persuade

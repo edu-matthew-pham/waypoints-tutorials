@@ -1,0 +1,29 @@
+inquiry:
+  q: "When do we choose formal words, and why?"
+  prompts:
+    - "Say 'I'm going to lunch' in four ways, from slang to formal."
+    - "Which would you use in a report?"
+  notes: "Four steps on a scale. Polite is not the same as formal."
+activities:
+  - at: predict
+    kind: activity
+    title: "Four ways to say it"
+    minutes: 5
+    do: |
+      In groups, say 'I'm going to lunch' in four ways, one per step of the scale. Each group performs one and the class names its step.
+    notes: "Listen for contractions and slang."
+  - at: investigate
+    kind: discussion
+    title: "Polite but not formal"
+    minutes: 5
+    do: |
+      Read a casual thank-you aloud and a formal one. Ask the class: which is more polite? Which is more formal?
+    notes: "Aim for 'both can be polite; only one is formal'."
+questions:
+  - at: investigate
+    title: "Which is formal?"
+    type: question
+    q: "Which sentence would suit a report to the principal?"
+    options: ["We reckon the library needs heaps more books.", "We believe that the library requires more books.", "Libraries need books, eh."]
+    answer: 1
+    explain: "Believe and requires are exact words with no slang."

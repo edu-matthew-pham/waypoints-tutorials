@@ -1,0 +1,22 @@
+inquiry:
+  q: "How do you make a message fit its readers?"
+  prompts:
+    - "Who will read the notice, and what do they know about Nib?"
+    - "Which words need to change?"
+  notes: "Use the scale and the two cues from the course."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Who is reading?"
+    minutes: 5
+    do: |
+      List the readers of the notice. For each, ask how well Nib knows them and whether they have authority.
+    notes: "Bring in familiarity and power from Who is it for?"
+questions:
+  - at: make
+    title: "Which word has to change?"
+    type: question
+    q: "Which word in Nib's notice most needs to change for parents?"
+    options: ["Heaps", "Training", "Gym"]
+    answer: 0
+    explain: "Heaps is colloquial. Training and gym suit any reader."
