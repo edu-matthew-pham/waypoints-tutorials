@@ -154,32 +154,32 @@ projects:
       - { label: "image_pattern_trainer.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/image_pattern_trainer.py", note: "your classes are things in pictures" }
       - { label: "pose_pattern_trainer.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/pose_pattern_trainer.py", note: "your classes are body poses" }
       - { label: "audio_pattern_trainer.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/audio_pattern_trainer.py", note: "your classes are sounds" }
-    example: trained-posture.py
+    example: trained-home-sounds.py
     benchmark:
-      - { file: trained-finished-1.png, caption: "A posture reminder: a photo in, a verdict and what to do about it out, with a setting for how sure it must be. (The photo is hidden here.)" }
+      - { file: trained-finished-1.png, caption: "A home sound alert for someone hard of hearing: a sound in, what it heard and what to do about it out, with a setting for how sure it must be." }
       - { file: trained-finished-2.png, caption: "A door knock listener: a sound in, what was heard and what to do about it out." }
     reveal: true
     milestones:
       - text: "My problem, my user and my classes are planned, and I have collected 20 or more examples of each."
         hints:
           - "Start with one sentence: who is it for, and what will it tell or do for them?"
-          - "Pick two to five classes that look (or sound) clearly different to you. Add a \"nothing\" class only if your app will often see none of the others."
+          - "Pick two to five classes that look (or sound) clearly different to you. Add a \"nothing\" class only if your app will often see none of the others. In Sounds mode the trainer hears kinds of sound (a dog, a knock, music, speech), not which word was said, so two spoken words sound the same to it: hover over an example to see what it heard."
           - "Collect examples in different places, at different times and from different angles, not twenty copies of one situation. The model learns whatever is the same in all of them, including the background."
         way: |
           # Plan (written before training):
-          #   User:     a student at a desk.
-          #   Job:      remind them when they lean towards the screen.
-          #   Classes:  Upright, Leaning   (nobody in the picture is handled in the app)
+          #   User:     someone hard of hearing, at home.
+          #   Job:      tell them about sounds they would want to know about.
+          #   Classes:  Baby crying, Dog barking, Fire crackling, Nothing urgent
       - text: "I trained it, checked it, and tried hard to fool it."
         hints:
           - "Try new examples that were not used for training, and write down what you expect before you try each one."
           - "Try to fool it: a new place, a different person who has said yes, a different angle, something that is not any of your classes. Note how sure it was, not just what it said."
           - "Every time it gets one wrong, add examples like that one to the class it should have been, and train again. Write down what you changed."
         way: |
-          # I tried                      I expected   It said    How sure
-          # upright, mirrored            Upright      Not sure   0.53
-          # upright, shrunk to 60 px     Upright      Not sure   0.59
-          # leaning, mirrored            Leaning      Upright    0.9997
+          # I tried                      I expected       It said          How sure
+          # a sneeze                     Nothing urgent   Baby crying      0.61   (now "Not sure")
+          # a rooster                    Nothing urgent   Dog barking      0.998  (fooled, and sure)
+          # a chainsaw, first model      Nothing urgent   Fire crackling   1.00   (fixed by adding chainsaws)
       - text: "My app runs, built from the closest starter with my model file and my ADAPT lines changed."
         hints:
           - "Run the starter exactly as it is first, with its sample model, so you know what working looks like."
@@ -187,8 +187,10 @@ projects:
           - "Say something different for each class, and keep those messages together in one place so they are easy to change."
         way: |
           ADVICE = {
-              "Upright": "Nice. Keep your feet flat and your screen at eye level.",
-              "Leaning": "Sit back, drop your shoulders, and bring the screen up to eye level.",
+              "Baby crying": "The baby is crying. Go and check on them.",
+              "Dog barking": "The dog is barking. Someone may be at the door.",
+              "Fire crackling": "Something is crackling like a fire. Check the kitchen and the heaters now.",
+              "Nothing urgent": "Nothing to worry about.",
           }
       - text: "I chose my cut-off from my testing, and I can name one thing a simple rule would do better."
         hints:
@@ -197,13 +199,15 @@ projects:
           - "For the rule: is there a part of your problem you could say exactly, with a measurement or a list, that the model only guesses?"
         way: |
           if score < cutoff:
-              return "Not sure", f"My best guess is {label} ({score:.0%}), but that is under your cut-off. Try again."
+              # Not sure is passed on, not dropped: a missed alert costs more than a false one.
+              return "Not sure", f"I heard something, maybe {label} ({score:.0%}). Have a look to be safe."
           return label, ADVICE[label]
     stretch:
       - "Add a second setting your user can change, such as how many examples must agree, and test both settings."
       - "Retrain with the examples that fooled it, and show in your testing record that the same inputs now work."
       - "Ask someone who was not in your training examples to try it, and add what happens to your testing record."
       - "Check the trainer's privacy claim yourself. Load it, then turn off Wi-Fi and train a model: if it still works, the work is happening on your computer. Or open your browser's developer tools (F12), click Network, clear it, then add examples and train, and see what appears."
+      - "Optional: train a first model on a public dataset (your teacher has links to some), then test it on examples you collect yourself. What changes when it meets your room, your camera or your voice?"
       - "Ideas to start from: a recycling helper, a plant health check, a hand-sign counter, a squat or plank coach, a gesture remote, a clap or knock command, an instrument identifier, or a doorbell, kettle and microwave listener."
     teacher: |
       **What this project is.** The trained half of a pair (project A uses rules; project C joins them). Students train a model from their own examples, build an app around it, and then test whether it can be trusted. The learning is in the testing and the reflection as much as in the app: new people, new places and things outside every class, and a cut-off picked from evidence rather than a guess.
@@ -221,7 +225,8 @@ projects:
       **What to change when you adapt it**
 
       - *Problem and user.* Students choose, or you set a shared context (a class, a club, a subject area). Say which in the brief you hand out.
-      - *Modes on offer.* Offer pictures, poses and sounds, or narrow it. Poses and sounds suit students who are not comfortable on camera, since poses use only 33 body points and sounds use no pictures.
+      - *Modes on offer.* Offer pictures, poses and sounds, or narrow it. Poses and sounds suit students who are not comfortable on camera, since poses use only 33 body points and sounds use no pictures. Steer voice-command ideas away from the Sounds mode: it keeps only YAMNet's scores for 521 kinds of sound, so spoken words all come out as "speech" and look alike to the trained part (a model on four words from Speech Commands scored about chance on new speakers, 28 Oct 2026). It is the same lesson as CreateAI, which measures movement, so two held-still positions look alike: what the fixed part can notice limits what any model can learn.
+      - *Public datasets.* An optional extra, not the main route: students collect their own examples for their own user. A dataset helps a student with no camera or microphone, and "train on theirs, test on yours" shows how a model fits the world it was trained in. Two with clear licences: [ESC-10](https://github.com/karolpiczak/ESC-50) (environmental sounds, CC BY 3.0, the example's data) and [Rock Paper Scissors](https://laurencemoroney.com/datasets.html) (computer-generated hands, CC BY 4.0, project C's). Avoid datasets of people's faces and bodies.
       - *Amount of data.* "20 or more examples of each class" is a prompt. Raise it for stronger models, or lower it for a short unit.
       - *The skills list.* "You'll use" lights up from pasted code and is only a prompt: the unchanged starters already light some of it, or all (the page tells students so), so it shows which skills are in play, not that a student wrote them. Read the code for that. Change `uses:` in `projects.yml` if you want other skills.
       - *Check your app.* This is the success criteria. Reword a line, add your own, or remove one. The page lists them in the goal; the marking points below follow the same order.
@@ -233,8 +238,8 @@ projects:
       **Marking points to look for** (replace with your own criteria):
 
       - *Clear result.* The output names the class and says what it means for the named user, not a bare label or number.
-      - *Honest about how sure it is.* There is a cut-off, the app says "not sure" under it, and the student can say where the number came from. Look for a cut-off taken from the testing record, not a round number picked early. In the example, 0.90 sits above the shaky answers (0.53 and 0.59) and below every correct one (0.93 or more).
-      - *Useful response.* Each class leads to different advice or a next step. In the example, Upright and Leaning each get their own advice.
+      - *Honest about how sure it is.* There is a cut-off, the app says "not sure" under it, and the student can say where the number came from. Look for a cut-off taken from the testing record, not a round number picked early. In the example, 0.85 sits above the four shaky wrong answers (0.61 to 0.79) and below all but one right answer.
+      - *Useful response.* Each class leads to different advice or a next step. In the example, each alert says what to do, and "not sure" still tells the user to look, because a missed alert costs more than a false one.
       - *Fits the user.* There is a setting the user can change (the cut-off slider in the example) and the student can say why it helps this user.
       - *Tested.* The record has at least five unseen inputs and at least two not in any class, with what was expected written before the result, and what the student changed in response.
       - *Reflection.* Names a real input that fooled the model, says what was changed, makes a fair rule-versus-model point, and says who would be affected by a wrong answer.
@@ -247,30 +252,28 @@ projects:
       - *A cut-off picked by guessing.* Ask: "Which numbers in your testing record did you use to choose it?"
       - *No \"nothing\" case.* The app always picks a class, even for something else. Ask: "What does it say if the camera sees an empty room?"
       - *Class that is really the background.* All the "dog" photos are outdoors and all the "cat" photos indoors. Ask: "Would it still say cat in the garden?"
+      - *Classes the mode cannot tell apart.* Spoken words in Sounds mode, or two still positions on a movement sensor. Ask: "What does the trainer say it heard for each one?"
 
-      **Ways it could look.** Students see two screenshots of finished apps in different modes (a posture reminder from a pose model, a door knock listener from a sound model): output only, never code, so they show the standard without giving one answer to copy. Both were made with the sample models and test files in the starters, so a model of your own students' will behave differently. In the first, the photo (a person) is hidden, and its caption says so. Replace them with your own screenshots if you like (a PNG in `content/code/pattern-detector/projects/`, listed under `benchmark:`).
+      **Ways it could look.** Students see two screenshots of finished apps (a home sound alert, and a door knock listener from the starters' sample sound model): output only, never code, so they show the standard without giving one answer to copy. Replace them with your own screenshots if you like (a PNG in `content/code/pattern-detector/projects/`, listed under `benchmark:`).
 
-      **The example below** is one complete trained app: a posture reminder built on the starters' sample pose model (`my_pose_model.json`, Upright and Leaning), with advice for each class, a "not sure" band, a cut-off slider and a few made-up tests of its wording. To run it, copy it into the starters folder beside `pattern_model.py` and the sample model, and run it like a starter. Students who unlock "Show one way" see only a short piece of it for the milestone they are on.
+      **The example below** is one complete trained app: a home sound alert for someone hard of hearing, with advice for each class, a "not sure" answer that still tells the user to look, a cut-off slider and a few made-up tests of its wording. Its model was trained in the Pattern Trainer's Sounds mode, as a student would (Upload sounds, Train model, Download), on ESC-10 clips: 32 to 33 five-second clips per class from folds 1 to 4 (Nothing urgent is rain, waves and a clock), tested on fold 5, which the model never heard. To run it, take `my_home_sounds_model.json` from [the examples folder](https://github.com/edu-matthew-pham/waypoints-tutorials/tree/main/experiments/pattern-detector-examples), put it in the starters folder beside `pattern_model.py`, and run the example like a starter. Students who unlock "Show one way" see only a short piece of it for the milestone they are on.
 
-      **A filled-in testing record** (the example app, run on the starters' sample test photos and changed copies of them; cut-off 0.90; yours will look different):
+      **A filled-in testing record** (the example app on ESC-10 fold 5, cut-off 0.85; yours will look different). The first model was tested, fooled, changed and tested again, as milestone 2 asks:
 
-      | I tried | I expected | The app said | How sure | Notes |
-      |---|---|---|---|---|
-      | `person_upright.jpg` | Upright | Upright | 0.995 | ok |
-      | `person_leaning.jpg` | Leaning | Leaning | 0.9996 | ok |
-      | upright, top half only | Upright | Upright | 0.997 | ok |
-      | leaning, top half only | Leaning | Leaning | 0.93 | ok, closest to the cut-off |
-      | upright, darkened | Upright | Upright | 0.993 | ok |
-      | leaning, darkened | Leaning | Leaning | 0.998 | ok |
-      | upright, shrunk to 60 pixels | Upright | Not sure | 0.59 | honest, did not guess |
-      | upright, mirrored | Upright | Not sure | 0.53 | honest, the model never saw this |
-      | leaning, mirrored (leaning the other way) | Leaning | **Upright** | 0.9997 | **wrong and sure**: no cut-off can catch it |
-      | upright, blurred | I can't see you | I can't see you | n/a | no person found |
-      | `cat.jpg` (in no class) | I can't see you | I can't see you | n/a | no person found |
+      | I tried | I expected | First model said | After the change | How sure (after) | Notes |
+      |---|---|---|---|---|---|
+      | 8 babies crying | Baby crying | 7 right, 1 Dog barking | same | 1.00 (wrong one 0.73) | the wrong one is now "Not sure" |
+      | 8 dogs barking | Dog barking | 8 right | same | 0.997 or more | ok |
+      | 8 fires crackling | Fire crackling | 7 right, 1 Nothing urgent | same | 1.00 | **a missed fire, and sure**: no cut-off catches it |
+      | 24 rain, waves, clocks | Nothing urgent | 23 right, 1 rain as Fire (0.99) | 23 right, rain as Fire (0.65) | 0.87 or more | the rain is now "Not sure" |
+      | 8 chainsaws (never trained) | Nothing urgent | **6 as Fire crackling** (0.997 to 1.00) | 8 Nothing urgent | 1.00 | false fire alarms; fixed by adding chainsaws |
+      | 8 sneezes (never trained) | Nothing urgent | **6 as Baby crying** (0.99 to 1.00), 2 Nothing urgent | 6 Nothing urgent, 2 Baby crying | 0.61 and 1.00 | one now "Not sure", one still fooled |
+      | 8 roosters (never trained) | Nothing urgent | 8 Nothing urgent | **8 as Dog barking** (0.79 to 1.00) | | **the change broke something that worked** |
+      | 8 helicopters (never trained) | Nothing urgent | 6 Nothing urgent, 2 Fire (0.51 and 1.00) | 7 Nothing urgent, 1 Fire (1.00) | | |
 
-      The sample "Leaning" class is the upright photo tilted one way, so the model learned that one tilt and nothing else. A student who trains on real sitting will see different failures, but the lesson is the same: choosing a cut-off removes the shaky answers, and the mirrored photo shows why it cannot remove the confident ones.
+      *What changed:* 11 chainsaw and 11 sneeze clips (from folds 1 to 4) were added to Nothing urgent and the model retrained. The chainsaws and most sneezes are fixed, but now every rooster is called Dog barking: adding examples to one class moved where the model draws its lines, and sounds it never heard landed somewhere new. The cut-off (0.85) turns the four shaky wrong answers into "not sure"; the confident ones (a fire called Nothing urgent, a sneeze, the roosters) need more examples, not a cut-off.
 
-      **A sample reflection** (strong): "When I tried a photo of myself leaning the other way, it said Upright and was 99% sure. My training photos all had me leaning to the left, so it never learned that leaning right is also leaning. I added 15 photos leaning right, retrained, and it now says Leaning at 0.94. My cut-off is 0.90 because my wrong answers on new people were all under 0.85 and my right ones all over 0.93. A simple rule would do better at telling whether my shoulders are level, because I can measure that exactly and explain it, and the model can only guess. If my app is wrong, someone with a sore back might think their posture is fine, so I made it say 'not sure' instead of guessing, and I tell the user it is only a reminder."
+      **A sample reflection** (strong): "The model was sure a chainsaw was a fire, 100% sure. I had trained Nothing urgent on rain, waves and a clock, so it only knew quiet sounds as 'nothing', and anything loud and rough sounded like fire to it. I added chainsaws and sneezes to Nothing urgent and the chainsaws were fixed, but then it called every rooster a dog barking, which had worked before. So I learned that fixing one mistake can make another, and I have to retest everything after every change. My cut-off is 0.85 because the shaky wrong answers were all under 0.80. A simple rule would do better at loudness: 'tell me about anything louder than talking' can be measured exactly. If my app is wrong, a deaf person might not go to a crying baby or a real fire, so 'not sure' still tells them to look, and I say it does not replace a smoke alarm."
 
       **What a weaker reflection looks like:** "My app works well and the confidence was high." Ask: on which input did you not expect it to work, and what happened?
   - id: combined
@@ -316,10 +319,10 @@ projects:
       - { label: "audio_pattern_trainer.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/audio_pattern_trainer.py", note: "the model part, for sounds" }
       - { label: "choice_rules.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/choice_rules.py", note: "a rules part: numbers and choices" }
       - { label: "sound_rules.py", href: "https://github.com/edu-matthew-pham/pattern-detector-starters/blob/main/sound_rules.py", note: "a rules part for sound: loudness and which note it is (uses measure.py)" }
-    example: combined-posture-streak.py
+    example: combined-rock-paper-scissors.py
     benchmark:
+      - { file: combined-finished-1.png, caption: "Rock paper scissors: the model reads your throw, and rules play the round, keep score and end the game. (A computer-made hand from the Rock Paper Scissors dataset, CC BY 4.0, Laurence Moroney.)" }
       - { file: combined-finished-2.png, caption: "A secret knock door: the model hears each sound, and rules check the last three sounds against the secret pattern." }
-      - { file: combined-finished-1.png, caption: "A posture break reminder: the model reads each photo, and rules count leaning checks in a row before suggesting a break. (The photo is hidden here.)" }
     reveal: true
     milestones:
       - text: "My problem and my user are clear, and my pipeline is drawn, with the reason each part is a model or rules."
@@ -329,39 +332,42 @@ projects:
           - "Under each box, write why it is a model or rules. If you can describe it exactly, it is probably rules. If it is too messy to describe, it is probably the model."
         way: |
           # Pipeline:
-          #   photo -> MODEL (label + how sure) -> RULES (streak, cut-off, break) -> advice
-          #   MODEL: telling Upright from Leaning in a photo is too messy for rules.
-          #   RULES: counting checks in a row and choosing when to speak is exact.
+          #   photo -> MODEL (Rock/Paper/Scissors + how sure) -> RULES (cut-off, who wins, score) -> result
+          #   MODEL: telling a hand shape apart in a photo is too messy for rules.
+          #   RULES: who beats whom, keeping score and when the game ends are exact.
       - text: "I built and tested each part on its own."
         hints:
           - "Get your model part working first, from the closest trainer starter, and check what it says on a few inputs it has not seen."
           - "Write your rules as a function that takes the model's answer as inputs, so you can test it with made-up labels and scores before the model is connected."
           - "Make up the awkward readings on purpose: unsure, nobody there, and the same answer many times in a row. Write what you expect before you run them."
         way: |
-          assert run([("Leaning", 0.97)] * 3) == (3, "Leaning for a while")
-          assert run([("Leaning", 0.97)] * 2 + [("Upright", 0.97)]) == (0, "Upright")  # upright resets it
-          assert run([("Leaning", 0.97)] * 2 + [("Leaning", 0.70)]) == (2, "Not sure")  # unsure changes nothing
+          assert run([("Rock", 0.95, "Scissors")]) == ({"you": 1, "computer": 0}, "You win the round")
+          assert run([("Rock", 0.95, "Paper")]) == ({"you": 0, "computer": 1}, "I win the round")
+          assert run([("Rock", 0.95, "Rock")]) == (NEW_GAME, "Draw")
+          assert run([("Paper", 0.65, "Rock")]) == (NEW_GAME, "Show it again")              # unsure: not played
       - text: "I joined the parts, and my rules use how sure the model is."
         hints:
           - "Call the model first, then pass its label and its confidence to your rules function."
           - "Decide what your rules do below your cut-off: ignore the answer, ask again, or say so. Whichever you choose, the user should be able to tell."
           - "If your rules remember something between checks (a count, a score, a list), keep it in one place and change it in one place."
         way: |
-          label, score = model.top(image)           # the MODEL part
-          streak = next_streak(streak, label, score)  # the RULES part
-          headline, advice = reply(streak, label, score, int(limit))
+          label, confidence = model.top(image)          # the MODEL part
+          computer = random.choice(list(BEATS))
+          score, headline, detail = play(score, label, confidence, computer, int(target))   # the RULES part
       - text: "I tested the joins, including when the model was unsure or wrong, and I can say who would be affected."
         hints:
           - "Test the whole app on a run of inputs, not one at a time, and include one the model is unsure about and one it gets wrong."
           - "Ask of each join: what does the rest of my app do with this answer? A confident wrong answer looks exactly like a confident right one, so what do your rules do with it?"
           - "Decide who is affected if the app is wrong, and whether they would know. Then change one thing so the app handles it better, and test again."
         way: |
-          if label is None or score < CUTOFF:
-              return streak
+          if label is None or confidence < CUTOFF:
+              return score, "Show it again", f"I'm not sure that was {label} ({confidence:.0%}), so that throw doesn't count."
     stretch:
       - "Add a second setting your user can change, and test both settings across a whole run of inputs."
       - "Make your rules less trusting: act on an answer only after it has repeated, and show in your testing record that one wrong answer no longer changes the result."
       - "Swap the model part for a different mode (poses, pictures or sounds) and keep the rules, and note what you had to change."
+      - "Use two models in a row: the first decides what kind of thing it is (an apple or a banana), and a second model for that kind decides the detail (ripe or not). How sure is the whole chain if each model is right 9 times in 10?"
+      - "Optional: train your model on a public dataset (your teacher has links), then test the whole app on examples you collect yourself."
       - "Ideas to start from: a recipe helper, a singing or playing coach, a language revision game, a workout timer that counts only good form, or a local recycling guide."
     teacher: |
       **What this project is.** The joined-up half of the set. Project A used rules and project B used a trained model; here a model feeds rules. The learning is in the joins: what the rules do with the model's label and confidence, and what happens when the model is unsure or confidently wrong. A strong project cannot work with either part taken away.
@@ -385,9 +391,9 @@ projects:
       **Marking points to look for** (replace with your own criteria):
 
       - *Clear result.* Words the named user would understand, not a label and a number.
-      - *Honest about how sure it is.* Low confidence changes what the app does, and the user can tell. In the example, an unsure answer is not counted and the app says so.
-      - *Useful response that needs both parts.* Ask: "If I removed the model, what would the app do? If I removed the rules?" In the example, the model alone can only say Leaning or Upright, and the rules alone have nothing to count.
-      - *Fits the user.* A setting the user can change (the leaning limit in the example), and the student can say why.
+      - *Honest about how sure it is.* Low confidence changes what the app does, and the user can tell. In the example, an unsure throw is not played and the app says so.
+      - *Useful response that needs both parts.* Ask: "If I removed the model, what would the app do? If I removed the rules?" In the example, the model alone can only name a hand shape, and the rules alone have no throw to play.
+      - *Fits the user.* A setting the user can change (rounds to win in the example), and the student can say why.
       - *Tested as a whole.* A record of runs of inputs through the whole app, not only one input at a time, with at least one unsure case and at least one wrong case, and what the student did about each.
       - *Pipeline diagram.* Shows both parts and the hand-off between them, and gives a reason for each part, not just labels.
       - *Reflection.* Names the part that caused the most trouble, a real input that broke a join, and who would be affected.
@@ -399,46 +405,47 @@ projects:
       - *Testing the parts but not the joins.* Each part passes on its own, but the app fails together. Ask: "What is the first input that makes them disagree?"
       - *Trusting a confident wrong answer.* A rule acts on every label as if it were true. Ask: "What does your app do if the model is sure and wrong?"
       - *A pipeline diagram that is decoration.* It shows boxes but gives no reasons. Ask: "Why is this part not the other kind?"
-      - *Forgetting what the app remembers.* A count that never resets, or resets at the wrong time. Ask: "When does this go back to zero?"
+      - *Forgetting what the app remembers.* A score that never resets, or resets at the wrong time. Ask: "When does this go back to zero?"
 
-      **Ways it could look.** Students see two screenshots of finished apps where the model feeds the rules in different ways (a secret knock door that checks the last three sounds against a pattern, and a posture break reminder that counts leaning checks in a row): output only, never code. Both were made with the sample models and test files in the starters, so a model of your students' own will behave differently. In the posture one, the photo (a person) is hidden, and its caption says so. Replace them with your own screenshots if you like (a PNG in `content/code/pattern-detector/projects/`, listed under `benchmark:`).
+      **Models in a row** (a stretch idea). The first model sorts the input into a kind (an apple or a banana) and a second model, one per kind, decides the detail (ripe or not). Each model stays small and needs examples only for its own question. Three things to draw out: mistakes multiply (two models each right 9 times in 10 are right about 8 times in 10 together); the second model only ever sees what the first sends it; and a safety call such as "spoiled, not safe to eat" needs a rule of its own ("if unsure, don't eat it"), not only a model. The starters can load two model files.
 
-      **The example below** is one complete combined app: a posture break reminder on the starters' sample pose model. The model decides Upright or Leaning; the rules count leaning checks in a row (an unsure check changes nothing, an Upright check resets it), speak only past a limit the user sets, and are tested on their own with made-up readings before they are joined to the model. To run it, copy it into the starters folder beside `pattern_model.py` and the sample model, and run it like a starter. Students who unlock "Show one way" see only a short piece of it for the milestone they are on.
+      **Ways it could look.** Students see two screenshots of finished apps where the model feeds the rules in different ways (rock paper scissors, where rules play the round and keep score, and a secret knock door that checks the last three sounds against a pattern): output only, never code. Replace them with your own screenshots if you like (a PNG in `content/code/pattern-detector/projects/`, listed under `benchmark:`).
 
-      **A filled-in testing record** (the example app on the starters' sample test photos and changed copies of them; cut-off 0.90, limit 3; yours will look different):
+      **The example below** is one complete combined app: rock paper scissors against the computer, first to 2. The model reads the throw; the rules skip a throw under the cut-off ("show it again"), decide the round, keep score with `gr.State`, end the game and start a new one, and are tested on their own with made-up readings before they are joined to the model. Its model was trained in the Pattern Trainer as a student would (Upload photos, Train model, Download) on 60 pictures per class from the Rock Paper Scissors dataset's training set, and tested on its separate test set (30 per class, different hands, never seen). To run it, take `my_rps_model.json` from [the examples folder](https://github.com/edu-matthew-pham/waypoints-tutorials/tree/main/experiments/pattern-detector-examples), put it in the starters folder beside `pattern_model.py`, and run the example like a starter. The dataset's hands are computer-generated, so try your own hand on the webcam too: expect it to do worse, which is "train on theirs, test on yours" first-hand. Students who unlock "Show one way" see only a short piece of it for the milestone they are on.
+
+      **A filled-in testing record** (the example app on the dataset's test set, cut-off 0.70, first to 2; yours will look different):
 
       *Rules on their own (made-up readings)*
 
-      | Readings in order | I expected | The rules said |
+      | Throw (how sure) and the computer's | I expected | The rules said |
       |---|---|---|
-      | Leaning (0.97) three times | streak 3, break message | streak 3, "Leaning for a while" |
-      | Leaning twice, then Upright | streak 0 | streak 0, "Upright" |
-      | Leaning twice, then Leaning at 0.70 | streak stays 2 | streak 2, "Not sure" |
-      | Leaning twice, then nobody found | streak stays 2 | streak 2, "I can't see you" |
-      | Leaning twice, limit set to 2 | break message | "Leaning for a while" |
+      | Rock (0.95) v Scissors | you win the round, 1-0 | "You win the round", 1-0 |
+      | Rock (0.95) v Paper | I win the round, 0-1 | "I win the round", 0-1 |
+      | Rock (0.95) v Rock | draw, 0-0 | "Draw", 0-0 |
+      | Paper (0.65) v Rock | not played | "Show it again", 0-0 |
+      | Paper (0.70) v Rock | played, exactly on the cut-off | "You win the round", 1-0 |
+      | two wins, first to 2 | game over, new game | "You win the game!", back to 0-0 |
 
-      *Model on its own*
+      *Model on its own (90 test pictures it never saw)*
 
-      | I tried | I expected | The model said | How sure |
+      | Class | Right | What went wrong | How sure |
       |---|---|---|---|
-      | `person_upright.jpg` | Upright | Upright | 0.995 |
-      | `person_leaning.jpg` | Leaning | Leaning | 0.9996 |
-      | upright, mirrored | Upright | Leaning | 0.53 |
-      | leaning, mirrored (the other way) | Leaning | **Upright** | 0.9997 |
-      | `cat.jpg` | nobody | nobody found | n/a |
+      | Rock | 30 of 30 | | 0.79 or more |
+      | Scissors | 30 of 30 | | 0.87 or more |
+      | Paper | 20 of 30 | 10 called Rock | wrong ones 0.54 to 0.97; right ones as low as 0.40 |
 
-      *The whole app, in runs of four checks*
+      *Choosing the cut-off.* From 0.70 up to 0.85, the cut-off catches the same 5 of the 10 wrong answers; 0.70 asks again least often (12 of the 80 right answers). Asking again costs little in a game, losing a round you won does not. 5 wrong answers were 0.85 or more sure: a cut-off can't catch those.
 
-      | Run | Streak after each check | The app said at the end | Notes |
+      *The whole app, in games*
+
+      | Game | Throws (what the model read, how sure) v the computer | The app said | Notes |
       |---|---|---|---|
-      | leaning, leaning, leaning | 1, 2, 3 | "Leaning for a while" | ok |
-      | leaning, leaning, mirrored upright, leaning | 1, 2, 2, 3 | "Leaning for a while" | the unsure photo (0.53) was not counted, so it did not reset or add |
-      | leaning, leaning, upright, leaning | 1, 2, 0, 1 | "Leaning" | upright resets it |
-      | leaning, leaning, cat photo, leaning | 1, 2, 2, 3 | "Leaning for a while" | nobody found does not reset it: a design choice to discuss |
-      | leaning, leaning, **mirrored leaning**, leaning | 1, 2, **0**, 1 | "Leaning" | **the model was sure (0.9997) and wrong, so the streak reset and the reminder never came** |
+      | 1 | rock (Rock 1.00) v Scissors; scissors (Scissors 0.99) v Rock; scissors (Scissors 0.99) v Paper | win, loss, "You win the game!" | ok |
+      | 2 | rock (Rock 1.00) v Scissors; **paper (Rock 0.59)** v Rock; paper (Paper 0.93) v Rock | win, "Show it again", "You win the game!" | the unsure throw was not played, so a shaky read cost nothing |
+      | 3 | rock (Rock 1.00) v Paper; **paper (Rock 0.97)** v Rock; scissors (Scissors 0.99) v Paper | loss, **"Draw"**, win: 1-1 | **the player won that round, but the model was sure and wrong, so it was called a draw** |
 
-      The last run is the point of the project: every part passes on its own, and the whole app still fails, because the rules trust a confident wrong answer. Students may fix it in different ways (reset only after two Upright answers in a row, or a second check), and a fix that makes the rules less trusting is worth marking up. Note that the sample "Leaning" class is the upright photo tilted one way, so the sample model has learned that one tilt only.
+      Game 3 is the point of the project: each part passes on its own, and the whole app still gets a round wrong, because the rules trust a confident wrong answer. Students may fix it in different ways (show what the model read and add a "That's not my throw" button that replays the round, or ask for the same throw twice), and a fix that lets the person catch the model's mistake is worth marking up.
 
-      **A sample reflection** (strong): "The model part caused the most trouble, but the real problem was where my rules trusted it. In my test run a photo of me leaning the other way was called Upright with 99% confidence, and my rules reset the streak, so the break reminder never came. Testing the model and the rules separately both passed. It only showed up when I ran four photos through the whole app. I changed the rules so the streak only resets after two Upright answers in a row, and retested the same run: the single wrong Upright no longer reset anything, and the reminder came on the fourth check, as it should have. If my app is wrong, someone could sit leaning for an hour without being told, so I made it say 'not sure' instead of guessing, and I say it is only a reminder."
+      **A sample reflection** (strong): "The rules were the easy part and they passed every test. The trouble was the join. In one game my paper was read as rock with 97% confidence, so my round was called a draw when I had won. The cut-off only caught the shaky reads, not that one. I changed the app so it always says what it read ('I read your throw as Rock') and added a 'That's not my throw' button that replays the round, then tested the same game again and got my point back. The model was trained on computer-made hands, and on my own hand it was much less sure, especially for paper, so I would add photos of real hands next. If it is wrong, the player loses a round they won, which is unfair but not dangerous, so I let them overrule it."
 
       **What a weaker reflection looks like:** "It works well and the model and the rules work together." Ask: which input did you expect to break it, and what happened?

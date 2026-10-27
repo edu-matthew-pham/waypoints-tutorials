@@ -77,7 +77,7 @@ Everyone's app is different. Hints are there if you need them, and your teacher 
 
 **What would you need to show it so it works where your user is?**
 
-<!-- Speaker note: Students who did the first lesson have already trained one model and run it in Python. Ask what their model said about the thing that was neither. -->
+<!-- Speaker note: Students who did the first lesson have already trained one model and run it in Python. Ask what their model said about the thing that was neither. The example (a home sound alert) called a chainsaw a fire at 100%: worth telling. -->
 
 ---
 
@@ -105,13 +105,13 @@ Everyone's app is different. Hints are there if you need them, and your teacher 
 
 The model **reads** the input. Your rules **decide** what to do with it.
 
-- Count: three leaning checks in a row means a break
+- Play: the model reads each throw, rules decide who won the round and keep score
 - Remember: the last three sounds must match the secret knock
-- Combine: a model's answer and a number the user gives
+- Chain: one model says what it is, a second says the detail (an apple or a banana, then ripe or not)
 
 **Test each part alone first, then the whole thing.**
 
-<!-- Speaker note: The example's main finding is worth telling: every part passed alone, but one confident wrong answer from the model reset the count, so the reminder never came. -->
+<!-- Speaker note: The example's main finding is worth telling: every part passed alone, but a paper throw read as rock with 97% confidence turned a won round into a draw. The cut-off only stops shaky answers; a confident wrong one needs a way for the person to overrule it. -->
 
 ---
 
