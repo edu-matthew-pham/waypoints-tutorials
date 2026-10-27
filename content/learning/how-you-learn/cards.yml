@@ -7,6 +7,9 @@ groups:
   - { id: before, title: "Before a task" }
   - { id: during, title: "During a task" }
   - { id: after, title: "After a task" }
+  - { id: maths, title: "In maths" }
+  - { id: science, title: "In science" }
+  - { id: english, title: "In English" }
   - { id: code, title: "In Code" }
 cards:
   - id: what-is-it-asking
@@ -181,3 +184,183 @@ cards:
       "Python": "Use a table: one column per variable, one row per line run."
       "MakeCode": "Follow each block in order, especially loops and ifs."
       "Web": "Find the rule that applies to the element, then check which one wins."
+  - id: maths-estimate-first
+    title: "Estimate first"
+    unit: maths
+    lesson: your-strategies
+    idea: "Before you work it out: round the numbers and guess roughly how big the answer should be, so a wrong answer stands out."
+    steps:
+      - "Round each number to something easy."
+      - "Work out the rough answer in your head."
+      - "Write the estimate down, then do the real working."
+      - "Compare: if they're far apart, look for the slip."
+    watch: "An estimate isn't the answer. Use it to check, then do the real working."
+    apps:
+      "Number": "19.8 × 4.1 is about 20 × 4 = 80."
+      "Measurement": "A classroom floor is tens of square metres, not thousands."
+      "Statistics": "The mean must sit between the smallest and biggest values."
+  - id: maths-is-it-reasonable
+    title: "Is it reasonable?"
+    unit: maths
+    lesson: your-strategies
+    idea: "During and after: read your answer as a real thing. Does the size, sign and unit make sense?"
+    steps:
+      - "Say the answer in words, with its unit: '400 kilograms'."
+      - "Ask: is it about the right size?"
+      - "Check the sign: can it be negative here?"
+      - "Check the unit: is it the one the question asked for?"
+    watch: "A neat answer can still be wrong. A messy one can still be right."
+    apps:
+      "Number": "A discount can't make a price go up."
+      "Measurement": "Area is in square units; volume in cubic units."
+      "Probability": "A probability is between 0 and 1."
+  - id: maths-simpler-case
+    title: "Try a simpler case"
+    unit: maths
+    lesson: your-strategies
+    idea: "When you don't know where to start: shrink the problem until you can do it, then grow it back."
+    steps:
+      - "Swap in small, friendly numbers."
+      - "Solve that version, and notice the steps you used."
+      - "Use the same steps on the real numbers."
+      - "Or draw it: a sketch, a number line or a table."
+    watch: "Check the simpler case really is the same problem with smaller numbers."
+    apps:
+      "Algebra": "Try x = 1, 2 and 3 to see the pattern."
+      "Geometry": "Sketch it, then label what you know."
+      "Number": "Not sure whether to multiply or divide? Try it with 10 and 2."
+  - id: maths-work-backwards
+    title: "Check by working backwards"
+    unit: maths
+    lesson: your-strategies
+    idea: "After: put your answer back into the question and see if it works."
+    steps:
+      - "Take your answer."
+      - "Put it back into the original question or equation."
+      - "Work it through."
+      - "Does it give what the question said? If not, find the slip."
+    watch: "Check against the original question, not your own working: the slip may be in the working."
+    apps:
+      "Algebra": "Substitute x back into the equation."
+      "Number": "Check a division by multiplying."
+      "Percentages": "Add the increase back on: does it reach the new price?"
+  - id: science-predict-compare
+    title: "Predict, then compare with the data"
+    unit: science
+    lesson: your-strategies
+    idea: "Before an experiment: write what you expect and why. After: compare it with what happened."
+    steps:
+      - "Write a prediction with a reason: 'I think… because…'."
+      - "Do the experiment and record what happened."
+      - "Compare: did the data match?"
+      - "If not, ask what that tells you. It's often the most interesting part."
+    watch: "Don't change the prediction afterwards. A wrong prediction is a result too."
+    apps:
+      "Practical": "Write the prediction before you touch the equipment."
+      "Simulation": "Predict before you press Run or move the slider."
+      "Written answer": "Say whether the evidence supports your prediction, and how."
+  - id: science-fair-test
+    title: "Is the test fair?"
+    unit: science
+    lesson: your-strategies
+    idea: "Before and during: change one thing, measure one thing, and keep everything else the same."
+    steps:
+      - "Name the one thing you'll change."
+      - "Name the one thing you'll measure."
+      - "List what you'll keep the same."
+      - "Partway through, check: has anything else changed by accident?"
+    watch: "Small things sneak in: a different cup, a warmer room, a later time."
+    apps:
+      "Practical": "Use the same equipment and amounts each time."
+      "Planning": "Write the changed, measured and kept-same lists before you start."
+      "Written answer": "Say what you kept the same, and why it mattered."
+  - id: science-check-the-data
+    title: "Check the data"
+    unit: science
+    lesson: your-strategies
+    idea: "After collecting results: look for anything odd before you draw a conclusion."
+    steps:
+      - "Look for a result that doesn't fit the pattern."
+      - "Check its units and how it was measured."
+      - "Repeat it if you can."
+      - "Say how sure you are, and why."
+    watch: "Don't quietly delete an odd result. Say what you did about it."
+    apps:
+      "Practical": "Three repeats show whether a result is a one-off."
+      "Graphs": "A point far from the line is worth a second look."
+      "Written answer": "Mention the odd result and what you think caused it."
+  - id: science-use-the-model
+    title: "Explain it with the model"
+    unit: science
+    lesson: your-strategies
+    idea: "When explaining a result: use the science idea (particles, forces, energy, cells), not just what you saw."
+    steps:
+      - "Say what happened."
+      - "Name the model or idea that explains it."
+      - "Link them: 'This happened because…' using the model."
+      - "Check: could a classmate follow the link?"
+    watch: "Describing what happened isn't explaining why it happened."
+    apps:
+      "Chemistry": "Use particles: what are they doing?"
+      "Physics": "Name the forces or the energy transfers."
+      "Biology": "Say what the cells, organs or organisms are doing."
+  - id: english-purpose-audience
+    title: "Purpose and audience first"
+    unit: english
+    lesson: your-strategies
+    idea: "Before writing: say what the text is for and who will read it. Every later choice depends on it."
+    steps:
+      - "Say the purpose: to persuade, explain, entertain, analyse."
+      - "Say who will read it and what they already know."
+      - "Pick the form: essay, report, story, speech."
+      - "Keep the purpose and audience at the top of your page."
+    watch: "Writing well for the wrong audience still misses."
+    apps:
+      "Persuasive": "Who do you need to convince, and what will they object to?"
+      "Imaginative": "What do you want the reader to feel?"
+      "Analytical": "What's your one main point about the text?"
+  - id: english-plan-the-points
+    title: "Plan your points"
+    unit: english
+    lesson: your-strategies
+    idea: "Before drafting: jot your main points in order, so each paragraph has one job."
+    steps:
+      - "Write your main idea in one sentence."
+      - "List two to four points that support it."
+      - "Put them in the best order."
+      - "Give each paragraph one point."
+    watch: "A plan can change as you write. Update it, don't abandon it."
+    apps:
+      "Persuasive": "Strongest point first or last, not in the middle."
+      "Imaginative": "Beginning, problem, turning point, ending."
+      "Analytical": "One point per paragraph: claim, evidence, explanation."
+  - id: english-reread-aloud
+    title: "Reread aloud"
+    unit: english
+    lesson: your-strategies
+    idea: "During and after: read your writing out loud, as a reader would hear it. Your ears catch what your eyes skip."
+    steps:
+      - "Read it out loud, or quietly under your breath."
+      - "Mark anywhere you stumble or run out of breath."
+      - "Mark anywhere you lose track of what 'it' or 'this' means."
+      - "Fix the marked spots first."
+    watch: "Reading it in your head, you read what you meant, not what you wrote."
+    apps:
+      "Persuasive": "Does each paragraph push the same way?"
+      "Imaginative": "Do the sentences vary in length and rhythm?"
+      "Analytical": "Does every quote get explained?"
+  - id: english-check-each-paragraph
+    title: "Check each paragraph's job"
+    unit: english
+    lesson: your-strategies
+    idea: "After drafting: check that each paragraph does one job and links to the next."
+    steps:
+      - "Read just the first sentence of each paragraph."
+      - "Ask: do these alone tell the main points, in order?"
+      - "In each paragraph, check every sentence belongs to its point."
+      - "Check the links between paragraphs: does each lead into the next?"
+    watch: "A new point in the conclusion is a sign it belongs earlier."
+    apps:
+      "Persuasive": "Each paragraph should give one reason."
+      "Analytical": "Claim, evidence, explanation in each body paragraph."
+      "Report": "Does each heading match what's under it?"

@@ -9,7 +9,7 @@ summary: "Self-regulation in any subject: the plan, check and look back cycle, t
 Two things are built so far, as a pilot (not yet tried with a class):
 
 - [How you learn best](../learning/how-you-learn/): an optional introduction for Years 6 to 8, four discussion workshops (about 40 minutes each). Students meet the ideas through made-up tasks with a trap in them, tell steering their learning apart from choosing it, see why studying that feels easy can fool them, and plan one strategy to try on a real task in another subject.
-- [Strategy cards](../learning/how-you-learn/reference/): one screen per strategy, for before, during and after a task, with what it looks like in maths, science, English and Code. Plus four cards for Code (say what it should do, test a small piece, read the error, trace it).
+- [Strategy cards](../learning/how-you-learn/reference/): one screen per strategy, for before, during and after a task, with what it looks like in maths, science, English and Code. Plus four cards for each subject in its own words: maths (estimate first, is it reasonable?, try a simpler case, check by working backwards), science (predict then compare with the data, is the test fair?, check the data, explain it with the model), English (purpose and audience first, plan your points, reread aloud, check each paragraph's job) and Code (say what it should do, test a small piece, read the error, trace it).
 
 The course is optional. The cards and the way you prompt them in your own lessons are what build the habit.
 
@@ -58,7 +58,6 @@ The research is clear on one thing: these strategies work best taught **inside**
 
 These are plans, not promises:
 
-- Strategy cards for maths, science and English in each subject's own words.
 - Optional slides to drop into a lesson deck: *Teach it* (a short NEMO-T insert), *Show it* (a think-aloud moment) and *Nudge it* (one prompt).
 - A "try a strategy first" link at the moment a student is stuck in a lesson, before the hints.
 

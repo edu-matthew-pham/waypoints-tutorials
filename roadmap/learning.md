@@ -10,11 +10,14 @@
 - **Shared changes** (small): `tools/ict-cards.mjs` reads optional top-level `groups`, `lede`, `search` and `more` from cards.yml (`loadCardsFile`); `build-site.mjs` builds cards for `learning/*` as well as `ict/*` and gives card search entries their own subject; `validate.mjs` checks both; search hint and teacher-page entry; Teachers menu link.
 - **Needs a whole-site publish** (new subject, shared tools, Teachers menu).
 
+## Built (27 Oct 2026, later): subject cards
+
+- Four cards each for maths, science and English (groups `maths`, `science`, `english` in `cards.yml`, notes by topic or text purpose), beside the Code cards; 23 cards in all. The placeholder course on the pathway is gone. Teacher page updated.
+
 ## Next (agreed in principle, not built)
 
-1. Strategy cards for maths, science and English in each subject's own words (placeholder course on the pathway).
-2. Optional deck inserts in Prepare: Teach it (NEMO-T, 3–4 slides), Show it (think-aloud), Nudge it (one open prompt). One per deck by default, roughly a third of a course's lessons, fading.
-3. A "try a strategy first" link at the stuck moment in lessons (before hints), worded as an open question.
+1. Optional deck inserts in Prepare: Teach it (NEMO-T, 3–4 slides), Show it (think-aloud), Nudge it (one open prompt). One per deck by default, roughly a third of a course's lessons, fading.
+2. A "try a strategy first" link at the stuck moment in lessons (before hints), worded as an open question.
 
 ## Open
 
