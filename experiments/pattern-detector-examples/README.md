@@ -1,4 +1,4 @@
-# Pattern Detector example models (briefs B and C)
+# Pattern Detector example models (briefs B and C, and the detect-then-judge example)
 
 How the two example apps' models were made (28 Oct 2026), so they can be checked or remade. The apps are
 `content/code/pattern-detector/projects/trained-home-sounds.py` (B) and `combined-rock-paper-scissors.py` (C);
@@ -13,6 +13,11 @@ put a model file beside them and the starters' `pattern_model.py` to run one.
 | `evaluate.py`, `detail.py` | Score a model on a test folder with the starters' `pattern_model.py` (mediapipe 1.1.1) |
 | `harness.py` | Loads an example app without starting Gradio, to run its functions on real files |
 | `results-*.tsv` | Every test file, what the model said and how sure (B: first model and retrained) |
+| `combined-banana-checker.py` | Two models in a row: MediaPipe's Object Detector finds bananas, `my_banana_model.json` judges each cut-out (Brief C's teacher notes) |
+| `my_banana_model.json` | Ripeness: Unripe, Half ripe, Ripe, Overripe (Pictures mode; 60 BananaID photos per stage, 15 bananas x 4 sides) |
+| `object_detect_starter.py` | A draft starter for pattern-detector-starters (a PR to merge there, with `efficientdet_lite0.tflite` and `labelmap.txt`) |
+| `results-banana-bananaid.tsv`, `banana_coco.json` | The ripeness model on 120 held-out BananaID photos; every detection and ripeness call on 62 COCO photos |
+| `coco-photos.csv` | The COCO val2017 test photos: what COCO says is in each, its fruit boxes, and each photo's own licence and Flickr page |
 | `speech-commands-did-not-work.json` | A model on four spoken words (Speech Commands v0.02): about chance on new speakers; see below |
 
 **Data.** C: Rock Paper Scissors (Laurence Moroney, CC BY 4.0; computer-generated hands), 60 per class from the
@@ -36,3 +41,12 @@ never heard (first model: chainsaws as Fire crackling; after adding chainsaws an
 **Why not spoken words.** Sounds mode keeps only YAMNet's scores for 521 kinds of sound, so go, stop, up and down
 all score as speech: the model scored 2 to 17 of 25 per word on new speakers (about chance overall), and the trainer's
 own check said 23 of 50. Steer voice-command projects away from Sounds mode.
+
+**Detect, then judge** (28 Oct 2026). Data from **Fetch example data** with part = fruit (`example-data` branch,
+`fruit/`): MediaPipe's EfficientDet-Lite0 float16 (Apache 2.0, 7.3 MB) and COCO's label map; BananaID's original
+ripeness set (Mutrofin, Fatichah, Yuniarti, Setiawan; Mendeley Data, doi 10.17632/h6n5srjjyw.1, CC BY 4.0), split by
+banana so no banana is in both training and test; and 62 COCO val2017 photos whose own licence is CC BY or CC BY-SA
+(27 with bananas, 20 with apples or oranges only, 15 food photos without fruit). The COCO photos are only for testing
+and are not on the site. Ripeness of the COCO cut-outs was judged by eye. Results are in Brief C's teacher notes.
+With the detector loaded, `pattern_model.py` prints a harmless "cannot schedule new futures after shutdown" error when
+Python exits (its `atexit` closes MediaPipe after MediaPipe has shut down); plain starters do not.

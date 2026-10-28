@@ -107,7 +107,7 @@ The model **reads** the input. Your rules **decide** what to do with it.
 
 - Play: the model reads each throw, rules decide who won the round and keep score
 - Remember: the last three sounds must match the secret knock
-- Chain: one model says what it is, a second says the detail (an apple or a banana, then ripe or not)
+- Two models: a ready-made one finds each banana in the photo, your own one says how ripe it is
 
 **Test each part alone first, then the whole thing.**
 

@@ -1,0 +1,1857 @@
+[
+ {
+  "file": "000000078959.jpg",
+  "objects": "banana",
+  "truth": 13,
+  "truth_boxes": [
+   [
+    245,
+    63,
+    308,
+    133
+   ],
+   [
+    240,
+    132,
+    338,
+    169
+   ],
+   [
+    199,
+    23,
+    231,
+    114
+   ],
+   [
+    223,
+    176,
+    291,
+    203
+   ],
+   [
+    197,
+    180,
+    313,
+    241
+   ],
+   [
+    226,
+    41,
+    264,
+    117
+   ],
+   [
+    255,
+    1,
+    308,
+    91
+   ],
+   [
+    166,
+    121,
+    195,
+    162
+   ],
+   [
+    153,
+    0,
+    232,
+    79
+   ],
+   [
+    80,
+    119,
+    168,
+    200
+   ],
+   [
+    160,
+    67,
+    214,
+    136
+   ],
+   [
+    137,
+    38,
+    203,
+    100
+   ],
+   [
+    264,
+    46,
+    295,
+    90
+   ]
+  ],
+  "w": 384,
+  "h": 640,
+  "dets": [
+   {
+    "box": [
+     136,
+     0,
+     331,
+     175
+    ],
+    "found": 0.453,
+    "label": "Unripe",
+    "sure": 0.706,
+    "match": 0.18,
+    "stage": "Unripe"
+   },
+   {
+    "box": [
+     205,
+     175,
+     287,
+     227
+    ],
+    "found": 0.257,
+    "label": "Unripe",
+    "sure": 0.877,
+    "match": 0.51,
+    "stage": null
+   },
+   {
+    "box": [
+     249,
+     124,
+     335,
+     175
+    ],
+    "found": 0.246,
+    "label": "Unripe",
+    "sure": 0.988,
+    "match": 0.66,
+    "stage": null
+   },
+   {
+    "box": [
+     248,
+     49,
+     309,
+     132
+    ],
+    "found": 0.214,
+    "label": "Unripe",
+    "sure": 0.999,
+    "match": 0.78,
+    "stage": null
+   },
+   {
+    "box": [
+     154,
+     0,
+     219,
+     54
+    ],
+    "found": 0.203,
+    "label": "Unripe",
+    "sure": 0.832,
+    "match": 0.56,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000489305.jpg",
+  "objects": "banana bowl person",
+  "truth": 5,
+  "truth_boxes": [
+   [
+    80,
+    133,
+    102,
+    150
+   ],
+   [
+    49,
+    116,
+    67,
+    128
+   ],
+   [
+    98,
+    110,
+    122,
+    128
+   ],
+   [
+    155,
+    130,
+    168,
+    150
+   ],
+   [
+    204,
+    122,
+    228,
+    139
+   ]
+  ],
+  "w": 305,
+  "h": 229,
+  "dets": [
+   {
+    "box": [
+     155,
+     130,
+     171,
+     150
+    ],
+    "found": 0.265,
+    "label": "Overripe",
+    "sure": 0.599,
+    "match": 0.81,
+    "stage": null
+   },
+   {
+    "box": [
+     161,
+     120,
+     186,
+     156
+    ],
+    "found": 0.203,
+    "label": "Overripe",
+    "sure": 0.993,
+    "match": 0.14,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000346707.jpg",
+  "objects": "banana",
+  "truth": 4,
+  "truth_boxes": [
+   [
+    233,
+    124,
+    245,
+    164
+   ],
+   [
+    261,
+    30,
+    315,
+    83
+   ],
+   [
+    0,
+    230,
+    140,
+    431
+   ],
+   [
+    168,
+    98,
+    235,
+    200
+   ]
+  ],
+  "w": 333,
+  "h": 500,
+  "dets": [
+   {
+    "box": [
+     2,
+     258,
+     143,
+     427
+    ],
+    "found": 0.615,
+    "label": "Unripe",
+    "sure": 0.985,
+    "match": 0.81,
+    "stage": "Unripe"
+   }
+  ]
+ },
+ {
+  "file": "000000348708.jpg",
+  "objects": "banana bowl dining table",
+  "truth": 1,
+  "truth_boxes": [
+   [
+    0,
+    116,
+    243,
+    539
+   ]
+  ],
+  "w": 383,
+  "h": 640,
+  "dets": [
+   {
+    "box": [
+     0,
+     124,
+     187,
+     545
+    ],
+    "found": 0.577,
+    "label": "Overripe",
+    "sure": 0.863,
+    "match": 0.75,
+    "stage": "Overripe"
+   }
+  ]
+ },
+ {
+  "file": "000000008844.jpg",
+  "objects": "banana person",
+  "truth": 4,
+  "truth_boxes": [
+   [
+    534,
+    242,
+    564,
+    321
+   ],
+   [
+    544,
+    259,
+    638,
+    393
+   ],
+   [
+    0,
+    116,
+    388,
+    417
+   ],
+   [
+    371,
+    244,
+    543,
+    384
+   ]
+  ],
+  "w": 640,
+  "h": 426,
+  "dets": [
+   {
+    "box": [
+     4,
+     134,
+     380,
+     419
+    ],
+    "found": 0.687,
+    "label": "Overripe",
+    "sure": 0.999,
+    "match": 0.91,
+    "stage": "Overripe"
+   },
+   {
+    "box": [
+     344,
+     239,
+     626,
+     395
+    ],
+    "found": 0.476,
+    "label": "Overripe",
+    "sure": 0.86,
+    "match": 0.55,
+    "stage": "Overripe"
+   },
+   {
+    "box": [
+     526,
+     256,
+     605,
+     321
+    ],
+    "found": 0.303,
+    "label": "Overripe",
+    "sure": 0.985,
+    "match": 0.35,
+    "stage": "Overripe"
+   },
+   {
+    "box": [
+     87,
+     352,
+     190,
+     421
+    ],
+    "found": 0.215,
+    "label": "Ripe",
+    "sure": 0.42,
+    "match": 0.06,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000298396.jpg",
+  "objects": "banana bowl chair clock dining table knife oven scissors sink",
+  "truth": 1,
+  "truth_boxes": [
+   [
+    366,
+    412,
+    430,
+    434
+   ]
+  ],
+  "w": 640,
+  "h": 480,
+  "dets": []
+ },
+ {
+  "file": "000000090891.jpg",
+  "objects": "banana person",
+  "truth": 14,
+  "truth_boxes": [
+   [
+    381,
+    352,
+    449,
+    388
+   ],
+   [
+    414,
+    42,
+    455,
+    74
+   ],
+   [
+    94,
+    42,
+    123,
+    98
+   ],
+   [
+    25,
+    58,
+    35,
+    67
+   ],
+   [
+    21,
+    246,
+    30,
+    254
+   ],
+   [
+    194,
+    132,
+    206,
+    147
+   ],
+   [
+    234,
+    123,
+    246,
+    134
+   ],
+   [
+    219,
+    205,
+    257,
+    277
+   ],
+   [
+    369,
+    281,
+    421,
+    350
+   ],
+   [
+    492,
+    75,
+    507,
+    92
+   ],
+   [
+    19,
+    333,
+    47,
+    371
+   ],
+   [
+    599,
+    16,
+    635,
+    50
+   ],
+   [
+    171,
+    405,
+    192,
+    421
+   ],
+   [
+    1,
+    0,
+    639,
+    430
+   ]
+  ],
+  "w": 640,
+  "h": 431,
+  "dets": [
+   {
+    "box": [
+     8,
+     329,
+     94,
+     429
+    ],
+    "found": 0.514,
+    "label": "Overripe",
+    "sure": 0.889,
+    "match": 0.12,
+    "stage": "Overripe"
+   },
+   {
+    "box": [
+     138,
+     368,
+     255,
+     426
+    ],
+    "found": 0.415,
+    "label": "Overripe",
+    "sure": 0.921,
+    "match": 0.05,
+    "stage": "Overripe"
+   },
+   {
+    "box": [
+     554,
+     319,
+     628,
+     367
+    ],
+    "found": 0.39,
+    "label": "Ripe",
+    "sure": 0.523,
+    "match": 0.01,
+    "stage": "Not sure"
+   },
+   {
+    "box": [
+     600,
+     11,
+     631,
+     49
+    ],
+    "found": 0.336,
+    "label": "Overripe",
+    "sure": 0.957,
+    "match": 0.74,
+    "stage": "Overripe"
+   },
+   {
+    "box": [
+     375,
+     360,
+     488,
+     427
+    ],
+    "found": 0.288,
+    "label": "Overripe",
+    "sure": 0.516,
+    "match": 0.23,
+    "stage": null
+   },
+   {
+    "box": [
+     424,
+     2,
+     452,
+     40
+    ],
+    "found": 0.26,
+    "label": "Overripe",
+    "sure": 1.0,
+    "match": 0.0,
+    "stage": null
+   },
+   {
+    "box": [
+     502,
+     0,
+     538,
+     84
+    ],
+    "found": 0.248,
+    "label": "Overripe",
+    "sure": 0.817,
+    "match": 0.01,
+    "stage": null
+   },
+   {
+    "box": [
+     500,
+     374,
+     574,
+     425
+    ],
+    "found": 0.241,
+    "label": "Unripe",
+    "sure": 0.673,
+    "match": 0.01,
+    "stage": null
+   },
+   {
+    "box": [
+     200,
+     403,
+     340,
+     430
+    ],
+    "found": 0.237,
+    "label": "Overripe",
+    "sure": 0.809,
+    "match": 0.01,
+    "stage": null
+   },
+   {
+    "box": [
+     2,
+     50,
+     52,
+     125
+    ],
+    "found": 0.234,
+    "label": "Overripe",
+    "sure": 0.995,
+    "match": 0.02,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000173008.jpg",
+  "objects": "banana cake cup microwave orange oven person scissors toaster",
+  "truth": 2,
+  "truth_boxes": [
+   [
+    258,
+    196,
+    312,
+    290
+   ],
+   [
+    24,
+    421,
+    144,
+    480
+   ]
+  ],
+  "w": 640,
+  "h": 480,
+  "dets": []
+ },
+ {
+  "file": "000000192871.jpg",
+  "objects": "apple banana bowl dining table orange",
+  "truth": 1,
+  "truth_boxes": [
+   [
+    36,
+    354,
+    123,
+    416
+   ]
+  ],
+  "w": 640,
+  "h": 427,
+  "dets": [
+   {
+    "box": [
+     42,
+     353,
+     134,
+     422
+    ],
+    "found": 0.212,
+    "label": "Overripe",
+    "sure": 0.832,
+    "match": 0.75,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000189078.jpg",
+  "objects": "apple banana orange",
+  "truth": 3,
+  "truth_boxes": [
+   [
+    21,
+    66,
+    174,
+    152
+   ],
+   [
+    60,
+    45,
+    181,
+    89
+   ],
+   [
+    21,
+    75,
+    198,
+    206
+   ]
+  ],
+  "w": 500,
+  "h": 334,
+  "dets": [
+   {
+    "box": [
+     20,
+     61,
+     194,
+     170
+    ],
+    "found": 0.594,
+    "label": "Overripe",
+    "sure": 0.495,
+    "match": 0.69,
+    "stage": "Not sure"
+   },
+   {
+    "box": [
+     54,
+     46,
+     182,
+     84
+    ],
+    "found": 0.406,
+    "label": "Ripe",
+    "sure": 0.974,
+    "match": 0.82,
+    "stage": "Ripe"
+   },
+   {
+    "box": [
+     179,
+     48,
+     266,
+     136
+    ],
+    "found": 0.235,
+    "label": "Ripe",
+    "sure": 0.576,
+    "match": 0.04,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000028809.jpg",
+  "objects": "banana",
+  "truth": 4,
+  "truth_boxes": [
+   [
+    215,
+    158,
+    498,
+    493
+   ],
+   [
+    229,
+    35,
+    498,
+    166
+   ],
+   [
+    226,
+    10,
+    498,
+    102
+   ],
+   [
+    298,
+    1,
+    496,
+    57
+   ]
+  ],
+  "w": 498,
+  "h": 500,
+  "dets": [
+   {
+    "box": [
+     211,
+     251,
+     498,
+     473
+    ],
+    "found": 0.628,
+    "label": "Overripe",
+    "sure": 0.978,
+    "match": 0.66,
+    "stage": "Overripe"
+   },
+   {
+    "box": [
+     229,
+     6,
+     496,
+     167
+    ],
+    "found": 0.602,
+    "label": "Overripe",
+    "sure": 0.999,
+    "match": 0.81,
+    "stage": "Overripe"
+   },
+   {
+    "box": [
+     290,
+     145,
+     498,
+     232
+    ],
+    "found": 0.496,
+    "label": "Overripe",
+    "sure": 0.997,
+    "match": 0.16,
+    "stage": "Overripe"
+   },
+   {
+    "box": [
+     290,
+     1,
+     490,
+     64
+    ],
+    "found": 0.317,
+    "label": "Overripe",
+    "sure": 0.991,
+    "match": 0.83,
+    "stage": "Overripe"
+   },
+   {
+    "box": [
+     440,
+     217,
+     496,
+     286
+    ],
+    "found": 0.264,
+    "label": "Overripe",
+    "sure": 0.971,
+    "match": 0.04,
+    "stage": null
+   },
+   {
+    "box": [
+     351,
+     459,
+     494,
+     498
+    ],
+    "found": 0.214,
+    "label": "Overripe",
+    "sure": 0.958,
+    "match": 0.05,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000147740.jpg",
+  "objects": "banana car handbag motorcycle person",
+  "truth": 2,
+  "truth_boxes": [
+   [
+    230,
+    126,
+    390,
+    278
+   ],
+   [
+    366,
+    228,
+    396,
+    283
+   ]
+  ],
+  "w": 640,
+  "h": 480,
+  "dets": [
+   {
+    "box": [
+     220,
+     125,
+     402,
+     295
+    ],
+    "found": 0.396,
+    "label": "Overripe",
+    "sure": 0.419,
+    "match": 0.79,
+    "stage": "Not sure"
+   },
+   {
+    "box": [
+     229,
+     193,
+     297,
+     265
+    ],
+    "found": 0.313,
+    "label": "Overripe",
+    "sure": 0.417,
+    "match": 0.2,
+    "stage": "Not sure"
+   },
+   {
+    "box": [
+     254,
+     159,
+     310,
+     188
+    ],
+    "found": 0.236,
+    "label": "Ripe",
+    "sure": 0.331,
+    "match": 0.07,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000191761.jpg",
+  "objects": "banana bowl orange",
+  "truth": 1,
+  "truth_boxes": [
+   [
+    297,
+    108,
+    500,
+    202
+   ]
+  ],
+  "w": 500,
+  "h": 375,
+  "dets": [
+   {
+    "box": [
+     32,
+     43,
+     489,
+     321
+    ],
+    "found": 0.237,
+    "label": "Overripe",
+    "sure": 1.0,
+    "match": 0.14,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000577539.jpg",
+  "objects": "banana bowl person",
+  "truth": 2,
+  "truth_boxes": [
+   [
+    250,
+    181,
+    329,
+    226
+   ],
+   [
+    167,
+    157,
+    247,
+    217
+   ]
+  ],
+  "w": 500,
+  "h": 334,
+  "dets": []
+ },
+ {
+  "file": "000000012667.jpg",
+  "objects": "banana",
+  "truth": 1,
+  "truth_boxes": [
+   [
+    284,
+    49,
+    448,
+    290
+   ]
+  ],
+  "w": 640,
+  "h": 480,
+  "dets": [
+   {
+    "box": [
+     278,
+     51,
+     430,
+     295
+    ],
+    "found": 0.529,
+    "label": "Ripe",
+    "sure": 0.981,
+    "match": 0.84,
+    "stage": "Ripe"
+   }
+  ]
+ },
+ {
+  "file": "000000006012.jpg",
+  "objects": "banana",
+  "truth": 2,
+  "truth_boxes": [
+   [
+    328,
+    25,
+    549,
+    502
+   ],
+   [
+    99,
+    24,
+    306,
+    505
+   ]
+  ],
+  "w": 640,
+  "h": 531,
+  "dets": [
+   {
+    "box": [
+     115,
+     40,
+     353,
+     491
+    ],
+    "found": 0.5,
+    "label": "Overripe",
+    "sure": 0.531,
+    "match": 0.71,
+    "stage": "Not sure"
+   },
+   {
+    "box": [
+     375,
+     80,
+     546,
+     492
+    ],
+    "found": 0.459,
+    "label": "Overripe",
+    "sure": 0.745,
+    "match": 0.67,
+    "stage": "Overripe"
+   },
+   {
+    "box": [
+     345,
+     37,
+     460,
+     301
+    ],
+    "found": 0.303,
+    "label": "Ripe",
+    "sure": 0.727,
+    "match": 0.29,
+    "stage": "Ripe"
+   }
+  ]
+ },
+ {
+  "file": "000000439290.jpg",
+  "objects": "banana",
+  "truth": 8,
+  "truth_boxes": [
+   [
+    373,
+    175,
+    391,
+    209
+   ],
+   [
+    355,
+    228,
+    445,
+    282
+   ],
+   [
+    407,
+    201,
+    423,
+    233
+   ],
+   [
+    421,
+    212,
+    437,
+    242
+   ],
+   [
+    397,
+    193,
+    414,
+    226
+   ],
+   [
+    367,
+    111,
+    457,
+    171
+   ],
+   [
+    346,
+    157,
+    386,
+    217
+   ],
+   [
+    384,
+    167,
+    399,
+    198
+   ]
+  ],
+  "w": 640,
+  "h": 427,
+  "dets": [
+   {
+    "box": [
+     326,
+     89,
+     462,
+     332
+    ],
+    "found": 0.378,
+    "label": "Unripe",
+    "sure": 0.977,
+    "match": 0.16,
+    "stage": "Unripe"
+   }
+  ]
+ },
+ {
+  "file": "000000575500.jpg",
+  "objects": "banana",
+  "truth": 1,
+  "truth_boxes": [
+   [
+    88,
+    114,
+    219,
+    308
+   ]
+  ],
+  "w": 426,
+  "h": 640,
+  "dets": [
+   {
+    "box": [
+     89,
+     111,
+     218,
+     319
+    ],
+    "found": 0.751,
+    "label": "Unripe",
+    "sure": 0.932,
+    "match": 0.92,
+    "stage": "Unripe"
+   }
+  ]
+ },
+ {
+  "file": "000000352618.jpg",
+  "objects": "banana bowl orange",
+  "truth": 2,
+  "truth_boxes": [
+   [
+    3,
+    147,
+    134,
+    315
+   ],
+   [
+    482,
+    226,
+    640,
+    340
+   ]
+  ],
+  "w": 640,
+  "h": 426,
+  "dets": [
+   {
+    "box": [
+     0,
+     144,
+     450,
+     349
+    ],
+    "found": 0.235,
+    "label": "Overripe",
+    "sure": 0.696,
+    "match": 0.24,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000013004.jpg",
+  "objects": "banana dining table",
+  "truth": 1,
+  "truth_boxes": [
+   [
+    45,
+    73,
+    344,
+    291
+   ]
+  ],
+  "w": 375,
+  "h": 500,
+  "dets": [
+   {
+    "box": [
+     10,
+     35,
+     363,
+     385
+    ],
+    "found": 0.218,
+    "label": "Overripe",
+    "sure": 0.991,
+    "match": 0.53,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000079651.jpg",
+  "objects": "banana bottle",
+  "truth": 2,
+  "truth_boxes": [
+   [
+    294,
+    346,
+    632,
+    460
+   ],
+   [
+    179,
+    365,
+    492,
+    473
+   ]
+  ],
+  "w": 640,
+  "h": 478,
+  "dets": [
+   {
+    "box": [
+     183,
+     345,
+     642,
+     474
+    ],
+    "found": 0.714,
+    "label": "Overripe",
+    "sure": 0.997,
+    "match": 0.65,
+    "stage": "Overripe"
+   }
+  ]
+ },
+ {
+  "file": "000000269314.jpg",
+  "objects": "banana cat",
+  "truth": 1,
+  "truth_boxes": [
+   [
+    92,
+    264,
+    281,
+    432
+   ]
+  ],
+  "w": 640,
+  "h": 480,
+  "dets": [
+   {
+    "box": [
+     129,
+     310,
+     271,
+     432
+    ],
+    "found": 0.234,
+    "label": "Unripe",
+    "sure": 0.936,
+    "match": 0.55,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000548506.jpg",
+  "objects": "apple banana",
+  "truth": 3,
+  "truth_boxes": [
+   [
+    351,
+    0,
+    582,
+    298
+   ],
+   [
+    452,
+    3,
+    640,
+    206
+   ],
+   [
+    226,
+    81,
+    640,
+    381
+   ]
+  ],
+  "w": 640,
+  "h": 425,
+  "dets": [
+   {
+    "box": [
+     345,
+     8,
+     620,
+     292
+    ],
+    "found": 0.757,
+    "label": "Ripe",
+    "sure": 0.942,
+    "match": 0.81,
+    "stage": "Ripe"
+   },
+   {
+    "box": [
+     3,
+     43,
+     598,
+     405
+    ],
+    "found": 0.297,
+    "label": "Ripe",
+    "sure": 0.804,
+    "match": 0.49,
+    "stage": null
+   },
+   {
+    "box": [
+     474,
+     154,
+     633,
+     385
+    ],
+    "found": 0.28,
+    "label": "Overripe",
+    "sure": 0.803,
+    "match": 0.29,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000389812.jpg",
+  "objects": "banana person",
+  "truth": 3,
+  "truth_boxes": [
+   [
+    314,
+    414,
+    397,
+    479
+   ],
+   [
+    244,
+    376,
+    328,
+    420
+   ],
+   [
+    181,
+    308,
+    424,
+    473
+   ]
+  ],
+  "w": 640,
+  "h": 480,
+  "dets": [
+   {
+    "box": [
+     179,
+     312,
+     402,
+     475
+    ],
+    "found": 0.613,
+    "label": "Overripe",
+    "sure": 0.999,
+    "match": 0.87,
+    "stage": "Overripe"
+   },
+   {
+    "box": [
+     320,
+     326,
+     413,
+     406
+    ],
+    "found": 0.221,
+    "label": "Ripe",
+    "sure": 0.703,
+    "match": 0.19,
+    "stage": null
+   },
+   {
+    "box": [
+     286,
+     404,
+     396,
+     476
+    ],
+    "found": 0.22,
+    "label": "Ripe",
+    "sure": 0.619,
+    "match": 0.62,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000415194.jpg",
+  "objects": "banana bowl chair cup dining table refrigerator sink spoon",
+  "truth": 1,
+  "truth_boxes": [
+   [
+    538,
+    201,
+    562,
+    208
+   ]
+  ],
+  "w": 640,
+  "h": 480,
+  "dets": []
+ },
+ {
+  "file": "000000294350.jpg",
+  "objects": "banana bottle bowl oven person",
+  "truth": 1,
+  "truth_boxes": [
+   [
+    238,
+    337,
+    286,
+    413
+   ]
+  ],
+  "w": 640,
+  "h": 425,
+  "dets": []
+ },
+ {
+  "file": "000000066231.jpg",
+  "objects": "apple banana bottle bowl knife orange person refrigerator sink",
+  "truth": 1,
+  "truth_boxes": [
+   [
+    573,
+    274,
+    635,
+    331
+   ]
+  ],
+  "w": 640,
+  "h": 427,
+  "dets": []
+ },
+ {
+  "file": "000000034873.jpg",
+  "objects": "apple bowl chair cup dining table sink tv",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 480,
+  "dets": []
+ },
+ {
+  "file": "000000002149.jpg",
+  "objects": "apple bowl",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 427,
+  "dets": [
+   {
+    "box": [
+     7,
+     72,
+     640,
+     425
+    ],
+    "found": 0.239,
+    "label": "Unripe",
+    "sure": 0.97,
+    "match": 0,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000565776.jpg",
+  "objects": "apple bowl cup oven potted plant refrigerator sink spoon vase",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 421,
+  "dets": []
+ },
+ {
+  "file": "000000562059.jpg",
+  "objects": "apple bowl cup dining table spoon",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 427,
+  "h": 640,
+  "dets": []
+ },
+ {
+  "file": "000000473406.jpg",
+  "objects": "apple bottle cup knife person sink",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 480,
+  "h": 640,
+  "dets": [
+   {
+    "box": [
+     309,
+     453,
+     450,
+     546
+    ],
+    "found": 0.204,
+    "label": "Overripe",
+    "sure": 0.998,
+    "match": 0,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000366711.jpg",
+  "objects": "orange person",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 427,
+  "h": 640,
+  "dets": []
+ },
+ {
+  "file": "000000148707.jpg",
+  "objects": "orange",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 480,
+  "dets": []
+ },
+ {
+  "file": "000000030213.jpg",
+  "objects": "apple bottle bowl chair dining table oven refrigerator sink",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 449,
+  "dets": []
+ },
+ {
+  "file": "000000304984.jpg",
+  "objects": "bowl cake fork orange sandwich wine glass",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 385,
+  "h": 289,
+  "dets": [
+   {
+    "box": [
+     150,
+     157,
+     264,
+     241
+    ],
+    "found": 0.226,
+    "label": "Overripe",
+    "sure": 0.999,
+    "match": 0,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000484351.jpg",
+  "objects": "apple book bottle chair dining table handbag person spoon tie",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 426,
+  "dets": []
+ },
+ {
+  "file": "000000079014.jpg",
+  "objects": "orange person",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 291,
+  "h": 455,
+  "dets": []
+ },
+ {
+  "file": "000000156278.jpg",
+  "objects": "apple book bowl chair clock knife refrigerator sink",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 425,
+  "dets": []
+ },
+ {
+  "file": "000000318114.jpg",
+  "objects": "bowl cake cup dining table fork orange",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 385,
+  "h": 308,
+  "dets": []
+ },
+ {
+  "file": "000000359833.jpg",
+  "objects": "apple orange person",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 480,
+  "h": 640,
+  "dets": []
+ },
+ {
+  "file": "000000078266.jpg",
+  "objects": "apple bowl carrot knife orange refrigerator sink",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 428,
+  "dets": []
+ },
+ {
+  "file": "000000544565.jpg",
+  "objects": "dining table knife orange spoon",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 640,
+  "dets": []
+ },
+ {
+  "file": "000000498919.jpg",
+  "objects": "apple orange",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 432,
+  "h": 324,
+  "dets": [
+   {
+    "box": [
+     368,
+     103,
+     429,
+     131
+    ],
+    "found": 0.204,
+    "label": "Unripe",
+    "sure": 0.498,
+    "match": 0,
+    "stage": null
+   }
+  ]
+ },
+ {
+  "file": "000000357888.jpg",
+  "objects": "apple bottle bowl clock cup kite person vase wine glass",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 480,
+  "dets": []
+ },
+ {
+  "file": "000000290081.jpg",
+  "objects": "bowl dining table orange",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 612,
+  "h": 612,
+  "dets": []
+ },
+ {
+  "file": "000000276434.jpg",
+  "objects": "cake dining table knife orange person",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 427,
+  "dets": []
+ },
+ {
+  "file": "000000161925.jpg",
+  "objects": "person pizza",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 480,
+  "h": 640,
+  "dets": []
+ },
+ {
+  "file": "000000238866.jpg",
+  "objects": "donut",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 439,
+  "dets": []
+ },
+ {
+  "file": "000000434479.jpg",
+  "objects": "chair dining table pizza",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 426,
+  "dets": []
+ },
+ {
+  "file": "000000076547.jpg",
+  "objects": "backpack bench bicycle chair dining table laptop person tie traffic light train",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 480,
+  "dets": []
+ },
+ {
+  "file": "000000243626.jpg",
+  "objects": "cup fork",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 385,
+  "h": 289,
+  "dets": []
+ },
+ {
+  "file": "000000481386.jpg",
+  "objects": "bottle bowl cup person potted plant wine glass",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 427,
+  "h": 640,
+  "dets": []
+ },
+ {
+  "file": "000000407524.jpg",
+  "objects": "broccoli",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 480,
+  "dets": []
+ },
+ {
+  "file": "000000242946.jpg",
+  "objects": "bowl carrot chair cup dining table person spoon",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 480,
+  "dets": []
+ },
+ {
+  "file": "000000314182.jpg",
+  "objects": "bowl broccoli carrot",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 375,
+  "h": 500,
+  "dets": []
+ },
+ {
+  "file": "000000371677.jpg",
+  "objects": "cup keyboard laptop mouse teddy bear tv",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 480,
+  "dets": []
+ },
+ {
+  "file": "000000359219.jpg",
+  "objects": "fork knife oven pizza",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 480,
+  "dets": []
+ },
+ {
+  "file": "000000529762.jpg",
+  "objects": "book bowl cell phone dining table person sandwich wine glass",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 480,
+  "dets": []
+ },
+ {
+  "file": "000000513688.jpg",
+  "objects": "chair dining table laptop mouse",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 480,
+  "dets": []
+ },
+ {
+  "file": "000000297084.jpg",
+  "objects": "bottle bowl chair cup dining table person spoon wine glass",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 612,
+  "h": 612,
+  "dets": []
+ },
+ {
+  "file": "000000329456.jpg",
+  "objects": "donut handbag person sandwich",
+  "truth": 0,
+  "truth_boxes": [],
+  "w": 640,
+  "h": 427,
+  "dets": []
+ }
+]

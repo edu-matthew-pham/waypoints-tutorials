@@ -366,7 +366,7 @@ projects:
       - "Add a second setting your user can change, and test both settings across a whole run of inputs."
       - "Make your rules less trusting: act on an answer only after it has repeated, and show in your testing record that one wrong answer no longer changes the result."
       - "Swap the model part for a different mode (poses, pictures or sounds) and keep the rules, and note what you had to change."
-      - "Use two models in a row: the first decides what kind of thing it is (an apple or a banana), and a second model for that kind decides the detail (ripe or not). How sure is the whole chain if each model is right 9 times in 10?"
+      - "Use two models in a row: a ready-made object detector finds each thing in the photo (a banana, a cup, a dog), and your own model judges each cut-out (ripe or not). Test where the join fails: what does your model say about something the detector got wrong, or missed?"
       - "Optional: train your model on a public dataset (your teacher has links), then test the whole app on examples you collect yourself."
       - "Ideas to start from: a recipe helper, a singing or playing coach, a language revision game, a workout timer that counts only good form, or a local recycling guide."
     teacher: |
@@ -407,7 +407,24 @@ projects:
       - *A pipeline diagram that is decoration.* It shows boxes but gives no reasons. Ask: "Why is this part not the other kind?"
       - *Forgetting what the app remembers.* A score that never resets, or resets at the wrong time. Ask: "When does this go back to zero?"
 
-      **Models in a row** (a stretch idea). The first model sorts the input into a kind (an apple or a banana) and a second model, one per kind, decides the detail (ripe or not). Each model stays small and needs examples only for its own question. Three things to draw out: mistakes multiply (two models each right 9 times in 10 are right about 8 times in 10 together); the second model only ever sees what the first sends it; and a safety call such as "spoiled, not safe to eat" needs a rule of its own ("if unsure, don't eat it"), not only a model. The starters can load two model files.
+      **Two models in a row: detect, then judge** (a stretch idea, with a worked example). Several models make sense when each looks at something different or answers a separate question: two senses (a sound and a picture), separate questions (which sign and which hand: 4 + 2 classes, not 8 combinations), a gate before a specialist, or a closer look for the second step. Splitting one question about one photo into a chain rarely helps at this scale (both models read the same 1,280 numbers, and their mistakes multiply).
+
+      The worked example, [`combined-banana-checker.py`](https://github.com/edu-matthew-pham/waypoints-tutorials/tree/main/experiments/pattern-detector-examples), is the strongest case: a **ready-made** model and the student's **own** model, each doing what the other can't. MediaPipe's Object Detector (EfficientDet-Lite0, Apache 2.0; it ships with the same MediaPipe the trainer and starters use, and knows COCO's 80 everyday things, banana, apple and orange among them) finds each banana and its box; the app cuts each one out; a ripeness model trained in the Pattern Trainer on BananaID (single bananas on a plain background; Mutrofin, Fatichah, Yuniarti and Setiawan, Mendeley Data, CC BY 4.0) judges it; rules apply two cut-offs (is it a banana: 0.30; how sure of the ripeness: 0.60), count and advise. Students cannot train a detector (it took thousands of photos with boxes drawn on them), but they can train the part that is theirs. **The point is knowing where it fails, not a perfect app.**
+
+      *Testing record* (28 Oct 2026; 62 photos from COCO val2017 with an open per-photo licence, 27 of them with bananas; ripeness of the cut-outs judged by eye, as a student would):
+
+      | Part | What I tried | What happened |
+      |---|---|---|
+      | Ripeness model alone | 120 BananaID photos of bananas it never saw (same plain background) | 82 right. Overripe 27 of 30, Ripe 27 of 30, Unripe 21 of 30, **Half ripe 7 of 30**: the in-between stage is hardest |
+      | Detector alone, cut-off 0.30 | 27 photos with bananas, 35 without | found a banana in 15 of the 27; no false bananas |
+      | Detector alone, cut-off 0.20 | the same | found one in 21 of the 27, but called 4 apples and oranges bananas |
+      | The join at 0.20 | an apple in a bowl | the detector said banana (0.24), and **my model said "Unripe" at 0.97**: it judged an apple's ripeness as a banana's, sure of itself |
+      | Missed bananas | bowls in kitchens, small or half hidden bananas | 6 photos with no detection at all, so my model never saw those bananas and the app said "no bananas" |
+      | Counting | a bunch of 13 bananas | one box around the bunch: counted as 1 banana |
+      | The whole app | 27 cut-outs it kept | green bananas: all Unripe or "not sure" (right). Yellow bananas alone on a table: mostly right. **Yellow bunches and close-ups: 10 called Overripe at 0.86 to 1.00**, wrong by eye |
+      | Confidence | median confidence on BananaID test photos vs kitchen cut-outs | 0.95 vs 0.94: **the model was just as sure on photos unlike its training ones** |
+
+      The last two rows are the lesson: the ripeness model learned from single bananas on a plain grey background, and a cut-out from a bunch or a kitchen photo looks nothing like that (shadows between bananas may read as the brown patches of an overripe one; we can't see inside the model to be sure). Confidence did not warn us, so only testing on the real photos showed it. Fixes a student might try and test: train on cut-outs from the app's own photos, a cut-off from this testing record, or telling the user "one box may be a whole bunch". Model, data and every result: [the examples folder](https://github.com/edu-matthew-pham/waypoints-tutorials/tree/main/experiments/pattern-detector-examples).
 
       **Ways it could look.** Students see two screenshots of finished apps where the model feeds the rules in different ways (rock paper scissors, where rules play the round and keep score, and a secret knock door that checks the last three sounds against a pattern): output only, never code. Replace them with your own screenshots if you like (a PNG in `content/code/pattern-detector/projects/`, listed under `benchmark:`).
 
