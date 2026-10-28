@@ -158,39 +158,76 @@ jobs:
           ls -la out/fruit/detector; grep -n -i -E "banana|apple|orange" out/fruit/detector/labelmap.txt
 
       - name: BananaID ripeness photos (Mendeley Data, CC BY 4.0)
+        continue-on-error: true
         run: |
-          python3 - <<'EOF'
-          import json, os, subprocess, urllib.request
-          API = "https://data.mendeley.com/public-api/datasets/h6n5srjjyw"
-          def get(url):
-              req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": "waypoints-fetch"})
-              return json.load(urllib.request.urlopen(req, timeout=60))
-          meta = get(API)
-          v = meta.get("version"); print("version", v, "licence", json.dumps(meta.get("data_licence") or meta.get("licence")))
-          json.dump(meta, open("out/fruit/bananaid-meta.json", "w"), indent=1)
+          mkdir -p out/fruit
+          python3 - 2>&1 <<'EOF' | tee out/fruit/bananaid-log.txt
+          # Try Mendeley Data's public API, then its "download all" zip, logging every answer (the log is kept in the
+          # branch because the Actions log may not be readable where it is needed).
+          import json, os, subprocess, urllib.request, urllib.error
+          ID = "h6n5srjjyw"
+          H = {"User-Agent": "Mozilla/5.0 (waypoints-fetch)", "Accept": "application/json, */*"}
+          def req(url, accept=None):
+              h = dict(H)
+              if accept: h["Accept"] = accept
+              return urllib.request.urlopen(urllib.request.Request(url, headers=h), timeout=120)
+          def tryjson(url, accept=None):
+              try:
+                  r = req(url, accept); body = r.read()
+                  print("OK", url, r.status, r.headers.get("content-type"), body[:300])
+                  return json.loads(body)
+              except urllib.error.HTTPError as e:
+                  print("HTTP", e.code, url, e.read()[:300])
+              except Exception as e:
+                  print("ERR", url, repr(e)[:300])
+          meta = None
+          for acc in (None, "application/vnd.mendeley-public-dataset.1+json"):
+              meta = tryjson(f"https://data.mendeley.com/public-api/datasets/{ID}", acc)
+              if meta: break
+          versions = [meta.get("version")] if meta and meta.get("version") else [1, 2, 3, 4]
+          if meta: json.dump(meta, open("out/fruit/bananaid-meta.json", "w"), indent=1)
           files = []
-          def walk(folder):
-              for f in get(f"{API}/files?folder_id={folder}&version={v}"):
-                  files.append(f)
-          walk("root")
-          try:
-              for d in get(f"{API}/folders/{v}"):
-                  walk(d["id"])
-          except Exception as e:
-              print("no folders listing:", e)
+          for v in versions:
+              for acc in (None, "application/vnd.mendeley-public-dataset-file.1+json"):
+                  got = tryjson(f"https://data.mendeley.com/public-api/datasets/{ID}/files?folder_id=root&version={v}", acc)
+                  if isinstance(got, list) and got:
+                      files += got; break
+              folders = tryjson(f"https://data.mendeley.com/public-api/datasets/{ID}/folders/{v}")
+              for d in folders or []:
+                  got = tryjson(f"https://data.mendeley.com/public-api/datasets/{ID}/files?folder_id={d['id']}&version={v}")
+                  if isinstance(got, list): files += got
+              if files: break
           for f in files:
-              print(f.get("filename"), f.get("size"), (f.get("content_details") or {}).get("download_url", "")[:80])
-          pick = [f for f in files if "ripe" in f["filename"].lower() and "aug" not in f["filename"].lower()]
-          print("picked:", [f["filename"] for f in pick])
-          assert pick, "no ripeness file found; see the list above"
-          f = pick[0]
-          urllib.request.urlretrieve(f["content_details"]["download_url"], "raw/" + f["filename"])
-          subprocess.run(["7z", "x", "-y", "-oraw/bananaid", "raw/" + f["filename"]], check=True, stdout=subprocess.DEVNULL)
+              print("FILE", f.get("filename"), f.get("size"), json.dumps(f.get("content_details") or {})[:200])
+          pick = [f for f in files if "ripe" in f.get("filename", "").lower() and "aug" not in f["filename"].lower()]
+          os.makedirs("raw", exist_ok=True)
+          target = None
+          if pick:
+              f = pick[0]; cd = f.get("content_details") or {}
+              url = cd.get("download_url") or f"https://data.mendeley.com/public-files/datasets/{ID}/files/{f['id']}/file_downloaded"
+              print("DOWNLOAD", f["filename"], url)
+              target = "raw/" + f["filename"]
+              open(target, "wb").write(req(url).read())
+          else:
+              for v in versions:
+                  url = f"https://data.mendeley.com/public-api/zip/{ID}/download/{v}"
+                  try:
+                      body = req(url).read(); print("ZIP", url, len(body))
+                      if body[:2] == b"PK":
+                          target = "raw/all.zip"; open(target, "wb").write(body); break
+                  except Exception as e:
+                      print("ERR", url, repr(e)[:300])
+          if not target:
+              raise SystemExit("no BananaID file downloaded")
+          subprocess.run(["7z", "x", "-y", "-oraw/bananaid", target], check=True, stdout=subprocess.DEVNULL)
+          for root, dirs, fs in os.walk("raw/bananaid"):
+              if fs: print("DIR", root, len(fs))
           EOF
           mkdir -p out/fruit/bananaid
-          cp -r raw/bananaid/. out/fruit/bananaid/
-          find out/fruit/bananaid -type d | head -40
-          find out/fruit/bananaid -type f | wc -l; du -sh out/fruit/bananaid
+          cp -r raw/bananaid/. out/fruit/bananaid/ 2>/dev/null || true
+          # Nested archives (an original-ripeness zip inside the all-files zip): unpack them in place.
+          find out/fruit/bananaid -iname "*.zip" -o -iname "*.rar" | while read z; do 7z x -y -o"${z%.*}" "$z" > /dev/null && rm "$z"; done
+          find out/fruit/bananaid -type f | wc -l; du -sh out/fruit/bananaid || true
 
       - name: COCO photos with fruit (per-photo CC BY or CC BY-SA)
         env:
