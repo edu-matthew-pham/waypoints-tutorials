@@ -1,0 +1,12 @@
+OK https://data.mendeley.com/public-api/datasets/h6n5srjjyw 200 application/json; charset=utf-8 b'{"id":"h6n5srjjyw","doi":{"id":"10.17632/h6n5srjjyw.1","status":"allocated","prefix":"10.17632"},"name":"BananaID: An image dataset of banana varieties and ripeness stages in Indonesia designed for classification","description":"Type of Data: Banana images with a resolution of 384\xc3\x97256 pixels\\nData '
+OK https://data.mendeley.com/public-api/datasets/h6n5srjjyw/files?folder_id=root&version=1 200 application/json; charset=utf-8 b'[{"filename":"Augmented Banana Ripeness Dataset.zip","id":"22a59412-bd5f-44f6-80de-8a6b3b2675d8","content_details":{"id":"f4706e4e-1356-474d-9006-5109935b627a","sha256_hash":"12bf9c74903201be460840d620679dc4d49e3a9f420eb19a7198b871e9288558","content_type":"application/x-zip-compressed","size":287517'
+OK https://data.mendeley.com/public-api/datasets/h6n5srjjyw/folders/1 200 application/json; charset=utf-8 b'[]'
+FILE Augmented Banana Ripeness Dataset.zip 287517866 {"id": "f4706e4e-1356-474d-9006-5109935b627a", "sha256_hash": "12bf9c74903201be460840d620679dc4d49e3a9f420eb19a7198b871e9288558", "content_type": "application/x-zip-compressed", "size": 287517866, "cr
+FILE Augmented Banana Variety Dataset.zip 379047318 {"id": "02eac896-2363-4e39-82ad-dd67a349f6ad", "sha256_hash": "bb95c88f2689f612d649821cb3ad3b69f75e996bd939a556770acdf297e78b2b", "content_type": "application/x-zip-compressed", "size": 379047318, "cr
+FILE Banana Ripeness Dataset.zip 25998413 {"id": "eb14f1a3-c2d1-4b1a-89a3-ee9c0d8bfdf6", "sha256_hash": "ee5c165ab6d117c646419ad0e500c01783db68723dddf90c97b64727a7096c12", "content_type": "application/x-zip-compressed", "size": 25998413, "cre
+FILE Banana Variety Dataset.zip 25957121 {"id": "ab8a5907-4731-4090-b6fa-5f5348de32f0", "sha256_hash": "1f4c59a46a09838e6c220f928182a4aa0cce25dd26f9db1396cb89b0d9efef74", "content_type": "application/x-zip-compressed", "size": 25957121, "cre
+DOWNLOAD Banana Ripeness Dataset.zip https://data.mendeley.com/public-files/datasets/h6n5srjjyw/files/ba61311a-63f2-4005-8fe5-66434d659a07/file_downloaded
+DIR raw/bananaid/Banana Ripeness Classification Dataset/Ripe 616
+DIR raw/bananaid/Banana Ripeness Classification Dataset/Unripe 408
+DIR raw/bananaid/Banana Ripeness Classification Dataset/Overripe 448
+DIR raw/bananaid/Banana Ripeness Classification Dataset/Half_Ripe 488

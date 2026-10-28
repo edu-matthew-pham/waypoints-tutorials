@@ -1,0 +1,227 @@
+{
+ "id": "h6n5srjjyw",
+ "doi": {
+  "id": "10.17632/h6n5srjjyw.1",
+  "status": "allocated",
+  "prefix": "10.17632"
+ },
+ "name": "BananaID: An image dataset of banana varieties and ripeness stages in Indonesia designed for classification",
+ "description": "Type of Data: Banana images with a resolution of 384\u00d7256 pixels\nData Format: JPG\nData Contents: Banana varieties and ripeness stages.\n\nNumber of Classes:\n(1) Five popular banana varieties in Indonesia: Ambon Lumut (referred to as Ambon in the dataset), Cavendish, Raja, Saba, and Mas.\n(2) Four ripeness stages: Unripe, Half-ripe, Ripe, and Overripe.\n\nNumber of Images:\n(1) Total original images for variety classification = 1,960, augmented to 8,750 images.\n(2) Total original images for ripeness classification = 1,960, augmented to 7,000 images.\n\nData Distribution:\n(1) Original images per banana variety:\n\u2022 Ambon = 468\n\u2022 Cavendish = 380\n\u2022 Raja = 424\n\u2022 Saba = 312\n\u2022 Mas = 376\n\n(2) Augmented images per banana variety:\n\u2022 Ambon = 1,750\n\u2022 Cavendish = 1,750\n\u2022 Raja = 1,750\n\u2022 Saba = 1,750\n\u2022 Mas = 1,750\n\n(3) Original images per ripeness stage:\n\u2022 Unripe = 408\n\u2022 Half-ripe = 488\n\u2022 Ripe = 616\n\u2022 Overripe = 448\n\n(4) Augmented images per ripeness stage:\n\u2022 Unripe = 1,750\n\u2022 Half-ripe = 1,750\n\u2022 Ripe = 1,750\n\u2022 Overripe = 1,750\n\nDataset Size:\n(1) Total size of the original variety dataset = 48.77 MB\n(2) Total size of the augmented variety dataset = 385.40 MB\n(3) Total size of the original ripeness dataset = 48.77 MB\n(4) Total size of the augmented ripeness dataset = 297.89 MB\n\nData Acquisition Process:\nImages were captured using a high-quality DSLR camera to ensure optimal detail for computer vision analysis.\n\nData Source Location:\nTraditional markets, minimarkets, and supermarkets across various areas of Surabaya City, East Java, Indonesia, as well as harvests from farms in Tulungagung Regency, East Java, Indonesia.\n\nDataset Applications:\nThis dataset is designed to support machine learning (ML), deep learning (DL), and computer vision (CV) applications for identifying banana varieties and ripeness stages. It is also relevant for developing image-based automated systems for pre-harvest and post-harvest analysis, including variety classification and ripeness assessment.",
+ "version": 1,
+ "contributors": [
+  {
+   "profile_id": "5ddbd61a-f009-3382-8543-47b4e5f08d28",
+   "first_name": "Siti",
+   "last_name": "Mutrofin"
+  },
+  {
+   "institution": {
+    "id": "4716e74e-99a5-5c7a-a6ac-9b97e4c72cfe",
+    "name": "Institut Teknologi Sepuluh Nopember",
+    "ror_id": "https://ror.org/05kbmmt89"
+   },
+   "contribution": "Investigation, Methodology, Supervision, Validation.",
+   "first_name": "Chastine",
+   "last_name": "Fatichah",
+   "orcid_id": "0000-0002-7348-9762"
+  },
+  {
+   "institution": {
+    "id": "4716e74e-99a5-5c7a-a6ac-9b97e4c72cfe",
+    "name": "Institut Teknologi Sepuluh Nopember",
+    "ror_id": "https://ror.org/05kbmmt89"
+   },
+   "contribution": "Investigation, Methodology, Supervision, Validation.",
+   "first_name": "Anny",
+   "last_name": "Yuniarti",
+   "orcid_id": "0000-0002-3234-4591"
+  },
+  {
+   "institution": {
+    "id": "b1d8a781-e745-5a64-8b75-14951b530c24",
+    "name": "Universitas Trunojoyo",
+    "ror_id": "https://ror.org/03x2m4d16"
+   },
+   "contribution": "Investigation, Methodology, Supervision, Validation.",
+   "first_name": "Eko",
+   "last_name": "Setiawan",
+   "orcid_id": "0000-0003-4821-1213"
+  }
+ ],
+ "files": [
+  {
+   "filename": "Augmented Banana Ripeness Dataset.zip",
+   "id": "22a59412-bd5f-44f6-80de-8a6b3b2675d8",
+   "content_details": {
+    "id": "f4706e4e-1356-474d-9006-5109935b627a",
+    "sha256_hash": "12bf9c74903201be460840d620679dc4d49e3a9f420eb19a7198b871e9288558",
+    "content_type": "application/x-zip-compressed",
+    "size": 287517866,
+    "created_date": "2025-12-05T14:51:33.285Z",
+    "download_url": "https://data.mendeley.com/public-files/datasets/h6n5srjjyw/files/22a59412-bd5f-44f6-80de-8a6b3b2675d8/file_downloaded",
+    "view_url": "https://data.mendeley.com/public-files/datasets/h6n5srjjyw/files/22a59412-bd5f-44f6-80de-8a6b3b2675d8/file_viewed",
+    "download_expiry_time": "2126-10-28T11:07:41.102773488Z"
+   },
+   "metrics": {
+    "downloads": 0,
+    "previews": 0
+   },
+   "size": 287517866,
+   "status": "COMPLETED"
+  },
+  {
+   "filename": "Augmented Banana Variety Dataset.zip",
+   "id": "49dae0ea-df54-4818-a58f-747faa3f8d07",
+   "content_details": {
+    "id": "02eac896-2363-4e39-82ad-dd67a349f6ad",
+    "sha256_hash": "bb95c88f2689f612d649821cb3ad3b69f75e996bd939a556770acdf297e78b2b",
+    "content_type": "application/x-zip-compressed",
+    "size": 379047318,
+    "created_date": "2025-12-05T14:52:31.825Z",
+    "download_url": "https://data.mendeley.com/public-files/datasets/h6n5srjjyw/files/49dae0ea-df54-4818-a58f-747faa3f8d07/file_downloaded",
+    "view_url": "https://data.mendeley.com/public-files/datasets/h6n5srjjyw/files/49dae0ea-df54-4818-a58f-747faa3f8d07/file_viewed",
+    "download_expiry_time": "2126-10-28T11:07:41.102777788Z"
+   },
+   "metrics": {
+    "downloads": 0,
+    "previews": 0
+   },
+   "size": 379047318,
+   "status": "COMPLETED"
+  },
+  {
+   "filename": "Banana Ripeness Dataset.zip",
+   "id": "ba61311a-63f2-4005-8fe5-66434d659a07",
+   "content_details": {
+    "id": "eb14f1a3-c2d1-4b1a-89a3-ee9c0d8bfdf6",
+    "sha256_hash": "ee5c165ab6d117c646419ad0e500c01783db68723dddf90c97b64727a7096c12",
+    "content_type": "application/x-zip-compressed",
+    "size": 25998413,
+    "created_date": "2025-12-05T14:45:52.08Z",
+    "download_url": "https://data.mendeley.com/public-files/datasets/h6n5srjjyw/files/ba61311a-63f2-4005-8fe5-66434d659a07/file_downloaded",
+    "view_url": "https://data.mendeley.com/public-files/datasets/h6n5srjjyw/files/ba61311a-63f2-4005-8fe5-66434d659a07/file_viewed",
+    "download_expiry_time": "2126-10-28T11:07:41.102781348Z"
+   },
+   "metrics": {
+    "downloads": 0,
+    "previews": 0
+   },
+   "size": 25998413,
+   "status": "COMPLETED"
+  },
+  {
+   "filename": "Banana Variety Dataset.zip",
+   "id": "223b0a68-f088-415c-ac65-9e244bf832c6",
+   "content_details": {
+    "id": "ab8a5907-4731-4090-b6fa-5f5348de32f0",
+    "sha256_hash": "1f4c59a46a09838e6c220f928182a4aa0cce25dd26f9db1396cb89b0d9efef74",
+    "content_type": "application/x-zip-compressed",
+    "size": 25957121,
+    "created_date": "2025-12-05T14:45:38.699Z",
+    "download_url": "https://data.mendeley.com/public-files/datasets/h6n5srjjyw/files/223b0a68-f088-415c-ac65-9e244bf832c6/file_downloaded",
+    "view_url": "https://data.mendeley.com/public-files/datasets/h6n5srjjyw/files/223b0a68-f088-415c-ac65-9e244bf832c6/file_viewed",
+    "download_expiry_time": "2126-10-28T11:07:41.102784928Z"
+   },
+   "metrics": {
+    "downloads": 0,
+    "previews": 0
+   },
+   "size": 25957121,
+   "status": "COMPLETED"
+  }
+ ],
+ "versions": [
+  {
+   "version": 1,
+   "available": true,
+   "publish_date": "2025-12-08T12:24:02.393Z"
+  }
+ ],
+ "articles": [],
+ "categories": [
+  {
+   "id": "data.elsevier.com/vocabulary/OmniScience/Concept-189352171",
+   "label": "Horticulture"
+  },
+  {
+   "id": "data.elsevier.com/vocabulary/OmniScience/Concept-189720754",
+   "label": "Computer Vision"
+  },
+  {
+   "id": "data.elsevier.com/vocabulary/OmniScience/Concept-191544538",
+   "label": "Image Processing"
+  },
+  {
+   "id": "data.elsevier.com/vocabulary/OmniScience/Concept-249523402",
+   "label": "Machine Learning"
+  },
+  {
+   "id": "data.elsevier.com/vocabulary/OmniScience/Concept-253046992",
+   "label": "Image Classification"
+  },
+  {
+   "id": "data.elsevier.com/vocabulary/OmniScience/Concept-257945950",
+   "label": "Banana"
+  },
+  {
+   "id": "data.elsevier.com/vocabulary/OmniScience/Concept-257947246",
+   "label": "Precision Agriculture"
+  },
+  {
+   "id": "data.elsevier.com/vocabulary/OmniScience/Concept-442095486",
+   "label": "Deep Learning"
+  }
+ ],
+ "institutions": [
+  {
+   "id": "4716e74e-99a5-5c7a-a6ac-9b97e4c72cfe",
+   "name": "Institut Teknologi Sepuluh Nopember",
+   "ror_id": "https://ror.org/05kbmmt89"
+  },
+  {
+   "id": "4a5dfae2-996a-543a-b567-f3ed9b7bb92d",
+   "name": "Universitas 17 Agustus 1945 - Surabaya"
+  }
+ ],
+ "metrics": {
+  "views": 0,
+  "file_downloads": 0,
+  "file_previews": 0
+ },
+ "available": true,
+ "size": 718520718,
+ "owner": {
+  "profile_id": "5ddbd61a-f009-3382-8543-47b4e5f08d28",
+  "first_name": "Siti",
+  "last_name": "Mutrofin"
+ },
+ "channel": "WEB",
+ "owner_id": "5ddbd61a-f009-3382-8543-47b4e5f08d28",
+ "publish_date": "2025-12-08T12:24:02.393Z",
+ "data_licence": {
+  "id": "01d9c749-3c4d-4431-9df3-620b2dcfe144",
+  "description": "You can share, copy and modify this dataset so long as you give appropriate credit, provide a link to the CC BY license, and indicate if changes were made, but you may not do so in a way that suggests the rights holder has endorsed you or your use of the dataset. Note that further permission may be required for any content within the dataset that is identified as belonging to a third party.",
+  "url": "http://creativecommons.org/licenses/by/4.0",
+  "category": "Creative",
+  "short_name": "CC BY 4.0",
+  "full_name": "Creative Commons Attribution 4.0 International"
+ },
+ "related_links": [],
+ "funders": [
+  {
+   "grant_id": "01684/BPPT/BPI.06/9/2023",
+   "name": "Beasiswa Pendidikan Indonesia"
+  }
+ ],
+ "customer_id": "7377952c-6404-4428-bbfc-77242cfc301e",
+ "modified_on": "2025-12-05T14:55:45.514Z",
+ "created_on": "2025-12-05T14:04:42.665Z",
+ "confidential": false,
+ "links": {
+  "view": "https://data.mendeley.com/datasets/h6n5srjjyw"
+ },
+ "repository": {
+  "id": "MENDELEY_DATA",
+  "name": "Mendeley Data"
+ }
+}
