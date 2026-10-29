@@ -6,6 +6,8 @@ summary: How the science boards sit beside your class practicals, and a draft li
 
 Short interactive tutorials for Years 7 to 10, built around simulations you can change and watch. Each one is a mini 5E cycle for one idea in the Australian Curriculum (version 9). They sit **beside** practical work and class discussion, never instead of it. For some ideas, such as natural selection or the tides, the simulation is the nearest thing to an experiment a class can run.
 
+There is one course per strand per year (Chemistry, Biology, Physics, Earth and space, each for Years 7 to 10), so a course never runs into the next year. For a look back over a whole year, use the year pages under **Look back over a year** on the [Science page](../science/): every idea from that year's four courses on one page, each with a quick question and its explanation. Nothing there is marked. They suit revision at the end of a year, or a check of what a new class remembers from last year.
+
 ## Which practicals do you run?
 
 We would like a board to **preview** a practical before the class does it, or **recap** it afterwards: name what you change, measure and keep the same, then set your class result beside the simulation and talk about where the real bench is messier. To choose which practicals to start with, we need your help.
