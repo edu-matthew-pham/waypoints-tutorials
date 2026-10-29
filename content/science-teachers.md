@@ -22,12 +22,12 @@ Print this page, tick what fits (**Run**: we run it; **Prev**: a preview would h
 
 | Practical | Tag | Our board | Run | Prev | Recap |
 |---|---|---|---|---|---|
-| Filtering and evaporating a salt–sand mixture | Core | [Filtration and evaporation](../science/chemistry/filter-evaporate/), [How do you separate a mixture?](../science/chemistry/separating/) | ☐ | ☐ | ☐ |
-| Chromatography of inks | Core | [Distillation and chromatography](../science/chemistry/distil-chroma/) | ☐ | ☐ | ☐ |
-| Distilling salt water | Optional | [Distillation and chromatography](../science/chemistry/distil-chroma/) | ☐ | ☐ | ☐ |
-| Heating or cooling curve (ice or water, or wax) | Core | [Where does the heat go?](../science/chemistry/heating-curve/) | ☐ | ☐ | ☐ |
-| Particles: dye in water, diffusion | Core | [What is everything made of?](../science/chemistry/particle-model/), [Why does a gas fill its container?](../science/chemistry/states/) | ☐ | ☐ | ☐ |
-| Properties: solubility, density | Optional | [Why can you squash air but not water?](../science/chemistry/properties/) | ☐ | ☐ | ☐ |
+| Filtering and evaporating a salt–sand mixture | Core | [Filtration and evaporation](../science/chemistry-7/filter-evaporate/), [How do you separate a mixture?](../science/chemistry-7/separating/) | ☐ | ☐ | ☐ |
+| Chromatography of inks | Core | [Distillation and chromatography](../science/chemistry-7/distil-chroma/) | ☐ | ☐ | ☐ |
+| Distilling salt water | Optional | [Distillation and chromatography](../science/chemistry-7/distil-chroma/) | ☐ | ☐ | ☐ |
+| Heating or cooling curve (ice or water, or wax) | Core | [Where does the heat go?](../science/chemistry-7/heating-curve/) | ☐ | ☐ | ☐ |
+| Particles: dye in water, diffusion | Core | [What is everything made of?](../science/chemistry-7/particle-model/), [Why does a gas fill its container?](../science/chemistry-7/states/) | ☐ | ☐ | ☐ |
+| Properties: solubility, density | Optional | [Why can you squash air but not water?](../science/chemistry-7/properties/) | ☐ | ☐ | ☐ |
 | Dichotomous key (leaves, invertebrates, pond life) | Core | [Who is it? Using a key](../science/biology-7/keys/) | ☐ | ☐ | ☐ |
 | Quadrat or pitfall sampling | Optional | [Who eats whom?](../science/biology-7/food-webs/) (no sampling board) | ☐ | ☐ | ☐ |
 | Food web removal, cascades | Demo | [What if the dingo disappeared?](../science/biology-7/cascades/) | ☐ | ☐ | ☐ |
@@ -61,9 +61,9 @@ Print this page, tick what fits (**Run**: we run it; **Prev**: a preview would h
 | Series and parallel circuits | Core | [How does current flow?](../science/physics-9/electric-current/) | ☐ | ☐ | ☐ |
 | Sound: tuning fork, water glasses | Optional | [Wave or particle?](../science/physics-9/wave-or-particle/) | ☐ | ☐ | ☐ |
 | Reflection and refraction (ray box) | Core | [What is the electromagnetic spectrum?](../science/physics-9/light/), [How does light bend?](../science/physics-9/bending-light/) | ☐ | ☐ | ☐ |
-| Conservation of mass (sealed bag, balloon) | Core | [Where does the mass go?](../science/chemistry-9-10/conservation-of-mass/) | ☐ | ☐ | ☐ |
-| Metals with acid, word equations | Core | [What goes in, what comes out?](../science/chemistry-9-10/word-equations/) | ☐ | ☐ | ☐ |
-| Half-life with dice or coins | Core | [How long does radioactivity last?](../science/chemistry-9-10/half-life/) | ☐ | ☐ | ☐ |
+| Conservation of mass (sealed bag, balloon) | Core | [Where does the mass go?](../science/chemistry-9/conservation-of-mass/) | ☐ | ☐ | ☐ |
+| Metals with acid, word equations | Core | [What goes in, what comes out?](../science/chemistry-9/word-equations/) | ☐ | ☐ | ☐ |
+| Half-life with dice or coins | Core | [How long does radioactivity last?](../science/chemistry-9/half-life/) | ☐ | ☐ | ☐ |
 | Carbon cycle model, greenhouse bottle | Optional | [Where is all the carbon?](../science/earth-9/carbon-stores/), [How do greenhouse gases warm the Earth?](../science/earth-10/greenhouse/) | ☐ | ☐ | ☐ |
 
 ### Year 10
@@ -72,10 +72,10 @@ Print this page, tick what fits (**Run**: we run it; **Prev**: a preview would h
 |---|---|---|---|---|---|
 | Trolley, ticker timer, F = ma | Core | [What is the net force?](../science/physics-10/net-force/), [What is acceleration, exactly?](../science/physics-10/acceleration/), [How hard do you need to push?](../science/physics-10/f-ma/) | ☐ | ☐ | ☐ |
 | Balloon rocket, action and reaction | Optional | [Push the wall, and it pushes you?](../science/physics-10/third-law/) | ☐ | ☐ | ☐ |
-| Reaction rates (thiosulfate and acid, marble chips) | Core | [Why does heat speed up reactions?](../science/chemistry-9-10/collision-theory/) | ☐ | ☐ | ☐ |
-| Reaction types (combustion, displacement, neutralisation) | Core | [What kind of reaction is it?](../science/chemistry-9-10/reaction-types/) | ☐ | ☐ | ☐ |
-| Flame tests | Optional | [Why do elements in a group behave alike?](../science/chemistry-9-10/groups/) | ☐ | ☐ | ☐ |
-| Alkali metals in water | Demo | [Why do elements in a group behave alike?](../science/chemistry-9-10/groups/) | ☐ | ☐ | ☐ |
+| Reaction rates (thiosulfate and acid, marble chips) | Core | [Why does heat speed up reactions?](../science/chemistry-10/collision-theory/) | ☐ | ☐ | ☐ |
+| Reaction types (combustion, displacement, neutralisation) | Core | [What kind of reaction is it?](../science/chemistry-10/reaction-types/) | ☐ | ☐ | ☐ |
+| Flame tests | Optional | [Why do elements in a group behave alike?](../science/chemistry-10/groups/) | ☐ | ☐ | ☐ |
+| Alkali metals in water | Demo | [Why do elements in a group behave alike?](../science/chemistry-10/groups/) | ☐ | ☐ | ☐ |
 | Punnett squares with coins; strawberry DNA extraction | Optional | [Can you predict the offspring?](../science/biology-10/punnett/), [Where are the instructions?](../science/biology-10/dna-genes/) | ☐ | ☐ | ☐ |
 | Natural selection game (beans and tweezers) | Optional | [Why did the beetles change?](../science/biology-10/natural-selection/) | ☐ | ☐ | ☐ |
 | Greenhouse bottle, albedo | Optional | [How do greenhouse gases warm the Earth?](../science/earth-10/greenhouse/), [What keeps Earth's temperature steady?](../science/earth-10/energy-balance/) | ☐ | ☐ | ☐ |

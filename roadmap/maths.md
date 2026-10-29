@@ -2,6 +2,10 @@
 
 The maths chat's file. Lessons live in `content/maths/`. Design notes and status so far are in the project docs (`maths-structure`, `maths-boards-plan`, `maths-expressions-status`, `maths-graphs-7a04-status`, `board-embed-contract`); record new decisions here.
 
+## Proposed (29 Oct 2026): one course per strand per year, then year look-backs
+
+Plan: Project doc year-recaps-and-course-split-plan (Part 2). Matthew agreed the direction; not started. Today's courses run Years 7 to 10 inside one strand, which invites acceleration; split them by ACARA v9 strand (Number, Algebra, Measurement, Space, Statistics, Probability) and year, about 24 courses, then add `lookback:` year pages as science has. Moves use `tools/moved.mjs` (forwarding and clip and picture reuse, tried on science chemistry). Pilot Data and chance first. Open: lessons that span two strands (place by content descriptor), Year 10A, thin courses.
+
 ## Pilot: when, where and why (22 Oct 2026, a trial for maths teachers, not a rule)
 
 Full strategy: [`roadmap/maths-when-where-why.md`](maths-when-where-why.md) (also the Project doc `maths-when-where-why-strategy`). Two lessons at opposite ends: **Finding a side** (AC9M8M06 n2, a *world* entry: will a ladder set up by the 1-in-4 safety rule reach the gutter?) and **Changing the subject** (AC9M8A01 n3, an *enabler* entry: what do I need on the last test to average 70?). Each opens with the real question (hook, plus a hand-drawn SVG in the intro); Make comes back to it; "Also used in" closes it (text under Make's last task). Predict to Practise are unchanged, so Predict still tests only the new move; whether the situation should run through the middle too is a question for the teachers, not built. Library: `data/connections/maths.yml` (pilot entries only; fields, kinds and application steps in its header; every figure has a source); lessons name their entry with `connection:` (documentation only). Figures sourced: ladder 1:4 (WorkSafe ACT, SafeWork NSW), ramp 1:14 up to 9 m (Queensland Health, from AS 1428.1). Tested headlessly: both figures in light and dark, every Make check with its planted slips and right answers.

@@ -57,7 +57,7 @@ try{
   results.push({app:item.app,preview:'pass',...(item.app==='science'?{recording:'pass'}:{})});console.log(item.app,'passed');
  }
  const catalogue=await page.evaluate(async()=>await(await fetch('./lesson-clips.json')).json());
- for(const slug of ['science/chemistry/states','maths/algebra/brackets']){
+ for(const slug of ['science/chemistry-7/states','maths/algebra/brackets']){
   const index=catalogue.findIndex(c=>c.source.lesson===slug&&!c.mode);assert.ok(index>=0);
   await page.selectOption('#lessonClip',String(index));await page.click('#loadLessonClip');assert.match(await page.locator('#status').innerText(),/from lesson frontmatter/);
   await page.click('#preview');await page.waitForFunction(()=>/Preview complete|Preview failed/.test(document.querySelector('#status').textContent),null,{timeout:120000});assert.equal(await page.locator('#status').innerText(),'Preview complete',slug);results.push({existingFrontmatter:slug,preview:'pass'});

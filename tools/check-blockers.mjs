@@ -19,7 +19,7 @@ const LISTS = {
   'Fanboy annoyances (general)': 'https://raw.githubusercontent.com/easylist/easylist/master/fanboy-addon/fanboy_annoyance_general_hide.txt',
 };
 const PAGES = ['', 'code/', 'maths/', 'science/', 'systems/', 'engineering/', 'ai/', 'teachers/', 'code/paths/python/', 'maths/paths/algebra/',
-  'code/python-foundations/', 'code/python-foundations/turtle-intro/', 'maths/algebra/', 'science/chemistry/', 'code/html/', 'teach/code/review/', 'about/'];
+  'code/python-foundations/', 'code/python-foundations/turtle-intro/', 'maths/algebra/', 'science/chemistry-7/', 'code/html/', 'teach/code/review/', 'about/'];
 
 const args = process.argv.slice(2), opt = (k, d) => { const i = args.indexOf(k); return i >= 0 ? args.splice(i, 2)[1] : d; };
 const DIST = opt('--dist', 'dist'), LOCAL = opt('--lists', null), WIDE = args.includes('--wide') && args.splice(args.indexOf('--wide'), 1);

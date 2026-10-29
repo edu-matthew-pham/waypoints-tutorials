@@ -2,6 +2,10 @@
 
 The science chat's file. Lessons live in `content/science/` (see CLAUDE.md › Science).
 
+## Done: one chemistry course per year, and year look-back pages (29 Oct 2026, Matthew said do it)
+
+Plan: Project doc year-recaps-and-course-split-plan. Courses now follow ACARA, one strand per year: `chemistry` became `chemistry-7`, and `chemistry-9-10` split into `chemistry-9` (atoms, equations) and `chemistry-10` (periodic table, rates). Old addresses forward (`tools/moved.mjs`, a forwarding page per old address plus `404.html`); clips and pictures are reused from the old live addresses, so nothing re-records. `science/look-back/year-7/` to `year-10/` gather each year's recap cards (four courses each); not marked, never counts towards Done. Needs a whole-site publish. Lesson `order:` numbers in `chemistry-10` still start at 10 (cards on the look-back page show no numbers; course pages number by position).
+
 ## Proposed (25 Oct 2026, science chat): practical previews and recaps
 
 *Status (26 Oct audit): the draft practicals list is built as the For science teachers page (`content/science-teachers.md`); the pilot companion lessons are not built. Heading said "not built".*

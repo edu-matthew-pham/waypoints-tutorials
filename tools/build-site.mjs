@@ -41,6 +41,7 @@ import { IDEAS, PATHWAY_IDEAS } from './ideas-map.mjs';
 import { PRACTICE_JS } from './practice-core.mjs';
 import { PRACTICE_CSS, PRACTICE_UI_JS, practiceBody } from './practice-view.mjs';
 import { MATH_JS } from './math-expr.mjs';
+import { forwardRules, forwardPage, notFoundPage } from './moved.mjs';
 import { loadProgressions } from './progressions.mjs';
 import { priorLessons, challengeTest } from './prior-links.mjs';
 import { markedMath, textWithMath, workedHtml } from './maths.mjs';
@@ -552,7 +553,7 @@ ${NAV_JS}
 const RECAP_CSS = `
 .rcunit{margin:28px 0 8px}.rcunit h2{font-size:1.15rem;margin:0 0 4px}.rcunit>p{margin:0 0 10px;color:var(--muted);font-size:15px}
 .rc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:10px 0}
-.rc h3{margin:0 0 6px;font-size:1.05rem}.rc h3 a{color:inherit;text-decoration:none}.rc h3 a:hover{text-decoration:underline}
+.rc h3{margin:0 0 6px;font-size:1.05rem}.rc h3 a{color:inherit;text-decoration:none}.rcunit h2 a{color:inherit;text-decoration:none}.rcunit h2 a:hover{color:var(--accent)}.rc h3 a:hover{text-decoration:underline}
 .rcq{margin:0;font-size:16px}.rcq b{color:var(--predict,#7c3aed);font-size:13px;letter-spacing:.04em;text-transform:uppercase;margin-right:6px}
 .rc details{margin-top:8px}.rc summary{cursor:pointer;font-weight:600;color:var(--investigate);padding:4px 0}
 .rca{margin:6px 0 10px;padding:8px 12px;border-left:4px solid var(--run);background:color-mix(in srgb,var(--run) 8%,var(--card));border-radius:6px}
@@ -592,25 +593,50 @@ function writePractice(node, skills) {
     `<script>${MATH_JS}${PRACTICE_JS}${PRACTICE_UI_JS}</script>` + (forms ? `<script src="${'../'.repeat(pp.split('/').length)}_numbas/numbas-jme.min.js?v=${NUMBAS_VERSION()}" defer></script><script>${FORMS_JS}</script>` : ''), navFor(pp, 'course', node.path)));
 }
 
+// One recap card: the lesson's exit question, then its explanation, picture and clip behind "Check your answer".
+// `to` is the lesson's folder relative to the page (the page must sit at the lesson's own depth, for pictures);
+// `id` the card's anchor; `numbered` shows the lesson's order before its title.
+function recapCard(l, to, id, mdp, numbered = true) {
+  const T = l.teacher || {};
+  if (!T.exit?.q && !T.explain) return '';
+  const st = l.explainStep;
+  const hasClip = st?.config.clip && existsSync(join(OUT, l.slug, 'clips', `${st.id}.mp4`));
+  // The clip's files sit with the lesson; from the page that is <to>clips/.
+  const clip = hasClip ? clipHtml(l, st).replace(/(src|poster)="clips\//g, `$1="${to}clips/`).replace('preload="metadata"', 'preload="none"') : '';
+  const pic = l.explainPicture ? pictureHtml(l, l.explainPicture, 'explain') : '';
+  const dia = l.explainDiagram ? diagramHtml(l, l.explainDiagram, 'explain') : '';
+  const body = (T.exit?.a ? `<p class="rca">${esc(T.exit.a)}</p>` : '') + (T.explain ? `<div class="rcx">${mdp.parse(String(T.explain))}</div>` : '') + dia + pic + clip +
+    `<a class="rcgo" href="${esc(to)}">Open the lesson →</a>` +
+    (l.coach ? `<div class="rccoach" hidden><p><b>Still stuck?</b> Try the lesson again first. Then, if your teacher has said you can, copy a coach prompt into the AI tool your school allows. It asks you questions; it won't give you the answers.</p><button type="button">Copy a coach prompt</button><textarea readonly hidden>${esc(l.coach)}</textarea></div>` : '');
+  return `<article class="rc" id="${esc(id)}"><h3><a href="${esc(to)}">${numbered && l.order != null ? `${l.order}. ` : ''}${esc(l.title)}</a></h3>` +
+    (T.exit?.q ? `<p class="rcq"><b>Try first</b>${esc(T.exit.q)}</p><details><summary>Check your answer</summary>${body}</details>` : `<details><summary>Show the explanation</summary>${body}</details>`) +
+    `</article>`;
+}
+
+// Year look-back pages (29 Oct 2026): a subject's `lookback:` list in its index.md, each { year, courses: [paths] },
+// makes <subject>/look-back/year-<n>/: the recap cards of every required lesson in those courses, course by course.
+// A free extra for looking back over a year: nothing is marked and it never counts towards Done.
+function writeYearRecap(node, entry, courseOf) {
+  const mdp = new Marked();
+  const yp = `${node.path}/look-back/year-${entry.year}`, up = '../'.repeat(yp.split('/').length);
+  const sections = (entry.courses || []).map((c) => {
+    if (!dirs.has(c)) throw new Error(`${node.path}/index.md: lookback year ${entry.year} names no course "${c}"`);
+    const ls = courseOf(c).filter((l) => !l.optional);
+    const cards = ls.map((l) => recapCard(l, `${up}${l.slug}/`, l.slug.replace(/\//g, '-'), mdp, false)).join('');
+    return cards ? `<section class="rcunit"><h2><a href="${up}${esc(c)}/">${esc(dirs.get(c).title)}</a></h2>${cards}</section>` : '';
+  }).join('');
+  mkdirSync(join(OUT, yp), { recursive: true });
+  writeFileSync(join(OUT, yp, 'index.html'), page(`Year ${entry.year} ${node.title.toLowerCase()}: look back`,
+    `<style>${RECAP_CSS}</style><header class="top"><a class="crumb" href="${up}${esc(node.path)}/">← ${esc(node.title)}</a><h1>Year ${esc(String(entry.year))} ${esc(node.title.toLowerCase())}: look back</h1>` +
+    `<p class="lede">Every idea from Year ${esc(String(entry.year))} ${esc(node.title.toLowerCase())} in one place. Answer each question in your head or on paper first, then check it. Nothing here is marked. If one is shaky, open the lesson and go over it again.</p></header>` +
+    sections + (sections.includes('rccoach') ? `<script>${RECAP_COACH_JS}</script>` : ''),
+    '', navFor(yp, 'home')));
+}
+
 function writeRecap(node, courseLessons) {
   const units = Array.isArray(node.meta?.units) ? node.meta.units : [];
   const mdp = new Marked();
-  const card = (l) => {
-    const T = l.teacher || {}, name = l.slug.split('/').pop();
-    if (!T.exit?.q && !T.explain) return '';
-    const st = l.explainStep;
-    const hasClip = st?.config.clip && existsSync(join(OUT, l.slug, 'clips', `${st.id}.mp4`));
-    // The clip's files sit with the lesson; from the recap page that is ../<lesson>/clips/.
-    const clip = hasClip ? clipHtml(l, st).replace(/(src|poster)="clips\//g, `$1="../${name}/clips/`).replace('preload="metadata"', 'preload="none"') : '';
-    const pic = l.explainPicture ? pictureHtml(l, l.explainPicture, 'explain') : '';
-    const dia = l.explainDiagram ? diagramHtml(l, l.explainDiagram, 'explain') : '';
-    const body = (T.exit?.a ? `<p class="rca">${esc(T.exit.a)}</p>` : '') + (T.explain ? `<div class="rcx">${mdp.parse(String(T.explain))}</div>` : '') + dia + pic + clip +
-      `<a class="rcgo" href="../${esc(name)}/">Open the lesson →</a>` +
-      (l.coach ? `<div class="rccoach" hidden><p><b>Still stuck?</b> Try the lesson again first. Then, if your teacher has said you can, copy a coach prompt into the AI tool your school allows. It asks you questions; it won't give you the answers.</p><button type="button">Copy a coach prompt</button><textarea readonly hidden>${esc(l.coach)}</textarea></div>` : '');
-    return `<article class="rc" id="${esc(name)}"><h3><a href="../${esc(name)}/">${l.order != null ? `${l.order}. ` : ''}${esc(l.title)}</a></h3>` +
-      (T.exit?.q ? `<p class="rcq"><b>Try first</b>${esc(T.exit.q)}</p><details><summary>Check your answer</summary>${body}</details>` : `<details><summary>Show the explanation</summary>${body}</details>`) +
-      `</article>`;
-  };
+  const card = (l) => { const name = l.slug.split('/').pop(); return recapCard(l, `../${name}/`, name, mdp); };
   const required = courseLessons.filter((l) => !l.optional);
   const groups = units.map((u) => ({ u, ls: required.filter((l) => l.unit === u.id) })).filter((g) => g.ls.length);
   const loose = required.filter((l) => !units.some((u) => u.id === l.unit));
@@ -851,6 +877,11 @@ for (const node of dirs.values()) {
         `<script src="${mup}progress.js" data-root="${mup}" defer></script><script src="${mup}curriculum-map.js" defer></script>`, navFor(mp, 'home')));
     }
     const mapLink = cur ? `<a class="pcard pmap" href="map/"><b>Curriculum map</b><span>Every Years 7–10 descriptor by strand and year: how they connect, and which have lessons.</span></a>` : '';
+    // lookback: in the subject's index.md: one look-back page per year (writeYearRecap), linked under the map card.
+    const lookback = Array.isArray(node.meta?.lookback) ? node.meta.lookback : [];
+    for (const e of lookback) writeYearRecap(node, e, (c) => lessons.filter((l) => l.slug.split('/').slice(0, -1).join('/') === c).sort((a, b) => (a.order ?? 0) - (b.order ?? 0)));
+    const lookbackLinks = lookback.length ? `<style>.wpt-lookback{margin:18px 0 4px}.wpt-lookback h2{font-size:1.1rem;margin:0 0 2px}.wpt-lookback>p{color:var(--muted);font-size:14px;margin:0 0 8px}.wpt-lbrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}.wpt-lbrow .pcard b::after{content:' →';color:var(--accent)}</style>` +
+      `<section class="wpt-lookback"><h2>Look back over a year</h2><p>Every idea from a year's courses on one page, to check what you remember. Nothing is marked.</p><div class="wpt-lbrow">${lookback.map((e) => `<a class="pcard" href="look-back/year-${esc(String(e.year))}/"><b>Year ${esc(String(e.year))}</b><span>${(e.courses || []).length} courses</span></a>`).join('')}</div></section>` : '';
     // trail: true: the subject page opens on trailheads (Continue, then a card per pathway with a picture of its
     // trail and a "Start here" line from the pathway's fit:), with today's list as "List for teachers".
     // trail: units makes each unit a stop (science: one standard per unit); trail: true keeps one stop per course.
@@ -882,7 +913,7 @@ for (const node of dirs.values()) {
       (heads ? `<style>${TRAIL_CSS}${TRAILHEADS_CSS}</style>` : '') +
       `<header class="top">${crumb}<h1>${esc(node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${subjSearch}${purposesBlock}${heads ? '' : mapLink}` +
       // With trails, students start on the trailheads; the curriculum map card follows them (both views).
-      (heads ? `${viewToggle}<div class="pview-map">${heads}</div><div class="pview-list">${pindex}</div>${mapLink}` : body) + create,
+      (heads ? `${viewToggle}<div class="pview-map">${heads}</div><div class="pview-list">${pindex}</div>${mapLink}${lookbackLinks}` : body + lookbackLinks) + create,
       `<script src="${up}progress.js" data-root="${up}" defer></script>` + (heads ? `<script src="${up}trailheads.js" data-root="${up}" defer></script>` : ''), navFor(node.path, 'home')));
     // One page per pathway: <subject>/paths/<id>/, with its courses in order and the planned ones as placeholders.
     for (const pw of pathways) {
@@ -1123,6 +1154,15 @@ const pointers = POINTER_SUBJECTS.filter((sub) => existsSync(join('data', 'curri
 const pointerList = pointers.length ? `<h2>Curriculum pointers</h2><p class="muted">One page per curriculum waypoint, with a button to make a primer lesson for it in Create. Not linked for students.</p><ul class="lessons">${pointers.map((p) => `<li><a href="${esc(p.path.slice('teach/'.length))}"><b>${esc(p.label)}</b><span>${p.count} waypoints, ${esc(p.span)}${p.draft ? ' (draft, from Waypoints Kit)' : ''}</span></a></li>`).join('')}</ul>` : '';
 writeFileSync(join(OUT, 'teach', 'index.html'), teachPage('Teacher guides', `<header class="top"><h1>Teacher guides</h1><p class="lede">Notes, answers, solutions, slides and worksheets for each course.</p></header><ul class="lessons">${teachCourses.map((c) => `<li><a href="${esc(c)}/"><b>${esc(dirNode(c).title)}</b><span>${esc(dirNode(c).summary)}</span></a></li>`).join('')}</ul>${ideasPages.length ? `<h2>Across pathways</h2><ul class="lessons">${ideasPages.map((x) => `<li><a href="${esc(x.path)}"><b>${esc(x.title)}</b><span>${x.blurb || (x.path.endsWith('review/') ? 'A printable tick-sheet: our course years and standards coverage, for you to correct.' : 'Which coding ideas need which first, in plain words, how each looks in each pathway and where it is first taught.')}</span></a></li>`).join('')}</ul>` : ''}${pointerList}`, 'teach', null));
 
+// Moved courses and lessons (tools/moved.mjs): a forwarding page at each old address, and a 404 page that forwards
+// anything else under one (recap, practice, reference, cheat sheets).
+const FORWARDS = forwardRules(lessons.map((l) => l.slug));
+for (const [from, to] of FORWARDS) {
+  if (existsSync(join(OUT, from, 'index.html'))) continue;   // never cover a real page
+  mkdirSync(join(OUT, from), { recursive: true });
+  writeFileSync(join(OUT, from, 'index.html'), forwardPage(to));
+}
+writeFileSync(join(OUT, '404.html'), notFoundPage(FORWARDS));
 writeFileSync(join(OUT, '.nojekyll'), '');
 // Pages keeps its custom domain only while the published branch has this file, and a rebuild publish replaces the branch.
 writeFileSync(join(OUT, 'CNAME'), 'tutorials.learningwaypoints.com\n');

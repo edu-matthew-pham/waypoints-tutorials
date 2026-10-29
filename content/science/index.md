@@ -4,16 +4,22 @@ order: 2
 map: true
 trail: units
 summary: Short concept tutorials for introducing an idea or revising it, built around particle simulations. Each one is a mini 5E cycle (Engage, Explore, Explain, Elaborate, Evaluate) for one idea in the curriculum. They sit beside practical work and class discussion, never instead of it.
+lookback:
+  - { year: 7, courses: [science/chemistry-7, science/biology-7, science/physics-7, science/earth-7] }
+  - { year: 8, courses: [science/chemistry-8, science/biology-8, science/physics-8, science/earth-8] }
+  - { year: 9, courses: [science/chemistry-9, science/biology-9, science/physics-9, science/earth-9] }
+  - { year: 10, courses: [science/chemistry-10, science/biology-10, science/physics-10, science/earth-10] }
 pathways:
   - id: chemistry
     title: Chemistry
     summary: The particle model, mixtures, atoms and compounds, chemical change, then reactions at the level of atoms.
     fit: "Start here to see what everything is made of, and why substances mix, separate and change."
-    about: "**Year 7 Chemistry** follows AC9S7U05 (particle theory) and AC9S7U06 (pure substances and mixtures): one tutorial per hinge idea, plus filtration, evaporation, distillation and chromatography. **Year 8 Chemistry** upgrades the particles to atoms (AC9S8U06) and defines chemical change (AC9S8U07). **Years 9 and 10 Chemistry** open up the atom (AC9S9U06), follow the atoms through reactions and balanced equations (AC9S9U07), explain the periodic table with electron shells (AC9S10U06) and reaction rates with collision theory (AC9S10U07). Nodes whose response is a class task (such as choosing a separation technique, or conservation of mass in open and closed systems) are left to class work."
+    about: "**Year 7 Chemistry** follows AC9S7U05 (particle theory) and AC9S7U06 (pure substances and mixtures): one tutorial per hinge idea, plus filtration, evaporation, distillation and chromatography. **Year 8 Chemistry** upgrades the particles to atoms (AC9S8U06) and defines chemical change (AC9S8U07). **Year 9 Chemistry** opens up the atom (AC9S9U06) and follows the atoms through reactions and balanced equations (AC9S9U07). **Year 10 Chemistry** explains the periodic table with electron shells (AC9S10U06) and reaction rates with collision theory (AC9S10U07). Nodes whose response is a class task (such as choosing a separation technique, or conservation of mass in open and closed systems) are left to class work."
     courses:
-      - { path: science/chemistry, stage: foundations, tagline: "Particles, mixtures and how to separate them." }
-      - { path: science/chemistry-8, stage: foundations, after: [science/chemistry], tagline: "Atoms, compounds and new substances." }
-      - { path: science/chemistry-9-10, stage: extensions, after: [science/chemistry-8], tagline: "Inside the atom, balancing equations and reaction rates." }
+      - { path: science/chemistry-7, stage: foundations, tagline: "Particles, mixtures and how to separate them." }
+      - { path: science/chemistry-8, stage: foundations, after: [science/chemistry-7], tagline: "Atoms, compounds and new substances." }
+      - { path: science/chemistry-9, stage: extensions, after: [science/chemistry-8], tagline: "Inside the atom, radioactivity and balancing equations." }
+      - { path: science/chemistry-10, stage: extensions, after: [science/chemistry-9], tagline: "The periodic table and reaction rates." }
   - id: biology
     title: Biology
     summary: Classification and food webs, cells and organs, coordination and reproduction, then genetics and evolution.
@@ -31,7 +37,7 @@ pathways:
     courses:
       - { path: science/physics-7, stage: foundations, tagline: "Forces as arrows, balanced or not." }
       - { path: science/physics-8, stage: foundations, after: [science/physics-7], tagline: "Energy on the move: kinetic, stored and transferred." }
-      - { path: science/physics-9, stage: extensions, after: [science/physics-8, science/chemistry#particles], tagline: "Heat transfer, and why energy is never lost." }
+      - { path: science/physics-9, stage: extensions, after: [science/physics-8, science/chemistry-7#particles], tagline: "Heat transfer, and why energy is never lost." }
       - { path: science/physics-10, stage: extensions, after: [science/physics-9], tagline: "Newton's laws and F = ma." }
   - id: earth-space
     title: Earth and space

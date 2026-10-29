@@ -38,6 +38,7 @@ const rendererSrc = (() => {
 })();
 
 // ---------- cache ----------
+const { oldSlug } = await import('./moved.mjs');   // imported here, not above, so it is not part of any clip's hash
 // Clips show a playground, so a change to the playground a lesson uses (or its snippets) must re-record
 // that lesson's clips. Only that playground counts: editing the micro:bit snippets leaves turtle clips alone.
 const SNIPPETS = { playground: 'turtle', 'playground-html': 'html', 'playground-makecode': 'microbit', 'playground-maths': 'maths', 'playground-board': 'maths', 'playground-explain': 'none' };
@@ -125,9 +126,12 @@ const voiceFiles = (m) => (Array.isArray(m?.voices) ? m.voices.filter((v) => /^[
 
 // Download a clip from the live site when its published hash matches: the same inputs give the same clip.
 async function seedClip(base, lesson, step, outDir) {
-  const url = `${base.replace(/\/$/, '')}/${lesson.slug}/clips/${step.id}`;
+  // A moved lesson's clips are still live at its old address (tools/moved.mjs): try there when the new one has none.
+  let url = `${base.replace(/\/$/, '')}/${lesson.slug}/clips/${step.id}`;
   try {
-    const meta = await fetch(`${url}.json`, { cache: 'no-store' });
+    let meta = await fetch(`${url}.json`, { cache: 'no-store' });
+    const was = oldSlug(lesson.slug);
+    if (!meta.ok && was) { url = `${base.replace(/\/$/, '')}/${was}/clips/${step.id}`; meta = await fetch(`${url}.json`, { cache: 'no-store' }); }
     const m = meta.ok ? await meta.json() : null;
     if (!m || m.hash !== stepHash(lesson, step) || !okVoice(lesson, m)) return false;
     for (const ext of voiceSpec(lesson.voice) ? ['mp4', 'jpg', 'vtt', ...voiceFiles(m)] : ['mp4', 'jpg']) {
@@ -471,9 +475,11 @@ let leftForNextRun = 0, keptOld = 0;
 const overLong = []; // clips over CLIP_MAX_S, for the subject chats to trim (listed in the job summary)
 async function keepLive(base, lesson, step, outDir) {
   if (!base) return false;
-  const url = `${base.replace(/\/$/, '')}/${lesson.slug}/clips/${step.id}`;
+  let url = `${base.replace(/\/$/, '')}/${lesson.slug}/clips/${step.id}`;
   try {
-    const meta = await fetch(`${url}.json`, { cache: 'no-store' });
+    let meta = await fetch(`${url}.json`, { cache: 'no-store' });
+    const was = oldSlug(lesson.slug);   // a moved lesson's clip is still live at its old address
+    if (!meta.ok && was) { url = `${base.replace(/\/$/, '')}/${was}/clips/${step.id}`; meta = await fetch(`${url}.json`, { cache: 'no-store' }); }
     if (!meta.ok) return false;
     const m = await meta.json();
     if (m.voice === 'flite') return false;

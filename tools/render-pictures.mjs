@@ -20,6 +20,7 @@ import { createServer } from 'node:http';
 import { createHash } from 'node:crypto';
 import { mkdirSync, readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join, extname, resolve, dirname, relative } from 'node:path';
+import { oldId } from './moved.mjs';
 
 const OUT = resolve(process.argv.includes('--out') ? process.argv[process.argv.indexOf('--out') + 1] : 'dist');
 const FORCE = process.argv.includes('--force');
@@ -85,8 +86,10 @@ async function pictures({ name, dir, base, jobs, viewport, draw, legacy = [], ex
     const worker = async () => {
       while (next < todo.length) {
         const n = next++, j = todo[n];
-        const h = live[j.id]?.hash;
-        got[n] = !!h && (h === hashOf(j) || legacy.some((b) => h === legacyOf(b, j))) && await fetch(`${url}/${j.id}.${ext}`).then(async (r) => {
+        // A moved lesson's pictures are still live under its old address (tools/moved.mjs).
+        const from = live[j.id] ? j.id : (live[oldId(j.id)] ? oldId(j.id) : j.id);
+        const h = live[from]?.hash;
+        got[n] = !!h && (h === hashOf(j) || legacy.some((b) => h === legacyOf(b, j))) && await fetch(`${url}/${from}.${ext}`).then(async (r) => {
           if (!r.ok) return false;
           mkdirSync(dirname(join(dir, `${j.id}.${ext}`)), { recursive: true });
           writeFileSync(join(dir, `${j.id}.${ext}`), Buffer.from(await r.arrayBuffer()));
@@ -96,7 +99,7 @@ async function pictures({ name, dir, base, jobs, viewport, draw, legacy = [], ex
     };
     await Promise.all(Array.from({ length: Math.min(16, todo.length) }, worker));
     const left = [];
-    todo.forEach((j, n) => { if (got[n]) { manifest[j.id] = { ...live[j.id], hash: hashOf(j) }; seeded++; } else left.push(j); });
+    todo.forEach((j, n) => { if (got[n]) { manifest[j.id] = { ...(live[j.id] || live[oldId(j.id)]), hash: hashOf(j) }; seeded++; } else left.push(j); });
     todo = left;
   }
   if (SHARD && !CHECK) todo = todo.filter((_, n) => n % SHARD[1] === SHARD[0]);
