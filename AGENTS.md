@@ -14,6 +14,7 @@ Then read `ROADMAP.md` (index and rules for parallel work) and the roadmap file 
 - **Tutorials are pace-agnostic in every subject** (`roadmap/shared.md` › Decided, 30 Oct 2026): no Consolidating, Steady or Advancing labels; the untiered path is the minimum; `tier:` steps are optional width on the same idea, never a faster track.
 - **First Nations content:** no student-facing explanations of First Nations history or culture written by us; teacher notes start from ACARA's elaborations and ask the teacher to add local, community-approved material.
 - **No write boxes:** the site never takes or checks a student's own writing; Make steps are written in the student's own book and ticked with a `reflect` check.
+- **Lesson shape is a default, not a rule.** Humanities courses copy `economics/scarcity-7/needs-and-wants`, which suits skill waypoints with a planted answer. If a waypoint is mostly discussion or weighing views, an inquiry shape (`shape: 5e` or `primer`) may suit better: say why in your roadmap file.
 - **Facts about people, places, studies and dates must be checked against a source.** Made-up cases are preferred; say so in the notes when something is unverified.
 - Do not reformat whole data files (for example `misconceptions.json`): add single lines.
 - Quote YAML values that contain colons. Give new page parts site-specific `wpt-` class names.
