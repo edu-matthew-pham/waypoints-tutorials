@@ -134,9 +134,9 @@ Found on the Economics `scarcity-7/needs-and-wants` deck, which opened "We are l
 
 ## Proposed (30 Oct 2026, Matthew; audit later, nothing built): rules audit of existing humanities lessons
 
-The rules in `AGENTS.md` and the self-check in `roadmap/checklist.md` only reach lessons written after them. Lessons already built (Economics `scarcity-7` and `businesses-7`, History, Civics, Geography `water-7`, `hass/inquiry-7`, `hass/before-year-7`) need one read-only pass first. Report only; no edits until Matthew has seen the counts.
+The rules in `AGENTS.md` and the self-check in `roadmap/checklist.md` only reach lessons written after them. Lessons already built (Economics `scarcity-7` and `businesses-7`, History, Civics, Geography `water-7`, `hass/inquiry-7`, `hass/before-year-7`) need one read-only pass first. Order: humanities first; then science (simplified models in student text); then AI, English persuade and ICT information as spot checks; maths and code a light scan. Report only; no edits until Matthew has seen the counts.
 
-- **Contestable ideas stated as settled truth,** even where ACARA words them that way (for example "wants are unlimited", "markets allocate", one cause for a historical event, how a system of government should work).
+- **Contestable or simplified ideas stated as settled truth,** even where ACARA words them that way (for example "wants are unlimited", "markets allocate", one cause for a historical event, how a system of government should work; in science a simplified model such as shells, a one-layer greenhouse or rigid molecules presented as how things are, with its limits only in teacher notes). Judgement, not a checklist: flag where a student would be misled, not every use of "is".
 - **Made-up names and brands:** cases labelled as made up; no names that read as real brands, people or places.
 - **First Nations content:** nothing student-facing written by us; teacher notes quote ACARA's elaborations.
 - **Pace labels and write boxes:** none.
