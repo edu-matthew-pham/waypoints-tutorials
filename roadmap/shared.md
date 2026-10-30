@@ -111,6 +111,17 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 - **Decided (27 Oct):** an optional, discussion-led intro course (4 workshops: shared trap task first, then the student's own task as transfer), framed around why it matters and how self-regulated differs from self-directed learning; its own small subject, Learning skills; Years 6–8; general and Code cards first. Built: see `roadmap/learning.md`.
 - **Open:** how deck inserts are authored (class plan field vs a shared insert library).
 
+## Decided (30 Oct 2026, Matthew): tutorials are pace-agnostic, in every subject
+
+A tutorial never knows the class, so it never assumes a pace. This matches the Kit, where node files carry no pace profile and pace only comes in when a teacher divides up time. Applies to every current and future subject (Economics next).
+
+- **Same waypoints, same order.** Lessons follow the node file's sequence and never teach a later waypoint early.
+- **Build to the floor, offer the rest.** The untiered path is minimum width, which every student must reach. `tier: typical` and `tier: wider` steps are optional extras on the same waypoint, never a faster track.
+- **Pace is the teacher's call, in class.** Lessons, teacher guides and class plans don't say "for a Consolidating / Steady / Advancing class" and don't assume Steady. A teacher note may say where a slower or faster class could spend extra time, but nothing gates or hides content by pace. No class tracking.
+- **Protect the hinges.** On a hinge waypoint, include a check before moving on (and `smaller:` support), so a student doesn't leave with a thin foundation whatever the pace.
+
+New subject chats: read this before planning a course.
+
 ## Decided (27 Oct 2026, Matthew): year grouping is not width
 
 Wider steps add contexts at the same level and demand; content for older students is not width, in any subject, AI included. Nothing in a wider tier is acceleration. This reverses the AI courses' "wider steps for older students" (`content/ai/index.md`) and the 18 Oct fold of the Years 9 to 10 candidate into wider steps (`roadmap/learning-with-ai.md`). The 37 AI wider steps are sorted in Project doc `claude/ai-wider-steps-sort.md`: keep 18, reshape 10, move 9 (policy, law or research reading; a separate optional course or optional steps). No lesson, `index.md`, `CLAUDE.md` or `AUTHORING.md` text has changed yet. The English build no longer waits on this audit.

@@ -16,6 +16,8 @@ Split by workstream on 11 Oct 2026 so separate chats can work at the same time (
 - [`roadmap/diagrams-plan.md`](roadmap/diagrams-plan.md): Mermaid diagrams across lesson parts, decks and worksheets (proposed 19 Oct 2026); the tools to follow it are in `shared.md` › Proposed: visual and quality tools.
 - [`roadmap/maths-when-where-why.md`](roadmap/maths-when-where-why.md): the when, where and why of maths: a library of purposes and real situations per node (`data/connections/maths.yml`), how lessons use it, and pictures (hand SVG, Mermaid, charts) (decided 22–23 Oct 2026).
 
+**Every subject, current and future:** tutorials are pace-agnostic (`roadmap/shared.md` › Decided (30 Oct 2026): tutorials are pace-agnostic). Read it before planning a new subject or course.
+
 "ROADMAP › <section>" in CLAUDE.md, AUTHORING.md and BUILDING.md means that section in the subject's file. Older sections moved to `roadmap/archive/` when a file was tidied (the code file on 12 Oct 2026: `roadmap/archive/code-to-2026-10-12.md`), so look there if a section is not in the current file.
 
 ## Working in parallel
