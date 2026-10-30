@@ -659,20 +659,40 @@ const PROJECTS = new Map(loadProjects(CONTENT_ROOT, (c) => PLAY[c]?.kind || 'tur
 const PREREQS = prerequisites(loadDirMeta, CONTENT_ROOT);
 // Project briefs without code (tools/briefs.mjs): <course>/briefs/ lists them, <course>/briefs/<id>/ is a printable task sheet.
 const BRIEFS = new Map(loadBriefs(CONTENT_ROOT).map((s) => [s.course, s]));
+function resolveBriefLesson(coursePath, item, fromRoot) {
+  if (item && typeof item === 'object' && item.soon === true) return { label: String(item.title || ''), soon: true };
+  const ref = typeof item === 'string' ? item : String(item.slug || '');
+  const note = item && typeof item === 'object' && item.note ? String(item.note) : '';
+  const slug = ref.includes('/') ? ref : `${coursePath}/${ref}`;
+  const l = lessons.find((x) => x.slug === slug);
+  if (!l) return { label: ref, href: `${fromRoot}${slug}/`, note };
+  const own = slug.startsWith(`${coursePath}/`);
+  const cPath = slug.split('/').slice(0, -1).join('/'), sPath = slug.split('/')[0];
+  const label = own ? l.title : `${dirNode(sPath).title} › ${dirNode(cPath).title}: ${l.title}`;
+  return { label, href: `${fromRoot}${slug}/`, note };
+}
 function writeBriefs(node, set) {
-  const bp = `${node.path}/briefs`, cur = loadCurriculum(node.path.split('/')[0]);
+  const bp = `${node.path}/briefs`, isSkel = set.kind === 'skeleton';
   const lessonByName = (n) => lessons.find((l) => l.slug === `${node.path}/${n}`);
-  const afterText = (b) => { const l = lessonByName(b.after); return l ? `${l.order != null ? `lesson ${l.order}: ` : ''}${l.title}` : String(b.after); };
+  const afterText = (b) => {
+    if (b.kind === 'skeleton') return `${b.subject || ''}${(b.stages || []).length ? ` · ${b.stages.length} stages` : ''}`;
+    const l = lessonByName(b.after);
+    return l ? `${l.order != null ? `lesson ${l.order}: ` : ''}${l.title}` : String(b.after);
+  };
   const mdb = new Marked();
   mkdirSync(join(OUT, bp), { recursive: true });
-  const lup = '../'.repeat(bp.split('/').length);
   const cards = set.briefs.map((b) => ({ id: b.id, title: b.title, after: afterText(b), goalText: firstSentence(String(b.goal || '').replace(/[*_`#]/g, '').split('\n')[0]) }));
-  writeFileSync(join(OUT, bp, 'index.html'), page(`Project briefs: ${node.title}`, `<style>${BRIEF_CSS}</style>` + briefListBody({ esc, title: node.title, cards }), '', navFor(bp, 'course', node.path)));
+  writeFileSync(join(OUT, bp, 'index.html'), page(`${isSkel ? 'Inquiry skeletons' : 'Project briefs'}: ${node.title}`, `<style>${BRIEF_CSS}</style>` + briefListBody({ esc, title: node.title, cards, kind: set.kind }), '', navFor(bp, 'course', node.path)));
   for (const b of set.briefs) {
-    const dp = `${bp}/${b.id}`;
+    const dp = `${bp}/${b.id}`, dup = '../'.repeat(dp.split('/').length);
     mkdirSync(join(OUT, dp), { recursive: true });
-    writeFileSync(join(OUT, dp, 'index.html'), page(`${b.title}: a project brief`, `<style>${BRIEF_CSS}</style>` +
-      briefPageBody({ esc, md: (t) => mdb.parse(t), courseTitle: node.title, b, after: afterText(b), nodes: briefNodes(b, cur) }), '', navFor(dp, 'course', node.path)));
+    const stages = b.kind === 'skeleton' ? (b.stages || []).map((st) => ({
+      ...st,
+      nodes: briefNodes(st, loadCurriculum, st.student_nodes ? 'student_nodes' : 'nodes'),
+      lessons: (st.lessons || []).map((it) => resolveBriefLesson(node.path, it, dup)),
+    })) : [];
+    writeFileSync(join(OUT, dp, 'index.html'), page(`${b.title}: ${b.kind === 'skeleton' ? 'an inquiry skeleton' : 'a project brief'}`, `<style>${BRIEF_CSS}</style>` +
+      briefPageBody({ esc, md: (t) => mdb.parse(t), courseTitle: node.title, b, after: afterText(b), nodes: briefNodes(b, loadCurriculum), stages }), '', navFor(dp, 'course', node.path)));
   }
 }
 let PROJPICS = null;
@@ -765,7 +785,7 @@ for (const node of dirs.values()) {
     // recap: true in a course's index.md: a short recap page at <course>/recap/ (recapHtml, below), linked as a chip.
     const recap = node.meta?.recap === true;
     const practice = practiceSkills(node, courseLessons);
-    const tools = (play ? `<a class="chip" href="playground/">Playground</a>` : '') + (ref || conceptualRef ? `<a class="chip" href="reference/">Reference</a>` : '') + (recap ? `<a class="chip" href="recap/">Recap</a>` : '') + (practice.length ? `<a class="chip" href="practice/">Practice</a>` : '') + (PROJECTS.has(node.path) ? `<a class="chip" href="projects/" data-projects="${esc(node.path)}">Projects</a>` : '') + (BRIEFS.has(node.path) ? `<a class="chip" href="briefs/">Project briefs</a>` : '');
+    const tools = (play ? `<a class="chip" href="playground/">Playground</a>` : '') + (ref || conceptualRef ? `<a class="chip" href="reference/">Reference</a>` : '') + (recap ? `<a class="chip" href="recap/">Recap</a>` : '') + (practice.length ? `<a class="chip" href="practice/">Practice</a>` : '') + (PROJECTS.has(node.path) ? `<a class="chip" href="projects/" data-projects="${esc(node.path)}">Projects</a>` : '') + (BRIEFS.has(node.path) ? `<a class="chip" href="briefs/">${BRIEFS.get(node.path).kind === 'skeleton' ? 'Inquiry skeletons' : 'Project briefs'}</a>` : '');
     if (recap) writeRecap(node, courseLessons);
     if (conceptualRef && !ref) {
       const refDir = `${node.path}/reference`;
@@ -785,14 +805,16 @@ for (const node of dirs.values()) {
         `<summary><span class="cnum">${l.order ?? ''}</span><span class="ctitle">${esc(l.title.replace(/^Optional:\s*/, ''))}${l.optional ? ' <em class="opt">Optional</em>' : ''}</span>${mini}<span class="cstat">${segs.length ? 'Not started' : ''}</span></summary>` +
         `<div class="cbody">${l.summary ? `<p class="csum">${esc(l.summary)}</p>` : ''}${steps}<a class="cgo" href="${esc(name)}/">Start lesson</a></div></details>`;
     };
+    const normPlanned = (u) => (Array.isArray(u?.planned) ? u.planned : []).map((p) => (typeof p === 'string' ? { title: p, summary: '' } : { title: String(p?.title || ''), summary: String(p?.summary || '') })).filter((p) => p.title);
+    const plannedRow = (p) => `<div class="crow wpt-crow-soon"><div class="wpt-crow-head"><span class="cnum">·</span><span class="ctitle">${esc(p.title)}</span><span class="cstat">Coming later</span></div>${p.summary ? `<p class="csum">${esc(p.summary)}</p>` : ''}</div>`;
     // Units (from the course's index.md) group the lessons; lessons without a unit go last.
     const units = Array.isArray(node.meta?.units) ? node.meta.units : [];
-    const groups = units.map((u) => ({ ...u, lessons: courseLessons.filter((l) => l.unit === u.id) })).filter((g) => g.lessons.length);
+    const groups = units.map((u) => ({ ...u, lessons: courseLessons.filter((l) => l.unit === u.id), planned: normPlanned(u) })).filter((g) => g.lessons.length || g.planned.length);
     const loose = courseLessons.filter((l) => !units.some((u) => u.id === l.unit));
-    if (loose.length) groups.push({ id: '', title: units.length ? 'More lessons' : '', lessons: loose });
+    if (loose.length) groups.push({ id: '', title: units.length ? 'More lessons' : '', lessons: loose, planned: [] });
     const rows = groups.map((g) => `<section class="unit"${g.id ? ` id="unit-${esc(g.id)}" data-unit="${esc(g.id)}"` : ''}>` +
-      (g.title ? `<div class="uhead"><h2>${esc(g.title)}</h2><span class="ustat"></span>${g.summary ? `<p>${esc(g.summary)}</p>` : ''}</div>` : '') +
-      `<div class="urows">${g.lessons.map(row).join('')}</div></section>`).join('');
+      (g.title ? `<div class="uhead"><h2>${esc(g.title)}</h2><span class="ustat">${!g.lessons.length && g.planned.length ? 'Coming later' : ''}</span>${g.summary ? `<p>${esc(g.summary)}</p>` : ''}</div>` : '') +
+      `<div class="urows">${g.lessons.map(row).join('')}${(g.planned || []).map(plannedRow).join('')}</div></section>`).join('');
     const challenge = node.meta?.challenge ? `<span class="badge" id="badge" data-unit="${esc(node.meta.challenge)}" hidden>★ Challenge complete</span>` : '';
     const hasChecks = courseLessons.some((l) => segmentsOf(l).length);
     // The teacher strip (25 Oct 2026): what a teacher needs to choose this course, and a link to give students.
@@ -800,7 +822,8 @@ for (const node of dirs.values()) {
     // optional lessons; "Do first" is the pathway's `after:`. Copying gives the course address only (no QR code: no phones).
     const strip = (() => {
       const [ylo, yhi] = SEARCH.yearsOfCourse(node.path), core = courseLessons.filter((l) => !l.optional).length, opt = courseLessons.length - core, first = afterOf(node.path);
-      const facts = [ylo != null ? (SEARCH.typical(node.path) ? ['Usually', SEARCH.yearsLabel(ylo, yhi)] : ['For', SEARCH.yearsLabel(ylo, yhi)]) : null, ['Lessons', `${core}${opt ? ` (and ${opt} optional)` : ''}`],
+      const plannedCount = groups.reduce((n, g) => n + (g.planned ? g.planned.length : 0), 0);
+      const facts = [ylo != null ? (SEARCH.typical(node.path) ? ['Usually', SEARCH.yearsLabel(ylo, yhi)] : ['For', SEARCH.yearsLabel(ylo, yhi)]) : null, ['Lessons', `${core}${opt ? ` (and ${opt} optional)` : ''}${plannedCount ? `, ${plannedCount} coming later` : ''}`],
         first ? ['Do first', first.length ? first.join(' and ') : 'No earlier course needed'] : null].filter(Boolean);
       const guide = courseLessons.some((l) => l.teacher) ? `<a href="${up}teach/${node.path}/">Teacher guide</a>` : '';
       const cov = COVERAGE.byCourse.get(node.path);
@@ -810,7 +833,7 @@ for (const node of dirs.values()) {
       const cuIdx = catchUpIndex(), cuSlugs = new Set(courseLessons.flatMap((l) => (cuIdx.first.get(l.slug) || []).map((c) => c.slug)));
       const cuCourse = [...cuSlugs][0]?.split('/').slice(0, -1).join('/');
       const catchCard = cuSlugs.size ? `<p class="wpt-catch"><b>Before Year 7</b> ${cuSlugs.size} short catch-up ${cuSlugs.size === 1 ? 'lesson leads' : 'lessons lead'} into this course, for students who need the earlier idea first: <a href="${up}${cuCourse}/">see them</a>. Each lesson links to its own catch-up lesson.</p>` : '';
-      return `<style>.wpt-catch{flex-basis:100%;margin:0;color:var(--muted)}.wpt-catch a{color:var(--accent)}.cstd{flex-basis:100%;margin:0;color:var(--muted)}.cstd a{color:var(--accent)}.cstrip{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;margin:12px 0 0;padding:10px 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:14px}.cfacts{display:flex;flex-wrap:wrap;gap:4px 18px;list-style:none;margin:0;padding:0}.cfacts b{color:var(--muted);font-weight:600;margin-right:4px}.wpt-teach{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin-left:auto}.wpt-teach a{color:var(--accent);font-weight:600}.copylink{font:inherit;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer}.copylink:hover{background:var(--bg)}.copymsg{color:var(--muted)}@media print{.cstrip{display:none}}</style>` +
+      return `<style>.wpt-catch{flex-basis:100%;margin:0;color:var(--muted)}.wpt-catch a{color:var(--accent)}.cstd{flex-basis:100%;margin:0;color:var(--muted)}.cstd a{color:var(--accent)}.cstrip{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;margin:12px 0 0;padding:10px 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:14px}.cfacts{display:flex;flex-wrap:wrap;gap:4px 18px;list-style:none;margin:0;padding:0}.cfacts b{color:var(--muted);font-weight:600;margin-right:4px}.wpt-teach{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin-left:auto}.wpt-teach a{color:var(--accent);font-weight:600}.copylink{font:inherit;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer}.copylink:hover{background:var(--bg)}.copymsg{color:var(--muted)}.wpt-crow-soon{padding:11px 16px;opacity:.78;cursor:default}.wpt-crow-head{display:flex;align-items:baseline;gap:10px}.wpt-crow-head .cnum{color:var(--muted);min-width:1.4em}.wpt-crow-head .ctitle{font-weight:600;color:var(--muted);flex:1}.wpt-crow-head .cstat{font-size:13px;color:var(--muted);font-style:italic}.wpt-crow-soon .csum{margin:4px 0 0 2.1em;font-size:14px;color:var(--muted)}@media print{.cstrip{display:none}}</style>` +
         `<div class="cstrip"><ul class="cfacts">${facts.map(([k, v]) => `<li><b>${k}</b> ${esc(v)}</li>`).join('')}</ul><div class="wpt-teach">${guide}<button type="button" class="copylink" hidden>Copy link for students</button><span class="copymsg" role="status"></span></div>${catchCard}${stds}</div>`;
     })();
     const COPY_JS = `<script>(function(){var b=document.querySelector('.copylink');if(!b)return;b.hidden=false;var m=document.querySelector('.copymsg');b.addEventListener('click',function(){var u=location.origin+location.pathname;function ok(){m.textContent='Link copied';setTimeout(function(){m.textContent=''},2000)}function fb(){var t=document.createElement('textarea');t.value=u;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');ok()}catch(e){m.textContent=u}document.body.removeChild(t)}if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(ok,fb);else fb()})})();</script>`;
@@ -1123,7 +1146,8 @@ for (const coursePath of teachCourses) {
   // Course guide: how to use it, then each unit with its primer, cheat sheet and lessons. A maths course renders $...$ in primers.
   const unitBlocks = (units.length ? units : [{ id: '', title: 'Lessons' }]).map((u) => {
     const mine = ls.filter((l) => (u.id ? l.unit === u.id : true));
-    if (!mine.length) return '';
+    const planned = (Array.isArray(u?.planned) ? u.planned : []).map((p) => (typeof p === 'string' ? { title: p, summary: '' } : { title: String(p?.title || ''), summary: String(p?.summary || '') })).filter((p) => p.title);
+    if (!mine.length && !planned.length) return '';
     let primer = '';
     const pf = join(CONTENT_ROOT, coursePath, 'primers', `${u.id}.md`);
     if (u.id && existsSync(pf)) {
@@ -1142,7 +1166,8 @@ for (const coursePath of teachCourses) {
     }
     const rows = mine.map((l) => l.teacher
       ? `<li><a href="${esc(l.slug.split('/').pop())}/">${esc(`${l.order != null ? `${l.order}. ` : ''}${l.title}`)}</a>${l.optional ? ' <span class="muted">(optional)</span>' : ''} <span class="muted">· <a href="${esc(prepareLink('prepare', `${SITE_URL}/${teachPath(l)}deck.md`))}" target="_blank" rel="noopener" title="Open the slides in Prepare">slides</a> · <a href="${esc(prepareLink('print', `${SITE_URL}/${teachPath(l)}worksheet.md`))}" target="_blank" rel="noopener" title="Open the worksheet in Print">worksheet</a></span></li>`
-      : `<li>${esc(l.title)} <span class="muted">(teacher notes coming)</span></li>`).join('');
+      : `<li>${esc(l.title)} <span class="muted">(teacher notes coming)</span></li>`).join('') +
+      planned.map((p) => `<li>${esc(p.title)} <span class="muted">(coming later${p.summary ? ` — ${esc(p.summary)}` : ''})</span></li>`).join('');
     return `<section class="tunit"><h2>${esc(u.title)}</h2>${u.summary ? `<p class="muted">${esc(u.summary)}</p>` : ''}${primer}${cheat}<ul>${rows}</ul></section>`;
   }).join('');
   // Open projects (tools/projects.mjs): each brief, its notes and one possible solution (its example), for the teacher.
@@ -1152,11 +1177,24 @@ for (const coursePath of teachCourses) {
     pset.projects.map((p) => `<details class="primer"><summary><b>${esc(p.title)}</b> <span class="muted">(${p.after ? `after ${esc(p.after)}; ` : ''}${esc(p.parts.flatMap((x) => x.uses.map((u) => skillLabel(x.language, u))).join(', '))})</span></summary>${md(p.goal)}` +
       `<p><b>Milestones:</b></p><ul>${(p.msx || []).map((m) => `<li>${esc(m.text)}${(m.hints || []).length ? `<ol class="muted">${m.hints.map((h) => `<li>${esc(h)}</li>`).join('')}</ol>` : ''}${m.way ? `<div class="muted">Students can earn this piece (reveal on): <code>${esc(m.way).replace(/\n/g, '<br>')}</code></div>` : ''}</li>`).join('')}</ul>` + (p.teacher ? md(p.teacher) : '') +
       p.parts.filter((x) => x.exampleCode).map((x) => codeBlock(highlightCode, x.exampleCode, HL[x.language] || 'python', `One possible solution${x.title ? `: ${x.title}` : ''}`)).join('') + `</details>`).join('') + `</section>` : '';
-  // Project briefs (tools/briefs.mjs): each brief's teacher notes and the criteria it evidences, for the teacher.
-  const bset = BRIEFS.get(coursePath), bcur = bset ? loadCurriculum(coursePath.split('/')[0]) : null;
-  const briefsGuide = bset ? `<section class="tunit" id="briefs"><h2>Project briefs</h2><p class="muted">Printable task sheets for assessment or extension: students make something, hand it in and explain their choices. The success criteria are the curriculum nodes' own. <a href="${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/briefs/">Open the briefs page</a></p>` +
-    bset.briefs.map((b) => `<details class="primer"><summary><b>${esc(b.title)}</b> <span class="muted">(after ${esc(b.after)})</span></summary>${md(String(b.goal || ''))}<p><b>Hand in:</b></p><ul>${(b.handin || []).map((m) => `<li>${esc(m)}</li>`).join('')}</ul>` +
-      `<p><b>Evidences:</b></p><ul>${briefNodes(b, bcur).filter((n) => !n.missing).map((n) => `<li>${esc(n.label)} <span class="muted">(${esc(n.code)} node ${n.n})</span>: ${esc(n.criteria.join('; '))}</li>`).join('')}</ul>` + (b.teacher ? md(String(b.teacher)) : '') + `</details>`).join('') + `</section>` : '';
+  // Project briefs or Inquiry skeletons (tools/briefs.mjs): each brief's teacher notes and the criteria it evidences, for the teacher.
+  const bset = BRIEFS.get(coursePath), bFromRoot = '../'.repeat(coursePath.split('/').length + 1);
+  const briefsGuide = bset ? (bset.kind === 'skeleton'
+    ? `<section class="tunit" id="briefs"><h2>Inquiry skeletons</h2><p class="muted">Printable outlines for a full class investigation in each humanities subject. Where a stage covers many waypoints, the student sheet prints 2 to 3 culminating waypoints so it fits on two pages; the full waypoint list for every stage is shown below so no curriculum coverage is hidden. <a href="${bFromRoot}${coursePath}/briefs/">Open the inquiry skeletons page</a></p>` +
+      bset.briefs.map((b) => `<details class="primer"><summary><b>${esc(b.title)}</b> <span class="muted">(${esc(b.subject || '')} · ${(b.stages || []).length} stages)</span></summary>${md(String(b.goal || ''))}<p><b>Hand in:</b></p><ul>${(b.handin || []).map((m) => `<li>${esc(m)}</li>`).join('')}</ul>` +
+        (b.stages || []).map((st) => {
+          const shownSet = st.student_nodes ? new Set(st.student_nodes.map(String)) : null;
+          const fullNodes = briefNodes(st, loadCurriculum).filter((n) => !n.missing);
+          const tries = (st.lessons || []).map((it) => resolveBriefLesson(coursePath, it, bFromRoot));
+          return `<h3>${esc(st.title)}</h3><p><b>Students will:</b> ${esc(st.you_will)}</p>` +
+            `<p><b>Evidences (${fullNodes.length} waypoint${fullNodes.length === 1 ? '' : 's'}):</b></p><ul>${fullNodes.map((n) => `<li><b>${esc(n.label)}</b> <span class="muted">(${esc(n.code)} node ${n.n}${shownSet ? (shownSet.has(`${n.code} n${n.n}`) ? ' · printed on student sheet' : ' · teacher guide') : ''})</span>: ${esc(n.criteria.join('; '))}</li>`).join('')}</ul>` +
+            (tries.length ? `<p><b>Need help? Try…</b> ${tries.map((l) => l.soon ? `<span class="muted">${esc(l.label)} (Coming later)</span>` : `<a href="${esc(l.href)}">${esc(l.label)}</a>${l.note ? ` <span class="muted">(${esc(l.note)})</span>` : ''}`).join(' · ')}</p>` : '') +
+            (st.teacher ? `<p><b>Stage note:</b> ${esc(st.teacher)}</p>` : '');
+        }).join('') +
+        (b.teacher ? md(String(b.teacher)) : '') + `</details>`).join('') + `</section>`
+    : `<section class="tunit" id="briefs"><h2>Project briefs</h2><p class="muted">Printable task sheets for assessment or extension: students make something, hand it in and explain their choices. The success criteria are the curriculum nodes' own. <a href="${bFromRoot}${coursePath}/briefs/">Open the briefs page</a></p>` +
+      bset.briefs.map((b) => `<details class="primer"><summary><b>${esc(b.title)}</b> <span class="muted">(after ${esc(b.after)})</span></summary>${md(String(b.goal || ''))}<p><b>Hand in:</b></p><ul>${(b.handin || []).map((m) => `<li>${esc(m)}</li>`).join('')}</ul>` +
+        `<p><b>Evidences:</b></p><ul>${briefNodes(b, loadCurriculum).filter((n) => !n.missing).map((n) => `<li>${esc(n.label)} <span class="muted">(${esc(n.code)} node ${n.n})</span>: ${esc(n.criteria.join('; '))}</li>`).join('')}</ul>` + (b.teacher ? md(String(b.teacher)) : '') + `</details>`).join('') + `</section>`) : '';
   // Optional course-wide teacher guidance is authored as Markdown alongside index.md.
   // Unit-specific guidance already lives in primers/<unit-id>.md, shown above.
   const courseNotesFile = join(CONTENT_ROOT, coursePath, 'teacher.md');

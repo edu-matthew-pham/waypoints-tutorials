@@ -1195,7 +1195,12 @@ Details in `roadmap/code.md` › How coding ideas build. Shared changes: `CORE_I
 
 
 ## Built (30 Oct 2026, shared inquiry chat): Humanities skills (hass)
-`content/hass/` (Preview): course `inquiry-7` (6 lessons, Asking and Finding; Sharing is planned) and `before-year-7` (Year 6 catch-ups). `tools/progressions.mjs` `CHECKED` now includes `hass`. Still to build: skeleton briefs (`kind: skeleton` in `briefs.yml`, needs cross-subject node lookup in `tools/briefs.mjs`, `briefs-view.mjs`, `validate.mjs`) and a Preview / "Coming later" display for planned lessons in a built course. Whole-site publish (new subject).
+`content/hass/` (Preview): course `inquiry-7` (9 lessons across Asking, Finding and Sharing) and `before-year-7` (Year 6 catch-ups). `tools/progressions.mjs` `CHECKED` now includes `hass`.
+- **Built later the same day (30 Oct 2026):**
+  - Four printable **Inquiry skeletons** (`content/hass/inquiry-7/skeletons.yml`, `kind: skeleton` with `stages:` and optional `student_nodes:` cap for the two-page student sheet while keeping the full `nodes:` list in `/teach/hass/inquiry-7/#briefs`).
+  - Cross-subject node lookup (`subjectOfCode`, `briefNodes(b, loadCurriculum)`) and `kind: skeleton` validation in `tools/briefs.mjs` and `tools/validate.mjs`; skeleton list and stage sheet view (`.wpt-skel-*`, printable blank lines, no write boxes) in `tools/briefs-view.mjs` and `tools/build-site.mjs`.
+  - **"Coming later" planned lessons in a built course:** a unit in `content/<course>/index.md` can list `planned: [{ title, summary }]` (rendered as `.wpt-crow-soon` rows without `data-keys` so `site/progress.js` ignores them, with `, N coming later` in the course's teacher strip and listed in `/teach/<course>/`). Used first in `content/hass/before-year-7/index.md` for *Spending choices* and *Three levels of government*.
+  - Needs a whole-site or quick publish.
 
 ## Done: grouped Subjects menu (30 Oct 2026, Matthew)
 - The Subjects dropdown had grown to 14 subjects and about 69 links. Each subject's `index.md` now has `group:` (Core: Maths, Science, English, Learning skills; Technologies: Code, How computers work, Engineering, Learning with AI, ICT skills; Humanities: Economics, History, Humanities skills, Civics, Geography). Groups show in the order they first appear (by `order:`); a subject with no `group:` falls under "More". New subjects need a `group:`.

@@ -1,0 +1,294 @@
+briefs:
+  - id: economics
+    kind: skeleton
+    subject: "Economics and Business"
+    title: "Year 7 Economics and Business inquiry"
+    goal: |
+      Use this outline to plan and carry out a class investigation into an **economic or business issue** chosen with your teacher (for example, how a local business, school service or council allocates limited resources).
+
+      Write your question, notes, data tables and final explanation in **your own book or document**, not on this page. Print this sheet or keep it open to tick off each stage as you go.
+    handin:
+      - "Your key inquiry question and a short note on what evidence will answer it."
+      - "Your selected notes and data from at least two sources, organised in a table or chart."
+      - "A comparison of at least two options for responding to the issue, showing opportunity cost, costs and benefits."
+      - "A written description and explanation that uses economics and business terms and references your sources."
+    stages:
+      - id: ask
+        title: "1. Ask an investigable question"
+        you_will: "Write a focused question about your class's economic or business issue that uses an economics concept (such as scarcity, opportunity cost, market or business purpose) and can be answered with evidence."
+        nodes: ["AC9HE7S01 n1", "AC9HE7S01 n2"]
+        lessons:
+          - "can-it-be-investigated"
+          - "build-from-a-big-idea"
+          - "right-sized"
+        teacher: "Supported on the site by the three Asking questions lessons. Help students narrow broad 'Should...' questions to a specific local decision or business case with accessible data."
+      - id: find
+        title: "2. Find and organise information"
+        you_will: "Locate at least two relevant sources or datasets, keep only the facts and figures that answer your question, and organise them into a clear table or graph."
+        nodes: ["AC9HE7S02 n1", "AC9HE7S02 n2", "AC9HE7S02 n3"]
+        lessons:
+          - "where-to-look"
+          - "keep-what-answers"
+          - "organise-it"
+        teacher: "Supported on the site by the three Finding information lessons (and ICT's Working with data if students use a spreadsheet). Supply a small starter pack of 2 to 3 local sources or datasets so class time goes into selecting and organising rather than open-ended web searching."
+      - id: interpret
+        title: "3. Make sense of the data"
+        you_will: "Read your table or graph to spot a pattern, trend or cause-and-effect relationship, and point to the exact figures that show it."
+        nodes: ["AC9HE7S03 n1", "AC9HE7S03 n2", "AC9HE7S03 n3"]
+        lessons:
+          - { title: "Economics skills: Read economic data for trends and cause and effect", soon: true }
+        teacher: "Class work (Economics data skills course is planned). Give students one multi-variable table or chart related to your topic and model the difference between describing a number and inferring an economic trend or cause-and-effect link."
+      - id: respond
+        title: "4. Weigh costs and benefits to choose a response"
+        you_will: "Propose a response to the issue, list both financial and non-financial costs and benefits of your option and an alternative, and explain why your choice comes out ahead."
+        nodes: ["AC9HE7S04 n1", "AC9HE7S04 n2"]
+        lessons:
+          - { slug: "economics/scarcity-7/putting-together", note: "applies opportunity cost to a decision" }
+          - { title: "Economics skills: Costs, benefits and choosing a response", soon: true }
+        teacher: "Class work. Lesson 4 of Scarcity and opportunity cost (`economics/scarcity-7/putting-together`) applies opportunity cost to a council decision; a dedicated skill lesson on cost-benefit tables is planned (`Coming later`). Check that students include at least one non-financial cost or benefit (such as time, fairness or environmental impact) alongside dollar figures, name the opportunity cost of their chosen option, and note that in economics weighing costs and benefits across different groups involves a value judgement."
+      - id: explain
+        title: "5. Explain what you found"
+        you_will: "Write a clear opening for your audience and an explanation that uses economics and business terms accurately and references your data and sources."
+        nodes: ["AC9HE7S05 n1", "AC9HE7S05 n2"]
+        lessons:
+          - "use-the-subjects-words"
+          - "explain-with-evidence"
+        teacher: "Supported on the site by Sharing what you found (Lessons 7 and 8; Lesson 9 is optional if students are writing a persuasive recommendation). Students write in their own book or document and use the 'Good looks like' criteria below for self- and peer-checking."
+    teacher: |
+      **When to use this skeleton:** In the second half of a Year 7 Economics and Business unit (after *Scarcity and opportunity cost* or *Types of businesses*), over 2 to 4 lessons of class inquiry time.
+
+      **What is on the site vs class work:** Stages 1, 2 and 5 are supported directly by the shared *Investigate like a humanities expert* lessons (`hass/inquiry-7`). Stages 3 and 4 are class-led using your local case and data (`economics/scarcity-7/putting-together` applies opportunity cost to a decision; the dedicated cost-benefit skill lesson is planned as *Coming later*).
+
+      **First Nations note:** Where your class inquiry investigates First Nations Australian businesses, exchange networks or sustainable resource management (`AC9HE7S02`, `AC9HE7K01`–`AC9HE7K03`), start from ACARA's elaborations and use local, community-approved material or a First Nations business's own published words.
+
+  - id: civics
+    kind: skeleton
+    subject: "Civics and Citizenship"
+    title: "Year 7 Civics and Citizenship inquiry"
+    goal: |
+      Use this outline to plan and carry out a class investigation into a **civic, legal or community issue** chosen with your teacher (for example, how a council rule, parliamentary check or community campaign works in practice).
+
+      Write your question, source notes, comparison of options and final argument in **your own book or document**, not on this page. Print this sheet or keep it open to tick off each stage as you go.
+    handin:
+      - "Your focused civic inquiry question and sub-questions."
+      - "Your organised source notes showing who made each source and what perspective it represents."
+      - "A comparison of at least two lawful ways citizens or institutions could respond, noting strengths and trade-offs."
+      - "A written explanation and civic argument that uses civics terms accurately and references your sources."
+    stages:
+      - id: ask
+        title: "1. Ask a focused civic question"
+        you_will: "Write an open, testable question about a civic institution, rule or current issue that uses civics concepts (such as representation, rights, responsibility or fairness)."
+        nodes: ["AC9HC7S01 n1", "AC9HC7S01 n2", "AC9HC7S01 n3"]
+        lessons:
+          - "can-it-be-investigated"
+          - "build-from-a-big-idea"
+          - "right-sized"
+        teacher: "Supported on the site by the three Asking questions lessons (Lesson 2's wider step practices turning a current news event into a neutral civic question for `AC9HC7S01 n3`). Help students turn a slogan into a question that evidence can test."
+      - id: find
+        title: "2. Find and group civic information"
+        you_will: "Locate relevant civic sources (such as official factsheets, committee submissions or news reports), keep what answers your sub-questions, and group your notes by idea."
+        nodes: ["AC9HC7S02 n1", "AC9HC7S02 n2", "AC9HC7S02 n3"]
+        lessons:
+          - "where-to-look"
+          - "keep-what-answers"
+          - "organise-it"
+        teacher: "Supported on the site by the three Finding information lessons. Provide a small curated pack of 2 to 3 contrasting civic sources so students spend their time selecting and grouping rather than cold-searching."
+      - id: perspectives
+        title: "3. Compare perspectives on the issue"
+        you_will: "Identify the different perspectives in your sources, explain why groups hold different views on the issue, and note any challenges or disagreements they raise."
+        nodes: ["AC9HC7S03 n1", "AC9HC7S03 n2", "AC9HC7S03 n3"]
+        lessons:
+          - { title: "Civics skills: Analysing perspectives and challenges in civic sources", soon: true }
+        teacher: "Class work (Civics perspectives skill lesson is planned). Ask students to identify what each group values or stands to gain or lose, rather than simply labelling a source 'biased'."
+      - id: participate
+        title: "4. Choose a way to take part"
+        you_will: "Compare at least two democratic participation methods for your issue, weigh their strengths and trade-offs, and choose a strategy that fits your civic goal."
+        nodes: ["AC9HC7S04 n1", "AC9HC7S04 n2", "AC9HC7S04 n3"]
+        lessons:
+          - { slug: "civics/democracy-7/ways-to-take-part", note: "compares voting, petitions, submissions, community groups and peaceful protest" }
+          - { slug: "civics/democracy-7/formal-and-active-citizenship", note: "distinguishes legal citizenship status from active participation" }
+          - { title: "Civics skills: Choosing a participation strategy", soon: true }
+        teacher: "Supported by Lessons 3 and 4 of Freedoms and taking part (`civics/democracy-7`), with a dedicated strategy-selection lesson planned (`Coming later`). Discuss how matching a method to the right level of government and audience matters more than picking the loudest action."
+      - id: argue
+        title: "5. Explain and argue your position"
+        you_will: "Write a clear explanation and civic argument that states your position, supports it with at least two distinct evidence-backed points, and uses civics terms accurately."
+        nodes: ["AC9HC7S05 n1", "AC9HC7S05 n2", "AC9HC7S05 n3"]
+        lessons:
+          - "use-the-subjects-words"
+          - "explain-with-evidence"
+          - "make-an-argument"
+        teacher: "Supported on the site by all three Sharing what you found lessons. Check that each student names the specific institution or level of government that has the power to act on their proposal."
+    teacher: |
+      **When to use this skeleton:** Alongside *How Australia is governed* (`civics/government-7`) or *Freedoms and taking part* (`civics/democracy-7`), over 2 to 4 lessons of class inquiry time.
+
+      **What is on the site vs class work:** Stages 1, 2 and 5 are supported by the shared *Investigate like a humanities expert* lessons, and Stage 4 connects directly to `civics/democracy-7`. Stage 3 is class-led with your chosen local or national case.
+
+      **First Nations note:** Where a class topic involves First Nations Australians' perspectives on civic, legal or constitutional questions (`AC9HC7S02`, `AC9HC7S03`), follow ACARA's elaborations on culturally responsive protocols and use local, community-approved sources rather than asking students to cold-contact community organisations.
+
+  - id: geography
+    kind: skeleton
+    subject: "Geography"
+    title: "Year 7 Geography inquiry"
+    goal: |
+      Use this outline to plan and carry out a geographical investigation into a **place, water resource or liveability challenge** chosen with your teacher.
+
+      Write your questions, fieldwork or secondary data tables, maps and final explanation in **your own book or document**, not on this page. Print this sheet or keep it open to tick off each stage as you go.
+    handin:
+      - "Your geographical inquiry questions and plan for collecting data."
+      - "Your recorded primary or secondary data and a geographical representation (map, graph or table)."
+      - "Your analysis of spatial patterns, impacts and proposed strategies for action."
+      - "A written geographical explanation that uses geographical concepts, terms and evidence."
+    stages:
+      - id: ask
+        title: "1. Ask and plan a geographical inquiry"
+        you_will: "Write a geographical question about where a phenomenon happens, how it changes a place, or how it can be managed, and plan what data you will need."
+        nodes: ["AC9HG7S01 n1", "AC9HG7S01 n2", "AC9HG7S01 n3"]
+        lessons:
+          - "can-it-be-investigated"
+          - "build-from-a-big-idea"
+          - "right-sized"
+        teacher: "Supported on the site by the three Asking questions lessons. Check that students' questions name a specific place, spatial distribution or environmental/human connection."
+      - id: collect
+        title: "2. Collect and represent data (fieldwork and secondary)"
+        you_will: "Collect primary fieldwork observations or secondary data (such as maps, climate tables or ABS statistics) and represent them in an appropriate geographical format."
+        nodes: ["AC9HG7S02 n1", "AC9HG7S02 n2", "AC9HG7S02 n3", "AC9HG7S02 n4"]
+        student_nodes: ["AC9HG7S02 n2", "AC9HG7S02 n3", "AC9HG7S02 n4"]
+        lessons:
+          - "where-to-look"
+          - "keep-what-answers"
+          - "organise-it"
+          - { title: "Geography skills: Fieldwork and maps", soon: true }
+        teacher: "The student sheet prints the 3 culminating nodes (`n2`–`n4`, 6 tick-boxes) so the six-stage sheet fits on two pages; check primary fieldwork methods (`AC9HG7S02 n1`) alongside them when your class collects primary data. Supported for secondary research and tables by Finding information (`hass/inquiry-7`); fieldwork and mapping conventions (BOLTSS) are class work (`Coming later`)."
+      - id: analyse
+        title: "3. Analyse patterns, trends and relationships"
+        you_will: "Compare your data and maps to identify similarities and differences, describe spatial patterns and trends, and infer geographical relationships."
+        nodes: ["AC9HG7S03 n1", "AC9HG7S03 n2", "AC9HG7S03 n3", "AC9HG7S03 n4"]
+        student_nodes: ["AC9HG7S03 n2", "AC9HG7S03 n3", "AC9HG7S03 n4"]
+        lessons:
+          - { title: "Geography skills: Interpreting geographical data and patterns", soon: true }
+        teacher: "The student sheet prints `n2`–`n4` (patterns, relationships and integrated analysis); check basic comparison of similarities and differences (`AC9HG7S03 n1`) as students read their tables and maps. Model naming where a pattern holds and any exception (anomaly)."
+      - id: conclude
+        title: "4. Draw geographical conclusions"
+        you_will: "Use geographical concepts (such as place, interconnection, environment or sustainability) to organise your findings and explain impacts on people, places and environments."
+        nodes: ["AC9HG7S04 n1", "AC9HG7S04 n2", "AC9HG7S04 n3"]
+        lessons:
+          - { slug: "geography/water-7/classify-connect-change", note: "joins resource classification, spatial connection and environmental/human effects" }
+          - { title: "Geography skills: Drawing conclusions about impacts", soon: true }
+        teacher: "Lesson 5 of Water as a resource (`geography/water-7/classify-connect-change`) models joining classification, connection and change into a conclusion. Check that students' conclusions directly answer their Stage 1 question."
+      - id: act
+        title: "5. Propose strategies for action"
+        you_will: "Propose an individual or collective strategy to respond to the geographical challenge, explain its environmental, economic or social impacts, and note how values shape the choice."
+        nodes: ["AC9HG7S05 n1", "AC9HG7S05 n2", "AC9HG7S05 n3", "AC9HG7S05 n4"]
+        student_nodes: ["AC9HG7S05 n2", "AC9HG7S05 n3", "AC9HG7S05 n4"]
+        lessons:
+          - { title: "Geography skills: Strategies for action and weighing values", soon: true }
+        teacher: "The student sheet prints `n2`–`n4` (collective action, values/impacts and integrated strategy); check individual action options (`AC9HG7S05 n1`) alongside them. Remind students that environmental, economic and social priorities can pull in different directions, so choosing a 'best' strategy depends on how a community weights those values."
+      - id: communicate
+        title: "6. Communicate your geographical explanation"
+        you_will: "Write a geographical description and explanation that uses geographical concepts, terms, research evidence and representations to answer your question."
+        nodes: ["AC9HG7S06 n1", "AC9HG7S06 n2", "AC9HG7S06 n3", "AC9HG7S06 n4"]
+        student_nodes: ["AC9HG7S06 n2", "AC9HG7S06 n3", "AC9HG7S06 n4"]
+        lessons:
+          - "use-the-subjects-words"
+          - "explain-with-evidence"
+          - { title: "Geography skills: Communicating with maps and representations", soon: true }
+        teacher: "The student sheet prints `n2`–`n4` (evidence-backed explanations, representations and complete response); check accurate geographical terminology and concepts (`AC9HG7S06 n1`, taught in `use-the-subjects-words`) throughout."
+    teacher: |
+      **When to use this skeleton:** Alongside *Water as a resource* (`geography/water-7`) or a Year 7 *Place and liveability* unit, over 3 to 5 lessons of class/field inquiry time.
+
+      **What is on the site vs class work:** Stages 1, 2 (secondary research and organising) and 6 (terminology and evidence-based explanation) are supported by `hass/inquiry-7`, and Stage 4 connects to `geography/water-7/classify-connect-change`. Fieldwork, mapping conventions, spatial pattern analysis and action strategies are class-led (`Coming later` on the site).
+
+      **First Nations note:** Where your class inquiry examines First Nations Australians' Custodianship of Country/Place, water management or liveability (`AC9HG7S02`, `AC9HG7K04`, `AC9HG7K06`), start from ACARA's elaborations and use local, community-approved sources and protocols selected with your school or state curriculum authority.
+
+  - id: history
+    kind: skeleton
+    subject: "History"
+    title: "Year 7 History inquiry"
+    goal: |
+      Use this outline to plan and carry out a historical investigation into an **ancient society, event, site or historical mystery** from the depth study you are doing with your class.
+
+      Write your questions, source notes, usefulness checks and final historical argument in **your own book or document**, not on this page. Print this sheet or keep it open to tick off each stage as you go.
+    handin:
+      - "Your historical inquiry questions and a list of the primary and secondary sources you located."
+      - "Your source analysis notes covering origin, purpose, accuracy, usefulness and perspectives."
+      - "Your notes on causes, continuity and change, or competing historical interpretations."
+      - "A written historical description, explanation or argument that uses historical terms and references your sources."
+    stages:
+      - id: ask
+        title: "1. Ask historical questions"
+        you_will: "Write an open historical question about how or why something happened, or how we know about it, using historical concepts and scoped to the evidence available."
+        nodes: ["AC9HH7S01 n1", "AC9HH7S01 n2", "AC9HH7S01 n3"]
+        lessons:
+          - "can-it-be-investigated"
+          - "build-from-a-big-idea"
+          - "right-sized"
+        teacher: "Supported on the site by the three Asking questions lessons. Help students move from simple fact-lookup questions ('When was X built?') to historical questions about purpose, change, significance or evidence."
+      - id: locate
+        title: "2. Locate and sort primary and secondary sources"
+        you_will: "Find relevant primary sources (made at the time) and secondary sources (made later), keep what answers your question, and organise your source notes clearly."
+        nodes: ["AC9HH7S02 n1", "AC9HH7S02 n2", "AC9HH7S02 n3"]
+        lessons:
+          - { slug: "history/sources-7/primary-or-secondary", note: "distinguishes primary from secondary sources for your question" }
+          - "where-to-look"
+          - "organise-it"
+        teacher: "Supported on the site by `history/sources-7/primary-or-secondary` and the Finding information lessons. Provide a curated source booklet (artefact photos, translated extracts and a modern historian's summary) suited to your depth study."
+      - id: evaluate
+        title: "3. Question the sources (origin, purpose, usefulness and perspectives)"
+        you_will: "Interrogate each source's origin, context and purpose, test its accuracy and usefulness for your specific question, and explain whose perspective is shown or missing."
+        nodes:
+          - "AC9HH7S03 n1"
+          - "AC9HH7S03 n2"
+          - "AC9HH7S03 n3"
+          - "AC9HH7S04 n1"
+          - "AC9HH7S04 n2"
+          - "AC9HH7S04 n3"
+          - "AC9HH7S06 n1"
+          - "AC9HH7S06 n2"
+          - "AC9HH7S06 n3"
+        student_nodes:
+          - "AC9HH7S03 n3"
+          - "AC9HH7S04 n3"
+          - "AC9HH7S06 n2"
+        lessons:
+          - "history/sources-7/origin-and-content"
+          - "history/sources-7/context-and-purpose"
+          - "history/sources-7/what-can-it-tell-us"
+          - "history/usefulness-7/fact-opinion-and-accuracy"
+          - "history/usefulness-7/accurate-versus-useful"
+          - "history/usefulness-7/weighing-a-source"
+          - { title: "History skills: Past perspectives in sources", soon: true }
+        teacher: "The student sheet prints the 3 culminating nodes (`AC9HH7S03 n3`, `AC9HH7S04 n3`, `AC9HH7S06 n2`, 9 tick-boxes) so the sheet fits on two pages, while all 9 nodes across `S03`, `S04` and `S06` are listed above in this guide. Supported on the site by both `history/sources-7` and `history/usefulness-7`; perspectives (`AC9HH7S06`) is planned (`Coming later`)."
+      - id: interpret
+        title: "4. Weigh causes, continuity and interpretations"
+        you_will: "Place events in chronological sequence, explain causes, effects and what changed or stayed the same, and compare different historical interpretations of the evidence."
+        nodes:
+          - "AC9HH7S05 n1"
+          - "AC9HH7S05 n2"
+          - "AC9HH7S05 n3"
+          - "AC9HH7S07 n1"
+          - "AC9HH7S07 n2"
+          - "AC9HH7S07 n3"
+        student_nodes:
+          - "AC9HH7S05 n2"
+          - "AC9HH7S05 n3"
+          - "AC9HH7S07 n3"
+        lessons:
+          - { slug: "history/evidence-7/reading-the-layers", note: "uses stratigraphy and physical layers to sequence the past" }
+          - { slug: "history/evidence-7/dna-and-dating", note: "checks how dating methods establish chronology" }
+          - { title: "History skills: Causes, continuity and historical interpretations", soon: true }
+        teacher: "The student sheet prints the 3 culminating nodes (`AC9HH7S05 n2`, `AC9HH7S05 n3`, `AC9HH7S07 n3`, 9 tick-boxes); all 6 nodes across `S05` and `S07` are listed above. When teaching `AC9HH7S07`, remind students that a historical interpretation is a reasoned claim built from surviving evidence, not a settled fact or a random opinion — two historians can weigh fragmentary evidence differently."
+      - id: argue
+        title: "5. Build a historical argument"
+        you_will: "Write a historical description, explanation or argument that uses chronological and historical terms accurately, cites primary and secondary sources, and addresses a counter-consideration."
+        nodes: ["AC9HH7S08 n1", "AC9HH7S08 n2", "AC9HH7S08 n3"]
+        lessons:
+          - "use-the-subjects-words"
+          - "explain-with-evidence"
+          - "make-an-argument"
+        teacher: "Supported on the site by all three Sharing what you found lessons (`hass/inquiry-7`). Check that students quote or cite specific details from their Stage 3 source evaluations and acknowledge where the surviving evidence is incomplete."
+    teacher: |
+      **When to use this skeleton:** Alongside your class's ancient world depth study and the *Source origin and purpose* (`history/sources-7`), *Source usefulness* (`history/usefulness-7`) and *How we know* (`history/evidence-7`) courses.
+
+      **What is on the site vs class work:** Stages 1, 2, 3 (origin, purpose, accuracy and usefulness) and 5 are supported directly by `hass/inquiry-7`, `history/sources-7` and `history/usefulness-7`. Past perspectives (`S06`) and multi-causal/interpretive analysis (`S05`, `S07`) are class-led with your depth-study sources (`Coming later` on the site).
+
+      **First Nations note:** When students use this skeleton for the Deep Time History of Australia depth study (`AC9HH7K03`–`K07`, `AC9HH7S02`, `AC9HH7S06`), follow ACARA's elaborations on ethical protocols, Cultural ownership/ICIP and First Nations perspectives, and use community-approved sources and guidance from your school or state curriculum authority.

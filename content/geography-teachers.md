@@ -28,4 +28,4 @@ These are plans, not promises. Water in Australia (AC9HG7K02), the values of wat
 
 ## For you
 
-Questions, finding and sharing skills are shared with the other humanities subjects: see [Humanities skills](../humanities-teachers/). Each lesson's **Teacher guide** link is at the bottom of the course page.
+Questions, finding and sharing skills are shared with the other humanities subjects: see [Humanities skills](../humanities-teachers/) and the printable [Year 7 Geography inquiry skeleton](../hass/inquiry-7/briefs/geography/). Each lesson's **Teacher guide** link is at the bottom of the course page.

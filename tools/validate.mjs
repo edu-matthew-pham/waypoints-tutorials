@@ -29,12 +29,24 @@ for (const f of readdirSync('snippets').filter((n) => n.endsWith('.json'))) {
 // Units: a lesson's unit must be one its course lists (index.md units:); in a course with units, every lesson needs one.
 import { loadDirMeta, CONTENT_ROOT } from './lesson.mjs';
 import { join as pjoin } from 'node:path';
+const seenCourses = new Set();
 for (const l of lessons) {
   const course = l.slug.split('/').slice(0, -1).join('/');
   const units = loadDirMeta(pjoin(CONTENT_ROOT, course)).units;
   const ids = Array.isArray(units) ? units.map((u) => u.id) : [];
   if (l.unit && !ids.includes(l.unit)) { bad++; console.error(`✗ ${l.slug} › frontmatter: unit "${l.unit}" is not in ${course}/index.md units (${ids.join(', ') || 'none'})`); }
   else if (!l.unit && ids.length) console.warn(`⚠ ${l.slug} › frontmatter: no unit; it will show under "More lessons"`);
+  if (!seenCourses.has(course) && Array.isArray(units)) {
+    seenCourses.add(course);
+    for (const u of units) {
+      if (u.planned === undefined) continue;
+      if (!Array.isArray(u.planned)) { bad++; console.error(`✗ ${course}/index.md › unit "${u.id}": planned must be a list`); continue; }
+      for (const p of u.planned) {
+        const ok = (typeof p === 'string' && p.trim()) || (p && typeof p === 'object' && typeof p.title === 'string' && p.title.trim());
+        if (!ok) { bad++; console.error(`✗ ${course}/index.md › unit "${u.id}": each planned item needs a title`); }
+      }
+    }
+  }
 }
 // Maths cards: every card's maths parses, and its unit is one of its course's units.
 import { loadAllMathsCards, validateMathsCards } from './maths-cards.mjs';
@@ -250,18 +262,18 @@ else console.log('✓ error tasks: every planted error names its fault and an on
   for (const s of sets) n += s.projects.length;
   if (sets.length && !e) console.log(`✓ projects: ${n} briefs in ${sets.length} courses; every example uses the skills its brief lists`);
 }
-// Project briefs without code (content/<course>/briefs.yml): each names a lesson, 1 to 4 hand-ins, 2 to 4 milestones, and
-// curriculum nodes that exist (their criteria become "Show that you can").
+// Project briefs without code (content/<course>/briefs.yml and skeletons.yml): each names lessons and
+// curriculum nodes that exist (their criteria become "Show that you can" or stage criteria).
 {
   const { loadBriefs, checkBriefs } = await import('./briefs.mjs');
   const { loadCurriculum } = await import('./curriculum-map.mjs');
   const sets = loadBriefs(CONTENT_ROOT);
   const course = (l) => l.slug.split('/').slice(0, -1).join('/');
   let n = 0, e = 0;
-  for (const s of sets) for (const r of checkBriefs(s, (c) => lessons.filter((l) => course(l) === c), loadCurriculum(s.course.split('/')[0]))) {
+  for (const s of sets) for (const r of checkBriefs(s, (c) => lessons.filter((l) => course(l) === c), loadCurriculum, lessons)) {
     if (r.level === 'error') { bad++; e++; console.error('✗ ' + r.msg); } else console.warn('⚠ ' + r.msg);
   }
   for (const s of sets) n += s.briefs.length;
-  if (sets.length && !e) console.log(`✓ briefs: ${n} project briefs in ${sets.length} courses; every node and lesson they name exists`);
+  if (sets.length && !e) console.log(`✓ briefs: ${n} project briefs/skeletons in ${sets.length} courses; every node and lesson they name exists`);
 }
 process.exit(bad ? 1 : 0);

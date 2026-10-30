@@ -25,4 +25,4 @@ These are plans, not promises. The rest of the Year 7 knowledge standards — en
 
 ## For you
 
-Questions, finding and sharing skills are shared with the other humanities subjects: see [Humanities skills](../humanities-teachers/). Each lesson's **Teacher guide** link is at the bottom of the course page.
+Questions, finding and sharing skills are shared with the other humanities subjects: see [Humanities skills](../humanities-teachers/) and the printable [Year 7 Economics and Business inquiry skeleton](../hass/inquiry-7/briefs/economics/). Each lesson's **Teacher guide** link is at the bottom of the course page.
