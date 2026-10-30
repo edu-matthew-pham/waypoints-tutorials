@@ -66,6 +66,8 @@ Also agreed: no blanket rules. Each element (board, tick, example, scaffold) is 
 
 ## Write boxes removed (27 Oct 2026, Matthew's decision)
 
+*Scope (30 Oct 2026, Matthew): this removed counted write boxes that passed or failed a student's writing. It is not a rule against writing; the site just doesn't mark or send free writing.*
+
 The site never takes, stores or checks a student's own writing. 43 Make or Practise steps across the seven courses used a write box with counted pass conditions; each is now a direction (brief, criteria, an example, a partner check) and a `reflect` tick, and its `make`/`make-solution` regions are gone. Cue-card boards stay (a tool, not a check). Open: which `tier: typical` own-writing ticks still add something (to discuss with Matthew); a light per-standard overview (student paragraph plus per-node points) for writing-heavy nodes is being designed with him.
 
 ## Master plan (27 Oct 2026, draft for Matthew's review)
