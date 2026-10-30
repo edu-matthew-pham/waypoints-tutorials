@@ -23,12 +23,11 @@ const overflow = async (page) => {
 };
 try {
   for (let n = 0; n < 40; n++) { try { if ((await fetch(root)).ok) break; } catch { /* starting */ } await delay(250); }
-  // Static checks on the built files: every History node has a page; no student page links to them.
+  // Static checks on the built files: every History node has a page. (History gained a student section on 30 Oct 2026, so the old "no dist/history" check was removed.)
   const cur = JSON.parse(readFileSync('data/curriculum/history.json', 'utf8'));
   const nodes = cur.descriptors.filter((d) => d.year >= 7).flatMap((d) => d.nodes.map((n) => `${d.code}/n${n.n}`));
   assert.ok(nodes.length > 300, 'History nodes imported');
   for (const p of nodes) assert.ok(existsSync(`dist/teach/curriculum/history/${p}/index.html`), `page for ${p}`);
-  assert.ok(!existsSync('dist/history'), 'no student-facing History section');
 
   browser = await chromium.launch({ headless: true, executablePath: process.env.CHROME_PATH || '/usr/bin/google-chrome', args: ['--no-sandbox', '--disable-dev-shm-usage'] });
   const context = await browser.newContext({ viewport: { width: 1280, height: 1000 }, permissions: ['clipboard-read', 'clipboard-write'] });
