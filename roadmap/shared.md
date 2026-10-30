@@ -1208,7 +1208,7 @@ Details in `roadmap/code.md` › How coding ideas build. Shared changes: `CORE_I
 `content/hass/` (Preview): course `inquiry-7` (9 lessons across Asking, Finding and Sharing) and `before-year-7` (Year 6 catch-ups). `tools/progressions.mjs` `CHECKED` now includes `hass`.
 - **Built later the same day (30 Oct 2026):**
   - Four printable **Inquiry skeletons** (`content/hass/inquiry-7/skeletons.yml`, `kind: skeleton` with `stages:` and optional `student_nodes:` cap for the two-page student sheet while keeping the full `nodes:` list in `/teach/hass/inquiry-7/#briefs`).
-  - Cross-subject node lookup (`subjectOfCode`, `briefNodes(b, loadCurriculum)`) and `kind: skeleton` validation in `tools/briefs.mjs` and `tools/validate.mjs`; skeleton list and stage sheet view (`.wpt-skel-*`, printable blank lines, no write boxes) in `tools/briefs-view.mjs` and `tools/build-site.mjs`.
+  - Cross-subject node lookup (`subjectOfCode`, `briefNodes(b, loadCurriculum)`) and `kind: skeleton` validation in `tools/briefs.mjs` and `tools/validate.mjs`; skeleton list and stage sheet view (`.wpt-skel-*`, no write boxes or custom blank-lines box on the page; Prepare Print `skeleton-<id>.md` offered in `/teach/<course>/#briefs`) in `tools/briefs-view.mjs` and `tools/build-site.mjs`.
   - **"Coming later" planned lessons in a built course:** a unit in `content/<course>/index.md` can list `planned: [{ title, summary }]` (rendered as `.wpt-crow-soon` rows without `data-keys` so `site/progress.js` ignores them, with `, N coming later` in the course's teacher strip and listed in `/teach/<course>/`). Used first in `content/hass/before-year-7/index.md` for *Spending choices* and *Three levels of government*.
   - Needs a whole-site or quick publish.
 

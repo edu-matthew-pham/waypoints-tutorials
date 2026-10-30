@@ -1179,19 +1179,41 @@ for (const coursePath of teachCourses) {
       p.parts.filter((x) => x.exampleCode).map((x) => codeBlock(highlightCode, x.exampleCode, HL[x.language] || 'python', `One possible solution${x.title ? `: ${x.title}` : ''}`)).join('') + `</details>`).join('') + `</section>` : '';
   // Project briefs or Inquiry skeletons (tools/briefs.mjs): each brief's teacher notes and the criteria it evidences, for the teacher.
   const bset = BRIEFS.get(coursePath), bFromRoot = '../'.repeat(coursePath.split('/').length + 1);
+  const skeletonPrintMd = (b) => {
+    const yStr = (s) => JSON.stringify(String(s || ''));
+    const tnote = (t) => (t && t.trim() ? `\n\n:::teacher-note\n\n${t.trim()}\n\n:::\n` : '');
+    const out = [
+      `---\ntitle: ${yStr(b.title)}\nsubtitle: ${yStr(`${node.title} · ${b.subject || 'Inquiry skeleton'}`)}\n---\n\n# ${b.title}\n\n**Name:** {{field-24}} **Date:** {{field-15}} **Class:** {{field-15}}\n\n${String(b.goal || '').trim()}\n\n**Topic set by my teacher:** {{field-30}}\n\n**My key inquiry question:**\n\n{{lines-2}}`,
+    ];
+    if (b.teacher) out.push(tnote(String(b.teacher)));
+    for (const st of b.stages || []) {
+      const sNodes = briefNodes(st, loadCurriculum, st.student_nodes ? 'student_nodes' : 'nodes').filter((n) => !n.missing);
+      const crit = sNodes.map((n) => `**${n.label}**\n\n${(n.criteria || []).map((c) => `☐ ${c}`).join('\n\n')}`).join('\n\n');
+      const tries = (st.lessons || []).map((it) => resolveBriefLesson(coursePath, it, '')).map((l) => `- ${l.label}${l.soon ? ' *(Coming later)*' : l.note ? ` *(${l.note})*` : ''}`).join('\n');
+      out.push(`## ${st.title}\n\n**You will:** ${st.you_will}${crit ? `\n\n### Good looks like\n\n${crit}` : ''}${tries ? `\n\n**Need help? Try…**\n\n${tries}` : ''}` + tnote(st.teacher || ''));
+    }
+    if ((b.handin || []).length) out.push(`## Hand in\n\n${b.handin.map((h) => `☐ ${h}`).join('\n\n')}`);
+    return out.join('\n\n') + '\n';
+  };
   const briefsGuide = bset ? (bset.kind === 'skeleton'
-    ? `<section class="tunit" id="briefs"><h2>Inquiry skeletons</h2><p class="muted">Printable outlines for a full class investigation in each humanities subject. Where a stage covers many waypoints, the student sheet prints 2 to 3 culminating waypoints so it fits on two pages; the full waypoint list for every stage is shown below so no curriculum coverage is hidden. <a href="${bFromRoot}${coursePath}/briefs/">Open the inquiry skeletons page</a></p>` +
-      bset.briefs.map((b) => `<details class="primer"><summary><b>${esc(b.title)}</b> <span class="muted">(${esc(b.subject || '')} · ${(b.stages || []).length} stages)</span></summary>${md(String(b.goal || ''))}<p><b>Hand in:</b></p><ul>${(b.handin || []).map((m) => `<li>${esc(m)}</li>`).join('')}</ul>` +
-        (b.stages || []).map((st) => {
-          const shownSet = st.student_nodes ? new Set(st.student_nodes.map(String)) : null;
-          const fullNodes = briefNodes(st, loadCurriculum).filter((n) => !n.missing);
-          const tries = (st.lessons || []).map((it) => resolveBriefLesson(coursePath, it, bFromRoot));
-          return `<h3>${esc(st.title)}</h3><p><b>Students will:</b> ${esc(st.you_will)}</p>` +
-            `<p><b>Evidences (${fullNodes.length} waypoint${fullNodes.length === 1 ? '' : 's'}):</b></p><ul>${fullNodes.map((n) => `<li><b>${esc(n.label)}</b> <span class="muted">(${esc(n.code)} node ${n.n}${shownSet ? (shownSet.has(`${n.code} n${n.n}`) ? ' · printed on student sheet' : ' · teacher guide') : ''})</span>: ${esc(n.criteria.join('; '))}</li>`).join('')}</ul>` +
-            (tries.length ? `<p><b>Need help? Try…</b> ${tries.map((l) => l.soon ? `<span class="muted">${esc(l.label)} (Coming later)</span>` : `<a href="${esc(l.href)}">${esc(l.label)}</a>${l.note ? ` <span class="muted">(${esc(l.note)})</span>` : ''}`).join(' · ')}</p>` : '') +
-            (st.teacher ? `<p><b>Stage note:</b> ${esc(st.teacher)}</p>` : '');
-        }).join('') +
-        (b.teacher ? md(String(b.teacher)) : '') + `</details>`).join('') + `</section>`
+    ? `<section class="tunit" id="briefs"><h2>Inquiry skeletons</h2><p class="muted">Outlines for a full class investigation in each humanities subject. Where a stage covers many waypoints, the student page shows 2 to 3 culminating waypoints so it stays concise; the full waypoint list for every stage is shown below so no curriculum coverage is hidden. <a href="${bFromRoot}${coursePath}/briefs/">Open the inquiry skeletons page</a></p>` +
+      bset.briefs.map((b) => {
+        const mdName = `skeleton-${b.id}.md`, mdUrl = `${SITE_URL}/teach/${coursePath}/${mdName}`;
+        writeFileSync(join(courseDir, mdName), skeletonPrintMd(b));
+        return `<details class="primer"><summary><b>${esc(b.title)}</b> <span class="muted">(${esc(b.subject || '')} · ${(b.stages || []).length} stages)</span></summary>` +
+          `<p><b>Printable sheet:</b> <a href="${esc(prepareLink('print', mdUrl))}" target="_blank" rel="noopener">Open in Print</a> · <a href="${esc(mdName)}" download>Markdown</a> <button type="button" class="copyurl" data-url="${esc(mdUrl)}">Copy address for Prepare</button> · <a href="${bFromRoot}${coursePath}/briefs/${esc(b.id)}/">Student page</a></p>` +
+          `${md(String(b.goal || ''))}<p><b>Hand in:</b></p><ul>${(b.handin || []).map((m) => `<li>${esc(m)}</li>`).join('')}</ul>` +
+          (b.stages || []).map((st) => {
+            const shownSet = st.student_nodes ? new Set(st.student_nodes.map(String)) : null;
+            const fullNodes = briefNodes(st, loadCurriculum).filter((n) => !n.missing);
+            const tries = (st.lessons || []).map((it) => resolveBriefLesson(coursePath, it, bFromRoot));
+            return `<h3>${esc(st.title)}</h3><p><b>Students will:</b> ${esc(st.you_will)}</p>` +
+              `<p><b>Evidences (${fullNodes.length} waypoint${fullNodes.length === 1 ? '' : 's'}):</b></p><ul>${fullNodes.map((n) => `<li><b>${esc(n.label)}</b> <span class="muted">(${esc(n.code)} node ${n.n}${shownSet ? (shownSet.has(`${n.code} n${n.n}`) ? ' · printed on student sheet' : ' · teacher guide') : ''})</span>: ${esc(n.criteria.join('; '))}</li>`).join('')}</ul>` +
+              (tries.length ? `<p><b>Need help? Try…</b> ${tries.map((l) => l.soon ? `<span class="muted">${esc(l.label)} (Coming later)</span>` : `<a href="${esc(l.href)}">${esc(l.label)}</a>${l.note ? ` <span class="muted">(${esc(l.note)})</span>` : ''}`).join(' · ')}</p>` : '') +
+              (st.teacher ? `<p><b>Stage note:</b> ${esc(st.teacher)}</p>` : '');
+          }).join('') +
+          (b.teacher ? md(String(b.teacher)) : '') + `</details>`;
+      }).join('') + `</section>`
     : `<section class="tunit" id="briefs"><h2>Project briefs</h2><p class="muted">Printable task sheets for assessment or extension: students make something, hand it in and explain their choices. The success criteria are the curriculum nodes' own. <a href="${bFromRoot}${coursePath}/briefs/">Open the briefs page</a></p>` +
       bset.briefs.map((b) => `<details class="primer"><summary><b>${esc(b.title)}</b> <span class="muted">(after ${esc(b.after)})</span></summary>${md(String(b.goal || ''))}<p><b>Hand in:</b></p><ul>${(b.handin || []).map((m) => `<li>${esc(m)}</li>`).join('')}</ul>` +
         `<p><b>Evidences:</b></p><ul>${briefNodes(b, loadCurriculum).filter((n) => !n.missing).map((n) => `<li>${esc(n.label)} <span class="muted">(${esc(n.code)} node ${n.n})</span>: ${esc(n.criteria.join('; '))}</li>`).join('')}</ul>` + (b.teacher ? md(String(b.teacher)) : '') + `</details>`).join('') + `</section>`) : '';
