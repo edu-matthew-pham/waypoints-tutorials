@@ -122,6 +122,16 @@ Why: Create (the editor) is complex and overwhelming for a teacher who only want
 - **Open questions for Matthew:** one prompt for every lesson or a variant per subject (maths and science boards, code playgrounds); whether very long lessons need a "paste the lesson separately" note; wording on the card; whether the prompt should be offered in the teacher guide and on Prepare as well.
 - **Needs when built:** a copy button and a prompt template (a pure function beside `lesson-source.mjs`, so Create and the lesson page share it), a test that the prompt contains every rule line, and a whole-site publish (every lesson page changes). Related: roadmap/shared.md state of play, "Make your own version" (25 Oct 2026, built).
 
+## Proposed (30 Oct 2026, Matthew; audit later, nothing built): deck "We are learning to" line and lesson summaries
+
+Found on the Economics `scarcity-7/needs-and-wants` deck, which opened "We are learning to a need is something you must have...".
+
+- **Cause:** the Today slide (`tools/teach.mjs`, around line 233) writes `**We are learning to**` plus the lesson's `summary:` with the first letter lowercased. That only works when the summary is one short verb-first sentence. Economics summaries are 3-5 sentence descriptions that start with a noun or a definition, so every one of them reads wrongly. Other new humanities, AI and English lessons may too. The summary is fine as a search and card description; the deck misuses it.
+- **Rule to add (AUTHORING, and the humanities roadmaps' lesson notes):** `summary:` is a description for cards and search. The deck's learning goal is a separate field, for example `learning:` in `teacher.yml` (one verb-first sentence, "tell needs from wants and explain why wants never run out").
+- **Audit:** list every lesson whose summary is not verb-first or runs past about one sentence, course by course (Economics, History, Civics, Geography first; then AI, English, ICT, Science, Maths, Code). Report counts before changing anything.
+- **Fix in `teach.mjs`:** use `T.learning` when present; otherwise take the first of `goals`; never force-fit the summary. Decks only, so no clips re-recorded; needs a whole-site publish (or publish-lessons for the affected lessons' `teach/` pages).
+- **Also check:** the same slide and the teacher guide for other places that reuse `summary:` as a sentence.
+
 ## Decided (30 Oct 2026, Matthew): humanities (Economics, Civics, Geography, History)
 
 - **One course per standard**, one lesson per waypoint, in the node file's order (pattern: `content/economics/scarcity-7/`).
