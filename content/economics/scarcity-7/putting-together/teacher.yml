@@ -1,0 +1,43 @@
+summary: "Students link needs and wants, scarcity, allocation, opportunity cost and sustainability in one chain, and apply it to a made-up council decision. Doable alone, with discussion as an optional extra using the class plan."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 8 min · Practise 8 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can put the chain in order and say how each idea leads to the next.
+  - I can name an opportunity cost in a council or community decision.
+  - I can give one point about the future (sustainability).
+struggle: "Students list the ideas without linking them. Ask 'Why does this one follow that one?' for each pair of lines."
+before: |
+  This is the integration lesson. Check that students from lessons 1 to 3 can state needs and wants, scarcity versus shortage, and the opportunity cost as the next best option. If not, return to the relevant lesson before this one.
+
+  Everything is made up. Do not ask students what their town spends or lacks. The Make step uses a decision students choose.
+
+  The optional discussion in the class plan has students defend different council choices. Different answers can both work if the reasoning is clear.
+running:
+  - "Predict: take votes. Most start with scarcity; let the case for wants be argued."
+  - "Try: ask pairs to read the chain aloud once it is right."
+  - "Worked example: ask for the ranking before the answer."
+  - "Vary: spend time on non-financial costs; students often skip them."
+  - "Practise: students write in their books, then compare with the model."
+stuck:
+  - see: "A student says the opportunity cost is the money spent."
+    ask: "What would the council have done with the $2 million otherwise?"
+    fix: "Opportunity cost is the next best use, the library hours."
+  - see: "A student thinks sustainability only means the environment."
+    ask: "Will the library or the clinic still be there and useful later?"
+    fix: "Sustainability asks whether a choice leaves enough for the future, in money, people and nature."
+  - see: "A student says there is one right choice."
+    ask: "Could a different council rank them differently and still be reasonable?"
+    fix: "Rankings depend on values and facts. Judge the reasoning, not the choice."
+stretch: "Is it fair to ask a future generation to pay for a choice made today? Argue both ways. It does not go on to the next lesson."
+support: "A chain card with the five lines on strips. Students order the strips and point to the arrow they find hardest."
+leads: |
+  Next: this course ends here. Further economics standards will follow.
+
+  Wider (teacher choice, not part of the student steps): ACARA's elaborations for AC9HE7K01 suggest First Nations exchange systems and networks for using limited resources sustainably. If you use this, start from ACARA's wording, then add material from the local community or the school's First Nations contact, not a generalisation from outside.
+exit:
+  q: "A council picks a skate park over a library. In one or two sentences, use scarcity and opportunity cost to explain it."
+  a: "There was not enough money for both (scarcity), so it chose. The opportunity cost is the library, the next best use of the money."
+explain: |
+  The chain: wants are unlimited, resources are limited, so there is **scarcity**; scarcity forces choices about **what, how and for whom**; each choice has an **opportunity cost**.
+
+  A good choice also asks whether it is **sustainable**: is enough left for the future?

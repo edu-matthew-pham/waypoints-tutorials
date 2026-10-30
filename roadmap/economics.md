@@ -25,6 +25,7 @@ Notes:
 
 - Subject `content/economics/index.md` (Economics and Business, order 8, pathway Scarcity and choice) and course `economics/scarcity-7` (Usually Year 7).
 - Lesson 1 `needs-and-wants` (AC9HE7K01 n1, hinge): predict, sort, worked example with Nib's planted mistake (`enough-stuff-ends-wanting`, with a `smaller:` lead-in), vary, practise, a Make step written in the student's own book (reflect tick), then one typical and two wider steps. Teacher notes, class plan. Misconceptions `enough-stuff-ends-wanting` and `needs-wants-blur` added.
+- Lessons 2 to 4 (30 Oct): `scarcity` (n2, hinge: shortage vs scarcity bug check with `smaller:`, land/labour/capital sort, what/how/for whom sort), `opportunity-cost` (n3: match, next-best-option bug check with `smaller:`, time/money/land), `putting-together` (n4: parsons chain, council $2m questions, cost/benefit sorts, reasoning on paper). Each has typical and wider steps, teacher notes and a class plan; units `scarcity` and `choice` added to the course page; misconceptions `shortage-vs-scarcity` and `opportunity-cost-is-price` added. Validate, build and a headless load of all three pass. Still to do: fresh-eyes review and a trial with a class.
 - `economics` added to the node check's `CHECKED` (`tools/progressions.mjs`, a one-word shared change).
 - One course per standard and the First Nations teacher note: confirmed by Matthew 30 Oct (`roadmap/shared.md` › Decided: humanities).
 - Needs a whole-site publish (new subject).

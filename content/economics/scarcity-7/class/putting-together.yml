@@ -1,0 +1,29 @@
+inquiry:
+  q: "A council can fund a water plant, a skate park or longer library hours. Which should it pick, and what would change your mind?"
+  prompts:
+    - "What does each choice give up?"
+    - "Who would be happy, and who would be left out?"
+  notes: "Different picks can both be sound. Judge the reasoning: is the opportunity cost named, and is the future considered?"
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Council meeting"
+    minutes: 8
+    do: |
+      Split the class into three groups, each arguing for one option. After two minutes each, hold a vote. Ask the winners to name the opportunity cost out loud.
+    notes: "Rankings differ across groups, and that is fine. Keep it made up."
+  - at: make
+    kind: discussion
+    title: "Who decides?"
+    minutes: 4
+    do: |
+      Ask pairs who should decide how a shared resource, such as town water in a dry year, is shared, and what each choice gives up.
+    notes: "No right answer. Listen for opportunity cost and the future."
+questions:
+  - at: investigate
+    title: "Which links?"
+    type: question
+    q: "Which idea forces a community to make choices?"
+    options: ["Scarcity", "Wants alone", "Sustainability", "Price"]
+    answer: 0
+    explain: "Wants meet limited resources, which is scarcity, and that forces choices."

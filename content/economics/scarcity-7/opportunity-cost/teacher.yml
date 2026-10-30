@@ -1,0 +1,41 @@
+summary: "Students learn that opportunity cost is the next best alternative given up, and not the price paid or everything else. They find it for time, money and land choices. Width is the point here: the same idea in several settings is what makes it transfer."
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can say what opportunity cost is in my own words.
+  - I can find the next best alternative in a choice.
+  - I can explain why the price is not the opportunity cost.
+struggle: "Students give the price or list everything they gave up. Ask 'If you could not have picked that, what would you have picked?' and let them name one thing."
+before: |
+  Two misconceptions run through this lesson: price as opportunity cost, and the cost as everything given up. The ranking step (first, second, third) is what fixes both. Insist that students rank before they answer.
+
+  Everything is made up. For the Make step, students choose a choice they are comfortable with; they do not need to share spending. No names read out unless students offer.
+running:
+  - "Predict: take votes. Many pick the ticket. Let the book vs ticket argument run."
+  - "Try: ask pairs to say the ranking aloud first."
+  - "Worked example: let Nib's mistake sit. Ask 'Where did the $8 go? What did Mia lose by going?'"
+  - "Vary: stress the time and land cases. Same idea, different resource."
+  - "Make: ask for a ranking, not just a choice."
+stuck:
+  - see: "A student gives the price as the opportunity cost."
+    ask: "Is that what Mia paid, or what she gave up?"
+    fix: "Price is what you pay. Opportunity cost is the best thing you did not do."
+  - see: "A student lists everything they gave up."
+    ask: "If the pool was closed, which one would she have picked?"
+    fix: "Only the next best option counts, because you could choose just one."
+  - see: "A student says time has no opportunity cost because it is free."
+    ask: "Could you do two things in the same hour?"
+    fix: "No. Using an hour on one thing uses it up, so something else is given up."
+stretch: "A student chooses the cheapest option. Is there still an opportunity cost? Argue both ways, then say what you would want to know. It does not go on to the next lesson."
+support: "A ranking card with three boxes (chosen, next best, third). Students fill it in, then circle the middle one."
+leads: |
+  Next in Scarcity and opportunity cost: Putting it together, the whole chain from wants to sustainability.
+
+  Wider (teacher choice, not part of the student steps): ACARA's elaborations for AC9HE7K01 include opportunity cost examples and First Nations exchange systems. If you use First Nations content, start from ACARA's wording, then add material from the local community or the school's First Nations contact.
+exit:
+  q: "You choose a film over practice and cleaning. You ranked practice second. What is your opportunity cost?"
+  a: "Practice, the next best option. Not the ticket, and not cleaning."
+explain: |
+  The **opportunity cost** of a choice is the next best alternative you gave up. It is one thing, not the price and not everything else.
+
+  Time, money and land all have opportunity costs, because each can be used only once.

@@ -6,4 +6,6 @@ years: "7"
 order: 1
 units:
   - { id: wants, title: Needs and wants, summary: "What people need, what they want, and why wanting never finishes." }
+  - { id: scarcity, title: Scarcity, summary: "Why there is never enough for everything, and how that differs from a shop running out." }
+  - { id: choice, title: Choice and opportunity cost, summary: "What is given up when we choose, and how to think about the future." }
 ---

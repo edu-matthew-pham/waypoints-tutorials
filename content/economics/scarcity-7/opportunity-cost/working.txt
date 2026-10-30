@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Mia has $20 and a free Saturday. She can buy a book, go to the pool, or save the money.
+She picks the pool, which costs $8.
+Nib says: "So Mia's opportunity cost is the $8 she paid."
+Nib says: "Or maybe it's everything she didn't do: the book, the savings and the sleep-in."
+# endregion

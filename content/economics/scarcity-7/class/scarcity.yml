@@ -1,0 +1,29 @@
+inquiry:
+  q: "The tuckshop ran out of pies and orders more. Dev says scarcity is gone. Nib says it never goes. Who is right, and what would change your mind?"
+  prompts:
+    - "What stops the tuckshop making a pie for everyone, even after the new batch?"
+    - "Can you think of a place with no limits at all?"
+  notes: "Let students find the oven and the helpers. The word 'resources' comes after they have named the limits themselves."
+activities:
+  - at: predict
+    kind: activity
+    title: "Pie queue"
+    minutes: 4
+    do: |
+      Hand out five pretend pies to a queue of ten students. Ask the class how it should be decided who gets one, and write the ideas on the board.
+    notes: "Do not rule on the ideas. They are the 'for whom' question before it has a name."
+  - at: investigate
+    kind: discussion
+    title: "Shortage or scarcity?"
+    minutes: 5
+    do: |
+      Read out four cases (a sold-out concert, one doctor in a town, a late bus, a bakery that sells out by noon). Pairs vote shortage or scarcity, then give a reason.
+    notes: "Accept any reason that names a limited resource."
+questions:
+  - at: investigate
+    title: "Which resource?"
+    type: question
+    q: "A baker's oven is which kind of resource?"
+    options: ["Capital", "Land", "Labour", "A want"]
+    answer: 0
+    explain: "An oven is equipment used to make things, which is capital."

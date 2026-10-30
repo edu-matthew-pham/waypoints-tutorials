@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+The tuckshop ran out of pies at 11:10 today. A new batch comes in the morning.
+Dev says: "There's never enough pies. That's scarcity."
+Nib says: "Scarcity just means something ran out, so the tuckshop only needs to order more."
+Nib says: "Once they order more, scarcity is gone for good."
+# endregion

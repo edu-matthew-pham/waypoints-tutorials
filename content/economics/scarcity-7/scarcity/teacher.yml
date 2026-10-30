@@ -1,0 +1,43 @@
+summary: "Students learn that scarcity is the lasting gap between unlimited wants and limited land, labour and capital, and that a shortage is a short-term run-out that more stock fixes. They then use the three allocation questions (what, how, for whom) on made-up places. This is the second hinge lesson: if students leave thinking scarcity means 'it ran out', opportunity cost and sustainability will not make sense."
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Decide 8 min · Vary 6 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can explain scarcity and say how it differs from a shortage.
+  - I can name land, labour and capital in an example.
+  - I can sort a decision under what, how or for whom.
+struggle: "Students say scarcity means something ran out, or that it only affects poor places. Ask 'After the new stock arrives, can the shop make unlimited pies?' and let them reach the oven and helpers themselves."
+before: |
+  This is a hinge lesson. The idea students must leave with is that scarcity is permanent and comes from limited resources meeting unlimited wants. If they take it as 'stock ran out', the next lesson will look like a story about prices.
+
+  Everything is made up (the tuckshop, the doctor, the town). Do not ask students what their own families can or cannot afford. The Make step asks about scarcity at school, not at home.
+
+  Water counts as land (a natural resource) in this lesson. Some students will want to call it something else; accept a reason and move on.
+running:
+  - "Predict: ask for votes before the answer. Most students say 'yes, it ran out'. Do not correct it yet."
+  - "Try: stop at the water. Natural things are land."
+  - "Worked example: let Nib's mistake sit before explaining it. Ask 'Does ordering more pies give the tuckshop a second oven?'"
+  - "Decide: ask for the reason, not only the group."
+  - "Make: read one or two out if students are happy to, without names."
+stuck:
+  - see: "A student says scarcity is when something runs out."
+    ask: "After the new stock arrives, can the shop make as many as everyone wants?"
+    fix: "Go back to the oven and the helpers. The limit on what can be made is the scarcity. Running out is only how it can show."
+  - see: "A student says scarcity only happens in poor places."
+    ask: "Does a rich town have unlimited doctors?"
+    fix: "Every community has limited land, labour and capital, so every community faces scarcity."
+  - see: "A student mixes up what, how and for whom."
+    ask: "Is this about which thing to make, the way to make it, or who gets it?"
+    fix: "Say each one as a question: What do we make? How do we make it? Who gets it?"
+stretch: "Is clean air scarce? Argue both ways, then say what you would want to know before deciding. It is the same idea at greater width and does not go on to the next lesson."
+support: "A card with three questions: What? How? For whom? Students point to the one that fits each decision."
+leads: |
+  Next in Scarcity and opportunity cost: Opportunity cost, what is given up when scarcity forces a choice.
+
+  Wider (teacher choice, not part of the student steps): ACARA's elaborations for AC9HE7K01 suggest "investigating how First Nations communities use exchange systems (barter) or networks (partnerships) to decide about the use of limited resources in sustainable ways". If you use this, start from that wording, then add material from the local community or the school's First Nations contact, not a generalisation from outside.
+exit:
+  q: "The tuckshop runs out of pies, then orders more. Is scarcity gone? Why?"
+  a: "No. The shortage is fixed, but the oven and helpers are still limited, and wants are not, so scarcity remains."
+explain: |
+  **Scarcity** is the gap between unlimited wants and limited resources (land, labour and capital). A **shortage** is a short-term run-out that more stock can fix.
+
+  Scarcity makes every community decide **what** to make, **how** to make it and **for whom**.

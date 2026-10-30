@@ -1,0 +1,29 @@
+inquiry:
+  q: "Mia pays $8 for the pool. Dev says that is the cost. Nib says the cost is the book. Who is right, and what would change your mind?"
+  prompts:
+    - "What did Mia lose by going to the pool?"
+    - "If the pool had been closed, what would she have done?"
+  notes: "Let the class find that the price is paid and the book is lost. Then give the term."
+activities:
+  - at: predict
+    kind: activity
+    title: "Rank your Saturday"
+    minutes: 4
+    do: |
+      Each student writes three things they could do on a free Saturday and ranks them. Ask a few to say what they would pick and what they would give up.
+    notes: "The second on the list is the opportunity cost. Do not name it yet."
+  - at: make
+    kind: discussion
+    title: "What did the council give up?"
+    minutes: 5
+    do: |
+      Present a made-up council choice: a clinic, a park or a road. Pairs say what was given up for each choice and who might care.
+    notes: "Keep it made up. Accept different rankings if the reasoning is clear."
+questions:
+  - at: investigate
+    title: "What is given up?"
+    type: question
+    q: "You pick a movie over a walk and a nap. You ranked the walk second. What is your opportunity cost?"
+    options: ["The walk", "The nap", "The ticket price", "Both"]
+    answer: 0
+    explain: "The walk was your next best option, so it is the opportunity cost."
