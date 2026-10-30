@@ -37,8 +37,13 @@ Notes:
 
 ## Next
 
-Lessons 2 to 4 (n2 scarcity, n3 opportunity cost, n4 integration), same shape as lesson 1. Economics' own skill is AC9HE7S04 (develop a response to an economic issue); S01, S02 and S05 go to the shared inquiry course.
+All four lessons of `economics/scarcity-7` (AC9HE7K01) are built, so the Next list now is:
+
+1. A fresh-eyes review and a trial with a class (nothing here has been tried yet).
+2. AC9HE7K02 to K05 (the rest of the Year 7 knowledge standards): one course per standard, one lesson per waypoint, in the node file's order, same shape as `scarcity-7`.
+3. Economics' own skill, AC9HE7S04 (develop a response to an economic issue). S01, S02 and S05 go to the shared inquiry course (`roadmap/humanities-inquiry.md`).
+4. Keep `content/economics-teachers.md` in step with what is built.
 
 ## Starter prompt for the Economics chat
 
-> Read CLAUDE.md, ROADMAP.md, `roadmap/shared.md` › Decided (30 Oct 2026) entries, and `roadmap/economics.md`. Build lessons 2 to 4 of `economics/scarcity-7` in the same shape as `needs-and-wants`, validate, test in a headless browser, commit and push.
+> Read AGENTS.md, CLAUDE.md, ROADMAP.md, `roadmap/shared.md` › Decided (30 Oct 2026) entries, and `roadmap/economics.md`. Plan and build the next Economics course (K02, in the node file's order) in the same shape as `economics/scarcity-7`, validate, test in a headless browser, commit and push.

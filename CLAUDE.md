@@ -1,5 +1,7 @@
 # Working notes for Claude (read first)
 
+These notes are for every coding agent, not only Claude: `AGENTS.md` is the short entry point for others (Codex, ChatGPT, Copilot) and points back here.
+
 Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with recorded clips and live playgrounds. Owner: Matthew (teacher, CGGS). He prefers direct, concise, high-signal replies.
 
 ## Publishing (and the temporary home, 10–13 Oct 2026)
