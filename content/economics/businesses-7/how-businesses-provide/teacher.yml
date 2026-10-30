@@ -12,7 +12,7 @@ before: |
   The Practise step uses a paper reasoning check with two model answers so students practise writing a connected causal explanation before the Make step.
 running:
   - "Predict: ask why a solo piano teacher wouldn't want thousands of shareholders voting on her Tuesday timetable."
-  - "Try: ask pairs to read the five-line chain aloud and test it on Corner Bakery and FreshMart."
+  - "Try: ask pairs to read the five-line chain aloud and test it on Corner Bakery and Made-Up Grocers Corp."
   - "Worked example: focus on how structure solves a practical problem (twenty small orchards couldn't fill a supermarket order alone, so a cooperative coolroom solves it)."
   - "Practise: students write in their own book first, then open the model answers to self-check against the three criteria."
   - "Make: partner review in books, checking that business terms are used accurately."

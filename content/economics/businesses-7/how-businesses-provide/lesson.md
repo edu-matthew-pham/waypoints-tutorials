@@ -48,18 +48,18 @@ insight: "Comparing two structures side by side shows how ownership and purpose 
 tasks:
   - check:
       type: question
-      q: "How does FreshMart Corporation's structure (owned by thousands of shareholders) help it run supermarkets in shopping centres across every state?"
+      q: "How does Made-Up Grocers Corp's structure (a corporation owned by thousands of shareholders) help it run supermarkets in shopping centres across every state?"
       options:
         - "Shareholder investment lets it fund warehouses, trucks and large stores across the country"
-        - "Having one solo owner lets it pack every box by hand"
-        - "Being a not-for-profit means it pays no rent in shopping centres"
-        - "Shareholders each drive a delivery truck"
+        - "Having one solo owner lets it make fast decisions without consulting anyone"
+        - "Being a not-for-profit means all its surplus must go into free community parcels"
+        - "Being a growers' cooperative means only member farmers are allowed to shop there"
       answer: 0
       feedback:
         - null
-        - "A corporation has many shareholders, not one solo owner."
-        - "FreshMart is a for-profit corporation and pays rent like any commercial tenant."
-        - "Shareholders invest money (capital); employed drivers run the trucks."
+        - "A corporation is owned by many shareholders, not one solo owner."
+        - "Made-Up Grocers Corp is a for-profit corporation that can pay dividends to shareholders, not a not-for-profit."
+        - "It is a shareholder-owned corporation selling to the public, not a farmers' cooperative."
       explain: "A corporation can raise large amounts of capital from shareholders, which funds the warehouses and store network needed for national distribution."
   - check:
       type: bug
@@ -75,9 +75,9 @@ tasks:
         q: "Lin teaches piano from her living room on Tuesdays and Thursdays. Does she need thousands of shareholders to provide her lessons?"
         options:
           - "No, a sole proprietorship fits because she owns her piano and runs the lessons herself"
-          - "Yes, every service business must have shareholders"
-          - "She must become a franchise of a supermarket"
-          - "Piano lessons are a physical good"
+          - "Yes, every service business must set up as a corporation with shareholders"
+          - "She should form a twenty-member cooperative to teach two afternoons a week"
+          - "She must pay a franchise fee to a national chain before she can teach"
         answer: 0
         explain: "A small, personal service needs low setup costs and direct control, which suits a sole proprietorship."
   - check:
@@ -85,24 +85,24 @@ tasks:
       q: "Why does a cooperative structure suit twenty small orchards that want to supply fresh fruit to city grocers?"
       options:
         - "Pooling their harvest in a member-owned packing shed lets small growers fill big orders they could not supply alone"
-        - "It turns the apples into a service instead of a good"
-        - "It means none of the farmers own the packing shed"
-        - "It stops the orchards from selling fruit outside their own valley"
+        - "It hands ownership of all twenty orchards to a single sole proprietor"
+        - "It lets outside shareholders outvote the farmers on how the shed is run"
+        - "It requires the orchards to stop selling fruit at local markets"
       answer: 0
       feedback:
         - null
-        - "Apples remain a physical good."
-        - "In a cooperative, the member farmers own the shed together."
-        - "Sharing a shed and trucks helps them reach wider markets, not fewer."
+        - "Each grower keeps their own farm and co-owns the shared shed as a member."
+        - "In a cooperative, the member farmers own the shed and each member gets a vote."
+        - "Sharing a shed and trucks helps them reach wider markets alongside local ones."
       explain: "The cooperative structure lets small independent producers share expensive equipment and reach customers they could not reach alone."
 ```
 
 ### Structure shapes provision
 
 ```worked
-\text{Solo Bike Mechanic} :: Purpose: earn a living fixing local bikes -> Structure: Sole proprietor -> Provision: personal repair service from an independent workshop.
+\text{Solo Bike Mechanic} :: Purpose: earn a living fixing local bikes -> Structure: Sole proprietorship -> Provision: personal repair service from an independent workshop.
 \text{Valley Growers} :: Purpose: help 20 small farms reach buyers -> Structure: Cooperative -> Provision: shared coolroom and weekly market & grocer deliveries.
-\text{FreshMart} :: Purpose: national grocery sales and shareholder profit -> Structure: Corporation -> Provision: hundreds of supermarkets in shopping centres and online.
+\text{Made-Up Grocers Corp} :: Purpose: national grocery sales and shareholder profit -> Structure: Corporation -> Provision: hundreds of supermarkets in shopping centres and online.
 ```
 
 Now: why do different business structures provide goods and services in different ways?
@@ -182,15 +182,15 @@ check:
   q: "How has selling online changed the way a sole proprietor making specialist guitar pedals in a country town can provide goods?"
   options:
     - "They can sell goods to musicians across the country from one workshop, without paying rent in city shopping centres"
-    - "They must become a corporation before they can post a parcel"
-    - "Online selling only works for services, never for physical goods"
-    - "It removes the need to make the guitar pedals"
+    - "They must become a corporation before they are allowed to sell to customers in other states"
+    - "Online selling only works for digital services, never for physical goods that need posting"
+    - "They must open a franchise branch in every capital city before launching a website"
   answer: 0
   feedback:
     - null
-    - "Sole proprietors, partnerships and cooperatives can all sell online."
+    - "Sole proprietors, partnerships and cooperatives can all sell interstate through an online store."
     - "Physical goods are ordered online and delivered by post or courier."
-    - "The goods still have to be made before they can be sent."
+    - "An online store lets a single workshop take orders nationwide without opening city branches."
   explain: "Digital channels let a small structure reach a wide market that once required a chain of physical shops."
 ```
 
@@ -205,15 +205,15 @@ check:
   q: "GreenBean Cafe sells coffee and toasties to office workers at normal cafe prices. It is set up as a not-for-profit social enterprise: every trainee barista is a young person learning job skills, and all surplus pays for their training. How do its purpose and structure work together?"
   options:
     - "Selling goods and services commercially funds the training mission, and the not-for-profit structure keeps every dollar of surplus inside that mission"
-    - "Because it sells coffee at normal prices, it must pay dividends to private shareholders"
-    - "Because it helps young people, it is not providing goods or services"
-    - "Training staff is impossible in a cafe"
+    - "Because it sells coffee at normal commercial prices, it must pay dividends to private shareholders"
+    - "Because it has a community mission, it can only rely on donations and cannot sell goods or services"
+    - "Because trainees work there, it counts as a partnership owned equally by every customer"
   answer: 0
   feedback:
     - null
     - "A not-for-profit has no private shareholders taking dividends; surplus stays in the mission."
-    - "Coffee is a good and hospitality is a service — it provides both."
-    - "Hospitality work is the very way the trainees build their skills."
+    - "A social enterprise earns its income by selling goods (coffee, toasties) and hospitality service."
+    - "Customers buy coffee; the organisation is a not-for-profit, not a customer partnership."
   explain: "A social enterprise combines commercial provision of goods and services with a structure that locks surplus into its community goal."
 ```
 

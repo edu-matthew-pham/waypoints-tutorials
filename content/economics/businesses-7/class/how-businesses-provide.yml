@@ -10,7 +10,7 @@ activities:
     title: "Trace the chain"
     minutes: 4
     do: |
-      Give each pair one business from the course (Corner Bakery, Priya & Tom Vets, Valley Growers' Cooperative, FreshMart, Riverbend Pantry). Ask them to speak the five steps of the chain for their business in one minute.
+      Give each pair one business from the course (Corner Bakery, Priya & Tom Vets, Valley Growers' Cooperative, Made-Up Grocers Corp, Riverbend Pantry). Ask them to speak the five steps of the chain for their business in one minute.
     notes: "Listen for the causal link between structure (who owns and funds it) and provision (how it reaches customers)."
   - at: make
     kind: discussion
@@ -26,8 +26,8 @@ questions:
     q: "How does a cooperative structure help small independent farmers provide goods to large grocers?"
     options:
       - "Members pool their produce and share equipment like coolrooms and trucks to fill orders none could meet alone"
-      - "It replaces all the farms with a single solo owner"
-      - "It stops the farmers from having a vote on decisions"
-      - "It means the farms no longer produce physical goods"
+      - "It replaces all the farms with a single sole proprietorship owned by one person"
+      - "It hands voting control of the packing shed to outside city shareholders"
+      - "It turns the farms into a franchise where every orchard pays fees to a fast-food chain"
     answer: 0
     explain: "By co-owning shared facilities and pooling harvests, cooperative members can supply markets they could not reach individually."

@@ -61,14 +61,14 @@ tasks:
       options:
         - "To provide goods to the community and create employment"
         - "To make a large profit for a private owner"
-        - "To stop people from working"
-        - "To avoid providing goods or services"
+        - "To collect taxes for the local council"
+        - "To earn dividends for private shareholders"
       answer: 0
       feedback:
         - null
         - "No private owner takes a profit here: any spare money goes back into keeping food affordable."
-        - "It pays two workers, so it creates employment."
-        - "It provides groceries (goods) and shop service."
+        - "Riverbend Pantry is a community pantry selling groceries, not a council collecting taxes."
+        - "It has no shareholders taking dividends: any surplus is put back into lower food prices."
       explain: "Riverbend Pantry provides goods a community needs and employs staff, even though it does not run for an owner's profit."
   - check:
       type: bug
@@ -86,7 +86,7 @@ tasks:
           - "Yes, it provides goods and jobs to the town"
           - "No, because nobody gets a profit"
           - "It only provides a service, not goods"
-          - "It is a hobby, not an organisation"
+          - "It only provides goods, because not-for-profits cannot pay wages"
         answer: 0
         explain: "Providing goods and jobs are reasons a business exists, even without an owner taking a profit."
   - check:
@@ -94,15 +94,15 @@ tasks:
       q: "Why does it matter for the rest of this course that businesses can exist for reasons beyond profit?"
       options:
         - "Because some business types, such as cooperatives and not-for-profits, are set up around those other reasons"
-        - "Because no business in Australia is allowed to make a profit"
-        - "Because goods can only be sold by charities"
-        - "Because services never cost money"
+        - "Because only charities are allowed to employ local workers"
+        - "Because businesses that sell services are not allowed to make a profit"
+        - "Because once a business employs staff, its owners can no longer keep any profit"
       answer: 0
       feedback:
         - null
-        - "Many businesses do aim to make a profit. The point is that profit is not the only reason."
-        - "Any kind of business can sell goods."
-        - "Services usually cost money to run and to buy."
+        - "For-profit businesses, cooperatives and not-for-profits can all employ workers."
+        - "Service businesses (such as hairdressers, vets and mechanics) can and often do make a profit."
+        - "Paying wages is a cost; a for-profit owner can still keep any profit left after costs."
       explain: "Once you see that purpose varies, the different business structures in the next lesson make sense."
 ```
 
@@ -175,16 +175,16 @@ tasks:
       type: question
       q: "Sam says: 'The local vet clinic doesn't make anything in a factory, so it isn't a real business.' What is the best reply?"
       options:
-        - "It is a business that provides a service — checking and treating animals — and Goods are not the only thing businesses sell"
+        - "It is a business that provides a service — checking and treating animals — and goods are not the only thing businesses sell"
         - "Sam is right: a business must manufacture physical objects"
         - "The vet clinic is only a business on days when it sells pet food"
-        - "Vets do not employ anyone"
+        - "The vet clinic is a charity because treating animals is a service"
       answer: 0
       feedback:
         - null
         - "Service businesses are a major part of the economy."
         - "Treating animals is a service, which counts every day."
-        - "Vet clinics employ vets, nurses and reception staff."
+        - "Providing a service does not make a business a charity; most vet clinics are for-profit businesses."
       explain: "Businesses provide goods, services, or both. Treating animals is a service."
 ```
 
@@ -231,15 +231,15 @@ check:
   q: "A store in a remote town 500 km from the nearest city is the only place to buy fresh fruit, medicine and fuel, and roads flood in the wet season. How does its purpose differ from one of twenty supermarkets in a big city?"
   options:
     - "Keeping essentials available and affordable for the community is vital, because residents cannot simply walk to another shop"
-    - "It has no costs to pay because it is far from the city"
-    - "It only sells services, never physical goods"
-    - "Transport is cheaper and easier than in the city"
+    - "Its main purpose is to maximise quick profits by selling only luxury goods"
+    - "It only needs to open during the dry season when freight trucks can get through easily"
+    - "It competes with twenty other grocery shops on the same street for passing shoppers"
   answer: 0
   feedback:
     - null
-    - "Freight, power and storage in remote areas are expensive, so covering costs still matters."
-    - "Fruit, medicine and fuel are physical goods."
-    - "Long distances and flooded roads make transport harder and costlier."
+    - "A remote community store focuses on everyday essentials like fresh food, medicine and fuel, not luxury-only lines."
+    - "Residents need food, medicine and fuel all year round, so the store plans storage ahead of the wet season."
+    - "It is the only store for hundreds of kilometres, which is why reliable supply for the community matters so much."
   explain: "Where a store is the community's lifeline, reliable supply of essentials and community wellbeing sit at the centre of why it exists."
 ```
 

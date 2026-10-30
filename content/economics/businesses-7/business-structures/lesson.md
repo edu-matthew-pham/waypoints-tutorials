@@ -3,7 +3,7 @@ order: 2
 unit: structures
 title: Ways a business can be set up
 node: AC9HE7K02 n2
-summary: "Businesses can be set up in different ways depending on who owns them, who decides, and where any surplus goes. The main types in Year 7 are a sole proprietorship (sole trader), a partnership, a cooperative, a corporation, a franchise and a not-for-profit organisation. Each structure suits a different purpose."
+summary: "Businesses can be set up in different ways depending on who owns them, who decides, and where any surplus goes. The main types in Year 7 are a sole proprietorship, a partnership, a cooperative, a corporation, a franchise and a not-for-profit organisation. Each structure suits a different purpose."
 language: maths
 hook: "In Mia's town, one baker owns the corner bakery alone, two vets own the animal clinic together, and twenty apple growers own the packing shed together. Why didn't they all set up the same way?"
 ---
@@ -11,10 +11,10 @@ Last lesson showed that businesses exist for different reasons. They also have d
 
 Six structures come up across Australia:
 
-- **Sole proprietorship (sole trader):** owned and run by one person, who makes the decisions and keeps any profit (and carries the losses).
+- **Sole proprietorship:** owned and run by one person (a **sole proprietor**), who makes the decisions and keeps any profit (and carries the losses).
 - **Partnership:** owned by two or more people who share the skills, decisions, profits and responsibilities.
 - **Cooperative:** owned and run by its members (such as growers, workers or local shoppers) to meet their shared needs; members each get a say.
-- **Corporation (company):** a separate legal body owned by **shareholders**, often used by larger businesses such as a national supermarket chain.
+- **Corporation:** a separate legal body owned by **shareholders**, often used by larger businesses such as a national supermarket chain.
 - **Franchise:** an independent business owner (**franchisee**) pays to use an established brand's name, products and system (**franchisor**).
 - **Not-for-profit organisation:** exists for a community, charitable or social purpose; any surplus left after costs goes back into that purpose, not to private owners.
 
@@ -46,7 +46,7 @@ check:
     - ["Sole proprietorship", "Owned and controlled by one person"]
     - ["Partnership", "Two or more people share ownership, skills and decisions"]
     - ["Cooperative", "Owned by its members for their shared benefit, with each member having a vote"]
-    - ["Corporation", "Owned by shareholders as a separate legal company, often operating at a large scale"]
+    - ["Corporation", "Owned by shareholders as a separate legal body, often operating at a large scale"]
     - ["Franchise", "A local owner pays to run a branch using a larger brand's name, recipes and system"]
     - ["Not-for-profit", "Any surplus after paying wages and costs is put back into its community purpose"]
 ```
@@ -89,8 +89,8 @@ tasks:
         options:
           - "One owner (Rosa), so it is a sole proprietorship"
           - "Seven owners, because seven people work there"
-          - "Zero owners"
-          - "Twenty owners"
+          - "Six owners, because the six salespeople run the lot"
+          - "Two owners, Rosa and the head salesperson"
         answer: 0
         explain: "Employees are paid wages for their work, but Rosa is the single owner."
   - check:
@@ -100,13 +100,13 @@ tasks:
         - "A cooperative"
         - "A sole proprietorship"
         - "A franchise"
-        - "A government department"
+        - "A corporation owned by outside shareholders"
       answer: 0
       feedback:
         - null
         - "Twenty farmers own it together, not one person."
         - "They are not paying a brand owner to copy a chain store; they formed a member-owned shed."
-        - "It is owned by the member farmers, not the government."
+        - "It is owned and used by the twenty member farmers with one vote each, rather than by outside shareholders."
       explain: "A business owned and run by its members to serve their shared need, with one vote per member, is a cooperative."
 ```
 
@@ -116,7 +116,7 @@ tasks:
 \text{Rosa's Car Yard} :: One owner (Rosa) who employs six staff -> Sole proprietorship.
 \text{Priya & Tom Vets} :: Two owners sharing skills, costs and profits -> Partnership.
 \text{Valley Growers' Shed} :: Owned by 20 member farms for shared packing -> Cooperative.
-\text{FreshMart Supermarkets} :: Owned by thousands of shareholders across Australia -> Corporation.
+\text{Made-Up Grocers Corp} :: Owned by thousands of shareholders across Australia -> Corporation.
 ```
 
 Now: how do you tell a partnership from a sole proprietorship or a cooperative?
@@ -138,7 +138,7 @@ tasks:
       items:
         - ["Leo runs a mobile dog-wash van that he owns by himself", "Sole proprietorship", "One person owns and controls the business."]
         - ["Three solicitors co-own a town law firm and split the profits", "Partnership", "Three partners share ownership and decisions."]
-        - ["A national grocery company with shares traded on the stock exchange", "Corporation", "It is a company owned by shareholders."]
+        - ["A national grocery corporation with shares traded on the stock exchange", "Corporation", "It is a corporation owned by shareholders."]
         - ["Riverbend Pantry sells low-cost groceries and puts all surplus back into food parcels", "Not-for-profit", "Surplus goes back into its community mission rather than to owners."]
   - check:
       type: question
@@ -147,13 +147,13 @@ tasks:
         - "A franchise"
         - "A cooperative"
         - "A not-for-profit organisation"
-        - "A government service"
+        - "An independent sole proprietorship with his own brand"
       answer: 0
       feedback:
         - null
         - "A cooperative is owned jointly by members with equal votes, not licensed from a brand."
         - "Amir and Burger Barn both operate to make a profit."
-        - "It is a private business using a licensed brand."
+        - "Because Amir pays to use Burger Barn's established brand, menu and system, he is operating a franchise."
       explain: "Paying a franchisor to operate a branch under an established brand and system is a franchise."
 ```
 
@@ -172,24 +172,24 @@ tasks:
       q: "Why might a plumber choose to join a partnership with an electrician rather than stay a sole proprietor?"
       options:
         - "They can combine two sets of skills, share the cost of tools, and cover for each other"
-        - "Because a sole proprietor is never allowed to charge customers"
-        - "Because partners never have to agree on any decisions"
-        - "Because a partnership automatically becomes a charity"
+        - "Because a sole proprietor is not allowed to employ staff or apprentices"
+        - "Because in a partnership, one partner can make every big decision without consulting the other"
+        - "Because a partnership does not have to pay for tools or materials"
       answer: 0
       feedback:
         - null
-        - "Sole proprietors charge customers and can earn a profit."
-        - "Partners do have to consult and agree — that is one of the trade-offs of a partnership."
-        - "Partnerships usually operate for profit."
+        - "A sole proprietor can employ staff and apprentices; a partnership is about sharing ownership."
+        - "Partners share decisions and must agree — that is one of the trade-offs of a partnership."
+        - "A partnership still pays all its costs, though the partners can split those costs between them."
       explain: "A partnership brings extra skills and shared costs, in exchange for sharing decisions and profits."
   - check:
       type: question
       q: "What is the key difference between a corporation and a not-for-profit organisation when money is left over after paying all bills and wages?"
       options:
         - "A corporation can pay profits to shareholders, while a not-for-profit must reinvest its surplus into its community purpose"
-        - "A corporation must give all its money away, while a not-for-profit pays shareholders"
-        - "Neither is allowed to employ paid staff"
-        - "Only a corporation can sell goods"
+        - "A corporation must reinvest all surplus into charity, while a not-for-profit pays dividends to shareholders"
+        - "A corporation can pay wages to staff, while a not-for-profit can only use unpaid volunteers"
+        - "A corporation can sell physical goods, while a not-for-profit can only provide services"
       answer: 0
       feedback:
         - null
@@ -240,13 +240,13 @@ tier: wider
 insight: "Comparing a member-owned cooperative with a shareholder-owned corporation shows how ownership changes decision-making."
 check:
   type: reasoning
-  q: "Compare the Valley Growers' Cooperative (owned by 20 local farms) with FreshMart Corporation (owned by distant shareholders). Explain how who owns each business changes how decisions are made and who benefits."
+  q: "Compare the Valley Growers' Cooperative (owned by 20 local farms) with Made-Up Grocers Corp (owned by distant shareholders). Explain how who owns each business changes how decisions are made and who benefits."
   paper: true
   models:
     - title: "A strong answer"
-      text: "In the cooperative, the 20 member farms both use the shed and own it, with one vote each, so they choose fees and opening hours that help local growers stay afloat. In the corporation, shareholders invest to earn a financial return and votes depend on how many shares you hold, so managers focus on company profit across all stores."
+      text: "In the cooperative, the 20 member farms both use the shed and own it, with one vote each, so they choose fees and opening hours that help local growers stay afloat. In the corporation, shareholders invest to earn a financial return and votes depend on how many shares you hold, so managers focus on profit across all stores."
     - title: "A different answer that also works"
-      text: "The cooperative exists to serve its members, so any surplus is used to lower packing costs for the 20 farms. FreshMart is owned by shareholders who may never visit the town, so its decisions aim to grow sales and pay dividends to shareholders."
+      text: "The cooperative exists to serve its members, so any surplus is used to lower packing costs for the 20 farms. Made-Up Grocers Corp is owned by shareholders who may never visit the town, so its decisions aim to grow sales and pay dividends to shareholders."
   criteria:
     - "I named who owns the cooperative and who owns the corporation."
     - "I explained how votes or decisions work differently in the two structures."

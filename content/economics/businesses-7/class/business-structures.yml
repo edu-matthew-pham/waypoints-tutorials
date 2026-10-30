@@ -17,7 +17,7 @@ activities:
     title: "Why buy a franchise?"
     minutes: 4
     do: |
-      Ask half the room to list why Amir should open a 'Burger Barn' franchise, and the other half to list why he should start 'Amir's Burgers' as an independent sole trader instead.
+      Ask half the room to list why Amir should open a 'Burger Barn' franchise, and the other half to list why he should start 'Amir's Burgers' as an independent sole proprietorship instead.
     notes: "Highlight the trade-off: instant brand recognition and training versus fees and strict rules on menu and suppliers."
 questions:
   - at: investigate
@@ -26,8 +26,8 @@ questions:
     q: "Which feature belongs to a cooperative rather than a corporation?"
     options:
       - "It is owned by the members who use or work in it, with each member having an equal say"
-      - "It is owned by one person alone"
-      - "It is never allowed to sell physical goods"
-      - "Votes are only given to the person who founded the town"
+      - "It is owned by one person alone who keeps all the profit"
+      - "It is owned by outside shareholders who vote according to how many shares they hold"
+      - "It pays a franchise fee to copy a national chain's brand and menu"
     answer: 0
     explain: "A cooperative is owned and democratically controlled by its members for their shared benefit."

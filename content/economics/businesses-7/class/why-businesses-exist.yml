@@ -24,6 +24,6 @@ questions:
     title: "Beyond profit"
     type: question
     q: "Which of these is a reason a business exists, other than making a profit?"
-    options: ["Providing employment and meeting a community need", "Avoiding all costs", "Keeping goods away from customers", "Having no workers or customers"]
+    options: ["Providing employment and meeting a community need", "Paying dividends to private shareholders", "Increasing the owner's personal wealth", "Charging higher prices than competitors"]
     answer: 0
     explain: "Businesses also exist to provide goods and services, create jobs and serve their community."

@@ -9,12 +9,12 @@ struggle: "Students often guess a business's structure from how big the shop loo
 before: |
   This lesson builds on Lesson 1 (businesses exist for several reasons, not only profit). Check that students remember why a community pantry counts as a business before meeting cooperatives and not-for-profits as formal structures.
 
-  All examples (Rosa's Car Yard, Priya & Tom Vets, Valley Growers' Shed, FreshMart, Burger Barn) are made up, mirroring the examples in ACARA's elaborations for AC9HE7K02 (a sole proprietor operating a car yard, a partnership providing legal services, a corporation selling groceries through a chain of supermarkets).
+  All examples (Rosa's Car Yard, Priya & Tom Vets, Valley Growers' Shed, Made-Up Grocers Corp, Burger Barn) are made up, mirroring the examples in ACARA's elaborations for AC9HE7K02 (a sole proprietor operating a car yard, a partnership providing legal services, a corporation selling groceries through a chain of supermarkets).
 running:
   - "Predict: ask who owns the bakery versus who works there. Ownership is the test."
   - "Try: have pairs test each match against 'Who owns it? Who decides?'"
   - "Worked example: let students spot why Nib's headcount rule fails on both Rosa's car yard and the growers' shed."
-  - "Vary: pause on Amir's Burger Barn franchise — he owns his local business, so it feels like a sole trader or company, but the brand contract makes it a franchise."
+  - "Vary: pause on Amir's Burger Barn franchise — he owns his local business, so it feels like a sole proprietorship or corporation, but the brand contract makes it a franchise."
   - "Make: students build their three-structure table in their own book and swap with a partner."
 stuck:
   - see: "A student calls any small shop with two workers a partnership."
@@ -22,7 +22,7 @@ stuck:
     fix: "It is only a partnership if two or more people share ownership. One owner paying an employee is still a sole proprietorship."
   - see: "A student mixes up a cooperative and a corporation because the words sound similar."
     ask: "Who are the owners of a cooperative, and why did they join?"
-    fix: "Co-op = co-operate: the members (growers, workers or shoppers) own it to use it together, usually with one vote per member. A corporation is a company owned by shareholders."
+    fix: "Co-op = co-operate: the members (growers, workers or shoppers) own it to use it together, usually with one vote per member. A corporation is a separate legal body owned by shareholders."
   - see: "A student thinks every store in a big chain is owned by head office."
     ask: "What if a local person paid to run that branch under the chain's name?"
     fix: "That is a franchise: local ownership under a shared brand and rulebook."
@@ -34,13 +34,13 @@ leads: |
   Wider (teacher choice, not part of the student steps): ACARA's elaborations for AC9HE7K02 include "identifying the features of different types of businesses, including sole proprietorship, partnership, cooperative, corporation, franchise and not-for-profit organisation" and "investigating a business owned by First Nations Australians". Where your class studies a First Nations community-run corporation or cooperative, use the organisation's own published statements and local community guidance to show how its structure supports both commercial activity and community governance.
 exit:
   q: "Name three different business structures and give one feature that sets each apart."
-  a: "For example: sole proprietorship (one owner controls it), partnership (two or more owners share decisions and profits), cooperative (owned by its members with one vote each), corporation (company owned by shareholders), franchise (local owner pays to use an established brand and system), not-for-profit (surplus goes back into its community purpose)."
+  a: "For example: sole proprietorship (one owner controls it), partnership (two or more owners share decisions and profits), cooperative (owned by its members with one vote each), corporation (owned by shareholders as a separate legal body), franchise (local owner pays to use an established brand and system), not-for-profit (surplus goes back into its community purpose)."
 explain: |
   A business's **structure** is how it is owned and controlled:
 
   - **Sole proprietorship:** one owner.
   - **Partnership:** two or more co-owners.
   - **Cooperative:** owned by its members for their shared benefit.
-  - **Corporation:** a company owned by shareholders.
+  - **Corporation:** a separate legal body owned by shareholders.
   - **Franchise:** a local owner paying to use a larger brand's name and system.
   - **Not-for-profit:** surplus is reinvested into a community purpose, not paid to owners.

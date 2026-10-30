@@ -42,7 +42,7 @@ Standard AC9HE7K02 (the reasons businesses exist and how different types of busi
 
 Notes:
 - **Shape check:** all three waypoints teach settled economic distinctions and causal links (goods vs services, non-profit purposes, ownership structures, and how structure shapes provision), so the `scarcity-7` worked-example shape fits all three.
-- **Scenarios:** all businesses and people (Corner Bakery, Pedal Fix Workshop, Riverbend Pantry, Rosa's Car Yard, Priya & Tom Vets, Valley Growers' Shed, FreshMart, Burger Barn, GreenBean Cafe) are made up, so nothing dates and no real brand is promoted.
+- **Scenarios:** all businesses and people (Corner Bakery, Pedal Fix Workshop, Riverbend Pantry, Rosa's Car Yard, Priya & Tom Vets, Valley Growers' Shed, Made-Up Grocers Corp, Burger Barn, GreenBean Cafe) are made up, so nothing dates and no real brand is promoted.
 - **First Nations:** teacher notes in all three lessons quote ACARA's elaborations for AC9HE7K02 (investigating a business owned by First Nations Australians, exploring the types of goods and services offered and why this business was started) and ask the teacher to build on them with local, community-approved material or a business's own published words; no student-facing explanation written by us.
 - **Subject and teacher pages:** `content/economics/index.md` now carries `preview: true`, links `economics/businesses-7` after `scarcity-7`, and shows the remaining Year 7 courses (`Entrepreneurs and business success`, `Work, income and identity`, `Consumer rights and responsibilities`, `Responding to an economic issue`) as "Coming later". `content/economics-teachers.md` updated to match. Three single-line misconceptions added (`profit-only-purpose`, `size-is-structure`, `one-best-structure`).
 
