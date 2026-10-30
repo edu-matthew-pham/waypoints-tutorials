@@ -1,7 +1,7 @@
 ---
 title: Geography
 group: Humanities
-blurb: "Water, hazards and the places people live."
+blurb: "Water, hazards, places"
 preview: true
 order: 7
 trail: units

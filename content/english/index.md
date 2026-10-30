@@ -1,7 +1,7 @@
 ---
 title: English
 group: Core
-blurb: "How writing holds together, how texts and sentences are built, and how word choices change meaning."
+blurb: "Writing, texts, sentences, words"
 order: 1
 map: true
 trail: units

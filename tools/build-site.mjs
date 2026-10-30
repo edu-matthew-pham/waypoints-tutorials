@@ -13,6 +13,7 @@ import { createRequire } from 'node:module';
 import { Marked } from 'marked';
 import { parse as YAMLparse } from 'yaml';
 import { lessonSource } from './lesson-source.mjs';
+import { subjectIcon } from './subject-icons.mjs';
 import { lessonPageHtml, tryEmbed, esc, titleCase, page, codeBlock, siteNav, NAV_CSS, NAV_JS, makecodeBlock } from './lesson-view.mjs';
 import { readFileSync } from 'node:fs';
 import { diagramSpec } from './diagram-core.mjs';
@@ -955,9 +956,9 @@ for (const node of dirs.values()) {
     for (const [name, k] of [...node.kids.entries()].filter(([, k]) => k.kind === 'dir' && k.audience !== 'teachers').sort(([an, a], [bn, b]) => (a.order ?? Infinity) - (b.order ?? Infinity) || an.localeCompare(bn))) {
       const m = dirNode(name).meta || {}, g = typeof m.group === 'string' ? m.group : 'More';
       let e = gs.find((x) => x.name === g); if (!e) gs.push(e = { name: g, cards: [] });
-      e.cards.push(`<li><a href="${esc(name)}/"><b>${esc(k.title)}${m.preview === true ? '<em class="wpt-tag">Preview</em>' : ''}</b>${(m.blurb || k.summary) ? `<span>${esc(m.blurb || k.summary)}</span>` : ''}</a></li>`);
+      e.cards.push(`<li><a href="${esc(name)}/"><span class="wpt-hrow"><span class="wpt-ic">${subjectIcon(name)}</span>${m.preview === true ? '<em class="wpt-tag">Preview</em>' : ''}</span><b>${esc(k.title)}</b>${(m.blurb || k.summary) ? `<span class="wpt-bl">${esc(m.blurb || k.summary)}</span>` : ''}</a></li>`);
     }
-    return `<style>.wpt-hgrp h3{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 8px}ul.lessons.wpt-hgrid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:0}.wpt-hgrid a{padding:14px 18px!important}.wpt-tag{font-style:normal;font-size:12px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:1px 8px;margin-left:8px;vertical-align:middle}</style>` +
+    return `<style>.wpt-hgrp h3{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 8px}ul.lessons.wpt-hgrid{grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:10px;margin-top:0}.wpt-hgrid a{padding:14px 14px!important;height:100%;box-sizing:border-box}.wpt-hrow{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}ul.lessons .wpt-ic{color:var(--accent);display:flex}.wpt-hgrid b{font-size:1.05rem!important}.wpt-bl{display:block;font-size:13px;color:var(--muted);margin-top:2px;line-height:1.35}.wpt-tag{font-style:normal;font-size:11px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:1px 8px}</style>` +
       gs.map((g) => `<section class="wpt-hgrp"><h3>${esc(g.name)}</h3><ul class="lessons wpt-hgrid">${g.cards.join('')}</ul></section>`).join('');
   })();
   const homeAbout = isRoot

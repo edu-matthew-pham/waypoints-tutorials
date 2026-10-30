@@ -1,7 +1,7 @@
 ---
 title: Learning with AI
 group: Technologies
-blurb: "How AI works, when it helps people learn, and who it affects."
+blurb: "How AI works and affects us"
 order: 14
 trail: units
 summary: Understand how AI works, investigate whether and when AI helps people learn, judge who AI affects, and decide how your school uses it.

@@ -1,7 +1,7 @@
 ---
 title: Code
 group: Technologies
-blurb: "Learn to program by predicting, running, investigating, modifying and making."
+blurb: "Learn to program"
 order: 11
 trail: units
 summary: Learn to program by predicting, running, investigating, modifying and making. Three pathways share the same big ideas; start with whichever fits your class.

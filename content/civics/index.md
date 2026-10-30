@@ -1,7 +1,7 @@
 ---
 title: Civics and Citizenship
 group: Humanities
-blurb: "How Australia is governed and how people take part."
+blurb: "How Australia is governed"
 preview: true
 order: 8
 trail: units

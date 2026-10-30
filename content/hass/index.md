@@ -1,7 +1,7 @@
 ---
 title: Humanities skills
 group: Humanities
-blurb: "The shared skills of historical, geographical, civic and economic inquiry."
+blurb: "Inquiry skills for the humanities"
 preview: true
 order: 5
 trail: units

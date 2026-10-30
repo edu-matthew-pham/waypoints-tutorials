@@ -1,7 +1,7 @@
 ---
 title: Engineering
 group: Technologies
-blurb: "Build it, test it, improve it: mechanisms, circuits, structures and fabrication."
+blurb: "Build it, test it, improve it"
 order: 12
 trail: units
 summary: "Build it, test it, improve it. An elective layer on top of the core curriculum for schools with kits, a makerspace or a STEM elective: mechanisms, circuits and microcontrollers, CAD and 3D printing. Each lesson teaches one engineering idea on a board or simulator, then a design brief tests it against criteria. It applies maths, science and code rather than re-teaching them."

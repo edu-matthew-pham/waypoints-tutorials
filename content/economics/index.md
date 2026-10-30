@@ -1,7 +1,7 @@
 ---
 title: Economics and Business
 group: Humanities
-blurb: "Needs and wants, scarcity and opportunity cost."
+blurb: "Needs, scarcity, opportunity cost"
 order: 9
 trail: units
 summary: "The ideas behind how people, businesses and communities decide what to do with what they have: needs and wants, scarcity, opportunity cost. Short lessons on made-up places such as a school tuckshop and a community garden, so nothing dates and nobody's real money is involved. Every lesson follows the same steps in the same order for every class; how long to spend and how much extra to use is the teacher's call."

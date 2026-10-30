@@ -1,7 +1,7 @@
 ---
 title: How computers work
 group: Technologies
-blurb: "How data, networks and computers work, with no coding needed."
+blurb: "How data, networks, computers work"
 order: 10
 map: true
 trail: units

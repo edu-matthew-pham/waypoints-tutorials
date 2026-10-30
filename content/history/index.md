@@ -1,7 +1,7 @@
 ---
 title: History
 group: Humanities
-blurb: "How historians use sources to find out about the past."
+blurb: "Working with sources"
 preview: true
 order: 6
 trail: units
