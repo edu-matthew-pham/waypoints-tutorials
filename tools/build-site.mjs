@@ -963,14 +963,16 @@ for (const node of dirs.values()) {
   })();
   // Teachers page (30 Oct 2026): the same groups as the Teachers menu (`group:` on each link in content/teachers/index.md),
   // in the order the links are listed, as a two-column grid of cards that keep their short descriptions.
+  const TEACHER_ICON = { 'code/create/': 'create', 'teachers/make-a-lesson/': 'lesson', 'my-path/': 'path', 'teachers/ai-and-your-tasks/': 'task', 'choosing-ai-tools/': 'compare', 'check/': 'device', 'humanities-teachers/': 'hass' };
   const teacherGroups = node.path !== 'teachers' ? '' : (() => {
     const gs = [];
     for (const l of linksOf('teachers')) {
       const g = l.group || 'More'; let e = gs.find((x) => x.name === g); if (!e) gs.push(e = { name: g, cards: [] });
       const sum = l.summary || dirs.get(l.href.slice(0, -1))?.summary || '';
-      e.cards.push(`<li><a href="${esc(up + l.href)}"><b>${esc(l.title)}</b>${sum ? `<span class="wpt-bl">${esc(sum)}</span>` : ''}</a></li>`);
+      const ic = subjectIcon(TEACHER_ICON[l.href] || l.href.replace(/-teachers\/$/, '').replace(/\/$/, ''));
+      e.cards.push(`<li><a href="${esc(up + l.href)}">${ic ? `<span class="wpt-hrow"><span class="wpt-ic">${ic}</span></span>` : ''}<b>${esc(l.title)}</b>${sum ? `<span class="wpt-bl">${esc(sum)}</span>` : ''}</a></li>`);
     }
-    return `<style>.wpt-hgrp h3{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 8px}ul.lessons.wpt-tgrid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:0}.wpt-tgrid a{padding:14px 18px!important;height:100%;box-sizing:border-box}.wpt-tgrid b{font-size:1.05rem!important}.wpt-bl{display:block;font-size:13px;color:var(--muted);margin-top:2px;line-height:1.4}</style>` +
+    return `<style>.wpt-hgrp h3{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 8px}ul.lessons.wpt-tgrid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:0}.wpt-tgrid a{padding:14px 18px!important;height:100%;box-sizing:border-box}.wpt-tgrid b{font-size:1.05rem!important}.wpt-hrow{display:flex;margin-bottom:8px}ul.lessons .wpt-ic{color:var(--muted);display:flex;transition:color .15s}.wpt-tgrid a:hover .wpt-ic{color:var(--accent)}.wpt-bl{display:block;font-size:13px;color:var(--muted);margin-top:2px;line-height:1.4}</style>` +
       gs.map((g) => `<section class="wpt-hgrp"><h3>${esc(g.name)}</h3><ul class="lessons wpt-tgrid">${g.cards.join('')}</ul></section>`).join('');
   })();
   const homeAbout = isRoot
