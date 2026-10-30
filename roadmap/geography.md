@@ -37,7 +37,7 @@
 All five recommendations accepted, with one rule on real places:
 1. **K01 only** for `geography/water-7`; K02 (Water in Australia, with the Australia water map lesson) is the next course.
 2. **Real places, but light.** Real spine (Snowy Mountains, Murrumbidgee, Murray) plus the Ord River and Great Artesian Basin as contrasts. **If a place needs a lot of fact-checking, go lighter on it:** use a real place only for a settled fact with a named source (a river is a river; a quoted line from CSIRO or the managing body), otherwise use a made-up case or a hypothetical. Lesson 1 followed this: Murrumbidgee as "a river" in one sort item, and one wider card paraphrasing CSIRO. Each real-place card carries its source and a `checked:` date in `teacher.yml`.
-3. **Kit prior links** (AC9HS4K06 and AC9HS5K08 for K01) to be added in waypoints-kit as a separate small job; **not done yet** (different repo). Then a "Build up to this" fold in lesson 1 rather than a catch-up lesson.
+3. **Kit prior links** for K01 (AC9HS4K06 and AC9HS5K08): **done 30 Oct** in waypoints-kit (`c6fbf22`; the standard's prior-knowledge text now names both codes) and re-imported here, so `data/curriculum/geography.json` lists them as K01's prior. The shared Before Year 7 HASS course covers inquiry skills only (HS6S01, S02), not these resource ideas, so K01 gets a "Build up to this" fold inside lesson 1 rather than a catch-up lesson; add a Geography catch-up to the shared course only if a trial shows students missing the ideas. Still missing in Kit: prior links for K03 to K08 (not guessed; list for Matthew to approve).
 4. **No board.** One map picture later if a lesson needs it (not needed for lesson 1).
 5. **Go up now, without waiting for the Preview label.** The subject and course pages say "preview" in their summaries.
 
@@ -82,7 +82,7 @@ Notes:
 4. **A board or not.** The checks above need nothing new. A small catchment board (click where to put a dam or clear land, see what reaches the town downstream) would suit lessons 2 to 4 but is new machinery, so I'd leave it until the pilot shows the static picture isn't enough.
 5. **Subject page.** `content/geography/index.md` as its own subject like Economics (order 9), one pathway "Water" with this course as foundations and K02 as "Coming later". The Preview label and planned-lesson display aren't built yet (Project plan › Placeholders); this course would wait for them or go up without them, as Economics has.
 
-Next: Kit prior links, then lessons 2 to 5 (same shape; lesson 2 is the second hinge and the first to need a map picture).
+Next: lessons 2 to 5 and the lesson 1 fold (same shape; lesson 2 is the second hinge and the first to need a map picture).
 
 ## Starter prompt for the Geography chat
 

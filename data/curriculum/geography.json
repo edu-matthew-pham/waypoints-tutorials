@@ -1,6 +1,6 @@
 {
  "subject": "geography",
- "source": "waypoints-kit d93e6e5",
+ "source": "waypoints-kit c6fbf22",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -11,8 +11,11 @@
    "strand": "Knowledge and understanding",
    "title": "Water as an environmental resource",
    "description": "classification of environmental resources and the way that water connects and changes places as it moves through environments",
-   "prior": [],
-   "knowledge": "Students enter Year 7 Geography from the F–6 HASS curriculum. They have a working understanding of basic geographical concepts (place, space, environment, interconnections, scale, sustainability, change), can identify natural and managed environments, and have located Australia within the Asia-Pacific region. They have not previously encountered formal resource classification frameworks or the concept of the hydrological cycle as an agent of landscape change.",
+   "prior": [
+    "AC9HS4K06",
+    "AC9HS5K08"
+   ],
+   "knowledge": "Students enter Year 7 Geography from the F–6 HASS curriculum. They have a working understanding of basic geographical concepts (place, space, environment, interconnections, scale, sustainability, change), can identify natural and managed environments, and have located Australia within the Asia-Pacific region. They have met renewable and non-renewable resources and their sustainable use (AC9HS4K06) and the types of resources that satisfy needs and wants: natural, human and capital (AC9HS5K08). They have not previously met a formal classification that adds continuous resources and asks whether use can run a resource down, or the concept of the hydrological cycle as an agent of landscape change.",
    "endpoint": "Students explain how water is classified as an environmental resource and how its movement through environments connects and changes places.",
    "elaborations": [
     "classifying resources into renewable, non-renewable and continuous resources, and identifying examples of each type",
