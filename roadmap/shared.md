@@ -145,6 +145,11 @@ Lessons 2–5 add four single-line entries to `misconceptions.json`: `directly-e
 - Four misconceptions added to `misconceptions.json` (`old-means-primary`, `origin-from-content`, `context-is-setting`, `purpose-is-content`).
 - Not built (no shared code): the **Preview** label and the planned-units display from the humanities plan. History says "Preview (a pilot, not finished)" in the subject, pathway and course summaries, and shows planned courses as "Coming later" cards. A shared Preview label and greyed planned units inside a course are still open.
 
+## Changed by the History chat (30 Oct 2026): completed courses without playgrounds
+
+- Browser testing `history/evidence-7` found that `site/progress.js` sent every completed course to `playground/`, even when no playground existed. The completion card now uses an existing course chip in order: playground, recap, reference; otherwise it links back to a lesson. Courses with playgrounds keep their playground destination.
+- This is a small shared progress-script change, not a lesson renderer or workflow change. Whole-site publish required. Browser checks cover the new History course, the existing Source origin and purpose course without a playground, and Python Foundations with its playground.
+
 ## Changed by the Geography chat (30 Oct 2026): node check
 
 `geography` added to `CHECKED` in `tools/progressions.mjs`, so Geography lessons must name their node (roadmap/geography.md). One misconception added to `misconceptions.json` (`continuous-is-renewable`). New subject `content/geography/` (order 10).

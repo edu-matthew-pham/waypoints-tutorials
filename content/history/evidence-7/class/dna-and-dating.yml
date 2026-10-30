@@ -1,0 +1,27 @@
+inquiry:
+  q: Can a good laboratory result still lead to a poor historical conclusion?
+  prompts:
+    - Which evidence would you need?
+    - What would make you change your conclusion?
+  notes: Accept competing views where their evidence and limits are stated. Return to this question after Make.
+activities:
+  - at: investigate
+    kind: activity
+    title: Try the reasoning together
+    do: Give pairs a sample card, a DNA report and a date-range report. For each conclusion they propose, ask which report supports it and which part remains unknown.
+    notes: Use made-up cases. Check reasons, not speed.
+questions:
+  - at: make
+    title: Check before moving on
+    type: question
+    q: You want to investigate whether two ancient individuals were biological relatives. Which is the best starting evidence?
+    options:
+      - Similar pots alone
+      - The depth of their finds alone
+      - A comparison of surviving DNA, alongside the context records
+    answer: 2
+    explain: DNA comparison can test biological relationship; the archaeological records help interpret the result.
+    feedback:
+      - Pots can be shared by people who are not relatives.
+      - Depth helps with relative order, not biological relationship.
+      - null

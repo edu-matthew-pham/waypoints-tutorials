@@ -1,0 +1,39 @@
+summary: Explain why destroying archaeological evidence closes off future questions. Identify how governments and international bodies help conserve sites, and weigh a made-up development proposal against clear evidence criteria.
+goals:
+  - I can explain why objects and their context need conserving.
+  - I can name a protection role for a government or international body.
+struggle: The visible objects can crowd out the invisible relationships. Return to a question about the sequence of layers before asking students to choose a protection action.
+before: |-
+  This integration lesson uses the normal skill-lesson shape for its checkable distinction between an object and context and its protection roles. The policy choice is open discussion and book work, not a marked opinion. All road and council cases are invented. The Qin example is limited to UNESCO’s published description of protection boundaries and construction controls. It is not a claim that World Heritage status prevents all damage. Source facts about the Qin site also provide a connection to the ancient China model used in Source origin and purpose.
+
+  Usually Year 7; Preview, not yet tried with a class. The untiered path is the minimum. Time and optional width are the teacher’s choices. No board or clips are needed.
+
+  K08 lists AC9HH7K01 and AC9HH7K07 as prior knowledge. Use their curriculum pointer pages, especially /teach/curriculum/history/AC9HH7K07/, rather than adding our own First Nations explanations. Start with ACARA’s elaborations on that pointer page and ask the school’s First Nations contact for local, community-approved material. Do not treat this methods course as covering K07.
+
+  Relevant ACARA K08 elaboration (an example, not a checklist): “examining the roles and responsibilities of governments and other bodies, such as UNESCO, in protecting key archaeological sites; for example, the rescue mission to save the temples of Abu Simbel or the campaign for the return of the Elgin Marbles to Greece”
+running:
+  - "Predict and Try: ask students to give a reason before revealing the explanation."
+  - "Worked example: use the smaller lead-in if the main distinction is still insecure."
+  - "Vary and Practise: change one condition and ask what remains supported."
+  - "Make: a partner or teacher judges the explanation in the student’s own book."
+stuck:
+  - see: "Nib says: “We kept the pots, so nothing important was lost.” What is the best correction?"
+    ask: Does a pot on a shelf tell you which layer it came from?
+    fix: The pots survive, but their relationships may not. Evidence includes context.
+  - see: A student gives a conclusion without saying what supports it.
+    ask: Which part of the record supports that?
+    fix: Name the source or method, then one thing it cannot settle.
+support: "List two things a museum might keep: the find and its location record. Ask which question becomes impossible if the second is missing."
+stretch: The wider recommendation has no single approved policy answer. Judge the evidence, uncertainty and trade-offs, not agreement with a preferred route.
+leads: Return to your depth study and use these methods beside Source origin and purpose. Source usefulness (AC9HH7S04) remains a planned separate course.
+exit:
+  q: Why is saving every object not always enough, and who could help protect the evidence?
+  a: Lost positions and layer relationships may be irreplaceable. A government can control construction and support management; international bodies can assist recognition and cooperation.
+explain: Conservation protects objects and the evidence in their relationships. Governments and international bodies have complementary roles; a protected title still needs practical care.
+sources:
+  - title: "UNESCO: Mausoleum of the First Qin Emperor"
+    url: https://whc.unesco.org/en/list/441
+    checked: 2026-10-30
+  - title: "Stratigraphy: reading the layers"
+    url: https://archeologie.culture.gouv.fr/archeo-sous-marine/en/glossaire/stratigraphy
+    checked: 2026-10-30

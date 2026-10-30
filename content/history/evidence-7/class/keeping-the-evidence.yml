@@ -1,0 +1,27 @@
+inquiry:
+  q: When might a longer road be worth its extra cost to preserve a site?
+  prompts:
+    - Which evidence would you need?
+    - What would make you change your conclusion?
+  notes: Accept competing views where their evidence and limits are stated. Return to this question after Make.
+activities:
+  - at: investigate
+    kind: activity
+    title: Try the reasoning together
+    do: Pairs advise the made-up council. Each gives a recommendation, one piece of evidence it protects, one cost, and one unanswered question. Another pair proposes a different solution using the same criteria.
+    notes: Use made-up cases. Check reasons, not speed.
+questions:
+  - at: make
+    title: Check before moving on
+    type: question
+    q: A made-up site can keep its finds but loses all records of their locations. Which future question becomes harder?
+    options:
+      - What colour is this surviving pot?
+      - How heavy is this surviving tool?
+      - Which activity came before another at this site?
+    answer: 2
+    explain: The lost locations and layers weaken the sequence that could answer the timing question.
+    feedback:
+      - A surviving object can still show its colour.
+      - The tool can still be weighed.
+      - null

@@ -1,0 +1,42 @@
+summary: Read an excavation as a sequence of layers. Use the position of a find and the evidence beside it to explain what may have changed, while keeping relative age separate from an exact date.
+goals:
+  - I can use undisturbed layers to put finds in relative order.
+  - I can use finds to suggest a change and name a limit.
+struggle: Depth feels like a clock. Ask students to separate “before” from “how many years before” before giving them a date.
+before: |-
+  This is the first K08 hinge: without the logic of layers, the scientific and written evidence in lessons 2 and 3 becomes a collection of facts rather than evidence in a sequence. All excavation cards are invented. The diagram is schematic, not to scale. Keep “undisturbed” attached to the deeper-is-older rule. The wider pit case shows why.
+
+  Usually Year 7; Preview, not yet tried with a class. The untiered path is the minimum. Time and optional width are the teacher’s choices. No board or clips are needed.
+
+  K08 lists AC9HH7K01 and AC9HH7K07 as prior knowledge. Use their curriculum pointer pages, especially /teach/curriculum/history/AC9HH7K07/, rather than adding our own First Nations explanations. Start with ACARA’s elaborations on that pointer page and ask the school’s First Nations contact for local, community-approved material. Do not treat this methods course as covering K07.
+
+  Relevant ACARA K08 elaboration (an example, not a checklist): “creating a cross-sectional drawing of the earth's surface from an archaeological excavation to identify the evidence located at various layers (stratigraphy) and what it reveals about change over time; for example, a charcoal layer containing human remains and weapons may indicate the capture and destruction of an ancient settlement such as Troy”
+running:
+  - "Predict and Try: ask students to give a reason before revealing the explanation."
+  - "Worked example: use the smaller lead-in if the main distinction is still insecure."
+  - "Vary and Practise: change one condition and ask what remains supported."
+  - "Make: a partner or teacher judges the explanation in the student’s own book."
+stuck:
+  - see: "Nib writes: “B is deeper than C, so B is exactly 500 years older.” What needs changing?"
+    ask: Can a stack of layers alone tell you how many years passed?
+    fix: Depth can establish relative order here. It does not measure a number of years.
+  - see: A student gives a conclusion without saying what supports it.
+    ask: Which part of the record supports that?
+    fix: Name the source or method, then one thing it cannot settle.
+support: Use three stacked cards labelled earlier floor, burnt wood, later floor. Read one pair at a time before the complete sequence.
+stretch: The extra cases add weapons and a later pit. They test the same inference with more evidence or a disturbance, without moving to later standards.
+leads: Continue to DNA and dating answer different questions.
+exit:
+  q: What can you infer from burnt wood between two floors, and what can you not yet say?
+  a: A burning event may lie between two periods of use. The cause, exact date and time gap need more evidence.
+explain: In an undisturbed sequence, lower layers formed first. Finds and their positions help reconstruct change; depth alone supplies neither an exact year nor a cause.
+sources:
+  - title: "UNESCO: Mausoleum of the First Qin Emperor"
+    url: https://whc.unesco.org/en/list/441
+    checked: 2026-10-30
+  - title: "Stratigraphy: reading the layers"
+    url: https://archeologie.culture.gouv.fr/archeo-sous-marine/en/glossaire/stratigraphy
+    checked: 2026-10-30
+  - title: "Smithsonian Human Origins: dating"
+    url: https://humanorigins.si.edu/evidence/dating
+    checked: 2026-10-30

@@ -1,0 +1,27 @@
+inquiry:
+  q: Does finding burnt wood prove there was an attack?
+  prompts:
+    - Which evidence would you need?
+    - What would make you change your conclusion?
+  notes: Accept competing views where their evidence and limits are stated. Return to this question after Make.
+activities:
+  - at: investigate
+    kind: activity
+    title: Try the reasoning together
+    do: Lay three paper strips on a desk as layers. Place a small find on each. Ask a partner to describe the sequence, then cut a paper pit through them and explain what changed.
+    notes: Use made-up cases. Check reasons, not speed.
+questions:
+  - at: make
+    title: Check before moving on
+    type: question
+    q: At a second made-up, undisturbed site, a floor lies below flood mud and a rebuilt wall lies above it. Which account is supported?
+    options:
+      - Flooding came before any floor existed
+      - The wall proves why the flood happened
+      - A period of use was followed by flooding and rebuilding
+    answer: 2
+    explain: The positions give a sequence. They do not give the cause or an exact year.
+    feedback:
+      - The floor is below the flood deposit.
+      - A wall does not explain the cause of a flood.
+      - null

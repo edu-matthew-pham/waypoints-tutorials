@@ -100,10 +100,23 @@ Decided (30 Oct 2026, Matthew said "defaults"):
 ## Next
 
 - Course 2: `history/source-usefulness-7` (AC9HH7S04: fact and opinion, accuracy, usefulness, combining), tagged to the existing lessons' ideas. Lesson 4's "what it cannot tell us" sentence leads into it.
-- Course 3: `history/evidence-7` (AC9HH7K08: stratigraphy, DNA and dating, written sources, conservation), with the Terracotta Army as the worked example.
+- Course 3 is built as `history/evidence-7`, *How we know* (AC9HH7K08); see the completion notes below. Source usefulness remains unbuilt and is not a gate on this course.
 - Then the ancient-world lenses (K09 to K13) with swap-in topic cards, and K01 (Out of Africa). K02 to K07 stay one pointer page.
 - A First Nations educator should review before these courses go beyond CGGS (`roadmap/shared.md` › Decided: humanities).
 
 ## Starter prompt for the History chat
 
 > Read CLAUDE.md, ROADMAP.md, `roadmap/shared.md` › Decided (30 Oct 2026) entries and › Changed by the History chat, and `roadmap/history.md` (Built and Next). Look at `content/history/sources-7/` end to end as the History model. Then propose the next History course (source usefulness, AC9HH7S04) in `roadmap/history.md`, commit and push, and wait for me before building.
+
+## Built: How we know (30 Oct 2026; Preview, not yet tried with a class)
+
+- `history/evidence-7`, AC9HH7K08, one lesson per waypoint in node order: `reading-the-layers` (n1, hinge), `dna-and-dating` (n2), `reading-ancient-writing` (n3, hinge), `keeping-the-evidence` (n4, integration). DNA comparison and biological relationships are in the untiered minimum path. Dating estimates, sample context and uncertainty are taught alongside them.
+- Normal skill-lesson shape: Predict, Try, Worked example, Vary, Practise, Make in the student's own book. Smaller-step support and escalating hints accompany each planted misconception, including both hinges. Typical and wider steps add breadth on the same waypoint. No pace labels, board, write box or clips.
+- Shape decision: n4 uses checkable object/context and protection-role distinctions in the normal shape; its policy recommendation is open discussion and book work. The site does not mark a preferred development policy.
+- Excavations, ancient individuals, lab reports, inscriptions, road proposals and councils are explicitly made up. The layer diagram is schematic. The real Qin conservation case is sourced to UNESCO; the optional Rosetta Stone example to the British Museum. Methods are checked against the French Ministry of Culture, Smithsonian and NHGRI sources listed in teacher notes. No claim is made that the invented DNA reports concern Qin people.
+- K01 and K07 prerequisites link to existing curriculum pointer pages. K07 is not covered by authored explanations; teacher notes direct teachers to ACARA elaborations and local, community-approved material. No First Nations historical or cultural explanation has been authored.
+- Teacher notes and class plans for all four lessons, plus a conceptual reference, recap, short course presentation and layer SVG (embedded in the lesson so it needs no asset-copy change). Subject/pathway and History teacher pages now link the course and retain Preview. Four misconception records added as single lines in `misconceptions.json`; no build tools or workflows changed.
+- Browser testing found a shared completion card linking to a nonexistent playground. `site/progress.js` now chooses an available course resource or lesson; details and regression checks are in `roadmap/shared.md`.
+- Continuation note: the previous unpublished checkout was unavailable after session cleanup, so this version was rebuilt from the current repository and K08 nodes; earlier reported test results were not reused.
+- Tested: `npm ci`, `npm run validate`, `npm run build` with `WP_NO_MAKECODE=1`, `npm run check-nodes`, and `check-decks` for the course. Browser checks at 1280 and 390 px: 34 page visits, 80 check instances (including smaller and optional steps), 96 wrong-answer trials; no page errors, broken History links or sideways scrolling. Required completion excludes optional width and smaller checks; progress persists after reload. Shared progress regression: 18 fresh, partial and complete states across this course, Source origin and purpose and Python Foundations. All four course presentation slides fit. Existing warnings elsewhere in maths/science and clip placeholders remain outside this work.
+- Not tested with a class; no local clips rendered, and no publish run. Needs a whole-site publish for subject and teacher-page discovery and the shared progress script; Matthew publishes manually. These lessons have no clips to record.

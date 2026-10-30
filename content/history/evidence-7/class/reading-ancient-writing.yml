@@ -1,0 +1,27 @@
+inquiry:
+  q: Can an exaggerated inscription still be useful evidence?
+  prompts:
+    - Which evidence would you need?
+    - What would make you change your conclusion?
+  notes: Accept competing views where their evidence and limits are stated. Return to this question after Make.
+activities:
+  - at: investigate
+    kind: activity
+    title: Try the reasoning together
+    do: Give half the pairs the inscription and half the layer card. Ask each to say what it can show. Join pairs and write one combined claim with one limit.
+    notes: Use made-up cases. Check reasons, not speed.
+questions:
+  - at: make
+    title: Check before moving on
+    type: question
+    q: A second made-up edict orders a road to be repaired. What can it establish most directly?
+    options:
+      - Every section was repaired at once
+      - No one used the road before the order
+      - Someone issued a repair order; completion needs other evidence
+    answer: 2
+    explain: An instruction is not proof that it was carried out. Road remains or later records could help.
+    feedback:
+      - An order does not establish completion.
+      - The order gives no such history of use.
+      - null

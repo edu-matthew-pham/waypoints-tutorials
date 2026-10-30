@@ -90,9 +90,11 @@
         c.querySelector('b').textContent = pick.row.dataset.title.replace(/Optional:\s*/, '') + (pick.optional ? ' (optional)' : '');
         c.querySelector('.cstep').textContent = any && pick.next ? 'Next: ' + pick.next.label : '';
       } else if (info.some(function (x) { return x.keys.length; })) {
+        // Courses without a playground still need a working destination after completion.
+        var next = document.querySelector('.chip[href="playground/"]') || document.querySelector('.chip[href="recap/"]') || document.querySelector('.chip[href="reference/"]');
         c.querySelector('.ck').textContent = 'All done';
-        c.querySelector('b').textContent = 'Every lesson here is complete. Try the playground.';
-        c.href = 'playground/'; c.querySelector('.cstep').textContent = '';
+        c.querySelector('b').textContent = next ? 'Every lesson here is complete. Open the ' + next.textContent.toLowerCase() + '.' : 'Every lesson here is complete. Revisit a lesson.';
+        c.href = next ? next.getAttribute('href') : info[0].row.dataset.href; c.querySelector('.cstep').textContent = '';
       }
     }
     var foot = document.getElementById('cfoot');

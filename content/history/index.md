@@ -11,11 +11,11 @@ pathways:
     title: How we know
     summary: "Where historians' knowledge comes from: sources, and the questions that turn a source into evidence."
     fit: "Start here before a depth study, or any time a class needs to question a source."
-    about: "**Preview.** This is a pilot: only the first course is built, and the planned ones below show where the pathway is going. It follows the ACARA Year 7 History skills standards, starting with AC9HH7S03 (identify the origin, content, context and purpose of sources). Every student takes the same steps in the same order; typical and wider steps add more examples of the same idea and are never needed to finish. Ancient China in the Qin and Han period is the worked example because it is what many Year 7 classes study. It is a model: the questions work the same way on Egypt, Greece, Rome, India or any other society, and your class can swap in its own sources. Nothing here replaces your unit."
+    about: "**Preview.** This is a pilot: Source origin and purpose and How we know are built; Source usefulness is planned. It follows the ACARA Year 7 History knowledge and skills standards, starting with AC9HH7S03 (identify the origin, content, context and purpose of sources). Every student takes the same steps in the same order; typical and wider steps add more examples of the same idea and are never needed to finish. Ancient China in the Qin and Han period is the worked example because it is what many Year 7 classes study. It is a model: the questions work the same way on Egypt, Greece, Rome, India or any other society, and your class can swap in its own sources. Nothing here replaces your unit."
     courses:
       - { path: history/sources-7, id: sources-7, stage: foundations, tagline: "Who made it, and why?" }
       - { title: Source usefulness, stage: foundations, after: [sources-7], summary: "Fact and opinion, accuracy and usefulness: what a source is worth as evidence (AC9HH7S04).", tagline: "How far can you trust it, and what is it good for?" }
-      - { title: Evidence of the ancient past, stage: foundations, after: [sources-7], summary: "Digs and layers, DNA and dating, written sources and looking after what is found (AC9HH7K08).", tagline: "How archaeologists work out what happened." }
+      - { path: history/evidence-7, id: evidence-7, stage: foundations, after: [sources-7], tagline: "What can the evidence tell us?" }
   - id: before-year-7
     title: Before Year 7
     summary: "A short catch-up lesson on the Year 6 idea Year 7 History builds on."

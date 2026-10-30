@@ -1,0 +1,42 @@
+summary: Describe how ancient DNA can reveal biological relationships. Distinguish that question from dating organic material, and read a date range as an estimate rather than an exact year.
+goals:
+  - I can describe one thing ancient DNA comparison can reveal.
+  - I can distinguish a biological relationship from a dating estimate.
+struggle: A scientific result can sound certain. Keep asking “which sample, which question, and what uncertainty?” rather than treating the lab report as the whole history.
+before: |-
+  DNA is on the untiered minimum path, not optional width. These are invented ancient individuals with no named community, images, remains descriptions or genetic sequences. Do not invite personal ancestry disclosures or ask students to analyse real remains. Real research requires permissions and ethical review; this lesson only interprets simple report cards. Biological ancestry is not a determination of cultural identity. No claim is made that these reports concern the Qin mausoleum. The 300 to 200 BCE range is an invented simplified calendar result, not an uncalibrated radiocarbon measurement.
+
+  Usually Year 7; Preview, not yet tried with a class. The untiered path is the minimum. Time and optional width are the teacher’s choices. No board or clips are needed.
+
+  K08 lists AC9HH7K01 and AC9HH7K07 as prior knowledge. Use their curriculum pointer pages, especially /teach/curriculum/history/AC9HH7K07/, rather than adding our own First Nations explanations. Start with ACARA’s elaborations on that pointer page and ask the school’s First Nations contact for local, community-approved material. Do not treat this methods course as covering K07.
+
+  Relevant ACARA K08 elaboration (an example, not a checklist): “evaluating various methods for investigating the ancient past; for example, stratigraphy to date discoveries, and DNA testing to identify common diseases and past individuals from their remains, such as Egyptian mummies”
+running:
+  - "Predict and Try: ask students to give a reason before revealing the explanation."
+  - "Worked example: use the smaller lead-in if the main distinction is still insecure."
+  - "Vary and Practise: change one condition and ask what remains supported."
+  - "Make: a partner or teacher judges the explanation in the student’s own book."
+stuck:
+  - see: Nib records Report B as “the settlement was built in exactly 250 BCE”. What is the problem?
+    ask: The report gives 300 to 200 BCE. Has it selected one exact year?
+    fix: 250 BCE is inside the range, but the report does not select that year or directly date construction.
+  - see: A student gives a conclusion without saying what supports it.
+    ask: Which part of the record supports that?
+    fix: Name the source or method, then one thing it cannot settle.
+support: "Give two headings: biological relationship and estimated time. Place one report under each, then ask what is being compared or measured."
+stretch: The extra cases explore preservation and displaced samples. No laboratory procedure, genetic calculations or student ancestry testing is required.
+leads: Continue to Reading ancient writing alongside other evidence.
+exit:
+  q: What could DNA comparison tell us about two ancient individuals, and what could it not tell us by itself?
+  a: It could support an inference about biological relationship. It would not by itself give their names, beliefs or an exact event date.
+explain: Ancient DNA comparison can investigate biological relationships. Radiocarbon dating estimates the age of suitable organic samples. Each result needs its limits and archaeological context.
+sources:
+  - title: "NHGRI: genetic ancestry"
+    url: https://www.genome.gov/genetics-glossary/Genetic-Ancestry
+    checked: 2026-10-30
+  - title: "Smithsonian Human Origins: ancient DNA"
+    url: https://humanorigins.si.edu/evidence/genetics/ancient-dna-and-neanderthals
+    checked: 2026-10-30
+  - title: "Smithsonian Human Origins: dating"
+    url: https://humanorigins.si.edu/evidence/dating
+    checked: 2026-10-30

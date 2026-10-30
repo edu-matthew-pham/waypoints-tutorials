@@ -1,0 +1,34 @@
+summary: Identify inscriptions as ancient written sources and explain translation and context problems. Compare a written claim with physical evidence instead of ranking writing as automatically more reliable.
+goals:
+  - I can name a written source and a difficulty in interpreting it.
+  - I can compare source types without assuming writing is always best.
+struggle: "Students may turn “written” into “true” or swing to “biased means useless”. Keep the claim and the question separate: useful for what?"
+before: |-
+  This is the second K08 hinge. Students who privilege text by default will carry a false reliability hierarchy into later source evaluation. Use the Nib check and its smaller lead-in before leaving the lesson. All ruler, town and road cards are invented; the only real object named here is the optional Rosetta Stone case. Student summaries are our own, not quotations or translations. Do not turn the brief comparison with oral sources into authored First Nations explanations. Use the curriculum pointer pages and community-approved resources for that content.
+
+  Usually Year 7; Preview, not yet tried with a class. The untiered path is the minimum. Time and optional width are the teacher’s choices. No board or clips are needed.
+
+  K08 lists AC9HH7K01 and AC9HH7K07 as prior knowledge. Use their curriculum pointer pages, especially /teach/curriculum/history/AC9HH7K07/, rather than adding our own First Nations explanations. Start with ACARA’s elaborations on that pointer page and ask the school’s First Nations contact for local, community-approved material. Do not treat this methods course as covering K07.
+running:
+  - "Predict and Try: ask students to give a reason before revealing the explanation."
+  - "Worked example: use the smaller lead-in if the main distinction is still insecure."
+  - "Vary and Practise: change one condition and ask what remains supported."
+  - "Make: a partner or teacher judges the explanation in the student’s own book."
+stuck:
+  - see: "Nib says: “It was carved in stone, so the town must have been prosperous for everyone.” Which reply is strongest?"
+    ask: Does a ruler praising a town record every resident’s experience?
+    fix: An inscription is evidence of what was recorded. Assessing the wider claim needs more evidence.
+  - see: A student gives a conclusion without saying what supports it.
+    ask: Which part of the record supports that?
+    fix: Name the source or method, then one thing it cannot settle.
+support: Underline the action in an order. Then ask separately whether the source records a command or records completion.
+stretch: The Rosetta Stone is a sourced swap-in example, not a language lesson. The wider discussion tests alternative explanations for disagreement without requiring one prescribed view.
+leads: Continue to Keeping the evidence for the next question.
+exit:
+  q: An edict orders road repairs. What can it show, what remains uncertain, and what evidence could help?
+  a: It records an order. Whether repairs happened remains uncertain. Archaeological evidence of repairs or later records could help.
+explain: Ancient writing can preserve a claim, order or account. Translation, damage and context shape what we can infer. Compare it with other sources on the same question.
+sources:
+  - title: "British Museum: Hieroglyphs, plain English highlights"
+    url: https://www.britishmuseum.org/sites/default/files/2022-10/Hieroglyphs_unlocking_ancient_Egypt_12_exhibition_highlights_in_plain_English_10_10.pdf
+    checked: 2026-10-30
