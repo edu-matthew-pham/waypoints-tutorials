@@ -101,3 +101,63 @@ Next: trial the five K01 lessons with a class and review the lesson 1 prerequisi
 - Added four single-line misconceptions. Updated the course summary and Geography teacher guide to say all five are built, still a preview and not yet classroom-tried. Lesson 3 teacher notes quote the imported ACARA elaboration naming Mutitjulu and direct teachers to local, community-approved material; no student explanation of First Nations history/culture added.
 - Verified: `npm ci`, `npm run validate`, `npm run check-nodes`, `WP_NO_MAKECODE=1 npm run build`, and `npm run check-decks -- geography/water-7` passed. Headless Chromium answered all 48 new checks (including smaller steps and optional width), checked 32 deliberate wrong answers, prediction locking, saved progress, optional-step hiding, four mobile layouts, the course/subject/Geography teacher pages and four lesson guides. No browser page or HTTP errors. Screenshots reviewed. The two Geography HTML warnings are the intentional inline SVG figures; unrelated existing warnings and nine existing Code clip placeholders remain. Not yet tried with a class or checked on the live site.
 - Publish: quick whole-site or full publish includes the plain Geography teacher guide as well as the new lessons/course. No clips to record; no workflows or publishing branches touched.
+
+
+## Stage 1 plan (30 Oct 2026, reviewed in ChatGPT; awaiting build go): `geography/water-australia-7`, *Water in Australia* (AC9HG7K02)
+
+**Status: plan only.** Do not create lessons before Matthew approves the build. This follows `roadmap/checklist.md` › Plan first, then build. The imported standard has **five nodes, with hinges at n1 and n2** (not four). Prior: AC9HG7K01, `geography/water-7`. Descriptor: “the location and distribution of water resources in Australia, their implications, and strategies to manage the sustainability of water”. Endpoint: explain Australian water distribution, its implications for people and water-sustainability strategies.
+
+**Course progression:** Where is water? → Why is supply variable or access limited? → Who is affected? → Which strategies address the cause? → Explain and justify an integrated response. Untiered route = minimum learning; `tier:` steps provide optional width, never faster pacing. The previous course covers water types, movement, connectivity and landscape change; do not reteach those as new content.
+
+### Waypoints and lesson plans
+
+**1. `water-on-the-map` — Where is Australia's water? (K02 n1, hinge)**
+- **Checkpoint:** Represent at least two types of Australian water resources (surface water and groundwater) using map conventions, then describe an uneven distribution pattern. The task must make students *represent* locations, not just view a map.
+- **One insight:** Where water resources are located is not necessarily where people can readily access reliable, usable water. Map a resource first; qualify access separately.
+- **Misconception ID:** `water-present-means-accessible`. Nib sees the Great Artesian Basin and assumes everyone living above it has plentiful accessible water. `smaller:` find a labelled river and a groundwater region separately before describing the pattern.
+- **Case:** Accurate Australian outline map with sourced river-system and groundwater-region locations; *made-up* map-note interpretations by Nib and imaginary towns Drybank/Riverbend clearly labelled “made up” whenever introduced.
+- **Distractors:** groundwater is one freely accessible underground river everywhere; a mapped river guarantees year-round drinking supply; reciting symbols without describing spatial distribution.
+- **Shape:** Worked map-reading example + guided representation and spatial-pattern check; suited to the cartographic hinge. **Width:** another resource type or comparison to population/access; seasonal distribution only with verified data.
+- **Resources:** Static Australian map (clear legend, labels and cartographic conventions) plus a student-completed location/legend task; no new board. Verify geography against official mapping before drawing.
+
+**2. `why-water-runs-short` — Why does water run short? (K02 n2, hinge)**
+- **Checkpoint:** Distinguish physical scarcity from economically constrained access, and explain at least two variability factors (e.g. climate, seasonality, evaporation, location or topography). Differentiate competing use/demand from physical supply.
+- **One insight:** Lack of reliably usable water can arise from limited physical supply, inadequate infrastructure/access, or competing demands. The diagnosis affects which response will work.
+- **Misconception ID:** `scarcity-always-means-no-rain`. Nib assumes inadequate access always proves low rainfall. `smaller:` separate “Is water physically there?” from “Can people reliably obtain usable water?”
+- **Case:** Two explicitly *made-up* settlements: one under prolonged dry conditions; the other with a potential water source but limited treatment/distribution infrastructure.
+- **Distractors:** rainfall alone guarantees safe access; infrastructure failure is the same as environmental shortage; drought is the only source of seasonal/temporal variability.
+- **Shape:** Worked causal comparison, classification and a hinge bug check. **Width:** combined supply-demand drivers, climate variability or changes in demand with evidence; do not imply any Australian community has the hypothetical circumstances.
+
+**3. `water-and-people` — Who has access to water? (K02 n3)**
+- **Checkpoint:** Explain at least one lived implication for a rural/remote place (e.g. reliability, health, costs or livelihoods), then compare it to an urban settlement. Where the node criteria ask for two implications, support that in the worked/practice path.
+- **One insight:** Distribution, reliability, infrastructure and competing uses affect settlements differently; settlement type alone does not determine access.
+- **Misconception ID:** `same-resource-same-access`. Nib thinks two settlements in one catchment must have the same supply and consequences. `smaller:` source → limitation → consequence.
+- **Case:** Explicitly *made-up* regional town with treatment infrastructure versus remote settlement relying on stored rainfall and a bore, using only hypothetical data.
+- **Distractors:** river proximity fully determines access; urban supply can never be restricted; every rural or remote settlement has the same water experience.
+- **Shape:** Paired case comparison with explain-the-consequence check; not a generic assertion about real remote or First Nations communities. **Width:** compare reliability, affordability, maintenance and competing uses; separate evidence from generalisations.
+
+**4. `managing-water` — Making water last (K02 n4)**
+- **Checkpoint:** Explain how at least one strategy targets a diagnosed sustainability problem and identify why shared/competing uses or variable supply complicate management.
+- **One insight:** Desalination, recycling, stormwater capture, inter-regional transfers and demand reduction work through different mechanisms, with contextual trade-offs.
+- **Misconception ID:** `one-water-solution-fits-all`. Nib recommends desalination everywhere without examining geography, cost or demand. `smaller:` match one explicit cause to a directly relevant response.
+- **Case:** Explicitly *made-up* coastal town and inland farming district, with clearly defined constraints. Optional real Perth desalination example only after source verification.
+- **Distractors:** recycling creates unlimited water; supply expansion is always superior to reducing demand; maintenance/energy/environmental costs can be ignored.
+- **Shape:** Guided inquiry: objective checks of mechanism and cause-strategy fit, then a book-based, teacher/partner-reviewed justification where more than one response can be defensible. **Width:** compare criteria (effectiveness, financial cost, environmental impact, equity), explain conditions that alter the choice. Do not automatically mark a contested “best” choice.
+
+**5. `water-decisions` — Choosing a water strategy (K02 n5, integration)**
+- **Checkpoint:** Explain the distribution of water in one Australian context, at least one implication for people, and how a strategy responds; use geographical terms `distribution`, `variability`, `scarcity`, `sustainability` accurately.
+- **One insight:** A defensible water-management proposal begins with spatial and causal evidence, considers who is affected and explains how its strategy addresses the diagnosed problem.
+- **Misconception ID:** `strategy-without-diagnosis`. Nib proposes a transfer before checking the shortage cause or downstream effects. `smaller:` where/source → problem/implication → matching response.
+- **Case:** Clearly *made-up* inland Australian town with variable rainfall, growing demand and ageing storage; provide a coherent fictional evidence pack (small map, table, stated community needs and strategy cards).
+- **Distractors:** increasing supply automatically meets everyone's needs; transfers have no consequences for a supplying area; a strategy guarantees sustainability regardless of future change.
+- **Shape:** `primer`/inquiry-style integration with an evidence interpretation check, Nib's flawed reasoning and a `reflect` book/document explanation. Writing is never machine-marked. **Width:** contrast two plausible strategies against explicit criteria, acknowledging reasonable disagreement.
+
+### Whole-course authoring and verification requirements
+
+- **Checks:** per-option feedback explains the specific error, not just “incorrect”; hinge n1 and n2 each have a meaningful `smaller:` step. Preserve curricular words; do not replace “physical/economic scarcity” or “distribution” with ungrounded aliases. `learning:` in each `teacher.yml` is a verb-first learning intention; `summary:` stays descriptive.
+- **Real and made-up:** Real-place facts (Great Artesian Basin, Murray–Darling, Perth desalination where used) need named authoritative sources and `checked:` dates in teacher notes. Verify exact water-quality/access claims, rainfall, river flows and policy effects rather than extrapolating from geography alone. Hypothetical towns, disputes, needs and data are *explicitly labelled made up* in student-facing text, including assessments.
+- **First Nations:** Quote the ACARA elaboration where relevant in teacher notes and offer approved First Nations-led sources chosen by teachers. Do not write student-facing explanations of First Nations history, culture or specific remote communities or invent their experiences; use the established pointer-page rule where necessary.
+- **Connections:** Link K01's classification/connection lessons as “What you should already know” where relevant, and the shared Humanities inquiry questions/finding/sharing skills as optional “Build up to this” help at the point of need. Full inquiry remains class work.
+- **Teaching assets:** One legible, accurately sourced distribution map with student map task; simple causal diagrams, imaginary case cards and existing `question`, `match`, `sort`, `bug` / `reflect` checks. No board, recorded clip, custom print layout or shared-tool change planned. Prepare Print supplies worksheets.
+- **Self-check before any implementation push:** confirm five `node:` tags in order, maps meet n1 representation criteria, two hinges and `smaller:` checks work, n3's lived implications are explained, n4/n5 allow multiple evidence-based recommendations, teacher notes and class plans exist, no automatic judging of open writing, cases/sources are honest, and width is optional. Run `npm ci`, `npm run validate`, `npm run check-nodes`, `WP_NO_MAKECODE=1 npm run build`, `npm run check-decks -- geography/water-australia-7` and Chromium checks of lesson/course/teacher pages and mobile layouts; update this roadmap with results.
+- **Publishing:** Plan-only commit needs no publish. A future completed new course plus subject/teacher page changes will need a manual quick whole-site or full publish; never touch workflows or publishing branches.
