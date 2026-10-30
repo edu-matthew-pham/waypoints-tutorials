@@ -17,8 +17,8 @@ activities:
     title: "Shortage or scarcity?"
     minutes: 5
     do: |
-      Read out four cases (a sold-out concert, one doctor in a town, a late bus, a bakery that sells out by noon). Pairs vote shortage or scarcity, then give a reason.
-    notes: "Accept any reason that names a limited resource."
+      Read out four cases (a sold-out concert, a supermarket with full shelves, a late bus, a bakery that sells out by noon). Pairs vote shortage, scarcity or both, then give a reason.
+    notes: "Accept any reason that names a limited resource. The full shelves are the case to land on: no shortage, and scarcity is still there."
 questions:
   - at: investigate
     title: "Which resource?"

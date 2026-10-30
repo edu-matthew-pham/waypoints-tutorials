@@ -9,7 +9,7 @@ hook: "The school tuckshop has one oven, two helpers and a Friday lunch rush. Ev
 ---
 Last lesson showed that wants never run out. This lesson asks what happens when those wants meet a limited amount of stuff.
 
-**Scarcity** is the problem that there is not enough resources to make everything people want. **Resources** are the things used to make goods and services: land and natural things (**land**), people's work (**labour**) and tools and equipment (**capital**).
+**Scarcity** is the problem that there are not enough resources to make everything people want. **Resources** are the things used to make goods and services: land and natural things (**land**), people's work (**labour**) and tools and equipment (**capital**).
 
 Scarcity is always there, even when the shelves are full. That is the difference from a **shortage**, which is a shop running out of something for a short time.
 
@@ -144,11 +144,11 @@ insight: "Same idea in a new setting so that it becomes a habit rather than a tu
 tasks:
   - check:
       type: question
-      q: "A town has one doctor for 3000 people. Is this scarcity or a shortage?"
-      options: ["Scarcity: there is a limit to the labour available and people always want more care", "A shortage that will fix itself by tomorrow", "Neither, because doctors are not goods", "Scarcity only for the poor"]
+      q: "A rich town has shops with full shelves every day. Is there scarcity there?"
+      options: ["Yes: the land, workers and equipment are still limited, and people still want more than can be made", "No, because the shelves are full", "Only in poor towns", "Only on days when a shop sells out"]
       answer: 0
-      feedback: [null, "It is not a short-term run-out. The limit is on the number of doctors that exist.", "Doctors' work is a service, and it uses labour, which is a resource.", "Scarcity affects every community, rich or poor."]
-      explain: "There is a limit to the labour, and wants for care are large. That is scarcity."
+      feedback: [null, "Full shelves today do not remove the limits. Think about the oven and the helpers.", "Scarcity affects every community, rich or poor.", "A shop selling out is a shortage. Scarcity is there on the days nothing sells out too."]
+      explain: "Every town has limited land, labour and capital, and wants keep growing. Full shelves show that this week's shortage is fixed, not that scarcity is gone."
   - check:
       type: question
       q: "A bakery has a big sale and sells out by noon. Next morning it is full again. This is..."
@@ -158,7 +158,7 @@ tasks:
       explain: "The run-out is a shortage. The bakery is still limited by its ovens and workers, which is scarcity."
 ```
 
-### A doctor for the town
+### A town with full shelves
 
 ### Selling out
 
