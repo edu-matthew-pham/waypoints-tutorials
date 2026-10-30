@@ -627,5 +627,6 @@
   "origin-from-content": {"home": "history/sources-7/origin-and-content", "text": "Who made a source is read off what it shows (a soldier made the clay soldier). What a source shows is its content; who made it, when and where is its origin."},
   "context-is-setting": {"home": "history/sources-7/context-and-purpose", "text": "Context is given as the place or period ('ancient China') instead of what was going on when the source was made."},
   "purpose-is-content": {"home": "history/sources-7/context-and-purpose", "text": "Purpose is given as what the source shows or says ('it shows the emperor') instead of why it was made and what the maker wanted it to do."},
-  "one-question-enough": {"home": "hass/before-year-7/questions-that-guide", "text": "One broad question is taken to be enough for an inquiry. An inquiry needs smaller questions about what, where, who and why to cover the parts of the big one."}
+  "one-question-enough": {"home": "hass/before-year-7/questions-that-guide", "text": "One broad question is taken to be enough for an inquiry. An inquiry needs smaller questions about what, where, who and why to cover the parts of the big one."},
+  "continuous-is-renewable": {"home": "geography/water-7/resource-types", "text": "A continuous resource such as sunlight is treated as the same as a renewable one because both 'come back'. A renewable resource comes back only if it is used no faster than it renews, so it can be used up. A continuous resource cannot be used up by what people do."}
 }

@@ -1,0 +1,51 @@
+summary: "Students learn three kinds of environmental resource by asking two questions: does it come back by itself, and can our use make it run out? Renewable resources (timber, fish, river water) come back but can be used up if taken too fast. Continuous resources (sunlight, wind, tides) cannot be used up. Non-renewable resources (coal, oil) do not come back in our time. They then apply the same test to water in three forms. This is the first of two hinge lessons: if students cannot apply the three-way sort to water, they will misclassify it for the rest of the unit and struggle with sustainability and management in K02 and K03."
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can sort resources into renewable, continuous and non-renewable and give a reason.
+  - I can explain why a renewable resource can be used up but a continuous one cannot.
+  - I can classify water in three forms.
+struggle: "Students very often treat renewable and continuous as the same because both are 'there tomorrow'. Ask 'Could we use it up if we took too much?' and let them argue about timber against sunlight before you say it. Resist settling it for them: the argument is the learning."
+before: |
+  This is a hinge lesson. Later lessons (how water moves and joins places, the effects of that movement, sustainability and management in the next courses) assume students can apply the three-way sort to water. If this lesson goes thinly, students will mislabel water as simply 'renewable' for every form and never ask whether use can run it down. Spend the time here.
+
+  Classifications of water vary between textbooks and websites. Some call all water renewable because of the water cycle. This lesson gives a reason-based rule (does it come back by itself, and can our use make it run out?) and asks students to justify each label, so a student who gives a different label with a good reason has still met the node. The deep underground store in the Vary sort is described by how slowly it refills, so the middle cases (water that refills over centuries) are left to the wider step and your own discussion.
+
+  Real places are used only for facts that will not date: the Murrumbidgee is a river, and the Great Artesian Basin card quotes CSIRO. Everything else (Sam, Mei, Ben, Nib, the fishing company and the town) is made up. The wider card paraphrases CSIRO and links the source; check it against the source before using it, since the Basin's condition can change.
+
+  Not covered here, on purpose: how water moves between places (next lesson), where Australia's water is (the next course), and who decides how it is shared.
+running:
+  - "Predict: ask for votes before the answer. The fish and timber options spark good talk because they 'come back'."
+  - "Try: stop at 'Wind' and 'Sunlight'. Ask what they have in common that timber does not."
+  - "Worked example: let Nib's mistake sit before explaining it. Ask students to find the difference between 'comes back' and 'is always there'."
+  - "Vary: ask for the reason for each water label, not only the label. Accept a different label with a good reason."
+  - "Make: read one or two out if students are happy to, without names."
+stuck:
+  - see: "A student says sunlight is renewable because it comes back every day."
+    ask: "Could people use up sunlight if they took too much of it?"
+    fix: "Sunlight is always there, whatever we do. Renewable resources are the ones that come back and can still be used up."
+  - see: "A student says water is renewable, full stop, because of the water cycle."
+    ask: "Could a town use up a river in a dry year? What about a very old underground store?"
+    fix: "River water is renewable, but it can run low. Some stores refill so slowly that they do not come back in our time. Ask for the reason, not only the label."
+  - see: "A student thinks non-renewable means it has been used up."
+    ask: "Is there coal in the ground today?"
+    fix: "There is plenty, but it would take a very long time to form again, so for us it does not come back."
+stretch: "Is a forest that is cut faster than it regrows still renewable? Argue both ways, then say what you would want to know before deciding. This is the same idea at greater width. It does not go on to the next lesson."
+support: "A card with two questions: 'Does it come back by itself?' and 'Could our use make it run out?'. Students ask both of each resource before sorting."
+leads: |
+  Next in Water as a resource: how water moves through places and joins them together.
+
+  First Nations content: ACARA's elaboration for this part of AC9HG7K01 is about the classification: "classifying resources into renewable, non-renewable and continuous resources, and identifying examples of each type". This lesson has no First Nations step. Other elaborations for this standard name a First Nations example (the Mutitjulu Waterhole) which this course leaves to teacher notes in lesson 3. If you want to bring in First Nations perspectives on resources here, start from the school's own resources and local, community-approved material, not a generalisation from outside.
+
+  ACARA elaborations for AC9HG7K01 (examples, not a checklist): classifying resources into renewable, non-renewable and continuous resources, and identifying examples of each type; explaining how the movement of water, such as groundwater, soil moisture (green water), surface water in dams, rivers and lakes (blue water), through the environment connects places and how water is a potential resource when it exists as salt water, ice or water vapour; explaining the environmental, economic or social effects of water as it connects places; explaining how moving water changes places.
+exit:
+  q: "Why is a forest renewable but sunlight continuous? Which one can be used up?"
+  a: "A forest comes back by regrowing and can be used up if trees are cut faster than they grow. Sunlight is always there and nothing we do can use it up."
+explain: |
+  A **renewable** resource comes back by itself, but it can be used up if we take it faster than it returns. Timber, fish and river water are examples.
+
+  A **continuous** resource is always there, whatever we do. We cannot use it up. Sunlight and wind are examples.
+
+  A **non-renewable** resource takes so long to form that it does not come back in our time. Coal and oil are examples.
+sources:
+  - { title: "Deep water: the health of the Great Artesian Basin (CSIROpedia)", url: "https://csiropedia.csiro.au/deep-water-health-great-artesian-basin/", checked: 2026-10-30 }

@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Sam's class sorts sunlight and timber from a planted forest. Sam puts them in different groups.
+Mei says that is fair, because a forest can be cut down but sunlight cannot.
+Nib says: "Both of them come back all the time, so they are both renewable."
+Nib says: "So renewable and continuous mean the same thing."
+# endregion

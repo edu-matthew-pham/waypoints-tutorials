@@ -1,0 +1,29 @@
+inquiry:
+  q: "A town says: 'The river is renewable, so we can take as much as we like.' A farmer says: 'No, renewable does not mean unlimited.' Who is right, and what would change your mind?"
+  prompts:
+    - "What would you need to know about how fast the river refills?"
+    - "What is different about the sun, which no town can use up?"
+  notes: "Steer students to the speed of use compared with the speed of refilling. The point is that renewable does not mean unlimited, which the next lessons build on."
+activities:
+  - at: predict
+    kind: activity
+    title: "Three corners"
+    minutes: 4
+    do: |
+      Mark three corners of the room Renewable, Continuous and Non-renewable. Read out resources (wind, timber, coal, fish) and have students stand where they think each belongs. Ask a student in each corner for a reason.
+    notes: "Students who stand between corners have usually spotted the trick: they may need the two questions. Do not settle it. Ask for a reason."
+  - at: make
+    kind: discussion
+    title: "Can you use it up?"
+    minutes: 4
+    do: |
+      Ask pairs to name a resource that could be used up if people took it too fast, and one that could not. Collect a few and ask what pattern they see.
+    notes: "The pattern is the point: renewable resources can be used up if we take them too fast, continuous ones cannot."
+questions:
+  - at: investigate
+    title: "Which can run out?"
+    type: question
+    q: "Which of these can be used up if people take too much?"
+    options: ["Fish in a river", "Sunlight", "Wind", "The tides"]
+    answer: 0
+    explain: "Fish are renewable: they breed, but not if too many are caught. The others are continuous."

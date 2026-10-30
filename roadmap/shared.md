@@ -143,6 +143,10 @@ ACARA Progressions and Planner hold each standard's elaborations in `static/data
 - Four misconceptions added to `misconceptions.json` (`old-means-primary`, `origin-from-content`, `context-is-setting`, `purpose-is-content`).
 - Not built (no shared code): the **Preview** label and the planned-units display from the humanities plan. History says "Preview (a pilot, not finished)" in the subject, pathway and course summaries, and shows planned courses as "Coming later" cards. A shared Preview label and greyed planned units inside a course are still open.
 
+## Changed by the Geography chat (30 Oct 2026): node check
+
+`geography` added to `CHECKED` in `tools/progressions.mjs`, so Geography lessons must name their node (roadmap/geography.md). One misconception added to `misconceptions.json` (`continuous-is-renewable`). New subject `content/geography/` (order 10).
+
 ## Decided (30 Oct 2026, Matthew): tutorials are pace-agnostic, in every subject
 
 A tutorial never knows the class, so it never assumes a pace. This matches the Kit, where node files carry no pace profile and pace only comes in when a teacher divides up time. Applies to every current and future subject (Economics next).

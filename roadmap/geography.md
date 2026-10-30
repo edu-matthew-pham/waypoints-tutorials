@@ -1,6 +1,6 @@
 # Roadmap: Geography
 
-`content/geography/` (not created yet). Set up 30 Oct 2026 so a Geography chat can start; first course proposed 30 Oct (below), not built. Node content: waypoints-kit `data/geography/`, copied in `data/curriculum/geography.json`.
+`content/geography/` (not created yet). Set up 30 Oct 2026 so a Geography chat can start; first course `geography/water-7` decided and lesson 1 built 30 Oct (below); lessons 2 to 5 not built. Node content: waypoints-kit `data/geography/`, copied in `data/curriculum/geography.json`.
 
 ## Rules (decided 30 Oct 2026, Matthew; `roadmap/shared.md` › Decided: humanities)
 
@@ -32,7 +32,27 @@
 - AC9HG7S04 Draw geographical conclusions (3 nodes)
 - AC9HG7S05 Identify strategies for geographical action (4 nodes)
 
-## Proposed (30 Oct 2026; nothing built, waiting for Matthew): course `geography/water-7`, *Water as a resource*
+## Decided (Matthew, 30 Oct 2026)
+
+All five recommendations accepted, with one rule on real places:
+1. **K01 only** for `geography/water-7`; K02 (Water in Australia, with the Australia water map lesson) is the next course.
+2. **Real places, but light.** Real spine (Snowy Mountains, Murrumbidgee, Murray) plus the Ord River and Great Artesian Basin as contrasts. **If a place needs a lot of fact-checking, go lighter on it:** use a real place only for a settled fact with a named source (a river is a river; a quoted line from CSIRO or the managing body), otherwise use a made-up case or a hypothetical. Lesson 1 followed this: Murrumbidgee as "a river" in one sort item, and one wider card paraphrasing CSIRO. Each real-place card carries its source and a `checked:` date in `teacher.yml`.
+3. **Kit prior links** (AC9HS4K06 and AC9HS5K08 for K01) to be added in waypoints-kit as a separate small job; **not done yet** (different repo). Then a "Build up to this" fold in lesson 1 rather than a catch-up lesson.
+4. **No board.** One map picture later if a lesson needs it (not needed for lesson 1).
+5. **Go up now, without waiting for the Preview label.** The subject and course pages say "preview" in their summaries.
+
+## Built (30 Oct 2026; not yet tried with a class)
+
+- Subject `content/geography/index.md` (Geography, order 10; pathways Water and places and Place and liveability; later courses show as Coming later) and course `geography/water-7` (Usually Year 7).
+- Lesson 1 `resource-types` (AC9HG7K01 n1, hinge): predict, sort into renewable, continuous and non-renewable, worked example with Nib's planted slip (`continuous-is-renewable`, with a `smaller:` lead-in), vary (water in three forms, a town and a river, the reason for continuous), practise, a Make step in the student's own book (reflect tick), then one typical and two wider steps (Great Artesian Basin card quoting CSIRO; can a resource change group). Teacher notes, class plan, one source (checked 30 Oct).
+- Classification rule used: does it come back by itself, and can our use make it run out? Teacher notes say water is labelled differently in different sources and ask for the reason, not only the label. Middle cases (water that refills over centuries) are left to the wider step.
+- `geography` added to the node check's `CHECKED`; one misconception added.
+- Checked: validate clean for the lesson, `check-nodes` passes, built, and in a headless browser every sort, question and the bug check answered correctly with no page errors. Not yet clicked through as a student for tone, and not reviewed by a fresh pair of eyes.
+- Needs a whole-site publish (new subject).
+
+## Original proposal (30 Oct 2026, revised the same day for real places)
+
+### Course `geography/water-7`, *Water as a resource*
 
 Standard AC9HG7K01 (Water as an environmental resource), the gateway in the Project plan (Water as a resource opens Valuing and managing water). One lesson per waypoint, in the node file's order. Usually Year 7 (teacher note only). Same lesson shape as `economics/scarcity-7/needs-and-wants`: `language: maths`, `node:` on every lesson, predict, try, worked example with Nib's planted slip, vary, practise, a Make step written in the student's own book with a `reflect` tick, then `tier:` extras. Sort, match, question and bug checks; no clips; no new board.
 
@@ -54,7 +74,7 @@ Notes:
 - **First Nations.** The node file's wider items name the Mutitjulu Waterhole. Not in student steps; lesson 3's teacher notes quote ACARA's elaboration for AC9HG7K01 (the Mutitjulu example is in it) and ask the teacher to build on it with local, community-approved material. No custodians'-words example is needed: no skill step here relies on one.
 - **Skills.** Lesson 2 touches AC9HG7S03 n2 (explaining patterns) but is not tagged to it; Geography's own skills (S03 data, S04 conclusions, S05 action) become a later course once a K course has given them content to work on.
 
-### Needs deciding (Matthew)
+### Needs deciding (answered above; kept for the record)
 
 1. **One course per standard vs the Project plan's unit.** The Project plan's "Water as a resource" unit mixed K01 and K02 (four lessons, including Reading Australia's water map and Why water runs short). The roadmap's one-course-per-standard rule wins, so this course is K01 only (five lessons) and K02 becomes the next course (`geography/water-australia-7`, five lessons, including the map lesson). OK?
 2. **Which real places?** Revised to your steer: a real spine (Snowy Mountains, Murrumbidgee, Murray) plus the Ord River and Great Artesian Basin as contrasts, instead of the made-up Kerrin. Canberra is the natural local anchor, but the course is meant for any school, so I'd frame it as "one real river system" with a prompt to swap in the teacher's own catchment. OK, or would you rather a different spine (for example the Murray-Darling as a whole)? Trade-off: real places are more authentic and need fact-checking; contested water politics are kept out of student steps.
@@ -62,7 +82,7 @@ Notes:
 4. **A board or not.** The checks above need nothing new. A small catchment board (click where to put a dam or clear land, see what reaches the town downstream) would suit lessons 2 to 4 but is new machinery, so I'd leave it until the pilot shows the static picture isn't enough.
 5. **Subject page.** `content/geography/index.md` as its own subject like Economics (order 9), one pathway "Water" with this course as foundations and K02 as "Coming later". The Preview label and planned-lesson display aren't built yet (Project plan › Placeholders); this course would wait for them or go up without them, as Economics has.
 
-Next after a yes: build lesson 1 as the pilot (plus the catchment picture and the Kit prior links if agreed), validate, test in a headless browser, push, then lessons 2 to 5.
+Next: Kit prior links, then lessons 2 to 5 (same shape; lesson 2 is the second hinge and the first to need a map picture).
 
 ## Starter prompt for the Geography chat
 
