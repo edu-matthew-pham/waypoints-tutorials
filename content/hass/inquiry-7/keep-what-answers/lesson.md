@@ -10,7 +10,7 @@ hook: "You find a page full of facts about school canteens. Some are fascinating
 ---
 A good source gives you a lot. Your question decides what to keep. For each piece, ask: **does this help answer my question?** If yes, keep it and write why. If not, set it aside, even if it is interesting.
 
-All sources here are made up. Addresses end in `.example`.
+All sources here are invented. Addresses end in `.example`; use the supplied cards for practice, then teacher-approved sources for your class topic. Relevance and reliability are different: something can answer your question yet still need checking.
 
 ## Think first
 
@@ -19,9 +19,9 @@ stage: predict
 insight: "Committing to a count shows how much we want to keep; the answer shows that relevance cuts it down."
 check:
   type: predict
-  q: "Question: How many students buy from the Parkside tuckshop each day? A page has five facts. How many would you keep?"
-  options: ["All five, they are all about the tuckshop", "One or two", "None", "Whichever is most surprising"]
-  actual: "One or two. Only facts that help answer the question about the daily number belong in your notes. The rest may be true and interesting but do not answer it."
+  q: "Question: How many students buy from the Parkside tuckshop each day? A record lists Monday’s buyer count, Tuesday’s buyer count, the opening year, the most popular item and the number of volunteers. How many directly help?"
+  options: ["All five, they are all about the tuckshop", "Two", "None", "Whichever is most surprising"]
+  actual: "Two: the daily buyer counts. Only facts that help answer the question about the daily number belong in your notes. The rest may be true and interesting but do not answer it."
 ```
 
 ## Try: keep or set aside
@@ -41,7 +41,7 @@ check:
     - ["The tuckshop has three volunteers each day.", "Set aside", "About staff, not students buying."]
 ```
 
-Was your guess right? Two facts were worth keeping. The rest are for a different question.
+Was your guess right? Two facts were worth keeping. The rest are for a different question. Two days are not enough to describe a typical week: keep the dates and look for the missing days.
 
 ## The idea: relevant, not just interesting
 
@@ -57,6 +57,9 @@ tasks:
       fault: logic
       misconception: interesting-is-relevant
       explain: "Line 3: interesting is not the same as relevant. A history of canteens does not tell Nib how many students buy each day. Keep only what answers the question."
+    hint:
+      - "Read the exact question before judging the note."
+      - "Does the note answer how many students, or a different question?"
     smaller:
       check: { type: question, q: "Does a history of school canteens tell you how many students buy lunch each day?", options: ["No", "Yes"], answer: 0, explain: "It is about canteens in the past, not the daily number." }
   - check:
@@ -108,8 +111,8 @@ check:
   q: "Question: How might closing Mill Road affect shops? Sort each note from riverbend-news.example."
   options: ["Keep (helps answer it)", "Set aside"]
   items:
-    - ["Shop owner: 'Most of my customers drive down Mill Road.'", "Keep (helps answer it)", "A direct effect on a shop."]
-    - ["Council counts show 4,000 cars a day use Mill Road.", "Keep (helps answer it)", "Shows how many people pass the shops."]
+    - ["Shop owner: 'Most of my customers drive down Mill Road.'", "Keep (helps answer it)", "Relevant evidence about one owner’s concern, not a measured effect of closure."]
+    - ["Council counts show 4,000 cars a day use Mill Road.", "Keep (helps answer it)", "Shows vehicle flow, not customers or unique people. Relevant background, but shop impacts need more evidence."]
     - ["The mayor opened a playground last week.", "Set aside", "Not about Mill Road or shops."]
     - ["Mill Road was named after the old flour mill.", "Set aside", "Interesting history, not about shops."]
 ```
@@ -133,10 +136,10 @@ check: { type: reflect, text: "I can keep only what answers my question and say 
 ```step
 stage: make
 insight: "Selecting from a real source for your own question makes the move your own."
-check: { type: reflect, text: "In my own book I took one source for my question and wrote down two pieces I kept, with a reason each, and two I set aside. A partner read it and agreed." }
+check: { type: reflect, text: "In my own book I kept two relevant pieces from a source for my question, gave a reason for each and identified information to set aside. I kept the source reference and distinguished a reported view from a measured finding. For Civics I selected from two different sources. A partner checked my reasons." }
 ```
 
-Write it in your own book or document. Your partner or teacher reads it.
+Write it in your own book or document. Your partner or teacher reads it. Record the title, maker, date and address or catalogue ID beside each note so you can reference it when explaining what you found.
 
 ## Typical: one more
 

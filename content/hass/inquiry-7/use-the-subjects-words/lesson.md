@@ -67,7 +67,7 @@ Compare these models with a list of words such as 'scarcity, opportunity cost'. 
 
 | Subject | Words used to describe the case |
 |---|---|
-| Economics | Parkside students face a smaller menu because the tuckshop has limited funds. Scarcity means it cannot buy everything; the opportunity cost of choosing a fridge is the oven it gives up. |
+| Economics | Parkside students face an equipment choice that will affect the menu. Scarcity means it cannot buy everything; the opportunity cost of choosing a fridge is the oven it gives up. |
 | Civics | Riverbend Council is considering closing Mill Road. Its consultation invites views before deciding; parents can participate by sending comments. This participation lets them contribute their views. |
 | Geography | Wattle Flat is downstream of a storage dam in the Kilby catchment. This interconnection means water kept upstream can affect water reaching the town. |
 | History | Catalogue card M1 describes the bronze mirror as an artefact with a polished face. As a source, this object provides evidence about its surface, but the card cannot show how everyone lived. |
@@ -191,12 +191,12 @@ stage: make
 insight: Producing a description tests more than recognition of vocabulary.
 check:
   type: reflect
-  text: In my own book or document I wrote the four short openings below, compared
-    them with the models, and asked a partner or teacher to check context,
-    meanings and the History source.
+  text: In my own book or document I wrote an opening for my current subject using its checklist below, compared
+    it with the model, and asked a partner or teacher to check the context,
+    vocabulary and any source reference.
 ```
 
-Write one short opening for **each** case. Use the models above to check your writing.
+Choose **your current subject’s** case or class topic and write one short opening. Meet that subject’s checklist below; the other cases show the same move and are available for optional practice.
 
 - **Economics:** address Parkside students, name the menu issue and its relevance, and use *scarcity* and *opportunity cost* accurately.
 - **Civics:** describe Mill Road using *council*, *consultation* and *participation*, showing what each means here.
@@ -226,8 +226,8 @@ tier: typical
 insight: Apply the same communication move in another context.
 check:
   type: reflect
-  text: I wrote an opening for my class topic and checked that each subject term
-    adds meaning.
+  text: I applied the same move to a second case or another subject, using its
+    vocabulary checklist and checking that each term adds meaning.
 ```
 
 

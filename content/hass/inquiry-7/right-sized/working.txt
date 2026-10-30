@@ -3,6 +3,6 @@
 # region: nib
 Nib's class has one week to investigate something about Riverbend Council.
 Nib says: "Bigger questions are more important, so they are better."
-Nib writes: "My question is: What is democracy?"
+Nib writes: "My question is: How has every democracy changed throughout history?"
 Nib says: "I will find everything about it and finish by Friday."
 # endregion

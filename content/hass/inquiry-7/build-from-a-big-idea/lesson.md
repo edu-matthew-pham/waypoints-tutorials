@@ -3,13 +3,13 @@ order: 2
 unit: asking
 title: Build a question from a big idea
 node: [AC9HE7S01 n2, AC9HC7S01 n2, AC9HG7S01 n2, AC9HH7S01 n2]
-summary: "Each subject has a short list of big ideas that make good questions: Economics has scarcity and opportunity cost, Civics has who decides and the rules, Geography has place, connection and change, History has cause, change and what mattered. A big idea is the topic. The question asks something about it that evidence can answer."
+summary: "Each subject has a short list of big ideas that make good questions: Economics has scarcity and opportunity cost, Civics has who decides and the rules, Geography has place, connection and change, History has cause, change and what mattered. A big idea is a lens for investigating a topic. The question asks something about it that evidence can answer."
 language: science
 shape: primer
 hook: "Nib's class is told to write a question using a big idea. Nib writes one word: 'Scarcity.' Is that a question?"
 assumes: [AC9HS6S01 n2]
 ---
-Every subject has a few **big ideas**: words that show up again and again because they help you ask good questions. A big idea on its own is a topic. A question uses it to ask something that evidence can answer.
+Every subject has a few **big ideas**: words that show up again and again because they help you ask good questions. A big idea is a **concept** that helps you look at a topic in a particular way. The mirror is a topic; change and significance are different lenses for investigating it. A concept word on its own is not yet a question.
 
 The cases are the same made-up ones as in the last lesson: the Parkside tuckshop, Mill Road, the Kilby River and the Hartley Museum's bronze mirror.
 
@@ -22,7 +22,7 @@ check:
   type: predict
   q: "Which of these is a question that uses the big idea of opportunity cost?"
   options: ["What did the Parkside tuckshop give up when it chose a second fridge over a new oven?", "Opportunity cost", "What is the tuckshop's budget?", "Is a tuckshop good?"]
-  actual: "The first. It names the case and asks what was given up. 'Opportunity cost' is only the idea. A budget is a look-up. 'Is a tuckshop good?' is opinion."
+  actual: "The question about the fridge and oven. It names the case and asks what was given up. 'Opportunity cost' is only the idea. A budget is a look-up. 'Is a tuckshop good?' needs criteria for good."
 ```
 
 ## Try: match the question to its big idea
@@ -47,8 +47,8 @@ Here are the big ideas each subject keeps coming back to:
 | | Big ideas to build questions from |
 |---|---|
 | **Economics** | scarcity, opportunity cost, income, markets, goods and services |
-| **Civics** | who decides, rules and laws, rights, taking part, government |
-| **Geography** | place, space, environment, connection, sustainability, scale, change |
+| **Civics** | power, democracy, rules and laws, rights, participation, government |
+| **Geography** | place, space, environment, interconnection, sustainability, scale, change |
 | **History** | cause, change and continuity, perspective, significance |
 
 ## The idea: a question, not a topic
@@ -72,14 +72,17 @@ tasks:
       fault: logic
       misconception: topic-word-is-question
       explain: "Line 3: Nib writes the big idea and calls it the question. 'Scarcity' is the topic. A question asks something about the case, such as: what does the tuckshop do when it cannot stock everything?"
+    hint:
+      - "Which words name the case, and which name the concept?"
+      - "What is Nib asking someone to find out?"
     smaller:
-      check: { type: question, q: "Is the single word 'Scarcity' a question?", options: ["No, it is a topic", "Yes, it is investigable", "Yes, because it is a big idea", "Yes, because it is short"], answer: 0, explain: "A question asks something. A single word names a topic." }
+      check: { type: question, q: "Is the single word 'Scarcity' a question?", options: ["No, it names a concept", "Yes, it is investigable", "Yes, because it is a big idea", "Yes, because it is short"], answer: 0, explain: "A question asks something. A single word names a concept without asking anything about a case." }
   - check:
       type: question
       q: "Which question uses the Geography big idea of connection?"
       options: ["How is Wattle Flat connected to the Kilby River, and what happens in the town when it runs low?", "Where is Wattle Flat?", "Is the Kilby River pretty?", "Connection"]
       answer: 0
-      feedback: [null, "That is a look-up.", "That is opinion.", "That is only the idea."]
+      feedback: [null, "That is a look-up.", "That needs criteria before evidence could help answer it.", "That is only the idea."]
       explain: "It links the town and the river and asks what changes."
 ```
 
@@ -122,13 +125,13 @@ stage: practise
 insight: "Matching big ideas to questions on a new case before moving on."
 check:
   type: sort
-  q: "For each question about Wattle Flat and the Kilby River, say whether it is a question or only a topic."
-  options: ["A question", "Only a topic"]
+  q: "Which concept gives each question its focus?"
+  options: ["Interconnection (Geography)", "Change (Geography)", "Cause (History)", "Significance (History)"]
   items:
-    - ["Why did the Kilby River run low, and who in Wattle Flat felt it most?", "A question", "It names the case and asks something that evidence can answer."]
-    - ["Sustainability", "Only a topic", "A single idea with nothing to find out."]
-    - ["How have people in Wattle Flat changed how they use water since the dry year?", "A question", "A case and a change to look for."]
-    - ["The Kilby River", "Only a topic", "A name. It needs a question about it."]
+    - ["How might upstream water storage affect Wattle Flat downstream?", "Interconnection (Geography)", "It investigates a relationship between places."]
+    - ["How did water use in Wattle Flat change during the dry year?", "Change (Geography)", "It compares water use across time."]
+    - ["What might have caused the museum mirror's surface to change?", "Cause (History)", "It asks for reasons for a change, using object records."]
+    - ["Why might this mirror have mattered to its owner?", "Significance (History)", "It asks what importance the object had; evidence may be limited."]
 ```
 
 ## In each subject
@@ -156,7 +159,7 @@ check: { type: reflect, text: "I can name a big idea from my subject and use it 
 ```step
 stage: make
 insight: "Writing two questions from your own subject's big ideas makes the move your own."
-check: { type: reflect, text: "In my own book I wrote two investigable questions for a topic my class is studying, each built from a different big idea, and named the idea. A partner read them and checked each was a question, not a topic." }
+check: { type: reflect, text: "In my own book I wrote two investigable questions for a topic my class is studying, each built from a different big idea, and named the idea and evidence each would need. For Geography, both questions target the same phenomenon; for History, they use different concept frames on the same topic. A partner checked their focus and whether evidence could answer them." }
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.
@@ -172,7 +175,7 @@ check:
   q: "Which question uses scarcity for the Wattle Flat water supply?"
   options: ["When water runs low, how does Wattle Flat decide who gets how much?", "Water", "Where is the dam?", "Is water important?"]
   answer: 0
-  feedback: [null, "That is a topic.", "That is a look-up.", "That is opinion."]
+  feedback: [null, "That is a topic.", "That is a look-up.", "That needs criteria before evidence could help answer it."]
   explain: "It asks about the choice when there is not enough."
 ```
 

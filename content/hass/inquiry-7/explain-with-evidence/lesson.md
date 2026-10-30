@@ -30,7 +30,7 @@ check:
     - The tuckshop chose a fridge.
     - The fridge uses the whole $600 budget, leaving no funds for the oven, so
       scarcity forces a choice.
-  actual: The last sentence connects the budget and price to why the tuckshop must
+  actual: The explanation about the whole budget connects the budget and price to why the tuckshop must
     choose.
 ```
 
@@ -47,15 +47,18 @@ check:
   pairs:
     - - Less rain contributed to less water entering the dam.
       - "Claim: the answer being offered"
-    - - Rain record G1 shows 20 mm this month versus 60 mm in the comparison
-        month; flow record G2 shows inflow fell from 8 to 3 units a day.
+    - - Rain record G1 shows 20 mm this month versus 60 mm in the same month
+        last year; flow record G2 shows mean daily inflow of 3 ML this month
+        versus 8 ML in that same comparison month.
       - "Evidence: named findings from records"
     - - Less rain in the catchment could mean less runoff entering storage; the
         lower inflow fits this, although other causes need checking.
       - "Reasoning: the connection and its limits"
 ```
 
-**Worked example: why can Parkside not buy both?** Invented quote E1 lists a fridge at $600 and an oven at $500. Budget record E2 sets a $600 limit.
+ML means megalitres, a measure of water volume. G1 and G2 cover the same two months; they show a comparison, not a complete account of the cause.
+
+**Worked example: why can Parkside not buy both?** Invented quote E1 lists a fridge at $600 and an oven at $500. Budget record E2 sets a $600 limit. These are the only two options in this practice decision, so the oven is the next best alternative if the fridge is chosen.
 
 | Item | Cost in E1 |
 |---|---:|
@@ -165,12 +168,12 @@ stage: make
 insight: Produce explanations with the evidence required by each subject.
 check:
   type: reflect
-  text: In my own document I wrote the four short explanations below, named
-    evidence and connected it to each claim. I compared them with the models and
+  text: In my own document I wrote an explanation for my current subject using its checklist below, named
+    evidence and connected it to my claim. I compared it with the model and
     asked a partner or teacher to check the reasoning.
 ```
 
-Use the supplied records or real sources approved by your teacher.
+Choose **your current subject’s** task below, using the supplied records or real sources approved by your teacher. Meet its evidence requirements; another case is optional practice on the same move.
 
 - **Economics:** explain why Parkside cannot buy both. Include the cost table, refer to E1 and E2 and use *scarcity* and *opportunity cost*. Compare with the worked example.
 - **Civics:** explain how C1 enables participation. Model: *Notice C1 invites comments before a decision, so people can participate by contributing views during consultation.*
@@ -200,8 +203,9 @@ tier: typical
 insight: Apply the same communication move in another context.
 check:
   type: reflect
-  text: A partner marked claim, evidence and reasoning in one explanation. I
-    revised any connection they could not follow.
+  text: I wrote a second explanation in another case, using that subject’s checklist.
+    A partner marked claim, evidence and reasoning, and I revised any unclear
+    connection.
 ```
 
 

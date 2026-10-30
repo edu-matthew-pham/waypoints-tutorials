@@ -22,7 +22,7 @@ briefs:
         teacher: "Supported on the site by the three Asking questions lessons. Help students narrow broad 'Should...' questions to a specific local decision or business case with accessible data."
       - id: find
         title: "2. Find and organise information"
-        you_will: "Locate at least two relevant sources or datasets, keep only the facts and figures that answer your question, and organise them into a clear table or graph."
+        you_will: "Locate at least two relevant sources or datasets, keep only the facts and figures that answer your question, and organise them into a clear digital table or graph."
         nodes: ["AC9HE7S02 n1", "AC9HE7S02 n2", "AC9HE7S02 n3"]
         lessons:
           - "where-to-look"
@@ -126,16 +126,16 @@ briefs:
     subject: "Geography"
     title: "Year 7 Geography inquiry"
     goal: |
-      Use this outline to plan and carry out a geographical investigation into a **place, water resource or liveability challenge** chosen with your teacher. Write your topic, questions, fieldwork or secondary data tables, maps and final explanation in **your own book or document**, not on this page.
+      Use this outline to plan and carry out a geographical investigation into a **place, water resource or liveability challenge** chosen with your teacher. Write your topic, questions, fieldwork and secondary data tables, maps and final explanation in **your own book or document**, not on this page.
     handin:
       - "Your geographical inquiry questions and plan for collecting data."
-      - "Your recorded primary or secondary data and a geographical representation (map, graph or table)."
+      - "Your recorded primary and secondary data and a geographical representation (map, graph or table)."
       - "Your analysis of spatial patterns, impacts and proposed strategies for action."
       - "A written geographical explanation that uses geographical concepts, terms and evidence."
     stages:
       - id: ask
         title: "1. Ask and plan a geographical inquiry"
-        you_will: "Write a geographical question about where a phenomenon happens, how it changes a place, or how it can be managed, and plan what data you will need."
+        you_will: "Write at least two focused geographical questions about the same phenomenon or challenge. Plan at least two types of evidence and a collection method for each, explaining how each will help."
         nodes: ["AC9HG7S01 n1", "AC9HG7S01 n2", "AC9HG7S01 n3"]
         lessons:
           - "can-it-be-investigated"
@@ -144,7 +144,7 @@ briefs:
         teacher: "Supported on the site by the three Asking questions lessons. Check that students' questions name a specific place, spatial distribution or environmental/human connection."
       - id: collect
         title: "2. Collect and represent data (fieldwork and secondary)"
-        you_will: "Collect primary fieldwork observations or secondary data (such as maps, climate tables or ABS statistics) and represent them in an appropriate geographical format."
+        you_will: "Collect primary fieldwork observations and secondary data (such as maps, climate tables or ABS statistics) and represent them in an appropriate geographical format."
         nodes: ["AC9HG7S02 n1", "AC9HG7S02 n2", "AC9HG7S02 n3", "AC9HG7S02 n4"]
         student_nodes: ["AC9HG7S02 n2", "AC9HG7S02 n3", "AC9HG7S02 n4"]
         lessons:
@@ -208,7 +208,7 @@ briefs:
     stages:
       - id: ask
         title: "1. Ask historical questions"
-        you_will: "Write an open historical question about how or why something happened, or how we know about it, using historical concepts and scoped to the evidence available."
+        you_will: "Write at least two historical inquiry questions about the same topic using different concept frames, such as cause and change. Explain what evidence each needs and keep the scope manageable."
         nodes: ["AC9HH7S01 n1", "AC9HH7S01 n2", "AC9HH7S01 n3"]
         lessons:
           - "can-it-be-investigated"
@@ -217,7 +217,7 @@ briefs:
         teacher: "Supported on the site by the three Asking questions lessons. Help students move from simple fact-lookup questions ('When was X built?') to historical questions about purpose, change, significance or evidence."
       - id: locate
         title: "2. Locate and sort primary and secondary sources"
-        you_will: "Find relevant primary sources (made at the time) and secondary sources (made later), keep what answers your question, and organise your source notes clearly."
+        you_will: "Find relevant primary sources (from the time being investigated) and secondary sources (later interpretations of that past), keep what answers your question, and organise your source notes clearly."
         nodes: ["AC9HH7S02 n1", "AC9HH7S02 n2", "AC9HH7S02 n3"]
         lessons:
           - { slug: "history/sources-7/primary-or-secondary", note: "distinguishes primary from secondary sources for your question" }

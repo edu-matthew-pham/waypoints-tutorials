@@ -9,9 +9,11 @@ struggle: "Students find it hard to leave out a fact they like. Ask 'Which quest
 before: |
   Economics hinge node: select at least two pieces with a stated reason and set aside what is not relevant. Covered by the Try, The idea and Make steps.
 
+  The daily counts describe only Monday and Tuesday, not a typical week. Vehicle counts are not counts of customers or people. Keep provenance with notes so claims can be traced later. Civics Make draws on two sources.
+
   Reliability of a source is not checked here; that is in Geography's and History's own courses and the Can you trust this source? catch-up.
 running:
-  - "Think first: ask for hands on 1 to 2 before the reveal."
+  - "Think first: show all five kinds of information in the prompt before collecting predictions. Ask which two answer the question."
   - "The idea: ask for a reason out loud, then check it points to the question."
   - "Vary: show the same page, new question."
 stuck:

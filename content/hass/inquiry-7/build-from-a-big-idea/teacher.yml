@@ -1,4 +1,4 @@
-summary: "Students see that a subject's big ideas (scarcity, who decides, change, cause) are topics, and practise building a question by naming a case and asking something about the idea that evidence can answer. Geography's and History's hinge nodes (using their concepts as question frames) are covered here in general; each subject's own lesson goes further."
+summary: "Students see that a subject's big ideas (scarcity, power, change, cause) are lenses for investigating topics, and practise building a question by naming a case and asking something about the idea that evidence can answer. Geography's and History's hinge nodes (using their concepts as question frames) are covered here in general; each subject's own lesson goes further."
 time: 40
 timing: "Think first and Try 10 min · The idea 10 min · Vary 6 min · Check 5 min · Make 6 min. Typical and wider steps are extras and not counted in this."
 goals:
@@ -11,7 +11,7 @@ before: |
 
   Cases are made up (Parkside tuckshop, Mill Road, the Kilby River, the Hartley bronze mirror). Do not substitute a real object or place in the sort without checking it first.
 
-  The Civics node asks for 'a key inquiry question about a specific topic'; the lesson covers the move and the Make step is the topic. History's node asks for two questions using different concept frames, which is what the Make step asks for.
+  The Make step asks for two questions and their evidence needs. Geography questions target the same phenomenon; History uses two concept frames on the same topic. In Civics, explain what the question investigates and identify useful sources. The concept-classification check tests meaning rather than merely recognising a question mark.
 running:
   - "Think first: ask for votes before the answer. 'Opportunity cost' on its own is the common wrong pick."
   - "Try: read each question aloud and ask which words are the case and which are the idea."
@@ -31,6 +31,6 @@ leads: |
   Next in Investigate like a humanities expert: Right-sized, and what would answer it. Subject lessons then build on the questions students write.
 exit:
   q: "How is a question different from a big idea?"
-  a: "A big idea is the topic. A question names a case and asks something about the idea that evidence can answer."
+  a: "A big idea is a lens for investigating a topic. A question names a case and asks something about the idea that evidence can answer."
 explain: |
-  A **big idea** is a topic. A question names a case and asks something about it that evidence can answer.
+  A **big idea** is a concept that helps you investigate a topic. A question names a case and asks something about it that evidence can answer.

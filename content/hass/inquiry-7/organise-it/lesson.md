@@ -3,14 +3,23 @@ order: 6
 unit: finding
 title: Organise what you found
 node: [AC9HE7S02 n3, AC9HC7S02 n3]
-summary: "Notes are easier to use when they are organised to fit the question. Numbers over days fit a table or a graph. Views from different people fit a table with a column for each group. Put like with like and name the columns."
+summary: "Notes are easier to use when they are organised to fit the question. Numbers over days fit a table or a graph. Views from different sources can be grouped by theme while retaining source references. Put like with like and name the columns."
 language: science
 shape: primer
 hook: "You have five numbers, one for each day. In a paragraph, which day was busiest? In a table?"
 ---
-After you keep what answers your question, **organise it** so you can see the answer. The shape depends on what you have: numbers over time suit a table or a graph. Views from different groups suit a table with a column for each.
+After you keep what answers your question, **organise it** so you can see the answer. The shape depends on what you have: numbers over time suit a table or a graph. Views from different sources can be grouped under shared sub-questions or themes, keeping who said what beside each note.
 
-Everything here is made up.
+Everything here is invented. Parkside has daily buyer counts; Riverbend Council is considering closing Mill Road; Wattle Flat is on the Kilby River in a dry year; Hartley Museum labels a bronze mirror as Han.
+
+For Mill Road, compare **ideas across sources**, rather than making separate piles headed “council” and “news”. These invented extracts can be organised like this:
+
+| Theme | Council notice C1 | Local news report N1 |
+|---|---|---|
+| Access | A timed closure is proposed at school arrival time. | A shop owner says deliveries need road access. |
+| Participation | Comments are invited before a decision. | Parents say they plan to send comments. |
+
+Each row brings related ideas together; the headings keep the source of each note visible. The extracts do not establish whether a closure is safe or what everyone thinks.
 
 ## Think first
 
@@ -34,7 +43,7 @@ check:
   q: "Which way of organising suits each?"
   pairs:
     - ["Student numbers each day of the week", "A table with a row for each day, or a bar graph"]
-    - ["What the council, shop owners and parents each say about Mill Road", "A table with a column for each group"]
+    - ["What the council, shop owners and parents each say about Mill Road", "A table grouping ideas by theme and naming each source"]
     - ["The Kilby River level each year since 2000", "A line graph over time"]
     - ["Four kinds of source and what each is good for", "A table with a row for each source"]
 ```
@@ -89,7 +98,7 @@ tasks:
       options: ["Source | What it says | Same or different?", "Interesting | Boring", "A | B | C", "Date found"]
       answer: 0
       feedback: [null, "That does not help you compare.", "These name nothing.", "Only one heading."]
-      explain: "Comparing needs a column for each thing you compare."
+      explain: "Keep the source attached, but group related ideas so you can compare what they say about the same issue."
 ```
 
 ### Change over time
@@ -102,15 +111,31 @@ tasks:
 stage: practise
 insight: "A last sort on a new case before moving on."
 check:
-  type: sort
-  q: "Which way of organising suits each set of notes?"
-  options: ["Table", "Graph over time"]
-  items:
-    - ["Five shop owners and what each said", "Table", "Words from different people."]
-    - ["Daily visitors to the Hartley Museum for a year", "Graph over time", "A number that changes over time."]
-    - ["Three sources and who runs each", "Table", "Facts to compare side by side."]
-    - ["Rainfall each month in Wattle Flat", "Graph over time", "Changes over months."]
+  type: question
+  q: "You need to compare what C1 and N1 say about access and participation. Which layout helps most?"
+  options:
+    - "One row per theme, with each source's notes alongside it"
+    - "All of C1, then all of N1, in the order copied"
+    - "Only notes that agree with the closure"
+    - "A graph counting words in each source"
+  answer: 0
+  feedback:
+    - null
+    - "That preserves sources but separates related ideas. Bring notes about the same theme together."
+    - "Grouping should preserve differences, including inconvenient evidence."
+    - "Word counts do not compare the ideas about access and participation."
+  explain: "Theme rows make similarities and differences visible without losing the sources."
+smaller:
+  check:
+    type: question
+    q: "Which theme fits a shop owner's note about deliveries?"
+    options: ["Access", "Participation"]
+    answer: 0
+    feedback: [null, "The note is about getting goods to a shop, rather than contributing views."]
+    explain: "Group it with other access information, keeping who said it."
 ```
+
+Tables and graphs can both show numerical data. Choose a table to retrieve exact values or a graph to inspect a pattern; label the measure, units, dates and sources. A graph of river level needs comparable readings from the same location. Neither format proves a cause.
 
 ## In each subject
 
@@ -131,18 +156,18 @@ check: { type: reflect, text: "I can organise my notes in a shape that fits my q
 ```step
 stage: make
 insight: "Organising your own notes makes the move your own."
-check: { type: reflect, text: "In my own book or a spreadsheet I organised the notes I kept for my question in a table or graph, named the columns, and said why that shape fits. A partner read it and agreed." }
+check: { type: reflect, text: "In my own book or a spreadsheet I organised notes for my class question, labelled them and kept the sources attached. For Civics I grouped related ideas from two sources under shared themes; for Economics I used a digital table or graph and explained why it fits. A partner checked whether the format helps answer the question." }
 ```
 
 Do it in your own document or spreadsheet. Your partner or teacher reads it.
 
-## Typical: a spreadsheet
+## Typical: another representation
 
 ```step
 stage: make
 tier: typical
-insight: "A digital tool makes the table and graph quick to change."
-check: { type: reflect, text: "I typed my table into a spreadsheet, made a chart from it, and said what it shows." }
+insight: "Representing the same information another way tests what each format makes visible."
+check: { type: reflect, text: "I made another suitable representation of the same notes or data and explained what it makes easier or harder to see. I kept the same labels and sources." }
 ```
 
 ## Wider: a second shape

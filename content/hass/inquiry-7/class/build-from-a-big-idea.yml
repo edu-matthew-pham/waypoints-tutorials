@@ -19,4 +19,4 @@ questions:
     q: "Which of these is a question?"
     options: ["What did Wattle Flat give up when water ran short?", "Water", "Scarcity", "The Kilby River"]
     answer: 0
-    explain: "It names a case and asks something. The others are topics."
+    explain: "It names a case and asks something. The others name a topic or concept without asking anything."

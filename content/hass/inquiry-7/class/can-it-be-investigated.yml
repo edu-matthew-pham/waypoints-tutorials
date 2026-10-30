@@ -10,7 +10,7 @@ activities:
     title: "Four corners"
     minutes: 4
     do: |
-      Label the corners Investigable, Just look it up, Too big and Only opinion. Read out questions from the lesson (and add your own from the class topic). Students walk to a corner and say why.
+      Label the corners Investigable, Just look it up, Too big and Preference without criteria. Read out questions from the lesson (and add your own from the class topic). Students walk to a corner and say why.
     notes: "Students in disagreement are the point. Ask for the test, not the answer."
 questions:
   - at: investigate
@@ -19,4 +19,4 @@ questions:
     q: "Which question is investigable?"
     options: ["Why did the Kilby River run low last summer?", "How long is the Kilby River?", "Is the Kilby River nice?", "What is a river?"]
     answer: 0
-    explain: "It asks why and needs evidence to answer. The other three are a look-up, an opinion and a definition."
+    explain: "It asks why and needs evidence to answer. The others are a supporting measurement, a preference needing criteria and a definition; each can be developed or contribute to a larger inquiry."

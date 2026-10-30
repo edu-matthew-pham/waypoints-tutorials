@@ -3,17 +3,19 @@ time: 40
 timing: "Think first and Try 10 min · The idea 10 min · Vary 6 min · Check 5 min · Make 6 min. Typical and wider steps are extras and not counted in this."
 goals:
   - I can say whether a question can be investigated and give a reason.
-  - I can tell a look-up, a too-big question and an opinion from an investigable question.
+  - I can distinguish a main inquiry question from a supporting fact or measurement and a question needing clearer scope or criteria.
   - I can write one investigable question and one that is not, for a topic my class is studying.
-struggle: "Students often think a question is good because it is about the topic or has a clear answer. Ask 'What would you have to do to answer it?' If the answer is 'look it up', it is not an investigation yet. Let them argue before you say."
+struggle: "Students often think a question is good because it is about the topic or has a clear answer. Ask 'What would you have to do to answer it?' A fact may support an inquiry without carrying the whole investigation. Let them argue before you say."
 before: |
   This is a hinge lesson in every subject: the next lessons (building and sizing a question) only work if students can already tell a look-up from an investigation. Spend time here.
 
   The cases are made up (Parkside School tuckshop, Riverbend Council and Mill Road, Wattle Flat and the Kilby River, the Hartley Museum's bronze mirror). The sort mixes all four on purpose, so students see the same four kinds in each subject. The Han mirror is a stand-in for any museum object; the lesson claims nothing about real objects.
 
+  The sorting categories are teaching tools, not rigid definitions. Counts are investigable data-collection questions; a definition may be a useful starting point. Evidence-informed judgements about fairness or value are legitimate if students state criteria and recognise different perspectives. Do not imply that inquiry requires agreement or that future questions cannot use evidence.
+
   Use it before or at the start of any unit that ends in an investigation. Students who have done the Year 6 catch-up Questions that guide an inquiry (in Before Year 7: HASS) will find it easier.
 
-  Where a node asks for more than this lesson gives, the subject's own lesson picks it up: Geography asks students to say what makes a question geographical (the 'where and why there' of the table), and History asks them to say what makes it historical (why and how we know, not recall).
+  For Geography, use the Make prompt to transform a general question and explain its spatial focus. For History, ask students to explain how their question investigates cause, change, significance or perspective. The source-node tags identify practice opportunities; an objective selection is not evidence that a student can formulate their own question.
 running:
   - "Think first: ask for votes before the answer. Many students pick 'Is the tuckshop good?' because it feels like the real question."
   - "Try: stop after the sort and ask which subject each investigable question belongs to. The answers are all one test."
@@ -24,9 +26,9 @@ stuck:
   - see: "A student says a question is good because it is interesting or about the topic."
     ask: "What would you have to do to answer it?"
     fix: "If the answer is 'look it up', it is a look-up. Interesting and on-topic questions can be look-ups too."
-  - see: "A student says opinion questions are fine for an investigation."
-    ask: "What evidence would settle it?"
-    fix: "If nothing can, it is opinion. A better version asks what evidence shows or how people decide."
+  - see: "A student treats a judgement as either unquestionable opinion or automatically provable."
+    ask: "What criteria would you use, and what evidence would help you judge?"
+    fix: "Define good or fair for a particular purpose and group. Gather relevant evidence, then acknowledge that people may weigh it differently."
   - see: "A student says a big question is better because it is more important."
     ask: "Could our class answer it in a week with what we can find?"
     fix: "If not, narrow it: name the case. The next lesson but one is about this."
@@ -36,6 +38,6 @@ leads: |
   Next in Investigate like a humanities expert: Build a question from a big idea. Each subject's own lesson follows: History's what makes a question historical, Geography's what makes it geographical.
 exit:
   q: "How can you tell if a question can be investigated?"
-  a: "Answering it means gathering evidence and thinking about it. If you could look up one fact, or only give a view, it is not investigable."
+  a: "Answering it means gathering evidence and thinking about it. A useful main question has focus and accessible evidence. Supporting facts and measurements help; a judgement needs explicit criteria."
 explain: |
-  A question is **investigable** when answering it means gathering evidence and thinking about it. A look-up, a too-big question and an opinion are not.
+  A question is **investigable** when answering it means gathering evidence and thinking about it. Look-ups and measurements can support it. Broad questions need narrowing; judgements need criteria and evidence.

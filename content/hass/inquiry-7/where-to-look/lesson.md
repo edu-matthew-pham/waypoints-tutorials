@@ -9,9 +9,9 @@ shape: primer
 hook: "You need to know how many students buy from the Parkside tuckshop each day. You could search the internet, ask a friend, or look at the till records. Which first?"
 assumes: [AC9HS6S02 n1, AC9HS6S02 n2, AC9HG7S02 n1, AC9HH7S02 n1]
 ---
-Once you have a question, ask **what would answer it, and who would have it**. A count is in the records. A rule is with whoever makes the rule. A view is with the people who hold it. Then you search, and a search works best when it is a few strong words.
+Once you have a question, ask **what would answer it, and who would have it**. A count may be in records or need collecting. A rule needs the relevant authority’s current documents. A view needs the people who hold it; a news report may quote some of them, but cannot represent everyone. Then you search, and a search works best when it is a few strong words.
 
-Every web page, report and address in this lesson is made up. Addresses end in `.example`, so none is a real site.
+All practice cases, records and addresses in this lesson are invented. Addresses end in `.example`; do not try to visit them. For this case, Parkside keeps anonymised daily buyer counts in its sales records. Ordinary transaction totals do not necessarily count distinct students.
 
 ## Think first
 
@@ -22,7 +22,7 @@ check:
   type: predict
   q: "How many students buy from the Parkside tuckshop each day? Where do you look first?"
   options: ["The tuckshop's own sales records", "A web search for tuckshops", "A news site", "Ask one friend"]
-  actual: "The tuckshop's own sales records. They have the count. A web search for 'tuckshops' finds tuckshops everywhere. A news site is unlikely to have it, and one friend only knows their own habits."
+  actual: "The tuckshop's own sales records. In this invented case, those records include daily buyer counts. A web search for 'tuckshops' finds tuckshops everywhere. A news site is unlikely to have it, and one friend only knows their own habits."
 ```
 
 ## Try: match the question to the source
@@ -38,9 +38,10 @@ check:
     - ["What are the rules for closing a road?", "The council's website (a government source)"]
     - ["What did local people say about closing Mill Road?", "A local news report"]
     - ["How much has the Kilby River dropped since 2000?", "River records from the water authority (statistics)"]
+    - ["What access problems might a road closure cause?", "A transport specialist's report (analysis of access)"]
 ```
 
-Was your guess right? Four kinds of source turn up a lot in a civics or economics investigation: **government websites** (rules and decisions), **news** (what people say and what happened), **specialist reports** (experts looking closely at something) and **statistics** (counts and measurements). Each is good for a different job.
+Was your guess right? Four kinds of source turn up a lot in a civics or economics investigation: **government websites** (rules and decisions), **news** (what people say and what happened), **specialist reports** (experts looking closely at something) and **statistics** (counts and measurements). Source types overlap: a government website can publish statistics or a specialist report. Match the information to your question, then check who produced it, when, how and for what purpose. Official does not automatically mean complete or reliable.
 
 ## The idea: strong words, not the first result
 
@@ -53,7 +54,7 @@ tasks:
       q: "You want the rules for closing a road. Which search is strongest?"
       options: ["\"road closure\" council rules", "tell me about roads", "road", "can you explain to me what a council is and what it does and what rules there are about roads"]
       answer: 0
-      feedback: [null, "It is too wide: it could mean any road in any country.", "One word finds far too much.", "The long sentence pulls in pages that match 'explain' and 'what', not the thing you want."]
+      feedback: [null, "It is too wide: it could mean any road in any country.", "One word finds far too much.", "It leaves out the specific road, council and decision. More words do not guarantee a focused search."]
       explain: "Quote marks keep \"road closure\" together as a phrase. The other words are the thing (council rules). Your search tool may use different symbols, so look at its help page."
   - check:
       type: bug
@@ -63,6 +64,9 @@ tasks:
       fault: logic
       misconception: first-result-is-the-place
       explain: "Line 3: Nib thinks the first result is always the best place. The right place depends on the question. The count is in the tuckshop's own records, so the first search result is the wrong place to start."
+    hint:
+      - "Who collected the information your question needs?"
+      - "Does the result contain that information, or just mention the topic?"
     smaller:
       check: { type: question, q: "Where would the daily count of students be written down?", options: ["The tuckshop's own records", "A search for tuckshops", "A news site", "A friend's memory"], answer: 0, explain: "The people who sell the food keep the count." }
   - check:
@@ -91,7 +95,7 @@ tasks:
       q: "The Hartley Museum has an online collection, hartley-museum.example/collection. You want its Han dynasty mirror. Which search is best, typed into the collection's own search box?"
       options: ["bronze mirror Han", "mirror", "what is the oldest thing in the museum", "Han"]
       answer: 0
-      feedback: [null, "Too wide: it finds every mirror.", "The collection can't answer a question like that.", "That finds everything from that period, not the mirror."]
+      feedback: [null, "Too wide: it finds every mirror.", "It searches for the oldest object rather than the mirror; catalogue search features vary.", "That finds everything from that period, not the mirror."]
       explain: "The thing (mirror), what it is made of (bronze) and the period (Han) give a short strong search for a catalogue."
   - check:
       type: question
@@ -145,10 +149,14 @@ check: { type: reflect, text: "I can say where I would look first for a question
 ```step
 stage: make
 insight: "Choosing sources and writing searches for your own question makes the move your own."
-check: { type: reflect, text: "In my own book I wrote, for one of my questions, what would answer it and who would have it, three places I would look (naming the kind of source for each) and the search words I would use. A partner read it and agreed." }
+check: { type: reflect, text: "In my own book I used a targeted search for my class question and recorded two relevant sources, their titles, makers, dates and links or catalogue references. I recorded my search terms and explained why I chose that strategy and how each source helps. A partner checked the sources against my question." }
 ```
 
-Write it in your own book or document, not on this page. Your partner or teacher reads it.
+Use your real class topic and teacher-approved search tools or collections. Try an exact phrase, a site limit or a catalogue filter, and note whether it improved the results. For History, locate one primary and one secondary source; for Geography, two secondary sources. In Civics, also name three useful source types and what each provides.
+
+For example, a source note needs: **title; maker; publication date (or “not given”); address or catalogue ID; why it helps**. A search result is a route to a source: open the source itself before recording it. Your teacher can supply an approved collection to search; the `.example` cards above are for practice only.
+
+Write in your own book or document. Your partner or teacher reads it.
 
 ## Typical: a second case
 

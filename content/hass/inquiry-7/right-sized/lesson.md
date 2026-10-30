@@ -3,13 +3,13 @@ order: 3
 unit: asking
 title: Right-sized, and what would answer it
 node: [AC9HH7S01 n3, AC9HG7S01 n3, AC9HC7S01 n3]
-summary: "A question can be too big to answer, too small to need investigating, or the right size: it names a case, and you can say what evidence would answer it and where you would get it. This lesson also starts from a news story, because many civic and economic investigations begin that way."
+summary: "A main inquiry question needs scope suited to the time and sources: it names a case, and you can say what evidence would answer it and where you would get it. This lesson also starts from a news story, because many civic and economic investigations begin that way."
 language: science
 shape: primer
-hook: "Nib has a week to investigate something about Riverbend Council and picks 'What is democracy?' Will Nib finish by Friday?"
+hook: "Nib has a week to investigate something about Riverbend Council and picks 'How has every democracy changed throughout history?' Will Nib finish by Friday?"
 assumes: [AC9HS6S01 n3]
 ---
-Last lesson, you built questions from big ideas. Now you check the **size**. A question that is too big cannot be finished. One that is too small is a look-up. The right size names a case, and you can say what evidence would answer it and where you would get it.
+Last lesson, you built questions from big ideas. Now you check the **size**. Size depends on the available time and evidence. A broad question may need narrowing; a single fact or measurement may be useful as a supporting question without carrying the whole inquiry. The right size names a case, and you can say what evidence would answer it and where you would get it.
 
 The cases are the made-up ones again: the Parkside tuckshop, Riverbend Council and Mill Road, the Kilby River and Wattle Flat, and the Hartley Museum's bronze mirror.
 
@@ -21,21 +21,21 @@ insight: "Committing to a choice shows the test: the right size names a case and
 check:
   type: predict
   q: "Which question about Mill Road is the right size for a week?"
-  options: ["What might closing Mill Road change for students, drivers and shops?", "What is democracy?", "How many cars use Mill Road at 8:30 on Monday?", "Is the council good?"]
-  actual: "The first. It names the case and you could gather evidence (a survey, traffic counts, council papers) and weigh it. 'What is democracy?' is too big. One traffic count is too small, and it is a look-up. 'Is the council good?' is only opinion."
+  options: ["What might closing Mill Road change for students, drivers and shops?", "How has every democracy changed throughout history?", "How many cars use Mill Road at 8:30 on Monday?", "Is the council good?"]
+  actual: "The question about effects on students, drivers and shops. It names the case and you could gather evidence (a survey, traffic counts, council papers) and weigh it. 'How has every democracy changed throughout history?' covers too many places and periods. One traffic count is a useful supporting measurement, but does not by itself explain the effects. 'Is the council good?' needs criteria and a clearer focus."
 ```
 
-## Try: too big, too small, or right?
+## Try: size it for this inquiry
 
 ```step
 stage: run
 insight: "Sorting across four cases shows the same sizes in every subject: the middle one names the case and asks something."
 check:
   type: sort
-  q: "How big is each question?"
+  q: "For this practice inquiry, you have a week and a small source pack. Which question can guide the whole inquiry? Too small means useful supporting work, but limited on its own."
   options: ["Too big", "Too small", "Right size"]
   items:
-    - ["What is the economy?", "Too big", "A whole subject, with no case named."]
+    - ["How have all economies changed throughout history?", "Too big", "Too many places and periods for this source pack."]
     - ["What price is a pie at the Parkside tuckshop?", "Too small", "One price is a look-up."]
     - ["How does the Parkside tuckshop decide what to stock, and what do students miss out on?", "Right size", "It names the case and needs sales records and student views."]
     - ["What happened in ancient history?", "Too big", "Thousands of years, no case named."]
@@ -67,8 +67,11 @@ tasks:
       fault: logic
       misconception: bigger-question-better
       explain: "Line 2: Nib thinks bigger questions are better because they are more important. But a class cannot gather enough evidence to answer one that big in a week. A better question names the case: for example, who decides whether Mill Road closes?"
+    hint:
+      - "What places and periods would Nib have to cover?"
+      - "Which single decision could Nib investigate with available records?"
     smaller:
-      check: { type: question, q: "Could a class finish investigating 'What is democracy?' in a week?", options: ["No, it is far too big", "Yes", "Yes, with the internet", "Yes, if they work hard"], answer: 0, explain: "It has no case. A class needs a case to know where to look." }
+      check: { type: question, q: "Could a class finish investigating 'How has every democracy changed throughout history?' in a week?", options: ["No, it is far too big", "Yes", "Yes, with the internet", "Yes, if they work hard"], answer: 0, explain: "There are too many places and periods for the available time. Choose a specific decision and sources you can access." }
   - check:
       type: match
       q: "What would answer each question, and where could you get it?"
@@ -94,17 +97,17 @@ tasks:
   - check:
       type: question
       q: "A made-up news story says: 'Riverbend Council votes to close Mill Road outside Parkside School from next term.' Which question links the story to a bigger idea about how government works?"
-      options: ["Which level of government can close a road, and what rules does it have to follow?", "When did the council vote?", "Was the vote fair?", "Do councils always close roads?"]
+      options: ["Which level of government can close a road, and what rules does it have to follow?", "When did the council vote?", "Which councillor spoke first?", "Do councils always close roads?"]
       answer: 0
-      feedback: [null, "That is a look-up. The story already tells you.", "That is mostly opinion. A better version asks how the vote is made and checked.", "That is closed and too wide."]
+      feedback: [null, "That is a supporting date, not a question about the wider civic process.", "That asks for one detail rather than investigating the rules governing this decision.", "That is closed and too wide."]
       explain: "It starts from the story, asks about the bigger idea (who decides, by what rules) and names the case."
   - check:
       type: question
-      q: "A made-up story says: 'Parkside tuckshop stops selling pies.' Which question links it to a bigger economic idea?"
-      options: ["What did the tuckshop give up, and gain, when it stopped selling pies?", "Why do people like pies?", "When did pies stop?", "Are pies healthy?"]
+      q: "A made-up story says: 'Parkside tuckshop replaces pies with wraps because it has limited oven space.' Which question investigates opportunity cost?"
+      options: ["What was the next best option given up when the tuckshop chose wraps?", "Why do people like pies?", "When did pies stop?", "What colour is the tuckshop sign?"]
       answer: 0
-      feedback: [null, "That is a different topic.", "That is a look-up.", "That is a different question and leans on opinion."]
-      explain: "It links the story to what is given up, which is opportunity cost."
+      feedback: [null, "That is a different topic.", "That is a look-up.", "That is a detail about the shop, not about an economic choice."]
+      explain: "It asks for the next best alternative given up, rather than treating every cost or benefit as opportunity cost."
 ```
 
 ### Civics, from a news story
@@ -122,8 +125,17 @@ check:
   options: ["Look at river height records and rainfall figures for last summer, and a map of what draws water from the river", "Read everything about rivers", "Ask one student what they think", "Look up the river's length"]
   answer: 0
   feedback: [null, "That is far too big. A plan names what to gather.", "One view is not enough evidence.", "That does not answer the question."]
-  explain: "A plan says what evidence and where to get it."
+  explain: "These records could test possible causes. Include a comparison period and check other influences before concluding why it ran low."
 ```
+
+A plan should say how the evidence helps, not just name a source. For the made-up river case:
+
+| Evidence needed | Where and how to collect it | How it helps |
+|---|---|---|
+| Rainfall for the dry summer and a comparison summer | Download monthly records from the water authority | Check whether less rain could help explain lower river levels |
+| River levels for the same months | Download readings for the same measuring station | Check when levels fell and compare them with rainfall |
+
+These records could support an explanation; they would not rule out water extraction or dam operations. Plan fieldwork with your teacher; you do not need to visit a river for this task.
 
 ## In each subject
 
@@ -148,13 +160,10 @@ check: { type: reflect, text: "I can say what makes a question the right size an
 ```step
 stage: make
 insight: "Writing a one-row plan for one of your questions makes sizing and evidence your own."
-check: { type: reflect, text: "In my own book I made a one-row plan for one of my questions: the question, what I would need, where I would get it, and how I would collect it. A partner read it and agreed it was the right size." }
+check: { type: reflect, text: "In my own book I made a short plan for one of my questions: the question, evidence needed, where and how I would get it, and how it would help answer the question. I explained why it fits the time and sources available. For Geography I included two evidence types and a collection method for each. A partner checked the plan and I revised it." }
 ```
 
-Write it in your own book or document. Use these four headings across a row:
-
-| My question | What I need | Where I would get it | How I would collect it |
-|---|---|---|---|
+Write it in your own book or document. Name your question, then use the worked plan’s headings. For Civics, also choose a current news item with your teacher and explain how your question connects it to a wider civic concept. The invented news checks rehearse that move; they are not current events.
 
 ## Typical: a second case
 
@@ -164,10 +173,10 @@ tier: typical
 insight: "The same sizing on another subject's case."
 check:
   type: sort
-  q: "How big is each question about Wattle Flat?"
+  q: "For the same one-week inquiry, how does each Wattle Flat question fit?"
   options: ["Too big", "Too small", "Right size"]
   items:
-    - ["What is water?", "Too big", "No case."]
+    - ["How has water use changed in every town since ancient times?", "Too big", "Too many places and periods for this inquiry."]
     - ["How many taps are there in Wattle Flat?", "Too small", "A count."]
     - ["How did people in Wattle Flat change how they use water during the dry year?", "Right size", "A case, a change and accounts to find."]
 ```

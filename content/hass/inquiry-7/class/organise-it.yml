@@ -10,7 +10,7 @@ activities:
     title: "Same data, two shapes"
     minutes: 6
     do: |
-      Give pairs the five daily numbers. One makes a table, one a bar graph. Compare what each shows fastest.
+      Use invented daily buyer counts: Monday 212, Tuesday 198, Wednesday 205, Thursday 190, Friday 220. Give pairs the five numbers. One makes a table, one a bar graph. Compare what each shows fastest.
     notes: "Both are right; the question decides."
 questions:
   - at: investigate

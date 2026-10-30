@@ -1,6 +1,6 @@
 ---
 title: Investigate like a humanities expert
-summary: "Nine short lessons for the inquiry skills Year 7 History, Geography, Civics and Economics share: asking, finding and organising, then using subject vocabulary, explaining with evidence and making an argument. Four made-up cases support practice; the real inquiry remains class work. This is a preview, not yet tried with classes."
+summary: "Nine short lessons on asking questions, finding and organising information, and sharing explanations and arguments. Dip into the skill your class needs; you do not have to finish the course before starting an inquiry. Use your current subject's task, with other cases and width steps as optional practice on the same idea. Four invented cases support practice; real inquiries remain class work. Preview, not yet tried with classes."
 tagline: "Ask it, find it, share what it shows."
 years: "7"
 order: 1

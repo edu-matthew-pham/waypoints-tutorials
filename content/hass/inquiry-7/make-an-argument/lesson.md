@@ -16,7 +16,7 @@ An **argument** takes a position on a question someone could reasonably disagree
 
 All cases, figures and source cards here are invented practice material. Parkside School's tuckshop cannot stock everything; Riverbend Council is considering closing Mill Road outside the school; Wattle Flat is on the Kilby River in a dry year; Hartley Museum labels a bronze mirror as Han. The records do not establish facts about a real council, river or ancient society.
 
-This lesson tags Civics and History only. Economics' responses and Geography's action stay in those subjects.
+Use this lesson for Civics or History. Economics’ responses and Geography’s action stay in those subjects.
 
 ## Think first
 
@@ -137,18 +137,18 @@ smaller:
 
 For a real historical topic, your teacher supplies or approves real sources and checks historical knowledge.
 
-## Apply: plan two arguments
+## Apply: plan your argument
 
 ```step
 stage: make
 insight: A plan connects a position to distinct points and evidence for an audience.
 check:
   type: reflect
-  text: In my own document I planned a civic argument and a historical argument,
-    each with a position, two supported points, an audience and an alternative.
+  text: In my own document I planned an argument for my current subject, with a position, two supported
+    points, an audience and a reasonable alternative or objection.
 ```
 
-Address the Mill Road argument to the council and the mirror argument to museum visitors. You may disagree with the models if the evidence supports your position. For real class work, use your teacher's sources.
+Choose the civic case (address the council) or the historical case (address museum visitors), or use your class topic with verified sources. You may disagree with the models if the evidence supports your position. For real class work, use your teacher's sources.
 
 | Part | What to put in your plan |
 |---|---|
@@ -166,11 +166,11 @@ stage: make
 insight: A finished argument connects evidence and reasoning for its audience.
 check:
   type: reflect
-  text: I wrote both arguments in my own document, compared them with the models,
+  text: I wrote my argument in my own document, compared it with the relevant model,
     and asked a partner or teacher to check the criteria below.
 ```
 
-Turn each plan into a short argument. Check:
+Turn your plan into a short argument. Use your subject’s checklist:
 
 - **Civics:** a clear claim, **two distinct supporting points** with referenced evidence and at least two accurate civic terms, such as *consultation* and *participation*.
 - **History:** a clear position supported by **at least two pieces of evidence**, at least two historical terms, such as *artefact*, *source*, *change* or *interpretation*, and a counter-consideration.
@@ -199,8 +199,9 @@ tier: typical
 insight: Apply the same communication move in another context.
 check:
   type: reflect
-  text: A partner highlighted each point, evidence and reasoning. I revised the
-    least convincing connection without adding unsupported claims.
+  text: I applied the same argument move to a second case, using that subject’s
+    checklist. A partner highlighted the points, evidence and reasoning so I
+    could revise an unclear connection.
 ```
 
 

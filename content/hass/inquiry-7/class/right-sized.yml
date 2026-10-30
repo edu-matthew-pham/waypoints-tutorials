@@ -3,7 +3,7 @@ inquiry:
   prompts:
     - "What could a small question be part of?"
     - "When would you want a small question on its own?"
-  notes: "Aim for: small questions are good as parts of a bigger one. On their own they are look-ups."
+  notes: "Aim for: small questions are good as parts of a bigger one. Some are look-ups; others require new measurements. Their value depends on what the inquiry needs."
 activities:
   - at: investigate
     kind: activity
@@ -17,6 +17,6 @@ questions:
     title: "Right size?"
     type: question
     q: "Which is the right size for a week?"
-    options: ["How did the dry year change water use in Wattle Flat?", "What is water?", "How tall is the dam?", "Is water important?"]
+    options: ["How did the dry year change water use in Wattle Flat?", "How has every town used water throughout history?", "How tall is the dam?", "Is water important?"]
     answer: 0
     explain: "It names a case and a change, and evidence would answer it."

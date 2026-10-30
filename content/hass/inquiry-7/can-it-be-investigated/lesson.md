@@ -3,13 +3,15 @@ order: 1
 unit: asking
 title: Can this be investigated?
 node: [AC9HE7S01 n1, AC9HC7S01 n1, AC9HG7S01 n1, AC9HH7S01 n1]
-summary: "An investigable question is one a class could answer by finding evidence and weighing it. Some questions only need a quick look-up, some are too big, and some are only opinion. Each subject has its own way of being not quite right: History's are often plain recall, Geography's are not about places, Civics' are too broad, Economics' are closed or unanswerable."
+summary: "Choose a focused inquiry question that available evidence can help answer. Distinguish a whole inquiry from useful supporting facts and measurements, and refine broad questions or judgements that need criteria."
 language: science
 shape: primer
 hook: "The school tuckshop has room for six items. Which of these questions would give a class something to investigate for a week?"
 assumes: [AC9HS6S01 n1]
 ---
-A question is **investigable** when finding the answer means gathering evidence and thinking about it. Looking up one fact is not an investigation, and neither is an opinion that nobody can check.
+A useful **inquiry question** is focused enough to investigate with available evidence and gives you something to work out. A quick look-up can help, but usually cannot carry the whole inquiry. Counts and measurements are investigable supporting questions: you may need to collect new data to answer them.
+
+Judgements can use evidence too. “Is the tuckshop good?” needs clearer criteria: good for whom, and in what way? “How well does the menu meet students’ needs within its budget?” gives you evidence to gather and a judgement to explain. People may still weigh that evidence differently.
 
 The cases in this lesson are made up: the Parkside School tuckshop, Riverbend Council and Mill Road, the town of Wattle Flat on the Kilby River, and a bronze mirror in the Hartley Museum.
 
@@ -22,7 +24,7 @@ check:
   type: predict
   q: "Which question about the Parkside tuckshop could a class investigate for a week?"
   options: ["How does the tuckshop decide which six items to stock, and what do students miss out on?", "What is the tuckshop's phone number?", "Is the tuckshop good?", "Should schools have tuckshops?"]
-  actual: "The first. It asks how and why, so you would gather evidence such as sales records and student views and weigh it. The phone number is one fact. 'Is it good?' and 'Should schools have them?' are mostly opinions, and they are too wide to settle with the evidence a class can collect."
+  actual: "The question about choosing stock. It asks how and why, so you would gather evidence such as sales records and student views and weigh it. The phone number is one fact. 'Is it good?' needs criteria; 'Should schools have them?' needs a narrower setting and evidence about benefits and costs. Neither is ready as written."
 ```
 
 ## Try: sort the questions
@@ -33,13 +35,13 @@ insight: "Sorting questions from all four cases shows the same four kinds turnin
 check:
   type: sort
   q: "What kind of question is each one?"
-  options: ["Investigable", "Just look it up", "Too big", "Only opinion"]
+  options: ["Investigable", "Just look it up", "Too big", "Preference without criteria"]
   items:
     - ["How does the Parkside tuckshop choose which six items to stock?", "Investigable", "You would gather evidence and weigh it."]
     - ["What time does the tuckshop open?", "Just look it up", "One fact answers it."]
-    - ["What is democracy?", "Too big", "Whole books are written on it. A class could not settle it with the evidence it can gather."]
+    - ["How has every democracy changed throughout history?", "Too big", "Too many places and periods for this class inquiry. Narrow the scope."]
     - ["Why did Riverbend Council want to close Mill Road, and who gets a say?", "Investigable", "It asks why and who, and records and views would answer it."]
-    - ["Is the Kilby River pretty?", "Only opinion", "People will say yes or no, and there is no evidence that settles it."]
+    - ["Is the Kilby River pretty?", "Preference without criteria", "As written it asks for personal taste. A question about how residents value the river could use interviews and stated criteria."]
     - ["Why did the Kilby River run low last summer, and who in Wattle Flat felt it most?", "Investigable", "It asks why and who, and records and local accounts would answer it."]
     - ["When did the Han dynasty start?", "Just look it up", "One date answers it."]
     - ["What can the Hartley Museum's bronze mirror tell us about life in Han times, and what can't it?", "Investigable", "You would look closely at the mirror and weigh what it shows and what it leaves out."]
@@ -58,7 +60,7 @@ tasks:
       q: "Which of these is the best reason a question is investigable?"
       options: ["Answering it means gathering evidence and thinking about it", "It is about the topic", "It has a short answer", "Lots of people have asked it"]
       answer: 0
-      feedback: [null, "A question can be about the topic and still be a quick look-up.", "A short answer usually means a look-up. Investigations take longer.", "Being popular does not make it investigable."]
+      feedback: [null, "A question can be about the topic and still be a quick look-up.", "Answer length does not decide this. A count may require data collection; a long answer may only copy a source.", "Being popular does not make it investigable."]
       explain: "If you can only answer it by finding evidence and weighing it, it is investigable."
   - check:
       type: bug
@@ -67,21 +69,24 @@ tasks:
       answer: 3
       fault: logic
       misconception: recall-is-inquiry
-      explain: "Line 3: Nib thinks a question is great because it is about history and has a clear answer. A clear single answer means it is a look-up. Nib's own next line gives it away: it takes one minute."
+      explain: "Line 3: Nib thinks a question is great because it is about history and has a clear answer. This particular question asks for one established date; it does not yet ask why, how things changed or how we know. That date could support a larger inquiry."
+    hint:
+      - "What would you need to find out beyond one date?"
+      - "Could that date support a question about why something happened?"
     smaller:
-      check: { type: question, q: "Nib's question can be answered with one date. What kind of question is it?", options: ["Just look it up", "Investigable", "Too big", "Only opinion"], answer: 0, explain: "One date answers it, so it is a look-up." }
+      check: { type: question, q: "Nib's question can be answered with one date. What kind of question is it?", options: ["Just look it up", "Investigable", "Too big", "Preference without criteria"], answer: 0, explain: "One date answers it, so it is a look-up." }
   - check:
       type: question
-      q: "Which of these questions is not investigable?"
+      q: "Which question needs clearer criteria and scope before it can guide an inquiry?"
       options: ["Which is the best river in the country?", "Why did the Kilby River run low last summer?", "How does the council decide when to close a road?", "What did people in Han times use bronze mirrors for?"]
       answer: 0
       feedback: [null, "Records and accounts could answer this.", "Council documents and people's accounts could answer this.", "Sources could answer this."]
-      explain: "'Best' is only opinion, and no evidence settles it."
+      explain: "'Best' for what purpose, and for whom? Criteria such as water quality or access would turn this into a question evidence could help answer."
 ```
 
-### Find Nib's mistake
-
 ### The best reason
+
+### Find Nib's mistake
 
 ### Not investigable
 
@@ -93,18 +98,18 @@ insight: "Each subject tends to slip in a different way, but the test is the sam
 tasks:
   - check:
       type: question
-      q: "A Geography class asks: 'What is the capital of France?' Why is it a poor question for Geography?"
-      options: ["It is one fact, and it is not about how or why a place is the way it is", "It is too big", "It is only opinion", "Geography never asks about capitals"]
+      q: "A Geography class asks: 'What is the capital of France?' Why is it too limited as the main inquiry question?"
+      options: ["It locates a place but does not yet investigate a spatial pattern, process or relationship", "It is too big", "It is only opinion", "Geography never asks about capitals"]
       answer: 0
-      feedback: [null, "It is small, not big.", "It is not opinion, and that is not the problem.", "Geography can use capitals. The problem is the question has a one-fact answer and does not ask about a place or a pattern."]
-      explain: "A question for Geography asks about a place, where things are and why. This one is a look-up."
+      feedback: [null, "It is small, not big.", "It is not opinion, and that is not the problem.", "Geography can use capitals. It does locate a place, but stops before investigating a pattern, process or relationship."]
+      explain: "Locating places is geographical work. To build an inquiry, ask about a spatial pattern, process or relationship, such as how a capital is connected to other places."
   - check:
       type: question
       q: "An Economics class asks: 'Will everyone have enough in future?' What is the problem?"
-      options: ["Nobody can answer it with evidence, so it cannot be investigated", "It is a look-up", "It is about the past", "It is too small"]
+      options: ["It leaves everyone, enough and future undefined, so the scope and evidence are unclear", "It is a look-up", "It is about the past", "It is too small"]
       answer: 0
       feedback: [null, "It is nowhere near a look-up.", "It looks ahead, not back, and that is not the main problem.", "It is far too wide, not too small."]
-      explain: "Nobody can know. A better version asks about something with evidence, such as how the tuckshop shares what it has now."
+      explain: "Forecasts can use evidence, but need a defined group, resource, period and stated assumptions. A manageable version asks how Parkside could meet lunch demand next term with its current budget."
 ```
 
 ### Geography's slip
@@ -118,16 +123,16 @@ stage: practise
 insight: "A last check on the test across a new case before moving on."
 check:
   type: sort
-  q: "Sort each question about Mill Road."
-  options: ["Investigable", "Not investigable"]
+  q: "Which questions could guide the whole Mill Road inquiry, and which need developing or serve as supporting questions?"
+  options: ["Main inquiry question", "Supporting question or needs refining"]
   items:
-    - ["How many cars use Mill Road each day?", "Not investigable", "It is a count you would look up or measure. It does not need weighing."]
-    - ["What might be the effects of closing Mill Road on students, drivers and shops?", "Investigable", "Several kinds of evidence, weighed."]
-    - ["Is Mill Road the nicest road in Riverbend?", "Not investigable", "Opinion only."]
-    - ["Who decides whether Mill Road closes, and why?", "Investigable", "Documents and rules would answer it."]
+    - ["How many cars use Mill Road each day?", "Supporting question or needs refining", "A valid data-collection question. Counts can support an inquiry about the effects of closure."]
+    - ["What might be the effects of closing Mill Road on students, drivers and shops?", "Main inquiry question", "Several kinds of evidence, weighed."]
+    - ["Is Mill Road the nicest road in Riverbend?", "Supporting question or needs refining", "Nicest needs criteria and a purpose before evidence can help."]
+    - ["Who decides whether Mill Road closes, and why?", "Main inquiry question", "Documents and rules would answer it."]
 ```
 
-If you got any of those wrong, go back to the sorting step and ask: could I answer this without finding evidence and thinking about it?
+If you got any of those wrong, go back to the sorting step and ask: what evidence would I collect, and does this guide the whole inquiry or help answer part of it?
 
 ## In each subject
 
@@ -135,16 +140,16 @@ Every subject wants an investigable question. What each one watches for is a lit
 
 | | The question usually goes wrong by being | A good one asks |
 |---|---|---|
-| **Economics** | closed, or unanswerable ("Will everyone have enough?") | how people or businesses choose, and what is given up |
+| **Economics** | closed, too broad, or unclear ("Will everyone have enough?") | how people or businesses choose, and what is given up |
 | **Civics** | too broad ("What is democracy?") | who decides, how, and with what rules |
-| **Geography** | not about a place or a pattern (a one-fact look-up) | where, why there, and what changes |
+| **Geography** | missing a spatial process or relationship to investigate | where, why there, and what changes |
 | **History** | plain recall ("When did X happen?") | why it happened, how it changed, how we know |
 
 Next: Build a question from a big idea.
 
 ```step
 stage: info
-check: { type: reflect, text: "I can say how a question usually goes wrong in my subject, and what a good one asks." }
+check: { type: reflect, text: "I can name two features of a useful inquiry question: a focused subject question and evidence I could obtain." }
 ```
 
 ## Make: your own
@@ -152,10 +157,10 @@ check: { type: reflect, text: "I can say how a question usually goes wrong in my
 ```step
 stage: make
 insight: "Writing one investigable question and one that is not, from your own subject, makes the test your own."
-check: { type: reflect, text: "In my own book I wrote one investigable question and one that is not, for a topic my class is studying, and said why. A partner read them and agreed." }
+check: { type: reflect, text: "In my own book I wrote one useful main inquiry question and one that needs developing for my class topic, explained the difference using focus and available evidence, and revised them after a partner’s comments." }
 ```
 
-Write it in your own book or document, not on this page. Your partner or teacher reads it.
+Write in your own book or document. For Geography, turn a general question such as “Is water important?” into one about a place, spatial pattern or relationship. Explain what geographical focus you added and what evidence would help. For History, explain how your question asks about cause, change, significance or perspective. Your partner or teacher reads it.
 
 ## Typical: a second case
 
@@ -168,7 +173,7 @@ check:
   q: "Which is investigable for a Civics class studying Riverbend Council?"
   options: ["Who can the council ask for money to repair Mill Road, and why?", "How many councillors are there?", "Is the council good?", "What is a council?"]
   answer: 0
-  feedback: [null, "That is a count you look up.", "That is opinion only.", "That is a definition. It is too small to investigate."]
+  feedback: [null, "That is a count you look up.", "That needs clearer criteria for good.", "That is a definition. It is too small to investigate."]
   explain: "It asks who and why, and documents and rules would answer it."
 ```
 
