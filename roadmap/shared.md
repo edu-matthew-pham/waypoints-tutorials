@@ -1221,3 +1221,69 @@ Details in `roadmap/code.md` › How coding ideas build. Shared changes: `CORE_I
 - Home page subjects (30 Oct 2026, Matthew): grouped like the Subjects menu (Core, Humanities, Technologies) as compact cards (a line icon from `tools/subject-icons.mjs`, the name, a tag of about five words), about 1,300 px instead of 3,300; a new subject needs an icon there too. Each subject's `index.md` carries `group:`, a short `blurb:` (the card tag; the long `summary:` stays on the subject's own page) and, for pilots, `preview: true` (a small Preview tag; set on History, Geography, Civics, Humanities skills). A new subject needs `group:`, `blurb:` and an `order:` that places it in its group. The home page lede no longer lists subjects. Needs a quick or whole-site publish.
 - Humanities teacher guides (30 Oct 2026, draft, Matthew): `content/humanities-teachers.md` (shared inquiry skills), `history-teachers.md`, `geography-teachers.md`, `civics-teachers.md`, `economics-teachers.md`, in the Teachers menu under Subject guides (subject order) and in `tools/search-index.mjs`. They state only what is built (History 4 lessons + 1 catch-up, Geography 1 of 5, Civics 1 of 5, Economics 4, shared inquiry 6 + 2 catch-ups) and mark everything else as planned. Update each guide when its subject builds more. Needs a whole-site or quick publish.
 - Teachers page and menu (30 Oct 2026): the Teachers page shows the same groups as its menu, as two-column cards with short descriptions; subject guides are in subject order under short names (English, Maths, ...). Group and order come from `links:` in `content/teachers/index.md`.
+
+
+## Planned: teacher introduction and Humanities pilot (30 Oct 2026)
+
+**Status:** Stage 1 design agreed by Matthew; **plan only, not built**. Follow `roadmap/checklist.md` plan-first rule: commit this plan, then stop before implementation. Any changes to shared site tooling need a separate review. The Humanities subject roadmaps remain responsible for their own courses. This onboarding project does not add Year 7 curriculum content.
+
+**Purpose:** Introduce **Learning Waypoints as three connected ways in**, not merely the Tutorials site: **Unpack** curriculum and conceptual progression, **Prepare** teaching resources and planning, and **Tutorials** for exploring and checking understanding. They are independent entry points, *not* a compulsory Unpack → Prepare → Tutorials workflow. Tutorials is the main hands-on example in the short Humanities department meeting; broader capability is made explicit. Pace is teacher controlled; the untiered lesson path is minimum understanding, with optional `smaller:` support and `tier:` width, not pace tracks.
+
+### Two deliberately different resources
+
+1. **Learning Waypoints in 10 Minutes:** a deliberately curated, **six-slide Humanities department presentation**, with speaker notes and links to live demonstrations. Use the existing Prepare/Marp hand-authored `presentation.md` mechanism if it can be exposed cleanly, not a new deck engine. Intended for a presenter, not a standalone tutorial.
+2. **Getting Started with Learning Waypoints:** reusable, **self-paced interactive teacher course**, with three short lessons (roughly 15–20 minutes total as an indicative self-paced route), generated Prepare decks/print resources and facilitator notes. Teachers who miss the meeting can follow it independently. It is not another required course for staff.
+3. **Humanities pilot companion page:** short subject-specific landing section/page linking the four Humanities subjects and shared inquiry skeletons, available introductory courses, the general tutorial and pilot reflection questions. This is *not* a third course.
+
+**Avoid duplicate maintenance:** share the same conceptual examples and cross-link the resources, but tailor wording/format to use: curated talk versus full interactive tutorial. A hand-authored Marp deck exists at `content/code/pattern-detector/presentation.md`; `content/teachers/make-a-lesson/` establishes the teacher-facing course precedent. Verify actual publishing and generated deck routing before committing to precise locations. Suggested slugs: `content/teachers/getting-started/` and `content/teachers/humanities-pilot/` (confirm site router supports the latter), with the curated deck attached at the supported course/project level. No external form, account system, AI marking or custom slide interface.
+
+### Six-slide presentation: 10 minutes including live demonstration
+
+| Slide | Time | On screen | Presenter note / live link |
+|---|---:|---|---|
+| 1. Three ways into Learning Waypoints | 1:00 | Unpack, Prepare, Tutorials; teacher choice | Not a three-step requirement. Name the need each meets. |
+| 2. Start with what students need to understand | 1:30 | One Geography water waypoint and its conceptual hinge | Link to the verified current curriculum view (Unpack); avoid using an unbuilt K02 lesson. |
+| 3. Experience a waypoint | 3:00 | Actual published Geography water lesson, a prediction and feedback | Show a realistic wrong choice, explanation, `smaller:` only where the chosen lesson actually has it, and return to the main task. |
+| 4. From waypoint to teaching resources | 1:30 | Teacher guide, Prepare Slides and Prepare Print for the *same* lesson | These are teaching resources, not a replacement for discussion, investigation or writing. Verify each exact live link. |
+| 5. Where Humanities teachers can begin | 1:30 | History, Geography, Civics, Economics and shared inquiry | Show individual lessons beside existing units and `Preview`/`Coming later` honestly. |
+| 6. Try one thing | 1:30 | Pilot invitation, self-paced link and three reflection prompts | Invite one activity or checkpoint, not a full course obligation. |
+
+**Timing total: 10:00.** Speaker notes include what to say and what to click, with a fallback screenshot or direct link if live navigation is slow. Before building, select a *currently implemented and verified* water lesson that actually provides the intended misconception check and scaffold; otherwise use another implemented Humanities lesson and update both resources consistently. Don't promise that an unbuilt board or interaction exists.
+
+### Self-paced teacher course: three lessons with real interactions
+
+**1. Find your starting point**
+- One insight: different teaching needs call for different entry points, and teachers may move between them.
+- Cases: explicitly invented teacher situations: identify a hidden prerequisite; prepare slides for tomorrow; uncover a misconception during a unit.
+- Checks: match each need to Unpack, Prepare or Tutorials; an explanation/reflect check for when more than one can serve the same goal (no automatic marking of free writing).
+- Real links: open the actual curriculum viewer, Prepare and a tutorial. A mistake to surface: “You must work through all three in order.” Distractors: confuse curriculum mapping with ready-made slides, assume only Tutorials supports classroom use, assume the tools mandate a teaching sequence.
+- Shape: teacher-facing primer/interactive orientation, not a simulated student curriculum standard; short feedback explains why each tool suits the use.
+
+**2. Experience a waypoint**
+- One insight: a conceptual check can make a student's reasoning visible; support builds back to the original idea, while width explores the same concept.
+- Use the same *real* Geography lesson as the talk, after verifying its built checks; show the progression concept, a prediction, a planted misconception and answer-specific feedback, a real `smaller:` scaffold and an optional `tier:` task if present. If one lesson cannot honestly demonstrate all features, state that and link a second verified lesson instead.
+- Checks: choose why a wrong answer signals a misconception; distinguish support, minimum and optional width; open the real lesson to try one interaction, followed by a `reflect` self-check rather than fabricated telemetry.
+- Distinct distractors: feedback is simply a correctness score; smaller step is a different track; optional width means faster pacing.
+- Shape: worked teacher walkthrough + live-link application. Written claims are evaluated by the teacher, not automatically scored.
+
+**3. Make it work for your class**
+- One insight: teachers select a concept and teaching move; they do not have to teach every lesson or delegate discussion, inquiry and assessment to the site.
+- Cases: made-up but realistic situations requiring a whole-class demonstration, a single checkpoint, or individual catch-up and wider application.
+- Checks: decide which use fits evidence of need; open real teacher guide/Prepare Slides/Prepare Print links for one example; explain what the teacher still does; identify one pilot candidate in own lesson planning.
+- Distractors: replace an entire inquiry with the tutorial; use optional width as ability/pace tracks; expect the site to mark extended reasoning.
+- Shape: choice and reflect, no AI marking, no collection of student work. Generated course deck, worksheet/print output and facilitator notes must be inspected, not just assumed.
+
+### Humanities pilot companion
+
+- Four subject starting points: **History**, **Geography**, **Civics**, **Economics** plus **Humanities skills** and printable inquiry skeletons. Draw links from the built/current site, not planned slugs. Clarify that site lessons are complementary, modular, pace-agnostic, and all Humanities pathways currently marked `Preview` (not classroom validated).
+- Call to action: **choose one relevant lesson or check; fit it into an existing unit; try it; reflect**. Three prompts: (1) Did it reveal something useful about student understanding? (2) Were feedback, scaffolds and teaching resources helpful? (3) What would make you more likely to use it again?
+- Feedback collection route to be decided later. Do **not** build a new form, account, analytics workflow or ask staff to upload student information.
+
+### Implementation gates and acceptance criteria
+
+- Read `AGENTS.md`, relevant `CLAUDE.md` sections, `ROADMAP.md`, `roadmap/shared.md` Decided entries, `BUILDING.md`, `AUTHORING.md` and `roadmap/checklist.md` before writing. Check parallel-agent changes and pull/rebase before starting and every push.
+- Verify how a hand-written `presentation.md` becomes reachable in the existing Prepare/deck pipeline and whether teacher course and companion page routes are supported. Prefer existing patterns, no speculative new features. Link the short deck from the Teachers hub in a discoverable way, along with the guide.
+- Use an existing **published, functional** lesson for live demo. Test both presenter path (all six slides, speaker notes, usable timing, live link fallback) and self-paced path (all three lessons readable without presenter, links to all three entry points work, checks/hints actually respond, back-navigation works). Check teacher guide, generated deck and print output.
+- Maintain compact mobile layouts; preserve student/teacher navigation; do not create mandatory completion or a separate pace tier. No real-world factual claims without source checks, no invented First Nations descriptions, no automatic grading of free writing.
+- Run `npm ci`, `npm run validate`, `npm run build`, appropriate `npm run check-decks` (and `check-nodes` only if using curriculum-node tags), and Chromium checks of changed pages and decks, including one narrow viewport. Record results in this roadmap in the implementation push.
+- **Publish:** this *plan-only* commit requires none. Finished new teacher pages and hub navigation will require a manual whole-site / quick publish by Matthew. Never edit workflows or publishing branches.
