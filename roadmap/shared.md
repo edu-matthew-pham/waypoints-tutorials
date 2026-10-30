@@ -1317,3 +1317,10 @@ Details in `roadmap/code.md` › How coding ideas build. Shared changes: `CORE_I
 3. *Make it work for your class*: three fictional classroom uses (whole-class prediction, a single check after discussion, a catch-up step for a struggling student). A match/choice check distinguishes these routes. Then an unmarked `reflect` task asks each teacher to find the subject's **List for teachers**, open one course's Teacher guide and Prepare outputs, choose one relevant check and write when they would use it. No student information or automatic judging.
 
 **Implementation/testing boundary (this planning session):** GitHub connector source inspection was possible; a local repository clone failed because the execution environment could not resolve `github.com`. Thus neither the site runtime, Prepare import flow, generated decks nor live-page headless-browser behavior could be verified in this session. Record live URLs after direct browser verification in an environment with network access. Proceed with implementation only in an environment that can clone/pull, run required npm and Chromium checks and push normally under `AGENTS.md`; no untested code through the GitHub contents API.
+
+
+### Adaptation messaging for the teacher onboarding (30 Oct 2026)
+
+**Agreed:** the self-paced *Getting Started with Learning Waypoints* teacher course briefly distinguishes **available now** (“Make your own version” creates a manually editable copy of an existing tutorial in Create) from **coming soon** (a simpler AI-assisted, prompt-first adaptation workflow with Create used to validate and preview). Link to the existing adaptation route for interested teachers, but do not suggest that AI-assisted adaptation is already available or necessary to pilot the current lessons.
+
+Keep this as a short note in Lesson 3 (“Make it work for your class”), **not an extra slide or live demonstration** in the ten-minute Humanities talk. The detailed future feature remains under `roadmap/shared.md` › “Make your own version as a prompt first, Create as the checker”; do not duplicate that specification or build it as part of teacher onboarding.
