@@ -1328,3 +1328,13 @@ Keep this as a short note in Lesson 3 (“Make it work for your class”), **not
 ### Student follow-along mention in self-paced onboarding (30 Oct 2026)
 
 In Lesson 3 (*Make it work for your class*) of the generic self-paced teacher introduction, include a **brief “Present to your class” note** explaining that Prepare supports teacher-led presentation with students following on their own screens. Link to the actual feature or usage instructions after verifying its current interface. This is an optional discovery link, **not** a separate lesson or walkthrough. No demonstration is needed in the six-slide, ten-minute Humanities presentation. Verify the claim and link in implementation; do not promise unverified sync behaviour.
+
+
+### Opening message: curriculum progression, not a critique of LI/SC (30 Oct 2026)
+
+**Approved clarification for the teacher onboarding and Humanities pilot:**
+
+- **Educational purpose before technology:** “Learning Waypoints helps teachers unpack curriculum into connected conceptual steps, then provides tools to plan, teach and check understanding.” This is the core opening message, grounded in ACARA curriculum descriptors and an *interpreted* progression created through curriculum analysis and instructional design. Do not imply that ACARA itself prescribes every waypoint, misconception or teaching method.
+- **Curated ten-minute presentation, Slide 1:** establish the purpose in one or two sentences **before** introducing the three independent ways in (Unpack, Prepare and Tutorials). Keep the existing six slides and total ten minutes; do not add a slide on Learning Intentions or Success Criteria or suggest that Waypoints exists because they are inadequate.
+- **Generic self-paced course, Lesson 1:** give a slightly fuller explanation of what a *waypoint* is: an important understanding on the way to a broader curriculum expectation, connected to prerequisites, potential misconceptions and evidence students have grasped the idea. Then show how Unpack, Prepare and Tutorials serve different teaching needs. Briefly acknowledge, if useful, that this complements familiar Learning Intentions and Success Criteria: those clarify the intended learning and evidence of success, while Waypoints makes conceptual dependencies and teaching supports visible. Do not require an LI/SC comparison activity.
+- **Tone and teacher agency:** these are tools grounded in ACARA and professional interpretation, not a replacement for teacher judgement, existing unit planning, discussion or assessment. Avoid positioning teachers' ordinary planning as “ad hoc” or inferior, and avoid overstating curriculum authority.
