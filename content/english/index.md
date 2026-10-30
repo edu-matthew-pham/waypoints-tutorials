@@ -1,7 +1,7 @@
 ---
 title: English
 group: Core
-order: 2.5
+order: 1
 map: true
 trail: units
 summary: "Short lessons on how English works: what makes writing hold together, how texts are built for a purpose, how sentences are built and how word choices change meaning. Each one is a text to mark up on the screen, a worked example and a few checks, then the same move in your own writing. Each lesson stands alone, so use them where they help in your own units: to introduce an idea, revisit one, or as a short task. They sit beside the reading, writing and talk in your class, not instead of it."

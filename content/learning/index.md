@@ -1,7 +1,7 @@
 ---
 title: Learning skills
 group: Core
-order: 7.5
+order: 4
 trail: units
 summary: "How to steer your own learning in any subject: make a plan, check how it's going, and look back. Short discussion workshops on made-up tasks, then a strategy to try on your own work, with cards to look up whenever you need one. For any class, beside the subject lessons, not instead of them."
 pathways:

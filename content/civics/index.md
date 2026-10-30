@@ -1,7 +1,7 @@
 ---
 title: Civics and Citizenship
 group: Humanities
-order: 9
+order: 8
 trail: units
 summary: "How Australia is governed and how people take part: the Constitution, Parliament, the courts, and what citizens can do. Short lessons that use the real institutions, which do not change, and made-up people, proposals and results, so nothing dates and nothing leans. Every lesson follows the same steps in the same order for every class; how long to spend and how much extra to use is the teacher's call. This subject is a preview: only some lessons are built, and the rest are marked Coming later."
 pathways:

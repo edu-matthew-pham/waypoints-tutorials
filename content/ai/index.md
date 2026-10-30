@@ -1,7 +1,7 @@
 ---
 title: Learning with AI
 group: Technologies
-order: 6
+order: 14
 trail: units
 summary: Understand how AI works, investigate whether and when AI helps people learn, judge who AI affects, and decide how your school uses it.
 pathways:
