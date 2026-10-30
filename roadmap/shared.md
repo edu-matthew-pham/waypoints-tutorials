@@ -1155,3 +1155,8 @@ Details in `roadmap/code.md` › How coding ideas build. Shared changes: `CORE_I
 
 ## Built (30 Oct 2026, shared inquiry chat): Humanities skills (hass)
 `content/hass/` (Preview): course `inquiry-7` (6 lessons, Asking and Finding; Sharing is planned) and `before-year-7` (Year 6 catch-ups). `tools/progressions.mjs` `CHECKED` now includes `hass`. Still to build: skeleton briefs (`kind: skeleton` in `briefs.yml`, needs cross-subject node lookup in `tools/briefs.mjs`, `briefs-view.mjs`, `validate.mjs`) and a Preview / "Coming later" display for planned lessons in a built course. Whole-site publish (new subject).
+
+## Done: grouped Subjects menu (30 Oct 2026, Matthew)
+- The Subjects dropdown had grown to 14 subjects and about 69 links. Each subject's `index.md` now has `group:` (Core: Maths, Science, English, Learning skills; Technologies: Code, How computers work, Engineering, Learning with AI, ICT skills; Humanities: Economics, History, Humanities skills, Civics, Geography). Groups show in the order they first appear (by `order:`); a subject with no `group:` falls under "More". New subjects need a `group:`.
+- Each subject is a link plus a small ▸ button (`.sn-exp`, `siteNav` in `tools/lesson-view.mjs`) that opens its pathways; the current subject starts open. Click, tap or Enter, same as the existing ▾ carets; no hover at this level. On phones the same markup sits inside Menu ▾. Without any `group:` the older layout is used.
+- Found while testing: `content/geography/index.md` never closed its frontmatter (no closing `---`), so the site ignored its title, summary and pathways. Closed. Needs a publish to show: navigation publish for the menu, whole-site for Geography's own page.

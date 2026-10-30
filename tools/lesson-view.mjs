@@ -294,10 +294,23 @@ export function siteNav({ root = '', subjects = [], teachers = null, current = n
   const dd = (id, top, label, items, on, cls = '') => `<div class="sn-dd${on ? ' on' : ''}">${top}<button type="button" class="sn-caret" aria-expanded="false" aria-controls="${id}" aria-label="${esc(label)}">▾</button><div class="sn-sub${cls}" id="${id}">${items}</div></div>`;
   // Three items (25 Oct 2026): Subjects (the home page, with each subject and its pathways' trail maps under it),
   // Teachers (the teacher pages and Prepare), About. Curriculum maps are reached from each subject's own page.
+  // Grouped (30 Oct 2026): subjects carry `group:` from their index.md; groups show in the order they first appear.
+  // Each subject is a link with a small ▸ button that opens its pathways (the current subject starts open), so the
+  // closed menu lists only subject names. Without groups, the older flat or pathway-under-subject layout is used.
+  const hasGroups = subjects.some((s) => s.group);
   const grouped = subjects.some((s) => s.pathways?.length);
-  const subjectsMenu = dd('sn-subjects', link('', 'Subjects', homeOn, 'sn-top'), 'Subjects menu', subjects.map((s) => grouped
+  let subjectsItems;
+  if (hasGroups) {
+    const groups = [];
+    for (const s of subjects) { const g = s.group || 'More'; let e = groups.find((y) => y.name === g); if (!e) groups.push(e = { name: g, items: [] }); e.items.push(s); }
+    subjectsItems = groups.map((g) => `<div class="sn-grp"><span class="sn-ghead">${esc(g.name)}</span>${g.items.map((s) => {
+      const pws = s.pathways || [], open = s.on && pws.length;
+      return `<div class="sn-sj${open ? ' open' : ''}"><div class="sn-row">${link(s.href, s.title, s.on && !pws.some((x) => x.on), 'sn-subj')}${pws.length ? `<button type="button" class="sn-exp" aria-expanded="${open ? 'true' : 'false'}" aria-label="Pathways in ${esc(s.title)}">▸</button>` : ''}</div>${pws.length ? `<div class="sn-pws">${pws.map((x) => link(x.href, x.title, x.on, 'sn-pw')).join('')}</div>` : ''}</div>`;
+    }).join('')}</div>`).join('');
+  } else subjectsItems = subjects.map((s) => grouped
     ? `<div class="sn-grp">${link(s.href, s.title, s.on && !(s.pathways || []).some((x) => x.on), 'sn-subj')}${(s.pathways || []).map((x) => link(x.href, x.title, x.on, 'sn-pw')).join('')}</div>`
-    : link(s.href, s.title, s.on)).join(''), homeOn || subjects.some((s) => s.on), grouped ? ' sn-grid' : '');
+    : link(s.href, s.title, s.on)).join('');
+  const subjectsMenu = dd('sn-subjects', link('', 'Subjects', homeOn, 'sn-top'), 'Subjects menu', subjectsItems, homeOn || subjects.some((s) => s.on), grouped || hasGroups ? ' sn-grid' : '');
   const teachersMenu = teachers ? dd('sn-teachers', link(teachers.href, 'Teachers', teachers.on && !teachers.items.some((x) => x.on), 'sn-top'), 'Teachers menu',
     teachersItems(teachers.items), teachers.on, teachers.items.some((x) => x.group) ? ' sn-grid sn-grid2' : '') : '';
   // Teachers menu items may carry `group:` (content/teachers/index.md): shown as headed groups, in the order the
@@ -335,6 +348,7 @@ html{scroll-padding-top:var(--nav,0px)}
 .sn-dd:hover .sn-sub,.sn-dd:focus-within .sn-sub,.sn-dd.open .sn-sub{display:flex}
 .sn-grid{min-width:0;width:max-content;max-width:min(760px,92vw);gap:4px 10px}.sn-dd:hover .sn-grid,.sn-dd:focus-within .sn-grid,.sn-dd.open .sn-grid{display:grid;grid-template-columns:repeat(3,minmax(150px,1fr))}
 .sn-dd:hover .sn-grid2,.sn-dd:focus-within .sn-grid2,.sn-dd.open .sn-grid2{grid-template-columns:repeat(2,minmax(170px,1fr))}.sn-ghead{font-weight:700;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em;padding:6px 10px 2px}.sn-grp{display:flex;flex-direction:column;padding:2px 0 6px}.sitenav .sn-grp .sn-pw{font-weight:400;font-size:13px;padding:3px 10px 3px 18px;color:var(--muted)}.sitenav .sn-grp .sn-pw:hover{color:var(--ink)}
+.sn-row{display:flex;align-items:center}.sn-row .sn-subj{flex:1}.sn-exp{font:inherit;font-size:12px;background:none;border:0;color:var(--muted);cursor:pointer;padding:6px 8px;border-radius:6px;transition:transform .15s}.sn-exp:hover{color:var(--ink);background:var(--bg)}.sn-sj.open>.sn-row .sn-exp{transform:rotate(90deg)}.sn-pws{display:none;flex-direction:column;padding-bottom:4px}.sn-sj.open>.sn-pws{display:flex}.sn-grp .sn-sj .sn-pw{padding-left:22px!important}
 .sn-menu{display:none;font:inherit;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:8px;padding:4px 10px;cursor:pointer}
 .sitenav .sn-back{color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:99px;margin-right:6px;max-width:42vw;overflow:hidden;text-overflow:ellipsis}
 .sitenav .sn-back[hidden]{display:none}
@@ -348,6 +362,7 @@ export const NAV_JS = `(function(){var n=document.querySelector('.sitenav');if(!
 var nh=function(){document.documentElement.style.setProperty('--nav',n.offsetHeight+'px')};nh();if(window.ResizeObserver)new ResizeObserver(nh).observe(n);else window.addEventListener('resize',nh);
 var mb=n.querySelector('.sn-menu');if(mb)mb.addEventListener('click',function(){var o=n.classList.toggle('open');mb.setAttribute('aria-expanded',String(o))});
 [].forEach.call(n.querySelectorAll('.sn-caret'),function(c){var d=c.parentNode;c.addEventListener('click',function(){var o=d.classList.toggle('open');c.setAttribute('aria-expanded',String(o))})});
+[].forEach.call(n.querySelectorAll('.sn-exp'),function(b){b.addEventListener('click',function(){var d=b.closest('.sn-sj'),o=d.classList.toggle('open');b.setAttribute('aria-expanded',String(o))})});
 document.addEventListener('click',function(e){[].forEach.call(n.querySelectorAll('.sn-dd.open'),function(d){if(!d.contains(e.target)){d.classList.remove('open');d.querySelector('.sn-caret').setAttribute('aria-expanded','false')}})});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')[].forEach.call(n.querySelectorAll('.sn-dd.open'),function(d){d.classList.remove('open')})});
 if(here==='lesson'){var h=document.querySelector('h1'),worked=null;

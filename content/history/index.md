@@ -1,5 +1,6 @@
 ---
 title: History
+group: Humanities
 order: 8.3
 trail: units
 summary: "Preview (a pilot, not finished). How historians find out about the past: who made a source, why, and what it can and cannot tell us. Short lessons that use sources from ancient China (the Qin and Han period) as the worked example, with the same questions to use on any society your class studies. They go beside your unit, never instead of it, and every lesson follows the same steps in the same order for every class; how long to spend and how much extra to use is the teacher's call."

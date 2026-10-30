@@ -1,5 +1,6 @@
 ---
 title: Maths
+group: Core
 order: 1
 map: true
 trail: units

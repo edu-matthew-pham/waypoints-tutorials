@@ -383,7 +383,7 @@ const COURSES = [...new Set(lessons.map((l) => l.slug.split('/').slice(0, -1).jo
   .map((path) => ({ path, title: dirNode(path).title, order: dirNode(path).order }))
   .sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity) || a.title.localeCompare(b.title));
 const SUBJECTS = [...dirNode('').kids.entries()].filter(([, k]) => k.kind === 'dir')
-  .map(([name, k]) => ({ path: name, title: k.title, order: k.order, pathways: Array.isArray(dirNode(name).meta?.pathways) ? dirNode(name).meta.pathways : [], map: dirNode(name).meta?.map === true && !!loadCurriculum(name), links: linksOf(name), teachers: k.audience === 'teachers' }))
+  .map(([name, k]) => ({ path: name, title: k.title, order: k.order, group: typeof dirNode(name).meta?.group === 'string' ? dirNode(name).meta.group : undefined, pathways: Array.isArray(dirNode(name).meta?.pathways) ? dirNode(name).meta.pathways : [], map: dirNode(name).meta?.map === true && !!loadCurriculum(name), links: linksOf(name), teachers: k.audience === 'teachers' }))
   .sort((a, b) => a.teachers - b.teachers || (a.order ?? Infinity) - (b.order ?? Infinity) || a.title.localeCompare(b.title));
 const pathwayOf = (coursePath) => { for (const sub of SUBJECTS) for (const pw of sub.pathways) if ((pw.courses || []).some((c) => c.path === coursePath)) return { sub, pw }; return null; };
 // Subjects menu order (25 Oct 2026): the order of the `order:` in each subject's index.md; the home page uses it too.
@@ -395,7 +395,7 @@ const navFor = (pagePath, here, coursePath = null) => {
   const tsub = SUBJECTS.find((x) => x.teachers);
   return siteNav({
     root: '../'.repeat(pagePath ? pagePath.split('/').length : 0), here, homeOn: pagePath === '', aboutOn: at('about') || at('approach') || at('behind-the-scenes'),
-    subjects: SUBJECTS.filter((x) => !x.teachers).map((sub) => ({ title: sub.title, href: `${sub.path}/`, on: subjectOn(sub),
+    subjects: SUBJECTS.filter((x) => !x.teachers).map((sub) => ({ title: sub.title, href: `${sub.path}/`, on: subjectOn(sub), group: sub.group,
       // Each pathway with a built course, linking to its trail map (one click from anywhere, for students).
       pathways: sub.pathways.filter((pw) => pw.id && (pw.courses || []).some((c) => c.path)).map((pw) => ({ title: pw.title, href: `${sub.path}/paths/${pw.id}/`, on: at(`${sub.path}/paths/${pw.id}`) || inPw?.pw === pw })) })),
     teachers: tsub ? { title: tsub.title, href: `${tsub.path}/`, on: subjectOn(tsub), items: tsub.links.map((l) => ({ title: l.title, href: l.href, group: l.group, on: at(l.href.slice(0, -1)) || coursePath === l.href.slice(0, -1) })) } : null,

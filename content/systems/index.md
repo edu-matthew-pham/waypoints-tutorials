@@ -1,5 +1,6 @@
 ---
 title: How computers work
+group: Technologies
 order: 4
 map: true
 trail: units

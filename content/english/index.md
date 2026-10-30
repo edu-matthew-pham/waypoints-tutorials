@@ -1,5 +1,6 @@
 ---
 title: English
+group: Core
 order: 2.5
 map: true
 trail: units

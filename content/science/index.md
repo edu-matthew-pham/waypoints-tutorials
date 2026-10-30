@@ -1,5 +1,6 @@
 ---
 title: Science
+group: Core
 order: 2
 map: true
 trail: units

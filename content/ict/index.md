@@ -1,5 +1,6 @@
 ---
 title: ICT skills
+group: Technologies
 order: 7
 trail: units
 summary: "The everyday tools every subject uses: spreadsheets, documents, slides and files. Each lesson teaches the idea first (a formula, a heading style, a folder) and then the same steps in whichever app your school uses, so the lessons keep working when the buttons move. Separate from Digital Technologies, which is about how computers work and how to make things with code."
