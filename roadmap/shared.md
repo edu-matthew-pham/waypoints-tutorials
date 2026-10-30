@@ -111,6 +111,10 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 - **Decided (27 Oct):** an optional, discussion-led intro course (4 workshops: shared trap task first, then the student's own task as transfer), framed around why it matters and how self-regulated differs from self-directed learning; its own small subject, Learning skills; Years 6–8; general and Code cards first. Built: see `roadmap/learning.md`.
 - **Open:** how deck inserts are authored (class plan field vs a shared insert library).
 
+## Changed by the Economics chat (30 Oct 2026): node check
+
+`economics` added to `CHECKED` in `tools/progressions.mjs`, so Economics lessons must name their node (roadmap/economics.md).
+
 ## Decided (30 Oct 2026, Matthew): tutorials are pace-agnostic, in every subject
 
 A tutorial never knows the class, so it never assumes a pace. This matches the Kit, where node files carry no pace profile and pace only comes in when a teacher divides up time. Applies to every current and future subject (Economics next).

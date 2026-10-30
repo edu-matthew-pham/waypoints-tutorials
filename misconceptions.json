@@ -611,5 +611,7 @@
   "voice-one-setting": {"home": "english/speaking/use-your-voice", "text": "A talk is delivered in one steady pace, volume and tone from start to finish, because the speaker aims to get through it, not to use the voice to show what matters."},
   "transcript-has-voice": {"home": "english/speaking/judge-a-spoken-text", "text": "A transcript is judged as if it showed how the talk sounded, when a transcript has the words only; pace, pitch, volume and pauses are not on the page unless someone marked them."},
   "slides-repeat-speech": {"home": "english/speaking/visuals-that-help", "text": "The slides repeat what the speaker says, word for word, so the listeners read ahead and stop listening, because the speaker uses the slide as the script."},
-  "feedback-vague": {"home": "english/speaking/rehearse-and-change-one-thing", "text": "Feedback after a rehearsal is general ('it was good', 'speak up') and cannot be acted on, because the listener names a feeling and not what they heard or saw."}
+  "feedback-vague": {"home": "english/speaking/rehearse-and-change-one-thing", "text": "Feedback after a rehearsal is general ('it was good', 'speak up') and cannot be acted on, because the listener names a feeling and not what they heard or saw."},
+  "enough-stuff-ends-wanting": {"home": "economics/scarcity-7/needs-and-wants", "text": "Wants are treated as a supply problem: if enough was made, everyone would have all they want and wanting would stop. In fact meeting one want tends to bring another, so wants do not run out."},
+  "needs-wants-blur": {"home": "economics/scarcity-7/needs-and-wants", "text": "A thing is called a need because it is expensive, popular or makes the student sad to lack, instead of because they cannot stay safe and well without it."}
 }

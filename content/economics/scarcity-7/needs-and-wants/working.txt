@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Mia has an old bike. She wants a new one, so she saves up and buys it.
+A month later she wants a helmet in the same colour, then a bell, then a phone holder for it.
+Nib says: "Mia got what she wanted, so she should be happy and want nothing else."
+Nib says: "So if factories made enough things, everyone would have everything they want, and wanting would stop."
+# endregion

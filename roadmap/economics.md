@@ -1,6 +1,6 @@
 # Roadmap: Economics and Business
 
-`content/economics/` (not created yet). Started 30 Oct 2026 with Year 7, standard AC9HE7K01 (Opportunity cost and scarcity). Node content comes from waypoints-kit `data/economics/y7_economics_AC9HE7K01.json` (copy in `data/curriculum/economics.json`).
+`content/economics/` (subject and course created 30 Oct 2026; lesson 1 built). Started 30 Oct 2026 with Year 7, standard AC9HE7K01 (Opportunity cost and scarcity). Node content comes from waypoints-kit `data/economics/y7_economics_AC9HE7K01.json` (copy in `data/curriculum/economics.json`).
 
 Rules this subject follows: `roadmap/shared.md` › Decided (30 Oct 2026): tutorials are pace-agnostic. In short: same waypoints in the same order, untiered path = minimum width, `tier:` steps are optional width on the same waypoint, a check before leaving each hinge, pace is the teacher's call.
 
@@ -21,9 +21,16 @@ Notes:
 - **First Nations wider items** (n1, n2, n3, n4 each list one): not written by us. Teacher notes point to the item and ask the teacher to use local, community-approved material (as English does with AIATSIS guidance). Matthew to confirm.
 - **Make steps** are written in the student's own book or document and judged by a partner or the teacher (English's no-write-boxes rule), with a `reflect` tick.
 
+## Built (30 Oct 2026; not yet tried with a class)
+
+- Subject `content/economics/index.md` (Economics and Business, order 8, pathway Scarcity and choice) and course `economics/scarcity-7` (Usually Year 7).
+- Lesson 1 `needs-and-wants` (AC9HE7K01 n1, hinge): predict, sort, worked example with Nib's planted mistake (`enough-stuff-ends-wanting`, with a `smaller:` lead-in), vary, practise, a Make step written in the student's own book (reflect tick), then one typical and two wider steps. Teacher notes, class plan. Misconceptions `enough-stuff-ends-wanting` and `needs-wants-blur` added.
+- `economics` added to the node check's `CHECKED` (`tools/progressions.mjs`, a one-word shared change).
+- Defaults taken (Matthew to confirm): one course per standard; First Nations wider items are a teacher note asking for local, community-approved material, not student text.
+- Needs a whole-site publish (new subject).
+
 ## Needs deciding
 
 1. Course name and folder: `economics/scarcity-7` (one course per standard, like science's per-year courses) or one Year 7 course with a unit per standard?
-2. Add `economics` to the node check's `CHECKED` (`tools/progressions.mjs`) so every lesson must name its node.
 3. A board or not: the existing `sort`, `match`, `question` and `bug` checks cover all four lessons; a small "budget" or "choices" board could come later if lesson 3 needs one.
 4. Subject page and order on the home page; a curriculum map (`map: true`) once more than one standard is built.

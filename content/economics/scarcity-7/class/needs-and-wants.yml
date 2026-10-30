@@ -1,0 +1,29 @@
+inquiry:
+  q: "Mia has a new bike and a matching helmet. A month later she wants something else. Her friend says she's greedy. Another says that's just how wanting works. Who is right, and what would change your mind?"
+  prompts:
+    - "What would Mia need to have so that she stopped wanting?"
+    - "Do you know anyone who has stopped wanting new things altogether?"
+  notes: "Steer away from judging Mia. The point is that wanting more is normal and shared, so the next lesson can ask what happens when everyone's wants meet a limited amount of stuff."
+activities:
+  - at: predict
+    kind: activity
+    title: "Stand on the line"
+    minutes: 4
+    do: |
+      Mark one end of the room Need and the other Want. Read out things (water, a games console, a coat, concert tickets) and have students stand where they think it belongs. Ask a student at the middle to say why.
+    notes: "The students in the middle have usually spotted the trick: the same thing can sit in both. Do not settle it. Ask for a reason."
+  - at: make
+    kind: discussion
+    title: "What did Mia want next?"
+    minutes: 4
+    do: |
+      Ask pairs to continue Mia's story for three more months, one want at a time. Collect a few and ask what pattern they see.
+    notes: "The pattern is the point. Nobody needs to say 'unlimited' yet, only that it keeps going."
+questions:
+  - at: investigate
+    title: "Which is the want?"
+    type: question
+    q: "Which of these is a want?"
+    options: ["A pair of trainers in the newest colour", "Food", "A coat in a cold town", "Clean water"]
+    answer: 0
+    explain: "Shoes are a need, but this particular pair is a want."
