@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Nib needs to know how many students buy from the Parkside tuckshop each day.
+Nib types: tuckshops.
+Nib says: "The first result is always the best place to look, so I will stop there."
+Nib writes down what the first result says and starts the report.
+# endregion

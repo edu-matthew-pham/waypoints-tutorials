@@ -1,0 +1,22 @@
+inquiry:
+  q: "Is a small question worth asking if it only has one answer?"
+  prompts:
+    - "What could a small question be part of?"
+    - "When would you want a small question on its own?"
+  notes: "Aim for: small questions are good as parts of a bigger one. On their own they are look-ups."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Shrink it, stretch it"
+    minutes: 5
+    do: |
+      Write one question on the board that is too big. Pairs make a smaller version, then a right-sized version. Share two and ask what evidence each needs.
+    notes: "Ask each pair to say what they would open first."
+questions:
+  - at: investigate
+    title: "Right size?"
+    type: question
+    q: "Which is the right size for a week?"
+    options: ["How did the dry year change water use in Wattle Flat?", "What is water?", "How tall is the dam?", "Is water important?"]
+    answer: 0
+    explain: "It names a case and a change, and evidence would answer it."

@@ -1,0 +1,6 @@
+# region: nib
+Nib's question: How many students buy from the Parkside tuckshop each day?
+Nib finds a page about the history of school canteens, with a lovely photo.
+Nib says: "This is interesting, so it must be relevant. I will keep all of it."
+Nib pastes the whole page into the notes.
+# endregion

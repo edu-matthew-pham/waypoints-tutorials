@@ -1,0 +1,22 @@
+inquiry:
+  q: "Can the same notes tell different stories in different shapes?"
+  prompts:
+    - "What does a graph show that a table hides?"
+    - "What does a table show that a graph hides?"
+  notes: "Aim for: shape is a choice that serves the question."
+activities:
+  - at: run
+    kind: activity
+    title: "Same data, two shapes"
+    minutes: 6
+    do: |
+      Give pairs the five daily numbers. One makes a table, one a bar graph. Compare what each shows fastest.
+    notes: "Both are right; the question decides."
+questions:
+  - at: investigate
+    title: "Which shape?"
+    type: question
+    q: "Which suits the Kilby River level each year since 2000?"
+    options: ["A line graph", "A paragraph", "A pie chart", "A word list"]
+    answer: 0
+    explain: "Change over time suits a line graph."

@@ -1,0 +1,22 @@
+inquiry:
+  q: "Is a fact less valuable if you set it aside?"
+  prompts:
+    - "When could a set-aside fact become useful?"
+    - "Who decides what is relevant: the source or the question?"
+  notes: "Aim for: the question decides. A fact can be useful for another question."
+activities:
+  - at: run
+    kind: activity
+    title: "Defend a keep"
+    minutes: 5
+    do: |
+      Pairs pick one kept fact and one set-aside fact from the sort and explain the choice to another pair.
+    notes: "Listen for reasons that name the question."
+questions:
+  - at: investigate
+    title: "Reason check"
+    type: question
+    q: "Which reason for keeping a fact is strongest?"
+    options: ["It answers the question I asked", "It is surprising", "It was first on the page", "It has a big number"]
+    answer: 0
+    explain: "A reason points back to the question."

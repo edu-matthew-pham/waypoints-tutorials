@@ -1,0 +1,32 @@
+summary: "Students keep only what helps answer their question, give a reason that points back to the question, and set the rest aside. Interesting is not relevant."
+time: 40
+timing: "Think first and Try 10 min · The idea 10 min · Vary 6 min · Check 5 min · Make 8 min."
+goals:
+  - I can decide what to keep from a source by asking whether it helps answer my question.
+  - I can give a reason for keeping a fact that points back to the question.
+  - I can set aside facts that are interesting but not relevant.
+struggle: "Students find it hard to leave out a fact they like. Ask 'Which question would this answer?'"
+before: |
+  Economics hinge node: select at least two pieces with a stated reason and set aside what is not relevant. Covered by the Try, The idea and Make steps.
+
+  Reliability of a source is not checked here; that is in Geography's and History's own courses and the Can you trust this source? catch-up.
+running:
+  - "Think first: ask for hands on 1 to 2 before the reveal."
+  - "The idea: ask for a reason out loud, then check it points to the question."
+  - "Vary: show the same page, new question."
+stuck:
+  - see: "A student keeps everything."
+    ask: "Which question does this fact answer?"
+    fix: "If it answers a different question, set it aside."
+  - see: "A student's reason is 'it is interesting'."
+    ask: "Interesting to whom? What does it tell you about your question?"
+    fix: "Reword it so it names the question."
+stretch: "Write a question that the set-aside facts would answer."
+support: "A card: 'My question is… This fact helps because…'"
+leads: |
+  Next in Investigate like a humanities expert: Organise what you found.
+exit:
+  q: "How do you decide what to keep?"
+  a: "Keep what helps answer my question, with a reason that points back to it. Set the rest aside."
+explain: |
+  Ask: **does this help answer my question?** Keep it and say why, or set it aside.

@@ -1,0 +1,36 @@
+summary: "Students see that a subject's big ideas (scarcity, who decides, change, cause) are topics, and practise building a question by naming a case and asking something about the idea that evidence can answer. Geography's and History's hinge nodes (using their concepts as question frames) are covered here in general; each subject's own lesson goes further."
+time: 40
+timing: "Think first and Try 10 min · The idea 10 min · Vary 6 min · Check 5 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can name a big idea from my subject.
+  - I can tell a topic from a question.
+  - I can build an investigable question from a big idea and a case.
+struggle: "Students often write the big idea as the question, or add a question mark to a topic. Ask 'What would you look for to answer it?' If they cannot say, it is still a topic."
+before: |
+  The nodes this serves are marked as hinges in Geography and History (concepts as question frames) and not in Economics and Civics, but the move is the same, so the lesson is the same for all four. Use the table of big ideas to match your unit: point at the row for your subject.
+
+  Cases are made up (Parkside tuckshop, Mill Road, the Kilby River, the Hartley bronze mirror). Do not substitute a real object or place in the sort without checking it first.
+
+  The Civics node asks for 'a key inquiry question about a specific topic'; the lesson covers the move and the Make step is the topic. History's node asks for two questions using different concept frames, which is what the Make step asks for.
+running:
+  - "Think first: ask for votes before the answer. 'Opportunity cost' on its own is the common wrong pick."
+  - "Try: read each question aloud and ask which words are the case and which are the idea."
+  - "The idea: let Nib's one word sit. Ask what you would look for."
+  - "Check: ask for a reason, not just the sort."
+  - "Make: let students pick the topic and idea from your current unit."
+stuck:
+  - see: "A student writes the idea as the question, or adds a question mark to a topic."
+    ask: "What would you look for to answer it?"
+    fix: "Name a case, then ask something about the idea in that case."
+  - see: "A student writes a question that is too wide to answer."
+    ask: "Which case does it cover?"
+    fix: "Name one. The next lesson shows how to size a question."
+stretch: "Write the same question using a second big idea from the same subject. Say how the investigation would change."
+support: "A card with the starter from the In each subject table for your subject."
+leads: |
+  Next in Investigate like a humanities expert: Right-sized, and what would answer it. Subject lessons then build on the questions students write.
+exit:
+  q: "How is a question different from a big idea?"
+  a: "A big idea is the topic. A question names a case and asks something about the idea that evidence can answer."
+explain: |
+  A **big idea** is a topic. A question names a case and asks something about it that evidence can answer.

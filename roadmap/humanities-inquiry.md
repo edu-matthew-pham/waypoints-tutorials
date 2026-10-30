@@ -29,7 +29,17 @@ One course shared by Economics and Business, Civics and Citizenship, Geography a
 | History | AC9HH7S02 | Locate primary and secondary sources |
 | History | AC9HH7S08 | Create historical arguments |
 
-## Proposed (30 Oct 2026; nothing built, waiting for Matthew)
+## Decided (30 Oct 2026, Matthew said yes to all six calls)
+
+1. Home: its own small subject `content/hass/`, "Humanities skills" (Preview).
+2. Scope: ask, find and share only; data, perspectives and responses stay in the subjects.
+3. Civics' news-to-question node (HC7S01 n3) is a step in shared lesson 3 for everyone.
+4. One made-up running case per subject (tuckshop, council road, river town, Han museum object), re-stated in one line in each lesson.
+5. Skeletons extend Project briefs (`kind: skeleton`, `stages:`). Type-your-topic-before-printing is later, after the pilot.
+6. Build now: Asking and Finding (6 lessons) and the four skeletons; Sharing shows as Coming later.
+7. **Amended (30 Oct, Matthew, after the Before Year 7 chat):** the Year 6 catch-ups are not in this course. One course, *Before Year 7: HASS*, owned by the Before Year 7 chat, holds them (units: Inquiry skills = Questions that guide an inquiry, Find it and sort it, Can you trust this source?; Economics = Spending choices; Civics = Three levels of government). Lessons 1 and 4 here name the first two as "Do first" (a link once they exist, plain text until then). Do not build them here.
+
+## Proposed (30 Oct 2026)
 
 Source: the twelve standards above in `data/curriculum/{economics,civics,geography,history}.json` (36 nodes) and their Year 6 priors in `hass.json`. Where this differs from the Project doc humanities-y7-plan, it follows `shared.md` › Decided: humanities (the shared core is ask, find, share; making sense and concluding stay with the subjects).
 
@@ -85,12 +95,10 @@ My view: keep them in the subjects. The words match but the work differs more th
 
 Width (never acceleration): typical = the same move on a second case or the class's own topic; wider = the same issue asked as two subjects' questions and compared.
 
-**Units and lessons (9 lessons + 2 optional warm-ups).** Gateway order: Asking before Finding; Sharing is free order. Every lesson lists all its nodes in `node:`.
+**Units and lessons (9 lessons).** Gateway order: Asking before Finding; Sharing is free order. Every lesson lists all its nodes in `node:`.
 
 | Unit | Lesson | Nodes | Notes |
 |---|---|---|---|
-| Warm-up (optional, Year 6) | Questions that guide an inquiry | AC9HS6S01 | Catch-up, as English cohesion's warm-up unit |
-| | Find it and sort it | AC9HS6S02 | Catch-up |
 | **Asking questions** (gateway) | 1 Can this be investigated? | HE7S01 n1, HC7S01 n1, HG7S01 n1, HH7S01 n1 | Four hinges: check before moving on, with `smaller:`. Sort investigable / recall / too broad / opinion only, then "which subject would ask this?" (covers what makes a question geographical or historical) |
 | | 2 Build a question from a big idea | HE7S01 n2, HC7S01 n2, HG7S01 n2, HH7S01 n2 | Concept bank per subject; pick the better of two questions (hinge check for Geog and History); write two in your book |
 | | 3 Right-sized, and what would answer it | HH7S01 n3, HG7S01 n3, HC7S01 n3 | Too big / too small / right; match question to evidence needed; one-row plan. Civics' news-to-question as a step everyone does |
@@ -101,7 +109,7 @@ Width (never acceleration): typical = the same move on a second case or the clas
 | | 8 Explain with evidence | HE7S05 n2, HC7S05 n2, HG7S06 n2, HH7S08 n2 | Two hinges. Claim, evidence, explain; mention English's "Inside a paragraph" as a link only |
 | | 9 Make an argument | HC7S05 n3, HH7S08 n3 | Position, two pieces of evidence, the subject's words; plan here, write in Docs |
 
-Covers 29 of the 36 nodes. **Stays in the subjects (7):** HG7S02 n1, n3, n4; HG7S06 n3, n4; HH7S02 n1, n3 (History's "Primary or secondary?"). The plan doc put HH7S02 n3 here; it moves to History because it sorts by source type. Build now (intro units, per the plan): Asking questions and Finding information plus both warm-ups, so 8 lessons; Sharing shows as Coming later.
+Covers 29 of the 36 nodes. **Stays in the subjects (7):** HG7S02 n1, n3, n4; HG7S06 n3, n4; HH7S02 n1, n3 (History's "Primary or secondary?"). The plan doc put HH7S02 n3 here; it moves to History because it sorts by source type. Build now: Asking questions and Finding information, 6 lessons; Sharing shows as Coming later. The Year 6 catch-ups (AC9HS6S01, S02) are in Before Year 7: HASS, not here (decision 7).
 
 **Shared code it needs:** `hass` added to `CHECKED`; a check that a lesson's `node:` list may name several subjects and that each subject's curriculum map and search pick the lesson up (they read codes, so it should work; confirm at build). Logged in `shared.md` when done.
 

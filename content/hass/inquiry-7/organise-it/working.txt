@@ -1,0 +1,6 @@
+# region: nib
+Nib has notes: Monday 212, Tuesday 198, Wednesday 230, Thursday 205, Friday 190.
+Nib says: "I will keep my notes in the order I found them, written as sentences."
+Nib writes each fact in a paragraph and tries to see which day was busiest.
+Nib cannot tell at a glance. Nib decides the notes are fine.
+# endregion

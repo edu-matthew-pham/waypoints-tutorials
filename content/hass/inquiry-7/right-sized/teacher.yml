@@ -1,0 +1,36 @@
+summary: "Students size a question (too big, too small, right) and say what evidence would answer it and where to get it. It also covers starting from a news story (Civics' node, and how Economics investigations often begin). Geography's planning node, with a collection method, is the Make step's table."
+time: 40
+timing: "Think first and Try 10 min · The idea 10 min · Vary 8 min · Check 4 min · Make 8 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can tell a question that is too big, too small or the right size.
+  - I can say what evidence would answer a question and where to get it.
+  - I can turn a news story into a question about a bigger idea.
+struggle: "Students often think a bigger question is a better one. Ask 'Could we finish this by Friday?' and 'What would we look at?'. If they cannot say, it is too big."
+before: |
+  The size of a question is hard because it depends on the time and the sources you have. The cases here are sized for a week and for a class with a device each; change the time in your own words if yours is different.
+
+  Use the news step with a real, short story from your own unit if you have one. The made-up stories in the lesson are the fallback.
+
+  History's node (a historical question and what evidence it would need) and Geography's (a plan with a collection method) are both met by the Make step's table. Fieldwork is class work and is planned in the subject's own course.
+running:
+  - "Think first: ask for votes before the answer. 'Is the council good?' sounds sensible and is only opinion."
+  - "Try: stop at 'What is the economy?' and ask what you would open first."
+  - "The idea: let Nib's plan sit. Ask what Nib will actually read on Monday."
+  - "Vary: if you have a real story, use it here."
+  - "Make: read one plan aloud and ask the class what is missing."
+stuck:
+  - see: "A student says the biggest question is the best."
+    ask: "What would you read first, and could you finish?"
+    fix: "Name the case. Then say what you would look at."
+  - see: "A student cannot say where evidence would come from."
+    ask: "Who would have it, or where would it be written down?"
+    fix: "Name a person, a record or a place. If you cannot, the question may be too big or may be opinion."
+stretch: "Take the question you rejected as too big and make three right-sized questions from it."
+support: "A card with the four headings of the plan: question, what I need, where I would get it, how I would collect it."
+leads: |
+  Next in Investigate like a humanities expert: Finding information, starting with where to look and how to search.
+exit:
+  q: "How do you know a question is the right size?"
+  a: "It names a case, and you can say what evidence would answer it and where you would get it."
+explain: |
+  A question is the **right size** when it names a case and you can say what evidence would answer it and where you would get it.

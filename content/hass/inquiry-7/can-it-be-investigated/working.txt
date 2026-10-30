@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Nib wants a question for the Han mirror in the Hartley Museum.
+Nib writes: "When did the Han dynasty start?"
+Nib says: "This is a great question to investigate, because it is about history and it has a clear answer."
+Nib says: "So I can finish my investigation in one minute."
+# endregion

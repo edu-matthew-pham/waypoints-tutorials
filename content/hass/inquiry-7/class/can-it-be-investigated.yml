@@ -1,0 +1,22 @@
+inquiry:
+  q: "Is 'When did the Han dynasty start?' a bad question? Or just a different kind?"
+  prompts:
+    - "Could it help with a bigger question? How?"
+    - "What would you have to add to make it investigable?"
+  notes: "Steer toward: it is a fine question, as part of a bigger one. On its own it is a look-up."
+activities:
+  - at: predict
+    kind: activity
+    title: "Four corners"
+    minutes: 4
+    do: |
+      Label the corners Investigable, Just look it up, Too big and Only opinion. Read out questions from the lesson (and add your own from the class topic). Students walk to a corner and say why.
+    notes: "Students in disagreement are the point. Ask for the test, not the answer."
+questions:
+  - at: investigate
+    title: "The test"
+    type: question
+    q: "Which question is investigable?"
+    options: ["Why did the Kilby River run low last summer?", "How long is the Kilby River?", "Is the Kilby River nice?", "What is a river?"]
+    answer: 0
+    explain: "It asks why and needs evidence to answer. The other three are a look-up, an opinion and a definition."

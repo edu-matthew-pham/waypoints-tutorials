@@ -1,0 +1,41 @@
+summary: "Students learn the test for an investigable question (answering it means gathering evidence and thinking about it) and sort questions from all four Year 7 humanities subjects. The four hinge nodes (one per subject) are the same move, so one lesson serves a History, Geography, Civics or Economics class."
+time: 40
+timing: "Think first and Try 10 min · The idea 10 min · Vary 6 min · Check 5 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can say whether a question can be investigated and give a reason.
+  - I can tell a look-up, a too-big question and an opinion from an investigable question.
+  - I can write one investigable question and one that is not, for a topic my class is studying.
+struggle: "Students often think a question is good because it is about the topic or has a clear answer. Ask 'What would you have to do to answer it?' If the answer is 'look it up', it is not an investigation yet. Let them argue before you say."
+before: |
+  This is a hinge lesson in every subject: the next lessons (building and sizing a question) only work if students can already tell a look-up from an investigation. Spend time here.
+
+  The cases are made up (Parkside School tuckshop, Riverbend Council and Mill Road, Wattle Flat and the Kilby River, the Hartley Museum's bronze mirror). The sort mixes all four on purpose, so students see the same four kinds in each subject. The Han mirror is a stand-in for any museum object; the lesson claims nothing about real objects.
+
+  Use it before or at the start of any unit that ends in an investigation. Students who have done the Year 6 catch-up Questions that guide an inquiry (in Before Year 7: HASS) will find it easier.
+
+  Where a node asks for more than this lesson gives, the subject's own lesson picks it up: Geography asks students to say what makes a question geographical (the 'where and why there' of the table), and History asks them to say what makes it historical (why and how we know, not recall).
+running:
+  - "Think first: ask for votes before the answer. Many students pick 'Is the tuckshop good?' because it feels like the real question."
+  - "Try: stop after the sort and ask which subject each investigable question belongs to. The answers are all one test."
+  - "The idea: let Nib's mistake sit. Ask what Nib would have to do to answer the question."
+  - "Check: read two out loud and ask for the test, not just the answer."
+  - "Make: choose a topic your class is on now so the questions can feed your next unit."
+stuck:
+  - see: "A student says a question is good because it is interesting or about the topic."
+    ask: "What would you have to do to answer it?"
+    fix: "If the answer is 'look it up', it is a look-up. Interesting and on-topic questions can be look-ups too."
+  - see: "A student says opinion questions are fine for an investigation."
+    ask: "What evidence would settle it?"
+    fix: "If nothing can, it is opinion. A better version asks what evidence shows or how people decide."
+  - see: "A student says a big question is better because it is more important."
+    ask: "Could our class answer it in a week with what we can find?"
+    fix: "If not, narrow it: name the case. The next lesson but one is about this."
+stretch: "Take any question you rejected and change it into an investigable one. Say what you changed."
+support: "A card that says: 'What would I have to do to answer it? Look it up, gather and weigh evidence, or just give my view?'"
+leads: |
+  Next in Investigate like a humanities expert: Build a question from a big idea. Each subject's own lesson follows: History's what makes a question historical, Geography's what makes it geographical.
+exit:
+  q: "How can you tell if a question can be investigated?"
+  a: "Answering it means gathering evidence and thinking about it. If you could look up one fact, or only give a view, it is not investigable."
+explain: |
+  A question is **investigable** when answering it means gathering evidence and thinking about it. A look-up, a too-big question and an opinion are not.

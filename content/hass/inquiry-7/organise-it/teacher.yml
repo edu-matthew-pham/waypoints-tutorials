@@ -1,0 +1,30 @@
+summary: "Students organise what they kept so the answer is visible: a table with a row for each item, columns for groups, a graph for change over time. Digital tools are optional."
+time: 40
+timing: "Think first and Try 10 min · The idea 10 min · Vary 6 min · Check 5 min · Make 8 min."
+goals:
+  - I can pick a table or a graph to suit my information.
+  - I can name columns so I can compare.
+  - I can say why a shape fits my question.
+struggle: "Students often copy notes in the order found. Ask 'What do you want to compare?'"
+before: |
+  This closes Finding information. The Economics node asks for a digital tool; the Typical step uses a spreadsheet. ICT's Working with data covers the tool itself. Representing geographical data (maps, geospatial) is in Geography's course.
+running:
+  - "Think first: vote for the format."
+  - "Try: ask what each kind of information is doing."
+  - "Make: let students use their real data."
+stuck:
+  - see: "A student has a long list of notes."
+    ask: "What do you want to compare?"
+    fix: "Make that the columns."
+  - see: "A student picks a pie chart for change over time."
+    ask: "Is it showing parts of a whole or change?"
+    fix: "Change over time suits a line or bar graph."
+stretch: "Organise the same data two ways and argue which is better."
+support: "A table with the column headings already written."
+leads: |
+  Next: Using the subject's words (the Sharing unit, coming later).
+exit:
+  q: "How do you decide how to organise notes?"
+  a: "Look at what you want to compare, then choose a table or graph that puts like with like."
+explain: |
+  Put **like with like**, and name the columns, so the answer is easy to see.

@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Nib's class is studying the Parkside tuckshop in Economics.
+Nib picks a big idea to build the question from: scarcity.
+Nib writes: "My question is: Scarcity."
+Nib says: "That uses the big idea, so it is done."
+# endregion

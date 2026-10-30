@@ -1,0 +1,22 @@
+inquiry:
+  q: "Is one big idea enough to make a good question, or do you need a case as well?"
+  prompts:
+    - "What would you look for if you only had the idea?"
+    - "What changes when you name a case?"
+  notes: "Aim for: the case tells you where to look. The idea tells you what to look for."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Idea plus case"
+    minutes: 5
+    do: |
+      Write four big ideas on the board and four cases on slips. Pairs draw one of each and write the question that joins them. Share two and ask what you would look for.
+    notes: "Some pairs will not fit. That is useful: ask what would have to change."
+questions:
+  - at: investigate
+    title: "Question or topic?"
+    type: question
+    q: "Which of these is a question?"
+    options: ["What did Wattle Flat give up when water ran short?", "Water", "Scarcity", "The Kilby River"]
+    answer: 0
+    explain: "It names a case and asks something. The others are topics."

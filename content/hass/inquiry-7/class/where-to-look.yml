@@ -1,0 +1,22 @@
+inquiry:
+  q: "Is a search engine ever the wrong place to start?"
+  prompts:
+    - "When would you go straight to the people who keep the records?"
+    - "What does a search engine do well?"
+  notes: "Aim for: a search engine is good for finding where things are. It is not the source."
+activities:
+  - at: predict
+    kind: activity
+    title: "Who would have it?"
+    minutes: 4
+    do: |
+      Read out four questions (the tuckshop count, a council rule, what locals say, the river level). Students write who would have each answer, then compare.
+    notes: "Accept any reasonable holder of the answer."
+questions:
+  - at: investigate
+    title: "Which source?"
+    type: question
+    q: "Which kind of source is best for what local people said about closing Mill Road?"
+    options: ["A local news report", "A government rule", "A table of rainfall", "A museum label"]
+    answer: 0
+    explain: "News reports what people say. The others are about rules, rainfall and objects."
