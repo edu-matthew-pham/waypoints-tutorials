@@ -111,6 +111,17 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 - **Decided (27 Oct):** an optional, discussion-led intro course (4 workshops: shared trap task first, then the student's own task as transfer), framed around why it matters and how self-regulated differs from self-directed learning; its own small subject, Learning skills; Years 6–8; general and Code cards first. Built: see `roadmap/learning.md`.
 - **Open:** how deck inserts are authored (class plan field vs a shared insert library).
 
+## Decided (30 Oct 2026, Matthew): humanities (Economics, Civics, Geography, History)
+
+- **One course per standard**, one lesson per waypoint, in the node file's order (pattern: `content/economics/scarcity-7/`).
+- **Inquiry skills: a shared core plus subject skills.** One shared course for the skills that are near-identical in all four (develop questions, locate and organise information, create explanations and arguments), each lesson tagged with every subject's node; each subject builds only its own skills (History's source work, Geography's data and action, Civics' participation, Economics' response to an issue). The full investigation is class work, with a printable inquiry skeleton per subject. Plan: `roadmap/humanities-inquiry.md`.
+- **First Nations wider items** are teacher notes: start from ACARA's own elaboration for that content, then local, community-approved material on top; we write no student text for them (Matthew, 30 Oct: the elaborations are the starting point).
+
+## Proposed (30 Oct 2026): elaborations in the node data
+
+The Kit node files and `data/curriculum/*.json` carry no ACARA elaboration text, though node widths refer to it ("use the elaboration example"). Proposed: add an `elaborations` list to each standard in the Kit export (ACARA text with attribution, as `NOTICE.md` already covers), import it in `tools/import-curriculum.mjs`, and show it on pointer pages and in teacher guides beside a lesson's `node:`. Teacher notes on First Nations items could then quote the elaboration. Needs a change in waypoints-kit first (Matthew's repo); nothing changed yet.
+- **Start all four now**, one chat each (starter prompts at the end of `roadmap/economics.md`, `civics.md`, `geography.md`, `history.md` and `humanities-inquiry.md`). Economics is the model; its lesson 1 is built.
+
 ## Changed by the Economics chat (30 Oct 2026): node check
 
 `economics` added to `CHECKED` in `tools/progressions.mjs`, so Economics lessons must name their node (roadmap/economics.md).

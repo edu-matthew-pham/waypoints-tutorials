@@ -13,6 +13,10 @@ Split by workstream on 11 Oct 2026 so separate chats can work at the same time (
 - [`roadmap/learning.md`](roadmap/learning.md): Learning skills (`content/learning/`: How you learn best, an optional self-regulated learning course, and strategy cards for any subject), added 27 Oct 2026.
 - [`roadmap/before-year-7.md`](roadmap/before-year-7.md): Before Year 7, short maths and science catch-up lessons on the primary ideas Year 7 lessons rely on (its own chat), added 26 Oct 2026.
 - [`roadmap/economics.md`](roadmap/economics.md): Economics and Business (`content/economics/`, not built yet; Year 7 AC9HE7K01 Scarcity and opportunity cost proposed, pace-agnostic), added 30 Oct 2026.
+- [`roadmap/civics.md`](roadmap/civics.md): Civics and Citizenship (`content/civics/`, not built yet; rules in `shared.md` › Decided: humanities), added 30 Oct 2026.
+- [`roadmap/geography.md`](roadmap/geography.md): Geography (`content/geography/`, not built yet; rules in `shared.md` › Decided: humanities), added 30 Oct 2026.
+- [`roadmap/history.md`](roadmap/history.md): History (`content/history/`, not built yet; rules in `shared.md` › Decided: humanities), added 30 Oct 2026.
+- [`roadmap/humanities-inquiry.md`](roadmap/humanities-inquiry.md): the shared inquiry-skills course for the four humanities subjects (not built yet), added 30 Oct 2026.
 - [`roadmap/shared.md`](roadmap/shared.md): shared and general: the build, publishing, home and plain pages, and shared tools.
 - [`roadmap/diagrams-plan.md`](roadmap/diagrams-plan.md): Mermaid diagrams across lesson parts, decks and worksheets (proposed 19 Oct 2026); the tools to follow it are in `shared.md` › Proposed: visual and quality tools.
 - [`roadmap/maths-when-where-why.md`](roadmap/maths-when-where-why.md): the when, where and why of maths: a library of purposes and real situations per node (`data/connections/maths.yml`), how lessons use it, and pictures (hand SVG, Mermaid, charts) (decided 22–23 Oct 2026).
