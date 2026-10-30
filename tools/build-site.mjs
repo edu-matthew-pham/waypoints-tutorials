@@ -961,13 +961,25 @@ for (const node of dirs.values()) {
     return `<style>.wpt-hgrp h3{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 8px}ul.lessons.wpt-hgrid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-top:0}.wpt-hgrid a{padding:14px 16px!important;height:100%;box-sizing:border-box}.wpt-hrow{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}ul.lessons .wpt-ic{color:var(--muted);display:flex;transition:color .15s}.wpt-hgrid a:hover .wpt-ic{color:var(--accent)}.wpt-hgrid b{font-size:1.05rem!important}.wpt-bl{display:block;font-size:13px;color:var(--muted);margin-top:2px;line-height:1.35}.wpt-tag{font-style:normal;font-size:11px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:1px 8px}</style>` +
       gs.map((g) => `<section class="wpt-hgrp"><h3>${esc(g.name)}</h3><ul class="lessons wpt-hgrid">${g.cards.join('')}</ul></section>`).join('');
   })();
+  // Teachers page (30 Oct 2026): the same groups as the Teachers menu (`group:` on each link in content/teachers/index.md),
+  // in the order the links are listed, as a two-column grid of cards that keep their short descriptions.
+  const teacherGroups = node.path !== 'teachers' ? '' : (() => {
+    const gs = [];
+    for (const l of linksOf('teachers')) {
+      const g = l.group || 'More'; let e = gs.find((x) => x.name === g); if (!e) gs.push(e = { name: g, cards: [] });
+      const sum = l.summary || dirs.get(l.href.slice(0, -1))?.summary || '';
+      e.cards.push(`<li><a href="${esc(up + l.href)}"><b>${esc(l.title)}</b>${sum ? `<span class="wpt-bl">${esc(sum)}</span>` : ''}</a></li>`);
+    }
+    return `<style>.wpt-hgrp h3{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 8px}ul.lessons.wpt-tgrid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:0}.wpt-tgrid a{padding:14px 18px!important;height:100%;box-sizing:border-box}.wpt-tgrid b{font-size:1.05rem!important}.wpt-bl{display:block;font-size:13px;color:var(--muted);margin-top:2px;line-height:1.4}</style>` +
+      gs.map((g) => `<section class="wpt-hgrp"><h3>${esc(g.name)}</h3><ul class="lessons wpt-tgrid">${g.cards.join('')}</ul></section>`).join('');
+  })();
   const homeAbout = isRoot
     ? (node.meta?.about ? `<div class="pabout home-about">${new Marked().parse(String(node.meta.about))}</div>` : '') +
       searchBoxHtml({ root: up, label: 'Find a lesson for your class', hint: SEARCH_HINTS[''] }) +
       `<p class="home-own">Learning on your own? Pick a subject below and follow its trail map. There is nothing to install and no account to make, and your progress stays in this browser. <a href="about/">About these tutorials</a></p><h2 class="home-subjects" id="subjects">Choose a subject</h2>`
     : node.path === 'teachers' ? searchBoxHtml({ root: up, label: 'Find a guide or a lesson', hint: SEARCH_HINTS.teachers }) : '';
   writeFileSync(join(outDir, 'index.html'), page(isRoot ? 'Waypoints tutorials' : node.title,
-    `<style>.home-own{max-width:680px;color:var(--muted);margin:0 0 6px}.home-own a{color:var(--accent)}</style><header class="top">${crumb}<h1>${esc(isRoot ? 'Waypoints tutorials' : node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${homeAbout}${isRoot ? homeGroups : `<ul class="lessons">${items}</ul>`}`, `<script src="${up}progress.js" data-root="${up}" defer></script>`, navFor(node.path, 'home')));
+    `<style>.home-own{max-width:680px;color:var(--muted);margin:0 0 6px}.home-own a{color:var(--accent)}</style><header class="top">${crumb}<h1>${esc(isRoot ? 'Waypoints tutorials' : node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${homeAbout}${isRoot ? homeGroups : node.path === 'teachers' ? teacherGroups : `<ul class="lessons">${items}</ul>`}`, `<script src="${up}progress.js" data-root="${up}" defer></script>`, navFor(node.path, 'home')));
 }
 
 // ---------- plain pages: content/<name>.md (besides index.md) becomes /<name>/ (approach, behind-the-scenes) ----------
