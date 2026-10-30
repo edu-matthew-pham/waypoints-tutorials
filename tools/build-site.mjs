@@ -948,13 +948,25 @@ for (const node of dirs.values()) {
   // The home page (25 Oct 2026) speaks to teachers first: find a lesson for your class (search), then the subjects. A
   // line for students on their own sits between. The About text lives on /about/ (content/about.md). Teachers' own page
   // gets the same search box. (A home page index.md can still carry an about: section.)
+  // Home page subjects (30 Oct 2026): grouped as in the Subjects menu (`group:` in each index.md), short cards from `blurb:`
+  // (else the summary), a small Preview tag for `preview: true`. The long summary stays on the subject's own page.
+  const homeGroups = !isRoot ? '' : (() => {
+    const gs = [];
+    for (const [name, k] of [...node.kids.entries()].filter(([, k]) => k.kind === 'dir' && k.audience !== 'teachers').sort(([an, a], [bn, b]) => (a.order ?? Infinity) - (b.order ?? Infinity) || an.localeCompare(bn))) {
+      const m = dirNode(name).meta || {}, g = typeof m.group === 'string' ? m.group : 'More';
+      let e = gs.find((x) => x.name === g); if (!e) gs.push(e = { name: g, cards: [] });
+      e.cards.push(`<li><a href="${esc(name)}/"><b>${esc(k.title)}${m.preview === true ? '<em class="wpt-tag">Preview</em>' : ''}</b>${(m.blurb || k.summary) ? `<span>${esc(m.blurb || k.summary)}</span>` : ''}</a></li>`);
+    }
+    return `<style>.wpt-hgrp h3{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:26px 0 8px}ul.lessons.wpt-hgrid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:0}.wpt-hgrid a{padding:14px 18px!important}.wpt-tag{font-style:normal;font-size:12px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:1px 8px;margin-left:8px;vertical-align:middle}</style>` +
+      gs.map((g) => `<section class="wpt-hgrp"><h3>${esc(g.name)}</h3><ul class="lessons wpt-hgrid">${g.cards.join('')}</ul></section>`).join('');
+  })();
   const homeAbout = isRoot
     ? (node.meta?.about ? `<div class="pabout home-about">${new Marked().parse(String(node.meta.about))}</div>` : '') +
       searchBoxHtml({ root: up, label: 'Find a lesson for your class', hint: SEARCH_HINTS[''] }) +
       `<p class="home-own">Learning on your own? Pick a subject below and follow its trail map. There is nothing to install and no account to make, and your progress stays in this browser. <a href="about/">About these tutorials</a></p><h2 class="home-subjects" id="subjects">Choose a subject</h2>`
     : node.path === 'teachers' ? searchBoxHtml({ root: up, label: 'Find a guide or a lesson', hint: SEARCH_HINTS.teachers }) : '';
   writeFileSync(join(outDir, 'index.html'), page(isRoot ? 'Waypoints tutorials' : node.title,
-    `<style>.home-own{max-width:680px;color:var(--muted);margin:0 0 6px}.home-own a{color:var(--accent)}</style><header class="top">${crumb}<h1>${esc(isRoot ? 'Waypoints tutorials' : node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${homeAbout}<ul class="lessons">${items}</ul>`, `<script src="${up}progress.js" data-root="${up}" defer></script>`, navFor(node.path, 'home')));
+    `<style>.home-own{max-width:680px;color:var(--muted);margin:0 0 6px}.home-own a{color:var(--accent)}</style><header class="top">${crumb}<h1>${esc(isRoot ? 'Waypoints tutorials' : node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${homeAbout}${isRoot ? homeGroups : `<ul class="lessons">${items}</ul>`}`, `<script src="${up}progress.js" data-root="${up}" defer></script>`, navFor(node.path, 'home')));
 }
 
 // ---------- plain pages: content/<name>.md (besides index.md) becomes /<name>/ (approach, behind-the-scenes) ----------

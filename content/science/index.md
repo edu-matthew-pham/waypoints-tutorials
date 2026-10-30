@@ -1,6 +1,7 @@
 ---
 title: Science
 group: Core
+blurb: "Short concept tutorials for introducing or revising an idea, built on simulations."
 order: 3
 map: true
 trail: units

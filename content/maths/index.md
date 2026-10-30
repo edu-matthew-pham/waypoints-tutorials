@@ -1,6 +1,7 @@
 ---
 title: Maths
 group: Core
+blurb: "Predict, try, study a worked example, then make your own, in four pathways."
 order: 2
 map: true
 trail: units

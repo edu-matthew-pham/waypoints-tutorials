@@ -1,6 +1,8 @@
 ---
 title: Geography
 group: Humanities
+blurb: "Water, hazards and the places people live."
+preview: true
 order: 7
 trail: units
 summary: "How water, hazards and the places people live connect and change: where water comes from, why it runs short, what people value in it, and what makes a place good to live in. Short lessons that start from real Australian places and settled facts, and use made-up people, towns and proposals only where a lesson needs a made-up case, so nothing dates and nothing leans. Every lesson follows the same steps in the same order for every class; how long to spend and how much extra to use is the teacher's call. This subject is a preview: only some lessons are built, and the rest are marked Coming later."

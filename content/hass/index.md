@@ -1,6 +1,8 @@
 ---
 title: Humanities skills
 group: Humanities
+blurb: "The shared skills of historical, geographical, civic and economic inquiry."
+preview: true
 order: 5
 trail: units
 summary: "The thinking skills that History, Geography, Civics and Economics share: asking a question that can be investigated, finding and keeping the right information, and sharing what you found. Short lessons on made-up cases, so the skill comes first and your class's topic comes from your teacher. This is a preview: the lessons built so far are marked, and the rest are planned."
