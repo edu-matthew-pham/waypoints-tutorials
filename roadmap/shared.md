@@ -1287,3 +1287,14 @@ Details in `roadmap/code.md` › How coding ideas build. Shared changes: `CORE_I
 - Maintain compact mobile layouts; preserve student/teacher navigation; do not create mandatory completion or a separate pace tier. No real-world factual claims without source checks, no invented First Nations descriptions, no automatic grading of free writing.
 - Run `npm ci`, `npm run validate`, `npm run build`, appropriate `npm run check-decks` (and `check-nodes` only if using curriculum-node tags), and Chromium checks of changed pages and decks, including one narrow viewport. Record results in this roadmap in the implementation push.
 - **Publish:** this *plan-only* commit requires none. Finished new teacher pages and hub navigation will require a manual whole-site / quick publish by Matthew. Never edit workflows or publishing branches.
+
+
+### Discovery requirement: List for teachers (30 Oct 2026 addendum)
+
+**Decision:** The general teacher introduction, Humanities pilot companion, and access to teaching resources must be discoverable through the existing **List for teachers** experience as well as the Teachers hub. Keep individual lesson teaching resources attached to their own lessons/courses; do not duplicate guides, slides or printable materials as standalone lessons. First verify how “List for teachers” is generated and which subject/pathway views it includes. Reuse existing links/data where possible; avoid a new menu system or prominent student-facing clutter.
+
+**Presentation adjustment (no extra slides or time):** Slide 4 (“From waypoint to teaching resources”) must explicitly show where a teacher opens **List for teachers**, finds a course's **Teacher guide**, and from there reaches Prepare Slides and Prepare Print. Demonstrate one verified real route. Slide 5 should show how to find the subject's course and teaching resources again after the meeting. Slide 6's follow-up link goes to the teacher-facing guide/pilot entry, not only to a student lesson.
+
+**Self-paced course adjustment:** Lesson 3 must include a “Find it again” task: begin from a subject/pathway's **List for teachers**, locate a suitable course, open its Teacher guide, locate slides/print and choose one lesson/check to use. Provide a small fallback written route/direct links for a teacher who lands on the Teachers hub. The Humanities pilot companion must give direct links to the relevant subject teacher-list and inquiry skeleton views.
+
+**Acceptance test:** A teacher starting either at the Teachers hub or a Humanities subject's List for teachers can reach the pilot presentation, the self-paced introduction, a selected lesson's teacher guide and its Prepare resources without relying on the meeting link. Verify the actual site-generated navigation and links in desktop and narrow Chromium. If the existing list only supports course indexes, prefer a short contextual link to the common onboarding page rather than reshaping the subject index.
