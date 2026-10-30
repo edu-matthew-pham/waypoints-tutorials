@@ -1,0 +1,33 @@
+inquiry:
+  q: "Rosa's car yard has seven people working on the lot. Across the road, the Valley Growers' Shed has only two staff on duty. Why is Rosa's yard a sole proprietorship while the shed is a twenty-member cooperative?"
+  prompts:
+    - "How is being an employee different from being an owner?"
+    - "What three questions tell you a business's structure when looking from the street cannot?"
+  notes: "Draw out the three test questions: Who owns it? Who makes the big decisions? Where does any surplus go?"
+activities:
+  - at: run
+    kind: activity
+    title: "Six structures, three questions"
+    minutes: 5
+    do: |
+      Write the six structures on the board. For each one, ask the class to answer in five words or fewer: 'Who owns it?' and 'Where does spare money go?'
+    notes: "Keep cooperative (member-owned, one vote each) clearly distinct from corporation (shareholder-owned)."
+  - at: modify
+    kind: discussion
+    title: "Why buy a franchise?"
+    minutes: 4
+    do: |
+      Ask half the room to list why Amir should open a 'Burger Barn' franchise, and the other half to list why he should start 'Amir's Burgers' as an independent sole trader instead.
+    notes: "Highlight the trade-off: instant brand recognition and training versus fees and strict rules on menu and suppliers."
+questions:
+  - at: investigate
+    title: "Cooperative or corporation?"
+    type: question
+    q: "Which feature belongs to a cooperative rather than a corporation?"
+    options:
+      - "It is owned by the members who use or work in it, with each member having an equal say"
+      - "It is owned by one person alone"
+      - "It is never allowed to sell physical goods"
+      - "Votes are only given to the person who founded the town"
+    answer: 0
+    explain: "A cooperative is owned and democratically controlled by its members for their shared benefit."

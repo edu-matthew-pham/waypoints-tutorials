@@ -1,4 +1,7 @@
 {
+  "profit-only-purpose": {"home": "economics/businesses-7/why-businesses-exist", "text": "Every business is thought to exist only to make a profit for a private owner; businesses also exist to provide goods and services, create employment and meet community needs."},
+  "size-is-structure": {"home": "economics/businesses-7/business-structures", "text": "A business's structure is guessed from how many people work in the building; structure depends on who owns and controls the business and where any surplus goes."},
+  "one-best-structure": {"home": "economics/businesses-7/how-businesses-provide", "text": "A corporation is treated as the best structure for every business; different structures suit different purposes, scales and ways of providing goods and services."},
   "repeated-position-is-evidence": {"home":"hass/inquiry-7/make-an-argument","text":"Repeating a position more strongly counts as a second supporting point; a distinct point needs its own reason, referenced evidence and connection to the position."},
   "directly-elect-pm": {"home": "civics/government-7/representative-and-responsible", "text": "A House ballot directly elects the Prime Minister; it elects a local member, and the Prime Minister leads the government with majority House support."},
   "complete-separation-australia": {"home": "civics/government-7/power-shared-and-checked", "text": "Australian legislative and executive powers have completely separate membership; ministers are in Parliament as well as the executive, while judicial decisions are independent."},

@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Lin wants to teach piano from her living room two afternoons a week.
+Riverbend Pantry wants to use any spare money from grocery sales to keep food affordable for local families.
+Nib says: "A corporation is always the best structure for every business, because it is the biggest."
+Nib says: "So Lin and Riverbend Pantry should both set up as shareholder corporations."
+# endregion

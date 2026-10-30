@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Corner Bakery sells loaves and pies, pays three staff and makes a profit for the baker.
+Riverbend Pantry sells low-cost groceries, pays two staff and puts any spare money into keeping food affordable.
+Nib says: "Every business exists for one reason only: to make a profit for its owner."
+Nib says: "So Riverbend Pantry cannot be a real business, even though it sells goods and employs workers."
+# endregion

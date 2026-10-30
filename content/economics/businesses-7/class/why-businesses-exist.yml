@@ -1,0 +1,29 @@
+inquiry:
+  q: "A community pantry sells groceries, rents a shop and pays two workers, but any spare money at the end of the year is used to lower food prices rather than paid to an owner. One student says it is a business; another says it isn't because nobody takes a profit. Who do you agree with, and why?"
+  prompts:
+    - "What does the pantry do each day that looks just like the bakery next door?"
+    - "If profit were the only reason to start a business, why would anyone set up a cooperative or a community bus?"
+  notes: "Keep the focus on the multiple reasons businesses exist: providing goods and services, creating jobs, meeting community needs, and making a profit."
+activities:
+  - at: run
+    kind: activity
+    title: "Good, service or both?"
+    minutes: 4
+    do: |
+      Call out familiar places (a dentist, a bookshop, a pizzeria, a lawn-mowing round, an optometrist). Students hold up one finger for a good, two for a service, or both hands for both. Ask one student from 'both' to separate the physical item from the work done.
+    notes: "The 'both' cases stop students thinking every business is purely one or the other."
+  - at: make
+    kind: discussion
+    title: "More than one reason"
+    minutes: 4
+    do: |
+      Ask pairs to share one business from their book and name at least two different reasons it exists (one for the owner or workers, one for customers or the town).
+    notes: "Check that students name at least two distinct reasons beyond profit."
+questions:
+  - at: investigate
+    title: "Beyond profit"
+    type: question
+    q: "Which of these is a reason a business exists, other than making a profit?"
+    options: ["Providing employment and meeting a community need", "Avoiding all costs", "Keeping goods away from customers", "Having no workers or customers"]
+    answer: 0
+    explain: "Businesses also exist to provide goods and services, create jobs and serve their community."

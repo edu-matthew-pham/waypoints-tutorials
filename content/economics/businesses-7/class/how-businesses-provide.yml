@@ -1,0 +1,33 @@
+inquiry:
+  q: "Fresh apples can be bought from a grower's stall at a Saturday market, a valley growers' cooperative, a national supermarket chain, or a remote community store. Why does each of those ways of getting apples to people suit a different business structure?"
+  prompts:
+    - "What can twenty orchards do together in a cooperative that one orchard alone cannot?"
+    - "Why wouldn't a remote community store with one road in and out run the same way as a city supermarket?"
+  notes: "Guide students to connect the full chain: purpose -> ownership structure -> how resources are organised -> how goods and services reach customers."
+activities:
+  - at: run
+    kind: activity
+    title: "Trace the chain"
+    minutes: 4
+    do: |
+      Give each pair one business from the course (Corner Bakery, Priya & Tom Vets, Valley Growers' Cooperative, FreshMart, Riverbend Pantry). Ask them to speak the five steps of the chain for their business in one minute.
+    notes: "Listen for the causal link between structure (who owns and funds it) and provision (how it reaches customers)."
+  - at: make
+    kind: discussion
+    title: "Compare two structures"
+    minutes: 5
+    do: |
+      Have students read their two-structure explanation to a partner. The partner checks whether it names the structure, whether it is a good or service, and *why* the structure fits that way of providing.
+    notes: "Use the two model answers on the page so students can see two different valid pairs."
+questions:
+  - at: investigate
+    title: "Why structure matters"
+    type: question
+    q: "How does a cooperative structure help small independent farmers provide goods to large grocers?"
+    options:
+      - "Members pool their produce and share equipment like coolrooms and trucks to fill orders none could meet alone"
+      - "It replaces all the farms with a single solo owner"
+      - "It stops the farmers from having a vote on decisions"
+      - "It means the farms no longer produce physical goods"
+    answer: 0
+    explain: "By co-owning shared facilities and pooling harvests, cooperative members can supply markets they could not reach individually."

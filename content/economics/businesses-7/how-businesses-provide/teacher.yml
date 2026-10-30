@@ -1,0 +1,44 @@
+summary: "Students connect business purpose and structure to what goods and services are provided and how they reach customers across markets, independent stores, shopping centres, online platforms and remote stores."
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 8 min · Practise 8 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can explain how a business's purpose and structure shape the way it provides goods or services.
+  - I can compare how two different business types reach customers.
+  - I can use business terms (sole proprietor, partnership, cooperative, corporation, franchise, not-for-profit, goods, services) accurately.
+struggle: "Students often describe a business's structure and its goods separately without linking them ('It is a corporation. It sells groceries.'). Prompt for the bridge word 'so' or 'which lets it': how does shareholder capital or cooperative membership make that way of providing possible?"
+before: |
+  This is the integration lesson for AC9HE7K02. Check that students can name reasons businesses exist beyond profit (lesson 1) and distinguish the six business structures by ownership and surplus (lesson 2).
+
+  The Practise step uses a paper reasoning check with two model answers so students practise writing a connected causal explanation before the Make step.
+running:
+  - "Predict: ask why a solo piano teacher wouldn't want thousands of shareholders voting on her Tuesday timetable."
+  - "Try: ask pairs to read the five-line chain aloud and test it on Corner Bakery and FreshMart."
+  - "Worked example: focus on how structure solves a practical problem (twenty small orchards couldn't fill a supermarket order alone, so a cooperative coolroom solves it)."
+  - "Practise: students write in their own book first, then open the model answers to self-check against the three criteria."
+  - "Make: partner review in books, checking that business terms are used accurately."
+stuck:
+  - see: "A student writes two separate sentences ('It is a cooperative. It sells apples.') with no link between them."
+    ask: "How does being owned by twenty farms help them get those apples to buyers?"
+    fix: "Add the link: pooling money in a cooperative lets them share a packing shed and truck they could not afford alone."
+  - see: "A student confuses how a business is owned (structure) with where customers buy from it (channel)."
+    ask: "Is 'online' who owns the business, or how customers order from it?"
+    fix: "Online, markets and shopping centres are channels. A sole proprietor, cooperative or corporation can all use an online store."
+  - see: "A student thinks a not-for-profit cannot charge prices for goods."
+    ask: "How does Riverbend Pantry pay for next week's groceries and its two workers?"
+    fix: "Not-for-profits can sell goods and services; 'not-for-profit' means any surplus left over goes back into the community purpose rather than to private owners."
+stretch: "When an independent bookstore in a country town opens an online store, what changes about who it can provide goods to, and what stays hard compared with a large corporation?"
+support: "Sentence frame for the comparison: 'Because a [structure] is owned by [who owns it] for the purpose of [purpose], it can [how it organises resources], which lets it provide [good/service] to customers through [channel].'"
+leads: |
+  Next: this course finishes AC9HE7K02. The next Year 7 Economics standard is AC9HE7K03 (characteristics of entrepreneurs and how these influence the success of a business).
+
+  Wider (teacher choice, not part of the student steps): ACARA's elaborations for AC9HE7K02 include "investigating the different ways that goods and services are provided to people, such as through shopping centres, local markets, online, small independent stores and remote community stores" and "investigating a business owned by First Nations Australians, exploring the types of goods and services offered and why this business was started". If your class compares a First Nations-owned enterprise with another business structure, draw on the enterprise's own published statements and local community-approved material.
+exit:
+  q: "Pick two different business structures and explain in two sentences how their structure shapes the way they provide goods or services."
+  a: "For example: A sole proprietor owns the business alone, which suits providing personal services (such as bike repairs) directly from a small local workshop. A corporation raises capital from many shareholders, which lets it fund warehouses and provide goods at scale through shopping centres and online delivery."
+explain: |
+  A business's **purpose** and **structure** shape how it provides **goods and services**:
+
+  - A **sole proprietor** or **partnership** suits personal, local goods and services with direct control.
+  - A **cooperative** lets members pool resources (such as a shared packing shed) to reach wider markets.
+  - A **corporation** or **franchise** can operate across many shopping centres and online at large scale.
+  - A **not-for-profit** reinvests any surplus to keep providing goods or services for its community mission.

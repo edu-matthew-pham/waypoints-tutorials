@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Rosa owns the town car yard by herself and pays six salespeople to help on the lot.
+Across the road, twenty dairy farmers co-own the Valley Growers' Shed, and two staff work inside it.
+Nib says: "You can tell the business structure just by counting how many people work in the building."
+Nib says: "So Rosa's car yard must be a corporation because seven people work there, and the shed is a partnership of two."
+# endregion
