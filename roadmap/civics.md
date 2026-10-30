@@ -28,9 +28,51 @@
 - AC9HC7S03 Analysing information and perspectives (3 nodes)
 - AC9HC7S04 Methods for civic participation (3 nodes)
 
-## Proposed
+## Proposed (30 Oct 2026; nothing built, waiting for Matthew): course `civics/government-7`, *How Australia is governed*
 
-Nothing yet. First step: pick the first standard, write the course plan here (a table like `roadmap/economics.md`), then build lesson 1 as a pilot.
+AC9HC7K01 first: it is the gateway (the humanities plan's "Civics: How Australia is governed opens Freedoms and Law and justice"), K02 to K05 all list it as prior knowledge, and it has the Year 6 catch-up already planned for it. One lesson per waypoint, in the node file's order, one unit (`government`). Usually Year 7 (teacher note only). Lesson shape: copy `economics/scarcity-7/needs-and-wants` (`language: maths`, predict, try, worked example with Nib's planted slip, vary, practise, Make in the student's own book with a `reflect` tick, then typical and wider steps; teacher.yml and a class plan; no clips, no board).
+
+**What is real and what is made up.** Civics can't be all made up the way Economics is: the Constitution and the institutions are the content. So: real institutions and stable constitutional facts only (the Constitution, Parliament's two houses, the Governor-General, the High Court, the double majority); everything else made up (people, proposals, election results, a club). No current office holders, no parties, no seat counts or other numbers that change, no live policy debates. Nothing dates and nothing leans.
+
+| # | Lesson (waypoint) | Flags | Minimum path (untiered) | Hinge check before moving on | Width (`tier:` steps) |
+|---|---|---|---|---|---|
+| 1 | The Constitution: rules for the rule-makers (n1) | Hinge | A made-up club's constitution as the model (it sets up the committee and says what the committee may decide), then the real one: what it is, that it started on 1 January 1901, that it sets up Parliament, the Governor-General and the High Court and limits what Parliament can make laws about | Bug: Nib says "Parliament wrote the Constitution, so Parliament can change it whenever it votes to". Find the slip (only the people can, at a referendum). `smaller:` back to the club: can the committee rewrite the club's constitution on its own? | Typical: the Constitution's chapters as a match (Parliament, the Executive, the Judicature, the States); Wider: the double majority on a made-up referendum result table (does it pass? a majority of all voters and in at least four of six states), and a short compare: written constitution (Australia, USA) or not one document (UK) |
+| 2 | We elect them, they answer to us: representative and responsible government (n2) | Hinge | Order the chain with a `parsons`: we vote → members of the House of Representatives → the side with most support forms government → its leader becomes Prime Minister, ministers come from Parliament → they answer to Parliament every sitting day. Match each role (Governor-General, Senate, House, Prime Minister, Cabinet, Opposition) to its job. One Mermaid diagram of the chain | Bug: Nib says "On election day I vote for the Prime Minister". Find the slip (you vote for a local member; the Prime Minister is whoever leads the side that has the House's support). `smaller:` "Whose name is on your House of Representatives ballot paper?" | Typical: the Prime Minister and Cabinet aren't named in the Constitution: they run on custom (convention), a question on why that still binds; Wider: how question time, a no-confidence motion and Senate committees hold ministers to account (made-up minister, made-up question) |
+| 3 | Power shared, power checked (n3) | | Sort jobs into make laws / carry them out / decide disputes about them (legislative, executive, judicial); popular sovereignty and representation in one plain line each; why Australia's split is *partial* (ministers sit in Parliament, the courts stand apart). One Mermaid diagram: who sits where | Not a hinge. Bug for practice: Nib says "In Australia the three powers are kept completely apart, so ministers can't be in Parliament" | Typical: match accountability tools (elections, courts, a free press, question time) to who they hold to account; Wider: compare with the USA's fuller separation (the president is not in Congress) |
+| 4 | One country, several governments: federation (n4) | | Sort responsibilities into Commonwealth or state/territory (defence, money, passports; schools, hospitals, police), with local councils shown as set up by the states, not the Constitution. Why the colonies federated, in two lines | Not a hinge. Bug: Nib says "The federal government is in charge of the states, so it can run any school it likes" | Typical: exclusive, concurrent and residual powers, and what happens when a Commonwealth and a state law clash (the Commonwealth law wins, s109) on a made-up pair of laws; Wider: one shared area (health or schools) and who pays for and who runs what |
+| 5 | Borrowed from Britain and America (n5) | Integration | Sort features into Westminster or Washington (responsible government, a monarch and Governor-General; a written constitution, a Senate with equal states, federation, a High Court that can rule laws invalid), then one choice: why the founders mixed them (small colonies wanted an equal say) | Exit ticket: name two features from each and say why the mix was chosen | Typical: lessons 1 to 4 placed on one table (where each idea came from); Wider: does the hybrid still fit today? (discussion only, never marked) |
+
+Make steps (own book, partner or teacher reads, `reflect` tick): 1 three things the Constitution does and one thing Parliament can't do alone; 2 draw the chain from a vote to the Prime Minister with arrows, checked against the diagram; 3 a three-column table of the powers with who holds each and one check on each; 4 four services from an ordinary week and which government looks after each (services only, nothing about the student's family); 5 the Westminster and Washington table plus one sentence on why.
+
+Notes:
+- **Hinges get the time.** Lessons 1 and 2 carry the `smaller:` support and the whole-class talk in the class plan. Teacher notes name the cascade from the node file's `hinge_reason` (without the Constitution as the source, institutions look arbitrary; without the accountability link, students misread who holds power).
+- **Lesson 2 is the hard one.** Kit flags the executive coming from Parliament as counter-intuitive. The chain (parsons, then the diagram, then the Nib slip) is where the lesson spends its time; the role match is secondary.
+- **Teacher notes quote the elaboration** that matches each lesson (K01 has four: responsible and representative government, Westminster and Washington, the democratic concepts, federation; none is about First Nations content, so no First Nations step here). Lesson 1's teacher note says the 1901 Constitution's treatment of Aboriginal and Torres Strait Islander peoples is taken up with citizenship (K02 n4), following the First Nations rule, with no student text here.
+- **Sources for teacher notes and fact checks:** the Constitution's text (Federal Register of Legislation, aph.gov.au) and the Parliamentary Education Office. Every fact in student text is checked against them at build time; the referendum count and anything else that could change stays out of student text.
+- **Political neutrality:** the 1975 dismissal and real referendums (including 1967 and 2023) stay out of this course's student steps. 1975 can be a teacher-note option on lesson 2; 1967 belongs to K02 n4.
+- **Checks only, no board.** `sort`, `match`, `parsons`, `question` and `bug` cover all five; the two Mermaid diagrams are the only visuals.
+
+### Before Year 7 catch-up (with this course)
+
+`civics/before-year-7/three-levels` *Three levels of government* (AC9HS6K07 n1 and n4, with K06 n1's three institutions as one step): local, state or territory, and federal, with a sort of everyday responsibilities. Lessons 1 and 4 `assumes:` it, so they show the "Build up to this" link. Same primer shape as the science catch-ups. To check at build: the node check reads `civics.json` for a civics lesson, so a lesson naming an AC9HS6 node may need the check to read `hass.json` too (log it in `shared.md` if so).
+
+### The rest of Year 7 Civics, shown as "Coming later"
+
+The subject page lists the other courses so teachers see the whole year (and the Preview label, when the shared placeholder work lands):
+
+- `civics/democracy-7` Freedoms and taking part (K02, 4 lessons, n1 hinge)
+- `civics/law-7` Law and justice (K03, 4 lessons, n1 and n2 hinges)
+- `civics/diversity-7` A diverse democracy (K04, 4; n3 a pointer page)
+- `civics/values-7` Values and living together (K05, 4; values questions as discussion only, n3 and n4 factual)
+- Civics' own skills (S03 analysing information and perspectives, S04 methods for civic participation): one skills course, or S04 folded into `democracy-7` beside K02 n3 as the humanities plan had it. Decide when K02 is planned.
+
+### Your calls
+
+1. **Lesson 5 required or optional?** The humanities plan made it optional; this roadmap's one lesson per waypoint makes it required. Suggest required: it is the waypoint that joins the other four, like Economics' lesson 4.
+2. **Real institutions, made-up everything else** (above). OK?
+3. **The club constitution** as lesson 1's model before the real thing. OK, or straight to the real one?
+4. **Referendums by a made-up result table** (the double majority as a check) rather than real referendums. OK?
+5. **Build order:** lesson 1 as the pilot, then you look, then 2 to 5 and the catch-up. Or all five plus the catch-up in one go, as Economics is now doing?
 
 ## Starter prompt for the Civics and Citizenship chat
 
