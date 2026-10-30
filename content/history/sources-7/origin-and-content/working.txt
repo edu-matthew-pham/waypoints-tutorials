@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Nib is looking at a clay warrior from the First Emperor's tomb (Source A).
+Nib sees that the figure is dressed as a soldier, in armour.
+Nib asks "Who made it?" and writes: "Soldiers, because it shows a soldier."
+Nib asks "What does it show?" and writes: "A soldier in armour."
+# endregion

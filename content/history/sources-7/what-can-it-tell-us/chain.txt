@@ -1,0 +1,7 @@
+# region: order
+Origin: who, when, where
+Content: what it shows or says
+Context: what was going on
+Purpose: why it was made
+So: what it can and can't tell us
+# endregion

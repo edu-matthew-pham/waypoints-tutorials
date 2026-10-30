@@ -15,7 +15,7 @@ Split by workstream on 11 Oct 2026 so separate chats can work at the same time (
 - [`roadmap/economics.md`](roadmap/economics.md): Economics and Business (`content/economics/`, not built yet; Year 7 AC9HE7K01 Scarcity and opportunity cost proposed, pace-agnostic), added 30 Oct 2026.
 - [`roadmap/civics.md`](roadmap/civics.md): Civics and Citizenship (`content/civics/`, not built yet; rules in `shared.md` › Decided: humanities), added 30 Oct 2026.
 - [`roadmap/geography.md`](roadmap/geography.md): Geography (`content/geography/`, not built yet; rules in `shared.md` › Decided: humanities), added 30 Oct 2026.
-- [`roadmap/history.md`](roadmap/history.md): History (`content/history/`, not built yet; rules in `shared.md` › Decided: humanities), added 30 Oct 2026.
+- [`roadmap/history.md`](roadmap/history.md): History (`content/history/`: Source origin and purpose, with a Before Year 7 catch-up; a Preview pilot; rules in `shared.md` › Decided: humanities), added 30 Oct 2026.
 - [`roadmap/humanities-inquiry.md`](roadmap/humanities-inquiry.md): the shared inquiry-skills course for the four humanities subjects (not built yet), added 30 Oct 2026.
 - [`roadmap/shared.md`](roadmap/shared.md): shared and general: the build, publishing, home and plain pages, and shared tools.
 - [`roadmap/diagrams-plan.md`](roadmap/diagrams-plan.md): Mermaid diagrams across lesson parts, decks and worksheets (proposed 19 Oct 2026); the tools to follow it are in `shared.md` › Proposed: visual and quality tools.

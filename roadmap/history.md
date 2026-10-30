@@ -1,6 +1,6 @@
 # Roadmap: History
 
-`content/history/` (not created yet). Set up 30 Oct 2026 so a History chat can start. Node content: waypoints-kit `data/history/`, copied in `data/curriculum/history.json`.
+`content/history/` (subject, course `history/sources-7` and a Before Year 7 course built 30 Oct 2026; not yet tried with a class). Node content: waypoints-kit `data/history/`, copied in `data/curriculum/history.json`.
 
 ## Rules (decided 30 Oct 2026, Matthew; `roadmap/shared.md` › Decided: humanities)
 
@@ -42,11 +42,11 @@
 - AC9HH7S06 Identify past perspectives (3 nodes)
 - AC9HH7S07 Explain historical interpretations (3 nodes)
 
-## Proposed (30 Oct 2026; nothing built): course `history/sources-7`, *Who made it, and why?*
+## Plan (proposed and approved 30 Oct 2026): course `history/sources-7`, *Source origin and purpose* (tagline *Who made it, and why?*)
 
 **Why this standard first.** "How we know" (K08, S03, S04) is the gateway. Of the three, **AC9HH7S03 Identify source origin and purpose** goes first: S04's prior is S03, and K08's priors are K01 and K07 (K07 is on the deep-time pointer page, so K08 is better after students can already question a source). S03's prior is AC9HS6S04, which is the catch-up named above. Suggested order for the gateway: S03 → S04 → K08, each its own course in a "How we know" pathway.
 
-Usually Year 7 (teacher note only). Lesson shape: `needs-and-wants` (`language: maths`, predict, sort, worked example with Nib's planted mistake, vary, practise, Make in the student's own book with a `reflect` tick, then typical and wider steps; class plan; no clips, no board). Sources are shown as **source cards** in the lesson text (a short heading, what it is, and either a plain summary we write or a short public-domain translation; a CC-licensed photo with credit where it helps). No new widget.
+The table below is the plan as proposed; "Built" says what was made. The built lessons add the optional warm-up (S02 n1) as lesson 1 and are numbered 2 to 4. Usually Year 7 (teacher note only). Lesson shape: `needs-and-wants` (`language: maths`, predict, sort, worked example with Nib's planted mistake, vary, practise, Make in the student's own book with a `reflect` tick, then typical and wider steps; class plan; no clips, no board). Sources are shown as **source cards** in the lesson text (a short heading, what it is, and either a plain summary we write or a short public-domain translation; a CC-licensed photo with credit where it helps). No new widget.
 
 Worked example throughout: **Qin and Han China**. Main sources (all real, all Year 7 content):
 - the Terracotta Army (artefact; Qin workshops, about 210 BCE; made to guard the First Emperor after death)
@@ -75,12 +75,34 @@ Goes with it (same push, once approved):
 - Subject `content/history/index.md` marked **Preview**, with a "How we know" pathway: this course built, S04 and K08 as "Coming later", and the course's planned units shown greyed (the planned-units display in the humanities plan; shared change, logged in `shared.md` when built).
 - `history` added to `CHECKED` in `tools/progressions.mjs`.
 
-Your calls:
-1. **Primary or secondary (S02 n1).** This list of History's own skills starts at S03, so S02 sits with the shared inquiry course. But S02 n1 (primary means from the time of the event, not old) is a hinge that S03 and S04 lean on, and it is History's meaning of the words. Options: (a) leave it to the inquiry course and link it as "Build up to this" from lesson 1; (b) an optional warm-up lesson in this course, tagged S02 n1 (like English's warm-up unit); (c) a small `history/finding-sources-7` course built first. I lean (b).
-2. **Order of the gateway:** S03 → S04 → K08 as above, or K08 first (the humanities plan's "Dating the past" sat inside the How we know unit).
-3. **Pictures:** text source cards only, or add a CC-licensed photo (Terracotta Army, a bamboo slip) with credit.
-4. **Course title:** "Who made it, and why?" or plainer, such as "Questioning a source".
+Decided (30 Oct 2026, Matthew said "defaults"):
+1. **Primary or secondary (S02 n1):** an optional warm-up lesson in this course (option b), tagged AC9HH7S02 n1. The rest of S02 (finding and organising sources) stays with the shared inquiry course (`content/hass/inquiry-7/`).
+2. **Order of the gateway:** S03 → S04 → K08.
+3. **Pictures:** text source cards only for now. Each source is a plain-words card in the lesson text, so a CC-licensed photo with credit can be added later without changing a lesson's shape.
+4. **Course title:** plain title "Source origin and purpose", with "Who made it, and why?" as the tagline.
+
+## Built (30 Oct 2026; not yet tried with a class)
+
+- Subject `content/history/index.md` (History, order 8.3, pathways **How we know** and **Before Year 7**), marked "Preview (a pilot, not finished)". How we know lists the built course and two planned ones as "Coming later": Source usefulness (AC9HH7S04) and Evidence of the ancient past (AC9HH7K08).
+- Course `history/sources-7` *Source origin and purpose* (Usually Year 7), four lessons in four units, no clips, no board, `language: maths`, class plans in `class/`:
+  1. `primary-or-secondary` (optional warm-up, AC9HH7S02 n1, hinge): sort sources by the time of the event, not their age. Nib's slip: "over 2000 years old, so it must be primary."
+  2. `origin-and-content` (AC9HH7S03 n1, hinge): origin (who, when, where) and content (what it shows or says). Nib reads the maker off the content. Sources A to D (clay warrior, Qin bamboo slips, stone inscription, a made-up 2019 museum label); typical tier adds a Roman coin.
+  3. `context-and-purpose` (AC9HH7S03 n2, hinge): context is what was going on, not the setting; purpose is why, not what it shows. Nib writes "Ancient China" as the context.
+  4. `what-can-it-tell-us` (AC9HH7S03 n3, integration): order the four questions, then say what a source can and cannot tell us about a question. It seeds the next course.
+- Course `history/before-year-7`, lesson `can-you-trust-this-source` (AC9HS6S04 n1), linked from lesson 2 by `assumes:`.
+- Every lesson has `smaller:` on its hinge bug task, a Make step written in the student's own book with a `reflect` tick, one typical and one wider step, and teacher notes (the Kimberley Bradshaw paintings are named only in the teacher notes, from ACARA's elaboration, never as a student example).
+- Four misconceptions added (`old-means-primary`, `origin-from-content`, `context-is-setting`, `purpose-is-content`). `history` added to `CHECKED` and the catch-up link extended to History (`roadmap/shared.md` › Changed by the History chat).
+- Tested: `npm run validate`, `check-nodes`, `check-concepts`; every History page loaded at 1280 and 390 px with no errors; every question, bug, match and reflect answered with its stored answer in a headless browser (the sort and ordering checks are checked by validate only). Needs a whole-site publish (new subject and a shared tool change).
+- Source facts to check before a class: the clay warriors (found 1974, tomb of Qin Shi Huang), the Shuihudi bamboo slips (a Qin official's tomb, 217 BCE, found 1975), Sima Qian (Han court historian, about a century after the Qin fell) and the Qin stone inscriptions (the original stones are mostly lost; the card gives a plain summary). Nothing is quoted from a published translation.
+- Known issue, not from this course: the ordering (parsons) step makes the page scroll sideways on a phone when its lines are long (Economics `putting-together` does it too); History's lines are short enough not to.
+
+## Next
+
+- Course 2: `history/source-usefulness-7` (AC9HH7S04: fact and opinion, accuracy, usefulness, combining), tagged to the existing lessons' ideas. Lesson 4's "what it cannot tell us" sentence leads into it.
+- Course 3: `history/evidence-7` (AC9HH7K08: stratigraphy, DNA and dating, written sources, conservation), with the Terracotta Army as the worked example.
+- Then the ancient-world lenses (K09 to K13) with swap-in topic cards, and K01 (Out of Africa). K02 to K07 stay one pointer page.
+- A First Nations educator should review before these courses go beyond CGGS (`roadmap/shared.md` › Decided: humanities).
 
 ## Starter prompt for the History chat
 
-> Read CLAUDE.md, ROADMAP.md, `roadmap/shared.md` › Decided (30 Oct 2026) entries, the Project doc humanities-y7-plan (background; where it differs, this roadmap and shared.md win), and `roadmap/history.md`. Look at `content/economics/scarcity-7/needs-and-wants/` end to end as the model lesson. Then propose the first Year 7 History course in `roadmap/history.md`, commit and push, and wait for me before building.
+> Read CLAUDE.md, ROADMAP.md, `roadmap/shared.md` › Decided (30 Oct 2026) entries and › Changed by the History chat, and `roadmap/history.md` (Built and Next). Look at `content/history/sources-7/` end to end as the History model. Then propose the next History course (source usefulness, AC9HH7S04) in `roadmap/history.md`, commit and push, and wait for me before building.

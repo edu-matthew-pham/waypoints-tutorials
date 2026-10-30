@@ -1,0 +1,29 @@
+inquiry:
+  q: "Two students are investigating the same school fair. One uses a photo taken on the day. The other uses an article written a year later. Whose source is better?"
+  prompts:
+    - "Better for what question?"
+    - "What would the article writer know that the photo cannot show?"
+  notes: "Steer away from 'primary is better'. The point is that they are different kinds, made at different times, for different questions."
+activities:
+  - at: predict
+    kind: activity
+    title: "Time line"
+    minutes: 4
+    do: |
+      Mark one end of the room Made at the time and the other Made later. Read out sources for the First Emperor's rule (a bamboo slip of laws, a clay warrior, a history written 100 years later, a museum label) and have students stand where they think each belongs. Ask a student in the middle for a reason.
+    notes: "Students in the middle have usually spotted the trap. Do not settle it. Ask for the reason."
+  - at: make
+    kind: discussion
+    title: "Your own event"
+    minutes: 4
+    do: |
+      Ask pairs to name one primary and one secondary source for an event at school. Collect a few and ask what they have in common.
+    notes: "They should all be about time, not age. If someone says 'old', ask what the event was."
+questions:
+  - at: investigate
+    title: "Which is secondary?"
+    type: question
+    q: "Which of these is a secondary source about the First Emperor's rule?"
+    options: ["A history written 100 years later", "A law on a bamboo slip from his time", "A clay warrior from his tomb", "A stone inscription he ordered"]
+    answer: 0
+    explain: "A history written a century later was made by someone looking back, so it is secondary."

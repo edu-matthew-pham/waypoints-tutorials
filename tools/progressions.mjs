@@ -17,7 +17,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { theoryIds } from './concepts-core.mjs';   // theory concepts (assumes: [text-as-numbers]) are not node codes
 
-export const CHECKED = ['maths', 'science', 'systems', 'english', 'economics', 'civics', 'hass'];   // subjects whose lessons must name a node
+export const CHECKED = ['maths', 'science', 'systems', 'english', 'economics', 'civics', 'hass', 'history'];   // subjects whose lessons must name a node
 const CODE = /AC9[A-Z]{1,4}\d{1,2}[A-Z]{1,3}\d{2}/g;
 
 /** The year level in a code such as AC9M7A01 (7), AC9M10A01 (10), AC9TDI8K03 (8) or AC9MFN01 (Foundation: 0); null if none. */

@@ -177,7 +177,7 @@ function diagramHtml(lesson, v, key) {
 // Before Year 7 (26 Oct 2026, roadmap/before-year-7.md): short catch-up lessons in `maths/before-year-7` and
 // `science/before-year-7`, tagged `node:` with the Year 3-6 standards they teach. A lesson that lists one of those nodes
 // in `assumes:` gets a "What you should already know" link, and the catch-up lesson gets "Leads into" back.
-const isCatchUp = (l) => /^(maths|science)\/before-year-7\//.test(l.slug);
+const isCatchUp = (l) => /^(maths|science|history)\/before-year-7\//.test(l.slug);
 const refList = (v) => (Array.isArray(v) ? v : v ? [v] : []).map((x) => String(x).trim().replace(/\s+/g, ' '));
 let CATCH = null;
 function catchUpIndex() {

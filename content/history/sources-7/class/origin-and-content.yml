@@ -1,0 +1,29 @@
+inquiry:
+  q: "A clay warrior shows a soldier. Does that tell you who made it? What would you want to find out, and where might you look?"
+  prompts:
+    - "What does the figure show? What does it not show?"
+    - "If a historian wanted to know who made it, what would help?"
+  notes: "Let students reach for 'a soldier'. Then ask what they would need to know to be sure. The pattern is the point: content does not answer origin."
+activities:
+  - at: predict
+    kind: activity
+    title: "Two lists"
+    minutes: 4
+    do: |
+      Show Source A. Ask half the class to write everything they can see (content) and half to write everything they would need to ask (origin). Compare the two lists.
+    notes: "The two lists should look different. If they overlap, ask which questions can be answered by looking."
+  - at: make
+    kind: discussion
+    title: "Origin or content?"
+    minutes: 4
+    do: |
+      Read out facts about a source from your own unit. Students hold up one finger for origin and two for content.
+    notes: "Keep it quick. Stop on any fact that splits the room and ask for a reason."
+questions:
+  - at: investigate
+    title: "Which is origin?"
+    type: question
+    q: "Which of these is about a source's origin?"
+    options: ["It was made by craftsmen in workshops", "It shows a soldier in armour", "Each figure has a different face", "Some figures carried bronze weapons"]
+    answer: 0
+    explain: "Who made it is origin. The others say what it shows."

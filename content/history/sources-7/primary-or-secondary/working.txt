@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Nib is deciding what kind of source Sima Qian's history of the Qin is.
+Nib knows it was written by a Han court historian about 100 years after the Qin.
+Nib knows the First Emperor ruled over 2000 years ago.
+Nib says: "It is over 2000 years old, so it must be a primary source about the Qin."
+# endregion

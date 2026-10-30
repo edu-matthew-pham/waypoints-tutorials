@@ -19,7 +19,7 @@ import { scanLesson } from './concepts.mjs';
 const list = (v) => (v == null ? [] : Array.isArray(v) ? v : [v]).map((x) => String(x).trim().replace(/\s+/g, ' '));
 const course = (slug) => slug.split('/').slice(0, -1).join('/');
 const subject = (slug) => slug.split('/')[0];
-const isCatchUp = (l) => /^(maths|science)\/before-year-7\//.test(l.slug);
+const isCatchUp = (l) => /^(maths|science|history)\/before-year-7\//.test(l.slug);
 export const MAX_PRIOR = 2;
 
 /** A lesson in its course's challenge unit (`challenge:` in the course index.md, `unit:` on the lesson). */

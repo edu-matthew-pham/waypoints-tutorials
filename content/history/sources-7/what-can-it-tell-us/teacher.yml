@@ -1,0 +1,43 @@
+summary: "Students use all four questions (origin, content, context, purpose) together to decide what a source can and cannot tell us about a particular question. A source is rarely useful or useless on its own: it depends on the question. This gives students a way to say what a source is good for, and prepares the next course, which looks at accuracy and usefulness."
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can use origin, content, context and purpose on one source.
+  - I can say what a source can tell us about a question, and what it cannot.
+  - I can write a sentence that names the limit of a source.
+struggle: "Students say a source is simply true or false, or that it is useless because it was made to persuade. Ask 'Useful for what question?' and let them argue before you settle it."
+before: |
+  This lesson puts the four questions together. It has a hinge-friendly check in the exit ticket, but the two earlier lessons are the hinges. If students are unsure of origin versus content or context versus purpose, go back to those lessons before this one.
+
+  The next course in the pathway, Source usefulness, takes up accuracy (fact and opinion, reliability) and usefulness (value for a specific question). This lesson names the idea, 'what it can and cannot tell us', but does not ask students to judge accuracy. Keep them to describing.
+
+  The worked example is ancient China in the Qin and Han period. It is a model: swap in your own depth study's sources, keeping the questions the same. Everything else is plain-words descriptions, and the made-up students, Ravi and Dev, are the only people invented.
+running:
+  - "Predict: ask for votes. The 'carved in stone so it must be true' option is a common first thought."
+  - "Try: the order is the same for every source. Ask why the conclusion comes last."
+  - "Worked example: the same source answers two questions differently. Ask students what changed between them."
+  - "Vary: ask students to name the question first, then the source."
+  - "Make: read one or two out if students are happy to, without names."
+stuck:
+  - see: "A student says the inscription is true because it was made at the time."
+    ask: "Made at the time by whom, and why?"
+    fix: "Go back to its purpose. It was made to win support. Primary does not mean it tells the whole truth."
+  - see: "A student says a source is useless because it praises someone."
+    ask: "Useless for what question?"
+    fix: "It is good evidence of how the maker wanted to be seen. Useful depends on the question."
+  - see: "A student's sentence only says 'it is true' or 'it is old'."
+    ask: "What can it tell us, and what can't it?"
+    fix: "Use the sentence frame: 'It shows ..., but it cannot show ...'."
+stretch: "Two sources, one inscription praising the emperor and one list of punishments for breaking the law, give different pictures of the same time. Why? This is the same idea at greater width. It does not go on to the next course."
+support: "A card with the four questions in order and a last line: 'So it can tell us ..., but it cannot tell us ...'. Students fill it in for one source."
+leads: |
+  Next in the How we know pathway: Source usefulness (AC9HH7S04), planned: fact and opinion, accuracy and usefulness.
+
+  Also planned: Evidence of the ancient past (AC9HH7K08), on digs, dating, written sources and conservation.
+exit:
+  q: "Choose a source from this course and a question. Use the four questions, then finish: 'It can tell us ..., but it cannot tell us ...'"
+  a: "For example, Source C and the question 'How did the emperor want to be seen?': it can tell us he wanted to be seen as a ruler who brought peace and order, but it cannot tell us what ordinary people really thought."
+explain: |
+  Use all four questions together: origin, content, context and purpose. Then say what the source can tell you about your question, and what it cannot.
+
+  A source is useful or not for a particular question.

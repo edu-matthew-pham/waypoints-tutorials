@@ -1,0 +1,43 @@
+summary: "Students learn that a source is primary if it was made at the time of the event being investigated, and secondary if it was made later by someone looking back. The test is the time of the event, not age. This is a hinge: every later source question assumes students sort sources correctly, and students who sort by age will misread what a source can tell them."
+time: 35
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 7 min · Practise 5 min · Make 5 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can say whether a source is primary or secondary for a given event, and give a reason.
+  - I can explain why a very old source can still be secondary.
+  - I can name a primary and a secondary source for an event from my own life.
+struggle: "Students sort by age: old means primary, new means secondary. The sort in Try puts a 300-year-old book on the secondary side on purpose. Let them argue it out before you say why."
+before: |
+  This is a hinge lesson and an optional warm-up. It is tagged to the History skill AC9HH7S02 (locate primary and secondary sources), node 1, because the later lessons in this course use the words. A class that already sorts sources by the time of the event can skip it. It is listed as Optional, so it does not count towards finishing the course.
+
+  The worked example uses ancient China in the Qin and Han period. It is a model: swap in the sources from your own depth study (Egypt, Greece, Rome, India or another) by keeping the question the same, was it made at the time of the event? Every source here is described in plain words, so nothing needs teaching first. Nothing is quoted from a published translation. The bamboo slips are real: a Qin official's tomb at Shuihudi was found with them in 1975. Sima Qian's history was written about a century after the Qin fell.
+
+  The school fair examples are made up. Do not ask students what their families did or have. The Make step asks for an event from their own life or school, but only what they choose to write, in their own book.
+running:
+  - "Predict: ask for a show of hands before the answer. The 100-years-later history is a good place to hear 'but it's really old'."
+  - "Try: stop at the 300-year-old book and ask for a reason, not an answer."
+  - "Worked example: let Nib's mistake sit before explaining it. Ask students which line is wrong, then why."
+  - "Vary: the museum label is primary for one question and secondary for another. Ask students to say which question changed the answer."
+  - "Make: read one or two out if students are happy to, without names."
+stuck:
+  - see: "A student says a source is primary because it is old."
+    ask: "Was it made at the time of the event we are asking about?"
+    fix: "Go back to the Sima Qian line. He wrote about a hundred years after the Qin. Old is not the test."
+  - see: "A student says secondary sources are worse than primary ones."
+    ask: "Worse for what question?"
+    fix: "Neither kind is better. They are different. A secondary source can be right, and a primary source can be wrong."
+  - see: "A student says a recent source cannot be primary."
+    ask: "What if we are investigating something that happened last month?"
+    fix: "Use the school fair diary. A recent source is primary for a recent event."
+stretch: "The same label or photo can be primary for one question and secondary for another. Find your own example and explain what changed. This is the same idea at greater width. It does not go on to the next lesson."
+support: "A card with one question: 'Was it made at the time of the event I am asking about?' Students ask it of each source before sorting."
+leads: |
+  Next in Source origin and purpose: Who made it, and what does it show? (origin and content).
+
+  Wider (teacher choice, not part of the student steps): ACARA's elaborations for AC9HH7S02 suggest categories for sorting sources, "such as scrolls, coins, artwork, human remains, primary perspectives and/or historical interpretations". Human remains are not used in this course's examples. If your unit includes them, follow your school's protocols and, for First Nations ancestral remains, local community guidance.
+exit:
+  q: "What is the test for whether a source is primary or secondary, and why is it not how old it is?"
+  a: "Whether it was made at the time of the event being investigated. An old source written long after the event is still secondary."
+explain: |
+  A **primary source** was made at the time of the event you are investigating. A **secondary source** was made later, by someone looking back.
+
+  The test is the time of the event, not how old the source is. A source can be primary for one question and secondary for another.

@@ -1,0 +1,7 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Nib is looking at the stone inscription (Source C).
+Nib asks "What was going on when it was made?" and writes: "Ancient China."
+Nib asks "Why was it made?" and writes: "To show the emperor's power."
+# endregion

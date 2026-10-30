@@ -136,6 +136,13 @@ ACARA Progressions and Planner hold each standard's elaborations in `static/data
 
 `civics` added to `CHECKED` in `tools/progressions.mjs`, so Civics lessons must name their node (roadmap/civics.md). One misconception added to `misconceptions.json` (`parliament-changes-constitution`).
 
+## Changed by the History chat (30 Oct 2026): node check and catch-up links
+
+- `history` added to `CHECKED` in `tools/progressions.mjs`, so History lessons must name their node (roadmap/history.md).
+- `isCatchUp` in `tools/build-site.mjs` and `tools/prior-links.mjs` now matches `history/before-year-7/` as well as maths and science (one word in each regex), so a History lesson that lists a catch-up node in `assumes:` gets "What you should already know" and the catch-up lesson gets "Leads into". Nothing changes for maths and science.
+- Four misconceptions added to `misconceptions.json` (`old-means-primary`, `origin-from-content`, `context-is-setting`, `purpose-is-content`).
+- Not built (no shared code): the **Preview** label and the planned-units display from the humanities plan. History says "Preview (a pilot, not finished)" in the subject, pathway and course summaries, and shows planned courses as "Coming later" cards. A shared Preview label and greyed planned units inside a course are still open.
+
 ## Decided (30 Oct 2026, Matthew): tutorials are pace-agnostic, in every subject
 
 A tutorial never knows the class, so it never assumes a pace. This matches the Kit, where node files carry no pace profile and pace only comes in when a teacher divides up time. Applies to every current and future subject (Economics next).

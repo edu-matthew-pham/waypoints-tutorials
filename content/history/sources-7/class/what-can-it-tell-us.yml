@@ -1,0 +1,29 @@
+inquiry:
+  q: "The inscription says everyone lives in peace. Does that mean they did? What would you want to see before you decided?"
+  prompts:
+    - "Who made it, and why?"
+    - "What other kind of source might show something different?"
+  notes: "There is no single right answer. Judge the reasoning: does it use the maker's purpose to say what the source can and cannot show?"
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Same source, two questions"
+    minutes: 6
+    do: |
+      Give half the class the question 'How did the emperor want to be seen?' and half 'What did ordinary people think of him?' Everyone uses Source C. Compare what each half can say.
+    notes: "The same source is good for one question and weak for the other. Ask why."
+  - at: make
+    kind: discussion
+    title: "It can tell us, but it cannot"
+    minutes: 4
+    do: |
+      Ask each pair to finish one sentence about a source from your unit: 'It can tell us ..., but it cannot tell us ...'. Read a few out.
+    notes: "Listen for a limit that comes from the source's purpose or origin, not just 'it is old'."
+questions:
+  - at: investigate
+    title: "Which is the limit?"
+    type: question
+    q: "A stone inscription was made to win support for the emperor. What is its limit as evidence?"
+    options: ["It is unlikely to show people who disagreed with him", "It is too old to use", "It is not primary", "It cannot be read"]
+    answer: 0
+    explain: "Its purpose is to win support, so it shows how he wanted to be seen. It will not show those who disagreed."

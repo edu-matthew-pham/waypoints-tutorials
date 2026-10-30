@@ -1,0 +1,29 @@
+inquiry:
+  q: "Why would a ruler cut words into stone on a mountain? What was going on that made it worth the trouble?"
+  prompts:
+    - "Who was meant to read it?"
+    - "What would the ruler want them to think?"
+  notes: "Accept a range of answers if the reasoning is sound. Push for something specific that was happening, not a general reason."
+activities:
+  - at: predict
+    kind: activity
+    title: "Setting or context?"
+    minutes: 4
+    do: |
+      Read out pairs of statements about Source C (for example 'it was ancient China' and 'the Qin had just joined rival kingdoms'). Students say which is a setting and which is a context.
+    notes: "A setting says where and when. A context says what was happening. Do not settle it. Ask for the reason."
+  - at: make
+    kind: discussion
+    title: "What was it for?"
+    minutes: 4
+    do: |
+      Show Sources A to D. Ask pairs to give each one a purpose in six words or fewer. Compare.
+    notes: "Purposes will differ between sources made for the same ruler. That difference is the point."
+questions:
+  - at: investigate
+    title: "Which is purpose?"
+    type: question
+    q: "Which of these is the purpose of the stone inscription?"
+    options: ["To show the emperor's power and win support", "To show the emperor", "To say there is peace", "To be made of stone"]
+    answer: 0
+    explain: "Purpose is why it was made. The others say what it shows, what it says or how it was made."
