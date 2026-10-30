@@ -6,6 +6,8 @@ Learning Waypoints helps teachers unpack curriculum into connected conceptual st
 
 [Learning Waypoints in 10 Minutes: presentation and facilitator guide](https://tutorials.learningwaypoints.com/teach/teachers/getting-started/) · [Getting Started: self-paced introduction](https://tutorials.learningwaypoints.com/teachers/getting-started/) · [Teachers hub](https://tutorials.learningwaypoints.com/teachers/).
 
+[Teacher quick reference: print a one-page takeaway](https://tutorials.learningwaypoints.com/teachers/getting-started/reference/).
+
 ## Choose your starting point
 
 | Offering | A small thing to try |

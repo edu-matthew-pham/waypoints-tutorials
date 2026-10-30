@@ -3,7 +3,7 @@ title: Teachers
 summary: For teachers, not students. Create or request lessons, make your own, subject guides, redesign your tasks for AI, try the maths lessons, choose AI tools for learning, and check your school's devices.
 audience: teachers
 links:
-  - { title: Getting Started with Learning Waypoints, href: teachers/getting-started/, group: Start here, summary: "Three optional self-paced lessons: curriculum, planning and preparation, and Tutorials. About 15–20 minutes." }
+  - { title: Getting Started with Learning Waypoints, href: teachers/getting-started/, group: Start here, summary: "Three optional self-paced lessons and a printable quick reference: curriculum, planning and preparation, and Tutorials. About 15–20 minutes." }
   - { title: Learning Waypoints in 10 Minutes, href: teach/teachers/getting-started/, group: Start here, summary: "The six-slide Humanities talk in Prepare, speaker notes and facilitator guidance." }
   - { title: Humanities pilot, href: humanities-pilot/, group: Start here, summary: "Choose any offering to try, find subject resources and reflect on the broader approach." }
   - { title: Create lessons and courses, href: code/create/, group: Make your own, summary: "Write or paste a lesson, preview it with a live playground, and request that it be added." }

@@ -4,6 +4,10 @@
 
 The talk takes ten minutes including live interactions: **1:00, 1:30, 3:00, 1:30, 1:30, 1:30**. The three minutes on Tutorials show how curriculum analysis and instructional planning become a tangible learning experience. This is a demonstration choice, not a ranking of the offerings. Teachers can use Curriculum, Planning and preparation, or Tutorials independently.
 
+### One-page takeaway
+
+Print the [teacher quick reference](https://tutorials.learningwaypoints.com/teachers/getting-started/reference/) for colleagues to keep. Its **Print this reference** button prints directly from the browser; **Open in Prepare Print** opens the same content for preview and printing. This is a reference sheet, separate from the three activity worksheets.
+
 ### Before the meeting
 
 Open the deck in Prepare, check all six slides and use **P** for presenter view and speaker notes. Keep three tabs ready: [Unpack](https://acara.learningwaypoints.com/hass/year/7), [resource-types tutorial](https://tutorials.learningwaypoints.com/geography/water-7/resource-types/) and [Geography](https://tutorials.learningwaypoints.com/geography/). Each demo slide includes a real screenshot and direct-link fallback. If a tool is slow, use the screenshot and continue within the allotted time. No video demonstration is needed.

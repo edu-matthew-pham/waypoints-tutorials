@@ -790,8 +790,22 @@ for (const node of dirs.values()) {
     if (conceptualRef && !ref) {
       const refDir = `${node.path}/reference`;
       mkdirSync(join(OUT, refDir), { recursive: true });
+      const refSource = readFileSync(join(CONTENT_ROOT, node.path, 'reference.md'), 'utf8').replace(/\r\n/g, '\n');
+      const fm = refSource.match(/^---\n([\s\S]*?)\n---\n?/);
+      const meta = fm ? (YAMLparse(fm[1]) || {}) : {};
+      const refBody = fm ? refSource.slice(fm[0].length) : refSource;
+      const refTitle = meta.title || `${node.title}: reference`;
+      // One authored reference supplies both the web page and Prepare Print. Absolute links
+      // keep working when Print loads the Markdown from this different address.
+      const refUrl = `${SITE_URL}/${refDir}/reference.md`;
+      const printBody = refBody.replace(/(\]\()([^):\s]+)(\))/g, (all, open, href, close) => {
+        if (href.startsWith('#')) return all;
+        return `${open}${new URL(href, `${SITE_URL}/${refDir}/`).href}${close}`;
+      });
+      writeFileSync(join(OUT, refDir, 'reference.md'), `${/^# /m.test(printBody) ? '' : `# ${refTitle}\n\n`}${printBody}`);
+      const refCss = `<style>.wpt-ref-actions{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:16px 0}.wpt-ref-actions button{font:inherit;cursor:pointer}.wpt-reference{line-height:1.5}.wpt-reference table{width:100%;border-collapse:collapse;font-size:.95em}.wpt-reference th,.wpt-reference td{padding:7px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere}.wpt-reference h2{margin:1.2em 0 .4em}.wpt-reference p{margin:.7em 0}.wpt-reference li{margin:.25em 0}@media(max-width:640px){.wpt-reference table{font-size:.8em}.wpt-reference th,.wpt-reference td{padding:5px}}@media print{@page{size:A4;margin:12mm}body{background:white!important;color:black!important;font-size:11pt;line-height:1.3}.wrap{max-width:none;padding:0}.wpt-ref-actions,.top .crumb{display:none}.top{margin:0 0 10pt}.top h1{font-size:18pt;line-height:1.15;margin:0}.wpt-reference{line-height:1.3}.wpt-reference h2{font-size:12pt;margin:10pt 0 4pt;break-after:avoid}.wpt-reference p{margin:5pt 0}.wpt-reference table{font-size:10pt;break-inside:avoid}.wpt-reference th:last-child,.wpt-reference td:last-child{width:32%}.wpt-reference td:last-child a{font-size:9pt;white-space:nowrap}.wpt-reference th,.wpt-reference td{padding:4pt;border-color:#aaa}.wpt-reference ul,.wpt-reference ol{padding-left:18pt;margin:5pt 0}.wpt-reference li{margin:2pt 0}.wpt-reference a{color:inherit;text-decoration:underline}}</style>`;
       writeFileSync(join(OUT, refDir, 'index.html'), page(`Reference: ${node.title}`,
-        `<header class="top"><a class="crumb" href="../">← ${esc(node.title)}</a><h1>${esc(node.title)}: reference</h1></header><div class="content">${new Marked().parse(readFileSync(join(CONTENT_ROOT, node.path, 'reference.md'), 'utf8'))}</div>`, '', navFor(refDir, 'course', node.path)));
+        `${refCss}<header class="top"><a class="crumb" href="../">← ${esc(node.title)}</a><h1>${esc(refTitle)}</h1></header><div class="wpt-ref-actions"><button type="button" onclick="window.print()">Print this reference</button><a href="${esc(prepareLink('print', refUrl))}" target="_blank" rel="noopener">Open in Prepare Print</a><a href="reference.md" download>Download Markdown</a></div><div class="content wpt-reference">${new Marked().parse(refBody)}</div>`, '', navFor(refDir, 'course', node.path)));
     }
     if (PROJECTS.has(node.path)) writeProjects(node, PROJECTS.get(node.path));
     if (BRIEFS.has(node.path)) writeBriefs(node, BRIEFS.get(node.path));
