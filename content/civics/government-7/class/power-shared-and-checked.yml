@@ -1,0 +1,23 @@
+inquiry:
+  q: If a government has won an election, should its decisions still face legal checks? Why?
+  prompts:
+    - Which feature supports your explanation?
+    - What could go wrong without that check or division?
+  notes: Judge the institutional explanation, not a student’s political view. Use no current office holders or
+    named parties.
+activities:
+  - at: investigate
+    kind: activity
+    title: Explain the connection
+    minutes: 5
+    do: "Give three students job cards: make laws, carry them out, decide disputes. Give the minister a second
+      Parliament card. Ask which overlap is allowed and whose decisions must stay independent."
+    notes: "Use three job cards first: make, carry out, decide a legal dispute. Then attach the institutional
+      names."
+  - at: make
+    kind: check
+    title: Check a partner’s explanation
+    minutes: 4
+    do: Read the partner’s work against the Make brief. Ask for a reason if a label alone does not explain the
+      idea.
+    notes: Students write elsewhere; the site does not take or mark writing.

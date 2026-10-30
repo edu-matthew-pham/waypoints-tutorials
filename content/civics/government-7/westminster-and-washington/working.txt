@@ -1,0 +1,8 @@
+# Display-only reasoning: nothing runs.
+
+# region: nib
+Australia’s government is drawn from Parliament and answers to it.
+Its written Constitution shares power between nation and states.
+Nib says: "Australia copied Britain alone, with no US influence."
+The Senate gives the states equal representation.
+# endregion

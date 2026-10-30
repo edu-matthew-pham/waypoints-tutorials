@@ -1,0 +1,24 @@
+inquiry:
+  q: Should a chamber give equal weight to each state or represent people mainly by population? What does each
+    choice protect?
+  prompts:
+    - Which feature supports your explanation?
+    - What could go wrong without that check or division?
+  notes: Judge the institutional explanation, not a student’s political view. Use no current office holders or
+    named parties.
+activities:
+  - at: investigate
+    kind: activity
+    title: Explain the connection
+    minutes: 5
+    do: Ask pairs to choose two features from each tradition, close the table, and explain the compromise. Check
+      knowledge of both traditions separately from opinions about the model.
+    notes: "Give four feature cards: responsible government, monarchy, written federal constitution, equal-state
+      Senate. Ask for two pairs and one reason."
+  - at: make
+    kind: check
+    title: Explain the mixture
+    minutes: 4
+    do: Name two features from each tradition and give a reason for the mix. Check that the reason explains a
+      feature.
+    notes: Students write elsewhere; the site does not take or mark writing.

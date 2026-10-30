@@ -1,0 +1,16 @@
+# Display-only reasoning: nothing runs.
+
+# region: nib
+Voters choose their local member of the House of Representatives.
+The government needs the support of a majority in the House.
+Nib says: "The House ballot elects the Prime Minister directly."
+Ministers answer questions in Parliament.
+# endregion
+
+# region: chain
+Voters elect local House members.
+House majority supports government.
+Governor-General appoints the PM.
+Ministers come from Parliament.
+Ministers answer to Parliament.
+# endregion

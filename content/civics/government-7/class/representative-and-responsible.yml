@@ -1,0 +1,23 @@
+inquiry:
+  q: If voters have chosen their representatives, why should ministers still have to answer questions between
+    elections?
+  prompts:
+    - Which feature supports your explanation?
+    - What could go wrong without that check or division?
+  notes: Judge the institutional explanation, not a student’s political view. Use no current office holders or
+    named parties.
+activities:
+  - at: investigate
+    kind: activity
+    title: Follow the chain
+    minutes: 8
+    do: Give pairs the five chain cards. Ask them to order them and explain the link from House support to
+      government. Return to the cards after Nib’s mistake.
+    notes: Lay out five chain cards. Ask which arrow explains why the government must keep the support of the House.
+  - at: make
+    kind: check
+    title: Check a partner’s explanation
+    minutes: 4
+    do: Read the partner’s work against the Make brief. Ask for a reason if a label alone does not explain the
+      idea.
+    notes: Students write elsewhere; the site does not take or mark writing.

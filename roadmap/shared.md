@@ -136,6 +136,8 @@ ACARA Progressions and Planner hold each standard's elaborations in `static/data
 
 `civics` added to `CHECKED` in `tools/progressions.mjs`, so Civics lessons must name their node (roadmap/civics.md). One misconception added to `misconceptions.json` (`parliament-changes-constitution`).
 
+Lessons 2–5 add four single-line entries to `misconceptions.json`: `directly-elect-pm`, `complete-separation-australia`, `federal-is-state-boss`, `australia-only-westminster`. No shared tools changed.
+
 ## Changed by the History chat (30 Oct 2026): node check and catch-up links
 
 - `history` added to `CHECKED` in `tools/progressions.mjs`, so History lessons must name their node (roadmap/history.md).

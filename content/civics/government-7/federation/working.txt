@@ -1,0 +1,8 @@
+# Display-only reasoning: nothing runs.
+
+# region: nib
+Australia has a federal government and state governments.
+The Constitution divides law-making power between them.
+Nib says: "Federal means boss: it can run any state school it wants."
+Governments sometimes work together to fund services.
+# endregion

@@ -1,0 +1,23 @@
+inquiry:
+  q: If a government helps pay for a service, does that mean it must also run it?
+  prompts:
+    - Which feature supports your explanation?
+    - What could go wrong without that check or division?
+  notes: Judge the institutional explanation, not a student’s political view. Use no current office holders or
+    named parties.
+activities:
+  - at: investigate
+    kind: activity
+    title: Explain the connection
+    minutes: 5
+    do: Put defence and a public school on two cards. Ask pairs to explain which is mainly Commonwealth and which
+      is state or territory, then add a funding card without moving the school’s operator.
+    notes: Start with national defence and running a public school. Say the job precisely before deciding which
+      government.
+  - at: make
+    kind: check
+    title: Check a partner’s explanation
+    minutes: 4
+    do: Read the partner’s work against the Make brief. Ask for a reason if a label alone does not explain the
+      idea.
+    notes: Students write elsewhere; the site does not take or mark writing.

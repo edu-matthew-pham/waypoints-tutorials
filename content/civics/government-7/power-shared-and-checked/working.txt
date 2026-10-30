@@ -1,0 +1,8 @@
+# Display-only reasoning: nothing runs.
+
+# region: nib
+Parliament makes laws, and the executive puts them into action.
+Courts decide legal disputes independently.
+Nib says: "Ministers cannot be in Parliament: all powers are separate."
+The different jobs help prevent power being concentrated.
+# endregion

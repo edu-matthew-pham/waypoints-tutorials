@@ -1,6 +1,6 @@
 # Roadmap: Civics and Citizenship
 
-`content/civics/` (subject and course created 30 Oct 2026; lesson 1 built, not yet tried with a class). Set up 30 Oct 2026 so a Civics and Citizenship chat can start. Node content: waypoints-kit `data/civics/`, copied in `data/curriculum/civics.json`.
+`content/civics/` (subject and course created 30 Oct 2026; all five government lessons built, not yet tried with a class). Set up 30 Oct 2026 so a Civics and Citizenship chat can start. Node content: waypoints-kit `data/civics/`, copied in `data/curriculum/civics.json`.
 
 ## Rules (decided 30 Oct 2026, Matthew; `roadmap/shared.md` › Decided: humanities)
 
@@ -82,11 +82,23 @@ The subject page lists the other courses so teachers see the whole year (and the
 - `civics` added to the node check's `CHECKED` (`tools/progressions.mjs`, one word; logged in `shared.md`).
 - Needs a whole-site publish (new subject).
 
-## Open for lessons 2 to 5
+## Remaining after lessons 2 to 5
 
-- Both diagrams (lessons 2 and 3) are Mermaid `flowchart TD`, at most about 12 boxes.
+- Both planned diagrams are built as Mermaid `flowchart TD`: the vote-to-government chain in lesson 2 and overlapping executive/legislative functions with independent courts in lesson 3.
 - The Before Year 7 catch-up `civics/before-year-7/three-levels` (AC9HS6K07) may need the node check to read `hass.json` for an AC9HS6 node.
-- Placeholders for planned lessons inside this course are the shared "planned units and lessons" display (humanities plan, approved 30 Oct); until that lands the course page says five are planned and shows only what is built.
+- This course now has all five lessons. Planned courses elsewhere in the subject remain Coming later; the subject remains Preview.
+
+## Built: lessons 2 to 5 (30 Oct 2026; not yet tried with a class)
+
+- `representative-and-responsible` (n2, hinge): five-line ordering task and vote-to-government diagram; six role matches; Nib's direct-election slip with a smaller ballot question; accountability between elections; ministers from either house; Make in the student's own book. Conventions are typical width; Question Time, no-confidence and Senate estimates are wider width. House **majority support**, not merely the largest grouping, is the test. Teacher notes explain outside support and s64's three-month exception.
+- `power-shared-and-checked` (n3): popular sovereignty, representation, accountability, sorting the three powers, a partial-separation diagram and planted slip, a book table, accountability-tool matches and a US comparison. Ministers sit in Parliament; courts decide independently. Reasons and appeals are distinguished from political instructions.
+- `federation` (n4): national and state/territory services; Nib's federal-boss slip; councils' legal foundation; an explicit ACT note; the different constitutional position of territories. Optional width covers exclusive/concurrent/residual powers, a made-up s109 conflict (valid laws assumed; only inconsistency displaced) and public-hospital funding versus operation. No live policy or funding figures.
+- `westminster-and-washington` (n5, required integration): influence sorts, the smaller-colony compromise, Nib's Britain-only slip, a book table and spoken exit requiring two features from each tradition and a reason for the mix. Optional width maps lessons 1–4 and offers an unmarked structural discussion. Equal **state** representation is not presented as equal state/territory representation.
+- Shape check against the updated AGENTS rule: retain the pilot's Predict/Try/Worked example/Vary/Practise/Make shape because these waypoints teach settled institutional relationships with defensible planted answers. The optional discussion in lesson 5 is unmarked; no discussion viewpoint is treated as a planted wrong answer.
+- Every lesson has teacher notes quoting the relevant ACARA elaboration, a class plan and dated primary sources. All writing stays outside the page with a reflect tick. Real institutions and settled facts only; fictional claims and law pairs are identified. No current office holders, named parties, changing seat counts or real referendum results. No student explanations of First Nations history or culture.
+- The index describes the complete five-lesson Preview. Four single-line misconception entries added, with a shared roadmap note. No shared tools or workflows changed. Before Year 7 catch-up remains outside this batch.
+- Local validation, node checks, build, browser interaction and deck-fit checks cover this batch. Chromium checks all 46 controls (including smaller/optional/reflection checks), rejects 36 wrong-answer attempts, verifies persistence on reload and course/guide/deck/worksheet links. Desktop and 390px mobile pages checked; ordering lines shortened to prevent mobile overflow. Both diagrams rendered and screenshots inspected. No clips rendered. Classroom use and live published pages remain untested.
+- Ready for Publish changed lessons for these four slugs (course page included); if Civics has not yet been published as a subject, use a whole-site publish for subject/pathway/navigation. No new video clips to record. Publishing remains Matthew's manual step.
 
 ## Starter prompt for the Civics and Citizenship chat
 

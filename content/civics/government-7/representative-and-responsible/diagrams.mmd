@@ -1,0 +1,8 @@
+%% region: chain
+flowchart TD
+  V["Voters"] -->|elect| H["House of Representatives"]
+  H -->|majority support| G["Government can form"]
+  G --> A["Governor-General appoints Prime Minister"]
+  A --> M["Ministers drawn from Parliament"]
+  M -->|answer to| P["Parliament: House and Senate"]
+%% endregion
