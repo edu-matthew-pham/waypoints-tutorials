@@ -230,8 +230,8 @@ export function deckFor(lesson, { course, unit, snip, blocks = null, diagram = n
   const diagramTasks = new Set();
   const srcNote = sourceList(T).length ? ` Sources: ${sourceList(T).map((x) => `${x.title}, ${x.url}${x.checked ? ` (checked ${x.checked})` : ''}`).join('; ')}.` : '';
   slides.push(`# ${pt(lesson.title)}\n\n${course}${unit ? ` · ${unit}` : ''}` + note(`${T.summary || lesson.summary}${T.time ? ` About ${T.time} minutes${T.timing ? ` (${T.timing})` : ''}.` : ''}${LANG === 'python' || LANG === 'html' ? ' The Run, Modify and Make slides have the live playground in them; the tutorial link under it is the backup.' : ''}${srcNote}`));
-  const todayGoal = T.learning || (T.goals?.[0] ? T.goals[0].replace(/^I can\s+/i, '') : lesson.summary);
-  slides.push(`## Today\n\n**We are learning to** ${lowerFirst(todayGoal.replace(/\.$/, ''))}.\n\n${(T.goals || []).map((g) => `- ${pt(g)}`).join('\n')}` + note([T.before ? `Before class: ${T.before}` : '', ...runOther.map((r) => `Teacher: ${r}`)].filter(Boolean).join(' ')));
+  const todayLead = T.learning ? `**We are learning to** ${lowerFirst(T.learning.replace(/\.$/, ''))}.\n\n` : '';
+  slides.push(`## Today\n\n${todayLead}${(T.goals || []).map((g) => `- ${pt(g)}`).join('\n')}` + note([T.before ? `Before class: ${T.before}` : '', ...runOther.map((r) => `Teacher: ${r}`)].filter(Boolean).join(' ')));
   if (lesson.hook) slides.push(`## Why it matters\n\n> ${lesson.hook}` + note(lesson.intro));
   // A question about a program keeps the program on the slide: code in the left column, the question on the right.
   // Only short programs (a column holds about 16 lines); a short runnable program becomes the live playground instead; a check can opt out with `slideCode: false` or name another region with `slideCode: file.py#region`.
