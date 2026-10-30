@@ -29,6 +29,20 @@ Plan well rather than fix a poor draft. Most fix rounds so far (weak distractors
 5. Commit with the `Co-Authored-By:` and `Claude-Session:` lines from the session reminder. `git push origin HEAD:main`.
 6. Notes go in your own roadmap file. Pushing deploys nothing.
 
+## Editorial pass before handover
+
+After drafting or substantially revising lesson content, make a separate editorial pass before the final validation and build. Apply the existing voice rules to explanations, instructions, questions, feedback and hints.
+
+Read as a teacher speaking to a student:
+
+- Rewrite anything you would not naturally say at their desk.
+- Replace vague references, strained metaphors and compressed explanations with clear wording.
+- Check that simplifying the language has not made the claim inaccurate.
+- Use a concrete example where it would explain the idea better than a definition.
+- Preserve useful subject terminology and explain it where needed.
+
+Revise the text, rather than only noting concerns. In the handover, briefly state which lessons received an editorial pass and identify any unresolved questions. Technical validation does not establish writing quality.
+
 ## Review pass for a lesson (checks the writing, not just that it runs)
 - **Voice.** Student text reads as you'd say it at their desk: no labels, no stage directions, the term named once (`roadmap/maths-when-where-why.md` › Voice).
 - **Checks.** Each question has per-option `feedback` that answers that wrong idea; options are not led by length or order; the answer is not in the question.

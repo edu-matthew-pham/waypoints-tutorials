@@ -5,13 +5,13 @@ Tools to **unpack curriculum, plan, teach and check understanding**. Use whichev
 
 ## Three ways in
 
-| Offering | Helps you… | Open |
+| Part | Helps you… | Open |
 |---|---|---|
-| **Curriculum · Unpack** | Understand conceptual progressions and prerequisites. | [acara.learningwaypoints.com](https://acara.learningwaypoints.com/) |
-| **Planning and preparation · Prepare** | Work with teaching resources and strategies. | [prepare.learningwaypoints.com](https://prepare.learningwaypoints.com/) |
-| **Tutorials** | Explore understanding through checks, feedback and scaffolding. | [tutorials.learningwaypoints.com](https://tutorials.learningwaypoints.com/) |
+| **Curriculum · Unpack** | See what students need to understand first. | [acara.learningwaypoints.com](https://acara.learningwaypoints.com/) |
+| **Planning and preparation · Prepare** | Turn those ideas into teaching resources and strategies. | [prepare.learningwaypoints.com](https://prepare.learningwaypoints.com/) |
+| **Tutorials** | Try checks, feedback and smaller steps with your class. | [tutorials.learningwaypoints.com](https://tutorials.learningwaypoints.com/) |
 
-A **waypoint** is an important understanding towards a curriculum expectation. Progressions are professional interpretations grounded in ACARA descriptors, not prescribed teaching sequences.
+A **waypoint** is an idea students need to understand to meet a curriculum expectation. The waypoints draw on ACARA descriptors; their sequence and teaching suggestions reflect professional judgement.
 
 ## Find teaching resources again
 
@@ -23,20 +23,20 @@ From the **Teachers hub**, open **Getting Started**, **Learning Waypoints in 10 
 
 ## Read a tutorial check
 
-- **Feedback:** read the explanation and ask about reasoning. A click alone is not a diagnosis.
+- **Feedback:** read the explanation, then ask the student how they chose their answer.
 - **Build up to it:** try the smaller question, then return to the original task.
-- **Minimum:** the untiered core. **Typical / Wider:** optional extra contexts on the same idea, not ability groups or faster tracks. Pace is your decision.
+- **Minimum** covers the main understanding. **Typical / Wider** add more examples of the same idea. You choose who would benefit from them and how long to spend.
 
 You still guide discussion and inquiry, select sources and assess extended reasoning. A tutorial check is one piece of evidence.
 
 ## Try one useful part, then reflect
 
-Choose a progression, planning resource or strategy, or tutorial check for an existing unit.
+Choose one part that helps with a unit you already teach.
 
-1. What did it reveal about the concept, prerequisites or student understanding?
-2. How useful was the part you tried?
+1. What did you learn about the topic or students’ understanding?
+2. What helped, and what got in the way?
 3. What would make you use Learning Waypoints again?
 
-Keep notes for a conversation with the pilot facilitator. No student information is needed. **Humanities is a preview, not yet classroom validated.**
+Keep notes for a conversation with the pilot facilitator. No student information is needed. **Humanities is a preview and has not yet been tried with classes.**
 
 **Continue:** [Teachers hub](https://tutorials.learningwaypoints.com/teachers/) · [Self-paced introduction](https://tutorials.learningwaypoints.com/teachers/getting-started/) · [Humanities pilot](https://tutorials.learningwaypoints.com/humanities-pilot/).

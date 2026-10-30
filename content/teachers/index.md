@@ -5,7 +5,7 @@ audience: teachers
 links:
   - { title: Getting Started with Learning Waypoints, href: teachers/getting-started/, group: Start here, summary: "Three optional self-paced lessons and a printable quick reference: curriculum, planning and preparation, and Tutorials. About 15–20 minutes." }
   - { title: Learning Waypoints in 10 Minutes, href: teach/teachers/getting-started/, group: Start here, summary: "The six-slide Humanities talk in Prepare, speaker notes and facilitator guidance." }
-  - { title: Humanities pilot, href: humanities-pilot/, group: Start here, summary: "Choose any offering to try, find subject resources and reflect on the broader approach." }
+  - { title: Humanities pilot, href: humanities-pilot/, group: Start here, summary: "Choose a part to try, find your subject resources and tell us what helped." }
   - { title: Create lessons and courses, href: code/create/, group: Make your own, summary: "Write or paste a lesson, preview it with a live playground, and request that it be added." }
   - { title: Make a lesson, href: teachers/make-a-lesson/, group: Make your own }
   - { title: My path, href: my-path/, group: Make your own, summary: "Pick lessons, put them in your order, add a note and share one link. No account." }
