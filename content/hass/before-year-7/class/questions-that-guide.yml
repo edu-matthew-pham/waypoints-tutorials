@@ -1,0 +1,21 @@
+inquiry:
+  q: "Can you ask too many questions?"
+  prompts:
+    - "Which questions matter most?"
+  notes: "Aim for: ask enough to cover the big question, and no more."
+activities:
+  - at: run
+    kind: activity
+    title: "Question swap"
+    minutes: 4
+    do: |
+      Pairs swap a big question and write small ones for each other.
+    notes: "Check they cover different parts."
+questions:
+  - at: investigate
+    title: "Which asks why?"
+    type: question
+    q: "Which small question asks for a reason?"
+    options: ["Why was the garden started?", "What grows in it?", "Where is it?", "Who looks after it?"]
+    answer: 0
+    explain: "Why asks for a reason."

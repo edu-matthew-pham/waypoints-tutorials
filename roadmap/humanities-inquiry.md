@@ -37,7 +37,7 @@ One course shared by Economics and Business, Civics and Citizenship, Geography a
 4. One made-up running case per subject (tuckshop, council road, river town, Han museum object), re-stated in one line in each lesson.
 5. Skeletons extend Project briefs (`kind: skeleton`, `stages:`). Type-your-topic-before-printing is later, after the pilot.
 6. Build now: Asking and Finding (6 lessons) and the four skeletons; Sharing shows as Coming later.
-7. **Amended (30 Oct, Matthew, after the Before Year 7 chat):** the Year 6 catch-ups are not in this course. One course, *Before Year 7: HASS*, owned by the Before Year 7 chat, holds them (units: Inquiry skills = Questions that guide an inquiry, Find it and sort it, Can you trust this source?; Economics = Spending choices; Civics = Three levels of government). Lessons 1 and 4 here name the first two as "Do first" (a link once they exist, plain text until then). Do not build them here.
+7. **Amended (30 Oct, Matthew, after the Before Year 7 chat):** the Year 6 catch-ups are not in this course. One course, *Before Year 7: HASS*, now owned by the shared-inquiry chat (Matthew, 30 Oct), holds them (units: Inquiry skills = Questions that guide an inquiry, Find it and sort it, Can you trust this source?; Economics = Spending choices; Civics = Three levels of government). Built 30 Oct: the shell `content/hass/before-year-7/` and its first two lessons (Questions that guide an inquiry, Find it and sort it). Can you trust this source? comes with History's intro unit, Spending choices with Economics, Three levels of government with Civics. Lessons 1 and 4 here can name the first two as "Do first".
 
 ## Proposed (30 Oct 2026)
 
@@ -136,7 +136,7 @@ Stages per subject (each follows its own skills standards, so differences are vi
 3. **Civics' news node (HC7S01 n3)** inside shared lesson 3 for everyone (recommended), or Civics' own lesson?
 4. **Running cases:** one made-up case per subject threaded through every lesson (recommended), or fresh material per lesson?
 5. **Skeleton:** extend Project briefs with `kind: skeleton` and `stages:` (recommended), or a plain teacher page per subject? And the optional type-your-topic-before-printing field: yes or later?
-6. **Build now:** warm-ups plus Asking and Finding (8 lessons) and the four skeletons, or skeletons later?
+6. **Build now:** Asking and Finding (6 lessons; the warm-ups moved to Before Year 7: HASS) and the four skeletons. Status 30 Oct: the six lessons and the two Before Year 7 catch-ups are built; skeletons still to do.
 
 ## Starter prompt for the inquiry chat
 

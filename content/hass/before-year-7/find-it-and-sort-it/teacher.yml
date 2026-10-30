@@ -1,0 +1,25 @@
+summary: "Students choose a way to find out to suit the question, pick key words, and read what an address suggests about who made a page."
+time: 20
+timing: "Think first and Try 6 min · The idea 7 min · Check 3 min · Make 4 min."
+goals:
+  - I can pick a way to find out that suits my question.
+  - I can choose key words for a search.
+  - I can say what an address suggests about who made a page.
+struggle: "Students type whole sentences into search boxes. Ask 'Which are the important words?'"
+before: |
+  Year 6 catch-up for AC9HS6S02. Year 7 Where to look, and how to search builds on it. Addresses vary by country; check what your students see.
+running:
+  - "Try: ask what you would do if the first source did not have it."
+stuck:
+  - see: "A student searches the whole question."
+    ask: "Which words matter most?"
+    fix: "Keep two or three."
+stretch: "Find two places that could answer the same question."
+support: "A word bank of address endings."
+leads: |
+  Next: Year 7 Where to look, and how to search.
+exit:
+  q: "How do you choose how to find out?"
+  a: "Think who would know, then use key words if you search."
+explain: |
+  Pick the **method** to suit the question, then use **key words**.

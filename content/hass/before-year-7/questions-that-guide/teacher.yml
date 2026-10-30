@@ -1,0 +1,25 @@
+summary: "Students see that an inquiry needs a big question and several smaller guiding questions (what, where, who, why)."
+time: 20
+timing: "Think first and Try 6 min · The idea 6 min · Check 3 min · Make 5 min."
+goals:
+  - I can break a big question into smaller ones.
+  - I can ask what, where, who and why questions about a topic.
+struggle: "Students often write one broad question and stop. Ask 'What would you need to find out first?'"
+before: |
+  This is a Year 6 catch-up for AC9HS6S01. Year 7 Investigate like a humanities expert lesson 1 builds on it. Any topic works; the garden is made up.
+running:
+  - "Predict: take a show of hands."
+  - "Try: ask which small questions would help."
+stuck:
+  - see: "A student asks only yes/no questions."
+    ask: "Could you find more out if you asked what or why?"
+    fix: "Reword with what, who, why."
+stretch: "Write a big question for another topic and three small ones."
+support: "Sentence starters: What, Where, Who, Why."
+leads: |
+  Next: Find it and sort it.
+exit:
+  q: "Why do we need smaller questions?"
+  a: "They break a big question into parts we can find out."
+explain: |
+  A **big question** is answered by several **smaller questions**.

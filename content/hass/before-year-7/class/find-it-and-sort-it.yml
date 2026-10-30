@@ -1,0 +1,21 @@
+inquiry:
+  q: "Is the internet always the best place to look?"
+  prompts:
+    - "When would asking a person be better?"
+  notes: "Aim for: match the method to the question."
+activities:
+  - at: run
+    kind: activity
+    title: "Choose a method"
+    minutes: 4
+    do: |
+      Read out three questions. Students show which method they would use.
+    notes: "Accept reasoned answers."
+questions:
+  - at: investigate
+    title: "Key words"
+    type: question
+    q: "Which are the best key words for 'When was the school garden started?'"
+    options: ["school garden started", "the", "garden", "please tell me"]
+    answer: 0
+    explain: "The important words only."

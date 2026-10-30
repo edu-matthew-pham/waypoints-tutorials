@@ -1,0 +1,6 @@
+# region: nib
+Nib wants to know when the school garden was started.
+Nib types the whole question, with every word, into a search box.
+Nib clicks the first result and writes down what it says.
+Nib says: "Done. The first result is always right."
+# endregion

@@ -1148,3 +1148,6 @@ Optional lesson 8 in the Make one unit (`content/teachers/make-a-lesson/other-wa
 ## Built (26 Oct 2026, code chat; Matthew approved): how coding ideas build
 Details in `roadmap/code.md` › How coding ideas build. Shared changes: `CORE_IDEAS` in `tools/concepts-core.mjs` reordered by band with three new ideas (`sequence`, `input`, `compare`; `html: { 'input-value': 'input' }` in `SAME_IDEA`); new `tools/ideas-map.mjs` (pure data and helpers); `tools/ideas-page.mjs` draws the map and table; `tools/build-site.mjs` writes the page and adds idea chips to Code lesson guides; `tools/check-concepts` checks the map's data. Search picks up the new labels. Whole-site publish.
 
+
+## Built (30 Oct 2026, shared inquiry chat): Humanities skills (hass)
+`content/hass/` (Preview): course `inquiry-7` (6 lessons, Asking and Finding; Sharing is planned) and `before-year-7` (Year 6 catch-ups). `tools/progressions.mjs` `CHECKED` now includes `hass`. Still to build: skeleton briefs (`kind: skeleton` in `briefs.yml`, needs cross-subject node lookup in `tools/briefs.mjs`, `briefs-view.mjs`, `validate.mjs`) and a Preview / "Coming later" display for planned lessons in a built course. Whole-site publish (new subject).
