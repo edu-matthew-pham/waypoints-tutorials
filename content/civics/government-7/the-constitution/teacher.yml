@@ -1,0 +1,52 @@
+summary: "Students see through a made-up club that a constitution sets up decision-makers, limits them, and says how the rules themselves change. They then meet Australia's Constitution as the same idea at national size: it came into effect on 1 January 1901, sets up Parliament, the Governor-General and the High Court, limits what Parliament can make laws about, and can be changed only by the voters at a referendum. This is the first of two hinge lessons: if students do not see the Constitution as the source of the institutions' authority, those institutions will look like arbitrary arrangements in the lessons that follow."
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can say what Australia's Constitution is and when it came into effect.
+  - I can name three bodies it sets up and say what each one does.
+  - I can explain why Parliament cannot change the Constitution on its own.
+struggle: "Students often treat the Constitution as 'just a big law' that Parliament can change whenever it likes. The club is there to fix that: ask 'Could the committee change its own spending limit alone?' and let them work out why not before you say it. Resist settling it for them: the argument is the learning."
+before: |
+  This is a hinge lesson. Every later lesson in this course (representative government, the separation of powers, federation) assumes students see the Constitution as the source of the institutions and their limits. If this lesson goes thinly, those institutions will look like arbitrary arrangements. Spend the time here.
+
+  Where the club comparison breaks down (say so before students stretch it too far): a club's rules can usually be changed by a simple vote of the members, while Australia's Constitution needs a double majority at a referendum; and the High Court can rule that a law is outside the Constitution, which a club has nothing like.
+
+  Everything in the club is made up (Maple Street Chess Club, Nib, Mei, Sam). The Constitution, Parliament, the Governor-General and the High Court are real and described as they are set out in the Constitution. The referendum results in the wider step are made up. No current office holders, parties or live policy debates are used.
+
+  Not covered here, on purpose: how Parliament works day to day (next lesson), the 1975 dismissal of a Prime Minister, and real referendums such as 1967. If you want 1975 as a case of the Governor-General's role, bring it in yourself once students have lesson 2. The 1967 referendum belongs with citizenship (Freedoms and taking part).
+
+  The Constitution as it was written in 1901 did not treat Aboriginal and Torres Strait Islander peoples as citizens in the way it treated other Australians. This course writes no explanation of that for students. It is taken up in Freedoms and taking part (AC9HC7K02 waypoint 4). If your class raises it, start from the school's own resources and local, community-approved material.
+running:
+  - "Predict: ask for votes before the answer. 'Committee changes the rule then spends' is a good one to argue about: why would that make the rule pointless?"
+  - "Try: stop at 'how the rules themselves can be changed'. This is the item the real Constitution answers with a referendum."
+  - "Worked example: let Nib's mistake sit before explaining it. Ask students to go back to the club."
+  - "Vary: ask them to give the reason, not only the answer."
+  - "Make: read one or two out if students are happy to, without names."
+stuck:
+  - see: "A student says Parliament can change the Constitution because it makes the laws."
+    ask: "Could the club committee change its own spending limit alone? What would the limit be worth then?"
+    fix: "A rule that the rule-makers could change alone would not limit them. Parliament can propose a change; the voters decide."
+  - see: "A student says the Constitution is a list of all of Australia's laws."
+    ask: "Who makes the laws about passports and tax?"
+    fix: "Parliament does, by passing ordinary laws, inside the limits the Constitution sets. The Constitution sets up the system."
+  - see: "A student thinks the Prime Minister is in the Constitution."
+    ask: "Look at the three bodies. Is the Prime Minister one of them?"
+    fix: "The Prime Minister is not named in the Constitution. Lesson 2 takes this up."
+stretch: "Why might the people who wrote the Constitution have made it hard to change? What would be the risk of making it very easy? This is the same idea at greater width. It does not go on to the next lesson."
+support: "A card with the three parts of a constitution: sets up the decision-makers, limits them, says how the rules change. Students find each one in the club and then in Australia."
+leads: |
+  Next in How Australia is governed: representative and responsible government, where the Constitution's institutions meet the voters.
+
+  First Nations content: the elaborations for AC9HC7K01 are about the system of government, not First Nations content, so this lesson has no First Nations step. See the note above on the Constitution and citizenship.
+
+  ACARA elaborations for AC9HC7K01 (examples, not a checklist): describing Australia's system of responsible and representative government set out in the Australian Constitution, with a focus on the roles of the Governor-General, the Senate and the House of Representatives, the Prime Minister and Cabinet, the Opposition and the members of parliament; explaining the origins of the Australian system of government by acknowledging the aspects of the Westminster and Washington systems in the overall model of Australia's Federation; exploring key democratic concepts, including popular sovereignty, representation, accountability and a partial separation of powers; investigating Australia as a federation with a division of powers and responsibilities between Commonwealth and state/territory governments.
+exit:
+  q: "Why can't Parliament change the Constitution on its own?"
+  a: "The Constitution limits Parliament. If Parliament could change it alone, it would not limit anything. Only the voters, at a referendum, can approve a change."
+explain: |
+  The **Constitution** is Australia's rulebook for the national government. It came into effect on 1 January 1901.
+
+  It sets up Parliament, the Governor-General and the High Court, and it limits what Parliament can make laws about. Parliament cannot change it alone: the voters decide, at a referendum.
+sources:
+  - { title: "The Constitution (Parliamentary Education Office)", url: "https://peo.gov.au/understand-our-parliament/how-parliament-works/the-australian-constitution/the-constitution", checked: 2026-10-30 }
+  - { title: "The Australian Constitution (Parliamentary Education Office)", url: "https://peo.gov.au/assets/Public/Australian_Constitution.pdf", checked: 2026-10-30 }

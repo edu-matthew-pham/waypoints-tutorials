@@ -1,6 +1,6 @@
 # Roadmap: Civics and Citizenship
 
-`content/civics/` (not created yet). Set up 30 Oct 2026 so a Civics and Citizenship chat can start. Node content: waypoints-kit `data/civics/`, copied in `data/curriculum/civics.json`.
+`content/civics/` (subject and course created 30 Oct 2026; lesson 1 built, not yet tried with a class). Set up 30 Oct 2026 so a Civics and Citizenship chat can start. Node content: waypoints-kit `data/civics/`, copied in `data/curriculum/civics.json`.
 
 ## Rules (decided 30 Oct 2026, Matthew; `roadmap/shared.md` › Decided: humanities)
 
@@ -28,7 +28,7 @@
 - AC9HC7S03 Analysing information and perspectives (3 nodes)
 - AC9HC7S04 Methods for civic participation (3 nodes)
 
-## Proposed (30 Oct 2026; nothing built, waiting for Matthew): course `civics/government-7`, *How Australia is governed*
+## Plan (proposed and approved 30 Oct 2026): course `civics/government-7`, *How Australia is governed*
 
 AC9HC7K01 first: it is the gateway (the humanities plan's "Civics: How Australia is governed opens Freedoms and Law and justice"), K02 to K05 all list it as prior knowledge, and it has the Year 6 catch-up already planned for it. One lesson per waypoint, in the node file's order, one unit (`government`). Usually Year 7 (teacher note only). Lesson shape: copy `economics/scarcity-7/needs-and-wants` (`language: maths`, predict, try, worked example with Nib's planted slip, vary, practise, Make in the student's own book with a `reflect` tick, then typical and wider steps; teacher.yml and a class plan; no clips, no board).
 
@@ -66,13 +66,26 @@ The subject page lists the other courses so teachers see the whole year (and the
 - `civics/values-7` Values and living together (K05, 4; values questions as discussion only, n3 and n4 factual)
 - Civics' own skills (S03 analysing information and perspectives, S04 methods for civic participation): one skills course, or S04 folded into `democracy-7` beside K02 n3 as the humanities plan had it. Decide when K02 is planned.
 
-### Your calls
+### Decided (30 Oct 2026, Matthew said go on the recommendations)
 
-1. **Lesson 5 required or optional?** The humanities plan made it optional; this roadmap's one lesson per waypoint makes it required. Suggest required: it is the waypoint that joins the other four, like Economics' lesson 4.
-2. **Real institutions, made-up everything else** (above). OK?
-3. **The club constitution** as lesson 1's model before the real thing. OK, or straight to the real one?
-4. **Referendums by a made-up result table** (the double majority as a check) rather than real referendums. OK?
-5. **Build order:** lesson 1 as the pilot, then you look, then 2 to 5 and the catch-up. Or all five plus the catch-up in one go, as Economics is now doing?
+1. Lesson 5 is **required** (one lesson per waypoint).
+2. **Real institutions and settled constitutional facts, made-up everything else**; no current office holders, parties, changing numbers or live debates.
+3. Lesson 1 opens with a **made-up club's constitution** as the model; teacher notes name where the comparison breaks down.
+4. Referendums are taught by a **made-up result table** (the double majority); 1975, 1967 and 2023 stay out of student steps (1967 belongs with citizenship, K02 n4).
+5. **Build order:** lesson 1 as the pilot, Matthew looks, then lessons 2 to 5 and the catch-up.
+
+## Built (30 Oct 2026; not yet tried with a class)
+
+- Subject `content/civics/index.md` (order 9, pathway *How Australia is governed*, the four other Year 7 courses as Coming later) and course `civics/government-7` (Usually Year 7).
+- Lesson 1 `the-constitution` (AC9HC7K01 n1, hinge): predict (club spending rule), sort (what goes in a club rulebook), worked example on the real Constitution with Nib's planted slip (`parliament-changes-constitution`, with a `smaller:` back to the club), vary (3 tasks), practise (which body, Sam's idea), a Make step in the student's own book (reflect tick), one typical step (chapters match) and two wider steps (did the referendum pass, other countries' rulebooks). Teacher notes (hinge reason, where the club comparison breaks, what is left out on purpose, First Nations and the 1901 Constitution pointed to K02 n4 with no student text), class plan, sources (PEO). Validate clean; all 14 answerable checks accept their stored answers in a headless browser.
+- `civics` added to the node check's `CHECKED` (`tools/progressions.mjs`, one word; logged in `shared.md`).
+- Needs a whole-site publish (new subject).
+
+## Open for lessons 2 to 5
+
+- Both diagrams (lessons 2 and 3) are Mermaid `flowchart TD`, at most about 12 boxes.
+- The Before Year 7 catch-up `civics/before-year-7/three-levels` (AC9HS6K07) may need the node check to read `hass.json` for an AC9HS6 node.
+- Placeholders for planned lessons inside this course are the shared "planned units and lessons" display (humanities plan, approved 30 Oct); until that lands the course page says five are planned and shows only what is built.
 
 ## Starter prompt for the Civics and Citizenship chat
 

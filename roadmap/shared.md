@@ -131,6 +131,10 @@ ACARA Progressions and Planner hold each standard's elaborations in `static/data
 
 `economics` added to `CHECKED` in `tools/progressions.mjs`, so Economics lessons must name their node (roadmap/economics.md).
 
+## Changed by the Civics chat (30 Oct 2026): node check
+
+`civics` added to `CHECKED` in `tools/progressions.mjs`, so Civics lessons must name their node (roadmap/civics.md). One misconception added to `misconceptions.json` (`parliament-changes-constitution`).
+
 ## Decided (30 Oct 2026, Matthew): tutorials are pace-agnostic, in every subject
 
 A tutorial never knows the class, so it never assumes a pace. This matches the Kit, where node files carry no pace profile and pace only comes in when a teacher divides up time. Applies to every current and future subject (Economics next).

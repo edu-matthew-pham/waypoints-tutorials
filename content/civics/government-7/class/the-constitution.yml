@@ -1,0 +1,29 @@
+inquiry:
+  q: "Maple Street Chess Club's committee wants to spend $500, but the rule says $200 without asking members. Tom says 'the committee runs the club, so it can change the rule.' Ana says 'then the rule means nothing.' Who is right, and what would change your mind?"
+  prompts:
+    - "What is the rule for, if the committee can change it alone?"
+    - "Who should have the final say on changing it, and why?"
+  notes: "Steer students to the purpose of the rule: to limit the committee. Do not name Parliament yet. The next step does that."
+activities:
+  - at: predict
+    kind: activity
+    title: "Vote with your feet"
+    minutes: 4
+    do: |
+      Put the four options on the wall, one per corner. Read out the chess club situation and have students stand at the corner they pick. Ask someone in each corner for a reason.
+    notes: "The corner for 'changes the rule then spends' usually has the best talk. Ask what the rule would be worth."
+  - at: make
+    kind: discussion
+    title: "What would go wrong?"
+    minutes: 4
+    do: |
+      Ask pairs: if Parliament could change the Constitution by voting, what could go wrong? Collect a few ideas and ask what they have in common.
+    notes: "The common thread is that rules which the rule-makers can change alone do not limit them."
+questions:
+  - at: investigate
+    title: "Who can change it?"
+    type: question
+    q: "Who can approve a change to Australia's Constitution?"
+    options: ["The voters, at a referendum", "Parliament, by voting", "The Governor-General", "The High Court"]
+    answer: 0
+    explain: "Parliament can propose a change, but the voters decide."

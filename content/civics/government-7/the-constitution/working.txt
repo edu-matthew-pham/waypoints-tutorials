@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Mei's class is learning about Australia's Constitution. It came into effect on 1 January 1901.
+It sets up Parliament, the Governor-General and the High Court, and it lists what Parliament can make laws about.
+Nib says: "Parliament makes the laws, so Parliament can change the Constitution whenever its members vote to."
+Nib says: "So the Constitution is really just another law."
+# endregion
