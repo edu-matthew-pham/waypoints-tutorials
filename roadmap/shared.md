@@ -111,6 +111,17 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 - **Decided (27 Oct):** an optional, discussion-led intro course (4 workshops: shared trap task first, then the student's own task as transfer), framed around why it matters and how self-regulated differs from self-directed learning; its own small subject, Learning skills; Years 6–8; general and Code cards first. Built: see `roadmap/learning.md`.
 - **Open:** how deck inserts are authored (class plan field vs a shared insert library).
 
+## Proposed (30 Oct 2026, Matthew; discussed, nothing built): "Make your own version" as a prompt first, Create as the checker
+
+Why: Create (the editor) is complex and overwhelming for a teacher who only wants to adapt one lesson. Most teachers already have an AI chat open, and a text box to paste into is a gentler way in.
+
+- **Front door:** the `wpt-mine` card at the end of every lesson page (`createHref` in `lessonPageHtml`, `tools/lesson-view.mjs`) offers **Copy a prompt** first, with the existing "Make your own version" link to Create kept as the second, advanced option.
+- **What the prompt holds:** (1) the lesson's own source, the same text the build already writes to `<lesson>/source.json` (`tools/lesson-source.mjs`: lesson files, teacher.yml and class plan); (2) a short line for the teacher to fill in, "Adapt this for my class: …" (year level, context, what to keep); (3) the format rules the AI must follow, taken from AUTHORING and `AGENTS.md`: keep the lesson format and check types, keep every `answer:` index aligned with its options, no write boxes (Make steps are written in the student's own book with a `reflect` tick), no LLM marking, made-up cases labelled as made up, nothing about First Nations history or culture written for students, pace-agnostic wording, and "say what you changed".
+- **Get the result back in:** the teacher pastes what the AI returns into Create, which stays the place that validates and previews it (checks accept their stored answers, nodes exist, the page renders). So Create becomes "check my version", not "write my version".
+- **Limits to state on the card:** AI output can break the format or the rules, so it is checked before use; schools that restrict AI need the Create route (or the teacher edits the text by hand); the prompt is a convenience, not a guarantee. Nothing is sent from the site: the prompt is built in the browser and copied (same privacy stance as My path).
+- **Open questions for Matthew:** one prompt for every lesson or a variant per subject (maths and science boards, code playgrounds); whether very long lessons need a "paste the lesson separately" note; wording on the card; whether the prompt should be offered in the teacher guide and on Prepare as well.
+- **Needs when built:** a copy button and a prompt template (a pure function beside `lesson-source.mjs`, so Create and the lesson page share it), a test that the prompt contains every rule line, and a whole-site publish (every lesson page changes). Related: roadmap/shared.md state of play, "Make your own version" (25 Oct 2026, built).
+
 ## Decided (30 Oct 2026, Matthew): humanities (Economics, Civics, Geography, History)
 
 - **One course per standard**, one lesson per waypoint, in the node file's order (pattern: `content/economics/scarcity-7/`).
