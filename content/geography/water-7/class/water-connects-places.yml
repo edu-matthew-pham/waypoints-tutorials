@@ -1,0 +1,22 @@
+inquiry:
+  q: Can a town protect its river by caring for only the land inside its boundary?
+  prompts:
+    - What is your reason?
+    - What information would change your view?
+  notes: "Protect the hinge: direction alone is not enough. Ask for carried material and a receiving place."
+activities:
+  - at: investigate
+    kind: discussion
+    title: Trace the missing link
+    minutes: 5
+    do: Pairs trace from Kerrin’s farm to the town. The listener asks what travels with the water and why the town
+      could care. Compare with a gutter-to-creek connection at school.
+    notes: "Protect the hinge: direction alone is not enough. Ask for carried material and a receiving place."
+  - at: make
+    kind: activity
+    title: Compare your explanations
+    minutes: 4
+    do: Write in your own book, then swap with a partner. The partner identifies the geographical terms and one
+      link explained with because.
+    notes: The reflect tick records completion. The teacher or partner reads the writing; the site does not assess
+      it.

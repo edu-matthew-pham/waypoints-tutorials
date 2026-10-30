@@ -1,0 +1,22 @@
+inquiry:
+  q: If a river takes soil away from one place, has the material vanished?
+  prompts:
+    - What is your reason?
+    - What information would change your view?
+  notes: Follow material through removal, carrying and settling. A location alone cannot explain physical change.
+activities:
+  - at: investigate
+    kind: discussion
+    title: Remove, carry, settle
+    minutes: 5
+    do: Pairs trace soil through Kerrin’s storm. Where is it removed, carried and deposited? The listener
+      identifies the missing process in Nib’s explanation.
+    notes: Follow material through removal, carrying and settling. A location alone cannot explain physical change.
+  - at: make
+    kind: activity
+    title: Compare your explanations
+    minutes: 4
+    do: Write in your own book, then swap with a partner. The partner identifies the geographical terms and one
+      link explained with because.
+    notes: The reflect tick records completion. The teacher or partner reads the writing; the site does not assess
+      it.

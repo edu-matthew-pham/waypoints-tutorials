@@ -1,0 +1,8 @@
+# Plain text for the planted reasoning slip. Nothing runs.
+
+# region: nib
+The Snowy Scheme diverts water inland for irrigation and electricity generation.
+Irrigation can support crop production.
+Nib says: "That benefit proves every connected place is better off."
+Nib decides not to check any other effects.
+# endregion

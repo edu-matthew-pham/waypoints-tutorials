@@ -1,0 +1,22 @@
+inquiry:
+  q: Does a benefit from moving water make the whole change a good one?
+  prompts:
+    - What is your reason?
+    - What information would change your view?
+  notes: Ask good for whom, where and in what way. Keep actual evidence separate from hypothetical viewpoints.
+activities:
+  - at: investigate
+    kind: discussion
+    title: One change, two consequences
+    minutes: 5
+    do: Pairs use the Snowy cards to name a benefit and an adverse effect of the same diversion. Ask which
+      sentence explains a change and which only describes the scheme.
+    notes: Ask good for whom, where and in what way. Keep actual evidence separate from hypothetical viewpoints.
+  - at: make
+    kind: activity
+    title: Compare your explanations
+    minutes: 4
+    do: Write in your own book, then swap with a partner. The partner identifies the geographical terms and one
+      link explained with because.
+    notes: The reflect tick records completion. The teacher or partner reads the writing; the site does not assess
+      it.

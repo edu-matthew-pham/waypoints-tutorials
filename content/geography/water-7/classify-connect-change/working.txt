@@ -1,0 +1,8 @@
+# Plain text for the planted reasoning slip. Nothing runs.
+
+# region: nib
+River water can be renewable when rainfall replenishes it.
+The Murray Mouth case describes water movement and sand build-up.
+Nib says: "Renewable means outflow can never be low, so sand cannot restrict the mouth."
+Nib decides the resource label is all the explanation needed.
+# endregion

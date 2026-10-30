@@ -4,9 +4,11 @@ summary: "What is built so far in Year 7 Geography (a preview on water as a reso
 ---
 ## What is here
 
-**This is a preview.** One lesson is built, and none of it has been tried with a class.
+**This is a preview.** Five lessons are built for AC9HG7K01, and none has been tried with a class.
 
-- [**Water as a resource**](../geography/water-7/): five lessons are planned for AC9HG7K01. The first, *what kind of resource water is*, is built: students sort resources by two questions (does it come back by itself, and can our use make it run out?) and apply the same reasoning to water in its three forms. It is a hinge lesson, so it carries an easier check you can set before moving on.
+- [**Water as a resource**](../geography/water-7/): five lessons, one per waypoint in AC9HG7K01, in order: resource classification; water movement connecting places; environmental, economic and social effects; physical landscape change; and a joined explanation. The first two are hinges, with smaller checks before moving on. The final lesson’s minimum joins at least two of classification, connection and change; all three are optional width.
+
+Each lesson includes checks, a planted reasoning slip, teacher notes, a class plan and a Make task written in the student's own book. A picture of made-up Kerrin supports movement and landscape change. Real cards name Parks ACT, NSW Government and the SA Department for Environment and Water; source links and checked dates appear in the notes.
 
 ## How a lesson runs
 
@@ -22,7 +24,7 @@ We do not write explanations of First Nations values or connection to Country ou
 
 ## What is planned
 
-These are plans, not promises. The rest of the water course (movement, effects, changes to the land), then Water in Australia, the values of water and water hazards, then liveability. The Geography skills (interpreting data, drawing conclusions, strategies for action) come after.
+These are plans, not promises. Water in Australia (AC9HG7K02), the values of water and water hazards, then liveability. The Geography skills (interpreting data, drawing conclusions, strategies for action) come after.
 
 ## For you
 

@@ -1,6 +1,6 @@
 # Roadmap: Geography
 
-`content/geography/` (not created yet). Set up 30 Oct 2026 so a Geography chat can start; first course `geography/water-7` decided and lesson 1 built 30 Oct (below); lessons 2 to 5 not built. Node content: waypoints-kit `data/geography/`, copied in `data/curriculum/geography.json`.
+`content/geography/`. First course `geography/water-7` decided and all five AC9HG7K01 lessons built 30 Oct 2026 (below); still a preview, not yet tried with a class. Node content: waypoints-kit `data/geography/`, copied in `data/curriculum/geography.json`.
 
 ## Rules (decided 30 Oct 2026, Matthew; `roadmap/shared.md` › Decided: humanities)
 
@@ -83,8 +83,20 @@ Notes:
 4. **A board or not.** The checks above need nothing new. A small catchment board (click where to put a dam or clear land, see what reaches the town downstream) would suit lessons 2 to 4 but is new machinery, so I'd leave it until the pilot shows the static picture isn't enough.
 5. **Subject page.** `content/geography/index.md` as its own subject like Economics (order 9), one pathway "Water" with this course as foundations and K02 as "Coming later". The Preview label and planned-lesson display aren't built yet (Project plan › Placeholders); this course would wait for them or go up without them, as Economics has.
 
-Next: lessons 2 to 5 and the lesson 1 fold (same shape; lesson 2 is the second hinge and the first to need a map picture).
+Next: trial the five K01 lessons with a class and review the lesson 1 prerequisite fold if needed. K02 remains the next planned course; it is not built in this batch.
 
 ## Starter prompt for the Geography chat
 
 > Read CLAUDE.md, ROADMAP.md, `roadmap/shared.md` › Decided (30 Oct 2026) entries, the Project doc humanities-y7-plan (background; where it differs, this roadmap and shared.md win), and `roadmap/geography.md`. Look at `content/economics/scarcity-7/needs-and-wants/` end to end as the model lesson. Then propose the first Year 7 Geography course in `roadmap/geography.md`, commit and push, and wait for me before building.
+
+
+## Lessons 2–5 built (30 Oct 2026)
+
+- Completed the K01 sequence in node order: `water-connects-places` (n2, hinge), `effects-of-water-movement` (n3), `water-changes-land` (n4), `classify-connect-change` (n5). Each follows `resource-types`, with teacher notes, a class plan, a worked explanation, Nib’s planted slip, a smaller check, a book-based Make and optional width. No board or clips.
+- Checked the shape against each waypoint under the updated AGENTS rule: n2 traces connections, n3 distinguishes effect types and causal claims, n4 explains processes, n5 joins concepts in explanations. The worked-example shape fits these specific reasoning moves. Judgements and viewpoints stay in discussion/optional width rather than pretending to have one marked answer.
+- Minimum width: n2 distinguishes three forms and traces one pathway carrying material; n3 explains one effect type with a specific Australian example and recognises beneficial/adverse consequences; n4 explains one physical change; n5 joins at least two concepts, with all three optional. The second hinge’s farm-to-town question and gutter lead-in protect the move beyond “water flows downhill”.
+- Real-place cards stay light: Parks ACT establishes the Murrumbidgee-to-Murray route; NSW Government establishes Snowy Scheme irrigation/electricity uses and river flow/channel consequences; SA Department for Environment and Water establishes the Lake Alexandrina–Murray Mouth connection and sand build-up under low outflow. Sources were checked 30 Oct and linked in student cards and teacher notes. No current volumes or particular community viewpoints asserted. The Snowy River channel replaces an unsourced formation story about a particular mountain valley.
+- Kerrin’s schematic catchment, Rill Bay, Wattle Creek, farm/town comparisons, groundwater spill and pipeline are explicitly made up. Optional Ord/GAB comparisons were replaced with invented cases under the settled-fact rule; lesson 1’s existing GAB card is unchanged. The schematic is inline SVG with larger labels for mobile. The process-order check uses a question rather than long draggable text, avoiding narrow-screen overflow without changing shared tools.
+- Added four single-line misconceptions. Updated the course summary and Geography teacher guide to say all five are built, still a preview and not yet classroom-tried. Lesson 3 teacher notes quote the imported ACARA elaboration naming Mutitjulu and direct teachers to local, community-approved material; no student explanation of First Nations history/culture added.
+- Verified: `npm ci`, `npm run validate`, `npm run check-nodes`, `WP_NO_MAKECODE=1 npm run build`, and `npm run check-decks -- geography/water-7` passed. Headless Chromium answered all 48 new checks (including smaller steps and optional width), checked 32 deliberate wrong answers, prediction locking, saved progress, optional-step hiding, four mobile layouts, the course/subject/Geography teacher pages and four lesson guides. No browser page or HTTP errors. Screenshots reviewed. The two Geography HTML warnings are the intentional inline SVG figures; unrelated existing warnings and nine existing Code clip placeholders remain. Not yet tried with a class or checked on the live site.
+- Publish: quick whole-site or full publish includes the plain Geography teacher guide as well as the new lessons/course. No clips to record; no workflows or publishing branches touched.

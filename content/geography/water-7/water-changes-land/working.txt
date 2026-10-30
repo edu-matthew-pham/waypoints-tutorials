@@ -1,0 +1,8 @@
+# Plain text for the planted reasoning slip. Nothing runs.
+
+# region: nib
+The river flows through a valley.
+The question asks how water can make the valley deeper.
+Nib says: "It is deeper because the river is in a low place. That is the whole explanation."
+Nib decides naming the location is enough.
+# endregion

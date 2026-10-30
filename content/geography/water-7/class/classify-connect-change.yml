@@ -1,0 +1,22 @@
+inquiry:
+  q: Is the water is renewable enough to judge a proposed pipeline?
+  prompts:
+    - What is your reason?
+    - What information would change your view?
+  notes: Keep the proposal hypothetical. The minimum is two linked concepts in one case; all three are width.
+activities:
+  - at: investigate
+    kind: discussion
+    title: Two tools in one explanation
+    minutes: 5
+    do: Pairs explain the Murray Mouth using connection and change. The listener points to the word joining the
+      ideas, then tries the same reasoning on Wattle Creek.
+    notes: Keep the proposal hypothetical. The minimum is two linked concepts in one case; all three are width.
+  - at: make
+    kind: activity
+    title: Compare your explanations
+    minutes: 4
+    do: Write in your own book, then swap with a partner. The partner identifies the geographical terms and one
+      link explained with because.
+    notes: The reflect tick records completion. The teacher or partner reads the writing; the site does not assess
+      it.

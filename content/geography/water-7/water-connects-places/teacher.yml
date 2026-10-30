@@ -1,0 +1,45 @@
+summary: Trace water through a catchment, distinguish its forms, and explain what it carries between places.
+time: 40
+timing: Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Optional
+  width is extra.
+goals:
+  - I can distinguish surface water, soil moisture and groundwater.
+  - I can trace one pathway between two places.
+  - I can explain what water carries and why another place is affected.
+struggle: Students may stop at “water flows downhill”. Ask what travels with it and who or what receives it.
+  Give time to add the missing link.
+before: Usually Year 7. This is the second hinge. K02 and K03 depend on seeing water as a connection rather
+  than a static store. The untiered path distinguishes three forms and explains one surface pathway. Protect
+  the farm-to-town question before moving on; the gutter lead-in strips back the same idea. Kerrin, its
+  schematic, spill and other scenarios are made up. Only the Parks ACT card describes real places. It
+  establishes a route, not the fate of every drop or a claim about pollution. No Australian water-distribution
+  or climate-system study is needed.
+running:
+  - "Try: trace the flow arrows and distinguish soil moisture from groundwater."
+  - "Worked example: ask for start, pathway, carried material and receiving place."
+  - "Vary: separate the real river route from the invented farm case."
+  - "Make: read the book explanation before accepting the tick."
+stuck:
+  - see: The answer only says water flows downhill.
+    ask: What could move with it, and where might it arrive?
+    fix: Add a carried material and a consequence for a receiving place.
+  - see: Soil moisture and groundwater are treated as identical.
+    ask: Is it around roots in soil or in spaces in deeper rock?
+    fix: Name the store before tracing movement.
+  - see: Underground water is assumed clean.
+    ask: Could dissolved pollution enter where rain soaks in?
+    fix: Groundwater can carry dissolved substances.
+support: "Use the smaller gutter question. Offer the oral frame: From __, water moves by __, carrying __ to __."
+stretch: Explain the same connection at gutter and river-system scales, without introducing a new concept.
+exit:
+  q: Why might a town care about loose soil on an upstream farm?
+  a: Rain can wash soil into the river. Surface water can carry it to the town, affecting water quality.
+explain: Water connects places when movement transfers materials or consequences. Name the start, pathway,
+  something carried and receiving place. Surface water, soil moisture and groundwater describe different
+  stores.
+sources:
+  - title: Murrumbidgee River Corridor (Parks ACT)
+    url: https://www.parks.act.gov.au/find-a-nature-park/murrumbidgee-river-corridor
+    checked: 2026-10-30
+leads: "Next: environmental, economic and social effects of water connections. Australian water distribution
+  belongs to K02."
