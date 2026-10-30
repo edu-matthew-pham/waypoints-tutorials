@@ -134,6 +134,11 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
     { t: 'For ICT skills teachers', u: 'ict-teachers/', d: 'What is built so far in ICT skills (five pilot courses: data, documents, files, judging information, staying safe), how it teaches, and what is planned.' },
     { t: 'For maths teachers', u: 'maths-teachers/', d: 'What is here for Years 7 and 8 maths and a ten-minute tour.' },
     { t: 'For Learning skills teachers', u: 'learning-teachers/', d: 'Self-regulation across subjects: the plan, check and look back cycle, think-alouds, teaching a strategy (NEMO-T) and when to prompt it.' },
+    { t: 'For Humanities skills teachers', u: 'humanities-teachers/', d: 'The shared Year 7 inquiry lessons for History, Geography, Civics and Economics (a preview): asking and finding.' },
+    { t: 'For History teachers', u: 'history-teachers/', d: 'What is built so far in Year 7 History (a preview on working with sources), how it fits your depth study, and what is planned.' },
+    { t: 'For Geography teachers', u: 'geography-teachers/', d: 'What is built so far in Year 7 Geography (a preview on water as a resource), and what is planned.' },
+    { t: 'For Civics teachers', u: 'civics-teachers/', d: 'What is built so far in Year 7 Civics and Citizenship (a preview on how Australia is governed), and what is planned.' },
+    { t: 'For Economics teachers', u: 'economics-teachers/', d: 'The Year 7 Economics course on scarcity and opportunity cost, how it works, and what is planned.' },
     { t: 'For English teachers', u: 'english-teachers/', d: 'What is built so far in English (a pilot course on cohesion), how the boards work without AI marking, and what is planned.' },
   ]) add({ ...p, s: 'Teachers', sp: 'teachers', c: '', y: '', ty: 'page', k: `${p.t} ${p.d} teacher teachers` });
   return { entries, yearsOfCourse: (path) => courseYears.get(path) || [null, null], yearsLabel, typical: (path) => typical.has(path) };

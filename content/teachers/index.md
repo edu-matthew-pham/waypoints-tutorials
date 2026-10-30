@@ -10,6 +10,11 @@ links:
   - { title: Maths, href: maths-teachers/, group: Subject guides, summary: "What is here for Years 7 and 8 maths, how a lesson runs, and a ten-minute tour." }
   - { title: Science, href: science-teachers/, group: Subject guides, summary: "How the science boards sit beside your class practicals, and a draft list of common practicals to correct." }
   - { title: Learning skills, href: learning-teachers/, group: Subject guides, summary: "Self-regulation in any subject: the cycle, think-alouds, teaching a strategy, and when to prompt it." }
+  - { title: Humanities skills, href: humanities-teachers/, group: Subject guides, summary: "The shared Year 7 inquiry lessons (a preview): asking and finding, and how they fit beside your unit." }
+  - { title: History, href: history-teachers/, group: Subject guides, summary: "A preview on working with sources, with ancient China as the worked example, and what is planned." }
+  - { title: Geography, href: geography-teachers/, group: Subject guides, summary: "A preview on water as a resource, how real places are used, and what is planned." }
+  - { title: Civics, href: civics-teachers/, group: Subject guides, summary: "A preview on how Australia is governed: what is real, what is made up, and what is planned." }
+  - { title: Economics, href: economics-teachers/, group: Subject guides, summary: "The four-lesson course on scarcity and opportunity cost, and what is planned." }
   - { title: How computers work, href: systems-teachers/, group: Subject guides, summary: "Which course to start with and what each needs." }
   - { title: Code, href: code-teachers/, group: Subject guides, summary: "Which Code course to start with, how a lesson runs, what you need, and a review sheet." }
   - { title: Engineering, href: engineering-teachers/, group: Subject guides, summary: "What each course needs (browser only, or kits) and where to start." }
