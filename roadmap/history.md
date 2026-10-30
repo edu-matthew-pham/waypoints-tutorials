@@ -42,9 +42,44 @@
 - AC9HH7S06 Identify past perspectives (3 nodes)
 - AC9HH7S07 Explain historical interpretations (3 nodes)
 
-## Proposed
+## Proposed (30 Oct 2026; nothing built): course `history/sources-7`, *Who made it, and why?*
 
-Nothing yet. First step: pick the first standard, write the course plan here (a table like `roadmap/economics.md`), then build lesson 1 as a pilot.
+**Why this standard first.** "How we know" (K08, S03, S04) is the gateway. Of the three, **AC9HH7S03 Identify source origin and purpose** goes first: S04's prior is S03, and K08's priors are K01 and K07 (K07 is on the deep-time pointer page, so K08 is better after students can already question a source). S03's prior is AC9HS6S04, which is the catch-up named above. Suggested order for the gateway: S03 → S04 → K08, each its own course in a "How we know" pathway.
+
+Usually Year 7 (teacher note only). Lesson shape: `needs-and-wants` (`language: maths`, predict, sort, worked example with Nib's planted mistake, vary, practise, Make in the student's own book with a `reflect` tick, then typical and wider steps; class plan; no clips, no board). Sources are shown as **source cards** in the lesson text (a short heading, what it is, and either a plain summary we write or a short public-domain translation; a CC-licensed photo with credit where it helps). No new widget.
+
+Worked example throughout: **Qin and Han China**. Main sources (all real, all Year 7 content):
+- the Terracotta Army (artefact; Qin workshops, about 210 BCE; made to guard the First Emperor after death)
+- a Qin stone inscription praising the First Emperor (public monument; written to be seen)
+- Sima Qian's *Records of the Grand Historian* (a Han court historian, about 100 years after the Qin fell, writing about the Qin)
+- Qin bamboo slips of laws from an official's tomb (administrative record)
+- one made-up secondary source (a museum label or textbook paragraph we write), so students meet secondary sources under the same questions
+
+| # | Lesson (waypoint) | Flags | Minimum path (untiered) | Hinge check before moving on | Width (`tier:` steps) |
+|---|---|---|---|---|---|
+| 1 | Who made it, when, and what does it show? (S03 n1: origin and content) | Hinge | Sort facts about the Terracotta Army into origin (who, when, where) or content (what it shows); answer Who? When? What? for a second source | Bug task: Nib says "the Terracotta Army was made by soldiers, because it shows soldiers" (origin read off content). `smaller:` lead-in: "Who made the figures: the people they show, or the workers who shaped them?" | Typical: the same questions on a Han bamboo slip and on a topic-card source (a Roman coin, an Egyptian tomb painting); Wider: a source whose origin is hard to pin down (artefacts with no record of where they were found) |
+| 2 | Why was it made, and what was going on? (S03 n2: context and purpose) | Hinge | Match each source to its purpose (ceremonial, propaganda, record-keeping, remembering); name the context of the Qin inscription in one specific sentence (a new emperor who had just united rival states) | Bug task: Nib writes "Context: ancient China. Purpose: it shows the emperor" (context as setting, purpose as content). `smaller:` lead-in: pick the more specific context from two | Typical: how purpose shapes what is left out (what an inscription praising the emperor would never mention); Wider: Sima Qian writing for a Han emperor about the dynasty the Han replaced |
+| 3 | What can this source tell us? (S03 n3: putting it together) | Integration | Order the four questions (origin, content, context, purpose) for one source in a parsons-style sort, then choose the best conclusion to an inquiry question ("What did the First Emperor want people to think of him?") | Exit ticket: the four questions on a new source, then one sentence on what it can and cannot tell us | Typical: the same routine on the made-up secondary source; Wider: two sources on one question that disagree, and what each one's purpose explains |
+
+Notes:
+- **Hinges get the time.** Lessons 1 and 2 carry `smaller:` and the class plan's whole-class discussion. Teacher notes name the cascade from the node file's `hinge_reason` (origin and content kept apart, then context and purpose, before lesson 3 can join them).
+- **Lesson 3 hands on.** Its "What can it not tell us?" sentence is the seed of S04 (accuracy and usefulness), which is the next course; the teacher note says so as a mention, not a gate.
+- **Misconceptions to add:** `origin-from-content`, `context-is-setting`, `purpose-is-content`.
+- **Make steps:** in the student's own book, the four questions on a source from the class's own unit (or a supplied one if the class has not started a topic), checked by a partner, `reflect` tick.
+- **First Nations:** S03's third elaboration names the Kimberley Bradshaw paintings. Not used as a student example (it is about culture and its origin is contested). Teacher notes quote the elaboration and point to custodian-led material (the paintings are known to their custodians as Gwion Gwion), per the rule above.
+- **Modern links stay factual:** the Terracotta Army as a World Heritage site; no claims about China today.
+- **Copyright:** source text is either our own plain summary, labelled as one, or a public-domain translation; secondary sources are written by us.
+
+Goes with it (same push, once approved):
+- **Before Year 7 catch-up** "Can you trust this source?" (AC9HS6S04 n1, publication details and content), primer shape, linked from lesson 1 by `assumes:`.
+- Subject `content/history/index.md` marked **Preview**, with a "How we know" pathway: this course built, S04 and K08 as "Coming later", and the course's planned units shown greyed (the planned-units display in the humanities plan; shared change, logged in `shared.md` when built).
+- `history` added to `CHECKED` in `tools/progressions.mjs`.
+
+Your calls:
+1. **Primary or secondary (S02 n1).** This list of History's own skills starts at S03, so S02 sits with the shared inquiry course. But S02 n1 (primary means from the time of the event, not old) is a hinge that S03 and S04 lean on, and it is History's meaning of the words. Options: (a) leave it to the inquiry course and link it as "Build up to this" from lesson 1; (b) an optional warm-up lesson in this course, tagged S02 n1 (like English's warm-up unit); (c) a small `history/finding-sources-7` course built first. I lean (b).
+2. **Order of the gateway:** S03 → S04 → K08 as above, or K08 first (the humanities plan's "Dating the past" sat inside the How we know unit).
+3. **Pictures:** text source cards only, or add a CC-licensed photo (Terracotta Army, a bamboo slip) with credit.
+4. **Course title:** "Who made it, and why?" or plainer, such as "Questioning a source".
 
 ## Starter prompt for the History chat
 
