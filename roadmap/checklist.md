@@ -2,6 +2,16 @@
 
 One place for the testing and review steps. Handoffs and roadmaps link here instead of repeating them. Add a line when a chat finds a step that should have been on it. Last updated 25 Oct 2026.
 
+## Plan first, then build (new course or waypoint; added 30 Oct 2026)
+
+Plan well rather than fix a poor draft. Most fix rounds so far (weak distractors, wording that drifts from the curriculum, a made-up name that reads as a real brand) were things a short plan would have caught.
+
+1. **Write a plan for each waypoint before any lesson file**, in the subject's roadmap file: node and descriptor wording, the one insight, the planted misconception (id in `misconceptions.json`), the made-up case (and where it is labelled made up), two or three distractor ideas that are each a real student error, the shape and why (the default is a default, not a rule), and any First Nations element (teacher notes only).
+2. **Commit and push the plan, then stop** and say so. Matthew or a reviewer reads it. Build only after "go".
+3. **Build from the approved plan.** Change the plan in the roadmap file if the build has to depart from it.
+4. **Self-check before saying done:** run `npm run validate`; every answer index matches its option; each distractor is a plausible error and its feedback names the slip; wording matches the curriculum descriptor (use its terms, no invented aliases); made-up cases and names are labelled and read as made up, with no real brands; no write boxes; no pace labels; `summary:` is a description and `teacher.yml` has the deck's learning goal (see shared.md audit note); teacher notes and the class plan are present; shared files (`misconceptions.json`, search index, Teachers page) touched only as agreed.
+5. **Report** what was built, what departs from the plan, and anything unsure, in a few lines.
+
 ## Before every push
 1. `git pull --rebase origin main`. Never force-push. Shared files (`tools/`, `playground-*/core.js`, `playground-shared/`, CLAUDE.md, AUTHORING.md, BUILDING.md, `roadmap/shared.md`): check `roadmap/shared.md` and `git log` first, keep the change small and say in `shared.md` what changed.
 2. `npm run validate`. Fix errors; read warnings that name your lessons.
