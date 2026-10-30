@@ -124,8 +124,9 @@ ACARA Progressions and Planner hold each standard's elaborations in `static/data
 
 - **waypoints-kit** (`d93e6e5`): 122 `*_width_tiers.json` files copied into `data/<subject>/` (1,512 standards, 1,489 with elaborations); `SOURCES.md` has a row for them. Three Visual Arts early-years files (`visual_arts_yf`, `_y12`, `_y34`) are left out because the source files in Progressions and Planner are not valid JSON (unescaped quotes); fix them there, then copy.
 - **Importer**: reads the width-tier files and stores `elaborations` on each descriptor (the standard, not a waypoint). All 14 `data/curriculum/*.json` re-imported; the diff is additions only.
-- **Pointer pages** (`/teach/curriculum/<subject>/<code>/`) show an "ACARA elaborations" section, labelled as examples, not a checklist. Not yet in the copied lesson prompt (`tools/kit-nodes.mjs`) or Create; add if wanted.
-- Needs a whole-site publish (pointer pages).
+- **Pointer pages** (`/teach/curriculum/<subject>/<code>/`) show an "ACARA elaborations" section, labelled as examples, not a checklist.
+- **Create and the copied lesson prompt** (Matthew said include them, 30 Oct): `withContext` and `compactCurriculum` in `tools/kit-nodes.mjs` carry `elaborations`, and `nodesPromptText` lists them once per standard ("examples that illustrate the whole standard, not a checklist and not tied to one waypoint"). Create's compact curriculum files grew about 10%. `node experiments/kit-nodes-test.mjs` passes.
+- Needs a whole-site publish (pointer pages) and a Create publish (`git push origin main:publish-create`) for Create.
 
 ## Changed by the Economics chat (30 Oct 2026): node check
 

@@ -52,7 +52,7 @@ export function findNode(cur, ref) {
   return n ? withContext(cur, d, n) : null;
 }
 export function withContext(cur, d, n) {
-  return { ...n, code: d.code, subject: cur.subject, year: d.year, ...(d.years ? { years: d.years } : {}), title: d.title, strand: d.strand, description: d.description, knowledge: d.knowledge || '', kit: d.kit || '' };
+  return { ...n, code: d.code, subject: cur.subject, year: d.year, ...(d.years ? { years: d.years } : {}), title: d.title, strand: d.strand, description: d.description, knowledge: d.knowledge || '', ...(d.elaborations?.length ? { elaborations: d.elaborations } : {}), kit: d.kit || '' };
 }
 
 /** Review status (data/review/<subject>.yml, parsed): subject-level now, node-level allowed. */
@@ -194,9 +194,11 @@ export function nodesPromptText(nodes, pick = {}, kitVersion = '') {
   if (!nodes.length) return '';
   const L = [`CURRICULUM NODES (from Waypoints Kit${kitVersion ? ` ${kitVersion}` : ''}, a draft under review; use these and do not fetch Kit for them)`,
     `Write them in frontmatter as node: ${nodes.length === 1 ? nodeKey(nodes[0]) : `[${nodes.map(nodeKey).join(', ')}]`}. Quote codes exactly; never invent one.`];
+  const shown = new Set();   // a standard's elaborations are listed once, with its first node
   for (const n of nodes) {
     L.push('', `${nodeKey(n)}: ${yearText(n)} ${labelOf(n.subject)}, ${n.code} ${n.title} (${n.strand})`, `Descriptor: ${n.description}`, `Waypoint ${n.n}: ${n.label}`, `Checkpoint: ${n.checkpoint}`);
     if (n.knowledge) L.push(`Prior knowledge (the standard's): ${n.knowledge}`);
+    if (n.elaborations?.length && !shown.has(n.code)) { shown.add(n.code); L.push(`ACARA elaborations for ${n.code} (examples that illustrate the whole standard, not a checklist and not tied to one waypoint):`, ...n.elaborations.map((e) => `- ${e}`)); }
     if (n.criteria?.length) L.push('Success criteria:', ...n.criteria.map((c) => `- ${c}`));
     if (n.width) {
       if (n.width.minimum) L.push(`Minimum width: ${n.width.minimum}`);
@@ -217,7 +219,7 @@ export function compactCurriculum(cur, review) {
   return {
     subject: cur.subject, label: labelOf(cur.subject), source: cur.source, kit: review?.kit || '', status: review?.status || 'draft',
     descriptors: cur.descriptors.map((d) => ({
-      code: d.code, year: d.year, ...(d.years ? { years: d.years } : {}), strand: d.strand, title: d.title, description: d.description, knowledge: d.knowledge || '', kit: d.kit || '',
+      code: d.code, year: d.year, ...(d.years ? { years: d.years } : {}), strand: d.strand, title: d.title, description: d.description, knowledge: d.knowledge || '', ...(d.elaborations?.length ? { elaborations: d.elaborations } : {}), kit: d.kit || '',
       nodes: d.nodes.map((n) => ({ n: n.n, label: n.label, checkpoint: n.checkpoint, hinge: n.hinge, ...(n.hinge_reason ? { hinge_reason: n.hinge_reason } : {}), criteria: n.criteria || [], ...(n.width ? { width: n.width } : {}), modes: n.modes || [] })),
     })),
   };
