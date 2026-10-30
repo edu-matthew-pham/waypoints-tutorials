@@ -1,0 +1,20 @@
+inquiry:
+  q: Does more vocabulary always improve a description?
+  prompts:
+    - What would you change, and why?
+  notes: Use the invented cards; invite disagreement supported by evidence.
+activities:
+  - at: investigate
+    kind: activity
+    title: Find what makes it convincing
+    minutes: 6
+    do: Underline the terms in each model and tell a partner what each means in that
+      sentence.
+    notes: Ask for the connection, not only the words highlighted.
+  - at: make
+    kind: discussion
+    title: Read as the audience
+    minutes: 5
+    do: Swap documents. Use the subject checklist to identify one clear connection
+      and one place to improve.
+    notes: Read the writing; the page does not mark it.

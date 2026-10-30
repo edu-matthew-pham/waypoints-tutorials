@@ -22,7 +22,7 @@ stuck:
 stretch: "Organise the same data two ways and argue which is better."
 support: "A table with the column headings already written."
 leads: |
-  Next: Using the subject's words (the Sharing unit, coming later).
+  Next: Use the subject's words (the Sharing unit).
 exit:
   q: "How do you decide how to organise notes?"
   a: "Look at what you want to compare, then choose a table or graph that puts like with like."

@@ -8,7 +8,7 @@ History, Geography, Civics and Economics all ask students to question, find and 
 
 **This is a preview.** Nothing here has been tried with a class yet.
 
-- [**Investigate like a humanities expert**](../hass/inquiry-7/): six lessons. *Asking questions* (what makes a question worth investigating, building one from a subject's big ideas, sizing it) and *Finding information* (where to look, what to keep, how to organise it). *Sharing what you found* is listed as coming later.
+- [**Investigate like a humanities expert**](../hass/inquiry-7/): nine lessons. *Asking questions* (what makes a question worth investigating, building one from a subject's big ideas, sizing it) and *Finding information* (where to look, what to keep, how to organise it). *Sharing what you found* adds using subject vocabulary, explaining with evidence and making an argument. Each has models, checks and writing in the student's own document.
 - [**Before Year 7: HASS**](../hass/before-year-7/): two short Year 6 catch-ups, *Questions that guide an inquiry* and *Find it and sort it*, for a class that needs them first.
 
 ## How it fits your unit
@@ -27,7 +27,7 @@ The lessons are tagged to the Year 7 inquiry skills standards of all four subjec
 
 ## What is planned
 
-These are plans, not promises: the *Sharing* lessons (using the subject's words, explaining with evidence, making an argument) and the printable inquiry outlines.
+These are plans, not promises: the printable inquiry outlines.
 
 ## For you
 

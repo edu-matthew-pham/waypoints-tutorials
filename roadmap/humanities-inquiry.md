@@ -141,3 +141,16 @@ Stages per subject (each follows its own skills standards, so differences are vi
 ## Starter prompt for the inquiry chat
 
 > Read CLAUDE.md, ROADMAP.md, `roadmap/shared.md` › Decided (30 Oct 2026) entries, the Project doc humanities-y7-plan (background; where it differs, this roadmap and shared.md win), and `roadmap/humanities-inquiry.md`. Open the four subjects' Year 7 skills nodes in `data/curriculum/` and map where they overlap and where they differ. Propose the shared course and the inquiry skeleton format in `roadmap/humanities-inquiry.md`, commit and push, and wait for me before building.
+
+## Built (30 Oct 2026): Sharing what you found
+
+Matthew requested the Sharing unit after the first six lessons; this supersedes decision 6's earlier hold on Sharing.
+
+- Added lessons 7–9: `use-the-subjects-words`, `explain-with-evidence`, `make-an-argument`, with the planned cross-subject node lists. Kept the planned `shape: primer`: these teach communication through comparison, evidence reasoning and writing, rather than a running simulation. Sharing remains free order and pace-agnostic.
+- Each has invented source cards, a model, checks with feedback and smaller support, writing in the student's own document, optional width, an In each subject table, teacher notes and a class plan. No clips, boards or writing boxes. Planning and writing are separate argument steps so the generated slides fit.
+- Required writing preserves the different floors: audience and two economic terms; three civic terms; three geographical terms plus a concept; historical description with two terms and named evidence; two connected findings for Geography and History explanations; two distinct supported civic points and a historical counter-consideration. Historical source analysis and interpretations (S03/S07) are assumed taught in class, not replaced here. Real History work requires verified sources and a historical knowledge check.
+- The Han label belongs to the invented museum case, not a verified attribution or finding about ancient society. All figures, councils, places and source cards are explicitly invented. No First Nations explanation is authored.
+- Updated the course overview, Humanities teacher guide and the previous lesson's teacher handoff. One single-line misconception added: `repeated-position-is-evidence`.
+- Checks: `npm ci`, `npm run validate`, `WP_NO_MAKECODE=1 npm run build`, `npm run check-nodes`; no new-lesson warnings. Headless Chromium checks wrong/right answers, matching, predictions, Nib's bug, smaller support, reflect ticks, authored links, desktop/390 px layouts, guides, course, teacher overview and all four subjects' curriculum pointer links. All three generated decks are checked with `check-decks`. Existing unrelated validation/font warnings remain.
+- A pre-existing shared hint link to `learning/how-you-learn/cards/#when-youre-stuck` does not resolve in the local build; this batch checks its authored links and leaves that shared route to the tools chat. No shared tools or workflows changed.
+- Not tried with classes; judgement of the student's writing remains with a partner or teacher. No clips rendered or requiring recording. Needs a whole-site or quick publish for the overview and curriculum pointers; pushing main publishes nothing. Skeletons remain a separate task.

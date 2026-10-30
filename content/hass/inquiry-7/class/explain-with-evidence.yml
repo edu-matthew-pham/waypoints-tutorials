@@ -1,0 +1,20 @@
+inquiry:
+  q: Can two true facts still make a weak explanation?
+  prompts:
+    - What would you change, and why?
+  notes: Use the invented cards; invite disagreement supported by evidence.
+activities:
+  - at: investigate
+    kind: activity
+    title: Find what makes it convincing
+    minutes: 6
+    do: Mark the claim, evidence and reasoning in the Kilby example. Remove the
+      reasoning and say what the reader must now guess.
+    notes: Ask for the connection, not only the words highlighted.
+  - at: make
+    kind: discussion
+    title: Read as the audience
+    minutes: 5
+    do: Swap documents. Use the subject checklist to identify one clear connection
+      and one place to improve.
+    notes: Read the writing; the page does not mark it.
