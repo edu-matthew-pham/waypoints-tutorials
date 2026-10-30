@@ -42,25 +42,33 @@ jobs:
           node --input-type=module <<'JS'
           import {readdirSync, readFileSync, writeFileSync, existsSync} from 'node:fs';
           import {join} from 'node:path';
+          // The navbar's CSS and script are copied into every page (and the pointer pages' shared files). Pages built
+          // since 30 Oct 2026 mark them /*wp-nav-css*/ … /*wp-nav-css-end*/ and /*wp-nav-js*/ … /*wp-nav-js-end*/, so
+          // they are swapped too; older pages have no markers and keep their old CSS until a whole-site publish.
+          const {NAV_CSS, NAV_JS} = await import(process.cwd() + '/tools/lesson-view.mjs');
           const nav = /<nav class="sitenav"[^>]*>.*?<\/nav>/s;
-          let count = 0;
+          const css = /\/\*wp-nav-css\*\/.*?\/\*wp-nav-css-end\*\//gs, js = /\/\*wp-nav-js\*\/.*?\/\*wp-nav-js-end\*\//gs;
+          let count = 0, styled = 0;
           function walk(dir, rel = '') {
             for (const entry of readdirSync(dir, {withFileTypes: true})) {
               if (entry.name === '.git') continue;
               const file = join(dir, entry.name), path = join(rel, entry.name);
               if (entry.isDirectory()) { walk(file, path); continue; }
-              if (!entry.name.endsWith('.html')) continue;
+              if (!/\.(html|css|js)$/.test(entry.name)) continue;
               const old = readFileSync(file, 'utf8');
-              if (!nav.test(old)) continue;
-              const built = join('dist', path);
-              if (!existsSync(built)) throw Error('No built counterpart: ' + path);
-              const replacement = readFileSync(built, 'utf8').match(nav)?.[0];
-              if (!replacement) throw Error('No built navigation: ' + path);
-              const updated = old.replace(nav, () => replacement);
-              if (updated !== old) { writeFileSync(file, updated); count++; }
+              let updated = old;
+              if (entry.name.endsWith('.html') && nav.test(old)) {
+                const built = join('dist', path);
+                if (!existsSync(built)) throw Error('No built counterpart: ' + path);
+                const replacement = readFileSync(built, 'utf8').match(nav)?.[0];
+                if (!replacement) throw Error('No built navigation: ' + path);
+                updated = updated.replace(nav, () => replacement);
+              }
+              if (updated.includes('/*wp-nav-')) { updated = updated.replace(css, () => NAV_CSS).replace(js, () => NAV_JS); }
+              if (updated !== old) { writeFileSync(file, updated); count++; if (updated.includes('/*wp-nav-css*/')) styled++; }
             }
           }
-          walk('live'); console.log('Updated navigation on', count, 'pages');
+          walk('live'); console.log('Updated navigation on', count, 'files;', styled, 'with the navbar CSS and script swapped too');
           JS
       - name: Update Create editor only
         if: github.ref_name == 'publish-create' || inputs.component == 'create'

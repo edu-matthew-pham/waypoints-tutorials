@@ -334,7 +334,7 @@ export function siteNav({ root = '', subjects = [], teachers = null, current = n
     `<div class="sn-main" id="sn-main">${subjectsMenu}${teachersMenu}${about}</div>` +
     `<span class="sn-grow"></span><a class="sn-back" href="#" hidden></a><div class="sn-tools">${tools}</div></div></nav>`;
 }
-export const NAV_CSS = `.sitenav{background:var(--card);border-bottom:1px solid var(--line);font-size:14px;position:sticky;top:0;z-index:20}
+export const NAV_CSS = `/*wp-nav-css*/.sitenav{background:var(--card);border-bottom:1px solid var(--line);font-size:14px;position:sticky;top:0;z-index:20}
 html{scroll-padding-top:var(--nav,0px)}
 .sn-in{max-width:1080px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:48px;flex-wrap:wrap}
 .sitenav a{color:var(--ink);text-decoration:none;font-weight:600;padding:6px 10px;border-radius:8px;white-space:nowrap}
@@ -356,8 +356,8 @@ html{scroll-padding-top:var(--nav,0px)}
 @media(max-width:700px){.sn-menu{display:inline-block;margin-left:auto}.sn-main{display:none;order:9;flex-basis:100%;flex-direction:column;align-items:stretch;padding:4px 0 8px}.sitenav.open .sn-main{display:flex;max-height:calc(100vh - 120px);overflow-y:auto}
 .sn-dd{flex-direction:column;align-items:stretch}.sn-caret{display:none}.sn-sub{display:flex;position:static;border:0;box-shadow:none;padding:0 0 0 16px;min-width:0;background:none}.sn-dd .sn-grid{display:flex!important;width:auto;max-width:none}.sitenav .sn-grp .sn-pw{padding:4px 10px 4px 22px}
 .sitenav a[aria-current]{box-shadow:none}.sn-tools{order:8;flex-basis:100%;justify-content:flex-start;padding-bottom:6px;overflow-x:auto}.sitenav .sn-back{order:7;flex-basis:100%;max-width:none;margin:2px 0 6px;text-align:center}}
-@media print{.sitenav{display:none}}`;
-export const NAV_JS = `(function(){var n=document.querySelector('.sitenav');if(!n)return;var K='wp-from',here=n.dataset.here;
+@media print{.sitenav{display:none}}/*wp-nav-css-end*/`;
+export const NAV_JS = `/*wp-nav-js*/(function(){var n=document.querySelector('.sitenav');if(!n)return;var K='wp-from',here=n.dataset.here;
 // Sticky navbar: publish its height as --nav (course bar, step pills and anchors sit below it).
 var nh=function(){document.documentElement.style.setProperty('--nav',n.offsetHeight+'px')};nh();if(window.ResizeObserver)new ResizeObserver(nh).observe(n);else window.addEventListener('resize',nh);
 var mb=n.querySelector('.sn-menu');if(mb)mb.addEventListener('click',function(){var o=n.classList.toggle('open');mb.setAttribute('aria-expanded',String(o))});
@@ -377,7 +377,7 @@ try{var prev=JSON.parse(sessionStorage.getItem(K));if(prev&&prev.href&&prev.href
 save();window.addEventListener('pagehide',save);return}
 var b=n.querySelector('.sn-back'),f=null;try{f=JSON.parse(sessionStorage.getItem(K))}catch(e){}
 if(f&&f.href){b.href=f.href;b.textContent='\\u2190 Back to '+f.title+(f.step?' \\u203a '+f.step:'');b.title=b.textContent;b.hidden=false;return}
-if(here==='playground'||here==='reference'){try{var l=JSON.parse(localStorage.getItem('wp-last-lesson'));if(l&&l.href){b.href=l.href;b.textContent='Continue: '+(l.title||'your lesson');b.hidden=false}}catch(e){}}})();`;
+if(here==='playground'||here==='reference'){try{var l=JSON.parse(localStorage.getItem('wp-last-lesson'));if(l&&l.href){b.href=l.href;b.textContent='Continue: '+(l.title||'your lesson');b.hidden=false}}catch(e){}}})();/*wp-nav-js-end*/`;
 
 export const JS = `var evalRules=${evalRules.toString()};
 ${MATH_JS}
