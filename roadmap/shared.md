@@ -132,6 +132,19 @@ Found on the Economics `scarcity-7/needs-and-wants` deck, which opened "We are l
 - **Fix in `teach.mjs`:** use `T.learning` when present; otherwise take the first of `goals`; never force-fit the summary. Decks only, so no clips re-recorded; needs a whole-site publish (or publish-lessons for the affected lessons' `teach/` pages).
 - **Also check:** the same slide and the teacher guide for other places that reuse `summary:` as a sentence.
 
+## Proposed (30 Oct 2026, Matthew; audit later, nothing built): rules audit of existing humanities lessons
+
+The rules in `AGENTS.md` and the self-check in `roadmap/checklist.md` only reach lessons written after them. Lessons already built (Economics `scarcity-7` and `businesses-7`, History, Civics, Geography `water-7`, `hass/inquiry-7`, `hass/before-year-7`) need one read-only pass first. Report only; no edits until Matthew has seen the counts.
+
+- **Contestable ideas stated as settled truth,** even where ACARA words them that way (for example "wants are unlimited", "markets allocate", one cause for a historical event, how a system of government should work).
+- **Made-up names and brands:** cases labelled as made up; no names that read as real brands, people or places.
+- **First Nations content:** nothing student-facing written by us; teacher notes quote ACARA's elaborations.
+- **Pace labels and write boxes:** none.
+- **Distractors and feedback:** each distractor is a real student error and its feedback names the slip; answer indexes match options.
+- **Wording:** descriptor terms only, no invented aliases.
+- **Deck fields:** `summary:` is a description; `learning:` present in `teacher.yml` once that field is built (see the deck audit note above).
+- **Output:** a table per course (lesson, rule, line or step, suggested fix), counts per rule, and which fixes are mechanical and which need Matthew's call. Reviewer should not be the agent that wrote the lesson (a different chat or model).
+
 ## Decided (30 Oct 2026, Matthew): humanities (Economics, Civics, Geography, History)
 
 - **One course per standard**, one lesson per waypoint, in the node file's order (pattern: `content/economics/scarcity-7/`).
