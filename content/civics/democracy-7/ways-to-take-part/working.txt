@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Next federal election day is still two years away.
+Residents in Wattle Creek want the government to improve flood warning signs along the river.
+Nib says: "Voting at an election is the only way citizens can participate in Australia's democracy."
+Nib says: "So the residents can do nothing at all for the next two years."
+# endregion

@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Citizens in a democracy vote at elections to choose members of Parliament.
+Between elections, people also speak out, form community groups, gather at peaceful rallies, practise their religion and travel.
+Nib says: "Democracy only happens on election day when you put a ballot paper in the box."
+Nib says: "So the five freedoms are just personal hobbies and have nothing to do with how democracy works."
+# endregion

@@ -1,7 +1,7 @@
 # region: order
-Why the business exists (its purpose)
-How ownership and decisions are set up (structure)
-How money, equipment and staff are organised
-What goods or services are produced
-How they reach customers (market, shop, online)
+Why the business exists (purpose)
+How ownership is set up (structure)
+How staff and tools are organised
+What goods or services are made
+How they reach customers
 # endregion

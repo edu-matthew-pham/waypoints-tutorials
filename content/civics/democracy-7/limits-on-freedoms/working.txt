@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Australia is a democracy that values freedom of speech and freedom of assembly.
+A group in Wattle Creek wants to hold a protest by blocking the ambulance entrance to the town hospital.
+Nib says: "In a democracy, freedom of speech and assembly mean you can say or do anything, anywhere, with no legal limits."
+Nib says: "So the law is never allowed to stop someone blocking a hospital driveway or making up false stories to ruin a neighbour's job."
+# endregion

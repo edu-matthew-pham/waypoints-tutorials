@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Inquiry question: "How did the Qin government enforce its laws across the empire?"
+Source B is the Shuihudi bamboo slips (217 BCE), which list official rules and fines for handling grain.
+Nib says: "Accuracy: accurate. Usefulness: useful."
+Nib says: "That is a complete historical assessment because I wrote both words."
+# endregion

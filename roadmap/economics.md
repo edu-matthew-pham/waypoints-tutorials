@@ -46,10 +46,56 @@ Notes:
 - **Scenarios:** all businesses and people (Corner Bakery, Pedal Fix Workshop, Riverbend Pantry, Rosa's Car Yard, Priya & Tom Vets, Valley Growers' Shed, Made-Up Grocers Corp, Burger Barn, GreenBean Cafe) are made up, so nothing dates and no real brand is promoted.
 - **First Nations:** teacher notes in all three lessons quote ACARA's elaborations for AC9HE7K02 (investigating a business owned by First Nations Australians, exploring the types of goods and services offered and why this business was started) and ask the teacher to build on them with local, community-approved material or a business's own published words; no student-facing explanation written by us.
 - **Subject and teacher pages:** `content/economics/index.md` now carries `preview: true`, links `economics/businesses-7` after `scarcity-7`, and shows the remaining Year 7 courses (`Entrepreneurs and business success`, `Work, income and identity`, `Consumer rights and responsibilities`, `Responding to an economic issue`) as "Coming later". `content/economics-teachers.md` updated to match. Three single-line misconceptions added (`profit-only-purpose`, `size-is-structure`, `one-best-structure`).
+- **Step 4 self-check pass (30 Oct 2026):** added `learning:` (one verb-first sentence) to all `teacher.yml` files across `scarcity-7` and `businesses-7` while keeping `summary:` as description only; added explicit "made-up" labels in student body text for all fictional businesses in `businesses-7` (`Corner Bakery`, `Pedal Fix Workshop`, `Riverbend Pantry`, `Rosa's Car Yard`, `Priya & Tom Vets`, `Valley Growers' Shed`, `Made-Up Grocers Corp`, `Burger Barn`, `GreenBean Cafe`); replaced the tax-collection distractor in `why-businesses-exist/lesson.md` with a plausible student error confusing a business with an all-volunteer charity giving away free parcels.
+
+## Plan (awaiting Matthew's "go" before building): course `economics/entrepreneurs-7`, *Entrepreneurs and business success* (AC9HE7K03)
+
+Per `roadmap/checklist.md` › "Plan first, then build", here is the per-waypoint plan for `economics/entrepreneurs-7` (*Entrepreneurs and business success*, tagline *Spotting opportunities, making decisions and building a business*):
+
+- **Standard & descriptor wording:** `AC9HE7K03` (*Entrepreneurial characteristics*) — "characteristics of entrepreneurs and how these influence the success of a business" (`prior: [AC9HE7K02]`).
+- **First Nations element:** `AC9HE7K03`'s second elaboration names First Nations Australian entrepreneurs and community-run enterprises (such as the Gumatj Aboriginal Corporation, Dean Foley, and Tahnee Edwards). Following `roadmap/shared.md` › First Nations content: we write **no** student-facing explanation of First Nations history, culture or enterprises ourselves; teacher notes in all three lessons quote ACARA's elaboration verbatim and ask teachers to use local, community-approved material or the entrepreneurs'/corporations' own published words.
+
+1. **Waypoint 1 (`AC9HE7K03 n1`): *Entrepreneurial knowledge and skills* (`knowledge-and-skills`)**
+   - **Node checkpoint:** "Students can identify the knowledge and skills entrepreneurs use, including opportunity recognition, decision-making and establishing a shared vision."
+   - **One insight:** An **entrepreneur** does more than just work in a job or own a building — they **recognise an unmet opportunity**, **establish a shared vision** so staff and partners pull in the same direction, and **make operational decisions** under uncertainty to turn that idea into a working business.
+   - **Planted misconception (`manager-or-inventor-equals-entrepreneur`):** confusing routine day-to-day shift management (or inventing a gadget in a shed without ever offering a good or service to customers) with entrepreneurial knowledge and skills (opportunity recognition, shared vision, and operational decision-making). Includes `smaller:` lead-in on whether following an existing checklist with no changes is the same as spotting a new market opportunity.
+   - **Made-up case and where it is labelled:** Three **made-up local entrepreneurs** (`"In our made-up town of Riverbend: Maya starts 'SunCrate'..."`, explicitly labelled made up in the intro and question prompts) showing opportunity recognition (spotting that farm boxes spoil in summer heat), shared vision (getting local growers and drivers behind a 24-hour cool-chain promise), and operational decision-making (choosing routes, pricing and reusable crates).
+   - **Distractor ideas (real student errors):**
+     - Confusing **opportunity recognition** (spotting an unmet customer need or gap in the market) with simply copying the nearest shop's exact product at a higher cost.
+     - Thinking **establishing a shared vision** just means designing a colourful logo, rather than aligning workers, suppliers and partners around what the business is trying to achieve.
+     - Assuming only giant tech-company founders are entrepreneurs, rather than local sole proprietors, cooperative founders or social-enterprise builders who spot opportunities and organise resources.
+   - **Shape and why:** Default `scarcity-7` / `businesses-7` worked-example shape (`predict`, `match` skill → concrete business action, `investigate` with `bug` + `smaller:`, `sort`, `practise`, `make` in student book with `reflect`, plus `typical` comparing a local founder with a corporate entrepreneur and `wider` on digital opportunity recognition). Fits because `n1` builds a clear three-part skill repertoire with a planted misconception.
+
+2. **Waypoint 2 (`AC9HE7K03 n2`, hinge): *Values and entrepreneurial decision-making* (`values-and-decisions`)**
+   - **Node checkpoint:** "Students can analyse how values — including identifying opportunities, stakeholder negotiation, and compliance — influence entrepreneurial decision-making."
+   - **One insight:** Skills tell an entrepreneur *how* to run a business, but **values** (what the entrepreneur and community care about — fairness, sustainability, safety, honesty) shape *which* opportunities they pursue, *how* they negotiate with **stakeholders** (workers, suppliers, customers, locals), and *how* they comply with laws and regulations.
+   - **Planted misconception (`values-never-affect-business-decisions`):** assuming business decisions are 100% automatic maths about the lowest cost today, so values, stakeholder trust and legal compliance play no role in whether a business succeeds or fails over time. Includes `smaller:` lead-in on what happens to a food business next month if it cuts corners on food-safety laws to save $200 today.
+   - **Made-up case and where it is labelled:** A **made-up repair-and-refurbish enterprise** (`"In a made-up case, Leo runs 'ReSpark Tech' in Riverbend..."`, explicitly labelled made up in the body text, worked example and Nib prompt), tracing three decisions: (1) opportunity choice (refurbishing laptops for students rather than selling disposable gadgets), (2) stakeholder negotiation (agreeing fair payment terms with local parts suppliers), and (3) compliance (paying for certified electrical safety testing and privacy data-wiping).
+   - **Distractor ideas (real student errors):**
+     - Confusing a **stakeholder** (anyone affected by the business's decisions: workers, customers, suppliers, local residents) with a **shareholder** (someone who owns shares in a corporation).
+     - Thinking **compliance with laws and regulations** is optional advice rather than a binding legal baseline that also protects customer trust.
+     - Assuming that choosing an ethical or sustainable option always causes a business to fail, ignoring how reputation and repeat customers work.
+   - **Shape and why:** Default worked-example shape (`predict`, `sort` opportunity choice / stakeholder negotiation / legal compliance, `investigate` with `bug` + `smaller:`, `modify`, `practise`, `make` in student book). Fits because `n2` is the course hinge connecting values to concrete business decisions and outcomes.
+
+3. **Waypoint 3 (`AC9HE7K03 n3`, integration): *Characteristics and business success* (`characteristics-and-success`)**
+   - **Node checkpoint:** "Students can combine entrepreneurial knowledge, skills and attitudes with observations of businesses to explain the factors that contribute to success, including opportunity recognition, initiative and innovation."
+   - **One insight:** Business success rarely comes from luck alone — it comes from combining **opportunity recognition** (seeing the gap), **initiative** (taking the first step to act before being told), **innovation** (improving a product, service or process), and **values-driven decisions** that keep stakeholders on side.
+   - **Planted misconception (`one-lucky-idea-guarantees-success`):** thinking a single clever idea or invention guarantees business success automatically, without initiative, operational follow-through, innovation when conditions change, or stakeholder trust. Includes `smaller:` lead-in comparing two made-up bakeries that had the same sourdough idea, where only one adapted its hours and delivery when commuter habits changed.
+   - **Made-up case and where it is labelled:** Two **made-up businesses** compared side by side (`"Compare two made-up Riverbend businesses: 'Pedal Cargo' and 'QuickDrop Couriers'..."`, explicitly labelled made up), showing how opportunity recognition + initiative + process innovation + reliable compliance led to success in one and stagnation in the other.
+   - **Distractor ideas (real student errors):**
+     - Confusing **innovation** (creating a new or improved way of doing something that adds value) with **initiative** (taking independent action to start or solve a problem).
+     - Explaining business success by saying "it succeeded because it made a lot of money" (circular reasoning: describing the result instead of the entrepreneurial characteristics that caused it).
+     - Measuring success only by short-term cash profit even when the business's stated goal is a community service or long-term durability.
+   - **Shape and why:** Default worked-example shape with a `parsons` chain (`spot unmet need → take initiative to launch → innovate operations → negotiate fairly & comply with rules → sustainable business success`), `bug` + `smaller:`, `reasoning` check on paper, and `make` step in the student's own book. Fits because `n3` integrates `n1` and `n2` into a complete causal explanation.
+
+## Decided: interactive boards (30 Oct 2026, Matthew)
+
+- **Concept and case lessons (`scarcity-7`, `businesses-7`, `entrepreneurs-7`, `work-7`, and `consumers-7` lessons 1–3):** keep the no-board layout (`sort`, `match`, `parsons`, `question`, `reasoning` and `bug` checks). Scenarios and case cards need reading room.
+- **Budgeting (`consumers-7` lesson 4, AC9HE7K05 n4):** use `widget: sheet` so students edit a live budget table with `SUM` formulas and see surplus/deficit update.
+- **Economic data skills (AC9HE7S03):** use `widget: graph` and `widget: sheet` for reading and plotting tables, bar charts and line graphs.
 
 ## Needs deciding
 
-3. A board or not: the existing `sort`, `match`, `parsons`, `question`, `reasoning` and `bug` checks cover `scarcity-7` and `businesses-7`.
 4. Subject curriculum map (`map: true`) once more of Year 7 is built.
 
 ## Next

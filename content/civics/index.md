@@ -11,11 +11,11 @@ pathways:
     title: How Australia is governed
     summary: "The Constitution, who does what in government, and how power is shared and checked."
     fit: "Start here for Year 7 Civics and Citizenship: the Constitution, representative and responsible government, the separation of powers, federation, and where the system came from."
-    about: "This follows the ACARA Year 7 Civics and Citizenship knowledge standard on Australia's system of government (AC9HC7K01), one lesson for each of its five waypoints, in order. Every student takes the same steps in the same order; typical and wider steps add more examples of the same idea and are never needed to finish. The first two lessons are the ones to give time to, because the later ideas rest on them. Real institutions and settled constitutional facts are used as they are; people, proposals and results are made up. The other Year 7 Civics courses are planned and shown as Coming later."
+    about: "This follows the ACARA Year 7 Civics and Citizenship knowledge standards on Australia's system of government (AC9HC7K01) and the characteristics of Australia's democracy (AC9HC7K02), one course for each standard and one lesson for each waypoint, in order. Every student takes the same steps in the same order; typical and wider steps add more examples of the same idea and are never needed to finish. Hinge lessons carry an easier check before moving on, because the later ideas rest on them. Real institutions and settled constitutional and legal facts are used as they are; people, proposals and results are made up. The other Year 7 Civics courses are planned and shown as Coming later."
     courses:
       - { path: civics/government-7, id: government-7, stage: foundations, tagline: "Who makes the rules for the rule-makers?" }
-      - { title: "Freedoms and taking part", summary: "The five democratic freedoms and their limits, ways to take part, and citizenship (AC9HC7K02).", stage: foundations }
-      - { title: "Law and justice", summary: "Where our laws come from, the rule of law, and the courts (AC9HC7K03).", stage: foundations }
-      - { title: "A diverse democracy", summary: "What secular, pluralist and multi-faith mean, and what the data shows (AC9HC7K04).", stage: foundations }
-      - { title: "Values and living together", summary: "Shared values and social cohesion (AC9HC7K05).", stage: foundations }
+      - { path: civics/democracy-7, id: democracy-7, after: [government-7], stage: foundations, tagline: "What are our democratic freedoms, and how do citizens take part?" }
+      - { title: "Law and justice", after: [government-7], summary: "Where our laws come from, the rule of law, and the courts (AC9HC7K03).", tagline: "Where do laws come from, and how do courts work?", stage: foundations }
+      - { title: "A diverse democracy", after: [democracy-7], summary: "What secular, pluralist and multi-faith mean, and what the data shows (AC9HC7K04).", tagline: "How does a secular, multi-faith democracy live together?", stage: foundations }
+      - { title: "Values and living together", after: [democracy-7], summary: "Shared values and social cohesion (AC9HC7K05).", tagline: "What shared values hold a diverse society together?", stage: foundations }
 ---

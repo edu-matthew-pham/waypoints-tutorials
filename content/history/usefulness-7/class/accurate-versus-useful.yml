@@ -1,0 +1,33 @@
+inquiry:
+  q: "A historian finds a stone inscription where an ancient king claims the gods personally handed him the crown and that not a single person in the kingdom ever complained. It is clearly biased. Should the historian throw it in the bin, or is there a question it is brilliant evidence for?"
+  prompts:
+    - "If your question is 'How did the king justify his power?', why is this stone so useful?"
+    - "What is the difference between trusting every word a source says and using the source as evidence?"
+  notes: "Break the habit of 'biased = useless'. A source's bias is often what makes it useful evidence of perspective, ideology or power."
+activities:
+  - at: run
+    kind: activity
+    title: "Flip the question"
+    minutes: 4
+    do: |
+      Put Source C (the First Emperor's mountain inscription) on the board. Give half the room Question A ('Were ordinary people happy under Qin rule?') and the other half Question B ('What message did the Qin court want carved across the empire?'). Ask each side to rate Source C's usefulness out of 5 and explain why the numbers differ.
+    notes: "The source didn't change; the question did. Usefulness always belongs to a question."
+  - at: make
+    kind: discussion
+    title: "Whose voice is missing, and what does that show?"
+    minutes: 4
+    do: |
+      Ask pairs to share one source where ordinary workers or women are barely named, and explain what that silence still tells us about who held power in that society.
+    notes: "Connects to ACARA's elaboration on limited evidence providing useful insights into power structures."
+questions:
+  - at: investigate
+    title: "Accurate vs useful"
+    type: question
+    q: "Why can a biased royal inscription still be useful evidence for a historian?"
+    options:
+      - "It shows how the ruler wanted to be seen and how power was justified, even if its boasts are not factually accurate"
+      - "Because historians must believe everything carved in stone"
+      - "Because bias only happens in modern newspapers, never in ancient sources"
+      - "It is only useful for weighing how heavy the stone is"
+    answer: 0
+    explain: "A biased source is poor evidence if taken at face value, but strong evidence of the maker's purpose, beliefs and propaganda."

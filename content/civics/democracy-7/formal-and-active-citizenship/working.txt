@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Formal citizenship is a person's legal status as a member of a nation, with legal rights and responsibilities.
+Active citizenship is how people take part in their community and democracy to make a positive difference.
+Nib says: "Formal citizenship and active citizenship mean the exact same thing: holding an Australian passport."
+Nib says: "And ever since 1901, every adult in Australia has always had the exact same right to vote in federal elections."
+# endregion

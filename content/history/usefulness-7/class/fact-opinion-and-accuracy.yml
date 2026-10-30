@@ -1,0 +1,33 @@
+inquiry:
+  q: "A stone monument ordered by an ancient king says: 'I built forty granaries across the capital, and every citizen loved my wise rule.' Which part of that sentence can archaeologists test with a spade, and which part is an opinion?"
+  prompts:
+    - "What physical evidence would be left behind if forty granaries were really built?"
+    - "Why can a single sentence in a primary source contain both a checkable fact and a biased opinion?"
+  notes: "Anchor the distinction early: 'primary' tells us when it was made; 'fact vs opinion' and the four accuracy questions tell us how far we can trust each claim."
+activities:
+  - at: run
+    kind: activity
+    title: "Fact or opinion?"
+    minutes: 4
+    do: |
+      Read out four short statements about your class's depth study (two checkable facts, two value judgements using words like 'greatest', 'unfair' or 'brave'). Students hold up one finger for a factual claim, two for an opinion, and say what evidence would test the factual claims.
+    notes: "Watch for students who call any ancient statement a fact just because it is about history."
+  - at: investigate
+    kind: discussion
+    title: "What other source would test it?"
+    minutes: 4
+    do: |
+      Ask pairs to name one claim in Source C that excavated objects can check, and one claim that excavated objects cannot prove.
+    notes: "Connect directly to the fourth accuracy question: 'What other sources may be needed to support or challenge this source?'"
+questions:
+  - at: investigate
+    title: "Testing accuracy"
+    type: question
+    q: "Which of these is a factual claim rather than an opinion?"
+    options:
+      - "Some Roman gladiators wore bronze helmets"
+      - "All Roman gladiators were brave heroes"
+      - "Roman gladiator games were the most exciting spectacle in the ancient world"
+      - "Only cruel people watched gladiator fights"
+    answer: 0
+    explain: "Whether some gladiators wore bronze helmets can be checked against surviving helmets and carvings; 'brave', 'most exciting' and 'cruel' are opinions and judgements."

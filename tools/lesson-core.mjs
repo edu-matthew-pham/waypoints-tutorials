@@ -831,7 +831,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
 }
 
 /** The fields of teacher.yml. Text fields are Markdown; see AUTHORING.md › Teacher notes. */
-export const TEACHER_TEXT = ['summary', 'before', 'struggle', 'stretch', 'support', 'leads', 'explain', 'timing'];
+export const TEACHER_TEXT = ['summary', 'learning', 'before', 'struggle', 'stretch', 'support', 'leads', 'explain', 'timing'];
 
 /** teacher.yml sources: [{ title, url, checked: 2026-10-12 }] -> [{ title, url, checked: '12 October 2026' or '' }]. */
 export function sourceList(T) {

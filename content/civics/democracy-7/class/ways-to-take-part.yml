@@ -1,0 +1,33 @@
+inquiry:
+  q: "You are 13 years old, so you cannot vote in a federal election yet. Does that mean you have zero say in Australia's democracy for the next five years, or what tools can you already use?"
+  prompts:
+    - "Which ways of participating require you to be 18, and which ones are open to any resident right now?"
+    - "Why is a different tool needed to clean up a local creek than to change a national law?"
+  notes: "Show that voting is crucial, but it is one tool in a much wider toolkit of formal and informal participation."
+activities:
+  - at: run
+    kind: activity
+    title: "Pick the tool for the job"
+    minutes: 4
+    do: |
+      Read out three goals: (1) getting 20 trees planted along the school fence this term, (2) getting a minister's formal reply on a national transport issue, (3) giving detailed feedback on a draft bill in the Senate. Pairs pick the best participation method for each and explain why.
+    notes: "Contrast direct community action (1), a parliamentary petition (2), and a committee submission (3)."
+  - at: make
+    kind: discussion
+    title: "Why combine methods?"
+    minutes: 4
+    do: |
+      Ask two pairs to share the problem they chose in their book and which second method they would add if their first method wasn't enough on its own.
+    notes: "Highlight how public awareness (campaigns/rallies) and formal channels (petitions/submissions) reinforce each other."
+questions:
+  - at: investigate
+    title: "Matching method to goal"
+    type: question
+    q: "Which participation method puts detailed written evidence directly in front of MPs and senators who are examining a proposed law?"
+    options:
+      - "Contributing a submission to a parliamentary committee of inquiry"
+      - "Waiting three years and hoping someone else mentions it"
+      - "Only telling a friend at lunchtime"
+      - "Applying for a passport"
+    answer: 0
+    explain: "Parliamentary committees of inquiry invite public submissions to gather evidence and improve proposed laws."

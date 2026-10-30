@@ -1,0 +1,45 @@
+summary: "Students learn that democratic freedoms in Australia are not absolute: they operate within the 'bounds of law', and legal limits (such as defamation, public safety and anti-violence laws) exist to protect others' rights, safety and reputation."
+learning: "explain how democratic freedoms operate within the bounds of law and why legal limits exist"
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can explain what it means for democratic freedoms to operate 'within the bounds of law'.
+  - I can give at least one example of a legal limit on a democratic freedom (such as defamation law on speech or safety rules on assembly).
+  - I can explain why legal limits exist in a democracy (to protect other people's rights, safety and reputation).
+struggle: "Students often swing between two extremes: either 'freedom means I can do anything with no rules' or 'if there is a law limiting speech, we don't have free speech'. Keep showing the balance: a boundary stops harm to others (defamation, violence, blocking ambulances) while keeping peaceful political debate open."
+before: |
+  This lesson builds directly on Lesson 1 (the five democratic freedoms). It also connects back to Course 1 Lesson 3 (independent courts check whether laws stay within constitutional bounds).
+
+  All examples in the student steps (Wattle Creek parking letters, Alex's false post, the hospital driveway) are made up so nothing leans or dates.
+running:
+  - "Predict: use the 'Fire!' or neighbour-defamation hook to show why no society can have zero boundaries on speech."
+  - "Try: ask pairs to name who is being protected in each of the five matched limits."
+  - "Worked example: contrast Jordan (criticising council parking fees — protected) with Alex (inventing a theft claim against a named shopkeeper — defamation)."
+  - "Vary: check that students see why urging a crowd to smash windows crosses the line from peaceful assembly into unlawful violence."
+  - "Make: students write one freedom, one limit, and the reason for the limit in their book."
+stuck:
+  - see: "A student thinks defamation law stops people from criticising the Prime Minister or a council policy."
+    ask: "Is saying 'this tax is too high' a false factual claim about a private person, or an opinion about a policy?"
+    fix: "Criticising policies and public decisions is protected democratic speech. Defamation is about publishing false claims that harm a person's reputation."
+  - see: "A student says any rule on a march destroys freedom of assembly."
+    ask: "What happens if a march blocks fire trucks or ambulances from reaching a hospital?"
+    fix: "Rules that keep emergency lanes open and ban violence protect everyone's safety while letting the peaceful march go ahead."
+  - see: "A student asks who decides if a government law goes too far."
+    ask: "Think back to Course 1: which branch interprets the Constitution and checks laws?"
+    fix: "Independent courts — and the High Court on constitutional matters."
+stretch: "Why is it important in a democracy that limits on freedoms are written in public laws passed by Parliament and interpreted by independent courts, rather than decided case-by-case by whichever politicians are in government?"
+support: "Three-part card: '1. The freedom: [e.g. Speech]. 2. What it protects: [debating ideas, questioning government]. 3. Where the law sets a boundary: [e.g. defamation / inciting violence] so that [others' reputation / safety is protected].'"
+leads: |
+  Next in Freedoms and taking part: Ways to take part (AC9HC7K02 n3), where students compare the different formal and informal ways citizens use these freedoms to participate in Australia's democracy.
+
+  Wider note for teachers: AC9HC7K02's node file notes that classes may also examine historical cases where freedoms were restricted by law. If your class explores historical restrictions on First Nations Australians' movement and association, use local, community-approved or First Nations-led resources (such as AIATSIS) alongside Lesson 4 on citizenship.
+exit:
+  q: "Give one example of a legal limit on a democratic freedom in Australia, and explain why that limit exists."
+  a: "For example, defamation law limits freedom of speech by stopping people from publishing false statements that ruin someone else's reputation; or public safety laws require assemblies to be peaceful so other people are kept safe."
+explain: |
+  Democratic freedoms in Australia operate **within the bounds of law**.
+
+  Laws set boundaries — such as **defamation** law (protecting people's reputation from false claims) and **public safety** rules (requiring assemblies to stay peaceful) — so that one person's freedom does not harm the rights or safety of others.
+sources:
+  - { title: "Rights and freedoms (Parliamentary Education Office)", url: "https://peo.gov.au/understand-our-parliament/how-parliament-works/system-of-government/rights-in-australia", checked: 2026-10-30 }
+  - { title: "Permissible limitations on rights (Australian Human Rights Commission)", url: "https://humanrights.gov.au/our-work/rights-and-freedoms/permissible-limitations-rights", checked: 2026-10-30 }

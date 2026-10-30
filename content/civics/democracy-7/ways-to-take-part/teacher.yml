@@ -1,0 +1,48 @@
+summary: "Students identify and compare formal and informal ways citizens participate in Australia's democracy — including voting, standing for parliament, petitions, committee inquiries, volunteering, community organisations, social enterprise, campaigns and peaceful protest — and evaluate which methods fit different civic goals."
+learning: "compare formal and informal ways citizens participate in Australia's democracy and match them to civic goals"
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can describe at least three different ways citizens can participate in Australia's democracy.
+  - I can distinguish between parliamentary/electoral channels and community/public action.
+  - I can explain why one method of participation is more effective than another for a specific goal.
+struggle: "Students often think voting is the only 'real' way to participate, or else think a single viral social media post will change a law by itself. Push them to match the tool to the job: 'Who has the power to fix this problem, and which method reaches them with the right evidence or action?'"
+before: |
+  This lesson builds on the five democratic freedoms (Lesson 1) and their legal bounds (Lesson 2). It shows how citizens put those freedoms to work in practice.
+
+  The facts about House of Representatives petitions in the Typical step (checked by the Petitions Committee, presented to the House, 90-day ministerial response rule under Standing Order 209) come from the Parliamentary Education Office and APH.
+running:
+  - "Predict: ask why waiting years for a federal election wouldn't make sense for getting bike racks outside the town library."
+  - "Try: pause on 'committee of inquiry' — many Year 7s have heard of protests and voting, but don't realise ordinary citizens and school classes can send submissions to parliamentary committees."
+  - "Worked example: use Nib's slip to highlight that democracy is an ongoing practice, not a once-every-three-years event."
+  - "Practise: emphasise that students under 18 can already use almost all of these methods except voting and standing for parliament."
+  - "Make: students write three participation methods and justify one for a chosen goal in their book."
+stuck:
+  - see: "A student says a petition automatically becomes a law if enough people sign it."
+    ask: "Who has the constitutional power to make laws in Australia?"
+    fix: "Parliament makes laws by voting on bills. A petition formally puts an issue before Parliament and gets a response from a minister, which can persuade MPs to act."
+  - see: "A student thinks volunteering at a food pantry or bushcare group isn't civic participation because it doesn't involve politicians."
+    ask: "Does a democracy only depend on politicians, or also on citizens looking after their community together?"
+    fix: "Volunteering, community organisations and social enterprise are active civic participation — citizens solving shared problems directly."
+  - see: "A student picks 'protest' as the best answer for every single problem."
+    ask: "If senators are asking for detailed ideas on how to word Clause 4 of a bill, is a street chant or a written committee submission clearer?"
+    fix: "Protests build visibility; submissions provide detailed evidence. Match the method to the goal."
+stretch: "Why do successful civic campaigns almost always combine several methods (for example, local volunteering + a media campaign + a parliamentary petition + a committee submission) rather than relying on only one?"
+support: "Three-question chooser: '1. Can we fix this ourselves locally (volunteering / community group)? 2. Do we need to wake up the public (campaign / peaceful rally)? 3. Do we need council or Parliament to change a rule or budget (petition / contacting MP / committee submission / voting)?'"
+leads: |
+  Next in Freedoms and taking part: Formal and active citizenship (AC9HC7K02 n4), which brings together formal legal citizenship, active citizenship, and who has been included and excluded from citizenship rights in Australia.
+
+  ACARA elaborations for AC9HC7K02: "identifying how citizens can participate in a democracy (for example, engaging in community organisations, volunteering, social enterprise and collaborative problem-solving)" and "comparing the effectiveness of different ways of participating in Australia's democracy, including voting, standing for parliament, contributing to committees of inquiry, organising petitions or social media campaigns, and protesting".
+exit:
+  q: "Name three ways citizens can participate in Australia's democracy, and explain which one you would choose if Parliament was reviewing a new bill that affected young people."
+  a: "Examples: voting, petitions, contributing to a parliamentary committee of inquiry, volunteering, peaceful protest, social media campaigns. If Parliament is reviewing a bill, contributing a submission to the committee of inquiry (alongside contacting your MP or petitioning) is effective because it puts evidence directly in front of the lawmakers examining the bill."
+explain: |
+  Citizens can take part in Australia's democracy in many ways:
+
+  - **Formal electoral and parliamentary ways:** voting, standing for parliament, organising petitions, contacting MPs, and contributing to **committees of inquiry**.
+  - **Community and public ways:** volunteering, joining community organisations, social enterprise, campaigns, and peaceful protest.
+
+  Different methods fit different goals.
+sources:
+  - { title: "Getting involved in Parliament (Parliamentary Education Office)", url: "https://peo.gov.au/understand-our-parliament/your-say/getting-involved-in-parliament", checked: 2026-10-30 }
+  - { title: "Petitions (Parliament of Australia)", url: "https://www.aph.gov.au/Parliamentary_Business/Petitions", checked: 2026-10-30 }

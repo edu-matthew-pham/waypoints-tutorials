@@ -1,0 +1,42 @@
+summary: "Students distinguish factual claims from opinions and apply the four accuracy questions ('Where does it come from?', 'What information is provided?', 'Is it factual or an opinion?', 'What other sources might support or challenge it?') to assess a source's reliability. This is the first of two hinges in AC9HH7S04: without a clear grasp of accuracy, students conflate accuracy and usefulness in lesson 2."
+learning: "distinguish factual claims from opinions and apply the four accuracy questions to test a source's reliability"
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can tell the difference between a factual claim and an opinion in a historical source.
+  - I can ask the four accuracy questions to judge how reliable a source is.
+  - I can explain how bias, purpose or limited information affects a source's accuracy.
+struggle: "Students often assume that if a source is primary (from the time), everything in it is a fact — or the opposite, that if it contains one opinion or boast, the whole source is 'fake'. Show them that a single inscription can contain both a checkable fact (weights and measures) and an opinion ('greatest ruler')."
+before: |
+  This is a hinge lesson for AC9HH7S04. Lesson 2 asks students to separate accuracy from usefulness (a biased source can still be useful evidence for the right question). If students cannot first tell a factual claim from an opinion or say what makes a source more or less accurate, accuracy and usefulness blur into a vague 'good source / bad source' label.
+
+  The examples continue the Qin and Han China spine from Source origin and purpose (Sources A to D, plus Sima Qian), alongside the gladiator fact/opinion contrast from ACARA's elaboration for AC9HH7S04.
+running:
+  - "Predict: ask which half of the inscription's claim could be tested by digging up objects."
+  - "Try: pause on 'The Shuihudi bamboo slips list punishments' versus 'Qin laws were too harsh'. One describes what is written on the slips; the other judges it."
+  - "Worked example: use the smaller check if any student thinks 'written in 219 BCE' makes a boast into a fact."
+  - "Vary: highlight why historians compare Sima Qian (Han court) with excavated Qin tomb slips."
+  - "Make: students write in their own book and check with a partner."
+stuck:
+  - see: "A student says 'The First Emperor set one system of weights' is an opinion because the inscription praises him."
+    ask: "Could an archaeologist test whether Qin weights across the empire matched?"
+    fix: "Yes — excavated bronze weights can be measured and compared. That makes it a factual claim, even though it sits next to praise."
+  - see: "A student says a primary source is always accurate because the writer was there."
+    ask: "If someone today writes an advertisement for their own shop, they are 'there' — does that make every word neutral and complete?"
+    fix: "Being from the time makes it primary. Whether it is accurate depends on who wrote it, why, and whether other evidence backs it up."
+  - see: "A student isn't sure what 'support or challenge' means."
+    ask: "What other object or record from the time would agree with this claim, or show the opposite?"
+    fix: "Compare two different kinds of evidence — for example, a court history compared with excavated working laws or objects."
+stretch: "Why is it stronger evidence when two sources with very different purposes (such as a Han historian who disliked the Qin and a Qin official's own tomb slips) agree on a fact than when two Qin monuments say the same thing?"
+support: "Four-question bookmark on the desk: '1. Where does it come from? 2. What does it say? 3. Fact (can be checked) or opinion (a judgement)? 4. What other source could back it up or test it?'"
+leads: |
+  Next in Source usefulness: Accurate versus useful (AC9HH7S04 n2, hinge), where students see why a biased or inaccurate source is still useful evidence for the right inquiry question.
+
+  ACARA elaborations for AC9HH7S04 quoted in this course: "examining the accuracy of sources by asking questions such as 'Where does it come from?', 'What information is provided?', 'Is the information factual or an opinion?' and 'What other sources may be needed to support/challenge this source?'" and "distinguishing between a fact (for example, 'Some gladiators wore helmets') and an opinion (for example, 'All gladiators were brave')".
+exit:
+  q: "Give one example of a fact and one example of an opinion about the ancient past, and name two questions you can ask to test a source's accuracy."
+  a: "Fact: 'Some gladiators wore helmets' (or 'Qin laws were written on bamboo slips'). Opinion: 'All gladiators were brave' (or 'The First Emperor was the greatest ruler'). Accuracy questions: Where does it come from? What information is provided? Is it factual or an opinion? What other sources support or challenge it?"
+explain: |
+  A **factual claim** can be checked against evidence. An **opinion** is a judgement or view.
+
+  To test a source's **accuracy**, ask: Where does it come from? What information is provided? Is it factual or an opinion? What other sources might support or challenge it?

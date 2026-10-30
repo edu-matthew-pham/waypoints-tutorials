@@ -1,0 +1,33 @@
+inquiry:
+  q: "Can a person who is excluded from formal voting rights — or a 13-year-old who isn't old enough to vote yet — still be an active citizen? How?"
+  prompts:
+    - "What is the difference between the legal badge of citizenship (formal) and the actions of a citizen (active)?"
+    - "How did people who were excluded from the federal voting roll before 1962 use active citizenship to change the law?"
+  notes: "Keep the two definitions clear, and ensure students distinguish the 1962 federal voting reform from the 1967 constitutional referendum."
+activities:
+  - at: run
+    kind: activity
+    title: "Formal, active, or both?"
+    minutes: 4
+    do: |
+      Call out six items (renewing an Australian passport, serving on a jury, volunteering at a local animal shelter, standing for the House of Representatives, organising a petition for a skate park, voting carefully on election day). Students say whether each is Formal citizenship, Active citizenship, or Both.
+    notes: "Voting thoughtfully and standing for parliament bridge both: they use a formal legal right in an active way."
+  - at: make
+    kind: discussion
+    title: "Checking the three criteria"
+    minutes: 5
+    do: |
+      Students swap books and check that their partner's explanation includes (1) formal citizenship, (2) active citizenship, and (3) how access to citizenship rights changed over time in Australia.
+    notes: "Follow the teacher notes if introducing First Nations active citizenship case studies using AIATSIS or local community-approved material."
+questions:
+  - at: investigate
+    title: "Formal vs active citizenship"
+    type: question
+    q: "Which statement accurately describes formal citizenship and active citizenship in Australia?"
+    options:
+      - "Formal citizenship is legal membership of the nation with legal rights and duties; active citizenship is engaged participation in the community and democracy"
+      - "Formal citizenship means volunteering; active citizenship means owning a passport"
+      - "Only politicians have formal citizenship"
+      - "Every person in Australia has had identical formal voting rights since 1 January 1901"
+    answer: 0
+    explain: "Formal citizenship is legal status and its rights/obligations; active citizenship is participating to contribute to civic and community life."

@@ -1,0 +1,49 @@
+summary: "Students learn the five key democratic freedoms in Australia — freedom of speech, association, assembly, religion and movement — and explain how they enable citizens to participate in democracy. This is the hinge lesson for AC9HC7K02: without a clear grasp of what each freedom is and why it matters, legal limits (lesson 2) and active participation (lessons 3–4) have no foundation."
+learning: "identify the five democratic freedoms and explain how each supports active participation in Australia's democracy"
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - "I can name the five democratic freedoms: speech, association, assembly, religion and movement."
+  - "I can explain how each freedom helps people take part in Australia's democracy."
+  - "I can give a concrete example of citizens using these freedoms to participate."
+struggle: "Students often mix up freedom of association (joining or forming a group) and freedom of assembly (gathering together in a place), or treat the five freedoms as a list to memorise rather than tools for democratic participation. Connect every freedom back to: 'How does this help citizens have a say?'"
+before: |
+  This is the hinge lesson for AC9HC7K02. Lesson 2 examines how and why the law sets limits on these five freedoms, and Lessons 3 and 4 examine civic participation and citizenship. If students treat freedoms as just 'doing whatever I want' instead of principles that enable democratic participation, Lesson 2's legal bounds will look arbitrary.
+
+  All scenarios (the Wattle Creek Safe Crossing Group, Priya's blog, Valley Bushcare) are made up so nothing dates or leans politically. Constitutional facts in the Typical/Wider steps (s 116 on religion, the implied freedom of political communication, s 92 on interstate intercourse/movement) are settled law.
+running:
+  - "Predict: ask whether a vote counts for much if nobody is allowed to criticise the government before election day."
+  - "Try: pause to contrast association (membership in a group) with assembly (gathering in a park or hall)."
+  - "Worked example: trace how one local campaign uses four different freedoms one after another."
+  - "Vary: check that students can spot freedom of religion protecting both religious practice and having no religion."
+  - "Make: students write the five freedoms and one participation example in their own book and check with a partner."
+stuck:
+  - see: "A student confuses freedom of association with freedom of assembly."
+    ask: "Are you joining an organisation as a member, or physically gathering in a square or hall today?"
+    fix: "Association = joining a group (like a club, union or party). Assembly = assembling together in one place (like a peaceful rally)."
+  - see: "A student thinks freedom of religion only protects the majority religion."
+    ask: "Is it a freedom if everyone has to follow the same belief?"
+    fix: "Freedom of religion protects people of any faith — and people of no faith — equally."
+  - see: "A student asks whether freedom of speech means you can tell lies about someone or threaten them."
+    ask: "What happens if one person's action harms another person's rights or safety?"
+    fix: "Tell them that is the exact question of Lesson 2: freedoms operate within the bounds of law."
+stretch: "Pick one of the five freedoms and imagine it disappeared tomorrow. Which part of Australia's system of government from Course 1 (elections, Question Time, petitions, the Opposition) would break first, and why?"
+support: "Five-finger memory check: 1. Speech (say it), 2. Association (join a group), 3. Assembly (gather in a place), 4. Religion (believe or not believe), 5. Movement (travel across the country)."
+leads: |
+  Next in Freedoms and taking part: Within the bounds of law (AC9HC7K02 n2), which explores why democratic freedoms are not absolute and how the law balances competing rights.
+
+  ACARA elaboration for AC9HC7K02: "explaining the origins of the characteristics of Australian democracy and how democratic freedoms, such as freedom of speech, association, assembly, religion and movement, support active participation in Australia's democracy, and investigating cases where the 'bounds of law' can limit these freedoms and why this occurs".
+exit:
+  q: "Name the five democratic freedoms and give one example of how one of them helps citizens take part in Australia's democracy."
+  a: "Freedom of speech, association, assembly, religion and movement. For example, freedom of assembly lets citizens gather peacefully at a public rally to call attention to a community issue."
+explain: |
+  Australia's democracy relies on five key **democratic freedoms**:
+
+  - **Speech:** expressing views and questioning decisions.
+  - **Association:** forming and joining groups, unions or parties.
+  - **Assembly:** gathering peacefully in public.
+  - **Religion:** following any faith, or none.
+  - **Movement:** travelling and living freely across Australia.
+sources:
+  - { title: "Rights and freedoms (Parliamentary Education Office)", url: "https://peo.gov.au/understand-our-parliament/how-parliament-works/system-of-government/rights-in-australia", checked: 2026-10-30 }
+  - { title: "Freedoms (Australian Human Rights Commission)", url: "https://humanrights.gov.au/our-work/rights-and-freedoms/freedoms", checked: 2026-10-30 }

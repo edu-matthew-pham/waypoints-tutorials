@@ -1,0 +1,7 @@
+# region: order
+Question: what are we asking?
+Origin & purpose: can we trust it?
+Statements: fact or opinion?
+Useful for: what does it show?
+Limits: what does it leave out?
+# endregion

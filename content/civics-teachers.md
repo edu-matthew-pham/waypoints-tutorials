@@ -1,12 +1,13 @@
 ---
 title: For Civics teachers
-summary: "What is built so far in Year 7 Civics and Citizenship (a preview on how Australia is governed), how it fits your unit, and what is planned."
+summary: "What is built so far in Year 7 Civics and Citizenship (how Australia is governed, and freedoms and taking part), how it fits your unit, and what is planned."
 ---
 ## What is here
 
-**This is a preview.** One lesson is built, and none of it has been tried with a class.
+**This is a preview.** Two courses are built (nine lessons in total), and none of it has been tried with a class.
 
-- [**How Australia is governed**](../civics/government-7/): five lessons are planned for AC9HC7K01, in the order the ideas depend on each other: the Constitution, representative and responsible government, shared and checked power, federation, and what Australia borrowed. The first, *the Constitution*, is built, using a made-up club's rules as the model before the real Constitution. It is a hinge lesson, so it carries an easier check you can set before moving on.
+- [**How Australia is governed**](../civics/government-7/): five lessons for AC9HC7K01, in the order the ideas depend on each other: *The Constitution* (hinge), *Representative and responsible government* (hinge), *Power shared, power checked*, *One country, several governments (federation)*, and *Borrowed from Britain and America*.
+- [**Freedoms and taking part**](../civics/democracy-7/): four lessons for AC9HC7K02, in waypoint order: *The five democratic freedoms* (speech, association, assembly, religion and movement, hinge), *Within the bounds of law* (why legal limits such as defamation and public safety exist), *Ways to take part in democracy* (comparing voting, petitions, committee inquiries, volunteering, community groups and peaceful protest), and *Formal and active citizenship* (legal status versus active participation, and historical exclusion and change in Australia).
 
 ## What is real and what is made up
 
@@ -22,7 +23,7 @@ Where the standards reach religion, heritage, values, migrants and refugees (AC9
 
 ## What is planned
 
-These are plans, not promises. The rest of the government course, then the characteristics of Australia's democracy, the legal system, a secular and pluralist society and values and social cohesion. A Year 6 catch-up, *Three levels of government*, is planned in [Before Year 7: HASS](../hass/before-year-7/).
+These are plans, not promises. Next are the Australian legal system (AC9HC7K03), a secular and pluralist society (AC9HC7K04), and values and social cohesion (AC9HC7K05), plus Civics' own skills (AC9HC7S03 and AC9HC7S04). A Year 6 catch-up, *Three levels of government*, is planned in [Before Year 7: HASS](../hass/before-year-7/).
 
 ## For you
 

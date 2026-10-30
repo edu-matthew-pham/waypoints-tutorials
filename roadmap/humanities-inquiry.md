@@ -154,3 +154,248 @@ Matthew requested the Sharing unit after the first six lessons; this supersedes 
 - Checks: `npm ci`, `npm run validate`, `WP_NO_MAKECODE=1 npm run build`, `npm run check-nodes`; no new-lesson warnings. Headless Chromium checks wrong/right answers, matching, predictions, Nib's bug, smaller support, reflect ticks, authored links, desktop/390 px layouts, guides, course, teacher overview and all four subjects' curriculum pointer links. All three generated decks are checked with `check-decks`. Existing unrelated validation/font warnings remain.
 - A pre-existing shared hint link to `learning/how-you-learn/cards/#when-youre-stuck` does not resolve in the local build; this batch checks its authored links and leaves that shared route to the tools chat. No shared tools or workflows changed.
 - Not tried with classes; judgement of the student's writing remains with a partner or teacher. No clips rendered or requiring recording. Needs a whole-site or quick publish for the overview and curriculum pointers; pushing main publishes nothing. Skeletons remain a separate task.
+
+## Stage 1 Plan (30 Oct 2026, awaiting Matthew's "go"): Four inquiry skeletons (`kind: skeleton`) and "Coming later" planned lessons in a built course
+
+No code or skeleton content has been written yet. Below is the complete plan for Stage 2.
+
+### 1. Exact `content/hass/inquiry-7/skeletons.yml` format (with worked example for Economics and Business)
+
+`tools/briefs.mjs` (`loadBriefs`) will read either `briefs.yml` or `skeletons.yml` in a course folder. When a file is named `skeletons.yml` (or a brief sets `kind: skeleton`), each brief is treated as an inquiry skeleton:
+- Top-level keys on each skeleton entry in `content/hass/inquiry-7/skeletons.yml`:
+  - `id`: `'economics' | 'civics' | 'geography' | 'history'` (becomes `/hass/inquiry-7/briefs/<id>/`)
+  - `kind`: `'skeleton'`
+  - `subject`: display name of the subject (`"Economics and Business"`, `"Civics and Citizenship"`, `"Geography"`, `"History"`)
+  - `title`: student-facing sheet title
+  - `goal`: Markdown introduction (1–2 short paragraphs explaining how to use the sheet alongside the teacher's class topic; all writing is in the student's own book or document)
+  - `handin`: 1 to 4 deliverables the student hands in at the end of the class inquiry
+  - `stages`: 4 to 6 ordered stages (replacing `milestones:` and top-level `nodes:`). Each stage has:
+    - `id`: short stage slug (`ask`, `find`, `analyse`, `respond`, `explain`, etc.)
+    - `title`: numbered stage heading (`"1. Ask an investigable question"`)
+    - `you_will`: one sentence stating what the student does in their own book/document in this stage
+    - `nodes`: array of `"AC9... nN"` strings for that subject and stage (their `criteria` from `data/curriculum/<subject>.json` render automatically as tick-boxes under **"Good looks like"**)
+    - `lessons`: array of lesson links for **"Need help? Try…"**. Each item is either:
+      - a built lesson path string: short slug within `hass/inquiry-7` (e.g. `"can-it-be-investigated"`) or full `<subject>/<course>/<lesson>` path for another subject's built skill lesson (e.g. `"history/sources-7/origin-and-content"`, `"civics/democracy-7/ways-to-take-part"`), OR
+      - a planned lesson object: `{ title: "Read economic data for trends and cause and effect", soon: true }` (rendered as greyed `Coming later` text, not a broken link).
+    - `teacher`: Markdown teacher note for this stage (whether the stage is supported by site tutorials or run as class/field/source work, what material to provide).
+  - `teacher`: top-level Markdown teacher notes (when in a Year 7 unit the skeleton fits, how to adapt it, and the First Nations teacher note where a class topic touches First Nations content).
+
+#### Worked example (`economics` entry in `content/hass/inquiry-7/skeletons.yml`)
+
+```yaml
+briefs:
+  - id: economics
+    kind: skeleton
+    subject: "Economics and Business"
+    title: "Year 7 Economics and Business inquiry"
+    goal: |
+      Use this outline to plan and carry out a class investigation into an **economic or business issue** chosen with your teacher (for example, how a local business, school service or council allocates limited resources).
+
+      Write your question, notes, data tables and final explanation in **your own book or document**, not on this page. Print this sheet or keep it open to tick off each stage as you go.
+    handin:
+      - "Your key inquiry question and a short note on what evidence will answer it."
+      - "Your selected notes and data from at least two sources, organised in a table or chart."
+      - "A cost-benefit table comparing at least two options for responding to the issue."
+      - "A written description and explanation that uses economics and business terms and references your sources."
+    stages:
+      - id: ask
+        title: "1. Ask an investigable question"
+        you_will: "Write a focused question about your class's economic or business issue that uses an economics concept (such as scarcity, opportunity cost, market or business purpose) and can be answered with evidence."
+        nodes: ["AC9HE7S01 n1", "AC9HE7S01 n2"]
+        lessons:
+          - "can-it-be-investigated"
+          - "build-from-a-big-idea"
+          - "right-sized"
+        teacher: "Supported on the site by the three Asking questions lessons. Help students narrow broad 'Should...' questions to a specific local decision or business case with accessible data."
+      - id: find
+        title: "2. Find and organise information"
+        you_will: "Locate at least two relevant sources or datasets, keep only the facts and figures that answer your question, and organise them into a clear table or graph."
+        nodes: ["AC9HE7S02 n1", "AC9HE7S02 n2", "AC9HE7S02 n3"]
+        lessons:
+          - "where-to-look"
+          - "keep-what-answers"
+          - "organise-it"
+        teacher: "Supported on the site by the three Finding information lessons (and ICT's Working with data if students use a spreadsheet). Supply a small starter pack of 2 to 3 local sources or datasets so class time goes into selecting and organising rather than open-ended web searching."
+      - id: interpret
+        title: "3. Make sense of the data"
+        you_will: "Read your table or graph to spot a pattern, trend or cause-and-effect relationship, and point to the exact figures that show it."
+        nodes: ["AC9HE7S03 n1", "AC9HE7S03 n2", "AC9HE7S03 n3"]
+        lessons:
+          - { title: "Economics skills: Read economic data for trends and cause and effect", soon: true }
+        teacher: "Class work (Economics data skills course is planned). Give students one multi-variable table or chart related to your topic and model the difference between describing a number and inferring an economic trend or cause-and-effect link."
+      - id: respond
+        title: "4. Weigh costs and benefits to choose a response"
+        you_will: "Propose a response to the issue, list both financial and non-financial costs and benefits of your option and an alternative, and explain why your choice comes out ahead."
+        nodes: ["AC9HE7S04 n1", "AC9HE7S04 n2"]
+        lessons:
+          - "economics/scarcity-7/putting-together"
+          - { title: "Economics skills: Costs, benefits and choosing a response", soon: true }
+        teacher: "Class work, building on Lesson 4 of Scarcity and opportunity cost (`putting-together`). Check that students include at least one non-financial cost or benefit (such as time, fairness or environmental impact) alongside dollar figures, and name the opportunity cost of their chosen option."
+      - id: explain
+        title: "5. Explain what you found"
+        you_will: "Write a clear opening for your audience and an explanation that uses economics and business terms accurately and references your data and sources."
+        nodes: ["AC9HE7S05 n1", "AC9HE7S05 n2"]
+        lessons:
+          - "use-the-subjects-words"
+          - "explain-with-evidence"
+        teacher: "Supported on the site by Sharing what you found (Lessons 7 and 8; Lesson 9 is optional if students are writing a persuasive recommendation). Students write in their own book or document and use the 'Good looks like' criteria below for self- and peer-checking."
+    teacher: |
+      **When to use this skeleton:** In the second half of a Year 7 Economics and Business unit (after *Scarcity and opportunity cost* or *Types of businesses*), over 2 to 4 lessons of class inquiry time.
+
+      **What is on the site vs class work:** Stages 1, 2 and 5 are supported directly by the shared *Investigate like a humanities expert* lessons (`hass/inquiry-7`). Stages 3 and 4 are class-led using your local case and data (with cost-benefit reasoning introduced in `economics/scarcity-7/putting-together`).
+
+      **First Nations note:** Where your class inquiry investigates First Nations Australian businesses, exchange networks or sustainable resource management, start from ACARA's elaborations for `AC9HE7K01`–`AC9HE7K03` (see the Economics teacher notes) and use local, community-approved material or a First Nations business's own published words.
+```
+
+---
+
+### 2. What the student page and the teacher guide each show per stage
+
+#### Student list page (`/hass/inquiry-7/briefs/`)
+- When a course's brief set is all `kind: skeleton`, the course chip reads **Inquiry skeletons** (instead of `Project briefs`), and `/hass/inquiry-7/briefs/` is titled **`Investigate like a humanities expert: inquiry skeletons`**, with a lede explaining that each printable sheet maps out a full Year 7 investigation in that subject and links to the short skill lessons at each stage.
+- Four cards (`Economics and Business`, `Civics and Citizenship`, `Geography`, `History`), each showing `b.title`, `<small>${esc(b.subject)} · ${b.stages.length} stages</small>`, and the first sentence of `b.goal`.
+
+#### Student skeleton page (`/hass/inquiry-7/briefs/<id>/`, rendered by `briefPageBody` in `tools/briefs-view.mjs`)
+1. **Header:** Breadcrumb `← Investigate like a humanities expert: inquiry skeletons`, `Print` button (`.bfprint`), `<h1>${esc(b.title)}</h1>`, and subtitle `<p class="pjafter">Inquiry skeleton · ${esc(b.subject)}</p>`.
+2. **Goal:** `<div class="pjgoal">${md(b.goal)}</div>`.
+3. **My inquiry box (`.pjbox.bfbox.plain.wpt-skel-topic`):** Printable blank lines for paper/book use (no `<input>` or `<textarea>` write boxes on the page):
+   - **Topic set by my teacher:** `__________________________________________________`
+   - **My key inquiry question:** `__________________________________________________`
+4. **One `<section class="pjbox bfbox wpt-skel-stage">` per stage in `b.stages`:**
+   - `<h2>${esc(stage.title)}</h2>`
+   - `<p class="wpt-skel-do"><b>You will:</b> ${esc(stage.you_will)}</p>`
+   - **Good looks like** (`stage.nodes` resolved via cross-subject `briefNodes`): each node's `<p class="bfnode">${esc(n.label)}</p>` followed by its `criteria` as a printable tick-box list (`<ul><li>...</li></ul>`).
+   - **Need help? Try…** (`stage.lessons`): a compact list `.wpt-skel-try` at the bottom of the stage card:
+     - Built lessons link to the lesson (`<a href="...">${esc(label)}</a>`, prefixed with `<Subject> › <Course>: ` when outside `hass/inquiry-7`).
+     - Planned lessons show `<span class="wpt-skel-soon">${esc(item.title)} <em>(Coming later)</em></span>`.
+5. **Hand in box (`.pjbox.bfbox.plain`):** `<h2>Hand in</h2>` with `b.handin` as a bullet list.
+
+#### Teacher guide (`/teach/hass/inquiry-7/#briefs`, rendered in `tools/build-site.mjs`)
+- Heading `<h2>Inquiry skeletons</h2>` with a link to `/hass/inquiry-7/briefs/`.
+- One `<details class="primer">` per skeleton containing:
+  - `b.goal` and the **Hand in** list.
+  - **Stages breakdown:** for each stage, its title, `you_will`, the exact curriculum nodes and criteria it evidences (`AC9... node n: criteria`), the linked lessons (built links and `Coming later` items), and the stage's `stage.teacher` note.
+  - Top-level `b.teacher` notes (when to run it, what sources to supply, First Nations guidance).
+
+---
+
+### 3. All four skeletons: stages, nodes and linked lessons ("Need help? Try…")
+
+| Skeleton (`id`) | Stage | Nodes (`data/curriculum/<subject>.json`) | "Need help? Try…" (`stage.lessons`) |
+|---|---|---|---|
+| **Economics and Business** (`economics`) | 1. Ask an investigable question | `AC9HE7S01 n1`, `AC9HE7S01 n2` | `can-it-be-investigated`, `build-from-a-big-idea`, `right-sized` |
+| | 2. Find and organise information | `AC9HE7S02 n1`, `AC9HE7S02 n2`, `AC9HE7S02 n3` | `where-to-look`, `keep-what-answers`, `organise-it` |
+| | 3. Make sense of the data | `AC9HE7S03 n1`, `AC9HE7S03 n2`, `AC9HE7S03 n3` | *Economics skills: Read economic data for trends and cause and effect (Coming later)* |
+| | 4. Weigh costs and benefits to choose a response | `AC9HE7S04 n1`, `AC9HE7S04 n2` | `economics/scarcity-7/putting-together`, *Economics skills: Costs, benefits and choosing a response (Coming later)* |
+| | 5. Explain what you found | `AC9HE7S05 n1`, `AC9HE7S05 n2` | `use-the-subjects-words`, `explain-with-evidence` |
+| **Civics and Citizenship** (`civics`) | 1. Ask a focused civic question | `AC9HC7S01 n1`, `AC9HC7S01 n2`, `AC9HC7S01 n3` | `can-it-be-investigated`, `build-from-a-big-idea`, `right-sized` |
+| | 2. Find and group civic information | `AC9HC7S02 n1`, `AC9HC7S02 n2`, `AC9HC7S02 n3` | `where-to-look`, `keep-what-answers`, `organise-it` |
+| | 3. Compare perspectives on the issue | `AC9HC7S03 n1`, `AC9HC7S03 n2`, `AC9HC7S03 n3` | *Civics skills: Analysing perspectives and challenges in civic sources (Coming later)* |
+| | 4. Choose a way to take part | `AC9HC7S04 n1`, `AC9HC7S04 n2`, `AC9HC7S04 n3` | `civics/democracy-7/ways-to-take-part`, `civics/democracy-7/formal-and-active-citizenship`, *Civics skills: Choosing a participation strategy (Coming later)* |
+| | 5. Explain and argue your position | `AC9HC7S05 n1`, `AC9HC7S05 n2`, `AC9HC7S05 n3` | `use-the-subjects-words`, `explain-with-evidence`, `make-an-argument` |
+| **Geography** (`geography`) | 1. Ask and plan a geographical inquiry | `AC9HG7S01 n1`, `AC9HG7S01 n2`, `AC9HG7S01 n3` | `can-it-be-investigated`, `build-from-a-big-idea`, `right-sized` |
+| | 2. Collect and represent data (fieldwork and secondary) | `AC9HG7S02 n1`, `AC9HG7S02 n2`, `AC9HG7S02 n3`, `AC9HG7S02 n4` | `where-to-look`, `keep-what-answers`, `organise-it`, *Geography skills: Fieldwork and maps (Coming later)* |
+| | 3. Analyse patterns, trends and relationships | `AC9HG7S03 n1`, `AC9HG7S03 n2`, `AC9HG7S03 n3`, `AC9HG7S03 n4` | *Geography skills: Interpreting geographical data and patterns (Coming later)* |
+| | 4. Draw geographical conclusions | `AC9HG7S04 n1`, `AC9HG7S04 n2`, `AC9HG7S04 n3` | `geography/water-7/classify-connect-change`, *Geography skills: Drawing conclusions about impacts (Coming later)* |
+| | 5. Propose strategies for action | `AC9HG7S05 n1`, `AC9HG7S05 n2`, `AC9HG7S05 n3`, `AC9HG7S05 n4` | *Geography skills: Strategies for action and weighing values (Coming later)* |
+| | 6. Communicate your geographical explanation | `AC9HG7S06 n1`, `AC9HG7S06 n2`, `AC9HG7S06 n3`, `AC9HG7S06 n4` | `use-the-subjects-words`, `explain-with-evidence`, *Geography skills: Communicating with maps and representations (Coming later)* |
+| **History** (`history`) | 1. Ask historical questions | `AC9HH7S01 n1`, `AC9HH7S01 n2`, `AC9HH7S01 n3` | `can-it-be-investigated`, `build-from-a-big-idea`, `right-sized` |
+| | 2. Locate and sort primary and secondary sources | `AC9HH7S02 n1`, `AC9HH7S02 n2`, `AC9HH7S02 n3` | `history/sources-7/primary-or-secondary`, `where-to-look`, `organise-it` |
+| | 3. Question the sources (origin, purpose, usefulness and perspectives) | `AC9HH7S03 n1`, `AC9HH7S03 n2`, `AC9HH7S03 n3`, `AC9HH7S04 n1`, `AC9HH7S04 n2`, `AC9HH7S04 n3`, `AC9HH7S06 n1`, `AC9HH7S06 n2`, `AC9HH7S06 n3` | `history/sources-7/origin-and-content`, `history/sources-7/context-and-purpose`, `history/sources-7/what-can-it-tell-us`, `history/usefulness-7/fact-opinion-and-accuracy`, `history/usefulness-7/accurate-versus-useful`, `history/usefulness-7/weighing-a-source`, *History skills: Past perspectives in sources (Coming later)* |
+| | 4. Weigh causes, continuity and interpretations | `AC9HH7S05 n1`, `AC9HH7S05 n2`, `AC9HH7S05 n3`, `AC9HH7S07 n1`, `AC9HH7S07 n2`, `AC9HH7S07 n3` | `history/evidence-7/reading-the-layers`, `history/evidence-7/dna-and-dating`, *History skills: Causes, continuity and historical interpretations (Coming later)* |
+| | 5. Build a historical argument | `AC9HH7S08 n1`, `AC9HH7S08 n2`, `AC9HH7S08 n3` | `use-the-subjects-words`, `explain-with-evidence`, `make-an-argument` |
+
+*(Note on History Stage 3 & 4 node density: listing all 9 nodes in Stage 3 and 6 nodes in Stage 4 would print 27+ criteria bullets on one student page. See Section 7 below for a recommendation to list the integration/summary node of each standard on the student sheet — e.g. `AC9HH7S03 n3`, `AC9HH7S04 n3`, `AC9HH7S06 n1`/`n3` — or group criteria cleanly so the printable sheet fits on 2 pages.)*
+
+---
+
+### 4. How cross-subject node and lesson lookup works
+
+1. **Subject-from-code resolution in `tools/briefs.mjs`:**
+   - Add a helper `subjectOfCode(code)` in `tools/briefs.mjs` that maps ACARA code prefixes to their curriculum file name:
+     - `AC9HE` → `economics`, `AC9HC` → `civics`, `AC9HG` → `geography`, `AC9HH` → `history`, `AC9HS` → `hass`, `AC9TDI` → `systems`, `AC9TDE` → `engineering`, `AC9M` → `maths`, `AC9S` → `science`, `AC9E` → `english`.
+   - Update `briefNodes(briefOrStage, cur)`:
+     - `cur` may be a single curriculum object `{ descriptors }` (keeping 100% backwards compatibility with existing callers), a `Map`/dictionary of `{ [subject]: curriculum }`, or a lookup function `(subjectOrCode) => curriculum`.
+     - When `cur` is a function (or when `briefNodes` uses a passed `loadCurriculum` function), each node ref `"AC9HE7S01 n1"` looks up `cur(subjectOfCode(m[1]))` so a single `skeletons.yml` in `content/hass/inquiry-7/` resolves Economics, Civics, Geography and History nodes seamlessly.
+     - When `briefOrStage` has `stages:` (a `kind: skeleton` brief passed as a whole), `briefNodes(brief, cur)` collects the resolved nodes across all stages.
+2. **Validation in `tools/briefs.mjs` (`checkBriefs`) and `tools/validate.mjs`:**
+   - Regular briefs (`!b.kind`): unchanged (`after:` required in same course, `handin` 1–4, `milestones` 2–4, `nodes` non-empty).
+   - Skeleton briefs (`b.kind === 'skeleton'`):
+     - `subject`, `title`, `goal` required; `handin` 1–4; `after:` optional (if present, checked).
+     - `stages:` required, length 4 to 6 (instead of `milestones:` and top-level `nodes:`).
+     - Each stage requires `id`, `title`, `you_will`, `nodes` (non-empty array of valid curriculum nodes verified via cross-subject `briefNodes`), and `lessons` (non-empty array where each string entry must resolve to a built lesson in the same course or across the repo via `allLessons`, and each `{ title, soon: true }` object must have a non-empty `title`).
+
+---
+
+### 5. "Coming later" display for planned lessons in a built course
+
+Currently, `tools/build-site.mjs` (line 790) filters out any unit in a course's `index.md` that has 0 built lessons (`.filter((g) => g.lessons.length)`), and there is no way for a partially built course (such as `content/hass/before-year-7/`, which has built `inquiry` lessons and planned `economics` and `civics` catch-up lessons) to show planned lessons or planned units as **Coming later**.
+
+1. **Authoring in `content/<course>/index.md`:**
+   - A unit in `units:` may include `planned: [{ title, summary }]` (or shorthand strings `planned: ["Spending choices"]`), or a course may have a unit in `units:` whose lessons are all in `planned:`.
+   - Example in `content/hass/before-year-7/index.md`:
+     ```yaml
+     units:
+       - id: inquiry
+         title: Inquiry skills
+         summary: "Questions that guide an inquiry, and finding and sorting information."
+       - id: economics
+         title: Economics and Business
+         summary: "What influences spending choices, and strategies for informed choices."
+         planned:
+           - { title: "Spending choices", summary: "Influences on consumer choices and strategies for informed decisions (AC9HS6K08)." }
+       - id: civics
+         title: Civics and Citizenship
+         summary: "Australia's three levels of government and what each level does."
+         planned:
+           - { title: "Three levels of government", summary: "The roles and responsibilities of federal, state and territory, and local governments (AC9HS6K06, AC9HS6K07)." }
+     ```
+2. **Rendering in `tools/build-site.mjs` & `site/progress.js`:**
+   - Keep any unit in `groups` that has `g.lessons.length > 0 || (g.planned && g.planned.length > 0)`.
+   - After rendering built lessons (`g.lessons.map(row)`), render each planned lesson as a non-interactive placeholder row:
+     `<div class="crow wpt-crow-soon"><div class="csum-row"><span class="cnum">·</span><span class="ctitle">${esc(p.title)}</span><span class="cstat">Coming later</span></div>${p.summary ? `<p class="csum">${esc(p.summary)}</p>` : ''}</div>`
+   - Because `.wpt-crow-soon` is a `<div>` without `data-keys`, `site/progress.js` (`document.querySelectorAll('.crow[data-keys]')`) ignores planned rows automatically — they never block course completion or skew progress bars.
+   - In the teacher strip (`cfacts`), if a course has planned lessons (`plannedCount > 0`), the `Lessons` fact shows `${core}${opt ? ` (and ${opt} optional)` : ''}, ${plannedCount} coming later`.
+   - In the course teacher guide (`/teach/<course>/`), planned units/lessons show a short muted line (`Coming later: <titles>`) so teachers see the full planned shape there too.
+3. **Validation in `tools/validate.mjs`:**
+   - Check that any `planned:` entry on a unit in `content/<course>/index.md` is a non-empty string or an object with a non-empty `title`.
+
+---
+
+### 6. Which files change in Stage 2 (and which are shared)
+
+- **Course & subject content files (Humanities inquiry & links):**
+  - `content/hass/inquiry-7/skeletons.yml` *(new — the four skeletons)*
+  - `content/hass/before-year-7/index.md` *(adds the planned `economics` and `civics` catch-up units/lessons to demonstrate and test the "Coming later" display in a built course)*
+  - `content/humanities-teachers.md`, `content/economics-teachers.md`, `content/civics-teachers.md`, `content/geography-teachers.md`, `content/history-teachers.md` *(update the line saying inquiry outlines are planned to link directly to `/hass/inquiry-7/briefs/` and `/hass/inquiry-7/briefs/<subject>/`)*
+- **Shared tool & doc files (flagged for your review):**
+  - `tools/briefs.mjs` *(shared: load `skeletons.yml` as well as `briefs.yml`; cross-subject `subjectOfCode` + `briefNodes`; `checkBriefs` support for `kind: skeleton` and `stages:`)*
+  - `tools/briefs-view.mjs` *(shared: `briefListBody` and `briefPageBody` rendering for `kind: skeleton` — My inquiry blank lines, per-stage `you_will`, `Good looks like` criteria, and `Need help? Try…` lesson links, plus `.wpt-skel-*` CSS)*
+  - `tools/build-site.mjs` *(shared: pass `loadCurriculum` into `writeBriefs` and `briefsGuide` so cross-subject nodes and cross-course lesson links resolve; label the course chip `Inquiry skeletons` when `set.kind === 'skeleton'`; render `planned:` lessons in a built course as `.wpt-crow-soon` "Coming later" rows)*
+  - `tools/validate.mjs` *(shared: pass `loadCurriculum` and all `lessons` into `checkBriefs`; validate `planned:` entries on course units)*
+  - `AUTHORING.md` *(shared doc: document `kind: skeleton` with `stages:` under Project briefs, and `planned:` on course units)*
+  - `roadmap/shared.md` *(shared log: record the `briefs.mjs`/`briefs-view.mjs`/`build-site.mjs`/`validate.mjs` changes)*
+  - *Note on `tools/search-index.mjs` and `content/teachers/index.md`:* neither needs code changes unless you want individual skeleton sheets added to the search index (`content/humanities-teachers.md` is already in `search-index.mjs` and `content/teachers/index.md`).
+
+---
+
+### 7. How we will test it in Stage 2
+
+1. `npm run validate` and `npm run check-nodes` (verifying all 4 skeletons, all cross-subject `AC9...` node refs, all built lesson links, and the unit `planned:` entries).
+2. `WP_NO_MAKECODE=1 npm run build`.
+3. Headless Chromium check (at `1280px` and `390px` viewports, serving `dist/`):
+   - `/hass/inquiry-7/` (course chip `Inquiry skeletons`), `/hass/inquiry-7/briefs/` (list of 4 skeletons), and `/hass/inquiry-7/briefs/economics/`, `/civics/`, `/geography/`, `/history/` (checking every stage heading, "You will", "Good looks like" node criteria, "Need help? Try…" links and "Coming later" tags, zero `<input>`/`<textarea>` write boxes, zero console/page errors, zero horizontal overflow).
+   - `/teach/hass/inquiry-7/` (checking the teacher guide's `Inquiry skeletons` section and per-stage notes).
+   - `/hass/before-year-7/` (checking the new "Coming later" planned lesson rows in a built course, and verifying `progress.js` completion is unaffected).
+4. Step 4 self-check from `roadmap/checklist.md`.
+
+---
+
+### 8. Anything in the decisions that should change?
+
+Two small recommendations for your call:
+1. **Curating `stage.nodes` in History Stage 3 & Stage 4 (and Geography Stage 2–6) so the printable student sheet fits on 2 pages:**
+   - Every Year 7 History skill standard has 3 waypoints (`n1`, `n2`, `n3`), and each waypoint has 2–3 criteria sentences. If History Stage 3 lists all 9 nodes (`S03 n1–n3`, `S04 n1–n3`, `S06 n1–n3`), `briefPageBody` will print **9 subheadings and 27 tick-box sentences** inside a single stage box.
+   - **Recommendation:** In each stage, list the **culminating/integration node** (or the 2–3 key nodes) whose criteria sum up the finished stage product (for example, in History Stage 3: `AC9HH7S03 n3` *Integrating OCCP*, `AC9HH7S04 n3` *Integrating accuracy and usefulness*, and `AC9HH7S06 n2` *Attitudes and values of the past* — 3 nodes, 9 tick-boxes total instead of 27), while still linking all the step-by-step lessons under `Need help? Try…`. That keeps every subject's printable skeleton to 2–3 criteria groups per stage and fits cleanly on a double-sided A4 sheet.
+2. **Keep the URL at `/hass/inquiry-7/briefs/<id>/` with "Inquiry skeletons" labels:**
+   - Using the existing `/briefs/<id>/` path pattern while changing the visible chip and headings to **Inquiry skeletons** (when `kind: skeleton`) avoids duplicating route/nav handling in `build-site.mjs` and gives clean URLs (`/hass/inquiry-7/briefs/economics/`, `/civics/`, `/geography/`, `/history/`).

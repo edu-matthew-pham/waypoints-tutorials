@@ -1,0 +1,33 @@
+inquiry:
+  q: "If a classmate writes 'Source B: Accurate = Yes. Useful = Yes' in their history book, why isn't that a complete evidence assessment yet?"
+  prompts:
+    - "Accurate about which claim? Useful for which inquiry question?"
+    - "Even a very accurate source leaves something out — what can Source B not tell us?"
+  notes: "Move students from two separate labels to a joined explanation that names accuracy, usefulness for the question, and limits."
+activities:
+  - at: run
+    kind: activity
+    title: "Build the three-sentence judgement"
+    minutes: 4
+    do: |
+      Put the inquiry question 'How did the Qin state govern its people?' on the board. In pairs, students speak a three-sentence assessment of Source A, B or C: Sentence 1 on accuracy, Sentence 2 on what it contributes to the question, Sentence 3 on what it cannot tell us.
+    notes: "Listen for students who state what the source can AND cannot contribute."
+  - at: make
+    kind: discussion
+    title: "Pair check against the three criteria"
+    minutes: 5
+    do: |
+      Students swap books and underline where their partner (1) assessed accuracy, (2) explained usefulness for the inquiry question, and (3) stated what the source cannot tell us.
+    notes: "If any of the three underlines is missing, the writer adds one sentence."
+questions:
+  - at: investigate
+    title: "A joined assessment"
+    type: question
+    q: "What must a complete evidence assessment of a source include?"
+    options:
+      - "How accurate its claims are, what it usefully contributes to the specific inquiry question, and what it cannot tell us on its own"
+      - "Only the date the source was found and the name of the museum it sits in"
+      - "A single word saying either 'true' or 'false'"
+      - "A list of every word in the source without mentioning the inquiry question"
+    answer: 0
+    explain: "Integrating accuracy and usefulness means explaining reliability, value for the inquiry question, and the source's limits."

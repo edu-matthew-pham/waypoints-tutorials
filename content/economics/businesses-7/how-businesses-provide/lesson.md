@@ -9,7 +9,7 @@ hook: "Fresh apples can reach Mia's family from a Saturday market stall, a natio
 ---
 You have met the **reasons businesses exist** (lesson 1) and the **structures** they use (lesson 2). This lesson joins them together: how a business's purpose and structure shape **what** it provides and **how** those goods and services reach customers.
 
-Businesses reach people through different channels: **local markets**, **small independent stores**, **shopping centres**, **online stores**, and **remote community stores**. The structure behind the business shapes how much money it can raise, who makes decisions, and which channel fits best.
+Businesses reach people through different channels: **local markets**, **small independent stores**, **shopping centres**, **online stores**, and **remote community stores**. The structure behind the business shapes how much money it can raise, who makes decisions, and which channel fits best. (All business names in this lesson, including Made-Up Grocers Corp and GreenBean Cafe, are made up.)
 
 ## Predict: why not one structure for everyone?
 

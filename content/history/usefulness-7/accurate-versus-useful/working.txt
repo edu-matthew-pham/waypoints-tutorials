@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Source C is a mountain inscription ordered by the First Emperor around 219 BCE to praise his rule.
+Because it was made to boast, its claim that everyone felt happy and peaceful is biased and not accurate.
+Nib says: "If a source is biased or inaccurate, it is completely useless to a historian and should be thrown away."
+Nib says: "So Source C cannot be used as evidence for any historical question at all."
+# endregion

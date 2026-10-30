@@ -1,0 +1,42 @@
+summary: "Students integrate accuracy and usefulness into a single reasoned evidence assessment for a specific inquiry question, stating what the source can and cannot contribute. This is the integration lesson for AC9HH7S04."
+learning: "weigh both the accuracy and the usefulness of a source in one reasoned conclusion for an inquiry question"
+time: 40
+timing: "Predict and Try 8 min · Worked example 10 min · Vary 8 min · Practise 8 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can assess both the accuracy and the usefulness of a source for a specific inquiry question.
+  - I can join accuracy and usefulness into one reasoned conclusion rather than two separate labels.
+  - I can state both what a source contributes to an inquiry and what it cannot tell us on its own.
+struggle: "Students often treat accuracy and usefulness as two separate one-word boxes ('Accurate: no. Useful: yes.') without linking them. Push for a joined sentence: 'Because this source was made by [origin] to [purpose], it is accurate/limited on [X], which makes it useful for showing [Y], though it cannot tell us [Z].'"
+before: |
+  This is the integration lesson for AC9HH7S04. Check that students can distinguish factual claims from opinions (lesson 1) and explain why a biased source can still be useful for the right question (lesson 2).
+
+  The Practise step uses a paper reasoning check with two model answers (one for the Shuihudi bamboo slips, one for the mountain inscription) so students can self-check all three criteria before writing their own in the Make step.
+running:
+  - "Predict: highlight why the first option is strong — it links origin (217 BCE working rules) to accuracy, then to usefulness for the question, and ends with what is missing."
+  - "Try: ask pairs why 'Read the inquiry question' sits at the very top of the chain."
+  - "Worked example: show Nib's two-word answer ('Accurate. Useful.') and ask the class what a reader still wouldn't know."
+  - "Practise: students write their paragraph in their book first, then open the model answers to tick the three criteria."
+  - "Make: partner review in books using the same three criteria."
+stuck:
+  - see: "A student writes two disconnected sentences: 'It is biased. It is useful.'"
+    ask: "How does the bias connect to what it is useful for?"
+    fix: "Join them with 'so' or 'which means': 'It is biased towards the emperor, so it cannot prove people were happy, but it is useful for showing how the court used propaganda.'"
+  - see: "A student forgets to mention the inquiry question."
+    ask: "Useful for finding out what?"
+    fix: "Always name the inquiry question in the usefulness sentence."
+  - see: "A student says a source tells us everything we need to know."
+    ask: "Whose view or what part of the story is missing from this single source?"
+    fix: "Every single source has a limit. Name one thing it cannot show and what kind of second source would help."
+stretch: "Take two sources from your depth study — one written and one archaeological — and explain in three sentences how using both together overcomes the limits of each one on its own."
+support: "Three-sentence frame: '1. Accuracy: Because [source] was made by [who/when] to [purpose], its claims about [X] are [accurate / biased / limited]. 2. Usefulness: For the question [inquiry question], it is useful evidence of [what it shows]. 3. Limit: However, it cannot tell us [what is missing], so we would also need [other source].'"
+leads: |
+  Next in the How we know pathway: How we know (AC9HH7K08, already built), which applies these source and evidence questions to archaeological layers, DNA and dating, ancient writing, and site conservation.
+exit:
+  q: "In three sentences, assess Source C (the First Emperor's mountain inscription) as evidence for the question: 'How did the First Emperor unite and rule the Qin empire?'"
+  a: "Source C was ordered by the First Emperor around 219 BCE to celebrate his rule; its claim about standardising laws and measures is accurate (backed by excavated weights), while its claim that everyone was happy is biased praise. It is useful evidence of how the state standardised measures and used public propaganda to claim authority. However, it cannot tell us how ordinary people actually experienced Qin rule, so we need legal records and archaeological evidence alongside it."
+explain: |
+  A complete **evidence assessment** joins **accuracy** and **usefulness** for your inquiry question:
+
+  1. How reliable are the source's claims (and what corroborates or limits them)?
+  2. What does the source **contribute** to answering the inquiry question?
+  3. What **cannot** it tell us on its own?

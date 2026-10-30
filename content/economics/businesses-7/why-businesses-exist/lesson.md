@@ -7,7 +7,7 @@ summary: "Businesses exist to provide goods and services, make a profit, create 
 language: maths
 hook: "In Mia's town, a bakery sells bread, a bike workshop fixes punctures, and a community pantry sells low-cost groceries with no owner taking a profit. Are all three businesses, and why do they exist?"
 ---
-A **business** is an organisation that provides goods or services to people.
+A **business** is an organisation that provides goods or services to people. (All businesses and people in this course — such as Mia, Corner Bakery, Pedal Fix Workshop and Riverbend Pantry — are made up.)
 
 A **good** is a physical item you can touch and take away, such as a loaf of bread or a bicycle tyre. A **service** is work someone does for you, such as fixing a flat tyre, cutting hair or teaching a music lesson. Many businesses provide both at once.
 
@@ -61,13 +61,13 @@ tasks:
       options:
         - "To provide goods to the community and create employment"
         - "To make a large profit for a private owner"
-        - "To collect taxes for the local council"
+        - "To give away free charity parcels using only unpaid volunteers"
         - "To earn dividends for private shareholders"
       answer: 0
       feedback:
         - null
         - "No private owner takes a profit here: any spare money goes back into keeping food affordable."
-        - "Riverbend Pantry is a community pantry selling groceries, not a council collecting taxes."
+        - "Riverbend Pantry sells low-cost groceries and pays two staff wages, rather than giving away free parcels with only unpaid volunteers."
         - "It has no shareholders taking dividends: any surplus is put back into lower food prices."
       explain: "Riverbend Pantry provides goods a community needs and employs staff, even though it does not run for an owner's profit."
   - check:

@@ -9,7 +9,7 @@ hook: "In Mia's town, one baker owns the corner bakery alone, two vets own the a
 ---
 Last lesson showed that businesses exist for different reasons. They also have different **business structures**: the legal and practical way a business is owned and run.
 
-Six structures come up across Australia:
+Six structures come up across Australia (all businesses named in this lesson — Rosa's Car Yard, Priya & Tom Vets, Valley Growers' Shed, Made-Up Grocers Corp and Burger Barn — are made up):
 
 - **Sole proprietorship:** owned and run by one person (a **sole proprietor**), who makes the decisions and keeps any profit (and carries the losses).
 - **Partnership:** owned by two or more people who share the skills, decisions, profits and responsibilities.

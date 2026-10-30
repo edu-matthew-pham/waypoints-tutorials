@@ -1,0 +1,33 @@
+inquiry:
+  q: "Suppose a country holds an election every three years, but in between elections citizens are not allowed to form community groups, gather in public parks, or criticise the government in the news. Why isn't voting alone enough to make a democracy work?"
+  prompts:
+    - "How would voters find out what needs fixing if nobody could speak up?"
+    - "How can one citizen with a good idea get heard if they aren't allowed to team up with neighbours?"
+  notes: "Show that the five democratic freedoms (speech, association, assembly, religion, movement) are the oxygen that keeps representative government working between elections."
+activities:
+  - at: run
+    kind: activity
+    title: "Association or assembly?"
+    minutes: 4
+    do: |
+      Call out five quick scenarios (signing up to a bushcare club online, 100 people marching down Main Street, joining a trade union, holding a Saturday afternoon rally outside town hall, starting a school chess society). Students say 'Association' (joining a group) or 'Assembly' (gathering in a place).
+    notes: "Separating association from assembly early prevents the most common mix-up in this standard."
+  - at: make
+    kind: discussion
+    title: "One campaign, many freedoms"
+    minutes: 4
+    do: |
+      Ask pairs to pick a local issue (such as a safer bike lane or a new library hour) and name how a citizen could use at least three of the five freedoms to campaign for it.
+    notes: "Listen for how speech, association and assembly work together."
+questions:
+  - at: investigate
+    title: "The five freedoms"
+    type: question
+    q: "Which list names the five key democratic freedoms in AC9HC7K02?"
+    options:
+      - "Freedom of speech, association, assembly, religion and movement"
+      - "Parliament, the Executive, the High Court, the Senate and the States"
+      - "Taxation, defence, passports, roads and rubbish collection"
+      - "Full-time, part-time, casual, volunteer and unpaid work"
+    answer: 0
+    explain: "The five democratic freedoms are freedom of speech, association, assembly, religion and movement."

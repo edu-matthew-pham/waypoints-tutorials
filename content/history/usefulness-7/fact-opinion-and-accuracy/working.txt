@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Source C is a stone inscription set up for the First Emperor around 219 BCE.
+It says the emperor united the states, set one system of weights and measures, and is the greatest ruler of all time.
+Nib says: "Every sentence in a primary source from the time is a fact, because the writer lived back then."
+Nib says: "So 'the greatest ruler of all time' is a factual claim, just like the rule about weights and measures."
+# endregion
