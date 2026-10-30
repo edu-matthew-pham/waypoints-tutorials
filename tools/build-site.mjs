@@ -7,7 +7,7 @@
 //   dist/_playground-html/               the embeddable HTML & CSS playground
 // A step with a clip embeds clips/step-N.mp4 if it exists, otherwise a labelled placeholder,
 // so lessons can be written, reviewed and published before any clip is rendered.
-import { mkdirSync, writeFileSync, existsSync, copyFileSync, readdirSync } from 'node:fs';
+import { mkdirSync, writeFileSync, existsSync, copyFileSync, cpSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { createRequire } from 'node:module';
 import { Marked } from 'marked';
@@ -58,7 +58,7 @@ const STRATEGY_CARDS = new Map(loadCardsFile(join(CONTENT_ROOT, 'learning/how-yo
 // Code course guides point to the four Code strategy cards and the course behind them (27 Oct 2026, roadmap/learning.md).
 const strategyGuide = (coursePath) => {
   const root = '../'.repeat(coursePath.split('/').length + 1) + 'learning/how-you-learn/';
-  const card = (id) => { const c = STRATEGY_CARDS.get(id); return c ? `<a href="${root}cards/#${id}">${esc(c.title)}</a>` : ''; };
+  const card = (id) => { const c = STRATEGY_CARDS.get(id); return c ? `<a href="${root}reference/#${id}">${esc(c.title)}</a>` : ''; };
   return `<p><b>Strategies for getting unstuck:</b> ${['code-say-what-it-does', 'code-test-small', 'code-read-the-error', 'code-trace-it'].map(card).filter(Boolean).join(', ')}. A student who is stuck can try one before asking for a hint. The optional course <a href="${root}">How you learn best</a> introduces them, and a few lesson decks have a short teach, show or nudge slide for one. <span class="muted">(Each lesson page links to the cards from its first hint.)</span></p>`;
 };
 const OUT = process.argv.includes('--out') ? process.argv[process.argv.indexOf('--out') + 1] : 'dist';
@@ -915,7 +915,8 @@ for (const node of dirs.values()) {
     const heads = trailOn ? trailheadsHtml(pathways, pathways.map((pw) => layoutTrail(pw, pathways, dirs, lessonCount, { stops: 'courses' })), esc) : '';
     // List for teachers (25 Oct 2026): one screen per subject. Each pathway with its courses as plain links, years and
     // lesson counts; the full course cards are on each pathway's page.
-    const pindex = `<style>.pindex{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:6px 28px;margin:6px 0 10px}.pindex h2{font-size:18px;margin:14px 0 4px}.pindex h2 a{color:var(--ink);text-decoration:none}.pindex h2 a:hover{color:var(--accent)}.pindex ul{list-style:none;margin:0;padding:0}.pindex li{display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px solid var(--line);font-size:15px}.pindex li a{color:var(--ink)}.pindex li span{color:var(--muted);font-size:13px;white-space:nowrap}.pindex li.pst{border:0;padding:8px 0 0;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}.pindex li.later{color:var(--muted)}.pmore{color:var(--muted);font-size:14px}</style>` +
+    const teacherStartLinks = (up) => `<p class="pmore wpt-teacher-start">New to Learning Waypoints? <a href="${up}teachers/getting-started/">Getting Started</a> · <a href="${up}teach/teachers/getting-started/">10-minute presentation</a> · <a href="${up}humanities-pilot/">Humanities pilot</a></p>`;
+    const pindex = teacherStartLinks(up) + `<style>.pindex{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:6px 28px;margin:6px 0 10px}.pindex h2{font-size:18px;margin:14px 0 4px}.pindex h2 a{color:var(--ink);text-decoration:none}.pindex h2 a:hover{color:var(--accent)}.pindex ul{list-style:none;margin:0;padding:0}.pindex li{display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px solid var(--line);font-size:15px}.pindex li a{color:var(--ink)}.pindex li span{color:var(--muted);font-size:13px;white-space:nowrap}.pindex li.pst{border:0;padding:8px 0 0;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}.pindex li.later{color:var(--muted)}.pmore{color:var(--muted);font-size:14px}</style>` +
       `<div class="pindex">` + pathways.map((pw) => {
         const row = (c) => {
           if (!c.path) return `<li class="later">${esc(c.title || '')}<span>coming later</span></li>`;
@@ -958,7 +959,7 @@ for (const node of dirs.values()) {
         (useTrail ? `<style>${TRAIL_CSS}</style>` : '') + `<style>.pswitch{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:2px 0 10px}.pswitch a{border:1px solid var(--line);border-radius:99px;padding:4px 12px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;background:var(--card)}.pswitch a:hover{border-color:var(--accent)}.pswitch a[aria-current]{background:var(--ink);color:var(--card);border-color:var(--ink)}.pswitch .pall{border-style:dashed}</style>` +
         `<header class="top"><nav class="pswitch" aria-label="Pathways in ${esc(node.title)}"><a class="pall" href="../../">← All ${esc(node.title)} pathways</a>${pathways.map((x) => `<a href="../${esc(x.id)}/"${x === pw ? ' aria-current="page"' : ''}>${esc(x.title)}</a>`).join('')}</nav><h1>${esc(pw.title)}</h1>${pw.summary ? `<p class="lede">${esc(pw.summary)}</p>` : ''}</header>` +
         (useTrail ? view + `<div class="pview-map">${trail}</div>` : '') + `<div class="pview-list">` +
-        (pw.about ? `<div class="pabout">${new Marked().parse(String(pw.about))}</div>` : '') +
+        teacherStartLinks(pup) + (pw.about ? `<div class="pabout">${new Marked().parse(String(pw.about))}</div>` : '') +
         // How coding ideas build › Part 2: this pathway's own ideas, linking to their section of the ideas page.
         (() => { const gs = node.path === 'code' ? PATHWAY_IDEAS.filter((g) => g.pathway === pw.id) : [];
           return gs.length ? `<div class="pabout wpt-pideas"><p><b>Ideas this pathway adds</b> to the ones every pathway shares: ${gs.map((g) => `${gs.length > 1 ? `${esc(g.title.replace(/^.*: /, ''))}: ` : ''}${g.ideas.map((x) => esc(x.label.toLowerCase())).join(', ')}`).join('; ')}. <a href="${pup}teach/code/ideas/#path-${esc(gs[0].id)}">See how they build on the shared ideas</a>.</p></div>` : ''; })() +
@@ -1221,12 +1222,17 @@ for (const coursePath of teachCourses) {
   // Unit-specific guidance already lives in primers/<unit-id>.md, shown above.
   const courseNotesFile = join(CONTENT_ROOT, coursePath, 'teacher.md');
   const coursePresentationFile = join(CONTENT_ROOT, coursePath, 'presentation.md');
-  if (existsSync(coursePresentationFile)) writeFileSync(join(courseDir, 'course-deck.md'), readFileSync(coursePresentationFile, 'utf8'));
+  if (existsSync(coursePresentationFile)) {
+    writeFileSync(join(courseDir, 'course-deck.md'), readFileSync(coursePresentationFile, 'utf8'));
+    // Authored decks may carry authentic screenshot fallbacks alongside their source.
+    const assets = join(CONTENT_ROOT, coursePath, 'presentation-assets');
+    if (existsSync(assets)) cpSync(assets, join(courseDir, 'presentation-assets'), { recursive: true });
+  }
   const studentCourseUrl = `${'../'.repeat(coursePath.split('/').length + 1)}${coursePath}/`;
   const resources = [
     ...(existsSync(join(CONTENT_ROOT, coursePath, 'reference.md')) ? [`<a href="${studentCourseUrl}reference/">Concept reference</a>`] : []),
     ...(node.meta?.recap === true ? [`<a href="${studentCourseUrl}recap/">Recap</a>`] : []),
-    ...(existsSync(coursePresentationFile) ? ['<a href="course-deck.md" download>Opening and closing slides (Markdown)</a>'] : []),
+    ...(existsSync(coursePresentationFile) ? [`<a href="${esc(prepareLink('prepare', `${SITE_URL}/teach/${coursePath}/course-deck.md`))}" target="_blank" rel="noopener">Open course presentation in Prepare</a>`, '<a href="course-deck.md" download>Opening and closing slides (Markdown)</a>'] : []),
   ];
   const courseResources = resources.length ? `<p><b>Course resources:</b> ${resources.join(' · ')}</p>` : '';
   const courseNotes = existsSync(courseNotesFile)

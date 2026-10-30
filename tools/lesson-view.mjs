@@ -809,7 +809,7 @@ export function lessonPageHtml(lesson, deps) {
     const body = md.parse(s.body) + videoHtml(c.video) + promptHtml(c.prompt, s.id);
     // Predict steps: code first, then the questions, then the hidden reveal. Others: text, code, clip.
     // Hints are nudges, one click each: "Need a hint?", then "Another hint".
-    const hintsOf = (h) => (h === undefined ? [] : [].concat(h)).map((t, i) => `<details class="hints"><summary>${i ? 'Another hint' : 'Need a hint?'}</summary>${i || !siteRoot ? '' : `<p class="wpt-strat">Before a hint: what kind of stuck is this? <a href="${esc(siteRoot)}learning/how-you-learn/cards/#when-youre-stuck">Try a strategy first</a></p>`}${md.parse(t)}</details>`).join('');
+    const hintsOf = (h) => (h === undefined ? [] : [].concat(h)).map((t, i) => `<details class="hints"><summary>${i ? 'Another hint' : 'Need a hint?'}</summary>${i || !siteRoot ? '' : `<p class="wpt-strat">Before a hint: what kind of stuck is this? <a href="${esc(siteRoot)}learning/how-you-learn/reference/#when-youre-stuck">Try a strategy first</a></p>`}${md.parse(t)}</details>`).join('');
     const hints = smallerOf(s, s.tasks.length ? null : c, s.id) + hintsOf(c.hint);
     const checks = checkHtml(lesson, s, snippetNames, snippet, null, tx);
     // A Run step after a Predict step with a predict check shows "You predicted X. It actually did Y." after Run.
