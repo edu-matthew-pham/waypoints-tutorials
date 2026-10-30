@@ -145,6 +145,16 @@ The rules in `AGENTS.md` and the self-check in `roadmap/checklist.md` only reach
 - **Deck fields:** `summary:` is a description; `learning:` present in `teacher.yml` once that field is built (see the deck audit note above).
 - **Output:** a table per course (lesson, rule, line or step, suggested fix), counts per rule, and which fixes are mechanical and which need Matthew's call. Reviewer should not be the agent that wrote the lesson (a different chat or model).
 
+## Proposed (30 Oct 2026, Matthew; audit later, nothing built): rules carry their reason, and are marked default or firm
+
+Why: rules get shortened each time they are copied, and the reason and scope are lost. Agents then follow the short version and over-correct (the 27 Oct English decision to remove counted write boxes became "no write boxes" for every subject, then "never stores"; "wants are unlimited" was taught as fact because ACARA words it so). Matthew's intent is almost always a default with a reason, not a blanket rule.
+
+- **Audit `AGENTS.md`, `CLAUDE.md` and the subject roadmaps' "rules" lists:** beside each rule add (1) the reason in a few words, (2) its scope (which subjects, which lessons), (3) who decided it and when, and (4) **default** (use judgement, say why if you depart) or **firm** (First Nations content, no real brands or people, no AI marking, safeguarding).
+- **Keep `AGENTS.md` short:** rule, one-line reason, scope. Longer reasoning goes in the roadmap file the rule points to.
+- **When Matthew makes a decision,** write the reason and the scope with it, in the same commit.
+- **Repeat now and then:** list rules with no reason beside them, and rules copied into more places than they were decided for.
+- **Known cases to fix first:** write boxes (narrowed 30 Oct), the lesson shape default, pace-agnostic wording, the contestable-or-simplified rule.
+
 ## Decided (30 Oct 2026, Matthew): humanities (Economics, Civics, Geography, History)
 
 - **One course per standard**, one lesson per waypoint, in the node file's order (pattern: `content/economics/scarcity-7/`).
