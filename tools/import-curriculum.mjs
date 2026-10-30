@@ -7,7 +7,7 @@
 //
 // Each node keeps everything a teacher pointer page (tools/pointer-pages.mjs) and Create's node picker need: checkpoint,
 // success criteria, width (minimum, typical, wider), hinge and its reason, response modes with Kit's reasons, related
-// standards. The standard keeps its prior knowledge text and progression endpoint; its `prior` list (what it builds on)
+// standards. The standard keeps its prior knowledge text, progression endpoint and ACARA elaborations (when the kit has them); its `prior` list (what it builds on)
 // joins the codes that text names with its parents in the kit's progression maps. Kit holds what the curriculum says:
 // corrections go to Kit and are re-imported, never edited here.
 //
@@ -49,6 +49,16 @@ for (const f of readdirSync(join(kit, 'data', KIT)).filter((n) => n.endsWith('.j
   const s = d.standard;
   if (!s?.code?.startsWith(PREFIX) || (ONLY && !ONLY.test(s.code)) || !Number.isFinite(yearOf(s.code))) continue;
   all.set(s.code, { ...s, kitFile: `data/${KIT}/${f}` });
+}
+
+// ACARA's elaborations (examples that illustrate each standard), from the kit's <subject>_y<band>_width_tiers.json files
+// ({ standards: { code: { elaborations: [...] } } }). They belong to the whole standard, not to one waypoint. Files that
+// are not valid JSON are skipped (three Visual Arts early-years files are left out of the kit for that reason).
+const elaborations = new Map();
+for (const f of readdirSync(join(kit, 'data', KIT)).filter((n) => n.endsWith('_width_tiers.json'))) {
+  let d;
+  try { d = JSON.parse(readFileSync(join(kit, 'data', KIT, f), 'utf8')); } catch { continue; }
+  for (const [code, v] of Object.entries(d.standards || {})) if (Array.isArray(v?.elaborations) && v.elaborations.length) elaborations.set(code, v.elaborations.map(String));
 }
 
 // Kit titles are in Title Case; the site writes sentence case. Keep capitals the curriculum needs.
@@ -139,6 +149,7 @@ const out = want.sort((a, b) => yearOf(a) - yearOf(b) || a.localeCompare(b)).map
     code: c, kit: s.kitFile, year: yearOf(c), span: spanOf(c), ...(spanOf(c) > 1 ? { years: bandOf(c) } : {}), strand: strandOf(s.strand, c), title: keepCase(c, sentence(pageTitles.get(c) || s.title)), description: s.description,
     prior: prior(s),
     knowledge: s.prior_knowledge || '', endpoint: s.progression_endpoint || '',
+    ...(elaborations.has(c) ? { elaborations: elaborations.get(c) } : {}),
     nodes: (s.nodes || []).map((n) => ({
       n: Number(n.id), label: n.label, checkpoint: n.progression_checkpoint, hinge: truthy(n.hinge), criteria: list(n.success_criteria),
       ...(truthy(n.hinge) && n.hinge_reason ? { hinge_reason: n.hinge_reason } : {}),

@@ -18,7 +18,7 @@ One lesson per waypoint, in the node file's order. Usually Year 7 (teacher note 
 Notes:
 - **Hinges get the time.** Lessons 1 and 2 carry the `smaller:` support and the class plan's discussion (whole class on the bug and shortage questions). Teacher notes name the cascade from the node file's `hinge_reason`.
 - **Lesson 3's width is the point.** Many decision contexts are what separate opportunity cost from "the price" (node file: repertoire building), so its typical tier is worth recommending in the teacher notes, not just offering.
-- **First Nations wider items** (n1, n2, n3, n4 each list one): not written by us. Teacher notes start from ACARA's elaboration for AC9HE7K01 and ask the teacher to build on it with local, community-approved material (decided 30 Oct).
+- **First Nations wider items** (n1, n2, n3, n4 each list one): not written by us. Teacher notes quote ACARA's elaboration for AC9HE7K01 (now imported) and ask the teacher to build on it with local, community-approved material (decided 30 Oct).
 - **Make steps** are written in the student's own book or document and judged by a partner or the teacher (English's no-write-boxes rule), with a `reflect` tick.
 
 ## Built (30 Oct 2026; not yet tried with a class)

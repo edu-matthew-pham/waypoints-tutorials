@@ -1,6 +1,6 @@
 {
  "subject": "civics",
- "source": "waypoints-kit 6bb92e4",
+ "source": "waypoints-kit d93e6e5",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -18,6 +18,12 @@
    ],
    "knowledge": "Students know the key institutions of Australia's system of government, that it is based on the Westminster system, and the key values and beliefs of Western democracies (AC9HS6K06). They understand the roles and responsibilities of the three levels of government (AC9HS6K07) and the events leading to Federation and the Constitution (AC9HS6K01).",
    "endpoint": "Students explain the key features of Australia's system of government, including democracy, the Australian Constitution, responsible government and federalism.",
+   "elaborations": [
+    "describing Australia's system of responsible and representative government set out in the Australian Constitution, with a focus on the roles of the Governor-General, the Senate and the House of Representatives, the Prime Minister and Cabinet, the Opposition and the members of parliament",
+    "explaining the origins of the Australian system of government by acknowledging the aspects of the Westminster and Washington systems in the overall model of Australia's Federation",
+    "exploring key democratic concepts, including popular sovereignty, representation, accountability and a partial separation of powers through the election of members of a legislative branch who answer to the people and from whom the executive branch is drawn",
+    "investigating Australia as a federation with a division of powers and responsibilities between Commonwealth and state/territory governments"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -172,6 +178,13 @@
    ],
    "knowledge": "Students know key values and beliefs of Western democracies (AC9HS6K06) and can identify roles and responsibilities of different levels of government (AC9HS6K07). They understand that Australia's government emerged from Federation and is grounded in constitutional arrangements (AC9HS6K01, AC9HC7K01).",
    "endpoint": "Students explain the characteristics of Australia's democracy, including democratic freedoms and how they support active participation, and identify limits on these freedoms.",
+   "elaborations": [
+    "explaining the origins of the characteristics of Australian democracy and how democratic freedoms, such as freedom of speech, association, assembly, religion and movement, support active participation in Australia's democracy, and investigating cases where the 'bounds of law' can limit these freedoms and why this occurs",
+    "identifying how citizens can participate in a democracy (for example, engaging in community organisations, volunteering, social enterprise and collaborative problem-solving)",
+    "comparing the effectiveness of different ways of participating in Australia's democracy, including voting, standing for parliament, contributing to committees of inquiry, organising petitions or social media campaigns, and protesting",
+    "identifying characteristics of formal citizenship and the attributes of active citizenship, and identifying who has been included and excluded from the rights and freedoms of citizenship in Australia, particularly in relation to First Nations Australians",
+    "examining the active citizenship of First Nations Australians such as Neville Bonner, Adam Goodes, Noel Pearson, Murundoo Yanner, Charles Mene, Ellie Gaffney, Evelyn Scott and Pat O'Shane, and their contributions to the rights and freedoms of Australian First Nations Peoples"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -290,6 +303,14 @@
    ],
    "knowledge": "Students understand that Australia's Constitution established the framework of government (AC9HC7K01). They know about democratic values including fairness and equality from primary HASS (AC9HS6K06). This is the first systematic treatment of Australia's legal system as a distinct institution.",
    "endpoint": "Students explain the key principles and features of the Australian legal system, including the Constitution, the rule of law, principles of justice and the court hierarchy.",
+   "elaborations": [
+    "exploring the origins of Australia's legal system, including British common law, the Magna Carta, an independent judiciary and the Court hierarchies, both federal and state/territory",
+    "explaining the principles of justice, fairness, equality, the rule of law and the importance of equal access to the protections provided by the law",
+    "making connections between a fair and just legal system and democratic principles",
+    "explaining Australia's legal and justice system, including the principles of the rule of law, presumption of innocence, burden of proof, and right to a fair trial and legal representation",
+    "discussing the elements of a 'fair trial', including citizens' roles as witnesses and jurors, legal representation and due process",
+    "exploring how Australians can receive access to justice and can apply for legal representation, such as through legal aid"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -414,6 +435,13 @@
    ],
    "knowledge": "Students understand Australia's system of government and democratic freedoms (AC9HC7K01, AC9HC7K02). From primary HASS they know about migration and Australian society (AC9HS6K03) and diversity in communities. This descriptor extends that to the concept of secular democracy and the religious and cultural dimensions of Australian identity.",
    "endpoint": "Students explain how Australia's secular democracy and pluralist, multi-faith society draws upon diverse cultural origins including Christian and Western heritage, distinct First Nations histories and cultures, and migrant communities.",
+   "elaborations": [
+    "defining the terms 'secular', 'multi-faith', 'diverse society', 'culturally diverse', 'Christian heritage', 'Western heritage' and 'pluralist', and discussing their relevance to Australia today",
+    "exploring the diversity of First Nations Australian communities and discussing the distinctiveness of a community linked to their Country/Place",
+    "identifying trends regarding religious observance and/or cultural heritage in Australian society, using the Australian Bureau of Statistics and other data sources",
+    "exploring the diversity of spiritualities among First Nations Australian communities, from traditional spirituality to the adoption of other religions such as Christianity and Islam",
+    "appreciating the cultural and historical foundations of Australia's Christian heritage and their impact on Australia's political and legal systems"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -532,6 +560,14 @@
    ],
    "knowledge": "Students understand Australia's democratic freedoms and the characteristics of active and formal citizenship (AC9HC7K02). They have explored Australia's pluralist, multi-faith society and diverse cultural origins (AC9HC7K04). This descriptor extends that to examine how shared values can hold a diverse society together.",
    "endpoint": "Students explain how values based on freedom, respect, fairness and equality of opportunity can support social cohesion and democracy, evaluating the extent to which these values are reflected in Australian society.",
+   "elaborations": [
+    "identifying how Australian values can include patriotism, inclusion, civility, personal and collective responsibility, compassion, equality, justice, a 'fair go' and religious freedom, and evaluating the extent to which values are reflected in Australian society",
+    "identifying shared values across the diverse communities within Australia and how these can be expressed through customs and protocols such as flag-raising ceremonies and singing the national anthem (this could include investigating the history of changes to our national anthem)",
+    "evaluating the extent to which these values can promote cohesion and reconciliation in Australia's society",
+    "investigating why migrants and refugees wish to come to Australia and become Australian citizens",
+    "identifying Christian traditions and values that have influenced the development of Australian society, democracy and law, including the impacts upon First Nations Australian communities and other groups within Australian society",
+    "identifying the values and beliefs of religions practised in contemporary Australia, such as Judaism, Buddhism, Islam and Hinduism"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -653,6 +689,10 @@
    ],
    "knowledge": "Students can develop questions to investigate people, events, developments, places and systems (AC9HS6S01). At Y7 the shift is from general HASS inquiry questions to discipline-specific civics questions grounded in understanding of political and legal systems.",
    "endpoint": "Students develop focused questions to investigate Australia's political and legal systems and contemporary civic issues.",
+   "elaborations": [
+    "developing a key question related to a specific investigation; for example, 'What is the rule of law and how does it apply to Australia's legal system?' or 'How does Australia's federal system of government divide powers between states and territories?'",
+    "using current events to generate questions that apply to the wider investigation; for example, 'How is Australians' freedom of expression protected and limited in cases of incorrect information being published or distributed?'"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -745,6 +785,12 @@
    ],
    "knowledge": "Students can locate, collect and organise information and data from primary and secondary sources in a range of formats (AC9HS6S02). The Y7 shift is to civics-specific source types (government websites, specialist reports, legislation) and a more deliberate approach to source selection and organisation.",
    "endpoint": "Students locate, select and organise information, data and ideas from different sources relevant to political, legal and civic investigations.",
+   "elaborations": [
+    "locating information in online sources by exploring advanced search functions; for example, using advanced search functions or targeted criteria: 'allintext: cultural and religious diversity in Australian society'",
+    "selecting print and online sources, such as articles, graphs, charts and statistics to identify information, data and ideas; for example, map cultural and religious diversity in Australian society",
+    "identifying key findings from specialist sources, such as reports into Australia's legal system by the Australian Law Reform Commission or state/territory commissions and committees",
+    "selecting and organising information from different sources, such as media reports, online publications and government websites, on the basis of similarity and relevance to the topic"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -838,6 +884,10 @@
    ],
    "knowledge": "Students can evaluate information to identify patterns, trends, and relationships (AC9HS6S03) and evaluate sources and perspectives (AC9HS6S04). The Y7 shift is to explicitly civic analytical work — identifying how perspectives on political and legal issues differ and why, and what challenges arise from this.",
    "endpoint": "Students analyse information, data and ideas about civic issues to identify and explain differences in perspectives and potential challenges.",
+   "elaborations": [
+    "examining online publications to find examples of how the system of government protects respect for human rights and the rule of law, and compare these examples with other publications that have different perspectives or challenge these views",
+    "evaluating data from surveys or reports to draw conclusions about a current issue of challenge; for example, a Lowy Institute poll on important issues facing Australia or media reports on the effectiveness of the court system"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -931,6 +981,11 @@
    ],
    "knowledge": "Students have examined ways citizens can participate in democracy (AC9HC7K02) and can assess possible effects of actions and evaluate perspectives (AC9HS6S06). The Y7 capability shift is to explain the methods and strategies of civic participation — understanding how and why particular participation strategies are chosen, not just what they are.",
    "endpoint": "Students explain the methods and strategies of civic participation, identifying how these contribute to democratic and just outcomes.",
+   "elaborations": [
+    "identifying and evaluating the methods and actions linked to active and informed citizenship and how these contribute to change in local, national, regional and/or global communities; for example, campaigners in the local community who have saved heritage buildings or preserved green space or environmentally important sites",
+    "identifying the core responsibilities of active citizenship and evaluating how the contributions of Australian citizens enacting democratic values demonstrate active citizenship and contribute to creating a cohesive society; for example, disability advocacy services or Landcare Australia groups",
+    "identifying and explaining the features of methods or strategies used by citizens and groups to achieve democratic and just outcomes, such as social media campaigns, letters, petitions, participating in mediation or tribunals, or taking direct action"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1023,6 +1078,11 @@
    ],
    "knowledge": "Students can present descriptions and explanations drawing on sources and using relevant terms and conventions (AC9HS6S07). The Y7 shift is to civics-specific communication — using discipline concepts and terms (rule of law, separation of powers, secular nation), referencing evidence, and developing argument as a distinct form.",
    "endpoint": "Students create descriptions, explanations and arguments using civics and citizenship knowledge, concepts and terms that reference evidence.",
+   "elaborations": [
+    "developing descriptions, explanations or arguments using civic and citizenship knowledge or research to present an authoritative position on an issue",
+    "presenting ideas and information appropriate to purpose and audience; for example, to develop digital material promoting participation in Australia's democracy or written material presenting a case for a constitutional change",
+    "presenting an argument using appropriate terms and concepts such as 'rule of law', 'separation of powers' or 'secular nation'"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1117,6 +1177,14 @@
    ],
    "knowledge": "Students know the key features of Australia's system of government including democracy, the Constitution, responsible government and federalism (AC9HC7K01), and the characteristics of Australia's democracy including freedoms of speech, association, assembly, religion and movement (AC9HC7K02). They can explain how values of freedom, respect, fairness and equality support social cohesion (AC9HC7K05). The gap this descriptor fills is the mechanisms by which citizens actually participate in and are informed about that democratic system — moving from structural knowledge to participatory knowledge.",
    "endpoint": "Students explain how Australians are informed about and participate in democracy, including the range of participatory mechanisms, how those mechanisms have changed over time, and the role of media, interest groups and campaigns in shaping informed citizenship.",
+   "elaborations": [
+    "investigating how Australians can participate in democracy, such as voting in elections, contacting their elected representatives, joining political parties and standing as candidates, and using lobby groups and taking direct action",
+    "explaining how who can vote and have a say in Australian democracy has changed since Federation, and the importance of an independent electoral service such as the Australian Electoral Commission",
+    "examining the issues of concern to young people in Australia today and investigating different ways they are seeking to influence political processes in addressing these issues",
+    "analysing case studies of citizen participation in political campaigns such as the Uluru Statement from the Heart",
+    "explaining how citizens' understanding of issues, policies and political choices are shaped and can contribute to active and informed citizenship, including the influence of the media and social media, political parties, interest groups and election campaigns",
+    "examining a range of strategies used to influence citizens' electoral choices, such as public debate, media and social media, opinion polls and political consulting firms, advertising, interest groups and political party campaigns"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1273,6 +1341,12 @@
    ],
    "knowledge": "Students know the key features of Australia's system of government including responsible government, federalism and the structure of parliament (AC9HC7K01). They understand the characteristics of Australia's democracy including freedoms that underpin political participation (AC9HC7K02). The gap this descriptor fills is the mechanics of how political representation operates — how parliaments are structured, how representatives are elected and how government is formed and lost.",
    "endpoint": "Students explain the role of political parties and independent representatives in Australian democracy, including how elections work, how different voting systems operate and how governments are formed and may be lost.",
+   "elaborations": [
+    "examining the structure and composition of current parliaments, both federal and state/territory",
+    "evaluating different voting systems such as preferential and proportional representation",
+    "understanding how government is formed and may be lost, through discussing concepts such as parliamentary majority, the opposition, hung parliament, minority government, party discipline and balance of power",
+    "investigating the roles of political parties and elected representatives, including independents"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1395,6 +1469,13 @@
    ],
    "knowledge": "Students know the key principles and features of the Australian legal system, including the Constitution, the rule of law and the court system (AC9HC7K03). They understand that democratic systems have structures and checks. The gap this descriptor fills is specifically how law is made — the characteristics that define a law and the two distinct sources (parliament and courts) through which Australian law is created.",
    "endpoint": "Students explain the characteristics of laws in Australia and how laws are made through both parliamentary processes (statutory law) and through the courts (common law), including the role of delegated legislation and the relationship between parliament and the courts.",
+   "elaborations": [
+    "exploring the characteristics of laws, such as reflecting society's values; being enforceable; being known, clear and understood; and being relatively stable",
+    "understanding how governments can introduce new rules and regulations without parliament voting on them (for example, delegated or subordinate legislation is not made directly by an Act of parliament, but under the authority of an Act of parliament)",
+    "questioning whether laws are affected by different cultural or social perspectives, such as those of First Nations Australians",
+    "identifying the 2 chief sources of law (parliament and the courts) and analysing a case study of statute and common law",
+    "examining the relationship between parliament and the courts"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1545,6 +1626,12 @@
    ],
    "knowledge": "Students understand the key principles of the Australian legal system including the rule of law and court system (AC9HC7K03), and from K03 in this year level they have developed understanding of the characteristics of laws and how statute, common and delegated law are made. The gap this descriptor fills is the categorical distinctions between types of law in terms of what they regulate and protect — criminal vs civil — and the distinctive place of First Nations customary law within and alongside the Australian legal system.",
    "endpoint": "Students explain the types of law in Australia including the fundamental distinction between criminal and civil law and their roles in protecting rights and freedoms, and examine the place of First Nations Australian customary law including through the lens of Native Title.",
+   "elaborations": [
+    "explaining the fundamental difference between criminal law and civil law and their role in the protection of rights and freedoms",
+    "distinguishing statutory and common law from executive law (delegated law) and identifying how the houses of parliament can disallow delegated legislation",
+    "examining the significance of customary law for First Nations Australians through selected case studies",
+    "evaluating the opportunities and limitations of Native Title law for First Nations Australians"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1670,6 +1757,11 @@
    ],
    "knowledge": "Students understand how Australia's secular democracy draws on diverse cultural origins including Christian and Western heritage, distinct First Nations Australian histories and cultures, and migrant communities (AC9HC7K04). They understand how values of freedom, respect, fairness and equality support social cohesion (AC9HC7K05). The gap this descriptor fills is the mechanism by which culture and religion shape how individuals and groups enact citizenship — moving from understanding Australia's diverse society to understanding how that diversity plays out in lived citizenship.",
    "endpoint": "Students explain how culture and religion may influence individuals' and groups' perceptions and expressions of citizenship and their actions as citizens, including through multiple community memberships, collective identities and the distinctions between types of citizenship.",
+   "elaborations": [
+    "exploring how people express different aspects of their personal identity through membership of multiple communities, such as cultural groups, faith groups, professional associations, trade unions, and sporting and social clubs, and how this is reflected in expressions of citizenship; for example, fund-raising for community services or supporting people experiencing health concerns",
+    "exploring the collective identities of several different groups in Australia's multicultural society, and how these identities might be represented and perceived",
+    "discussing the differences between legal citizenship, active citizenship and global citizenship"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1767,6 +1859,14 @@
    ],
    "knowledge": "Students understand how Australia's pluralist multi-faith society draws on diverse cultural origins (AC9HC7K04), the values supporting social cohesion (AC9HC7K05), and from K05 in this year level, how culture and religion shape citizenship expressions. The gap this descriptor fills is the explicitly contested dimension of national identity — not just that Australia is diverse, but that there are genuine, ongoing debates about what it means to be Australian, who belongs, and whose perspectives are centred or marginalised.",
    "endpoint": "Students analyse different experiences of, perspectives on and debates about Australia's national identity and citizenship, including the perspectives of First Nations Australians as owners of their respective nations and of different migrant groups.",
+   "elaborations": [
+    "examining the meaning of \"national identity\", what it means to be an Australian citizen, and its role and significance in a globalised world",
+    "analysing different representations of Australian identity, historical and current",
+    "investigating the factors shaping debates about Australian identity, such as place, immigration and standard of living",
+    "exploring the reasons why some migrants elect to be become Australian citizens, while others choose not to become citizens",
+    "examining the types of questions asked in the citizenship test and exploring how these questions reflect our national identity",
+    "discussing how the national anthem contributes to our national identity"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1913,6 +2013,11 @@
    ],
    "knowledge": "Students have developed questions about civic topics at Year 7 level (AC9HC7S01) in the context of Australia's political and legal systems at introductory scope. The gap this descriptor fills is development of questioning at a more sophisticated level — including the distinction between key questions and related sub-questions, and the move from narrower factual questions to open-ended questions that drive investigation of contemporary civic issues.",
    "endpoint": "Students develop questions — including key questions and related sub-questions — to investigate Australia's political and legal systems and contemporary civic issues, demonstrating capacity to generate both closed and open-ended questions and to identify current events as inquiry starting points.",
+   "elaborations": [
+    "developing a key question and related questions to investigate an issue; for example, \"How do young people effectively participate in democratic processes to influence issues that impact on them?\", \"How did public opinion help in persuading the government on the importance of providing a National Disability Insurance Scheme?\"",
+    "developing a range of closed and open-ended questions about a particular topic or issue; for example, \"What are the main features of a democracy?\", \"How are laws made?\" and \"What is the relationship between democracy and active citizenship?\"",
+    "considering current events to generate ideas for research; for example, how Australian governments have developed media and communications campaigns on public health issues to reach the culturally and linguistically diverse groups in Australia, why media coverage of the National Agreement on Closing the Gap reflects changing perspectives on Australia's national identity"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2010,6 +2115,11 @@
    ],
    "knowledge": "Students have located, selected and organised information from provided sources at Year 7 level (AC9HC7S02). The gap this descriptor fills is the move from provided sources to self-directed source finding — including using advanced search strategies, applying accuracy and reliability criteria, and critically organising sources by identifying bias and selective use of information.",
    "endpoint": "Students locate, select and organise information, data and ideas from different sources — using advanced search strategies, applying accuracy and reliability criteria, and organising sources by identifying bias, language choices and selective information use.",
+   "elaborations": [
+    "locating information from a range of print and online sources (for example, online journal articles, news reports or social media posts) using advanced search functions or targeted criteria about a citizenship issue, such as the nature of the Australian citizenship test",
+    "selecting information from a range of sources by applying understandings of accuracy and reliability to the selection of information",
+    "organising the ideas in different sources, such as opinion pieces, information from political parties, government reports and reports from independent organisations, by identifying bias, language choices and selective use of information"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2105,6 +2215,12 @@
    ],
    "knowledge": "Students have analysed civic information at Year 7 level (AC9HC7S03) to identify differences in perspectives. The gap this descriptor fills is the move to analysis that also identifies and explains potential challenges — not just that perspectives differ, but why they differ and what consequences those differences have for civic and democratic life.",
    "endpoint": "Students analyse information, data and ideas about political, legal or civic issues to identify and explain differences in perspectives and potential challenges, drawing on a range of source types including speeches, award criteria, letters and case studies.",
+   "elaborations": [
+    "examining speeches from prominent Australian politicians or jurists to explain how Australia's legal and political systems promote a fair and cohesive society",
+    "identifying and analysing the criteria for awarding Australian of the Year and Young Australian of the Year and explaining the different ways in which recipients of these awards have met the criteria and demonstrated the values of \"good citizenship\"",
+    "examining letters to the editor about current issues, and identifying and explaining the differences of opinion",
+    "identifying and explaining possible reasons for the difference in perspectives about a civics and citizenship issue, such as marriage equality"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2202,6 +2318,10 @@
    ],
    "knowledge": "Students have explained methods and strategies for civic participation at Year 7 level (AC9HC7S04). The gap this descriptor fills is explaining those methods in the context of decision-making — not just naming strategies but explaining the reasoning behind choosing particular strategies for particular civic aims, and the links between democratic societies, active citizenship and global citizenship.",
    "endpoint": "Students explain the methods or strategies related to making decisions about civic participation, including active citizenship strategies, the links between democracy and active and global citizenship, and the methods used to take civic action at different scales.",
+   "elaborations": [
+    "describing how active citizenship strategies may contribute to an informed and positive change, and to building a democratically cohesive society; for example, stopping whaling, reducing carbon emissions",
+    "explaining the links between democratic societies, active citizenship and global citizenship at national, regional and global levels, and methods used to take civic action; for example, citizens who protest against militaristic and authoritarian regimes and/or abuses of human rights in other societies"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2301,6 +2421,10 @@
    ],
    "knowledge": "Students have created civic descriptions, explanations and arguments at Year 7 level (AC9HC7S05). The gap this descriptor fills is creating civic communication that references evidence — moving from basic descriptions and explanations to arguments that are grounded in evidence and use subject-specific terminology accurately. The command term 'create' encompasses a range of output types — not just written arguments but also descriptions and explanations across different civic contexts.",
    "endpoint": "Students create descriptions, explanations and arguments using civics and citizenship knowledge, concepts and terms that reference evidence — including persuasive content on contemporary civic issues and accurate use of subject-specific legal and civic terminology.",
+   "elaborations": [
+    "persuading the public on a contemporary issue or about a need for action, using evidence; for example, to argue the case for a constitutional change or an advertisement promoting participation in Australia's democracy",
+    "using appropriate terms and concepts such as \"freedoms\", \"responsibilities\", \"common law\", \"statutory law\" and \"customary law\""
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2399,6 +2523,12 @@
    ],
    "knowledge": "Students know how Australians are informed about and participate in democracy (AC9HC8K01), and the role of political parties and independent representatives including elections and formation of governments (AC9HC8K02). They have a working understanding of democratic participation but have not yet examined the constitutional foundations underpinning these processes.",
    "endpoint": "Students explain the role of the Australian Constitution in establishing Australia's federal system of government and democratic institutions, and describe the process and challenges of constitutional change through referendum.",
+   "elaborations": [
+    "understanding the aims of the founding fathers prior to Federation in writing the Australian Constitution, including the need for compromise",
+    "describing the process by which referendums to change the Australian Constitution are initiated and decided, including the role of the Australian Electoral Commission, and discussing the advantages and disadvantages of having a constitution that can only be amended by referendum",
+    "investigating the extent to which the Constitution upholds and enables democratic institutions and processes, including a constitutional monarchy, a federal parliamentary system with elected legislatures, protection of states' rights and individual rights, and representation of the interests of all Australians",
+    "assessing the effectiveness of the process of constitutional change and the degree to which it supports popular sovereignty through examining selected referendum proposals; for example, the successful vote on the Constitution Alteration (Aboriginals) 1967 or the unsuccessful vote on the Constitution Alteration (Establishment of Republic) 1999"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2519,6 +2649,11 @@
    ],
    "knowledge": "Students know the role of political parties and independent representatives in Australian democracy including elections and formation of governments (AC9HC8K02), and how statutory law is made through parliaments (AC9HC8K03). They understand the basic passage of a bill into law but have not examined the upstream policy process — how government decisions move from idea to legislation.",
    "endpoint": "Students explain the legislative processes through which federal government policy is shaped, developed and implemented, including the influences on policy formulation.",
+   "elaborations": [
+    "locating the areas of federal government responsibility as outlined in the Constitution and methods for resolving conflicts over federal/state/territory responsibilities",
+    "charting the process of development of a policy from initial idea to enacted legislation",
+    "using a specific federal policy to understand and analyse the influences on policy formulation and implementation, such as political parties, interest groups, citizens, international influences and the public service"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2611,6 +2746,12 @@
    ],
    "knowledge": "Students know the characteristics of laws and how they are made through parliaments and courts (AC9HC8K03), and the types of law in Australia including criminal and civil law and First Nations customary law (AC9HC8K04). They understand law is made through two mechanisms but have not yet examined how the court hierarchy is structured or how different courts exercise their jurisdiction.",
    "endpoint": "Students explain the key features and jurisdictions of Australia's court system, describe the operations of courts and tribunals, and explain how court judgements contribute to the development of law.",
+   "elaborations": [
+    "locating information about the matters that some of the different courts and tribunals deal with and how they enact the law and resolve disputes, and developing a summary for a state jurisdiction and the federal jurisdiction",
+    "creating a visual representation of the Australian court system and each court's jurisdiction and place in the relevant hierarchy",
+    "using sample cases to investigate the differences between civil and criminal law, and how the courts apply and interpret criminal laws and resolve civil disputes",
+    "exploring how court judgements impact on the development of law; such as the role of statutory interpretation and the creation of precedent; for example, the decision in the Mabo Case (1992) overturned the legal concept of terra nullius and established the concept of native title"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2703,6 +2844,14 @@
    ],
    "knowledge": "Students understand the structure of the court hierarchy and the difference between civil and criminal law from AC9HC9K03. They have a surface-level understanding of courts as places where law is applied but have not yet examined who does what inside a trial or what rights attach to participants.",
    "endpoint": "Students explain the roles of courts, judges, lawyers and juries in criminal and civil trials, compare the rights of the accused with the rights of victims, and evaluate whether the legal system delivers equal access to justice.",
+   "elaborations": [
+    "investigating the roles of judges, lawyers, court officials and juries in criminal and civil trials",
+    "comparing the rights of the accused with the rights of victims in criminal trials, and the rights of the plaintiff and of a defendant in a civil case",
+    "understanding the role of the police, including state and federal police, in enabling equal access to justice and equal treatment under the law (the rule of law)",
+    "understanding the purpose of civil remedies and the rights of appeal in both criminal and civil cases, and evaluating whether they are applied equally and deliver just outcomes",
+    "investigating potential barriers to equality of access to justice, such as education and literacy, location and proximity to legal avenues, financial constraints, race or ethnicity, especially for First Nations Australians",
+    "exploring how legal aid operates and how it contributes to rights of the accused or victims"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2800,6 +2949,11 @@
    ],
    "knowledge": "Students know how culture and religion influence individuals' and groups' perceptions and expressions of citizenship (AC9HC8K05), and have examined debates about national identity and citizenship (AC9HC8K06). They understand that citizenship is expressed through identity and culture but have not yet examined formal and informal mechanisms of civic participation at community, national and global levels.",
    "endpoint": "Students explain how and why individuals and groups participate in civic life in Australia and as global citizens, including the contribution of community, religious and cultural organisations.",
+   "elaborations": [
+    "researching the work of an Australian non-government organisation (NGO), philanthropist, community group or religious group and the extent to which they contribute to the Australian community; for example, volunteers that support communities ravaged by natural disasters such as the State Emergency Service (SES), the Salvation Army, the Red Cross, Sikh Volunteers Australia",
+    "researching examples of young people who are acting as global citizens, such as Malala Yousafzai and Greta Thunberg, and Australia's Amelia Telford, Mackinley Butson and Bassam Maaliki, or UNICEF Australia's Young Ambassadors",
+    "collaborating with peers to plan a citizenship campaign on an issue related to sustainability or climate change"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2891,6 +3045,10 @@
    ],
    "knowledge": "Students have examined different experiences of and debates about Australia's national identity and citizenship including perspectives of First Nations Australians and migrant groups (AC9HC8K06). They understand identity as shaped by culture and community but have not yet examined how media actively constructs and circulates representations that shape identity and attitudes.",
    "endpoint": "Students explain how media, including social media, influences the shaping of identity and attitudes to diversity, and analyse media representations of different groups in Australian society.",
+   "elaborations": [
+    "analysing how media represent different groups in Australian society, such as First Nations Australians, immigrant groups, and male and female sporting figures, and people with disability, and assessing the impact those representations have on community cohesiveness",
+    "investigating a human rights campaign that uses social media and how members of the public have engaged with the issue"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2958,6 +3116,10 @@
    ],
    "knowledge": "Students can develop questions to investigate Australia's political and legal systems and contemporary civic issues (AC9HC8S01). At Year 9 the expectation adds modification — students are expected to revisit and refine questions as their investigation develops, not just formulate them at the outset.",
    "endpoint": "Students develop initial inquiry questions about Australia's political and legal systems or civic issues, and modify those questions as their investigation develops in response to new information.",
+   "elaborations": [
+    "developing questions about Australia's political and legal systems; for example, 'How democratic is Australia's system of government?' or 'Does Australia's legal system deliver justice?'",
+    "revisiting the questions based on further collection of information; for example, modifying 'How democratic is Australia's system of government' to 'How representative is Australia's system of government?'"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3025,6 +3187,10 @@
    ],
    "knowledge": "Students can locate, select and organise information, data and ideas from different sources (AC9HC8S02). At Year 9 the expectation advances from organising to comparing — students are expected to evaluate relative accuracy and reliability across sources, not just find and sort relevant information.",
    "endpoint": "Students locate, select and compare information, data and ideas from a range of sources, evaluating the accuracy and reliability of different sources.",
+   "elaborations": [
+    "locating from a range of print and online sources, information, such as statistics, graphs, tables, maps, articles, blogs and advertisements to select relevant information or data about an issue; for example, the development of water policy in the Murray–Darling Basin, an aspect of the COVID-19 pandemic or First Nations Australians' rights",
+    "identifying why some sources and information have greater accuracy and reliability than others"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3091,6 +3257,11 @@
    ],
    "knowledge": "Students can analyse information about civic issues to identify and explain differences in perspectives and potential challenges (AC9HC8S03). At Year 9 the expectation advances from explaining differences to evaluating them — students must assess the values, motivations and contexts that underpin perspectives, not just identify that perspectives differ.",
    "endpoint": "Students analyse information about political, legal or civic issues to identify and evaluate differences in perspectives and interpretations, including examining the values and motivations underlying those perspectives.",
+   "elaborations": [
+    "identifying the values, motivations and contexts that underpin different perspectives about political and legal systems and processes; for example, calls for constitutional recognition for First Nations Australians, First Nations Voice and Makarrata, or the impact of reducing or extending mining activity on particular communities",
+    "examining information that includes a diversity of perspectives about the effectiveness of a political or legal institution; for example, 'Is Australia's parliament representative of the Australian community?' or 'Does the court system deliver justice for the victims of crime?'",
+    "investigating how the Australian Government responds to an issue and examining the process of policy development and implementation, such as the development of welfare changes and financial support in response to natural disasters or emergencies"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3158,6 +3329,11 @@
    ],
    "knowledge": "Students can explain the methods or strategies related to making decisions about civic participation (AC9HC8S04). At Year 9 the expectation advances from explaining to evaluating — students must assess whether methods are effective and what their intended and unintended effects are.",
    "endpoint": "Students evaluate the methods or strategies used in civic participation decisions, assess intended and unintended effects of action plans, and develop evaluated plans for addressing a contemporary civic issue.",
+   "elaborations": [
+    "examining a government action plan, identifying the actions, the measures, and the intended and unintended effects of the plan; for example, a recycling program in a local community or a national campaign to improve post-school literacy",
+    "developing a plan of action to address a contemporary issue that incorporates a consultation process to ensure a range of views are heard and recorded, and participants are provided with opportunities to contribute; for example, planning a campaign to raise awareness about a personal or road safety issue at a local level; developing a strategy to aid a group in another region or country (a developing nation) with educational resources and opportunities",
+    "evaluating the government media campaigns and community supported activities that have been used over time to promote reduction in littering and disposal of waste, and determine if they have been effective"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3229,6 +3405,10 @@
    ],
    "knowledge": "Students can create descriptions, explanations and arguments using civics and citizenship knowledge, concepts and terms that reference evidence (AC9HC8S05). At Year 9 the expectation advances from referencing to incorporating evidence — evidence should be integrated into the argument structure rather than added as a gesture.",
    "endpoint": "Students create descriptions, explanations and arguments using civics and citizenship knowledge, concepts and terms, with evidence incorporated into the argument structure.",
+   "elaborations": [
+    "developing an evidence-based argument about a civics and citizenship issue, such as a need to reform youth justice arrangements in a particular jurisdiction",
+    "using terms and concepts such as 'representative', 'jurisdictions', 'parliamentary majority' and 'mandate'"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3297,6 +3477,11 @@
    ],
    "knowledge": "Students know the role of the Australian Constitution in providing the basis for Australia's federal system and democratic processes, including institutions and the referendum process (AC9HC9K01). They understand the legislative processes through which federal government policy is shaped and implemented (AC9HC9K02).",
    "endpoint": "Students compare the key features and values of Australia's system of government with at least one other system of government in the Asia-Pacific region, explaining similarities, differences and cultural influences.",
+   "elaborations": [
+    "comparing the key institutional features of Australia's system of government (for example, free, fair and frequent elections, the party system, the partial separation of powers, the rule of law, and the protection of human rights and freedoms) with the key features of a system of government of a country in Asia",
+    "researching and comparing the experiences of First Nations Australians in engaging with the political system with those of the Indigenous peoples in an Asian nation",
+    "exploring and reflecting on the cultural influences shaping the Australian political system and that of a comparison country"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3435,6 +3620,14 @@
    ],
    "knowledge": "Students know how individuals and groups participate in civic life in Australia and contribute to global citizenship (AC9HC9K05). They understand legislative processes shaping government policy (AC9HC9K02).",
    "endpoint": "Students explain the Australian Government's role and responsibilities at a regional and global level, analysing and evaluating its participation in relation to a global issue.",
+   "elaborations": [
+    "explaining the ways Australia contributes to and participates in the Asia-Pacific region, including membership of international organisations and participation in agreements with other nations (for example, exchange programs, peacekeeping, election monitoring, development aid, health programs, disaster management) and internationally, including participation in the United Nations Security Council",
+    "investigating Australia's responsibilities and commitment to various international treaties, conventions and agendas, such as the UN Sustainable Development Agenda and the United Nations Framework Convention on Climate Change",
+    "analysing and evaluating the reasons for and effectiveness of Australia's participation in the region and globally with regard to a global issue, such as human rights, war and conflict, challenges to democracy or climate",
+    "comparing the responses of governments and organisations around the world to a global issue; for example, gender equality, poverty, climate change, vaccination against communicable diseases",
+    "identifying ways that the forces of global interconnectedness could both exacerbate and enhance the ability to solve the key issues of our time",
+    "evaluating the impacts of these issues on Australia's identity; First Nations Australians' reconciliation, truth-telling and sovereignty; Australian government policies and citizens' choices to act in the global interest"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3578,6 +3771,12 @@
    ],
    "knowledge": "Students know the key features and jurisdictions of Australia's court system and the operations of courts and tribunals (AC9HC9K03). They understand the role of courts, judges, lawyers and juries in trials, and the rights of the accused and victims (AC9HC9K04).",
    "endpoint": "Students explain the roles of both parliament and the High Court in protecting rights through the Constitution, common law, and statute law, comparing different mechanisms and their effectiveness.",
+   "elaborations": [
+    "explaining the role of the High Court in interpreting and applying the law, using contemporary Australian examples",
+    "exploring the concepts of express and implied rights through High Court cases such as the Stolen Generations Case (Kruger v the Commonwealth [1997]) and the Vicki Lee Roach Case (Roach v Electoral Commissioner [2007])",
+    "investigating understanding of terra nullius and how the Native Title Act 1993 property rights were developed through High Court interpretation of common law and enshrined in statutory law",
+    "comparing the effectiveness of a constitutional bill of rights, such as in the USA, with a statutory bill of rights, such as in New Zealand"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3717,6 +3916,11 @@
    ],
    "knowledge": "Students know how individuals and groups participate in civic life and contribute to global citizenship (AC9HC9K05). They understand the court system's role in applying law (AC9HC9K03, AC9HC9K04).",
    "endpoint": "Students explain how Australia's international legal obligations shape Australian law and government policies, including those relating to First Nations Australians, and analyse issues related to applying those obligations.",
+   "elaborations": [
+    "investigating how many of the 9 key human rights treaties Australia has signed and ratified, and researching how at least one of these has shaped Australian law or government policy",
+    "explaining how international conventions and declarations, such as the Declaration on the Rights of Indigenous Peoples, have shaped Australian government law and policies with regards to First Nations Australians",
+    "analysing Australia's legal obligations to the environment under the Paris Agreement (2016) and the World Heritage Convention (1972), and/or to refugees under the Convention Relating to the Status of Refugees (1951) and its optional protocol (1967)"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3825,6 +4029,12 @@
    ],
    "knowledge": "Students know how individuals and groups participate in and contribute to civic life in Australia and to global citizenship (AC9HC9K05). They understand the influence of media, including social media, in shaping identity and attitudes to diversity (AC9HC9K06).",
    "endpoint": "Students explain the challenges to and ways of sustaining a resilient democracy and a cohesive society, examining threats and responses in the Australian and/or global context.",
+   "elaborations": [
+    "identifying the key characteristics of cohesive, democratic societies, such as cooperation, inclusion, respect and peaceful resolution of conflicts, and the importance of an active and informed citizenry",
+    "considering threats to Australian democracy and other democracies, such as the influence of vested interests, organised crime, corruption and lawlessness, and the impact of social media on the quality of civic debate about controversial matters",
+    "locating and discussing a range of possible threats to the resilience of democratic societies globally, such as extreme polarisation of views and a breakdown in social consensus, and the reasons for the rise of non-democratic forces such as extremist groups with no commitment to democratic values",
+    "examining how our Western democratic heritage and values such as freedom of speech support participation in public debate about controversial issues; for example, the date of Australia Day, the Uluru Statement, reconciliation and truth-telling, or the call for a treaty between First Nations Australians and the Australian Government"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3959,6 +4169,10 @@
    ],
    "knowledge": "Students have developed and modified questions to investigate Australia's political and legal systems and contemporary civic issues at Year 9 (AC9HC9S01). They can formulate sub-questions and revisit questions based on new information.",
    "endpoint": "Students develop and modify questions that guide sustained civic inquiry, generating productive sub-questions and revising the inquiry based on evidence gathered.",
+   "elaborations": [
+    "developing a range of sub-questions connected to the over-arching question and using these to modify the question; for example, \"How does the system of government provide equality?\", \"How representative is the government?\", \"What processes ensure accountability?\" and \"How accessible is the government to citizens?\"",
+    "revisiting the questions based on further collection of information; for example, \"Do different groups in society have particular views on representativeness, equality and accountability?\""
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4054,6 +4268,12 @@
    ],
    "knowledge": "Students have located, selected and compared information from a range of sources at Year 9 (AC9HC9S02). They can use digital tools to survey political issues and explore media for bias and representation.",
    "endpoint": "Students locate, select and compare information, data and ideas from a range of sources about political, legal or civic issues, evaluating sources for credibility, perspective and relevance.",
+   "elaborations": [
+    "locating print and online sources to investigate a contemporary global political, legal or civic issue, selecting varying and conflicting points of view in relation to the issue, such as the success of exchange programs or Australia's commitment to its international legal obligations",
+    "using digital programs and survey and polling apps to conduct surveys on a political issue, such as a specific policy proposal, and analysing the research results to determine the range of views or support",
+    "exploring traditional and social media texts for stereotypes, over-generalisation and misrepresentation, such as those related to how cultural groups such as recent immigrants are represented in the media",
+    "comparing the varying policies of different political groups on an issue such as mining, climate change, services for rural communities, or refugees"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4156,6 +4376,11 @@
    ],
    "knowledge": "Students have analysed information to identify and evaluate differences in perspectives and interpretations at Year 9 (AC9HC9S03). They can examine media and information sources for varying views on contemporary issues.",
    "endpoint": "Students analyse information, data and ideas about political, legal or civic issues to identify and evaluate differences in perspectives and interpretations, including assessing the effectiveness of global governance institutions.",
+   "elaborations": [
+    "examining information from traditional and social media sources to identify examples of different views on and responses to a contemporary Australian political, legal or civic issue, such as limiting freedoms, placing restrictions on movement, trade or association, or debates about the use of public resources",
+    "examining the role of institutions of global governance, such as the United Nations or the International Criminal Court, and evaluating their effectiveness in upholding democratic norms and human rights",
+    "investigating a contemporary international event or situation, such as armed conflict, development of an international agreement, or natural or humanitarian disaster, to assess the effectiveness and values positions of global actors such as NGOs, and the response of the Australian Government to the event or situation"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4263,6 +4488,9 @@
    ],
    "knowledge": "Students have evaluated the methods or strategies related to making decisions about civic participation at Year 9 (AC9HC9S04). At Year 10 the descriptor adds 'and outcomes' — students are now expected to evaluate not just the method but what the method achieved.",
    "endpoint": "Students evaluate both the methods or strategies used in civic participation and the outcomes achieved, drawing conclusions about effectiveness and accountability.",
+   "elaborations": [
+    "examining the methods or strategies used by the Australian government, a non-government organisation, or a campaigning or pressure group, to address an issue at a regional or global level, or to ensure accountability to Australia's international obligations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4340,6 +4568,10 @@
    ],
    "knowledge": "Students have created descriptions, explanations and arguments using civics and citizenship knowledge, concepts and terms at Year 9 (AC9HC9S05). They can construct basic evidence-based arguments.",
    "endpoint": "Students create well-structured descriptions, explanations and arguments that use civics and citizenship knowledge, concepts and terminology, with evidence integrated to support claims and conclusions.",
+   "elaborations": [
+    "developing an evidence-based argument about a civics and citizenship issue, such as the role of Australia in the security of the Asia-Pacific region or the role of Australia's trading relationships with nations that have human rights issues, and drawing conclusions about the future impacts of this issue on Australia's values",
+    "using terms and concepts such as \"conventions\", \"international law\", \"cohesive society\" and \"global citizen\""
+   ],
    "nodes": [
     {
      "n": 1,

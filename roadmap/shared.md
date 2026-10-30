@@ -115,11 +115,16 @@ No course on the site is recorded as tried with a class. Flagged explicitly in t
 
 - **One course per standard**, one lesson per waypoint, in the node file's order (pattern: `content/economics/scarcity-7/`).
 - **Inquiry skills: a shared core plus subject skills.** One shared course for the skills that are near-identical in all four (develop questions, locate and organise information, create explanations and arguments), each lesson tagged with every subject's node; each subject builds only its own skills (History's source work, Geography's data and action, Civics' participation, Economics' response to an issue). The full investigation is class work, with a printable inquiry skeleton per subject. Plan: `roadmap/humanities-inquiry.md`.
-- **First Nations wider items** are teacher notes: start from ACARA's own elaboration for that content, then local, community-approved material on top; we write no student text for them (Matthew, 30 Oct: the elaborations are the starting point; the data exists, see Proposed below).
+- **First Nations wider items** are teacher notes: start from ACARA's own elaboration for that content, then local, community-approved material on top; we write no student text for them (Matthew, 30 Oct: the elaborations are the starting point; imported, see Done above).
 
-## Proposed (30 Oct 2026): import ACARA elaborations that the data already has
+## Done (30 Oct 2026, Matthew said go): ACARA elaborations in the node data
 
-Corrects an earlier note here that said the node data lacks elaborations. ACARA Progressions and Planner (`acara-progressions-v2` and `waypoints-planner-v2`, `static/data/<subject>/`) hold them in a `<subject>_y<N>_width_tiers.json` file beside the per-standard node files, as an `elaborations` list on each standard (identical in both repos; Economics Year 7 checked: AC9HE7K01 has five, including the First Nations barter and partnerships one). `tools/import-curriculum.mjs` reads only the per-standard node files (it skips any file without a `standard` key), so `data/curriculum/*.json` never got them. Not checked: whether waypoints-kit carries the width-tier files (the raw URL for economics Year 7 did not fetch); if it does not, the copy script that fills the Kit needs to include them. Proposed: read the width-tier file in the importer, store `elaborations` on each standard, and show them on pointer pages and teacher guides beside a lesson's `node:`. The elaborations belong to the whole standard, not to one waypoint, so show them on the standard. Nothing changed yet.
+ACARA Progressions and Planner hold each standard's elaborations in `static/data/<subject>/<subject>_y<N>_width_tiers.json` (an `elaborations` list per standard). waypoints-kit had none of these files, and `tools/import-curriculum.mjs` reads only per-standard node files, so `data/curriculum/*.json` had no elaborations (an earlier note here wrongly said the data lacked them).
+
+- **waypoints-kit** (`d93e6e5`): 122 `*_width_tiers.json` files copied into `data/<subject>/` (1,512 standards, 1,489 with elaborations); `SOURCES.md` has a row for them. Three Visual Arts early-years files (`visual_arts_yf`, `_y12`, `_y34`) are left out because the source files in Progressions and Planner are not valid JSON (unescaped quotes); fix them there, then copy.
+- **Importer**: reads the width-tier files and stores `elaborations` on each descriptor (the standard, not a waypoint). All 14 `data/curriculum/*.json` re-imported; the diff is additions only.
+- **Pointer pages** (`/teach/curriculum/<subject>/<code>/`) show an "ACARA elaborations" section, labelled as examples, not a checklist. Not yet in the copied lesson prompt (`tools/kit-nodes.mjs`) or Create; add if wanted.
+- Needs a whole-site publish (pointer pages).
 
 ## Changed by the Economics chat (30 Oct 2026): node check
 

@@ -1,6 +1,6 @@
 {
  "subject": "history",
- "source": "waypoints-kit 6bb92e4",
+ "source": "waypoints-kit d93e6e5",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -17,6 +17,11 @@
    ],
    "knowledge": "Students can describe significant individuals, events and ideas in Australia's post-Federation history and explain how migration to Australia changed society (AC9HS6K01, AC9HS6K03). They have not yet studied human prehistory, early human evolution, or the movement of peoples before written records. They have not worked with geological or archaeological timescales, or with theories about human origins.",
    "endpoint": "Students identify and describe competing theories of early human evolution and migration, explain how environmental changes drove the movement of peoples out of Africa and into other parts of the world including Australia, and identify how different types of evidence — excavation and stratigraphy, oral history, and radiocarbon dating — inform historical interpretations about these events.",
+   "elaborations": [
+    "identifying different theories regarding human evolution such as the Out of Africa Theory and the Modern Theory of Evolution",
+    "describing how environmental changes, such as climate change and desertification, triggered the movement of peoples from Africa",
+    "identifying how different approaches, such as the use of excavation and stratigraphy, oral history and the data derived from radiocarbon dating, inform historical interpretations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -126,6 +131,12 @@
    ],
    "knowledge": "Students can identify competing theories of early human evolution and migration, describe how environmental changes drove movement out of Africa, and identify how different evidence types inform interpretations (AC9HH7K01). They have not yet studied the specific causes, routes, or effects of the arrival of early peoples on the Australian continent.",
    "endpoint": "Students identify and describe theories about why and how early First Nations Australians arrived on the Australian continent, explain likely migration routes across the continent using geographical and chronological evidence, and describe the effects of that arrival on the continent.",
+   "elaborations": [
+    "investigating how scientific techniques have been used to establish the arrival of humans to the mega-continent known as Sahul; for example, use of radiocarbon (C14) and Thermoluminescence (TL) dating techniques used to date archaeological sites related to early human occupation such as Lake Mungo, and genetic research to map the movement of people",
+    "investigating how the ancestors of the early First Peoples of Australia were seafarers and examining the likely effects this had on the movement of people to the continent",
+    "examining online maps and information to investigate the relationship between geographical features and the location of known ancient sites on the mega-continent known as Sahul; for example, investigating the vegetation types and water sources in different parts of the continent and how they reflect the location of ancient sites",
+    "investigating the techniques used to predict the chronology and the routes taken in the dispersal of early First Nations Australians across the continent; for example, using online information that explains how research into ancient landscapes, waterways, terrain and important early First Nations Australians' habitation sites can model the movement of people across the continent, or how DNA taken from hair samples can track the genetic connections of First Nations Australians back to specific parts of Australia as far back as tens of thousands of years ago"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -226,6 +237,13 @@
    ],
    "knowledge": "Students can describe the arrival of early First Nations Australians on the continent, identify evidence for migration routes, and describe effects of that arrival including the establishment of diverse cultures (AC9HH7K02). They have not yet examined the evidence for cultural continuity over deep time, nor the concept of 'deep time' as a historical framework.",
    "endpoint": "Students explain how First Nations Australians represent the world's oldest continuing cultures, identify and describe specific evidence of both continuity and change across deep time, and explain what 'deep time' means as a historical concept and how it is investigated using methods such as the Before Present (BP) dating system and archaeological sites.",
+   "elaborations": [
+    "investigating dating methods used by archaeologists for the study of early First Nations Australians; for example, the use of the 'Before Present' (BP) dating system",
+    "exploring how we know about continuities and changes in First Nations Australians' cultures; for example, the archaeological research showing evidence of occupation and the lives of First Nations Australians during the Pleistocene epoch at sites such as Lake Mungo and Kutikina Cave",
+    "exploring evidence of continuities and changes in the ancient period at specific sites; for example, dating the creation of pictographs and the carving of petroglyphs at sites such as the Dampier Archipelago, Grampians National Park, Kakadu National Park, Koonalda Cave, Uluru-Kata Tjuta National Park, Preminghana, and the West Kimberley",
+    "exploring evidence of continuing culture that was evident in the ancient period, such as the use of ochre",
+    "examining First Nations Australians' views on creation and changes in the landscape that have been passed down through oral tradition, such as the existence of megafauna, changes from wetter to drier climates and changes in vegetation in central Australia"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -331,6 +349,13 @@
    ],
    "knowledge": "Students can explain that First Nations Australians' cultures display both continuity and change over deep time, and describe evidence of cultural adaptation including responses to environmental change (AC9HH7K03). They have not yet examined specific environmental processes in detail — rising sea levels, aridification, megafauna — or how particular communities responded to each.",
    "endpoint": "Students explain how First Nations Australians responded to specific environmental processes and changes over time, including rising sea levels, aridification, and the presence and extinction of megafauna, and describe how evidence of these responses — including oral traditions, archaeological evidence, and water management techniques — demonstrates adaptation, resilience, and cultural sophistication.",
+   "elaborations": [
+    "explaining the effects of environmental changes on First Nations Australians across Australia, such as rising sea levels (for example, the loss of the land bridge to Tasmania and the formation of the Torres Strait Islands from an existing land bridge) and the aridification of some landscapes, such as Lake Mungo",
+    "investigating how accounts of rising sea levels that occurred between 18,000 and 7,000 years ago have been passed down through the oral traditions of First Nations Australians; for example, stories in the Boonwurrung (Port Phillip) Country about the loss of kangaroo hunting grounds, and those in the Nukunu (Spencer Gulf) Country about the sea swallowing up the land",
+    "investigating the megafauna that inhabited Australia in the Pleistocene epoch and discussing how it may have impacted on the sustainable harvesting of game by First Nations Australians, both prior to and after the extinction of megafauna",
+    "exploring evidence of how First Nations Australians responded to environmental changes in the Holocene epoch; for example, archaeological evidence that people maintained seasonal presence in the Willandra Lakes region at times when water was available, the maritime specialisation of those on the Torres Strait Islands and Cape York around 2,500 BP, and the de-population of islands such as Rottnest, Kangaroo and Flinders islands when cut off from the mainland",
+    "investigating the water management techniques used by early First Nations Australians in environments with scarce supplies of fresh water, such as islands and deserts"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -431,6 +456,12 @@
    ],
    "knowledge": "Students can describe how First Nations Australians responded to environmental processes and changes over time, including specific adaptive strategies involving water management and seasonal movement (AC9HH7K04). They have not yet examined the technological achievements of early First Nations Australians as a category in their own right, including the development and sophistication of stone tools, food production systems, and land and water management technologies.",
    "endpoint": "Students describe specific technological achievements of early First Nations Australians — including stone tools and stone-knapping techniques, food production and procurement systems, and land and water management technologies — explain how these developed differently across different places, and describe how they contributed to daily life and resource management.",
+   "elaborations": [
+    "investigating chronologies of technological achievements for continuity and change over time, including the development of stone tools and stone-knapping techniques such as ground-edge tools, hafted axes and mill stones",
+    "exploring how food production or procurement such as agriculture, aquaculture, nomadism and hunter-gatherer/forager societies were influenced by the environment; for example, people in the Torres Strait Islands and Cape York developing maritime technologies and people in arid environments developing a nomadic lifestyle, and the development of sustainable harvesting practices such as those of the Mithaka People in Queensland's Channel Country",
+    "exploring land and water management practices developed by early First Nations Australians, such as cultural burning practices, and the conservation and use of water through the development of weirs, irrigation and water evaporation reduction systems",
+    "exploring aquaculture practices developed by early First Nations Australians, such as eel traps of the Gundtitjmara People at Budj Bim, Victoria, the mollusc harvesting of the Kombumerri People on the Gold Coast, Queensland, and stone fish traps used by the Ngemba People at Brewarrina, New South Wales"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -531,6 +562,12 @@
    ],
    "knowledge": "Students can describe the technological achievements of early First Nations Australians across different environments, including food systems and land management (AC9HH7K05). They have not yet examined the social organisational structures — moieties, totems, kinship — or the cultural practices and their transmission mechanisms as topics in their own right.",
    "endpoint": "Students describe the social organisation systems of early First Nations Australians — including moieties, totems, and kinship groups — explain how these systems determine roles and relationships, and describe how cultural practices including oral traditions, lore, rites of passage, and funerary customs have been transmitted and have continued and changed over time.",
+   "elaborations": [
+    "examining the social organisation systems of First Nations Australians, such as moieties, totems and kinship groups, and how they determine roles and relationships to others, including how they underpin marriage laws, and their development and significance in areas such as Central Australia during increasing desertification",
+    "examining how aspects of social organisation and cultural practices of early First Nations Australians are known because they have been passed on through oral traditions and supported by media such as song, dance, music and visual art representations such as rock paintings; for example, narratives or visual representations related to lore, kinship structures, and responsibilities to the land, seas, waterways, sky and universe",
+    "investigating important cultural practices of early First Nations Australians and their continuity and change over time; for example, lore, rites of passage, and the antiquity and types of funerary customs and burial practices such as the early example of cremation at the Willandra Lakes in New South Wales, the tombstone openings of the Torres Strait Islands and the log coffins used by the Yolngu Peoples of Arnhem Land",
+    "exploring the existence of defined land, sea and sky territories, and the social and political systems that governed early First Nations Australians' societies, such as land tenure systems, delineation and reciprocal access rights, and the trade and bartering of items such as ochre, medicine and trepang"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -631,6 +668,13 @@
    ],
    "knowledge": "Students can describe the social organisation and cultural practices of early First Nations Australians, including funerary customs, and explain how cultural knowledge has been transmitted through oral traditions and expressive arts (AC9HH7K06). They have not yet examined cultural obligations about heritage sites specifically, or the role of collaboration and institutional frameworks in cultural preservation.",
    "endpoint": "Students explain the cultural obligations of First Nations Australians regarding significant heritage sites, ancestral remains, and material culture; describe how the Lake Mungo case illustrates issues of ownership, cultural protocols, and repatriation; and explain the role of collaboration between Traditional Owners, researchers, and institutions in cultural preservation, including world heritage frameworks.",
+   "elaborations": [
+    "recognising how the human remains of early First Nations Australians are the ancestors of contemporary First Nations Peoples of Australia and, as such, any unauthorised disturbance is taken as a serious breach of cultural protocol",
+    "exploring how the ancestral remains found at Lake Mungo (Willandra Lakes region) illustrate the issues of ownership, cultural protocols, research and repatriation",
+    "examining the importance of consultation with multiple stakeholders when conserving culture and heritage sites; for example, the collaboration between the Traditional Owners and researchers",
+    "investigating world heritage criteria for the listing of significant sites such as the Budj Bim and Willandra Lakes regions, and cultural landscapes such as Uluru-Kata Tjuta and Kakadu",
+    "examining the role of national and state/territory galleries, libraries, archives, museums, historical societies and field-sites in curating, conserving and showcasing First Nations Australians' histories and cultures"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -732,6 +776,13 @@
    ],
    "knowledge": "Students can explain the cultural obligations of First Nations Australians regarding heritage sites and ancestral remains, and describe how collaboration between Traditional Owners and researchers supports cultural preservation (AC9HH7K07). Students also bring prior understanding of evidence types from AC9HH7K01 (stratigraphy, radiocarbon dating, oral history as evidence for early human migration). They have not yet examined the full range of methods used to investigate early (ancient) societies, nor the specific roles of archaeology and heritage conservation in that investigation.",
    "endpoint": "Students describe the different methods and sources of evidence used by historians and archaeologists to investigate early societies — including stratigraphy, DNA testing, and written sources — evaluate their value for understanding the past, and explain why archaeology and the conservation of remains, material culture, and heritage sites matter.",
+   "elaborations": [
+    "evaluating various methods for investigating the ancient past; for example, stratigraphy to date discoveries, and DNA testing to identify common diseases and past individuals from their remains, such as Egyptian mummies",
+    "creating a cross-sectional drawing of the earth's surface from an archaeological excavation to identify the evidence located at various layers (stratigraphy) and what it reveals about change over time; for example, a charcoal layer containing human remains and weapons may indicate the capture and destruction of an ancient settlement such as Troy",
+    "examining the impact of modern infrastructure works, such as the Aswan Dam, on sites of ancient significance",
+    "examining the roles and responsibilities of governments and other bodies, such as UNESCO, in protecting key archaeological sites; for example, the rescue mission to save the temples of Abu Simbel or the campaign for the return of the Elgin Marbles to Greece",
+    "investigating world heritage criteria for the listing of significant sites; for example, the Great Wall of China or the Mausoleum of the First Qin Emperor (Qin Shi Huang) or Mohenjo-dara in India"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -860,6 +911,15 @@
    ],
    "knowledge": "Students can describe the methods and sources of evidence used by historians and archaeologists to investigate early societies, and explain the importance of conservation (AC9HH7K08). They have not yet examined how the physical environment and geography specifically shaped the development of an ancient society — the cause-and-effect relationship between landscape and civilisation.",
    "endpoint": "Students describe how the physical environment and geographical features of an ancient society's location influenced its development — including how landforms, waterways, climate, and resources shaped settlement patterns, agriculture, trade, and cultural development.",
+   "elaborations": [
+    "explaining the role of topography in providing barriers of defence for city-states, such as the surrounding seas, mountain ranges and river systems; for example, the Axios (Vardar), Strimonas (Struma) and Nestos rivers",
+    "explaining the role of the fertile soil of the Po and Tiber River regions in enabling trade through surplus production",
+    "describing Roman methods to manage resources; for example, water supply through aqueducts and plumbing systems",
+    "explaining how the Nile River enabled the establishment of ancient Egyptian society through farming (including the role of the inundation), transportation, defence (for example, the cataract fortifications) and religion (for example, Hapi, god of the inundation; Khnum, god of the Nile; and Satet, goddess of Nile floods and the Nile cataracts)",
+    "identifying how the environment and harmonious relationships with the natural world were reflected in belief systems such as Hinduism, Buddhism and Jainism",
+    "examining the role of climate in enabling the establishment and expansion of agriculture around the Yellow River and how this supported the ancient society",
+    "describing the impact of topographic features, such as the Himalayas, rivers and seas, on contact with other societies, including trade and warfare"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -961,6 +1021,18 @@
    ],
    "knowledge": "Students can explain how the physical environment shaped the development of the ancient society, including agricultural foundations and social complexity (AC9HH7K09). They have not yet examined the internal social organisation of the ancient society — the specific groups, their roles, their relationships, and how power was distributed and contested.",
    "endpoint": "Students describe the organisation and roles of key social groups in the ancient society — including the nobility, bureaucracy, women, and slaves — explain how these groups influenced the society, and describe how the relationships between groups changed over time.",
+   "elaborations": [
+    "examining evidence of the social structure of Athenian or Spartan society; for example, the roles of citizens, women and slaves in Athenian society and the roles of Spartiates, Perioikoi and Helots in Spartan society",
+    "describing the rights of citizens in ancient Athens (for example, the right for men to vote), their responsibilities (for example, military service, attending assembly meetings) and the concept of freedom",
+    "describing the significance of slavery in the period of the Roman Empire; for example, the acquisition of slaves through warfare, the use of slaves as gladiators, agricultural labourers and domestic servants, and the rise of freedmen",
+    "investigating material culture and visual primary sources depicting the role of social structure (for example, the roles of patricians, plebeians, women of different classes and slaves) to understand the lived experience of republicanism in Rome",
+    "explaining the social structure of ancient Egypt, including slaves, farmers, craftsmen, merchants, scribes, soldiers, priests, Vizers, Nomarchs and Pharaoh",
+    "describing the rights and responsibilities of women of different classes in the areas of marriage, family life, work and education, and the depiction of women fulfilling these roles in artwork and funerary texts",
+    "explaining how scribes viewed their role in the maintenance of society, using evidence such as funerary texts and literary works, such as the Instruction of Amenemope",
+    "explaining how society was organised and shaped through the social hierarchy, including the role of Brahmins (priests, teachers), Kshatriyas (kings, warriors), Vaishyas (merchants, artisans) and Shudras (labourers, peasants)",
+    "describing the role of women in shaping ancient society in the areas of marriage, family life, work and education",
+    "outlining the rights and responsibilities of the Shi class"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1062,6 +1134,18 @@
    ],
    "knowledge": "Students can describe the organisation and roles of key groups in the ancient society, including how groups influenced and changed society (AC9HH7K10). They have not yet examined the beliefs, values, and practices that shaped how the society understood the world and organised cultural life — the religious, ideological, and practical dimensions of daily existence.",
    "endpoint": "Students describe the key beliefs, values, and practices of the ancient society with particular emphasis on one focus area (everyday life, warfare, or death and funerary customs), explain how these beliefs and values shaped the society's practices, and use evidence from sources to support their descriptions.",
+   "elaborations": [
+    "describing the role of the Delphic Oracle in informing decision-making regarding future warfare",
+    "investigating significant beliefs and values associated with warfare, such as the heroic ideals revealed in the Iliad, and military practices such as army organisation, the hoplite phalanx and naval warfare",
+    "investigating significant beliefs associated with daily life (for example, the evidence of household religion) and practices (for example, the use of public amenities such as baths, and the forms of entertainment in theatres and amphitheatres)",
+    "analysing the role of the military in the organisation of Roman society and politics, in both the Republic and the early Empire",
+    "investigating beliefs associated with death, such as belief in an afterlife, and funerary customs and practices (for example, burial in tombs and techniques of mummification)",
+    "describing how the prominence of male and female gods changed based on locality and time",
+    "developing criteria to evaluate the significant beliefs, values and practices of Indian society associated with, for example, the role of the family and religious ceremonies, such as rites of passage for boys and men, and rites of passage for girls and women, and marriage rites",
+    "formulating questions to analyse how Vedism and later, Brahmanism shaped death and funerary customs",
+    "identifying how the Mandate of Heaven assisted people in understanding and justifying periods of warfare",
+    "investigating the significant beliefs, values and practices of Chinese society associated with daily life; for example, irrigation and the practice of agriculture, the teachings of Confucius, the evidence of daily life from the Han tombs"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1163,6 +1247,19 @@
    ],
    "knowledge": "Students can describe the key beliefs, values, and practices of the ancient society and explain how they shaped the society's organisation (AC9HH7K11). They have not yet examined how contacts and conflicts — within or with other societies — produced specific historical developments and changes.",
    "endpoint": "Students describe the causes and effects of significant contacts and conflicts within ancient societies and/or with other societies, and explain how these contacts and conflicts resulted in specific developments — including conquest, expansion of trade, and peace treaties.",
+   "elaborations": [
+    "explaining the nature of contact and conflict with other societies, such as the commodities that formed the trade with Egypt, Greek colonisation of the Mediterranean, the Persian Wars, the Battle of Salamis, the empire of Alexander the Great and the reach of Greek culture",
+    "identifying the short-term triggers of a conflict, such as the Peloponnesian war",
+    "explaining the causes of the fall of the Roman Republic and the rise of the Roman Empire",
+    "describing the furthest extent of the Roman Empire and the influence of foreign cults on Roman religious beliefs and practices; for example, the Pantheon of Gods (Greece), Isis (Egypt), Mithras (Persia) and Judaism and early Christianity (Palestine)",
+    "comparing accounts of contact between Rome and Asian societies in the ancient period; for example, the visit of Chinese and Indian envoys to Rome in the time of Augustus, as described by the Roman historian Florus",
+    "analysing the causes and effects of the rise and expansion of the Egyptian Empire",
+    "explaining the nature of contact and conflict with other societies, such as trade with Cyprus, Crete and Greece, and the Battle of Kadesh in the New Kingdom that concluded with Ramses II's peace treaty with the Hittites",
+    "analysing the long-term causes of the rise of the Mauryan Empire and the spread of Mauryan philosophies and beliefs",
+    "examining the extent of Indian contact with other societies such as the Persians under Cyrus, the Macedonians under Alexander; the extensive trade with the Romans and Chinese; the material remains of the Mauryan Empire such as the Pillars of Ashoka and the Barabar Caves; and the spread of Hinduism and Buddhism",
+    "explaining the rise of imperial China; for example, through chariot warfare and the adoption of mass infantry armies, the building of the first phase of the Great Wall of China, military strategies as codified in Sun Tzu's The Art of War",
+    "describing indirect contact and interactions between the Roman Empire and the Han Dynasty"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1264,6 +1361,18 @@
    ],
    "knowledge": "Students can describe the causes and effects of contacts and conflicts within ancient societies and explain how they drove historical change (AC9HH7K12). They have accumulated understanding of the ancient society's environment (K09), social structure (K10), beliefs and practices (K11), and dynamics of change (K12). They have not yet examined how a specific individual's role and achievements reflect, shaped, and were shaped by the historical context built across K09–K12.",
    "endpoint": "Students describe the role and achievements of a significant individual in the ancient society, explain how the individual's actions influenced the society, and connect the individual's story to the broader historical context of the society's environment, structure, beliefs, and dynamics of change.",
+   "elaborations": [
+    "developing questions to establish the significance of key individuals such as Homer (800–701 BCE), Draco (7th century BCE), Socrates (470–399 BCE), Aspasia (470–400 BCE), Plato (428–348 BCE), Aristotle (384–322 BCE), Archimedes (287–212 BCE), Hippocrates (460–370 BCE), Alexander the Great (356–323 BCE), and/or Pericles (495–429 BCE)",
+    "examining the historical context, early life and achievements of a significant historical figure, such as Leonidas or Pericles from ancient Greece, and how they were perceived by their contemporaries",
+    "describing the importance of a key group such as patricians, plebeians, women or slaves in the maintenance of the Roman empire",
+    "examining the historical context, early life and achievements of a significant historical figure such as Julius Caesar, Augustus, Agrippina the Younger, Marcus Aurelius or Jesus Christ, and how they were perceived by their contemporaries",
+    "analysing the impact of Constantine's reign on society and religion in the Roman Empire",
+    "evaluating the significance of Rameses II, including military victories, expansion of the Egyptian empire and architectural endeavours",
+    "examining the historical context, early life and achievements of a significant historical figure from ancient Egypt, such as Hatshepsut or Akhenaten, and how they were perceived by their contemporaries",
+    "examining the historical context, early life and achievements of key individuals such as Chandragupta Maurya or Ashoka",
+    "describing the social, political and cultural impact of Confucius on ancient Chinese society",
+    "examining the historical context, early life and achievements of a significant historical figure such as Confucius or Qin Shi Huang, and how each was perceived by their contemporaries"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1367,6 +1476,10 @@
    ],
    "knowledge": "Students can develop questions about objects, people, places, and events in the past and present (AC9HS6S01). They have not yet distinguished historical inquiry questions from general questions — specifically the disciplinary requirements of historical questions: they must be investigable using evidence, focused on historical significance, causation, continuity/change, or perspective, and they must be open enough to require analysis rather than simple recall.",
    "endpoint": "Students develop historical questions that can inform historical inquiry — questions that are focused on historically significant issues, investigable using historical evidence, and framed around historical concepts such as causation, continuity and change, perspective, or significance.",
+   "elaborations": [
+    "developing a key question such as 'How were the pyramids at Giza built?' and understanding that there may not be a definitive answer; identifying related questions to inform the inquiry, including 'What evidence is there?' and 'What theories have been developed?'",
+    "developing questions using historical concepts such as cause, effect, change, continuity, perspectives, interpretations and significance; for example, 'What were the effects of rising sea levels on the movements of early First Nations Australians?'"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1468,6 +1581,13 @@
    ],
    "knowledge": "Students can locate, collect, and organise information from primary and secondary sources (AC9HS6S02). They have not yet applied the primary/secondary distinction specifically to historical inquiry — including the disciplinary definition of primary sources as sources from the time of the event being investigated, and the practical skills of locating sources in digital repositories and research databases.",
    "endpoint": "Students locate and identify primary and secondary sources to use in historical inquiry, demonstrating understanding of the primary/secondary distinction, ability to use search strategies to find sources in repositories and databases, and the capacity to sort and organise sources by type.",
+   "elaborations": [
+    "locating digital repositories of archaeological sources and records, and using search functions to identify evidence; for example, Rome ceramics – religion",
+    "identifying categories for sorting primary and secondary sources, such as scrolls, coins, artwork, human remains, primary perspectives and/or historical interpretations",
+    "selecting and recording information from a range of sources (both archaeological and written) and differentiating between primary sources (those from the time of the event/person/site being investigated) and secondary sources (those that represent later interpretations)",
+    "examining methods for investigating the ancient past for providing information relevant to inquiry questions; for example, stratigraphy to date discoveries, DNA testing to identify past individuals from their remains (such as Egyptian mummies) and common diseases",
+    "explaining the challenges of translation and intercultural understanding when interrogating sources of evidence, such as the inscriptions of Asoka and other edicts carved in stone and contained in religious literature, and the Vedas and epics of the Ramayana and Mahabharata"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1568,6 +1688,11 @@
    ],
    "knowledge": "Students can evaluate primary and secondary sources to determine origin, purpose, and perspectives (AC9HS6S04). They have not yet applied these skills specifically to historical sources in the context of historical inquiry — distinguishing origin, content, context, and purpose as four distinct analytical dimensions, and applying disciplinary questions ('Who wrote/produced this?', 'When?', 'Why?', 'What does it show about the past?') systematically.",
    "endpoint": "Students identify and explain the origin, content, context, and purpose of primary and secondary sources by applying disciplinary analytical questions, demonstrating understanding of how each dimension contributes to interpreting what a source can and cannot tell us about the past.",
+   "elaborations": [
+    "developing and applying questions such as 'Who wrote/produced this?', 'When?', 'Why?' and 'What does it show about the past?' to photographs, artefacts, stories, buildings and other sources to explain context and purpose",
+    "identifying and explaining the origin, content, features and purposes of different sources in understanding the impact and legacy of a key individual such as Leonidas (King of Sparta), Pericles or Alexander the Great",
+    "explaining the difficulties in identifying the origin and purpose of some sources, such as the Kimberley Bradshaw paintings"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1669,6 +1794,12 @@
    ],
    "knowledge": "Students can identify the origin, content, context, and purpose of primary and secondary sources (AC9HH7S03). They have not yet applied the concepts of accuracy and usefulness as distinct analytical lenses — understanding what makes a source accurate (factually reliable) vs what makes it useful (valuable for a specific inquiry, even if biased or partial).",
    "endpoint": "Students identify and describe the accuracy and usefulness of primary and secondary sources as evidence — distinguishing fact from opinion, examining whether sources are reliable or partial, and explaining that a source can be useful as evidence even when its accuracy is limited.",
+   "elaborations": [
+    "examining the accuracy of sources by asking questions such as 'Where does it come from?', 'What information is provided?', 'Is the information factual or an opinion?' and 'What other sources may be needed to support/challenge this source?'",
+    "recognising that, while evidence may be limited for a particular group of people, such evidence can provide useful insights into the power structures in an ancient society",
+    "distinguishing between a fact (for example, 'Some gladiators wore helmets') and an opinion (for example, 'All gladiators were brave')",
+    "identifying information within a source that can be useful evidence to support an interpretation of an event, movement, individual, group or society"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1772,6 +1903,12 @@
    ],
    "knowledge": "Students can develop evidence-based conclusions and identify patterns and trends in historical information (AC9HS6S03, AC9HS6S05). They have not yet applied the historical concepts of causation and continuity/change as distinct analytical frameworks — specifically the multi-causal nature of historical events, the difference between short-term and long-term causes, or the distinction between continuity and change within the same period.",
    "endpoint": "Students describe causes and effects of historical events and explain continuities and changes — applying chronological reasoning, using timelines to sequence events, working with historical dating conventions, and identifying gaps in historical narratives.",
+   "elaborations": [
+    "sequencing events from early Australia and the ancient society in order, using timelines to identify and describe causes and effects",
+    "defining terms such as 'BC' (Before Christ), 'AD' (Anno Domini), 'BCE' (Before Common Era), 'CE' (Common Era), 'BP' (Before Present) and 'history' (the period beginning with named individuals and textual recording)",
+    "identifying gaps in timelines or narratives and explaining possible reasons for why these gaps occur",
+    "sequencing a range of primary sources in chronological order to support the development of an explanation of continuities or changes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1875,6 +2012,11 @@
    ],
    "knowledge": "Students can discuss perspectives related to objects, people, places, and events (AC9HS6S04). They have not yet applied perspective analysis specifically to historical sources — distinguishing the perspective embedded in a source from the events the source describes, and examining how attitudes and values of a historical period are expressed in its sources.",
    "endpoint": "Students identify perspectives, attitudes, and values of the past in sources — recognising that sources express the viewpoints of their producers, that some groups are underrepresented in historical sources, and that reading sources for perspective is a distinct historical skill from reading them for factual information.",
+   "elaborations": [
+    "identifying perspectives in a historical source, such as the saying of Confucius, 'Women and underlings are especially difficult to handle', and discussing the values and attitudes of the society that produced it",
+    "identifying that, while evidence may be limited for a particular group of people such as women, slaves, peoples living in newly conquered areas and ethnic groups, such evidence can provide useful insights into the power structures of a society",
+    "identifying the possible meanings of, and attitudes and values shown by, images and symbols in primary sources, such as funerary texts or religious manuscripts"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1977,6 +2119,10 @@
    ],
    "knowledge": "Students can identify perspectives, attitudes, and values of the past in sources (AC9HH7S06). They have not yet applied the concept of historical interpretation — understanding that historians construct different interpretations of the same events, that interpretations are argument-based rather than simply 'what happened', and that explaining why different interpretations exist is a distinct historical skill.",
    "endpoint": "Students explain historical interpretations about significant events, individuals, and groups — demonstrating understanding that interpretations are constructed from evidence and argument, that different interpretations of the same event can coexist, and that developing a historical argument about why something is interpreted in different ways is a key historical skill.",
+   "elaborations": [
+    "examining different interpretations to explain short-term triggers and/or turning points of the decline of an empire or society, such as failing economy, political upheaval, foreign invasion or conflict",
+    "developing a historical argument about why an event, individual or group is interpreted in different ways"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2079,6 +2225,12 @@
    ],
    "knowledge": "Students can explain historical interpretations about significant events, individuals, and groups, and develop reasoned arguments about why interpretations differ (AC9HH7S07). Students can identify and describe the accuracy and usefulness of sources, identify perspectives, and explain causes, effects, continuities, and changes (AC9HH7S03–S07). They have not yet produced formal historical descriptions, explanations, and arguments — texts that integrate historical knowledge, disciplinary concepts and terms, and source references into coherent historical communication.",
    "endpoint": "Students create historical descriptions, explanations, and arguments that use historical knowledge, concepts, and terms, and that reference evidence from sources — producing texts that demonstrate command of historical communication conventions at Year 7 level.",
+   "elaborations": [
+    "communicating a description or explanation using historical knowledge (for example, describing the social structure of the society) referring to evidence from sources (for example, reference to artwork)",
+    "developing a description or explanation using historical concepts and terms; for example, sources, evidence, continuity and change, perspective or interpretation",
+    "creating a presentation using different formats; for example, visual displays to recreate and show the specific features of an ancient battle, temple, pyramid complex or burial site supported by a timeline, annotations on a diagram or a summary",
+    "developing a historical argument; for example, explaining the significance of a past event, providing reasons for the event with reference to relevant evidence"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2184,6 +2336,12 @@
    ],
    "knowledge": "Students explain the causes and effects of contacts and conflicts within and between ancient societies (AC9HH7K12), and the organisation and roles of key groups in ancient society (AC9HH7K10). They have not yet examined the large-scale structural transformation from the ancient to early modern world — the collapse of Roman order, the rise of new religious and political systems, and the emergence of Renaissance ideas.",
    "endpoint": "Students explain the key transformations from the ancient world to the early modern world — including the decline of the Roman Empire, the spread of Christianity and Islam, the development of feudalism, the growth of towns and trade, and the emergence of Renaissance ideas — and describe how these developments connect to the organisation of modern political, religious and cultural life.",
+   "elaborations": [
+    "identifying the key events that have shaped the modern era, such as the decline of ancient empires and societies; the spread of Christianity in Europe; the spread of Islam through the Arab world, Mediterranean coast, Egypt, North Africa and Persia; the development of the feudal system; the growth of towns and cities; trade; the migration of peoples and the emergence of new ideas",
+    "describing the connection between key events or developments of this period to modern day life, such as religious holidays and political systems; for example, the expansion of the Ottoman Empire, the Magna Carta and the Westminster system",
+    "investigating the emergence of ideas about the world such as those formed during the Renaissance, and the place of significant individuals and people that caused change",
+    "explaining the historical significance of selected key events such as the conversion to Christianity of the Emperor Constantine in 312 CE and the invasion of England by William the Conqueror in 1066"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2322,6 +2480,19 @@
    ],
    "knowledge": "Students explain the organisation and roles of key groups in ancient society and how they influenced change (AC9HH7K10). They have not yet examined how group roles and relationships were structured in the medieval European context — the feudal hierarchy, the Church as an institution, the emerging merchant classes, and continuity and change in daily life across the period.",
    "endpoint": "Students explain the roles and relationships of different groups in Medieval, Renaissance or pre-modern Europe — including the feudal hierarchy, the institutional role of the Church, the emergence of merchant and artisan classes, the experiences of women, and continuities and changes in daily life — and describe how these roles both shaped and reflected the power structures of the period.",
+   "elaborations": [
+    "describing the structure of feudal society, including the role and responsibilities of the king, nobles, church, knights, peasants, and women and men",
+    "explaining the continuities and changes in society in one of the following areas: crime and punishment; military and defence systems; towns, cities and commerce; farming and the impact on the environment such as tree clearance",
+    "explaining how medieval society changed and affected the environment; for example, harnessing water and wind power for milling, urban settlements and agriculture, management practices and legal structures of medieval forests such as the English royal forests",
+    "describing key changes of life in the late Medieval period such as the spread of literacy and the development of new ways to disseminate ideas through schools and universities, scientific academies, debating societies, literary salons, coffee houses, and the reach of printed books, journals and pamphlets",
+    "explaining reactions to the Black Death, such as the emergence of flagellants (those who would whip themselves to be free of sin) and the persecution of Jewish people",
+    "identifying the similarities and differences of daily life between the popolo minuto and popolo grasso",
+    "describing the way of life of people in Renaissance Italy; for example, the role of men in tending the fields or merchant shops, the role of women in the society and the influence of government in particular city-states such as Naples (a monarchy) and Florence (a republic)",
+    "identifying the spread of Renaissance culture to England; for example, the rise of literature through Shakespeare",
+    "The emergence of the modern world",
+    "describing the contribution of key theories such as Nicolaus Copernicus' De revolutionibus orbium coelestium, Galileo's Dialogue Concerning the Two Chief World Systems and Isaac Newton's Philosophiae Naturalis Principia Mathematica to the changes brought about by the Scientific Revolution",
+    "examining the changes in economic activity created by the discoveries of new commodities, making the costs of basic foodstuffs lower and the quality higher, and the advancements of technologies such as in tools, armaments and shipbuilding"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2435,6 +2606,23 @@
    ],
    "knowledge": "Students explain the causes and effects of contacts and conflicts within and between ancient societies (AC9HH7K12). They understand continuity and change as historical concepts from Year 7 work. They have not yet applied these concepts to a sustained analysis of a specific turning point within medieval, Renaissance or pre-modern European history.",
    "endpoint": "Students explain a significant event, development, turning point or challenge that contributed to continuity and change in Medieval, Renaissance or pre-modern Europe — describing its causes, its immediate and longer-term effects, and how it altered the balance between what changed and what remained the same for different groups.",
+   "elaborations": [
+    "describing the features of castles and churches of the period, such as Warwick Castle in England and Notre Dame Cathedral in Paris, as examples of the Church's power in terms of its control of wealth, land and labour",
+    "examining the nature of illuminated manuscripts and recognising that the medieval manuscripts of monastic scribes contributed to the survival of many ancient Greek, Roman and Arab literary texts",
+    "explaining the changing relations between Islam and Europe, including the effects of the Crusades and trade",
+    "describing the impact of the Magna Carta on different social groups including the nobility, religious orders, merchants, workers/craftsmen, peasants and women",
+    "investigating the effects of the Black Death in a city such as Carthage, Damascus or Rome; for example, labour shortages, peasant uprisings, the weakening of feudal structures, increased social mobility, and challenges to religious ideas and power",
+    "identifying the effect of the Black Death on human populations using studies of church records from the period, considering the reliability of these statistics and explaining the impact of the population change in areas such as farming, commerce, culture and religion",
+    "describing the significance of double-entry bookkeeping, as seen in the Messari accounts of the Republic of Genoa in 1340 CE, in accelerating the production of wealth and patronage",
+    "investigating learning in the Renaissance period (for example, humanism and the influence of ancient Greece and Rome) and analysing the symbolic representation of this learning in architecture, artworks and inventions from individuals such as Brunelleschi, Copernicus, Donatello, da Vinci, Michelangelo and Titian",
+    "explaining why the Catasto of 1427 was introduced in Florence following the end of war with the Duchy of Milan",
+    "identifying a range of primary sources, such as artwork, music, literature, architecture, correspondence and diaries, that demonstrate the spread of the Renaissance across Europe",
+    "The emergence of the modern world",
+    "describing the impact of the printing press on the rise of literacy",
+    "investigating the Enlightenment ideas about human freedom and the exercise of authority, which promoted radical change to the political order; for example constitutional government and the separation of Church and state",
+    "examining how rulers in different European nations responded differently to new and dissenting ideas that were emerging by comparing the responses of France, England, Spain and Russia",
+    "investigating the way of life in key features of the French \"Ancien Régime\" and how it represented increasing centralisation of administrative power in the monarchy"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2551,6 +2739,16 @@
    ],
    "knowledge": "Students explain the organisation and roles of key groups in ancient society (AC9HH7K10) and understand the feudal hierarchy from AC9HH8K02. They have not yet examined how power and authority were experienced differently by rulers and subject peoples, or how those relationships were contested and changed across the medieval and early modern period.",
    "endpoint": "Students explain the experiences and perspectives of rulers and subject peoples in Medieval, Renaissance or pre-modern Europe — including how power was exercised, justified and contested — and describe how interactions between power and authority shaped political change from feudalism through to early modern political systems.",
+   "elaborations": [
+    "explaining the reasons for different punishments for different groups of people, such as trial by combat as a privilege granted to the nobility and ducking stools as a punishment for women, and the use of punishment as a deterrent",
+    "describing the impact of the Black Death on daily life using primary sources such as Matteo Villani's diary, Boccaccio's Decameron, Fordun's Chronicle of the Scottish Nation and Ibn Khaldun's recollection of the impact of the plague",
+    "analysing how rulers responded to demands from the lower classes to improve their working conditions and lives following the plague, using sources such as King Edward III's law Statute of Labourers",
+    "analysing primary sources to understand the interactions between the rulers of Florence, Venice, Naples and/or the Papal States",
+    "explaining the differing levels of political involvement in city-states such as the guilds in Florence and Libro d'Oro in Venice",
+    "The emergence of the modern world",
+    "examining the change in the role and power of monarchies in the political systems of Western Europe, for example, decline of \"absolutism\", development of parliaments, and new ideas relating to nationalism",
+    "investigating the changes and continuities in the political power of the bourgeoise and peasant classes with the growth of cities and increased urbanisation, and the movement of peoples"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2664,6 +2862,16 @@
    ],
    "knowledge": "Students explain the role and achievements of a significant individual in an ancient society (AC9HH7K13). They understand how to investigate an individual's significance using evidence. They have not yet applied this to a medieval or early modern European context — including the institutional role of the Catholic Church, Renaissance figures, or individuals who shaped political and religious reform.",
    "endpoint": "Students explain the role and achievements of a significant individual or group in Medieval, Renaissance or pre-modern Europe — describing what they did, why it mattered in their historical context, and what legacy their achievements left for later developments.",
+   "elaborations": [
+    "explaining the influence and dominance of the Catholic Church on society using visual sources such as the illustration of Hell in the Hortus Deliciarum manuscript by Herrad of Landsberg",
+    "investigating the role of the Catholic Church in Medieval Europe in the provision of social services such as education, health care and social welfare, and in feudal village organisation",
+    "explaining the influence of the Medici family in Florence as bankers and merchants, and their patronage of the arts",
+    "explaining the influences and contributions of individuals such as Lucrezia Borgia, Galileo, Leonardo da Vinci, Niccolo Machiavelli, Martin Luther and Louis XIV",
+    "The emergence of the modern world",
+    "investigating the role and achievements of Henry VIII, Elizabeth I and Martin Luther",
+    "investigating the importance of the Scientific Revolution, in particular the scientific theories and discoveries of Copernicus, Galileo, Kepler and Newton, for overturning traditional views of the motion of the planets, and how these contributed to science being seen by many as an alternative to the Church as a source of fundamental truth about reality",
+    "investigating the role and significance of Oliver Cromwell and the execution of Charles I in the English Civil War in the development of the Westminster parliamentary system"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2777,6 +2985,14 @@
    ],
    "knowledge": "Students explain historical interpretations about significant events, individuals and groups in ancient contexts (AC9HH7K — implicit from prior band) and have developed skills in source analysis (AC9HH7S07). They have not yet examined how and why historians construct different interpretations of the same medieval or early modern subject, including how myths, misconceptions and changing access to sources shape historical understanding.",
    "endpoint": "Students explain how and why historians have developed different interpretations about events, individuals, groups, institutions or movements in Medieval, Renaissance or pre-modern Europe — including what evidence those interpretations rest on, why they differ, and how interpretations have changed over time.",
+   "elaborations": [
+    "explaining how historians have disproved medieval myths such as King Arthur or Pope Joan",
+    "analysing why the Black Death has been misconceived as impacting Europe predominantly, with reference to differing historians' interpretations",
+    "analysing the importance of key women in Renaissance society, such as Caterina Sforza (1463–1509), Isabella d'Este (1474–1539), Lucrezia Borgia (1480–1519) and Catherine de Medici (1519–1589), using a range of artwork, written sources and historians' interpretations to justify claims",
+    "The emergence of the modern world",
+    "explaining how the interpretations of the discoveries of science are linked to ideas about the free exercise of human reason and how that could lead to improvements and progress in human life and society generally",
+    "examining historical interpretations of key events, developments or achievements during this period, such as the Scientific Revolution or the beginnings of the Age of Reason/Enlightenment, and how these interpretations highlight their importance or significance to contemporary society"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2867,6 +3083,16 @@
    ],
    "knowledge": "Students explain the significant social, religious, cultural, economic and political features of ancient societies (AC9HH7K09, AC9HH7K11). They understand how to describe the organisation of a society across multiple dimensions. They have not yet examined these features in the context of medieval empires and expansionist societies — the Mongols, Ottomans, Vikings or the Spanish conquest of the Americas.",
    "endpoint": "Students explain the significant social, religious, cultural, economic, environmental and political features of the chosen empire or expansionist group — describing how these features shaped their way of life and enabled or reflected their expansion.",
+   "elaborations": [
+    "describing the nomadic nature of Mongol life and how it enabled the rise of Temujin (Genghis Khan), who united all Mongol tribes in 1206 CE",
+    "describing facets of life in Mongolia and the incorporation of these facets into Chinese life; for example, agriculture – domestication of animals such as horses, camels and cattle; food – dried meat and yoghurt; housing – yurts",
+    "describing the way of life of people in the Ottoman Empire; for example, the role of women, the role of the coffee house and bazaar or marketplace, and the power and responsibility of the Sultan to ensure that justice was served within society",
+    "using a selection of primary sources to track changes in the way of life in the Ottoman Empire across time or locations",
+    "describing the way of life of the Vikings; for example, living in a cold and harsh environment, the importance of farming and raids, the significance of honour in Viking warrior society and the role of gender",
+    "explaining how the environment of Viking lands in Scandinavia influenced the activities of societies",
+    "The Spanish conquest of the Americas",
+    "describing pre-Columbian life in the Americas, including the social organisation of the Aztecs (for example, nobility and slaves), their beliefs (for example, worship of a number of gods and the need to make human sacrifices to appease these gods), and life in the capital city of Tenochtitlan"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2959,6 +3185,25 @@
    ],
    "knowledge": "Students explain the causes and effects of contacts and conflicts within and between ancient societies (AC9HH7K12) and understand the concept of turning points from prior study (AC9HH8K03). They understand the social and cultural features of the chosen empire (AC9HH8K07). They have not yet applied turning point analysis to the specific context of empire and expansion.",
    "endpoint": "Students explain a significant event, development, turning point or challenge that contributed to continuity and change in the context of empire and/or expansion — describing its causes, effects on different groups, and what it changed or preserved in the trajectory of the empire or expansion.",
+   "elaborations": [
+    "explaining the role of the Mongols in forging connections between Europe and Asia through conquest, settlement and trade; for example, the use of paper money and coinage; the growing number of European merchants travelling to China",
+    "explaining Genghis Khan's use of decimal organisation in his army and his policies for governing his empire, including codifying laws, banning the killing of animals in the breeding season, supporting religious freedom and expanding trade",
+    "analysing the effects of Mongol expansion including life in China before, during and after the Mongol conquest",
+    "explaining the role of warfare in expanding Ottoman territory, including the sieges of Bursa (1317–1326 CE) and Nicaea (1328–1331 CE)",
+    "describing Ottoman art and architecture, such as Selimiye Mosque in the city of Edirne in Turkey, and Islamic geometric design",
+    "outlining inventions and developments in the Islamic world, such as the astrolabe, public hospitals and libraries, and their subsequent adoption in the Western world",
+    "explaining the impact of the Crusades in challenging the Ottoman Empire and the responses of the Ottomans to the challenge",
+    "identifying the key role of gods such as Odin, Thor, Frey and Freyja in Viking religion and the impact of the adoption of Christianity during the Viking period",
+    "explaining the significance of the construction of longboats and their role in exploration, including innovations in keel and sail design",
+    "identifying and analysing evidence of Viking trade between Russia (Kiev) and the east (through Constantinople)",
+    "describing Viking craft with particular emphasis on the production of weapons and armour (for example, swords, battle axes and helmets) and the effectiveness of these in battle",
+    "explaining the triggers of declining Viking power such as the Battle of Standford Bridge, the treaty of Saint-Clair-sur-Epte, new colonies, changing climate and/or the spread of Christianity",
+    "The Spanish conquest of the Americas",
+    "explaining the arrival of Spanish conquistadores in Mexico and Peru from 1510 CE (Balboa) to 1531 (Pizarro), and their reasons; for example, seeking wealth, claiming land for their king, converting the local populations to Christianity, sense of adventure",
+    "analysing the significance of Alexander VI's papal decrees of 1493 in legalising Spanish territorial expansion and claims in the Americas",
+    "outlining the effects of Spanish conquest on the Americas, such as the spread of disease, introduction of crops such as maize, beans, tobacco, chocolate and potatoes to Europe, the Encomienda system, mining and deforestation, and the impact of the loss of natural resources",
+    "explaining the longer-term effects of conquest and colonisation on the Indigenous populations of the Americas, such as the unequal distribution of land and wealth, slavery, political inequality, and supremacy of Spanish culture and language over conquered territories"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3051,6 +3296,18 @@
    ],
    "knowledge": "Students understand how power and authority operated in medieval Europe (AC9HH8K04) and the social and cultural features of the chosen empire (AC9HH8K07). They have not yet analysed the specific power structures and relationships between rulers and subject peoples in the context of empire and expansion.",
    "endpoint": "Students explain the experiences and perspectives of rulers and subject peoples in the context of the chosen empire or expansion — describing how power was exercised, how authority was legitimised, how subject peoples experienced conquest or rule, and how these interactions shaped the empire's development.",
+   "elaborations": [
+    "describing the reign of Kublai Khan as the first Mongol emperor of China (the Yuan Dynasty), including the processes of government using administrators from different backgrounds and the growth of Chinese culture during this time",
+    "explaining the role of the Mongols in forging connections between Europe and Asia through conquest, settlement and trade, for example the meeting of Marco Polo and the development of trade",
+    "outlining the millet system that regarded non-Muslim people as subjects but as not being subject to Muslim law",
+    "explaining the tolerance of the Ottomans towards Christians and Jews",
+    "explaining the attacks on monasteries such as Lindisfarne (793 CE) and Iona (795 CE) and reviewing the written accounts of monks that contributed to the Vikings' reputation for pillaging and violence",
+    "explaining the survival of a heroic Iron Age society in early Medieval Ireland, as described in the vernacular epics, and its transformation by the spread of Christianity, the influence of the Vikings and the Anglo-Norman conquest",
+    "investigating the remains of Viking settlements such as Dublin (Ireland) and Jorvik (York)",
+    "The Spanish conquest of the Americas",
+    "describing encounters between Hernán Cortés and the Aztecs, as well as the siege of Tenochtitlan",
+    "investigating the impact of conquest on the Indigenous populations of the Americas (for example, the introduction of new diseases, horses and gunpowder, and the loss of natural resources) and the wider world (for example, the introduction of crops such as maize, beans, potatoes, tobacco and chocolate from the Americas to Europe and increased wealth in Europe)"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3143,6 +3400,14 @@
    ],
    "knowledge": "Students explain the role and achievements of a significant individual in an ancient society (AC9HH7K13) and understand significance as a historical concept (AC9HH8K05). They understand the social and cultural features of the chosen empire (AC9HH8K07) and its turning points (AC9HH8K08). They have not yet applied significance analysis to individuals specifically connected to medieval empire and expansion.",
    "endpoint": "Students explain the role and achievements of a significant individual or group connected to the chosen empire or expansion — describing what they did, the conditions that enabled their actions, and the impact and legacy of their achievements on the empire and beyond.",
+   "elaborations": [
+    "identifying the similarities in leadership styles and successes of Genghis Khan and Kublai Khan",
+    "comparing historians' interpretations of the achievements of individuals such as Selim I in establishing the empire and capturing Jerusalem, or Suleiman the Magnificent in expanding the empire to Belgrade in Europe",
+    "outlining Erik the Red's development of Viking settlements in Eastern and Western Greenland in 985 CE",
+    "comparing the artefacts discovered at L'Anse aux Meadows in Newfoundland (Canada) with Viking artefacts as possible evidence that the Vikings had journeyed to North America 500 years before Christopher Columbus",
+    "The Spanish conquest of the Americas",
+    "explaining the significance of key chronological events in the lives of individuals such as Columbus, Balboa, Cortés, Montezuma II and/or Pizarro"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3233,6 +3498,13 @@
    ],
    "knowledge": "Students understand how historians construct and evaluate interpretations (AC9HH8K06) and the events, individuals and society of the chosen empire (AC9HH8K07–K10). They have not yet applied interpretive analysis specifically to the contested historiography of medieval empires and expansion — including how oral traditions, primary sources, death tolls and post-colonial perspectives shape historical understanding.",
    "endpoint": "Students explain how and why historians have developed different interpretations of the chosen empire or expansion — including the evidence on which interpretations rest, the factors that have shaped historical understanding, and how interpretations have been contested or revised over time.",
+   "elaborations": [
+    "discussing the validity of various death tolls linked to Mongol expansion, such as 1,000,000 people in Nishapur and 60 million people in China, and using primary sources and historians' interpretations",
+    "describing the contrasting perspectives on the Fall of Constantinople (1453), including prophecies and legends, and how these shaped historians' interpretations of the experiences of people living at the time",
+    "analysing the extent to which historians' interpretations are corroborated with the oral histories contained in Icelandic sagas, such as about Erik the Red founding Greenland",
+    "The Spanish conquest of the Americas",
+    "analysing the extent to which historians' interpretations that the Spanish conquest can be attributed to the pursuit of \"Gold, God and Glory\" differ"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3322,6 +3594,15 @@
    ],
    "knowledge": "Students explain the significant social, religious, cultural, economic and political features of ancient and early societies (AC9HH7K09–K11). They understand how to describe a society across multiple dimensions. They have not yet examined these features in Asia-Pacific contexts — the Khmer Empire, feudal Japan under the Shoguns, or Polynesian societies including Māori and Rapa Nui.",
    "endpoint": "Students explain the significant social, religious, cultural, economic, environmental and political features of the chosen Asia-Pacific society — describing how these features shaped the way of life of different groups and how social, cultural and political structures organised daily existence.",
+   "elaborations": [
+    "describing the way of life in the Khmer Empire as depicted through stone carvings and the writings of the Chinese Ambassador Zhou Daguan; for example, in relation to fishing, trading in markets, temple construction",
+    "Japan under the Shoguns",
+    "describing the way of life in feudal Japan under the shoguns; for example, \"bushido\" – the chivalric code of conduct of the samurai that emphasised frugality, loyalty, mastery of martial arts and honour",
+    "analysing how the relationship between the different social classes, such as the emperor, shogun, daimyo, samurai and workers, promoted social and cultural continuity",
+    "Polynesian expansion across the Pacific",
+    "describing the way of life in one Polynesian society, including the social, cultural, economic and political features, such as the role of the ariki in Māori and in Rapa Nui society",
+    "investigating the way of life of Easter Island (Rapa Nui) society; for example, fishing by the men; links between the household and the extended clan through the exchange of goods, wives and labour; the use of stone tools"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3412,6 +3693,22 @@
    ],
    "knowledge": "Students understand the concept of turning points and continuity and change from AC9HH8K03. They understand the social, cultural and economic features of the chosen Asia-Pacific society (AC9HH8K12). They have not yet applied turning point analysis to the specific context of Asia-Pacific societies — the decline of the Khmer Empire, changes in Shogunate power, Polynesian expansion, or environmental challenges.",
    "endpoint": "Students explain a significant development, event, turning point or challenge that contributed to continuity and change in the chosen Asia-Pacific society — describing its causes, its effects on different groups, and what it changed or preserved in the trajectory of the society.",
+   "elaborations": [
+    "investigating theories about the decline of the Khmer Empire; for example, the development of an unstable climate such as drought and monsoons, the rise of Theravada Buddhism, the breakdown of Angkor's water management system",
+    "explaining how being revered as the \"god-king\" or \"deva-raja\" enabled the Khmer kings to rule over the empire with absolute authority, thereby enhancing their ability to mobilise the population to defend the empire as well as to invade neighbours",
+    "explaining the significance of the archaeological site of Angkor Wat as a demonstration of the empire's power",
+    "explaining how archaeologists and paleo-environmentalists have established the prevalence of droughts in the 14th–15th centuries and the impact of these droughts on the empire",
+    "Japan under the Shoguns",
+    "explaining reasons for Japan's closure to foreigners under the Tokugawa Shogunate and the impact of US Commodore Perry's visit in 1853",
+    "explaining the continuity of Shogunate power in areas such as trade, resource use and social classes",
+    "outlining the reasons for attempts by the Tokugawa Shogunate to curb deforestation, such as imposing heavy regulations on farmers, managing the harvesting of trees, and using new, lighter and more efficient construction techniques",
+    "explaining the role of the daimyo in contributing to the end of the Ashikaga Shogunate",
+    "Polynesian expansion across the Pacific",
+    "outlining different theories about the expansion; for example, west–east and east–west movements of settling peoples, and/or the expansion as accidental versus intentional",
+    "investigating the construction of the moai (giant statues) on Easter Island (Rapa Nui), the techniques used to make and transport them, and theories about their meaning, such as that they are representations of dead ancestors or chiefs",
+    "explaining the significance of Rahui as a way of prohibiting the collection of resources to ensure their sustainability as a response to the decline and extinction of animals such as the moa",
+    "explaining how environmental challenges were overcome on different islands to make settlement possible; for example, the practice of aquaculture in Nauru and/or agricultural practices in Hawaii"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3503,6 +3800,14 @@
    ],
    "knowledge": "Students understand how power and authority operated in medieval European and imperial contexts (AC9HH8K04, AC9HH8K09) and the social hierarchy of the chosen Asia-Pacific society (AC9HH8K12). They have not yet analysed how power and authority specifically operated in Asia-Pacific contexts — including the Khmer god-king, the Tokugawa feudal system, or chiefly authority in Polynesian societies.",
    "endpoint": "Students explain the experiences and perspectives of rulers and subject peoples in the chosen Asia-Pacific society — describing how power was exercised and legitimised, how subject peoples experienced authority, and how interactions between rulers and subjects shaped the society's development.",
+   "elaborations": [
+    "analysing the perspectives of Angkor as depicted through stone carvings and the writings of Chinese Ambassador Zhou Daguan; for example, in relation to fishing, trading in markets and temple construction",
+    "Japan under the Shoguns",
+    "discussing the role of the Tokugawa Shogunate in reimposing a feudal system (based on daimyo and samurai) and explaining the impact of this change on the daily life of different classes",
+    "Polynesian expansion across the Pacific",
+    "examining artefacts such as Lapita pottery from Vanuatu, tapa cloth and/or ship-building techniques to provide insight into those societies",
+    "describing the responsibilities and privileges of being a chief in a society such as those in New Zealand, Hawaii, Tonga and/or the Society Islands"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3595,6 +3900,13 @@
    ],
    "knowledge": "Students explain the role and achievements of significant individuals in ancient and imperial contexts (AC9HH7K13, AC9HH8K05, AC9HH8K10). They understand the social and cultural features of the chosen Asia-Pacific society (AC9HH8K12). They have not yet applied significance analysis to individuals specifically connected to Asia-Pacific societies — Khmer rulers, Japanese shoguns, or Polynesian groups.",
    "endpoint": "Students explain the role and achievements of a significant individual or group in the chosen Asia-Pacific society — describing what they did, the conditions that enabled their actions, and the impact and legacy of their achievements.",
+   "elaborations": [
+    "describing the rule of Jayavarman VII and his influence in expanding the empire, expelling the Chams and on the scale of the construction program in Angkor",
+    "Japan under the Shoguns",
+    "explaining the legacy of Tokugawa Ieyasu as founder of the Edo Shogunate",
+    "Polynesian expansion across the Pacific",
+    "describing the achievements of one Polynesian group of people such as Māori, Samoan, Tahitian (Maohi), Tongans or Rapa Nui"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3686,6 +3998,13 @@
    ],
    "knowledge": "Students understand how historians construct and evaluate interpretations (AC9HH8K06, AC9HH8K11). They understand the events, individuals and society of the chosen Asia-Pacific context (AC9HH8K12–K15). They have not yet applied interpretive analysis to Asia-Pacific historiography — including the specific challenges posed by limited written sources, oral traditions, and post-colonial perspectives on Pacific history.",
    "endpoint": "Students explain how and why historians have developed different interpretations of the chosen Asia-Pacific society — including the challenges posed by source availability, the role of oral traditions and archaeology, and how interpretations have changed as new evidence emerges.",
+   "elaborations": [
+    "discussing theories about the causes of and/or the factors that contributed to the decline of the Khmer Empire; for example, Tai invasions, economic decline as a result of Jayavarman VII's building program, population growth and attempts to control trade routes, religious revolution through the rise of Theravada Buddhism, internal political tension, environmental challenges such as soil sterilisation, over-intensified land use, the development of an unstable climate through drought and monsoons, and the breakdown of Angkor's water management system",
+    "Japan under the Shoguns",
+    "evaluating the significance of the range of reasons for Japan's closure to foreigners under the Tokugawa Shogunate and the impact of US Commodore Perry's visit in 1853",
+    "Polynesian expansion across the Pacific",
+    "explaining the challenges posed by the lack of written sources in understanding the history of Polynesia, such as changes in interpretations of Lapita culture being present in Vanuatu"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3775,6 +4094,11 @@
    ],
    "knowledge": "Students develop questions about objects, people, places and events in the past and present (AC9HH7S01). They can formulate basic historical questions. They have not yet developed multi-level question hierarchies (key question plus related sub-questions), questions about historical significance with measurable criteria, or the capacity to review and revise questions when inquiry produces unexpected findings.",
    "endpoint": "Students develop historical questions about the past that inform historical inquiry — including a key question, related sub-questions about evidence and theories, questions about historical significance with measurable criteria, and the capacity to review questions when unexpected findings emerge.",
+   "elaborations": [
+    "developing a key question such as \"How did the decline of Rome's western empire change the organisation of European society?\" or \"Why did Easter Island (Rapa Nui) society decline?\"; identifying related questions to inform the inquiry, such as \"What evidence is there?\" and \"What theories have been developed?\"",
+    "developing questions about historical significance such as \"How many people were affected by the Black Death?\" and \"How long did it last?\"",
+    "reviewing questions when faced with unexpected or challenging developments posed by the historical investigation; for example, \"How was the organisation of Japanese society influenced by world events?\""
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3864,6 +4188,10 @@
    ],
    "knowledge": "Students locate and identify primary and secondary sources to use in historical inquiry (AC9HH7S02). They can identify and categorise sources. They have not yet organised sources into systematic categories (written, visual, material culture, artefacts), retrieved information from multiple digital repositories using advanced search functions, or evaluated the range and diversity of their source base.",
    "endpoint": "Students locate and identify primary and secondary sources to use in historical inquiry — organising them by type and period, retrieving information from digital repositories using advanced search techniques, and assembling a diverse source base appropriate to the inquiry.",
+   "elaborations": [
+    "organising sources into categories such as primary and secondary sources and/or written, visual, material culture, and artefacts; for example, sources from the period investigated including journals, church records, paintings, artefacts, and sites and sources written after the period including fictional and artistic interpretations, and academic texts",
+    "retrieving relevant information from multiple digital sources, including repositories of primary sources, maps and photographs of culturally significant artefacts such as online platforms, and using advanced search functions to refine the search"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3929,6 +4257,11 @@
    ],
    "knowledge": "Students identify the origin, content, context and purpose of primary and secondary sources (AC9HH7S03). They can respond to basic origin questions (who, when, why). They have not yet used internal source clues to infer provenance, addressed the difficulty of identifying origin and purpose for ambiguous sources, or analysed how uncertainty about origin affects usefulness.",
    "endpoint": "Students identify the origin, content, context and purpose of primary and secondary sources — responding to who, when, why and what questions, using internal clues to infer provenance, and discussing the difficulties that arise when origin and purpose are uncertain or contested.",
+   "elaborations": [
+    "responding to questions such as \"Who wrote/produced this?\", \"When?\", \"Why?\" and \"What does it show about the past?\" about photographs, artefacts, stories, buildings and other sources to explain the past",
+    "explaining how clues within a source can be used to identify where it was made or who it was made by; for example, the place where it was found, the materials used, the condition of the object, decorative features",
+    "discussing the difficulty of identifying the origin and purpose of some sources, and how this can impact on the source's usefulness"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4018,6 +4351,11 @@
    ],
    "knowledge": "Students identify and describe the accuracy and usefulness of primary and secondary sources as evidence (AC9HH7S04). They can ask basic validity questions about sources. They have not yet systematically distinguished fact from opinion using linguistic strategies, or evaluated usefulness with reference to the specific demands of a historical inquiry.",
    "endpoint": "Students identify and describe the accuracy and usefulness of primary and secondary sources as evidence — examining validity through source analysis questions, distinguishing fact from opinion using linguistic strategies, and evaluating how the accuracy and usefulness of a source depends on the specific inquiry question being asked.",
+   "elaborations": [
+    "examining the validity of sources by asking questions such as \"Where does it come from?\", \"What information is provided?\", \"Is the information factual or an opinion?\" and \"What other sources may be needed to support/challenge this source?\"",
+    "distinguishing between fact (for example, \"The moai were constructed on Easter Island [Rapa Nui]\") and opinion or interpretation (for example, \"The moai on Easter Island [Rapa Nui] are representations of gods\")",
+    "using strategies to detect whether a statement is fact or opinion, including word choices that may indicate an opinion is being offered; for example, the use of conditionals \"might\" and \"could\", and words such as \"believe\", \"think\" and \"suggests\""
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4107,6 +4445,10 @@
    ],
    "knowledge": "Students describe causes and effects, and explain continuities and changes (AC9HH7S05). They can identify causes, effects and continuities. They have not yet sequenced events to identify broader patterns across a society, or distinguished the different qualities of continuity — lack of deviation, widespread similarity — from the continued significance of a short-term event or development.",
    "endpoint": "Students describe causes and effects, and explain continuities and changes — sequencing events to identify broader patterns across society, explaining observations with reference to key events, individuals, themes and sources, and describing continuity with precision by distinguishing widespread structural continuity from the diminishing significance of short-term disruptions.",
+   "elaborations": [
+    "sequencing historical events to identify broader patterns of cause and/or effect, and change and/or continuity across society, and explaining their observations with reference to key events, individuals, themes and sources of evidence",
+    "describing continuities by highlighting the lack of deviation, the similarities of important aspects, and the widespread nature of similarities in the era, period or society despite an event, idea, person, group or movement achieving short-term significance"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4172,6 +4514,10 @@
    ],
    "knowledge": "Students identify perspectives, attitudes and values of the past in sources (AC9HH7S06). They can identify the perspective in a source. They have not yet used additional sources to show how an individual account is broadly representative of or contrasts with wider societal values, or analysed how historians' own contexts shape their interpretations.",
    "endpoint": "Students identify perspectives, attitudes and values of the past in sources — describing what a source reveals and using additional sources to assess how representative it is of broader societal values — and explain why historians interpret the same sources differently based on their own perspectives and contextual factors.",
+   "elaborations": [
+    "describing the values and attitudes revealed by a source such as an individual account, and using additional sources to show how they are broadly representative or contrast the values and attitudes of the society",
+    "identifying the perspective in a source and discussing the values and attitudes of the society that produced it; for example, explaining why historians have different interpretations, including access to source material, personal views and other contextual factors influencing the time in which the historian was working"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4261,6 +4607,11 @@
    ],
    "knowledge": "Students explain historical interpretations about significant events, individuals and groups (AC9HH7S07). They can identify differing interpretations and explain some reasons for them. They have not yet distinguished short-term triggers from longer-term causes within competing interpretations, or used interpretations to describe change in terms of quality, type, speed and impact.",
    "endpoint": "Students explain historical interpretations about significant events, individuals and groups — identifying differing interpretations and accounting for their differences, including how interpretations of cause distinguish short-term triggers from longer-term causes, and how interpretations can be used to describe change in relation to quality, type, speed and impact.",
+   "elaborations": [
+    "identifying differing historians' interpretations on the short-term triggers and longer-term causes of a significant event",
+    "identifying different interpretations of an event or development, such as the influence of scientific ideas or the status of women, and accounting for the differences",
+    "using historical interpretations to describe change in relation to quality, type, speed and impact"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4350,6 +4701,11 @@
    ],
    "knowledge": "Students create descriptions, explanations and historical arguments using historical knowledge, concepts and terms that reference evidence from sources (AC9HH7S08). They can construct basic historical writing with source references. They have not yet applied structural elements for argumentative effect (introduction with explicit argument, conclusion that restates and summarises), presented findings across multiple formats, or applied historical concepts and terms with precision in their appropriate historical context.",
    "endpoint": "Students create descriptions, explanations and historical arguments — using structural elements for argumentative effect, applying historical terms and concepts in their appropriate context, referencing source evidence, and presenting findings in formats appropriate to audience and purpose.",
+   "elaborations": [
+    "communicating explanations or analysis using structural elements for effect; for example, an introduction that outlines an argument and a conclusion that summarises and restates the argument",
+    "presenting findings or historical knowledge in range of formats, such as a podcast, an oral presentation or an essay, appropriate to audience and purpose with reference to evidence",
+    "developing descriptions and explanations, applying historical terms and concepts in their appropriate historical context"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4441,6 +4797,11 @@
    ],
    "knowledge": "Students can describe the features of societies and the effects of contact and change in earlier periods (AC9HH8K07, AC9HH8K08, AC9HH8K12). They have not yet examined the global scale of European imperial expansion in the modern period, the push and pull factors driving mass population movements, or the range of responses by colonised peoples to European contact.",
    "endpoint": "Students identify and describe the causes of European imperial expansion and the movement of peoples — including push and pull factors — describe the effects of those movements on colonised peoples, and describe the different responses to colonisation and migration across affected societies.",
+   "elaborations": [
+    "identifying and describing the causes of the movement of peoples in the modern world, including the push factors (for example, the Agricultural Revolution, the Industrial Revolution, the Irish Potato Famine, discrimination and persecution, forced migration such as slavery and convict settlements) and pull factors (for example, the promise of a better life, employment opportunities, space and personal freedom)",
+    "identifying and describing the effects of the movements of peoples on colonised peoples, such as dispossession, disease, and destruction of traditional society and culture",
+    "examining data on the movement of peoples in the period, such as the number of slaves transported and the nations/places involved, including Portugal, Britain, France, Spain, North America, or the number of people forced to migrate from Ireland due to the potato famine, and the nations/places they emigrated to, such as the United States, Canada and Australia"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4558,6 +4919,11 @@
    ],
    "knowledge": "Students can describe changes and continuities in earlier societies and identify causes of significant developments (AC9HH8K07, AC9HH8K12). They have not yet examined the specific mechanisms — agricultural enclosures, factory system, steam engine — that drove urbanisation and population redistribution in the modern period, or traced the multiple simultaneous movement patterns of this era.",
    "endpoint": "Students describe the reasons for changing population movements in the period 1750–1900 — including agricultural change, industrialisation, and push factors from the slave trade, Irish Potato Famine and convict transportation — and describe how these movements changed settlement patterns.",
+   "elaborations": [
+    "describing reasons for changing population movements; for example, changes to agricultural practices such as enclosures, improvements in farm machinery, the development of the factory system, the development of the steam engine, and the growth of cities as people moved to the cities to find employment",
+    "explaining the role of the Industrial Revolution in creating a growing need for labour and transportation",
+    "identifying and describing the various push factors for the movement of peoples in the transatlantic slave trade, the Irish Potato Famine and convict transportation, such as the Agricultural Revolution, the Industrial Revolution, discrimination and persecution, and forced migration"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4652,6 +5018,10 @@
    ],
    "knowledge": "Students can identify significant events, developments and turning points in earlier periods and describe causes and effects of change (AC9HH8K03, AC9HH8K07). They have not yet examined the specific development of the Australian colonies — the different colonial contexts, the economic foundations (pastoral, agricultural, mining), or the trajectory from colonial settlement to Federation.",
    "endpoint": "Students examine the different colonial contexts and explain their influences on development; describe the development of Australia's economy from settlement to WW1, including agricultural and pastoral industries; and examine key social, cultural, economic and political changes and their significance in the development of Australian society.",
+   "elaborations": [
+    "examining the different contexts of the Australian colonies and explaining their influences; for example, analysing and evaluating the effects of physical isolation on the development of the Swan River Colony in Western Australia, the deliberate exclusion of convicts in the colonisation of South Australia, the discovery of gold on the development of Victoria, and the expansion across the Blue Mountains in New South Wales",
+    "examining the development of Australia's economy from the early days of settlement up to the First World War, in particular agricultural and pastoral industries, and the key role played by the \"squattocracy\" and figures such as Elizabeth Macarthur"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4751,6 +5121,14 @@
    ],
    "knowledge": "Students can describe the effects of contact and colonisation on societies in earlier periods and examine perspectives of colonisers and colonised (AC9HH8K09, AC9HH8K14). They have not yet examined the specific legal and ideological framework of Australian colonisation (terra nullius), the full scope of colonisation's effects on First Nations Australians, or the range of First Nations responses including the Stolen Generations.",
    "endpoint": "Students investigate the causes and effects of European contact and settlement in Australia — including the legal fiction of terra nullius, frontier conflict, disease, industry, and the forcible removal of children — and examine how First Nations Australians responded to and were impacted by colonisation.",
+   "elaborations": [
+    "investigating Cook's 'secret' instructions from the Lords of the Admiralty (30 July 1768) that requested him to 'with the Consent of the Natives to take possession of the Convenient Situations in the Country in the Name of the King of Great Britain' with relation to understanding of terra nullius",
+    "examining the effects of colonisation, such as frontier conflict and massacres of First Nations Australians, the spread of European diseases and the destruction of cultural lifestyles",
+    "explaining the contribution of various industries such as wheat, wool, beef, mining, cotton, fishing, pearling and whaling to Australia's economic development and prosperity over the 19th century, as well as the associated impacts on the ecosystems",
+    "analysing the impact of colonisation by Europeans on First Nations Australians such as frontier warfare, massacres, removal from land, and relocation to 'protectorates', reserves and missions",
+    "investigating how First Nations Australians responded to colonisation, including through making important contributions to the various industries that were established on their lands and waters, adopting Christianity and other settler religions",
+    "investigating the forcible removal of children from First Nations Australian families in the late 19th century and 20th century (leading to the Stolen Generations), including the motivations for the removal of children, the practices and laws that were in place, and experiences of separation"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4873,6 +5251,14 @@
    ],
    "knowledge": "Students can identify significant events and describe the roles of individuals and groups in historical change (AC9HH8K05, AC9HH8K10, AC9HH8K15). They have not yet examined the specific factors driving Australian Federation, the constitutional process, the development of Australian democratic institutions, or the role of women's suffrage in Australian democracy.",
    "endpoint": "Students describe the rise of nationalist sentiment in Australia, explain the factors contributing to Federation and the development of democracy, describe the key steps to Federation, examine influences on the Australian Constitution, analyse the significance of women's voting rights, and investigate key people and groups in the Federation movement.",
+   "elaborations": [
+    "discussing the rise of nationalist sentiment in Australia in the mid- to late 19th century",
+    "explaining the factors that contributed to Federation and the development of democracy in Australia, such as defence concerns, economic concerns and the 1890s depression, the 'White Australia' ideal, nationalist ideals and egalitarianism",
+    "describing the key steps to Federation",
+    "examining the influences on the development of the Australian Constitution, such as the British Westminster system, the Washington system and federalism",
+    "analysing the significance of the advance of women's voting rights to the development of Australian democracy",
+    "investigating key people and groups involved in the Federation movement and the development of an Australian identity"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4968,6 +5354,12 @@
    ],
    "knowledge": "Students can describe causes and effects of change and identify continuities in earlier periods (AC9HH8K03, AC9HH8K08, AC9HH8K13). They have not yet examined living conditions and material culture in Australia around 1900, the specific legal reforms of the new Federal Parliament, or how to systematically apply the concepts of continuity and change across multiple domains simultaneously.",
    "endpoint": "Students examine living and working conditions in Australia around 1900, compare different settings, identify features of housing, sanitation, transport, education and industry, compare these with conditions around 1800, and explain how federal laws such as the Harvester Judgment affected living and working conditions.",
+   "elaborations": [
+    "examining the living and working conditions in Australia around 1900 and making comparisons between different settings (for example, rural versus urban) using sources such as photographs, paintings, diaries and newspapers",
+    "examining the social and political impact of religious sectarianism between Catholics and Protestants in the formation of the Australian nation",
+    "identifying the main features of housing, sanitation, transport, education, agriculture and industry that influenced living and working conditions in Australia around 1900 and comparing them with early colonisation around 1800",
+    "explaining how laws made by the federal parliament, such as those resulting from the Harvester Judgement or the introduction of pensions, affected working conditions and standards of living"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5088,6 +5480,13 @@
    ],
    "knowledge": "Students can examine perspectives of rulers and subject peoples and describe how contact shaped societies (AC9HH8K04, AC9HH8K09, AC9HH8K14). They have not yet examined the specific diversity of colonial Australian society — convict, free settler, and non-European experiences — or the contested language around colonisation and its ongoing significance.",
    "endpoint": "Students investigate the experiences of specific groups in colonial Australia — convicts, free settlers, non-Europeans, and First Nations Australians — examining how their experiences differed and how those experiences shaped changes to Australian society's ideas, beliefs and values, including the ongoing contestation of terms such as 'invasion', 'colonisation' and 'settlement'.",
+   "elaborations": [
+    "investigating the experiences of a specific group of arrivals to Australia, such as convicts in Sydney, Hobart or Brisbane, or free settlers in Melbourne, Adelaide, Perth or Darwin",
+    "examining how convicts transported to Australia were able to begin new lives away from the rigid class structures of English society",
+    "describing the impact of changes brought about by non-indigenous groups on First Nations Australians",
+    "examining the experiences of non-Europeans in Australia prior to the 1900s",
+    "exploring the perspectives and experiences of First Nations Australians, including discussing terms in relation to Australian history such as 'invasion', 'colonisation' and 'settlement'"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5184,6 +5583,10 @@
    ],
    "knowledge": "Students can describe the development of the new Federal Parliament and its social legislation (AC9HH9K04, AC9HH9K05). They have not yet examined how Australian Federal social legislation compared internationally, how women's roles and rights developed in the new federation, or how Australia's position in the world — as a British dominion, as a Pacific nation — shaped its identity by 1914.",
    "endpoint": "Students investigate how the major social legislation of the new Federal Government affected living and working conditions, and explain the continuities and changes in the role of women by 1914, including advocacy for women's rights, suffrage, political representation and pacificism.",
+   "elaborations": [
+    "investigating how the major social legislation of the new Federal Government affected living and working conditions in Australia",
+    "explaining the continuities and changes in the role of women, such as advocating for women's rights, suffrage, political representation and pacificism"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5257,6 +5660,14 @@
    ],
    "knowledge": "Students can identify causes and effects of significant historical events and describe turning points in earlier periods (AC9HH8K03, AC9HH8K08, AC9HH8K13). They have not yet examined the alliance system or balance-of-power logic in early 20th-century Europe, the mechanisms by which a localised conflict escalated to continental war, or the specific motivational framework — Empire loyalty, adventure, propaganda, peer pressure — that shaped Australian enlistment decisions.",
    "endpoint": "Students identify and describe the long-term structural causes of WW1 (militarism, imperialism, alliance system, nationalism) and the short-term triggers (assassination, July Crisis, invasion of Belgium); explain how these causes escalated a local crisis into a world war; and describe the range of reasons Australian men enlisted in the AIF, including the role of Empire identity, propaganda, peer and community pressure, and the stories of First Nations Australian soldiers.",
+   "elaborations": [
+    "identifying and describing the long-term causes of the First World War, such as militarism, the alliance system, imperialism and nationalism",
+    "identifying and describing the short-term triggers of the First World War",
+    "explaining the different perspectives towards war at the turn of the 20th century",
+    "examining the responses of Australia's political leaders to the outbreak of war",
+    "listing the reasons why Australian men enlisted in the Australian Imperial Force",
+    "examining the stories of First Nations Australian men who enlisted in the Australian Imperial Force"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5438,6 +5849,11 @@
    ],
    "knowledge": "Students can describe historical turning points and examine the experiences and perspectives of different groups in earlier historical periods (AC9HH8K03, AC9HH8K04). They have not yet examined the specific geography of WW1 theatres, the nature of industrialised warfare (trench warfare, military technology), or the contrast between experiences on the Western Front and in the Middle East.",
    "endpoint": "Students identify the major theatres where Australians fought (Gallipoli, Western Front, Middle East), describe the conditions and experiences of soldiers in each theatre, investigate the difficulties of trench warfare and the development of military technology, and compare and contrast the different experiences of foot soldiers on the Western Front and Light Horse in the Middle East.",
+   "elaborations": [
+    "identifying the places where Australians fought, such as Gallipoli, Fromelles, the Somme, Pozières, Passchendaele, Bullecourt, Villers-Bretonneux, Sinai Peninsula, Gaza and Beersheba",
+    "investigating the difficulties of trench warfare, the development of military technology such as the use of tanks, aeroplanes and chemical weapons (gas)",
+    "comparing and contrasting the different experiences of war"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5568,6 +5984,11 @@
    ],
    "knowledge": "Students can describe the theatres where Australians fought, the conditions of trench warfare, and the development of military technology (AC9HH9K09). They have not yet examined the concept of a military turning point, evaluated the significance of strategic-level events (Russian Revolution, American entry, Armistice), or worked with opposing-perspective sources to construct historical understanding of specific battles.",
    "endpoint": "Students investigate a major battle (including its location, techniques and the nature of warfare), examine the perspectives of those who fought on both sides using primary sources, and evaluate the significance of the Russian Revolution, American entry into the war and the Armistice of November 1918 in ending the war.",
+   "elaborations": [
+    "investigating one major battle and examining locations, techniques and warfare",
+    "examining the perspectives of those who fought on both sides using sources such as diaries, letters and newspapers",
+    "evaluating the significance of the Russian Revolution, American entry into the war and the Armistice of November 1918 in ending the war"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5675,6 +6096,12 @@
    ],
    "knowledge": "Students can describe Australia's relationship with Britain and Empire identity by 1914 (AC9HH9K08) and the nature of warfare and the war's major turning points (AC9HH9K09, AC9HH9K10). They have not yet examined how the war reshaped Australian domestic society — including the political crisis over conscription, the changed role of women, the experience of returned soldiers, and what the war revealed about the changing relationship with Britain.",
    "endpoint": "Students investigate examples of the war's effects on Australian society — including changes to women's roles, the conscription referenda debates, continuities and changes in Australia's relationship with the British Empire, and the physical, psychological, economic and social experiences of returned soldiers including First Nations Australian soldiers.",
+   "elaborations": [
+    "investigating examples of the war's effects on society, such as the changes to women's roles",
+    "investigating the first and second referenda on conscription, including the role of prime minister Billy Hughes, the division within the Labor Party and groups who opposed conscription",
+    "examining the continuities and changes in Australia's relationship with the British Empire",
+    "explaining the effects of war on returned soldiers, including First Nations Australian soldiers, such as physical and psychological trauma, shell shock, employment opportunities, social and racial discrimination, service recognition, land allocation, wage inequality, and access to health care and pensions"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5840,6 +6267,12 @@
    ],
    "knowledge": "Students can identify that historical interpretations differ and explain why (AC9HH8K06, AC9HH8K11). They have studied the Gallipoli campaign, the Western Front experience, and the effects of the war on Australian society (AC9HH9K09, AC9HH9K11). They have not yet examined what the 'Anzac legend' claims as a set of values and ideals, how commemoration functions as a cultural practice, or how historians have debated and contested the legend's nature and significance over time.",
    "endpoint": "Students investigate the ideals associated with the Anzac tradition and how and why WW1 is commemorated in Australian society; discuss similarities and differences in historians' views of the Anzac legend over time; identify differences between commemoration and glorification; and evaluate the fairness of post-war treaties on the defeated powers, including the Treaty of Versailles on Germany.",
+   "elaborations": [
+    "investigating the ideals associated with the Anzac tradition and how and why the First World War is commemorated within Australian society",
+    "discussing the similarities and differences in historians' views of the Anzac legend over time",
+    "identifying differences between commemoration and glorification of war",
+    "evaluating the fairness of post-war treaties on the defeated powers, such as the Treaty of Versailles on Germany"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5978,6 +6411,12 @@
    ],
    "knowledge": "Students can describe significant developments and their causes and effects in earlier periods (AC9HH8K03, AC9HH8K07). They have not yet examined the Industrial Revolution as a multi-causal, multi-domain transformation — the specific role of technology, the Agricultural Revolution preconditions, the spread of industrialisation across Europe, or how to evaluate the relative significance of multiple causes.",
    "endpoint": "Students explain how changes in technology led to the development of factories and industrialised cities, identify the spread of innovations across Europe and beyond, analyse the multiple factors that caused the Industrial Revolution, and evaluate the most significant effects across economic, social, political and environmental domains.",
+   "elaborations": [
+    "explaining how changes in technology, such as steam-driven spinning mills, railways and steam ships, led to the development of factories and industrialised cities",
+    "identifying the spread of innovations such as steam power, iron and steel production, transport and the use of new chemicals in Europe, the USA and Japan",
+    "analysing factors that caused the Industrial Revolution",
+    "evaluating the most significant effects of the Industrial Revolution"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6096,6 +6535,11 @@
    ],
    "knowledge": "Students can describe the movement of peoples and the growth of industrial cities (AC9HH9K014, AC9HH9K13). They have not yet applied a short/medium/long-term temporal framework to evaluate effects, or examined how population movements produced effects across multiple timescales simultaneously.",
    "endpoint": "Students describe the short-, medium- and long-term effects of population movements and changing settlement patterns — including the impact of factories, mines and cities on the environment; the impact of the steam engine on transport, manufacturing and trade; and how social and political reforms resulted in higher living standards.",
+   "elaborations": [
+    "describing the impact of factories, mines and cities on the environment, and on population growth and distribution",
+    "investigating the impact of the development of the steam engine on transport, manufacturing and trade",
+    "explaining how social and political reforms resulted in higher standards of living for many, including in health care and education, and political and workplace reforms"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6213,6 +6657,11 @@
    ],
    "knowledge": "Students can examine the experiences and perspectives of different groups in historical periods (AC9HH8K04, AC9HH8K09). They have not yet applied this skill to the Industrial Revolution context, examined how technological change affected men, women and children differently, or explored the emergence of trade unions as a collective response to industrial conditions.",
    "endpoint": "Students compare and contrast the impact of steam, gas and electricity on people's way of life; investigate the changes in working conditions including long hours, low pay and child labour; and identify the growth of trade unions as a response to industrialisation's impacts on the working class.",
+   "elaborations": [
+    "comparing and contrasting the impact of steam, gas and electricity on people's way of life during the Industrial Revolution",
+    "investigating the changes in working conditions, such as longer working hours for low pay and the use of children as a cheap source of labour",
+    "identifying the growth of trade unions as a response to the impacts of the Industrial Revolution on the working class"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6311,6 +6760,11 @@
    ],
    "knowledge": "Students can describe significant events and their causes and effects (AC9HH8K03, AC9HH8K07). They have not yet examined how abstract political and economic ideas — capitalism, socialism, nationalism, Chartism — emerged from specific historical contexts, or how to explain the basis of an idea and identify the changes it produced.",
    "endpoint": "Students explain why an idea emerged and the basis of that idea — including Chartism — and identify changes that arose from it; examine the causes and impacts of the French Revolution on politics and citizens' rights; and examine the role of religious beliefs in movements for reform.",
+   "elaborations": [
+    "explaining why an idea emerged and the basis of that idea, such as Chartism, and identifying changes that arose from that idea",
+    "examining the causes and impacts of the French Revolution on politics and citizens' rights including in the United Kingdom and the USA",
+    "examining the role of religious beliefs in the movement to end the slave trade, reforms to improve the negative effects of the Industrial Revolution, the enfranchisement of women and the rise of organised labour"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6433,6 +6887,10 @@
    ],
    "knowledge": "Students can describe the role of significant individuals and groups in historical change (AC9HH8K05, AC9HH8K10, AC9HH8K15) and understand the ideas that emerged during the Industrial Revolution (AC9HH9K17). They have not yet applied the concept of historical agency — the role of individuals in promoting and enacting ideas — to the Industrial Revolution context, or examined how responses to ideas shaped the trajectory of industrial society.",
    "endpoint": "Students explain responses to particular ideas — including how religious groups responded to Darwin's ideas, and how workers responded to capitalism or socialism — and investigate the role played by a specific individual or group in promoting a key idea, including figures such as Adam Smith, Florence Nightingale, Pope Leo XIII, and William Cuffay.",
+   "elaborations": [
+    "explaining responses to particular ideas; for example, how religious groups responded to ideas in Charles Darwin's 1859 book On the Origin of Species or how workers responded to the idea of capitalism or socialism",
+    "investigating the role played by an individual or group in promoting a key idea"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6530,6 +6988,11 @@
    ],
    "knowledge": "Students can describe the key features of societies across multiple domains (AC9HH8K07, AC9HH8K12). They have not yet examined Asian societies in the modern period — the political structures, cultural systems, and economic foundations of Qing China, Mughal India, or Tokugawa Japan before European contact became transformative.",
    "endpoint": "Students investigate the significant economic, political and cultural features of a chosen Asian society — from: Qing dynasty China (Emperor, cultural features), Mughal India (territorial extent, Emperor, art and architecture), or Tokugawa Japan (Shogunate's influence on political, economic and social development).",
+   "elaborations": [
+    "investigating the significant economic and political features of the Qing dynasty in China",
+    "investigating the territorial extent of the Mughal Empire in India",
+    "examining the influence of the Tokugawa Shogunate on Japan's political, economic and social development"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6596,6 +7059,12 @@
    ],
    "knowledge": "Students can describe the key features of the chosen Asian society (AC9HH9K19) and describe the effects of European imperial expansion (AC9HH9K01). They have not yet examined how European contact specifically transformed the chosen Asian society — what changed, what persisted, and what the society's internal dynamics brought to the encounter.",
    "endpoint": "Students identify aspects of the chosen Asian society that remained the same or changed during the period of European contact; and describe the causes and effects of European contact — including British opium trade with China, British Raj in India, or Dutch trade and colonisation in Indonesia.",
+   "elaborations": [
+    "identifying aspects of the Asian society under investigation that remained the same or changed during this period",
+    "describing the reasons for and the effects of the British opium trade with China",
+    "examining the development of the British Raj and identifying British influences on Indian society",
+    "investigating the short- and long-term effects of Dutch trade and colonisation on Indonesian society from the 17th century"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6667,6 +7136,13 @@
    ],
    "knowledge": "Students can describe how individuals and groups promote ideas and how significant events shape historical change (AC9HH9K18, AC9HH8K05, AC9HH8K10). They have not yet applied this analytical framework to the specific development of the chosen Asian society under European contact pressure.",
    "endpoint": "Students describe and explain significant events, ideas, people and movements in the development of the chosen Asian society — drawing from: the Boxer Rebellion and Chinese modernisation; Japan's Meiji Restoration period; or the Indian independence movement and key figures.",
+   "elaborations": [
+    "describing the activities of Christian missionaries in China, and the role of the Self-Strengthening Movement and the Society of Righteous Harmony in the Boxer Rebellion",
+    "investigating the role of Empress Dowager Cixi in modernising China",
+    "examining the role of Emperor Mutsuhito, Commodore Matthew Perry and the Satsuma Rebellion in Japan",
+    "describing the role of the British East India Company, the Sepoy Rebellion, the Indian National Congress and key figures in the development of Indian nationalism",
+    "examining the contribution of key figures and movements to Indonesian independence"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6737,6 +7213,12 @@
    ],
    "knowledge": "Students can apply the continuity-and-change framework (AC9HH9K05) and describe the effects of European contact (AC9HH9K20). They have not yet applied this framework systematically to their chosen Asian society across multiple domains simultaneously.",
    "endpoint": "Students explain the position of the chosen Asian society in relation to other nations around 1900; describe how foreign influence and imperialism challenged and changed Asian societies; investigate what remained the same or changed as a result of contact with European powers; and compare relevant policy systems (e.g. Cultivation System and Ethical System in the Dutch East Indies).",
+   "elaborations": [
+    "explaining the position of the Asian society in relation to other nations in the world around the turn of the 20th century, including the influence of significant ideas such as nationalism",
+    "describing how increasing foreign influence and imperialism was challenging and changing Asian societies",
+    "investigating what remained the same or changed during this period as a result of contact with European powers",
+    "comparing the Cultivation System and the Ethical System in the Dutch East Indies (Indonesia)"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6808,6 +7290,10 @@
    ],
    "knowledge": "Students can examine perspectives and experiences of different groups in colonial contexts (AC9HH9K06, AC9HH8K04, AC9HH8K09). They have not yet applied this skill to Asian colonial contexts, or examined how historians have interpreted the significance of Western colonial influences on Asian societies.",
    "endpoint": "Students compare and contrast different perspectives about the effect of European colonisation on Asian countries — including colonisers and Asian peoples — and compare the similarities and differences in historians' views about the significance of Western colonial influences.",
+   "elaborations": [
+    "comparing and contrasting different perspectives about the effect of European colonisation on Asian countries",
+    "comparing the similarities and differences in historians' views about the significance of Western colonial influences on Asian countries"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6879,6 +7365,9 @@
    ],
    "knowledge": "Students can describe the development of the chosen Asian society, the effects of European contact, and the role of significant individuals and movements (AC9HH9K19–K23). They have not yet synthesised this knowledge into an account of where the chosen society stood in the world by 1914, or examined how nationalism and self-determination as ideas were reshaping Asian societies' relationships with European powers.",
    "endpoint": "Students investigate the confrontation between the chosen Asian society and Western powers — such as the Sino-French war, the Russo-Japanese war, or the growing demand for Indian or Indonesian independence — explaining the effects of nationalism and self-determination on the society's development by 1914.",
+   "elaborations": [
+    "investigating the confrontation between an Asian country and Western powers, such as the Sino-French war, the Russo-Japanese war, or the increasing demand for Indian or Indonesian independence and self-government"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6952,6 +7441,11 @@
    ],
    "knowledge": "In Year 7 students developed historical questions (AC9HH7S01). In Year 8 students refined this by developing questions to inform inquiry (AC9HH8S01). Y9 extends this with the expectation that students develop a range of questions and modify them iteratively as the inquiry develops — adding the dimension of ongoing revision as evidence and understanding grows.",
    "endpoint": "Students develop and modify a range of historical questions about the past to inform historical inquiry, revising questions as new factors are introduced.",
+   "elaborations": [
+    "developing a range of questions about aspects of the past that require historical argument",
+    "developing an inquiry question such as 'What were the effects of the Industrial Revolution?' and refining it as further factors are introduced into the research process",
+    "modifying questions using historical concepts such as cause, effect, change and continuity"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7018,6 +7512,11 @@
    ],
    "knowledge": "In Year 7 students located and identified primary and secondary sources (AC9HH7S02). In Year 8 they continued this practice (AC9HH8S02). Y9 extends the scope to include a wider range of repositories — archives, museums, online collections — and introduces digital data sources and the role of technology in enabling access to historical sources.",
    "endpoint": "Students locate and identify primary and secondary sources from a range of repositories, including digital collections, to use in historical inquiry.",
+   "elaborations": [
+    "locating historical sources from archives, museums and online collections",
+    "recognising the role of technology in providing access to sources, such as the ability to access resources that historians use",
+    "comparing sources to analyse changes over time, including data from online records such as immigration records"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7084,6 +7583,12 @@
    ],
    "knowledge": "In Year 7 students identified origin, content, context and purpose of sources (AC9HH7S03). In Year 8 they continued this (AC9HH8S03). Y9 extends this by adding explanation of context (when/where produced, contemporaneous vs retrospective) and analysis of literal and symbolic features, purpose, and inferences from visual sources.",
    "endpoint": "Students identify the origin, content, context and purpose of primary and secondary sources, including explaining contextual features and analysing intent.",
+   "elaborations": [
+    "identifying the context of a source, such as when and where it was produced, and whether it was at the same time as the event being studied or after the event",
+    "identifying literal and symbolic features of sources and explaining their purpose and inferences",
+    "explaining the events, ideas and individuals represented in a visual source",
+    "analysing the intent of the author and purpose of the source"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7151,6 +7656,10 @@
    ],
    "knowledge": "In Year 7 students identified and described accuracy and usefulness of sources (AC9HH7S04). In Year 8 they continued this (AC9HH8S04). Y9 introduces the key principle that usefulness and reliability depend on the questions being asked — the same source may be useful for one inquiry and unreliable for another. This represents a shift from applying fixed criteria to question-relative judgement.",
    "endpoint": "Students explain the usefulness and reliability of primary and secondary sources as evidence, recognising that these qualities depend on the questions asked of the source.",
+   "elaborations": [
+    "identifying that the reliability and usefulness of a source depends on the questions asked of it",
+    "determining the extent to which the accuracy or purpose of a source affects its usefulness"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7219,6 +7728,10 @@
    ],
    "knowledge": "In Year 7 students described causes and effects and explained continuities and changes (AC9HH7S05). In Year 8 they continued with description and explanation (AC9HH8S05). Y9 lifts the demand — from describe/explain to analyse cause-and-effect and evaluate continuity/change patterns. The addition of 'evaluate' signals that students must now make judgements about significance, not only describe relationships.",
    "endpoint": "Students analyse cause and effect and evaluate patterns of continuity and change across the topics being studied.",
+   "elaborations": [
+    "creating a timeline that identifies the significant events or individuals across a particular period, observing and discussing patterns of causation and change",
+    "organising a range of primary sources and/or perspectives in chronological order to support the development of a historical argument about continuities or changes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7286,6 +7799,11 @@
    ],
    "knowledge": "In Year 7 students identified perspectives, attitudes and values in sources (AC9HH7S06). In Year 8 they continued with identification (AC9HH8S06). Y9 lifts the demand — from identify to compare, and adds the new requirement to explain how perspectives are influenced by events, ideas, location, beliefs and values. Students must now move from recognising different perspectives to explaining what shaped them.",
    "endpoint": "Students compare perspectives and explain how perspectives are influenced by significant events, ideas, location, beliefs and values.",
+   "elaborations": [
+    "determining whether or not the information in one historical source can be verified by information in another historical source",
+    "comparing and contrasting the range of perspectives at the time surrounding a historical event, and consider voices that may be absent from the sources",
+    "discussing whether the perspective of one individual in the period is representative of a majority or minority view at that time"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7353,6 +7871,12 @@
    ],
    "knowledge": "In Year 7 students explained historical interpretations about significant events, individuals and groups (AC9HH7S07). In Year 8 they continued with explanation (AC9HH8S07). Y9 lifts the demand to analysis — students must now not only identify and explain different interpretations but analyse how and why they differ, including how interpretations change over time as new sources are discovered.",
    "endpoint": "Students analyse different and contested historical interpretations, examining how and why interpretations differ and change over time.",
+   "elaborations": [
+    "exploring debates about the historical period or topic studied",
+    "comparing similarities and differences in historians' views about colonial society",
+    "identifying different interpretations of specific events",
+    "analysing how historians have changed the way they interpret the event under investigation over time"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7420,6 +7944,12 @@
    ],
    "knowledge": "In Year 7 students created descriptions, explanations and historical arguments using knowledge and concepts (AC9HH7S08). In Year 8 they continued this (AC9HH8S08). Y9 adds two significant extensions: developing arguments that identify different interpretive possibilities and argue a particular point of view, and selecting appropriate communication formats. Students must now produce genuinely argumentative historical writing, not only explanations.",
    "endpoint": "Students create descriptions, explanations and historical arguments that engage with interpretive possibilities, argue a point of view with evidence, and are communicated in appropriate formats.",
+   "elaborations": [
+    "developing a historical argument that identifies different possibilities in interpretation and argues a particular point of view with consistent reference to the evidence available",
+    "selecting appropriate formats to communicate a historical argument",
+    "developing an explanation, interpretation or argument using historical concepts and terms such as contested historical interpretations",
+    "constructing a historical argument using selected evidence from sources to support an interpretation of the past"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7489,6 +8019,12 @@
    ],
    "knowledge": "Students have explained the causes of World War One using the MAIN framework (Militarism, Alliance systems, Imperialism, Nationalism) and can distinguish long-term structural causes from short-term triggers (AC9HH9K08). They have examined the effects of WW1 on Australian society including conscription debates and Australia's relationship with Britain (AC9HH9K11), and have encountered the Treaty of Versailles as a post-war settlement — though depth of treatment of its specific terms is variable (AC9HH9K12 elaboration). They have not yet examined the inter-war period (1919–1939) as a causal field, the rise of fascism as a structural phenomenon, the diplomatic sequence leading to WW2, or Australia's political decision-making around entry into WW2.",
    "endpoint": "Students explain the causes and outbreak of the Second World War across European and Asia-Pacific contexts, analyse the course of the war, and evaluate the significance of Australian involvement.",
+   "elaborations": [
+    "investigating significant events and ideas during the inter-war years between the First World War and the Second World War, including the Treaty of Versailles (territorial concessions required by Germany and the imposition of war reparations), the Russian Revolution and the Great Depression, rise of Adolf Hitler and the Nazi Party in Germany from 1933",
+    "analysing the major events leading up to the outbreak of the Second World War, such as the Japanese invasion of Manchuria, the Spanish Civil War, Italo–Abyssinian Wars, the annexation of Austria, the Munich Agreement and the annexation of the Sudetenland, the invasion of Poland in 1939, the occupation of China and the attack on Pearl Harbor in 1941",
+    "investigating the causes of the effects of the Treaty of Versailles on Germany, the structural weaknesses of the League of Nations, the rise of fascist and militarist regimes, and the failure of appeasement policies",
+    "examining the reasons for Australia’s involvement in the Second World War, and the responses to the conflicts of prime minister Robert Menzies, “Australia is also at war” and prime minister John Curtin, “Australia looks to America”"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7678,6 +8214,12 @@
    ],
    "knowledge": "Students have examined the places where Australians fought in WW1 and the experiences of soldiers on the Western Front and at Gallipoli (AC9HH9K09). They understand the Anzac legend and its commemorative significance (AC9HH9K12). From AC9HH10K01 they understand Australia's political decision to enter WW2, the strategic context of the Pacific theatre, and the Curtin pivot. They have not yet examined the specific theatres and campaigns of WW2, the fall of Singapore as a distinct event with its own significance, or the range of Australian POW experiences.",
    "endpoint": "Students identify the significant places where Australians fought in WW2, explain the perspectives and experiences of Australian service personnel including POWs, and evaluate the significance of at least one major campaign.",
+   "elaborations": [
+    "identifying places where Australians fought, such as North Africa (including Tobruk), Darwin, New Guinea (including Kokoda), Malaya and Singapore, and evaluating their significance",
+    "investigating the significance of Kokoda as the battle that halted the Japanese advance on Port Moresby and why it helped reinforce the Anzac legend",
+    "comparing the experiences of various prisoners of war (POWs), such as the treatment of Australian POWs under German and Japanese control",
+    "examining the perspectives of particular groups of POWs, such as those in camps in Ambon or Rabaul, those used as forced labour on the Thai–Burma Railway, or army nurses captured in Singapore"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7850,6 +8392,15 @@
    ],
    "knowledge": "Students have examined turning points of WW1 (AC9HH9K10) and can apply the concept of historical significance. From AC9HH10K01 they understand the course of the war at a structural level. From AC9HH10K02 they have examined specific Australian campaigns. They have studied the rise of fascism and Nazi ideology (AC9HH10K01, N2), giving them the ideological context for the Holocaust. They have not yet examined the Holocaust as a conceptually distinct historical phenomenon requiring its own analytical framework, nor analysed the atomic bomb decision as an ethical and strategic problem.",
    "endpoint": "Students explain why particular events were significant turning points in both the European and Asia-Pacific theatres, examine the historical context and scale of the Holocaust, and analyse the decision to use atomic weapons including their short- and long-term effects.",
+   "elaborations": [
+    "explaining why particular events were significant turning points in the European theatre of war, such as Germany’s invasion of Poland in 1939, the Blitzkrieg, the Battle of Britain, Operation Overlord (the invasion of Normandy), the Battle of the Bulge, and the Soviets’ capture of Berlin",
+    "explaining why particular events were significant turning points in the Asia-Pacific theatre of war, such as the Japanese occupation of China, the Japanese attack on Pearl Harbor in 1941, the fall of Singapore in 1942, the bombings of northern Australia, the American victory at the Battle of Midway in 1942, the Battle for Kokoda and the Battle of Iwo Jima",
+    "examining the historical context in which the Holocaust occurred, including anti-Semitism and Nazi race theory",
+    "investigating the scale and significance of the Holocaust using primary and secondary sources, such as survivor testimonies",
+    "discussing the short- and long-term impacts of the Holocaust on the Jewish community post–Second World War, such as coming to terms with the scale of loss, migration to Israel, Australia and the United States, and the creation of Yad Vashem and other Holocaust centres, museums and memorials",
+    "identifying the race to build the atomic bomb by Germany, Japan and the USA, and analysing why the atomic bombs were dropped on Hiroshima and Nagasaki",
+    "investigating the effects of the atomic bombs on Hiroshima and Nagasaki, including short- and long-term effects on human health, and short- and long-term environmental effects on the cities and surrounding areas"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8050,6 +8601,15 @@
    ],
    "knowledge": "Students have examined the effects of WW1 on the Australian home front including conscription debates, women's roles, and the treatment of returned soldiers (AC9HH9K11). They can apply continuity-and-change analysis. From AC9HH10K01 they understand the political context of Australia's entry into WW2 and the National Security Act 1939. They have not yet examined the specific home front changes of WW2, the distinct position of First Nations Australians in WW2, or the nature of wartime government controls.",
    "endpoint": "Students explain the continuities and changes on the Australian home front during WW2, including the changing roles of women and First Nations Australians, and evaluate the effects of wartime government controls on individual rights and freedoms.",
+   "elaborations": [
+    "discussing the introduction of conscription into Australia through the Citizen Military Forces as a change from the policies of First World War",
+    "investigating the effects of the Second World War on the changing roles of women in Australia during the war (for example, women in the military [WAAAF, AWAS, WRANS], the Women’s Land Army, factory work) contrasted with the continuities of their roles before and after the war",
+    "investigating the impact of Second World War at a local and national level, such as the bombing of Darwin, the Japanese submarine attack on Sydney and the sinking of ships off the Australian coast, the “Battle of Brisbane”, the Cowra breakout and the Brisbane Line",
+    "describing the effects of changes to individual rights and freedoms because of the National Security Act 1939, such as censorship of the media; detention of Japanese, German and Italian residents; banning groups opposed to the war on either political or religious grounds; and controls over the workforce (“manpower controls”)",
+    "identifying the barriers that affected First Nations Australians’ enlistment in the Second World War, such as the lack of trust in their loyalty by the Australian Government, denial of their Aboriginal or Torres Strait Islander status and the notion that there would be disharmony between First Nations Australians and non-Indigenous Australian men",
+    "examining the reasons for the Australian Government changing its views on including First Nations Australians in the defence forces, such as the critical shortage of soldiers, Torres Strait Light Infantry Battalion established in 1941 and specialised work undertaken by First Nations Australians; for example, the Nackeroos and the Northern Territory Special Reconnaissance Unit",
+    "examining the changing roles of First Nations Australian men and women working as civilians for the army during the Second World War, such as increased employment opportunities in domestic work in hospitals, ammunition stacking, timber cutting and cement works, maintaining gardens, slaughtering cattle, and assembling and clearing gearboxes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8217,6 +8777,13 @@
    ],
    "knowledge": "Students have established in AC9HH10K01 that the war accelerated Australia's strategic pivot from Britain to the USA and that this was a political choice. From K04 they have examined the home front effects. They understand Australia's pre-war relationship with Britain from WW1 study (AC9HH9K11). They have not yet examined post-war reconstruction, ANZUS, Australia's role in the UN, or the mechanisms of Australia's post-war engagement with Asia.",
    "endpoint": "Students evaluate the significance of WW2 to Australia's post-war development — economic, political, and social — and to Australia's international relationships, including the shift from Britain to the USA and the deepening engagement with Asia.",
+   "elaborations": [
+    "examining the role of Prime Minister Ben Chifley in post-war reconstruction",
+    "evaluating the significance of the Second World War to Australia’s changing relationship with Britain and the USA, particularly the shift in importance from the one to the other, such as the creation of the ANZUS alliance",
+    "evaluating the short- and long-term effects of the Second World War on the emergence of Australia’s deeper engagement with Asia, such as the development of SEATO, the South Pacific Forum, APEC, the ASEAN Regional Forum and various trade alliances",
+    "describing the involvement of Australia in the founding of the United Nations, such as the roles played by HV Evatt and Jessie Street in drafting the charter of the United Nations",
+    "investigating the impact of the significant wave of post-war European and Asian migration, including the Colombo Plan, and views about race, including attitudes towards First Nations Australians"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8357,6 +8924,10 @@
    ],
    "knowledge": "Students have examined WW1 commemoration and the Anzac legend, including the distinction between commemoration and glorification (AC9HH9K12). From K02 they have examined Kokoda's strategic significance and its role in reinforcing the Anzac tradition. They can apply the concept of historical interpretation. They have not yet examined specifically WW2 commemoration debates, how the Anzac legend was extended from WW1 to WW2, the Battle for Australia controversy, or the ethical questions around Kokoda trekking.",
    "endpoint": "Students analyse different historical interpretations and debates about the commemoration of WW2, including the Battle for Australia debate and the Kokoda commemoration controversy.",
+   "elaborations": [
+    "analysing the debate over the Battle for Australia 1942 and its commemoration since 2008",
+    "discussing the commemoration of Kokoda, including the debate about the appropriateness of hiking the Kokoda trail today as a form of commemoration"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8493,6 +9064,11 @@
    ],
    "knowledge": "Students have examined post-war reconstruction and Australia's strategic reorientation in AC9HH10K05, including the 'populate or perish' migration drive and the Colombo Plan. They understand push and pull factors in migration from general geographic study. They have not yet examined the specific waves of post-war migration in detail, the policy mechanisms governing migration, or the push factors driving each wave.",
    "endpoint": "Students analyse the effects of significant post-war world events and developments on Australian society, including the causes and nature of successive waves of migration and the government policies that shaped them.",
+   "elaborations": [
+    "analysing the causes and conditions that led to increased migration to Australia and changing public opinion and government policy, such as the publication of the mass murder of the Holocaust or the plight of refugees in war-ravaged Europe",
+    "describing the main features of a government policy that affected migration to Australia, such as the government’s “populate or perish” policy and the “White Australia” policy",
+    "investigating the nature of the waves of migration (for example, from Europe in the 1950s–1960s, from different parts of Asia in the 1970s–2000s, from the Middle East in the 1980s–1990s, from India in the 1990s–2000s or from Africa in the 2000s), the numbers of migrants from those countries since the Second World War and the reasons for those migrations, including push factors such as the effects of war, economic downturns or social upheaval, and pull factors such as Australia’s peaceful democracy and economic and educational opportunities"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8628,6 +9204,13 @@
    "prior": [],
    "knowledge": "Students have examined successive migration waves and their effects on Australian society in K07. They understand the 'White Australia' policy as a boundary condition and know that it was dismantled between the late 1960s and 1973. They have not yet examined the specific causes of attitudinal change toward migration, the arguments over multiculturalism, or how contemporary immigration policy debates evolved.",
    "endpoint": "Students analyse the causes of changes in perspectives on migration since 1945, including the dismantling of the White Australia policy, the contribution of migration to Australia's changing identity, and the evolution of contemporary immigration debates.",
+   "elaborations": [
+    "using sources to analyse the changing attitudes to the arrival of migrants in the 1950s, 1960s, 1970s and 1980s",
+    "analysing the arguments for and against the “White Australia” policy between 1964 and 1973 or the Child Migration scheme 1922–1967",
+    "discussing the contribution of migration to Australia’s changing identity as a nation; for example, the influence of different cultural and religious groups with the arrival of different waves of migrants, such as those from Europe in the 1950s–1960s, from different parts of Asia in the 1970s–2000s, from the Middle East in the 1980s–1990s, from India in the 1990s–2000s or from Africa in the 2000s",
+    "discussing the debate over multiculturalism that arose in the 1980s",
+    "discussing how debates over different aspects of Australia’s immigration and border protection policies have changed over time in light of international events, including consideration of issues such as mandatory detention of asylum seekers, humanitarian migration, business and skilled migration, and temporary protection visas, from the early 1990s to the present day"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8768,6 +9351,11 @@
    ],
    "knowledge": "Students have examined First Nations Australians' wartime service and the contradiction between service and denied citizenship (AC9HH10K04). From Y9 they have studied colonisation and its effects on First Nations peoples (AC9HH9K03, K06). They have not yet examined the specific legislative and policy framework that governed First Nations Australians' lives in the 20th century, the early organised campaigns for rights, or the Stolen Generations as a distinct historical phenomenon.",
    "endpoint": "Students explain the causes of First Nations Australians' campaigns for rights and freedoms before 1965, including the discriminatory legislative and policy framework, the significance of the 1938 Day of Mourning, and the impact of the Stolen Generations on the civil rights movement.",
+   "elaborations": [
+    "investigating the political and societal impacts that contributed to First Nations Australians’ campaigns for rights and freedoms, such as legal status at the Commonwealth and various state/territory levels, segregation and treatment on missions, and the policy of assimilation adopted in 1937 by the Aboriginal Welfare Conference of Commonwealth and State Authorities",
+    "explaining the significance of the 1938 Day of Mourning in the campaigns of First Nations Australians for rights and freedoms, including the significance of 26 January 1938 (150 years since the arrival of the First Fleet) and the national Indigenous rights meeting",
+    "exploring accounts of the past experiences of First Nations Australians who were members of the Stolen Generations and how these experiences influenced the civil rights movement in Australia from the 1960s through to the present day"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8874,6 +9462,12 @@
    "prior": [],
    "knowledge": "Students have examined the legislative framework of exclusion, early organised campaigns, and the Stolen Generations in K09. They understand the model of organised political activism established by the AAPA, AAL, and the 1938 Day of Mourning. They have not yet examined the specific contributions of individuals across the broader campaign period, the role of allied groups (Christian, union, labour), or the extent-of-change question.",
    "endpoint": "Students investigate the contributions of significant individuals and groups in the campaign for First Nations rights and evaluate the extent to which they brought change to Australian society.",
+   "elaborations": [
+    "investigating the lives of significant First Nations Australians and other Australians who contributed to the rights and freedoms of First Nations Australians, such as Neville Bonner, William Cooper, Fred Maynard (AAPA), Jack Patten, Sir Douglas Nicholls, Lady Gladys Nicholls, Vincent Lingiari, Charles Perkins, Shirley Smith, Gladys Elphick, Essie Coffee, Joyce Clague, Daisy Bindi, Gary Foley, Michael Anderson, Eddie Koiki Mabo and Lowitja O’Donoghue",
+    "investigating First Nations Australian groups that contributed to changing Australian society, such as the Australian Aborigines League (Victoria), the Australian Aboriginal Progressive Association (AAPA) and Student Action for Aborigines",
+    "examining the role of Christian, union and labour groups in the movement for First Nations Australians' rights and freedoms, including the foundation of the National Day of Mourning",
+    "examining the ways some First Nations Australians’ embracing of Christianity and Islam has interacted with their beliefs, identity and political freedoms"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9010,6 +9604,13 @@
    "prior": [],
    "knowledge": "Students have examined the legislative framework, early campaigns, and the Stolen Generations (K09) and the contributions of individuals and groups (K10). They understand the evaluation framework for extent of change. They have not yet examined the specific chronology of civil rights events from the 1960s onwards, the influence of the US civil rights movement, or the post-Mabo trajectory of reconciliation.",
    "endpoint": "Students explain the significant events and methods in the movement for First Nations civil rights, including the influence of the US civil rights movement, a chronology of key events from 1962 to the Uluru Statement, and evaluate the extent to which they contributed to change.",
+   "elaborations": [
+    "investigating the effects of the US civil rights movement of the 1960’s and its influence on Australia in changing perspectives, beliefs and opinions; for example, outlining the Freedom Rides in the USA, how they inspired civil rights campaigners in Australia and how they became a turning point in the campaign of First Nations Australians for rights and freedoms",
+    "creating a chronological account of the significant events in the movement for the civil rights of First Nations Australians, including the right to vote federally in 1962, Freedom Rides, the 1967 Referendum, the Tent Embassy, the Mabo decision, prime minister Keating's Redfern Speech, the Bringing Them Home report, the first Sorry Day, the Apology to the Stolen Generations and the Uluru Statement from the Heart",
+    "explaining how significant events contributed to change; for example, legal changes, especially land rights, as a result of the Pilbara Strike, Palm Island Strike, Wave Hill Walk-Off, the Mabo decision, the Wik decision and the Tent Embassy; political changes as a result of the right to vote federally in 1962 and the 1967 Referendum; social changes as a result of the Freedom Rides; changes to advance Reconciliation as a result of the Redfern Speech, the Bringing Them Home report, the Royal Commission into Deaths in Custody and the Apology to the Stolen Generations",
+    "discussing how Reconciliation is not a single significant event or change, but an ongoing process of truth-telling and healing between First Nations Australians and other Australians",
+    "investigating the Mabo case and the significance of this event’s contribution to understanding of terra nullius and the land rights movement for First Nations Australians"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9146,6 +9747,10 @@
    "prior": [],
    "knowledge": "Students have examined women's wartime roles and the change-versus-continuity pattern in K04 — including that most wartime gains were reversed post-war. They have studied suffrage from earlier year levels. They have not yet examined the post-1945 women's movement as a sustained organised campaign, the specific legal changes that followed, or the ongoing gap between formal equality and lived experience.",
    "endpoint": "Students investigate significant events, individuals and groups in the Australian women's movement and evaluate how they changed the role and status of women.",
+   "elaborations": [
+    "investigating events connected to the changing roles and rights of women in the workforce since 1945 such as the repeal of the “marriage bar”, the Sex Discrimination Act 1984, the changing nature of participation in employment and the gender pay gap",
+    "examining the contributions of significant female leaders in Australian public life; for example, political leaders and activists, social reformers, sporting identities, artists and entertainers"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9279,6 +9884,12 @@
    "prior": [],
    "knowledge": "Students have examined First Nations rights campaigns and civil rights events (K09–K11), the women's movement (K12), and changing attitudes to migration (K08). They have evaluated the extent of change in each domain and identified limits. They have not yet examined the three domains together as a connected pattern of ongoing struggle, or examined the international frameworks that support continuing rights claims.",
    "endpoint": "Students explain continuing efforts to create change in civil rights and freedoms for First Nations Australians, migrants, and women, and examine Australia's responsibilities under international human rights frameworks.",
+   "elaborations": [
+    "identifying areas such as education, health care, housing and employment that are the focus for continued civil rights action for First Nations Australians, and discussing why there continues to be a need for such action",
+    "examining the changes in women’s rights in 20th- and 21st-century Australia, ranging from suffrage to election to state and commonwealth parliaments, employment law, reproductive rights, access to public places like hotels, and protections against domestic and family violence",
+    "investigating the changes in government policy in relation to migrants and how these policies have reflected and impacted on Australia’s changing place in the world; for example, the Racial Discrimination Act 1975",
+    "examining the ideas in and Australia’s responsibilities as a signatory to the United Nations Declaration of the Rights of Indigenous Peoples (UNDRIP) (2007) and discussing how it influences calls for recognising the rights of First Nations Australians and First Peoples in other countries"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9415,6 +10026,11 @@
    "prior": [],
    "knowledge": "Students understand continuity and change as historical concepts from earlier study. They have examined post-war reconstruction and the long boom in K05 and K16. They have not yet examined technological development, public health, or the environmental movement as distinct historical threads with their own periodisation and changing perspectives.",
    "endpoint": "Students identify key developments in technology, public health, and standard of living in the 20th century, and explain how perspectives on environmental sustainability have changed over time.",
+   "elaborations": [
+    "identifying key developments in technology since 1945 that have changed the world in the following areas: the household, such as television, appliances, central heating and cooling; travel and trade, such as shipping and passenger jets; globalisation, mass consumption and communications, such as the microchip, satellites and digital systems",
+    "discussing the growth in the world’s population during the 20th century, including life expectancy changes in different parts of the world, and the depletion of natural resources",
+    "identifying how the rise of the environmental movement around the world has changed people’s perspectives on things such as developments in renewable energy technology and sustainability measures such as recycling"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9551,6 +10167,10 @@
    ],
    "knowledge": "Students have examined the Holocaust's scale and significance and its role in motivating international human rights frameworks (AC9HH10K03, N5). They have examined Australia's role in founding the United Nations (K05, N3). They have studied international human rights frameworks in K13. They have not yet examined the UDHR's specific content, drafting history, or present significance in detail.",
    "endpoint": "Students explain the origins and significance of the Universal Declaration of Human Rights, including Australia's involvement in its development and its present significance.",
+   "elaborations": [
+    "describing the causes of the development of the Universal Declaration of Human Rights, such as the atrocities of the Holocaust, the immense scale of destruction and displacement because of Second World War",
+    "investigating the present significance of the Universal Declaration of Human Rights"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9655,6 +10275,14 @@
    "prior": [],
    "knowledge": "Students have examined Australia's post-war reconstruction and strategic realignment (K05). They understand the Cold War context from general knowledge. They have not yet examined the Cold War's specific domestic effects on Australia, the long boom's economic character, or the cultural transformation of the 1950s–60s in detail.",
    "endpoint": "Students explain the causes and effects of major global influences on Australia in the post-war period, including the Cold War, the long boom, and cultural transformation through American and British popular culture.",
+   "elaborations": [
+    "investigating how the fear of communism and the emergence of the Cold War impacted on Australian society, particularly in relation to political debates, immigration and some aspects of popular culture including music, film and sport",
+    "examining the “the long boom” under prime minister Robert Menzies, in particular the expansion of primary industry exports (wool and iron ore) and the growth of protected manufacturing industries such as steel, textiles, electrical goods and automobiles, and the promotion of home ownership",
+    "analysing the causes of cultural development and the effects on Australian society such as the post–Second World War baby boom and the resulting effect of the development of youth culture in the 1960s",
+    "investigating America’s cultural influences, such as the arrival of television for the Melbourne Olympics (1956) and Bill Haley’s Australian tour (1957), and British popular influences, such as the Mersey sound and The Beatles’ tour of 1964",
+    "comparing views on the values and beliefs of rock ‘n’ roll, film and television across time, age and gender, such as issues of conservatism and rebellion, the challenge to established ideas and national identity",
+    "analysing the causes and conditions that led to the environment movement and its effects on changing public opinion about protecting the environment, such as rapid population increase, urbanisation, increases in industrial pollution and waste, and species extinction"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9790,6 +10418,16 @@
    "prior": [],
    "knowledge": "Students have examined post-war migration waves (K07–K08), cultural transformation through American and British influences (K16), and the environmental movement (K14, K16). They have not yet examined the Vietnam War's specific domestic effects on Australia, multiculturalism as a policy framework, or post-war population growth in data form.",
    "endpoint": "Students explain the changing conditions of post-war Australia and analyse the causes of a major global influence, including the Vietnam War's domestic effects, multiculturalism, and the environmental and cultural changes of the second half of the 20th century.",
+   "elaborations": [
+    "describing the impact of the Vietnam War on Vietnam and how the communist victory in Vietnam in 1975 resulted in the arrival of refugees into Australia",
+    "investigating policies of multiculturalism since the 1970s and the concepts of cultural heritage and assimilation",
+    "analysing post–Second World War population growth and the development of Australia’s culturally diverse society, using different types of graphs",
+    "recognising the historic impact of the pictures of Earth taken during the Apollo 8 mission and how they influenced people’s view of the world",
+    "explaining events such as the struggle over American, British and French nuclear weapon testing in the Pacific from 1946 to 1996 or the sinking of the Rainbow Warrior in 1985",
+    "evaluating the effectiveness of international protocols and treaties such as Kyoto (1997), the United Nations Framework Convention on Climate Change (since 1992) and the Washington Declaration (2007)",
+    "identifying American and Asian influences on Australian popular culture since the Second World War, such as through mainstream Hollywood and Bollywood films, and the animation film industry in China and Japan",
+    "investigating the changing contribution of the Australian rock ‘n’ roll, film and television industries to Australian culture and identity through the development and export of music, film and television"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9924,6 +10562,12 @@
    "prior": [],
    "knowledge": "Students have examined Cold War domestic effects, the long boom, and cultural transformation (K16); the Vietnam War's domestic effects and multiculturalism (K17); and First Nations and women's rights movements (K09–K12). They understand continuity-and-change as an analytical concept. They have not yet examined how Australians began to question traditional national values in the 1960s–70s as a connected pattern, or how specific governments shaped Australia's engagement with the Asia-Pacific.",
    "endpoint": "Students explain continuities and changes in perspectives, beliefs, and values that have influenced the Australian way of life — including challenges to traditional notions of Australian identity in the 1960s–70s, changing religious practice, and shifting approaches to Asia-Pacific engagement.",
+   "elaborations": [
+    "explaining why environmental movements gained increasing public voice and identifying different perspectives",
+    "investigating how Australians in the 1960s and 1970s, influenced by the events of those decades, began to question the traditional notions of egalitarianism, a fair go, classlessness and democracy; for example, conscription and the Vietnam War, the Women’s Liberation Movement and the dismissal of the Whitlam government",
+    "comparing and contrasting the policies relating to engagement with the Asia-Pacific region of the governments led by prime minister Paul Keating (1991–1996) and prime minister John Howard (1996–2007)",
+    "examining the nature of religion in Australia; for example, the changing attitudes to religious practice, the increase of non-Christian religions and non-traditional Christian churches"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10057,6 +10701,13 @@
    "prior": [],
    "knowledge": "Students have examined post-war foreign policy (K05, K18), cultural transformation (K16, K17), and Australia's evolving relationship with Britain, the USA, and Asia. They understand how migration transformed Australia's cultural composition (K07–K08). They have not yet examined how specific prime ministers' foreign policy shaped national identity, or how Australia's contribution to international popular culture connects to national identity.",
    "endpoint": "Students explain the effects of global influences on Australia's changing identity as a nation — including how post-war foreign policy shaped national identity, Australia's contribution to and absorption of international popular culture, and the rising influence of China and India.",
+   "elaborations": [
+    "investigate how the broad foreign policy and international relations policies of prime minister Gough Whitlam (1972–1975), prime minister Malcolm Fraser (1975–1983), prime minister Bob Hawke (1983–1991) in relation to cultural exchange, migration, trade and defence shaped Australia’s national identity",
+    "discussing the changing nature of the music, film and television industries in Australia during the post-war period, including the influence of overseas developments such as rock ‘n’ roll, disco, punk, grunge, indie and other music genres; Hollywood, Bollywood and the animation film industry in China and Japan; and the development of satellite broadcast on television",
+    "investigating Australia’s contribution to international popular culture in music, film, television and sport, and the recognition of Australian creative and performing arts internationally",
+    "discussing the rising economic and political influence of countries such as China and India since the end of the Cold War",
+    "examining the role of digital media, including social media, in shaping Australian society and connecting to global relationships"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10192,6 +10843,13 @@
    "prior": [],
    "knowledge": "Students have examined historical interpretation and debate throughout the unit — in commemoration (K06), civil rights (K10–K11), migration (K08), and environmental movements (K14, K17). They have encountered the concept of historical significance as contested. They have not yet examined these interpretive debates as a connected set, or examined the global movements for rights, the rise of extremism, nuclear energy, and climate change debates as distinct historiographical topics.",
    "endpoint": "Students discuss different historical interpretations and debates during the second half of the 20th century, including global rights movements, extremism, nuclear energy, and climate change.",
+   "elaborations": [
+    "discussing the concept of popular culture and how First Nations Australians became more assertive in the development of their own arts industries and influences; for example, the role of Bangarra Dance Theatre in advancing First Nations Australians’ cultures, beliefs, stories and concerns through dance and music",
+    "discussing the significant movements for rights and freedom in the world, such as the US Civil Rights movement, the rights movement of First Nations Peoples of Australia, South Africa’s anti-apartheid movement, women’s movements, LGBTQI+ movements and environmental movements",
+    "investigating the rise of political and religious extremism, and the impact of the events of 11 September 2001 and the 2002 Bali bombings on immigration to Australia",
+    "discussing the global debate over the use of nuclear energy from the 1960s to the present and its change over time, including arguments for and against its use as an alternative to fossil fuels, and the effects of nuclear disasters such as Three Mile Island (1979), Chernobyl (1986) and Fukushima Daiichi (2011)",
+    "investigating the change in debate about climate change over time from the 1960s to the present"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10326,6 +10984,12 @@
    "prior": [],
    "knowledge": "Students can develop and modify historical questions to inform inquiry at Year 9 level — scoping questions for a specific investigation and adjusting them based on source availability.",
    "endpoint": "Students develop a range of historical questions requiring historical argument, modify them in response to source suitability and scope, and evaluate whether questions are appropriately calibrated for the investigation.",
+   "elaborations": [
+    "identifying, planning to investigate and investigating a specific historical question or issue",
+    "developing a range of questions about aspects of the past that require historical argument",
+    "modifying a key question or related questions in an inquiry, depending on the suitability of the sources available",
+    "determining whether a key question or related questions are too broad or narrow given the requirements of the investigation"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10391,6 +11055,11 @@
    "prior": [],
    "knowledge": "Students can locate, identify and compare primary and secondary sources for historical inquiry, selecting sources relevant to a Year 9-level investigation.",
    "endpoint": "Students locate relevant primary and secondary sources from databases including Trove and state libraries, identify information matching their inquiry questions, and compare multiple sources to select those most pertinent to their research.",
+   "elaborations": [
+    "selecting relevant and useful historical sources from data bases such as Trove and state libraries",
+    "identifying information in a primary or secondary source that matches the historical questions being asked",
+    "comparing multiple primary or secondary sources and selecting the source/s most pertinent to the historical research being conducted"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10456,6 +11125,11 @@
    "prior": [],
    "knowledge": "Students can identify the origin and content of sources and explain the purpose and context of primary and secondary sources in a Year 9 inquiry context.",
    "endpoint": "Students identify the origin and content of a range of source types, explain their purpose and historical context, and describe stylistic elements of sources to inform meaning.",
+   "elaborations": [
+    "explaining the historical context of a source and identifying any gaps or inaccuracies in the source",
+    "analysing the intent of the author and the features of the source to determine the purpose of the source",
+    "describing stylistic elements of sources, such as artistic or architectural, to inform the meaning of sources"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10521,6 +11195,14 @@
    "prior": [],
    "knowledge": "Students can explain the usefulness and reliability of primary and secondary sources as evidence in a Year 9 historical inquiry, identifying bias and perspective.",
    "endpoint": "Students explain the usefulness and reliability of primary and secondary sources as evidence, identifying absent perspectives, explaining bias and intent, corroborating across sources, and comparing sources for inconsistencies.",
+   "elaborations": [
+    "identifying perspectives absent from sources and the extent to which this may affect usefulness",
+    "explaining the bias of the author and the intent of a source, and the extent to which this may affect reliability",
+    "determining the usefulness of sources by corroborating with other sources of information",
+    "examining that the reliability and usefulness of a source depends on the questions asked of it; for example, an account having a particular historical perspective and therefore being of use in revealing past prevailing attitudes",
+    "determining whether or not the information in one historical source can be verified by information in another historical source",
+    "comparing a range of historical sources and identifying similarities, differences and inconsistencies in interpretations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10586,6 +11268,11 @@
    "prior": [],
    "knowledge": "Students can analyse cause and effect and evaluate patterns of continuity and change in a Year 9 historical context.",
    "endpoint": "Students analyse cause and effect and evaluate patterns of continuity and change across the Year 10 History topics, using primary sources and sequential argument.",
+   "elaborations": [
+    "identifying the various manifestations or effects of an event in different geographical locations, using interactive timelines",
+    "organising a range of primary sources in chronological order to support the development of a historical argument about significant causes",
+    "explaining the links between the main ideas, actions and individuals of an event, and drawing links between them by placing them in sequence; for example, sequencing the Freedom Rides campaigns in the USA and Australia, and explaining the links between the 2 campaigns"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10650,6 +11337,12 @@
    "prior": [],
    "knowledge": "Students can compare perspectives in sources and explain how they are influenced by significant events, ideas, locations, beliefs and values at Year 9 level.",
    "endpoint": "Students compare perspectives in sources, evaluate differences in relation to influencing factors, and explain why some perspectives were not recorded.",
+   "elaborations": [
+    "comparing interpretations and evaluating differences in relation to the ideas, locations, beliefs and values that have influenced them",
+    "explaining the links between the continuities over the period, such as the experiences and treatment of First Nations Australians, women and migrants",
+    "analysing the views of men and women at different times regarding gender equality in Australia and explaining how these views might reflect changing values and attitudes",
+    "explaining why some perspectives in the past may not have been recorded"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10694,6 +11387,12 @@
    "prior": [],
    "knowledge": "Students can analyse different and contested historical interpretations in a Year 9 inquiry context.",
    "endpoint": "Students analyse different and contested historical interpretations, construct arguments about which interpretation is best supported by evidence, and evaluate how interpretations change over time.",
+   "elaborations": [
+    "exploring debates about the historical period or topic studied, such as the “Brisbane Line”, “reds under the bed” and McCarthyism",
+    "identifying different interpretations and constructing an argument about which interpretation has the evidence to support it",
+    "analysing how historians have changed the way they interpret the event under investigation over time, such as a change in view with the discovery of more sources",
+    "constructing a historical argument that identifies different possibilities in interpretation, organising ideas to build an argument, presents a particular point of view with consistent reference to the evidence available, and uses evaluative language"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10763,6 +11462,12 @@
    "prior": [],
    "knowledge": "Students can create descriptions, explanations and historical arguments using historical knowledge, concepts and terms that incorporate and acknowledge evidence from sources at Year 9 level.",
    "endpoint": "Students create extended historical arguments that synthesise ideas, evaluate evidence, present a clear point of view, and are communicated for a specific purpose and audience in an appropriate form.",
+   "elaborations": [
+    "developing an extended text that explains, analyses and evaluates a historical event, development or movement for purpose and audience; for example, organising ideas and information to present relevant historical knowledge about the impact of a global event on a community to be presented to peers",
+    "constructing a historical argument that identifies different possibilities in interpretation, synthesises ideas to build an argument, presents a particular point of view that incorporates and evaluates available evidence",
+    "developing a historical explanation or interpretation, using historical concepts and terms to build understanding of context, significance, purpose and the impact of the event or development",
+    "presenting a historical argument, such as essay, oral presentation, debate, interactive digital or non-digital display, online conference or forum incorporating evidence"
+   ],
    "nodes": [
     {
      "n": 1,

@@ -1,6 +1,6 @@
 {
  "subject": "hass",
- "source": "waypoints-kit 6bb92e4",
+ "source": "waypoints-kit d93e6e5",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -14,6 +14,11 @@
    "prior": [],
    "knowledge": "Students have informal experience of their family through lived experience. No formal prior HASS curriculum.",
    "endpoint": "Students identify the people in their family, where they were born and raised, and explain how family members are related to each other.",
+   "elaborations": [
+    "discussing the members of a family (for example, mother, father, caregiver, sister, brother, grandparent, auntie, uncle, cousin) and acknowledging other varieties of kinship structure that may be represented in the cultural background of students (for example, cousin-brother and mother-auntie in First Nations Australian families)",
+    "creating drawings of family members accompanied by information collected from questions and observations to share details of that person's life, including the places they were born and raised",
+    "creating concept maps of their family with pictures or photographs to show connections to those people who make up their family"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -101,6 +106,10 @@
    "prior": [],
    "knowledge": "Students have lived experience of family celebrations. No formal prior HASS curriculum.",
    "endpoint": "Students identify celebrations and commemorations that are significant to their families and communities, and explain why they are important.",
+   "elaborations": [
+    "responding to a provided calendar of events that students, their family and friends celebrate or commemorate; for example, birthdays; religious festivals such as Easter, Ramadan, Buddha's Birthday, Feast of Passover and Coming of the Light; family reunions; cultural festivals; and community commemorations such as NAIDOC Week and Anzac Day, and discussing why they are important",
+    "discussing ways of celebrating these significant occasions; for example, special meals, family gatherings, visiting special places, and the role of art, music, telling stories and handing on traditions from generation to generation for First Nations Australians"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -164,6 +173,12 @@
    "prior": [],
    "knowledge": "Students have lived experience of places they inhabit. No formal prior HASS curriculum.",
    "endpoint": "Students identify features of familiar places, explain why some places are special to them, and describe ways places can be looked after.",
+   "elaborations": [
+    "identifying the places, communities, Country/Place they live in and belong to and why that place may be special to them; for example, a neighbourhood, suburb, town or rural locality, community",
+    "exploring the features of their own place, and places they are familiar with or aware of; for example, places they have visited, places family members have come from, imaginary places in stories, or places featured on television and websites, in books or ebooks",
+    "identifying reasons why people live in or visit places, such as the provision of basic needs (water, food, shelter), to enhance lives (holiday places, places for recreation, for religious observance) and to maintain cultural connections to Country/Place",
+    "discussing different ways they could or do contribute to caring for special places, including those that are unique; for example, planting trees for a local endangered species, cleaning up litter at a local park or beach, or planting flora in a local wetland"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -253,6 +268,12 @@
    ],
    "knowledge": "Students have general experience of place from AC9HSFK03. No formal prior knowledge of First Nations Australian concepts of Country/Place.",
    "endpoint": "Students identify the importance of Country/Place to First Nations Australians, name the local First Nations Australian language group, and identify the Country/Place on which their school is located.",
+   "elaborations": [
+    "identifying how and why the words \"Country/Place\" are used by First Nations Australians for the places they belong to",
+    "identifying and using the name of the local First Nations Australians' language group or groups",
+    "listening and responding to invited members of the Traditional Owner group talking about Country/Place, and places of cultural and historical significance to the First Nations Australian community in the local neighbourhood, suburb, town or rural area",
+    "identifying local places of significance for First Nations Australians in the local area"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -316,6 +337,11 @@
    "prior": [],
    "knowledge": "Students have natural question-asking capacity from lived experience. No formal prior HASS inquiry skills curriculum.",
    "endpoint": "Students pose questions about familiar objects, people, places and events to guide their own inquiry.",
+   "elaborations": [
+    "posing questions about family and places, such as \"How old was I?\", \"Where was I?\" and \"What was I doing?\", having explored sources relating to their own life; for example, family interviews, photographs, stories, film, classmates' paintings, excursions to places",
+    "posing questions about the features of places and how they can look after them, after being encouraged to observe them using various senses",
+    "posing questions about what makes events and places special; for example \"What special events do my family celebrate?\", \"What makes my favourite places special?\""
+   ],
    "nodes": [
     {
      "n": 1,
@@ -379,6 +405,10 @@
    "prior": [],
    "knowledge": "Students have informal sorting experience from everyday life. No formal prior HASS inquiry skills curriculum.",
    "endpoint": "Students sort and record information using pictorial timelines and pictorial maps or models.",
+   "elaborations": [
+    "sorting and displaying sources (for example, historical sources such as pictures, photographs and family mementoes) to organise a display about a family member or significant family event and creating pictorial timelines, such as adding photos or drawings of significant events as they happen, to create a timeline of events over the year",
+    "identifying features on a provided pictorial map or oblique aerial photograph of a familiar place and linking the representation of specific features to pictures they have drawn of those features; for example, using a pictorial map of a visited site such as a public garden or an oblique aerial photograph of their school to find familiar features, and then linking drawings of those features with lines to the features in the map or aerial photograph"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -466,6 +496,10 @@
    "prior": [],
    "knowledge": "Students have opinions and preferences from lived experience. No formal prior HASS inquiry skills curriculum.",
    "endpoint": "Students share their own perspective on information about significant events and special places, using sources to support their view.",
+   "elaborations": [
+    "sharing aspects of events special to past generations of their family from provided stories and discussing why those events and places are special",
+    "identifying a place in their local area that they like, and talking about why they like it and how they could care for it"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -529,6 +563,12 @@
    "prior": [],
    "knowledge": "Students have answered questions from personal experience. No formal prior HASS inquiry skills curriculum.",
    "endpoint": "Students draw conclusions in response to inquiry questions about their family, celebrations, places and ways of caring for places.",
+   "elaborations": [
+    "identifying the main people in their family and explaining how they are related",
+    "identifying the most important celebrations and commemorations in their lives and those of their family",
+    "exploring the location and features of places they belong to and what makes those places special",
+    "suggesting ways that they are going to care for their classroom, bedroom or playground"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -592,6 +632,11 @@
    "prior": [],
    "knowledge": "Students can tell stories about their own experience. No formal prior HASS inquiry skills curriculum.",
    "endpoint": "Students share narratives and observations about the past and places, using sources and subject-specific terms for time and location.",
+   "elaborations": [
+    "creating a display about a special place or family event using photographs, artefacts and/or drawings",
+    "using terms about time when talking about their experiences; for example, \"then\", \"now\", \"yesterday\", \"today\", \"tomorrow\"",
+    "using appropriate terms to describe the direction and location of a place such as \"near and far\", \"above and below\", \"beside and opposite\""
+   ],
    "nodes": [
     {
      "n": 1,
@@ -657,6 +702,11 @@
    ],
    "knowledge": "From Foundation (AC9HSFK01): Students identified people in their family, where they were born and raised, and how family members are related. They used relationship vocabulary and created concept maps of family.",
    "endpoint": "Students explain differences in family structures and roles today, and describe how these have changed or remained the same over time.",
+   "elaborations": [
+    "identifying the similarities and differences of a range of family structures; for example, nuclear families, one-child families, large families, single-parent families, extended families, blended or step families, adoptive and foster parent families and grandparent families, and kinship groups",
+    "comparing families in the present with those from the recent past, for example, the size of families across the generations",
+    "examining the roles of family members over time, such as roles of parents, children and extended family members, and comparing these with family roles today"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -747,6 +797,12 @@
    ],
    "knowledge": "From Foundation (AC9HSFK02): Students explored celebrations and commemorations and their significance. From AC9HS1K01: Students compared family structures and roles across generations.",
    "endpoint": "Students identify continuity and change between aspects of their daily lives and their parents' and grandparents' childhoods.",
+   "elaborations": [
+    "comparing and commenting on photographs and oral histories to find out how daily lives have changed and remained the same over time; for example, talking to parents, grandparents and other elders",
+    "comparing what has changed in daily life over time; for example, homes, family traditions, diverse religious and cultural practices, leisure, school life, rules, and shopping/consumer habits",
+    "examining the traditional toys used by First Nations Australian children to play and learn; for example, Arrernte children learn to play string games so they can remember stories they have been told",
+    "identifying similarities and differences in classroom equipment, learning activities, school playgrounds and playground games through observations of provided artefacts and photos, and asking questions of adults from different generations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -836,6 +892,13 @@
    ],
    "knowledge": "From Foundation (AC9HSFK03): Students identified features of familiar places and why some places are special. They used basic place vocabulary (near, far, natural, built).",
    "endpoint": "Students identify the natural, managed and constructed features of local places and describe their location.",
+   "elaborations": [
+    "identifying natural features (for example, hills, rivers, native vegetation and weather), managed features (for example, farms, parks and gardens) and constructed features (for example, roads and buildings) and locating them on a map",
+    "listening to and viewing Dreaming and Creation stories of First Nations Australians that identify the natural features of a place",
+    "listing the different types of buildings in their local area; for example, houses, shops, offices, factories, religious buildings and farm buildings",
+    "describing the daily and seasonal weather of their place using simple terms such as \"rainy\", \"hot\", \"cold\", \"windy\" and \"cloudy\", and comparing it with the weather of other places that they know or are aware of; for example, \"It was windy at the beach but not at my house\", \"It is colder on the mountain\", \"It is rainy in the winter\", \"It is hot in the summer\"",
+    "explaining to classmates where places are and the directions to be followed when moving from one place to another, with the use of appropriate terms for direction and location; for example, terms such as \"beside\", \"forward\", \"up\", \"down\", \"by\", \"near\", \"further\", \"close to\", \"before\", \"after\", \"here\", \"there\", \"at\""
+   ],
    "nodes": [
     {
      "n": 1,
@@ -927,6 +990,13 @@
    ],
    "knowledge": "From Foundation (AC9HSFK03): Students identified features of places and how places can be looked after. From AC9HS1K03: Students classified local place features as natural, managed or constructed.",
    "endpoint": "Students explain how places change and how they can be cared for by different groups including First Nations Australians.",
+   "elaborations": [
+    "observing changes in natural, managed and constructed features in their place; for example, recent erosion, revegetated areas, planted crops or new buildings",
+    "identifying which resources they can recycle, reduce, re-use or none of these, and what local spaces and systems support these activities; for example, rules, signs, waste collection truck routes",
+    "describing how local places change due to changing weather and seasons, and how we can care for places because of those changes; for example, not walking in muddy areas during wet weather, and watering plants in dry weather",
+    "describing local features that people look after, finding out why and how these features need to be cared for, and who provides this care; for example, bushland, wetlands, a park or a heritage building",
+    "investigating examples of how First Nations Australians manage and care for places"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1016,6 +1086,11 @@
    ],
    "knowledge": "From Foundation (AC9HSFS01): Students posed questions about familiar objects, people, places and events using basic stems (What, Where, Who, Why, How).",
    "endpoint": "Students develop questions about objects, people, places and events in the past and present to guide inquiry.",
+   "elaborations": [
+    "posing questions with the stems \"where\", \"what\", \"how\" and \"why\" about families and places when provided with everyday objects and other sources, such as photos, found objects, maps and observation sketches",
+    "asking questions before, during and after listening to stories about people and places, and about their past and present",
+    "preparing questions for parents and members of older generations about how and where they lived in the past, and the places they value"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1081,6 +1156,13 @@
    ],
    "knowledge": "From Foundation (AC9HSFS02): Students sorted and recorded information using pictorial timelines and located features on pictorial maps or models.",
    "endpoint": "Students collect, sort and record information from observations and provided sources, including unscaled timelines and labelled maps.",
+   "elaborations": [
+    "exploring stories from the past and present about people and families (for example, fiction books, letters, diaries, songs) and about places (for example, myths, Dreaming and Creation stories, fiction, story maps, films)",
+    "gathering evidence of features in a local place; for example, using observations, online aerial photographs and sketches, and noting how they change, such as by comparing current observations of a place with photographs of it taken in the past, or recording observations of weather and seasons",
+    "developing a pictorial table to categorise information; for example, matching clothes with seasons, activities with the weather, features with places, places with the work done there",
+    "creating a peg timeline in which labelled, drawn or photographic representations of events or objects from different generations are pegged onto string in the correct sequence",
+    "recording data about the locations of places and their features on maps and/or plans; for example, labelling the location of their home on a map of the local area, using a provided plan of their classroom and labelling its activity spaces"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1172,6 +1254,13 @@
    ],
    "knowledge": "From Foundation (AC9HSFS02, AC9HSFS03): Students sorted information from sources and shared perspectives. From AC9HS1S02: Students collected and recorded information from observations and sources.",
    "endpoint": "Students interpret information from observations and provided sources, including comparing objects from the past and present.",
+   "elaborations": [
+    "using information gained from sources, such as stories, photographs, fieldwork observations, satellite images and rock art, to answer \"when\", \"where\", \"what\", \"how\" and \"why\" questions",
+    "identifying similarities and differences between activities over time by comparing objects of the past with those currently used; for example, comparing toys, games, clothes, phones, cooking utensils, tools, homework books",
+    "using comparative language when describing family life over time and/or comparing features of places, such as \"smaller/bigger than\", \"closer/further\", \"not as big as\", \"younger/older than\", \"more rainy days\", \"fewer/less\", \"hotter/colder\", \"sunnier/windier than\"",
+    "exploring traditional and contemporary First Nations Australian stories about places and the past, and how places have changed",
+    "categorising objects, drawings or images by their features and explaining the reason for their categorisation; for example, categorising the features of a local place into natural (such as a native forest), constructed (such as a street of houses) and managed (such as a windbreak of trees)"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1261,6 +1350,10 @@
    ],
    "knowledge": "From Foundation (AC9HSFS03): Students shared a perspective on information, recognised that perspectives differ, and explained reasons for their own views.",
    "endpoint": "Students discuss perspectives related to objects, people, places and events, comparing their own views with those of others.",
+   "elaborations": [
+    "comparing students' daily lives with those of their parents, grandparents, elders or a familiar older person and identifying which aspects of the past they would or would not want to experience",
+    "sharing personal preferences about their world (for example, their favourite weather, activities, places, celebrations, objects from the past) and explaining why they are favoured"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1326,6 +1419,11 @@
    ],
    "knowledge": "From Foundation (AC9HSFS04): Students drew conclusions in response to inquiry questions supported by evidence. From AC9HS1S03: Students interpreted information and compared objects from past and present.",
    "endpoint": "Students draw conclusions about continuity and change, how places change, and make proposals for action.",
+   "elaborations": [
+    "using collected information (for example, from stories told by parents, grandparents, elders or familiar older people; from comparison of objects; from geographic pictures) to make conclusions about continuity and change over time (for example, how family roles, occupations and/or technologies have changed or remained the same) and how places change (for example, because of the seasons)",
+    "describing features of a space or place that is important to them and explaining what they could do to care for it; for example, a chicken coop, a play area, their bedroom, the reading corner, the beach",
+    "imagining how a local feature or place might change in the future and proposing action they could take to improve a place or influence a positive future"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1391,6 +1489,10 @@
    ],
    "knowledge": "From Foundation (AC9HSFS05): Students shared narratives using sources and basic time/place terms.",
    "endpoint": "Students develop narratives and share observations about the past and places, using sources and subject-specific terms for time sequence.",
+   "elaborations": [
+    "retelling stories about life in the past through spoken narratives and the use of pictures, role-plays or photographs",
+    "using terms to denote the sequence of time; for example, \"then\", \"now\", \"yesterday\", \"today\", \"past\", \"present\", \"later on\", \"before I was born\", \"in the future\", \"generations\""
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1456,6 +1558,13 @@
    ],
    "knowledge": "From Y1 (AC9HS1K01-K02): Students compared family structures and daily life across generations. They understand continuity and change and comparative language.",
    "endpoint": "Students explain the importance of a local individual, group, place or building, including its social, cultural or spiritual significance.",
+   "elaborations": [
+    "suggesting reasons for the location of a local landmark before searching for resources that provide an explanation; for example, community building, statue or war memorial",
+    "investigating the history of a chosen person, building, site or place in the local community, using provided sources (for example, the internet, books, newspapers, community information guides, audio-visual material, digital sources, photographs) and relating a story that these reveal about the past",
+    "discussing why a particular site has heritage significance or cultural value for present generations; for example, it provides a record of a significant historical event, has aesthetic value, reflects the community's identity",
+    "identifying and visiting, where appropriate, local sites, places and landscapes of significance to First Nations Australians; for example, engraving sites, rock paintings, natural sites or features such as the creeks or mountains",
+    "identifying and designing a local historical tour of a building or site; for example, one related to a particular cultural group"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1521,6 +1630,13 @@
    ],
    "knowledge": "From Y1 (AC9HS1K02): Students compared daily life across generations identifying change and continuity. They used comparative language for change.",
    "endpoint": "Students explain how technological developments changed people's lives at home, and in the ways they worked, travelled and communicated.",
+   "elaborations": [
+    "examining changes in technologies over several generations by comparing past and present objects and photographs, and discussing how these changes have shaped people's lives; for example, changes to land, air and sea transport; the introduction of transistors, television, FM radio moving to digital streaming, including how people communicated over long distances",
+    "identifying, through questioning adults, the communication, work and transport technologies used in the childhoods of their grandparents or familiar elders",
+    "suggesting what their pattern of visits to places might have been one or two generations ago and comparing this to their current pattern",
+    "identifying the technologies used by local First Nations Australians for aspects of daily life such as providing food, shelter and transportation",
+    "identifying the ways current communication and transport technologies impact on our interconnections with other places; for example, online communication, accessibility to other places through different types of transport"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1586,6 +1702,12 @@
    ],
    "knowledge": "From Y1 (AC9HS1K03): Students located natural, managed and constructed features on local maps using direction and location terms.",
    "endpoint": "Students explain how places can be spatially represented from local to state/territory scale and how people and places are interconnected across those scales.",
+   "elaborations": [
+    "identifying where they live in Australia, including in relation to their nearest capital city, the region and state/territory on a map and a globe",
+    "investigating the places locally and at a broader scale that they and their families visit for shopping, health, recreation, religious or ceremonial activities, or other reasons",
+    "identifying links they and other people in their community have with people and places at the regional and/or state/territory scale; for example, where produce in their supermarket comes from or produce from their farms goes to, relatives they visit, places they go for holidays",
+    "describing how communication and transport technologies connect their place to other places at the regional and/or state/territory level; for example, online communication, phone, road, rail, planes, ferries"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1653,6 +1775,11 @@
    ],
    "knowledge": "From Foundation (AC9HSFK04): Students identified the importance of Country/Place to First Nations Australians and named the local language group. From Y1 (AC9HS1K03): Students explored place features including through Dreaming and Creation stories.",
    "endpoint": "Students explain the interconnections of First Nations Australians to a local Country/Place.",
+   "elaborations": [
+    "listening to stories connecting local First Nations Australians with the land, sea, waterways, sky and animals of their Country/Place",
+    "liaising with community to identify language groups of First Nations Australians who belong to the local area and exploring the relationship between language, Country/Place and spirituality (this is intended to be a local area study with a focus on one language group; however, if information or sources are not readily available, another representative area may be studied)",
+    "discussing when to use Acknowledgement of Country and Welcome to Country at ceremonies and events to respectfully recognise the Country/Place and Traditional Owners and Custodians of the land, sea, waterways, and sky"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1718,6 +1845,11 @@
    ],
    "knowledge": "From Y1 (AC9HS1S01): Students developed questions about objects, people, places and events in past and present using Where/What/How/Why stems, and identified appropriate sources.",
    "endpoint": "Students develop questions about objects, people, places and events in the past and present to guide inquiry.",
+   "elaborations": [
+    "developing inquiry questions about a historical site; for example, \"What does it look like now?\", \"What condition is it in?\", \"What was its purpose?\", \"How might its use have changed?\", \"How was it built/created?\", \"Who built it?\", \"How is it now used?\", \"Why is it important?\", \"Was/is it used by different groups of people?\"",
+    "developing inquiry questions about places; for example, \"What are the features of the place?\", \"How far away is it?\", \"How easy is it to get to?\", \"How am I connected to it?\", \"How is it connected to other places?\"",
+    "posing questions using the stems, \"How do I feel about …?\", 'What would it be like to …?\" and \"What effect …?\""
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1758,6 +1890,12 @@
    ],
    "knowledge": "From Y1 (AC9HS1S02): Students collected information from a range of sources and recorded on unscaled timelines and labelled maps.",
    "endpoint": "Students collect, sort and record information from observations and provided sources using unscaled timelines and labelled maps.",
+   "elaborations": [
+    "collecting information from sources and observations relevant to learning about the past (for example, photographs, interviews, newspapers, stories, and place and street names in maps) and relevant to learning about places (for example, surveying peers, satellite images, diagrams, field photographs, observations of monuments, built and non-built historical landmarks, middens, remnants of native vegetation and old building remains), and identifying relevant information",
+    "creating pictorial maps with annotations to show historical sites or places they are connected to, incorporating symbols to show locations of objects, places or significant features",
+    "locating the places they are connected to, such as through family, travel or friends, or the places they visit for shopping, recreation or other reasons on a print, electronic or wall map",
+    "ordering key events in the history of the local community or in its development using formats such as unscaled timelines, slideshows or stories; for example, the history of a person, place or building, or the developmental stages of telecommunications technologies"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1823,6 +1961,12 @@
    ],
    "knowledge": "From Y1 (AC9HS1S03): Students used sources to answer questions and compared objects from past and present using comparative language.",
    "endpoint": "Students interpret information and data from observations and provided sources, including comparing objects from the past and present.",
+   "elaborations": [
+    "interpreting distance on maps using terms such as \"distant\", \"close\", \"local\", \"many hours in a bus/car/plane\" and \"walking distance\" to decide on the accessibility of different features and places",
+    "interpreting geographic maps, concept maps and other digital or visual displays to explore system connections; for example, places their classmates are connected to, where some food comes from, how First Nations Australians' songlines connect places",
+    "interpreting symbols and codes that provide information, such as map legends",
+    "identifying how objects and activities are similar or different depending on conditions in local and distant places; for example, clothes, transport, technology"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1887,6 +2031,11 @@
    ],
    "knowledge": "From Y1 (AC9HS1S04): Students compared perspectives across generations and shared personal preferences about places and events with reasons.",
    "endpoint": "Students discuss perspectives related to objects, people, places and events, including perspectives of different community groups.",
+   "elaborations": [
+    "discussing why some places are considered special or significant by others, such as parents, First Nations Australians, grandparents or familiar elders, friends and returned soldiers",
+    "examining the points of view of older generations about changes over time; for example, changes to the natural or built environment, changes to daily living",
+    "exploring how the same place has significance to different groups for different reasons; for example, traditional meeting places for First Nations Australians within an urban area that include buildings or monuments that are important to other cultural groups."
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1951,6 +2100,13 @@
    ],
    "knowledge": "From Y1 (AC9HS1S05): Students drew evidence-based conclusions about change and made proposals for caring for places.",
    "endpoint": "Students draw conclusions about local significance, technology change and place connections, and make proposals for positive futures.",
+   "elaborations": [
+    "listing what makes a local person, place or building significant and drawing conclusions about how people were, or are, connected to a local place and other places in the region and/or state/territory",
+    "creating a Venn diagram or table that shows aspects of continuity or change in the local area or technology over time",
+    "discussing how change in one aspect of technology impacted on the way people worked, travelled, communicated or played in the past",
+    "identifying how knowledge of special places and natural systems in their local area contributes to behaviour, and ideas about how to care for these places and to preserve their significance",
+    "using their knowledge about a familiar place or site to imagine how it might change in the future and how they can influence a positive future for it"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2016,6 +2172,11 @@
    ],
    "knowledge": "From Y1 (AC9HS1S06): Students developed historical narratives using sources and time sequence vocabulary.",
    "endpoint": "Students develop narratives and share observations, using sources and subject-specific terms for time and place.",
+   "elaborations": [
+    "developing narratives drawing on ideas in sources, such as a comparison of past and present daily life",
+    "sharing observations using sources such as how access to and use of a place has changed over time",
+    "sharing with their teacher, other students and members of their family what they know about the past, using terms in speech and writing to denote the passing of time (for example, \"in the past\", \"years ago\", \"the olden days\", \"in the future\") and to describe direction and location of a place (for example, \"north\", \"south\", \"opposite\", \"near\", \"far\")"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2081,6 +2242,12 @@
    ],
    "knowledge": "From Y2 (AC9HS2K01-K02): Students explained local significance and how technological developments changed daily life. They understand continuity and change and source-based investigation.",
    "endpoint": "Students explain causes and effects of changes to the local community and describe how people from diverse backgrounds have contributed to those changes.",
+   "elaborations": [
+    "exploring photographs, newspapers, oral histories, diaries and letters to investigate how an aspect of life in the local community, such as transport, entertainment, the natural and built environment, and technologies, has changed over time; for example, from the time of European settlement to the present day",
+    "comparing photographs from the past and present of a specific location to identify the change or continuity (similarities and differences over time) associated with people, events or developments, places or ecosystems",
+    "identifying individuals and groups of diverse backgrounds from the past, who have contributed to the community's economic, social, cultural, civic and environmental development and character",
+    "investigating reasons for change in the local community, why change was brought about and what happened because of it; for example, the change in use of a building, wasteland turning to wetland"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2173,6 +2340,13 @@
    ],
    "knowledge": "From Foundation (AC9HSFK02) and Y2 (AC9HS2K01): Students explored celebrations, commemorations and local significance. They understand social, cultural and spiritual significance.",
    "endpoint": "Students identify and explain significant Australian events, symbols and emblems and describe how they are celebrated, commemorated or recognised, including multiple perspectives on their significance.",
+   "elaborations": [
+    "identifying and discussing the historical origins of an important Australian celebration or commemoration, including Australia Day, Anzac Day, NAIDOC Week and National Sorry Day, as well as significant religious or cultural festivals, such as Easter, Christmas, Lunar New Year, Diwali and Eid",
+    "recognising that people have different points of view on some events that are commemorated and celebrated; for example, some First Nations Australians regard \"Australia Day\" as \"Invasion Day\" and many non-Christians celebrate Christmas",
+    "generating a list of local, state/territory, national and religious symbols and emblems (for example, the Commonwealth Coat of Arms, the Australian Flag and First Nations Australians' flags, state/territory flags and coats of arms, club emblems, school logos, flags, floral emblems, and religious symbols, such as the Christian cross, the Crescent and Star, and the Magen David), and discussing their origins, use and significance",
+    "examining the symbolism found in the design and positioning of flags (for example, the Australian flag, First Nations Australians' flags) and recognising special occasions when they are flown (for example, all three flags are flown during NAIDOC Week, National Reconciliation Week, National Sorry Day and Mabo Day)",
+    "examining the roles, rights and responsibilities the community has when observing protocols around flag flying"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2238,6 +2412,11 @@
    ],
    "knowledge": "From Y2 (AC9HS2K03): Students located their home within geographical divisions from local to state/territory and explored interconnections across scales.",
    "endpoint": "Students identify how Australia can be represented as states/territories and as Countries/Places of First Nations Australians, and locate Australia's neighbouring regions and countries.",
+   "elaborations": [
+    "using geographical tools to locate and name the states and territories in Australia, along with their capital cities; for example, a globe, wall map or digital source such as an online satellite image",
+    "using a globe or digital source to locate the Pacific Island nations, New Zealand, Papua New Guinea, Timor-Leste, Indonesia and countries relevant to students, labelling them on a map and identifying the direction of each country from Australia",
+    "using the Australian Institute of Aboriginal and Torres Strait Islander Studies Map of Indigenous Australia and a states and territories map of Australia to compare the boundaries of Aboriginal Countries and Torres Strait Islander Places with the surveyed boundaries between Australian states and territories, to gain an appreciation of the different ways Australia can be represented"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2327,6 +2506,11 @@
    ],
    "knowledge": "From Y2 (AC9HS2K04): Students explained interconnections of First Nations Australians to a local Country/Place and the relationship between language, Country/Place and spirituality.",
    "endpoint": "Students explain the diverse ways First Nations Australians in different parts of Australia are interconnected with Country/Place.",
+   "elaborations": [
+    "explaining that some First Nations Australians have special connections to many Countries/Places; for example, through marriage, birth, parents, residence and chosen or forced movement, and that First Nations Australians can identify with more than one Country/Place",
+    "discussing how some people are connected to one Country; for example, because it is \"Mother's\" Country or \"Father's\" Country",
+    "exploring the ways Australian First Nations Peoples connect to Country/Place, by reading and viewing poems, songs, paintings and stories from different groups outside the local area"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2393,6 +2577,13 @@
    ],
    "knowledge": "From Y1 (AC9HS1K03): Students classified local place features as natural, managed and constructed. From Y2 (AC9HS2K03): Students explored geographical scales from local to state/territory.",
    "endpoint": "Students identify and describe similarities and differences between places in Australia and neighbouring countries in terms of natural, managed and constructed features.",
+   "elaborations": [
+    "identifying and locating examples of the main climatic types in Australia and neighbouring countries (for example, equatorial, tropical arid, semi-arid, temperate) and the features of those climate types and their impact on other natural features",
+    "identifying and describing the similarities and differences between places in Australia and places in neighbouring countries, such as Indonesia and Pacific Island nations, in their natural features; for example, rocks, landforms, bodies of water, climate, soils, natural vegetation and animal life",
+    "investigating differences in the type of housing that people use in different climates and environments",
+    "exploring different types of settlement and classifying them into hierarchical categories, such as isolated dwellings, outstations, villages, towns, regional centres and large cities",
+    "choosing a place in a neighbouring country, such as Indonesia or Pacific Island nations, to compare with a place in Australia in terms of managed and built features to explore the reasons for similarities and differences"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2456,6 +2647,13 @@
    "prior": [],
    "knowledge": "No direct prior HASS civics standard. Students have lived experience of rules from home and school.",
    "endpoint": "Students explain who makes rules, why rules are important, and describe the consequences of rules not being followed.",
+   "elaborations": [
+    "developing and justifying a set of fair rules and consequences for the class",
+    "identifying familiar rules, how rules protect the rights of others, what their responsibilities are to others, and the consequences when rules are not followed",
+    "exploring who has the authority to make rules in different contexts (for example, parents, teachers, coaches) and considering why rules differ across these contexts, such as a school playground, in class, at home, or in sport",
+    "discussing situations where it is not fair to have one rule that treats everyone the same; for example, if some people, such as students with disability, have different needs or would be unable to follow the rules",
+    "exploring cultural norms behind some rulemaking; for example, removing shoes before entering places of cultural or religious significance"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2521,6 +2719,12 @@
    ],
    "knowledge": "From Y3 civics context: Students have explored rules and authority (AC9HS3K06). No direct prior standard on participation.",
    "endpoint": "Students explain why people participate in communities and describe how they can actively contribute.",
+   "elaborations": [
+    "identifying groups that actively participate in the local community or through a virtual community and exploring their purpose",
+    "exploring how they could participate in a school or community project; for example, raising money for a relevant aid project, such as supporting disadvantaged communities overseas or working to protect a bird habitat",
+    "investigating how an individual's contribution can be recognised; for example, an Order of Australia award",
+    "exploring the motivations of individuals who contribute to communities, such as local community volunteers, leaders and Elders"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2586,6 +2790,11 @@
    ],
    "knowledge": "From Y2 (AC9HS2S01): Students developed inquiry questions about historical sites and places using factual and perspective-seeking stems.",
    "endpoint": "Students develop questions to guide investigations about people, events, places and issues, including consequential and ethical questions.",
+   "elaborations": [
+    "developing inquiring questions as they investigate; for example, \"Why there?\" questions about location; \"What might happen?\" questions about future consequences of natural processes or people's actions in places; and \"What ought to happen?\" questions or other questions about ethical behaviour, sustainability and preferred futures",
+    "asking probing questions during an investigation (for example, \"Why is that so?\", \"What else do we need to know?\")",
+    "posing questions to compare such as \"How have things changed?\" and \"How is my house the same or different to one in a neighbouring country?\""
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2627,6 +2836,14 @@
    ],
    "knowledge": "From Y2 (AC9HS2S02): Students collected from a range of source types and recorded on unscaled timelines and labelled maps.",
    "endpoint": "Students locate, collect and record information from a range of sources including annotated timelines and maps using appropriate cartographic conventions.",
+   "elaborations": [
+    "locating sources suited to learning about the past, such as photographs, interviews, newspapers, digital media, stories, cemetery observations, interviews with older people, and maps, including those online",
+    "collecting information in the field; for example, taking photographs, making sketches or collecting natural objects, or interviewing or surveying people to seek information about feelings, preferences, perspectives and actions",
+    "gathering information from maps, aerial photographs, satellite images or digital application objects, to support the investigation of the natural, managed and constructed features of places",
+    "sequencing information about local people and events in annotated timelines to show change",
+    "acquiring geographical information from schools in geographically contrasting parts of Australia and neighbouring countries and recording that information by constructing and annotating maps, using the appropriate cartographic conventions, including map symbols, title and north point",
+    "creating tables or picture and column graphs to show patterns in data collected from class vote on participation in community activities"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2692,6 +2909,13 @@
    ],
    "knowledge": "From Y2 (AC9HS2S03): Students interpreted distance and location on maps and compared objects and activities across places and time.",
    "endpoint": "Students interpret information and data displayed in different formats including climate data, maps, graphs and photographs.",
+   "elaborations": [
+    "distinguishing between fiction and non-fiction texts in relation to representation of places, environments and past events",
+    "interpreting climate data to describe the temperature and rainfall for a place in Australia and a place in a neighbouring country",
+    "interpreting information about the number of parents that volunteer at the school and why they may choose to contribute in this way",
+    "interpreting data to identify patterns of change over time: for example, examine building dates to make inferences about changing designs and materials used",
+    "using maps, ground and aerial photographs, and a digital source such as online satellite images to identify, locate and describe features, including the interpretation of cartographic information such as titles, map symbols, north point and compass direction"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2757,6 +2981,12 @@
    ],
    "knowledge": "From Y2 (AC9HS2S03-S04): Students compared objects and activities and discussed perspectives of different groups.",
    "endpoint": "Students analyse information and data to identify evidence of change and identify perspectives in sources.",
+   "elaborations": [
+    "comparing information in different sources to identify evidence of change; for example, images and maps of the local area over time",
+    "comparing different accounts of historic events to determine the effects of changes; for example, how the development of local farming or industry impacted on people and the environment",
+    "analysing information collected from interviews with different people, such as children, teachers, coaches and community members, about rules and how decisions are made",
+    "using visible thinking strategies to examine a group of paintings and/or maps across a period of time, to explore evidence of continuity and change, and significant events in the local area"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2822,6 +3052,11 @@
    ],
    "knowledge": "From Y2 (AC9HS2S05): Students drew evidence-based conclusions about significance, technology change and place connections.",
    "endpoint": "Students draw conclusions about community change, place features and people's connections with places, based on analysis of information.",
+   "elaborations": [
+    "reaching conclusions about how their place and community have changed and developed based on an analysis of data and information related to settlement patterns, local changes in plant and animal species, historic events or cultural celebrations",
+    "drawing conclusions about the preservation of unique features of the natural environment",
+    "drawing conclusions about the ways people are connected with places, and the similarities and differences of places in Australia and those of neighbouring countries"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2863,6 +3098,12 @@
    ],
    "knowledge": "From Y2 (AC9HS2S05): Students proposed positive futures for familiar places. From Y1 (AC9HS1S05): Students made proposals for caring for places.",
    "endpoint": "Students propose actions or responses to an issue or challenge, considering possible effects of those actions.",
+   "elaborations": [
+    "contributing ideas to a group response to a community challenge; for example, ways their class or school could contribute to recycling or conserving energy",
+    "considering anticipated effects of actions designed to protect and improve places that people perceive as important, such as places of environmental, cultural or religious value, or historic significance",
+    "developing a plan of action to achieve a set goal; for example, to protect a place, to participate in a community festival or commemoration, to raise awareness about an issue, to raise money for a purpose",
+    "arguing a point of view on a civics and citizenship issue relevant to their lives (for example, the consequences of breaking school rules, the value of contributing to their community, the need to preserve an endangered species) and making effective use of persuasive language such as \"I think\" and \"I dis/agree that\" to gain the support of others"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2928,6 +3169,10 @@
    ],
    "knowledge": "From Y2 (AC9HS2S06): Students developed narratives and shared observations using time and place vocabulary.",
    "endpoint": "Students present descriptions and explanations using ideas from sources and relevant subject-specific terms from history, geography and civics.",
+   "elaborations": [
+    "selecting ideas from sources such as graphs, tables, timelines, photographs and pictures",
+    "using appropriate terms when speaking, writing and illustrating; for example, historical terms such as \"immigration\", \"exploration\", \"development\", \"settlement\", \"naming days of commemoration\" and \"emblems\"; geographical terms such as \"climate\", \"environment\", \"natural\" and \"constructed\"; and civics terms such as \"community\", \"decision-making\" and \"participation\""
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2994,6 +3239,12 @@
    ],
    "knowledge": "From Y3 (AC9HS3K04): Students explored the ways First Nations Australians in different parts of Australia are interconnected with Country/Place through poems, songs, paintings and stories.",
    "endpoint": "Students explain the diversity of First Nations Australians, their social organisation and their continuous connection to Country/Place.",
+   "elaborations": [
+    "exploring the connection of First Nations Australians to the land and water and how they manage these resources",
+    "recognising that First Nations Australians include two distinct cultural groups – Aboriginal Peoples and Torres Strait Islander Peoples – and there is considerable diversity within these groups",
+    "investigating archaeological sites (for example, Nauwalabila, Devil's Lair, Lake Mungo) that show the continuous connection of early First Peoples of Australia to Country/Place and the early lifestyles of First Nations Australians",
+    "investigating the diversity and significance of trade and exchange of ideas to First Nations Australians, including with groups outside Australia such as the Macassans"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3083,6 +3334,12 @@
    ],
    "knowledge": "From Y3: Students explored community change and diversity of contributions. At Y4 students begin studying colonisation of Australia.",
    "endpoint": "Students explain the causes of the establishment of the first British colony in Australia in 1788.",
+   "elaborations": [
+    "examining the journeys of one or more explorers who sailed parts of the route to Australia, such as Vasco da Gama and Ferdinand Magellan, using navigation maps to reconstruct their journeys, in order to investigate how exploration and knowledge of routes allowed for the later feasible settlement of Australia",
+    "examining journeys of the Australian coastline of one or more explorers (for example, Dirk Hartog, Abel Tasman, James Cook, Comte de la Perouse, Willem Jansz) using navigation maps to reconstruct their journeys, in order to investigate the possibility of countries settling Australia to expand their empires",
+    "describing the journeys of James Cook, and that of Joseph Banks, and their role in the establishment of a British colony in Australia, including reference to Cook's \"secret instructions\"",
+    "investigating the reasons for the colonisation of Australia, including Britain needing a penal colony, the impact of the American War of Independence, the creation of a base in the global south and resources"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3149,6 +3406,13 @@
    ],
    "knowledge": "From AC9HS4K02: Students explained causes of the first British colony. They now examine who was involved and what they experienced.",
    "endpoint": "Students describe the experiences of diverse individuals and groups involved in establishing the first British colony.",
+   "elaborations": [
+    "describing the events around the establishment of the First Fleet and the key people involved, such as Captain Arthur Phillip, marines, Reverend Richard Johnson and convicts",
+    "describing the events and experiences of groups and individuals on the journey of the First Fleet",
+    "examining the wide range of crimes punishable by transportation and looking closely at the people who were transported",
+    "investigating attitudes to the poor, the treatment of prisoners and the social standing of those who travelled to Australia on the First Fleet, including families, children and convict guards",
+    "investigating daily life in the Port Jackson penal settlement, the challenges experienced by the people there and how they were managed"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3215,6 +3479,11 @@
    ],
    "knowledge": "From AC9HS4K01-K03: Students have explored First Nations Australian diversity and First Fleet establishment. They now examine contact from First Nations Australian perspectives.",
    "endpoint": "Students explain the effects of contact following 1788 on First Nations Australians, including how colonisation was experienced as an invasion.",
+   "elaborations": [
+    "investigating contact between First Nations Australians and people from different continents (Asia and Europe) before 1788; for example, the repulsion of the Dutch at Cape Keerweer in 1606, trade, sharing of ideas and technologies",
+    "exploring early contact of First Nations Australians with the British, including individuals such as Pemulwuy, Windradyne and Bennelong, and considering the differing perspectives of the interactions between Europeans and First Nations Australians, and how interactions could be interpreted as negative for one group and positive for the other",
+    "examining paintings and accounts by individuals involved in exploration and colonisation to explore the impact that British colonisation had on the lives of First Nations Australians; for example, dispossession, dislocation and the loss of lives through frontier conflict, disease, and loss of food sources and medicines, the embrace of some colonial technologies, the practice of colonial religion, and intermarriage between colonists and Australian First Nations Peoples"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3281,6 +3550,13 @@
    ],
    "knowledge": "From Y3 (AC9HS3K05): Students compared Australia with a neighbouring country in terms of natural, managed and constructed features. From Y3 (AC9HS3K04): Students explored First Nations Australian connections to Country/Place.",
    "endpoint": "Students explain the importance of natural environments, including vegetation and water, to people and animals in Australia and on another continent.",
+   "elaborations": [
+    "identifying the main types of vegetation, including forest, savannah, grassland, woodland and desert, and exploring natural vegetation in Australia and another continent such as Africa or South America",
+    "exploring how vegetation has an important role in sustaining the environment by producing oxygen, protecting food-producing land from erosion, retaining rainfall, providing habitat for animals, sheltering crops and livestock, providing shade for people, cooling urban places, producing medicines, wood and fibre, and making places appear more attractive",
+    "explaining how people's connections with their environment can also be aesthetic, emotional and spiritual",
+    "exploring strategies to protect particular environments that provide habitats for animals; for example, planting bird-attracting vegetation",
+    "identifying the importance of water to the environment and to sustaining the lives of people and animals"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3347,6 +3623,10 @@
    ],
    "knowledge": "From AC9HS4K05: Students explained the importance of environments and vegetation to people and animals. From Y3 (AC9HS3K06): Students explored rules and community responsibility.",
    "endpoint": "Students explain how resources can be used and managed sustainably, including First Nations Australian custodial responsibility for Country/Place.",
+   "elaborations": [
+    "exploring how some resources are used and managed in sustainable and non-sustainable ways; for example, auditing use of renewable and non-renewable resources in the classroom, investigating recycling and waste disposal of non-renewable resources in the school and by local government, reducing waste through \"nude food\" lunch boxes and using recycled toilet paper, examining how renewable resources such as timber are managed",
+    "investigating how First Nations Australians adapted ways using knowledge and practices linked to the sustainable use of resources and environments (for example, rotational use and harvesting of resources; mutton-bird harvesting in Tasmania; the use of fire; the use of vegetation endemic in the local area for food, shelter, medicine, tools and weapons; and the collection of bush food from semi-arid rangelands), and how this knowledge can be taught through stories and songs, reflecting their inherent, custodial responsibilities"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3412,6 +3692,12 @@
    ],
    "knowledge": "From Y3 (AC9HS3K06): Students explored who makes rules, why rules are important and the consequences of not following them.",
    "endpoint": "Students distinguish between rules and laws, explain why laws are important and describe how they affect people's lives.",
+   "elaborations": [
+    "distinguishing between \"laws\", such as not speeding in school zones, and \"rules\", such as practising sun safety in the school",
+    "exploring examples of laws and their purpose, recognising that laws apply to everyone in society and why they are important to students' lives",
+    "investigating the impact of laws, such as environmental laws, native title laws and laws concerning sacred sites, on specific groups, including First Nations Australians",
+    "investigating the customary lore of First Nations Australians and how they relate to people and places; for example, the lore covers rules of living, skin groups, broad roles of men and women, economic affairs, marriage and other activities"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3478,6 +3764,11 @@
    ],
    "knowledge": "From Y3 (AC9HS3K07): Students explored why people participate in communities and how they can contribute. From Y3 (AC9HS3K06): Students explored rule-making authority.",
    "endpoint": "Students explain the roles of local government and describe how community members use and contribute to local services.",
+   "elaborations": [
+    "examining how local government is chosen and by whom",
+    "exploring what local government does, including the services it provides, such as environment and waste management, libraries, health services, parks, cultural events, pools and sport facilities, arts and pet management",
+    "describing how local government services impact on the lives of students, and discussing how local groups/organisations and children can use their voices and make responsible choices about the services that impact them and their environment"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3544,6 +3835,11 @@
    ],
    "knowledge": "From Y3 (AC9HS3K02): Students explored significant Australian events, symbols and identity. From Foundation-Y2: Students explored celebrations, family structures and community connections.",
    "endpoint": "Students explain the diversity of cultural, religious and social groups to which they and others belong and describe their importance to identity.",
+   "elaborations": [
+    "identifying diversity through the different social, cultural and religious groups students belong to and describing what makes them feel that they belong to the groups",
+    "listing and comparing the different beliefs, traditions and symbols used by groups",
+    "recognising that the identity of First Nations Australians is shaped by Country/Place, language and knowledge traditions"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3609,6 +3905,12 @@
    ],
    "knowledge": "From Y3 (AC9HS3S01): Students developed location, consequence and ethical questions using inquiring question types.",
    "endpoint": "Students develop questions to guide investigations about people, events, places and issues, including discipline-specific and 'How do we know?' questions.",
+   "elaborations": [
+    "asking questions before, during and after an investigation using tools such as a KWL chart (what they know, what they want to know and what they have learned) and five W's + H (who, what, when, where, why and how)",
+    "developing \"How do we know?\" questions for evidence; \"How are these ideas connected to each other? What is similar/different about what you have found out?\" questions about comparisons; \"What could be done?\" questions about alternatives; \"Is that right or fair?\" questions about decisions in the past and present; \"How did/do certain groups respond/act when…?\" questions about diverse groups; \"What rules apply when…? Who was/is involved…?\" questions about rules and citizenship",
+    "discussing how an investigation about the past, such as through a museum display, video or interactive website, is guided by questions at different stages, including \"Why is that important now?\"",
+    "developing questions that address the disciplinary concepts; for example, \"What was the cause…?\", \"Why was this event significant?\", \"How did daily life change?\", \"What are the characteristics of this place?\", \"How can we manage resources sustainably?\", \"What rules are used by different groups I belong to?\" and \"What laws protect our local environment?\""
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3649,6 +3951,12 @@
    ],
    "knowledge": "From Y3 (AC9HS3S02): Students located and evaluated sources and constructed annotated timelines and maps using cartographic conventions.",
    "endpoint": "Students locate, collect and record information from discipline-appropriate sources using annotated timelines, maps, graphs and tables.",
+   "elaborations": [
+    "identifying the types of sources suited to historical, geographical, civic inquiry contexts (for example, paintings, maps and written records/accounts to investigate the First Fleet or a local environment; newspaper articles and database information to investigate the cultural diversity of the local community or to respond to a civic or geographic issue such as recycling; traditional ballads and stories to investigate historical events or cultural groups in the community) and discussing why particular sources might be suitable for a particular context",
+    "brainstorming ways that information might be collected for an inquiry, such as surveys, interviews and tallying, and choosing, with teacher guidance, the most effective sources of data; for example, the internet, thematic maps, photographs, satellite imagery, field data collection, interviewing members of local government",
+    "exploring stories about the groups people belong to; for example, cultural groups such as groups that value First Nations Australian or Asian heritage; interest and community groups such as recreational and volunteering organisations; and gender or religious groups",
+    "using graphic organisers, timelines, maps, graphs or tables to display data and information (for example, a food web; consequence wheels for an issue; creating a timeline related to the First Fleet; mapping locations of different types of vegetation, the loss of native species, the movement of peoples over time, or social, cultural and religious groups in Australia's society) and using digital applications as appropriate"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3714,6 +4022,12 @@
    ],
    "knowledge": "From Y3 (AC9HS3S03): Students distinguished fiction from non-fiction and interpreted climate data, graphs and maps.",
    "endpoint": "Students interpret information and data from symbols, graphs, maps, satellite images and other display formats.",
+   "elaborations": [
+    "decoding the meaning of symbols and emblems associated with Australian history, geography and civic life and applying an understanding of conventions, vocabulary and symbols when interpreting large-scale maps",
+    "interpreting the data presented in picture, line, bar or column graphs to identify trends; for example, explaining survey results about types of waste produced in the school or how people participate in the community",
+    "interpreting thematic maps and using online satellite images to describe the environmental characteristics of a continent or region, or to identify a particular characteristic, such as equatorial rainforests or clearance of natural vegetation for farming and settlement",
+    "comparing environments in places of similar climate and vegetation that are located on different continents; for example, sandy, icy and stony deserts of Australia, Africa and South America"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3778,6 +4092,12 @@
    ],
    "knowledge": "From Y3 (AC9HS3S04): Students compared sources for evidence of change and identified perspectives, including whose perspectives may be absent.",
    "endpoint": "Students analyse information across sources and identify multiple perspectives including those of First Nations Australians and diverse groups.",
+   "elaborations": [
+    "comparing information in sources to identify evidence of change; for example, First Nations Australian, Dutch and French place names on Australia's west coast",
+    "analysing information collected from interviews with different people about the same issue; for example, developers, businesspeople and their employees, council members, local Elders and conservationists, regarding the management of resources",
+    "analysing information gathered through visible thinking strategies to examine a group of paintings and/or maps across a period of time to explore evidence of continuity and change, and significant events in Australia pre- and post-1788 (for example, images of First Nations Australian rock painting depicting early interactions and trade with the Macassans) and comparing it with written information from a historian",
+    "exploring different perspectives about a historical event (for example, the perspectives of convicts, soldiers, free settlers and First Nations Australians on the arrival of the First Fleet) or a contemporary issue, such as a school issue or an environmental issue"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3842,6 +4162,11 @@
    ],
    "knowledge": "From Y3 (AC9HS3S05): Students drew evidence-based conclusions about community change, environmental features and place connections.",
    "endpoint": "Students draw conclusions from analysis of information about risks, resources, exploration, ecosystems and civic issues.",
+   "elaborations": [
+    "describing risks in past times, such as those involved in sea travel, exploration and colonisation",
+    "explaining how seeking resources is connected to trade, world exploration, colonisation, economic development and environmental change",
+    "analysing sources to draw conclusions; for example, 'What are the relationships between plants and animals in an ecosystem?', 'What can local government do to improve services?' and 'How do students benefit from school rules?'"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3882,6 +4207,12 @@
    ],
    "knowledge": "From Y3 (AC9HS3S06): Students considered effects of actions before proposing them and developed action plans with persuasive justification.",
    "endpoint": "Students propose actions or responses to environmental, local government or cultural issues, considering effects and forecasting futures.",
+   "elaborations": [
+    "participating in cooperative strategies that enable decision-making about roles and responsibilities in relation to an issue that may be of concern to the students (for example, waste management in their school or protecting a habitat for an endangered species) and identifying resources needed to support the actions and likely outcomes",
+    "forecasting a probable future and a preferred future relating to an environmental, local government or cultural issue; for example, developing a future scenario of what oceans will be like if humans continue to allow waste plastic to enter waterways, and a preferred scenario of what oceans would be like if plastics were to be replaced by degradable materials",
+    "reflecting on personal behaviours and identifying attitudes that may affect aspects of the environment at a local or global level; for example, pouring paints down the sink, using products sourced from cleared rainforests and proposing awareness-raising strategies to reduce impacts on the environment",
+    "proposing possible actions that could be taken to address an issue (for example, improving the management of waste in the school, choosing products not made from endangered species or their habitats) and identifying resources needed to support the actions and likely outcomes (for example, composting lunch waste and using it on the school garden, making socially responsible decisions)"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3947,6 +4278,10 @@
    ],
    "knowledge": "From Y3 (AC9HS3S07): Students presented using ideas from sources and subject-specific terms from history, geography and civics.",
    "endpoint": "Students present descriptions and explanations using ideas from sources and subject-specific terms from Year 4 HASS disciplines.",
+   "elaborations": [
+    "describing the relative location of different features in a place by distance and compass direction; for example, the distance from their home to the local waste management site, the route of a navigator",
+    "using accurate and subject-appropriate terms when speaking, writing and illustrating; for example, using historical terms such as \"exploration\", \"navigation\", \"trade\", \"penal\", \"transportation\", \"contact\" and \"colonisation\"; using geographical terms such as \"continents\", \"countries\", \"natural resources\", \"vegetation\", \"environments\", \"ecosystems\", \"sustainability\", \"consumption\", \"waste\" and \"management\"; and using civic terms such as \"local government\", \"decision-making\", \"services\", \"roles\", \"responsibilities\", \"rules\", \"laws\" and \"belonging\""
+   ],
    "nodes": [
     {
      "n": 1,

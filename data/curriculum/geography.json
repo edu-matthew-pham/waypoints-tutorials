@@ -1,6 +1,6 @@
 {
  "subject": "geography",
- "source": "waypoints-kit 6bb92e4",
+ "source": "waypoints-kit d93e6e5",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -14,6 +14,12 @@
    "prior": [],
    "knowledge": "Students enter Year 7 Geography from the F–6 HASS curriculum. They have a working understanding of basic geographical concepts (place, space, environment, interconnections, scale, sustainability, change), can identify natural and managed environments, and have located Australia within the Asia-Pacific region. They have not previously encountered formal resource classification frameworks or the concept of the hydrological cycle as an agent of landscape change.",
    "endpoint": "Students explain how water is classified as an environmental resource and how its movement through environments connects and changes places.",
+   "elaborations": [
+    "classifying resources into renewable, non-renewable and continuous resources, and identifying examples of each type",
+    "explaining how the movement of water, such as groundwater, soil moisture (green water), surface water in dams, rivers and lakes (blue water), through the environment connects places and how water is a potential resource when it exists as salt water, ice or water vapour",
+    "explaining the environmental, economic or social effects of water as it connects places; for example, the environmental effects of water diversion in the Snowy Mountains, the economic effects of irrigation in the Ord River or the social effects of the Mutitjulu Waterhole connecting Australian First Nations Peoples in Central Australia",
+    "explaining how moving water changes places; for example, moving water causes soil and rock erosion or cuts valleys into mountains"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -177,6 +183,14 @@
    ],
    "knowledge": "Students have completed AC9HG7K01 — they can classify water as a renewable/continuous/non-renewable resource, trace water movement connecting places, and explain environmental, economic and social effects. They can locate Australia broadly but have not previously examined the spatial distribution of Australia's water resources or the concept of sustainability applied specifically to water.",
    "endpoint": "Students explain the location and distribution of water resources in Australia, their implications for people, and strategies to manage water sustainability.",
+   "elaborations": [
+    "representing the location of Australia's water resources, such as surface water and groundwater",
+    "describing the distribution of Australia's water resources, and its implications for people; for example, limited access to water for people in rural and remote places and its implications",
+    "identifying the causes of variability in water resources or water scarcity; for example, an absolute shortage of water (physical cause), inadequate development of water resources (economic cause), or the ways water is used (such as farming, industry, drinking, washing or watering)",
+    "explaining the factors that contribute to variability in water resources or water scarcity; for example, location, climate, topography, seasonality or evaporation",
+    "examining why water is a difficult resource for communities to manage and sustain; for example, because of its shared and competing uses, and variability of supply over time",
+    "examining how a strategy may manage the sustainability of water resources; for example, recycling ('grey water'), stormwater harvesting and re-use, desalination, inter-regional transfer of water and trade in virtual water, and reducing water consumption"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -333,6 +347,12 @@
    "prior": [],
    "knowledge": "Students have completed K01 and K02 — they can classify water resources, trace water movement connecting places, and explain distribution and sustainability. Those nodes treat water primarily as a physical and economic resource. This standard introduces the cultural, spiritual and aesthetic dimensions of water value, which require a different conceptual lens.",
    "endpoint": "Students explain the economic, cultural, spiritual and aesthetic value of water for people, including First Nations Australians.",
+   "elaborations": [
+    "examining and comparing places in Australia and a country in Asia that have economies and communities based on irrigation; for example, rice production in the Murrumbidgee Irrigation Area in New South Wales and the Mekong Delta in Vietnam",
+    "discussing the multilayered meanings (material, cultural and spiritual wellbeing) associated with rivers, waterways, waterholes, human-made wells, seas, lakes, soaks and springs for First Nations Australians",
+    "examining bays, rivers, waterfalls or lakes in Australia and in countries of Asia that have been listed as either World Heritage sites or national parks for their aesthetic and cultural value",
+    "investigating the spiritual significance of water in an Asian culture"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -489,6 +509,12 @@
    "prior": [],
    "knowledge": "Students have completed K01–K03 — they understand water as an environmental resource, can explain water distribution and sustainability, and know that water movement causes environmental change. They have basic knowledge of climate and weather from primary school but have not previously studied hazard processes in depth or examined governmental and community response frameworks.",
    "endpoint": "Students explain the causes and impacts of an atmospheric or hydrological hazard and responses from communities and governments.",
+   "elaborations": [
+    "explaining the environmental processes that cause a hazard, such as drought, storms, tropical cyclones or floods",
+    "explaining how the impacts of a hazard on people and the environment are influenced by environmental, social or economic factors",
+    "identifying examples of responses to a hazard from the community and the government at the local scale, and identifying practices that increased effectiveness",
+    "reflecting on the principles of prevention, mitigation and preparedness in responses from the community and the government to explain how the impact of a hazard can be reduced"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -634,6 +660,12 @@
    "prior": [],
    "knowledge": "Students enter the liveability unit having completed the water unit (K01–K04). They understand that places have environmental, economic, cultural, spiritual and aesthetic dimensions of value, and that water distribution creates differential access for populations in different settlement types. They have not previously encountered the concept of 'liveability' or the objective/subjective measurement distinction.",
    "endpoint": "Students explain factors that influence where people live, including perceptions of liveability and the influence of environmental quality.",
+   "elaborations": [
+    "explaining how the economic, cultural, spiritual and aesthetic value of places influence choices about where to live; for example, economic – working for industries located in remote and very remote places; culture – connections for cultural groups; spiritual – meanings attributed to places; aesthetic – 'bright lights' attraction or tree change",
+    "discussing the concept of liveability and the ways it is measured, and comparing objective measures, such as transportation infrastructure with subjective measures, such as people's perceptions",
+    "comparing students' access to and use of places and spaces in their local area, and evaluating how this affects perceptions of liveability",
+    "examining the influence of environmental quality on decisions people make about where to live; for example, clean land, air and water, views, recreation facilities and favourable climate"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -787,6 +819,11 @@
    "prior": [],
    "knowledge": "Students have completed K05 — they understand liveability as a concept, can distinguish objective and subjective measures, and know that factors including environmental quality influence residential decisions. They can represent distribution of resources from K02 work. This standard applies distribution analysis specifically to services and facilities and connects it to liveability outcomes.",
    "endpoint": "Students explain the location and distribution of services and facilities and their implications for liveability.",
+   "elaborations": [
+    "comparing the distribution and location of a range of services and facilities, such as access to clean water, sanitation, education and health services, between different types of settlements (urban, rural, remote and very remote)",
+    "explaining the role transport and technologies play in people's ability to access services and participate in activities in their local area",
+    "analysing the distribution of services and facilities in different types of settlements (for example, using aerial images of contrasting places in Australia such as inner and outer suburbs, or rural and remote) to identify implications for people, such as access to services and availability of facilities"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -919,6 +956,11 @@
    "prior": [],
    "knowledge": "Students have completed K05 and K06 — they understand liveability as concept, know that cultural factors influence residential decisions, and can analyse implications of service distribution. From K03 they understand multilayered values (including spiritual/cultural) of water for First Nations Australians. This standard extends that understanding to place identity, belonging and inclusion/exclusion more broadly.",
    "endpoint": "Students explain how cultural connectedness to places influences identity, belonging and perceptions, especially for First Nations Australians.",
+   "elaborations": [
+    "identifying different places where people can feel included or excluded, safe or threatened, and explaining how this affects perceptions about liveability of place",
+    "explaining the importance of people being socially connected and the effect on perceptions of liveability",
+    "discussing the cultural connectedness and belonging that First Nations Australians have to a number of places through family, Country/Place, dispossession, relocation and employment"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1051,6 +1093,11 @@
    "prior": [],
    "knowledge": "Students have completed K05–K07 — they can explain factors influencing residential decisions, analyse service distribution and its liveability implications, and explain how cultural connectedness shapes belonging and place perceptions. This standard is the synthesis point of the liveability unit — applying all prior conceptual work to the evaluation of strategies that improve liveability for specific community groups.",
    "endpoint": "Students explain strategies used to enhance the liveability of a place for different groups in the community.",
+   "elaborations": [
+    "identifying strategies implemented in Australia or a country in Europe to improve the liveability of a place (for example, improving public spaces, walkability, transport connections or water disposal and recycling) and consider applicability to their own locality",
+    "developing a strategy to improve an aspect of liveability at the local scale, taking into account the needs of diverse groups in the community, including young people (for example, through fieldwork in the local recreation area) or Traditional Owners (for example, developing bilingual signage or garden projects in the local area with First Nations Australians)",
+    "evaluating a strategy to improve the liveability of a place using criteria, and deciding on its applicability to their own locality"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1178,6 +1225,10 @@
    ],
    "knowledge": "Students have developed general inquiry questions in F–6 HASS (AC9HS6S01: develop questions to investigate people, events, developments, places and systems). This standard requires them to apply question development specifically within a geographical inquiry framework — questions must be oriented to geographical phenomena, use geographical concepts as organisers, and be plannable as a geographical investigation.",
    "endpoint": "Students develop questions to guide a geographical inquiry into a phenomenon or challenge.",
+   "elaborations": [
+    "developing questions to investigate why a geographical phenomenon has changed or a challenge may arise; for example, the causes of water scarcity in different places, or measuring the liveability of a place and the factors affecting the liveability of a place",
+    "planning an investigation of a geographical phenomenon or challenge being studied, using digital planning tools; for example, analysing statistics on variation in water quantity and quality over time in Central Australia, or using fieldwork to survey perceptions of the liveability of a local place"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1279,6 +1330,12 @@
    ],
    "knowledge": "Students have prior data collection and organisation skills from F–6 HASS (AC9HS6S02: locate, collect and organise information and data from primary and secondary sources in a range of formats). This standard introduces geospatial technologies, specialist digital tools, cartographic conventions and the distinction between primary fieldwork methods and secondary research materials in a specifically geographical context.",
    "endpoint": "Students collect, organise and represent geographical data from primary and secondary sources using appropriate geospatial technologies, digital tools and cartographic conventions.",
+   "elaborations": [
+    "identifying appropriate primary research methods, including fieldwork, and using specialised digital tools to collect original materials; for example, interview and survey data, photographs of streetscapes, annotated field sketches, diagrams and statistics related to liveability",
+    "collecting relevant secondary research materials, such as print and online publications, photographs and images, using advanced search functions; for example, 'allintitle: community opinion on water scarcity in Australia' or 'Australia's most liveable city'",
+    "representing relevant data and information in appropriate formats to combine ideas; for example, applying primary research to the design of a questionnaire or survey on what is meant by liveability, with results presented in a table or graph",
+    "representing spatial distribution of different types of geographical phenomena by constructing appropriate maps at different scales that conform to cartographic conventions, for example using computer mapping to show the spatial distribution of impacts of hydrological hazards on environments"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1408,6 +1465,11 @@
    ],
    "knowledge": "Students have prior skills identifying patterns and trends from F–6 HASS (AC9HS6S03: evaluate information and data in a range of formats to identify and describe patterns and trends, or to infer relationships). This standard extends that to geographical-specific analytical moves: reading spatial data, explaining geographical patterns and trends with reference to geographical processes, and inferring place-based relationships from data.",
    "endpoint": "Students interpret and analyse geographical data to identify similarities and differences, explain patterns and trends, and infer relationships.",
+   "elaborations": [
+    "identifying similarities and differences in data and information; for example, using aerial images of contrasting places in Australia, such as inner and outer suburbs or rural and remote places, to identify differences in housing density",
+    "explaining patterns and trends; for example, using graphs, weather maps and satellite images to examine the temporal and spatial patterns of a selected hydrological hazard",
+    "inferring relationships in data and information collected; for example, using surveys and interviews to identify community attitudes or perceptions about the extent of services and facilities in Australia's cities compared with remote communities"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1533,6 +1595,10 @@
    ],
    "knowledge": "Students have prior evidence-based conclusion skills from F–6 HASS (AC9HS6S05: develop evidence-based conclusions). This standard requires them to draw conclusions specifically in a geographical inquiry context — using geographical concepts (place, space, environment, interconnections, sustainability, scale, change) as organisers, and connecting conclusions to the impacts of geographical phenomena on people, places and environments.",
    "endpoint": "Students draw conclusions based on the analysis of geographical data and information.",
+   "elaborations": [
+    "drawing on the results of an analysis and using at least one of the concepts of place, space, environment, interconnections, sustainability, scale or change as an organiser to respond to a question; for example, using an analysis of the distribution of water resources to form conclusions about the sustainability of farming, or an analysis of the location of services to form conclusions about interconnections between people, place, environment and liveability",
+    "explaining the impacts of a geographical phenomenon or challenge on people, places and environments; for example, impacts of water scarcity on individuals, communities and government, or the impacts of declining water quality on people and the liveability of places"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1629,6 +1695,11 @@
    ],
    "knowledge": "Students have prior skills proposing actions from F–6 HASS (AC9HS6S06: propose actions or responses to issues or challenges and use criteria to assess the possible effects). This standard extends that to the geographical context — proposing individual and collective action in response to geographical phenomena, explaining potential impacts, and reflecting on how personal values influence explanation of impacts.",
    "endpoint": "Students identify a strategy for action in relation to a geographical phenomenon or challenge and explain its potential impacts.",
+   "elaborations": [
+    "proposing individual action in response to a geographical phenomenon or challenge and supporting the proposal with reasons; for example, reducing the individual water footprint; walking, cycling or using public transport for a more environmentally liveable place",
+    "proposing collective action in response to a geographical phenomenon or challenge and supporting the proposal with reasons; for example, developing guidelines for conserving water at school to promote awareness of levels of water usage for a community over time, especially during droughts; planning sustainable and liveable cities such as the ecopolis",
+    "reflecting on the influence of personal values and attitudes on explanations of potential impacts; for example, the effects of personal factors such as availability of technology and infrastructure on what is perceived as a liveable place; conflicting cultural and economic uses of water by people"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1750,6 +1821,11 @@
    ],
    "knowledge": "Students have prior communication skills from F–6 HASS (AC9HS6S07: present descriptions and explanations, drawing ideas, findings and viewpoints from sources, and using relevant terms and conventions). This standard raises the bar specifically for geographical communication — incorporating geographical methods (maps, graphs, data representations), geographical concepts, specialised terminology, and reference to sources as integrated elements of geographical writing and presentation.",
    "endpoint": "Students create descriptions, explanations and responses using geographical knowledge and methods, concepts, terms and reference sources.",
+   "elaborations": [
+    "creating a description that connects the audience to the topic and uses geographical concepts and terms to provide accurate information about a preferred strategy; for example, planning liveable streets and sustainable cities in Australia and Europe",
+    "constructing an explanation, using research findings to support ideas; for example, data on water usage over time and at different places; information about liveability indexes for different places in Australia and Europe",
+    "developing conclusions, using geographical methods to represent data and information; for example, a map showing water usage and a map indicating water scarcity in Australia; a map representing places where liveability is difficult and dangerous due to environmental factors"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1879,6 +1955,12 @@
    ],
    "knowledge": "Students explain how water connects and changes places as it moves through environments (AC9HG7K01), and the causes and impacts of atmospheric/hydrological hazards (AC9HG7K04). They have not yet encountered tectonic, volcanic, or rock-weathering processes at this scale.",
    "endpoint": "Students explain geomorphological processes — including tectonics, volcanism, folding, faulting, weathering, erosion, transportation and deposition — that produce different landscapes and significant landforms.",
+   "elaborations": [
+    "explaining the diversity of landscapes, such as wetlands, grasslands, forests, cold and hot deserts, and landforms at the national scale; for example, mountains – Himalayan Mountains, Nepal; grasslands – the Steppe, central Asia; forests – Daintree, Australia; cold deserts – Gobi, China",
+    "explaining how tectonics, volcanism, folding, faulting, chemical weathering and physical weathering such as erosion, transportation and deposition shape places; for example, folding – MacDonnell Ranges, Northern Territory, Australia; faulting – Great Sumatran Fault (Semangko Fault), Indonesia; volcanism – Krakatoa, Indonesia",
+    "explaining the effects of rock type on a selected landform at the local scale; such as Fraser Island, Queensland or Twelve Apostles, Victoria; for example, sedimentary – igneous and metamorphic; chemical weathering – oxidation and solution; physical weathering – exfoliation and frost wedging",
+    "explaining the effects of erosion, transportation and deposition of water and wind on a selected landform at the local scale; for example, Fraser Island, Queensland, formed by wind, waves and ocean currents; the Twelve Apostles, Victoria, formed by erosion, tides and ocean currents"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2013,6 +2095,12 @@
    ],
    "knowledge": "Students can explain water distribution at the national scale and have located water resources on maps (AC9HG7K02). They have not yet mapped the distribution of landform types or related landscape patterns across Australia.",
    "endpoint": "Students explain the location and distribution of Australia's distinctive landscapes and significant landforms, including their significance to First Nations Australians.",
+   "elaborations": [
+    "representing the distribution of Australian distinctive landscapes, such as the deserts in Central Australia, and significant landforms, such as Uluru in Central Australia",
+    "locating iconic landscapes and landforms in Australia on a map and describing what makes them iconic",
+    "comparing the distribution of Australia's distinctive landscapes with distinctive landscapes in another country; for example, grasslands in Arnhem Land in northern Australia compared to grasslands in Mongolia; tropical rainforests in northern Australia compared to forests in Laos and Cambodia",
+    "explaining the significance of a landform important to First Nations Australians; for example, the names, meanings and significance of the Three Sisters in the Blue Mountains, New South Wales; Budj Bim cultural landscape within Gunditjmara Country; Uluru-Kata Tjuta National Park in Northern Territory"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2109,6 +2197,14 @@
    ],
    "knowledge": "Students explain the economic, cultural, spiritual and aesthetic value of water for people including First Nations Australians (AC9HG7K03), and the cultural connectedness of people to places (AC9HG7K07). They have not yet extended this framework to landscapes and landforms broadly.",
    "endpoint": "Students explain the spiritual, aesthetic and cultural value of landscapes and landforms for people, including the multilayered meanings of Country/Place for First Nations Australians.",
+   "elaborations": [
+    "identifying the ways people value significant landscapes in Japan and China, such as Mt Fuji and the Yellow Mountains respectively, and describing what makes them important",
+    "analysing the role of landforms and landscapes in tourism; for example, Uluru in Australia or the Himalayas in Nepal",
+    "examining how Aboriginal Dreaming stories and Torres Strait Islander Creation stories give meaning to Country/Place",
+    "discussing the meaning of the stories that describe First Nations Australians' special connection to Country/Place",
+    "discussing the multilayered meanings (material, cultural and spiritual wellbeing) associated with landscapes and significant landforms for First Nations Australians",
+    "explaining the formation of a landform with reference to the special connections First Nations Australians have to Country/Place"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2205,6 +2301,12 @@
    ],
    "knowledge": "Students explain strategies to manage water sustainability (AC9HG7K02) and have examined responses to hydrological hazards (AC9HG7K04). They have not yet examined how human activity directly drives or modifies geomorphological processes.",
    "endpoint": "Students explain the interconnections between human activity and geomorphological processes, and evaluate ways of managing distinctive landscapes including contributions from First Nations Australian knowledges.",
+   "elaborations": [
+    "identifying the interconnections and effects of erosion and sedimentation produced by human activities on the quality of the environment; for example, the effects of overuse of tourist tracks in bushland or the effects of land-clearing for the production of palm oil in Indonesia and Malaysia",
+    "explaining the interconnections and effects of mining, quarrying and urban development on the quality of the environment; for example, the interconnections of the quality of the environment and uranium mining in Kakadu, urban development in Singapore or the extension of land area in Tokyo Bay",
+    "explaining the effects of river regulation, including dams, locks, channel straightening and drains, on the quality of riverine and wetland environments; for example, the Three Gorges Dam on the Yangtze River in China, or dams and weirs on the Murray–Darling River system",
+    "identifying the contribution of the knowledges of First Nations Australians to the use and management of distinctive landscapes; for example, Indigenous Peoples' Knowledge (IPK) incorporated into modern management of diverse landscapes and landforms such as Kakadu National Park, Uluru, the Great Barrier Reef and the Snowy Mountains"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2300,6 +2402,12 @@
    ],
    "knowledge": "Students explain causes and impacts of atmospheric/hydrological hazards and community/government responses (AC9HG7K04). They now extend this cause-impact-response framework to geomorphological hazards (volcanic eruptions, earthquakes, tsunamis, landslides, avalanches).",
    "endpoint": "Students explain the causes and impacts of a geomorphological hazard on people, places and environments, and the effects of responses including prevention, mitigation and preparedness strategies.",
+   "elaborations": [
+    "identifying the causes of a geomorphological hazard such as a volcanic eruption, earthquake, tsunami, landslide or avalanche",
+    "examining the environmental, economic or social impacts of a hazard at the local scale; for example, where people choose to live; the negative consequences for human wellbeing including loss of industry and unemployment; and lack of infrastructure and resources to prepare and respond to hazards",
+    "reflecting on observations of a location where the environment has been altered by human activities to explain how the change has heightened the impact of a hazard",
+    "reflecting on the principles of prevention, mitigation and preparedness to explain how the harmful effects of a hazard can be reduced by the implementation of a management strategy"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2393,6 +2501,13 @@
    ],
    "knowledge": "Students explain factors that influence where people live including liveability and environmental quality (AC9HG7K05), and strategies to enhance liveability (AC9HG7K08). They have not yet examined urbanisation as a process with causes and spatial impacts.",
    "endpoint": "Students explain the causes of urbanisation and its impacts on places and environments, drawing on a country study, and explain the implications of these impacts.",
+   "elaborations": [
+    "explaining the difference between urban growth and urbanisation, and how push-pull forces contribute to internal and international population movements and increase the size of urban areas",
+    "distinguishing between large cities and the rise of megacities at the national scale, including the growth of large capital cities in Australia, Los Angeles as a megacity, or Boston – Washington as an urban corridor in the United States of America",
+    "explaining how changes in economic conditions affect the characteristics of urban places, including population growth in a tourist community in coastal New South Wales such as Byron Bay, population decline in a regional area such as Carnarvon Shire, or old industrial areas evolving into areas of urban renewal, and urban villages in Green Square and Barangaroo, Sydney",
+    "explaining the connections between urbanisation and economic and social opportunities; for example, the location of universities, sporting stadiums or parliaments in capital cities",
+    "explaining how urbanisation can positively or negatively affect the quality of the environment; for example, increases in carbon emissions or increases in water consumption"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2509,6 +2624,12 @@
    ],
    "knowledge": "Students explain the location and distribution of services and facilities and liveability implications (AC9HG7K06). They have applied basic spatial analysis at local/urban scales. They have not yet compared urban distribution patterns at the national scale across countries.",
    "endpoint": "Students explain differences in the distribution and concentration of urban settlements in Australia compared with another country, and interpret the relationship between population density and proximity to urban centres.",
+   "elaborations": [
+    "representing the location of urban settlements in Australia and the United States of America, identifying similarities and differences in the distribution",
+    "examining the causes of urban concentration in Australia; for example, the history of European settlement, migration, the export orientation of the economy, the centralisation of state governments, environmental constraints and the shape of transportation networks",
+    "examining the effects of urban concentration in a country other than Australia; for example, the decline in biodiversity and increase in waste, the increase in carbon emissions leading to a large carbon footprint, or the decline in access to adequate clean water and the development of slums",
+    "interpreting and explaining the relationship between population density and proximity to urban centres at the national scale; for example, higher population density towards the urban central business district (CBD) as a centre of employment, education, culture and government, such as in Brisbane, and declining towards the rural-urban fringe (core and periphery)"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2602,6 +2723,14 @@
    ],
    "knowledge": "Students explain factors that influence where people live (AC9HG7K05) and cultural connectedness to places (AC9HG7K07). They have not yet examined migration as a driver of population change at national or international scales.",
    "endpoint": "Students explain the reasons for and effects of internal and international migration in Australia, China or other countries, including the relationship between migration and urban concentration.",
+   "elaborations": [
+    "identifying and explaining the main types and patterns of internal and international migration, such as permanent migration, temporary labour migration, student migration, forced migration (including refugees, illegal migrants and illegally trafficked people) and circular migration",
+    "explaining how mining developments affect employment growth in regions and cities, and influence internal migration in Australia; for example, migration leading to population growth in mining areas such as Pilbara in Western Australia and Bowen Basin in North Queensland",
+    "explaining changing influences on migration over time; for example, chain migration related to connection to family, employment, education or health; circular migration involving short-term mobility related to visits to family or for a cultural event",
+    "identifying and explaining the patterns of temporary internal migration and permanent internal migration in China and the effects on the places of origin and destination",
+    "interpreting population data and describing the relationship between international migration and urban concentration within Australia, and internal migration and urban concentration within China",
+    "exploring the connections between the cultural diversity of places and how they are affected by internal and international migration; for example, in Australia or China"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2698,6 +2827,10 @@
    ],
    "knowledge": "Students explain the causes of urbanisation and its impacts (AC9HG8K06) and urban distribution patterns and concentration (AC9HG8K07). They now bring these together to evaluate management strategies for sustainable urban futures.",
    "endpoint": "Students explain strategies used to manage the sustainability of Australia's changing urban places, examining environmental, economic and social implications.",
+   "elaborations": [
+    "examining a strategy used by local, state or national governments to manage projected population growth in one of Australia's cities or regional urban centres, and identifying implications for sustainability (environmental, economic and social factors) and liveability",
+    "generating ideas for a strategy for a more balanced distribution of urban population, such as decentralisation, using Canberra as an example"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2770,6 +2903,10 @@
    ],
    "knowledge": "Students develop questions for geographical inquiry related to a phenomenon or challenge (AC9HG7S01). At Y7, questions were framed around water and liveability phenomena. At Y8, the same inquiry skill is applied to landforms and urbanisation contexts.",
    "endpoint": "Students develop questions for a geographical inquiry related to a geomorphological or urbanisation phenomenon or challenge, including planning investigations at a range of scales.",
+   "elaborations": [
+    "developing questions to investigate why a geographical phenomenon has changed or why a challenge may arise; for example, \"How does urban development affect the sustainability of wetlands?\", \"Why is biodiversity declining in urban places?\"",
+    "planning an investigation of a geographical phenomenon or challenge being studied, at a range of scales using digital planning tools; for example, how geomorphological processes produce significant landforms at the local scale, or the causes and consequences of urbanisation at the national scale"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2837,6 +2974,15 @@
    ],
    "knowledge": "Students collect, organise and represent data from primary and secondary methods using geospatial technologies (AC9HG7S02). At Y8, greater emphasis falls on evaluating reliability and relevance of sources, and on protocols for engaging First Nations communities.",
    "endpoint": "Students collect, organise and represent relevant and reliable data from primary and secondary sources, using geospatial technologies and digital tools, respecting protocols for First Nations community consultation where appropriate.",
+   "elaborations": [
+    "identifying appropriate primary research methods, including fieldwork, to collect original materials using specialised digital tools; for example, field observations such as sketches or measurements of landscapes or landforms, or digital tools to recreate topographic features of a landform",
+    "collecting relevant secondary research materials online using search terms and functions such as \"allintitle: geomorphological hazards\" or \"define: megacities\" to identify relevant geographical information",
+    "identifying and respecting protocols for consultation with communities of First Nations Australians when organising primary research or fieldwork, such as when discussing Dreaming stories about the formation, meaning and interconnections of Australian landscapes and landforms",
+    "evaluating research materials for relevance (for example, \"Does the information reflect current thinking about urbanisation?\") and reliability (for example, \"Who is/are the author/s? Does the author reference other experts in the field?\")",
+    "comparing findings from primary research methods, including fieldwork, with those from secondary research materials for relevance and reliability; for example, comparing field sketches showing the impact of a geomorphological hazard with newspaper reports on the extent of damage; comparing survey and interview data about people's perception of their suburb with a government report on the impacts of urbanisation",
+    "representing relevant and reliable data and information in appropriate formats to combine ideas, using digital tools; for example, creating annotated diagrams to show the changes to a landform over time or using digital mapping tools to show the cultural and demographic diversity of First Nations Australians",
+    "representing spatial distributions of different types of geographical phenomena by constructing appropriate maps at different scales that conform to cartographic conventions; for example, constructing a map to show the relationship between landforms such as mountains and landscapes such as deserts, or contrasting the spatial distribution of population in Australia and/or China"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2944,6 +3090,11 @@
    ],
    "knowledge": "Students interpret and analyse geographical data to identify similarities and differences, explain patterns and trends and infer relationships (AC9HG7S03). At Y8, more complex data sets and multi-scale analysis are expected.",
    "endpoint": "Students interpret and analyse geographical data to identify similarities and differences, explain patterns and trends, and infer relationships from primary research and complex secondary sources.",
+   "elaborations": [
+    "identifying similarities and differences from data and information; for example, comparing source and destination of international migration for Australia in 2 different time periods",
+    "explaining patterns and trends; for example, comparing compound graphs or census data for different time periods to identify patterns in urban concentration in Australia and the United States of America, or trends in international migration",
+    "inferring relationships from data and information collected during primary research; for example, using observations, field sketches, field measurements, questionnaires or interviews to explain the distribution of population in your local area and suggesting possible causes, effects and trends"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3031,6 +3182,10 @@
    ],
    "knowledge": "Students draw conclusions based on analysis of data (AC9HG7S04). At Y8, conclusions must explicitly draw on geographical concepts (place, space, environment, interconnections, sustainability, scale, change) as organisers.",
    "endpoint": "Students draw conclusions from data analysis using at least one geographical concept as an organiser, and explain reasons for decisions and choices.",
+   "elaborations": [
+    "drawing on the results of an analysis and using at least one of the concepts of place, space, environment, interconnections, sustainability, scale or change as an organiser to respond to a question; for example, using research about the value of distinctive landscapes to form conclusions about the influence they have on peoples' lives or an analysis of the distribution of urban settlements to form conclusions about how space is used",
+    "explaining reasons for decisions and choices; for example, reflecting on research findings or data analysis of the impacts of geomorphological hazards or urbanisation to identify and explain significant impacts on people, places and environments"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3098,6 +3253,12 @@
    ],
    "knowledge": "Students identify a strategy for action and explain potential impacts (AC9HG7S05). At Y8, students move toward evaluating strategy effectiveness across environmental, economic and social dimensions.",
    "endpoint": "Students identify and justify a strategy for action, explain potential impacts across environmental, economic and social factors, and evaluate the effectiveness of the strategy.",
+   "elaborations": [
+    "proposing individual action and supporting the proposal with reasons; for example, reducing waste going to landfill, especially toxic e-waste causing degradation of landscapes, or reducing the large and expanding urban footprint by decreasing the consumption of energy resources as well as eating, working and buying locally",
+    "proposing collective action and supporting the proposal with reasons; for example, promoting community awareness of the effects of human–environmental change on significant Australian landforms such as Uluru and the Great Barrier Reef, or encouraging the development of urban and peri-urban agriculture",
+    "evaluating the effectiveness of a strategy in relation to environmental, economic and social factors",
+    "reflecting on personal values and attitudes and how these influence explanations of potential outcomes; for example, applying sustainable design principles to urban redevelopment projects that provide green, open spaces for citizens"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3185,6 +3346,11 @@
    ],
    "knowledge": "Students create descriptions, explanations and responses using geographical knowledge, methods, concepts and terms (AC9HG7S06). At Y8, responses must demonstrate more sophisticated use of geographical concepts and data representations.",
    "endpoint": "Students create descriptions, explanations and responses that connect audiences to geographical topics, use research findings and data representations, and demonstrate appropriate use of geographical knowledge, methods, concepts and terms.",
+   "elaborations": [
+    "creating a description that connects the audience to the topic, using geographical concepts and providing accurate information; for example, alleviating the impact of a geological hazard such as volcanic eruptions, earthquakes, tsunamis, landslides and avalanches, or eradicating slums in cities",
+    "constructing an explanation, using research findings to support ideas, such as the causes and effects of a geographical phenomenon or challenge, and reinforcing knowledge and understanding of the interconnections between people, places and the environment",
+    "developing a response, using representations of data and information to support actions and conclusions, such as a map showing the location of iconic landforms or a flow map showing the international movement of refugees"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3270,6 +3436,11 @@
    "prior": [],
    "knowledge": "Students can describe the characteristics of environments and explain how physical and human factors influence the characteristics of places (Y7-8). They have not formally studied biomes as regions defined by distinctive climate-soil-vegetation interconnections, nor analysed patterns of biome productivity across countries.",
    "endpoint": "Students identify and describe the major aquatic and terrestrial biomes, explain the interconnections between environmental processes and human activities that shape their characteristics, and interpret patterns of productivity across biomes in Australia and Asia.",
+   "elaborations": [
+    "identifying and describing the major aquatic and terrestrial biomes of Australia and other areas of the world, and mapping their distribution",
+    "interpreting and explaining patterns and trends in the productivity of the major aquatic and terrestrial biomes in Australia compared with a country in Asia",
+    "explaining the effects of interconnections between environmental processes (atmosphere, hydrosphere, lithosphere and biosphere) and human activities, such as deforestation, mining and agriculture on the characteristics of biomes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3394,6 +3565,11 @@
    "prior": [],
    "knowledge": "Students can describe how people modify environments for agriculture and other purposes (Y7-8) and can describe some effects of these modifications. They have not analysed how biome alteration affects flows of nutrients, water and biodiversity systematically, nor compared natural and agricultural ecosystems structurally.",
    "endpoint": "Students identify biomes that produce food and industrial materials, explain differences between natural and agricultural ecosystems in nutrient and water flows and biodiversity, and explain how agricultural innovations have increased productivity through biome alteration in Australia and Asia.",
+   "elaborations": [
+    "identifying the biomes in Australia and a country in Asia that produce some of the foods and plant material people consume",
+    "explaining the differences between natural and agricultural ecosystems in flows of nutrients and water, and in biodiversity; for example, the tropical rainforest biome in Indonesia produces food such as fruit, grains, nuts, vegetables and spices, and non-food products such as wood, rubber, coffee, chocolate and palm oil",
+    "explaining how human alteration of biomes (for example, drip irrigation, fertilisers, pesticides, genetically modified seeds, agrobiotics, terracing, and controlling erosion and overgrazing) has increased agricultural productivity in Australia and a country in Asia"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3491,6 +3667,12 @@
    "prior": [],
    "knowledge": "Students can describe factors that affect land use and explain why places have particular characteristics (Y7-8). They have not examined the interaction between environmental, economic and technological factors on agricultural productivity comparatively across two countries, nor analysed how innovations reduce environmental limitations.",
    "endpoint": "Students examine how environmental, economic and technological factors — and their interconnections — impact the yield of specific crops in Australia and a country in Asia.",
+   "elaborations": [
+    "examining how environmental factors, such as climate, soil, landform, water and hazards, support higher agricultural production, such as wheat, rice and maize, in Australia and a country in Asia",
+    "examining how economic factors such as available land, labour, finance and enterprise, and technological factors such as biotechnology and use of Geographical Information Systems (GIS) software, affect agricultural production in Australia and a country in Asia; for example, increased labour supply or access to storage, transportation and markets",
+    "examining how agricultural innovations have reduced environmental limitations on food production in Australia and a country in Asia; for example, increased food production due to research into and development of high-yielding and genetically engineered pest resistant varieties, construction of drip irrigation systems, and the use of stubble mulching, intercropping, agroforestry and crop rotation",
+    "explaining the impact of the interconnections between environmental, economic and technological factors on the yield of a particular crop, such as wheat, rice or maize, in Australia"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3610,6 +3792,14 @@
    "prior": [],
    "knowledge": "Students understand that environments can be degraded and that management strategies exist to address this (Y7-8). They have examined biome alteration and productivity factors in K01-K03. They have not examined challenges to sustainable food production at national scale or generated strategies responding to those challenges, nor considered First Nations Australians' food sources specifically.",
    "endpoint": "Students examine environmental, economic and social challenges to food production and food security in Australia, and evaluate and generate management strategies that restore agricultural quality, diversity or security.",
+   "elaborations": [
+    "examining environmental impacts of changes to food production causing a decline in the capacity of the land to provide agricultural products; for example, land and water degradation such as soil erosion, salinity and desertification, shortage of fresh water, competing land uses, climate change and pollution contribute to a decrease in food production",
+    "examining economic and social impacts of changes to food production; for example, competing land uses such as urban and industrial uses, and recreation activities",
+    "examining the impacts of modifications to biomes on the productivity and availability of staple resources for First Nations Australians; for example, reduced access to bush food such as myrrnong (yam daisy) in Victoria or cycads, bunya nuts and wongi plums in northern Australia",
+    "examining management strategies that improve food security; for example, efforts to reduce food wastage, government policies or trade barriers",
+    "explaining management strategies that restore the quality or diversity of agriculture in Australia; for example, improving the function of natural biomes and anthropogenic biomes, monitoring land management practices, improving the condition of the soil or building the capability of farmers",
+    "generating ideas for a strategy to expand agricultural production in Australia; for example, market bush food such as herbs and wattle seed, invest in research, support farm innovations or develop the expertise of farmers"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3729,6 +3919,13 @@
    "prior": [],
    "knowledge": "Students can describe how technologies connect people and places and identify that transport and communication systems vary (Y7-8). They have not examined how changing transportation and technologies shape differential access to services across population groups, nor examined supply-chain logistics or the digital divide specifically.",
    "endpoint": "Students examine how transport and information networks connect people to goods, services and other people, interpret differences in access to the internet between and within countries, and explain how technologies connect people across places including globally distributed business services.",
+   "elaborations": [
+    "discussing how access to transportation affects the ways people perceive, use and are connected to specific services or opportunities in a place; for example, regional flights to travel to capital cities and to international destinations",
+    "identifying and describing how transport and information networks function to connect people to goods and services (for example, from cotton crop to t-shirts or from farm to table), including how supply-chain logistics influence these connections",
+    "discussing how communications infrastructure and networks support people to collaborate; for example, local people working for social sustainability and inclusion such as the Masai in Kenya, Berber in North Africa, San or Kalahari Bushmen in southern Africa, Uyghurs in China, Ainu in Japan, Inuit in Greenland and Yanomami in the Amazon Basin",
+    "interpreting differences in people's access to the internet between and within countries, such as in rural areas across Australia and across the world, including a country of Asia, and explaining how technologies are used to connect people to information, services and other people",
+    "examining how technologies have made it possible for places to provide a range of global business services, such as businesses operating call centres in India and the Philippines"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3848,6 +4045,11 @@
    "prior": [],
    "knowledge": "Students can describe how people's activities affect the characteristics of places (Y7-8). They have not examined tourism and leisure as a structured driver of environmental, economic and social change, nor examined management plans that integrate cultural and scientific knowledge to address these impacts.",
    "endpoint": "Students explain the causes of global tourism growth and its environmental, economic and social impacts on places, predict how future trends may affect places, and examine management strategies that integrate cultural and scientific knowledge to manage these impacts.",
+   "elaborations": [
+    "discussing the causes of the global growth of tourism and its environmental, economic or social impacts on places",
+    "explaining the impacts of people's cultural and leisure choices on the sustainability of places popular with tourists (for example, visiting Mecca, Vatican City or Varanasi as religious pilgrimages) and predicting how space tourism or the impacts of COVID-19 may affect places",
+    "examining how management plans for national parks, such as Uluru-Kata Tjuta National Park, bring together cultural and scientific knowledge and experience, and examining governance and past experience to manage the effects of people's cultural and leisure choices"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3945,6 +4147,11 @@
    "prior": [],
    "knowledge": "Students understand that places are interconnected through movement of people, goods and ideas (Y7-8). They have not examined the mechanisms and scale variations of trade interconnections systematically, nor traced how these change over time at local, national and global scales.",
    "endpoint": "Students examine how and why places are interconnected through trade in goods and services at local, national and global scales, and identify examples of how trade interconnections change over time.",
+   "elaborations": [
+    "discussing some of the products and/or services that businesses in their local area sell to or buy from other places",
+    "examining how and why places are interconnected nationally, regionally and globally through trade in goods and services",
+    "identifying examples of change in interconnections between places and people through trade in goods and/or services over time at the local, national and global scale"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4042,6 +4249,12 @@
    "prior": [],
    "knowledge": "Students can describe how production and consumption affect places (Y7-8). They have examined trade interconnections in K07. They have not analysed full supply chains end-to-end, evaluated the environmental effects across a supply chain, or examined sustainability management strategies for production and consumption impacts at scale.",
    "endpoint": "Students examine the environmental, economic and social effects of production and consumption on places worldwide, and examine and evaluate sustainability strategies used to manage these impacts.",
+   "elaborations": [
+    "examining the effects on people, places or environments of mining, farming, forestry or the production of manufactured goods",
+    "explaining the environmental effects of the production and distribution of consumer products and services on the places that produce the raw materials, the people who make the products, and the environments that receive the waste at the end of the products' life; for example, the environmental effects of an e-waste supply chain from mining, production and sales to waste disposal",
+    "evaluating the environmental, economic and social impacts of the global oil supply chain, from where the resource is extracted, processed and sold, and how impacts could be sustainably managed in Australia and in West Asia",
+    "examining a strategy used by local, state or national governments to manage waste in one of Australia's cities or regional urban centres, and identifying implications for sustainability (environmental, economic and social factors)"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4165,6 +4378,11 @@
    "prior": [],
    "knowledge": "Students can develop geographical questions to guide inquiry and plan investigations at a range of scales (Y7-8). They are building towards refining questions using geographical concepts and multi-scale digital planning tools. At Y9, the move is from generating initial questions to sharpening focus through geographical concepts and scale.",
    "endpoint": "Students develop and modify a range of questions that sharpen the focus of a geographical inquiry using concepts and scale, and plan an investigation using digital tools.",
+   "elaborations": [
+    "developing a range of questions to investigate why a geographical phenomenon has changed or why a challenge may arise; for example, 'Why is food security important?', 'What are sources of food in Australia?', 'How are people, places and environments connected?'",
+    "developing and modifying questions to sharpen the focus of an investigation using concepts or scale of study; for example, 'Why is the security and sustainability of food production important at the national scale?', 'How can bush food become a sustainable nutritional source of food in Australia?', 'How can connections between people, environments and places affect the sustainability of places at the global scale?'",
+    "planning an investigation of a geographical phenomenon or challenge being studied at a range of scales, using digital tools; for example, the diverse types of biomes modified by humans for food and non-food products at a national and global scale, or the different types of connections between people and places at local, national and global scales"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4259,6 +4477,14 @@
    "prior": [],
    "knowledge": "Students can collect, represent and compare geographical data using a range of methods and tools (Y7-8). At Y9, the moves are: evaluating sources for relevance and reliability, creating multi-variable visual representations, and constructing cartographically-compliant special purpose maps using geospatial technologies.",
    "endpoint": "Students collect primary and secondary data, evaluate sources for relevance and reliability, create multi-variable visual representations using digital tools, and construct cartographically-compliant special purpose maps.",
+   "elaborations": [
+    "identifying primary research methods, including fieldwork, to collect original materials; for example, comparison of aerial photographs or field sketches over time to document the use or alteration of biomes by people, or surveying peers on their use of the internet or other technologies",
+    "collecting relevant secondary research materials online using targeted criteria; for example, \"connections between food security and deforestation in Bangladesh\", \"the digital divide and its impacts on people and places in North Korea\"",
+    "evaluating primary or secondary research materials for relevance (for example, \"Does the information reflect current thinking on sustainable food production?\") and reliability (for example, \"Who is/are the author/s? Does the author reference other experts or reports in the field of environmental management?\")",
+    "creating a presentation of data and information using geospatial technologies; for example, a 3D diagram illustrating interactions between an oil spill in coral reefs and resultant decline in aquatic food production; a flow diagram showing the daily activities of a female subsistence farmer in Africa; or a diagram of a mangrove ecosystem before and after human interactions",
+    "creating visual representations of multi-variable geographical data using digital tools; for example, a table to compare the daily consumption of meat per person in developed and developing countries; a complex graph to illustrate the relationship between temperature, precipitation and biomes; or a cross-section identifying horizons in a soil profile, and the impacts of mining and fracking on agricultural land",
+    "representing spatial distribution of geographical phenomena by constructing special purpose maps that conform to cartographic conventions, for example creating a map to show the relationship between biomes and world food production"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4382,6 +4608,11 @@
    "prior": [],
    "knowledge": "Students can identify patterns and trends in geographical data (Y7-8). At Y9, the moves are: making and justifying generalisations from data, making predictions from trends, and inferring causal relationships between variables.",
    "endpoint": "Students evaluate geographical data to make justified generalisations and predictions, explain patterns and trends with reference to geographical factors, and infer relationships between causes and impacts represented in data.",
+   "elaborations": [
+    "making generalisations about trends; for example, using questionnaires or interviews to identify people's perspectives on live food fish trade in Australia or people's access to the internet in the local area",
+    "explaining a pattern; for example, using the current Global Hunger Index and the updated Food and Agricultural Organization's Low-Income Food-Deficit Countries (LIFDCs) to identify locations of food scarcity and malnutrition, or comparing maps showing transport networks with survey responses on personal mobility",
+    "explaining relationships between causes and impacts of factors represented in data; for example, the impact of the use of Global Positioning System (GPS) and Geographic Information Systems (GIS) on the way farmers control the dispersion of fertilisers and pesticides to produce higher yields and limit run-off, or the effects of the use of GPS to construct maps on how tourists use different transport systems to visits popular places in Australia"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4475,6 +4706,10 @@
    "prior": [],
    "knowledge": "Students can draw conclusions from geographical data (Y7-8). At Y9, the moves are: drawing conclusions about the impact of a geographical challenge on people, places and environments; and justifying conclusions by reflecting on the perspectives and reasons behind those perspectives.",
    "endpoint": "Students evaluate data and information to draw and justify conclusions about geographical challenges, reflecting on environmental, economic and social perspectives and the reasons for these perspectives.",
+   "elaborations": [
+    "drawing conclusions about the impact of a geographical challenge on people, places and environments; for example, investigating the causes of a decline in food species, its impacts on food security and the establishment of the Svalbard Global Seed Vault, or the effects of cyberattacks on technological interconnections and implementation of international laws related to cyber security",
+    "justifying conclusions by reflecting on perspectives identified and reasons for these perspectives; for example, considering environmental, economic and social factors when challenging disappearing arable land converted from food production to non-food crops, or promoting ecotourism that impacts on people and places"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4542,6 +4777,13 @@
    "prior": [],
    "knowledge": "Students can propose actions and explain reasons for them (Y7-8). At Y9, the moves are: evaluating strategies against environmental, economic and social criteria; making a recommendation from alternatives; explaining predicted outcomes; and reflecting on personal values.",
    "endpoint": "Students develop and evaluate strategies using environmental, economic and social criteria, recommend a strategy, explain its predicted impacts, and reflect on how personal values influence predicted outcomes.",
+   "elaborations": [
+    "proposing individual action and supporting the proposal with reasons; for example, reducing food wastage or reducing negative environmental impacts when visiting theme parks or national parks",
+    "proposing collective action and supporting the proposal with reasons; for example, organisations that work to end hunger and improve food security, or improve labour practices and increase wages for people working to produce goods exported to other countries",
+    "evaluating the effectiveness of a strategy in relation to environmental, economic or social criteria; for example, examining factors likely to impact on achieving Goal 2 of the Sustainable Development Goals – Ending global hunger by 2030 or monitoring the extent that a management plan for a national park is implemented",
+    "explaining the outcomes and impacts of a strategy, such as providing people with adequate and quality food that is acceptable in different cultures, or reducing the global movement of hazardous waste between countries",
+    "reflecting on the influence of personal values and attitudes on predicted outcomes and impacts; for example, how preferring to buy locally produced food reduces food miles and greenhouse gases, or how reducing, recycling and reusing goods contributes to a more sustainable environment"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4665,6 +4907,11 @@
    "prior": [],
    "knowledge": "Students can create descriptions and explanations using geographical knowledge and tools (Y7-8). At Y9, the moves are: applying geographical concepts and terms in structured responses; using data representations (maps, graphs, images) and research findings as evidence; and calibrating tone appropriately to audience.",
    "endpoint": "Students create descriptions, explanations and responses using geographical concepts and terms, incorporating and acknowledging research findings, using geographical tools as evidence, and applying tone appropriate to audience.",
+   "elaborations": [
+    "developing a response using geographical concepts and terms; for example, strategies to improve the sustainability of a place or environment",
+    "creating a description, using representations of data (for example, using maps to illustrate the major terrestrial biomes of Australia and photographs to show their impacts on people and places) and research findings (for example, using diagrams, graphs, tables and/or satellite images to show how environmental, economic or technological factors affect crop yields)",
+    "creating an explanation that applies tone appropriate to the audience; such as reducing food wastage, or developing a management plan for a tourist hot spot, in an authoritative tone and reasoned argument"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4762,6 +5009,11 @@
    ],
    "knowledge": "Students understand the effects on environments of human alteration of biomes (AC9HG9K02), challenges to sustainable food production and management strategies (AC9HG9K04), and the impacts of production and consumption on places with sustainability strategies (AC9HG9K08). They can describe human-environment interconnections and identify sustainability challenges at a general level.",
    "endpoint": "Students explain the nature of human-induced environmental changes that challenge the sustainability of places and environments, and identify tensions between conflicting perspectives of individuals, communities and governments on sustainable practices.",
+   "elaborations": [
+    "identifying tensions between the conflicting perspectives of individuals, communities and governments on the use of sustainable practices",
+    "explaining the nature of human-induced environmental changes (for example, water and atmospheric pollution; loss of biodiversity; degradation of land and aquatic environments) and the challenge they pose for sustainability",
+    "discussing the concept of sustainability in relation to environmental functions and identifying tensions between the conflicting perspectives of communities, businesses and government"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4865,6 +5117,11 @@
    ],
    "knowledge": "Students can explain conflicting stakeholder perspectives on sustainability (AC9HG10K01) and understand human-induced environmental change types. They have engaged with interconnections between human activity and environments (AC9HG9K02, AC9HG9K08) and understand that different people have different relationships to place.",
    "endpoint": "Students discuss the influence of people's environmental world views (human-centred and earth-centred) regarding environmental management and explain how world views shape choices of management methods.",
+   "elaborations": [
+    "discussing the influence of people's environmental world views (human-centred and earth-centred) regarding environmental management",
+    "comparing differences in peoples' views about the causes of an environmental issue of personal, national and global importance",
+    "discussing whether environmental change is necessarily a problem that should be managed and explaining people's choices of methods for managing or responding to environmental changes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4958,6 +5215,11 @@
    ],
    "knowledge": "Students understand the spiritual and aesthetic value of landscapes for First Nations Australians (AC9HG8K03) and have engaged with environmental world views including distinctions between anthropocentric and other frameworks (AC9HG10K02). They have developed awareness of Country/Place as a concept in earlier years.",
    "endpoint": "Students explain First Nations Australians' approaches to custodial responsibility and environmental management in different regions of Australia, including the influence of cultural values, the role of First Nations Park Rangers, and First Nations models of sustainability.",
+   "elaborations": [
+    "identifying the influence of cultural values on how First Nations Australians manage environments (for example, continuity of cultural practices, management or development of Country/Place, and land tenure systems) and explaining custodial responsibilities for a Country/Place",
+    "discussing the role of First Nations Australian Park Rangers and their cultural knowledge and practices in the management of their Country/Place and environments",
+    "explaining First Nations Australians' models of sustainability, which contribute to broader conservation practices; for example, obligations to Country/Place, land management and care practices such as cleaning up the land and fire management, removal of weeds and rubbish, protection of threatened species, and capacity building within their communities"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5058,6 +5320,13 @@
    ],
    "knowledge": "Students understand human-induced environmental changes and sustainability (AC9HG10K01), environmental world views (AC9HG10K02), and First Nations custodial approaches (AC9HG10K03). They have engaged with sustainability strategies for biomes (AC9HG9K04) and urban places (AC9HG8K09), providing a prior framework for evaluating management strategies.",
    "endpoint": "Students explain the causes and effects of a change in an identified environment and propose and compare strategies to manage sustainability, drawing on environmental, economic and social criteria and considering trade-offs and the perspectives of different stakeholders.",
+   "elaborations": [
+    "identifying a context to be studied, describing the causes of the environmental change and impacts for the sustainability of its functions (resource, service or spiritual)",
+    "recognising and discussing the influence of people's world views on how management strategies are developed and implemented",
+    "proposing strategies to manage the effects of environmental change; for example, environmental strategies – establishing marine reserves, national parks, World Heritage Sites or ecosystem-based management; spatial strategies – corridors to preserve flora and fauna or urban planning to reduce energy consumption; holistic thinking – addressing past and present causes of environmental change",
+    "comparing management strategies in Australia with strategies in another country for human-induced environmental change, using criteria; for example, managing waste in Australia compared with India's rubbish pickers or managing floods in Australia compared to floods in China",
+    "explaining how Traditional Owners, communities, developers, governments and non-government organisations use environmental, economic and social criteria, and consider trade-offs when making decisions"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5156,6 +5425,11 @@
    ],
    "knowledge": "Students have examined causes of urbanisation and its impacts on places (AC9HG8K06), reasons for and effects of migration (AC9HG8K08), and interconnections between places through trade and consumption (AC9HG9K07-K08). They understand that places differ in economic and social conditions but have not yet used formal measurement indices.",
    "endpoint": "Students identify the UN Sustainable Development Goals relevant to human wellbeing, compare different measurements of human wellbeing including GDP, HDI and PQLI, and interpret and explain trends in human wellbeing in a developed and a developing country over time.",
+   "elaborations": [
+    "identifying the United Nations Sustainable Development Goals 2015–2030 relevant to human wellbeing",
+    "comparing different measurements of human wellbeing (for example, comparing rankings of selected indicators such as Gross Domestic Product [GDP], Human Development Index [HDI] and Physical Quality of Life Index [PQLI] for Australia, India and a country in the Pacific) and explaining trends in the different measurements",
+    "interpreting and explaining trends in human wellbeing in a developed country and a developing country over time; for example, Australia compared with a country in Asia or the Pacific"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5255,6 +5529,12 @@
    ],
    "knowledge": "Students can compare wellbeing measurements using GDP, HDI, PQLI and other indices at global scale (AC9HG10K05). They understand urbanisation causes and effects (AC9HG8K06) and internal/international migration patterns (AC9HG8K08), which are relevant to within-country wellbeing variation.",
    "endpoint": "Students identify and describe the causes and consequences of spatial inequality in human wellbeing within India or another country in Asia, interpreting spatial data on wellbeing to identify regions of high and low wellbeing and explaining similarities and differences.",
+   "elaborations": [
+    "interpreting and analysing measures of human wellbeing, and identifying and describing the causes and consequences of inequality",
+    "identifying and describing the economic, social, technological, political or environmental causes of variations in human wellbeing within India or another country compared to Australia",
+    "interpreting and analysing spatial data on human wellbeing in India or another country in Asia to identify the regions with high and low levels of human wellbeing, explaining similarities and differences; for example, rural Rajasthan compared to urban Mumbai",
+    "interpreting and analysing measures of human wellbeing, such as the Multidimensional Poverty Index (MPI), Press Freedom Index (PFI) and Fragile States Index (FSI), and making inferences about the level of wellbeing at different scales; for example, for child labour and child slaves at the local scale or for Syria or Afghanistan at the national scale"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5351,6 +5631,11 @@
    ],
    "knowledge": "Students understand spatial wellbeing variations at the regional/national scale using international cases (AC9HG10K06) and are familiar with wellbeing measurement tools (AC9HG10K05). They have engaged with First Nations custodial approaches (AC9HG10K03) and Australia's internal migration and urban/rural dynamics (AC9HG8K06, AC9HG8K08).",
    "endpoint": "Students explain the reasons for and consequences of spatial variations in human wellbeing in Australia, including identifying causes for First Nations Australians' wellbeing data and explaining how a person's wellbeing is influenced by where they live, with reference to interconnections of environmental, economic, social and technological factors in at least two different places.",
+   "elaborations": [
+    "explaining the environmental factors (access to resources – fossil fuels, water, fertile soils), the social factors (adequate food, health and education services), the economic factors (employment, income) and the technological factors (information and communications technology) that influence human wellbeing and development between and within countries",
+    "interpreting and analysing similarities, differences, patterns and trends in human wellbeing data for communities of First Nations Australians compared to non-Indigenous Australians, and explaining the links between human wellbeing and Closing the Gap initiatives",
+    "explaining how a person's wellbeing is influenced by where they live, with reference to interconnections of environmental, economic, social and technological factors in at least 2 different places in Australia, such as urban and remote places"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5449,6 +5734,11 @@
    ],
    "knowledge": "Students understand causes and consequences of wellbeing variation at global scale (AC9HG10K05), within a country in Asia (AC9HG10K06), and within Australia including for First Nations Australians (AC9HG10K07). They are positioned to evaluate organisational responses against the causes identified in those earlier standards.",
    "endpoint": "Students identify and explain responses of government and non-government organisations to improve human wellbeing in Australia, India and a Pacific country, evaluating programs against their objectives and outcomes.",
+   "elaborations": [
+    "identifying and describing a national, state or community program to reduce regional inequalities in human wellbeing in a country such as Papua New Guinea or Indonesia",
+    "explaining the objectives and outcomes of an overseas economic and social development program by the Australian Government (for example, AusAID) or a non-government overseas aid program (for example, World Vision) in India or a country in the Pacific",
+    "identifying and explaining ways to improve the wellbeing of remote communities of First Nations Australians, including ways proposed by the communities"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5540,6 +5830,11 @@
    ],
    "knowledge": "At Y9, students developed a range of questions for geographical inquiry (AC9HG9S01). At Y10 the added complexity is working with multi-scale phenomena and linking questions across scales (local, national, global) using geographical concepts (place, space, environment, interconnection, sustainability, scale, change) to sharpen focus.",
    "endpoint": "Students develop a range of relevant questions to investigate a geographical phenomenon or challenge, modifying and refining questions to incorporate geographical concepts and scale of study, and planning an investigation across multiple scales using digital tools.",
+   "elaborations": [
+    "developing a range of relevant questions to investigate why a geographical phenomenon has changed or a challenge may arise; for example, 'What is human wellbeing?', 'How has human wellbeing changed over time?', 'How and why should inequality in human wellbeing be reduced?'",
+    "developing and modifying questions to sharpen the focus of an investigation using concepts or scale of study; for example, 'How are variations in the spatial distribution of human wellbeing measured at the global scale?', 'Why does human wellbeing vary between and within countries?' (national scale), 'How would you measure human wellbeing in the local area?' (local scale)",
+    "planning an investigation of a phenomenon or challenge being studied at a range of scales, using digital tools; for example, investigating the causes of human-induced climate change at the global scale and its impacts on Australia, Bangladesh and/or a Pacific Island country at the national scale"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5632,6 +5927,15 @@
    ],
    "knowledge": "At Y9, students collected, represented and compared data using primary and secondary methods, geospatial technologies and digital tools (AC9HG9S02). At Y10 the additional complexity involves evaluating sources for relevance, reliability and bias, respecting First Nations consultation protocols, and representing multi-variable data using geospatial and digital tools.",
    "endpoint": "Students collect data from primary and secondary research methods, evaluate sources for relevance, reliability and bias, respect First Nations consultation protocols where relevant, and represent multi-variable data using geospatial technologies and digital tools.",
+   "elaborations": [
+    "identifying primary research methods, including fieldwork, to collect original materials; for example, survey and interviews regarding perspectives on environmental management at the local scale, or strategies to improve human wellbeing of First Nations Australians at the national and local scale",
+    "collecting relevant secondary research materials online using targeted criteria; for example, \"allintext: critically endangered list by country\" or \"allintext: targets for reducing hunger or increasing access to health care\"",
+    "identifying and respecting protocols for consultation with communities of First Nations Australians when planning and conducting investigations; for example, acknowledging their earth-centred world view and how their traditional knowledges contribute to environmental management projects, or considering cultural and spiritual wellbeing of First Nations Australians when implementing programs to reduce economic and social inequality",
+    "evaluating primary or secondary research materials for relevance (for example, \"Does the information reflect current thinking?\"), reliability (for example, \"Who is/are the author/s? Does the author reference other experts in the field?\") and bias, such as information bias presenting one side of an issue, or selection bias presenting information on the positive aspects of foreign aid with cultural and social issues not considered",
+    "comparing findings from primary research with those from secondary research materials for relevance and reliability",
+    "representing multi-variable data using geospatial technologies; for example, using scatterplots to visually represent data for countries to demonstrate the correlation between 2 variables, such as comparing adult literacy with GDP per capita in United Arab Emirates or Bhutan",
+    "representing multi-variable data using digital tools; for example, generating pie graphs showing threats to biodiversity; using digital photographs to indicate differences in material goods between people and places"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5728,6 +6032,11 @@
    ],
    "knowledge": "At Y9, students evaluated geographical data to make generalisations and predictions, explain patterns and trends and infer relationships (AC9HG9S03). At Y10 the same descriptor applies with the implicit expectation that students apply it to more complex data sets — including geospatial technology outputs, multi-variable data and cross-national comparisons — that match the Y10 content strand complexity.",
    "endpoint": "Students evaluate geographical data and information to develop generalisations, explain patterns and trends in complex datasets including geospatial outputs, and infer relationships between key environmental or wellbeing indicators at the national scale.",
+   "elaborations": [
+    "developing generalisations; for example, critically analysing text and images for their meaning and significance, such as satellite images showing before and after deforestation in the Amazon or contrasting nightlife in North and South Korea",
+    "explaining patterns and trends; for example, explaining why a vegetation corridor for movement of koalas assists them to traverse through the bush and reduce death rates, or whether there has been an increased use of technology such as satellite images, drones and robots during and after a natural disaster to identify the need for aid",
+    "inferring relationships between key environmental indicators and sustainability of places at the national scale; for example, using a geospatial technologies application to create a map of Australia and another country to show measures of environmental change such as air quality, freshwater quality, fish resources, energy use, biodiversity or waste generation"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5820,6 +6129,10 @@
    ],
    "knowledge": "At Y9, students evaluated data to justify conclusions (AC9HG9S04). At Y10 the same descriptor is applied with the expectation that conclusions integrate at least two geographical concepts as organisers and that justification examines whether the reasons given are adequate for the conclusion.",
    "endpoint": "Students draw conclusions using at least two geographical concepts as organisers and examine whether and how the reasons given justify the conclusion reached, across sustainability and wellbeing contexts.",
+   "elaborations": [
+    "drawing conclusions using at least 2 concepts, such as place, space, environment, interconnection, sustainability, scale and change as organisers for example discussing the concept of sustainability in relation to human-induced change affecting environments or considering implications of spatial variations in human wellbeing",
+    "examining the reasons given for making a specific decision and explain how these reasons have or have not justified the conclusion reached, such as considering the interconnection of environmental, economic, social, political or technological factors when developing strategies to address sustainable management of environments, or unequal access of people to resources essential for human wellbeing"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5887,6 +6200,13 @@
    ],
    "knowledge": "At Y9, students developed and evaluated strategies using environmental, economic or social criteria, recommended a strategy and explained predicted impacts (AC9HG9S05). At Y10 the same descriptor applies with greater complexity: explicit reflection on personal values, evaluation of collective as well as individual action, and integration with First Nations traditional practices.",
    "endpoint": "Students develop and evaluate both individual and collective strategies using environmental, economic and social criteria; recommend a strategy with explained predicted impacts; reflect on personal values and their influence on strategy choices.",
+   "elaborations": [
+    "proposing individual action and supporting the strategy with reasons; for example, reducing their ecological footprint by reducing the amount of food packaging included in a packed lunch, or becoming volunteers for non-government organisations such as the Red Cross or Red Crescent to increase social connectedness",
+    "proposing collective action and evaluation of actions; for example, identifying ways to improve the wellbeing of remote communities of First Nations Australians and evaluating the actions proposed and implemented by the community members",
+    "evaluating the effectiveness of a strategy in relation to environmental, economic or social criteria; for example, reflecting on whether environment degradation has been reduced and human wellbeing improved",
+    "explaining reasons for decisions and choices, such as the traditional use of firestick farming by First Nations Australians to control fires, or grassroots decisions on implementation and effectiveness of aid projects",
+    "reflecting on personal values and attitudes and how these influence strategies; for example, applying sustainable design principles to urban redevelopment projects that provide green, open spaces for citizens, or supporting non-government organisations that reflect personal values"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5979,6 +6299,11 @@
    ],
    "knowledge": "At Y9, students created descriptions, explanations and responses using geographical knowledge, tools, concepts and terms (AC9HG9S06). At Y10 the same descriptor applies with added complexity: explicit use of tone appropriate to purpose and audience (including authoritative tone), formal use of structural features, and integration of geospatial data representations as part of the response.",
    "endpoint": "Students create descriptions, explanations and responses that use appropriate structural features, incorporate geographical knowledge and tools, deploy concepts and terms accurately, acknowledge research findings, and apply tone appropriate to purpose and audience.",
+   "elaborations": [
+    "creating a description for a purpose, using structural features to organise ideas, findings, impacts and actions; for example, sub-headings",
+    "presenting conclusions using geospatial technologies and digital tools to create representations of data (for example, the trends in Human Development Index [HDI] over time in a selected country or region) and research findings (for example, how a person's wellbeing is influenced by where they live) to explain causes and effects of a geographical phenomenon or challenge, and reinforcing understanding of the interconnections between people, places and the environment",
+    "developing an explanation, applying tone appropriate to purpose and audience; for example, using an authoritative tone, and referring to representations of data and information when explaining a strategy to improve the sustainability of an identified environment or action to improve human wellbeing"
+   ],
    "nodes": [
     {
      "n": 1,

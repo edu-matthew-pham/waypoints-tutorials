@@ -1,6 +1,6 @@
 {
  "subject": "economics",
- "source": "waypoints-kit 6bb92e4",
+ "source": "waypoints-kit d93e6e5",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -16,6 +16,13 @@
    ],
    "knowledge": "Students have explored influences on consumer choices and strategies for making informed personal consumer and financial choices (AC9HS6K08). They can identify that people make decisions about spending and saving but have not formally engaged with the economic concepts of scarcity, resource allocation, or opportunity cost.",
    "endpoint": "Students explain why opportunity cost exists as decisions are made to allocate limited resources to meet unlimited needs and wants.",
+   "elaborations": [
+    "explaining the concept of 'economic scarcity' in relation to 'What to produce?', 'How to produce?' or 'For whom to produce?'",
+    "identifying the needs and wants of a local community, and exploring how limited resources are currently used to meet unlimited needs and wants",
+    "explaining how economic resources might be used more sustainably to meet needs and wants into the future",
+    "investigating how First Nations communities use exchange systems (barter) or networks (partnerships) to decide about the use of limited resources in sustainable ways",
+    "explaining the concept of 'opportunity cost' in relation to a choice; for example, if a student chooses to spend their time (resource) riding their bike after school, they cannot go for a swim (trade-off)"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -152,6 +159,12 @@
    ],
    "knowledge": "Students have explored consumer choices and how individuals make financial decisions (AC9HS6K08). They are familiar with the idea of goods and services from everyday life but have not formally analysed why businesses exist, the range of business structures, or the distinction between goods-producing and service-providing enterprises.",
    "endpoint": "Students explain the reasons businesses exist and how different types of businesses provide goods and services.",
+   "elaborations": [
+    "identifying why businesses exist; for example, to produce goods and services, to make a profit, to provide employment, and investigating the different ways that goods and services are provided to people, such as through shopping centres, local markets, online, small independent stores and remote community stores",
+    "identifying the features of different types of businesses, including sole proprietorship, partnership, cooperative, corporation, franchise and not-for-profit organisation",
+    "investigating a business owned by First Nations Australians, exploring the types of goods and services offered and why this business was started",
+    "identifying examples of different types of businesses that sell goods and/or services in the local community; for example, a sole proprietor operating a car yard, a partnership providing legal services or a corporation selling groceries through a chain of supermarkets"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -253,6 +266,12 @@
    ],
    "knowledge": "Students understand why businesses exist and can identify different business types (AC9HE7K02). They are building a picture of the business landscape but have not yet examined the human factors — knowledge, skills, values and attitudes — that drive business creation and success.",
    "endpoint": "Students explain the characteristics of entrepreneurs and how these influence the success of a business.",
+   "elaborations": [
+    "identifying examples of entrepreneurs and the entrepreneurial knowledge and skills that they bring to their business, such as recognising opportunities, establishing a shared vision and making decisions about how the business is run",
+    "describing the characteristics of First Nations Australian entrepreneurs; for example, community-run companies such as the Gumatj Aboriginal Corporation and individuals such as Dean Foley and Tahnee Edwards, by asking questions such as 'What is their story?', 'How did they achieve success?' and 'What processes did they apply?'",
+    "analysing the influence of values on entrepreneurial decision-making; for example, identifying and taking advantage of an opportunity, negotiating with stakeholders, and complying with the law and regulations",
+    "combining knowledge, skills and attitudes demonstrated by entrepreneurs with observations of successful local businesses to explain factors that contribute to success, such as seeing and taking advantage of an opportunity or demonstrating initiative and innovation"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -362,6 +381,12 @@
    ],
    "knowledge": "Students have explored consumer choices and personal financial decision-making (AC9HS6K08). They have encountered the idea that people earn income but have not formally examined the full range of work types, income sources, or the social and identity dimensions of work — including unpaid, volunteer and First Nations community contributions.",
    "endpoint": "Students explain the reasons individuals work, the types of work they are involved in, and how they may derive an income.",
+   "elaborations": [
+    "identifying different types of work; for example, full-time, part-time, casual, at home, paid, unpaid, unrecognised and volunteer, to appreciate the reasons individuals work or contribute to community organisations",
+    "identifying the ways people derive an income, such as working for a wage or salary, owning a business, being a shareholder, providing a rental service or receiving a social security benefit",
+    "describing examples of how continuity of cultural practices and management of Country/Place contributes to and sustains First Nations communities; for example, regional tourism ventures, coaching and mentoring initiatives, and fostering entrepreneurial and start-up cultures in regional and remote communities",
+    "analysing the contribution that work can make to an individual's identity and role within a community; for example, earning an income, contributing to self-esteem and happiness, supporting the community through volunteering, enhancing material and non-material living standards"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -469,6 +494,12 @@
    ],
    "knowledge": "Students have explored consumer choices and strategies for making informed financial decisions (AC9HS6K08) and are developing understanding of work and income (AC9HE7K04). They are familiar with making purchases but have not formally examined the legal and ethical framework of rights and responsibilities that governs consumer and financial transactions.",
    "endpoint": "Students explain the rights and responsibilities of individuals and businesses in relation to consumer and financial products and services.",
+   "elaborations": [
+    "distinguishing the difference between rights and responsibilities, and creating a list of the rights and responsibilities of individuals and businesses",
+    "explaining the rights of individuals and businesses in relation to consumer and financial products and services; for example, warranties, cooling-off periods and processes for returning goods",
+    "discussing the responsibilities of businesses in relation to consumer and financial products and services, such as the role of mandatory and voluntary standards, and product safety recalls",
+    "explaining the importance of developing personal or business budgets or savings plans before making decisions in relation to consumer and financial products and services"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -601,6 +632,10 @@
    ],
    "knowledge": "Students have developed questions about people, events, developments, places and systems in primary HASS (AC9HS6S01). They can form basic inquiry questions but have not yet applied economic and business concepts and vocabulary systematically to question construction, nor targeted their questions specifically at contemporary issues.",
    "endpoint": "Students develop questions to investigate a contemporary economic and business issue.",
+   "elaborations": [
+    "developing questions to form the basis of an investigation; for example, 'How does an understanding of consumer rights and responsibilities impact on decision-making?' and 'What are the attributes of an entrepreneur?'",
+    "developing questions, using economic and business concepts and terms; for example, 'How do businesses decide what to produce?', 'What is economic scarcity?' and 'Why can individuals not have all the items they want, meaning they must choose?'"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -675,6 +710,12 @@
    ],
    "knowledge": "Students can locate, collect and organise information from primary and secondary sources in a range of formats (AC9HS6S02). At Year 7, the demand shifts to selecting from a wider range of source types — including government and NGO websites and digital tools — and to organising using more specialised formats such as tables, graphs and visual displays.",
    "endpoint": "Students locate, select and organise information and data from a range of sources.",
+   "elaborations": [
+    "locating online sources; for example, using advanced search functions: 'define: market' or targeted criteria: 'allintext: successful Australian entrepreneurs'",
+    "selecting relevant information and data from sources by asking questions such as 'How will the data or information help answer the question?' about websites of government departments or non-government organisations",
+    "collaborating and safely exchanging information online with an entrepreneur to identify attributes that built success",
+    "organising data into appropriate formats using specialised digital tools, such as tables and graphs, visual displays"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -779,6 +820,11 @@
    ],
    "knowledge": "Students can evaluate information and data to identify and describe patterns and trends, and infer relationships (AC9HS6S03). The Year 7 demand adds specific economic frames — identifying issues, identifying multi-variable trends using interactive digital tools, and reasoning about cause-and-effect relationships in economic contexts.",
    "endpoint": "Students interpret information and data to identify economic and business issues, trends and economic cause-and-effect relationships.",
+   "elaborations": [
+    "interpreting information to identify economic and business issues; for example, inferring the effect of growth in shopping online on the number of customers entering stores",
+    "interpreting multi-variable data by using interactive digital tools to identify trends and to answer questions such as 'For a 10-year period, to what extent has the number of people in casual work changed?'",
+    "interpreting visual displays of multi-variable data to identify a cause-and-effect relationship within an economic and business issue, such as the relationship between income earned by an individual and levels of saving and spending"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -883,6 +929,12 @@
    ],
    "knowledge": "Students can develop evidence-based conclusions and propose actions with assessed effects (AC9HS6S05, AC9HS6S06). The Year 7 demand adds the economic frame of costs and benefits — structuring a response to an issue by explicitly identifying and weighing the trade-offs involved, and explaining that a decision selects one alternative over another.",
    "endpoint": "Students develop a response to an economic and business issue, identifying potential costs and benefits.",
+   "elaborations": [
+    "developing a response to an issue by combining known knowledge with new ideas; for example, when purchasing a mobile phone, use the product statement and personal budget to identify benefits and costs",
+    "identifying and describing reasons that inform the response to an issue; for example, the reasons for using recyclable materials in packaging as a way to support sustainable use of economic resources to meet needs and wants into the future",
+    "identifying the potential costs and benefits of a decision; for example, deciding whether to work part-time involves identifying benefits such as earning money and recognising costs such as time on the weekend devoted to travelling to and from work",
+    "explaining how making an economic and business decision involves selecting one alternative over another; for example, to satisfy a particular want, a selection of goods or services is preferred or purchased over another"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -957,6 +1009,10 @@
    ],
    "knowledge": "Students can present descriptions and explanations drawing on findings and viewpoints from sources using relevant terms and conventions (AC9HS6S07). The Year 7 demand adds domain-specific economic vocabulary — market, income, business, goods and services, costs and benefits — and requires students to embed data and information from sources explicitly in their explanations.",
    "endpoint": "Students create descriptions and explanations, using economic and business knowledge, concepts and terms, and referencing information and data from sources.",
+   "elaborations": [
+    "developing a response to an issue that orients the audience (for example, peers or community members) to the issue, using relevant economic and business concepts and terms such as 'market', 'income', 'business', 'goods and services' and 'costs and benefits'",
+    "explaining ideas and decisions with details and examples, using data and information presented in appropriate formats; for example, visual displays, tables and graphs, or budget and savings plans, and research findings presented in appropriate formats, such as a graphic organiser or summary"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1035,6 +1091,12 @@
    ],
    "knowledge": "Students understand why opportunity cost exists as decisions are made to allocate limited resources to meet unlimited needs and wants (AC9HE7K01). They understand the reasons businesses exist and how different types of businesses provide goods and services (AC9HE7K02).",
    "endpoint": "Students explain how markets influence decisions about the allocation of resources to the production of goods and services, and how prices signal those decisions.",
+   "elaborations": [
+    "identifying who is involved in the market system in Australia and explaining how the market operates through the interactions of participants (household, business, finance and government sectors)",
+    "explaining how interaction between buyers and sellers enables the allocation of resources to the production of goods and services; that is, 'What to produce?', 'How to produce?' and 'For whom to produce?'",
+    "discussing examples of products or services that sell for high prices and low prices, and identifying the factors that influence the setting of price; for example, factors influencing the cost of petrol include available supply, consumer demand, manufacturing costs and competition",
+    "explaining how price is the means by which the decisions of consumers and businesses interact to determine the allocation of resources; for example, when the price of a good or service rises, resources are redirected to produce additional goods and services"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1189,6 +1251,12 @@
    ],
    "knowledge": "Students understand the reasons businesses exist and how different types of businesses provide goods and services (AC9HE7K02). They understand entrepreneur characteristics and how these influence business success (AC9HE7K03). They understand how markets allocate resources through price signals (AC9HE8K01).",
    "endpoint": "Students discuss different ways that businesses adapt to opportunities in the market and respond to the changing nature of work.",
+   "elaborations": [
+    "discussing how businesses identify needs, niches and gaps in established markets to guide the development of specific services or products to address these opportunities; for example, electric cars and solar power",
+    "identifying where businesses have used technologies to streamline or gain efficiencies in existing business models; for example, ride share, food delivery applications and online retail",
+    "explaining current influences on the ways people work; for example, technological change, outsourced labour in the global economy, rapid communication changes, casualisation of the workforce",
+    "identifying and explaining changes to the workforce over time; for example, the jobs available, the way individuals or businesses value particular work, career length and human resource development, changing demography, corporate social responsibility, sustainability practices, changes to workplace laws"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1313,6 +1381,11 @@
    ],
    "knowledge": "Students understand the reasons businesses exist and characteristics of entrepreneurs (AC9HE7K02, AC9HE7K03). They have context from AC9HE8K02 on how businesses identify market opportunities and adapt.",
    "endpoint": "Students investigate how First Nations Australian businesses and entrepreneurs develop opportunities in the market.",
+   "elaborations": [
+    "investigating how First Nations Australian businesses and entrepreneurs establish partnerships or cooperatives to provide goods and services such as farming, fashion, design or tourism",
+    "investigating how First Nations Australian communities participate in contemporary markets; for example, producing, buying and selling goods and services; approaches to marketing, employment and social contribution; and strategies to overcome difficulties in accessing markets",
+    "investigating how First Nations Australian businesses and entrepreneurs use connection to, and responsibility for, Country/Place to make innovations in the production and distribution of goods and services; for example, medicines and food derived from the environment or cultural tourism"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1411,6 +1484,13 @@
    ],
    "knowledge": "Students understand why individuals work and how income is derived (AC9HE7K04). They understand consumer rights and financial responsibilities (AC9HE7K05). They have foundational knowledge of how market prices affect decision-making (AC9HE8K01).",
    "endpoint": "Students explain the importance of Australia's system of taxation and how this system affects decision-making by individuals and businesses.",
+   "elaborations": [
+    "discussing why the government collects taxation revenue and provides services to individuals and communities; for example, the provision of health, education, paid parental leave, childcare, aged care and infrastructure",
+    "explaining how, when and why young Australians pay tax, and the type of government services provided to them",
+    "identifying the rights and obligations of individuals in relation to taxation by asking questions such as, 'When should I apply for a tax file number?', 'How is income tax calculated?', 'What should I do when an employer is not deducting the right amount of tax?' and 'How do I lodge a tax return?'",
+    "identifying examples of taxes paid by individuals and businesses, and explaining how they may influence decision-making about spending; for example, the effect of income tax, import duties or excise duties on price of goods and services",
+    "explaining how the collection of taxes and the provision of services supports individual human and financial wellbeing, communities and Australian society"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1534,6 +1614,11 @@
    ],
    "knowledge": "Students understand consumer rights and financial responsibilities (AC9HE7K05). They understand income sources and the reasons individuals work (AC9HE7K04). They have context from AC9HE8K04 on how the taxation system affects individual financial decisions.",
    "endpoint": "Students explain processes that individuals and/or businesses use to plan and budget to achieve short-term and long-term financial objectives.",
+   "elaborations": [
+    "identifying ways short- and long-term personal financial objectives can be achieved; for example, through developing a budget and having a savings plan",
+    "explaining how financial records, such as income statements, balance sheets, budgets and cash flow statements, inform business decision-making",
+    "identifying and explaining business processes that are used to manage finances and plan in the short- and long-term; for example, devising a business plan, borrowing from a financial institution, building savings by earning interest"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1655,6 +1740,10 @@
    ],
    "knowledge": "Students can develop questions to investigate a contemporary economic and business issue (AC9HE7S01). At Year 8, the expectation shifts toward questions that are more precisely targeted using economics and business concepts and terms, and toward a wider range of issue types.",
    "endpoint": "Students develop questions — including targeted questions using economics and business concepts and terms — to investigate a contemporary economic and business issue.",
+   "elaborations": [
+    "developing a range of questions to form the basis of an investigation; for example, 'Why does an individual or group establish a business?' and 'How are consumers' rights protected?'",
+    "developing targeted or key questions using economics and business concepts and terms, such as, 'How is the price of goods and services determined?' and 'Why do changes in market price act as a signal about how scarce resources should be allocated?'"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1726,6 +1815,11 @@
    ],
    "knowledge": "Students can locate, select and organise information and data from a range of sources (AC9HE7S02). At Year 8, the expectation shifts toward more advanced search strategies, explicit source evaluation, and using specialised digital tools to organise data.",
    "endpoint": "Students locate, select and organise information and data from a range of sources, including using advanced search functions and digital tools.",
+   "elaborations": [
+    "locating online sources; for example, exploring advanced search functions such as 'allintitle: taxation in Australia' or 'define: not-for-profit organisation'",
+    "selecting relevant information and data from sources about websites of government departments or non-government organisations by asking questions such as 'How will the data or information help answer the question?'",
+    "organising data into appropriate formats using specialised digital tools; for example, constructing a diagram modelling the relationship between consumers, producers and workers in a market or a table showing the features of different ways businesses adapt to opportunities in the market"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1797,6 +1891,11 @@
    ],
    "knowledge": "Students can interpret information and data to identify economic and business issues, trends and cause-and-effect relationships (AC9HE7S03). At Year 8, the expectation develops toward interpreting multi-variable data and identifying cause-and-effect relationships within economic and business issues.",
    "endpoint": "Students interpret information and data — including tables, graphs and multi-variable data — to identify economic and business issues, trends and cause-and-effect relationships.",
+   "elaborations": [
+    "interpreting information to identify economic and business issues; for example, inferring a change in the price of a key commodity as a signal about scarcity of resources or increasing consumer expenditure",
+    "interpreting data displayed in tables and graphs to identify trends and answer questions such as, 'For a 10-year period, what is the trend in the percentage of people over 60 paying income tax?'",
+    "interpreting multi-variable data to identify a cause-and-effect relationship within an economic and business issue; for example, an increase in income earned by an individual and taxation paid, or when the supply of a good and service increases, the price adjusts"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1894,6 +1993,12 @@
    ],
    "knowledge": "Students can develop a response to an economic and business issue identifying potential costs and benefits (AC9HE7S04). At Year 8, the expectation develops toward responses that combine known knowledge with new ideas and that require explicit identification and description of costs and benefits.",
    "endpoint": "Students develop a response to an economic and business issue, identifying potential costs and benefits and explaining the reasoning behind their response.",
+   "elaborations": [
+    "developing a response to an issue by combining known knowledge with new ideas; for example, using a personal budget and savings plan to decide whether to purchase a good or service",
+    "identifying and describing reasons informing a recommendation; for example, the reasons the government collects taxation revenue and provides services to individuals and communities",
+    "identifying the potential costs and benefits of a decision; for example, doing casual work involves identifying benefits such as money earned, and costs such as less certainty about work hours each week",
+    "explaining that making an economic and business decision involves choice and foregoing an alternative want; for example, the goods and/or services they must forgo or give up in order to satisfy a particular want"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1967,6 +2072,10 @@
    ],
    "knowledge": "Students can create descriptions and explanations using economic and business knowledge, concepts and terms, and referencing information and data from sources (AC9HE7S05). At Year 8, the expectation develops toward explicit orientation of the audience to the issue and more deliberate use of data to support conclusions.",
    "endpoint": "Students create descriptions and explanations — using economic and business knowledge, concepts and terms, and referencing information and data from sources — that orient an audience to an issue and support conclusions.",
+   "elaborations": [
+    "developing a response to an issue that orients the audience (for example, peers or community groups) to the issue, using relevant economic and business concepts and terms such as 'markets', 'business', 'consumer and financial decision-making' and 'taxation'",
+    "creating a description or explanation using data or information presented in appropriate formats to support decisions and conclusions about an economic and business issue"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2040,6 +2149,13 @@
    ],
    "knowledge": "From Y8: how markets influence resource allocation decisions and the effect of prices (AC9HE8K01); how businesses adapt to market opportunities and changing work (AC9HE8K02); First Nations Australian businesses and entrepreneurs in markets (AC9HE8K03). Students understand basic market mechanisms and business types but have not yet studied the financial sector's specific role as an intermediary.",
    "endpoint": "Students explain the role of Australia's financial sector and its effect on economic decision-making by individuals, businesses and global markets.",
+   "elaborations": [
+    "identifying different organisations within Australia's financial sector, such as banks, credit unions or building societies, and explaining their functions; for example, collecting deposits, pooling savings, and lending funds to individuals and businesses",
+    "explaining the nature of investment or the financial products and services that enable people to receive income in the future; for example, shares, earning interest on term deposits, managed funds or superannuation",
+    "explaining the difference between good and bad debt, how to manage debt, the risks of over-indebtedness and the importance of having a savings buffer",
+    "explaining the forces that shape and affect Australia's financial landscape, such as financial deregulations, technological changes, economic and business activities, and consumer and business sentiment about the future",
+    "identifying examples and explaining how Australia's financial sector supports businesses in global markets; for example, the nature of global financial services, payment systems – clearing and settlement, access to currencies, insurance and capital"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2198,6 +2314,12 @@
    ],
    "knowledge": "From AC9HE9K01 (direct predecessor): Australia's financial sector — its structure, functions, products and global role. From Y8: market mechanisms and price signals (AC9HE8K01), business adaptation (AC9HE8K02). Students understand how individual actors operate in markets but have not yet analysed how their decisions are mutually dependent within local, national and global economic systems.",
    "endpoint": "Students explain how economic decision-making involves the interdependence of consumers, businesses, the financial sector and government.",
+   "elaborations": [
+    "explaining the interdependent nature of economic decision-making within local, national and global contexts; for example, consumers purchase goods and services, businesses organise production and distribution, and the financial sector facilitates investment",
+    "examining how the nature of globalisation supports transnational corporations use supply chains to develop, produce and deliver a product or service, and explaining the advantages or disadvantages for businesses, workers and consumers",
+    "analysing the implications of interdependence within the global economy for Australian consumers, workers and businesses; for example, costs of the product or service and impacts of disruption or changes to regulations in another country",
+    "identifying examples and explaining how changes to a nation's economic conditions affects other nations; for example, rising unemployment affects consumer demand in one country and impacts the exports of goods and services in another country"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2328,6 +2450,13 @@
    ],
    "knowledge": "From AC9HE9K02 (direct predecessor): how economic decision-making involves interdependence of consumers, businesses, financial sector and government, including globalisation and supply chains. From AC9HE9K01: Australia's financial sector and its global role. Students understand economic interdependence but have not yet specifically investigated why countries trade or analysed Australia's trade relationship with Asia.",
    "endpoint": "Students explain the reasons Australia trades with other nations and the patterns of trade between Australia and Asia.",
+   "elaborations": [
+    "explaining the reasons countries trade, such as variations in the quantity and quality of economic resources within and between countries, to sell surplus goods and services, or to buy goods and services required by individuals and businesses",
+    "identifying the benefits of trade; for example, economic benefits (such as increased production, specialisation, increased household incomes, increased employment), benefits for individuals and businesses (such as opportunities to sell surpluses, competition encouraging greater choice, connections for inventors and entrepreneurs with future discoveries), and national benefits (such as relationships between countries, access to health and education services, and diversified sources of national income)",
+    "analysing patterns of trade between Australia and the countries of Asia over time; for example, total value of trade each year, composition of trade (such as category, goods, services), direction of trade (such as exports to which countries, imports from which countries), percentage change over a decade (such as increase or decrease)",
+    "identifying similarities and differences or trends in the composition and direction of trade between Australia and Asia now and 50 years ago",
+    "explaining the interdependent nature of trade between Australia and the countries of Asia"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2460,6 +2589,14 @@
    ],
    "knowledge": "From Y8: how businesses adapt to market opportunities and the changing nature of work (AC9HE8K02); how First Nations Australian businesses and entrepreneurs develop market opportunities (AC9HE8K03). From Y7: entrepreneur characteristics and how these influence business success (AC9HE7K03). Students understand why businesses exist and how entrepreneurs operate but have not yet studied the specific processes used to create and maintain competitive advantage in global markets.",
    "endpoint": "Students explain the processes businesses use to create and maintain competitive advantage, including the role of entrepreneurs.",
+   "elaborations": [
+    "identifying and explaining processes used by First Nations Australian businesses to out-perform competitors and innovate in global markets; for example, promoting brand image recognition or the uniqueness of experiences, managing cultural and intellectual property, copyright and licensing, and collaborating through the First Nations Chamber of Commerce and Industry",
+    "identifying and explaining the processes First Nations Australian businesses use to maintain, control, protect and develop their cultural expressions in goods and/or services; for example, designing products, licensing of art and music, or consulting on locations of cultural significance for movies, television programs and other commercial activities",
+    "explaining the reasons businesses seek to build or create a competitive advantage; for example, to meet the changing demands of a competitive global market and improve their profit margins",
+    "explaining processes that businesses use to build connections, such as working with other businesses within the industry to share promotion costs, working with government to increase exports, developing highly skilled professionals and leaders in different industries",
+    "explaining processes that businesses use to produce goods and services at a lower cost, such as research and development; improving efficiency in development, production or delivery processes; utilising local resources, and outsourced labour in the global economy",
+    "explaining processes that businesses use to innovate and differentiate products and services from competitors; for example, identifiable marketable attributes, and use of advertising and social media"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2586,6 +2723,13 @@
    ],
    "knowledge": "From Y8 (direct predecessor AC9HE8K05): processes individuals and businesses use to plan and budget to achieve short- and long-term financial objectives. From Y7 (AC9HE7K05): consumer rights and responsibilities of individuals and businesses relating to financial products and services. Students understand planning, budgeting and consumer rights but have not yet studied active risk management strategies — the move from understanding what rights exist to understanding how to manage active threats.",
    "endpoint": "Students explain how individuals and businesses manage consumer and financial risks and rewards.",
+   "elaborations": [
+    "discussing examples of consumer and financial risk to individuals and businesses, such as scams, identity threat or fraudulent transactions",
+    "discussing examples of consumer reward programs; for example, innovative products and services, benefits accrued through loyalty schemes, and rewards for building savings and making investments (such as shares, term deposits, managed funds or home ownership)",
+    "identifying and explaining strategies individuals use to manage consumer and financial risk; for example, through setting financial goals, having insurance and savings, and being alert to scams",
+    "identifying and explaining practices used by businesses to protect the safety of consumers; for example, mandatory and voluntary standards, product safety recalls or cooling-off periods",
+    "reflecting on the importance of ethical decision-making and corporate social responsibility when making consumer and financial decisions; for example, considering consequences for themselves, their families, the broader community and/or the environment"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2714,6 +2858,10 @@
    ],
    "knowledge": "From Y8 AC9HE8S01 (direct predecessor): develop questions to investigate a contemporary economic and business issue. Students can develop questions at Y8 level. Y9 adds two moves: (1) modifying questions to improve focus, and (2) operating with more complex, contemporary issues involving global markets, interdependence and globalisation. The 'modify' move is new and requires meta-cognitive reflection on question quality.",
    "endpoint": "Students develop and modify questions to investigate a contemporary economic and business issue.",
+   "elaborations": [
+    "developing questions to investigate a complex issue, such as 'How do participants in the global economy interact?' and 'Why does international trade benefit Australian society?'",
+    "developing and modifying questions to improve the focus of an investigation, using economic and business concepts and terms such as, 'How can consumers protect themselves from risk?' and 'How do businesses create and maintain a competitive advantage?'"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2787,6 +2935,12 @@
    ],
    "knowledge": "From Y8 AC9HE8S02 (direct predecessor): locate, select and organise information and data from a range of sources. Students can locate and organise sources. Y9 adds 'analyse' to the capability — specifically analysing for relevance (does this help answer the question?) and reliability (who collected it, when, why?) — and adds selecting and presenting data using specialised digital tools and processes.",
    "endpoint": "Students locate, select and analyse information and data from a range of sources.",
+   "elaborations": [
+    "locating online sources using contextually specific terms (for example, 'global markets') or criteria (for example, find 'case studies related to trade between Australia and Asia')",
+    "selecting and analysing information and data for relevance by asking questions such as 'How will the data or information help answer this economic or business question?' or 'How will the data or information inform a response to an economic or business issue?'",
+    "selecting and analysing information and data for reliability by asking questions such as 'How and when was it collected?', 'Who collected the data?' and 'For what purpose was the data collected?'",
+    "selecting and presenting data in appropriate formats using specialised digital tools and processes; for example, a table and graph showing the composition and direction of trade between Australia and Asia"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2916,6 +3070,12 @@
    ],
    "knowledge": "From Y8 AC9HE8S03 (direct predecessor): interpret information and data to identify economic and business issues, trends and economic cause-and-effect relationships. Y9 extends the capability in two key directions: (1) explaining rather than merely identifying (the move to explicit explanation of relationships and mechanisms); and (2) making predictions about consumer and financial impacts — a new move requiring projection from trends to future outcomes.",
    "endpoint": "Students interpret information and data, explaining economic and business issues, trends and economic cause-and-effect relationships, and make predictions about consumer and financial impacts.",
+   "elaborations": [
+    "interpreting information to explain the nature and extent of economic and business issues; for example, the way Australian businesses operate in the global economy",
+    "interpreting multi-variable data to explain direction and time period for a change; for example, change in the direction and composition of Australia's trade in the past 10, 20 or 50 years",
+    "explaining relationships between the actions of individuals and businesses; for example, the way businesses operate in the global economy and implications for the Australian market",
+    "explaining trends to make predictions about who will be affected and how; for example, the trend for money lost in scams and age groups most affected, and predictions about how it will affect the behaviour of individuals and businesses"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3046,6 +3206,12 @@
    ],
    "knowledge": "From Y8 AC9HE8S04 (direct predecessor): develop a response to an economic and business issue, identifying potential costs and benefits. Students can develop a response with costs and benefits identified. Y9 adds two moves: (1) evaluating the response — not just developing it — and (2) using cost-benefit analysis or explicit criteria to decide on a course of action. The 'evaluate' and 'decide' moves are both new additions to the Y8 capability.",
    "endpoint": "Students develop and evaluate a response to an economic and business issue, using cost-benefit analysis or criteria to decide on a course of action.",
+   "elaborations": [
+    "applying strategies to mitigate risk in consumer and financial decision-making; for example, estimating monthly and annual costs of each option and considering ability to pay",
+    "examining why businesses may have to consider opportunity cost when deciding on a course of action; for example, an Australian bank may prioritise support for an existing business operating in local and global markets instead of supporting a new or emerging business",
+    "developing processes that consider the results of a cost-benefit analysis; for example, processes used by businesses to remain competitive in the global market",
+    "selecting and justifying a preferred response using criteria such as consideration of consumer and financial risk"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3171,6 +3337,11 @@
    ],
    "knowledge": "From Y8 AC9HE8S05 (direct predecessor): create descriptions and explanations using economic and business knowledge, concepts and terms, referencing information and data from sources. Students can create descriptions and explanations with source references. Y9 adds two moves: (1) arguments — a new text type requiring a reasoned position with evidence; and (2) acknowledge research findings — moving from referencing to formal acknowledgement of sources. Y9 also adds audience orientation and appropriate tone.",
    "endpoint": "Students create descriptions, explanations and arguments, using economic and business knowledge, concepts and terms that incorporate and acknowledge research findings.",
+   "elaborations": [
+    "developing a response to an issue that orients the audience; for example, peers or representatives of businesses, to the issue using relevant economic and business terms and concepts such as 'interdependence', 'trade', 'comparative advantage', 'competitive advantage', 'globalisation', 'supply chain' 'financial risks and rewards', 'return on investment', 'debt', 'savings buffer', 'scams', 'financial landscape', 'corporate social responsibility', 'financial planning' and 'insurance'",
+    "explaining decisions and conclusions related to an economic or business issue supported by representations of relevant data; for example, visual displays, a graphic organiser or tables and graphs, and research in a range of formats such as explanations, procedures or reports",
+    "presenting a reasoned argument in relation to an economic or business issue, applying tone appropriate to the purpose; for example, using an authoritative tone when explaining trends in data to an audience such as peers or representatives of a business"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3272,6 +3443,12 @@
    ],
    "knowledge": "Students understand the role of Australia's financial sector and its effect on economic decision-making by individuals, businesses and global markets (AC9HE9K01). They understand how economic decision-making involves the interdependence of consumers, businesses, the financial sector and government (AC9HE9K02). They can explain how economic decisions by one actor affect others across the system.",
    "endpoint": "Students explain how and why economic indicators influence economic decision-making by governments, businesses and individuals in Australia.",
+   "elaborations": [
+    "identifying examples of economic indicators, such as economic growth rates, unemployment trends, inflation rates or sustainability indexes",
+    "analysing how the Australian Government may intervene in response to an emerging economic issue or to changes in economic indicators, such as to maintain or improve the standard of living or respond to a decline in gross domestic product",
+    "explaining economic objectives of the Australian Government (for example, economic growth, full employment and price stability) and how these have been framed in response to economic indicators (for example, gross domestic product, business sales or earnings, inflation)",
+    "identifying an example of an economic indicator, such as employment statistics, and explaining how it influences government economic decision-making; for example, by providing support for new apprenticeships and training places"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3444,6 +3621,12 @@
    ],
    "knowledge": "Students understand how economic decision-making involves the interdependence of consumers, businesses, the financial sector and government (AC9HE9K02). They have explored how Australia trades with other nations and its patterns with Asia (AC9HE9K03). They can explain how different actors in the economy interact and how decisions ripple across the system. Students have also begun working with AC9HE10K01 — how economic indicators signal the need for government response.",
    "endpoint": "Students explain the ways that the Australian Government intervenes in the economy through fiscal policy, income redistribution and regulation to improve economic performance and living standards.",
+   "elaborations": [
+    "explaining how the Australian Government uses fiscal policy to help improve the standard of living; for example, the federal Budget, taxation, expenditure on skills training and workforce development",
+    "explaining the forces that shape and affect variations in living standards within Australian society, such as unemployment and poverty, and identifying why the government may redistribute income and wealth",
+    "explaining how the government may redistribute income to achieve a more equal distribution of income and wealth; for example, income transfers such as pensions, youth allowance and job search, or the provision of services for all such as healthcare and education",
+    "investigating the role and function of the Reserve Bank of Australia within the Australian economy"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3605,6 +3788,11 @@
    ],
    "knowledge": "Students understand how individuals and businesses manage consumer and financial risks and rewards (AC9HE9K05). They can identify financial risks, explain strategies for managing them, and consider trade-offs in financial decision-making. They have also explored how consumer decisions are influenced by market forces.",
    "endpoint": "Students analyse factors that influence major consumer and financial decisions and explain both the short- and long-term consequences of these decisions.",
+   "elaborations": [
+    "identifying examples of minor and major consumer and financial decisions, and explaining the processes that guide decision-making",
+    "analysing factors that influence major consumer and financial decisions, such as price, availability and cost of finance, marketing of products, age and gender of consumer, convenience, and ethical and environmental considerations",
+    "identifying the costs of consumer and financial transactions over time, such as the ability to make loan repayments, available savings, depreciation, and maintenance costs and insurance, as well as the benefits such as independence and convenience when purchasing a car or home"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3738,6 +3926,11 @@
    ],
    "knowledge": "Students understand factors that influence major consumer and financial decisions and their short- and long-term consequences (AC9HE10K03). They can analyse how financial commitments accumulate over time and consider the role of savings. Students have also explored how governments redistribute income through transfers and services (AC9HE10K02).",
    "endpoint": "Students explain the importance of Australia's superannuation system for individual retirement wellbeing and government fiscal sustainability, and explain how the system shapes consumer and financial decision-making.",
+   "elaborations": [
+    "explaining the importance of Australia's superannuation system in relation to human and financial wellbeing in retirement and the government's ability to maintain a welfare payment system for the common good",
+    "identifying why individuals make decisions about superannuation investment options and how their circumstances, such as age, employment status, dependents and anticipated retirement age, affect these decisions",
+    "explaining how individuals manage a personal superannuation fund; for example, who contributes, taxation, consolidating superannuation funds, finding lost superannuation and tracking the performance of a superannuation account"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3858,6 +4051,13 @@
    ],
    "knowledge": "Students understand processes businesses use to create and maintain competitive advantage, including the role of entrepreneurs (AC9HE9K04). They can explain how businesses respond to market conditions, manage risk and use innovation to maintain advantage. They have a working understanding of business structures and strategy at Year 9 level.",
    "endpoint": "Students explain the processes businesses use to manage their workforce and improve productivity, and explain how entrepreneurs drive innovation in response to changing economic conditions.",
+   "elaborations": [
+    "investigating the processes corporations, government and non-government organisations use to support start-up businesses, promote the success of business ventures or create relationships between businesses; for example, Indigenous Business Month Awards, First Nations Chambers of Commerce or the Registrar of Indigenous Corporations",
+    "investigating the processes used by First Nations Australian businesses and other organisations to improve workforce participation; for example, cross-cultural training programs, \"Closing the gap\" initiatives or corporate commitments to diversity and inclusion in employment",
+    "identifying and explaining strategies for improving workforce management; for example, horizontal or vertical organisational structures, transparency in decision-making, encouragement of workers to show initiative, paid parental leave, flexible work arrangements, employer responsibilities to workers and government",
+    "identifying and explaining strategies that improve productivity; for example, training or upskilling, capital investment, increasing research and development, investment in applications of technologies, use of just-in-time inventory systems or collection, and analysis of data to inform product development or service delivery",
+    "explaining how entrepreneurs lead responses to changes in global and domestic economic conditions and use technologies to drive innovation; for example, influencing approaches to waste management or sustainable use of energy"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3989,6 +4189,10 @@
    ],
    "knowledge": "Students can develop and modify questions to investigate a contemporary economic and business issue at Year 9 level (AC9HE9S01). They have practised formulating inquiry questions and hypotheses in economic contexts, and have some experience modifying questions to narrow or focus an investigation. The Y10 descriptor carries the same wording — the progression is in the complexity of issues investigated and the sophistication of question modification.",
    "endpoint": "Students develop and modify questions to investigate a complex contemporary economic and business issue, including formulating and refining hypotheses.",
+   "elaborations": [
+    "developing a range of questions to investigate a complex issue (for example, \"Why does the government intervene in the economy to improve living standards?\") or formulating a hypothesis such as \"Responding to an upswing in the economy with expansionary measures will improve business productivity\"",
+    "developing and modifying a range of questions to improve the focus of an investigation; for example, modifying \"What factors influence decision-making within consumer and financial contexts?\" to \"What factors influence choosing a mobile phone plan?\""
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4056,6 +4260,13 @@
    ],
    "knowledge": "Students can locate, select and analyse information and data from a range of sources at Year 9 level (AC9HE9S02). They have practised searching for economic information, evaluating sources for relevance and reliability, and using digital tools to organise data. Y10 builds on this with more complex sources, more contextually specific search strategies, and explicit attention to assumptions and missing information in sources.",
    "endpoint": "Students locate, select and analyse economic and business information and data from a range of sources, evaluating relevance, reliability and the assumptions or gaps that may affect interpretation.",
+   "elaborations": [
+    "locating online sources using contextually specific terms (for example, \"global markets\") or criteria (for example, using specific key words to find \"case studies related to trade agreements\")",
+    "selecting and analysing economic information and data for relevance by asking questions such as \"How will information and data help answer the inquiry question?\"",
+    "selecting and analysing economic information and data for reliability by asking questions such as \"How and when was the data collected?\", \"Who collected the data?\" and \"For what purpose was the data collected?\"",
+    "explaining assumptions or missing information in sources that may affect the reliability of an opinion about an economic or business issue",
+    "selecting and representing information and data about an economic or business issue, using specialised digital tools and processes to support interpretation and analysis; for example, a graphic organiser connecting objectives of the Australian economy with examples of government intervention in the economy"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4155,6 +4366,12 @@
    ],
    "knowledge": "Students can interpret information and data, explain economic and business issues, trends and cause-and-effect relationships, and make predictions at Year 9 level (AC9HE9S03). They have practised interpreting single-variable economic data, identifying trends and articulating cause-and-effect logic. Y10 builds on this with multi-variable data, more complex trend interpretation and more explicit prediction reasoning.",
    "endpoint": "Students interpret information and data to explain economic and business issues, trends and cause-and-effect relationships, and make reasoned predictions about consumer and financial impacts.",
+   "elaborations": [
+    "interpreting information to explain the nature, extent and importance of the economic and business issue; for example, the relationship between standards of living, infant mortality and access to health services",
+    "interpreting multi-variable data to analyse trends in government expenditure over time; for example, the trend in the provision of health and education programs over time, and explaining reasons for the change",
+    "analysing the causes and effects of an economic issue on individuals or businesses; for example, the reasons for and implications of government intervention in the economy to improve living standards",
+    "analysing trends to make predictions about who will be affected and how; for example, trends in productivity and implications for businesses"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4280,6 +4497,12 @@
    ],
    "knowledge": "Students can develop and evaluate responses to economic and business issues using cost-benefit analysis or criteria at Year 9 level (AC9HE9S04). They have practised identifying and weighing costs and benefits to justify a decision, and have used criteria-based evaluation in business contexts. Y10 builds on this with more complex financial calculations, multi-variable cost-benefit analysis, and the explicit use of opportunity cost reasoning.",
    "endpoint": "Students develop and evaluate a response to an economic and business issue using cost-benefit analysis or criteria-based evaluation to justify a recommended course of action.",
+   "elaborations": [
+    "evaluating the short- and long-term financial implications of a decision; for example, calculating the costs of different purchasing methods and considering ability to opt out if circumstances change",
+    "evaluating a response, using a cost-benefit analysis to explain the reasons for a course of action; for example, comparing different types of loans to estimate the short- and long-term financial costs and benefits of each",
+    "evaluating a response, using criteria such as efficiency, profitability or equity to explain the reasons for a course of action; for example, use of indicators of economic performance to identify variations within the Australian economy",
+    "examining the opportunity cost consumers and businesses may have to consider when deciding on a course of action; for example, employing more staff instead of upskilling existing staff to improve productivity"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4426,6 +4649,11 @@
    ],
    "knowledge": "Students can create descriptions, explanations and arguments using economic and business knowledge, concepts and terms that incorporate and acknowledge research findings at Year 9 level (AC9HE9S05). They have practised using discipline-specific vocabulary, presenting structured arguments and acknowledging sources. Y10 builds on this with more complex arguments, authoritative tone, and use of a broader vocabulary set across the full Year 10 topic scope.",
    "endpoint": "Students create descriptions, explanations and arguments using economic and business knowledge, concepts and terms, incorporating and acknowledging research findings for varied purposes and audiences.",
+   "elaborations": [
+    "presenting a description or explanation that orients the audience; for example, peers or representatives of businesses, to the issue, using relevant economic and business concepts and terms such as \"economic indicators\", \"government intervention\", \"fiscal policy\", \"standard of living\", \"economic performance\", \"federal Budget\", \"productivity\", \"organisational structures\", \"workforce management\", \"superannuation\", \"interdependence\", \"trade\", \"comparative advantage\", \"globalisation\", \"supply chain\" and \"insurance\"",
+    "explaining decisions and conclusions about a business issue, supported by reasons and representations of data in a range of formats; for example, financial statements or information sheet and research in appropriate formats, such as reports and webpages",
+    "presenting an argument for a proposal for action in response to an economic or business issue, applying tone appropriate to purpose; for example, using an authoritative tone when presenting an argument and making predictions about impacts, and audience; for example, a business manager or entrepreneur"
+   ],
    "nodes": [
     {
      "n": 1,

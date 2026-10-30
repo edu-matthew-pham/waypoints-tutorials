@@ -1,6 +1,6 @@
 {
  "subject": "design",
- "source": "waypoints-kit 6bb92e4",
+ "source": "waypoints-kit d93e6e5",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -14,6 +14,13 @@
    "prior": [],
    "knowledge": "This is the first Design and Technologies descriptor in the curriculum. Students have no prior DT knowledge assumed. They bring general familiarity with everyday products and environments. They have not yet connected objects or places to the idea that people deliberately designed and made them for a purpose.",
    "endpoint": "Students explore how familiar products, services and environments are designed by people, identifying that design decisions are made for a purpose.",
+   "elaborations": [
+    "identifying how First Nations Australians have long designed and produced domestic items including clothing, tools and shelter, for example the Lamalama Peoples of the eastern Cape York Peninsula weave the reddish coloured fibres from Acacia latifolia alternately with white coloured fibres from Brachychiton diversifolium to produce a striped woven bag",
+    "exploring how local delivery services meet different needs of people, for example describing how gift packages can be sent to and from people who live in different locations and how online shopping items arrive at a person's home",
+    "exploring how an environment such as a local playground may have shade structures to protect users and be designed to allow access for all",
+    "describing how community gardens, public swimming pools and parks are designed to help people stay healthy",
+    "asking questions about the design of products from the local store, for example why certain packaging materials might have been selected, and how people design the text and images on the packaging to attract people's attention"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -85,6 +92,14 @@
    "prior": [],
    "knowledge": "This is the first Design and Technologies process descriptor. Students have no prior design process experience assumed. They bring general play and construction experience. They have not yet framed design as purposeful — generating ideas for a specific purpose, communicating those ideas in a design form, making a solution, or evaluating against a purpose.",
    "endpoint": "Students generate and communicate at least one design idea for a purpose, use materials and equipment safely to make a solution, and evaluate what they made using personal preferences.",
+   "elaborations": [
+    "identifying a purpose for designing and making a solution, for example the sand keeps blowing out of the sandpit, the birds keep flying into the waste bin and taking food scraps or people with disability need to know where they can park at school",
+    "exploring ideas by drawing or modelling and choosing the most suitable idea, for example drawing or modelling designs for bee hotels to attract native bees to the school garden and choosing one to make, and changing perspectives from front view to plan view",
+    "evaluating what they have made using personal preferences, for example using a smiley face Likert scale",
+    "exploring how available materials can be used or re-used in construction play, for example using blocks and rain gutters or cardboard to make a ramp to roll a ball or toy car down",
+    "practising a range of technical skills safely using equipment, for example joining techniques when making a product from materials, such as a greenhouse to keep a seedling warm or a trellis for holding up tomato plants",
+    "assembling components of systems and checking they function as planned, for example making and testing a bowling, stacking or obstacle game with discarded food containers or packaging"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -213,6 +228,13 @@
    ],
    "knowledge": "Students can explore how familiar products, services and environments are designed by people (AC9TDEFK01). They can identify design decisions and connect them to a purpose. They have not yet connected design to community-level needs or to sustainability considerations.",
    "endpoint": "Students identify how familiar products, services and environments are designed and produced to meet personal or local community needs, including sustainability.",
+   "elaborations": [
+    "exploring how First Nations Australians have long understood their dependence on living systems to meet their local and community needs, for example exploring the material culture of the Ngarrindjeri Peoples who sustainably make woven items from a grass-like sedge",
+    "exploring how particular services meet different needs of people in the community, for example describing why doctors provide medical care to people in many ways including by phone, video conference, plane, car or outdoor clinic",
+    "asking questions about the design of a range of shelters provided for the public and how they meet the needs of people in the community, for example the structures of a school or local sportsground or how to improve accessibility",
+    "exploring how local products are designed, for example brainstorming the materials and processes needed to create a costume for a school or community event including using recycled clothing or components to minimise waste",
+    "exploring how people come up with new ideas or modify existing designs, for example preventing water wastage when caring for plants"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -286,6 +308,13 @@
    ],
    "knowledge": "Students can explore how products are designed by people (AC9TDEFK01). They have made simple solutions using materials (AC9TDEFP01). They have not yet systematically connected material properties to movement outcomes, or explored how changing materials or forces changes how a product moves.",
    "endpoint": "Students explore how material properties and forces affect movement in products, and explain how changing materials can change how a product moves.",
+   "elaborations": [
+    "investigating First Nations Australians' instructive toys and how such toys are designed and made to produce movement, for example propeller toys made from pandanus across northern Australia",
+    "selecting materials to show how material properties are appropriate for particular designed solutions, for example materials that enable sliding, floating or flying",
+    "exploring how to manipulate materials using a range of tools, equipment and techniques to create movement, for example when constructing a toy boat that floats or a kite that flies",
+    "exploring a system such as a marionette or Indonesian wayang kulit shadow puppet to see that by combining materials with forces movement can be created",
+    "testing materials to see how they affect movement and speed, for example the movement of a wheeled toy on different surfaces such as timber, carpet, rubber and plastic"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -359,6 +388,13 @@
    ],
    "knowledge": "Students have explored how products are designed and produced to meet community needs (AC9TDE2K01). They understand that design decisions connect to purpose. They have not yet examined the origins of the materials used in products — specifically that plants and animals are deliberately grown and managed as sources for food, clothing and shelter.",
    "endpoint": "Students explore how plants and animals are grown and used as sources for food, clothing and shelter, identifying specific plants and animals and the products derived from them.",
+   "elaborations": [
+    "exploring how First Nations Australians grow plants and animals for food, for example how land is transformed through the construction of terraces at Wagadagam on Mabuiag Island in the Torres Strait, or how the Kombumerri Peoples of South East Queensland developed an important aquaculture industry farming mangrove worms",
+    "identifying which plants and animals can provide food or materials for clothing and shelter, for example looking at a range of items and sorting them according to plant or animal source",
+    "exploring where plants and animals are grown for food, clothing and shelter in Australia, for example citrus fruit in South Australia; cotton in New South Wales, which is harvested and made into yarn and fabric for clothing; or timber for building homes from sustainable forests in Tasmania",
+    "identifying products that can be designed and produced from plants and animals, for example food products, paper and wood products, fabrics and yarns",
+    "considering a range of tools and equipment that can be used to grow plants for a purpose and their suitability, for example naming and describing tools such as a spade or rake used to cultivate or mulch a home vegetable garden, or equipment such as a seed spreader or global positioning system (GPS) tractor to sow wheat, or a tubestock planting tool and drones to manage forestry plantations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -432,6 +468,13 @@
    ],
    "knowledge": "Students have explored how plants and animals are grown for food (AC9TDE2K03). They can identify plant and animal food sources. They have not yet organised foods into health categories or connected preparation methods to healthy eating outcomes.",
    "endpoint": "Students explore how foods can be selected and prepared for healthy eating, identifying food groups and preparation methods.",
+   "elaborations": [
+    "identifying a wide range of foods, categorising them into food groups according to the Australian Guide to Healthy Eating and discussing ways to eat a variety of food groups, including cooking methods, tools and equipment needed to prepare them for healthy eating",
+    "exploring how people including peoples from the countries of Asia design and produce food for healthy eating based on the available plants and animals in their region, the influence of cultural practices, and locally available tools and equipment",
+    "exploring the Australian Guide to Healthy Eating and the Aboriginal and Torres Strait Islander Guide to Healthy Eating and identifying foods in each of the 5 food groups which contribute to health and wellbeing, for example choosing foods from each of the 5 food groups which they are familiar with and designing a menu for a day",
+    "exploring the local supermarket to observe the variety of foods and the placement of foods on shelves, in aisles and displays; and considering how their design may influence the purchase of foods for healthy food eating",
+    "exploring different ways of preparing the products from the school kitchen garden, farmers' market or supermarket, for example preparing vegetables for a salad, steaming or roasting vegetables and noticing the changes in flavour and texture"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -506,6 +549,12 @@
    ],
    "knowledge": "Students can generate and communicate design ideas through drawing or modelling (AC9TDEFP01). They have communicated ideas for a purpose. They have not yet labelled drawings, shown multiple views, used digital tools to communicate design ideas, or compared existing products to generate new ideas.",
    "endpoint": "Students generate and communicate design ideas through describing, drawing or modelling — including labelled drawings with multiple views and using digital tools.",
+   "elaborations": [
+    "comparing and contrasting features of existing products to develop new ideas, for example designing and making a puppet with a movable part after experimenting with other toys with several movable parts",
+    "communicating design ideas by modelling or producing and labelling 2-dimensional drawings using a range of technologies, for example designing a new environment such as a cubbyhouse or animal shelter and showing different views (top view and side view) with descriptions of materials and features",
+    "communicating an opinion about their design ideas, for example expressing own likes and dislikes about a design idea for felt finger puppets including how they have made changes to their design ideas",
+    "describing the results from exploring design ideas, for example recording the results from people taste-testing a food product"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -607,6 +656,11 @@
    ],
    "knowledge": "Students can use materials and equipment to make solutions safely (AC9TDEFP01). They have practised basic joining and construction techniques. They have not yet deliberately selected materials for a purpose, or demonstrated safe use of a range of tools and techniques across different construction contexts.",
    "endpoint": "Students use materials, components, tools, equipment and techniques to safely make designed solutions across different construction contexts.",
+   "elaborations": [
+    "exploring how available materials can be used or re-used in construction play, for example using used wrapping paper and gift cards to design and make decorations or signage for the classroom or a school event to minimise waste",
+    "practising a range of technical skills using tools and equipment safely, for example joining techniques when making products, watering and mulching gardens, preparing a recipe using a knife safely",
+    "assembling components and checking they function as planned, for example containers, contents and joining materials when making musical shakers"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -681,6 +735,12 @@
    ],
    "knowledge": "Students can evaluate what they made using personal preferences (AC9TDEFP01). They have shared opinions about their design. They have not yet evaluated against sustainability considerations, reflected on environmental impacts, or compared design ideas for strengths and weaknesses in a structured way.",
    "endpoint": "Students evaluate the success of design ideas and solutions based on personal preferences and sustainability considerations.",
+   "elaborations": [
+    "reflecting on and recording a judgement about design ideas, for example describing how design ideas meet the needs of those who will use the solution using audio-recording or video-recording software",
+    "sharing design strengths and weaknesses, for example explaining how the equipment in a playground might be unsuitable for some children to use and suggesting areas for design improvement",
+    "reflecting on the environmental impacts of the production of a solution and considering alternative approaches that would minimise future negative impacts, for example identifying the negative environmental impacts of different food packaging and how these could be minimised",
+    "reflecting on the challenges of designing and producing a solution and recording these reflections, for example when growing a food product, designing a structure to take a load or making a nutritious snack"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -755,6 +815,11 @@
    ],
    "knowledge": "Students can use materials and equipment to make solutions (AC9TDEFP01, AC9TDE2P02). They have followed steps to make things. They have not yet formally sequenced steps for making as a planning activity, recorded procedures, or identified roles for cooperative group making.",
    "endpoint": "Students sequence the steps for making a designed solution and work cooperatively with others, identifying roles within a group.",
+   "elaborations": [
+    "using lists or storyboarding when planning and making, for example when creating an electronic planting calendar",
+    "recording the procedure for making a product, for example the ordered steps for making a salad, instructions for making a container or bag",
+    "identifying roles for each member of a group when working cooperatively, for example when making a number of items for a school fete"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -828,6 +893,14 @@
    ],
    "knowledge": "Students can identify how familiar products, services and environments are designed and produced by people to meet personal or local community needs and sustainability (AC9TDE2K01). They have not yet examined occupations in design and technologies or analysed how sustainability factors actively shape design decisions.",
    "endpoint": "Students examine design and technologies occupations and the role sustainability plays in shaping what those occupations produce, explaining how products, services and environments are designed to meet community needs.",
+   "elaborations": [
+    "exploring how many First Nations Australians were and continue to be recognised for their specialist skills in designing and producing products made from local materials and providing related services, using sustainable practices to ensure future access to meet community needs, for example traditional adhesives",
+    "exploring how design and technologies occupations in the local area (urban, suburban, regional or rural) meet community needs, for example bakers, builders, engineers, farmers, seafood industry workers, mechanics, radiographers, textile designers and others in science, technology, engineering and mathematics roles",
+    "examining the suitability of a service or system and proposing improvements, for example a water-saving system for a bathroom at home or school, traffic management systems to reduce traffic jams around the school, remote and regional services including medical services",
+    "exploring how Australian designers consider sustainability when designing products, services or environments, for example designing products from 100% recycled materials, designing services that use minimal energy, or designing landscapes that require minimal water",
+    "examining products and environments to discover the factors that may have influenced the design and, choice of technologies used, for example discussing energy-efficient cooking with a wok, or sustainable wood products for home use including furniture made from plantation timbers, bamboo toothbrushes or coconut shell bowls",
+    "conducting a survey to identify a community need that involves accessibility and social sustainability, for example design features that improve access to the school"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -925,6 +998,13 @@
    ],
    "knowledge": "Students can explore how technologies including materials affect movement in products (AC9TDE2K02). They have explored movement through play. They have not yet described the relationship between forces, material properties and function, or connected these to design decisions in a product or system.",
    "endpoint": "Students describe how forces (push, pull, gravity, buoyancy) and the properties of materials (strength, flexibility, weight) affect the function of products and systems.",
+   "elaborations": [
+    "researching how First Nations Australians consider buoyant forces as they select materials for watercraft, for example making bark or dugout canoes",
+    "looking at models to identify how materials are used and movement is created, for example in the design of a toy with wheels or moving parts",
+    "exploring through play how movement can be started by combining materials and using forces, for example releasing a wound rubber band to propel a model boat, how different materials may impact a marble roll speed, or how various surfaces from carpet to grass to concrete might affect a robot's movement",
+    "deconstructing a product or system to identify how motion and forces affect performance, for example in a puppet such as a Japanese bunraku puppet or a model windmill with moving sails",
+    "identifying engineered systems and experimenting with available local materials, tools and equipment to solve problems, for example designing a container or parachute that will keep an egg intact when dropped from a height; a pop-up card; a tower; or a vehicle"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1022,6 +1102,12 @@
    ],
    "knowledge": "Students can explore how plants and animals are grown for food, clothing and shelter (AC9TDE2K03). They have encountered food and fibre production at an exploratory level. They have not yet described production methods, compared different production systems, or examined tools and technologies used in food and fibre production.",
    "endpoint": "Students describe the ways food and fibre are produced, including tools, equipment and procedures used to support plant and animal production.",
+   "elaborations": [
+    "researching food and fibre production techniques and technologies developed by First Nations Australians, such as burning, tilling, planting, transplanting, watering, irrigating, weeding, thinning, cropping, storing and trading food",
+    "describing tools, equipment and procedures to improve plant and animal production, for example when growing vegetables in the school garden and producing environments such as a glasshouse (protected cropping) or animal housing including safe chicken shelters",
+    "comparing farming methods for food in Australia and a country in Asia, for example the use of different types of plants and animals and how diverse technologies are used to produce them",
+    "researching how animal fibres (for example wool, alpaca) and plant fibres (for example timber, cotton, bamboo) are produced in Australia, for example how production of plantation timbers may be different from bamboo production"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1109,6 +1195,13 @@
    ],
    "knowledge": "Students can explore how food can be selected and prepared for healthy eating (AC9TDE2K04). They have explored food selection at a general level. They have not yet described specific selection criteria, examined food technologies for health and safety, or compared fresh and processed foods by nutritional content.",
    "endpoint": "Students describe the ways food can be selected and prepared for healthy eating, including how food technologies support food safety and nutrient retention and how sensory properties inform selection.",
+   "elaborations": [
+    "exploring how First Nations Australians consider the nutrient content of seasonal foods as a means of maintaining a balanced diet",
+    "recognising the benefits food technologies provide for health and food safety and to ensure that a wide variety of food is available and can be prepared for healthy eating, for example pasteurisation of milk for food safety and freezing of vegetables to retain nutrients and reduce food waste",
+    "exploring the differences between fresh food and processed food by researching nutrient content of fresh food using a nutrition calculator app and examining nutrition information labels on processed foods for nutritional values",
+    "considering creative ways foods can be prepared for maximum taste and appeal, for example locating and discussing images online that show colourful or fun ways to present food that might encourage healthy eating",
+    "describing foods using the senses, for example describing the colour, aroma, sound, texture and taste of the ingredients in a salad or stir-fry and how our senses influence what we select to eat"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1195,6 +1288,13 @@
    ],
    "knowledge": "Students can generate and communicate design ideas through describing, drawing or modelling (AC9TDE2P01) and use materials, components, tools and equipment to safely make designed solutions (AC9TDE2P02). They have not yet explored needs systematically or tested materials for suitability before designing.",
    "endpoint": "Students explore needs or opportunities for designing, and test materials, components, tools, equipment and processes for suitability before creating designed solutions.",
+   "elaborations": [
+    "exploring the designs and performance of models of First Nations Australians' watercraft, and the opportunities for their designs to inform the design of a floating toy",
+    "examining the production of local products, services and environments to enhance their own design ideas, for example discussing the processes and systems that might be used to distribute hot food to a large number of people at a community event",
+    "selecting and making judgements about appropriate joining techniques for materials to produce designs, prototypes, structures or working models, for example joining fabric, paper or cardboard in various ways",
+    "exploring and testing a range of materials under different conditions for suitability including sustainability considerations, for example the compostability of paper-based materials or the strength and durability of natural materials",
+    "exploring the different uses of materials in a range of products, including those from a country in Asia, to inform design decisions, for example in shelters, boats, handmade tools, baskets, wooden items, musical instruments, clothing and fabric"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1293,6 +1393,12 @@
    ],
    "knowledge": "Students can generate and communicate design ideas through describing, drawing or modelling, including using digital tools (AC9TDE2P01). They have communicated design ideas informally. They have not yet used technical terms, annotated diagrams, attributions, or more formal graphical representation techniques.",
    "endpoint": "Students generate and communicate design ideas and decisions using appropriate technical terms, attributions and graphical representation techniques, including annotated diagrams and digital tools.",
+   "elaborations": [
+    "visualising innovative design ideas by producing thumbnail sketches, models and labelled drawings to explain features and modifications, for example drawing one or more designs for a machine to collect waste, and including labels and descriptions to explain materials used, their properties and the intended function of components or the whole system",
+    "planning, sharing and documenting creative designs, ideas and processes using digital tools and appropriate terms and privacy considerations, for example a class blog or collaborative document that has been selectively shared with peers",
+    "communicating design ideas using annotated diagrams, for example labelling a diagram for a pushcart with technical terms and explanations about components such as the chassis, axle, wheels and steering",
+    "generating design ideas for solutions using Safety by Design principles, for example designing communication that is accessible for all parents and carers"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1389,6 +1495,13 @@
    ],
    "knowledge": "Students can use materials, components, tools, equipment and techniques to safely make designed solutions (AC9TDE2P02). They have used materials and tools in a supervised context. They have not yet selected materials with justified reasons, considered environmental impact across the production process, or used appropriate technologies terminology to describe procedures.",
    "endpoint": "Students select and use materials, components, tools, equipment and techniques to safely make designed solutions, with consideration of environmental impact and using appropriate terminology to describe procedures.",
+   "elaborations": [
+    "exploring ways of joining, connecting and assembling components that ensure success including the impact digital tools have on these processes, for example using virtual reality or simulations to experience assembling materials or using tools",
+    "using tools and equipment accurately when measuring, marking and cutting, for example when creating a template or pattern, measuring ingredients in a recipe or preparing a garden bed for sowing seeds",
+    "explaining the importance of safe, responsible, inclusive and cooperative work practices when designing and making, for example when handling sharp equipment such as knives and scissors",
+    "selecting and using materials, components, tools, equipment and processes with consideration of the environmental impact at each stage of the production process, for example considering how packaging and offcuts could be recycled or used for other purposes before choosing materials for a project",
+    "using appropriate technologies terms to describe and share with other students the procedures and techniques for making, for example how to safely make an engineered solution such as a robotic device"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1487,6 +1600,12 @@
    ],
    "knowledge": "Students can evaluate the success of design ideas and solutions based on personal preferences and including sustainability (AC9TDE2P03). They have evaluated based on personal judgement. They have not yet used explicit design criteria as the basis for evaluation or co-developed criteria with others.",
    "endpoint": "Students use given or co-developed design criteria — including sustainability — to evaluate design ideas and solutions, with reasons grounded in the criteria.",
+   "elaborations": [
+    "developing design criteria with others including considering universal design principles to address social sustainability, for example a criterion that specifies flexible or intuitive use or low physical effort",
+    "using design criteria to evaluate, revise and select design ideas, for example when designing an e-textile toy for a young child to ensure it will be safe",
+    "comparing the amount of waste that would be produced from different design ideas and the potential for recycling waste, for example exploring the choice of materials to construct a toy and whether these materials are repairable or able to be recycled once the toy breaks or is no longer wanted",
+    "reflecting on how well their designed solution meets design criteria, such as ensuring safety and wellbeing of users and meeting the needs of communities or different cultures, for example reviewing and discussing the choice of fabrics used to make re-usable bags and how they could be made more appealing to all cultural groups by considering modifications to style"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1585,6 +1704,11 @@
    ],
    "knowledge": "Students can sequence steps for making designed solutions cooperatively (AC9TDE2P04). They have sequenced steps in a cooperative context. They have not yet worked with explicit planning tools (timelines, spreadsheets, flowcharts), managed time and resource allocation, or understood mass production processes.",
    "endpoint": "Students sequence steps to individually and collaboratively make designed solutions, using planning tools to record steps and manage time and resource allocation.",
+   "elaborations": [
+    "determining planning processes as a class, for example recording when parts of a project need to be completed on a timeline, in a spreadsheet, calendar or list",
+    "discussing the importance of managing time and resource allocation throughout production, for example discussing the roles different people might take in a team and identifying the tasks they will complete and the resources they will each need",
+    "identifying the steps in a mass production process, for example drawing a flowchart or making a video recording of a procedure for packing identical boxes of food for community members in need, where each student in a group has a separate task as part of the production process"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1682,6 +1806,14 @@
    ],
    "knowledge": "Students can examine design and technologies occupations and factors including sustainability that impact on the design of products, services and environments (AC9TDE4K01). They have identified that designers consider multiple factors. They have not yet explained how competing factors are weighed against each other — the tension between them and how practitioners resolve it.",
    "endpoint": "Students explain how people in design and technologies occupations weigh competing factors including sustainability when designing products, services and environments, and identify examples of innovative solutions that resolve such tensions.",
+   "elaborations": [
+    "investigating how First Nations Australians have long considered competing factors especially those related to sustainability in the design of fish harvesting technologies, for example fish traps and fish poisons that allow for selective harvesting and release of bycatch, as compared with high-yield, non-selective harvesting practices such as trawling",
+    "describing the impact and sustainability implications of designed products, services or environments on local, regional and global communities, for example the emergence of small businesses that are recycling materials, such as plastic tags and bottle tops into prosthetics",
+    "explaining the importance of aesthetics, function and sustainability in product design, for example a textile product that gives ultraviolet protection and is appealing; an odour-fighting wool fabric that minimises washing; a motor that moves a vehicle and uses a sustainable power source; a modification to a home to reduce environmental impact; restoring a natural environment and enabling low-impact access for the public such as boardwalks in fragile wet heath or swamp ecosystems",
+    "identifying the components of a service that contribute to its success and assessing potential risk or failure, for example a community service announcement to communicate a message in the school or to a wide audience; a service that manages an aspect of the environment such as Clean Up Australia Day in different communities",
+    "considering how engineers resolve competing factors to produce innovative solutions, for example experimenting with novel ideas such as biomimicry to engineer a solution such as a soft robotic device",
+    "considering how Safety by Design principles have been used in the design of products, services or environments, for example considering how prevention, protection and proactive change can be used to improve safety of designed solutions"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1757,6 +1889,13 @@
    ],
    "knowledge": "Students can describe how forces and the properties of materials affect function in a product or system (AC9TDE4K02). They understand that materials have properties that affect how products work. They have not yet connected electrical energy specifically to output transformations — movement, sound, or light — or worked with circuits as systems.",
    "endpoint": "Students explain how electrical energy is transformed into movement, sound or light in products and systems, and can identify the components needed to control these transformations.",
+   "elaborations": [
+    "investigating how automated, labour-saving photovoltaic systems are expected to provide opportunities for First Nations Australians to expand their aquaculture industries in coastal regions of northern Australia",
+    "explaining how sun tracking of solar panels assists renewable energy production in communities classified as remote",
+    "describing the process needed to carefully plan and select components for a system to perform a specific task, for example planning the arrangement of switches, light globes and a power source in a lighting design",
+    "producing models using materials, tools and equipment to show how to control movement, sound or light, for example constructing an automaton, automation system or lifting system including a pulley to raise a bucket or toy",
+    "deconstructing a product or system to discover how movement, sound or light can be controlled, for example taking apart a torch or buzzer, or exploring circuit design in a security system and investigating the properties of materials to solve problems including the amount of light reflected from different surfaces to control a sensor"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1838,6 +1977,13 @@
    ],
    "knowledge": "Students can describe the ways of producing food and fibre (AC9TDE4K03). They understand that food and fibre come from different production systems. They have not yet explained how and why those environments are actively managed — the decisions, constraints, and sustainability practices behind production.",
    "endpoint": "Students explain how food and fibre are produced in managed environments, including soil preparation, plant and animal selection, and supply chain processes, and why these management decisions are made.",
+   "elaborations": [
+    "exploring how before colonisation, First Nations Australians lived in discrete communities that cared for, protected and sustainably harvested food and fibre resources, some of which are now cultivated to meet domestic and international demand, for example bunya nuts, macadamia and finger limes",
+    "investigating and experimenting with different tools, equipment and methods of preparing soil and the effect on soil quality and sustainability including conserving and recycling nutrients, for example building a food composting system, including mulch when designing a sustainable school vegetable garden or cropping area",
+    "describing the relationship between plant types and animal breeds and their environmental suitability when selecting suitable plants or animals for an environment, for example growing tropical fruits in northern Australia due to higher temperature, and raising sheep in the cooler regions of Australia",
+    "sequencing the process of converting on-farm food or fibre products into a product suitable for retail sale, for example creating a digital flowchart to record a paddock-to-plate supply chain, or the fibre-to-garment life cycle (fibre, yarn, fabric, garment)",
+    "visiting a farm or participating in a virtual tour to ask questions about how and why food and fibre are produced in that environment"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1913,6 +2059,14 @@
    ],
    "knowledge": "Students can describe the ways food can be selected and prepared for healthy eating (AC9TDE4K04). They understand that food choices affect health. They have not yet explained how specific food characteristics (nutritional value, spoilage, preparation requirements, taste) drive selection and preparation decisions.",
    "endpoint": "Students explain how the characteristics of foods — nutritional value, spoilage, preparation requirements, taste — influence selection and preparation decisions for healthy eating.",
+   "elaborations": [
+    "investigating how First Nations Australians have long selected and prepared foods for healthy eating, for example based on their nutritional value, availability, spoilage, preparation and processing requirements",
+    "using the Australian Dietary Guidelines to determine the recommended number of serves for an individual, for example describing and planning a healthy meal or lunchbox for a particular individual with recommended serving sizes to inform choices and then explaining the characteristics of the selected foods",
+    "experimenting with tools, equipment, ingredients and techniques to design and make food products or meals for selected groups for healthy eating taking into consideration environmental impacts and nutritional benefits, for example experimenting with preserving techniques including pickling, fermentation, air drying or sun drying and presenting information on the benefits for an audience",
+    "exploring a variety of tastes and how they may influence the selection or preparation of food, for example the sour, salty, sweet, spicy and umami flavours of many foods from countries across Asia",
+    "developing strategies to communicate healthy choices based on the Australian Dietary Guidelines, for example designing a website with food preparation tips for healthy eating for pre-teens",
+    "exploring the food service options of a local restaurant, café, fast food or takeaway establishment and identifying the food preparation skills needed to prepare food for healthy eating"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1988,6 +2142,14 @@
    ],
    "knowledge": "Students can describe how forces and the properties of materials affect function in a product or system (AC9TDE4K02). They can describe material properties in relation to how products work. They have not yet explained how properties determine selection across a range of materials, systems, components, tools and equipment — or compared production approaches across different scales or cultural contexts.",
    "endpoint": "Students explain how the characteristics and properties of materials, systems, components, tools and equipment affect how they are selected and used when producing designed solutions.",
+   "elaborations": [
+    "investigating how First Nations Australians have long used material science knowledge to identify materials and preparation techniques to meet performance needs, for example twining techniques of string and rope fibres to ensure suitability for use in wet, dry, freshwater and saltwater applications",
+    "identifying and describing the properties of materials for the design and construction of a household product or system to improve household sustainability, for example a product for storing harvested water or reducing energy consumption",
+    "describing the materials and systems used in public places and facilities that benefit the way people live, for example a community exercise environment, arts facility, water treatment plant or garbage collection service",
+    "comparing and describing the tools, equipment and techniques used to manufacture products in factories with those used by local and regional enterprises including cost and impacts, for example clothing made in factories compared with local handmade garments",
+    "comparing the design and production of products, services or environments in Australia and a country in Asia, for example comparing the diversity, availability and properties of preferred materials and the design of public shelters and housing in Indonesia and Australia",
+    "investigating the properties of fibres and how these are used to create products, for example designing an experiment to test which fabrics are warmest and explaining how those properties influence what they are used for"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2064,6 +2226,14 @@
    ],
    "knowledge": "Students can explore needs or opportunities for designing, and test materials, components, tools, equipment and processes to make designed solutions (AC9TDE4P01). They have explored and tested. They have not yet investigated systematically — the shift is from exploring/testing to purposeful investigation with a view to making design decisions.",
    "endpoint": "Students investigate needs or opportunities for designing and determine the materials, components, tools, equipment and processes required — including sustainability considerations and comparative evaluation of options.",
+   "elaborations": [
+    "investigating First Nations Australians' traditional fibre sources as potential commercial solutions for biodegradable string or rope, and researching the materials, systems, components, tools and equipment needed",
+    "surveying people in the school community about their needs in order to design an appropriate product, service or environment that addresses the need, for example planning the requirements for a community meal, creating more shade in the school by determining where trees could be planted or designing a security system for the community garden",
+    "investigating designed solutions from around the world to make suitable, quality decisions that meet needs or opportunities, for example locating information online about small-space gardening ideas from different countries and judging their suitability for the local environment",
+    "investigating the importance of complementary parts of working systems by deconstructing the components, structure and purpose of products, services or environments, for example labelling a diagram of a robotic weeder or vacuum cleaner and explaining the function of parts",
+    "testing a range of materials, components, tools and equipment to determine the appropriate technologies needed to make products, services or environments, for example the materials for a product such as a rubber-band-powered vehicle or item of protective clothing",
+    "investigating how to minimise material use and manage waste by comparing the environmental and social impacts of materials, components, tools and equipment, for example comparing the cost and environmental impact of repurposing an old item of clothing to create a carry bag with buying a new one, or using vegetable scraps to make a healthy soup versus buying takeaway soup"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2141,6 +2311,14 @@
    ],
    "knowledge": "Students can generate and communicate design ideas and decisions using appropriate attributions, technical terms and graphical representation techniques (AC9TDE4P02). They have generated and communicated ideas. They have not yet iterated — systematically refining designs based on evaluation — or used the full range of representation techniques including scale, symbols, digital mapping and modelling tools.",
    "endpoint": "Students generate a range of design ideas, iterate and improve them based on evaluation, and communicate decisions and processes using technical terms and graphical representation including digital tools.",
+   "elaborations": [
+    "generating a range of design ideas for products, services or environments using prior knowledge, skills and research, for example a security system for a community garden, a product made from a repurposed item of clothing, a permaculture vegetable patch or a healthy meal for a family picnic",
+    "analysing, modifying and developing design ideas to enhance and improve the sustainability of the product, service, environment or system, for example analysing eco-friendly alternatives to non-recyclable decorations for a community event or replacing paper-based newsletters with online formats",
+    "representing and communicating design ideas using modelling and drawing standards including the use of digital tools, for example including scale, symbols and codes in plans and diagrams; using pictorial maps and aerial views; and using digital mapping applications or infographics to present research and ideas to others",
+    "developing and using models to iterate and improve design ideas, for example using modelling applications to design the layout and features of an enclosure for a chosen animal",
+    "experimenting with materials, tools and equipment to refine design decisions and processes, for example considering the selection of materials and joining techniques to suit the purpose of a product, such as a pop-up book, a fabric bag or an electric circuit",
+    "considering the social values and ethics of clients when designing an environment, for example interviewing users of a space or seeking permission to use designs or images created by others including respect of cultural and intellectual property"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2242,6 +2420,12 @@
    ],
    "knowledge": "Students can select and use materials, components, tools, equipment and techniques to safely make designed solutions (AC9TDE4P03). They have selected and used tools and materials with guidance. They have not yet matched selection decisions to design intention with explicit justification, or applied the full range of safety, hygiene and environmental considerations across material types.",
    "endpoint": "Students select materials, components, tools, equipment and techniques that match the design intention and use them safely — applying appropriate safety, hygiene and environmental practices for the context.",
+   "elaborations": [
+    "matching material and joining techniques to the design intention, for example accurately and safely cutting and sewing the fabric pieces to make a community banner or joining components to produce an electric circuit",
+    "using appropriate personal protective equipment (PPE) required for the use of some tools and equipment, for example protective eyewear and working safely, responsibly and cooperatively to ensure safe work areas, for example the safe use of equipment when making a water-resistant, floating craft",
+    "choosing appropriate materials, tools, equipment and techniques for a specific purpose, for example when safely and hygienically preparing food, cultivating garden beds or constructing electronic products",
+    "identifying work practices that show an understanding of nutrition, environmental considerations, hygiene and food safety when designing and making a food product, for example washing fruit and vegetables carefully to remove residues, safe disposal of cooking oils to avoid environmental damage, refrigerated storage of highly perishable foods, being aware of food allergies"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2319,6 +2503,13 @@
    ],
    "knowledge": "Students can use given or co-developed design criteria including sustainability to evaluate design ideas and solutions (AC9TDE4P04). They have applied provided or jointly created criteria. They have not yet negotiated criteria — the new demand is taking ownership of developing the criteria collaboratively, including sustainability as a non-optional factor.",
    "endpoint": "Students negotiate design criteria — including sustainability — collaboratively, and use those criteria to evaluate design ideas, processes and solutions throughout a project.",
+   "elaborations": [
+    "deciding on design criteria collaboratively for a designed solution, for example including an environmental sustainability criterion such as product should be recyclable",
+    "developing design criteria with others to evaluate the suitability of materials, tools and equipment for specific purposes, for example considering the most suitable fabric, tools and equipment needed to make beeswax wraps",
+    "iterating and modifying design ideas based on evaluation to improve solutions, for example modifying the sensitivity of sensors in the design of an automated light",
+    "evaluating their designed solutions including considering the benefits and costs of production processes and the environmental impact, for example for the production of an animal shelter",
+    "reflecting on designed solutions to evaluate and assess suitability and sustainability and determine how well they meet design criteria, for example gathering relevant data to make judgements about a school or community fundraising event in relation to waste reduction, attendance and funds raised, and considering how these aspects could be handled in future events"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2396,6 +2587,11 @@
    ],
    "knowledge": "Students can sequence steps to individually and collaboratively make designed solutions (AC9TDE4P05). They have sequenced production steps. They have not yet developed full project plans that include resources, roles, timelines, milestones and digital planning tools — the shift is from step sequencing to project management.",
    "endpoint": "Students develop project plans that sequence production steps, identify required resources, allocate roles and set milestones — using digital tools to manage and document the plan collaboratively.",
+   "elaborations": [
+    "setting milestones for production processes and allocating roles to team members, for example using a cloud-based or server-based document or spreadsheet to list tasks, deadlines and roles for team members working on a project collaboratively, including setting document sharing permissions with selected people",
+    "identifying the human resources, materials, tools and equipment that will be needed to make the designed solution as part of the project plan and specifying when these will be needed, for example access to a wildlife expert at the planning stage and scheduling access to shared tools when building a habitat for local animals",
+    "planning production steps needed to produce a product, service or environment using digital tools, for example making a flowchart or using a digital planner to record the sequence of tasks and deadlines needed to complete a project"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2470,6 +2666,13 @@
    ],
    "knowledge": "Students can explain how people in design and technologies occupations consider competing factors, including sustainability, in the design of products, services and environments (AC9TDE6K01). They have identified competing factors but have not yet analysed how ethical considerations (intellectual property, cultural protocols, cross-cultural requirements) shape design decisions alongside sustainability.",
    "endpoint": "Students analyse how people in design and technologies occupations consider ethical and sustainability factors — including intellectual property rights, First Nations Australian protocols, and cross-cultural requirements — to design and produce products, services and environments.",
+   "elaborations": [
+    "researching current information on animal welfare when designing an animal shelter or researching intellectual property or the significance of offshore manufacturing in a country in Asia when designing a 3D printed product",
+    "investigating traditional and contemporary design and technologies, including from countries across Asia, and predicting how they might change or be sustained in the future in response to technological, environmental or economic change, for example the production of contemporary textile designs using traditional batik techniques and modern dyes in Indonesia",
+    "comparing the design and production of products, services and environments in Australia and a country in Asia by identifying needs and new opportunities for design and enterprise, for example design, promotion and marketing of a Western Australian wheat variety especially bred and grown for the making of udon noodles in Japan",
+    "researching the rights and responsibilities of those working in design and technologies occupations, for example taking into account First Nations Australian protocols and Indigenous cultural and intellectual property rights",
+    "analysing the ethical and social requirements when designing solutions for cultural groups including their involvement and consultation, for example designing a solution with community members from other cultural backgrounds or those who usually communicate in a language other than English"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2575,6 +2778,13 @@
    ],
    "knowledge": "Students can explain how people in design and technologies occupations consider competing factors, including sustainability, in the design of products, services and environments (AC9TDE6K01). They have identified factors but have not yet analysed the impact of innovation or emerging technologies on designed solutions, or considered how design contributes to global preferred futures.",
    "endpoint": "Students analyse the impact of innovation and the development of technologies — including traditional, contemporary and emerging technologies — on designed solutions, and evaluate how these contribute to global preferred futures.",
+   "elaborations": [
+    "analysing competing factors, including social and ethical factors, that influence the design of services for First Nations Australian communities in areas classified as remote, for example a natural disaster warning system for the Koeybuway and Moegibuway Peoples of Saibai Island, who are vulnerable to flooding and rising sea levels",
+    "investigating techniques used by land managers for managing and reducing bushfires in forests, for example techniques used by local First Nations Australians or smart technologies such as Internet of Things (IoT) sensors, artificial intelligence, cameras and drones",
+    "investigating traditional, contemporary and emerging design and technologies, including from a country in Asia, and the need for more sustainable patterns of living, and predicting how they might change in the future in response to social, technological, environmental or economic change, for example the diversity of house design or waste management practices",
+    "investigating influences impacting on manufactured products and processes such as historical developments, societal change, new materials, accessibility guidelines, control systems or biomimicry, for example researching the development of Velcro, which was inspired by burrs, or researching contemporary designers who use new materials to design and produce innovative products",
+    "considering factors that impact on innovation, for example developing novel ideas, responding quickly to change, creating a point of differentiation, adding value for society, reducing costs and improving efficiency"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2677,6 +2887,15 @@
    ],
    "knowledge": "Students can explain how electrical energy can be transformed into movement, sound or light in a product or system (AC9TDE6K02). They understand energy transformation in simple systems but have not yet analysed how force, motion and energy are applied together to manipulate and control more complex engineered systems.",
    "endpoint": "Students analyse how force, motion and energy are used to manipulate and control engineered systems, including testing components for structural or functional performance and calculating system outputs.",
+   "elaborations": [
+    "analysing how wind turbines harness the motion of propellers to transform wind energy into electricity, and how this energy is used to sustainably power communities classified as remote, such as on Waiben (Thursday Island) in the Torres Strait Islands and in Gawa on Elcho Island near the northern Arnhem Land coast",
+    "investigating the technologies in a control system for an identified need or opportunity and user, for example the Corriong or Millowl (Phillip Island) penguin weighbridge that enables collection of data about penguin weight and foraging duration",
+    "experimenting to select the most appropriate principles and systems on which to base design ideas, for example testing structural components for strength",
+    "testing functionality of an idea by producing prototypes and jigs, including the use of rapid prototyping tools such as 3D printers",
+    "calculating an engineered system's outputs, for example speed, brightness of light, volume of sound to determine when the system might fail",
+    "experimenting with control systems to understand motion, for example programming a microcontroller or an object-based programming application to control a system such as a remote-controlled car or robotic arm",
+    "investigating components, tools and equipment in terms of force, motion or energy, for example testing the durability of batteries or determining the effective range of wireless devices"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2783,6 +3002,14 @@
    ],
    "knowledge": "Students can explain how and why food and fibre are produced in managed environments (AC9TDE6K03). They understand that production is managed but have not yet analysed the techniques used to increase production ethically and sustainably, or compared production methods across contexts including First Nations and Asian approaches.",
    "endpoint": "Students analyse how food and fibre are produced in managed environments — including ethical and sustainable techniques for increasing production — and evaluate how these methods can become more sustainable across different production contexts.",
+   "elaborations": [
+    "analysing traditional First Nations Australians' food and fibre sources for potential species that offer benefits in sustainability, such as conserving water use and resources needed for processing",
+    "comparing land and water management methods in contemporary Australian food and fibre production with a country in Asia, for example comparing the use of robotics, drones, global positioning system (GPS) technologies, minimum-tillage cropping, water-efficient irrigation and smart farm monitoring and controlling systems for increasing efficiency of farm operations and crop protection, and the impact of cash crops versus staples on social sustainability",
+    "investigating how animal and plant crops are grown and the ethical and sustainable techniques used to increase food production, for example comparing the use of herbicides or medicines when producing food and fibre products and recognising the need to increase food production using cost-efficient, ethical and sustainable production techniques",
+    "outlining physical and chemical characteristics of soil and their effects on plant growth when producing food and fibre products, for example comparing the effect on soil characteristics of different farming practices",
+    "investigating different animal nutrition strategies such as grazing and supplementary feeding, and their effects on quality when producing food and fibre products, for example meat tenderness, wool-fibre diameter (micron), milk fat and protein content",
+    "recognising the importance of food and fibre production to Australia's food security and economy, including exports and imports to and from countries across Asia, for example exports of Tasmanian Candy Abalone (wild-caught dried abalone)"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2891,6 +3118,12 @@
    ],
    "knowledge": "Students can explain how the characteristics of foods influence selection and preparation for healthy eating (AC9TDE6K04). They understand that food characteristics matter for healthy eating but have not yet analysed how specific food properties (sensory properties, nutrient retention) determine preparation and presentation techniques.",
    "endpoint": "Students analyse how the properties of foods — including sensory properties (flavour, texture, appearance, aroma) and nutrient value — determine the selection of preparation and presentation techniques when designing solutions for healthy eating.",
+   "elaborations": [
+    "analysing how First Nations Australians prepare foods for healthy eating, for example using cooking methods that improve edibility, such as removing bitterness to make yams more palatable, roasting bunya nuts to improve texture and flavour, and on many occasions, carefully selecting wood for roasting and smoking to complement the flavour of foods",
+    "explaining how food preparation techniques impact on the sensory properties, such as flavour, appearance, texture and aroma of food, for example the browning of cut fruit, the absorption of water when cooking rice, and the selection of timbers when smoking foods",
+    "investigating the relationship between food preparation techniques and the impact on nutrient value including how a recipe can be modified to enhance health benefits, for example stir-frying, steaming vegetables, leaving skin on vegetables or removing skin from chicken",
+    "analysing food preparation techniques used in different cultures including those from countries across Asia and the impact of these on nutrient retention, aesthetics, taste and palatability, for example stir-frying, steaming, poaching and using a wide variety of vegetables"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2993,6 +3226,15 @@
    ],
    "knowledge": "Students can explain how characteristics and properties of materials, systems, components, tools and equipment affect their use when producing designed solutions (AC9TDE6K05). They understand that properties affect use but have not yet analysed how different materials and systems are combined, or how the interaction between properties determines what a designed solution can achieve.",
    "endpoint": "Students analyse how the characteristics and properties of materials, systems, components, tools and equipment can be combined to create designed solutions, including testing and selecting the most appropriate options for a given purpose.",
+   "elaborations": [
+    "investigating the significance of hafting in First Nations Australians' traditional toolkit, including how the characteristics and properties of materials are combined to create a designed solution, for example modern hatchets have seen little innovation since the hafted stone hatchet that combines the benefits of a lever and a wedge to create durable tools that reduce effort",
+    "investigating aspects of technologies specialisations, for example in architecture, critiquing the design of an existing building to identify features of passive design or, in fashion, evaluating the sustainability of different fibres",
+    "investigating a broad range of technologies – tools, equipment, processes, materials, systems and components − when designing for a range of technologies contexts, for example analysing the benefits and disadvantages of building an animal shelter such as a dog kennel with wood, metal and synthetic fabric in terms of function, tools and equipment needed to produce it and expected durability",
+    "considering the ways in which the characteristics and properties of technologies will impact on designed solutions, for example the choice of building materials and housing design in Australia and a country in Asia; the properties of textile fibres and fabrics that determine end use in a range of settings such as architecture, medicine, sport and automotive",
+    "explaining safe work practices for using specific equipment or materials, for example producing a safety information video that details risk management practices for using tools or equipment including considering how the properties of some materials suit certain designs and may cause harm if manipulated in an unsafe way in the classroom or within a community such as ventilation when sanding timber",
+    "testing and selecting the most appropriate hand tools, equipment, processes and materials to produce a product, for example a stool or smartphone stand that can be assembled from bending and interlocking cardboard pieces or from wood using a laser cutter or other digital tools",
+    "investigating carbon fibres (reinforced polymers) and graphite fibres which are strong, stiff, lightweight material used in specialised high-performance products, for example on the design of sporting equipment"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3101,6 +3343,15 @@
    ],
    "knowledge": "Students can investigate needs or opportunities for designing and identify materials, components, tools, equipment and processes needed to create designed solutions (AC9TDE6P01). They have not yet analysed needs to justify design opportunities, nor selected and justified specific resources based on evidence such as testing, sustainability or fitness for purpose.",
    "endpoint": "Students analyse a need or opportunity by examining the context, constraints and stakeholders involved, then investigate and select materials, components, tools, equipment and processes with justification, demonstrating that their selections are fit for purpose in creating designed solutions.",
+   "elaborations": [
+    "considering First Nations Australian community needs when identifying opportunities for designing, for example considering the needs of local groups when designing energy supply or community housing solutions in areas classified as remote",
+    "considering community needs when identifying opportunities for designing, for example gardens for a community centre, cost-effective food service for a sport club",
+    "experimenting with traditional and contemporary technologies when developing designs, and discovering the advantages and disadvantages of each approach, for example comparing a hand-sewn product with one produced using a sewing machine",
+    "investigating emerging technologies and their potential impact on design decisions, for example flame-retardant fabrics, self-healing materials, virtual reality or aquaponics",
+    "examining, testing and selecting a variety of suitable materials, components, tools and equipment for each design project, for example the durability differences between natural hardwood and plantation softwood timbers, which determine their suitability for interior or exterior use",
+    "analysing the viability of using different techniques and materials in areas considered remote, isolated areas or less developed countries and selecting appropriate materials to acknowledge sustainability needs by using life cycle thinking",
+    "creating a survey to determine students' food choices and developing a range of healthy food items such as snacks, juices, breakfast or nourish bowls such as a Buddha bowl which could be sold at the school canteen"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3238,6 +3489,13 @@
    ],
    "knowledge": "Students can generate, iterate and communicate design ideas, decisions and processes using technical terms and graphical representation techniques, including using digital tools (AC9TDE6P02). They have generated and communicated ideas but have not yet systematically tested ideas through prototyping, used multiple generation strategies, or produced formal production drawings with scale and symbols.",
    "endpoint": "Students generate design ideas using multiple strategies, test ideas through models and prototypes, iterate based on testing, and communicate ideas and processes using annotated concept sketches, production drawings with technical terms, scale and symbols, and digital tools.",
+   "elaborations": [
+    "using a variety of strategies such as brainstorming, sketching, 3D modelling and experimenting to generate innovative design ideas to present to others",
+    "considering which ideas to further explore and investigating the benefits and drawbacks of ideas including identifying factors that may hinder or enhance project development, for example using digital polling to capture the views of different groups in the community to inform the production of a solution designed with intercultural understanding",
+    "developing models, prototypes or samples using a range of materials, tools and equipment to test the functionality of ideas",
+    "producing annotated concept sketches and drawings, using technical terms, scale, symbols, pictorial and aerial views to draw environments; production drawings, perspective drawings, orthogonal drawings; patterns and templates to explain product design ideas",
+    "documenting and communicating the generation and development and selection of design ideas for an intended audience, for example developing a digital portfolio with images and text which clearly communicate each step of a design process"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3339,6 +3597,13 @@
    ],
    "knowledge": "Students can select and use suitable materials, components, tools, equipment and techniques to safely make designed solutions (AC9TDE6P03). They can select and use materials but have not yet justified selections with evidence, compared traditional and emerging technologies, or independently managed safety risks.",
    "endpoint": "Students select, justify and use suitable materials, components, tools, equipment, skills and processes to safely make designed solutions, including comparing traditional and contemporary technologies and managing risks through safe, inclusive working practices.",
+   "elaborations": [
+    "developing innovative ways of manipulating technologies by comparing and choosing the most appropriate options to design a solution using traditional or contemporary materials, components, tools, equipment and techniques and considering alternatives including emerging technologies that could be substituted to reduce waste or time",
+    "practising techniques to improve expertise, for example handling animals, cutting and joining materials such as metal, textiles, timber",
+    "developing technical production skills (techniques) and safe independent inclusive working practices to produce quality solutions designed for sustainability",
+    "identifying and managing risks in the development of various projects, for example working safely, responsibly, cooperatively and ethically on design projects; assessing and responding to uncertainty and risk in relation to long-term health and environmental impacts, for example ensuring appropriate personal protective equipment (PPE) is worn or that ventilation is appropriate where solvents, glues or 3D printers are used",
+    "considering how to improve technical expertise required to use tools or equipment needed to design a solution, for example using an online tutorial to learn to use software for design or production"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3496,6 +3761,12 @@
    ],
    "knowledge": "Students can negotiate design criteria, including sustainability, to evaluate design ideas, processes and solutions (AC9TDE6P04). They have used given or negotiated criteria but have not yet developed criteria collaboratively from scratch, incorporated Safety by Design principles, or used evaluation to drive iterative modification of processes.",
    "endpoint": "Students develop design criteria collaboratively — covering accessibility, aesthetics, functionality, sustainability and Safety by Design principles — and use these criteria to evaluate design ideas, processes and solutions, iterating and modifying based on evaluation.",
+   "elaborations": [
+    "developing design criteria collaboratively to evaluate designed solutions in terms of accessibility, aesthetics, functionality and sustainability, for example recording design goals from people interviewed as prospective users of the finished product, service or environment or including life cycle assessment criteria",
+    "developing design criteria including Safety by Design principles, for example do the ideas promote safety through prevention, protection and proactive change",
+    "re-evaluating, iterating and modifying design processes to improve efficiency and increase production, for example when mass producing a product for an enterprise or improving sustainability",
+    "evaluating designed solutions and processes and transferring new knowledge and skills to future design projects, for example considering project planning skills learnt in producing an engineered product and using them in future projects"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3656,6 +3927,11 @@
    ],
    "knowledge": "Students can develop project plans that include consideration of resources to individually and collaboratively make designed solutions (AC9TDE6P05). They have planned with resources in mind but have not yet managed time, cost and production as explicit planning variables, or used planning tools to track and evaluate progress.",
    "endpoint": "Students develop project plans that explicitly manage time, cost and production of designed solutions, including interpreting drawings to identify resources, estimating time for production stages, identifying and minimising risks, and evaluating decisions throughout production.",
+   "elaborations": [
+    "interpreting drawings to plan resources and production steps needed to produce products, services or environments for specific purposes, for example identifying resource requirements from specifications on a labelled drawing and collaboratively developing a detailed procedure",
+    "identifying risks and how to minimise them, organising time, evaluating decisions and managing resources to ensure successful project completion, for example using digital tools to keep track of tasks, resources, expenses and deadlines",
+    "investigating the time needed for each step of production, for example estimating time allocations on a planning template for the different stages of the design process needed to produce a clock, acoustic speaker or desk lamp using prior knowledge, research and testing"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3839,6 +4115,15 @@
    ],
    "knowledge": "Students can analyse how people in design and technologies occupations consider ethical and sustainability factors when designing solutions (AC9TDE8K01). They can identify how designers respond to community needs and sustainability constraints. They have not yet analysed how ethical, security and sustainability factors combine to drive innovation, nor examined product life cycle thinking, mass production systems, or the role of global professional collaboration.",
    "endpoint": "Students analyse how people in design and technologies occupations integrate ethical, security and sustainability considerations — including product life cycle thinking, mass production ethics, and professional collaboration — to innovate and improve products, services and environments.",
+   "elaborations": [
+    "examining sustainability factors influencing the design and production of a solution developed by First Nations Australians, such as the sustainable production of culturally significant pigments",
+    "analysing design and technologies professions and their contributions to society, for example engineers working in disaster recovery or empowering communities",
+    "recognising the impact of past designed solutions when creating solutions for preferred futures",
+    "considering the factors that influence design and manufacture and the work of professional designers including time, access to skills, knowledge, finance, expertise in global engineering",
+    "explaining how product life cycle thinking can influence decision-making related to design and technologies",
+    "examining mass production systems taking into account ethics and sustainability considerations",
+    "explaining the consequences of ethical and sustainability decisions for products, services and environments"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3952,6 +4237,12 @@
    ],
    "knowledge": "Students can analyse the impact of innovation and the development of technologies on designed solutions and sustainability (AC9TDE8K02). They can identify how innovation responds to community needs. They have not yet examined enterprise responses to technological change, used forecasting or backcasting techniques, or analysed innovation for global preferred futures.",
    "endpoint": "Students analyse how innovation, enterprise and emerging technologies interact to create designed solutions — and use forecasting and backcasting techniques to evaluate possible futures and their implications for society.",
+   "elaborations": [
+    "investigating how the knowledges of First Nations Australians have led to the discovery of potential innovative solutions, for example biodegradable polymers using spinifex grass",
+    "exploring the ways commercial enterprises respond to the challenges and opportunities of technological change, for example e-commerce, and considering their carbon footprint",
+    "investigating scenarios of how the future may unfold and what opportunities and impacts there may be for society using forecasting and backcasting techniques",
+    "examining real-world problems and understanding basic needs when considering designed solutions, for example students collaborating to design solutions to challenges in the Asia region"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4048,6 +4339,14 @@
    ],
    "knowledge": "Students can analyse how force, motion and energy are used to manipulate and control engineered systems (AC9TDE8K03). They can identify material properties in functional contexts. They have not yet made judgements on combinations of material properties with force, motion and energy, nor calculated structural loads or critiqued system effectiveness.",
    "endpoint": "Students analyse and make judgements on how material characteristics and properties combine with force, motion and energy to control engineered systems — including calculating forces and loads, and critiquing system effectiveness.",
+   "elaborations": [
+    "investigating the engineering innovations of First Nations Australians, such as spearthrowers and bow and arrow, and how characteristics and properties of materials are used",
+    "explaining the way common machines or engineered systems interact and combine properties of materials, force, motion and energy efficiently",
+    "calculating forces, reactions and loads in structures and analysing the relationship between materials of properties, forces and safety in engineered systems such as bridges",
+    "critiquing the effectiveness of the combinations of materials, forces, energy and motion in an engineered system such as a 3D printer",
+    "investigating how the placement of wind turbines in a wind farm affects their performance",
+    "investigating the main types of chargers for electric vehicles and their capabilities"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4166,6 +4465,14 @@
    ],
    "knowledge": "Students can analyse how food and fibre are produced in managed environments and how food and fibre production systems are affected by innovation and sustainability requirements (AC9TDE8K04). They can identify production methods and sustainability considerations. They have not yet made judgements on ethics and security in production and marketing, nor analysed food and water security, digital production tools, or marketing chain impacts.",
    "endpoint": "Students analyse and make judgements on the ethical, secure and sustainable production and marketing of food and fibre enterprises — including production technology choices, environmental interdependencies, food security, and the marketing chain.",
+   "elaborations": [
+    "analysing grain sources used by First Nations Australians, such as acacia, for their nutrient content and suitability as a sustainable food source",
+    "examining emerging production technologies and methods in terms of productivity, profitability and sustainability, including animal welfare considerations",
+    "investigating how digital tools could be used to enhance food production systems",
+    "investigating the interdependence of plants and animals and comparing the environmental impacts of intensive and extensive production systems",
+    "considering the meaning of food and water security and how they may influence design decisions",
+    "examining the marketing chain of a range of agricultural products and outlining the effect of product processing and advertising on demand and price"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4253,6 +4560,15 @@
    ],
    "knowledge": "Students can analyse how the properties of foods determine their preparation and presentation techniques, and how health, food safety and sustainability affect food choices (AC9TDE8K05). They can identify sensory and nutritional properties of food. They have not yet made judgements on how these properties interact in designing sustainable food solutions, nor examined food preservation, trend-driven food innovation, or emerging food technologies.",
    "endpoint": "Students analyse and make judgements on how sensory and functional food properties influence the design and preparation of sustainable food solutions for healthy eating — including food preservation, trends, and emerging technologies.",
+   "elaborations": [
+    "analysing how First Nations Australians have long understood techniques to turn plant products into food sources with high nutritional value",
+    "experimenting with food preservation methods such as freezing and dehydrating to determine changes to food structure",
+    "conducting sensory and nutritional assessment testing of a range of foods to determine how these characteristics might be used to enhance food solutions",
+    "determining how the causes of food spoilage can be addressed when preparing, cooking, presenting and storing food items",
+    "reflecting on food trends and how they may influence choosing food or designing food solutions for healthy eating",
+    "investigating ways innovations may influence human health and sustainability, for example 3D printing of foods, Internet of Things (IoT) in the food supply chain",
+    "considering factors that influence the preparation and presentation of foods using a range of techniques to ensure optimum nutrient content, flavour, texture and visual appeal"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4347,6 +4663,15 @@
    ],
    "knowledge": "Students can analyse how characteristics and properties of materials, systems, components, tools and equipment can be combined to create designed solutions (AC9TDE8K06). They can identify material properties and justify selection decisions. They have not yet made judgements on combinations, nor critiqued environmental consequences of material selection, nor investigated emerging and innovative materials at this level.",
    "endpoint": "Students analyse and make judgements on how characteristics and properties of materials, systems, components, tools and equipment can be combined in designed solutions — including environmental consequences of material selection, emerging materials, and justified selection from a broad technology range.",
+   "elaborations": [
+    "analysing how First Nations Australians identified the superior thermal properties of possum fur in developing products such as cloaks including making judgements on how these fibres are sourced",
+    "critiquing the design of an existing product to identify environmental consequences of material selection and investigating emerging materials such as bioplastics or seaweed",
+    "justifying decisions when selecting from a broad range of technologies — tools, equipment, processes, materials, systems and components",
+    "analysing and explaining the ways in which the properties and characteristics of materials have been considered in the design of a product with specific requirements",
+    "investigating emerging materials and their impact on design decisions, for example bioplastic material made from discarded potato peels",
+    "investigating fibre-based medical textile products and structures used in a medical environment",
+    "investigating soft robotics including nanomaterials which enable them to function like human muscles"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4441,6 +4766,14 @@
    ],
    "knowledge": "Students can analyse needs or opportunities for designing, and investigate and select materials, systems, components, tools and equipment (AC9TDE8P01). They can develop basic design briefs. They have not yet developed design briefs independently that incorporate universal design or Safety by Design principles, nor analysed intellectual property rights in design contexts, nor interviewed community members to identify design needs.",
    "endpoint": "Students independently analyse needs or opportunities for designing; develop design briefs that incorporate user needs and ethical considerations; and investigate, analyse and select materials, systems, components, tools and equipment for designed solutions.",
+   "elaborations": [
+    "analysing First Nations Australians' traditional grains for their potential for providing nutritional and commercial solutions",
+    "analysing the design of new products to identify how well design ideas respond to sustainability issues",
+    "developing design briefs that take into consideration the needs of users, for example universal design principles or Safety by Design principles",
+    "analysing a range of design and technologies ideas including those that draw on the intellectual property of others, including Indigenous cultural and intellectual property rights",
+    "considering the needs of community groups to identify rich design tasks, for example interviewing community members about accessibility requirements",
+    "examining tools, techniques, equipment and relationships of properties for complementary materials"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4535,6 +4868,14 @@
    ],
    "knowledge": "Students can generate, test, iterate and communicate design ideas, processes and solutions (AC9TDE8P02). They have experience with ideation techniques, modelling and design documentation. They have not yet applied innovation and enterprise skills, reimagined designs to feature emerging technologies, or used the full range of technical drawing and 3D modelling/prototyping tools at this level.",
    "endpoint": "Students apply innovation and enterprise skills to generate, test, iterate and communicate design ideas and solutions — using analysis of benefits and constraints, a range of modelling and prototyping techniques, and appropriate technical documentation for an intended audience.",
+   "elaborations": [
+    "using techniques including combining and modifying ideas and exploring functionality to generate solution concepts and reimagining designs to feature emerging technologies",
+    "undertaking functional, structural and aesthetic analysis of benefits and constraints of design ideas, for example assessing how a design is suitable for different communities and environments",
+    "considering competing variables that may hinder or enhance project development",
+    "producing drawings, models and prototypes to explore design ideas, for example using technical drawing techniques, 3D printers or augmented reality modelling software",
+    "communicating using appropriate technical terms and recording the generation and development of design ideas and processes",
+    "using design thinking and enterprise skills to create innovative approaches to processes and solutions"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4646,6 +4987,13 @@
    ],
    "knowledge": "Students can select, justify and use suitable materials, components, tools, equipment and techniques safely (AC9TDE8P03). They have experience with safe production practices. They have not yet worked with full production independence, adapted processes to unforeseen challenges, or experimented with innovative material combinations at this level.",
    "endpoint": "Students select, justify, test and use suitable technologies, skills and processes with independence and appropriate safety procedures to safely make designed solutions — including adapting processes to risks and unforeseen challenges.",
+   "elaborations": [
+    "refining technical skills and using production skills with independence to produce quality designed solutions",
+    "using materials, components, tools, equipment and techniques safely and considering alternatives to maximise sustainability",
+    "experimenting with innovative combinations and ways of manipulating traditional and contemporary materials and recording findings in a collaborative space",
+    "modifying production processes to respond to opportunities, risks or unforeseen challenges",
+    "experimenting with the functional and sensory properties of food to determine the most successful approach"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4737,6 +5085,12 @@
    ],
    "knowledge": "Students can develop design criteria collaboratively including sustainability to evaluate design ideas, processes and solutions (AC9TDE8P04). They have experience using criteria to guide evaluation. They have not yet developed criteria independently, reflected substantively on process choices, or iterated based on evaluation feedback.",
    "endpoint": "Students independently develop design criteria including sustainability and use them to evaluate and iterate design ideas, processes and solutions — including reflecting on process choices and responding creatively to evaluation feedback.",
+   "elaborations": [
+    "establishing specific design criteria for evaluating designed solutions, for example determining necessary function of a product and making a judgement about whether these have been met after stress testing or user testing",
+    "evaluating and justifying the use and best combination of traditional, contemporary and emerging technologies during project development, including consideration of sustainability",
+    "reflecting on learning including processes or choices made at various stages of a design process and modifying plans when needed with consideration of design criteria",
+    "responding creatively to evaluation feedback to iterate and modify design ideas and processes to improve sustainability measures"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4830,6 +5184,11 @@
    ],
    "knowledge": "Students can develop project plans to individually and collaboratively manage time, cost and production (AC9TDE8P05). They have experience with sequencing and tracking tasks. They have not yet developed plans for specific intended purposes and audiences, incorporated formal risk and contingency planning, or investigated manufacturing process strategies for production enhancement.",
    "endpoint": "Students develop project plans for intended purposes and audiences that manage time, cost, risk, processes and production of designed solutions — including flowcharts, spreadsheets, equitable role distribution, contingencies, and production enhancement strategies.",
+   "elaborations": [
+    "producing, explaining and interpreting drawings and planning production timelines using digital tools, for example establishing materials and equipment needs using spreadsheets, or creating production flowcharts",
+    "collaborating to develop production plans for equitable distribution of work including discussing roles, tasks and deadlines and considering flexibility and contingencies",
+    "investigating manufacturing processes to identify strategies to enhance production, for example identifying techniques to reduce use, cut costs, speed up processes or to form beneficial partnerships"
+   ],
    "nodes": [
     {
      "n": 1,

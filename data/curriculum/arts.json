@@ -1,6 +1,6 @@
 {
  "subject": "arts",
- "source": "waypoints-kit 6bb92e4",
+ "source": "waypoints-kit d93e6e5",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -14,6 +14,13 @@
    "prior": [],
    "knowledge": "No formal prior knowledge assumed. Students bring physical play, movement, and imaginative storytelling from everyday experience.",
    "endpoint": "Students create arts works — including dance — that communicate ideas drawn from personal or social experience.",
+   "elaborations": [
+    "creating arts works in a range of forms to communicate ideas from lived personal or social experiences",
+    "creating works in response to inspiration from sources such as play, imagination, observation, literature, artworks from their cultures and communities",
+    "extending and varying known songs, chants or rhymes",
+    "manipulating objects, puppets, 2D images and/or available technologies to create or retell stories",
+    "repurposing materials and objects such as clothing or packing boxes as starting points for imagining and developing scenes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -106,6 +113,16 @@
    "prior": [],
    "knowledge": "No formal prior knowledge assumed. Students bring physical play, movement, and imaginative storytelling from everyday experience.",
    "endpoint": "Students use play, imagination and arts knowledge to discover movement possibilities and develop ideas for arts works.",
+   "elaborations": [
+    "playing with the tactile qualities of a range of materials and exploring how they feel to develop ideas for dance",
+    "imagining how characters in a story might dress or move, making still or moving images",
+    "identifying shapes, colours and lines in the environment and exploring ways to use these creatively",
+    "playing games to develop subject-specific practices; exploring ways that body parts, zones and bases can be moved safely and expressively",
+    "responding to emotions while listening to music and using movement to share responses",
+    "improvising rhythmic patterns for clapping or stamping or inventing new movements for familiar action songs",
+    "exploring speaking and singing voices and discovering ways to use them to communicate ideas and feelings",
+    "improvising movements to explain the steps in a process"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -169,6 +186,14 @@
    "prior": [],
    "knowledge": "No formal prior knowledge assumed. Students bring awareness of arts experiences from family and community life.",
    "endpoint": "Students explore how and why the arts — including dance — are important for people and communities.",
+   "elaborations": [
+    "exploring how facial expressions, gestures and other ways of moving communicate emotions and feelings in arts works",
+    "identifying and/or learning social or cultural dances that have meaning for people and communities, observing relevant protocols",
+    "identifying arts works and experiences in their lives and sharing ideas and feelings about them with peers and teachers",
+    "singing songs that are used for celebrations",
+    "exploring how illustrations in texts communicate narrative about characters, settings and mood",
+    "listening to First Nations Australians talk about the importance of the arts for connecting to People, Culture and Country/Place"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -259,6 +284,15 @@
    ],
    "knowledge": "Students have created simple movement sequences and arts works communicating personal ideas (AC9ADAFC01). They have some experience of physical play and movement exploration (AC9ADAFD01).",
    "endpoint": "Students share their arts works — including movement and dance — with audiences.",
+   "elaborations": [
+    "sharing artworks with the class via a gallery or performance walk",
+    "performing songs, soundscapes or chants/raps using music skills",
+    "taking images of class arts events and creating an image sequence to document the occasion",
+    "talking about ideas such as themes, processes, or features of the work",
+    "presenting retellings of stories to peers through dramatic play using repurposed objects or puppets",
+    "performing movement/dance sequences created for other groups and introducing the work",
+    "using digital devices to record arts explorations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -322,6 +356,14 @@
    "prior": [],
    "knowledge": "No formal prior Drama curriculum. Students bring imaginative play, storytelling through objects and movement, and early experience using voice, gesture and repurposed materials to express ideas.",
    "endpoint": "Students create arts works — including dramatic play, scenes and puppetry — that communicate ideas drawn from imagination and experience.",
+   "elaborations": [
+    "creating arts works in a range of forms to communicate ideas from lived personal or social experiences",
+    "creating works in response to inspiration from sources such as play, imagination, observation, literature, artworks from their cultures and communities",
+    "manipulating objects, puppets, 2D images and/or available technologies to create or retell stories",
+    "devising a chant/rap that a character could use to communicate a health or sustainability message",
+    "repurposing materials and objects as starting points for imagining and developing scenes and scenarios",
+    "considering characters and situations associated with a story and re-imagining them"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -415,6 +457,14 @@
    "prior": [],
    "knowledge": "No formal prior Drama curriculum. Students bring exploratory play using body, voice and materials; early curiosity about imaginative scenarios.",
    "endpoint": "Students use play, imagination and available arts skills and materials to discover possibilities and develop ideas for arts-making.",
+   "elaborations": [
+    "playing with the tactile qualities of a range of materials and exploring how they feel to develop ideas",
+    "imagining how characters in a story might dress or move, and making still or moving images",
+    "playing games to develop subject-specific practices; taking on the point of view of a fictional character",
+    "responding to emotions in music and using movement to share their response",
+    "exploring their speaking and singing voices and discovering ways to use them to communicate ideas and feelings",
+    "improvising movements to explain the steps in a process, then capturing images to document it"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -479,6 +529,12 @@
    "prior": [],
    "knowledge": "No formal prior Drama curriculum. Students have personal experience of arts in their lives — songs, stories, performances — but have not yet been prompted to consider why people make and share arts works.",
    "endpoint": "Students explore how and why the arts — including drama — are important for people and communities.",
+   "elaborations": [
+    "identifying artworks and experiences in their lives, such as songs, dances, drama, animations, computer games or public art",
+    "singing songs used for celebrations such as school songs, anthems, sports teams' songs, birthday songs",
+    "exploring how illustrations/images in a text help communicate narrative or information",
+    "listening to First Nations Australians talk about the importance of the arts for connecting to people, culture and Country/Place"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -542,6 +598,14 @@
    "prior": [],
    "knowledge": "No formal prior Drama curriculum. Students have experience of sharing informally in play contexts but have not yet participated in purposeful sharing of arts works with an audience.",
    "endpoint": "Students share their arts works — dramatic play, scenes, puppetry — with an audience, and respond to questions about their work.",
+   "elaborations": [
+    "sharing artworks with the class via a 'gallery' or 'performance walk'",
+    "talking about ideas, themes, processes and features of the work",
+    "presenting retellings of stories to peers through dramatic play using repurposed objects, toys or puppets",
+    "sharing work with teacher and responding to questions about the work",
+    "performing movement/dance sequences for other groups and introducing the work",
+    "using digital devices to record and curate arts explorations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -607,6 +671,15 @@
    "prior": [],
    "knowledge": "Students have experience with play and exploration of materials, voice, movement and digital devices in early childhood settings. They can express ideas through drawing, movement and role play but have not yet deliberately used media technologies to communicate ideas to an audience.",
    "endpoint": "Students create arts works using available materials, technologies or tools that communicate a recognisable idea from personal or social experience.",
+   "elaborations": [
+    "creating arts works in a range of forms to communicate ideas from lived personal or social experiences; for example, creating a dance or scenes showing favourite activities such as games; using digital devices to record their peers playing a game and creating a voice-over that describes what's happening; composing a song or chant about a favourite food or activity; drawing a home scene of people and animals",
+    "creating works in response to inspiration from sources such as play, imagination, observation, literature, artworks from their cultures and communities or arts knowledge and skill development activities",
+    "extending and varying known songs, chants or rhymes; for example, changing words, interpreting without using voice, adding movements/actions or improvising rhythm patterns as accompaniment",
+    "manipulating objects, puppets, 2D images and/or available technologies to create or retell stories",
+    "devising a chant/rap that a character from an animated series, a text or a fictional hero could use to communicate a health or sustainability message or to learn the steps in a process; recording the chant/rap using an available digital device and sharing live or via a school-managed space such as a learning management system",
+    "repurposing materials and objects such as clothing or packing boxes as starting points for imagining and developing scenes and scenarios; for example, using packing boxes to create an imagined environment or vehicle",
+    "considering as a class the characters and situations associated with a story and then re-imagining them by asking questions of the story, such as \"What's up?\", \"What happens next?\" or \"What else might/could happen?\" to support the development of their own socio-dramatic or miniature worlds play"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -699,6 +772,16 @@
    "prior": [],
    "knowledge": "Students have experience with free play and exploration of materials, voice, movement and basic digital devices. They have not yet deliberately used play as a strategy for discovering creative possibilities in media arts.",
    "endpoint": "Students use play, imagination and arts processes to discover new possibilities and develop ideas for media arts works.",
+   "elaborations": [
+    "playing with the tactile qualities of a range of materials (rough, smooth, spikey, gooey) and exploring how they feel about these qualities to develop ideas for a visual artwork, dance or soundscape",
+    "imagining how the characters in a story they are reading might dress or move, and making still or moving images to communicate ideas about the characters",
+    "identifying and describing shapes, colours and lines they observe in their environment and exploring ways to use these shapes creatively",
+    "playing games to develop subject-specific practices such as pitch, beat and/or rhythm recognition; exploring ways that body parts, zones and bases can be moved safely and expressively; taking on the point of view of a fictional character in dramatic play",
+    "responding to the emotions they experience while listening to different pieces of music and using movement to share their response",
+    "improvising rhythmic patterns for clapping or stamping, or inventing new movements for familiar action songs, and interpreting these visually using elements of art/design such as shapes, lines and/or colours",
+    "exploring their speaking and singing voices and discovering ways they can use their voices/vocalisation to communicate ideas and feelings",
+    "improvising movements to explain the steps in a process, and then using a camera to capture a series of images/photographic story that can be displayed in the classroom to remind everybody about the process"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -787,6 +870,15 @@
    "prior": [],
    "knowledge": "Students have personal experience of arts events (songs at celebrations, animations, dances) but have not yet consciously reflected on why the arts matter to communities or what role they play.",
    "endpoint": "Students can identify arts works and experiences from their lives and explain how they are important for people and communities.",
+   "elaborations": [
+    "exploring how facial expressions, gestures and other ways of moving, and using voice or language, can communicate emotions and feelings in arts works",
+    "identifying and/or learning social or cultural dances that have meaning for people and communities, taking care to observe relevant protocols",
+    "using dramatic play to explore ideas or understandings they observe or perceive in a text or image",
+    "identifying arts works and experiences in their lives, such as songs they sing, dances or drama they watch or perform, animations, computer games or music videos, public art, 2D, 3D or screen-based works they encounter at school or in community settings",
+    "singing songs that are used for celebrations, such as school songs, anthems, sports teams' songs, birthday songs",
+    "exploring how illustrations/images in a text help to communicate narrative or information about characters or settings and/or mood",
+    "listening to First Nations Australians talk about the importance of the arts for connecting to people, culture and Country/Place; for example, using resources created or co-created by First Nations Australians"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -874,6 +966,16 @@
    "prior": [],
    "knowledge": "Students have experience sharing work informally with teachers during play or activity time, but have not yet engaged in deliberate presentation to an audience — where the relationship between maker and viewer is conscious and considered.",
    "endpoint": "Students share arts works with an audience and engage with that audience's responses.",
+   "elaborations": [
+    "sharing their artworks with the class via a \"gallery\" or \"performance walk\"",
+    "performing songs, soundscapes or chants/raps, using music skills they have learnt and practised",
+    "taking images of class arts events (with permission from the people involved), creating an image sequence to document the occasion, and adding sound",
+    "talking about ideas such as themes, processes used to make the work, or features of the work such as patterns, pathways or lines",
+    "presenting retellings of stories to peers; for example, through dramatic play using repurposed objects, toys or puppets they have made",
+    "sharing their work with their teacher and responding to questions such as \"What is going on in your work?\", \"Tell me the story of what is happening?\", \"What did you enjoy about making this work?\"",
+    "performing movement/dance sequences they have created for other groups in their class",
+    "using digital devices to record their arts explorations; for example, curating (selecting, ordering) a sequence of digital images (photos) to show the steps in a process"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -962,6 +1064,14 @@
    "prior": [],
    "knowledge": "No formal prior arts learning assumed. Students bring play, curiosity and informal experience with voice, movement and sound from early childhood. This is their first formal encounter with creating arts works within a school context.",
    "endpoint": "Students create arts works in at least one form that communicate ideas from personal experience, using deliberate choices about how the work will look, sound or feel.",
+   "elaborations": [
+    "creating arts works in a range of forms to communicate ideas from lived personal or social experiences; for example, composing a song or chant about a favourite food or activity",
+    "creating works in response to inspiration from sources such as play, imagination, observation, literature, artworks from their cultures and communities",
+    "extending and varying known songs, chants or rhymes; for example, changing words, interpreting without using voice, adding movements/actions or improvising rhythm patterns as accompaniment",
+    "manipulating objects, puppets, 2D images and/or available technologies to create or retell stories",
+    "devising a chant/rap to communicate a health or sustainability message; recording using an available digital device",
+    "repurposing materials and objects as starting points for imagining and developing scenes and scenarios"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1074,6 +1184,14 @@
    "prior": [],
    "knowledge": "No formal prior arts learning assumed. Students bring informal experience with play, voice and movement from early childhood. This is their first formal encounter with arts skill-development in a school context.",
    "endpoint": "Students use play, imagination and at least one arts process or skill to discover possibilities and develop ideas across at least one arts form.",
+   "elaborations": [
+    "playing with the tactile qualities of a range of materials and exploring how they feel to develop ideas for a soundscape or visual artwork",
+    "playing games to develop subject-specific practices such as pitch, beat and/or rhythm recognition",
+    "responding to the emotions they experience while listening to different pieces of music and using movement to share their response",
+    "improvising rhythmic patterns for clapping or stamping and interpreting these visually using elements of art/design such as shapes, lines and/or colours",
+    "exploring their speaking and singing voices and discovering ways they can use their voices/vocalisation to communicate ideas and feelings",
+    "improvising movements to explain the steps in a process, then using a camera to capture a series of images or a photographic story"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1185,6 +1303,13 @@
    "prior": [],
    "knowledge": "No formal prior arts learning assumed. Students bring personal experience of music, song, stories and community celebrations from their family and cultural contexts.",
    "endpoint": "Students explore how and why the arts are important for people and communities, and share their own observations and responses.",
+   "elaborations": [
+    "exploring how facial expressions, gestures and other ways of moving, and using voice or language, can communicate emotions and feelings in arts works",
+    "identifying and/or learning social or cultural dances that have meaning for people and communities, taking care to observe relevant protocols",
+    "identifying arts works and experiences in their lives, such as songs they sing, dances or drama they watch or perform, animations, computer games or music videos",
+    "singing songs that are used for celebrations, such as school songs, anthems, sports teams' songs, birthday songs",
+    "listening to First Nations Australians talk about the importance of the arts for connecting to People, Culture and Country/Place"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1272,6 +1397,14 @@
    "prior": [],
    "knowledge": "No formal prior arts learning assumed. Students bring informal experience with showing things to others (e.g. showing a drawing to a parent). Formal experience of sharing arts works with an audience is new.",
    "endpoint": "Students share their arts works with an audience, introduce what the work is about, and respond to questions or comments about it.",
+   "elaborations": [
+    "sharing their artworks with the class via a 'gallery' or 'performance walk'",
+    "performing songs, soundscapes or chants/raps, using music skills they have learnt and practised",
+    "taking images of class arts events, creating an image sequence to document the occasion, and adding sound",
+    "talking about ideas such as themes, processes used to make the work, or features of the work",
+    "presenting retellings of stories to peers through dramatic play using repurposed objects, toys or puppets",
+    "using digital devices to record their arts explorations; curating a sequence of digital images to show the steps in a process"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1684,6 +1817,14 @@
    "prior": [],
    "knowledge": "Students have created arts works communicating ideas and used play and imagination to discover movement possibilities (Foundation). They can sequence simple movement ideas and present them to peers.",
    "endpoint": "Students use the elements of dance to choreograph dance sequences.",
+   "elaborations": [
+    "using improvised movements to create a dance sequence that represents a weather event, or shows how they might take care of a place that is important to them",
+    "using music they have created as inspiration for a dance",
+    "devising a starting shape, a way of moving to another place, and combining ideas with a partner",
+    "using ideas from exploration of balance, posture, and body part movement to create a dance sequence",
+    "using patterns of locomotor movements, sharing these with a partner, and working collaboratively to combine and extend",
+    "using own words and learnt dance terminology and recognising constructive feedback"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1774,6 +1915,13 @@
    "prior": [],
    "knowledge": "Students have used play and imagination to discover movement possibilities at Foundation. They can vary movement in simple ways and are building awareness of their body in space.",
    "endpoint": "Students experiment with ways to move safely and expressively using fundamental movement skills and the elements of dance.",
+   "elaborations": [
+    "developing awareness of and taking responsibility for safe dance practice",
+    "using improvisation to explore movement possibilities in response to stimuli",
+    "using Viewpoints to ask questions and identify movement possibilities",
+    "exploring fundamental movements safely to develop ideas based on familiar situations",
+    "moving around open and crowded spaces safely; identifying distance between self and others; using props; reflecting on safe and unsafe movement"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1862,6 +2010,13 @@
    "prior": [],
    "knowledge": "Students have explored how arts are important for communities at Foundation. They recognise that arts experiences — including dances — bring people together and carry cultural meaning.",
    "endpoint": "Students explore where, why and how people across cultures, communities and/or other contexts experience dance.",
+   "elaborations": [
+    "identifying features of dances that communicate cultural knowledge such as stories, traditions or ceremonies",
+    "using Viewpoints to ask questions about dances experienced",
+    "recognising and describing patterns of movement using own words and learnt terminology",
+    "identifying similarities and differences in dances by sharing, viewing and learning dances from families and communities",
+    "identifying how dance can show what feelings people have about places, people or experiences"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1928,6 +2083,12 @@
    ],
    "knowledge": "Students have explored how the arts are important for communities at Foundation, including listening to First Nations Australians talk about arts and connection to Country/Place. They can observe and describe dance features (AC9ADA2E01).",
    "endpoint": "Students explore examples of dance choreographed and/or performed by First Nations Australians.",
+   "elaborations": [
+    "exploring when, where, how and why First Nations Australians use dance during celebrations and significant occasions",
+    "observing how the elements of dance are used in First Nations Australian choreography and/or performance",
+    "identifying where dance occurs in First Nations Australians' cultural expressions and noting audience protocols",
+    "learning about First Nations Australians' interpretations of the night sky and co-creating movements with cultural authority holders"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1994,6 +2155,12 @@
    ],
    "knowledge": "Students have shared arts works with audiences at Foundation. They can present a movement sequence and describe what it communicates. They are building choreography skills using dance elements (AC9ADA2C01).",
    "endpoint": "Students share dance sequences in informal settings.",
+   "elaborations": [
+    "presenting a learned sequence or performing dances learnt to peers and teachers",
+    "performing a dance co-created with a First Nations Australian person with cultural authority, following ICIP protocols",
+    "expressing ideas through movement — contrasting dynamics, movement qualities communicating ideas",
+    "using Viewpoints to develop questions when responding to dances to reflect on choreography and performance"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2058,6 +2225,15 @@
    "prior": [],
    "knowledge": "Students can create arts works that communicate ideas using play, movement, voice and repurposed materials (Foundation). They can draw an idea from imagination or experience and use at least one mode to express it.",
    "endpoint": "Students create and co-create fictional situations — through dramatic play, process drama, puppetry or movement — based on imagination and/or experience.",
+   "elaborations": [
+    "using puppets to create new stories, including stories that communicate understanding of existing stories or personal experiences",
+    "using learning from explorations of First Nations Australians' drama to devise drama communicating connection to place",
+    "using costume items and props to share character information in Readers' Theatre",
+    "identifying situations from stories, films, fantasy, history or personal experience to explore through dramatic play",
+    "contributing ideas within whole group or small group improvisations including teacher-in-role",
+    "communicating non-verbally using facial expressions and movements to explore role and situation in mime",
+    "accepting or developing the pretence situation established by others"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2148,6 +2324,13 @@
    "prior": [],
    "knowledge": "Students can use play and imagination to discover possibilities and develop ideas (Foundation). They can engage in purposeful exploration of materials, voice and movement.",
    "endpoint": "Students use the elements of drama — role, place, situation, language and movement — and imagination in dramatic play and/or process drama.",
+   "elaborations": [
+    "exploring a situation through dramatic play using familiar props",
+    "understanding and employing appropriate drama terminology",
+    "taking part in purposeful dramatic play focusing on creating roles and situations",
+    "taking turns offering and accepting ideas, and staying in role during improvised drama",
+    "brainstorming and discussing situations from experiences and using these ideas to improvise drama"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2236,6 +2419,12 @@
    "prior": [],
    "knowledge": "Students can identify arts works in their lives and explain a simple reason why the arts are important for people and communities (Foundation). They have not yet explored drama specifically across different cultures and contexts.",
    "endpoint": "Students explore where, why and how people across cultures, communities and other contexts experience drama.",
+   "elaborations": [
+    "identifying where they might experience drama in their lives and community",
+    "recognising how drama can show feelings and ideas people have about the world",
+    "asking questions about drama they experience",
+    "considering how drama communicates cultural knowledge in their own communities"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2302,6 +2491,13 @@
    ],
    "knowledge": "Students have explored the arts as important for people and communities (Foundation). They are developing awareness that drama is used across different cultures and contexts (AC9ADR2E01). No specific prior knowledge of First Nations drama is assumed.",
    "endpoint": "Students explore examples of drama created and/or performed by First Nations Australians, attending to how elements of drama communicate connection to culture and Country/Place.",
+   "elaborations": [
+    "exploring when, where, how and why First Nations Australians use drama during cultural celebrations",
+    "exploring First Nations Australians' use of drama to express connection to and responsibility for Country/Place",
+    "observing how elements such as place, language and movement are used in First Nations cultural expressions",
+    "exploring ways of communicating knowledge through stories from their region",
+    "co-creating a Welcome to Country or Acknowledgement of Country with cultural authority"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2366,6 +2562,11 @@
    "prior": [],
    "knowledge": "Students can share arts works with audiences and respond to questions about their work (Foundation). They have been developing skills in dramatic play, process drama and simple performance within class contexts.",
    "endpoint": "Students share their drama in informal settings, communicating to an audience and reflecting on what the drama made them think or feel.",
+   "elaborations": [
+    "retelling a familiar story through acting and sharing with an audience",
+    "performing sequences of frozen images linked by transitions to communicate key scenes",
+    "reflecting using questions about what they want audiences to think, what the drama made them think about, and what they liked and why"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2431,6 +2632,13 @@
    "prior": [],
    "knowledge": "Students can create arts works that communicate a recognisable idea and share them informally. They have explored media technologies through play. They have not yet deliberately applied media languages (shot types, composition) or production choices to construct representations with communicative intent.",
    "endpoint": "Students use media languages and media technologies to construct representations that communicate identifiable ideas or stories.",
+   "elaborations": [
+    "creating a story through a series of captioned or voice-over images or direct to camera footage; exploring composition through character creation using images, sounds, and/or animation; for example, claymation",
+    "selecting and editing images, sound and text to re-create the characters in well-known stories or songs, using Viewpoints to develop questions when making decisions about composition",
+    "capturing and sequencing images and text to create a media arts work, such as a comic book that retells familiar or traditional stories",
+    "producing and presenting a media arts work for a particular purpose; for example, creating an advertisement that recommends appropriate behaviour when using cameras",
+    "using features such as shot types in media arts works; for example, identifying long-shots, mid-shots and close-ups; discussing what the shots tell the audience about the story"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2519,6 +2727,13 @@
    "prior": [],
    "knowledge": "Students have used digital devices for play and idea exploration. They can capture images or sounds informally. They have not yet explicitly considered responsible use, or deliberately combined visual and audio elements to communicate.",
    "endpoint": "Students explore ways of using media technologies responsibly to capture and organise images, sounds, text and/or interactive elements.",
+   "elaborations": [
+    "exploring ways to use digital tools to capture moving image; for example, using a digital device to capture and manipulate short videos, add sound effects or voice-overs, and considering how best to combine the visual and audio elements to communicate ideas or a narrative",
+    "exploring how sound can be used to communicate ideas; for example, creating sound effects using found objects or sound recording technology to integrate with a picture book story",
+    "experimenting with images; for example, retelling the story of a school day using a digital camera to capture still or moving images and adding appropriate captions",
+    "experimenting with ways that media artists communicate with audiences by combining text, symbols and images; for example, combining headlines, subtitles and digital images to communicate ideas or emotions",
+    "using Viewpoints to develop questions as they experiment with media technologies, such as, \"What happens if I take a photo up close to the object, and how does it change as I move further away?\", \"How can I change the meaning of this image by adding different text headings?\""
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2607,6 +2822,12 @@
    "prior": [],
    "knowledge": "Students can identify arts works in their own lives and explain why they matter to people. They have not yet explored media arts works across different cultures or communities, or considered the roles and responsibilities of media artists.",
    "endpoint": "Students can explore where, why and how people across cultures, communities and/or other contexts experience media arts, and describe the role of media artists and what permissions mean.",
+   "elaborations": [
+    "identifying where they might experience media arts works in their lives and communities; for example, considering how media arts works communicate cultural knowledge and the purpose of a range of media types",
+    "using Viewpoints to ask questions about societies and cultures; for example, \"What story is this media arts work telling me/us?\", \"Who made this media arts work?\", \"Where is this media arts work from?\"",
+    "discussing the roles of media artists and what permission means; for example, deciding on a class set of rules for using and creating images, sounds and text in media arts works",
+    "considering how media arts works communicate and celebrate cultural knowledge in their own communities; for example, through podcasts or animated children's shows"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2695,6 +2916,12 @@
    "prior": [],
    "knowledge": "Students can identify media arts works and explain how they communicate cultural knowledge. They may have encountered First Nations Australian arts works in Foundation but have not yet specifically explored media arts produced and/or distributed by First Nations Australians.",
    "endpoint": "Students explore examples of media arts produced and/or distributed by First Nations Australians, identifying how visual, audio and/or interactive elements communicate cultural knowledge.",
+   "elaborations": [
+    "exploring when, where, how and why First Nations Australians use media arts works to share knowledge about their cultures; for example, during celebrations such as National Aboriginal and Torres Strait Islander Children's Day, NAIDOC Week, Reconciliation Week or the acknowledgement of significant occasions including Sorry Day",
+    "exploring children's television programs, cartoons/animations and child-focused print media, such as an advertisement encouraging people to adopt a healthy lifestyle, created and distributed by First Nations Australians",
+    "observing how visual, audio and/or interactive elements are used in media arts works created by First Nations Australians; for example, exploring colours, symbols and patterns used in media arts works with representatives of the First Nations Australian community or through resources that are created or co-created by First Nations Australians",
+    "exploring media arts works created and/or co-created by First Nations Australians that communicate cultural narratives"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2759,6 +2986,12 @@
    "prior": [],
    "knowledge": "Students can share arts works informally and respond to audience questions. They have not yet shared specifically media arts works in ways that require permission, protocol consideration, or audience relationship thinking.",
    "endpoint": "Students share media arts works with audiences in informal settings, applying permission principles and considering audience relationships.",
+   "elaborations": [
+    "collecting and sharing class stories and presenting them in the form of a class news bulletin, with permission of the people involved and observing relevant protocols",
+    "presenting a media arts work they have made to the class, a small group or their teacher, and explaining how they made it and what they enjoyed about making it",
+    "considering relationships that peers may have with their work when creating, rehearsing and recording a radio play, and seeking permission to share it with another class",
+    "exploring what permission means; for example, consulting relevant people such as cultural knowledge holders or using online safety resources, and deciding on a class set of rules for using and creating images, sounds and text in media arts works"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2827,6 +3060,16 @@
    ],
    "knowledge": "Students have created arts works that communicate ideas (AC9AMUFC01) and made deliberate choices during making. They have explored voice, body percussion and sound sources through play (AC9AMUFD01). They have no formal vocabulary for elements of music and have not yet deliberately selected or combined musical elements.",
    "endpoint": "Students select and combine elements of music when composing and practising music, using at least two elements deliberately to create expressive or communicative effects.",
+   "elaborations": [
+    "contributing to decisions about how to interpret the elements of music, such as tempo, dynamics and/or articulation when performing songs, chants, rhymes or instrumental music",
+    "improvising and making decisions about how to combine sounds to create compositions; for example, combining pitch and rhythm patterns, improvising melodies and drone accompaniments",
+    "using voices and body percussion to create music that features contrasting examples of elements of music, such as sound/silence, fast/slow, long/short, high/low, loud/soft",
+    "improvising patterns of body movement, such as clapping or stamping, to create accompaniments for songs",
+    "practising a repertoire of songs, chants and rhymes focusing on using elements of music such as tempo, dynamics or articulation to create expressive effects",
+    "using signs and symbols to notate or document patterns or soundscapes and/or using an available device to record work in progress",
+    "practising music using accessible technologies; for example, using recordings to make decisions about dynamics or tempo",
+    "writing lyrics for a chant/rap and improvising to develop rhythmic patterns they can use to perform the lyrics"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2942,6 +3185,16 @@
    ],
    "knowledge": "Students have explored their speaking and singing voices through play (AC9AMUFD01) and discovered ways voice can communicate ideas. They have not yet formally practised listening skills for specific musical purposes, ensemble blending, or instrumental technique.",
    "endpoint": "Students develop listening skills for specific musical purposes and demonstrate developing skills for singing and playing instruments across a range of sound sources.",
+   "elaborations": [
+    "experimenting with their speaking and singing voices/vocalisation to create a range of expressive effects",
+    "playing music games or taking part in skill-development activities to develop skills for listening, composing and performing",
+    "improvising on pitch and rhythm patterns to develop skills relevant to different elements of music; for example, echo clapping, calling and response singing",
+    "participating in singing games/activities that involve pitch awareness or matching pitch",
+    "developing listening skills for specific purposes, such as listening to count-ins, to become confident about tempo",
+    "exploring and improvising ways to create and vary sounds using a range of sound sources, such as voice, classroom instruments, found/environmental objects or digital instruments",
+    "developing understanding of what matching pitch means; for example, by using a digital tuner",
+    "practising techniques for singing songs and playing classroom instruments"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3056,6 +3309,13 @@
    ],
    "knowledge": "Students have explored how arts are important for people and communities (AC9AMUFE01) and can identify arts works in their own life. They have not yet formally explored music across diverse cultural or community contexts, or considered the different roles people play in relation to music.",
    "endpoint": "Students explore where, why and how people across cultures, communities and other contexts experience music, and share observations about music preferences and purposes.",
+   "elaborations": [
+    "listening to and talking about music that features instruments and/or voices from diverse contexts and cultures, and sharing observations about the music",
+    "exploring ways that people in their local community are making and experiencing music",
+    "identifying opportunities for engaging with music in their daily life by being a composer, performer or audience",
+    "discussing where, how and why they and their peers or family members experience music, and their music preferences",
+    "practising active listening skills; for example, moving with the beat and clapping rhythmic ideas"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3146,6 +3406,11 @@
    ],
    "knowledge": "Students have explored how arts are important for communities (AC9AMUFE01) including listening to First Nations Australians talk about arts and Country/Place. They have explored music from diverse cultural contexts (AC9AMU2E01). This is their first focused exploration of music specifically by First Nations Australian composers and performers.",
    "endpoint": "Students explore examples of music composed and/or performed by First Nations Australians across diverse styles, asking questions about instruments, voices, cultural messages and connections to Country/Place.",
+   "elaborations": [
+    "identifying where and how they can experience music composed and/or performed by First Nations Australians, such as via mainstream music platforms, music for ceremonies, or state and national events",
+    "exploring the diverse music styles represented in music composed and performed by First Nations Australians",
+    "exploring how the elements of music are used to create specific effects in screen-based or theatrical works that communicate First Nations Australian cultural knowledge"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3236,6 +3501,14 @@
    ],
    "knowledge": "Students can share arts works with audiences (AC9AMUFP01), understand the audience relationship, and have practised basic music performance skills (staying in time, using singing voice). They have not yet performed with formal introductions, staging decisions or post-performance reflection.",
    "endpoint": "Students sing and play music in informal settings, following agreed performance decisions, introducing performances to audiences, and contributing to post-performance discussion.",
+   "elaborations": [
+    "singing songs, performing chants/raps or playing instrumental music they have learnt or composed for an audience of peers and teachers",
+    "following agreed decisions about how the music should sound; for example, using singing voice rather than speaking voice",
+    "making decisions about how/where to sit/stand in a performance space",
+    "introducing a performance by writing text for a slide that shares information about the music with the audience",
+    "listening intentionally and respectfully during performances",
+    "contributing to post-performance discussions"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3774,6 +4047,12 @@
    "prior": [],
    "knowledge": "Students can use elements of dance to choreograph dance sequences (Y1-2). They have produced sequences with beginning, middle and end, made deliberate element choices, and used feedback to refine their work.",
    "endpoint": "Students use the elements of dance to choreograph dance that communicates ideas, perspectives and/or meaning.",
+   "elaborations": [
+    "improvising using movements from a dance they have learnt and using elements to develop sequences based on original movements",
+    "using Viewpoints to frame questions about choreography being developed",
+    "creating dance sequences by combining fundamental locomotor and non-locomotor movements at various levels and directions",
+    "using learning from First Nations Australians' connection to Country/Place to devise dance communicating their own connection"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3864,6 +4143,13 @@
    "prior": [],
    "knowledge": "Students can move safely and expressively using fundamental movement skills and elements of dance (Y1-2). They have established spatial awareness and can use movement quality to communicate ideas.",
    "endpoint": "Students experiment with and practise skills for moving safely and expressively using fundamental movement skills and the elements of dance.",
+   "elaborations": [
+    "exploring known movements to find alternative ways of performing them at different levels, directions, sizes, body parts",
+    "using contrast and repetition to explore and generate new movement in response to stimuli",
+    "exploring how elements of dance can be used to communicate ideas from cultural stories",
+    "developing the habit of always using safe dance practice including warm-up and cool-down",
+    "developing body awareness and refining technical skills in response to teacher feedback"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3952,6 +4238,11 @@
    "prior": [],
    "knowledge": "Students can identify where, why and how people experience dance across cultures and communities (Y1-2). They can observe and describe dance features using learnt terminology.",
    "endpoint": "Students explore where, why and how dance is choreographed and/or performed across cultures, times, places and/or other contexts.",
+   "elaborations": [
+    "identifying meaning and describing purposes that dance is created for across a range of cultures",
+    "learning dances created for different purposes such as entertainment, dance crazes",
+    "using Viewpoints to ask questions about similarities, where dances are performed"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4015,6 +4306,13 @@
    "prior": [],
    "knowledge": "Students have explored examples of dance choreographed and/or performed by First Nations Australians (Y1-2). They can observe element use in First Nations dance and know that First Nations Australians use dance on significant cultural occasions.",
    "endpoint": "Students explore how First Nations Australians use dance to communicate their connection to and responsibility for Country/Place.",
+   "elaborations": [
+    "collecting and sharing information about dances for festivals or ceremonies; reflecting on how they communicate knowledge about Country/Place",
+    "exploring how First Nations Australians use dance to express connection to and responsibility for Country/Place including seasonal knowledge",
+    "exploring screen-based storytelling to maintain unique ways of life",
+    "observing how elements are used in dances communicating connection to Country/Place",
+    "exploring movements in dances with community representatives or co-created resources"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4083,6 +4381,12 @@
    "prior": [],
    "knowledge": "Students have shared dance sequences in informal settings (Y1-2). They can present with expressive intent and reflect on performances using Viewpoints questions.",
    "endpoint": "Students practise and perform dances in informal settings.",
+   "elaborations": [
+    "using expressive skills such as projection and focus to communicate to an audience",
+    "presenting dance using screen-based technologies or online platforms",
+    "being an attentive audience member during class performances and providing constructive feedback",
+    "sharing meaning and intended purposes using own words, images, learnt terminology, movement or drawing"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4148,6 +4452,15 @@
    "prior": [],
    "knowledge": "Students can create and co-create fictional situations using elements of drama in dramatic play and process drama (Y1-2). They can take on roles, contribute ideas, and communicate non-verbally within a group improvisation.",
    "endpoint": "Students improvise and/or devise and shape drama using elements of drama to communicate ideas, perspectives and/or meaning.",
+   "elaborations": [
+    "using learning from First Nations Australians' drama to devise drama communicating connection to place",
+    "creating drama by exploring roles and situations in a 'miniature world'",
+    "improvising drama to explore issues, using empathy to take on roles and 'stand in the shoes' of another",
+    "devising dialogue for a previously 'wordless story'",
+    "using elements of drama and principles of story to shape improvisations",
+    "working in groups to devise sections of drama and combining them using play-building",
+    "communicating Acknowledgement of Country before a performance"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4242,6 +4555,12 @@
    "prior": [],
    "knowledge": "Students can use elements of drama — role, place, situation, language, movement — in dramatic play and process drama (Y1-2). They can identify and use drama vocabulary and take on roles purposefully.",
    "endpoint": "Students use the elements of drama to explore and develop ideas for dramatic action in improvisations and/or devised drama.",
+   "elaborations": [
+    "experimenting with loudness/softness, pace and pitch of voices to create roles and situations",
+    "exploring roles using language choice, expressions and tone to heighten tension",
+    "improvising ways to connect short scenes through clapping, phrases or movement",
+    "developing spatial awareness — considering distance and movement to manipulate tension"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4330,6 +4649,12 @@
    "prior": [],
    "knowledge": "Students can explore where, why and how people across cultures experience drama (Y1-2). They understand that drama communicates feelings, ideas and cultural knowledge for different communities.",
    "endpoint": "Students explore where, why and how drama is created and/or performed across cultures, times, places and other contexts.",
+   "elaborations": [
+    "listening to actors talk about how they developed their character and what they found interesting",
+    "comparing audience and performer expectations in different cultural settings including Asia",
+    "reflecting on live or recorded performances asking questions about purpose and features",
+    "examining drama in their community and comparing it with drama from other cultures, times and places"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4394,6 +4719,13 @@
    "prior": [],
    "knowledge": "Students have explored examples of drama created and/or performed by First Nations Australians and attended to how elements communicate cultural meaning (Y1-2). They understand that First Nations Australians use drama to share cultural knowledge.",
    "endpoint": "Students explore how First Nations Australians use drama to communicate their connection to, and responsibility for, Country/Place.",
+   "elaborations": [
+    "collecting and sharing information about First Nations drama for festivals or ceremonies communicating knowledge about Country/Place",
+    "exploring how First Nations Australians use drama to communicate knowledge and maintain unique ways of life",
+    "observing how elements of drama are used in First Nations drama to communicate connection to Country/Place",
+    "accessing drama by First Nations Australians exploring ways to live sustainably and respect the land",
+    "looking at performances representing the importance of Country/Place and Story as a starting point for talking about different ways of seeing the same place"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4458,6 +4790,11 @@
    "prior": [],
    "knowledge": "Students can share drama in informal settings, considering audience perspective and reflecting on the experience (Y1-2). They can use elements of drama in dramatic play and simple performance.",
    "endpoint": "Students perform improvised and/or devised drama in informal settings, demonstrating commitment to role and using voice, movement and language to sustain dramatic action.",
+   "elaborations": [
+    "using voice, movement and language to sustain role and relationships when performing",
+    "demonstrating commitment to the reality of the drama — staying in role throughout",
+    "manipulating focus, tension, space and time to shape dramatic action when performing"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4527,6 +4864,14 @@
    "prior": [],
    "knowledge": "Students can use media languages and technologies to construct representations that communicate identifiable ideas or stories. They can apply basic shot types and make deliberate compositional decisions. They have not yet worked with the full production process — pre-production, production, post-production — or communicated perspectives and meaning through multi-element works.",
    "endpoint": "Students use media languages, media technologies and production processes to construct representations that communicate ideas, perspectives and/or meaning.",
+   "elaborations": [
+    "taking a series of photographs that show themselves and their friends as comic superheroes and villains through setting, costume and body language",
+    "creating a soundscape to accompany a moving image that includes Foley sounds and recorded sounds on a variety of devices to explore volume, layering and the use of voice to create a sense of environment",
+    "using learning from explorations of media arts works that communicate First Nations Australians' connection to and responsibility for Country/Place to devise media arts works that communicate their own connection to and responsibility for place",
+    "experimenting with the camera and framing the subject, using shot types, angles and lighting, and experimenting to apply text to still or moving images, such as credits in a title sequence",
+    "filming a short sequence that focuses on conflict by selecting camera angles, lighting and/or costume to convey meaning without dialogue",
+    "collaborating with others to make a small publication to explore ideas that are significant in their lives; for example, a zine or new website, using collaged images and texts and drawings"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4615,6 +4960,13 @@
    "prior": [],
    "knowledge": "Students can capture and organise media elements and experiment with how changes affect meaning. They can apply basic production skills. They have not yet systematically explored how specific production techniques (suspense, genre conventions, Foley sound) shape meaning.",
    "endpoint": "Students develop media production skills by exploring ways of shaping ideas using media technologies, images, sounds, text and/or interactive elements.",
+   "elaborations": [
+    "experimenting with suspense to create meaning and sustain representations; for example, exploring the way colour, shot type and editing techniques are used to communicate film genre",
+    "investigating how the conventions of a news story or video game communicate meaning",
+    "exploring different ways of creating sounds when making a soundscape; for example, creating Foley sounds with available resources",
+    "exploring media technologies and languages when creating sound effects or images to convey a mood or main idea of a story",
+    "using Viewpoints to develop questions to respond to their experiences as they work, such as, \"In what ways does the meaning of the image change when I manipulate the sound effects?\""
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4679,6 +5031,13 @@
    "prior": [],
    "knowledge": "Students can explain why media arts works matter to communities and describe the role of media artists. They have explored media arts from their own and First Nations Australian communities. They have not yet explored media arts across historical periods or analysed representations and stereotypes across different social contexts.",
    "endpoint": "Students explore where, why and how media arts is created and/or distributed across cultures, times, places and/or other contexts — comparing works made for different purposes and identifying how context shapes representation.",
+   "elaborations": [
+    "sequencing images, sounds and/or text to clearly establish the beginning, middle and end of a story or event",
+    "identifying meaning and describing representations in media arts works from different social, cultural or historical contexts; for example, examining the different ways traditional stories are retold using media technologies or the use of stereotypes in advertising",
+    "comparing media arts works made for different purposes using appropriate language, and identifying features such as use of conventions in a variety of media types",
+    "using appropriate language to discuss the meaning of their own media arts works",
+    "investigating digital or analog storyboarding as a planning tool"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4743,6 +5102,15 @@
    "prior": [],
    "knowledge": "Students can identify media arts works produced by First Nations Australians and describe how visual, audio and interactive elements communicate cultural knowledge. They have not yet explored specifically how media arts communicates connection to and responsibility for Country/Place.",
    "endpoint": "Students explore how First Nations Australians use media arts to communicate their connection to and responsibility for Country/Place.",
+   "elaborations": [
+    "identifying meaning and describing representations in media arts works created and/or co-created by First Nations Australians, such as how traditional stories of First Nations Australians are being retold using media technologies",
+    "recognising, through media arts, how First Nations Australians' cultural expressions often contain and communicate connection to and responsibility for Country/Place",
+    "exploring First Nations Australians' use of media arts to express connection to and responsibility for Country/Place, such as communicating knowledge about the local seasons or using screen-based storytelling to maintain language and unique ways of life",
+    "exploring how First Nations Australians use media arts concepts to communicate their connection to and responsibility for Country/Place",
+    "collecting and sharing information about media arts works created and produced by First Nations Australians for occasions such as festivals or ceremonies",
+    "exploring how stories and ideas can communicate connection to and responsibility for Country/Place",
+    "exploring a media arts work that includes images, sound and/or text and communicates the diversity of First Nations Australians' cultures, such as an interactive map of First Nations Australian languages"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4807,6 +5175,11 @@
    "prior": [],
    "knowledge": "Students can share media arts works with audiences in informal settings and apply basic permission principles. They have not yet applied a full suite of responsible media practices (credits, formal permission workflows, audience and relationship considerations) when presenting.",
    "endpoint": "Students share media arts works in informal settings considering responsible media practice — including permission, credits, and audience/relationship considerations.",
+   "elaborations": [
+    "creating credits in a title sequence and selecting appropriate fonts, colour and length of display time to accompany screening of a series of moving images",
+    "seeking permission to take photos of class members; for example, documenting a school excursion for publication on the school intranet",
+    "considering media concepts, such as audience and relationships, when formatting and laying out a story, using available software and appropriate text conventions for a front-page news story or print advertisement"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4873,6 +5246,16 @@
    ],
    "knowledge": "Students can select and combine elements of music when composing (AC9AMU2C01) and have practised documentation using signs, symbols and recordings. They can combine two elements for expressive effect and justify their selections. They have not yet manipulated elements strategically to communicate specific ideas, perspectives or meaning across a sustained composition.",
    "endpoint": "Students manipulate elements of music to communicate ideas, perspectives and/or meaning when composing and practising for performance, using notation, documentation or recording to capture their work.",
+   "elaborations": [
+    "writing lyrics and/or melodies for songs, raps or chants and using formats such as graphic or staff notation or a lead-sheet or an audio recording to notate/document/record their work",
+    "using available technologies to create accompaniments; for example, improvising patterns and recording as a loop or using digital tools to notate/document music",
+    "improvising phrases of music on an instrument to practise known notes and rhythm patterns",
+    "learning songs and/or instrumental music associated with specific cultures",
+    "listening to live or recorded performances and gathering ideas they can use in their performance",
+    "manipulating the elements of music to express different characters or dramatic action when composing music for a screen-based work or to accompany drama",
+    "combining composed and improvised sections to create a complete work",
+    "working in pairs or groups to create ostinatos or accompaniments"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4964,6 +5347,15 @@
    ],
    "knowledge": "Students have developed listening skills for specific purposes and basic singing/instrumental technique (AC9AMU2D01). They can match pitch with developing accuracy and demonstrate correct technique for classroom instruments. They have not yet focused on manipulating elements deliberately to create and control intended effects.",
    "endpoint": "Students develop listening skills and skills for manipulating elements of music to create controlled expressive effects when singing and playing instruments.",
+   "elaborations": [
+    "using speaking, singing, voice/vocalisation and movement to develop skills for singing/vocalisation",
+    "manipulating elements of music to create and control intended effects, using sounds from a range of sources",
+    "singing and playing learnt pitch and rhythm patterns and varying elements of music within them to create different effects",
+    "listening to the effects they create by manipulating elements of music in different ways",
+    "listening to diverse examples of music to explore how rhythm and pitch patterns, structures or timbres are used",
+    "practising reading staff, graphic and/or invented notation as they rehearse and perform",
+    "exploring options for representing sounds in a score"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5054,6 +5446,13 @@
    ],
    "knowledge": "Students have explored music from diverse cultural contexts and discussed preferences (AC9AMU2E01). They can identify where and how people experience music and connect personal preferences to contexts. They have not yet compared music across times and places for similar purposes, or examined audience/performer expectations across different settings.",
    "endpoint": "Students explore where, why and how music is composed and performed across cultures, times, places and other contexts, comparing purposes, notation formats, performance settings and audience expectations.",
+   "elaborations": [
+    "exploring examples of music created for similar purposes across different times and/or places, such as music for dancing, songs that communicate messages, or narrative songs",
+    "examining the purpose for which music is used in their lives and community",
+    "comparing the expectations and requirements of performers and audiences in different performance settings",
+    "exploring ways of notating or documenting forms of music",
+    "exploring ways to make instruments from a range of materials"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5143,6 +5542,12 @@
    ],
    "knowledge": "Students have explored diverse styles and instruments in First Nations Australian music and examined how music communicates messages about Country/Place (AC9AMU2E02). They can identify instruments and ask basic analytical questions. They have not yet focused on connection to and responsibility for Country/Place as the specific communicative purpose, or engaged with First Nations Australian community protocols for performance.",
    "endpoint": "Students explore how First Nations Australians use music to communicate their connection to and responsibility for Country/Place, including listening expectations and protocols for different contexts.",
+   "elaborations": [
+    "examining a diverse range of music composed and/or performed by First Nations Australians to communicate connection to, and responsibility for Country/Place",
+    "listening to and exploring music that shares feelings and ideas about the importance of Country/Place and Story for First Nations Australians",
+    "learning from First Nations Australians about how they use music to communicate their connection to, and responsibility for Country/Place, culture and people",
+    "learning from First Nations Australians about the expectations and requirements of performers and audiences experiencing music that communicates connection to Country/Place"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5233,6 +5638,13 @@
    ],
    "knowledge": "Students can sing and play in informal settings, follow agreed performance decisions, introduce performances and contribute to post-performance discussion (AC9AMU2P01). They can make basic staging decisions. They have not yet performed from notation in rehearsal/performance, used sound reinforcement technology, or iteratively refined a performance using recordings.",
    "endpoint": "Students sing and play music they have learnt and/or composed in informal settings, using notation, staging plans, technology and feedback to prepare and introduce performances.",
+   "elaborations": [
+    "performing music such as unison songs, rounds and instrumental music arranged for small ensembles",
+    "introducing performances by sharing information such as the intended purposes of their compositions",
+    "rehearsing and performing music using a range of technologies",
+    "planning how they will stage a performance and introduce their performances to audiences",
+    "reading from notation and/or documentation such as a lead-sheet, staff or graphic notation when practising and performing"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5775,6 +6187,12 @@
    "prior": [],
    "knowledge": "Students can use elements of dance to choreograph dance that communicates ideas, perspectives and/or meaning (Y3-4). They can structure dances with beginning-middle-end, generate and combine movement material, and use choreographic intent to guide decisions.",
    "endpoint": "Students manipulate the elements of dance and/or choreographic devices to choreograph dances that communicate ideas, perspectives and/or meaning.",
+   "elaborations": [
+    "exploring character and mood by experimenting with elements, developing narrative dance",
+    "devising movement possibilities and selecting, combining, arranging and refining; using some movements in repeating sections that alternate with contrasting sections",
+    "creating dance that focuses on technical and expressive skills",
+    "creating dance that explores a theme or issue such as sustainability"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5865,6 +6283,12 @@
    "prior": [],
    "knowledge": "Students can experiment with and practise skills for moving safely and expressively (Y3-4). They demonstrate habitual safe practice and can use elements to communicate ideas through movement.",
    "endpoint": "Students develop and practise technical and expressive skills using safe dance practice and the elements of dance.",
+   "elaborations": [
+    "improvising new movement to communicate ideas in response to stimulus",
+    "developing technical and expressive skills to refine execution of fundamental movements",
+    "developing expressive skills of focus, clarity of movement, confidence and facial expression/character",
+    "exploring an element of dance; experimenting with shapes and positive/negative space, contrasting dynamics"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5929,6 +6353,13 @@
    "prior": [],
    "knowledge": "Students can explore where, why and how dance is choreographed and/or performed across cultures, times, places and/or other contexts (Y3-4). They can compare dances and identify purpose and meaning using Viewpoints questions.",
    "endpoint": "Students explore ways that the elements of dance are combined to communicate ideas, perspectives and/or meaning in dance across cultures, times, places and/or other contexts.",
+   "elaborations": [
+    "exploring how dances use elements and choreographic devices such as repetition, unison, contrast",
+    "seeking feedback about how audience interpreted the dance's movements",
+    "discussing purpose of movements, elements, production elements and technical/expressive skills and their effect on mood",
+    "asking Viewpoints questions to explore similarities and differences across choreographers",
+    "exploring how dance communicates cultural traditions; considering dances from Asia"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5993,6 +6424,13 @@
    "prior": [],
    "knowledge": "Students can explore how First Nations Australians use dance to communicate connection to and responsibility for Country/Place (Y3-4). They can identify element use in First Nations dance and understand the cultural purposes of specific dance occasions.",
    "endpoint": "Students explore the ways that First Nations Australians use dance to continue and revitalise cultures.",
+   "elaborations": [
+    "exploring how and why cultural expressions are critical for sharing, continuing or revitalising cultures",
+    "investigating how meaning and purpose are communicated in dance at community events",
+    "experiencing how First Nations Australians' stories and ideas communicate connection to and responsibility for Country/Place",
+    "using Viewpoints to develop questions and build understanding about First Nations dance",
+    "exploring how narrative dances maintain culture — knowledge about sustainable practices or place stories"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6057,6 +6495,12 @@
    "prior": [],
    "knowledge": "Students can practise and perform dances in informal settings (Y3-4). They use expressive skills (projection, focus) and can communicate intent to an audience and reflect on performance.",
    "endpoint": "Students practise and perform dances using technical and expressive skills in informal and/or formal settings.",
+   "elaborations": [
+    "rehearsing and performing with awareness of body capabilities and applying technical and expressive skills",
+    "using specific technical and expressive skills to communicate ideas, perspectives and meaning",
+    "presenting using production elements — music, costumes, props — appropriate to the context",
+    "using Viewpoints to reflect on performance — space, energy, relationship between dancers and audience"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6122,6 +6566,14 @@
    "prior": [],
    "knowledge": "Students can improvise and devise drama using elements of drama to communicate ideas and meaning (Y3-4). They can shape improvisations using voice, movement and language, and devise drama collaboratively with communicative intent.",
    "endpoint": "Students develop characters and situations, and shape and sustain dramatic action to communicate ideas, perspectives and/or meaning in improvised, devised and/or scripted forms.",
+   "elaborations": [
+    "exploring physical, fictional or emotional spaces to create characters",
+    "varying voice using projection, dynamics, pace, pause and pitch to communicate character intentions",
+    "rehearsing, interacting and negotiating with others to interpret scripts and create characters",
+    "devising drama based on research about a school/community project for cultural awareness or debate",
+    "working collaboratively to devise drama for a school ritual or gathering",
+    "using Viewpoints to ask questions when exploring character"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6193,6 +6645,13 @@
    "prior": [],
    "knowledge": "Students can use elements of drama — voice, movement, language, space — in combination to develop dramatic action in improvisations and devised drama (Y3-4). They can make deliberate element choices and describe their effect.",
    "endpoint": "Students explore ways to combine elements of drama to communicate ideas, perspectives and/or meaning in improvisations, devised drama and/or scripted drama.",
+   "elaborations": [
+    "experimenting with empathy to develop characters, considering situations from different perspectives and challenging stereotypes",
+    "imagining and developing a 'new scene' to include in a dramatic re-telling of a known narrative",
+    "using Viewpoints to ask questions about cultures and element use",
+    "using improvisation or process drama to compare ways improvised and scripted drama create characters",
+    "imagining being in the time/place of a historical event and considering why people made certain decisions"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6257,6 +6716,11 @@
    "prior": [],
    "knowledge": "Students can explore where, why and how drama is created across cultures, times and places; they can identify features from other drama contexts and connect them to their own practice (Y3-4).",
    "endpoint": "Students explore ways that elements of drama are combined to communicate ideas, perspectives and/or meaning in drama across cultures, times, places and other contexts.",
+   "elaborations": [
+    "exploring how drama is used within communities to maintain, continue and revitalise culture",
+    "identifying and discussing element use using Viewpoints questions",
+    "exploring drama from other places and times and discussing how it might contribute to their own drama and how cultural understandings shape meaning"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6321,6 +6785,12 @@
    "prior": [],
    "knowledge": "Students can explore how First Nations Australians use drama to communicate connection to and responsibility for Country/Place (Y3-4). They understand that drama carries cultural knowledge and is used in community and ceremonial contexts.",
    "endpoint": "Students explore the ways that First Nations Australians use drama to continue and revitalise cultures.",
+   "elaborations": [
+    "exploring how performances that tell stories maintain culture",
+    "identifying and discussing the role of storytelling in First Nations cultural traditions",
+    "identifying examples showing how cultural expressions change over time",
+    "investigating how diverse First Nations drama makers embed community in drama as visual declaration of identity, storytelling and resilience"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6385,6 +6855,12 @@
    "prior": [],
    "knowledge": "Students can perform improvised and devised drama in informal settings, demonstrating role-commitment and making deliberate performance choices (Y3-4). They understand the purpose of audience and can reflect on performance experience.",
    "endpoint": "Students rehearse and perform improvised, devised and/or scripted drama in informal and/or formal settings.",
+   "elaborations": [
+    "using props, costumes and technologies to create dramatic symbols and enhance dramatic action",
+    "focusing on communication with audience — remembering lines, moves and cues",
+    "showing understanding of the purpose of rehearsing and the need for collaboration",
+    "sharing ideas about their drama with audiences through performance space choice, approach to entering/leaving the space, or pre-show presentations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6454,6 +6930,15 @@
    "prior": [],
    "knowledge": "Students can construct representations using media languages and production processes, communicating ideas and perspectives. They have applied shot types, sound, sequencing and pre-production planning. They have not yet designed works specifically for audiences — applying genre codes and conventions deliberately, or using chroma key, special effects and more advanced editing.",
    "endpoint": "Students use media languages, media technologies and production processes to construct media arts works that communicate ideas, perspectives and/or meaning for specific audiences.",
+   "elaborations": [
+    "producing a media arts work for a particular purpose; for example, creating an advertisement for a new toy or computer game",
+    "designing a storyboard that reflects a key scene in a sequence",
+    "designing and drawing a game character for a particular genre and considering the appropriate costume, mannerisms and typical dialogue",
+    "designing a navigational plan for a game using multiple levels and obstacles",
+    "considering the codes and conventions of music videos to create their own section of a music video",
+    "creating a short genre film using chroma key, special effects, editing, sound effects, film language and other technology",
+    "using Viewpoints to develop questions when reflecting on their production process"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6542,6 +7027,13 @@
    "prior": [],
    "knowledge": "Students can experiment with production techniques and evaluate how changes affect meaning. They can apply Foley sound, storyboarding and image review. They have not yet manipulated media languages across multiple forms to communicate perspectives — or applied genre conventions deliberately to create humour, mood or meaning.",
    "endpoint": "Students develop media production skills to communicate ideas, perspectives and/or meaning through manipulation of media languages and media technologies.",
+   "elaborations": [
+    "experimenting with approaches to capturing and sequencing images and text to create comic books, animations or stop motion videos that retell familiar stories",
+    "trialling options for applying the conventions of an established genre to an ordinary everyday event in order to create humour",
+    "using Viewpoints to develop questions when solving problems or making decisions about preferred options",
+    "identifying story structures and technical or symbolic elements that contribute to the formation of genre in media arts works",
+    "creating a script for a radio production and documenting the appropriate permissions that may be required for music and voice talents in a real-world community radio setting"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6606,6 +7098,15 @@
    "prior": [],
    "knowledge": "Students can compare media arts works made for different purposes and explain how context shapes representations. They have not yet explored how media languages and technologies construct power relationships, stereotyping and bias — or systematically compared media representations across historical and cultural contexts.",
    "endpoint": "Students explore how media languages and media technologies are used to construct representations across cultures, times, places and contexts — including analysis of stereotyping, power, bias and cultural values.",
+   "elaborations": [
+    "investigating characters in games, considering issues such as stereotyping or bias",
+    "exploring status, such as power relationships, and showing different perspectives of character by using framing, colour and costume",
+    "using Viewpoints to develop questions that explore the impact of media technologies on the way the audience experiences a story",
+    "researching and comparing media representations created in different times and places",
+    "using Viewpoints to develop questions to explore new ideas",
+    "exploring how context influences the characters, stories and values portrayed in media arts works",
+    "discussing the role of media arts works in sharing cultural information about a group of people and their spirituality"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6670,6 +7171,12 @@
    "prior": [],
    "knowledge": "Students can explain how First Nations Australians use media arts to communicate connection to and responsibility for Country/Place, and can compare multiple works across forms. They have not yet explored how media arts works are used specifically to continue and revitalise cultures — or investigated how cultural expressions change over time.",
    "endpoint": "Students explore ways First Nations Australians use media arts to continue and revitalise cultures, including how media artists embed community identity and how cultural expressions change over time.",
+   "elaborations": [
+    "exploring (for example, by talking with First Nations Australians or accessing published resources accredited by First Nations Australian organisations) how and why cultural expressions and media arts works are critical for sharing, maintaining, continuing and revitalising cultures",
+    "identifying examples that illustrate how cultural expressions change over time",
+    "investigating the ways that First Nations Australian media artists embed themselves and their communities in media arts works in a range of representative forms as a visual declaration of identity, storytelling and resilience",
+    "using Viewpoints to develop questions that explore understandings about themes or issues in media arts works"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6734,6 +7241,13 @@
    "prior": [],
    "knowledge": "Students can share media arts works in informal settings applying permission and credits. They have not yet presented in formal settings, used internet-based platforms for distribution, or reflected systematically on how different audiences receive the same work.",
    "endpoint": "Students present media arts works in informal and/or formal settings using responsible media practice, considering how audiences and platforms shape reception.",
+   "elaborations": [
+    "applying responsible media practices relating to the media arts works they are creating, such as legal, ethical and moral considerations",
+    "presenting a short film they have created to different audiences on different platforms",
+    "presenting their media arts works using internet-based media technologies",
+    "considering protocols for representing community or cultural stories in media arts works",
+    "reflecting on how and why understandings of culture were used within their media arts works, and their effect on the audience"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6804,6 +7318,16 @@
    ],
    "knowledge": "Students can manipulate elements of music to communicate ideas and practise for performance, using notation to document work (AC9AMU4C01). They can use multiple documentation formats and work collaboratively on accompaniments. They have not yet applied formal compositional devices (form, contrast, repetition) to structure compositions, or composed for specific instruments within technical constraints.",
    "endpoint": "Students manipulate elements of music and apply compositional devices to communicate ideas, perspectives and/or meaning, notating, documenting or recording the work in a format that supports rehearsal and performance.",
+   "elaborations": [
+    "working collaboratively to compose music in response to an image, theme or question",
+    "improvising and experimenting with combinations of sounds and/or using digital tools to create moods and atmospheres",
+    "rehearsing a range of unison and part music individually and/or in an ensemble",
+    "using a limited range of pitches to compose melodies for a selected instrument",
+    "arranging or re-imagining a known work; for example, writing new lyrics and arranging for available instruments",
+    "composing a melody, manipulating elements of music such as rhythm, pitch, dynamics, texture or timbre, and using a compositional device/s to structure the music",
+    "using voice/vocalisation and sounds such as body percussion or drumming to develop a song, chant or soundscape for a Welcome to Country or Acknowledgement of Country",
+    "using digital tools, voices and instruments to compose, notate, document and/or record music"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6918,6 +7442,14 @@
    ],
    "knowledge": "Students can manipulate elements during performance and use evaluative listening to compare effects (AC9AMU4D01). They can read from notation and demonstrate developing technique. They have not yet developed the specific aural-skills lens of hearing and adjusting to other parts in real time, or used digital tools systematically for technical development.",
    "endpoint": "Students develop listening/aural skills and skills for manipulating elements of music to achieve expressive effects when composing, singing and playing instruments.",
+   "elaborations": [
+    "developing vocal and/or instrumental skills by focusing on specific elements of music; for example, improvising patterns, phrases or melodies",
+    "combining listening/aural and performance skills; for example, listening to hear other parts when singing or playing in a group",
+    "exploring vocal/instrumental techniques to manipulate elements of music to create contrast, repetition and balance",
+    "developing vocal and instrumental skills such as manipulating the timbre of instruments and voices to create and vary mood",
+    "using digital tools to build skills such as accuracy and control",
+    "practising techniques for singing and playing to develop technical skills in solo and ensemble music"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7008,6 +7540,14 @@
    ],
    "knowledge": "Students have explored music for similar purposes across cultures and compared performance and audience expectations (AC9AMU4E01). They can identify how elements are used in a piece and describe purposes. The new demand is specifically on how elements are combined — and on evaluation of personal response and musical preferences using music terminology.",
    "endpoint": "Students explore ways that elements of music are combined in music across cultures, times, places and other contexts, evaluating personal responses and describing how structural features create effects.",
+   "elaborations": [
+    "listening to music that uses a range of instrumentation or forms and describing how the elements of music are used or combined",
+    "evaluating and discussing personal preferences for music from a range of contexts and cultures",
+    "identifying and describing features of music that create effects, such as ways in which elements of music are manipulated",
+    "listening to (and/or performing) and responding to music from a variety of contexts and cultures, such as Asian cultures",
+    "considering ways in which music is used in celebrations, ceremonies or rituals",
+    "demonstrating understanding of the form and structure of popular songs"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7097,6 +7637,12 @@
    ],
    "knowledge": "Students have explored how First Nations Australians use music to communicate connection to and responsibility for Country/Place (AC9AMU4E02), including engaging with First Nations Australian voices directly. The new focus is cultural continuity and revitalisation — music's role in maintaining living culture, language, and knowledge, including in contemporary contexts.",
    "endpoint": "Students explore ways First Nations Australians use music to continue and revitalise culture, investigating diverse styles, language preservation, and how cultural knowledge is shared through performance.",
+   "elaborations": [
+    "investigating the range of music styles and instruments that living First Nations Australian composers and/or performers are using in their work",
+    "investigating how music is being used to maintain and revitalise knowledge and use of First Nations Australian languages",
+    "investigating music that First Nations Australian composers are creating for dance, drama, media arts or visual arts works that share cultural knowledge",
+    "investigating how First Nations Australian composers and/or performers share knowledge about their culture as part of performances"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7187,6 +7733,11 @@
    ],
    "knowledge": "Students can perform from notation in informal settings, use rehearsal recordings and basic sound reinforcement, and plan/introduce performances (AC9AMU4P01). They have not yet performed in formal settings, presented via digital platforms, or engaged in systematic peer feedback cycles.",
    "endpoint": "Students perform music in a range of forms in informal and/or formal settings, using expressive elements, peer feedback and digital platforms to refine and present performances.",
+   "elaborations": [
+    "rehearsing and refining performances to engage audiences and communicate ideas, perspectives and/or meaning",
+    "providing and responding to feedback to refine performances and compositions",
+    "presenting performances via digital platforms including, if age-appropriate, interacting with audiences via platforms such as school intranet or website"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7277,6 +7828,14 @@
    ],
    "knowledge": "Students can create artworks that communicate specific ideas and perspectives using compositional choices and deliberate selection of conventions and materials (AC9AVA4C01). They can generate and select ideas and explain their choices. They have not yet planned artworks systematically, applied aesthetic criteria, or created works that combine digital and analog materials intentionally.",
    "endpoint": "Students use visual conventions, visual arts processes and materials to plan and create artworks that communicate ideas, perspectives or meaning — making and documenting deliberate choices about how elements serve aesthetic and communicative intentions.",
+   "elaborations": [
+    "applying their understanding of visual arts processes and materials to create artworks that are both robust and communicate intended aesthetic qualities",
+    "using visual conventions and visual arts processes to communicate ideas and meaning in their artwork; for example, exploring the ways that different brushstrokes can communicate meaning in a painting",
+    "examining a series of diverse artworks that employ frames, windows, mirrors or sections as containers or portals into space",
+    "trying and testing a range of analog visual arts materials, such as paints, drawing materials or clay, and comparing virtual simulations of these materials",
+    "creating artworks that are the product of ideas they have developed through experimentation and planning",
+    "forming modular patterns, images or letters with grid paper or an online digital system to combine glyphs, pixels and shapes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7368,6 +7927,14 @@
    ],
    "knowledge": "Students can experiment with a range of materials and processes, document discoveries through annotation, and use visual arts language to reflect (AC9AVA4D01). They have begun investigating composition. They have not yet produced systematic logbook-style documentation, experimented with Augmented Reality or cross-arts visual mapping, or applied observational drawing across multiple representational modes.",
    "endpoint": "Students experiment with, document and reflect on ways to use a range of visual conventions, visual arts processes and materials, using their documentation as a source for informed making choices.",
+   "elaborations": [
+    "drawing on themes they are learning about in other subjects and visually brainstorming a range of diverse ideas that link to this theme",
+    "using visual conventions and visual arts processes to map the movements of a dance sequence",
+    "presenting a selection of Augmented Reality face filters that map and track the face in real time",
+    "exploring a range of approaches to printmaking, such as transferring previously created drawings onto printing foam and creating multiple prints that explore visual conventions",
+    "making informed choices about using various combinations of representational elements appropriate for a concept or subject matter",
+    "exploring different approaches to working in 3D forms, such as developing a range of techniques in modelling using materials such as earthenware clay or modelling clay"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7458,6 +8025,13 @@
    ],
    "knowledge": "Students can compare artworks across cultures, times and places and explain how an artist's context shapes their approach (AC9AVA4E01). They can identify multiple perspectives on events. They have not yet examined how social and historical forces shape artworks, or engaged critically with multiple-perspective readings of the same artwork.",
    "endpoint": "Students explore ways that visual conventions, processes and materials are combined to communicate ideas, perspectives and meaning across cultures, times, places and other contexts — examining multiple perspectives and discussing how artworks develop social awareness.",
+   "elaborations": [
+    "investigating how a diverse range of Australian artists have expressed historical, social and environmental concerns over time",
+    "identifying ways that artworks by different artists can present multiple perspectives of the same event, discussing how these works can assist the development of social awareness",
+    "exploring a range of Australian and international artworks, such as artworks from countries or regions in Asia, that communicate a topic or issue the class is learning about in another subject",
+    "using Viewpoints to develop questions to examine, compare and contrast what they notice in an artwork",
+    "examining audio descriptions as an accessible way for people with impaired vision to enjoy visual arts"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7548,6 +8122,13 @@
    ],
    "knowledge": "Students have explored how First Nations Australians use visual arts to communicate connection to and responsibility for Country/Place (AC9AVA4E02). They can identify cultural symbols and understand that arts serve community functions. They have not yet examined how First Nations arts serve as active cultural continuation and revitalisation, or explored contemporary applications such as street art, popular culture and textiles.",
    "endpoint": "Students explore ways that First Nations Australians use visual arts to continue and revitalise cultures — examining the range of purposes, forms and contexts in which this occurs.",
+   "elaborations": [
+    "exploring the ways that a diverse range of First Nations Australian artists embed themselves and their communities in artworks in a range of representative forms as a visual declaration of identity, storytelling and resilience",
+    "exploring the ways that visual arts created by First Nations Australians may have multiple purposes; for example, art as cultural practice, art to communicate cultural understandings, or as narrative",
+    "investigating a range of site-specific artworks created by First Nations Australian artists, exploring how they communicate and celebrate cultural knowledge and understandings",
+    "using Viewpoints to question understandings about artists and artworks",
+    "investigating how meaning and purpose are communicated in artworks and design created or co-created by First Nations Australians; for example, learning about how visual conventions are used in artworks and designs, such as textiles and fashion, to share cultural knowledge with the broader community"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7638,6 +8219,15 @@
    ],
    "knowledge": "Students can share and display artworks in informal settings, produce artist statements and make audience-driven decisions about format (AC9AVA4P01). They have curated basic displays and produced written or spoken statements. They have not yet prepared artworks for formal display, created professional exhibition materials, or used digital encoding methods to accompany their work.",
    "endpoint": "Students select and present documentation of visual arts practice and display artworks in informal and/or formal settings — making deliberate decisions about space, labelling, audience and format.",
+   "elaborations": [
+    "preparing artworks for display within the school environment; for example, measuring and making frames or stands for artworks, using repurposed/recycled materials",
+    "exploring digital methods of encoding information in artworks to share with audiences; for example, by using image coding software or QR codes",
+    "working collaboratively to create an online exhibition of student work",
+    "exploring options for sharing work in public spaces; for example, in café galleries, public exhibition spaces or through community arts events",
+    "selecting and arranging evidence of their learning from their investigations, experiments and reflections in a way that communicates the development of their ideas and understandings",
+    "considering artworks that represent a spatial awareness in digital or physical forms; for example, experimenting with Augmented Reality to place collage, objects or forms in space",
+    "creating a set of art labels to accompany artworks in a class exhibition of student work"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7727,6 +8317,13 @@
    ],
    "knowledge": "Students can use elements of dance and simple choreographic devices in own dance works (AC9ADA6C01). They have not yet selected and manipulated devices with a clear rationale for how each choice communicates specific ideas, perspectives or meaning.",
    "endpoint": "Students choreograph dance where selections of elements and devices are deliberate and connected to intended ideas, perspectives and meaning.",
+   "elaborations": [
+    "exploring ways to use elements of dance and choreographic devices to portray characters and stories respectfully and empathetically",
+    "experimenting with elements of dance and choreographic devices to represent ideas about themes or issues such as social relationships",
+    "selecting movements from improvisation and organising for use in a music video or immersive experience",
+    "selecting, combining, refining and sequencing movement using choreographic devices such as transitions, variation and contrast, and forms such as binary, ternary and narrative",
+    "analysing and evaluating structural choices in their dance by documenting process in journals, blogs, video or audio recordings"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7838,6 +8435,11 @@
    ],
    "knowledge": "Students can use technical and expressive skills in own dance works (AC9ADA6C02). They have not yet applied skills with a clear rationale for how each contributes to communicating specific ideas, perspectives or meaning.",
    "endpoint": "Students apply technical and expressive skills deliberately to communicate intended ideas, perspectives and meaning, using feedback to refine their application.",
+   "elaborations": [
+    "applying technical skills such as strength, balance or coordination to intensify communication of mood/atmosphere",
+    "responding to feedback to enhance communication of choreographic intent to the audience",
+    "using Viewpoints to evaluate clarity of movement, projection, focus and musicality; using video to evaluate and refine"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7945,6 +8547,11 @@
    ],
    "knowledge": "Students can use technical and expressive skills with some control (AC9ADA6D01). They have not yet systematically extended movement vocabulary across diverse styles or applied safe dance practice principles deliberately across different physical demands.",
    "endpoint": "Students develop technical and expressive skills and movement vocabulary through sustained deliberate practice, applying safe dance practice principles appropriately.",
+   "elaborations": [
+    "developing dance skills and style-specific techniques — improvising using movements and techniques from diverse dance styles to extend movement vocabulary",
+    "exploring how expressive skills can be used to communicate ideas — using gesture or facial expression to communicate relationships or emotions",
+    "extending technical competence such as control, coordination, accuracy, alignment, balance, flexibility, strength, endurance and articulation in response to feedback"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8052,6 +8659,11 @@
    ],
    "knowledge": "Students can use teacher feedback to reflect on own dance practice (AC9ADA6D02). They have not yet systematically investigated others' dance works as a source of influence, or used reflection to document and direct practice development over time.",
    "endpoint": "Students reflect on own and others' dance works to make and document informed choices about choreography and technical/expressive skill use.",
+   "elaborations": [
+    "reflecting on how they have used or extended their movement vocabulary and considering options for further development",
+    "evaluating influences on own performance or choreography — documenting examples of how others use elements of dance or style-specific techniques",
+    "reflecting on feedback from peers who have observed a workshop or rehearsal and using ideas to refine dance"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8160,6 +8772,13 @@
    ],
    "knowledge": "Students can identify how elements of dance and choreographic devices are used to communicate ideas (AC9ADA6E01). They have not yet investigated how cultural, historical and contextual factors shape these choices across diverse dance traditions.",
    "endpoint": "Students investigate how elements of dance, choreographic devices and production elements are used across cultures, times and contexts to communicate ideas, perspectives and meaning.",
+   "elaborations": [
+    "analysing dances from a range of times and locations, considering how a single realistic movement can be manipulated from representational to symbolic",
+    "investigating the development of dance styles in different artistic, social, environmental, historical or cultural contexts",
+    "using Viewpoints to explore questions about choreographic intention and ideas expressed",
+    "comparing use of elements of dance and choreographic devices across genres, cultures, times and places",
+    "investigating how digital tools and immersive technologies such as VR are influencing choreography and performance"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8269,6 +8888,12 @@
    "prior": [],
    "knowledge": "Students have some awareness that First Nations Australians have diverse dance traditions. They have not yet investigated this diversity systematically or engaged with ICIP rights frameworks in dance contexts.",
    "endpoint": "Students investigate the diversity of First Nations Australian dance with genuine cultural responsiveness, understanding and applying ICIP rights frameworks.",
+   "elaborations": [
+    "exploring information about ICIP rights to help dance practitioners make ethical choices",
+    "using and annotating a map of First Nations Australian language groups to identify where First Nations choreographers and performers are working",
+    "analysing how linear and non-linear narrative is used in specific First Nations Australian dance works",
+    "investigating cultural appropriation examples where ICIP rights have been denied and how situations could have been approached respectfully"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8369,6 +8994,13 @@
    ],
    "knowledge": "Students can perform dance with basic technical and expressive skill for an audience (AC9ADA6P01). They have not yet used deliberate rehearsal strategies, production elements, or audience communication tools to enhance the performance experience.",
    "endpoint": "Students rehearse and perform dance for audiences using deliberate rehearsal strategies, appropriate technical and expressive skills, and production elements to communicate choreographic intent.",
+   "elaborations": [
+    "planning effective use of available performance spaces during rehearsals",
+    "using production elements such as projection, soundscape, music, special effects or voice-overs to share key ideas about creative intention",
+    "using technical and expressive skills and style-specific techniques when performing dance they have learnt and/or choreographed",
+    "using rehearsal strategies such as spotting to enhance confidence, clarity of movement, projection, focus and musicality",
+    "introducing their dance to an audience in a program note or voice-over using descriptive style-specific dance terminology"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8477,6 +9109,14 @@
    ],
    "knowledge": "Students can use elements of drama and simple conventions in own drama work (AC9ADR6C01). They have not yet selected and manipulated elements with clear rationale for how each serves the intended dramatic action, nor applied style-specific conventions with deliberate intent.",
    "endpoint": "Students improvise, devise and interpret drama where manipulation of elements and application of conventions is deliberate and connected to intended dramatic action and meaning.",
+   "elaborations": [
+    "identifying dramatic potential in starting points and using improvisation and processes such as 'mantle of the expert' to develop situations and characters",
+    "using play-building to develop scenes as a class response to an inquiry question",
+    "working collaboratively to interpret scripted drama — using improvisation to explore characters, applying conventions, blocking space",
+    "using Viewpoints to frame questions to interpret, analyse and evaluate dramatic forms, elements, design and conventions",
+    "employing voice/vocalisation and movement appropriate to situation, manipulating space and time to heighten tension and shape meaning",
+    "using feedback, reflection or evaluation to develop and extend ideas when improvising, devising and/or scripting"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8588,6 +9228,12 @@
    ],
    "knowledge": "Students can make basic evaluations of own drama work (AC9ADR6C02). They have not yet systematically evaluated element and convention choices against intended dramatic purpose, or used that evaluation to make and document specific refinements.",
    "endpoint": "Students evaluate and refine use of elements and conventions through deliberate questioning, feedback and reflection to shape dramatic action and communicate intended meaning.",
+   "elaborations": [
+    "refining drama during rehearsal using feedback, evaluation, documentation and personal reflection using Viewpoints questions",
+    "adjusting performance based on audience response to make meaning clear",
+    "planning, organising and rehearsing dramatic action to stage devised and scripted drama — arranging theatre technologies and collaborating in rehearsal",
+    "considering how and why empathy should be considered when creating effects and communicating intended meaning"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8695,6 +9341,15 @@
    ],
    "knowledge": "Students can use voice and movement to communicate in drama (AC9ADR6D01). They have not yet developed skills systematically through deliberate practice, applied style-specific conventions, or used improvisation to extend technique.",
    "endpoint": "Students develop vocal and physical performance skills relevant to selected drama styles and forms, using improvisation and deliberate practice to extend technique.",
+   "elaborations": [
+    "developing vocal qualities of projection, clarity and contrast through control of pace, pitch, dynamics and use of pause and silence",
+    "developing use of the body to communicate through movement, stillness, realistic and non-realistic movement; exploring ways to transition between scenes",
+    "experimenting with ways to use conventions associated with a specific style/form",
+    "experimenting with elements of drama and stylistic conventions to create, shape and sustain dramatic action through improvisation and basic devising",
+    "using improvisation to explore techniques associated with specific styles to heighten and release tension",
+    "experimenting with ways to manipulate elements and performance skills to communicate status/power relationships",
+    "understanding the importance of and applying respectful relationships and empathy when developing roles and characters"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8802,6 +9457,12 @@
    ],
    "knowledge": "Students can use teacher feedback to reflect on own drama practice (AC9ADR6D02). They have not yet systematically investigated others' drama as a source of influence, or used reflection to document and direct practice development over time.",
    "endpoint": "Students reflect on own and others' drama to make and document informed choices about elements, conventions and dramatic action.",
+   "elaborations": [
+    "reflecting independently and in class discussion to evaluate dramatic action and make decisions about future choices",
+    "seeking, accepting and responding to feedback — using Viewpoints to develop reflective questions",
+    "developing understanding of human behaviours and emotions using appropriate boundaries by recalling and re-enacting past experiences",
+    "reflecting on how performance skills communicate perspectives such as challenging unequal power relationships and oppression"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8909,6 +9570,12 @@
    ],
    "knowledge": "Students can identify how elements of drama and conventions communicate ideas (AC9ADR6E01). They have not yet investigated how cultural, historical and contextual factors shape these choices across diverse dramatic traditions.",
    "endpoint": "Students investigate how elements of drama and conventions communicate ideas, perspectives and meaning across cultures, times and contexts.",
+   "elaborations": [
+    "researching and noticing how the impact of time and place can differ from one period to another, particularly in relation to drama conventions",
+    "using Viewpoints to analyse and evaluate performances — asking about ideas expressed, conventions used, how movement was used",
+    "writing or recording a review of drama focusing on use of specific elements and conventions",
+    "analysing how linear and non-linear narrative is used in drama from diverse cultures"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9018,6 +9685,13 @@
    "prior": [],
    "knowledge": "Students have some awareness that First Nations Australians have diverse storytelling and performance traditions. They have not yet investigated this diversity systematically or engaged with ICIP rights frameworks in drama contexts.",
    "endpoint": "Students investigate the diversity of First Nations Australian drama with genuine cultural responsiveness, understanding and applying ICIP rights frameworks.",
+   "elaborations": [
+    "identifying how diverse First Nations Australian drama can demonstrate culturally responsive approaches to ICIP rights",
+    "using ICIP protocols and guidelines to inform decisions about using cultural expressions in new drama work",
+    "engaging in activities to understand how to make ethical choices — asking 'Whose story is it?', 'Is this my story to share?'",
+    "investigating how drama practitioners use First Nations Australian historical and cultural material to create contemporary theatre",
+    "identifying and analysing cultural appropriation and how to avoid it"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9118,6 +9792,13 @@
    ],
    "knowledge": "Students can perform drama for an audience with basic performance skills (AC9ADR6P01). They have not yet used deliberate rehearsal strategies, systematically collected audience feedback, or reflected on the relationship between intention and audience reception.",
    "endpoint": "Students rehearse and perform drama for audiences using performance skills and conventions appropriate to style and form, reflecting on the relationship between intention and audience reception.",
+   "elaborations": [
+    "performing using conventions relevant to style, suiting choices to the underlying dramatic structure",
+    "collecting and evaluating audience feedback to enhance future performance",
+    "using Viewpoints to ask reflective performance questions about intentions, meaning and audience engagement",
+    "respecting ICIP rights when performing drama that explores First Nations Australian perspectives",
+    "reflecting on how respectful relationships and empathy were applied and interpreted by the audience"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9225,6 +9906,16 @@
    ],
    "knowledge": "Students can plan and structure media arts works with basic pre-production tools (AC9AMA6C01). They have not yet made deliberate design decisions about media languages and technical elements with a clear rationale for how each serves the intended representation for a specific audience.",
    "endpoint": "Students design and structure media arts works where media language and technical element choices are deliberate and connected to intended ideas, perspectives and meaning for a specific audience.",
+   "elaborations": [
+    "using pre-production templates such as storyboard, shooting script or production schedule to plan production",
+    "understanding the importance of respectful relationships and empathy when developing characters to convey historical or cultural ideas",
+    "exploring ways to use media languages and technologies to create representations that perpetuate or challenge relationships or address issues such as stereotyping, bias, identity",
+    "experimenting with technical capabilities of media technologies and using media languages to inform plans for construction of representations",
+    "experimenting with technical and symbolic elements such as sound and lighting to construct representations for various genres or media platforms",
+    "experimenting with audio effects to construct ambient sound for different places or create/enhance atmosphere",
+    "experimenting with technical and symbolic elements to construct safe, legal, ethical and responsible representations",
+    "trialling ways to combine established genre conventions to make a hybrid production"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9336,6 +10027,14 @@
    ],
    "knowledge": "Students can use production processes to create media arts works (AC9AMA6C02). They have not yet applied media arts concepts deliberately across the full production pipeline, nor maintained responsible media practice as a consistent production discipline.",
    "endpoint": "Students apply production processes and media arts concepts to produce works that communicate intended meaning for specific audiences with responsible media practice throughout.",
+   "elaborations": [
+    "using pre-production, production and post-production processes to produce a media arts work representing sustainable futures or social justice",
+    "combining established genre conventions such as framing in still and moving images, sounds in radio/podcasts, font in print",
+    "transferring established technical codes between media types",
+    "using Viewpoints to ask questions about forms, elements, genre, mood and setting",
+    "producing a media arts work about sustainable habits or social justice",
+    "creating a news story focusing on an event to communicate perspective, using Viewpoints to consider bias"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9443,6 +10142,15 @@
    ],
    "knowledge": "Students can use media technologies and languages to construct representations (AC9AMA6D01). They have not yet developed production skills systematically across the full production process, or used digital tools to expand representational possibilities deliberately.",
    "endpoint": "Students develop media production skills across pre-production, production and post-production, using media languages and technologies to construct increasingly sophisticated representations.",
+   "elaborations": [
+    "exploring ways to use media languages and technologies to create representations that address issues of stereotyping, bias, identity, sustainable living",
+    "experimenting with technical capabilities and media languages to inform plans for design and construction of representations",
+    "experimenting with digital tools such as cameras, sound recording equipment or editing/coding/animation software",
+    "constructing fictional versions of everyday spaces using AR and VR",
+    "experimenting with audio effects to construct ambient sound",
+    "experimenting with story principles such as establishing setting/location or disrupting narrative structure",
+    "combining established genre conventions to make a hybrid production"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9550,6 +10258,15 @@
    ],
    "knowledge": "Students can use feedback to reflect on own media arts practice (AC9AMA6D02). They have not yet investigated others' media arts works and practices systematically as a source of influence, or used structured reflection to document and direct production decisions.",
    "endpoint": "Students reflect on own and others' media arts works to make and document informed production choices throughout the production process.",
+   "elaborations": [
+    "observing and considering potential audience engagement to inform refinements across production processes",
+    "using Viewpoints to develop investigating questions about representing themes, concepts or ideas",
+    "documenting and explaining creative choices in relation to representations, genre codes and conventions",
+    "justifying decisions made by producers in construction of representations through technical and symbolic codes",
+    "using a storyboarding or editing template to annotate creative thinking when refining production",
+    "using Viewpoints for reflective questions about representing views and creating audience connection",
+    "exploring styles and representations from other cultural contexts to inform practice and understand cultural appropriation"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9657,6 +10374,12 @@
    ],
    "knowledge": "Students can identify how media arts concepts are used in works (AC9AMA6E01). They have not yet investigated how cultural, historical and institutional contexts shape how media arts concepts construct representations and position audiences.",
    "endpoint": "Students investigate how media arts concepts construct representations and position audiences across cultures, times and contexts.",
+   "elaborations": [
+    "identifying, describing and analysing how cinematography, mise-en-scène, editing or sound are manipulated to construct representations",
+    "using questions to analyse ideology and philosophical viewpoint of media works including institutional involvement and audience impact",
+    "analysing how media languages construct representations in media genres — how technical and symbolic codes produce stereotypical representations",
+    "analysing how audiences are positioned to respond to different representations through technical and symbolic codes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9766,6 +10489,14 @@
    "prior": [],
    "knowledge": "Students have some awareness that First Nations Australians have media arts practices. They have not yet investigated this diversity systematically or engaged with ICIP rights frameworks in media arts contexts.",
    "endpoint": "Students investigate the diversity of First Nations Australian media arts with genuine cultural responsiveness, understanding and applying ICIP rights frameworks.",
+   "elaborations": [
+    "exploring how knowledge of ICIP protocols helps students make ethical choices about content use",
+    "investigating cultural appropriation examples where ICIP rights have been denied in media arts",
+    "investigating choices First Nations Australian media artists make about technical elements, story principles, representations and audience relationships",
+    "collaboratively constructing guidelines to promote safe, ethical, legal and responsible media use",
+    "recognising how to select and use historical materials that accurately communicate First Nations perspectives",
+    "investigating issues relating to use of First Nations languages or stories in screen-based works"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9866,6 +10597,12 @@
    ],
    "knowledge": "Students can present media arts works to an audience (AC9AMA6P01). They have not yet made deliberate presentation decisions about distribution context, audience relationships, copyright/ICIP obligations, or evaluated how different presentation contexts change audience reception.",
    "endpoint": "Students present media arts works using responsible media practices and with deliberate consideration of how presentation choices shape audience relationships.",
+   "elaborations": [
+    "distributing a media arts work designed to engage a specific audience using appropriate rights and permissions",
+    "complying with copyright laws and respecting ICIP rights when presenting media arts works",
+    "reflecting on how relationships develop between media arts makers and audiences",
+    "considering the impact of different audiences on interpretation and engagement"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9973,6 +10710,12 @@
    ],
    "knowledge": "Students can manipulate elements of music and use compositional devices to communicate ideas when composing and practising music for performance (AC9AMU6C01). They can notate, document and/or record music they compose. They have not yet focused on interpretation of existing works across a variety of forms and styles, nor on deliberately employing style-specific vocal/instrumental techniques to realise stylistic features.",
    "endpoint": "Students interpret music in a variety of forms and/or styles by manipulating elements of music and employing relevant vocal/instrumental techniques to realise stylistic features and achieve intended expressive effects.",
+   "elaborations": [
+    "investigating and trialling ways of realising stylistic features when rehearsing; for example, using effects such as distortion, decay or delay, or using accent/stress to achieve a stylistic feel when interpreting melodies or rhythmic patterns",
+    "interpreting music that is notated/documented in a range of formats, such as graphic or interactive scores, staff notation or tablature (TAB) and recordings; for example, using a recording and a chart that includes melody, form and harmony/chords to develop an arrangement of a song",
+    "using student and teacher set goals as a focus for practising and rehearsing a range of solo and/or ensemble music",
+    "manipulating sound quality by applying understanding of the range of sounds/timbres that different instruments and voice types can produce; for example, manipulating dynamics and timbre in voice or acoustic or digital instruments to create a specific effect"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10129,6 +10872,15 @@
    ],
    "knowledge": "Students can manipulate elements of music and use compositional devices to communicate ideas when composing and practising music for performance (AC9AMU6C01). They can notate, document and/or record their compositions. They have not yet focused on communicating specific ideas, perspectives or meaning as a compositional intent, nor on arranging or re-imagining existing works.",
    "endpoint": "Students compose music using elements of music and compositional devices to communicate specific ideas, perspectives or meaning, and notate, document or record the composition in a format appropriate to the genre, style or intended performers.",
+   "elaborations": [
+    "writing songs or instrumental music to communicate ideas or opinions about themes or issues, such as their perspectives on local issues relating to sustainable ways of living or relationships such as friendship",
+    "combining and manipulating the elements of music in ways that are characteristic of selected styles, creating and notating, documenting and/or recording a composition, using available digital tools",
+    "using patterns such as harmonic, rhythmic or melodic patterns as the basis for improvisation or composition; for example, creating a composition entirely from loops or recording a series of loops (ostinati/repeating patterns) and then composing/improvising additional melodic lines",
+    "composing music for different purposes, such as repertoire for an ensemble to perform or music for a theatrical, site-specific or media work; for example, a fanfare or other composition that will grab the audience's attention at the start of an event, ritual or ceremony",
+    "using software to notate, document and/or record compositions in formats that are appropriate to a genre, style or instrument, such as chord charts or percussion notation",
+    "arranging a familiar music piece into a different music style by manipulating the elements of music to convey meaning, and documenting the arrangement in a form that is appropriate, considering the style and the preferences of the musicians who might be performing the arrangement; for example, arranging an instrumental work for choral performance",
+    "developing an arrangement or re-imagining of an existing melody/tune by improvising, using given material such as a melody, riff or chord progression"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10283,6 +11035,15 @@
    ],
    "knowledge": "Students can develop listening/aural skills and skills for manipulating elements of music to achieve expressive effects when composing, singing and playing instruments (AC9AMU6D01). They have not yet focused on documenting their developing skills, experimenting with digital tools for arranging, or extending and varying harmonic, rhythmic and melodic patterns systematically.",
    "endpoint": "Students develop and practise listening/aural skills and vocal/instrumental techniques for manipulating elements of music to achieve expressive effects, documenting their ideas and progress as a reference for performance and composition.",
+   "elaborations": [
+    "experimenting with ways in which vocal/instrumental techniques can be used to manipulate elements of music to achieve intended effects, such as an expressive sound that is typical of a particular style, and transcribing or documenting their ideas as a reference for future performances or composition",
+    "practising technical and expressive skills such as intonation, pitch/rhythmic accuracy, phrasing or shaping dynamics and articulation to communicate expressive intent using voices and/or instruments",
+    "developing techniques for extending/varying patterns such as harmonic, rhythmic or melodic patterns; for example, identifying qualities of chords in isolation and experimenting with different ways to order the chords to create a chord progression and improvising over the progression, or using the chord progression in a song or instrumental music",
+    "experimenting with ways in which digital tools can be used when arranging musical ideas or creating effects; for example, using digitally produced parts alone or in combination with voice/vocalisation or other instruments",
+    "developing ability to manipulate and control elements of music to enhance performance and communicate intentions; for example, recording alternative approaches to interpreting a phrase or melody and evaluating it to identify preferred options",
+    "using a listening diary/journal format to document ideas for compositions, interpretations, re-imaginings or performances",
+    "writing/notating a chart or lead-sheet to record ideas from a songwriting workshop or using software to write additional parts such as a bassline to accompany a melody"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10440,6 +11201,11 @@
    ],
    "knowledge": "Students can develop listening/aural skills and skills for manipulating elements of music to achieve expressive effects when composing, singing and playing instruments (AC9AMU6D01). They have not yet focused explicitly on evaluative reflection — using aural analysis of self and others to drive deliberate choices as a composer or performer.",
    "endpoint": "Students reflect on their own and others' music using aural skills and music terminology to evaluate how elements of music and compositional devices are used, and use this reflection to inform deliberate choices in their own composing and performing.",
+   "elaborations": [
+    "practising, using aural skills and music terminology, how to identify and describe technical and expressive elements of music, such as chord progressions or the way a performer interprets, performs or shapes melodies, phrasing or dynamics; for example, when songwriting, in an instrumental music lesson or in a discussion with peers or a teacher",
+    "practising ways to use aural/visual cues when playing or singing in an ensemble; for example, chords or phrases that indicate place within a structure (aural) or gestures indicating tempo or entries (visual)",
+    "using focused listening and selected aural skills to evaluate the use of elements of music when listening to a recording for the purpose of making decisions about how they will interpret the music"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10573,6 +11339,12 @@
    ],
    "knowledge": "Students can explore ways that the elements of music are combined in music across cultures, times, places and/or other contexts (AC9AMU6E01). They have explored rather than investigated — they have not yet analysed how elements and devices are used with the specific purpose of informing their own performance or composition decisions.",
    "endpoint": "Students investigate how composers and/or performers use elements of music and compositional devices in music across cultures, times, places and/or other contexts, using this investigation to describe stylistic features and inform their own practice.",
+   "elaborations": [
+    "accessing and researching music through live or recorded/streamed performances to analyse performers' interpretations of composers' intentions; for example, using recordings and score/s or chart/s or other information such as an interview or review to identify how performers have interpreted a composer's intentions, such as tempo choices, instrumentation, feel or articulation",
+    "listening to live or recorded music and identifying stylistic characteristics; for example, analysing how elements of music are manipulated and how compositional devices are used; then using this information to describe features of a style or to inform their performance of music in that style",
+    "listening to and evaluating how elements of music are manipulated in music composed by a range of composers, with the intention of drawing attention to social issues or values; for example, protest songs, nationalistic music, music that uses \"folk\"/traditional tunes in re-imagined ways, songs with lyrics that focus on themes such as identity or belonging",
+    "researching and discussing the influence of social, cultural and historical developments relating to specific styles, forms or traditions and incorporating these into their performance and/or compositions; for example, conventions relating to forms such as 32-bar song form, genres such as chamber music, or traditions such as singer-songwriter"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10702,6 +11474,12 @@
    ],
    "knowledge": "Students can explore ways First Nations Australians use music to continue and revitalise culture (AC9AMU6E02). They have explored rather than investigated — they have not yet engaged with the specific question of Indigenous Cultural and Intellectual Property (ICIP) rights or considered the ethical responsibilities of listeners, performers and composers when engaging with First Nations music.",
    "endpoint": "Students investigate the diversity of music composed and/or performed by First Nations Australians and engage with culturally responsive approaches to Indigenous Cultural and Intellectual Property rights as they are relevant to their practice as listeners, composers and performers.",
+   "elaborations": [
+    "exploring ways that First Nations Australian composers and/or performers communicate their ideas and messages across communities and cultures; for example, by asking questions such as \"What are the impacts of this musician's/these musicians' music?\" and \"What music styles or genres is this musician drawing on in creating their own music?\"",
+    "investigating when, how and why copyright and/or Indigenous Cultural and Intellectual Property rights might be relevant to their practice as, for example, listeners, songwriters, composers and/or performers",
+    "exploring how protocols for protecting Indigenous Cultural and Intellectual Property rights exist to help students make ethical choices about how they use music, as listeners or creators; for example, by asking questions such as, \"Who wrote this music?\", \"May I use ideas from this song, and do I need permission to do so?\"",
+    "investigating issues relating to the use of First Nations Australian languages or stories in lyrics and songs or music for screen-based works; for example, considering case studies that illustrate protocols relating to Indigenous Cultural and Intellectual Property rights"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10802,6 +11580,13 @@
    ],
    "knowledge": "Students can perform music in a range of forms they have learnt and/or composed in informal and/or formal settings (AC9AMU6P01). They have not yet focused on the full range of performance skills — posture, technical control, tonal balance, real-time problem-solving — or on planning and presenting performances that demonstrate stylistic understanding.",
    "endpoint": "Students perform music using relevant vocal and/or instrumental techniques and performance skills, demonstrating technical control and expressive understanding appropriate to the style and context.",
+   "elaborations": [
+    "rehearsing a range of music in solo and ensemble activities for performance to a variety of audiences",
+    "analysing the performance practices of musicians identified as experts in specific styles/genres to identify strategies for interpreting the styles authentically; for example, using online resources and creating a voice-over to add commentary to create a guide/set of aims for rehearsals",
+    "performing with correct posture, understanding that the body is part of the performance; for example, standing or sitting as appropriate for the instrument, ensemble, audience and any technology in use such as a microphone; maintaining technical control throughout the performance of a piece of music, controlling tone and volume to create a balanced sound in ensemble performance, reflecting and problem-solving to address imbalances in tone and volume in real-time and seeking feedback from the audience that they can use to reflect on and modify their musical practices in future performances",
+    "planning performances, rehearsing and performing their own vocal and/or instrumental compositions, individually or in a group, paying attention to expressive skills that convey stylistic understanding, such as articulation and accents",
+    "planning and presenting an in-school performance, attending to how they manipulate elements of music and use vocal/instrumental techniques to convey stylistic understanding"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10931,6 +11716,14 @@
    ],
    "knowledge": "Students can generate and document ideas for artworks using planning strategies (AC9AVA6C01). They have not yet developed sustained visual inquiry, moved through multiple development stages, or justified compositional decisions in relation to intended meaning.",
    "endpoint": "Students generate, document and develop ideas for artworks through sustained visual inquiry, making and justifying compositional decisions that connect to intended meaning.",
+   "elaborations": [
+    "engaging in visual brainstorming by selecting, organising and combining appropriate images, forms, visual art processes and materials to represent ideas about a particular subject",
+    "documenting their visual arts practice when developing ideas and processes, including studio practice, correct use of materials and tools, creative thinking and reflection",
+    "developing a series of compositional sketches as planning for a final artwork that communicates how the visual conventions and planned processes will communicate meaning",
+    "exploring and researching ideas about their interests in the world/subject matter or concepts from a particular perspective or a range of perspectives",
+    "recording and documenting their research into a subject or theme using their own images or images from other sources, written annotations and comments, or evaluations",
+    "exploring ways that artists, designers, architects or craftspeople communicate ideas and meaning in their work"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -11040,6 +11833,15 @@
    ],
    "knowledge": "Students can use visual conventions and materials to make artworks that communicate ideas (AC9AVA6C02). They have not yet deliberately selected and manipulated conventions with a clear rationale for how each choice serves the intended meaning.",
    "endpoint": "Students select and manipulate visual conventions, processes and materials to create artworks where choices are deliberate and connected to intended ideas, perspectives and meaning.",
+   "elaborations": [
+    "creating a series of Augmented Reality digital assets that represent distinct textures, placing assets within a space to communicate concepts",
+    "creating artworks as a way of exploring feelings and emotions, such as self-awareness, emotional awareness and personal wellbeing",
+    "working independently and/or in groups to create artworks that tell stories or create awareness about issues significant to them",
+    "transforming an analog visual artwork into digital versions using digital tools; evaluating and selecting the most successful transformation",
+    "considering sustainable design practices when generating ideas — exploring sustainable fabrics and recycled materials when creating wearable art",
+    "applying knowledge of visual arts processes, materials and techniques to create artworks; demonstrating understanding of relief printing, digital tools etc.",
+    "representing ideas through considered use of visual conventions such as modulated lines to create movement, or breaking rhythmic patterns to create discord"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -11148,6 +11950,16 @@
    ],
    "knowledge": "Students can use visual conventions, processes and materials with increasing control (AC9AVA6D01). They have not yet systematically experimented to develop skills through deliberate practice, nor documented and evaluated that process using visual arts terminology.",
    "endpoint": "Students experiment with visual conventions, processes and materials to develop skills, documenting and evaluating their practice using visual arts terminology.",
+   "elaborations": [
+    "selecting and appropriately acknowledging the use of found images when making and responding to artworks",
+    "investigating the choices that other artists have made when structuring their representation of ideas",
+    "developing an understanding of how and why artists choose to use encryption in their artworks — analog and digital approaches",
+    "evaluating feedback from teachers and peers and documenting subsequent decisions in journals using visual arts terminology",
+    "developing an awareness of cultural and artistic conventions for representing subjects through contextual study, observing protocols for First Nations Australian cultural property",
+    "reflecting on learning and evaluating choices to represent their ideas as the artwork progresses",
+    "exploring the ways that a range of artists use materials and visual conventions to communicate concepts",
+    "observing the different ways that artists respond to sensory stimuli to generate ideas"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -11255,6 +12067,14 @@
    ],
    "knowledge": "Students can use teacher feedback to reflect on their practice (AC9AVA6D02). They have not yet investigated how other artists respond to influences and used that investigation to articulate and inform their own practice choices.",
    "endpoint": "Students reflect on how they and other artists respond to influences — materials, emotions, cultural context, other artworks — to make informed and documented choices in own visual arts practice.",
+   "elaborations": [
+    "developing understanding of the ways that visual conventions can be used to communicate feelings and emotions — exploring compositional sketches to identify how changes communicate different emotions",
+    "using teacher and student set goals to reflect on and practise specific skills over time, using Viewpoints to develop questions about aims, strengths and areas for improvement",
+    "exploring and reflecting on the way a particular artist uses materials, techniques and processes to inform own investigations",
+    "considering sustainable practices when exploring properties of materials",
+    "reflecting on the work of others and own explorations when developing an understanding of visual conventions and how they might be manipulated to communicate meaning",
+    "building on understanding of composition to explore multiple ways to represent space and depth — experimenting with proportion, scale, positive and negative space, perspective"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -11367,6 +12187,14 @@
    ],
    "knowledge": "Students can identify how artists use visual conventions and materials to communicate ideas (AC9AVA6E01). They have not yet investigated how cultural, historical and contextual factors shape these choices or analysed how the same subject is represented differently across cultures and times.",
    "endpoint": "Students investigate how visual conventions, processes and materials are manipulated to represent ideas, perspectives and meaning across cultures, times, places and contexts.",
+   "elaborations": [
+    "investigating arts works by First Nations Australian artists that cross over multiple artforms, analysing how the arts forms come together",
+    "researching the ways that artists from different times and places have represented a particular subject or theme",
+    "analysing the ways that artists represent subject matter and ideas in their artworks when developing ideas for own representations",
+    "creating written accounts such as catalogue entries or reviews that discuss how artists have shown their ideas",
+    "investigating and trialling techniques and visual arts processes used by artists, thinking about how processes have changed over time",
+    "exploring the ways that artists are inspired and influenced by the practice of artists from other countries or cultures"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -11477,6 +12305,12 @@
    "prior": [],
    "knowledge": "Students have some awareness that First Nations Australians have rich artistic traditions. They have not yet investigated the diversity of these practices in depth, nor engaged systematically with ICIP rights frameworks.",
    "endpoint": "Students investigate the diversity of First Nations Australians' artworks and arts practices with genuine cultural responsiveness, understanding and applying ICIP rights frameworks.",
+   "elaborations": [
+    "locating and discussing information about ICIP rights and protocols, engaging in activities to understand how to make ethical choices",
+    "investigating examples of how visual artists and designers ensure their legal and moral obligations are met when selecting First Nations Australians' cultural material",
+    "investigating an example of cultural appropriation where ICIP rights have been denied and identifying how the situation could have been approached respectfully",
+    "exploring how visual artists can respect ICIP rights when using historical or background materials that communicate First Nations perspectives"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -11577,6 +12411,15 @@
    ],
    "knowledge": "Students can present artworks with basic accompanying documentation (AC9AVA6P01). They have not yet made deliberate curation decisions about which works to present, how to organise them, or how documentation can connect artworks to ideas and meaning for an audience.",
    "endpoint": "Students curate and present examples of their visual arts practice with documentation that connects artworks to ideas, perspectives and meaning for a specific audience.",
+   "elaborations": [
+    "creating a webpage, walkthrough, presentation or other document to connect geographically distanced audiences with a visual arts showcase",
+    "working together to identify/select a space within the school for showing their works, considering who in the community might see their works",
+    "visiting and evaluating exhibitions of work in galleries, museums or community sites and developing responses",
+    "making a themed series of artworks to be displayed in the class or via the school intranet, considering relationships between artworks and the space",
+    "creating visual art labels for an exhibition/showcase",
+    "describing the artistic vision of artists from different contexts, cultures, times and places",
+    "using hex editors to explore information included in encrypted artworks and create own encrypted information"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -11689,6 +12532,14 @@
    ],
    "knowledge": "Students can choreograph dance by selecting and manipulating elements of dance and choreographic devices to communicate ideas, perspectives and/or meaning (Y7-8, AC9ADA8C01). They have worked with binary, ternary and narrative structures, transitions, variation and contrast, and can document their process.",
    "endpoint": "Students choreograph dance that communicates ideas, perspectives and/or meaning by selecting and manipulating elements of dance, choreographic devices and/or structure.",
+   "elaborations": [
+    "experimenting with ways to combine choreographic devices such as addition and diminution, force and tempo",
+    "using Viewpoints relating to forms and elements when choreographing about identity, belonging or social justice",
+    "adapting dance ideas from different cultural influences respectfully",
+    "developing movement motifs and using devices innovatively to communicate choreographic intent",
+    "using motifs from known dances on social media as starting points for extension",
+    "using style-specific forms to structure a dance"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -11783,6 +12634,11 @@
    ],
    "knowledge": "Students can apply technical and expressive skills and genre- or style-specific techniques to communicate ideas, perspectives and/or meaning (Y7-8, AC9ADA8C02). They have worked with strength, balance, coordination, and have used feedback to refine technical and expressive quality.",
    "endpoint": "Students apply technical and expressive skills and genre- or style-specific techniques to enhance communication of ideas, perspectives and/or meaning.",
+   "elaborations": [
+    "applying knowledge of the structure and function of the musculoskeletal system to execute movements safely",
+    "using observations of a dance in a selected genre/style to identify and build characteristic techniques over time",
+    "seeking feedback using Viewpoints to refine technical and expressive skills"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -11873,6 +12729,11 @@
    ],
    "knowledge": "Students have developed safe dance practice and technical/expressive skills (Y7-8, AC9ADA8D01). They can extend their movement vocabulary through improvisation and work with genre/style-specific techniques.",
    "endpoint": "Students develop and refine safe dance practice, expressive and technical skills and genre- or style-specific techniques.",
+   "elaborations": [
+    "refining technical skills in response to self-reflection to develop safe dance practice and control, accuracy, strength, balance, alignment, flexibility, endurance, coordination, articulation",
+    "using experimentation and improvisation to develop techniques for expressive skills in a range of genres/styles",
+    "practising and refining technical skills to develop proficiency in genre- and style-specific techniques"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -11939,6 +12800,13 @@
    ],
    "knowledge": "Students can reflect on own and others' dance works and/or practices to inform choreographic choices and use of technical and expressive skills (Y7-8, AC9ADA8D02). They can use journals and peer feedback as reflective tools.",
    "endpoint": "Students reflect on own and others' use of elements, choreographic devices, structure, genre- or style-specific techniques and/or technical and expressive skills to inform their choreographic or performance choices.",
+   "elaborations": [
+    "using Viewpoints to reflect on and evaluate use of forms and elements",
+    "evaluating choreographic and performance choices",
+    "documenting creative process including analysis and evaluation in reflective records",
+    "improvising using elements and analysing movement choices to reflect individuality",
+    "considering how emotion, political statements, critical theories or experiences influence and shape approach to dance"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -12005,6 +12873,13 @@
    ],
    "knowledge": "Students can investigate dance works, performers and/or choreographers across cultures, times, places and contexts (Y7-8, AC9ADA8E01). They can analyse element and device use, investigate digital tool influence, and evaluate choreographic intent.",
    "endpoint": "Students investigate performers' and/or choreographers' use of elements, devices, genre/style-specific techniques, conventions and/or production elements to communicate and/or challenge ideas, perspectives and/or meaning across cultures, times, places and/or other contexts.",
+   "elaborations": [
+    "investigating how and why choreographers work collaboratively with communities in Australia with cultural links to Asia",
+    "investigating how and why choreographers work with communities to advocate for sustainability and social justice",
+    "investigating why different traditions, styles and contexts affect experience and interpretation",
+    "extending movement vocabulary through exploration of stylistic preferences and analysis of styles from different times and cultures",
+    "analysing element use in popular culture styles or styles from Asia as stimulus for choreography"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -12075,6 +12950,11 @@
    ],
    "knowledge": "Students can investigate the diversity of dance choreographed and/or performed by First Nations Australians, considering ICIP rights (Y7-8, AC9ADA8E02). They understand cultural appropriation and can apply culturally responsive approaches to First Nations dance.",
    "endpoint": "Students investigate the ways First Nations Australian choreographers and/or performers celebrate and challenge multiple perspectives of Australian identity through dance.",
+   "elaborations": [
+    "evaluating ways First Nations Australian performers and choreographers work respectfully with communities to explore local histories and identities",
+    "investigating dance works that challenge understandings about 'first contacts' between First Nations Peoples and colonisers",
+    "exploring ways First Nations Australian choreographers use their practice to communicate ideas, messages and lived experiences to the broader community"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -12145,6 +13025,11 @@
    ],
    "knowledge": "Students can rehearse and perform dance for audiences using technical and expressive skills and genre/style-specific techniques (Y7-8, AC9ADA8P01). They have worked with production elements, rehearsal strategies and performed in formal and informal contexts.",
    "endpoint": "Students rehearse and perform dance for audiences, using technical and expressive skills and genre- or style-specific techniques.",
+   "elaborations": [
+    "planning how to enter and leave the performance space consistently with genre/style, mood or ideas conveyed",
+    "using rehearsal to build confidence in accurate and fluent spatial placement maintenance",
+    "using available production elements to enhance communication of ideas, perspectives or meaning"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -12210,6 +13095,14 @@
    "prior": [],
    "knowledge": "Students can improvise, devise and interpret scripted drama, manipulating elements and applying conventions relevant to style/form (Y7-8). They can evaluate and refine dramatic work and develop performance skills for specific styles.",
    "endpoint": "Students improvise and devise drama, and interpret scripted drama, using elements of drama and conventions to shape and manipulate dramatic action and convey intended ideas, perspectives and/or meaning.",
+   "elaborations": [
+    "using a teacher-provided framework to develop drama collaboratively",
+    "considering contexts such as audiences, viewpoints, intentions and style/form when planning interpretations",
+    "conveying tensions through manipulation of language, movement and symbol",
+    "devising drama presenting a range of perspectives using non-linear structures",
+    "scripting scenes from improvisation using play-building techniques",
+    "using props, set items or digital tools to enhance communication of meaning"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -12277,6 +13170,15 @@
    "prior": [],
    "knowledge": "Students can evaluate and refine use of elements and conventions to shape dramatic action (Y7-8). They can plan, organise and rehearse, and adjust performance based on feedback and audience response.",
    "endpoint": "Students rehearse and refine drama, making deliberate aesthetic choices to unify dramatic meaning.",
+   "elaborations": [
+    "evaluating how ideas, emotions and audience response inform refinement",
+    "reflecting on how successfully intentions, meaning and effects were achieved and what can be learnt for future practice",
+    "strengthening dramatic action by manipulating pace, cues, vocal tone, proximity and transitions",
+    "collaborating as director — blocking and staging to communicate intended meaning",
+    "taking on roles such as stage manager, sound/lighting designer, costumes, writer, director",
+    "considering the impact of design elements on meaning and aesthetic effect",
+    "manipulating elements and conventions to create and manipulate actor-audience relationships"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -12346,6 +13248,11 @@
    "prior": [],
    "knowledge": "Students can develop performance skills relevant to selected drama styles and forms (Y7-8). They can develop vocal quality, movement skills, and use improvisation to explore character.",
    "endpoint": "Students develop performance skills and techniques to communicate the physical and psychological aspects of roles and characters consistent with their dramatic intentions.",
+   "elaborations": [
+    "experimenting with, reflecting on and refining styles and conventions to shape action",
+    "using text analysis to inform exploring and refining implied aspects of character",
+    "refining vocal skills through warm-ups focusing on character and delivery or movement"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -12414,6 +13321,11 @@
    "prior": [],
    "knowledge": "Students can reflect on their own and others' drama to inform choices when manipulating elements and conventions (Y7-8). They can seek, accept and respond to feedback, and develop understanding of human behaviours and emotions in performance contexts.",
    "endpoint": "Students reflect on their own and others' drama or practices to refine and inform their use of elements of drama, conventions and approaches to shape and sustain dramatic action.",
+   "elaborations": [
+    "comparing use of conventions to explore and challenge power and oppression across performance styles",
+    "analysing and making choices about manipulating elements and experimenting with conventions (subtext, beats) to affect meaning",
+    "shaping use of elements, conventions and styles to achieve intended meaning or effect"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -12483,6 +13395,13 @@
    "prior": [],
    "knowledge": "Students can investigate how elements and conventions communicate meaning in drama across cultures, times and places (Y7-8). They can analyse and evaluate use of elements and conventions in drama they experience or participate in.",
    "endpoint": "Students investigate how elements of drama, performance skills and conventions are used to communicate and/or challenge ideas, perspectives and/or meaning in drama across cultures, times, places and other contexts.",
+   "elaborations": [
+    "viewing a performance and considering how elements use symbol or movement to make meaning",
+    "investigating ways drama texts are created and developed collaboratively",
+    "viewing examples of varied styles within a style to understand shared and differing conventions",
+    "using Viewpoints to ask questions about social context, cultural movements and historical influences",
+    "viewing historical texts where artists use contemporary performance conventions to affect meaning"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -12547,6 +13466,12 @@
    "prior": [],
    "knowledge": "Students have investigated the diversity of drama created by First Nations Australians, considering culturally responsive approaches and ICIP rights (Y7-8). They understand that First Nations drama is diverse and requires culturally responsive engagement.",
    "endpoint": "Students investigate the ways that drama created and/or performed by First Nations Australians celebrates and challenges multiple perspectives of Australian identity.",
+   "elaborations": [
+    "investigating how and why drama practitioners work collaboratively with communities to present contemporary First Nations theatre",
+    "considering how global trends in drama influence First Nations drama",
+    "investigating how Contemporary First Nations Australian Theatre explores and challenges histories of Australia and Australian identity",
+    "comparing and critiquing ways contemporary drama celebrates and challenges influences on Australia's identity"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -12612,6 +13537,12 @@
    "prior": [],
    "knowledge": "Students can rehearse and perform drama to audiences using performance skills and conventions relevant to style and form (Y7-8). They can collect and evaluate audience feedback and reflect on how respectful relationships and empathy were applied and interpreted.",
    "endpoint": "Students perform improvised, devised and/or scripted drama to audiences, using performance skills and conventions to shape the drama.",
+   "elaborations": [
+    "conveying tensions in stories, characters, relationships through voice, movement and symbol to engage audiences",
+    "presenting and performing devised or scripted drama created in a shared process with community members, adhering to collective ownership protocols",
+    "performing on stage or in class in a sustained presentation",
+    "reflecting on and evaluating how successfully intentions, meaning and effects were achieved, and what can be learnt for future practice"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -12677,6 +13608,12 @@
    "prior": [],
    "knowledge": "Students can design and structure media arts works using pre-production processes and apply media arts concepts to construct representations for specific audiences. They have applied genre codes and conventions and reflected on communicative intent. They have not yet designed works that specifically examine and communicate ideas — applying critical analysis of existing conventions to produce works that confirm or challenge them.",
    "endpoint": "Students design and structure media arts works that examine and communicate ideas, perspectives and/or meaning using pre-production processes and deliberate application of technical and symbolic codes.",
+   "elaborations": [
+    "using media technologies, languages and representations when designing a media arts work such as a computer game, community service announcement, website or music video",
+    "using media technologies to design a media arts work that communicates stereotypical representations for a specific target audience",
+    "designing the camera work, sound, editing or mise-en-scène to construct alternative representations of people, places, ideas and events",
+    "examining the way technical and symbolic codes and conventions of specific film, television or radio genres have been used in a media arts work"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -12741,6 +13678,13 @@
    "prior": [],
    "knowledge": "Students can design media arts works using pre-production processes. They can apply genre conventions deliberately. They have not yet produced works that specifically confirm or challenge audience expectations — applying full production processes with critical awareness of how representations position audiences.",
    "endpoint": "Students apply production processes and media arts concepts to produce media arts works that communicate ideas, perspectives and/or meaning, and confirm or challenge the expectations of specific audiences.",
+   "elaborations": [
+    "filming a short sequence to show a conflict, and selecting camera angles, lighting and costume to convey meaning through silent film, music video, stop motion or computer animation",
+    "collaborating with communities to explore, challenge and celebrate local histories, cultures and identities",
+    "using mise-en-scène, camera work, sound, editing and media technologies in ways that are typically used in a genre, auteur or film movement",
+    "using Viewpoints to frame questions and evaluate how their intentions are being communicated",
+    "creating multiple representations of the same person, place or concept in different media and for different intentions"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -12805,6 +13749,12 @@
    "prior": [],
    "knowledge": "Students can manipulate media languages to change meaning and develop production skills across multiple forms. They can apply genre conventions deliberately. They have not yet experimented systematically with how an auteur, genre or film movement shapes a distinctive representational language — or used target audience research to inform production.",
    "endpoint": "Students experiment with ways to construct representations that reflect ideas, perspectives and/or meaning using media conventions, languages and technologies — informed by analysis of practitioners and target audience research.",
+   "elaborations": [
+    "examining the way technical and symbolic codes are shaped by a media artist such as a social media influencer, auteur, game designer or music video director",
+    "researching target audiences and conventions used in successful online media arts works",
+    "experimenting with use of mise-en-scène, camera work, sound, editing and media technologies in ways that are typically used in a genre, auteur or film movement",
+    "manipulating technical and symbolic media codes and conventions of specific film, television or radio genres to produce a media arts work for a target audience"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -12869,6 +13819,14 @@
    "prior": [],
    "knowledge": "Students can document and explain production choices and use Viewpoints questions to evaluate communicative intent. They have used editing software to experiment with sequences. They have not yet applied systematic reflective practice that informs refinement across all stages of production — or developed DSLR manual camera skills through reflective practice.",
    "endpoint": "Students reflect on their own or others' media arts works and practices to refine and inform choices across stages of the production process.",
+   "elaborations": [
+    "developing skills needed to use selected media technologies to produce a photographic sequence, developing understanding through reflective practice of how to use the manual settings for ISO, shutter speed and aperture",
+    "identifying and developing knowledge and skills needed to produce a media arts work",
+    "using Viewpoints to frame questions and explore possibilities",
+    "documenting and explaining their creative choices in relation to representations or genre codes and conventions",
+    "using editing software to experiment with structuring sequences",
+    "using Viewpoints to develop investigating questions when making decisions about how they will represent a theme, concept or idea"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -12933,6 +13891,17 @@
    "prior": [],
    "knowledge": "Students can compare media representations across contexts and explain how context shapes values and stereotypes. They have analysed power relationships in representations. They have not yet investigated at the level of evaluating social, cultural and ethical implications — or analysing how media platforms use data to shape audience information.",
    "endpoint": "Students investigate how media artists use media arts concepts to construct representations across cultures, times, places and contexts — evaluating social, cultural and ethical implications and how audiences are positioned.",
+   "elaborations": [
+    "analysing and evaluating the social, cultural and/or ethical implications of the changing nature of representations in media arts works over time",
+    "justifying, in a video commentary, the technical and symbolic code choices they have made in constructing representations",
+    "analysing and evaluating the way social beliefs and values can be communicated to audiences through the manipulation of technical and symbolic codes",
+    "exploring how media platforms use data and how they can influence the breadth and depth of information provided to an audience",
+    "evaluating relationships embedded within media practices",
+    "researching audiences of specific genres or users of specific media platforms",
+    "analysing and evaluating the ways technical and symbolic codes have been used to construct stereotypical representations",
+    "identifying, describing and explaining the way technical and symbolic codes are manipulated to evoke audience responses",
+    "examining the role of media makers in perpetuating and/or challenging prevailing views"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -12997,6 +13966,14 @@
    "prior": [],
    "knowledge": "Students can explore how First Nations Australians use media arts to continue and revitalise cultures, and how cultural expressions change over time. They have not yet investigated specifically how First Nations Australian media artists celebrate and challenge multiple perspectives of Australian identity — or analysed how media arts provide a voice through media institutions.",
    "endpoint": "Students investigate how First Nations Australian media artists and/or producers celebrate and challenge multiple perspectives of Australian identity through media arts, evaluating implications for community debate and audience relationships.",
+   "elaborations": [
+    "investigating how First Nations Australian media artists and/or producers are exploring and challenging concepts and histories of Australia and Australian identity",
+    "exploring the ways that First Nations Australian media artists and/or producers use their practice to communicate ideas, messages and lived experiences to the broader community",
+    "comparing and critiquing ways First Nations Australian media artists use their practice to celebrate and challenge perspectives about Australia's identity",
+    "using questions based on Viewpoints to examine the ideology or philosophical stance taken in media arts works",
+    "understanding the ways that media arts provide a voice for First Nations Australians through media institutions and forms",
+    "analysing the ways that First Nations Australian media artists use their practice to challenge and inform community debate"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -13061,6 +14038,13 @@
    "prior": [],
    "knowledge": "Students can present media arts works in informal and formal settings applying responsible media practices. They can reflect on how different audiences receive the same work. They have not yet planned distribution strategies, investigated classification systems, or engaged with government regulation, self-regulation and institutional media producer relationships.",
    "endpoint": "Students present media arts works to audiences and plan approaches for creating audience relationships in personal, community and/or institutional distribution contexts using responsible media practice.",
+   "elaborations": [
+    "investigating differences between government regulation and self-regulation",
+    "researching Australia's classification system for various media platforms",
+    "distributing a media arts work they have produced via an online platform, using appropriate rights and permissions; producing a set of guidelines for appropriate online conduct",
+    "using media technologies to design and produce a media arts work that promotes a community event",
+    "investigating the relationships created between intended audiences and the media arts works they create"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -13131,6 +14115,12 @@
    ],
    "knowledge": "Students have manipulated elements and used compositional devices to communicate ideas (AC9AMU8C01/C02 — Y7-8). They can compose for specific forms, use style-specific devices and notate/document work. The Y9-10 step adds: style-specific vocal/instrumental techniques as a distinct requirement, and accuracy and fluency as explicit performance goals alongside communicative intent.",
    "endpoint": "Students interpret music in a variety of forms and styles using style-specific vocal/instrumental techniques and compositional devices, demonstrating accuracy, fluency and stylistic understanding in performance.",
+   "elaborations": [
+    "rehearsing and refining their ability to control technical and expressive qualities in solo and/or ensemble music",
+    "experimenting with and comparing how the elements of music and compositional devices are used to communicate musical intentions in traditional, digital or graphic scores",
+    "identifying stylistic conventions relevant to music they are learning and practising to apply the conventions in their performance",
+    "selecting, interpreting and practising a performance program that focuses on a particular theme, music style or the work of a composer or performer"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -13221,6 +14211,14 @@
    ],
    "knowledge": "Students have composed music using elements and compositional devices to communicate ideas, including for collaborative and cross-curricular purposes (AC9AMU8C01/C02 — Y7-8). The Y9-10 step requires style-specific compositional devices as distinct knowledge, application of aural understanding of key and tonality, and evaluating how context affects audience response.",
    "endpoint": "Students compose music using style-specific elements, devices and forms to communicate ideas, perspectives and/or meaning, notating, documenting or recording the work.",
+   "elaborations": [
+    "evaluating how different traditions, styles or contexts affect the way people respond to a piece of music",
+    "experimenting with options for using instrumentation, dynamics and expressive techniques to develop the texture of a composition",
+    "working collaboratively to compose songs or instrumental music; for example, a song cycle, music theatre work or music for a film, animation or video game",
+    "applying an aural understanding of key and tonality when improvising or composing",
+    "experimenting with ways to combine and manipulate the elements of music and using style-specific compositional devices",
+    "analysing how elements of music are typically used in a music style and using findings as a guide when arranging"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -13311,6 +14309,12 @@
    ],
    "knowledge": "Students have developed ensemble listening skills, vocal and instrumental techniques for expressive effect, and used digital tools for skill development (AC9AMU8D01 — Y7-8). They can make real-time ensemble adjustments and monitor technique using recordings. The Y9-10 step adds: identifying challenging sections and building stamina, mapping and realising dynamic interpretations, and developing technical and expressive facility and control at a higher level.",
    "endpoint": "Students develop, practise and refine listening/aural skills and style-specific vocal/instrumental skills, demonstrating increasing technical and expressive facility and control.",
+   "elaborations": [
+    "working collaboratively to develop ensemble skills, such as listening carefully to establish and maintain balance across parts",
+    "identifying challenging sections in music they are learning and developing necessary techniques and stamina",
+    "mapping a planned approach to interpret dynamics and practising to realise the plan",
+    "developing technical and expressive facility and control when using voice and/or instrument/s"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -13401,6 +14405,12 @@
    ],
    "knowledge": "Students have developed aural skills for tuning/intonation and used recordings and performance comparisons to develop interpretations (AC9AMU8D02 — Y7-8). They can read from scores and lead-sheets during performance. The Y9-10 step requires using focused listening and aural/memory skills to identify, sing/play and notate musical ideas for future use, and developing real-time intonation skills.",
    "endpoint": "Students use listening, aural skills and score/chart/lead-sheet information to develop interpretations, and reflect on the practices of others to inform their own compositions and performances.",
+   "elaborations": [
+    "listening to, analysing and comparing the performance practices of others to shape and refine their own interpretation",
+    "using listening, aural skills and understanding of the information provided in scores, charts or lead-sheets to develop interpretations",
+    "using focused listening, aural or memory skills to identify, sing or play and/or notate/document music ideas for future use",
+    "developing and refining use of aural skills relating to tuning/intonation in real-time performance"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -13491,6 +14501,15 @@
    ],
    "knowledge": "Students have explored how elements of music are combined across cultures and contexts and evaluated personal responses using music terminology (AC9AMU8E01 — Y7-8). They can describe how structural features create effects. The Y9-10 step shifts from exploration to investigation and analysis — specifically examining how composers/performers use elements to influence emotional response, communicate identity, and respond to social and historical contexts.",
    "endpoint": "Students investigate and analyse ways composers and/or performers use elements of music, compositional devices and/or vocal/instrumental techniques across a range of cultures, times and contexts.",
+   "elaborations": [
+    "investigating ways that composers and/or performers use the elements of music and compositional devices to structure compositions or evoke an emotional response",
+    "investigating how composers and performers use instrumentation or instrumental techniques to communicate specific effects",
+    "comparing ways that people in a range of times, places and/or other contexts have used music in times of conflict and change",
+    "reflecting on why music might be described as 'experimental'",
+    "investigating the way elements of music are manipulated in music or sound designs for installations or site-specific artworks",
+    "discussing and evaluating the influence of music on the development of personal or social identity",
+    "using Viewpoints to ask questions about how technology has changed music styles, composition practices, audiences and the music industry"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -13581,6 +14600,12 @@
    ],
    "knowledge": "Students have explored how First Nations Australians use music to continue and revitalise culture — including diverse contemporary styles, language revitalisation, and cultural knowledge-sharing in performance (AC9AMU8E02 — Y7-8). The Y9-10 step specifically concerns Australian national identity — how First Nations Australian artists engage with, celebrate and challenge perspectives on what Australia is and means.",
    "endpoint": "Students investigate ways First Nations Australian performers and composers celebrate and/or challenge multiple perspectives of Australian identity, evaluating innovations and the motivations behind music that advocates for social change.",
+   "elaborations": [
+    "evaluating innovation in the ways that First Nations Australian composers and/or performers are contributing to Australian contemporary music, including inter-cultural collaborations",
+    "investigating how First Nations Australian songwriters, performers and/or composers use music to share knowledge, educate, protest, advocate for change or express opinions or beliefs",
+    "evaluating intentions/motivations in music that challenges people to take action on issues such as climate change, environmental protection, social justice or racism",
+    "using and annotating a map of First Nations Australian language groups to identify where First Nations Australian composers and/or performers are working"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -13671,6 +14696,12 @@
    ],
    "knowledge": "Students can perform in a range of forms in informal and formal settings, use peer feedback systematically, and perform via digital platforms (AC9AMU8P01 — Y7-8). They can adapt performance decisions to context. The Y9-10 step adds: performing in a range of physical and virtual spaces as a distinct requirement, recording and evaluating systematically, and performing own compositions with accompanying scores or visual material.",
    "endpoint": "Students rehearse and present planned performances in a range of physical and/or virtual spaces, recording and evaluating performances using digital tools, and reflecting on personal and audience responses.",
+   "elaborations": [
+    "recording and evaluating performances using digital tools",
+    "performing their own music compositions and reflecting on/evaluating personal or audience responses",
+    "rehearsing and presenting planned performances, then reflecting on which was more successful with audiences and why",
+    "planning and presenting performances in a range of physical or virtual spaces, including providing audiences with information about the music"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -13762,6 +14793,13 @@
    ],
    "knowledge": "Students have created planned artworks using coordinated visual choices and can explain their decisions (AC9AVA8C01/AC9AVA8C02, implied from progression). They have engaged with peer and teacher feedback at an informal level. They have not yet systematically evaluated feedback, tracked its influence on decision-making, or distinguished between seeking impressions and confirming intended responses.",
    "endpoint": "Students evaluate critical feedback from teachers, peers and audiences when planning, developing and refining their visual arts practice — documenting how feedback influences decisions.",
+   "elaborations": [
+    "uncovering meaning, interpretations or reactions from audiences by seeking impressions without confirming or leading the audience towards intended responses",
+    "tracking success using self-assessment and reflection guided by questions based on Viewpoints in order to solve creative challenges",
+    "experimenting with and evaluating ways of structuring ideas in sketches, studies, maquettes, annotated digital images or journal entries",
+    "evaluating and responding to feedback on works in process from teachers and peers, in discussions or reviews, and documenting their decisions and responses in written, oral or multimedia, physical or digital journals/diaries",
+    "collaborating with other students, groups or agencies, such as community groups, to generate ideas for artworks on design or artistic projects for curated exhibitions or events"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -13850,6 +14888,14 @@
    "prior": [],
    "knowledge": "Students can plan and create artworks with coordinated visual choices and can evaluate feedback in their practice. They make deliberate aesthetic decisions. They have not yet developed a sustained personal voice, self-initiated research process, or created artworks that deliberately challenge established perspectives.",
    "endpoint": "Students select and manipulate visual conventions, processes and materials to create artworks that reflect personal expression and represent or challenge ideas, perspectives and meaning.",
+   "elaborations": [
+    "creating artworks that realise the intentions and communicate ideas developed through their experimentation and planning",
+    "researching approaches to representing their ideas and interests in the world/subjects or concepts from a particular viewpoint or a range of viewpoints",
+    "recording and documenting their research into their subject using their own images or images from other sources, written annotations, and comments and evaluations",
+    "initiating their own ways of resolving ideas and concepts visually, using creative problem-solving throughout the process",
+    "creating their own artworks in response to a specific subject, theme or idea, using material, techniques and conventions in intentional, interpretative and personal ways",
+    "applying their knowledge and understanding of visual arts processes and materials to create artworks"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -13940,6 +14986,14 @@
    ],
    "knowledge": "Students can experiment with and document visual arts processes and reflect on discoveries to make informed choices (AC9AVA8D01, implied from progression). They have developed documentation habits. They have not yet investigated a medium in depth for comprehensive understanding, or begun identifying an emerging personal style.",
    "endpoint": "Students experiment with visual conventions, processes and materials to refine skills and develop personal expression, using deep investigation and documentation to identify their own artistic voice.",
+   "elaborations": [
+    "experimenting with the material properties of a medium or form and investigating/exploring, in depth, the technical processes associated with that form",
+    "interrogating multiple ways of approaching an activity; for example, using a diverse range of media to express different interpretations of the one topic",
+    "investigating a diverse selection of artists through their sketchbooks to uncover their practices, and find connections between their processes and the development of their personal expression",
+    "developing an 'inspiration' journal of collections from everyday life",
+    "documenting and evaluating their investigations of visual art processes, visual conventions and materials in a diary, portfolio or digital journal",
+    "drawing lines, shapes and arrows drawn over photocopies of artworks and using a code to demonstrate their understanding of the way the artist has composed the artwork"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -14028,6 +15082,14 @@
    "prior": [],
    "knowledge": "Students have begun identifying an emerging personal style and have investigated artists from diverse contexts. They can make informed choices based on documented experimentation. They have not yet systematically reflected on how personal, cultural and contextual influences shape their own practice, or used investigation of others' influences to understand their own.",
    "endpoint": "Students reflect on the ways they and other visual artists respond to influences — using this understanding to inspire, develop and resolve choices in their own visual arts practice.",
+   "elaborations": [
+    "investigating and reflecting on the role and influence of their own culture, family or personal experiences when developing ideas for artworks",
+    "investigating a diverse range of visual artists; for example, artists who live and work in a different place, such as a country in the Asia region",
+    "analysing and reflecting on the ways that artists have structured their artworks to represent ideas",
+    "reflecting on, evaluating and resolving their choices for representing their ideas as their work progresses",
+    "exploring current issues that are of importance to them, such as global or local issues, as a starting point for generating and reflecting on ideas for artworks",
+    "investigating the ways that artists use their visual arts practice to explore, examine, resolve or represent personal experiences and expressions"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -14118,6 +15180,14 @@
    ],
    "knowledge": "Students can compare how artists from different contexts communicate ideas and examine multiple perspectives on artworks (AC9AVA8E01, implied from progression). They have developed critical questioning skills. They have not yet produced extended critical analysis, selected from multiple critical viewpoints, or investigated the historical development of a visual arts form.",
    "endpoint": "Students investigate how artists across cultures, times, places and other contexts develop personal expression to represent, communicate and challenge ideas, perspectives and meaning.",
+   "elaborations": [
+    "analysing a selection of artworks that represent a point of view on the same or similar theme, story, historical event, place, time, use of a technique or materials",
+    "investigating how linear timelines, in contrast to circular timelines, can shift meaning in art with reference to First Nations Australian ways of knowing, being and doing",
+    "researching, analysing and evaluating the ways that artists from different times and places represent subject matter, themes or concepts",
+    "creating extended written, oral or multimedia accounts, such as essays, pod/vodcast, debate or reviews",
+    "selecting different critical viewpoints to develop explanations about artists' approaches and works",
+    "exploring the development of a visual arts form over time, considering the impact of globalisation, cultural practices, and new discoveries in materials and technologies"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -14208,6 +15278,14 @@
    ],
    "knowledge": "Students have explored how First Nations Australian arts continue and revitalise cultures, and engaged with site-specific and community-based works (AC9AVA8E02, implied from progression). They understand arts as ongoing cultural practice. They have not yet engaged with First Nations Australian visual arts as explicitly political, activist or identity-challenging, or investigated 'first contacts' and colonisation from multiple perspectives within this frame.",
    "endpoint": "Students investigate ways that First Nations Australian artists celebrate and challenge multiple perspectives of Australian identity through their artworks and visual arts practice.",
+   "elaborations": [
+    "researching a diverse range of artworks or designs such as artworks in galleries, protest posters or street art in order to analyse how and why First Nations Australian artists have used visual communication as a tool to express activism for change",
+    "analysing the ways that First Nations Australian artists use their practices to challenge and inform community debate",
+    "comparing, analysing and evaluating ways that contemporary First Nations Australian artists and designers are exploring and challenging concepts and histories of Australia and Australian identity",
+    "exploring the ways that First Nations Australian visual artists use their practices to communicate ideas, messages and lived experiences to the broader community",
+    "understanding ways that the arts provide opportunities for First Nations Australian artists and designers to continue and develop their culture",
+    "investigating how First Nations Australian visual artists are caring for Country/Place, culture and people through the visual arts"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -14298,6 +15376,15 @@
    ],
    "knowledge": "Students can prepare artworks for formal display, create exhibition materials and make deliberate presentation decisions for different audiences (AC9AVA8P01, implied from progression). They have produced artist statements and curated class exhibitions. They have not yet evaluated existing exhibitions as a research base for their own curatorial decisions, or planned exhibitions that communicate a broader curatorial argument.",
    "endpoint": "Students evaluate art exhibitions to inform the curation and exhibition of their own and/or others' artworks and visual arts practice.",
+   "elaborations": [
+    "investigating ways in which artworks are displayed and how artists and curators work together to create a visual narrative",
+    "selecting and presenting their own artworks for exhibitions in class, in the school or in the wider community",
+    "planning and curating exhibitions of their own work, community installations, projects or imagined exhibitions of artworks by other artists, considering, as appropriate, Indigenous Cultural and Intellectual Property rights",
+    "developing material to accompany exhibitions, such as didactic panels, artists' or curatorial statements, branding, advertising or press statements",
+    "visiting and evaluating exhibitions of work in physical or virtual galleries, museums or in community sites",
+    "developing responses to exhibitions of work; for example, in written/oral/multimedia explanations or reviews",
+    "constructing explanations of how artists, designers, architects or craftspeople communicate ideas and meaning in artworks"
+   ],
    "nodes": [
     {
      "n": 1,

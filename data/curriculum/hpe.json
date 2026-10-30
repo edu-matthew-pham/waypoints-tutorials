@@ -1,6 +1,6 @@
 {
  "subject": "hpe",
- "source": "waypoints-kit 6bb92e4",
+ "source": "waypoints-kit d93e6e5",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -14,6 +14,14 @@
    "prior": [],
    "knowledge": "No prior HPE curriculum. Students bring informal movement experience from play and daily life — walking, running, throwing, catching — but without structured FMS practice.",
    "endpoint": "Students practise locomotor, object-manipulation and balance skills in minor game and play situations, combining them with increasing control and purpose.",
+   "elaborations": [
+    "applying different locomotor skills to move from one point to another",
+    "combining fine and gross motor skills in increasingly complex patterns",
+    "sending, controlling and receiving objects at different levels and in different ways",
+    "performing a range of water confidence skills such as floating with a buoyancy aid and putting their face in the water",
+    "demonstrating how to transfer weight from one part of the body to another",
+    "applying fundamental movement skills for purpose and enjoyment in natural environments"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -143,6 +151,13 @@
    "prior": [],
    "knowledge": "No prior HPE curriculum. Students bring informal movement experience and basic spatial awareness from daily life. No prior structured experimentation with movement choices.",
    "endpoint": "Students experiment with different ways of moving their body safely and manipulating objects and space, making judgements about effectiveness and demonstrating spatial awareness.",
+   "elaborations": [
+    "suggesting and testing different ways to move in a playing space or different ways to use equipment and objects, and making judgements about which are most effective and which movements and equipment they prefer",
+    "persisting with challenges and demonstrating resilience while moving their body in a range of situations",
+    "participating in games that require them to be aware of personal safety in relation to game boundaries, rules and safe use of equipment",
+    "manipulating equipment in a range of different movement situations and tasks, including in minor games, imaginative play and when practising fundamental movement skills",
+    "demonstrating spatial awareness when moving around and through indoor and outdoor (natural) environments confidently and safely"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -241,6 +256,12 @@
    "prior": [],
    "knowledge": "No prior HPE curriculum. Students have informal experience being physically active. No prior structured exploration of the benefits of physical activity or outdoor settings.",
    "endpoint": "Students participate in a range of activities in natural and outdoor settings and explore what it feels like to be physically active and why it is beneficial.",
+   "elaborations": [
+    "exploring a range of ways to be active and participate safely in outdoor or natural settings",
+    "playing traditional First Nations Australian games and discussing how they are like other games they have experienced",
+    "discussing opportunities to be active in spaces in and around their homes",
+    "exploring strategies for taking considered risks and developing self-regulation skills when moving and playing in outdoor settings"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -309,6 +330,11 @@
    "prior": [],
    "knowledge": "No prior HPE curriculum. Students bring informal social experience of turn-taking and sharing from play and home contexts. No prior structured engagement with game rules or fair play.",
    "endpoint": "Students follow rules in a range of physical activities and can identify what fair and unfair play looks like.",
+   "elaborations": [
+    "identifying and describing actions that would constitute fair and unfair play while participating in minor games",
+    "demonstrating how to play fairly in a range of minor games and play situations",
+    "discussing rules of different games that relate to safety, boundaries and appropriate use of equipment"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -382,6 +408,14 @@
    "prior": [],
    "knowledge": "No prior HPE curriculum. Students bring lived experience of family, community and personal identity. No prior structured curriculum investigation of identity and belonging.",
    "endpoint": "Students investigate who they are and the people in their world, making connections between identity, belonging and community.",
+   "elaborations": [
+    "making personal connections with stories that explore identity and belonging; discussing who they are, where they come from and people in their lives",
+    "exploring similarities and differences in family structures in First Nations Australian communities and other cultures",
+    "exploring cultural practices from different cultures, including the cultures of Asia, that are important to individuals, families and communities",
+    "identifying different families in their communities; for example, 2-parent, single-parent, extended and non-traditional families",
+    "identifying ways they use their strengths in physical activities to help themselves and others to be successful",
+    "recognising that they have a right to belong and contribute to a variety of groups"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -480,6 +514,12 @@
    "prior": [],
    "knowledge": "No prior HPE curriculum. Students bring social experience from home and prior care/education settings. No prior structured curriculum practice of respectful interaction skills.",
    "endpoint": "Students practise personal and social skills to interact respectfully with others, including cooperating, collaborating and responding to challenging social situations.",
+   "elaborations": [
+    "explaining their reasons and actions in response to challenging situations in shared play experiences",
+    "identifying characters in texts who have been excluded from a group, exploring why they have been excluded and discussing how other characters could have been more inclusive",
+    "cooperating, collaborating and negotiating with others when participating in physical activities to achieve agreed outcomes",
+    "identifying behaviours that may be disrespectful and cause hurt or harm to others during play"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -553,6 +593,14 @@
    "prior": [],
    "knowledge": "No prior HPE curriculum. Students have intuitive emotional experience but limited vocabulary and structured practice for identifying and expressing emotions.",
    "endpoint": "Students express and describe emotions they experience using appropriate language and actions, and make connections between feelings, body reactions and body language.",
+   "elaborations": [
+    "identifying and describing the emotions of people who are happy, sad, excited, tired, angry, scared or confused",
+    "learning and using appropriate language and actions to communicate their feelings in different situations",
+    "recalling and sharing emotional responses to different situations and representing these in a variety of ways",
+    "reading and viewing stories about adventures, and talking about how characters feel and react when taking risks or responding to emergencies",
+    "talking about connections between feelings, body reactions and body language",
+    "expressing a variety of emotions, thoughts and views in a range of situations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -626,6 +674,11 @@
    "prior": [],
    "knowledge": "No prior HPE curriculum. Students have informal experience of asking and being asked to share. No prior structured curriculum exploration of consent, rights and respectful negotiation.",
    "endpoint": "Students explore and practise how to seek, give or deny permission respectfully when sharing possessions or personal space, recognising their right to say no.",
+   "elaborations": [
+    "practising and refining how to ask for permission when sharing possessions or personal space",
+    "negotiating roles and demonstrating awareness of rights (such as body autonomy/integrity) and respect for different perspectives through imaginative and shared play experiences",
+    "exploring the importance of asking for permission and giving permission when sharing or negotiating in play and respecting someone's right to say no"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -702,6 +755,13 @@
    "prior": [],
    "knowledge": "No prior HPE curriculum. Students have some awareness of trusted adults from home and care settings. No prior structured curriculum work on protective behaviours, anatomical naming or assertive help-seeking.",
    "endpoint": "Students demonstrate protective behaviours, name body parts correctly, and rehearse help-seeking strategies including identifying trusted adults and assertive strategies for unsafe situations.",
+   "elaborations": [
+    "exploring protective behaviours and help-seeking strategies they can use when they or others feel unsafe or uncomfortable",
+    "exploring and demonstrating assertive strategies to seek help when they or others feel unsafe",
+    "recognising online spaces and digital tools that are safe for them to use and recognising the importance of seeking help from a trusted adult if they feel unsafe while online",
+    "identifying a support network of adults they can trust to help them if they feel unsafe, uncomfortable or scared",
+    "recognising that all people have the right to bodily autonomy: the right to make choices about what others ask them to do with and to their bodies"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -797,6 +857,13 @@
    "prior": [],
    "knowledge": "No prior HPE curriculum. Students have informal exposure to health symbols in the environment (road signs, food packaging) but without structured curriculum identification or explanation.",
    "endpoint": "Students identify health symbols, messages and community strategies that support their health and safety, and explain what these symbols and strategies mean.",
+   "elaborations": [
+    "identifying household substances that are dangerous and explaining what symbols are used to identify the danger",
+    "identifying symbols on food packages that indicate healthier choices",
+    "identifying different types of advertising that influence choices about food",
+    "exploring different community strategies that keep children safe; for example, pedestrian crossings and traffic lights, safety procedures at swimming pools and beaches, and traffic controllers at school crossings",
+    "recognising and following safety symbols and procedures at home and in water and road environments"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -874,6 +941,13 @@
    ],
    "knowledge": "Students have practised fundamental movement skills in minor game and play situations (AC9HPFM01). They have experimented with different ways of moving their body safely and manipulating objects and space (AC9HPFM02).",
    "endpoint": "Students practise fundamental movement skills and apply them in a variety of movement situations.",
+   "elaborations": [
+    "performing locomotor movements using different body parts to travel in different directions",
+    "selecting and implementing different movement skills to be successful in a range of games",
+    "performing fundamental movement skills involving controlling objects with equipment and different parts of the body",
+    "practising gliding forward and backward in the water using arm and kicking movements",
+    "demonstrating balances and describing what helps to maintain stable positions"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1006,6 +1080,13 @@
    ],
    "knowledge": "Students have experimented with different ways of moving their body safely and manipulating objects and space (AC9HPFM02). They can practise fundamental movement skills in varied situations (AC9HP2M01).",
    "endpoint": "Students investigate different ways of moving their body, and manipulating objects and space, and draw conclusions about their effectiveness.",
+   "elaborations": [
+    "demonstrating changes in speed, direction and level as they use locomotor and non-locomotor skills in sequences",
+    "inventing new games, based on rules and equipment from familiar games, and drawing conclusions about whether the rules and choice of equipment provide for an interesting, challenging and enjoyable game",
+    "using stimuli such as equipment, rhythm, music and words to create simple playground games and assessing which games they enjoy most",
+    "using different types of equipment to create an original game or solve a movement challenge and evaluating the game or solution against a set of criteria",
+    "participating in activities that require students to move around different outdoor spaces and discussing which types of movement are most appropriate to move around safely and efficiently"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1104,6 +1185,12 @@
    ],
    "knowledge": "Students have participated in activities in natural and outdoor settings and explored the benefits of being physically active (AC9HPFM03).",
    "endpoint": "Students participate in physical activities in natural and outdoor settings and investigate factors and settings that make physical activity enjoyable.",
+   "elaborations": [
+    "recognising the physical features in a range of different environments, including natural and outdoor settings, that make physical activity in these spaces enjoyable",
+    "participating in children's games from First Nations Australian cultures, such as Keentan played by the Kalkadoon People of the north-west central districts of Queensland, and discussing similarities with other games and activities they enjoy",
+    "participating in a range of minor games and exploring which ones they enjoy and what makes them enjoyable",
+    "comparing the characteristics and benefits of physical activities that can take place in an outdoor setting to those that take place inside"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1197,6 +1284,11 @@
    ],
    "knowledge": "Students have followed rules to promote fair play in a range of physical activities (AC9HPFM04). They have practised turn-taking and basic inclusion in game contexts.",
    "endpoint": "Students co-construct and apply rules to promote fair play in a range of physical activities.",
+   "elaborations": [
+    "discussing changes to rules that will make an activity fairer or more inclusive of all learners",
+    "explaining how rules contribute to fair play and applying them in group activities",
+    "demonstrating turn-taking and sharing equipment when participating in play and minor games"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1290,6 +1382,11 @@
    ],
    "knowledge": "Students have followed rules to promote fair play (AC9HPFM04) and have experienced cooperative interaction in basic game contexts. There is no direct Foundation predecessor for collaborative strategy use — this is a new demand at this band.",
    "endpoint": "Students apply strategies to work collaboratively in physical activities.",
+   "elaborations": [
+    "working cooperatively with a partner when practising new skills",
+    "describing and demonstrating how to include others in physical activities",
+    "proposing and trialling how a game can be changed so that everyone can be included"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1383,6 +1480,14 @@
    ],
    "knowledge": "Students have investigated who they are and the people in their world (AC9HPFP01). They can name people in their life and explore basic features of themselves and their communities.",
    "endpoint": "Students describe personal qualities and explain how they contribute to developing identities.",
+   "elaborations": [
+    "describing the personal qualities of characters in stories and how they are similar to and different from their own",
+    "describing how belonging to First Nations Australian cultural groups contributes to identities",
+    "exploring examples of cultural practices, including those of Australians of Asian heritage, that recognise the contributions of family and friends to identities",
+    "explaining how personal and cultural identities are influenced by the groups and communities to which we belong",
+    "participating in physical activities and describing how their own and others' personal qualities contribute to successful outcomes",
+    "describing personal achievements and sharing how they felt and how it influenced their personal identities"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1481,6 +1586,13 @@
    ],
    "knowledge": "Students have practised personal and social skills to interact respectfully with others (AC9HPFP02). They can demonstrate basic respectful interaction in familiar contexts.",
    "endpoint": "Students identify and explore skills and strategies to develop respectful relationships.",
+   "elaborations": [
+    "identifying characters in texts who demonstrate respect and cooperation to develop respectful relationships",
+    "identifying characters in texts who demonstrate respect for different types of families and carers, including those of different cultures, abilities or compositions",
+    "demonstrating appropriate language (including verbal, non-verbal, body language and gestures) when encouraging and including others in physical activities, when completing movement tasks or practising for performance",
+    "discussing strategies we can use to show respect to First Nations Australians and acknowledge difference using appropriate language",
+    "describing behaviours that may cause hurt or harm to others, or cause them to feel disrespected, including verbal and physical forms of bullying"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1549,6 +1661,14 @@
    ],
    "knowledge": "Students have expressed and described emotions they experience (AC9HPFP03). They can name basic emotions and connect them to personal experiences.",
    "endpoint": "Students identify how different situations influence emotional responses.",
+   "elaborations": [
+    "recognising own emotions and demonstrating ways to manage how they express their emotions in different situations",
+    "exploring self-regulation strategies to manage emotional responses",
+    "identifying situations that may trigger strong emotional responses in themselves and others, and recognising the impact the responses can have on others",
+    "identifying how someone might feel, think and act during an emergency through role-play and imaginative play",
+    "predicting how a person or character might be feeling based on the words they use, their facial expressions and body language",
+    "recognising how self and others are feeling in a range of situations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1642,6 +1762,11 @@
    ],
    "knowledge": "Students have explored how to seek, give or deny permission respectfully when sharing possessions or personal space (AC9HPFP04).",
    "endpoint": "Students practise strategies for seeking, giving or denying permission respectfully.",
+   "elaborations": [
+    "practising strategies they can use when they need to give or refuse consent; for example, saying yes and no in an assertive manner, using non-verbal body cues and gestures",
+    "practising ways to interact with others in a fair and respectful way in play and other activities, regardless of differences in gender, abilities, race or personality",
+    "exploring situations where they need to seek, give or deny permission and practising strategies to assert themselves; for example, saying no to inappropriate touching"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1710,6 +1835,14 @@
    ],
    "knowledge": "Students have demonstrated protective behaviours, named body parts and rehearsed help-seeking strategies that help keep them safe (AC9HPFP05).",
    "endpoint": "Students identify and demonstrate protective behaviours and help-seeking strategies to help them and others stay safe.",
+   "elaborations": [
+    "identifying the body's reaction to a range of situations, including safe and unsafe situations, and comparing the different emotional responses",
+    "identifying and rehearsing strategies they can use when requiring assistance, such as asking an adult they trust, reading signs and symbols to identify safe places, and solving a problem with friends",
+    "proposing strategies they can use at school and home that promote healthy use of digital tools",
+    "recognising photos and locations of safe places and a network of people who can help",
+    "discussing the importance of seeking help when problems are too big to solve by themselves",
+    "exploring how characters in texts use protective behaviours and help-seeking strategies to keep themselves and others safe"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1803,6 +1936,13 @@
    ],
    "knowledge": "Students have identified health symbols, messages and strategies in their community that support their health and safety (AC9HPFP06).",
    "endpoint": "Students investigate health messages and practices in their community and discuss their purposes.",
+   "elaborations": [
+    "identifying poison labels and medicine packaging and understanding to ask an adult before taking medicines",
+    "discussing how eating a variety of fresh foods can influence health and wellbeing by using The Australian Guide to Healthy Eating",
+    "investigating how foods are marketed and promoted to children through advertisements in online spaces, promotion in supermarkets, and labelling and packaging",
+    "exploring sustainable practices that students can implement in the classroom to improve the health and wellbeing of the class, such as composting food waste, creating an edible garden and reducing single-use plastics",
+    "creating rules and applying them at school and home to implement healthy and manageable practices with their use of digital tools"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3808,6 +3948,13 @@
    ],
    "knowledge": "At Years 3-4, students refined and applied fundamental movement skills in new movement situations (AC9HP4M01) and applied and adapted movement strategies to achieve movement outcomes (AC9HP4M02). They can execute core locomotor, stability and object control skills and have begun adapting these to new contexts.",
    "endpoint": "Students adapt and modify movement skills across a variety of situations, adjusting technique in response to changing movement demands.",
+   "elaborations": [
+    "applying stability and locomotor skills to dodge and feint in different movement situations",
+    "performing activities that involve a transition from one skill to another, such as from dribbling to shooting or from leaping to balancing, in changing movement situations",
+    "adapting kicking, striking and throwing skills to a variety of new games and activities",
+    "combining surface propulsion and underwater skills in an aquatic environment",
+    "composing and performing a range of static and dynamic balances on different body parts, rotating and pivoting to change direction of movement"
+   ],
    "nodes": [
     {
      "n": null,
@@ -3911,6 +4058,12 @@
    ],
    "knowledge": "At Years 3-4, students applied and adapted movement strategies to achieve movement outcomes (AC9HP4M02). They have experience identifying strategies in familiar activities and can adapt skills at a technical level. They have not yet explicitly analysed why a strategy transfers or evaluated transfer effectiveness.",
    "endpoint": "Students transfer familiar movement strategies to different movement situations and evaluate the effectiveness of the transfer.",
+   "elaborations": [
+    "adapting and transferring defensive or offensive strategies that have been successful in one game to another similar game",
+    "examining and demonstrating how strategies used in one physical activity can be transferred to a new movement situation",
+    "transferring strategies they have used to maintain balance to safely traverse a natural environment",
+    "making judgements, based on agreed criteria, about the effectiveness of transferring strategies from one game to another"
+   ],
    "nodes": [
     {
      "n": null,
@@ -3993,6 +4146,12 @@
    ],
    "knowledge": "At Years 3-4, students demonstrated how movement concepts related to effort, space, time, objects and people can be applied when performing movement sequences (AC9HP4M03). They can identify and apply individual movement concepts in structured sequences but have not systematically investigated how manipulating multiple concepts improves outcomes.",
    "endpoint": "Students investigate how movement concepts related to effort, space, time, objects and people can be applied and combined to improve movement outcomes.",
+   "elaborations": [
+    "demonstrating an understanding of how to adjust the force and speed of an object to improve accuracy and control",
+    "creating a movement sequence that demonstrates variations in flow and levels, and involves individuals moving together in time",
+    "working with a partner to explore pushing and pulling movements and how these can be manipulated to generate and perform counterbalances",
+    "developing strategies that exploit the playing space to create overlaps and extra attackers"
+   ],
    "nodes": [
     {
      "n": null,
@@ -4071,6 +4230,11 @@
    ],
    "knowledge": "At Years 3-4, students participated in physical activities to explore how their body feels and described how regular physical activity helps the body stay healthy (AC9HP4M04). They can describe subjective body sensations during activity but have not yet categorised intensity levels or measured physiological responses.",
    "endpoint": "Students participate in physical activities of varying intensity and investigate the body's physiological and practical reactions, categorising activities by intensity level.",
+   "elaborations": [
+    "performing activities of different intensities and measuring breathing rate, heart rate and other body responses to categorise activities into low, moderate and high intensity",
+    "designing and modelling different warm-up and cool-down routines for the class and discussing their importance for reducing the chance of injuries or soreness after activity",
+    "participating in and designing physical activity opportunities that support their health and fitness goals"
+   ],
    "nodes": [
     {
      "n": null,
@@ -4149,6 +4313,12 @@
    ],
    "knowledge": "At Years 3-4, students participated in physical activities in natural and outdoor settings to examine factors that can influence their own and others' participation (AC9HP4M05). They can identify participation barriers and enablers at a descriptive level but have not yet analysed the steps and resources needed to actively promote participation.",
    "endpoint": "Students participate in physical activities in natural and outdoor settings and analyse the steps and resources needed to promote participation for themselves and others.",
+   "elaborations": [
+    "analysing how access to natural environments and the outdoors can influence participation in physical activities, and enhance health and wellbeing",
+    "learning traditional dances from local First Nations Australian community members and recognising the role dance plays in the lives of these communities",
+    "researching the Australian 24-Hour Movement Guidelines for Children and Young People, comparing their daily habits of physical activity to the recommendations and proposing strategies for enhancing or maintaining their levels of activity",
+    "discussing how a connection to a community space or special place can influence the types of physical activity options people will choose to participate in, such as links to skate parks, surf beaches or bushwalking trails"
+   ],
    "nodes": [
     {
      "n": null,
@@ -4227,6 +4397,11 @@
    ],
    "knowledge": "At Years 3-4, students explored recommendations about physical activity and sedentary behaviours and discussed strategies to achieve the recommendations (AC9HP4M06). They know that guidelines exist and can discuss strategies at a general level but have not yet proposed and explained strategies grounded in their own specific life contexts.",
    "endpoint": "Students propose and explain strategies to increase physical activity and reduce sedentary behaviour in their own lives, with reference to health benefits and social and mental wellbeing.",
+   "elaborations": [
+    "creating and participating in an activity circuit they could replicate at home that is designed to improve health-related fitness",
+    "examining the benefits of physical activity for social health and mental wellbeing, and researching options for participating in physical activities in the local area",
+    "investigating the resources needed and steps required to set up a lunchtime sports competition, activity circuit or playground games aimed at increasing levels of physical activity among students and staff"
+   ],
    "nodes": [
     {
      "n": null,
@@ -4306,6 +4481,11 @@
    ],
    "knowledge": "At Years 3-4, students applied creative thinking when designing movement sequences and solving movement problems (AC9HP4M07). They have experience generating and trying movement solutions but have not yet explicitly predicted outcomes before testing or used agreed criteria to evaluate effectiveness.",
    "endpoint": "Students predict and test the effectiveness of different skills and strategies across a range of movement situations, refining solutions based on systematic testing.",
+   "elaborations": [
+    "predicting and systematically testing a range of solutions to unfamiliar movement challenges to find out which solution is most appropriate or effective",
+    "adapting movement skills and strategies from other contexts to generate creative solutions to unfamiliar movement challenges when participating in outdoor activities",
+    "co-developing criteria to assess effectiveness of responses to movement challenges, predicting the effectiveness of each, then testing and refining solutions against the criteria in order to achieve successful outcomes"
+   ],
    "nodes": [
     {
      "n": null,
@@ -4384,6 +4564,12 @@
    ],
    "knowledge": "At Years 3-4, students applied rules and scoring systems to promote fair play when participating or designing physical activities (AC9HP4M08). They understand that rules exist to enable fair play and can apply existing rules. They have not yet devised their own rule modifications or tested them for inclusive effect.",
    "endpoint": "Students devise and test alternative rules and game modifications, evaluating whether they support fair play and inclusive participation.",
+   "elaborations": [
+    "proposing changes to rules and/or conditions to create a more inclusive game or to allow for a fairer contest",
+    "recognising unfairness and exclusion in a game situation, and proposing strategies to overcome these issues",
+    "discussing where and when they have witnessed fairness and inclusion in a game situation and explaining what factors led to the game being inclusive and fair",
+    "investigating the effectiveness of rules used in traditional games of First Nations Australians to promote participation, such as Inkanyi: a cooperative running game played by the Pitjantjatjara / Yankunytjatjara of central Australia where there are no winners and Barambah gimbe: a throwing and catching game from the lands of the Wakka Wakka where catchers can be nominated to increase participation"
+   ],
    "nodes": [
     {
      "n": null,
@@ -4462,6 +4648,11 @@
    ],
    "knowledge": "At Years 3-4, students performed a range of roles in respectful ways to achieve successful outcomes in group or team movement activities (AC9HP4M09). They can take on assigned roles respectfully but have not yet explicitly practised negotiating roles or using specific verbal communication strategies (reflective listening, assertive communication) in group movement contexts.",
    "endpoint": "Students participate positively in groups and teams, contributing to activities, encouraging others, and negotiating roles and responsibilities in movement situations.",
+   "elaborations": [
+    "exploring and performing the different roles and responsibilities in physical activities that promote enjoyment, safety and positive outcomes for participants",
+    "demonstrating negotiation skills when dealing with conflicts or disagreements in movement situations",
+    "using reflective listening and assertive communication when working in small groups on movement tasks or challenges"
+   ],
    "nodes": [
     {
      "n": null,
@@ -4544,6 +4735,14 @@
    ],
    "knowledge": "At Years 3-4, students described how choices and actions can be influenced by stereotypes (AC9HP4P03). They understand that external forces can shape behaviour and choices. They have not yet explicitly analysed how identities are formed through relationships with specific people and connections to place, or how to actively create positive self-identities.",
    "endpoint": "Students explain how identities are influenced by people and places, and describe strategies for creating positive self-identities.",
+   "elaborations": [
+    "explaining how role models influence the way individuals see themselves; for example, sporting role models, social media influencers, parents, friends and coaches",
+    "investigating how First Nations Australians identify within and across communities through connection to Country/Place; for example, Bama People of the rainforests of North Queensland or Quandamooka People of South East Queensland",
+    "examining how beliefs and cultural practices convey meanings for cultural groups, including Australians of Asian heritage, and contribute to the development of positive self-identities",
+    "exploring how connection to people and places can influence personal and cultural identities over time",
+    "exploring the different levels of connection within First Nations Australian communities, such as cultural group, clan, Country/Place, skin names and social standing within community",
+    "exploring how family, peers, popular culture, gender stereotypes and the media influence developing identities"
+   ],
    "nodes": [
     {
      "n": null,
@@ -4626,6 +4825,14 @@
    ],
    "knowledge": "At Years 3-4, students planned, rehearsed and reflected on strategies to cope with different changes and transitions they experience (AC9HP4P02). They have experience with strategies for change at a general level. This descriptor specifically includes puberty as a named change type, representing a significant new content area.",
    "endpoint": "Students investigate a range of resources and strategies to manage changes and transitions, including the physical and social changes associated with puberty.",
+   "elaborations": [
+    "understanding that experiences of puberty differ, and the resources and strategies chosen to manage these changes are personal",
+    "examining the range of products and resources available to manage the physical changes associated with puberty, including products for managing menstruation",
+    "understanding that physical changes experienced during puberty are linked to rites of passage ceremonies in many First Nations Australian communities",
+    "discussing ways families and cultural groups acknowledge and celebrate major stages of development in young people's lives",
+    "analysing how roles and responsibilities change as people grow older and examining strategies for managing these increasing responsibilities",
+    "examining how the developmental changes that occur through puberty prepare a persons' body for reproduction"
+   ],
    "nodes": [
     {
      "n": null,
@@ -4708,6 +4915,12 @@
    ],
    "knowledge": "At Years 3-4, students described how choices and actions can be influenced by stereotypes (AC9HP4P03). They understand that stereotypes exist and can shape behaviour. This descriptor extends that understanding specifically to gender stereotypes and their influence on societal roles and responsibilities — a more specific and politically situated application.",
    "endpoint": "Students investigate how gender stereotypes influence the portrayal of societal roles and responsibilities, identifying limiting effects and proposing strategies for gender equality.",
+   "elaborations": [
+    "identifying characters in texts who are not constrained by traditional gender stereotypes and how this influences their choices and actions",
+    "questioning the fairness of gender roles and proposing ways to challenge those practices that infringe on an individual's human rights",
+    "investigating how social and cultural norms about gender can influence the roles and responsibilities of family members and people within their community",
+    "identifying those gender norms that can have limiting and harmful effects, and proposing strategies to advance gender equality and respect for human rights"
+   ],
    "nodes": [
     {
      "n": null,
@@ -4790,6 +5003,13 @@
    ],
    "knowledge": "At Years 3-4, students selected, used and refined personal and social skills to establish, manage and strengthen relationships (AC9HP4P04). They have a repertoire of relationship skills. This descriptor requires specifically demonstrating respect and empathy as relationship-influencing mechanisms, and understanding how language and behaviour directed at others (including First Nations Australians) can affect relationships.",
    "endpoint": "Students describe and demonstrate how respect and empathy can be expressed to positively influence relationships in a range of contexts.",
+   "elaborations": [
+    "exploring strategies for responding when relationships change, such as starting a new school, changing priorities or interests, family break-up, or joining a new sports team",
+    "proposing strategies for managing the changing nature of relationships, including dealing with bullying and harassment, and building new friendships",
+    "exploring and performing different roles and responsibilities in physical activities that promote enjoyment, safety and positive outcomes for all participants",
+    "recognising how words and labels used regarding First Nations Australians can cause offence and how this awareness can support and strengthen respectful relationships",
+    "examining the behaviours people demonstrate when treating others in respectful ways, and comparing to those behaviours that constitute forms of bullying, racism or gender-based violence"
+   ],
    "nodes": [
     {
      "n": null,
@@ -4868,6 +5088,14 @@
    ],
    "knowledge": "At Years 3-4, students described how valuing diversity influences wellbeing and identified actions that promote inclusion (AC9HP4P05). They understand that diversity has wellbeing value and can identify inclusive actions. This descriptor moves to implementing strategies and addressing specific forms of discrimination including sexism, racism and homophobia.",
    "endpoint": "Students describe and implement strategies to value diversity in their communities, including addressing discrimination and supporting belonging for diverse groups.",
+   "elaborations": [
+    "proposing strategies to help others understand points of view that differ from their own and to encourage discussion about individual and cultural similarities and differences to tackle discrimination such as sexism, racism and homophobia",
+    "exploring initiatives that sporting and cultural groups use to celebrate diversity, counter discrimination and racism, and support the wellbeing of their communities",
+    "discussing the role bystanders can play in promoting respectful interactions and challenging disrespect and discrimination such as homophobia, transphobia and racism",
+    "discussing how adaptations and modifications to physical activities can enable inclusivity for students with a range of abilities",
+    "exploring the importance of cultural expressions of First Nations Australians in maintaining a continuing deep connection to Country/Place and its influence on wellbeing",
+    "examining how beliefs, values and cultural practices convey meaning and influence peoples' sense of identity and belonging, including Australians of Asian heritage"
+   ],
    "nodes": [
     {
      "n": null,
@@ -4950,6 +5178,11 @@
    ],
    "knowledge": "At Years 3-4, students explained how and why emotional responses can vary and practised strategies to manage their emotions (AC9HP4P06). They have strategies for emotion management and understand that responses vary. This descriptor adds analysis: how emotional responses influence the quality of interactions — not just managing emotions internally but understanding their relational consequences.",
    "endpoint": "Students apply strategies to manage emotions and analyse how emotional responses influence interactions in a range of situations.",
+   "elaborations": [
+    "exploring the emotions associated with feeling unsafe or uncomfortable and proposing strategies to manage these situations",
+    "analysing situations in which emotions can influence decision-making, including in peer-group, family and movement situations",
+    "exploring when emotional responses can be intense or unpredictable, including feelings of grief associated with loss, and practising strategies to self-regulate and manage expression of strong emotions"
+   ],
    "nodes": [
     {
      "n": null,
@@ -5028,6 +5261,11 @@
    ],
    "knowledge": "At Years 3-4, students rehearsed and refined strategies for seeking, giving and denying permission respectfully and described situations when permission is required (AC9HP4P07). They have language for permission in concrete situations. This descriptor introduces consent explicitly (not just permission), adds the step of communicating intentions effectively, and addresses the emotional responses when consent is denied.",
    "endpoint": "Students describe strategies for seeking, giving or denying consent and rehearse how to communicate intentions effectively and respectfully across a range of situations.",
+   "elaborations": [
+    "exploring the steps of seeking, giving or denying consent (asking, responding, listening and reacting) and practising how to communicate their intentions effectively at each step",
+    "practising and refining strategies for interpreting verbal and non-verbal cues related to seeking, giving and denying consent in a range of situations",
+    "analysing how a person's reaction to being denied permission to do something can affect others' feelings and discussing options for dealing with situations when this may occur; for example, feelings of disappointment, shame and anger associated with rejection"
+   ],
    "nodes": [
     {
      "n": null,
@@ -5110,6 +5348,14 @@
    ],
    "knowledge": "At Years 3-4, students described and applied protective behaviours and help-seeking strategies in a range of online and offline situations (AC9HP4P08). They can apply known strategies. This descriptor adds analysis — students evaluate the efficacy of strategies, not just apply them — and extends to bystander situations and reducing stigma around help-seeking.",
    "endpoint": "Students analyse and rehearse protective behaviours and help-seeking strategies for online and offline situations, including acting as bystanders and normalising help-seeking.",
+   "elaborations": [
+    "researching sources of health information and places where they can seek help, and prioritising those that are reliable and trustworthy",
+    "examining ways to normalise and de-stigmatise help-seeking behaviour so all students feel more comfortable and confident to seek help when needed",
+    "discussing strategies for maintaining online safety when using digital tools and environments, including the options and processes for reporting negative or harmful behaviour",
+    "exploring actions they can take when they feel unsafe when online; for example, who to speak to if someone posts an embarrassing picture of them without permission or when to step away from negative online social interactions",
+    "proposing strategies they can use if they witness others in unsafe situations, such as accessing support networks or telling an adult they trust",
+    "analysing the responses of characters in TV shows or movies when in unsafe or risky situations and discussing the efficacy of their response to the situation"
+   ],
    "nodes": [
     {
      "n": null,
@@ -5188,6 +5434,12 @@
    ],
    "knowledge": "At Years 3-4, students interpreted the nature and intention of health information and messages and reflected on how they influence personal decisions (AC9HP4P09). They can interpret individual health messages. This descriptor adds investigation across source types, reliability evaluation, and application to real health choices.",
    "endpoint": "Students investigate different sources and types of health information, evaluate their reliability, and apply them to their own and others' health choices.",
+   "elaborations": [
+    "examining how family, friends, media and public identities may influence the way people act and the choices they make in relation to their health",
+    "analysing nutritional information of different foods and developing strategies to communicate healthier choices to their family",
+    "identifying trusted people in their lives with whom they can share their health needs and concerns, and rehearsing ways to communicate concerns about their health to a variety of support people",
+    "examining and comparing relevant health information and opinions, and identifying which aspects can be verified as accurate and reliable"
+   ],
    "nodes": [
     {
      "n": null,
@@ -5266,6 +5518,16 @@
    ],
    "knowledge": "At Years 3-4, students investigated and applied behaviours that contribute to their own and others' health, safety, relationships and wellbeing (AC9HP4P10). They can apply health-promoting behaviours. This descriptor moves to analysis — examining how behaviours operate at individual and community scales, including online environments, food systems, and First Nations community wellbeing structures.",
    "endpoint": "Students analyse how individual and community behaviours influence health, safety, relationships and wellbeing, and propose strategies to promote positive community wellbeing.",
+   "elaborations": [
+    "recognising actions that can help keep classmates safe, including strategies to reduce potential for contamination, infection and anaphylaxis",
+    "investigating practices that help promote and maintain health and wellbeing, such as eating a diet reflecting The Australian Guide to Healthy Eating, meeting recommendations for daily physical activity and creating connections with others to enhance social health",
+    "exploring how kinship and extended family structures in First Nations Australian communities support and enhance the health, safety and wellbeing of their communities",
+    "proposing strategies they can use in daily routines to increase physical activity levels and reduce sedentary behaviour",
+    "practising and refining assertive communication techniques that can be used in a range of situations where they may be asked to do something they don't believe is appropriate",
+    "proposing and implementing strategies to positively contribute to online environments, such as evaluating the impact of 'character' behaviour when gaming with peers",
+    "examining sustainable food practices to measure the quality of food available in the school canteen or local area",
+    "describing strategies to support a sense of belonging and connection, and recognising the importance of social support for enhancing mental health and wellbeing"
+   ],
    "nodes": [
     {
      "n": null,
@@ -5346,6 +5608,14 @@
    "prior": [],
    "knowledge": "Students have adapted and modified movement skills across a variety of situations and transferred familiar movement strategies to different movement contexts (Y5-6). They can identify and describe movement adjustments in response to changing conditions.",
    "endpoint": "Students analyse, refine and transfer movement skills across varied movement situations using feedback from multiple sources.",
+   "elaborations": [
+    "implementing feedback from a teacher to refine how they move within the playing or performance space",
+    "using feedback from teammates in a game to know when to travel, mark or intercept to achieve and retain possession",
+    "using feedback from a peer coach to adapt movement sequences to create, use and defend space in invasion, net/court, striking and fielding, and target games",
+    "refining a range of swimming strokes using feedback from a teacher, peers or video resources",
+    "using feedback from others to refine the composition of a group dance sequence",
+    "using feedback from others to safely and efficiently travel around, over, up, under and through natural or built obstacles"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5468,6 +5738,12 @@
    "prior": [],
    "knowledge": "Students have transferred familiar movement strategies to different movement situations and can identify when strategies are or are not working (Y5-6). They can describe how strategies affect movement outcomes in broad terms.",
    "endpoint": "Students design and demonstrate how movement strategies can be manipulated to improve movement outcomes across a range of movement situations.",
+   "elaborations": [
+    "developing and implementing appropriate strategies for selected movement scenarios",
+    "selecting strategies that have been successful previously and applying the most appropriate ones when solving new movement challenges",
+    "exploring similarities between the bases of support and flow of movements when performing different movement sequences that require static and dynamic balance",
+    "predicting the effectiveness of changes in tactics or strategies on scoring opportunities and suggesting reasons for any unexpected results"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5557,6 +5833,12 @@
    "prior": [],
    "knowledge": "Students have investigated how movement concepts (effort, space, time, objects, people) can be applied to improve movement outcomes (Y5-6). They can apply these concepts to specific situations but have not yet been asked to explain manipulations systematically.",
    "endpoint": "Students demonstrate and explain how movement concepts related to effort, space, time, objects and people can be manipulated to improve movement outcomes.",
+   "elaborations": [
+    "performing a range of movements and analysing technique based on understanding of effort in relation to take-off, body position and landing",
+    "demonstrating an understanding of how to adjust the angle of release of an object and how this will affect the height and distance of flight",
+    "creating, performing and appraising rhythmic movement sequences that demonstrate variations in flow of movements, use of space and relationships to other performers",
+    "designing and refining performances to demonstrate how to manipulate space and relationships between players in the space to achieve successful movement outcomes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5646,6 +5928,11 @@
    "prior": [],
    "knowledge": "Students have participated in physical activities and investigated the body's reaction to different levels of intensity (Y5-6). They can describe physical changes during exercise but have not yet systematically investigated the relationship between regular participation and health outcomes.",
    "endpoint": "Students participate in physical activities designed to improve fitness and wellbeing and investigate the impact of regular participation on health, fitness and wellbeing.",
+   "elaborations": [
+    "using digital tools to design personal physical activity programs that support regular participation and meet their individual health, wellbeing and fitness goals",
+    "designing and performing a fitness circuit they could implement at home (with minimal equipment) that improves one or more fitness components",
+    "researching and participating in new activities to explore how they can enhance health, fitness and wellbeing, such as yoga, mindfulness meditation, gym classes, HIIT sessions"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5735,6 +6022,12 @@
    "prior": [],
    "knowledge": "Students have participated in physical activities in natural and outdoor settings and analysed the steps and resources needed to promote participation (Y5-6). They can identify what supports participation but have not yet evaluated management strategies at a community level.",
    "endpoint": "Students participate in physical activities using community spaces and outdoor settings, and evaluate strategies to support increased use of these spaces.",
+   "elaborations": [
+    "evaluating different strategies used to manage and protect environments where physical activities take place, such as bushwalking trails, surf beaches, skate parks and sporting fields",
+    "investigating different approaches to custodial responsibility for Country/Place used by First Nations Australian communities to support the use of local settings and spaces for physical activity while protecting the environment",
+    "designing and evaluating physical activity options that reimagine the use of community spaces to encourage more active lifestyles among their peer group",
+    "promoting an understanding of minimal-impact outdoor recreation in the local area"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5823,6 +6116,11 @@
    "prior": [],
    "knowledge": "Students have proposed and explained strategies to increase physical activity and reduce sedentary behaviour (Y5-6). They can describe what strategies might work but have not yet been expected to design and justify strategies against specific health and wellbeing outcome targets.",
    "endpoint": "Students design and justify strategies to increase physical activity levels to achieve health and wellbeing outcomes.",
+   "elaborations": [
+    "designing and monitoring a personal physical activity plan that proposes realistic strategies for increasing physical activity levels and reducing sedentary behaviours",
+    "investigating which physical activities people engage in to maintain emotional and social wellbeing, and designing a program of activities aimed at increasing social connection and wellbeing",
+    "comparing their current physical activity levels, amount of sleep and sedentary activity time with Australia's 24-Hour Movement Guidelines for Children and Young People and suggesting strategies for themselves and others to meet these recommendations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5916,6 +6214,11 @@
    "prior": [],
    "knowledge": "Students have predicted and tested the effectiveness of different skills and strategies in a range of movement situations (Y5-6). They can make predictions and test them but have not yet been expected to systematically propose and evaluate across a range of situation types.",
    "endpoint": "Students propose and evaluate movement strategies and skills that would be most effective in different movement situations.",
+   "elaborations": [
+    "evaluating factors that enabled them to achieve success in movement activities and justifying how these factors can be transferred to other learning contexts",
+    "explaining and justifying the movement strategies selected in response to movement challenges when participating in outdoor or nature-based activities such as rope courses, bushwalking, orienteering or canoeing",
+    "putting their movement solutions into action by predicting outcomes and testing the approach proposed to achieve successful movement outcomes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6010,6 +6313,12 @@
    "prior": [],
    "knowledge": "Students have devised and tested alternative rules and game modifications to support fair play and inclusive participation (Y5-6). They have tested modifications but have not yet systematically investigated how and why modifications work.",
    "endpoint": "Students investigate modifications to equipment, rules and scoring systems that support fair play and inclusive participation.",
+   "elaborations": [
+    "modifying rules, equipment or scoring systems to allow all participants to enjoy success in physical activities",
+    "applying and adapting scoring systems in activities to assess movement performances consistently and fairly",
+    "analysing the benefits and potential drawbacks of activities where players, rather than an independent official, are responsible for officiating the game",
+    "exploring rules, equipment and scoring systems of traditional games of First Nations Australians and investigating how they support skill development and fair and inclusive play"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6099,6 +6408,12 @@
    "prior": [],
    "knowledge": "Students have participated positively in groups and teams by contributing to group activities, encouraging others and negotiating roles and responsibilities (Y5-6). They can participate constructively but have not yet been expected to undertake explicit leadership roles or apply group decision-making processes.",
    "endpoint": "Students practise and apply leadership, collaboration and group decision-making processes when participating in a range of physical activities.",
+   "elaborations": [
+    "adopting roles and responsibilities that support and enhance team cohesion and lead to successful movement outcomes",
+    "applying an understanding of verbal, physical and situational cues to identify and appropriately respond to the feelings and motives of others when working in a team or group",
+    "reflecting on their role and articulating how the actions they initiated in that role led to the achievement of successful outcomes",
+    "undertaking various roles as a leader or collaborator to support the planning of physical activities for their team or peer group"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6192,6 +6507,12 @@
    "prior": [],
    "knowledge": "Students have explained how identities can be influenced by people and places, and how positive self-identities can be created (Y5-6). They can identify external influences on identity but have not yet been expected to analyse how values and beliefs specifically operate as mechanisms of influence.",
    "endpoint": "Students analyse and reflect on the influence of values and beliefs on the development of identities.",
+   "elaborations": [
+    "examining how their values and beliefs, as well as those of family and friends, influence the development of identities",
+    "analysing how naming of deceased protocols, such as kumanjayi, can impact the identities of other members within First Nations Australian communities",
+    "examining how cultural values and beliefs influence the way young people view themselves, including young Australians of Asian heritage",
+    "examining how cultural beliefs about the physical changes experienced during puberty can influence gender, cultural and sexual identities"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6280,6 +6601,13 @@
    "prior": [],
    "knowledge": "Students have investigated resources and strategies to manage changes and transitions, including puberty (Y5-6). They can identify strategies and resources but have not yet been expected to analyse the impact of transitions systematically or devise strategies for supporting others.",
    "endpoint": "Students analyse the impact of changes and transitions, and devise strategies to support themselves and others through these changes.",
+   "elaborations": [
+    "investigating the changing nature of peer and family relationships and proposing strategies to manage these changes",
+    "accessing and assessing health information and services that support young people to effectively manage changes and transitions as they grow older, including sexual health information about sexually transmitted infections, contraception and safe sexual practices",
+    "examining how ceremonies of First Nations Australians involve sharing of cultural knowledge leading to changes in social standing and responsibilities in communities",
+    "examining the notion of 'border crossing'; that is, how First Nations Australians live across multiple cultures, and how these transitions can impact on a sense of belonging to culture, family and peer groups",
+    "evaluating and practising coping, communication and problem-solving skills to manage changes and emotions associated with puberty and getting older"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6369,6 +6697,12 @@
    "prior": [],
    "knowledge": "Students have investigated how the portrayal of societal roles and responsibilities can be influenced by gender stereotypes (Y5-6). They can identify stereotyping in representations but have not yet examined how stereotypes operate through power and coercion within relationships.",
    "endpoint": "Students examine how roles, decision-making, and levels of power, coercion and control within relationships can be influenced by gender stereotypes.",
+   "elaborations": [
+    "exploring scenarios in texts that demonstrate how gender inequality can arise from intergenerational patterns of inequity and unequal power in relationships",
+    "examining how gender roles and stereotypes can influence beliefs and decisions about self, friendships, sexual relationships, sexual behaviour, contraceptive use, substance use and future life plans",
+    "identifying those positive character attributes and strengths that are valued regardless of gender",
+    "investigating strategies that have been successful in challenging harmful or limiting stereotypes, attitudes or practices"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6457,6 +6791,13 @@
    "prior": [],
    "knowledge": "Students have described and demonstrated how respect and empathy can be expressed to positively influence relationships (Y5-6). They can express respect and empathy but have not yet been expected to examine how power and coercion operate within or against respectful relationships.",
    "endpoint": "Students examine the roles of respect, empathy, power and coercion in developing respectful relationships.",
+   "elaborations": [
+    "analysing how behaviours, actions and responses to situations can change depending on whether they are by themselves, with friends or with family",
+    "recognising the impact bullying and harassment can have on relationships, including online relationships",
+    "showing respect for cultural norms and sensitivities when building relationships with people from different cultural backgrounds",
+    "proposing strategies for addressing racism towards First Nations Australians, including the role of bystanders in promoting respectful interactions and challenging disrespect and discrimination",
+    "examining what constitutes disrespectful, harmful or violent behaviour within peer, family and intimate relationships"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6545,6 +6886,14 @@
    "prior": [],
    "knowledge": "Students have described and implemented strategies to value diversity in their communities (Y5-6). They can describe and implement strategies but have not yet been asked to investigate the broader mechanisms by which communities come to value diversity, or to propose community-level actions.",
    "endpoint": "Students investigate strategies that influence how communities value diversity and propose actions to promote inclusion in their communities.",
+   "elaborations": [
+    "investigating how respecting diversity and challenging racism, sexism, ableism and homophobia influence individual and community health and wellbeing",
+    "examining values and beliefs about cultural and social issues such as gender, race, violence, sexuality and ability, and how resisting stereotypes can help students be themselves",
+    "developing strategies to challenge narrow views of gender, race, violence, sexuality, gender diversity and ability to contribute to inclusive communities",
+    "researching how norms, stereotypes and prejudice are challenged in local, national and global contexts",
+    "investigating events and strategies that value the contributions of First Nations Australians and strengthen relationships, such as Indigenous rounds in sporting codes and NAIDOC Week",
+    "identifying examples of beliefs and cultural practices within, between and across cultural groups, including cultural groups from the Asian region, and describing how they have changed or remained the same over time"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6637,6 +6986,11 @@
    "prior": [],
    "knowledge": "Students have applied strategies to manage emotions and analysed how emotional responses influence interactions (Y5-6). They can apply management strategies and describe their effects on interactions, but have not yet been expected to analyse the range of factors that drive emotional responses.",
    "endpoint": "Students analyse factors that influence emotional responses and devise strategies to self-manage emotions.",
+   "elaborations": [
+    "investigating personal, social and cultural factors that influence the way individuals respond emotionally to different situations and determining the impact these responses could have on others",
+    "exploring different viewpoints, practising being empathetic and considering alternative ways to respond in a variety of situations, which take into account how they may affect others",
+    "recognising and interpreting emotional responses to stressful situations and proposing strategies for ensuring those responses don't have a negative impact on others"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6726,6 +7080,11 @@
    "prior": [],
    "knowledge": "Students have described strategies for seeking, giving or denying consent and rehearsed how to communicate their intentions effectively and respectfully (Y5-6). They have practised communication strategies in basic scenarios but have not yet been expected to explain the rationale behind assertive communication or apply it across more complex relationship and digital contexts.",
    "endpoint": "Students explain and apply skills and strategies to communicate assertively and respectfully when seeking, giving or denying consent.",
+   "elaborations": [
+    "exploring and refining skills and strategies needed to communicate assertively and respectfully in relationships",
+    "understanding and applying online and social protocols to enhance relationships with others and protect their own wellbeing, including recognising and responding to online content that may be harmful for themselves or others (such as grooming or image-based abuse), respectfully communicating needs or concerns to others",
+    "examining the nature of consent in different types of relationships, and proposing and practising strategies for seeking, giving and denying consent respectfully"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6815,6 +7174,14 @@
    "prior": [],
    "knowledge": "Students have analysed and rehearsed protective behaviours and help-seeking strategies in online and offline situations (Y5-6). They have rehearsed protective behaviours but have not yet been expected to refine them through evaluation or to evaluate the quality and suitability of community resources.",
    "endpoint": "Students refine protective behaviours and evaluate community resources to seek help for themselves and others.",
+   "elaborations": [
+    "exploring different strategies they can use, and resources or help sites they can access or refer others to, if they are experiencing symptoms of anxiety or depression",
+    "examining scenarios to highlight how emotions, dispositions, social supports, and gender and cultural norms can affect a person's willingness to seek help",
+    "exploring strategies for dealing with online abuse and bullying when there is an imbalance of power, such as grooming, image-based abuse or negative social interactions, and reporting the situation to appropriate authorities, trusted adults and through online tools",
+    "collaborating with peers to suggest strategies they could use if they are being encouraged to use a substance such as alcohol, e-cigarettes, cannabis or inhalants",
+    "analysing how bystanders play a role in ensuring online spaces are positive and safe, and examining how support services such as kidshelpline and the eSafety Commissioner can provide support for young people who feel unsafe, bullied or abused online",
+    "exploring help-seeking scenarios young people may encounter and sharing strategies for dealing with each situation, including situations linked to substance use, mental health issues, safety and risk-taking, and sexual health"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6908,6 +7275,13 @@
    "prior": [],
    "knowledge": "Students have investigated different sources and types of health information and how these apply to health choices (Y5-6). They can identify and apply health information but have not yet been expected to investigate the mechanisms by which media and influential figures shape attitudes and beliefs — not just inform decisions.",
    "endpoint": "Students investigate how media and influential people impact attitudes, beliefs, decisions and behaviours in relation to health, safety, relationships and wellbeing.",
+   "elaborations": [
+    "analysing the credibility, validity and relevance of health messages conveyed by different sources (including news sites, bloggers, influencers and social media advertising) and applying credible information to health-related decisions",
+    "investigating how messages related to food are portrayed in the media and how this may impact decision-making in relation to health and wellbeing",
+    "exploring and evaluating the accessibility and reliability of health information sources from the media that target young people in relation to their health, wellbeing, body, sexuality, relationships and other health issues",
+    "exploring health campaigns targeting First Nations Australian young people and discussing the messages and strategies used to promote and enhance their health; for example, Deadly Choices, Don't Make Smokes Your Story and Yarn Safe",
+    "analysing how messages related to sexual relationships are portrayed in different forms of media and how they may influence the way people act within relationships"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6996,6 +7370,16 @@
    "prior": [],
    "knowledge": "Students have analysed how behaviours influence the health, safety, relationships and wellbeing of individuals and communities (Y5-6). They can analyse behavioural influence but have not yet been expected to plan and implement strategies using specific health resources to produce health enhancement outcomes.",
    "endpoint": "Students plan and implement strategies using health resources to enhance their own and others' health, safety, relationships and wellbeing.",
+   "elaborations": [
+    "proposing and implementing actions and behaviours that promote safe participation in physical activities, and evaluating the impact participation can have on their own and others' mood and mental wellbeing",
+    "investigating food-serving recommendations from The Australian Guide to Healthy Eating and producing a guide to help students make healthy choices when buying food from the school canteen",
+    "researching a variety of snack and lunch options, and evaluating nutritional value, value for money and sustainability to create a weekly menu plan",
+    "investigating how First Nations Australians have developed complete diets that meet nutritional requirements, and used and continue to use food for medicinal purposes",
+    "examining how different cultures value the contribution of the mind-body-spirit connection to health and wellbeing; for example, Dadirri and yoga and meditation practices from the Asia region",
+    "investigating preventive health practices relevant to young people, and designing and implementing health promotion activities targeting these practices",
+    "investigating tools and designing routines that help to regulate the use of digital environments and tools and ensure a healthy pattern of use",
+    "investigating different approaches and developing personal plans for promoting their own positive mental health and wellbeing, such as mindfulness, relaxation techniques and healthy eating"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7089,6 +7473,13 @@
    ],
    "knowledge": "Students can demonstrate and explain how movement concepts can be manipulated to improve movement outcomes (AC9HP8M03). At Y9-10 the focus moves to analysis of performance with feedback — using knowledge of results, digital tools, and constructive peer feedback to refine skills in challenging situations.",
    "endpoint": "Students analyse, adapt and refine their own and others' movement skills in challenging situations, using feedback mechanisms including digital tools to enhance performance.",
+   "elaborations": [
+    "using knowledge of results feedback to support skill refinement for greater accuracy and control",
+    "using digital tools to record performance and provide feedback on timing relative to teammates and external stimuli",
+    "adapting and responding to equipment changes that increase movement complexity",
+    "analysing performances at swimming, cross-country or athletics and proposing refinement strategies",
+    "providing constructive feedback on group performance of movement sequences"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7160,6 +7551,12 @@
    ],
    "knowledge": "Students can analyse, adapt and refine movement skills in challenging situations to enhance performance (AC9HP10M01), and have previously designed and demonstrated how movement strategies can be manipulated to improve outcomes (AC9HP8M02). At Y9-10 the focus shifts to creating original strategies rather than adapting existing ones.",
    "endpoint": "Students create and refine movement strategies to achieve successful outcomes across challenging movement situations, using self-developed evaluation criteria to assess and adapt strategies.",
+   "elaborations": [
+    "reviewing, proposing and implementing alternative responses based on previous performance outcomes",
+    "performing specialised movement skills in modified-rule situations",
+    "adapting and refining strategies with different equipment types",
+    "evaluating effectiveness of strategies using personally developed criteria and suggesting adaptations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7231,6 +7628,12 @@
    ],
    "knowledge": "Students can create and refine movement strategies to achieve successful outcomes in challenging situations (AC9HP10M02), and have previously demonstrated and explained how movement concepts (effort, space, time, objects, people) can be manipulated to improve outcomes (AC9HP8M03). At Y9-10 the focus shifts to applying concepts in new or challenging situations and analysing the impact of each concept.",
    "endpoint": "Students apply movement concepts in new or challenging situations and analyse the impact each concept has on movement outcomes, including force absorption, synchronisation, and space/time modifications.",
+   "elaborations": [
+    "experimenting with force and speed manipulation to examine differences in movement paths",
+    "analysing body force absorption techniques and evaluating effectiveness for injury prevention across game situations",
+    "creating and evaluating group performances with synchronous and individual movements",
+    "analysing how space and time modifications improve individual or team performance"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7301,6 +7704,11 @@
    ],
    "knowledge": "Students can design and justify strategies to increase physical activity to achieve health and wellbeing outcomes (AC9HP8M06). At Y9-10 the focus shifts to personalisation — designing, applying and evaluating strategies that incorporate specific physical activities into their own lives, including understanding individual physiological responses.",
    "endpoint": "Students participate in fitness-enhancing activities, design personalised strategies for incorporating them into their lives, and evaluate those strategies against fitness and wellbeing goals.",
+   "elaborations": [
+    "participating in physical activities and evaluating individual responses including heart rate, breathing rate and recovery rate",
+    "performing fitness activities and analysing how they improve fitness components",
+    "setting realistic physical activity goals and designing, implementing and evaluating a personalised program"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7371,6 +7779,12 @@
    ],
    "knowledge": "Students can design, apply and evaluate personalised strategies for incorporating physical activity into their lives (AC9HP10M04). At Y9-10 this standard shifts focus from individual fitness planning to the social dimensions of physical activity participation — designing strategies that promote both health and social connection for themselves and others.",
    "endpoint": "Students participate in physical activities that promote health and social outcomes, and design and evaluate participation strategies for themselves and others.",
+   "elaborations": [
+    "creating and evaluating proposals to promote use of natural settings for physical activity",
+    "designing strategies involving family, friends and community in culturally significant physical activity celebrations",
+    "investigating community-based campaigns and determining key success elements",
+    "identifying local natural resources and community spaces for physical and social activity"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7441,6 +7855,11 @@
    ],
    "knowledge": "Students can participate in activities promoting health and social outcomes and design participation strategies (AC9HP10M05), and have designed and applied personalised activity strategies (AC9HP10M04). This standard extends to explicitly implementing and evaluating multi-goal personalised plans for themselves or others, including using digital tools and heart-rate zone knowledge.",
    "endpoint": "Students design, implement and evaluate personalised physical activity plans — for themselves or others — to achieve specific fitness, health and wellbeing outcomes.",
+   "elaborations": [
+    "using digital tools to design, implement and monitor a personal fitness plan with timeframe, goals and varied activities",
+    "justifying activity selections linked to physical activity goals and wellbeing outcomes",
+    "investigating target training heart-rate zones for different people and how they relate to health and fitness"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7511,6 +7930,11 @@
    ],
    "knowledge": "Students can practise and apply leadership, collaboration and group decision-making in physical activities (AC9HP8M09). At Y9-10 the focus shifts to the metacognitive skill of deliberately transferring movement skills and strategies from known to unknown contexts.",
    "endpoint": "Students transfer and adapt movement skills and strategies from previous experiences to create successful outcomes in unfamiliar movement situations.",
+   "elaborations": [
+    "drawing parallels between successful movement strategies across different sports",
+    "speculating on outcomes of innovative solutions based on past experience in outdoor or nature-based activities",
+    "reflecting on effectiveness of movement solutions and proposing how they can be transferred to other situations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7582,6 +8006,12 @@
    ],
    "knowledge": "Students can transfer and adapt skills from previous experiences to create successful outcomes in unfamiliar situations (AC9HP10M07), and have previously investigated modifications to equipment and rules supporting fair play and inclusion (AC9HP8M08). At Y9-10 the focus extends to reflecting on how ethical behaviour influences outcomes — including contested issues like performance-enhancing drugs.",
    "endpoint": "Students demonstrate fair play and reflect on how ethical behaviour influences physical activity outcomes for individuals and groups, including engagement with contested ethical questions in sport.",
+   "elaborations": [
+    "analysing how equitable participation in group activities influences outcomes",
+    "investigating performance-enhancing drugs and tensions between competing positions",
+    "discussing the role of Sports Integrity Australia, sporting tribunals, the Australian Human Rights Commission and the Court of Arbitration for Sport",
+    "analysing how First Nations Australian athletes have been treated and evaluating impacts on young First Nations Australians' participation"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7652,6 +8082,12 @@
    ],
    "knowledge": "Students can demonstrate fair play and reflect on how ethical behaviour influences outcomes (AC9HP10M08), and have previously practised and applied leadership, collaboration and group decision-making in physical activities (AC9HP8M09). At Y9-10 the focus shifts to devising, implementing and refining decision-making strategies — a higher-order planning and evaluation task.",
    "endpoint": "Students devise, implement and refine decision-making strategies for group and team contexts that demonstrate leadership and collaboration skills.",
+   "elaborations": [
+    "evaluating own contribution to teamwork, leadership and enjoyable participation",
+    "analysing self-talk and encouragement to motivate team members and improve performance",
+    "creating and implementing self-assessment and peer-assessment tools to evaluate performance in multiple roles",
+    "identifying and critiquing leadership styles and group dynamics through initiative games"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7722,6 +8158,13 @@
    ],
    "knowledge": "Students can examine how power, coercion and gender stereotypes influence roles and relationships (AC9HP8P03). They have not yet analysed the broader range of societal, cultural, and community factors that shape identity, nor evaluated how individuals actively influence each other's identities.",
    "endpoint": "Students analyse multiple factors that shape identities — including societal norms, cultural practices, and community belonging — and evaluate how individuals influence the identities of others.",
+   "elaborations": [
+    "evaluating how societal norms, stereotypes and expectations influence how young people view themselves and how they deal with these influences",
+    "analysing how the use of personal totems in First Nations Australian cultures can be based on personal qualities and contribute to identities",
+    "investigating how cultural beliefs and practices surrounding transitions to adulthood may differ between cultures, including the cultures of Asia",
+    "analysing the role of family, friends and community in supporting an individual's identities, and proposing strategies to enhance their own and others' wellbeing",
+    "examining how societal norms, stereotypes and expectations influence perceptions of movement competence"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7794,6 +8237,13 @@
    ],
    "knowledge": "Students can analyse factors that shape identities and evaluate how individuals influence others' identities (AC9HP10P01). They have previously investigated resources and strategies to manage changes including puberty (AC9HP6P02) and analysed the impact of changes and transitions (AC9HP8P02). At Y9-10 the focus shifts to refining, evaluating and adapting — not introducing strategies for the first time.",
    "endpoint": "Students refine, evaluate and adapt strategies for managing changes and transitions, including asserting their stance respectfully and responding to changing social and behavioural expectations.",
+   "elaborations": [
+    "practising skills to deal with challenging or unsafe situations, such as refusal skills, communicating choices, expressing opinions and initiating contingency plans",
+    "assessing behavioural expectations in different relationships and social situations, and examining how these expectations can influence decisions and actions",
+    "analysing the changing roles and responsibilities for First Nations Australians as their social standing changes within their communities",
+    "discussing the impact of border crossing on the development of identities for First Nations Australians",
+    "rehearsing strategies to respectfully assert their stance on a situation, dilemma or decision by expressing thoughts, opinions and beliefs that acknowledge the feelings of others"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7865,6 +8315,12 @@
    ],
    "knowledge": "Students can refine, evaluate and adapt strategies for managing changes and transitions (AC9HP10P02), and have previously examined how power, coercion and gender stereotypes influence roles and relationships (AC9HP8P03). At Y9-10, the focus moves from examining influence to investigating the causal link between gender assumptions and violence prevention.",
    "endpoint": "Students investigate how gender equality and challenging gender assumptions can prevent violence and abuse in relationships, including analysing attitudes that excuse or condone gender-based violence and evaluating how equality empowers respectful relationships.",
+   "elaborations": [
+    "investigate and challenge attitudes that lead to people enacting, excusing or condoning gender-based violence",
+    "analysing ways that attitudes towards gender equality and power can affect expectations and behaviour, and lead to practices of sexual coercion, harassment, violence and submission",
+    "evaluating how gender equality can empower people to develop equal and respectful relationships",
+    "exploring scenarios in texts that demonstrate how gender inequality can arise from intergenerational patterns of inequity and unequal power in relationships, and proposing strategies for challenging inequality in their communities"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7936,6 +8392,13 @@
    ],
    "knowledge": "Students can explain and apply skills to communicate assertively when seeking, giving or denying consent (AC9HP8P07). They have previously examined roles of respect, empathy, power and coercion in respectful relationships (AC9HP8P04). At Y9-10 the focus shifts to evaluation — assessing how these factors operate and what happens when the balance shifts.",
    "endpoint": "Students evaluate how respect, empathy, power and coercion influence whether relationships are established and maintained as respectful, including the influence of historical inequity and the forms violence can take.",
+   "elaborations": [
+    "investigating the characteristics of positive, respectful relationships and the rights and ethical responsibilities of individuals in relationships",
+    "investigating how the balance of power influences the nature of relationships and proposing actions that can be taken when a relationship is not respectful",
+    "investigating how demonstrating support for causes that promote truth-telling can build cultural awareness, empathy and respectful relationships",
+    "identifying the ways in which historical patterns of inequity, violence and discrimination can have lasting intergenerational effects on wellbeing",
+    "investigating how bullying, racism and gender-based violence can take different forms, including verbal, physical, emotional, sexual and economic forms, in both face-to-face and online environments"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8007,6 +8470,14 @@
    ],
    "knowledge": "Students can evaluate the influence of respect, empathy, power and coercion on respectful relationships (AC9HP10P04), and have previously investigated strategies that influence how communities value diversity (AC9HP8P05). At Y9-10 the focus moves to proposing and designing concrete strategies and actions for challenging bias and discrimination.",
    "endpoint": "Students propose and evaluate specific strategies and actions for challenging biases, stereotypes, prejudices and discrimination, and for promoting inclusion in their communities.",
+   "elaborations": [
+    "analysing the implications of attitudes and behaviours such as prejudice, marginalisation, homophobia, racism, discrimination, violence and harassment on individuals and communities",
+    "investigating community health resources to evaluate how accessible they are for marginalised individuals and groups",
+    "critiquing media representations of different cultural and racial groups",
+    "analysing messages about gender norms and stereotypes in popular culture",
+    "designing strategies to challenge stereotypes, prejudices and discrimination, and publicly acknowledge the contributions First Nations Australians make to Australia's sporting and health fields",
+    "proposing strategies to challenge prejudices, biases and discrimination that target specific cultural groups, including Australians of Asian heritage"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8078,6 +8549,11 @@
    ],
    "knowledge": "Students can propose strategies to challenge biases and promote inclusion (AC9HP10P05), and have previously analysed factors that influence emotional responses and devised self-management strategies (AC9HP8P06). At Y9-10 the focus shifts from devising strategies to evaluating emotional responses and refining existing strategies based on that evaluation.",
    "endpoint": "Students evaluate emotional responses in different situations — including extreme or uncontrolled responses — and use that evaluation to refine strategies for managing emotions.",
+   "elaborations": [
+    "proposing strategies for managing emotional responses and resolving conflict in a family, school or social situation, or online environment",
+    "reflecting on the possible consequences of not recognising their own or others' emotions in challenging situations, including responses to rejection, failure, harassment and violence",
+    "evaluating situations where an individual may react with extreme or uncontrolled emotion and reflecting on the impact on the situation and relationships"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8149,6 +8625,12 @@
    ],
    "knowledge": "Students can evaluate emotional responses and refine emotion management strategies (AC9HP10P06), and have previously explained and applied assertive consent communication skills (AC9HP8P07). At Y9-10 the focus expands to examining how consent communication strategies support the development of respectful relationships broadly, including sexual relationships.",
    "endpoint": "Students examine how communicating choices, seeking, giving and denying consent, and expressing opinions and needs support respectful relationships, including understanding legal requirements and the importance of taking responsibility for their own actions.",
+   "elaborations": [
+    "describing strategies that enhance the safety and wellbeing of sexual partners, including affirmative consent, assertive communication and respecting rights",
+    "investigating the legal requirements for consent in relation to seeking, giving, refusing and accepting refusal of consent in online and offline interactions",
+    "reflecting on the potential impact of own behaviour on others and taking responsibility for own actions",
+    "refining strategies to communicate clearly and respectfully choices, needs and opinions in peer group, family or work situations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8219,6 +8701,14 @@
    ],
    "knowledge": "Students can plan and implement strategies using health resources to enhance health, safety and wellbeing (AC9HP8P10). At Y9-10 the focus moves to more complex risk situations — peer pressure around substance use, first aid including CPR, consent under impairment, and safe blood practices — with evaluation of strategies added to planning and rehearsal.",
    "endpoint": "Students plan, rehearse and evaluate strategies for managing health and safety risk situations, including peer pressure, first aid emergencies, digital safety, and safe practices in a range of risk contexts.",
+   "elaborations": [
+    "critiquing the appropriateness and effectiveness of help and support services for young people",
+    "proposing and practising realistic responses to scenarios involving peer pressure around substance use",
+    "investigating safe, legal and ethical behaviour in digital environments",
+    "planning and practising responses to emergencies including CPR",
+    "understanding factors impacting ability to consent when affected by alcohol or other drugs",
+    "examining safe blood practices across multiple situations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8290,6 +8780,13 @@
    ],
    "knowledge": "Students can plan, rehearse and evaluate strategies for managing health and safety risk situations (AC9HP10P08), and have previously investigated how media and influential people impact health attitudes and behaviours (AC9HP8P09). At Y9-10 the focus shifts to critique — a higher-order evaluative move that assesses the validity, bias and influence of health information and media.",
    "endpoint": "Students critique health information, services and media messaging to evaluate their influence on attitudes and actions across relationships, lifestyle choices, health decisions and health behaviours.",
+   "elaborations": [
+    "critiquing health information and services for young people across substance use, food choices, fitness, mental health, sexual health and personal safety",
+    "analysing nutritional composition of foods eaten by First Peoples of Australia",
+    "evaluating strategies to increase personal safety",
+    "investigating health issues specific to First Nations Australian communities and proposing proactive community strategies",
+    "discussing how portrayals of sexual relationships in media may influence beliefs about respectful, safe and consensual relationships"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8360,6 +8857,16 @@
    ],
    "knowledge": "Students can critique health information and media messaging to evaluate their influence on attitudes and actions (AC9HP10P09). At Y9-10 this standard integrates critique capability with strategy planning and justification — moving from evaluating others' messages to designing and critically assessing their own strategies.",
    "endpoint": "Students plan, justify and critique strategies to enhance health, safety, relationships and wellbeing — across individual, community and cultural dimensions, including mental health and wellbeing strategies.",
+   "elaborations": [
+    "investigating community-action initiatives young people have started with positive health and wellbeing influence",
+    "proposing, sharing and evaluating sustainable food preparation presentations",
+    "exploring how connection to Country/Place enhances health and wellbeing for First Nations Australians",
+    "investigating cultural rights of First Nations Australians to maintain traditional diets",
+    "analysing social, cultural and economic factors influencing health behaviours and help-seeking",
+    "investigating First Nations Australian community pharmacopeia and health practices with respect for ICIP protocols",
+    "proposing constructive digital health promotion actions",
+    "designing and evaluating mental health and wellbeing strategies"
+   ],
    "nodes": [
     {
      "n": 1,

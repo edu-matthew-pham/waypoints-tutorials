@@ -109,6 +109,7 @@ export function buildPointerPages(subject, ctx) {
       `<h2>Descriptor</h2><p class="chk">${esc(d.description)}</p>` +
       (d.knowledge ? `<h2>Prior knowledge</h2><p>${esc(d.knowledge)}</p>` : '') +
       (d.endpoint ? `<h2>By the end</h2><p>${esc(d.endpoint)}</p>` : '') +
+      (d.elaborations?.length ? `<h2>ACARA elaborations</h2><p class="muted">Examples from ACARA that illustrate this standard. They are examples, not a checklist, and belong to the standard as a whole.</p><ul>${d.elaborations.map((e) => `<li>${esc(e)}</li>`).join('')}</ul>` : '') +
       coverageSection(d, up(sp)) +
       `<h2>Waypoints</h2><ul class="nodes">${d.nodes.map((n) => `<li><a href="n${n.n}/"><b>${n.n}. ${esc(n.label)}</b>${n.hinge ? '<span class="tag" style="display:inline">Hinge</span>' : ''}<span>${esc(n.checkpoint)}</span></a></li>`).join('')}</ul>` +
       `<p><a href="${esc(kitLink(d))}">Kit node file for ${esc(d.code)}</a> (JSON)</p>` + src,

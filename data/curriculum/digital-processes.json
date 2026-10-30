@@ -1,6 +1,6 @@
 {
  "subject": "digital-processes",
- "source": "waypoints-kit 6bb92e4",
+ "source": "waypoints-kit d93e6e5",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -15,6 +15,12 @@
    "prior": [],
    "knowledge": "Students have not yet formally investigated problems. They have encountered digital systems in familiar contexts and can recognise when a digital system helps them do something. They have not yet structured a problem investigation — identifying a user, a problem, and how a digital system could address it.",
    "endpoint": "Students investigate simple, well-defined problems for a known user and identify how a digital system could solve the problem.",
+   "elaborations": [
+    "investigating internet-based translation tools and how similar digital tools could promote the use of First Nations Australians' languages or assist communications, for example responding to cultural stories of Australian First Nations Peoples",
+    "investigating familiar and easily understood problems with few complications or steps needed to solve them, for example deciding what to wear by checking the forecast on a weather app",
+    "identifying how digital systems are used to solve problems at school, for example taking attendance or borrowing a library book",
+    "exploring how a familiar problem could be solved using a robot, for example creating a model robot using cardboard boxes and explaining how it could be used to clean up the classroom floor at the end of the day"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -111,6 +117,14 @@
    "prior": [],
    "knowledge": "This is the first algorithmic thinking descriptor in the DT curriculum (no Foundation predecessor). Students bring general sequencing experience from everyday tasks — they can order familiar actions. They have not yet used computational vocabulary (sequence, branching, iteration) or applied algorithmic structure to a problem.",
    "endpoint": "Students follow and describe algorithms that include a sequence of steps, at least one decision point (branching), and at least one repetition (iteration).",
+   "elaborations": [
+    "following a short, ordered sequence of steps and making decisions to solve a simple problem, for example follow a recipe or directions to reach a location",
+    "describing the steps and decisions (in the correct order) needed to solve a simple problem, for example writing, saying, drawing or photographing the steps needed to make a sandwich",
+    "rearranging into the correct order a series of mixed-up pictures that describe a story, for example stories authored and published by First Nations Australians",
+    "identifying the steps needed to solve a problem, and understanding when their order is important, for example socks must be put on before shoes but a jumper can be put on before or after shoes",
+    "identifying the decisions needed to solve a problem and the next steps to follow in each case, for example if it is raining, take a raincoat, otherwise take a hat",
+    "following algorithms that repeat a single step a fixed number of times, for example practise spelling a word 5 times or throw and catch a ball with a partner 10 times"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -238,6 +252,12 @@
    ],
    "knowledge": "Students have explored digital systems in familiar contexts (AC9TDI2K01). They can identify systems and name their components. They have not yet evaluated systems against user needs — linking what a system does to whether it satisfies a specific user's requirement.",
    "endpoint": "Students discuss how existing digital systems satisfy identified needs for known users — explaining what the need is, and how specific features of the system address it.",
+   "elaborations": [
+    "describing how familiar digital systems meet the needs of individuals, for example how different family members use a tablet for different needs – to play videos, read the news or follow a recipe",
+    "discussing how we use digital systems to store and access information, and how that information helps us learn about our environment, interactions and leisure activities, for example how interactive versions of stories authored and published by First Nations Australians preserve important cultural expressions",
+    "sharing ideas about how digital systems are used at school for learning, for example sharing a student's work with the class on an interactive display screen to provide class feedback on their writing",
+    "sharing and describing ways that common digital systems can be used to meet communication needs, for example tablets can be used as phones and tools for communication between families living in different locations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -310,6 +330,13 @@
    "prior": [],
    "knowledge": "This is the first content creation descriptor (no Foundation predecessor). Students have used digital systems in familiar contexts and can recognise what they are used for. They have not yet deliberately used digital tools to create original content, locate specific content, or communicate content to others.",
    "endpoint": "Students use basic features of common digital tools to create original content, locate relevant content, and communicate that content to others.",
+   "elaborations": [
+    "using familiar digital systems to create content with others, for example using presentation software to retell a story",
+    "taking, storing safely and presenting photos of class work, for example locating photos they took of their work to show to parents or carers or for the teacher to upload to the class shared folder",
+    "finding images of (local) Australian flora and fauna or places for use in a story and including First Nations Australians' names for the items",
+    "using a camera or drawing app to create a picture, for example making a card for a family member that includes a photo and short message",
+    "creating individual pieces of work that contribute to a group task, for example each student contributes a recipe and photo of their favourite food to create a class recipe book"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -408,6 +435,11 @@
    ],
    "knowledge": "Students can use basic features of digital tools to create, locate and communicate content (AC9TDI2P04). They have not yet applied agreed behaviours when sharing digitally, nor considered personal safety and privacy when sharing online with others.",
    "endpoint": "Students use basic features of common digital tools to share content and collaborate with others, demonstrating agreed behaviours and guided by trusted adults.",
+   "elaborations": [
+    "taking and sharing photos of class work with parents or carers using classroom messaging software with teacher guidance",
+    "applying agreed standards of behaviour when sharing content with classmates, for example using language that is considered by all students and the teacher to be appropriate when they are writing messages to each other",
+    "considering the need for online safety when sharing information, for example recognising that personal information such as a photo can be used inappropriately"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -478,6 +510,9 @@
    "prior": [],
    "knowledge": "Students have used digital systems at home and school but have not previously managed personal login credentials. They may have used shared devices without individual accounts. They have not yet connected the concept of personal credentials to privacy or account ownership.",
    "endpoint": "Students access their school account using a recorded username and password, and understand that credentials are personal and private.",
+   "elaborations": [
+    "using username and password recorded in a private place to access a digital system, for example logging into a school computer using details given on a card by the teacher"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -547,6 +582,10 @@
    ],
    "knowledge": "Students understand that credentials are personal and private (AC9TDI2P06). They can identify some types of personal information (AC9TDI2P05). They have not yet discussed the concept that websites and apps collect and store personal data online — or that entering details online creates a stored record.",
    "endpoint": "Students discuss that websites and apps store their personal data online, give examples of data that is collected, and explain that a parent or carer should be asked before entering personal details online.",
+   "elaborations": [
+    "sharing examples of the data collected by apps and websites they commonly use, for example usernames and email addresses used by school websites and games to log in",
+    "discussing the importance of asking permission from a parent or carer before entering personal details online such as address, phone number and date of birth"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -621,6 +660,13 @@
    ],
    "knowledge": "Students can investigate simple problems for known users that can be solved with digital systems (AC9TDI2P01). They have explored what makes a problem solvable. They have not yet worked with explicit design criteria or user story formats as structured tools for problem definition.",
    "endpoint": "Students define problems using given design criteria and co-created user stories, capturing both what a solution must do and who it is for.",
+   "elaborations": [
+    "recognising a range of familiar problems and defining achievable solutions using given design criteria, for example buying presents for family members within a specified budget",
+    "using responses to guiding questions to write a user story, for example a family member wants a way of entertaining their puppy when they are at school to stop it digging holes",
+    "co-creating a user story using a template such as 'A has so that ', for example 'a sports team wants to access league rankings online so that they can see their progress'",
+    "developing a problem statement for collecting and managing information, for example how First Nations Australians rangers could monitor animal populations, such as local marine turtles, using global positioning systems (GPS)",
+    "co-creating user stories about exploring hard-to-reach locations, for example a school student wants to explore neighbouring countries classified as remote to compare how people live"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -718,6 +764,13 @@
    ],
    "knowledge": "Students can follow and describe algorithms involving a sequence of steps, branching and iteration (AC9TDI2P02). They have encountered these three structures but at a descriptive, recognition level. They have not yet worked with comparison operators explicitly or described algorithms involving numerical conditions.",
    "endpoint": "Students follow and describe algorithms that use sequencing, comparison operators (e.g. greater than, equal to) as branching conditions, and iteration (repeating steps a fixed number of times or until a condition is met).",
+   "elaborations": [
+    "following the steps and decisions of algorithms and knowing what step they are up to, for example following rules to form the past tense of regular verbs such as 'create' to 'created', 'try' to 'tried' and 'cook' to 'cooked' and checking off items on a list as they are completed",
+    "describing algorithms using representations such as a list of steps or a diagram, for example drawing a diagram of a recipe involving decisions",
+    "understanding there can be more than one sequence of steps to solve a problem, some are better than others, and the steps should be unambiguous, for example describing 2 different ways to get to the same location",
+    "describing the decisions needed to solve a problem, including numerical and text comparisons, for example if the UV index is above 3, put on sunscreen and a hat",
+    "describing algorithms that repeat steps a fixed number of times, for example calculating multiplication using repeated addition, where the sum changes in each iteration"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -845,6 +898,11 @@
    ],
    "knowledge": "Students have explored problems for known users and generated simple design ideas through describing, drawing or modelling (AC9TDE2P01 — Design Technologies equivalent; AC9TDI2P01 for DT problem investigation). They have not yet worked with explicit comparison of design ideas against user stories or design criteria.",
    "endpoint": "Students generate multiple design ideas for a digital solution, communicate those ideas clearly, and compare them against user stories and design criteria to identify the most suitable approach.",
+   "elaborations": [
+    "brainstorming possible design ideas and discussing these with their peers, for example sketching different ideas for a computer game",
+    "discussing whether the needs identified from the user story are met by generated design ideas, for example comparing design ideas in pairs for encouraging people to recycle",
+    "ideating multiple design ideas and comparing them against user stories, for example as a class, discussing the needs identified from the user story and brainstorming multiple design ideas (accepting all suggestions as possibilities)"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -942,6 +1000,14 @@
    ],
    "knowledge": "Students can follow and describe algorithms involving sequencing, branching and iteration (AC9TDI4P02). They have described these structures but have not yet implemented them in a programming environment. They have not yet written programs that accept user input.",
    "endpoint": "Students implement simple algorithms as visual programs using a block-based or event-sheet environment, including control structures (sequence, branching, fixed-count iteration) and user input.",
+   "elaborations": [
+    "writing and editing programs to solve simple problems using branching and simple iteration in a visual programming environment, for example helping a user understand multiplication by displaying the repeated addition in order",
+    "writing programs that take input from the user or environment, for example asking the user for their name and displaying it or sensing the temperature from the environment to make a decision",
+    "writing programs that make decisions involving comparison, for example comparing whether the temperature is above 25 degrees Celsius to label the weather hot or cold",
+    "writing programs that repeat one or more steps a fixed number of times, for example writing a program that displays repetitive song lyrics, such as in 'Ten in the bed'",
+    "running and testing a program to check it performs as expected, for example a character: 1. moves forward 2. turns left 3. moves forward",
+    "implementing a program that demonstrates the strict routines and techniques followed by First Nations Australian ranger groups when caring for or handling specific native animals, for example using IF and THEN statements to create a training manual, such as: IF  is injured THEN the ranger will"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1070,6 +1136,12 @@
    ],
    "knowledge": "Students can discuss how existing digital systems satisfy identified needs for known users (AC9TDI2P03). They have discussed fit-for-purpose at a general level. They have not yet evaluated solutions explicitly against design criteria and user stories as structured evaluation tools.",
    "endpoint": "Students discuss how both existing digital solutions and their own student-created solutions satisfy specific design criteria and user stories, giving reasons grounded in the criteria.",
+   "elaborations": [
+    "describing the way familiar digital systems allow the user to perform tasks, for example discussing how a family member could place an order online for something they cannot buy locally",
+    "discussing how a digital solution meets the different needs of users, for example how maps help people to locate places in the community or interactive store directories help shoppers to find a particular store in a shopping centre",
+    "making judgements on their digital solutions against the design criteria and user stories, for example how high their friends score in the game they created to help them learn what is recyclable",
+    "reflecting on how the systems in the school help it run, for example how the librarian keeps track of books borrowed"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1171,6 +1243,12 @@
    ],
    "knowledge": "Students can use basic features of digital tools to create, locate and communicate content (AC9TDI2P04). They have used digital tools for simple content creation. They have not yet worked with agreed conventions, information hierarchies, or search strategies for finding suitable sources.",
    "endpoint": "Students use core features of common digital tools to create, locate and communicate content, following agreed conventions including safe search steps, file organisation and appropriate use of autocomplete features.",
+   "elaborations": [
+    "discussing and creating as a class a set of steps they need to follow to safely find information online",
+    "using an online search engine to find suitable sources to create and communicate information, following agreed steps, for example creating a presentation on life cycles",
+    "grouping, naming and itemising objects using a logical hierarchy, for example creating a section of a virtual library or virtual supermarket using folders and files",
+    "using autocomplete features in text authoring tools; for example, using suggestions in a word processor to complete words or sentences, or using predictive text in SMS or messaging apps"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1268,6 +1346,13 @@
    ],
    "knowledge": "Students can use basic features of digital tools to share content and collaborate, demonstrating agreed behaviours guided by trusted adults (AC9TDI2P05). They have shared content in simple, supervised contexts. They have not yet used digital tools to plan tasks collaboratively or manage shared content across a group project.",
    "endpoint": "Students use core features of digital tools to share content, plan tasks and collaborate with peers, following agreed behaviours and supported by trusted adults.",
+   "elaborations": [
+    "using an agreed folder to make it easy for students to collaborate on shared content in a group project",
+    "demonstrating safe sharing of content with a select audience, for example sharing a holiday adventure without revealing exact dates, specific names or other personal information",
+    "listening to others when participating in online environments to share content, for example respecting the rights of others by taking turns to suggest and add words or images to a factual slide deck to share with the teacher",
+    "interacting cooperatively in a group in an online environment to plan and complete a task, for example writing and responding to others' views on canteen products",
+    "using digital tools to plan an event as a class, for example jointly creating a class survey to help plan an end-of-year party, where responses conform to the class's accepted behavioural expectations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1369,6 +1454,11 @@
    ],
    "knowledge": "Students can access their school account using a recorded username and password (AC9TDI2P06). They know that accounts require credentials. They have not yet memorised credentials independently or reasoned about what makes a password strong (easy to remember, hard to guess).",
    "endpoint": "Students access their school account using a memorised password and explain the principles that make a password both memorable and secure.",
+   "elaborations": [
+    "recalling their school username and password from memory to login to a school laptop or desktop",
+    "explaining how keeping a password secret prevents others from accessing their data, for example how their work is saved in their account and can only be accessed using their secret password",
+    "exploring techniques to create an easy to remember and hard to guess password, for example creating a password using 3 unrelated but easy to remember words"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1433,6 +1523,10 @@
    ],
    "knowledge": "Students can discuss how websites and apps store personal data online (AC9TDI2P07). They know data is stored online. They have not yet identified specifically what data is in their own accounts, how that data forms a digital identity, or systematically discussed the risks associated with that data.",
    "endpoint": "Students identify personal data stored and shared in their online accounts and discuss risks associated with that data being accessible, visible or misused.",
+   "elaborations": [
+    "identifying the personal data stored in accounts they use at school and at home and who has access to it, for example documents in their school cloud storage are accessible by the teacher, or their nickname in their online gaming accounts is visible to all players",
+    "discussing how personal data stored in online accounts forms a person's digital identity and can reveal detailed information about people, for example looking at photographs of themselves, friends or fictional characters that reveal details about a person's location, habits or home"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1538,6 +1632,11 @@
    ],
    "knowledge": "Students can define problems with given design criteria and by co-creating user stories (AC9TDI4P01). They have worked with provided design criteria and contributed to user stories collaboratively. They have not yet developed design criteria with more agency (co-developed rather than given) or created user stories independently from stimulus.",
    "endpoint": "Students define a problem by co-developing or applying design criteria and by creating user stories that identify an issue, the user, and their need.",
+   "elaborations": [
+    "using provided stimulus to identify an issue and writing a user story in groups, for example using a newspaper article to develop a user story, such as: a family in a bushfire or flood-prone environment needs a way to ensure they are prepared in case of an emergency",
+    "discussing possible design criteria based on a stimulus, for example the cost, sustainability and timeliness for a roadside bushfire or flood risk rating system",
+    "investigating the impact that feral animals have on native flora and fauna and how this problem has led to economic development opportunities for groups such as the Arnhem Land Progress Aboriginal Corporation"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1642,6 +1741,14 @@
    ],
    "knowledge": "Students can follow and describe algorithms involving sequencing, comparison operators (branching) and iteration (AC9TDI4P02). They have worked with existing algorithms and described how they work. They have not yet designed algorithms themselves — the shift from reading/describing to creating is the new demand at this band.",
    "endpoint": "Students design algorithms that include multiple branches (more than two alternatives) and loops (repetition until a condition is met), representing their logic as structured steps.",
+   "elaborations": [
+    "designing an algorithm or understanding and modifying an existing algorithm to fix an error or change functionality, for example exploring issues in drought-prone areas to decide when to water a garden, taking into account humidity as well as soil moisture level",
+    "creating the steps, decisions and loops in algorithms and knowing what step they are up to, for example repeating the steps to add 2 digits for each column in multi-digit addition, knowing which column they are adding and when to stop",
+    "constructing more than one sequence of steps that solve the same problem and explaining why one is better than the other, for example specifying the exact route through a maze versus using the right-hand rule that works for all mazes",
+    "modelling a decision that has more than 2 options to select the next step, for example selecting transport IF distance is less than 2 km THEN walk, ELSE IF the distance is less than 5 km THEN ride a bike, ELSE catch the bus",
+    "planning algorithms that repeat until a condition is met, for example keep mixing UNTIL the ingredients are combined or subtracting a number UNTIL the result reaches zero",
+    "designing an algorithm including branching and iteration which responds to data, for example how First Nations Australian rangers use structured procedures to respond to live tracking data that indicates feral buffalo are approaching an environmentally or culturally significant site"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1748,6 +1855,11 @@
    ],
    "knowledge": "Students can generate, communicate and compare designs (AC9TDI4P03). They have produced design ideas and communicated them. They have not yet focused specifically on designing user interfaces — the layout, accessibility, and usability considerations of how a user interacts with a digital system.",
    "endpoint": "Students design a user interface for a digital system that addresses an identified need, considering layout, accessibility, and how users from different backgrounds can access the information.",
+   "elaborations": [
+    "designing a user interface on paper or using digital tools, for example drawing the designed layout of the landing page of an app to order lunches from the school canteen",
+    "designing a user interface to address an identified need, for example including customisable font size and colour contrast to help users who are visually impaired",
+    "modelling how user interfaces allow people from different cultures and language backgrounds to access information, for example using consistent symbols to represent common actions such as copy, paste and save"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1823,6 +1935,10 @@
    ],
    "knowledge": "Students can generate, communicate and compare designs (AC9TDI4P03). They have produced and communicated design ideas and made comparisons. They have not yet formally evaluated designs against criteria or made and documented modifications to a preferred design based on evaluation.",
    "endpoint": "Students generate a range of design ideas, evaluate them against design criteria and user stories, select a preferred design, and modify it where it does not satisfy all criteria.",
+   "elaborations": [
+    "ideating a range of possible design ideas, discussing them and judging them against the design criteria and user stories, for example using the design criteria to put design ideas in order of preference in a group discussion",
+    "suggesting modifications to the preferred design idea if it does not satisfy all design criteria and user stories, for example modifying a game or game controller so that it can be used by a wider range of players"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1926,6 +2042,14 @@
    ],
    "knowledge": "Students can implement simple algorithms as visual programs involving control structures and input (AC9TDI4P04). They have written programs with basic sequences, simple branching, and loops in a visual environment. They have not yet used variables to store and reuse values, or combined variables with control structures to respond to user input.",
    "endpoint": "Students implement algorithms as visual programs that use variables to store input, control structures (branching and iteration) to direct program flow, and produce correct output — verifying and fixing errors.",
+   "elaborations": [
+    "writing and editing programs to solve problems using branching, iteration and variables in a visual programming environment, for example writing a program to draw a rotated shape a given number of times using Turtle Graphics",
+    "writing programs that take input from the user or environment and storing that input in a variable for later use, for example asking the user how many shapes to draw in a circle and using that to calculate the number of iterations and angle to rotate each time",
+    "writing programs that make decisions involving multiple alternatives, for example an interactive quiz that checks if the answer is correct, gives feedback and updates the score, or gives a final grade based on the score",
+    "writing programs that repeat multiple steps based on the user's input, for example repeatedly drawing a shape a given number of times, shifting the position between each iteration",
+    "stating the expected behaviour of a program, running the program to check it is correct and fixing any errors, for example 'when I press the left arrow key, the cat should move left, finding the cat moves right, and fixing it by changing the 10 to -10 to alter the direction'",
+    "programming digital systems to perform automated tasks, such as closing gates, for example simulating the work of First Nations Australian rangers attempting to lure and capture feral animals"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2028,6 +2152,12 @@
    ],
    "knowledge": "Students can discuss how existing and student solutions satisfy the design criteria and user stories (AC9TDI4P05). They have made comparisons between solutions and criteria. They have not yet evaluated broader community impact — the new demand is assessing solutions beyond their immediate function to consider effects on the wider community.",
    "endpoint": "Students evaluate solutions (their own and existing ones) against design criteria and user stories, and consider the broader community impact of those solutions.",
+   "elaborations": [
+    "evaluating the effectiveness of their own solutions to address the identified problem from the user stories, for example checking if the information created for the local interactive history walk is relevant and meets the council's needs",
+    "evaluating how an existing solution provides users with safety tools and features such as those described in the Safety by Design Vision for Young People, for example having a clearly visible button to easily report and block inappropriate behaviour in an app or on a website",
+    "reflecting on the many systems that are used in the wider community to address a range of problems, for example timetables to manage transport and other services through to details such as storing licence information so that police can enforce road rules",
+    "verifying the correctness of AI-generated content against information known to be factually accurate; for example, comparing the output from a generative text model providing a biography of a local leader with the data published on their official website or other authoritative source"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2130,6 +2260,13 @@
    ],
    "knowledge": "Students can use the core features of common digital tools to create, locate and communicate content, following agreed conventions (AC9TDI4P06). They have used digital tools with provided guidance. They have not yet selected tools themselves — the shift is from using a nominated tool to choosing the appropriate one for a task.",
    "endpoint": "Students select appropriate digital tools for creating, locating and communicating content, plan achievable steps and timeframes, apply common conventions, and judge the appropriateness of content for the audience.",
+   "elaborations": [
+    "creating achievable steps and timeframes and identifying digital tools needed to produce a solution to a given problem, for example planning what they need to do to create a report on the effectiveness of the school's recycling initiatives",
+    "locating content through search engines and in documents by revising queries and using required search terms, for example reviewing search results and modifying search terms to make the query more accurate",
+    "creating appropriate content that reflects planning as well as new external factors, for example uploading a draft of a report on a local government issue to the teacher for feedback as part of an iterative process",
+    "creating content for a school celebration, for example designing a collaborative spreadsheet that can be used by a small group to plan and cost their graduation party, together with a folder of tagged resources which support the planning",
+    "judging the tone and appropriateness for the intended audience of text generated using autocomplete; for example, deciding that the predictive text was too formal for a conversation with a friend and rewriting it in more casual language"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2229,6 +2366,13 @@
    ],
    "knowledge": "Students can use the core features of common digital tools to share content, plan tasks and collaborate, following agreed rules (AC9TDI4P07). They have used shared tools with provided rules. They have not yet selected tools themselves or taken ownership of defining and moderating collaborative behaviours.",
    "endpoint": "Students select appropriate tools for sharing content and project collaboration, manage files and project tasks, and demonstrate agreed online behaviours including cultural protocols and respect for others' work.",
+   "elaborations": [
+    "following a previously created plan to report back to the class on a given problem, using digital tools, for example small groups reporting on the best location for a new skate park in the local government area",
+    "defining and acting collectively using online community standards and valuing the work of others, for example moderating language and behaviour in an online class forum, not deleting the work of collaborators, and respecting others' intellectual property",
+    "naming, organising and storing files in a way that allows for easy retrieval of shared content, for example labelling the main folders by topic, such as school garden project, and then creating sub-folders for each section of the project, such as 'plans', 'designs' and 'implementation'",
+    "demonstrating agreed behaviours; following cultural protocols, including relevant permissions and attributions; acknowledging diversity, capability and strength; and addressing risks and responsibilities such as privacy, security, and accuracy of data; for example when sharing images of First Nations Australians' cultural artefacts",
+    "using a range of communication tools to share ideas and information with stakeholders, for example presenting content for a school celebration such as a graduation celebration with the parents and citizens association or school executive in an online forum"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2328,6 +2472,10 @@
    ],
    "knowledge": "Students can access their school account using a memorised password and explain why it should be easy to remember but hard for others to guess (AC9TDI4P08). They have a single-account security practice. They have not yet managed multiple accounts with different credentials, or understood the specific risk cascade that password reuse creates.",
    "endpoint": "Students access multiple accounts using unique passphrases and can explain why password reuse creates a risk cascade when one credential is compromised.",
+   "elaborations": [
+    "using multiple accounts, each with different passphrases, to access each website or app used for school and home, for example having a different username and password combination for school, gaming and music accounts",
+    "explaining why re-using a password is risky when one of them is found out, for example how a compromised password from one social media account might be able to be used to access their bank or school account if the password is the same and other details are also compromised"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2401,6 +2549,11 @@
    ],
    "knowledge": "Students can identify what personal data is stored and shared in their online accounts and discuss associated risks (AC9TDI4P09). They understand that accounts hold personal data. They have not yet understood the concept of digital footprint as cumulative and permanent, or considered data minimisation as a design principle when collecting user data.",
    "endpoint": "Students explain how digital footprints are created and persist over time, and apply privacy considerations when thinking about collecting user data — including the principle of collecting only what is needed.",
+   "elaborations": [
+    "describing scenarios where data, images or both that have been posted online can lead to information being resurfaced at a later date, for example how a comment made on a social media post or video associates a person with both their comment and the content",
+    "explaining why collecting the smallest amount of data needed for a purpose is important to protect someone's privacy, for example how choosing not to collect information about someone's birthdate when it is not necessary ensures that private data cannot be stolen in a cyber attack",
+    "understanding the implications of how personal data can be used to train generative AI models; for example, sharing personal information increases the likelihood that private information is revealed through AI outputs now and in the future"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2473,6 +2626,13 @@
    "prior": [],
    "knowledge": "This is the first standard in the Managing Data sub-strand (begins at 7-8). Students bring general digital literacy from the Collaborating and Managing sub-strand and basic data representation understanding from the K strand. They have not yet formally acquired, stored or validated data using spreadsheets or databases.",
    "endpoint": "Students acquire data from a range of sources to answer a specific question, store it using appropriate software (spreadsheets or databases), and validate the data by judging its relevance, correctness, currency and potential bias.",
+   "elaborations": [
+    "acquiring data to answer questions for their own investigations, for example answering \"Does the canteen sell the right food?\" by designing a survey to collect food preferences data and accessing canteen sales data",
+    "judging how meaningful data is to a question, its correctness and how up to date the data is, for example \"Does age affect the chance of cyclist injury?\", \"Are self-reported accidents reliable?\" and \"Is the data before cycleways existed relevant?\"",
+    "storing acquired data using specialised and general software appropriate for how it will be accessed and manipulated, for example a spreadsheet for visualisation or a pre-defined database for filtering and queries",
+    "acquiring, storing and validating data from a reputable source, such as the Australian Bureau of Statistics, to analyse the geographic distribution of First Nations Australians, with the aim to highlight past and emerging trends",
+    "ensuring that the data used to train an AI model minimises any potential biases in its output and is representative of the target audience; for example, training a model on data collected from a single demographic group may not produce correct outputs for a more diverse population"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2592,6 +2752,12 @@
    ],
    "knowledge": "Students can acquire, store and validate data from a range of sources (AC9TDI8P01). They have worked with data in spreadsheets but have not yet selected visualisation types, summarised data by attributes to identify trends, or drawn evidence-based conclusions and predictions.",
    "endpoint": "Students analyse and visualise data by choosing appropriate graph types and representations, summarise data by attributes to identify trends and patterns, and draw conclusions and make predictions supported by evidence from the data.",
+   "elaborations": [
+    "summarising data based on its attributes to identify trends and make predictions, for example sorting crime data by type of offence, showing that burglaries have decreased over time to predict fewer burglaries will happen next year",
+    "visualising multidimensional data by choosing appropriate graphs, for example a scatter plot of food prices and sales, coloured by each food's sugar content, or diagrams such as a social network diagram and maps of crime rates by location to reveal trends, outliers or other information",
+    "using an AI model with a natural language interface to generate queries to perform analysis; for example, describing a database schema and asking the model to generate an SQL query to find results that match a set of criteria",
+    "comparing the analysis performed by a trained predictive AI model with other analysis techniques; for example, comparing the output from a classification model against data tagged manually to verify its accuracy and effectiveness"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2693,6 +2859,11 @@
    ],
    "knowledge": "This is the first standard in the Modelling Data sub-strand (begins at 7-8). Students have used spreadsheets to store and organise data (AC9TDI8P01) but have not yet modelled objects and events as structured data with defined attributes, nor queried data using filtering, sorting or SQL.",
    "endpoint": "Students model objects and events as structured data by identifying relevant attributes and appropriate formats, and query the data using filtering, sorting and simple SQL (SELECT, WHERE, ORDER BY) to answer questions.",
+   "elaborations": [
+    "modelling objects and events as structured data, that is, the attributes relevant to the task, for example products in the canteen and the sale of those products, with attributes such as the product name, price, quantity and nutritional value",
+    "using a spreadsheet table to model objects and events, including choosing appropriate formats for each column, and filtering and sorting rows to answer questions",
+    "interpreting and querying single-table databases using visual or simple SQL queries with SELECT, WHERE and ORDER BY clauses, for example answering queries in a database for a historical event"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2792,6 +2963,11 @@
    ],
    "knowledge": "Students can define problems using given or co-developed design criteria and independently created user stories (AC9TDI6P01). They have not yet decomposed complex real-world problems into sub-problems or justified their decomposition decisions.",
    "endpoint": "Students define real-world problems by framing what is known and what outcome is desired, decompose them into manageable sub-problems, and create user stories that capture user needs to guide the design process.",
+   "elaborations": [
+    "framing a problem in terms of what we know, why it is important and the outcome we want, for example matching the items in your fridge to possible recipes to reduce food waste",
+    "asking a series of questions and sub-questions to understand the problem and breaking it down into manageable parts, for example \"How do we keep track of what items are in the pantry? Are there any dietary requirements that need to be considered?\"",
+    "making predictions about future population distribution of First Nations Australians based on identified trends, for example analysing and visualising data using spreadsheets and databases on their population growth in metropolitan areas"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2890,6 +3066,11 @@
    ],
    "knowledge": "Students can design algorithms involving multiple branching alternatives and iteration (AC9TDI6P02). They can use sequence, branching and iteration as separate control structures. They have not yet nested control structures inside each other or represented algorithms in both flowcharts and pseudocode.",
    "endpoint": "Students design algorithms involving nested control structures (IF inside IF, IF inside loops, loops inside loops), represent them precisely using both flowcharts and pseudocode, and explain the design decisions at each branching or iteration point.",
+   "elaborations": [
+    "designing an algorithm or modifying an existing algorithm to fix an error or change functionality, for example calculating the coins and notes needed for an amount of money and changing the algorithm to handle new denominations",
+    "describing algorithms precisely in pseudocode (structured English) or with flowcharts for each part of the problem, for example using separate flowcharts to describe the purchase of an item and the giving of change during the purchase",
+    "describing algorithms with nested control structures, including a nested if, for example IF it is raining THEN [IF parents are home THEN drive to school]; or an IF inside a loop, for example REPEAT [select the largest coin smaller than the remaining total, and subtract it] UNTIL the remainder is zero"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3021,6 +3202,11 @@
    ],
    "knowledge": "Students can design algorithms with nested control structures and represent them in flowcharts and pseudocode (AC9TDI8P05). They can follow simple algorithms but have not yet systematically traced algorithms using desk checks, specified test cases with expected outputs, or identified errors through tracing.",
    "endpoint": "Students trace algorithms step by step to predict output for given inputs, specify test cases with expected and actual outputs, and identify and explain errors found through systematic tracing.",
+   "elaborations": [
+    "following an algorithm precisely to confirm it produces the expected output for the given input, for example desk check with a table of input, variables and output",
+    "specifying test cases and comparing the expected and actual output to determine the correctness of an algorithm, for example a test case of the change-calculating algorithm could have input $1.45 and expected output 1 x $1, 2 x 20c and 1 x 5c coins",
+    "following instructions for making woven baskets or nets by hand, as done by First Nations Australians, and making predictions of how the instructions would need to be modified to enable the item to be produced through automated manufacturing processes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3125,6 +3311,11 @@
    ],
    "knowledge": "Students can design a user interface for a digital system (AC9TDI6P03) and generate, modify, communicate and evaluate design ideas (AC9TDI6P04). They have experience designing interfaces but have not yet considered user experience holistically — including branding, user values, and how design decisions serve user stories.",
    "endpoint": "Students design the user experience of a digital system by creating wireframes and storyboards across multiple pages, applying branding guidelines for visual identity, and justifying design decisions against user stories and design criteria.",
+   "elaborations": [
+    "designing a user interface or experience to satisfy design criteria and user stories, using digital tools, for example sketch multiple pages of a website with wireframes, storyboards and simple branding guidelines for colours and styling",
+    "considering the factors of why a user might buy and use a product, in addition to its utility, for example how aligning the brand with the user's values and identity contributes to its appeal",
+    "exploring the evolution of a user interface, for example comparing the design and branding of different search engines over time"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3281,6 +3472,11 @@
    ],
    "knowledge": "Students can generate, modify, communicate and evaluate design ideas (AC9TDI6P04). They have experience producing and sharing designs but have not yet systematically generated alternatives, used iterative modification, or evaluated designs against user stories for diverse users.",
    "endpoint": "Students generate multiple alternative designs using appropriate tools (concept maps, wireframes, diagrams, AI), communicate design ideas clearly, modify a preferred design iteratively based on evaluation, and evaluate alternatives against design criteria and user stories.",
+   "elaborations": [
+    "reviewing and modifying a preferred design as part of the iterative development approach, for example making changes to overcome limitations of the design or better satisfy the user stories",
+    "using concept maps, wireframes or other diagrams to record and discuss the generated ideas, for example creating and discussing wireframes of a music streaming service, evaluating it against design criteria and user stories, such as the needs of diverse users",
+    "comparing multiple outputs from a generative model to determine the most suitable; for example, using AI tools to generate multiple prototypes of a user interface and selecting the design or features that best address users' needs"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3380,6 +3576,13 @@
    ],
    "knowledge": "Students can implement algorithms as visual programs involving control structures, variables and input (AC9TDI6P05). They have programmed in visual/block-based environments but have not yet used a general-purpose text-based language, defined functions, or systematically debugged programs.",
    "endpoint": "Students implement working programs in a general-purpose language (e.g. Python, JavaScript) using branching, iteration, variables and functions; read and modify existing code to change functionality; and debug programs by identifying and fixing errors.",
+   "elaborations": [
+    "writing and editing programs to solve problems using branching, iteration, variables and functions in a general-purpose programming language, such as Python, JavaScript or C#",
+    "reading and interpreting an existing program and modifying the code to change functionality and fix errors, for example taking existing code for a weather forecasting app that includes temperatures and improving the output to include extra information such as rainfall, UV levels and air quality",
+    "writing a program that receives data from the environment to change the program behaviour, for example reading moisture level data from a soil sensor and switching on the watering system",
+    "writing a program that contains nested control structures to perform more complicated branching and decisions, for example using an IF statement inside a loop to count the warm days from an array containing temperature data only when the temperature for each day is more than 20 degrees Celsius",
+    "defining and using a function that produces different output based on the argument(s) it receives, for example a function that receives the name of an actor from user input, and searches a file or database to return a list of movies that actor appears in"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3507,6 +3710,12 @@
    ],
    "knowledge": "Students can evaluate solutions against design criteria, user stories and broader community impact (AC9TDI6P06). They have evaluated whether solutions meet criteria, but have not yet considered possible future impact across economic, environmental, or social dimensions, or evaluated for safety and misinformation risks.",
    "endpoint": "Students evaluate existing and student solutions against design criteria and user stories, and analyse the possible future impact of solutions across economic, environmental and social dimensions, including safety, misinformation and sustainability considerations.",
+   "elaborations": [
+    "evaluating how an existing solution ensures users can control their safety and experience online as described in the Safety by Design Vision for Young People, for example ensuring privacy settings are comprehensive, easy to use and set to maximum protection by default",
+    "reviewing the requirements of a user story to ensure that their solution meets the user's needs, for example making sure that recommendations offered by their music application are of a similar genre to the rest of the user's library",
+    "judging existing solutions on the basis of their possible impact on the economy, environment or society, for example cloud computing services decrease data loss but require vast amounts of electricity to power the servers",
+    "discussing the risks and consequences of AI-generated content on social media platforms; for example, the potential for the spread of misinformation due to high volumes of automatically generated and intentionally misleading content being posted"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3667,6 +3876,14 @@
    ],
    "knowledge": "Students can select and use appropriate digital tools to create, locate and communicate content, applying common conventions (AC9TDI6P07). They have used familiar tools but have not yet explored unfamiliar features to improve efficiency, used generative AI for content creation, or consistently applied conventions including heading hierarchy, captions and inclusive language.",
    "endpoint": "Students select and use digital tools efficiently, including exploring unfamiliar features to improve their work; create, locate and communicate content while consistently applying common conventions including heading hierarchy, captions and inclusive language.",
+   "elaborations": [
+    "locating relevant content from multiple sources, exploring advanced search functions and targeted criteria, for example using specific filters such as date range, image size, file type and usage licence",
+    "selecting and using appropriate digital tools, for example when participating in online lessons or planning sessions using a common video conferencing tool",
+    "applying common conventions consistently when creating content, for example organising content in paragraphs and within a heading hierarchy, writing captions to describe images and using gender-inclusive pronouns, where appropriate",
+    "creating logical storage locations for project assets and resources together with an outline to ensure collaborators are up to date, for example creating a logical storage area for a group to share content and ideas in a timely manner about the canteen issue they are solving",
+    "using effective prompts with generative AI models to create output that is better suited to the problem being solved; for example, specifying the voice, tone and brevity for a persuasive news article with a restrictive word limit",
+    "using a progressive series of prompts with generative models to refine output to improve its correctness; for example, performing translation from one language to another and instructing the model to correct errors in translation"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3758,6 +3975,13 @@
    ],
    "knowledge": "Students can select and use appropriate digital tools to share content, plan tasks and collaborate on projects (AC9TDI6P08). They have collaborated using shared tools but have not yet managed projects using agile practices, recorded tasks with responsibilities and timeframes, or applied cultural protocols in collaborative contexts.",
    "endpoint": "Students select and use digital tools responsibly to share content online, and plan and manage agile projects by setting up shared spaces, recording tasks with responsibilities and timeframes, and demonstrating agile practices across a project.",
+   "elaborations": [
+    "collaborating effectively online using cloud storage, for example setting up and managing a shared space in an online repository to co-develop content for an app which presents and checks safety aspects of working in a specific setting such as a kitchen, lab, workshop or greenhouse",
+    "displaying empathy for diverse cultural expectations when participating in teams and in online communities, for example showing sensitivity around images or names of deceased people, and valuing the intellectual property and perspectives of others",
+    "demonstrating agile project management skills and understanding, for example when collaborating with First Nations Australians' community groups to develop digital solutions to projects: following cultural protocols, including relevant permissions and attributions; acknowledging diversity, capability and strength; and addressing risks and responsibilities such as privacy, security and accuracy of data",
+    "determining and recording the tasks, responsibilities and timeframes for a collaborative project, for example using a spreadsheet to record tasks and their sequence, critical dates and who is responsible for each task so a project can be finished on time",
+    "using AI tools to decompose high-level instructions into more detailed steps to assist with completing a task; for example, asking an AI model to break down the steps involved in building a website from scratch"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3847,6 +4071,10 @@
    ],
    "knowledge": "Students can use unique passphrases across accounts and explain the risks of password re-use (AC9TDI6P09). They understand password-based security but have not yet explored what happens when passwords are compromised, how MFA adds a second layer of protection, or how phishing attacks exploit human behaviour.",
    "endpoint": "Students explain how multi-factor authentication protects an account even when the password is compromised, and identify phishing and other cyber security threats by recognising the techniques attackers use to exploit users.",
+   "elaborations": [
+    "explaining how multi-factor authentication prevents unauthorised access by prompting the account owner for a token or single-use password, for example demonstrating how a funds transfer from their bank account requires not only logging in, but provision of a one-time password received via SMS",
+    "identifying the common techniques used in phishing scams to identify and exploit susceptible users, for example using an email address from an unofficial domain when pretending to be an online retailer, or including grammatical errors to help filter out users who are more likely to detect the scam"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3946,6 +4174,13 @@
    ],
    "knowledge": "Students can explain how their digital footprint is created and permanent, and consider privacy when collecting user data (AC9TDI6P10). They understand that a footprint exists but have not yet investigated what specific data systems collect, assessed whether that data is essential, or managed their own footprint settings.",
    "endpoint": "Students investigate what digital footprint data existing systems and student solutions collect, manage their own footprint by reviewing privacy settings, and assess whether the data collected is essential to the system's purpose.",
+   "elaborations": [
+    "investigating the ethical obligations of individuals and organisations regarding ownership and privacy of data and information by researching an online platform's privacy policy for data collection, use and storage information and discussing impacts on digital footprint",
+    "reviewing and managing their digital footprint across online digital tools that they use, for example selecting their default privacy and sharing settings on social media accounts",
+    "investigating how recommendation algorithms used in media services rely on data that tracks user habits, for example how music streaming services generate playlists that contain songs from genres and artists that are similar to those you listen to regularly",
+    "assessing the appropriateness and relevance of data collected by surveys from other students and organisations they complete online, for example identifying that providing your address data is not necessary for a survey asking about your food preferences but providing the address for the Census would be appropriate",
+    "explaining the risks associated with sharing personal data due to the ease with which generative AI models can create new content; for example, from short videos and audio recordings it is possible for convincing deepfake videos to be generated and distributed for malicious purposes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4047,6 +4282,14 @@
    ],
    "knowledge": "Students can acquire, store and validate data from a range of sources using spreadsheets and databases (AC9TDI8P01). They can identify data quality issues including relevance, correctness, currency and potential bias. They have not yet developed automated validation techniques, applied the Australian Privacy Principles to data collection, or considered training data issues for predictive models.",
    "endpoint": "Students develop techniques — including automated validation, privacy-compliant acquisition, and bias-aware evaluation — to acquire, store and validate data from a range of sources using spreadsheets and databases.",
+   "elaborations": [
+    "developing systems that store structured data, for example a movie or travel review website that collects Likert scale ratings and written reviews",
+    "developing systems that check data is correct and meaningful using automated techniques and manual analysis, for example, validating movie review data using rules and user interface elements, and detecting bias and fake reviews through simple statistical analysis",
+    "developing systems that acquire, use and protect data according to the Australian Privacy Principles, for example ensuring personally identifiable information is not publicly shared without consent and is protected from unauthorised access",
+    "accessing and storing data from the Australian Bureau of Statistics in a format that is useful for analysis, for example acquiring data on the population growth across age groups in Australia",
+    "identifying strengths and weaknesses of collecting data using different methods, for example online surveys, face-to-face interviews, phone interviews, observation, comments in response to a social media posting, phone logs, browser history and online webcam systems",
+    "considering how training data issues such as the zero problem dictate the output from predictive models; for example, a model with many examples of horses and no zebras in its training data is likely to classify all zebras as horses"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4168,6 +4411,13 @@
    ],
    "knowledge": "Students can analyse and visualise data using a range of software including spreadsheets and databases (AC9TDI8P02). They can identify trends and patterns in data and draw conclusions from visualisations. They have not yet developed interactive visualisations, applied machine learning as a form of analysis, or adjusted model parameters to observe effects on predictions.",
    "endpoint": "Students analyse and visualise data interactively using spreadsheets and databases to draw conclusions and make predictions by identifying trends and outliers, including developing interactive visualisations and exploring how machine learning models analyse patterns in data.",
+   "elaborations": [
+    "summarising data, its attributes and the relationships between data sets, identifying trends and outliers to draw conclusions and make predictions, for example summarising data about electorates and their demographics, historical swings and exceptions to predict an election outcome",
+    "developing interactive visualisations for exploring complex data, for example population, life expectancy and fertility rate in motion charts",
+    "using software to visualise and compare data to identify patterns, relationships and trends, for example investigating emerging trends in Australia's industries",
+    "exploring machine learning, a form of artificial intelligence where an algorithm is trained using a data set, for example to classify images into categories",
+    "adjusting parameters of an AI model to observe the impact of different factors on predicted outcomes; for example, changing the weighting of different input variables to see how much it changes the model's outputs"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4289,6 +4539,11 @@
    ],
    "knowledge": "Students can model and query the attributes of objects and events using structured data (AC9TDI8P03). They have experience with single-table databases and basic queries. They have not yet modelled multi-entity relationships, created relational data schemas, or written SQL queries with JOIN operations.",
    "endpoint": "Students model entities and their relationships using a relational data schema, build a structured database, and query it using SQL including SELECT, WHERE and simple JOIN/GROUP BY clauses.",
+   "elaborations": [
+    "modelling entities and processes, their attributes and the relationships between them, for example creating database tables for a movie, a user and their movie review, where a movie has a title, genre and release date, and a review has a movie, a user and their rating and comments",
+    "using structured data to help in decision-making, for example creating a data schema for a relational database and building the database, incorporating query and reporting functionality to solve a problem of student choice",
+    "interpreting and querying multi-table databases using SQL queries with SELECT, WHERE and simple JOIN/GROUP BY clauses and counting, for example checking that each user has only reviewed each movie once"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4408,6 +4663,13 @@
    ],
    "knowledge": "Students can define and decompose real-world problems with design criteria and by considering the needs of users (AC9TDI8P04). They can identify constraints and requirements. They have not yet conducted stakeholder interviews, formulated user stories from primary research, or defined problems with explicit scope awareness.",
    "endpoint": "Students define and decompose real-world problems by interviewing stakeholders to create user stories, establishing design criteria with precision and scope awareness.",
+   "elaborations": [
+    "creating user stories by interviewing a stakeholder to complete a template such as \"As a , I want so that \", for example interviewing an amateur athlete to complete the template",
+    "defining the problem with precision and some awareness of scope, for example \"How do we encourage people to balance their energy intake and expenditure?\" and \"Can this be solved in a specified timeframe?\"",
+    "asking questions that help them define the problem more precisely, for example \"How do we measure energy intake?\" or \"How much energy does each exercise expend?\"",
+    "recognising the importance of diverse perspectives when defining the problem and devising survey or interview questions to elicit stakeholder needs",
+    "exploring how First Nations Australian cultural stories and languages are being preserved with digital systems, for example how communities could record, animate and maintain their connections with culture and language in a contemporary format"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4526,6 +4788,12 @@
    ],
    "knowledge": "Students can design algorithms involving nested control structures and represent them as flowcharts and pseudocode (AC9TDI8P05). They have experience with sequence, selection and iteration. They have not yet used Boolean logical operators (AND, OR, NOT) to express compound conditions in control structures.",
    "endpoint": "Students design algorithms using Boolean logical operators (AND, OR, NOT) to express compound conditions, and represent them as flowcharts and pseudocode.",
+   "elaborations": [
+    "designing an algorithm or modifying an existing algorithm to fix, extend or improve it, for example fixing a bug in an algorithm to detect if 2 shapes intersect when the shapes just touch or extending the algorithm to support a new shape",
+    "describing algorithms using flowcharts or other appropriate diagram types, for example a decision tree for classifying an animal based on physical characteristics",
+    "describing algorithms precisely and succinctly using pseudocode, for example short, unambiguous statements such as IF length of word is greater than 4 AND first letter is a vowel",
+    "using Boolean operations (that is, AND, OR and NOT) to express complex conditions in control structures, for example IF [the temperature is above 30 degrees AND people are inside the building] THEN open the windows"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4641,6 +4909,11 @@
    ],
    "knowledge": "Students can trace algorithms to predict output for a given input and identify errors (AC9TDI8P06). They can identify when a program's state is unexpected. They have not yet designed systematic test suites including boundary and invalid input cases, or applied a validation methodology beyond ad-hoc tracing.",
    "endpoint": "Students validate algorithms and programs by designing and applying a range of test cases — including boundary cases and invalid inputs — to confirm correct behaviour or identify errors.",
+   "elaborations": [
+    "tracing and debugging an algorithm by identifying when its state is unexpected, why this has occurred, and the changes needed to correct it, for example identifying that a loop has finished one iteration too early",
+    "determining boundary test cases and testing that they are handled correctly by a program, for example checking that an intersection is detected when 2 shapes are perfectly aligned",
+    "generating invalid input and user errors and testing that they are handled appropriately by a program, for example checking that a program does not crash when text is entered instead of a number"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4757,6 +5030,12 @@
    ],
    "knowledge": "Students can design the user experience of a digital system, including interface mock-ups and considering user needs (AC9TDI8P07). They have experience with digital design tools. They have not yet prototyped an interactive user experience with clickable flows, or considered all dimensions of UX including emotional, cultural and onboarding experiences.",
    "endpoint": "Students design and prototype the user experience of a digital system, including interactive prototypes with clickable flows and consideration of aesthetics, functionality, accessibility, and emotional or cultural user responses.",
+   "elaborations": [
+    "designing engaging user experiences, considering aesthetics, functionality and the feeling of enjoyment and satisfaction of the user",
+    "prototyping a user experience, using simple graphical tools that support clicking on an image to change slides or views, for example using a presentation tool or a no-code user interface prototyping tool to design a simple mobile app",
+    "considering all aspects of a product as perceived by the users, for example evaluating users' initial experience of setting up and using a system, or users' emotional or cultural response to using a digital system",
+    "designing documentation, branding and marketing for a digital solution, for example a product demonstration screencast or 'getting started' user guide"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4848,6 +5127,11 @@
    ],
    "knowledge": "Students can generate, modify, communicate and evaluate alternative designs (AC9TDI8P08). They have experience with ideation techniques and design iteration. They have not yet critically evaluated designs against design criteria and user stories, or used generative AI outputs as ideation input.",
    "endpoint": "Students generate multiple design ideas using a range of ideation techniques, modify and evaluate them critically against design criteria and user stories, and communicate the preferred design with justification.",
+   "elaborations": [
+    "eliminating design ideas by evaluating them against the design criteria and user stories, for example in consultation with stakeholders, reviewing the design ideas, making modifications if necessary, and further developing the design of the preferred solution",
+    "using a range of ideation techniques to create multiple design ideas for a solution, for example using graphic organisers, role-play and mind mapping to develop and then record a range of ideas without evaluating them first",
+    "combining the output from generative AI models and human capital from recognised experts to meet a specific need; for example, using a range of outputs from an image generator as inspiration for modelling a 3D character in a game"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4951,6 +5235,15 @@
    ],
    "knowledge": "Students can implement, modify and debug programs involving control structures and functions (AC9TDI8P09). They have experience with iteration, selection, and basic functions. They have not yet implemented programs across multiple files or classes, applied data structures beyond simple lists, or written object-oriented code with custom classes.",
    "endpoint": "Students implement, modify and debug modular programs using selected algorithms and data structures, including defining and using custom classes in an object-oriented programming language.",
+   "elaborations": [
+    "writing and editing programs to solve problems using algorithms and data structures in general-purpose and object-oriented programming languages, such as Python, JavaScript or C#",
+    "debugging a program by locating an error, modifying the program, and verifying that the changes made are correct",
+    "reading and interpreting programs split across files, functions or classes, and modifying them to add functionality",
+    "writing programs that receive structured data from the user that determines the program's behaviour",
+    "applying simple data structures and algorithms appropriately in their programs, for example using an array to store temperature data, a dictionary for character information in an RPG",
+    "defining their own classes to model and define the actions that can be performed on data in their programs",
+    "selecting different types of data structures such as array, record and object to model structured data"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5094,6 +5387,13 @@
    ],
    "knowledge": "Students can evaluate existing and student solutions against the design criteria, user stories and sustainability (AC9TDI8P10). They have experience applying criteria-based evaluation. They have not yet evaluated for future impact, unintended consequences of AI systems, or enterprise/pivot opportunities.",
    "endpoint": "Students evaluate existing and student solutions against design criteria, user stories, possible future impact (including unintended consequences) and opportunities for enterprise.",
+   "elaborations": [
+    "evaluating how an existing solution detects violations of site rules and imposes sanctions as described in the Safety by Design Vision for Young People",
+    "judging the quality of the output of their solution against the design criteria",
+    "evaluating how existing products have pivoted to meet the needs of a different set of users",
+    "examining the unintended consequences of an image generation solution implemented using AI; for example, using a model trained on a homogenous population to generate graphics that do not represent the diversity of customers",
+    "considering the complexities associated with training predictive models to capture events that occur with low probability"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5185,6 +5485,13 @@
    ],
    "knowledge": "Students can select and use a range of digital tools efficiently and responsibly to create and communicate content (AC9TDI8P11, AC9TDI8P12). They have experience with standard digital tools. They have not yet used emerging technologies for dynamic content, incorporated interactive elements, or designed specifically for accessibility.",
    "endpoint": "Students select and use emerging digital tools and advanced features to create interactive content that is accessible and appropriate for a diverse audience.",
+   "elaborations": [
+    "locating relevant content by using Boolean operators or artificial intelligence search features",
+    "using emerging technologies to add dynamic features to content, for example using a QR code to trigger an augmented reality (AR) overlay",
+    "incorporating interactive elements into content to assist with analysis, for example adding sliders to visualisations",
+    "ensuring content is accessible by using built-in accessibility features, for example using ALT tags in images inside HTML",
+    "combining the output from multiple generative AI sources to communicate a complex idea or narrative"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5298,6 +5605,14 @@
    ],
    "knowledge": "Students have experience with collaborative digital tools and sequencing tasks (AC9TDI8P12). They can assign roles and track progress. They have not yet applied agile project management techniques, worked with version control in a collaborative coding context, or systematically accounted for project risks.",
    "endpoint": "Students use project management tools to plan and manage individual and collaborative agile projects, establishing clear responsibilities, managing risks, and applying relevant legislation or guidelines.",
+   "elaborations": [
+    "managing collaborative projects using appropriate platforms, for example sharing code development using a collaborative version control tool such as GitHub",
+    "establishing clear lines of responsibility and tasks for all members of a project team",
+    "using relevant legislation or guidelines to inform their solutions",
+    "planning the creation of content using project management tools to mitigate potential risks or project delays",
+    "accounting for appropriate project management responsibilities, for example when collaborating with First Nations Australians' community groups to develop digital solutions: following cultural protocols, including relevant permissions and attributions",
+    "incorporating suggestions made by built-in virtual assistants in project planning and organisation tools to streamline and prioritise work"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5412,6 +5727,11 @@
    ],
    "knowledge": "Students can explain how multi-factor authentication protects accounts and manage basic security settings (AC9TDI8P13). They understand access control concepts from AC9TDI10K01. They have not yet modelled how data moves through a system, constructed a threat model, or explored how specific vulnerabilities can be exploited.",
    "endpoint": "Students develop cyber security threat models to identify where data is at risk in a system, and explore a specific software, user or software supply chain vulnerability.",
+   "elaborations": [
+    "using a data flow diagram to understand how private information moves through a system and when it would be the most likely target of a cyber attack",
+    "exploring the impact of a cyber security threat by systematically following the steps involved in bypassing a known vulnerability in their own software",
+    "explaining how techniques like prompt injection can change the intended behaviour of generative AI models"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5502,6 +5822,10 @@
    ],
    "knowledge": "Students can investigate and manage the digital footprint that existing systems and student solutions collect (AC9TDI8P14). They can identify what data systems collect about them. They have not yet applied the Australian Privacy Principles as a formal framework to critique systems, or used cryptographic techniques to protect user data in student solutions.",
    "endpoint": "Students apply the Australian Privacy Principles to critique existing systems and manage the digital footprint collected by student solutions, including using appropriate technical controls to protect user data.",
+   "elaborations": [
+    "critiquing the extent to which online services allow them to control access to their data in line with the Australian Privacy Principles",
+    "using the Australian Privacy Principles as a reference to evaluate the steps they are taking to protect user information in their application, for example explaining how they are storing passwords using cryptographic hashing algorithms so that a data breach does not expose their users to security vulnerabilities due to password re-use"
+   ],
    "nodes": [
     {
      "n": 1,

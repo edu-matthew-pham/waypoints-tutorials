@@ -1,6 +1,6 @@
 {
  "subject": "science",
- "source": "waypoints-kit c921661",
+ "source": "waypoints-kit d93e6e5",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -14,6 +14,13 @@
    "prior": [],
    "knowledge": "No formal prior science learning assumed.",
    "endpoint": "Students explore how people — including scientists, First Nations Australians and themselves — use their senses and tools to make observations, and use questions to guide their learning about the natural world.",
+   "elaborations": [
+    "using senses and exploring how scientists use senses and equipment",
+    "viewing examples of observations including rock paintings, drawings, photos and reports",
+    "exploring how First Nations Australians gain knowledge through observation",
+    "interacting with stories about scientists like Jane Goodall or Joseph Banks",
+    "watching documentaries and noticing how scientists ask questions"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -53,6 +60,12 @@
    "prior": [],
    "knowledge": "No formal prior science learning assumed.",
    "endpoint": "Students pose simple questions about observed objects and phenomena and make predictions grounded in their personal experiences.",
+   "elaborations": [
+    "posing questions based on experiences about plant parts or object movement",
+    "posing questions about everyday objects and materials",
+    "making predictions before field work about plants and animals",
+    "making predictions about how unusually shaped objects might move"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -87,6 +100,12 @@
    "prior": [],
    "knowledge": "No formal prior science learning assumed.",
    "endpoint": "Students engage in investigations following basic safety rules, make observations using appropriate senses and simple tools, and record observations in basic formats.",
+   "elaborations": [
+    "discussing ways to conduct investigations safely",
+    "explaining safety considerations for touch, smell, sight and hearing",
+    "using provided tools to enhance observations of plants and animals",
+    "recording observations using numbers, dots, drawings, voice recordings, digital photography"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -121,6 +140,13 @@
    "prior": [],
    "knowledge": "No formal prior science learning assumed.",
    "endpoint": "Students represent observations in provided templates (tables, graphic organisers, displays) and identify simple patterns in sorted data with teacher guidance.",
+   "elaborations": [
+    "using provided tables and graphic organisers to sort plants and animals by features",
+    "collaborating to create displays linking materials to objects",
+    "identifying common features within familiar animal groups",
+    "identifying patterns of movement in objects with guidance",
+    "identifying patterns in uses of everyday objects made of similar materials"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -180,6 +206,11 @@
    "prior": [],
    "knowledge": "No formal prior science learning assumed.",
    "endpoint": "Students revisit predictions after observing, compare them with what they actually observed, and — with guidance — identify whether they matched or differed.",
+   "elaborations": [
+    "revisiting predictions and with guidance identifying whether they matched observations",
+    "comparing observations of plants or animals from field work with predictions",
+    "using a provided table to draw or dictate prediction and observation"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -214,6 +245,15 @@
    "prior": [],
    "knowledge": "No formal prior science learning assumed.",
    "endpoint": "Students share their science questions, predictions, observations and ideas with others using a range of forms — spoken, drawn, modelled, performed or displayed.",
+   "elaborations": [
+    "sharing questions, predictions and observations through discussions and circle groups",
+    "recounting experiences learning about nature at home or in conservation areas",
+    "acknowledging First Nations Australians' ways of communicating about plant and animal features",
+    "showing or describing how objects move in different ways",
+    "role-playing how people use equipment to make observations",
+    "representing plant and animal features using a range of materials",
+    "communicating using posters, collages, digital displays, drawings or storyboards"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -253,6 +293,14 @@
    "prior": [],
    "knowledge": "No formal prior science learning assumed. Students bring everyday observations of living things from home and community contexts.",
    "endpoint": "Students observe and name external features of plants and animals, describe similarities and differences between organisms, and sort living things into groups based on observable external features.",
+   "elaborations": [
+    "observing fruits and vegetables identifying them as roots, flowers, fruits or leaves",
+    "recognising humans as animals and describing human external features",
+    "using magnifying glasses or digital cameras to observe features of plants and animals",
+    "sorting model animal collections and explaining different grouping strategies",
+    "recognising First Nations Australians' use of observable features to group living things",
+    "exploring how First Nations Australians' observations are replicated in traditional dance"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -313,6 +361,13 @@
    "prior": [],
    "knowledge": "No formal prior science learning assumed. Students bring everyday experience of moving objects.",
    "endpoint": "Students describe different ways objects move, observe how size, shape and material affect movement, and make comparisons between objects based on how they move.",
+   "elaborations": [
+    "observing how toys move and grouping by movement",
+    "observing and describing how unusually shaped objects move when rolled down a slope",
+    "comparing different-sized similar-shaped objects rolling and bouncing",
+    "exploring how material affects ball movement",
+    "exploring how size and shape of First Nations instructive toys influence movement"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -372,6 +427,15 @@
    "prior": [],
    "knowledge": "No formal prior science learning assumed. Students bring everyday experience of handling objects and materials.",
    "endpoint": "Students recognise that objects are made of materials, identify the material(s) an object is made from, and describe observable properties of materials using appropriate vocabulary.",
+   "elaborations": [
+    "observing and manipulating objects to identify their materials",
+    "recognising that some objects are made of more than one material",
+    "sorting and grouping materials by observed properties",
+    "creating a display of materials and exploring property language",
+    "using a digital camera on a materials scavenger hunt",
+    "suggesting why different parts of objects use different materials",
+    "investigating how First Nations Australians combine materials to make utensils"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -433,6 +497,16 @@
    "prior": [],
    "knowledge": "Students have not yet examined science as a human activity used in daily life or connected the idea of patterns to prediction.",
    "endpoint": "Students describe examples of how people — including themselves, community members and First Nations Australians — use science knowledge and observed patterns to make decisions and predictions in everyday life.",
+   "elaborations": [
+    "learning from farmers, bush care volunteers, gardeners or nursery owners about observing plant needs",
+    "identifying ways science knowledge is used in care of the local environment",
+    "investigating how First Nations Australians use science to meet needs including food, water and shelter",
+    "recognising how First Nations Australians use landscape and sky changes to answer questions about resource gathering",
+    "learning from ecologists or wildlife carers about observing animal behaviour",
+    "sharing examples of using science knowledge at home — weather forecasts, seasonal clothing",
+    "identifying pushes and pulls when preparing meals and tools that help",
+    "exploring how engineers use force knowledge to create playground equipment or toys"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -494,6 +568,13 @@
    "prior": [],
    "knowledge": "Students can ask questions about the world around them (F band). They now begin to pose questions about patterns and relationships specifically, and make predictions grounded in their experiences.",
    "endpoint": "Students pose simple investigable questions about observed patterns and relationships, and make experience-based predictions before observing or investigating.",
+   "elaborations": [
+    "posing questions about push and pull relationships",
+    "posing questions about how animals meet their needs in particular places",
+    "making predictions about plant needs",
+    "making predictions about animals and plants in a particular place",
+    "making predictions about patterns of seasonal changes or temperature"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -550,6 +631,12 @@
    "prior": [],
    "knowledge": "Students have participated in guided investigations (F band). They now begin to suggest procedures — not just follow them — and contribute to safety planning.",
    "endpoint": "Students suggest steps for safe investigation procedures and follow guided procedures — including age-appropriate safety measures — to investigate questions and test predictions.",
+   "elaborations": [
+    "suggesting safe investigation steps including sun safety and using age-appropriate equipment",
+    "following steps in a guided investigation of push/pull movement",
+    "exploring different ways of investigating science questions",
+    "suggesting steps for setting up and packing away equipment"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -585,6 +672,12 @@
    "prior": [],
    "knowledge": "Students can make observations using their senses (F band). They now extend to making observations more systematically and recording them using informal measurements and digital tools.",
    "endpoint": "Students make and record observations using text, drawing, counts, informal measurements (cups, handspans, paces, blocks) and digital tools (photography, video) as appropriate.",
+   "elaborations": [
+    "exploring what an observation is through guided discussion",
+    "counting and using informal measurements such as cups, handspans, paces, blocks",
+    "making suggestions about measurement types for investigations",
+    "recording observations through text, drawing, counts, measurements, digital photography"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -620,6 +713,13 @@
    "prior": [],
    "knowledge": "Students can sort objects by observable features (F band). They now extend to sorting and ordering scientific data and identifying patterns in provided formats.",
    "endpoint": "Students sort and order data using provided tables, graphic organisers and visual models, and identify simple patterns in sorted data.",
+   "elaborations": [
+    "using pictographs and tables to document plant growth patterns",
+    "using digital photography to show how pushes/pulls affect shape — before and after table",
+    "using drawings or photos to document weather changes over days or weeks",
+    "ordering images of seasonal changes across the year",
+    "using graphic organisers to sort data into groups"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -655,6 +755,13 @@
    "prior": [],
    "knowledge": "Students have made observations and predictions (F band). They now begin to compare these with others and consider fairness — guided by the teacher.",
    "endpoint": "Students compare their observations with predictions and with others' observations, consider with guidance whether an investigation was fair, and identify further questions prompted by their observations.",
+   "elaborations": [
+    "comparing observations with others such as bird counts or seedling growth",
+    "consulting with First Nations Australians to compare animal track observations",
+    "exploring if weather observation time makes a difference",
+    "comparing movement observations with predictions",
+    "discussing how investigation fairness could be improved"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -690,6 +797,14 @@
    "prior": [],
    "knowledge": "Students can share ideas informally (F band). They now begin to create texts — written, drawn, modelled or role-played — that communicate observations and ideas using both everyday and scientific vocabulary.",
    "endpoint": "Students write and create texts to communicate science observations and ideas, using scientific vocabulary alongside everyday language and selecting from a range of forms (drawing, model, label, role-play, sequential representation).",
+   "elaborations": [
+    "exploring difference between everyday and scientific vocabulary",
+    "acknowledging First Nations Australians' ways of representing and sharing observations",
+    "creating models of plant or animal habitats",
+    "representing seasonal plant changes using sequential drawings or photographs",
+    "representing push and pull forces using role-play, labels, arrows or drawings",
+    "role-playing how people use patterns for predictions"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -726,6 +841,14 @@
    ],
    "knowledge": "Students can observe and describe features of living things and their environments (AC9SFU01, F band). They have not yet systematically identified needs of living things or described how habitat features meet those needs.",
    "endpoint": "Students identify the basic needs of plants and animals (air, water, food, shelter) and describe how features of the places they live meet those needs — connecting habitat features to specific survival requirements.",
+   "elaborations": [
+    "identifying the places where plants and animals live including homes, local ponds, parks, gardens or zoos",
+    "identifying what they do to look after pets or plants at home and grouping these activities",
+    "identifying and comparing the needs of a variety of plants and animals including humans",
+    "creating dioramas of a place a plant or animal lives identifying features that enable need-meeting",
+    "recognising how First Nations Australians care for living things",
+    "exploring why caring for plants and animals is important including as sources of food and fibre"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -789,6 +912,14 @@
    "prior": [],
    "knowledge": "Students can observe and describe features of their local environment (F band). They have not yet described daily and seasonal change patterns or connected those patterns to effects on living things and human decisions.",
    "endpoint": "Students describe observable daily changes (weather, temperature, day length) and seasonal patterns, and explain how these changes affect plants, animals and human daily life — including clothing, activity planning and habitat use.",
+   "elaborations": [
+    "making and recording observations of weather, seasonal plant changes and growth of flowers or fruit",
+    "noticing how daily and seasonal patterns help us make plans for activities",
+    "investigating how seasonal changes affect plants and animals including hibernation and migration",
+    "exploring how people make clothing choices using weather predictions or seasonal knowledge",
+    "recognising First Nations Australians' extensive knowledges of daily and seasonal changes",
+    "exploring how First Nations Australians' concepts of time and weather patterns explain the world"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -859,6 +990,15 @@
    ],
    "knowledge": "Students have informally experienced pushing and pulling objects. They have not yet described forces in terms of strength and direction or predicted their effects on motion and shape.",
    "endpoint": "Students describe pushes and pulls in terms of strength (stronger/weaker) and direction, predict how push and pull forces affect the motion and shape of objects, and represent forces using simple labels, arrows or role-play.",
+   "elaborations": [
+    "observing and manipulating everyday objects such as playground equipment, toys, windows or doors",
+    "investigating how sporting equipment design produces stronger pushes and pulls",
+    "recognising that pushing or pulling can start, stop or change direction of motion",
+    "exploring how playdough shape changes when pushed or pulled",
+    "designing playground equipment or toys representing push and pull forces",
+    "investigating push and pull in traditional First Nations children's instructive toys",
+    "exploring how traditional Asian toys are played using push or pull"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -929,6 +1069,17 @@
    ],
    "knowledge": "Students can describe daily and seasonal changes in the environment (AC9S1U02). They have not yet placed Earth within the solar system or examined patterns in the changing position of celestial objects as a systematic phenomena.",
    "endpoint": "Students recognise Earth as a planet in the solar system, identify observable patterns in the changing position of the sun, moon and stars across days and months, and make predictions based on those patterns.",
+   "elaborations": [
+    "identifying celestial objects visible in space: sun, moon, stars, planets",
+    "viewing images or video of Earth from space and describing Earth's shape",
+    "exploring representations of the solar system and identifying Earth and other planets",
+    "observing day and night sky phenomena",
+    "investigating how shadow length changes with changing sun position",
+    "creating a class moon diary across a month identifying patterns and making predictions",
+    "observing short-term and longer-term sky patterns",
+    "distinguishing regular and irregular sky events",
+    "exploring First Nations cultural stories about patterns in the sun, moon and stars"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -994,6 +1145,16 @@
    "prior": [],
    "knowledge": "Students have informally experienced sound. They have not yet investigated the relationship between actions, vibration and sound production, or explored how sound can be varied (louder, softer, higher, lower).",
    "endpoint": "Students describe how different actions (striking, blowing, plucking, scraping, shaking) produce sounds, explain that sound energy causes objects to vibrate, and investigate how to vary sound properties including loudness and pitch.",
+   "elaborations": [
+    "building vocabulary for loudness and pitch, comparing instrument sounds",
+    "exploring different ways to produce sound using familiar objects and actions",
+    "exploring traditional First Nations Australian instruments",
+    "observing vibrations from a twanged ruler",
+    "investigating how sound energy makes things vibrate",
+    "investigating which materials muffle sound",
+    "designing and making instruments",
+    "discussing echolocation in humans with vision impairment and other animals"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1060,6 +1221,13 @@
    ],
    "knowledge": "Students can observe and describe properties of materials (AC9SFU03, F band). They have not yet distinguished between changing the form of a material and changing its composition, or systematically explored multiple physical change actions.",
    "endpoint": "Students recognise that physical actions (bending, twisting, stretching, folding, cutting, crushing) change the shape or size of a material without changing what it is made of, and explore how different materials respond differently to the same physical action.",
+   "elaborations": [
+    "exploring how materials can be physically changed for particular purposes",
+    "manipulating paper, fabric and other materials through multiple physical changes",
+    "crushing chalk and comparing properties of stick vs powder",
+    "exploring how First Nations Australians make physical changes to natural materials",
+    "creating an 'odd one out' game using same-material physical changes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1131,6 +1299,13 @@
    ],
    "knowledge": "Students can describe how people use science in daily life and use patterns to make scientific predictions (AC9S1H01, 1-2 band). They have not yet examined the specific role of data in developing scientific explanations or how the scientific community shares and evaluates explanations.",
    "endpoint": "Students examine how scientists and other knowledge-holders use data to develop and support scientific explanations, identifying what data is, how it is collected, and how it supports — rather than simply produces — an explanation.",
+   "elaborations": [
+    "examining age-appropriate scientific journal articles, identifying common text features and exploring why the scientific community might have conventions for sharing information about data and explanations",
+    "viewing or listening to documentaries or news reports that feature researchers and identifying how they talk about their area of research, particularly references to observations, data and evidence",
+    "investigating how ecologists use food chain data to develop explanations for population decline of native species such as the Richmond birdwing butterfly, and to develop strategies to increase their population",
+    "explore how hydrologists use rainfall and water use data to explain the amount of water flowing in rivers and why this changes over time",
+    "investigating how First Nations Australians test predictions and gather data in the development of technologies and processes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1231,6 +1406,14 @@
    "prior": [],
    "knowledge": "Students can describe how science knowledge has changed peoples' lives (AC9S3H02, 3-4 band). They have not yet examined the specific link between a scientific explanation and the design of a solution — the mechanism by which understanding produces application.",
    "endpoint": "Students examine how scientific explanations about natural phenomena are applied by people to meet needs or solve problems, and identify the explanation-to-application pathway in real-world examples including First Nations knowledge applications.",
+   "elaborations": [
+    "investigating how knowledge of the role of decomposers has helped people design industrial composting systems to manage plant and animal waste",
+    "investigating how First Nations Australians of arid regions of Australia use scientific knowledge to manage precious water resources",
+    "considering how knowledges of plant biology enable First Nations Australians to sustainably harvest and use plants to make tools and weapons, musical instruments, clothing, cosmetics and artworks",
+    "exploring how knowledge of the properties of plastic has influenced people to change how they purchase, use and dispose of plastic products",
+    "examining how people use knowledge of friction to improve car or bicycle safety on slippery surfaces such as wet or icy roads",
+    "investigating how knowledge of magnetic force is used to sort metals in recycling, mining and food processing"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1335,6 +1518,12 @@
    ],
    "knowledge": "Students can pose simple questions and make predictions based on their experiences (AC9S1I01, 1-2 band). They have not yet posed questions that target patterns or relationships specifically, or made predictions that are explicitly grounded in prior observations rather than intuition.",
    "endpoint": "Students pose investigable questions that target patterns and relationships in observed phenomena, and make predictions that are explicitly grounded in prior observations, distinguishing between questions that can be tested and those that cannot.",
+   "elaborations": [
+    "posing questions about why some materials are used more often than others for particular products",
+    "predicting the effect on food chains when living things are removed from or die out in an area",
+    "consulting with First Nations Australians about how to predict the location of water sources from observation of landscape features",
+    "making predictions about the distances over which magnets will attract or repel each other"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1407,6 +1596,12 @@
    ],
    "knowledge": "Students can follow instructions to conduct investigations safely and make observations (AC9S1I02, 1-2 band). They have not yet identified the elements of a fair test or used a provided scaffold to plan an investigation, as opposed to following a given procedure.",
    "endpoint": "Students use provided scaffolds to plan investigations that test a prediction, identify and control the elements of a fair test (variable to change, variable to measure, variables to keep the same), and conduct investigations safely with appropriate materials and equipment.",
+   "elaborations": [
+    "using an investigation scaffold to design a fair test to identify which shoe provides the greatest or least friction or which materials are attracted to a magnet",
+    "predicting the interactions of forces in a game or toy design, and building and testing a prototype",
+    "predicting effects of changing numbers of producers or consumers, and using a virtual or roleplay food chain simulation to explore possible outcomes by running the simulation multiple times",
+    "following safety rules when conducting investigations, such as wearing personal safety gear correctly, using equipment according to guidelines and demonstrating safe behaviours in field sites or when interacting with biological specimens"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1504,6 +1699,12 @@
    ],
    "knowledge": "Students can make and record observations using their senses and simple tools (AC9S1I03/I04, 1-2 band). They have not yet used scaled instruments with formal measurement conventions or discussed the effect of scale size on measurement accuracy.",
    "endpoint": "Students follow procedures to make and record systematic observations, use familiar scaled instruments accurately (including reading scales and applying rounding conventions), and use digital tools where appropriate to record observations.",
+   "elaborations": [
+    "identifying animals in field locations using procedures such as direct or virtual observation, call or scat identification or pitfall traps",
+    "using appropriate equipment to make and record observations, such as digital cameras, video, voice recorders and familiar scaled instruments with appropriate increments",
+    "describing how to use rounding up or down when reading scaled instruments, and the effect of the scale size on the accuracy of the measurement",
+    "constructing tables or graphic organisers to record observations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1577,6 +1778,12 @@
    ],
    "knowledge": "Students can represent observations in provided templates and identify simple patterns with guidance (AC9SFI03, F band; AC9S1I04, 1-2 band). They have not yet constructed representations independently or used representations specifically to identify patterns and relationships.",
    "endpoint": "Students construct and use tables, column graphs, visual models and physical models to organise data, show simple relationships between variables, and identify patterns in data.",
+   "elaborations": [
+    "using virtual or role-play food chain simulations to explore effects of changing numbers of producers or consumers in a habitat",
+    "using maps to locate water sources in the local area, or constructing maps to show sites of water wastage in the school grounds",
+    "constructing column graphs to compare numbers of objects made of particular materials or distances moved by objects experiencing frictional forces",
+    "using force arrows to show forces operating on objects"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1680,6 +1887,14 @@
    ],
    "knowledge": "Students can compare observations with predictions with guidance, and identify unexpected results (AC9S1I05, 1-2 band). They have not yet systematically evaluated fairness of investigations, drawn evidence-based conclusions, or posed further questions from findings.",
    "endpoint": "Students compare their findings with others, evaluate whether their investigation was fair, draw conclusions that are grounded in their data, and identify questions for further investigation arising from their findings or unexpected results.",
+   "elaborations": [
+    "identifying instances during investigations where elements may have been changed in error, resulting in an unfair test",
+    "comparing findings of water use surveys and discussing differences between home and school, or between each other's homes",
+    "comparing designed solutions, such as toys, lunchboxes or structures, to determine fitness for purpose of selected materials",
+    "comparing findings from investigations with peers and asking questions about factors that may have led to any differences in findings",
+    "identifying unexpected findings and posing questions for further investigation",
+    "drawing conclusions that reflect their data and information"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1781,6 +1996,14 @@
    ],
    "knowledge": "Students can share questions, predictions, observations and ideas with others in simple forms (AC9S1I06, 1-2 band). They have not yet written or created texts that are explicitly structured for a purpose and audience, or used scientific vocabulary deliberately for communicative effect.",
    "endpoint": "Students write and create texts to communicate science findings and ideas for identified purposes and audiences, selecting appropriate text forms and scientific vocabulary, and using digital tools where appropriate.",
+   "elaborations": [
+    "discussing the purpose of a text and identifying vocabulary appropriate to the topic and audience",
+    "acknowledging and learning about First Nations Australians' ways of representing and sharing information about water sources",
+    "sharing ideas about ways to represent feeding relationships including using drawings, labels, images or models",
+    "producing an informative text using scientific vocabulary to explain the impact of introduced predators on food chains",
+    "constructing a report using scientific vocabulary to explain which materials are best suited to be used for making particular products, such as nylon for tents, rubber for shoes or wool for warm clothing",
+    "creating posters, a song, slideshow or performance to encourage the school community to save water"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1881,6 +2104,13 @@
    ],
    "knowledge": "Students can identify and describe features of living things and group them based on observable characteristics (AC9SFU01, F band; AC9S1U01, 1-2 band). They have not yet formally compared living and non-living things using a characteristic framework, or examined the different structural forms life cycles can take (metamorphic vs non-metamorphic).",
    "endpoint": "Students compare characteristics of living and non-living things using observable evidence, and examine how plant and animal life cycles differ in structure — distinguishing metamorphic from non-metamorphic cycles and connecting the physical characteristics of organisms to their life stage.",
+   "elaborations": [
+    "classifying a collection of objects as living, once living or non-living and explaining their reasoning",
+    "observing and describing differences between metamorphic (such as butterflies, beetles or frogs) and non-metamorphic life cycles of animals, including humans",
+    "comparing the physical characteristics of an animal such as a frog or moth with its activity at different stages of its life cycle",
+    "representing stages of a plant or animal's life cycle using drawings, digital photographs, graphic organisers or concrete materials",
+    "investigating how First Nations Australians understand and utilise the life cycles of certain species"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -1979,6 +2209,16 @@
    ],
    "knowledge": "Students can observe and describe properties of natural and made materials (AC9SFU03, F band). They have not yet systematically compared soil types, distinguished rocks from minerals, or examined Earth materials as resources that living things depend on.",
    "endpoint": "Students compare observable properties of soils, rocks and minerals using appropriate vocabulary, understand that minerals are components of rocks, and explain why soils, rocks and minerals are important resources for living things including humans.",
+   "elaborations": [
+    "examining different soils from local areas and using magnifying glasses to observe their components, such as pebbles, sand or plant matter as well as living things such as earthworms and insects",
+    "exploring the school grounds or a local area and observing or collecting different types of rocks and describing similarities or differences such as texture, colour, grain or crystal size",
+    "recognising that minerals are the building blocks of rocks and that the different characteristics of rocks depend on the minerals they are made up of",
+    "identifying rocks as key components of the built and natural environment and recognising uses of minerals such as gemstones in jewellery, graphite in pencils, and table salt in food",
+    "investigating First Nations Australians' knowledges of different rock and mineral types, and how they were used such as for stone blades, grindstones and pigments",
+    "describing ways in which living things including humans depend on soils, such as for food, growing plants, providing habitat for organisms, and holding and cleaning water",
+    "examining information on plant tags and exploring the vocabulary used to describe soils and different plant soil requirements",
+    "investigating which rocks or minerals are quarried or mined locally or regionally and how those resources are used"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2075,6 +2315,14 @@
    "prior": [],
    "knowledge": "Students can describe how objects move and respond to pushes and pulls (1-2 band). They have informally experienced heat and cold but have not yet identified heat as a form of energy, distinguished temperature from heat, or examined heat transfer between objects systematically.",
    "endpoint": "Students identify sources of heat energy in everyday and natural contexts, explain that heat energy transfers from warmer to cooler objects, use thermometers to measure temperature change, and identify how materials vary in their ability to conduct or insulate heat.",
+   "elaborations": [
+    "exploring how we sense heat and identifying sources of heat such as the sun, fire, electrical devices and geothermal springs",
+    "recognising that changes in heat energy can be measured using a thermometer",
+    "observing and, with assistance, measuring, what happens when a cold object is placed in direct contact with a warm object and proposing explanations",
+    "modelling the movement of heat from one object to another using drawing or role-play",
+    "investigating how well heat is transferred by different types of materials such as metals, plastics and ceramics and identifying how materials are used to keep things hot and cold",
+    "exploring how First Nations Australians developed clothing from animal skins such as possum furs and kangaroo skin cloaks that trap heat close to the body to stay warm"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2181,6 +2429,13 @@
    ],
    "knowledge": "Students can observe and describe properties of materials and sort them by observable features (AC9SFU03, F band). They have not yet formally defined solid and liquid using observable properties, investigated change of state, or connected heat energy addition/removal to state transitions.",
    "endpoint": "Students describe the observable properties that distinguish solids from liquids, explain that adding or removing heat energy causes changes of state (solid ↔ liquid), and give examples of state change in everyday and cultural contexts — including how state change enables recycling of materials.",
+   "elaborations": [
+    "observing the properties of substances and classifying them as solids (that hold their shape) or liquids (that fill the bottom of containers)",
+    "investigating ice melting or water freezing in a sealed bag and explaining their observations",
+    "using ice cubes, butter or chocolate to explore how changes of state involve the removal of heat or the addition of heat",
+    "investigating how changes of state in materials used by First Nations Australians such as beeswax or resins are important for their use",
+    "exploring how changes from solid to liquid and liquid to solid can help us recycle materials such as glass or plastics"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2283,6 +2538,15 @@
    ],
    "knowledge": "Students can compare characteristics of living and non-living things and explain differences between plant and animal life cycles (AC9S3U01). They have not yet examined feeding relationships between organisms or the role of decomposers in a habitat.",
    "endpoint": "Students explain the roles of producers, consumers and decomposers within a habitat — including how each group obtains energy and contributes to the habitat — and construct food chains to represent feeding relationships between named organisms across different habitats.",
+   "elaborations": [
+    "describing how animals, including humans, obtain their food from plants and other animals",
+    "observing living things in a local habitat and categorising them as producers, consumers or decomposers",
+    "researching the different types of decomposers and their importance within a habitat",
+    "representing feeding relationships of producers and consumers as a food chain and comparing food chains across different habitats",
+    "recognising how First Nations Australians perceive themselves as being an integral part of the environment",
+    "investigating the impact of introduced predators such as foxes on small mammal species in Australia",
+    "researching how the removal of a food source from within a habitat, such as through an insect or rodent infestation, affected other living things within that habitat"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2449,6 +2713,16 @@
    ],
    "knowledge": "Students can describe observable properties of solids and liquids and explain how adding or removing heat energy causes changes of state (AC9S3U04). They can compare properties of soils, rocks and minerals as Earth resources (AC9S3U02). They have not yet connected state changes to the movement of water through the environment as a continuous cycle.",
    "endpoint": "Students describe the key processes of the water cycle — evaporation, condensation and precipitation — trace the movement of water through sky, landscape and ocean, and identify sources of water including how First Nations Australians and others understand and manage water resources.",
+   "elaborations": [
+    "identifying everyday examples of precipitation (rain or snow), evaporation (wet washing or paint drying) and condensation of water (water droplets on a cold water bottle)",
+    "identifying local water sources and exploring how they change over time, such as rain puddles that evaporate or a local creek that flows faster after rain",
+    "exploring where tap water comes from and predicting what happens to water that goes down the drain",
+    "exploring a game or simulation of the water cycle, identifying key processes and creating their own representation of the water cycle",
+    "recognising that clouds are tiny water droplets suspended in air, observing a 'cloud in a bottle' demonstrated by a teacher and discussing what conditions are needed for clouds to form and for rain or snow to fall",
+    "exploring First Nations Australians' connections with and valuing of water and water resource management",
+    "recognising First Nations Australians' knowledges and understandings of evaporation and how the effect of evaporation can be reduced to conserve water, such as by covering surfaces",
+    "considering why we are encouraged to save and recycle water, and actions people can take to reduce water consumption and waste"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2614,6 +2888,16 @@
    ],
    "knowledge": "Students can describe pushes and pulls in terms of strength and direction and predict their effects on motion and shape (AC9S1U03). They have not yet encountered named force types (friction, gravity, magnetism) or the concept that forces are exerted by one object on another, including at a distance.",
    "endpoint": "Students identify how forces are exerted between objects — including contact and non-contact forces — and describe the effects of friction, gravity and magnetism on the motion of objects, using force arrows to represent direction and magnitude.",
+   "elaborations": [
+    "exploring the effect of magnets on other magnets and how magnetic forces can pull objects from a distance",
+    "exploring the positive and negative effects of friction on their everyday experiences, such as how friction causes objects to slow down and stop",
+    "recognising that gravity is the force that pulls all objects towards the centre of Earth and that gravitational force acts on an object regardless of whether it is moving or not moving",
+    "observing how the pushing force of a liquid enables an object to float",
+    "investigating the effect of forces on the movement of objects in traditional First Nations Australians' children's instructive toys and games",
+    "examining shoe sole design and identifying patterns in sole design and use related to friction",
+    "watching a video of astronauts walking on the moon or dropping objects on its surface, and discussing the force they are observing",
+    "exploring how force arrows can be used to represent the direction and magnitude of forces acting on an object"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2779,6 +3063,14 @@
    ],
    "knowledge": "Students can recognise that objects are made of materials and describe observable properties of those materials (AC9SFU03). They can recognise that physical actions change the shape of materials without changing their composition (AC9S2U03). They have not yet systematically compared material classes (fibres, metals, glass, plastics) or connected material properties to selection for specific uses.",
    "endpoint": "Students examine properties of natural and made materials across fibres, metals, glass and plastics, use property vocabulary to describe and compare materials, and explain how specific properties determine why materials are selected for particular uses.",
+   "elaborations": [
+    "identifying and naming materials in the classroom, and grouping objects made of similar materials or combinations of materials",
+    "exploring vocabulary for describing properties; observing different fibres, metals, glass and plastics; and using appropriate terms to describe, compare and contrast their properties",
+    "investigating familiar objects, such as shoes, drink containers or backpacks, examining the combination of materials from which they are made and suggesting reasons for those combinations based on properties of materials",
+    "considering how First Nations Australians use materials for different purposes, such as tools, clothing and shelter, based on their properties",
+    "designing, building and testing an object or structure for a specific purpose, such as a tent, lunchbox or bird feeder",
+    "investigating which materials can be recycled and researching alternatives for materials such as single use plastics"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2909,6 +3201,13 @@
    ],
    "knowledge": "Students can examine how data is used to develop scientific explanations (AC9S3H01, 3-4 band). They have not yet examined the collaborative and cumulative nature of science — the idea that advances typically require multiple people, disciplines and prior discoveries.",
    "endpoint": "Students examine real examples of scientific advances that required collaboration across disciplines, institutions or cultures, or that built on the prior work of others — explaining why scientific knowledge advances more effectively through collective effort than individual work alone.",
+   "elaborations": [
+    "researching how the recent discovery of a biofluorescent flying squirrel led to discoveries of more fluorescent mammals, such as wombats, bilbies, echidna and bandicoots as scientists collaborated with other scientists across fields of science and internationally",
+    "researching why European naturalists and scientists first thought the platypus was a faked animal, and how scientists such as those in the Platypus Conservation Initiative are collaborating in ongoing research to understand the features and behaviours of platypuses",
+    "investigating how contemporary soil erosion management practices adapt and build on First Nations Australians' fire management and agricultural practices",
+    "exploring why developing new erosion mitigation techniques such as contour banks and strip cropping requires geologists, hydrologists and farmers to collaborate",
+    "exploring how understanding of light and optics has developed by comparing the ideas of Plato, Euclid, Ptolemy, Ibn al-Haytham and Roger Bacon"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -2977,6 +3276,13 @@
    ],
    "knowledge": "Students can examine how scientific explanations are used to meet needs or solve problems (AC9S3H02, 3-4 band). They now extend to examining how knowledge is used by communities — not just to design solutions, but to identify problems, evaluate responses and make collective decisions.",
    "endpoint": "Students investigate examples where scientific knowledge enables individuals and communities to identify problems, evaluate possible responses and make decisions — examining what knowledge was used, what options were considered, and how decisions were reached.",
+   "elaborations": [
+    "considering how decisions are made to farm particular crops or animals depending on local habitats, such as considering their ability to withstand drought or cold weather",
+    "examining how communities use knowledge of erosion processes to design landscape features that reduce erosion in fragile environments",
+    "examining how knowledge of erosion is used by park rangers to design rules such as keeping to the path and not climbing sandstone, and built features such as channel drains on paths, railings and barriers to protect the park environment and First Nations Australians' heritage sites",
+    "researching the impacts of light pollution and exploring how communities have used scientific knowledge to reduce light pollution, such as through the use of covered bulbs facing downwards in streetlights, automated systems to turn off streetlights and motion sensors on outdoor lights at home and in public places",
+    "investigating how and why people used properties of light to design signal lamps to communicate via Morse code and where they continue to be used"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3039,6 +3345,13 @@
    ],
    "knowledge": "Students can pose questions targeting patterns and relationships and make observation-grounded predictions (AC9S3I01, 3-4 band). They now extend to posing questions that test causal relationships and making reasoned predictions — predictions that are explicitly justified with prior knowledge, not just prior observation.",
    "endpoint": "Students pose investigable questions that target patterns and test causal relationships, make reasoned predictions that are explicitly justified with prior scientific knowledge, and distinguish between questions that can and cannot be scientifically investigated.",
+   "elaborations": [
+    "posing questions that can be investigated scientifically, such as: 'Do all animals which live in desert habitats have ways to survive without water?'",
+    "acknowledging and using information from First Nations Australians to guide the formulation of investigable questions about structural features and behaviours of living things",
+    "posing investigable questions about landscape features and how they were changed by weathering, erosion, transportation or deposition",
+    "asking questions and making predictions to test relationships, such as: 'Will there be more erosion of steeper slopes? Will this organisation of mirrors enable me to see around corners? Are animals that camouflage well more likely to survive predation?'",
+    "making reasoned predictions about the habitat a plant or animal lives in or the observable effect of light interacting with an object"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3100,6 +3413,15 @@
    ],
    "knowledge": "Students can use provided scaffolds to plan fair tests (AC9S3I02, 3-4 band). They now take greater ownership — deciding variables independently, planning for repeatability, and considering field site permissions and risks without a provided scaffold.",
    "endpoint": "Students independently plan repeatable investigations — deciding variables, describing risks, planning safe equipment use and identifying required permissions — and conduct investigations that could be reproduced by another person from the recorded method.",
+   "elaborations": [
+    "considering different ways to approach investigations, such as researching, using trial and error, experimental testing, field observations, using digital tools to record observations or development of virtual simulations",
+    "planning and recording the method to be used in an investigation so that it could be repeated by someone else",
+    "making decisions on the variables to be changed, measured and controlled in fair tests, such as measuring the length and size of a shadow formed by different light sources",
+    "using a map or aerial photographs to predict local sites likely to be affected by erosion, and collaboratively planning a field excursion to collect observations",
+    "explaining rules for safe processes and use of equipment and materials, and potential risks to themselves or others when conducting an investigation",
+    "consulting with First Nations Australians to identify local areas that require permission before accessing",
+    "consulting with First Nations Australians to guide the planning of scientific investigations, considering potential risks for field investigations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3163,6 +3485,12 @@
    ],
    "knowledge": "Students can read familiar scaled instruments and record observations systematically (AC9S3I03, 3-4 band). They now extend to selecting equipment for precision, using standard units with prefixes, and recording data electronically.",
    "endpoint": "Students select equipment appropriate to the precision required, measure and record data using standard units and prefixes, discuss why precision matters for investigation findings, and use digital tools where appropriate.",
+   "elaborations": [
+    "exploring which equipment gives the most reasonable precision for the measurements of data required in the investigation",
+    "exploring the precision of measurements of different equipment such as a cup compared with a measuring jug and discussing why precision is important in measurement",
+    "recording data using standard units, such as grams, second and metre, and developing the use of standard prefixes for metric units such as kilo- and milli-",
+    "recording data in tables and diagrams or electronically as digital images and spreadsheets"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3207,6 +3535,13 @@
    ],
    "knowledge": "Students can construct tables and column graphs and use visual/physical models (AC9S3I04, 3-4 band). They now extend to selecting appropriate representations independently, constructing a wider range of types (ray diagrams, annotated field sketches, maps, physical landscape models), and using representations to identify and describe patterns, trends and relationships — not just to display data.",
    "endpoint": "Students select and construct appropriate representations for a given data type or relationship, and use those representations to identify and describe patterns, trends and relationships — treating construction and interpretation as two distinct phases of data processing.",
+   "elaborations": [
+    "using annotated digital photography or field sketches to describe structural features of plants or animals",
+    "constructing a column graph to illustrate the relationship between predation and an animal feature such as colour as indicated by a simulation, and using values to represent the outcomes of repeated simulations",
+    "modelling landscapes using materials such as sand, gravel, soil and rocks to show effects of erosion by water",
+    "constructing labelled ray diagrams to represent observations and compare how light interacts with different objects",
+    "using maps to identify patterns in erosion site locations or aerial photographs to show effects of erosion over time"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3279,6 +3614,13 @@
    ],
    "knowledge": "Students can compare findings, evaluate fairness and draw data-grounded conclusions (AC9S3I05, 3-4 band). They now extend to recognising specific error sources, selecting evidence from data, and drawing reasoned conclusions — not just grounded ones.",
    "endpoint": "Students compare methods and findings with peers, recognise specific sources of error in methods and measurements, select appropriate evidence from data to support reasoned conclusions, and pose further questions arising from method limitations or unexpected findings.",
+   "elaborations": [
+    "comparing methods and findings with those of others to determine if the investigation was a fair test",
+    "recognising errors that could have occurred during investigations including changing too many variables, incorrect or misreading of measurements, or changes in environmental factors",
+    "comparing, in small groups, proposed reasons for findings and explaining their reasoning and posing further questions",
+    "discussing the difference between data and evidence and examining how evidence is selected",
+    "reflecting on inferences made from observations and analysis of the data to draw a reasoned conclusion"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3343,6 +3685,14 @@
    ],
    "knowledge": "Students can write and create science texts for identified purposes and audiences using scientific vocabulary (AC9S3I06, 3-4 band). They now extend to selecting specific language features (vocabulary, sentence structure) deliberately to shape meaning, and co-authoring scientific reports with standard conventions.",
    "endpoint": "Students write and create texts that use deliberately selected language features to serve specific scientific communication purposes — including persuasive texts, scientific reports and digital presentations — selecting vocabulary and sentence structures appropriate to purpose and audience.",
+   "elaborations": [
+    "exploring how language features such as vocabulary and sentence structure help shape a text and give it meaning",
+    "acknowledging and exploring First Nations Australians' ways of representing and communicating information about anatomical features",
+    "developing a digital presentation to share information about the structural features or behaviours of animals and plants in a particular habitat",
+    "constructing a persuasive text for local council to argue the use of an erosion mitigation strategy in a local area",
+    "co-authoring a scientific report on an investigation into the behaviours of light using appropriate vocabulary, data representations and sentence structures",
+    "exploring whether there is a 'correct' way of representing particles and creating an animation to teach other students about the particulate nature of matter"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3405,6 +3755,13 @@
    ],
    "knowledge": "Students can explain the roles of producers, consumers and decomposers in a habitat and describe food chains (AC9S4U01). They can identify physical conditions of habitats at a surface level but have not yet examined the specific structural and behavioural adaptations that enable individual organisms to survive in those conditions.",
    "endpoint": "Students examine structural features (physical characteristics) and behaviours of plants and animals that enable survival in specific habitats, explain the function of each feature or behaviour in terms of the survival challenge it addresses, and connect these to the physical conditions of the habitat.",
+   "elaborations": [
+    "identify physical and behavioural characteristics that enable a plant or animal to survive, such as being able to see in dim light and being nocturnal",
+    "exploring features of plants and animals that enable them to survive in Australia's desert environments, such as bottle (or boab) trees and the water-holding frog",
+    "investigating how camouflage is used by animals to hide from predators and to ambush prey",
+    "using physical or digital simulations to explore how the shape of animals' body parts, such as the beak of a particular bird species, influence their ability to find food and survive in a given environment",
+    "investigating First Nations Australians' knowledges of the structural features of certain species and how those features can be exploited"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3506,6 +3863,15 @@
    ],
    "knowledge": "Students can compare observable properties of soils and rocks and explain their importance as Earth resources (AC9S3U02). They have not yet distinguished weathering from erosion, examined the agents driving each, or connected these processes to landscape change over time.",
    "endpoint": "Students describe how weathering breaks down rock material and how erosion, transportation and deposition move and redistribute that material to change Earth's surface — across both slow geological and rapid event-driven timescales — and examine human impacts on these processes.",
+   "elaborations": [
+    "identifying types of weathering caused by mechanical means such as by wind abrasion, cycles of extreme heat or cold, and frost wedging; and biological means such as by plants and tree roots",
+    "exploring how erosion can be caused by moving air or moving water and how substances such as surface soil are relocated, and identifying examples of erosion on a local or regional scale",
+    "analysing the difference between weathering and erosion and comparing the timescales over which these processes can occur",
+    "modelling the effects of erosion on a simulated landscape and exploring factors that mitigate its effects",
+    "investigating how humans have changed local landscapes and predicting the effect these changes might have on rates of erosion",
+    "considering how First Nations Australians are impacted by the rapid erosion of sand dunes and the resulting effect of saltwater on culturally significant freshwater swamps",
+    "considering the effects of significant rainfall, such as a monsoon, on the transportation and deposition of river sediments in the Asia-Pacific region"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3602,6 +3968,15 @@
    ],
    "knowledge": "Students have informally encountered light and shadows in earlier years. They have not yet examined light as travelling in straight paths, distinguished natural from artificial sources, or described reflection and refraction as distinct interactions between light and matter.",
    "endpoint": "Students identify natural and artificial light sources, explain that light travels in straight paths from a source, describe shadow formation and the conditions that affect shadow size and shape, explain reflection and refraction as different interactions of light with surfaces and media, and represent these using ray diagrams.",
+   "elaborations": [
+    "distinguishing between natural (such as glow worms, the sun and stars) and artificial (such as light bulbs or candles) sources of light",
+    "investigating the shadows that are formed when light is completely or partially blocked by an object, such as when using a sundial or shadow puppets",
+    "drawing ray diagrams to show how the path of light from a source reflects off surfaces into the eye",
+    "observing refraction of light using prisms or water droplets and examining the rainbow effect produced",
+    "exploring how 'holograph' videos use the refractive properties of light to create an image that appears to be 3-dimensional",
+    "exploring the use of reflection of light by mirrors such as in periscopes and mirror mazes",
+    "recognising First Nations Australians' understanding of refraction as experienced in spearfishing and in shimmering body paint, and reflection as evidenced by materials selected for construction of housing"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3704,6 +4079,14 @@
    ],
    "knowledge": "Students can classify materials as solids or liquids by observable properties and explain changes of state using heat energy (AC9S3U04). They have not yet used a particle model to explain why solids, liquids and gases behave as they do, or examined gases as a third state of matter with distinct properties.",
    "endpoint": "Students use a particle model — describing the arrangement, spacing and motion of particles — to explain the observable properties of solids, liquids and gases, and connect state changes to changes in particle behaviour when heat energy is added or removed.",
+   "elaborations": [
+    "classifying substances as solids, liquids and gases and investigating their properties",
+    "exploring examples that demonstrate that gases have mass, such as blowing air through straws to move objects or using a balance to compare an empty balloon to one filled with air",
+    "using role-play to model the arrangement and motion of particles in solids, liquids and gases",
+    "observing a virtual demonstration of coloured gases being compressed and providing an explanation for the change in colour intensity",
+    "exploring, through guided discussion, ideas about what is between particles",
+    "recognising First Nations Australians' knowledges and understandings of solids, liquids and gases and how these knowledges are applied in a range of processes and practices, including the extraction of oils, medical therapies and cooking"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3801,6 +4184,15 @@
    ],
    "knowledge": "Students can explain how structural features and behaviours enable survival in specific habitats (AC9S5U01). They have not yet systematically investigated physical conditions as variables, examined how changes in conditions affect growth and survival, or analysed the impact of human-caused condition changes.",
    "endpoint": "Students identify physical conditions in habitats (temperature, light, salinity, soil type, moisture), investigate how changes in those conditions affect the growth and survival of living things, and analyse how human-caused condition changes affect organisms — including predicting impacts and examining responses.",
+   "elaborations": [
+    "identifying the physical conditions in an aquatic or terrestrial habitat and how they change over time",
+    "investigating how changes to physical conditions such as salinity, soil type, sunlight or temperature affect plant growth",
+    "examining how changes in physical conditions such as temperature, light availability and rainfall affect animals, such as corals, honey bees or flying foxes, and predict impacts of these changes",
+    "investigating changes in physical conditions that are the result of human activity and exploring the impact of these on living things, such as the impact of urban lighting on nocturnal and migratory animals",
+    "investigating the effect of physical conditions on the growth of bread mould colonies in sealed plastic bags",
+    "recognising that environmental conditions can affect stages of life, such as ponds drying up, seeds requiring water to germinate, or temperatures being too hot or cold for eggs to hatch",
+    "investigating First Nations Australians' knowledges and understandings of the physical conditions necessary for the survival of certain plants and animals"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3900,6 +4292,14 @@
    "prior": [],
    "knowledge": "Students have informally observed day/night cycles and seasons. They have not yet modelled Earth's rotation and revolution as the mechanical causes of these cycles, or connected Earth's axial tilt to variable day length and seasons.",
    "endpoint": "Students describe the movement of Earth and planets in the solar system relative to the sun, model how Earth's rotation causes day and night, explain how Earth's axial tilt causes variable day length and seasons across hemispheres, and connect these movements to cyclic observable phenomena.",
+   "elaborations": [
+    "exploring simulations of the solar system such as a pocket solar system to appreciate the distances and relationships between the sun and planets",
+    "recognising the role of gravity in keeping the planets in orbit around the sun",
+    "using 3-dimensional models or role-play to model how Earth's rotation on its axis causes day and night",
+    "using virtual simulations or real-time views of Earth from space to explore why different regions on Earth, such as the South Pole, experience long periods of sunlight or darkness over the cycle of one revolution of Earth around the sun",
+    "using 3-dimensional models to explore how the tilt of Earth points one hemisphere towards the sun and the other away at different times of the year, and predicting how this affects the amount of sunlight on the surface of different regions on Earth",
+    "researching First Nations Australians' understandings of the night sky and its use for timekeeping purposes as evidenced in oral cultural records, rock paintings, paintings and stone arrangements"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -3998,6 +4398,14 @@
    ],
    "knowledge": "Students know that heat energy moves from warmer to cooler objects and can sort materials into conductors and insulators of heat (AC9S3U03). They have met sound as energy that makes objects vibrate (AC9S2U02) and explored light from different sources (AC9S5U03). They have not yet examined electrical circuits, circuit components or electrical conductors and insulators.",
    "endpoint": "Students investigate the requirements for a working electrical circuit, identify the role of each component, distinguish electrical conductors from insulators, construct and represent circuits using standard conventions, and explain how electrical energy is transferred and transformed within a circuit.",
+   "elaborations": [
+    "identifying necessary components for an electric circuit such as a source of electrical energy and conducting material such as metal wires",
+    "constructing a real or virtual circuit to examine requirements to allow the flow of electricity, including exploring the construction and role of switches",
+    "constructing representations of electrical circuits and their components using accepted conventions",
+    "examining the purpose of different components such as switches and bulbs and exploring use of ammeters to measure current",
+    "investigating different electrical conductors and insulators and examining why they may be used",
+    "exploring how electricity is used in the home and identifying electrical hazards and safety measures used to mitigate these hazards"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4103,6 +4511,14 @@
    ],
    "knowledge": "Students can explain changes of state using the particle model (AC9S5U04) and distinguish solids, liquids and gases (AC9S3U04). They have informally encountered dissolving. They have not yet formally compared reversible and irreversible changes or connected irreversibility to the production of new substances.",
    "endpoint": "Students compare reversible changes (dissolving, state changes — same substances, no new matter produced) with irreversible changes (cooking, rusting — new substances produced), explain what makes a change reversible or irreversible at the substance level, and describe methods for recovering dissolved substances.",
+   "elaborations": [
+    "discussing what makes a change reversible or irreversible, using everyday examples",
+    "examining the substances produced in cooking and rusting and comparing them with the original substances",
+    "comparing how the amount of heat energy added affects whether a change in state or an irreversible change occurs",
+    "describing how dissolved substances are reclaimed from solutions",
+    "exploring how reversible changes can be used to recycle materials",
+    "investigating First Nations Australians' knowledges of reversible processes such as the application of adhesives and of irreversible processes such as the use of fuels for torches"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4207,6 +4623,13 @@
    ],
    "knowledge": "Students can examine why scientific advances depend on collaboration and building on prior work (AC9S5H01). They have not yet explained how specific new evidence or perspectives cause established scientific knowledge to change.",
    "endpoint": "Students explain how new evidence or different perspectives can lead to changes in scientific knowledge.",
+   "elaborations": [
+    "exploring how scientists are re-examining the relationships between organisms to refine the classification of species as they discover new information or interpret evidence in new ways",
+    "investigating how the land management practices of First Nations Australians inform contemporary management of the environment to protect biodiversity",
+    "investigating how First Nations Australians' traditional ecological and zoological knowledges inform sustainable harvesting practices of certain species, such as dugongs and turtles",
+    "researching developments in the understanding of astronomy, such as the predictions of eclipses and the calculation of the length of the solar year by Abu Abdallah Mohammad ibn Jabir ibn Sinan al-Raqqi al-Harrani al-Sabi al-Battani in the 10th century",
+    "investigating how aeronautical engineers' understanding of the nature of the forces acting in flight have led to changes in the design of aircraft"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4351,6 +4774,14 @@
    ],
    "knowledge": "Students can examine why scientific advances depend on collaboration and building on prior work (AC9S5H01). They have not yet investigated how cultural perspectives and world views specifically shape which questions are asked and how knowledge develops.",
    "endpoint": "Students investigate how cultural perspectives and world views influence the development of scientific knowledge.",
+   "elaborations": [
+    "investigating classification systems used by First Nations Australians and how they differ in context and use from those used by contemporary science",
+    "investigating how First Nations Australians have developed sustainable harvesting practices and cultural protocols based on deep ecological understandings",
+    "exploring how the personal beliefs of a scientist may influence the questions they choose to pursue and how they investigate those questions, such as Richard Levins, whose political views led him to focus on population ecology, or Joseph Rotblat, a physicist who refused to work on science that might lead to development of an atomic bomb",
+    "considering why it is important to recognise that different people in society have different perspectives on the introduction of biological controls to eradicate an invasive species",
+    "exploring the work of Wang Zhenyi, an acclaimed female scholar of 18th-century China, including her experiments in studying lunar eclipses",
+    "exploring how David Unaipon, a Ngarrindjeri man from Coorong region of South Australia, used his cultural knowledge and understanding of the aerodynamic properties of boomerangs to conceptualise a 'vertical lift flying machine' in 1914"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4494,6 +4925,15 @@
    ],
    "knowledge": "Students can investigate how individuals and communities use scientific knowledge to identify problems and make decisions (AC9S5H02). They have not yet examined how proposed scientific responses to issues carry ethical, environmental, social and economic trade-offs.",
    "endpoint": "Students examine how proposed scientific responses to contemporary issues may impact on society and explore ethical, environmental, social and economic considerations.",
+   "elaborations": [
+    "investigating how scientific knowledge that larger reserves are better for maintaining ecosystem function might interact with competing viewpoints, values and interests for land use when planning ecological reserves",
+    "examining how laboratory-grown meat might reduce impact on ecosystems and considering any social, ethical and economic implications of developing laboratory-grown meat for wide consumption",
+    "examining how the use of desalination plants to produce fresh water has impacted marine ecosystems where the desalination plants are located",
+    "investigating the contributions of First Nations Australians' knowledges in the identification of medicinal properties of endemic plants and the ethical, environmental, social and economic implications of others using these knowledges",
+    "investigating the ethical, environmental, social and economic implications of proposed scientific responses that involve cross-cultural partnerships and build on First Nations Australians' land management techniques",
+    "discussing how scientific knowledge of the forces involved in flight has led to changes in aircraft design and any ethical, environmental, social and economic considerations of these changes",
+    "researching how properties of gases were utilised in the gas warfare in the First World War and the subsequent development of the Geneva Protocol and the later adoption of the Chemical Weapons Convention international arms control treaty"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4643,6 +5083,14 @@
    ],
    "knowledge": "Students can investigate how individuals and communities use scientific knowledge to identify problems and make decisions (AC9S5H02). They have not yet explored how the communication of science — not just the knowledge itself — shapes viewpoints and drives policy.",
    "endpoint": "Students explore the role of science communication in informing individual viewpoints and community policies and regulations.",
+   "elaborations": [
+    "investigating how, through two-way approaches, First Nations Australians are communicating their knowledge and viewpoints, such as Caring for Country and Place initiatives to influence related policies",
+    "examining how science communication of endangered species has led to policies and regulations related to fishing catch and hunting limits",
+    "exploring how Dame Jane Goodall's communication of her research resulted in changed individual viewpoints and conservation policies",
+    "examining how global reporting on high-impact weather events such as cyclones, tidal surges and heatwaves has led to the development of warning systems and evacuation policies",
+    "reflecting on the role of contemporary First Nations Australians astronomers and astrophysicists, such as Wiradjuri astrophysicist and science communicator Kirsten Banks, in promoting First Nations astronomy knowledges and understandings",
+    "investigating how science communication of the impact of waste materials on the environment has led to the adoption of community policies for separating household waste and encouraged other recycling initiatives"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4785,6 +5233,14 @@
    ],
    "knowledge": "Students can pose investigable questions to identify patterns and test relationships and make predictions based on experiences (AC9S5I01). They have not yet developed hypotheses with explicit variable-outcome-reasoning structure or generated questions to explore scientific models.",
    "endpoint": "Students develop investigable questions, reasoned predictions and hypotheses to explore scientific models, identify patterns and test relationships.",
+   "elaborations": [
+    "discussing the features of investigable and non-investigable questions, including consideration of school and web-based resources available, and examining their own and others' questions",
+    "consulting with First Nations Australians to clarify questions based on their traditional ecological knowledges, such as predictions regarding the impact of invasive species",
+    "developing investigable questions to explore scientific models, such as: 'How does particle theory explain the properties of substances?'",
+    "developing investigable questions to test relationships, such as: 'How does the volume of a balloon change as it is heated and cooled? What happens to the height of the tide at different points of the lunar cycle?'",
+    "discussing the relationship between a reasoned prediction and a hypothesis, identifying essential elements of a hypothesis and using a provided scaffold to develop hypotheses",
+    "formulating hypotheses such as: 'If the surface area of the parachute is decreased, the parachute will descend more quickly because there will be less air resistance'"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -4902,6 +5358,17 @@
    ],
    "knowledge": "Students can plan and conduct repeatable fair-test investigations, identifying variables (AC9S5I02). They have not yet planned for reproducibility, identified assumptions about controlled variables, or considered ethical issues and heritage site protocols.",
    "endpoint": "Students plan and conduct reproducible investigations, identifying variables and assumptions, recognising and managing risks, considering ethical issues and recognising heritage site considerations.",
+   "elaborations": [
+    "comparing the method with the hypothesis and examining the reasonableness of the method for testing that hypothesis",
+    "discussing why it is important to identify variables and assumptions when planning an investigation",
+    "examining the features of reproducible investigations, constructing methods and reviewing other students' methods",
+    "identifying assumptions relating to variables that are assumed to be constant, such as ambient temperature, properties of materials used or purity of substances",
+    "identifying risks to themselves and others in investigations and considering actions that can be taken to avoid or manage those risks",
+    "considering ethical issues relating to interactions with living things",
+    "recognising state and territory laws as they relate to First Nations Australians' heritage sites and artefacts",
+    "collaborating with First Nations Australians communities and organisations to conduct investigations about ecosystems, ensuring mutually beneficial outcomes",
+    "acknowledging and recognising First Nations Australians' artefacts and heritage sites, such as human stonework and scatter sites in comparison with rocks changed by natural processes, and understanding not to harm or disturb sites"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5010,6 +5477,13 @@
    ],
    "knowledge": "Students can follow safe procedures to investigate questions and use basic measurement tools (AC9S5I02). They have not yet selected equipment based on measurement range or precision requirements, or used digital tools to improve data quality.",
    "endpoint": "Students select and use appropriate equipment to generate and record data with precision, using digital tools as appropriate.",
+   "elaborations": [
+    "selecting and using equipment appropriate to the investigation, such as ensuring a selected thermometer can measure within the range of temperatures expected, or selecting an appropriate-capacity measuring cylinder for the volume of liquid needed",
+    "examining how the use of digital tools such as stopwatches and digital scales can enable the generation of more precise data",
+    "constructing tables, spreadsheets and graphic organisers to collect data and information",
+    "using appropriate standard units and performing simple unit conversions when recording data",
+    "using digital tools such as sensors to measure abiotic factors and apps that use image or call recognition to make field identifications"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5115,6 +5589,14 @@
    ],
    "knowledge": "Students can construct and use tables, graphs and models to describe patterns, trends and relationships (AC9S5I04). They have not yet selected between representation types based on data characteristics or constructed mathematical relationships from data.",
    "endpoint": "Students select and construct appropriate representations, including tables, graphs, models and mathematical relationships, to organise and process data and information.",
+   "elaborations": [
+    "using spreadsheets to aid the presentation and analysis of data",
+    "constructing food webs to represent feeding relationships and flows of energy and matter in an ecosystem",
+    "constructing representations of dichotomous keys, such as a creating a visual key or an interactive presentation, or coding a simple program",
+    "analysing data, including secondary data, to determine mathematical relationships, such as tidal variations over the course of a lunar cycle",
+    "distinguishing between discrete and continuous data and selecting appropriate data representations",
+    "acknowledging, analysing and interpreting data and information from First Nations Australians' astronomical observations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5224,6 +5706,13 @@
    ],
    "knowledge": "Students can compare methods, recognise sources of error and select evidence to draw reasoned conclusions (AC9S5I05). They have not yet systematically analysed data to describe patterns and relationships or identified and explained anomalies.",
    "endpoint": "Students analyse data and information to describe patterns, trends and relationships and identify anomalies.",
+   "elaborations": [
+    "analysing change in predator and prey numbers over time to identify predator-prey cycles",
+    "identifying patterns and relationships in data sets such as identifying qualitative relationships between the mass of a planet and its gravity",
+    "analysing data to identify patterns in the proportions of a day spent in sunlight and in darkness and relating these patterns to the seasons",
+    "identifying anomalies in data and investigating their effect on observed patterns or relationships",
+    "collaborating with First Nations Australians communities to create a calendar as a representation of seasonal patterns and relationships using digital tools"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5333,6 +5822,14 @@
    ],
    "knowledge": "Students can compare methods, recognise sources of error and select evidence to draw reasoned conclusions (AC9S5I05). They have not yet analysed conclusions and claims for assumptions, conflicting evidence and unanswered questions.",
    "endpoint": "Students analyse methods, conclusions and claims for assumptions, possible sources of error, conflicting evidence and unanswered questions.",
+   "elaborations": [
+    "identifying and considering indicators of the quality of the data when analysing results to identify unanswered questions",
+    "evaluating the method used in an investigation, identifying assumptions made about variables that should be controlled, suggesting ways it could be improved and giving reasons for the suggested changes",
+    "analysing conclusions and claims to identify facts or premises that are taken for granted to be true, and considering their relevance to conclusions",
+    "considering the spread of repeated measurements and observations",
+    "identifying possible sources of error in the method used and describing how the method could be improved to remove these sources of error",
+    "identifying the evidence being cited to support a claim and evaluating conflicting evidence"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5443,6 +5940,13 @@
    ],
    "knowledge": "Students can compare methods, recognise sources of error and select evidence to draw reasoned conclusions (AC9S5I05). They have not yet constructed arguments with explicit evidence-reasoning structure or considered ethical issues around using secondary data.",
    "endpoint": "Students construct evidence-based arguments to support conclusions or evaluate claims, considering ethical issues and cultural protocols associated with using or citing secondary data or information.",
+   "elaborations": [
+    "constructing an argument supported by evidence and reasoning to support or reject a hypothesis",
+    "drawing a logical conclusion in consideration of the method of data collection, quality of evidence and limitations or significance of a claim",
+    "exploring how to determine credibility of a source",
+    "investigating the cultural, historical and archaeological evidence used in the scientific debate about the role of early First Nations Australians in the extinction of Australian megafauna",
+    "researching the development of commercial products that are founded on the traditional knowledges and practices of First Nations Australians and discussing related ethical considerations associated with biopiracy and intellectual property rights"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5552,6 +6056,14 @@
    ],
    "knowledge": "Students can write and create texts to communicate ideas and findings for specific purposes and audiences (AC9S5I06). They have not yet selected language and text features strategically for purpose and audience or produced multi-modal scientific communications.",
    "endpoint": "Students write and create texts to communicate ideas, findings and arguments for specific purposes and audiences, selecting appropriate language and text features and using digital tools as appropriate.",
+   "elaborations": [
+    "examining a range of scientific texts, inferring the purpose of the text and target audience, and identifying specific language and text features that support that inference",
+    "reporting on a scientific investigation, incorporating diagrams, graphical representations and data as appropriate, and including examination of the accuracy and reproducibility of the data",
+    "developing a prototype for a dichotomous key app to enable community members to classify plants or animals in a local park or reserve",
+    "writing a letter to the editor to express a view about an environmental issue affecting local ecosystems",
+    "creating an informative text for a younger audience to show how the tilt of Earth's axis, rotation of Earth on that axis, and the revolution of Earth around the sun cause the seasons",
+    "creating an animation that explains particle theory to a peer audience"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5662,6 +6174,15 @@
    ],
    "knowledge": "Students can group living things by their external features (AC9SFU01), compare living and non-living things and the life cycles of plants and animals (AC9S3U01), and explain how structural features and behaviours help living things survive in their habitats (AC9S5U01). They have not studied formal taxonomy or constructed classification tools.",
    "endpoint": "Students investigate why classification systems are used, apply and construct dichotomous keys, and evaluate how classification tools order and organise biodiversity.",
+   "elaborations": [
+    "observing and identifying the similarities and differences of particular features within and between groups of organisms",
+    "creating and modifying a dichotomous key to classify organisms into groups and groups within groups",
+    "naming and classifying species using scientific conventions from the Linnaean hierarchical classification system, such as kingdom, phylum, class, order, family, genus, species",
+    "considering the reasons for classifying living things, such as identification and communication",
+    "examining how biological classification has changed over time through improvements in microscopy",
+    "using provided dichotomous keys to identify organisms surveyed on a field trip",
+    "investigating First Nations Australians' systems of classifying living things and how these systems differ from those used by contemporary science"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -5841,6 +6362,14 @@
    ],
    "knowledge": "Students can explain the roles of producers, consumers and decomposers in a habitat and construct simple food chains (AC9S4U01), and know that a habitat's physical conditions affect the growth and survival of living things (AC9S6U01). They have not studied energy flow quantitatively or modelled multi-factor ecosystem changes.",
    "endpoint": "Students use food web models to represent matter and energy flow, and predict the impact of changes to abiotic and biotic factors on populations.",
+   "elaborations": [
+    "analysing food webs to show feeding relationships between organisms in an ecosystem and the role of microorganisms",
+    "modelling how energy flows into and out of an ecosystem via the pathways of food webs",
+    "predicting the effects on local ecosystems when living things such pollinators or predators are removed from or die out in an area",
+    "examining how events such as seasonal changes, destruction of habitat or introduction of a species impact abiotic and biotic factors and cause changes to populations",
+    "investigating First Nations Australians' responses to invasive species and their effect on food webs that many communities are a part of, and depend on, for produce and medicine",
+    "considering how First Nations Australians' fire management practices over tens of thousands of years have changed the distribution of flora and fauna in most regions of Australia"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6016,6 +6545,14 @@
    ],
    "knowledge": "Students can identify patterns in the changing positions of the sun, moon and stars in the sky and observe moon phases (AC9S2U01), and can relate Earth's tilt, rotation and revolution around the sun to day and night and day length (AC9S6U02). They have not modelled the Earth, sun and moon together as one system or explained eclipses, seasons and tides mechanistically.",
    "endpoint": "Students model and explain how cyclic changes in Earth-sun-moon positions cause eclipses, seasons and tides.",
+   "elaborations": [
+    "using physical models or virtual simulations to explain how Earth's tilt and position relative to the sun causes differences in light intensity on Earth's surface, resulting in seasons",
+    "examining the effect of the gravitational attraction of the moon and the sun on Earth's oceans and describing how the relative positions of the moon and sun with respect to Earth result in tidal variations",
+    "using physical models or virtual simulations to explain the cyclic patterns of lunar phases and eclipses of the sun and moon",
+    "researching knowledges held by First Nations Australians regarding the phases of the moon and the connection between the lunar cycle and ocean tides",
+    "investigating First Nations Australians' calendars and how they are used to predict seasonal changes",
+    "researching First Nations Australians' oral traditions and cultural recordings of solar and lunar eclipses and investigating similarities and differences with contemporary understandings of such phenomena"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6192,6 +6729,16 @@
    ],
    "knowledge": "Students can identify pushes and pulls as forces and have investigated how frictional, gravitational and magnetic forces affect the motion of objects (AC9S4U03). They have not represented forces as vectors, analysed balanced and unbalanced forces, or related changes in motion to an object's mass and the size and direction of the forces on it.",
    "endpoint": "Students represent and explain how balanced and unbalanced forces, including gravity, relate to changes in an object's motion in terms of mass, magnitude and direction.",
+   "elaborations": [
+    "investigating the effects of applying different forces to familiar objects of the same and different mass",
+    "analysing the effect of balanced and unbalanced forces on an object's motion, such as starting, stopping and changing direction",
+    "measuring the magnitude of a force using a force meter and representing the magnitude and direction of forces acting on an object using force arrow diagrams",
+    "investigating how Earth's gravitational force is the attractive force which pulls objects to the centre of Earth and its magnitude is related to the mass of an object",
+    "investigating how simple machines such as levers and pulleys are used to change the magnitude of force needed to perform a task",
+    "examining how gravity affects objects in space, including moons, planets, stars, galaxies and black holes",
+    "analysing the forces acting on boomerangs and how early First Peoples of Australia designed an air foil profile which allowed for multiple variations and applications",
+    "investigating the effect of forces through the application of simple machines, such as the bow and arrows used by Torres Strait Islander Peoples or the spearthrowers used by First Peoples of Australia"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6373,6 +6920,15 @@
    ],
    "knowledge": "Students know that matter exists as solids, liquids and gases, can describe observable properties, and know that adding or removing heat energy changes state (AC9S3U04) and changes temperature (AC9S3U03). They have used a simple particle model of motion and arrangement to explain the properties of solids, liquids and gases (AC9S5U04). They have not included attraction between particles, or used the model to explain a wider range of properties such as compressibility, density and diffusion, or energy in changes of state.",
    "endpoint": "Students use particle theory to describe the arrangement, motion and attraction of particles in substances and relate this to observable physical properties, including changes of state.",
+   "elaborations": [
+    "using and constructing models, diagrams or virtual simulations to represent changes in particle arrangement as substances change state",
+    "relating motion and energy of particles to distances between particles of the same substance in different states",
+    "comparing attractive forces in the solid, liquid and gaseous states of the same substance and relating this to relative position and movement of particles",
+    "examining how the changing motion and energy of particles is affected by the amount of heat energy absorbed or released",
+    "comparing the properties of different states of matter and explaining differences using particle theory",
+    "investigating properties of materials such as density, melting point and compressibility and explaining these in terms of particle arrangement",
+    "explaining the process of diffusion in a liquid and a gas in terms of particles"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6547,6 +7103,14 @@
    ],
    "knowledge": "Students know how the properties of materials influence their use (AC9S4U04), have compared reversible changes including dissolving and changes of state (AC9S6U04), and have an introductory particle model from AC9S7U05. They have not formally distinguished pure substances from mixtures at the particle level or applied separation techniques systematically.",
    "endpoint": "Students use a particle model to describe the difference between pure substances and mixtures, and select and apply appropriate separation techniques based on properties of substances.",
+   "elaborations": [
+    "using representations of particles to show the difference between samples of pure substances and mixtures, and identifying examples of each",
+    "examining different solutions and identifying the solvent and solute",
+    "investigating and using a range of physical separation techniques such as filtration, decantation, evaporation, crystallisation, chromatography and distillation",
+    "exploring and comparing separation methods used in a variety of situations such as in the home, recycling industries and purifying water",
+    "analysing how the physical properties of substances in mixtures, such as particle size, density or volatility, determine the separation technique used",
+    "investigating separation techniques used by First Nations Australians, such as hand-picking, sieving, winnowing, yandying, filtering, cold-pressing and steam distilling"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6726,6 +7290,14 @@
    ],
    "knowledge": "Students can group living things by external features (AC9SFU01), compare living and non-living things and life cycles (AC9S3U01), explain how structural features enable survival (AC9S5U01), and classify organisms using dichotomous keys (AC9S7U01). All prior learning is at the organism level — external structures, observable features, habitat relationships. There is no prior curriculum treatment of internal cell structure, cellular scale, or sub-organism organisation.",
    "endpoint": "Students recognise that all living things are made of cells, compare plant and animal cells identifying structures present in each, and describe the functions of key organelles including nucleus, cell membrane, cell wall, cytoplasm, chloroplasts and vacuoles.",
+   "elaborations": [
+    "exploring an augmented or virtual reality tour of a plant or animal to 'zoom in' and understand the scale of cells",
+    "identifying the structure and function of organelles in cells including the nucleus, cell membrane, cell wall, cytoplasm, chloroplasts and vacuoles",
+    "examining a variety of cells, including single-celled organisms, using a light microscope, a digital microscope, simulations and photomicrographs",
+    "comparing the similarities and differences of plant cells and animal cells visible with a light microscope and represented in a digital or physical model",
+    "designing a physical or digital model of a cell and explaining how the representation models the cell",
+    "considering how the invention of the microscope has contributed to understanding of cell structure"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -6891,6 +7463,14 @@
    ],
    "knowledge": "Students can describe organelle functions and cell specialisation (AC9S8U01) and explain how structural features enable survival at the organism level (AC9S5U01). They have not yet encountered the tissue or organ as organisational levels, or analysed how structure at sub-organism levels enables system-level survival functions.",
    "endpoint": "Students analyse structure-function relationships across the cell → tissue → organ → organ system hierarchy in one plant and one animal system, explaining how integrated system function enables individual survival.",
+   "elaborations": [
+    "comparing 2-dimensional and 3-dimensional representations of organ systems to understand how organs are positioned within the body",
+    "comparing the structure and function of analogous systems in a plant and an animal",
+    "examining the specialised cells and tissues involved in structure and function of particular organs in an organ system",
+    "describing the structure of each organ in a system and relating its function to the overall function of the system",
+    "researching how a disorder in cells or tissues can affect how an organ functions, such as how hardening of the arteries can lead to poor circulation or heart disease",
+    "investigating how an artificial organ mimics or augments the function or functions of a real organ"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7025,6 +7605,16 @@
    ],
    "knowledge": "Students can describe observable properties of rocks and minerals (AC9S3U02) and explain how weathering, erosion, transportation and deposition change Earth's surface (AC9S5U02). Prior learning is entirely surface-level — there is no curriculum treatment of Earth's interior at any prior year level. Earth-Sun-Moon cycles (AC9S7U03) address celestial geometry, not geological interior. Students have no prior exposure to Earth's internal structure, plates, or tectonic processes.",
    "endpoint": "Students describe the formation of geological features at divergent, convergent and transform plate boundaries and explain the scientific evidence — including seafloor spreading, continental fit, fossil distribution and earthquake/volcanic patterns — that supports the theory of plate tectonics.",
+   "elaborations": [
+    "examining patterns of earthquake and volcanic activity over time and proposing explanations",
+    "evaluating the impact of tectonic events on human populations and examining engineering solutions designed to reduce the impact",
+    "modelling interactions at plate boundaries",
+    "investigating the relative significance of different forces involved in tectonic plate movement including slab pull, ridge push and convection",
+    "relating the extreme age and stability of a large part of the Australian continent to its plate tectonic history",
+    "constructing a timeline of evidence to show the development of the theory of plate tectonics",
+    "exploring how geologist and oceanographic cartographer Marie Tharp's topographic maps of the Atlantic Ocean floor provided support for the acceptance of the theory of plate tectonics",
+    "researching First Nations Australians' cultural accounts that provide evidence of earthquakes and volcanoes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7214,6 +7804,16 @@
    ],
    "knowledge": "Students can compare observable properties of rocks and minerals (AC9S3U02) and describe weathering, erosion, transportation and deposition as surface processes (AC9S5U02). Plate tectonics provides heat, pressure and uplift mechanisms (AC9S8U03). Prior learning covers surface rock identification and surface processes only — rock formation processes (igneous crystallisation, metamorphism, lithification) and the rock cycle as a system are entirely new.",
    "endpoint": "Students describe the rock cycle as an interconnected system linking sedimentary, igneous and metamorphic formation, explain the geological timescales involved, and examine how each rock type's properties reflect its formation history and determine appropriate use.",
+   "elaborations": [
+    "comparing the observable properties of different types of rocks and identifying them using a provided dichotomous key",
+    "exploring the major processes of the rock cycle including weathering, erosion, deposition, melting, crystallisation, uplift, heat and pressure in the formation of different types of rocks",
+    "analysing the role of forces and heat energy in the formation of different types of rocks and comparing how quickly or slowly different processes can occur",
+    "examining fossil evidence, such as body, trace or opalised fossils, to predict how and when a rock was formed",
+    "explaining the uses of different types of rocks with reference to their properties and formation",
+    "exploring the traditional geological knowledges of First Nations Australians that are used in the selection of different rock types for different purposes",
+    "investigating how First Nations Australians have used quarrying to access rocks for use as or production of everyday objects such as grindstones, hammerstones, anvils and cutting tools",
+    "exploring how the mining of ores and minerals impacts on local environments and examining environmental rehabilitation initiatives"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7381,6 +7981,15 @@
    ],
    "knowledge": "Students have encountered specific energy forms across multiple years: sound energy causes vibration (AC9S2U02), heat energy transfers between objects (AC9S3U03), light travels in straight paths (AC9S5U03), electrical energy transfers in circuits (AC9S6U03). Prior learning is energy-form specific — each form was treated in isolation. The kinetic/potential classification framework, the transfer/transformation distinction, and the concept of by-product heat are all new.",
    "endpoint": "Students classify energy types as kinetic (movement, heat, sound, light, electrical) or potential (chemical, gravitational, elastic), distinguish energy transfer from transformation, and trace energy through multi-step systems — identifying useful outputs and by-product heat — using flow diagrams.",
+   "elaborations": [
+    "investigating relationships between kinetic and potential energy in a simple system such as a roller-coaster or Newton's cradle",
+    "classifying types of energy as either kinetic energy such as movement, heat and electricity or potential energy such as chemical, elastic and gravitational",
+    "critiquing and using representations such as flow diagrams to illustrate changes between different forms of energy in a system",
+    "identifying where heat energy is produced as a by-product of energy transfer, such as filament light globes, exercise, and battery charging and use",
+    "using electrical circuits and components to demonstrate electrical energy transfer and its transformation into heat, light and sound",
+    "observing a Rube Goldberg machine and identifying the energy transfers and transformations involved",
+    "investigating traditional fire-starting methods used by First Nations Australians and their understandings of the transformation of energy"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7576,6 +8185,14 @@
    ],
    "knowledge": "Students can describe observable material properties (AC9SFU03), recognise physical change preserves material composition (AC9S2U03), explain solid/liquid/gas properties using a particle model (AC9S5U04), distinguish pure substances from mixtures and apply separation techniques (AC9S7U06), and describe particle arrangement, motion and attraction forces (AC9S7U05). The particle model treats particles as undifferentiated — particles have no identity (atom type). The concept of atom type, element as one atom type, and compound as chemically combined different atom types are all new. Chemical symbols and molecular formulas are new.",
    "endpoint": "Students classify matter as elements (one atom type), compounds (two or more atom types chemically combined in fixed ratios) or mixtures (substances not chemically combined), and use chemical symbols, formulas and 2D/3D models to represent each — selecting representations based on what information each conveys.",
+   "elaborations": [
+    "using virtual and physical models to distinguish between elements and compounds in terms of types of atoms",
+    "examining how Dmitri Mendeleev arranged the elements in the first version of the periodic table and comparing his arrangement with the current version",
+    "explaining why elements are represented by symbols, compounds and molecules by formulas and mixtures by percentages",
+    "using representations to show the classification of matter as elements, compounds and different types of mixtures such as solutions, suspensions and colloids",
+    "examining the information conveyed by different types of representations of elements and compounds and identifying where and why these different representations are used",
+    "creating a timeline or models to show how the concept of an element has changed over time from Democritus to John Dalton"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7741,6 +8358,13 @@
    ],
    "knowledge": "Students can recognise that physical changes preserve material composition (AC9S2U03), compare reversible and irreversible changes at an observable level (AC9S6U04), use particle theory for substance properties (AC9S7U05), and classify matter as elements, compounds or mixtures (AC9S8U06). AC9S6U04 provides a reversibility heuristic that mostly works but fails for dissolving. The new substance criterion — grounded in compound formation from AC9S8U06 — is new. Exothermic and endothermic as named categories of energy change in reactions are new.",
    "endpoint": "Students compare physical and chemical changes using the new substance criterion, identify observable indicators of chemical change, and explain exothermic and endothermic reactions as categories of energy change — applying all three criteria to classify and analyse unfamiliar changes.",
+   "elaborations": [
+    "performing simple chemical reactions to identify the indicators of chemical change such as gas production, solid production, colour change and temperature change",
+    "analysing and interpreting data on the properties of substances before and after the substances interact to determine if a chemical or physical change has occurred",
+    "investigating and identifying energy changes in different chemical reactions such as differences in temperature",
+    "examining how the physical and chemical properties of a substance will affect its production or use",
+    "discussing where indicators of chemical change are used for identifying the presence of particular substances, such as in soil, water and medical testing kits"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -7935,6 +8559,14 @@
    ],
    "knowledge": "Students can explain how scientific evidence challenges and changes our understanding of the world, and recognise that science is a human endeavour involving reasoning from evidence (AC9S7H01). They have not yet examined the formal mechanisms by which scientific claims are evaluated and accepted by the scientific community — specifically publication and peer review as institutional processes.",
    "endpoint": "Students explain how scientific knowledge is validated and refined through the publication and peer review process — describing what peer review involves, why it is used, and how it can result in validation, revision or rejection of claims. Students can examine cases where scientific knowledge was initially rejected or revised before being accepted, and explain why consensus builds over time through accumulation of consistent evidence.",
+   "elaborations": [
+    "investigating the process of publishing a paper in Science which receives about 12,000 submissions per year",
+    "investigating how publication of data related to First Nations fire regimes has informed fire-reduction policies",
+    "exploring why Marshall and Warren's work was first rejected then validated",
+    "examining the scientific consensus supporting global warming",
+    "researching how Thomson, Millikan and Rutherford experiments provide consistency of evidence",
+    "examining how Marie and Pierre Curie's discovery of new elements was validated"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8030,6 +8662,14 @@
    ],
    "knowledge": "Students can explain how scientific understanding has developed through people's questions, observations and experiments (AC9S7H03, AC9S7H04). They have not yet examined the two-way relationship between science and technology specifically — where technology enables scientific discovery and scientific understanding enables technological development — as a systematic relationship rather than individual historical examples.",
    "endpoint": "Students investigate the two-directional relationship between science and technology — describing cases where technological advances enabled new scientific knowledge (imaging technologies, particle accelerators, digital monitoring tools) and cases where scientific understanding enabled technological development (radioactivity → medical imaging; wave-particle model → EM communications). Students can examine how this relationship has operated in Australian and global contexts.",
+   "elaborations": [
+    "analysing how imaging technologies improved understanding of body system functions",
+    "considering the impact of Australian technological advances including cochlear implant, bionic eye, spray-on skin and wi-fi",
+    "researching how monitoring technologies contributed to reinstatement of traditional fire management",
+    "examining how EM radiation properties relate to its uses",
+    "exploring how scientists and engineers make machines more energy efficient",
+    "examining how advances in understanding radioactivity led to new applications"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8123,6 +8763,15 @@
    ],
    "knowledge": "Students can explain how scientific knowledge and its applications affect people's lives (AC9S7H03) and examine how scientific communication shapes policy (AC9S7H04). They have not yet systematically analysed the factors that determine whether scientific knowledge or practices are widely adopted — moving from describing the relationship between science and society to analysing the conditions for adoption.",
    "endpoint": "Students analyse key factors that contribute to scientific knowledge and practices being adopted more broadly by society — including evidence quality, accessibility, economic feasibility, government support, community trust, media communication and cultural alignment. Students can examine cases of adoption and non-adoption to identify which factors were decisive, including examples involving First Nations Australians' knowledge practices.",
+   "elaborations": [
+    "researching citizen science projects related to public health",
+    "investigating how Dr Helen Mayo's research led to reduction in infant mortality",
+    "examining how assisted reproductive technologies became widely used",
+    "examining how Landcare supports adoption of land restoration practices",
+    "investigating how First Nations fire management practices are informing contemporary fire management",
+    "analysing factors leading to adoption of solar panels and battery storage",
+    "investigating how concern for environment led to widespread recycling"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8198,6 +8847,15 @@
    ],
    "knowledge": "Students can examine how scientific communication shapes policy and societal responses (AC9S7H04), and have analysed adoption factors (AC9S9H03). They have not yet examined the reverse direction — how societal values and needs shape what research is funded and pursued in the first place.",
    "endpoint": "Students examine how the values and needs of society influence which scientific research questions are funded, pursued and developed — identifying factors such as government priorities, economic incentives, health needs, environmental concerns, and cultural values as shapers of research focus. Students can examine cases where societal needs have directly driven scientific and technological advances, including examples where government, industry and community priorities have shaped research directions.",
+   "elaborations": [
+    "exploring how governments determine which research projects should be funded",
+    "exploring how Australia developed an AI system for IVF prediction",
+    "researching how First Nations Peoples of the Torres Strait are at the forefront of preventing disease transfer",
+    "investigating how need to minimise greenhouse gas production led to scientific and technological advances",
+    "considering innovative energy transfer devices",
+    "considering how development of new materials contributed to safe sound levels",
+    "examining why manufacturers are adopting green chemistry processes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8273,6 +8931,13 @@
    ],
    "knowledge": "Students can develop questions, make predictions and formulate methods to investigate (AC9S7I01). They have not yet developed formal hypotheses specifying a testable relationship (if-then-because structure) or developed questions targeted at testing a relationship or building an explanatory model rather than simply exploring a phenomenon.",
    "endpoint": "Students develop investigable questions that target a specific relationship between variables, write reasoned predictions, and formulate hypotheses that can be supported or refuted through evidence — in contexts requiring explanation of body systems, energy transfer or chemical reactions. Students can develop questions intended to explore an explanatory model and explain what would constitute supporting or refuting evidence.",
+   "elaborations": [
+    "discussing what is needed for a question to be investigable or a prediction to be reasoned",
+    "generating investigable questions about body system relationships",
+    "developing investigable questions to explore explanatory models",
+    "discussing why a scientific hypothesis must be able to be supported or refuted",
+    "proposing a hypothesis to test an identified relationship"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8372,6 +9037,14 @@
    ],
    "knowledge": "Students can plan and conduct investigations to test predictions, identifying variables and describing methods (AC9S7I02). They have not yet explicitly focused on validity and reproducibility as criteria for method quality, or systematically identified and controlled sources of error as part of planning.",
    "endpoint": "Students plan and conduct investigations that are valid (method measures what it claims to measure, variables controlled) and reproducible (method can be repeated by others to get consistent results) — systematically identifying sources of error and explaining how they are controlled. Students can develop and follow risk assessments, consider ethical issues in investigation design, and recognise responsibilities regarding heritage sites and artefacts on Country/Place.",
+   "elaborations": [
+    "discussing what is meant by validity and reproducibility and how they relate to method",
+    "determining reproducibility of a field investigation using survey techniques",
+    "identifying possible sources of error and examining if further testing is needed",
+    "identifying potential hazards of chemicals or biological materials",
+    "discussing ethical issues in care and use of animals",
+    "recognising First Nations Australians' heritage laws and responsibilities"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8459,6 +9132,14 @@
    ],
    "knowledge": "Students can select and use equipment to generate and record data (AC9S7I03). They have not yet focused on precision as a criterion for equipment selection, significant figures and scientific notation as recording conventions, or sample size justification as a design decision.",
    "endpoint": "Students select equipment based on the precision required for the investigation, record data to the correct degree of precision using appropriate significant figures and units, consider instrument accuracy and replicability when choosing equipment, and justify sample size decisions — using digital tools where appropriate to improve collection efficiency or enable larger samples.",
+   "elaborations": [
+    "using an electronic balance measuring within required parameters and recording to correct significant figures",
+    "using data loggers and choosing correct scale",
+    "examining accuracy of different instruments including measuring cylinder vs pipette",
+    "considering replicability of data from different instruments",
+    "discussing amount of data needed for useful sample size",
+    "considering how digital tools enable efficient collection for larger samples"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8526,6 +9207,13 @@
    ],
    "knowledge": "Students can select and construct tables, graphs and models to represent data (AC9S7I04). They have not yet selected among descriptive statistics as appropriate for a data type, used mathematical relationships to process data, or applied representations such as Sankey diagrams or Sankey-like proportional models.",
    "endpoint": "Students select and construct appropriate representations for organising and processing data — including tables, graphs, descriptive statistics (mean, median, range), models and mathematical relationships — and can explain the rationale for choosing one representation over another for a given data type or investigation question.",
+   "elaborations": [
+    "using spreadsheet software to present data in tabular and graphical forms",
+    "identifying which sample properties (mean, median, range) are most appropriate for generalisations",
+    "applying algorithms to measure carbon storage",
+    "applying ratios to represent energy in Sankey diagrams",
+    "comparing information from molecular models and balanced equations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8619,6 +9307,13 @@
    ],
    "knowledge": "Students can identify patterns and anomalies in data and explain observations using scientific knowledge (AC9S7I05). They have not yet connected data across multiple sources to support an explanation, or used proportional reasoning and extrapolation as analytical tools at this level.",
    "endpoint": "Students analyse data from their own investigations and secondary sources to identify and explain patterns, trends, proportional relationships and anomalies — connecting multiple data sources where relevant and using scientific knowledge to account for observed patterns. Students can discuss the validity of extrapolations from their data and highlight inconsistencies across data sources.",
+   "elaborations": [
+    "discussing validity of extrapolation from a graph",
+    "analysing atmospheric CO₂ representations from monitoring and ice cores",
+    "comparing published data with experimental data on sound insulation levels",
+    "analysing heat transfer data to identify proportional relationships",
+    "examining radioactive decay half-life data to predict mass changes"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8712,6 +9407,14 @@
    ],
    "knowledge": "Students can analyse methods and claims (AC9S7I06). They have not yet explicitly identified assumptions embedded in methods or conclusions, or systematically addressed conflicting evidence and areas of uncertainty as dimensions of evaluation.",
    "endpoint": "Students assess the validity and reproducibility of investigation methods by identifying specific features that support or undermine each, and evaluate the validity of conclusions and claims by identifying assumptions, conflicting evidence and areas of uncertainty — including how uncertainty and conflicting evidence may support viable alternative conclusions.",
+   "elaborations": [
+    "discussing what is meant by 'validity' and how to evaluate secondary sources",
+    "identifying gaps or weaknesses in conclusions related to validity and reproducibility",
+    "identifying assumptions in methods and determining impact on conclusion validity",
+    "analysing methods and conclusions for hidden assumptions",
+    "considering if uncertainty could lead to a viable alternative conclusion",
+    "considering how GPs manage conflicting evidence"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8805,6 +9508,15 @@
    ],
    "knowledge": "Students can construct evidence-based arguments (AC9S7I07). They have not yet applied ethical considerations and cultural protocols specifically to secondary data use, or constructed arguments based on analysis of multiple sources — including evaluation of source credibility as part of the argument.",
    "endpoint": "Students construct arguments based on analysis of a variety of evidence — evaluating the credibility and relevance of multiple sources to support a conclusion or evaluate a claim. Students consider ethical issues associated with accessing, using and citing secondary data, and apply cultural protocols when working with First Nations knowledges — including acknowledging contributions and the relationship between Indigenous knowledge and contemporary science.",
+   "elaborations": [
+    "examining secondary data for source credibility and data validity",
+    "identifying multiple consistent evidence sources for a claim",
+    "interrogating evidence and reasoning for claims about ancient artefact age",
+    "researching methods used in media-reported studies to evaluate headline validity",
+    "examining secondary data for personal information and appropriate citation",
+    "acknowledging relationship between First Peoples' knowledges and contemporary science",
+    "constructing an argument for First Nations contributions to medicine"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8894,6 +9606,14 @@
    ],
    "knowledge": "Students can write and communicate scientific ideas and findings (AC9S7I08). They have not yet explicitly analysed communication choices for different purposes and audiences, or written scientific reports that include validity and reproducibility discussion as a required structural component.",
    "endpoint": "Students write and create texts that communicate ideas, findings and arguments effectively for specific purposes and audiences — selecting appropriate content, language and text features for each context. Students can write a scientific investigation report (including background, results explanation and validity/reproducibility discussion), and produce texts for non-specialist audiences (e.g. presentations, social media campaigns, community reports) — selecting appropriate language and cultural responsiveness in all contexts.",
+   "elaborations": [
+    "comparing and contrasting scientific texts for different purposes and audiences",
+    "selecting culturally responsive content maintaining cultural protocols",
+    "writing investigation reports including theory, results and validity discussion",
+    "developing interactive presentations showing body system feedback loops",
+    "planning a social media campaign to reduce carbon footprint",
+    "collaborating to prepare a local government report on carbon storage"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -8993,6 +9713,14 @@
    ],
    "knowledge": "Students can analyse structure-function relationships across cells, tissues and organs in body systems (AC9S8U02). They have not yet examined how multiple systems coordinate responses to stimuli, or modelled negative feedback as a regulatory mechanism.",
    "endpoint": "Students compare how the nervous and endocrine systems coordinate responses to stimuli — using models of receptor-command centre-effector pathways — and describe how negative feedback maintains homeostasis, including the effects of feedback system disorders.",
+   "elaborations": [
+    "exploring the body's observable responses to external stimuli (such as changes in light or temperature, or presence of danger or pathogens) or internal stimuli (such as dehydration or hunger)",
+    "using models, flow diagrams and virtual simulations to explore and represent the relationships between body systems that are necessary to coordinate a response to stimuli",
+    "comparing the role and function of electrical impulses and hormones in the body's responses to external stimuli",
+    "modelling how the process of regulation is monitored and adjusted by connections between the receptor, command centre and effector",
+    "examining the effects of a disorder in a feedback system, such as diabetes-induced blindness or hypothermia",
+    "considering how understanding of feedback mechanisms has enabled the development of pharmaceuticals and other products to address issues or enhance performance, such as insulin or electrolytes in sports drinks"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9214,6 +9942,14 @@
    ],
    "knowledge": "Students can explain how structural features and behaviours are adaptations enabling survival in particular habitats (AC9S5U01) and analyse how physical conditions affect organism survival (AC9S6U01). They can recognise cells as basic units of living things and describe specialised cell structures (AC9S8U01). They have not yet examined reproductive organs and cells as systems with specific forms matched to function, or analysed sexual vs asexual reproduction in terms of variation and species survival trade-offs.",
    "endpoint": "Students describe the form and function of reproductive cells and organs in animals and plants, and analyse how sexual reproduction generates variation and how asexual reproduction enables rapid colonisation — connecting each strategy to survival in different environmental contexts.",
+   "elaborations": [
+    "examining how the male and female reproductive organ structures work collectively as a system",
+    "explaining how the forms of male and female gametes relate to their specific function",
+    "identifying and comparing sexual and asexual reproductive strategies in plants",
+    "exploring how sexual reproduction creates a greater rate of variation among offspring compared with asexual reproduction",
+    "examining how the reproductive strategies of multicellular animals are related to their environment and the complexity of the organism",
+    "examining how the number of offspring produced by animals is related to the amount of parental care"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9381,6 +10117,17 @@
    ],
    "knowledge": "Students can describe Earth's surface changes (AC9S5U02), model how Earth's tilt and revolution produce seasonal change (AC9S6U02), and compare reversible and irreversible changes including combustion (AC9S6U04). They can use food web models to represent matter and energy flow through ecosystems (AC9S7U02) and explain plate tectonics and rock cycle processes (AC9S8U03, AC9S8U04). They have not yet encountered Earth as a system of interacting spheres, or carbon as a substance that cycles through those spheres via identifiable chemical and biological processes.",
    "endpoint": "Students represent the carbon cycle using diagrams or models and explain how combustion, photosynthesis and respiration each move carbon between Earth's spheres — including how human activity through combustion perturbs the natural cycle.",
+   "elaborations": [
+    "identifying Earth as a system, describing Earth's spheres and discussing examples of interactions between different spheres",
+    "examining the carbon cycle using diagrams, animations or simulations and explaining the role of photosynthesis and respiration in that cycle",
+    "identifying the impact of combustion reactions as a result of human activity on the carbon cycle",
+    "investigating the greenhouse effect and relating it to the role carbon dioxide plays in maintaining temperatures that support life on Earth",
+    "conducting a field investigation to evaluate carbon sequestration in an ecosystem",
+    "investigating how First Nations Australians use fire-mediated chemical reactions to facilitate energy and nutrient transfer through firestick farming",
+    "investigating how First Nations Australians are reducing greenhouse gas emissions through traditional fire management",
+    "identifying how carbon dioxide is captured and stored naturally or through technologies",
+    "calculating an individual's carbon footprint and suggesting strategies to reduce emissions"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9548,6 +10295,15 @@
    ],
    "knowledge": "Students can explain how light travels in straight paths and describe reflection and refraction (AC9S5U03). They can explain energy transfer and transformation in electrical circuits (AC9S6U03) and classify energy as kinetic or potential (AC9S8U05). They can use particle theory to explain physical properties of substances (AC9S7U05). They have encountered both particle and wave ideas separately but have not yet applied them as competing or complementary models for explaining energy transfer, or evaluated which model is more useful for a given phenomenon.",
    "endpoint": "Students use wave and particle models to describe how energy is transferred through different mediums — including sound, heat and light — and examine the usefulness and limitations of each model for explaining phenomena including electromagnetic radiation.",
+   "elaborations": [
+    "describing the processes underlying convection and conduction of heat in terms of the particle model",
+    "modelling the transfer of sound energy as waves using slinky springs and relating to the medium through which the sound is transferred",
+    "examining how the particle model of electricity explains static electricity and electrical current and relating this to voltage, conductors and insulators",
+    "discussing the wave and particle models of energy transfer, including the concept of photons, and how they are useful for understanding aspects of light and other forms of electromagnetic radiation",
+    "investigating aspects of heat transfer and conservation in the design of First Nations Australians' bedding and clothing in the various climatic regions of Australia",
+    "investigating the impact of material selection on the transfer of sound energy in First Nations Australians' traditional musical, hunting and communication instruments",
+    "examining the forms of electromagnetic radiation that are used in different modern communication technologies and identifying any limitations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9715,6 +10471,15 @@
    ],
    "knowledge": "Students can classify energy as kinetic or potential and explain energy transfers and transformations in simple systems (AC9S8U05). They can explain energy transfer and transformation in electrical circuits (AC9S6U03). They have qualitative understanding of energy transformation but have not yet applied conservation of energy as a quantitative law, or analysed system efficiency — the proportion of useful output energy — as a calculated quantity.",
    "endpoint": "Students apply the law of conservation of energy to account for all energy inputs and outputs in a system, calculate efficiency as useful output divided by total input, and use Sankey diagrams to represent energy flow — applying this analysis to real systems including electricity generation and appliances.",
+   "elaborations": [
+    "explaining that the law of conservation of energy explains that total energy is maintained in energy transfer and transformation in a system",
+    "explaining efficiency and recognising that in energy transfer and transformation a variety of processes can occur, so that the amount of usable energy is reduced and the system is not 100% efficient",
+    "using and critiquing representations such as Sankey diagrams to show energy inputs, changes and outputs in a system",
+    "investigating the efficiency of ground ovens used by First Nations Australians",
+    "comparing the efficiency of electricity generation from coal and other sources such as nuclear, hydroelectricity, gas, solar and wind",
+    "examining the meaning of energy star ratings given to appliances such as refrigerators and washing machines and criteria used to determine these ratings",
+    "examining how improving efficiency in energy transfer and transformations in sporting activities such as pole vaulting or archery improves athletic performance"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -9853,6 +10618,16 @@
    ],
    "knowledge": "Students can use particle theory to explain physical properties of substances (AC9S7U05) and classify matter as elements, compounds and mixtures using symbols and formulas (AC9S8U06). They have a functional particle model but it is the simple undifferentiated particle model — particles have no internal structure. They have not yet encountered subatomic particles, the historical development of atomic models, or the concept of nuclear instability and radioactive decay.",
    "endpoint": "Students explain how experimental evidence drove the development of the nuclear model of the atom through the discovery of electrons, protons and neutrons, and describe how unstable isotopes undergo radioactive decay (alpha, beta, gamma) to produce stable atoms — including half-life as a measure of decay rate.",
+   "elaborations": [
+    "comparing the mass and charge of protons, neutrons and electrons",
+    "examining how the discovery of electrons, protons and neutrons resulted from experimental evidence",
+    "explaining that differences in the number of neutrons in atoms of the same element results in isotopes",
+    "describing how different unstable isotopes decay such as radon-222, iodine-131 and cobalt-60",
+    "defining half-life and simulating radioactive decay",
+    "investigating how radiocarbon dating has been used to establish First Peoples' presence for more than 60,000 years",
+    "identifying applications of radioactivity in medicine and industry",
+    "discussing how mass and energy are connected at all scales"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10018,6 +10793,14 @@
    ],
    "knowledge": "Students can compare physical and chemical changes and identify indicators of energy change in chemical reactions (AC9S8U07). They can classify matter as elements, compounds and mixtures and use chemical symbols and formulas (AC9S8U06). They can compare reversible and irreversible changes (AC9S6U04). They have not yet modelled atom rearrangement as the mechanism of chemical change, written balanced symbolic equations, or applied conservation of mass as a quantitative principle to chemical reactions.",
    "endpoint": "Students model chemical reactions as atom rearrangement using word equations, molecular models and balanced symbolic equations, and use conservation of mass — demonstrated through atom counting — to explain why equations must be balanced.",
+   "elaborations": [
+    "identifying reactants and products in chemical reactions",
+    "using models and representations to show the rearrangement of atoms in chemical reactions",
+    "investigating chemical reactions in closed and open systems and relating data obtained to the law of conservation of mass",
+    "writing symbolic equations that are easy to balance and explaining, using the law of conservation of mass, and atoms, the rationale for balancing chemical equations",
+    "investigating why most elements are not found in their elemental state",
+    "predicting how ideas of green chemistry will affect the environment"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10183,6 +10966,14 @@
    ],
    "knowledge": "Students can describe reproductive structures and processes in animals and plants and analyse how sexual and asexual reproduction enable species survival (AC9S9U02). They can recognise cells as the basic units of living things and describe specialised cell structures (AC9S8U01). They have not yet examined the molecular basis of heredity — chromosomes, DNA and genes as functional units — or the mechanics of meiosis and mitosis as cell division processes, or Mendelian inheritance as a predictive model.",
    "endpoint": "Students explain the roles of meiosis and mitosis in heredity, describe the structural relationship between chromosomes, DNA and genes, and predict genotype and phenotype ratios in monohybrid crosses including dominant/recessive and sex-linked patterns.",
+   "elaborations": [
+    "using models and diagrams to represent the relationship between genes, chromosomes, and DNA",
+    "explaining how genetic information passed on to offspring from both parents by meiosis and fertilisation increases variation",
+    "using Mendelian inheritance to predict offspring genotypes and phenotypes in monohybrid crosses",
+    "using pedigree diagrams to show patterns of inheritance through multigenerational families",
+    "investigating First Nations Australians' knowledges of heredity as evidenced by kinship and family structures",
+    "exploring environmental and other factors that cause mutations"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10384,6 +11175,14 @@
    ],
    "knowledge": "Students can explain how specific structural features and behaviours are adaptations enabling survival in particular habitats (AC9S5U01), analyse how physical conditions affect organism survival (AC9S6U01), and explain classification systems and biodiversity (AC9S7U01). They understand sexual and asexual reproduction and the role of variation in species survival (AC9S9U02). They have not yet encountered natural selection as a mechanistic explanation for how populations change over time, or engaged with the evidence base — fossil record, anatomical and chemical similarities, geographical distribution — that supports the theory.",
    "endpoint": "Students use the theory of evolution by natural selection to explain both past and present biological diversity, and analyse multiple lines of scientific evidence — fossil record, anatomical and chemical similarities, geographical distribution — that support the theory.",
+   "elaborations": [
+    "outlining processes involved in natural selection including variation, isolation and selection",
+    "examining biodiversity as a function of evolution",
+    "analysing evidence for the theory of evolution including fossil record, chemical and anatomical similarities, and geographical distribution",
+    "investigating changes caused by natural selection in a population under a specified selection pressure",
+    "relating genetic characteristics to survival and reproductive rates",
+    "investigating some structural and physiological adaptations of First Nations Australians to the Australian environment"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10553,6 +11352,15 @@
    ],
    "knowledge": "Students can model and explain how Earth-sun-moon positions cause eclipses, seasons and tides (AC9S7U03) and describe daily and seasonal environmental changes (AC9S1U02, AC9S2U01). They have scale and cyclic-phenomenon understanding at the solar system level. They have not yet encountered cosmological scale (galaxies, light-years, astronomical units), the origin and timeline of the universe, or the evidence base for the big bang — cosmic microwave background radiation, redshift of galaxies, or Hubble's observations.",
    "endpoint": "Students describe how the big bang theory models the origin and evolution of the universe — including its major stages and the formation of stars and galaxies — and analyse the supporting evidence including redshift, cosmic microwave background radiation and the observed proportions of matter.",
+   "elaborations": [
+    "describing the major components of the universe using appropriate scientific terminology including light-years",
+    "constructing a timeline of major changes from Big Bang to formation of stars and galaxies",
+    "examining how stars' light spectra reveal composition, movement and distance",
+    "explaining how cosmic microwave background radiation, red/blue shift, Hubble's observations and matter proportions support the big bang",
+    "researching First Nations Australians' knowledges of celestial bodies and explanations of the origin of the universe",
+    "identifying technologies used to collect astronomical data",
+    "exploring recent advances including SKA Pathfinder and discovery of gravitational waves, dark matter and dark energy"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10720,6 +11528,14 @@
    ],
    "knowledge": "Students can represent the carbon cycle and explain how combustion, photosynthesis and respiration depend on interactions between Earth's spheres (AC9S9U03). They can describe how Earth's tilt and revolution produce seasonal change (AC9S6U02) and model food web energy flow through ecosystems (AC9S7U02). They have not yet examined energy exchange mechanisms between spheres (radiation, conduction, convection), the greenhouse effect as a quantitative balance, or how perturbations to that balance produce measurable global-scale patterns.",
    "endpoint": "Students use models of energy flow between the geosphere, biosphere, hydrosphere and atmosphere to explain patterns of global climate change, including analysing indicators of change and evaluating strategies to reduce or mitigate effects.",
+   "elaborations": [
+    "examining the role of radiation from the sun and how its interactions with atmosphere, ocean and land are the foundation for the global climate system",
+    "investigating indicators of climate change such as changes in ocean and atmospheric temperatures, sea levels, biodiversity, species distribution, permafrost and sea ice",
+    "identifying changes in global climate over time and exploring visualisations and simulations",
+    "examining the factors that drive deep ocean currents and their role in regulating global climate",
+    "investigating how quantum computers enhance modelling of complex weather and climate systems",
+    "predicting changes to the Earth system and identifying strategies to reduce or mitigate climate change"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -10916,6 +11732,15 @@
    ],
    "knowledge": "Students can represent and explain how balanced and unbalanced forces, including gravity, relate to changes in an object's motion in terms of mass, magnitude and direction (AC9S7U04). There is a two-year gap in the physical sciences strand (Years 8–9 address energy, not force/motion), so force and motion knowledge has had no curriculum reinforcement for three years. Students carry the Aristotelian misconception that moving objects require a continuous applied force to maintain motion. They have no prior exposure to Newton's named laws, acceleration as a defined quantity, F=ma as a quantitative relationship, or action-reaction pairs.",
    "endpoint": "Students apply Newton's three laws of motion to analyse object behaviour and quantitatively solve problems using F=ma, including multi-force scenarios, free body diagrams, and real-world applications such as vehicle safety features and sport.",
+   "elaborations": [
+    "investigating a moving object to analyse relationships between distance, time, speed, force and acceleration",
+    "using mathematical representations to quantitatively relate force, speed, acceleration and mass",
+    "investigating how First Nations Australians achieve increased speed and impact force through spearthrowers and bows",
+    "modelling how change in net force affects motion and relating to safety features",
+    "investigating Newton's laws applications in sport",
+    "constructing a data-supported argument for lower speed limits",
+    "investigating how driverless vehicles apply Newton's laws to brake in time"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -11177,6 +12002,14 @@
    ],
    "knowledge": "Students can classify matter as elements, compounds or mixtures and use symbols, formulas and models to represent them (AC9S8U06). They can explain how atomic theory developed through the discovery of subatomic particles and describe how radioactive decay produces stable atoms (AC9S9U06). They have the Bohr model of the atom as prior knowledge — protons, neutrons and electrons in shells — but have not yet examined how electron shell configuration determines an element's chemical properties, or how repeating patterns in electron configuration are the basis for periodic table organisation.",
    "endpoint": "Students explain how the structure of atoms — particularly outer electron shell configuration — determines the physical and chemical properties of elements and accounts for the organisation and repeating patterns of the periodic table.",
+   "elaborations": [
+    "examining how elements are organised in the periodic table and analysing patterns",
+    "investigating physical properties of some metals and non-metals",
+    "using the Bohr model to describe atom structure in terms of electron shells",
+    "deducing that repeating periodic patterns reflect outer electron shell patterns",
+    "conducting flame tests and examining emission spectra",
+    "examining how the spectroscope led to further development of the atomic model"
+   ],
    "nodes": [
     {
      "n": 1,
@@ -11316,6 +12149,15 @@
    ],
    "knowledge": "Students can model atom rearrangement in chemical reactions using word and balanced equations and demonstrate conservation of mass (AC9S9U07). They can compare physical and chemical changes and identify energy change indicators (AC9S8U07). They understand elements, compounds and mixtures and can use chemical symbols and formulas (AC9S8U06). They have not yet categorised reactions by structural type (synthesis, decomposition, displacement), identified patterns within those categories, or examined what variables control how fast reactions proceed.",
    "endpoint": "Students identify structural patterns in synthesis, decomposition and single and double displacement reactions, predict reaction products from type, and explain how temperature, concentration, surface area and catalysts affect reaction rates in terms of particle collision theory.",
+   "elaborations": [
+    "defining and representing synthesis, decomposition and displacement reactions",
+    "identifying reaction type and predicting products",
+    "investigating synthesis, decomposition and displacement reactions across multiple examples",
+    "investigating the effect of temperature, concentration, surface area and catalysts on reaction rates",
+    "investigating chemical reactions employed by First Nations Australians in producing substances such as acids and ethanol",
+    "investigating First Nations Australians' methods to convert toxic plants into edible food",
+    "examining reactions that produce useful products"
+   ],
    "nodes": [
     {
      "n": 1,
