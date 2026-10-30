@@ -1,22 +1,43 @@
 ---
 title: About these tutorials
-summary: What the tutorials are, why we made them and how a lesson works.
+summary: The subjects, which are previews, why we made the tutorials and how a lesson works.
 ---
 ## About
 
-Waypoints tutorials are short lessons in coding, maths, science, engineering, digital systems and AI that run in your browser. They're a work in progress, with more on the way. Every lesson is still being tested in classrooms and refined. There's nothing to install and no account to make, and we don't track anyone's progress beyond their own browser.
+Waypoints tutorials are short lessons that run in your browser, with notes and resources for teachers. They cover the subjects below, grouped as on the home page. They're a work in progress, with more on the way. Lessons are still being tested in classrooms and refined. There's nothing to install and no account to make, and we don't track anyone's progress beyond their own browser.
 
-Each idea is explained in a few different ways, because students come at things differently. You can try the code yourself, watch a short clip with captions (the sound is optional), look at a picture of what the code makes, or read an explanation in plain words. Cheat sheets and worksheets print for times away from the screen. Every lesson also has notes for the teacher, written so they work whether or not you specialise in the subject.
+## Core
 
-The lessons follow the Australian Curriculum (version 9) and are meant to be done in order, though you're welcome to start wherever suits you.
+- **[English](../english/):** how writing holds together, how texts and sentences are built, and how word choices change meaning. Students explore examples, then use the same moves in their own writing.
+- **[Maths](../maths/):** predict, try an interactive model, study a worked example, vary one thing, practise, then make your own problem.
+- **[Science](../science/):** explore scientific ideas through simulations, explanations and checks. The lessons sit beside practical work and class discussion.
+- **[Learning skills](../learning/):** plan, check and look back on your learning, with discussion workshops and strategy cards to use in any subject.
+
+## Humanities
+
+**Preview** means a subject is a pilot with only part of its planned content built. Planned courses are shown as Coming later. The four subjects labelled below are previews, as on the home page.
+
+- **[Humanities skills](../hass/) · Preview:** the inquiry skills History, Geography, Civics and Economics share, including asking questions and finding and organising information. Use them alongside your class's topic.
+- **[History](../history/) · Preview:** how historians work with sources and evidence to find out about the past. The lessons support your class's history unit.
+- **[Geography](../geography/) · Preview:** water as a resource, with pathways planned for water, hazards and places. Lessons use sourced facts about real places and clearly made-up cases where needed.
+- **[Civics and Citizenship](../civics/) · Preview:** how Australia is governed, starting with the Constitution and the roles of its institutions.
+- **[Economics and Business](../economics/):** needs and wants, scarcity and opportunity cost. Students reason through choices using made-up cases.
+
+## Technologies
+
+- **[How computers work](../systems/):** how computers store data, how networks move it and how it is kept safe. No coding needed.
+- **[Code](../code/):** learn to read, run, investigate, change and make programs, with pathways in Python, web development and MakeCode.
+- **[Engineering](../engineering/):** build, test and improve designs, using models and design briefs with criteria and constraints. An elective layer that applies maths, science and code.
+- **[ICT skills](../ict/):** the ideas behind spreadsheets, documents, slides and files, then the same moves in whichever app your school uses.
+- **[Learning with AI](../ai/):** understand how AI works, investigate when it helps learning, consider who it affects and make decisions about its use.
 
 ## Why we made this
 
-Coding, maths and science all build on earlier ideas, so a student who misses one can quietly fall behind on what follows. We wanted a principled sequence: small steps in a deliberate order, each lesson clear about what it builds on, and each built on research about how that subject is best learned.
+Learning builds on earlier ideas. A student who misses one can quietly struggle with what follows. We wanted small steps in a deliberate order, each clear about what it builds on, with examples, explanations and checks that suit the subject.
 
-We also built it because the browser can now do things it couldn't a few years ago. Code runs, draws and prints its output right there on the page, with nothing to install. Maths and science lessons have interactive models students can change and watch respond, so a prediction can be tested rather than just explained. A lesson can ask a student to try something and see what happens, every time, for every student.
+The browser lets students test an idea rather than only read about it. They can run a program, change a model, examine a text or compare evidence, then see what their choice reveals. Different subjects need different ways to make thinking visible.
 
-That helps every teacher. Specialists get a coherent sequence to teach from, adapt or use for revision. Teachers working outside their specialism, which is common in coding and not rare in maths and science, also get plain-language notes, slides and answers so they can run a lesson with confidence.
+Specialists get sequences to teach from, adapt or use for revision. Teachers working outside their specialism get plain-language notes, slides and answers to help them run a lesson. The tutorials support classroom teaching, discussion, practical work and students' own writing.
 
 **Using these lessons.** Teachers are welcome to use and adapt the lessons for their own classes, and to share adapted versions free of charge with students and colleagues, keeping a credit. They aren't open for anyone to sell, put in a paid product or republish as their own resource without permission. [Full terms](https://github.com/edu-matthew-pham/waypoints-tutorials/blob/main/LICENSE.md).
 
@@ -24,22 +45,22 @@ Teachers can [suggest or request a lesson](https://forms.gle/CoRAXJWHnVQ8mXpPA).
 
 ## How the lessons work
 
-Every lesson starts with a prediction, gives students something to try, and checks their understanding along the way. The order of steps suits each subject.
+Lessons draw out what students think, give them something to try and check their understanding along the way. The order and activities suit the subject.
 
-**Coding** lessons follow **PRIMM**, developed by Sue Sentance and colleagues: students *predict* what a short program will do, *run* it, *investigate* how it works, *modify* it, then *make* their own. Now that AI can write code, being able to read a program and tell whether it's right matters more than ever.
+**Code** uses PRIMM: predict what a short program will do, run it, investigate how it works, modify it, then make your own. **Maths, How computers work and Engineering** use interactive models and worked examples, followed by variation, practice and a task of your own. **Science** uses the 5E model: engage, explore, explain, elaborate and evaluate.
 
-**Maths** lessons centre on a worked example: students predict, try the idea on an interactive model, study a worked example, change one thing at a time to see the structure, practise, then make their own problem. Maths teachers: [start here →](../maths-teachers/)
+**English** uses texts to examine and worked examples before students apply the idea in their own writing. **Humanities** lessons use questions, sources, information and cases to practise reasoning before applying it to the class's topic. **ICT skills** teaches ideas shared by everyday apps, then asks students to use them in their own tools. **Learning skills** uses discussion and strategies to try on real work. **Learning with AI** combines models, cases and inquiry to test ideas and support judgement.
 
-**Science** lessons follow the **5E** model: they *engage* students by drawing out what they already think, let them *explore* it in a simulation, *explain* the idea, *elaborate* it in new contexts, then *evaluate* what they've learned. They sit beside practical work, never instead of it.
+Where useful, lessons include pictures, interactive boards or short captioned clips with optional sound. Printable resources support work away from the screen. Students write their own responses in their books or class tools; the site does not collect or mark their writing.
 
-**Engineering** and **How computers work** lessons work the same way as maths: predict, try it on a model, see a worked example, vary one thing, practise, then make something. Engineering is an elective layer beside the core subjects.
+Lessons follow a sequence, but teachers can choose where to start and how long to spend. The main path teaches the core idea; optional wider steps give more ways to explore it. They are not a faster track.
 
-**Learning with AI:** [Explore the student courses](../ai/) · [Choosing AI tools for learning — teacher guide](../choosing-ai-tools/)
-
-[Why we teach this way →](../approach/) · [Behind the scenes →](../behind-the-scenes/)
+[Subject guides for teachers →](../teachers/) · [Why we teach this way →](../approach/) · [Behind the scenes →](../behind-the-scenes/)
 
 [Check your school](../check/) · [Choosing AI tools for learning](../choosing-ai-tools/)
 
 <h2 id="standards">About the standards</h2>
 
-Maths, science and How computers work are tagged lesson by lesson: each lesson says which waypoint of which standard it teaches. Code is not tagged that way. For the Digital Technologies Processes standards, a Code course is listed as **main focus** where it is built around the standard, or **touches on** where the standard comes up but is not the point. That is general coverage, not a promise that every lesson teaches it. Where a course only touches a standard, a teacher could extend it to cover the standard more fully.
+Subject and course pages explain their curriculum links, including the Australian Curriculum (version 9) and relevant general capabilities. Coverage is still growing: a subject appearing here does not mean every standard has a lesson.
+
+Where lessons are tagged with curriculum waypoints, each names the part of the standard it teaches. Code uses course-level coverage instead: a course is listed as **main focus** where it is built around a Digital Technologies Processes standard, or **touches on** where that standard comes up but is not the point. That is general coverage, not a promise that every lesson teaches it. Teachers can extend a course to cover a standard more fully.
