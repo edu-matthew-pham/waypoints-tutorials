@@ -1671,6 +1671,14 @@ Vary, Practise, Make).
     board's chain and parts modes. `npm run check-wordchoice` tests the widget and every wordchoice board in a lesson
     (it starts, the check fails at the start and passes solved, explain pictures say `answer: on`). Like the sentence
     board, it never judges a student's own writing. Trays and swap choices are shown in a fixed, answer-blind order (hash of the text), so list order gives nothing away. A swap board shows each choice's band, so use `@n` where the band is the lesson idea, not where the task is to find the "best" word.
+  - `widget: tradeoff` (Economics › Scarcity and opportunity cost, 1 Nov 2026): one scarce resource split between two
+    uses (a made-up oven's hours baking pies or muffins). `resource: oven hours`, `total: 6` (whole number, 1 to 12),
+    `first: pies, 10` and `second: muffins, 20` (name, how many one unit makes), `start: 3` (units on the first use;
+    default half), `compare: on | off` (the "since the start" line; off for a predict-first use). Students press a
+    block or "Move an oven hour to pies / muffins"; the counts and a "since the start" line update. Values: `h` (units on
+    the first use), `a` and `b` (how many of each), `u` and `v` (change in each since the start), so checks read
+    `when: "h = 4"` or `"v < 0"`. A straight-line model on purpose (every unit makes the same amount): say so where
+    students meet it. No graph yet; a production possibilities line for Years 9–10 would be an addition.
 - **Maths cards** (`snippets/maths-<course>.json`, one per course, for the course named by its `course:`; the format note is in `maths-algebra-7.json`): the words and methods of the course,
   one card each, with `label`, `code` (TeX, shown typeset), `hint` (may use `$...$`), `unit` (the unit whose cheat sheet
   lists it) and optionally `board` (a board setup, drawn as the card's picture by `npm run render`) with `shows` (its

@@ -12,6 +12,13 @@ activities:
     do: |
       Each student writes three things they could do on a free Saturday and ranks them. Ask a few to say what they would pick and what they would give up.
     notes: "The second on the list is the opportunity cost. Do not name it yet."
+  - at: run
+    kind: activity
+    title: "One oven, two choices"
+    minutes: 4
+    do: |
+      Put the oven board up. Move one hour from muffins to pies, then another. Each time, ask the class what the tuckshop got and what it gave up.
+    notes: "Wait for 'fewer muffins' before giving the term. If someone says the pastry, ask what else that oven hour could have done."
   - at: make
     kind: discussion
     title: "What did the council give up?"

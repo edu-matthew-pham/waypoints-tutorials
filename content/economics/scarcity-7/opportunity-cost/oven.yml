@@ -1,0 +1,29 @@
+# The Riverbend tuckshop oven (made up) for "Opportunity cost - what you give up".
+
+# region: try
+widget: tradeoff
+resource: oven hours
+total: 6
+first: pies, 10
+second: muffins, 20
+start: 3
+# endregion
+
+# region: explain
+widget: tradeoff
+resource: oven hours
+total: 6
+first: pies, 10
+second: muffins, 20
+start: 3
+# endregion
+
+# region: explain-pic
+widget: tradeoff
+resource: oven hours
+total: 6
+first: pies, 10
+second: muffins, 20
+start: 4
+compare: off
+# endregion

@@ -135,7 +135,7 @@ Tagline: *Spotting opportunities, making decisions and building a business*. Thr
 - **Where:** one step in `scarcity-7/opportunity-cost` (and optionally `putting-together`). This is a narrow exception to the 30 Oct "no board for concept and case lessons" decision, which still holds for the case lessons. A short captioned clip of the trade-off moving suits Explain it to me.
 - **Next:** the Economics chat plans it (widget name, starter, checks) and Matthew says go. Could be the first humanities board, a pattern for others (`roadmap/shared.md` › Decided: humanities, per-course choice).
 
-## Plan (1 Nov 2026, awaiting Matthew's "go"): the trade-off board in `scarcity-7/opportunity-cost`
+## Plan (1 Nov 2026; built the same day, see Built below): the trade-off board in `scarcity-7/opportunity-cost`
 
 Builds the Proposed item above. Light on purpose: one new widget, one new step, two checks, an optional clip.
 
@@ -185,6 +185,16 @@ Plus an `explainPicture` of the board at 4 and 2 for anyone without video. The c
 **Publish:** full publish (new widget and board page). The only clip recorded is this lesson's Explain clip.
 
 **After it's built:** link it from `content/humanities-pilot.md` and slide 6 of the teachers' getting-started deck (shared.md › Next for the Humanities pilot page), in the same push if you agree; otherwise that waits for the pilot-page chat.
+
+## Built (1 Nov 2026): the trade-off board (Preview, not yet tried with a class)
+
+**Decisions (Matthew, 1 Nov 2026, "defaults are ok"; defaults for this lesson, not rules for humanities):** the board is its own step, before the match (so students act before they rank); a misconception line `used-resource-is-free` added (the "the oven's ours, so it's free" error, also in the stuck notes for time); the humanities pilot page and slide 6 of the getting-started deck link the board and ask the agreed board question. The Explain clip is in (decided earlier the same day, above).
+
+- Widget `playground-board/widgets/tradeoff.js` (AUTHORING › `widget: tradeoff`), one `<script>` line in `playground-board/index.html`. Classes are `wpt-to…` (ad-blocker rule).
+- Lesson: new step "Try: one oven, two choices" (board check `h = 4`, then the opportunity-cost question with `smaller:`), starter `oven.yml` (`try`, `explain`, `explain-pic`), `explainPicture`, `explainClip` on port 8700 (Economics clip ports start at 8700; Engineering has 8600–8639), `voice:` Heart. Teacher notes: time 44 min, the model's simplifications, a running line, a stuck entry, one line in `explain`. Class plan: a whole-class "One oven, two choices" activity at `run`.
+- Departures from the plan: the change values are `u` and `v`, not `da` and `db` (board conditions read multi-letter names as products); the step is 400 px tall, not 300 (the bars were cut off on phones); `used-resource-is-free` is a documented misconception but not tagged on the question, because only planted error items (bug tasks) carry `misconception:` tags; arrow keys were not added (every control is a button, so Tab and Enter work).
+- Tested: validate, build, and a headless Chromium run at 1100 px and 375 px (starts at 30 pies and 60 muffins, the check does not tick at the start and ticks at 4 hours, block clicks, move buttons and Enter all work, no horizontal scroll). `check-decks` on the class plan and the getting-started deck. Not tested: the clip with the real voice (records on the full publish).
+- Publish: full publish (new widget, pilot page). The only clip recorded is this lesson's Explain clip. The getting-started deck change also needs the same publish.
 
 ## Boards in built lessons (1 Nov 2026)
 - `scarcity-7/opportunity-cost`: the trade-off board (Proposed above) is the only one. The case lessons stay as they are.

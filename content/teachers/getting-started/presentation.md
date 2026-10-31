@@ -89,9 +89,12 @@ Fit one useful part into an existing unit, try it, then reflect:
 1. What did you learn about the topic or students’ understanding?
 2. What helped, and what got in the way?
 3. What would make you use Learning Waypoints again?
+4. Where would your students learn more by doing something on screen than by reading about it?
 
 [Humanities pilot: starting points and reflection](https://tutorials.learningwaypoints.com/humanities-pilot/)
 
 [Getting Started: optional self-paced guide](https://tutorials.learningwaypoints.com/teachers/getting-started/)
 
-<!-- 8:30–10:00 (1:30). Invite teachers to try whichever part best suits their needs. They do not need to complete a course. Feedback from someone who explores the curriculum or tries a planning resource is just as useful as feedback from someone who tries a tutorial check. We want feedback on the broader Learning Waypoints approach, not just Tutorials. Ask what they would like to try and what they hope it will help them do or find out. Colleagues can keep their own notes for a conversation; the collection route is still to be decided. Do not request student information or create accounts/forms. Teachers who missed the meeting can use the three independent self-paced lessons. End at 10:00. -->
+[A humanities board: the tuckshop oven](https://tutorials.learningwaypoints.com/economics/scarcity-7/opportunity-cost/)
+
+<!-- 8:30–10:00 (1:30). Invite teachers to try whichever part best suits their needs. They do not need to complete a course. Feedback from someone who explores the curriculum or tries a planning resource is just as useful as feedback from someone who tries a tutorial check. We want feedback on the broader Learning Waypoints approach, not just Tutorials. Question 4 asks where a board (something students move or count on screen) would help; the tuckshop oven link shows one. Ask what they would like to try and what they hope it will help them do or find out. Colleagues can keep their own notes for a conversation; the collection route is still to be decided. Do not request student information or create accounts/forms. Teachers who missed the meeting can use the three independent self-paced lessons. End at 10:00. -->

@@ -1,7 +1,7 @@
 summary: "Students learn that opportunity cost is the next best alternative given up, and not the price paid or everything else. They find it for time, money and land choices. Width is the point here: the same idea in several settings is what makes it transfer."
 learning: "define opportunity cost as the next-best alternative given up and identify it in a resource choice"
-time: 40
-timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+time: 44
+timing: "Predict 4 min · Oven board 4 min · Try 4 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Typical and wider steps are extras and not counted in this."
 goals:
   - I can say what opportunity cost is in my own words.
   - I can find the next best alternative in a choice.
@@ -10,9 +10,12 @@ struggle: "Students give the price or list everything they gave up. Ask 'If you 
 before: |
   Two misconceptions run through this lesson: price as opportunity cost, and the cost as everything given up. The ranking step (first, second, third) is what fixes both. Insist that students rank before they answer.
 
+  The oven board (Try: one oven, two choices) is a model, and it keeps things simple on purpose: every oven hour bakes the same amount, the tuckshop can sell whatever it bakes, and there are only two products, so the next best option is obvious. A real oven's hours are not all equal (warming up, mixed batches), and selling 60 pies is a different question. The ranking idea still comes from the cases that follow.
+
   Everything is made up. For the Make step, students choose a choice they are comfortable with; they do not need to share spending. No names read out unless students offer.
 running:
   - "Predict: take votes. Many pick the ticket. Let the book vs ticket argument run."
+  - "Oven board: put it up for the class. Move one hour at a time and ask: what did we get, and what did we give up?"
   - "Try: ask pairs to say the ranking aloud first."
   - "Worked example: let Nib's mistake sit. Ask 'Where did the $8 go? What did Mia lose by going?'"
   - "Vary: stress the time and land cases. Same idea, different resource."
@@ -21,6 +24,9 @@ stuck:
   - see: "A student gives the price as the opportunity cost."
     ask: "Is that what Mia paid, or what she gave up?"
     fix: "Price is what you pay. Opportunity cost is the best thing you did not do."
+  - see: "A student says the extra pies cost the pastry."
+    ask: "Could that oven hour have done anything else?"
+    fix: "The pastry is a price. The opportunity cost is the 20 muffins the hour could have baked."
   - see: "A student lists everything they gave up."
     ask: "If the pool was closed, which one would she have picked?"
     fix: "Only the next best option counts, because you could choose just one."
@@ -38,5 +44,7 @@ exit:
   a: "Practice, the next best option. Not the ticket, and not cleaning."
 explain: |
   The **opportunity cost** of a choice is the next best alternative you gave up. It is one thing, not the price and not everything else.
+
+  On the oven board, moving one hour to pies bakes 10 more pies and 20 fewer muffins. The 20 muffins are the opportunity cost of those pies.
 
   Time, money and land all have opportunity costs, because each can be used only once.

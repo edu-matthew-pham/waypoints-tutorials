@@ -5,6 +5,28 @@ title: Opportunity cost - what you give up
 node: AC9HE7K01 n3
 summary: "Because of scarcity, choosing one thing means not choosing another. The opportunity cost of a choice is the next best alternative you gave up. It is not the price paid, and it is not everything you did not choose, only the one next best thing. People, businesses and governments all face opportunity costs, with money, time or land."
 language: maths
+voice: { name: af_heart, speed: 1.1 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8700
+  url: http://127.0.0.1:8700/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainPicture: { ref: oven.yml#explain-pic, caption: "Four oven hours on pies and two on muffins: 40 pies and 40 muffins. Compared with three hours each, that is 10 more pies and 20 fewer muffins." }
+explainClip:
+  query: { code: "@oven.yml#explain", fresh: 1, id: explain }
+  caption: "One oven, two choices"
+  say: "One oven, six hours."
+  clip:
+    - caption: { text: "Six oven hours. Each hour bakes 10 pies or 20 muffins.", say: "The oven has six hours. Each hour bakes ten pies, or twenty muffins." }
+    - wait: 800
+    - click: Move an oven hour to pies
+    - caption: { text: "One more hour on pies: 10 more pies.", say: "One more hour on pies makes ten more pies." }
+    - expect: { selector: "#gsum", contains: "10 more pies" }
+    - wait: 800
+    - caption: { text: "That hour can't bake muffins too: 20 fewer muffins.", say: "But that hour can't bake muffins as well, so twenty fewer muffins." }
+    - wait: 600
+    - caption: { text: "Those 20 muffins are the opportunity cost of the 10 pies.", say: "Those twenty muffins are the opportunity cost of the ten pies." }
+    - wait: 1500
 hook: "Mia has a free Saturday and $20. She could go to the pool, buy a book or save the money. She picks the pool. What did that choice cost her, apart from the ticket?"
 ---
 Scarcity means we cannot have everything, so we have to choose. Every choice leaves something behind.
@@ -22,6 +44,35 @@ check:
   options: ["The $8 ticket", "The book she gave up", "The book and the savings", "Nothing, because she got what she chose"]
   actual: "The book. It was her next best choice, and she gave it up. The $8 is the price, not the opportunity cost, and the savings was a worse option than the book."
 ```
+
+## Try: one oven, two choices
+
+The tuckshop at Riverbend High has one oven. (Riverbend is a made-up town.) Each morning the oven has six hours. In one hour it can bake 10 pies or 20 muffins, but not both. In this made-up oven, every hour bakes the same amount.
+
+```step
+stage: run
+insight: "Moving an hour from muffins to pies, and watching the muffins drop, shows that using a resource for one thing gives up something else."
+try: { playground: board, starter: "oven.yml#try", height: 400 }
+tasks:
+  - check:
+      type: board
+      text: "The tuckshop wants more pies for the footy day. Give pies 4 of the 6 oven hours."
+      when: "h = 4"
+      explain: "Four hours of pies bake 40 pies. That leaves two hours for muffins, so 40 muffins, not 60."
+  - check:
+      type: question
+      q: "The tuckshop moved one oven hour from muffins to pies. What was the opportunity cost of the 10 extra pies?"
+      options: ["The 20 muffins the oven could have baked in that hour", "The $15 the tuckshop paid for the extra pastry", "Nothing, because the school already owns the oven", "The 40 muffins it still bakes in the other two hours"]
+      answer: 0
+      feedback: [null, "That is a price the tuckshop paid. The cost here is what the oven hour could have made instead.", "The oven costs nothing to use, but each hour can bake only one thing. Using it for pies uses up muffin time.", "Those are the muffins it kept. The cost is the muffins it gave up."]
+      explain: "That hour could have baked 20 muffins. Baking pies gave them up, so the 20 muffins are the opportunity cost of the 10 pies."
+    smaller:
+      check: { type: question, q: "In one oven hour, can the tuckshop bake pies and muffins at the same time?", options: ["No, the hour bakes one or the other", "Yes, if the oven is big enough", "Yes, if it bakes faster", "Only on footy day"], answer: 0, explain: "The hour goes to one thing. Whatever it would have baked instead is given up." }
+```
+
+### Give pies four hours
+
+### What did the pies cost?
 
 ## Try: match the choice to what is given up
 

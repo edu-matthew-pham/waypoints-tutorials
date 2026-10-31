@@ -36,6 +36,8 @@ Open a subject below and select **List for teachers**. Choose the course, then i
 
 The inquiry skeletons are outlines you can print and use for your class investigation. Printable sheets are in the inquiry course's Teacher guide through Prepare Print. The full inquiry, sources, local context, writing and assessment remain yours. Use just the lessons that help with your unit. Smaller steps lead back to the original task. Typical and Wider offer more examples of the same idea; you choose who would benefit and how long to spend.
 
+**Try a humanities board.** In [Opportunity cost](https://tutorials.learningwaypoints.com/economics/scarcity-7/opportunity-cost/), students move a made-up tuckshop oven's hours between pies and muffins and see what each choice gives up. It is the first humanities board: a small on-screen model students act on, with checks on planted answers only.
+
 First Nations perspectives are teacher-led, starting from ACARA's elaborations and local, community-approved material. The site writes no student-facing explanations, and a First Nations educator will review before use beyond CGGS.
 
 ## Try one thing and reflect
@@ -45,6 +47,7 @@ Choose one part that helps with a unit you already teach. Try it, then reflect:
 1. What did you learn about the topic or students’ understanding?
 2. What helped, and what got in the way?
 3. What would make you more likely to use Learning Waypoints again?
+4. Where would your students learn more by doing something on screen (moving, sorting, counting, watching a change) than by reading about it?
 
 Feedback on any part is useful. Keep notes for a conversation with the pilot facilitator; the feedback collection route is still to be decided. No account, form or upload of student information is needed.
 
