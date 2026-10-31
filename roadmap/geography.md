@@ -178,3 +178,60 @@ Next: trial the five K01 lessons with a class and review the lesson 1 prerequisi
 ## Boards in built lessons (1 Nov 2026, Matthew agreed; for the Geography chat)
 - **Needs a new light board:** the catchment board (above) in `water-7/water-connects-places`, `effects-of-water-movement` and `water-changes-land`: change land use or add a dam upstream and see what reaches the town.
 - `resource-types` and `classify-connect-change` stay as they are (their sort checks already are the interaction). Plan, then Matthew's go.
+
+## Stage 1 re-check: `water-australia-7` against the 1 Nov rules and fixes (1 Nov 2026; plan still waiting for go)
+
+Checked the Stage 1 plan above against `roadmap/rules.md`, `shared.md` › Decided: humanities (boards per course, 1 Nov), the 1 Nov review fixes and the imported K02 node data. The plan holds; these amendments apply when it is built (the plan text above is left as reviewed, so read it with this list):
+
+1. **Boards and clips (per-course choice, 1 Nov).** "No board" now needs a reason, not a rule: none of the five waypoints asks students to change a system and watch it respond, except possibly n4 (a dam or transfer upstream). Keep Stage 1 board-free and clip-free. Once the catchment board (below) is built, n4 may reuse it as an optional `tier: typical` step (put a dam or a transfer upstream, see who downstream gets less); not planned until Matthew says so. The map-reading board stays proposed only.
+2. **n1 "represent", without a custom worksheet (T5, T16).** The node's first criterion is that students *produce* a map with conventions. Students draw and label on a blank outline in their book or on the lesson's Prepare Print worksheet (`worksheet.md`), then a `reflect` tick ("a partner gave feedback"). On-page checks only read the static map: match symbols to the legend, question on the distribution pattern, the Nib bug. No fill-in layout on the page.
+3. **Real map, kept light (T2, T12; 30 Oct "if a place needs a lot of fact-checking, go lighter").** An accurate map of every river system and aquifer is heavy checking. Draw the Australian outline with only two sourced regions: the Murray–Darling Basin and the Great Artesian Basin extents, from one named public source (Geoscience Australia or the Bureau of Meteorology; confirm the licence and credit line at build), `checked:` date in `teacher.yml`. Anything else on the map is left off, not guessed.
+4. **GAB wording (1 Nov fix).** Reuse lesson 1's checked wording: important for "much of inland Australia", never "the only reliable source". Nib's n1 slip is about access (being above an aquifer is not having a bore), not a new claim about the basin.
+5. **Made-up names (T2).** Check Drybank and Riverbend against the Australian gazetteer at build; "Riverbend" reads like a real suburb or homestead name, so swap it for a clearly invented one if there is any doubt. Label each made-up place as made up where it first appears in each lesson and in assessments.
+6. **n5 needs a specific Australian context.** The node's first criterion asks for "a specific Australian water context". A wholly made-up town can't carry Australia's distribution. Amend: the town is made up, but sits in a real region from lesson 1's map, and its distribution facts are only the sourced ones from that map; its rainfall, demand, storage and community needs are labelled made up. The node's wider Murray–Darling case (Basin Plan, water trading) stays out of student steps (contested, dated); a teacher note may point to it.
+7. **Scarcity categories as a way of sorting (T8).** Physical, economic and use-based causes are ACARA's categories, not a law: introduce them as "one way geographers sort the causes of a shortage" and say real places often mix them. Distractors stay genuine errors (every shortage is low rain; a river nearby means safe water), never disagreements with the categories. n2's minimum must include the use-based cause (elaboration 3: "the ways water is used"); the plan's "competing use/demand" covers it, keep the term.
+8. **First Nations (T1).** K02's six elaborations name no First Nations example, so there is nothing to quote for First Nations content; n3's teacher notes quote elaboration 2 (limited access for people in rural and remote places). The node file's n3 wider item (a remote Indigenous community dependent on bore water) is not used in student steps or written up by us; n3 notes ask the teacher to use local, community-approved material if the class goes there.
+9. **1 Nov review fixes carried forward.** `summary:` lines short, plain and descriptive (the review found water-7 summaries 2–5 dense); `learning:` in every `teacher.yml`; Make and partner ticks say "a partner gave feedback", not "read it and agreed"; an editorial pass before handover (`checklist.md`).
+10. **Perth desalination (optional, n4).** Only the settled fact that Perth draws part of its supply from desalination, from Water Corporation, with no figures; otherwise leave it out.
+11. **Misconceptions and publishing.** Five new single-line ids in `misconceptions.json` (`water-present-means-accessible`, `scarcity-always-means-no-rain`, `same-resource-same-access`, `one-water-solution-fits-all`, `strategy-without-diagnosis`). A new course changes the subject page, so it is a whole-site publish: ask Matthew first (W1).
+
+## Plan: a light catchment board for `water-7` lessons 2–4 (1 Nov 2026; waiting for go)
+
+Follows "Boards in built lessons" above. Light on purpose, like Economics' trade-off board: two land choices, a dam switch and a storm button, with a result panel. Phone-friendly, buttons only (no dragging).
+
+### The board (`widget: catchment`, new file `playground-board/widgets/catchment.js`)
+
+- **Picture:** the same made-up Kerrin catchment as the lessons' inline SVG (rain on the high slope, farm, river, town, lake), so the still and the board match. Labelled "Kerrin is made up. A simple model: it shows which way things change, not real amounts."
+- **Controls:** High slope cover (forest, grass, bare soil); Farm (grazed grass, ploughed and bare); Dam above the town (off, on); **Send a storm**; Reset. A setup line can hide any control (`controls: farm storm` for a one-choice lead-in).
+- **What a storm shows:** water and soil move down the river (a short animation, skipped with reduced motion), then a panel in words, never numbers: water reaching the town and the lake (a little, some, a lot); soil lost from the slope and farm (none to a lot); where soil settled (in the dam, at the town, at the lake entrance). Bare ground gives more runoff and much more soil; forest the least. A dam stores water (steadier supply for the town), traps most soil behind it, and sends less water and soil on to the lake.
+- **Values for checks** (0 to 3 levels, set only after a storm, so the start never ticks): `storms`, `dam` (0 or 1), `town_water`, `town_soil`, `lake_water`, `lake_soil`, `eroded`, `dam_soil`, `covers_tried` (different slope covers stormed).
+- **Honest model (T8):** the board says it is a simple made-up model; teacher notes list what it leaves out (rain amount and intensity, soil type, groundwater, dam releases and flushing, years of change).
+
+### Where it goes (one step per lesson; existing checks stay)
+
+| Lesson | Step | Task | Check |
+|---|---|---|---|
+| 2 `water-connects-places` (hinge) | New untiered step after Try: "Send a storm" | Make the farm bare and send a storm; see soil reach a town that had no rain | board `when: "storms >= 1 and town_soil >= 2"`; question: why did soil reach the town? (distractor: only rain over the town can affect it, existing `water-is-only-transport` slip) |
+| 3 `effects-of-water-movement` | New untiered step before Practise: "Add a dam" | Turn the dam on and send a storm; compare the town and the lake | board `when: "dam = 1 and storms >= 1"`; sort what changed into environmental, economic, social (town supply steadier vs less water to the lake's wetland), reusing `water-benefits-everyone`; one new id if needed: `dam-creates-water` ("a dam makes more water") |
+| 4 `water-changes-land` | New untiered step after Try: "Watch the soil" | Bare slope, storm; find where soil was eroded, carried and deposited | board `when: "eroded >= 2 and lake_soil >= 1"`; match erosion, transport, deposition to places on the board |
+| 4, Wider (already `tier: wider`) | Becomes a board step | Same storm on forest and bare slope | board `when: "covers_tried >= 2"`; the reflect step stays |
+
+- Board lead-ins (`smaller:`) only on lesson 2 (the hinge): farm only, one storm (`controls: farm storm`).
+- Class plans: the board step is whole-class predict, then pairs; at most three checks per site step (T18).
+- `explainPicture` for lessons 2–4: a board still after a storm. The inline SVG figures stay for reading.
+
+### Optional clip
+
+One short captioned clip for lesson 2's Explain it to me (about 20 s, four lines: bare farm, storm, soil reaches the town, the dam traps it). Fits the 1 Nov rule: a clip follows a board, and this idea is a sequence of change. Only clips on the `catchment` widget would record (none exist yet). If yes: pick an unused clip-server port range at build (grep the roadmaps; Geography has none yet) and use the full publish so it records. Without the clip, a quick whole-site publish is enough.
+
+### Shared files and tests
+
+- Shared: one `<script src="widgets/catchment.js">` line in `playground-board/index.html`, an AUTHORING › `widget: catchment` entry, one or two misconception lines; noted in `shared.md`. `core.js` untouched.
+- Tests: a Node check of the rule table (bare beats grass beats forest for soil; dam lowers town and lake soil; nothing set before a storm), `npm run validate`, `check-nodes`, build, `npm run check-lesson-boards` for the three lessons, `check-decks -- geography/water-7`, and Chromium at 390 px and desktop answering each new check and one wrong path.
+- Publish: whole-site (a new widget), so ask first (W1).
+
+### For Matthew
+
+1. Board steps on the minimum path in lessons 2–4 (recommended: the interaction is the point, and lesson 2 is a hinge), or as `tier: typical` extras?
+2. The clip: lesson 2 only, or none for now?
+3. Keep the farm to two choices (lighter), or add "crops with fertiliser" so lesson 2's fertiliser example shows on the board?
