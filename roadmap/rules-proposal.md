@@ -34,9 +34,9 @@ Source = where Matthew's decision is recorded. "None found" = the rule exists bu
 | T13 | **AI in lessons:** scripted response labs are the core; real AI only through optional prompt cards with a no-AI alternative and "only if your teacher says you can"; coach prompts on recap pages only in general lessons. | Beneficial, not harmful, cognitive offloading; tool age limits. | AI courses (cards); every other subject (recap only). | Matthew 18 Oct (`learning-with-ai.md`) | Default |
 | T14 | **Plan first, then build:** a per-waypoint plan in the roadmap, push, stop for "go". | Most fix rounds were things a plan would catch. | New courses and waypoints. | Matthew 30 Oct (`35946d2`) | Default |
 | T15 | **No lesson step needs a phone.** A QR code may be offered as an optional shortcut, always beside a link or "Copy link" that works without it. | Many schools (CGGS included) don't allow phones in class; where they do, a QR saves typing. | Every subject. | Matthew (CLAUDE.md, Teacher layer); settled 1 Nov | Default |
-| T16 | **Printable sheets come from Prepare Print;** no custom blank-line or fill-in layouts on pages. | One print route; custom layouts drift and break. | Every subject. | None found (`28bbc08`, agent commit; humanities inquiry chat) | Default, source **?** (Q6) |
-| T17 | **Effort:** new lessons get `struggle:`, goals a student would recognise, escalating hints (up to three, none giving the answer). | Students expect coding to be easy; name the hard part. | Every subject (written for Code, 11 Oct). | None found beyond AUTHORING › Effort | Default, source **?** (Q6) |
-| T18 | **Class plans:** at most about three checks per site step. | Deck pacing. | Every class plan. | 12 Oct (CLAUDE.md); Matthew's decision not found | Default |
+| T16 | **Worksheets students write on** (blank lines, fill-in boxes) come from Prepare Print: the generated `worksheet.md` or a guide page. Other printables (cheat sheets, briefs, cue cards, reference pages) can have their own print layout where Markdown can't do the job well. | One route keeps worksheets consistent and editable in Print; reference sheets need pictures and layout. | Every subject. | Agent commit `28bbc08` (30 Oct); scope settled with Matthew 1 Nov | Default |
+| T17 | **Effort:** new lessons get `struggle:`, goals a student would recognise, escalating hints (up to three, none giving the answer). | Students expect coding to be easy; name the hard part. | Every subject (written for Code, 11 Oct). | None found beyond AUTHORING › Effort | Default (kept 1 Nov) |
+| T18 | **Class plans:** at most about three checks per site step. | Deck pacing. | Every class plan. | 12 Oct (CLAUDE.md); Matthew's decision not found | Default (kept 1 Nov) |
 | T19 | **No rigid pedagogy rules;** clips only where useful (hook, expected result, why). | Meta-rule: Matthew's stance. | Every subject. | Matthew (CLAUDE.md › How we work) | Default (and the frame for all of these) |
 
 ### Working rules (the repo)
@@ -46,7 +46,7 @@ Source = where Matthew's decision is recorded. "None found" = the rule exists bu
 | W1 | **Lesson-only batches: publish when finished** (`publish-lessons`) and say so. **Whole-site, navigation or Create publishes: ask first.** Never add automatic triggers; never push to `gh-pages` or `makecode-editor` directly. | Matthew is happy to publish; wider publishes ship every chat's work; manual triggers by choice since the Oct suspension. | All chats. | Matthew 10–13 Oct; settled 1 Nov | Default (no automatic triggers: firm) |
 | W2 | Pull before starting and before every push; never force-push; notes in your own roadmap file; shared files: check `git log`, small change, note it in `shared.md`. | Parallel chats; a force-push or stale push can silently wipe another chat's work. `git pull --rebase` replays your commits on top, so a normal push always works and force is never needed. | All chats. | Matthew 11 Oct (ROADMAP split), 19 Oct | **Firm** (settled 1 Nov) |
 | W3 | Test before pushing (validate, build, headless check); don't re-render clips locally. | No CI on push; the publish run records the real voice. | All chats. | 11–19 Oct (CLAUDE.md) | Default |
-| W4 | Don't reformat whole data files; add single lines. | Merge conflicts between parallel chats. | Shared data files. | None found | Default, source **?** (Q6) |
+| W4 | Don't reformat whole data files; add single lines. | Merge conflicts between parallel chats. | Shared data files. | None found | Default (kept 1 Nov) |
 | W5 | Quote YAML values with colons; site-specific `wpt-` class names. | YAML parsing; ad blockers hide generic names (25 Oct). | All page code. | Technical (CLAUDE.md › Gotchas) | Default |
 | W6 | When Matthew decides something, write its reason and scope beside it in the same commit. | This proposal's point. | All chats. | Matthew 30 Oct (`shared.md` › Proposed: rules carry their reason) | Default (added to `checklist.md` now) |
 
@@ -109,7 +109,7 @@ Defaults
 6. **Publishing, three versions:** `AGENTS.md` "Never publish"; `CLAUDE.md` "Matthew is happy for Claude to publish finished batches" (publish-lessons, 13 Oct); `checklist.md` "Do not publish unless Matthew asks".
 7. **No real people** (firm) sits beside History's significant-individual lens, real historical sources, real places (China, Budj Bim) and checked real facts in English. Needs a scope line.
 8. **No QR codes** is a CGGS fact applied to a site for any school.
-9. **No source decision found:** Prepare Print only (T16, an agent commit of 30 Oct), effort fields (T17), three checks per step (T18), data-file reformatting (W4), and the editorial pass in `checklist.md` (31 Oct, `5e81a98`).
+9. **No source decision found:** effort fields (T17), three checks per step (T18), data-file reformatting (W4), and the editorial pass in `checklist.md` (31 Oct, `5e81a98`).
 
 ## 5. Questions for Matthew
 
@@ -118,5 +118,5 @@ Defaults
 3. ~~Safeguarding scope (T4, T7)~~ **Decided 1 Nov:** both firm. Security is defined by authorisation and containment, not "defensive only": white-hat skills are fine inside our boards or an approved isolated lab.
 4. ~~Repo safety (W2)~~ **Decided 1 Nov:** firm. Rebase, never force-push.
 5. ~~QR codes (T15)~~ **Decided 1 Nov:** no step needs a phone; optional QR beside a link is fine. (A QR beside the course strip's "Copy link for students" would be a separate build.)
-6. **Rules with no source (T16, T17, T18, W4, editorial pass):** keep as defaults, change, or drop?
+6. ~~Rules with no source~~ **Decided 1 Nov:** all kept as defaults. Prepare Print is for worksheets students write on only; cheat sheets, briefs, cue cards and reference pages may have their own print layouts. Editorial pass (`checklist.md`, 31 Oct) kept.
 7. **Shape of the fix:** OK to add `roadmap/rules.md` as the register, cut `AGENTS.md` to §2, and have subject roadmaps point to it rather than copy?
