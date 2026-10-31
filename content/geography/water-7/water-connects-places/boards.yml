@@ -1,0 +1,19 @@
+# Boards for "Water on the move". Kerrin is made up; the board is a simple model (AUTHORING › widget: catchment).
+
+# region: storm
+widget: catchment
+controls: slope farm
+# endregion
+
+# region: storm-farm
+widget: catchment
+farm: bare
+controls: farm
+# endregion
+
+# region: explain-pic
+widget: catchment
+farm: bare
+controls: farm
+storm: on
+# endregion

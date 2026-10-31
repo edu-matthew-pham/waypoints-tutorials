@@ -5,6 +5,12 @@ inquiry:
     - What information would change your view?
   notes: Follow material through removal, carrying and settling. A location alone cannot explain physical change.
 activities:
+  - at: run
+    kind: discussion
+    title: Where did the soil go?
+    minutes: 4
+    do: Send a storm over a bare slope. Students point to where soil left, travelled and settled, and name each process.
+    notes: Erosion, transport and deposition happen in different places in the same storm.
   - at: investigate
     kind: discussion
     title: Remove, carry, settle

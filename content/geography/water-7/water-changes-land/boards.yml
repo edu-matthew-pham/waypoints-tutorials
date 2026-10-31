@@ -1,0 +1,18 @@
+# Boards for "How moving water changes the land". Kerrin is made up; the board is a simple model (AUTHORING › widget: catchment).
+
+# region: soil
+widget: catchment
+controls: slope farm
+# endregion
+
+# region: covers
+widget: catchment
+controls: slope
+# endregion
+
+# region: explain-pic
+widget: catchment
+slope: bare
+controls: slope
+storm: on
+# endregion

@@ -6,6 +6,7 @@ node: AC9HG7K01 n4
 summary: "Moving water changes the shape of the land. Flowing water can loosen and remove soil and rock (erosion), carry that material along (transport) and drop it where the flow slows down (deposition). Over time these processes deepen channels, build up banks and fill lakes with sediment. Saying that a river runs through a valley names a place; explaining how the water wore the valley down explains how it changed."
 language: maths
 hook: A river runs through a valley. Does that explain how the valley became deeper?
+explainPicture: { ref: boards.yml#explain-pic, caption: "Kerrin is made up. Soil is eroded from the bare slope, carried down the river and deposited where it slows at the lake." }
 ---
 Water flowing downhill gains energy as gravity pulls it down a slope. It can loosen and remove soil or rock: **erosion**. It can carry material along: **transport**. When flow slows enough that it cannot carry some material, particles settle: **deposition**. The carried particles are **sediment**.
 
@@ -46,6 +47,41 @@ check:
 ```
 
 <figure class="wpt-catchment" style="margin:0 0 14px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-label="Made-up Kerrin catchment. Rain falls on a high slope beside a farm. Runoff enters a river flowing past a town to a lake. Some rain soaks into soil and rock. Not to scale." style="width:100%;max-width:720px;height:auto;background:#f4f8fa;border-radius:12px"><path d="M10 200 L95 80 L190 165 L320 185 L470 210 L470 285 L10 285Z" fill="#d7e7cb" stroke="#49634b" stroke-width="2"/><path d="M120 140 Q160 155 210 180 T330 200 L400 210" fill="none" stroke="#187aa4" stroke-width="10"/><ellipse cx="425" cy="210" rx="44" ry="25" fill="#a9dbef" stroke="#187aa4" stroke-width="2"/><path d="M225 184 l18 4 -12 10 M335 201 l18 4 -12 10" fill="#187aa4"/><path d="M157 165 l0 45 M178 175 l0 42" stroke="#187aa4" stroke-width="2" stroke-dasharray="5 4"/><g fill="#162c38" font-family="sans-serif" font-size="22"><text x="15" y="34">Rain on high slope</text><text x="175" y="124">Farm</text><text x="288" y="152">Town</text><text x="401" y="216">Lake</text><text x="32" y="266">Soil and rock below ground</text></g><path d="M70 48 l-7 19 M95 48 l-7 19 M120 48 l-7 19" stroke="#187aa4" stroke-width="3"/><rect x="187" y="139" width="22" height="20" fill="#ba8d5c"/><path d="M182 139 l16 -13 16 13" fill="#8c533b"/><rect x="290" y="164" width="18" height="16" fill="#856cb0"/><rect x="316" y="167" width="18" height="16" fill="#856cb0"/></svg><figcaption>Kerrin is made up, not to scale. Follow the flow arrows from the farm past the town to the lake.</figcaption></figure>
+
+## Try it on the board: follow the soil
+
+```step
+stage: run
+insight: Erosion, transport and deposition happen in different places in one storm.
+try: { playground: board, starter: "boards.yml#soil", height: 640 }
+tasks:
+  - check:
+      type: board
+      text: "Make the high slope bare soil, then send a storm. Get soil to settle at the lake."
+      when: "soil_lost >= 2 and lake_soil >= 1"
+    hint:
+      - The slope's buttons are in the first row.
+      - Choose Bare soil, then press Send a storm.
+      - Watch where the specks stop, and read the last line.
+  - check:
+      type: match
+      q: Match what you saw on the made-up board to the process.
+      pairs:
+        - - Gullies cut into the bare slope
+          - Erosion
+        - - Brown specks moving down the river
+          - Transport
+        - - A brown fan where the river meets the lake
+          - Deposition
+      explain: The same storm removed soil in one place and added it in another.
+```
+
+### Storm on a bare slope
+
+The board is a simple made-up model: it shows which way things change, not real amounts.
+
+### Name each process
+
 
 ## Worked example: a process, not a location
 
@@ -236,12 +272,24 @@ Material lost from the slope can be gained at the lake entrance. A river can bot
 ```step
 stage: make
 insight: Apply the chain to another surface at the same level.
-check:
-  type: reflect
-  text: I compared two made-up slopes with the same rain and steepness, one with plant cover and one with
-    exposed loose soil. I explained which could lose more soil and why.
+try: { playground: board, starter: "boards.yml#covers", height: 640 }
+tasks:
+  - check:
+      type: board
+      text: "Send a storm over the slope as forest, then as bare soil. Compare the soil lost."
+      when: "covers_tried >= 2"
+  - check:
+      type: reflect
+      text: I compared two made-up slopes with the same rain and steepness, one with plant cover and one with
+        exposed loose soil. I explained which could lose more soil and why.
 tier: wider
 ```
+
+### Forest, then bare soil
+
+Send one storm over each cover and compare the soil lost. The board is a simple model, so use it to see which way things change.
+
+### Explain the difference
 
 Imagine roots and ground cover protect the first slope. Loose soil on the second is exposed to runoff. Explain a possible difference and another condition you would need to check.
 

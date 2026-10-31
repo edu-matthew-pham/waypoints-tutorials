@@ -6,6 +6,7 @@ node: AC9HG7K01 n2
 summary: "Water exists in different forms: surface water in rivers and lakes, soil moisture, groundwater, ice and water vapour. It moves between places as runoff, by soaking into the ground, and through the air as vapour and rain. Because water moves, a river or catchment joins places together, so a change upstream, such as soil washed off a farm, can reach a town downstream. This lesson traces water through a catchment and asks what it carries from one place to another."
 language: maths
 hook: A town has had no rain, but its river turns muddy. How could a change somewhere else reach it?
+explainPicture: { ref: boards.yml#explain-pic, caption: "Kerrin is made up. A storm on the bare farm sends soil down the river, past the town and into the lake." }
 ---
 Water can be **surface water** in rivers and lakes, **soil moisture** held in soil, or **groundwater** in spaces and cracks below ground. It can also be salt water, ice or invisible water vapour. A form tells us where or how water exists; a pathway tells us where it moves.
 
@@ -48,6 +49,49 @@ check:
 <figure class="wpt-catchment" style="margin:0 0 14px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-label="Made-up Kerrin catchment. Rain falls on a high slope beside a farm. Runoff enters a river flowing past a town to a lake. Some rain soaks into soil and rock. Not to scale." style="width:100%;max-width:720px;height:auto;background:#f4f8fa;border-radius:12px"><path d="M10 200 L95 80 L190 165 L320 185 L470 210 L470 285 L10 285Z" fill="#d7e7cb" stroke="#49634b" stroke-width="2"/><path d="M120 140 Q160 155 210 180 T330 200 L400 210" fill="none" stroke="#187aa4" stroke-width="10"/><ellipse cx="425" cy="210" rx="44" ry="25" fill="#a9dbef" stroke="#187aa4" stroke-width="2"/><path d="M225 184 l18 4 -12 10 M335 201 l18 4 -12 10" fill="#187aa4"/><path d="M157 165 l0 45 M178 175 l0 42" stroke="#187aa4" stroke-width="2" stroke-dasharray="5 4"/><g fill="#162c38" font-family="sans-serif" font-size="22"><text x="15" y="34">Rain on high slope</text><text x="175" y="124">Farm</text><text x="288" y="152">Town</text><text x="401" y="216">Lake</text><text x="32" y="266">Soil and rock below ground</text></g><path d="M70 48 l-7 19 M95 48 l-7 19 M120 48 l-7 19" stroke="#187aa4" stroke-width="3"/><rect x="187" y="139" width="22" height="20" fill="#ba8d5c"/><path d="M182 139 l16 -13 16 13" fill="#8c533b"/><rect x="290" y="164" width="18" height="16" fill="#856cb0"/><rect x="316" y="167" width="18" height="16" fill="#856cb0"/></svg><figcaption>Kerrin is made up, not to scale. Follow the flow arrows from the farm past the town to the lake.</figcaption></figure>
 
 Imagine rain soaking into the farm soil. Some stays around roots, some moves deeper into rock, and some runs into the river. These are made-up observations, not a report about a real place.
+
+## Try it on the board: send a storm
+
+```step
+stage: run
+insight: See a change upstream reach a place that had no part in it.
+try: { playground: board, starter: "boards.yml#storm", height: 640 }
+tasks:
+  - check:
+      type: board
+      text: "Make the farm ploughed bare, then send a storm. Get some soil to reach the town."
+      when: "n_storms >= 1 and town_soil >= 2"
+    smaller:
+      starter: "boards.yml#storm-farm"
+      height: 520
+      check: { type: board, text: "The farm is already bare. Send a storm and watch the river.", when: "n_storms >= 1" }
+    hint:
+      - The farm's buttons are in the second row.
+      - Choose Ploughed bare, then press Send a storm.
+      - Read the line about soil at the town.
+  - check:
+      type: question
+      q: On the board, no storm fell on the town, but soil reached it. Why?
+      options:
+        - The river carried soil from the farm upstream down to the town
+        - The town's own ground must have washed into the river
+        - Soil only reaches places where the rain falls
+        - The board shows soil only because the river is long
+      answer: 0
+      feedback:
+        - null
+        - The town's ground did not change. Look at where the gullies appeared.
+        - Rain fell upstream, but flowing water carried the soil further.
+        - Length alone carries nothing. Name what moved and how.
+      explain: The farm and the town are joined by the river. Soil washed off upstream travelled with the water.
+```
+
+### Send a storm
+
+The board is made up and simple. It shows which way things change, not real amounts. Try the other covers too: what does a forest on the slope change?
+
+### Why did the town get soil?
+
 
 ## Worked example: more than a direction
 

@@ -1,0 +1,15 @@
+# Boards for "Good for some, bad for others". Kerrin is made up; the board is a simple model (AUTHORING › widget: catchment).
+
+# region: dam
+widget: catchment
+farm: bare
+controls: farm dam
+# endregion
+
+# region: explain-pic
+widget: catchment
+farm: bare
+dam: on
+controls: dam
+storm: on
+# endregion

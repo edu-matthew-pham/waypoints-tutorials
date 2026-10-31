@@ -1148,3 +1148,14 @@ div.wc-band { cursor: default; }
 .wc-read { margin: 6px 0 4px; font-size: 17px; }
 .wc-answer .wc-paper { pointer-events: none; max-width: 480px; }
 @media (max-width: 480px) { .wc-paper { padding: 14px 10px 8px; font-size: 16px; } .wc-scale { flex-direction: column; } .wc-band { min-height: 0; flex-direction: row; flex-wrap: wrap; align-items: center; text-align: left; } .wc-bl { flex: 0 0 100%; } .wc-in { flex-direction: row; flex-wrap: wrap; } }
+/* Catchment (geography water-7) */
+.wpt-cbar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.wpt-clab { font: 600 14px/1.2 system-ui, sans-serif; min-width: 9.5em; color: var(--muted); }
+.wpt-cbar button { font: 600 14px/1 system-ui, sans-serif; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+.wpt-cbar button.go, .wpt-cbar button[aria-pressed=true] { background: var(--accent); border-color: transparent; color: #fff; }
+@media (prefers-color-scheme: dark) { .wpt-cbar button.go, .wpt-cbar button[aria-pressed=true] { color: #14181f; } }
+.wpt-cbar button.quiet { margin-left: auto; font-size: 13px; padding: 6px 10px; }
+.wpt-cbar button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.wpt-cres { display: grid; grid-template-columns: auto auto; gap: 2px 14px; margin: 2px 0 0; font-size: 14px; justify-content: start; }
+.wpt-cres dt { color: var(--muted); } .wpt-cres dd { margin: 0; font-weight: 600; }
+@media (max-width: 480px) { .wpt-clab { min-width: 0; flex: 0 0 100%; } }

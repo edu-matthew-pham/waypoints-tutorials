@@ -5,6 +5,12 @@ inquiry:
     - What information would change your view?
   notes: "Protect the hinge: direction alone is not enough. Ask for carried material and a receiving place."
 activities:
+  - at: run
+    kind: discussion
+    title: Predict, then storm
+    minutes: 4
+    do: Show the board. Ask where soil from a bare farm will end up, take two answers, then send one storm and compare.
+    notes: "Keep the town in view: it had no rain, yet the river changed."
   - at: investigate
     kind: discussion
     title: Trace the missing link

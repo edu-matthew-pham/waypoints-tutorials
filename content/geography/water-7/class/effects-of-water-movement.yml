@@ -12,6 +12,12 @@ activities:
     do: Pairs use the Snowy cards to name a benefit and an adverse effect of the same diversion. Ask which
       sentence explains a change and which only describes the scheme.
     notes: Ask good for whom, where and in what way. Keep actual evidence separate from hypothetical viewpoints.
+  - at: modify
+    kind: discussion
+    title: Same storm, with a dam
+    minutes: 4
+    do: Send one storm without the dam and one with it. Pairs name one gain for the town and one loss for the lake.
+    notes: Both effects are real; neither cancels the other.
   - at: make
     kind: activity
     title: Compare your explanations

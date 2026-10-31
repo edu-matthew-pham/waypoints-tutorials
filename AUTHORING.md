@@ -1231,6 +1231,15 @@ Vary, Practise, Make).
     in %, as bars with multipliers; values `q a b x y`, `m` overall multiplier, `c` overall % change) or `mode: tax` (`slider i:`
     income, `brackets: 18200: 0; 45000: 15; 135000: 30; 190000: 37; 45`; values `i`, `t` tax, `e` effective %, `r` marginal %,
     `n` after tax). `units: $` (default).
+  - `widget: catchment` (first used by `geography/water-7/water-connects-places`, 1 Nov 2026): the made-up Kerrin catchment.
+    Buttons choose `slope: forest | grass | bare` and `farm: grazed | bare` and a dam above the town (`dam: off | on`), then
+    **Send a storm**: soil specks run down the river, the river browns and widens, and a list says in words (none, a little,
+    some, a lot) what reached the town and the lake and where soil settled. `controls: farm` (any of slope, farm, dam) hides
+    the other choices for a lead-in; `storm: on` shows one storm's results at the start, for pictures. A simple model,
+    labelled on the board: it shows which way things change, not amounts. Values (levels 0–3, all 0 until a storm is sent
+    with the current choices; changing a choice clears them): `n_storms`, `dam_on`, `slope_bare`, `farm_bare`, `soil_lost`,
+    `town_water`, `town_soil`, `lake_water`, `lake_soil`, `dam_soil`, `town_steady`, `covers_tried`. Rules tested by
+    `node experiments/catchment-check.mjs`.
   - `widget: rate` (first used by `maths/measurement-8/rates`): a double number line, `top: km, distance` over `bottom: h, time`, with
     `rate: 60` or `slider r:`, `slider x:` (the bottom amount; the line runs to its max), the unit rate dashed. `compare: 75, Car B`
     (and `name: Car A`) adds a second line; `base: 4.2` adds a fixed starting amount (top = base + rate × x); `money: top` writes

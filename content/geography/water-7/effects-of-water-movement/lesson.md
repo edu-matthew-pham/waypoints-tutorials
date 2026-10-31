@@ -6,6 +6,7 @@ node: AC9HG7K01 n3
 summary: "When water moves from one place to another, it changes things in both places. Those changes are its effects. Some effects help people or the environment and some harm them, and the same change can help one group and harm another. Geographers often sort effects into environmental, economic and social ones, though a single change can fit more than one. This lesson looks at the Snowy Mountains scheme and made-up cases to see who gains and who loses when water is moved."
 language: maths
 hook: If water is moved to help one place, does every connected place benefit?
+explainPicture: { ref: boards.yml#explain-pic, caption: "Kerrin is made up. The dam holds back soil and evens out the town's water, and less water and soil reach the lake." }
 ---
 Moving water can have **environmental effects** on habitats, plants, animals and water quality; **economic effects** on production, jobs and income; and **social effects** on daily life, access and recreation. An **effect** says what changes because water moves. “The channel is long” is a description, not an effect.
 
@@ -166,6 +167,70 @@ tasks:
 
 ### A made-up contrast
 
+
+
+## Try it on the board: add a dam
+
+```step
+stage: modify
+insight: One change on a river can help one place and take something from another.
+try: { playground: board, starter: "boards.yml#dam", height: 680 }
+tasks:
+  - check:
+      type: board
+      text: "Send a storm with no dam first. Then add the dam and send another storm. Compare the town and the lake."
+      when: "dam_on = 1 and n_storms >= 1"
+    hint:
+      - Send one storm as it is, and read the list under the buttons.
+      - Choose Dam, then send another storm.
+      - Compare the lines for the town and the lake with your first storm.
+  - check:
+      type: sort
+      q: The dam in Kerrin is made up. Sort what changed by its main focus.
+      options:
+        - Environmental
+        - Economic
+        - Social
+        - Description, not an effect
+      items:
+        - - Less water and soil reach the lake's wetland
+          - Environmental
+          - This is about the lake's habitat.
+        - - Town businesses can count on a steadier water supply
+          - Economic
+          - This is about work and income.
+        - - Families in town are less worried about muddy tap water
+          - Social
+          - This is about daily life.
+        - - The dam sits on the river above the town
+          - Description, not an effect
+          - Where the dam is does not say what changed.
+  - check:
+      type: question
+      q: Nib says, “The dam made more water for Kerrin, so every place downstream gets more.” What does the board show?
+      options:
+        - The dam holds back the same storm's water, so less goes on to the lake
+        - The dam made extra water, so the lake gets more too
+        - Nothing below the dam changes
+        - Only the town is affected by the dam
+      answer: 0
+      feedback:
+        - null
+        - A dam stores and releases water. It does not make rain.
+        - Look at the lake's lines before and after the dam.
+        - The lake is downstream of the town. What reached it?
+      explain: A dam can help the town and leave the lake with less water and soil. Both effects are real.
+      fault: logic
+      misconception: dam-creates-water
+```
+
+### Storm, then dam
+
+The board is a simple made-up model: it shows which way things change, not real amounts. Real dams also release water on purpose, which this board leaves out.
+
+### Sort what changed
+
+### Did the dam make water?
 
 
 ## Practise: cause to consequence
