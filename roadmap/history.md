@@ -241,3 +241,95 @@ Not verified, left as is: the Rosetta Stone wording (reworded to "versions of th
   - `sources-7/origin-and-content` and `sources-7/context-and-purpose`: click the parts of a source card that tell you origin, purpose or content on `cohesion` parts mode.
 - **Needs a new light board:** `evidence-7/reading-the-layers`, a dig through layers (deeper is usually older; a dated coin dates its layer). A short clip suits Explain it to me.
 - Add each as one step; keep the existing checks. Plan, then Matthew's go.
+
+## Plan: the two ready-to-add boards (1 Nov 2026; awaiting Matthew's "go")
+
+Both reuse the English `cohesion` board as it is: no widget, tool or shared-file change. Each is **one new step**; every existing check stays. The three setups below were tried against the widget's core (`cohesionCore`, as `check-cohesion` runs it): each builds, its check does not hold at the start, and it passes when solved. Board checks only look at planted answers on text we wrote, so nothing marks a student's own words.
+
+### 1. `usefulness-7/fact-opinion-and-accuracy`: fact or opinion inside one source
+
+- **Where:** a new step right after *Try: sort facts and opinions*, before the Worked example. Title *Try: one source, two kinds of statement*; `stage: run`. The sort uses single statements from different sources; this step shows both kinds in one source, which is what the Predict says ("a single source often contains both") and what Nib gets wrong two steps later.
+- **Board:** `mode: chain`, `colours: 2`, Source C in our own plain words (the card text says so: "our own summary, not a translation", as the Predict already does). Each factual claim is marked as a whole clause, so no stray words sit inside a claim; each opinion is the judging word, as English *Fact or feeling?* does.
+  ```
+  p: [[He defeated six rival kingdoms#a]] and [[joined them into one empire#a]]. [[He set one system of weights and measures#a]]. His rule is [[glorious#b]] and [[without equal#b]].
+  ```
+- **Check:** "Colour the claims that can be checked one colour and the opinions another." `when: "chains_ok = 2 and n_stray = 0"`. Explain: the three claims can be checked against other evidence (excavated weights, other records); glorious and without equal are praise. Checkable does not mean true: that is the accuracy question, next.
+- **Left out on purpose:** "everyone is happy and at peace" (the worked example calls it an opinion, but a sharp student could fairly call it a false factual claim; a board item needs one defensible answer, so it stays in the worked example and the purpose question, where it is discussed, not marked).
+- **Colours are unlabelled** (chain mode has no legend), so the check text names the two kinds, as English *Words that push a feeling* does.
+
+### 2. `sources-7/origin-and-content`: find origin and content on the card
+
+- **Where:** a new step right after the Try step's findspot note (*where it was found is not always where it was made*), before the Worked example. Title *Try: label the card*; `stage: run`. The findspot note from the 1 Nov review fixes has no check yet; this step gives it one, and moves from sorting facts we pulled out to finding them on the card itself.
+- **Board:** `mode: parts`, `layout: blocks`, Source A's card split into sentences, three labels:
+  ```
+  roles: origin content found
+  role origin: Origin (who, when, where made)
+  role content: Content (what it shows)
+  role found: Where it was found
+  s content: It is dressed as a soldier, with armour and a belt.
+  s origin: It was made by craftsmen in Qin workshops.
+  s found: It was found in pits near the First Emperor's tomb, in what is now Shaanxi province, China.
+  s content: Each figure has a different face.
+  s origin: It was made during the First Emperor's reign, before he died in 210 BCE.
+  ```
+  The sentences are mixed so the labels don't come in runs. The card's size-and-clay sentence is left off the board (it would be an unchecked `s any:` line, and "what do I call this?" is a distraction here).
+- **Check:** "Label each sentence: origin, content, or where it was found." `when: "n_right = 5"`. Explain names the findspot: the pits are where the figures were found, not where they were made.
+
+### 3. `sources-7/context-and-purpose`: find context on the card, and notice purpose is not there
+
+- **Where:** a new step after the Worked example (so it does not answer the worked example's context question), before Vary. Title *Try: what the card tells you*, its own step (`stage: run`) placed after the Worked example.
+- **Board:** `mode: parts`, `layout: blocks`, Source C's card with its context, four labels offered:
+  ```
+  roles: origin content context purpose
+  s origin: It was set up on a mountain by order of the First Emperor, around 219 BCE.
+  s content: It says the emperor brought peace and order.
+  s content: It says everyone now lives under one set of laws, weights and measures.
+  s context: A few years earlier, the Qin had defeated six rival kingdoms and joined them into one empire.
+  s context: Many people in the new empire had been enemies of the Qin.
+  ```
+- **Why Purpose is a label with no sentence:** after the 1 Nov fixes, purposes are inferences ("probably", "historians think"); no sentence on the card states one. A student who labels "It says the emperor brought peace" as Purpose makes the lesson's planted slip (`purpose-is-content`) and the board says no. Check: "Label each sentence: origin, content, context or purpose." `when: "n_right = 5 and n_wrong = 0"`. Explain: no sentence says why it was made; the card tells you what it says and what was going on, and purpose is worked out from those. **Alternative if Matthew prefers no trap label:** offer three labels only and ask the purpose as a follow-up question.
+
+### Goes with it
+
+- `text.yml` in each lesson folder (regions `run`); one line in each `teacher.yml` (what the board is for; chain colours are unlabelled; the board only checks planted answers). Class plans unchanged: the deck gets the live board slide automatically (`boardUrl` in `teach.mjs` covers any `playground: board` step).
+- Tests: `npm run validate`, `npm run check-cohesion history`, `npm run build` (`WP_NO_MAKECODE=1`), each new step answered in a headless browser at 1280 and 390 px, `check-decks` for the three lessons.
+- Publish route: lesson folders only, no widget change, so **Publish changed lessons** (no clips in History, nothing records).
+- Follow-on in `roadmap/shared.md` › Next for the Humanities pilot page and deck: once built, the fact-or-opinion board is the first humanities board, so the pilot page and slide 6 can link it. Not in this batch unless Matthew says so.
+- Not in this batch: `evidence-7/reading-the-layers` (needs a new light board; separate plan).
+
+## Re-check (1 Nov 2026): `land-7` and `migration-7` plan against the 1 Nov rules and fixes
+
+The plan above (written 30 Oct, still waiting for "go") was checked against `rules-proposal.md` (T1 First Nations, T2 made-up names, T8 contestable or simplified), the economics naming convention (1 Nov), `shared.md` › Decided: humanities (boards per course, 1 Nov), this file's Review fixes (1 Nov), and the K09 and K01 node data. The changes below supersede the plan where they differ; the rest stands.
+
+### Both courses
+
+1. **Label made-up material once per lesson, not in every stem** (1 Nov convention: the place or document carries the label). The plan labels "made-up" in headings, prompts and Nib's intro; drop the repeats.
+2. **Made-up places in ancient settings:** don't coin English-sounding names for Qin villages ("Reed Hollow"). Use a plain description ("a made-up Qin farming village") or a neutral label (Village A). Modern made-up settings (a classroom, a dig report) keep plain names; label once.
+3. **Reasons and purposes as inference** (Review fixes): where a lesson says why people did something (settled a valley, built a canal, left Africa), say "historians think" or "probably" where no source says so.
+4. **No ordering tasks for chains of causes** (Review fixes removed parsons where order is a choice; Economics swapped its chain for a match on 1 Nov). Any causal chain is a `match` or `sort`, introduced as one way historians explain it.
+5. **Distractors are real slips of similar length** with feedback naming the slip; not disagreements with a model (T8).
+6. **Boards and clips: a decision per course** (1 Nov). Proposed: `land-7` no board by default, with one schematic map of the Qin and Han heartland as an annotated still (SVG in the lesson, labelled schematic, like `evidence-7/layers.svg`); optional reuse of the `cohesion` chain board in n3 to colour opportunities and constraints in the made-up draft paragraph (planted answers only). `migration-7` no board; a sea-level and coastline board is a later idea (new code), parked.
+7. **Teacher layer:** `learning:` in every `teacher.yml`, Make ticks say "gave feedback", and every factual claim is listed with its source in teacher notes (name the source, not "museum/atlas references").
+8. **Topic cards are not designed yet** (rule: K09–K13 lessons carry swap-in cards for Egypt, Greece, Rome and India). Proposed for this course: cards as short blocks in a course `reference.md` (a few key facts, a short timeline, two or three sources each), linked from the typical step. India is missing from the plan's typical and wider steps; add it (ACARA's K09 elaborations name the Himalayas and rivers for India, but the Hinduism, Buddhism and Jainism environment elaboration is beliefs, which is K11, so leave it out here).
+
+### `land-7` (AC9HH7K09)
+
+9. **Grand Canal is out:** it is Sui dynasty (about 600 CE), not Qin or Han. Use the Lingqu Canal (Qin, 214 BCE), the Zhengguo Canal (state of Qin, 246 BCE) and Dujiangyan (built by the state of Qin before unification, about 256 BCE; UNESCO lists it with Mount Qingcheng). Check each date before building.
+10. **Loess wording:** loess is wind-laid soil on the plateau; the river carries its silt. The plan's "fertile flood silt (loess)" runs the two together.
+11. **Millet first, wheat later** in the north: say millet (with wheat spreading later), not "millet/wheat" as if together from the start. Check before building.
+12. **"Cradle of Chinese civilisation" is a traditional label, not settled** (archaeology finds several early centres, including on the Yangtze). If n3's `smaller:` uses it, present it as a nickname some people use, beside "China's Sorrow" (T8).
+13. **n2's surplus chain is a model** (T8): "historians often explain it this way". The planted slip stays the reversal for China (farming came thousands of years before the first states, which is chronology students can check), plus "surplus means farmers got rich". Drop the version that says specialists "decided to start farming", which reads as a straw man.
+14. **Himalayas:** ACARA's elaboration uses them for contact (n3), so move them from n1's barrier list to n3; n1 uses the Tibetan Plateau, Gobi and the seas.
+
+### `migration-7` (AC9HH7K01)
+
+15. **Arrival in Australia stays out of student text** (T1, firm; K02 is the pointer page). The plan's n2 uses sea crossings to Sahul as a worked mechanism; that is the arrival story. Use Africa to Arabia and Asia corridors in student text; Australia gets one line pointing to the deep-time pointer page, and Sunda and Sahul go in teacher notes. No arrival date in student text (it is contested and it is K02's).
+16. **Oral history in n3:** the type is named and explained generally; no First Nations oral tradition is used as a student example (T1). If an example is needed, use a non-First Nations, Year 7-relevant one or none.
+17. **n2's cause is a leading explanation, not a settled one** (T8): ACARA's elaboration says climate change and desertification "triggered" the movement. Keep the descriptor's terms, and say scientists think changing climate opened and closed routes; name that other factors (population, food sources along coasts) are also argued. The hinge check stays on the mechanism (rain shifts over generations → ranges move), not on climate being the only cause.
+18. **n3 overlaps `evidence-7`** (stratigraphy, dating, DNA are already taught there). n3 should focus on what is new for K01: several kinds of evidence together build an interpretation, which can change; mention `evidence-7` as a link (lessons don't assume another course), and keep method detail short.
+19. **"Modern Theory of Evolution"** is ACARA's term; keep it, explain it plainly once, and add a teacher note that some families hold religious views on human origins, so the lesson teaches what the evidence-based theory says without asking students to state a belief.
+
+### Questions for Matthew
+
+- Build both courses, or `land-7` first (the lens order in Next) and `migration-7` after?
+- Topic cards in a course `reference.md` (item 8): OK as the format?
