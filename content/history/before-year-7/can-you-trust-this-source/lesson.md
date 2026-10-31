@@ -113,6 +113,7 @@ check: { type: reflect, text: "I picked a page or book from a topic we are learn
 Write it in your own book or document, not on this page. Your partner or teacher reads it.
 
 ```teacher
+learning: "check where a source comes from and what it says before relying on it"
 summary: "Students ask two questions before trusting a source: where does it come from, and is it fact or opinion? They drop the idea that anything on a page can be trusted."
 time: 17
 timing: "Think first 3 min · Try 4 min · The idea 4 min · Check 4 min · Apply 2 min"
