@@ -1,0 +1,25 @@
+inquiry:
+  q: "Is there a best way to make water last in Australia?"
+  prompts:
+    - "Best for which place, and for which cause?"
+    - "Who gains, and who might get less?"
+  notes: "Keep the answer open. The move is fitting a strategy to a cause and a place, and naming a trade-off."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Copy Perth?"
+    minutes: 3
+    do: "Vote on whether the Drybank farms should copy Perth's desalination. Ask what a plant needs nearby."
+    notes: "Perth's use of desalination is a sourced fact; Drybank is made up."
+  - at: investigate
+    kind: discussion
+    title: "Cause first"
+    minutes: 5
+    do: "For Mellick Bay and the Drybank farms, pairs name the cause before any strategy, then suggest two strategies each."
+    notes: "Accept more than one strategy. Ask for how it works on the cause."
+  - at: make
+    kind: activity
+    title: "Choose and justify"
+    minutes: 8
+    do: "Students write a justified choice for one place: cause, strategy, how it works, one trade-off, one reason management is hard. Partners give feedback."
+    notes: "Different choices can all be good. The site does not mark this writing."

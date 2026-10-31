@@ -186,6 +186,10 @@ ACARA Progressions and Planner hold each standard's elaborations in `static/data
 - **Create and the copied lesson prompt** (Matthew said include them, 30 Oct): `withContext` and `compactCurriculum` in `tools/kit-nodes.mjs` carry `elaborations`, and `nodesPromptText` lists them once per standard ("examples that illustrate the whole standard, not a checklist and not tied to one waypoint"). Create's compact curriculum files grew about 10%. `node experiments/kit-nodes-test.mjs` passes.
 - Needs a whole-site publish (pointer pages) and a Create publish (`git push origin main:publish-create`) for Create.
 
+## Changed by the Geography chat (1 Nov 2026): water-australia-7
+
+Five misconceptions added to `misconceptions.json` (single lines, after `dam-creates-water`). New course `geography/water-australia-7` replaces a Coming later card on `content/geography/index.md`. No shared code changed.
+
 ## Changed by the Geography chat (1 Nov 2026): catchment board widget
 
 - New widget `playground-board/widgets/catchment.js`, one `<script>` line in `playground-board/index.html` (after `consent.js`), a `wpt-cbar`/`wpt-cres` section at the end of `playground-board/style.css`, an AUTHORING entry (before `widget: rate`). `core.js` untouched; adding a widget re-records no other clip.

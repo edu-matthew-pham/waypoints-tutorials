@@ -1,0 +1,8 @@
+# Nib's notes for the "find the slip" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Pennerby and Fennow are both in the same made-up area.
+Pennerby gets river water that is treated and piped to every house.
+So Fennow must get the same water as Pennerby.
+So Fennow's families never need to save water either.
+# endregion

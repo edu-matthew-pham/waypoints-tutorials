@@ -1,0 +1,52 @@
+summary: "Students explain how water management strategies work (desalination, stormwater harvesting, recycling grey water, inter-regional transfer, reducing water use), match a strategy to the cause of a shortage and the place, and explain why water is hard to manage when uses are shared and supply varies. They choose and justify a strategy for a made-up place; more than one choice is defensible, so the writing is read by a partner or the teacher, not marked."
+learning: "explain how a water management strategy targets a sustainability problem and why water is hard to manage"
+time: 45
+timing: "Think first and Try 8 min · The idea 12 min · Vary 8 min · Check 6 min · Apply 10 min. Typical and wider steps are extras."
+goals:
+  - I can explain how a water strategy works.
+  - I can match a strategy to the cause of a shortage and the place.
+  - I can give a trade-off and a reason water is hard to manage.
+struggle: "Students pick one 'best' answer and apply it everywhere, often desalination. Ask 'What is the cause here, and what does this place have?' before any strategy is named. Expect and welcome disagreement about which is best."
+before: |
+  The checks only mark things with a clear answer: how a strategy works, whether it uses a place's features, and recognisable errors (recycling creates unlimited water; new supply always beats using less; a transfer costs nothing at the other end). Which strategy is best for Mellick Bay or the Drybank farms is left open; the Make step asks for a justified choice read by a partner or you.
+
+  The node's mode note sorts recycling with demand-side strategies; other sources treat it as stretching supply. The lesson avoids that sort and asks how each strategy works instead.
+
+  Real fact used: Perth gets part of its water from desalination plants (Water Corporation's page calls the Southern Seawater Desalination Plant "the second desalination plant supplying water to Perth"). No figures are used; supply shares change over time. Desalination's needs (seawater nearby, a plant to build, energy to run) are general and stated without numbers. Mellick Bay and the Drybank farms are made up.
+
+  Virtual water trade is a node wider item and an ACARA elaboration; it is left to the wider discussion or your teaching. The Murray–Darling Basin Plan and water trading are contested and dated, and stay out of student steps.
+
+  Shape: `primer`, so the stages read Think first, The idea, Check and Apply. The lesson weighs strategies more than it drills one answer.
+running:
+  - "Think first: take a vote, then ask what a desalination plant needs nearby."
+  - "Try: ask which strategies add water and which lower use."
+  - "The idea: name the cause and the place before naming a strategy."
+  - "Vary: ask who else uses the river, and what happens to them."
+  - "Apply: accept different strategies if the cause, how it works and a trade-off are all there."
+stuck:
+  - see: "Desalination is chosen for everything."
+    ask: "Where does a desalination plant get its water? What does that need nearby?"
+    fix: "Check the place and the cause first."
+  - see: "Recycling is described as making new water."
+    ask: "Where did the grey water come from in the first place?"
+    fix: "Recycling reuses water already supplied; it stretches the supply."
+  - see: "A transfer is described as free water."
+    ask: "Where does the water come from, and who there gets less?"
+    fix: "Check both ends of a transfer."
+support: "Give a frame: Cause → Strategy → How it works → One trade-off."
+stretch: "Compare two strategies for one place against four criteria (fit to cause, cost, environment, who gains or gets less), then say what would change your choice. Same level, more width."
+leads: |
+  Next in Water in Australia: putting distribution, implications and a strategy together for one place.
+
+  First Nations content: none of ACARA's elaborations for AC9HG7K02 names a First Nations example; this lesson has none.
+
+  ACARA elaborations used here: "examining why water is a difficult resource for communities to manage and sustain; for example, because of its shared and competing uses, and variability of supply over time" and "examining how a strategy may manage the sustainability of water resources; for example, recycling ('grey water'), stormwater harvesting and re-use, desalination, inter-regional transfer of water and trade in virtual water, and reducing water consumption".
+exit:
+  q: "Choose a strategy for a made-up town whose people use far more water each year. Say how it targets the cause and give one trade-off."
+  a: "For example, reducing water use (fittings, limits on watering) targets over-use directly. A trade-off: people have to change habits, and limits can be unpopular."
+explain: |
+  A **strategy** is a planned way to make water last. Desalination removes salt from seawater; stormwater harvesting collects runoff; recycling reuses grey water; a transfer moves water between regions; reducing use lowers demand.
+
+  A strategy works when it targets the cause of the shortage and suits the place. Water is hard to manage because many users share it and the supply changes from year to year.
+sources:
+  - { title: "Southern Seawater Desalination Plant (Water Corporation)", url: "https://www.watercorporation.com.au/our-water/desalination/southern-seawater-desalination-plant", checked: 2026-11-01 }

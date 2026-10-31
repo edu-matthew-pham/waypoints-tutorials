@@ -1,0 +1,25 @@
+inquiry:
+  q: "Is water access in Australia mostly about where you live, or about what has been built there?"
+  prompts:
+    - "What do Pennerby and Fennow show?"
+    - "What evidence would you want before deciding?"
+  notes: "Both matter. Keep students to the made-up cases and away from generalising about real communities."
+activities:
+  - at: run
+    kind: discussion
+    title: "So what?"
+    minutes: 3
+    do: "After the match, pairs take one Fennow source and say what its limit means for the people there."
+    notes: "The 'so what' step is the one students skip."
+  - at: investigate
+    kind: discussion
+    title: "Build the chain"
+    minutes: 5
+    do: "Build source, limit, consequence on the board for one Fennow source, then a contrast for Pennerby."
+    notes: "Ask for a consequence for health, for money and work, or for daily life."
+  - at: make
+    kind: activity
+    title: "Two implications"
+    minutes: 6
+    do: "Students write two Fennow implications as chains and one comparison with Pennerby, then swap with a partner."
+    notes: "The reflect tick records completion; the site does not mark the writing."

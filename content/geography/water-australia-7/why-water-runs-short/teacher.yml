@@ -1,0 +1,52 @@
+summary: "Students sort the causes of water scarcity three ways (a physical shortage, an economic cause where water is there but cannot be delivered or treated, and the ways water is used) and explain factors that make water vary: climate, seasonality, evaporation, location and topography. This is the second hinge: mixing up physical and economic causes leads to mismatched strategies in lesson 4."
+learning: "distinguish physical and economic causes of water scarcity and explain factors that make water resources vary"
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Typical and wider steps are extras."
+goals:
+  - I can tell a physical cause of water scarcity from an economic one.
+  - I can name a cause that comes from the ways water is used.
+  - I can explain how two factors, such as seasons and evaporation, change the water in a place.
+struggle: "Students collapse every shortage into 'not enough rain'. Ask the two questions in order, out loud, every time: is the water physically there? Can people reliably get usable water?"
+before: |
+  This is the second hinge (K02 n2). The node's reason: confusing physical and economic causes leads students to recommend engineering fixes for economic scarcity, or the reverse, in node 4. Protect the Corrowin bug task and its smaller step.
+
+  The three causes are ACARA's elaboration (physical, economic, the ways water is used). They are a way of sorting causes, not a law, and the lesson says so; real places often have more than one, which the typical step shows. "Economic" here means the water is there but people cannot get it because infrastructure is missing, broken or unaffordable; some students hear "economic" as "about money" only, so name pipes, pumps and treatment.
+
+  Drybank and Corrowin are made up, with made-up conditions. They are not meant to stand for any real Australian town. The one real fact used is the northern wet season (almost all rain from about November to April; Bureau of Meteorology, ABS Year Book Australia 2005). The location factor is phrased "usually", since inland Australia's driest areas are in the interior (same source) but there are exceptions. No climate-change or ENSO claims are made; ENSO is a node wider item for teachers who want it, with historical records from the Bureau of Meteorology.
+running:
+  - "Predict: take a vote. Most students pick 'no rain'. Let that sit until Try."
+  - "Try: stop after the pipes item and ask: is the water there? Can people get it?"
+  - "Worked example: say the two questions aloud before the bug task. Protect the smaller step for students who stall."
+  - "Vary: ask for 'how it works', not just the factor's name."
+  - "Make: check each cause is named with its town, and each factor with how it works."
+stuck:
+  - see: "Every shortage is put down to low rainfall."
+    ask: "Is the water physically there? If yes, what stops people getting it?"
+    fix: "Separate the water from the delivery: river, then pumps, pipes and treatment, then taps."
+  - see: "'Economic' is read as 'the town is poor' only."
+    ask: "What would the town need to build or fix to get the water to people?"
+    fix: "Economic causes are about the system that delivers water (dams, pipes, pumps, treatment) not being there or working."
+  - see: "A factor is named but not explained."
+    ask: "How does seasonality change the water? When is there more, when less?"
+    fix: "Name it, then say how it changes the amount or the timing."
+support: "Give the two questions on a card: 'Is the water physically there?' and 'Can people reliably get usable water?'"
+stretch: "Explain how population growth and a run of dry years together could make a shortage worse than either alone. Same level, more width."
+leads: |
+  Next in Water in Australia: what water distribution means for people in different places.
+
+  First Nations content: none of ACARA's elaborations for AC9HG7K02 names a First Nations example; this lesson has none. Any local example should come from community-approved material.
+
+  ACARA elaborations used here: "identifying the causes of variability in water resources or water scarcity; for example, an absolute shortage of water (physical cause), inadequate development of water resources (economic cause), or the ways water is used (such as farming, industry, drinking, washing or watering)" and "explaining the factors that contribute to variability in water resources or water scarcity; for example, location, climate, topography, seasonality or evaporation".
+exit:
+  q: "Give one physical and one economic cause of water running short, and say why the same fix would not suit both."
+  a: "Physical: little rain for years, so the water is not there. Economic: the water is there but pipes or treatment are missing. A dam does not fix missing pipes, and new pipes do not make it rain."
+explain: |
+  **Water scarcity** means not enough usable water for what people need. One way to sort its causes:
+
+  - **Physical**: not enough water in the place (little rain, high evaporation).
+  - **Economic**: the water is there, but pipes, pumps or treatment to get it to people are missing.
+  - **The ways water is used**: more is taken than the place can supply.
+
+  **Variability** factors (seasons, evaporation, location, the shape of the land, climate) change how much water there is and when.
+sources:
+  - { title: "Australia's climate (Bureau of Meteorology chapter, ABS Year Book Australia 2005)", url: "https://www.abs.gov.au/ausstats/abs@.nsf/0/35F9CDF3307C036ECA256F7200832F12", checked: 2026-11-01 }

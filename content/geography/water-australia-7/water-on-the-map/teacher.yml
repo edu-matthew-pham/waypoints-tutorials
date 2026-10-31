@@ -1,0 +1,57 @@
+summary: "Students show Australia's surface water and groundwater on a map using its conventions (title, legend, north arrow, scale, source), describe the distribution with direction words, and keep 'where water is' separate from 'who can use it'. This is the first hinge of the course: later lessons on scarcity and implications need students who can read and draw a distribution map."
+learning: "represent the location of Australia's surface water and groundwater on a map and describe its distribution"
+time: 45
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 5 min · Make 12 min (drawing the map). Typical and wider steps are extras."
+goals:
+  - I can tell surface water from groundwater.
+  - I can read a map's legend, north arrow, scale and source.
+  - I can draw two kinds of water resource on my own map with the right conventions.
+  - I can describe where Australia's water is, using direction words.
+struggle: "Students often read a symbol list as a description ('there are blue lines') or treat water under a place as water everyone there has. Ask 'Where is there more, where less?' and then 'Could someone there actually use it?' as two separate questions."
+before: |
+  This is the first hinge (K02 n1): node 2 and 3 work on the implications of distribution, and they need students who can read and produce a distribution map. The node's first criterion is that students *represent* water on a map, so the Make step (their own map, drawn in the book or on the printed worksheet) is the required evidence, not the on-page checks. Give it the time.
+
+  The map is drawn from Natural Earth (public domain) and simplified: coastline, state borders, some major rivers and capital cities. The two basins are named but not outlined, on purpose. Natural Earth's regions for them are label areas rather than their real extents (its Murray–Darling region reaches Brisbane and Adelaide, which are outside the real basin), so students shade them from the official maps instead: Geoscience Australia for the Great Artesian Basin and the Murray–Darling Basin map on the Inspector-General of Water Compliance site. Only some major rivers are drawn; the Murrumbidgee, for example, is not in Natural Earth's river set at this scale.
+
+  Real facts used, each from a named source: the Great Artesian Basin lies under parts of Queensland, New South Wales, South Australia and the Northern Territory and is the largest groundwater basin in Australia (Geoscience Australia); the Murray–Darling Basin covers parts of Queensland, New South Wales, Victoria and South Australia and all of the ACT (Bureau of Meteorology, National Water Account); in the north almost all rain falls in a wet season from about November to April (Bureau of Meteorology chapter, ABS Year Book Australia 2005). No figures that date are used. The town in Predict and Nib are made up.
+
+  Not covered here, on purpose: why water runs short (next lesson), who it affects (lesson 3), and comparisons with Asian countries (a node wider item, left to the teacher).
+running:
+  - "Predict: take a vote, then ask what the town would need before the water under it is any use."
+  - "Try: ask why a map needs a legend at all. Cover the legend and ask what a blue line means."
+  - "Worked example: let students say the pattern in their own words before the question. Push for direction words."
+  - "Vary: ask how to show a line, an area and a point on a map. A basin is an area."
+  - "Make: check the legend matches the symbols used, and that the basins were shaded from the official maps."
+stuck:
+  - see: "The description lists the symbols ('there are rivers and cities')."
+    ask: "Where is there a lot of water, and where is there little?"
+    fix: "Use direction words: north, south-east, centre, west."
+  - see: "Groundwater is left off the student's map because 'you can't see it'."
+    ask: "Do maps show other things you can't see, like state borders?"
+    fix: "Shade the area from the official map and add it to the legend."
+  - see: "A student says people above the Great Artesian Basin all have plenty of water."
+    ask: "What would you need to reach water deep in rock? Is all of it fit to use?"
+    fix: "Map where water is first; ask who can use it as a separate question."
+support: "Give the blank outline with the rivers already traced; students add the two basins, the legend and the pattern sentence."
+stretch: "Add a third kind of water resource (large dams or reservoirs) to your map with its own symbol, from a source you name. Same idea, more width."
+leads: |
+  Next in Water in Australia: why water runs short in some places, even where it is on the map.
+
+  First Nations content: none of ACARA's elaborations for AC9HG7K02 names a First Nations example, so this lesson has no First Nations step. If you bring in First Nations knowledge of water places in your area, start from local, community-approved material.
+
+  ACARA elaborations for AC9HG7K02 (examples, not a checklist): representing the location of Australia's water resources, such as surface water and groundwater; describing the distribution of Australia's water resources, and its implications for people; for example, limited access to water for people in rural and remote places and its implications; identifying the causes of variability in water resources or water scarcity; for example, an absolute shortage of water (physical cause), inadequate development of water resources (economic cause), or the ways water is used (such as farming, industry, drinking, washing or watering); explaining the factors that contribute to variability in water resources or water scarcity; for example, location, climate, topography, seasonality or evaporation; examining why water is a difficult resource for communities to manage and sustain; for example, because of its shared and competing uses, and variability of supply over time; examining how a strategy may manage the sustainability of water resources; for example, recycling ('grey water'), stormwater harvesting and re-use, desalination, inter-regional transfer of water and trade in virtual water, and reducing water consumption.
+exit:
+  q: "Name one surface water and one groundwater resource in Australia, and describe where Australia's major rivers are."
+  a: "For example the Murray River (surface water) and the Great Artesian Basin (groundwater). Most major rivers are in the north and the south-east; few cross the centre or the west."
+explain: |
+  **Surface water** is water you can see: rivers, lakes and dams. **Groundwater** is stored under the ground in rock and soil.
+
+  To describe the **distribution** of water, say where there is more and where there is less, with direction words. Most of Australia's major rivers are in the north and the south-east.
+
+  Where water is and who can use it are two questions. Water under a place still needs a bore, and it has to be fit to use.
+sources:
+  - { title: "Great Artesian Basin (Geoscience Australia)", url: "https://ga.gov.au/scientific-topics/water/groundwater/gab", checked: 2026-11-01 }
+  - { title: "Murray–Darling Basin: physical information (Bureau of Meteorology, National Water Account)", url: "https://www.bom.gov.au/water/nwa/2014/mdb/contextual/physicalinformation.shtml", checked: 2026-11-01 }
+  - { title: "Australia's climate (Bureau of Meteorology chapter, ABS Year Book Australia 2005)", url: "https://www.abs.gov.au/ausstats/abs@.nsf/0/35F9CDF3307C036ECA256F7200832F12", checked: 2026-11-01 }
+  - { title: "Natural Earth (public domain map data)", url: "https://www.naturalearthdata.com/", checked: 2026-11-01 }
+  - { title: "Murray–Darling Basin map (Inspector-General of Water Compliance)", url: "https://www.igwc.gov.au/who-we-are/mdb-map", checked: 2026-11-01 }

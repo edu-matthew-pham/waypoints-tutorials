@@ -1,0 +1,25 @@
+inquiry:
+  q: "A map shows a huge store of water under a dry town. Does the town have a water problem or not?"
+  prompts:
+    - "What does the map tell you, and what does it not?"
+    - "What would you need to know about the town before you decided?"
+  notes: "Steer to the difference between where water is and whether people can reach and use it. That difference carries the rest of the course."
+activities:
+  - at: run
+    kind: discussion
+    title: "Cover the legend"
+    minutes: 3
+    do: "Show the map with the legend covered. Ask what the blue lines and the italic names might mean, then reveal it."
+    notes: "The point is that symbols mean nothing without a legend. Students need this for their own map."
+  - at: investigate
+    kind: discussion
+    title: "Say the pattern"
+    minutes: 4
+    do: "Pairs describe where the major rivers are in one sentence, using two direction words. Collect two or three and improve one together."
+    notes: "Push past 'there are rivers' to 'more in the north and south-east, few in the centre and west'."
+  - at: make
+    kind: activity
+    title: "Draw your own water map"
+    minutes: 12
+    do: "Students draw two rivers and shade both basins on an outline from the official maps, add title, legend, north arrow, scale and source, and write a pattern sentence. A partner checks the conventions."
+    notes: "This is the evidence for the hinge. Check that basins were shaded from the official maps, not guessed."

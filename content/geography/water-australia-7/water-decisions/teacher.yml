@@ -1,0 +1,47 @@
+summary: "Students join the course in one explanation for one place: a made-up town, Pennerby, in the real Murray–Darling Basin, with a made-up evidence pack. They diagnose the causes before choosing a strategy, check who else is affected, and use distribution, variability, scarcity and sustainability accurately. More than one strategy is defensible, so the final explanation is read by a partner or the teacher, not marked."
+learning: "explain the distribution of water for one Australian place, its implications for people and how a strategy responds"
+time: 45
+timing: "Think first and Try 6 min · The idea 12 min · Vary 7 min · Check 5 min · Apply 15 min. Typical and wider steps are extras."
+goals:
+  - I can explain where a place's water comes from and where it is in Australia.
+  - I can say what a shortage means for the people there and why it is hard to sustain.
+  - I can choose a strategy that targets a cause and use the course's words correctly.
+struggle: "Students reach for a strategy first, usually the pipeline in the case. Ask 'What is causing this?' and 'Who else uses this water?' before any strategy is named."
+before: |
+  This is the integration node (K02 n5). The node's first criterion asks for "a specific Australian water context". Pennerby is made up so that its evidence can be clear and nothing dates or leans, but it sits inside the real Murray–Darling Basin, and the only real facts used are the Basin's definition and that it covers parts of NSW (Bureau of Meteorology, National Water Account). Say this aloud: the place is invented; the Basin is real. A teacher who wants a fully real case can swap in their own catchment, with sources.
+
+  The node's wider item, a Murray–Darling Basin case with the Basin Plan and water trading, is not used in student steps: it is contested and its details date. If your class goes there, present it as competing views with dated sources, not as settled.
+
+  Shape: `primer`, so the stages read Think first, The idea, Check and Apply. The lesson is mostly weighing and explaining. Only the diagnosis, the order of parts, the meanings of terms and recognisable errors are marked; the strategy choice is open.
+running:
+  - "Think first: vote, then ask what the evidence pack says is causing the shortage."
+  - "The idea: list the causes from the evidence on the board before the bug task."
+  - "Vary: check each word's meaning against an example from the case."
+  - "Apply: accept different strategies if the four parts are there and a cause is targeted."
+stuck:
+  - see: "The plan starts with the pipeline."
+    ask: "What is causing the shortage? Would the pipeline fix the leaks?"
+    fix: "Diagnose from the evidence first, then choose."
+  - see: "'Sustainable' is used to mean 'there is water now'."
+    ask: "Would this still work in five dry years, with more people?"
+    fix: "Sustainable means meeting needs without running the source down."
+  - see: "The explanation leaves out other users."
+    ask: "Who else uses the river? What happens to them?"
+    fix: "Name the farms and the wetland, and what they would get."
+support: "Give the four-part frame on a card: Where → What it means for people → Why it is hard → Strategy and the cause it targets."
+stretch: "Test your plan against a run of very dry years and a doubling population. Same level, more width."
+leads: |
+  This is the last lesson in Water in Australia. Next in the Water and places pathway: What water is worth (AC9HG7K03), coming later.
+
+  First Nations content: none of ACARA's elaborations for AC9HG7K02 names a First Nations example. If you add First Nations perspectives on water in the Basin, use First Nations-led sources and local, community-approved material.
+
+  ACARA endpoint for AC9HG7K02: "Students explain the location and distribution of water resources in Australia, their implications for people, and strategies to manage water sustainability."
+exit:
+  q: "For a place you have not studied (your own town, or a made-up one), name where its water comes from, one implication for people, and one strategy that targets a cause."
+  a: "Answers vary. Look for a source and its place, a consequence for people, a named cause, and a strategy that targets that cause."
+explain: |
+  A water plan has four parts, in order: **where** the water is (distribution), **what it means for people**, **why it is hard to keep going** (sustainability), and **how a strategy targets the cause**.
+
+  Diagnose before choosing. A strategy that skips the diagnosis may miss the cause, and may take water from someone else.
+sources:
+  - { title: "Murray–Darling Basin: physical information (Bureau of Meteorology, National Water Account)", url: "https://www.bom.gov.au/water/nwa/2014/mdb/contextual/physicalinformation.shtml", checked: 2026-11-01 }

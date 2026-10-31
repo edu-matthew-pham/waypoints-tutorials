@@ -1,0 +1,25 @@
+inquiry:
+  q: "A town is short of water. Should it build a new dam?"
+  prompts:
+    - "What would you need to know first?"
+    - "When would a dam not help at all?"
+  notes: "Steer to diagnosis before a fix: is the water physically there, and can people get it? This is the move lesson 4 builds on."
+activities:
+  - at: predict
+    kind: discussion
+    title: "River, but dry taps"
+    minutes: 3
+    do: "Read the Corrowin hook. Vote on a reason, then hold the answer until Try."
+    notes: "Most students will say 'no rain'. Leave it; the sort and the bug task turn it round."
+  - at: investigate
+    kind: discussion
+    title: "Two questions in order"
+    minutes: 5
+    do: "Pairs apply the two questions to Drybank, then Corrowin, before the bug task."
+    notes: "Protect the hinge: students who cannot separate 'there' from 'reachable' will mismatch strategies later."
+  - at: make
+    kind: activity
+    title: "Swap and check"
+    minutes: 4
+    do: "Students write their two causes and two factors in their books, swap, and the partner checks each cause is named and each factor says how it works."
+    notes: "The reflect tick records completion. A partner or the teacher reads the writing; the site does not mark it."

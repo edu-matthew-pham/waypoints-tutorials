@@ -14,7 +14,7 @@ pathways:
     about: "This follows the ACARA Year 7 Geography knowledge standards on water, one course for each standard and one lesson for each waypoint, in order. Every student takes the same steps in the same order; typical and wider steps add more examples of the same idea and are never needed to finish. The first two lessons of each course are the ones to give time to, because the later ideas rest on them. Real places are used for facts that will not date and each one has its source; hypothetical changes, people and proposals are made up. The other Year 7 Geography courses are planned and shown as Coming later."
     courses:
       - { path: geography/water-7, id: water-7, stage: foundations, tagline: "Is water a resource that runs out?" }
-      - { title: "Water in Australia", summary: "Where Australia's water is, why it runs short, and how to keep it going (AC9HG7K02).", stage: foundations, tagline: "Find where Australia's water is and why some places run short." }
+      - { path: geography/water-australia-7, id: water-australia-7, after: [water-7], stage: foundations, tagline: "Find where Australia's water is and why some places run short." }
       - { title: "What water is worth", summary: "The different values people place on water (AC9HG7K03).", stage: foundations, tagline: "Work out why the same water matters in different ways to different people." }
       - { title: "Water hazards", summary: "Floods, droughts and storms: causes, effects and how to prepare (AC9HG7K04).", stage: foundations, tagline: "See what causes floods and droughts, and how places get ready for them." }
   - id: place

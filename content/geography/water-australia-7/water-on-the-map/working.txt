@@ -1,0 +1,8 @@
+# Nib's notes for the "find the slip" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+The Great Artesian Basin lies under parts of Queensland, New South Wales, South Australia and the Northern Territory.
+It is groundwater: water stored in rock layers below the ground.
+So everyone who lives above it has plenty of water to use.
+So towns over the basin never run short of water.
+# endregion

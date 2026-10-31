@@ -1,0 +1,46 @@
+summary: "Students explain what water distribution means for people by following a chain (source, limit, consequence) for two made-up places in one area: Pennerby, a regional town with piped, treated river water, and Fennow, a small remote settlement on rainwater tanks and a bore. They sort consequences into health, money and work, and daily life, and see that a town's supply can be limited too."
+learning: "explain implications of water distribution for people in a remote place and compare them with a town"
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 5 min · Make 7 min. Typical and wider steps are extras."
+goals:
+  - I can explain an implication as source, limit and consequence.
+  - I can explain two implications of water access for a remote place.
+  - I can compare water access in a remote place and a town.
+struggle: "Students stop at the source ('they have a bore') without saying what it means for people, or assume one settlement type always has good or bad water. Ask 'So what happens to the people?' after every source."
+before: |
+  The node asks for at least two implications for a specific rural or remote place, plus a comparison with another settlement type. Both places here are made up, with made-up conditions, so students can practise the chain without anything we write being taken as a claim about a real community. Students' Make writing uses only the case details.
+
+  ACARA's elaboration for this node is "describing the distribution of Australia's water resources, and its implications for people; for example, limited access to water for people in rural and remote places and its implications". The node file's wider items include "a remote Indigenous community dependent on bore water". That is not used in student steps and we have not written it up. If your class goes there, use local, community-approved material and First Nations-led sources; do not generalise from one community to others.
+
+  The vary question shows a town's water being limited too, so the lesson does not suggest town water is limitless or remote water always poor. The wider sort trains students to keep evidence from a case apart from generalisations.
+running:
+  - "Predict: ask what would have to be true for the two places to have the same water."
+  - "Try: after each match ask 'So what happens to the people?'"
+  - "Worked example: build the chain on the board for one Fennow source before the bug task."
+  - "Vary: accept another category if the student explains it; some consequences fit two."
+  - "Make: check each implication has all three links and that nothing is said about real communities."
+stuck:
+  - see: "The answer stops at 'Fennow has a bore'."
+    ask: "What limits the bore, and what does that mean for people?"
+    fix: "Add the limit and the consequence."
+  - see: "A student says towns always have good water."
+    ask: "What happened at Pennerby in the dry spell?"
+    fix: "Access depends on the source and what has been built, not only on the kind of settlement."
+  - see: "A student describes a real community from what they have heard."
+    ask: "Is that from the case, or something you heard?"
+    fix: "Use only the case details here; real communities need their own sources and their own voice."
+support: "Give a three-box frame: Source / Limit / Consequence for people."
+stretch: "Add a third made-up place on the edge of a growing city and compare all three on reliability, cost and maintenance. Same level, more width."
+leads: |
+  Next in Water in Australia: strategies to make water last, and why it is hard to manage.
+
+  First Nations content: see the notes above. No student step describes a real community.
+
+  ACARA elaboration used here: "describing the distribution of Australia's water resources, and its implications for people; for example, limited access to water for people in rural and remote places and its implications".
+exit:
+  q: "Give one implication of water access for made-up Fennow, as source, limit and consequence, and one way Pennerby is different."
+  a: "For example: rainwater tanks (source) run low in dry weeks (limit), so families ration water (consequence). Pennerby's water is piped and treated from a river, so it is more reliable day to day."
+explain: |
+  An **implication** is what something means for people. Follow the chain: **source** (where the water comes from), **limit** (what can stop it), **consequence** (what that means for people's health, money and work, or daily life).
+
+  Two places in the same area can have very different water, because of where it comes from and what has been built to deliver it.
