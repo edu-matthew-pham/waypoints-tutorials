@@ -3,8 +3,7 @@ order: 4
 unit: water
 title: How moving water changes the land
 node: AC9HG7K01 n4
-summary: Explain erosion, transport and deposition as processes that change a place, rather than merely naming
-  a landform.
+summary: "Moving water changes the shape of the land. Flowing water can loosen and remove soil and rock (erosion), carry that material along (transport) and drop it where the flow slows down (deposition). Over time these processes deepen channels, build up banks and fill lakes with sediment. Saying that a river runs through a valley names a place; explaining how the water wore the valley down explains how it changed."
 language: maths
 hook: A river runs through a valley. Does that explain how the valley became deeper?
 ---

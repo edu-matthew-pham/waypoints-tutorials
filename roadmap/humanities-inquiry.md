@@ -157,7 +157,7 @@ Matthew requested the Sharing unit after the first six lessons; this supersedes 
 
 ## Stage 1 Plan (30 Oct 2026, awaiting Matthew's "go"): Four inquiry skeletons (`kind: skeleton`) and "Coming later" planned lessons in a built course
 
-No code or skeleton content has been written yet. Below is the complete plan for Stage 2.
+*(Superseded 1 Nov 2026: skeletons are built, in `content/hass/inquiry-7/skeletons.yml`. The plan below is kept as the record of what was planned.)* Below is the complete plan for Stage 2.
 
 ### 1. Exact `content/hass/inquiry-7/skeletons.yml` format (with worked example for Economics and Business)
 
@@ -437,3 +437,14 @@ The course renderer uses frontmatter summaries rather than an `index.md` body, s
 **Delivery:** Local implementation commit completed and rebased over main. `git pull --rebase origin main` succeeded before the push; `git push origin HEAD:main` failed because this environment has no GitHub credentials (`could not read Username`). No remote branch was changed or published. A `git format-patch` deliverable accompanies this pass and can be applied with `git am humanities-inquiry-pilot-review.patch` on an up-to-date main checkout.
 
 **Delivery update (31 Oct 2026):** Matthew authorised using the connected GitHub API after the shell credential failure. Deliver the same verified content in one commit based on freshly checked main, with a non-forced, expected-head-guarded fast-forward ref update. Publishing remains manual. The earlier patch remains a fallback and must not be applied again if this connector delivery succeeds.
+
+## Review fixes (1 Nov 2026)
+
+- Build from a big idea: predict, match, Economics starter and other checks no longer contain their own answer; mirror "cause" item no longer calls "Who made it / How old" a look-up (replaced with a view and a label look-up); options evened out.
+- Can it be investigated: final sort has a third group, "Needs criteria first", for "nicest road"; options evened out; intro shortened.
+- Where to look: "What did local people say" now matches consultation comments or a survey (class plan too); intro rewritten at Year 7 level.
+- Use the subject's words: assumes trimmed to Year 6 AC9HS6S07 n2 for every subject plus descriptor-level History S03/S07 (History only, noted in teacher.yml); listing them at descriptor level keeps validate quiet.
+- Sharing unit (lessons 7–9): editorial pass (shorter sentences, one hedge per idea, made-up labels plain); all checks now have four options of similar length with feedback naming the slip.
+- `learning:` added to every HASS teacher.yml; vague summaries in lessons 7–9 rewritten.
+- Before Year 7 › Find it and sort it: ".com usually for a business".
+- Line ~160 ("No code or skeleton content…") marked superseded.

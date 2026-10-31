@@ -16,7 +16,7 @@ Every source has two things you can ask about straight away.
 
 They sound close, but they are different questions. A source can show one thing and have been made by someone quite different.
 
-> **Source A: a clay warrior.** A life-size figure made of baked clay, standing about 1.8 metres tall. It is dressed as a soldier, with armour and a belt, and each figure has a different face. It was one of thousands buried near the tomb of the First Emperor of Qin, in what is now Shaanxi province, China. It was made by craftsmen in workshops, around the time the emperor died (210 BCE).
+> **Source A: a clay warrior.** A life-size figure made of baked clay, standing about 1.8 metres tall. It is dressed as a soldier, with armour and a belt, and each figure has a different face. It was one of thousands buried near the tomb of the First Emperor of Qin, in what is now Shaanxi province, China. It was made by craftsmen in Qin workshops during the First Emperor's reign. Making the figures took many years, before the emperor died in 210 BCE.
 
 ## Predict: which question?
 
@@ -42,13 +42,15 @@ check:
   items:
     - ["It was made by craftsmen in workshops", "Origin", "That says who made it."]
     - ["It shows a soldier in armour", "Content", "That is what the figure looks like."]
-    - ["It was made around 210 BCE", "Origin", "That says when."]
+    - ["It was made during the First Emperor's reign, before 210 BCE", "Origin", "That says when it was made."]
     - ["Each figure has a different face", "Content", "That is what you can see in it."]
-    - ["It was buried near the First Emperor's tomb in Shaanxi province", "Origin", "That says where it came from."]
+    - ["It was made in the Qin heartland, in what is now Shaanxi province", "Origin", "That says where it was made."]
     - ["Some figures carried real bronze weapons", "Content", "That is something it contains."]
 ```
 
-Was your guess right? Origin is about the maker, the time and the place. Content is about what is in the source.
+Was your guess right? Origin is about the maker, and when and where it was made. Content is about what is in the source.
+
+One thing to watch: where a source was **found** is not always where it was **made**. The warriors were found in pits near the emperor's tomb. Historians record that too, but it is the findspot, not the origin.
 
 ## Worked example: a different source
 
@@ -61,7 +63,7 @@ tasks:
       q: "Source B is below. Is each fact about its origin or its content?"
       options: ["Origin", "Content"]
       items:
-        - ["It was buried with a Qin official in 217 BCE", "Origin", "That says when and where it came from."]
+        - ["It was written before 217 BCE, in Qin territory", "Origin", "That says when and where it was made."]
         - ["It lists rules for looking after grain stores", "Content", "That is what it says."]
         - ["It was written by officials of the Qin government", "Origin", "That says who made it."]
         - ["It has rules and punishments for people who break them", "Content", "That is what it records."]
@@ -74,13 +76,13 @@ tasks:
       misconception: origin-from-content
       explain: "Line 3: Nib has answered 'who made it?' by looking at what the figure shows. The warrior is dressed as a soldier, but that is its content. The origin is the craftsmen who made it in workshops."
     smaller:
-      check: { type: question, q: "The warrior is dressed as a soldier. Does that tell you who made it?", options: ["No, it only shows what it looks like", "Yes, a soldier made it", "Yes, the emperor made it", "It tells you where it was made"], answer: 0, explain: "What a source shows is its content. It does not tell you who made it." }
+      check: { type: question, q: "The warrior is dressed as a soldier. Does that tell you who made it?", options: ["No, it only shows what it looks like", "Yes, soldiers made figures of themselves", "Yes, it shows a Qin soldier, so the Qin army made it", "No, but it tells you when it was made"], answer: 0, feedback: [null, "That reads the maker off what it shows. The card says craftsmen made it.", "The figure shows a Qin soldier. That is content. Who shaped the clay is a different question.", "What it shows does not tell you when either. That is origin too, and you need the card for it."], explain: "What a source shows is its content. It does not tell you who made it." }
   - check:
       type: question
       q: "Why is it useful to ask origin and content as two separate questions?"
-      options: ["Because what a source shows is not always who made it", "Because there are two kinds of source", "Because origin is more important", "Because content is always wrong"]
+      options: ["Because what a source shows does not tell you who made it", "Because some sources have an origin and others have content", "Because origin matters more, so you ask it first", "Because the content of an old source is usually wrong"]
       answer: 0
-      feedback: [null, "Both questions are asked about every source.", "Neither is more important. You need both.", "Content is not always wrong. It just does not answer the question of who made it."]
+      feedback: [null, "Every source has both. You ask both questions about every source.", "Neither matters more. You need both, and the order is not the point.", "Content is not usually wrong. It just does not answer the question of who made it."]
       explain: "A source can show one thing and be made by someone else. Asking both questions keeps them apart."
 ```
 
@@ -88,7 +90,7 @@ tasks:
 
 ### Ask the questions
 
-Look at Source B. **Who** made it? Officials of the Qin government. **When**? Before 217 BCE. **Where**? Qin territory, in central China. That is its origin. **What** is in it? Rules for grain stores, and punishments. That is its content.
+Look at Source B. **Who** made it? Officials of the Qin government. **When**? Before 217 BCE, because that is when they were buried. **Where**? Somewhere in Qin territory. That is its origin. The tomb at Shuihudi is where the slips were **found**, which is useful to know but is not the same thing. **What** is in it? Rules for grain stores, and punishments. That is its content.
 
 ### Find Nib's mistake
 
@@ -105,9 +107,9 @@ tasks:
   - check:
       type: question
       q: "Source C is a stone inscription the First Emperor had set up on a mountain around 219 BCE. It says he brought peace and one set of laws and measures to all. What is its origin?"
-      options: ["Made for the First Emperor, around 219 BCE, on a mountain", "Peace and one set of laws and measures", "A stone with writing on it", "It praises the emperor"]
+      options: ["Made for the First Emperor, around 219 BCE, on a mountain", "It tells of peace and one set of laws and measures", "Made by the emperor's enemies, after he died", "It praises the emperor for uniting the land"]
       answer: 0
-      feedback: [null, "That is what it says. That is content, not origin.", "That describes how it looks. Origin is who made it, when and where.", "That is what it says about him. That is content, not origin."]
+      feedback: [null, "That is what it says. That is content, not origin.", "Nothing on the card says that. It was set up by order of the emperor, around 219 BCE.", "That is what it says about him. That is content, not origin."]
       explain: "Origin is made for the First Emperor, around 219 BCE, on a mountain. What it says is its content."
   - check:
       type: question
@@ -129,7 +131,7 @@ tasks:
 
 > **Source C: an inscription.** Words cut into stone, set up on a mountain by order of the First Emperor on one of his tours, around 219 BCE. It says the emperor brought peace and order, and that everyone now lives under one set of laws, weights and measures.
 
-> **Source D: a museum label.** A short text on a card next to a clay warrior in a museum, written in 2019 by museum staff. It says each warrior was shaped in parts and fitted together, and that farmers digging a well found the first figures in 1974.
+> **Source D: a museum label (made up for this lesson).** A short text on a card next to a clay warrior in a museum, written in 2019 by museum staff. It says each warrior was shaped in parts and fitted together, and that farmers digging a well found the first figures in 1974.
 
 ### Source C: origin
 
@@ -155,9 +157,9 @@ tasks:
   - check:
       type: question
       q: "Dev says: 'The inscription praises the emperor, so the emperor wrote it.' What is the best reply?"
-      options: ["What it says is content. Who wrote it is a separate question", "That is right, it praises him so he wrote it", "Inscriptions are never written by anyone in particular", "Praise means it is false"]
+      options: ["What it says is content. Who wrote it is a separate question", "That is right: people do not usually praise someone else", "No: it praises him, so his enemies must have written it", "No: it praises him, so it is false, and we cannot know the maker"]
       answer: 0
-      feedback: [null, "Something can praise a person without being written by them. Many things are made for a ruler by others.", "Someone always makes a source. We just need to find who.", "Praise does not make it false. That is a different question."]
+      feedback: [null, "Something can praise a person without being written by them. Rulers often had others make things for them.", "That still reads the maker off the content, just the other way round.", "Praise does not make it false, and it is a different question from who made it."]
       explain: "What the inscription says is its content. Who wrote it, and who had it made, is its origin."
 ```
 
@@ -170,7 +172,7 @@ tasks:
 ```step
 stage: make
 insight: "Writing origin and content separately for a source you choose makes the two questions yours."
-check: { type: reflect, text: "In my own book I picked a source (from our unit, or one of Sources A to D) and wrote its origin (who, when, where) and its content (what it shows or says) on two separate lines. A partner read it and agreed the two were kept apart." }
+check: { type: reflect, text: "In my own book I picked a source (from our unit, or one of Sources A to D) and wrote its origin (who, when, where) and its content (what it shows or says) on two separate lines. A partner read it and gave feedback on whether the two were kept apart." }
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.

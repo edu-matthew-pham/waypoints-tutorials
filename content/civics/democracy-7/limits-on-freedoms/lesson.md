@@ -4,18 +4,18 @@ unit: freedoms
 title: Within the bounds of law
 node: AC9HC7K02 n2
 assumes: [AC9HC7K02 n1]
-summary: "Democratic freedoms in Australia are real, but they are not unlimited: they operate within the 'bounds of law'. Laws set limits — such as defamation laws, rules against inciting violence, and public safety rules for marches — so that one person's freedom does not destroy the rights, safety or reputation of others."
+summary: "Democratic freedoms in Australia are real but not unlimited: they work within the bounds of law. Laws on defamation, urging violence and safety at marches stop one person's freedom from harming other people's safety, rights or reputation."
 language: maths
-hook: "You have freedom of speech in Australia. Does that mean you can publish a made-up lie accusing your neighbour of a crime, or shout 'Fire!' in a packed cinema when there is no fire?"
+hook: "You have freedom of speech and assembly in Australia. Does that mean you can post a false story that your neighbour is a thief, or hold a protest that blocks an ambulance on its way to hospital?"
 ---
 In Lesson 1 you met the five democratic freedoms: speech, association, assembly, religion and movement.
 
-Are those freedoms absolute — meaning you can do anything at all in their name? No. In a democracy, freedoms operate **within the bounds of law**.
+Can you do anything at all in the name of those freedoms? No. In a democracy, freedoms work **within the bounds of law**.
 
-That phrase means the law sets clear, public boundaries where one person's exercise of a freedom would seriously harm:
-- **other people's rights and reputation** (for example, **defamation** laws stop someone publishing false statements that ruin an innocent person's reputation);
-- **public safety and public order** (for example, assemblies must be peaceful and cannot block emergency ambulances or use violence);
-- **the safety of the community** (for example, laws against criminal organisations or inciting violence).
+That means the law sets public limits where one person's use of a freedom would seriously harm others:
+- **other people's reputation**: harmful false claims about a person can break **defamation** law (the law that protects a person's good name);
+- **public safety**: a protest must stay peaceful and must not block ambulances;
+- **the safety of the community**: urging people to be violent is against the law.
 
 ## Predict: why set boundaries on a freedom?
 
@@ -26,10 +26,10 @@ check:
   type: predict
   q: "Why does Australian law put limits on democratic freedoms, such as defamation law on speech or peaceful-conduct rules on assembly?"
   options:
-    - "To balance competing rights and protect other people's safety, rights and reputation so everyone can share public life safely"
-    - "Because freedoms in Australia apply only when a citizen agrees with the government"
-    - "To stop citizens from criticising elected representatives between elections"
-    - "Because ordinary laws passed by Parliament always cancel constitutional freedoms completely"
+    - "So one person's freedom does not seriously harm other people"
+    - "So people do not criticise the government too much"
+    - "Because freedoms only apply on election day"
+    - "Because most people would misuse their freedoms"
   actual: "Legal boundaries exist so one person's freedom is not used to harm another person's safety, rights or reputation."
 ```
 
@@ -42,11 +42,11 @@ check:
   type: match
   q: "Match each freedom to an example of a legal limit in Australia and why that limit exists."
   pairs:
-    - ["Freedom of speech", "Defamation law: you cannot publish false claims that destroy someone's reputation without a lawful defence"]
-    - ["Freedom of assembly", "Public order and safety laws: a protest must stay peaceful and cannot block emergency services or trespass on private homes"]
-    - ["Freedom of association", "Criminal association laws: people cannot form or join a violent criminal or terrorist organisation"]
-    - ["Freedom of movement", "Road, court and border laws: you need a licence to drive, and a court can restrict movement on bail or quarantine to protect safety"]
-    - ["Freedom of religion", "General criminal and safety laws: religious belief cannot be used as an excuse to break laws that protect people from harm"]
+    - ["Freedom of speech", "Defamation law: harmful false claims about a person can break the law"]
+    - ["Freedom of assembly", "Safety laws: a protest must stay peaceful and keep emergency routes clear"]
+    - ["Freedom of association", "Joining a group never makes it legal for members to commit crimes"]
+    - ["Freedom of movement", "Road rules: you need a licence to drive, and courts can set bail conditions"]
+    - ["Freedom of religion", "Laws that protect people from harm still apply, whatever someone believes"]
 ```
 
 Notice what all five limits have in common: they do **not** ban the freedom itself. You can still criticise the government, join unions and clubs, march peacefully, practise your faith and travel across Australia. The boundary sits where an action harms others.
@@ -59,19 +59,19 @@ insight: "Comparing fair political speech with defamation and unsafe assembly sh
 tasks:
   - check:
       type: question
-      q: "In the made-up town of Wattle Creek, Jordan writes a newspaper letter saying: 'The council's new parking fees are too high and will hurt local shops.' Meanwhile, Alex posts a made-up story online claiming that a named local shopkeeper steals from customers. How does Australian law treat these two uses of speech?"
+      q: "In the made-up town of Wattle Creek, Jordan writes a newspaper letter saying: 'The council's new parking fees are too high and will hurt local shops.' Meanwhile, Alex posts a false story online saying that a named shopkeeper steals from customers. How does the law treat these two posts?"
       options:
-        - "Jordan's letter is protected political and public comment, while Alex's false personal accusation can be limited by defamation law to protect the shopkeeper's reputation"
-        - "Both are banned by defamation law, because criticising a council policy and accusing a shopkeeper both hurt someone's reputation"
-        - "Both are completely protected by freedom of speech, because freedom of speech has no legal limits"
-        - "Jordan's letter is banned because it criticises an elected council, while Alex's post is allowed because it is about a private business"
+        - "Jordan's opinion is fine; Alex's false claim could break defamation law"
+        - "Both could break defamation law, because both make someone look bad"
+        - "Both are fine, because freedom of speech covers anything you say"
+        - "Jordan's letter could be illegal for criticising the council; Alex's is fine"
       answer: 0
       feedback:
         - null
-        - "Expressing an honest opinion about a council policy is protected political comment, not defamation."
-        - "Freedom of speech operates within the bounds of law; publishing false factual claims that ruin a person's reputation is limited by defamation law."
-        - "That has it backwards: criticising government and council policies is protected, while false personal accusations against an individual can be defamatory."
-      explain: "Criticising a public policy is protected democratic speech; publishing false claims that damage an individual's reputation crosses into defamation."
+        - "An honest opinion about a council policy is normal political comment, not defamation."
+        - "Freedom of speech has limits. A harmful false claim about a person can break defamation law."
+        - "That is backwards. Criticising a council policy is normal political speech; a false claim about a person can be defamation."
+      explain: "Criticising a policy is part of democratic debate. Spreading a harmful false claim about a person can cross into defamation."
   - check:
       type: bug
       code: "working.txt#nib"
@@ -85,27 +85,30 @@ tasks:
         type: question
         q: "If a protest group wants to march in town, why can the law require them to keep the hospital's ambulance driveway clear?"
         options:
-          - "To protect patients' lives and safety while still letting the group hold its rally in a safe public place"
-          - "To stop people from expressing political views near public buildings"
-          - "Because freedom of assembly only applies indoors on private property"
-          - "Because freedom of movement always cancels freedom of assembly"
+          - "To keep patients safe while the group still holds its march"
+          - "To keep political views away from public buildings"
+          - "Because marches are only allowed on private land"
         answer: 0
         explain: "Keeping the ambulance driveway clear protects life and safety while leaving room for peaceful assembly nearby."
+        feedback:
+          - null
+          - "The group can still march and say what it thinks. The rule is about keeping the driveway clear."
+          - "Peaceful marches on public streets are allowed. The limit is about safety."
   - check:
       type: question
       q: "What makes a legal limit on a freedom reasonable in a democracy, rather than an excuse to silence people?"
       options:
-        - "It is set by a known law, applies equally to everyone, and goes only as far as needed to protect others' rights or public safety — leaving peaceful political disagreement free"
-        - "It only applies to people who vote against the government"
-        - "It is made up on the spot by a minister without a law passed by Parliament"
-        - "It bans all public meetings forever"
+        - "It is in a public law, applies to everyone and protects others from harm"
+        - "It is popular with most voters at the time"
+        - "A minister decides it on the day, depending on the protest"
+        - "It applies only to groups the government disagrees with"
       answer: 0
       feedback:
         - null
-        - "In a democracy under the rule of law, laws must apply equally, never target political opponents."
-        - "Limits must be grounded in laws passed by Parliament or established legal rules, and can be tested in independent courts."
-        - "Banning all public meetings would abolish freedom of assembly rather than bound it."
-      explain: "A legitimate limit is written in law, applies equally, and protects safety or rights without shutting down peaceful democratic debate."
+        - "A popular rule can still be unfair. People often disagree about exactly where limits should sit, but a fair limit is set out in law and protects others."
+        - "Limits need to be in a law that everyone can read, and courts can check them."
+        - "Laws must apply equally to everyone, not target people with unpopular views."
+      explain: "A fair limit is written in a public law, applies to everyone, and protects safety or rights without shutting down peaceful debate. People can still disagree about where a particular limit should sit."
 ```
 
 ### Inside and outside the bounds of law
@@ -129,13 +132,13 @@ stage: modify
 insight: "Sorting concrete cases into protected exercise of a freedom versus crossing a legal boundary."
 check:
   type: sort
-  q: "Sort each made-up action into whether it is a protected use of a democratic freedom, or crosses a legal boundary designed to protect others."
+  q: "Is each made-up action a protected use of a freedom, or does it cross a legal limit?"
   options: ["Protected democratic freedom", "Crosses a legal boundary"]
   items:
-    - ["A student group organises a peaceful Saturday march on a pre-arranged route to ask for cleaner rivers", "Protected democratic freedom", "Peaceful public assembly that allows safe traffic management is protected."]
+    - ["A student group holds a peaceful Saturday march on an agreed route for cleaner rivers", "Protected democratic freedom", "A peaceful march with safe traffic arrangements is protected."]
     - ["A speaker at a rally urges the crowd to smash the windows of shops along the street", "Crosses a legal boundary", "Inciting violence and property damage is unlawful and harms others."]
     - ["A citizen writes to their local MP arguing that a government bill is unfair", "Protected democratic freedom", "Questioning and criticising proposed laws is core political speech."]
-    - ["A blogger knowingly invents a false story that a local teacher stole school money", "Crosses a legal boundary", "Publishing false claims that damage a person's reputation is limited by defamation law."]
+    - ["A blogger posts a false story that a local teacher stole school money", "Crosses a legal boundary", "A harmful false claim about a person can break defamation law."]
 ```
 
 ## Practise: explain the balance
@@ -146,34 +149,34 @@ insight: "Explaining both the freedom and the reason for its legal boundary in a
 tasks:
   - check:
       type: question
-      q: "Sam says: 'If the law can stop me from publishing false rumours about someone, then we don't really have freedom of speech at all.' What is the best reply?"
+      q: "Sam (made up) says: 'If the law can stop me spreading false rumours about someone, we don't have free speech at all.' What is the best reply?"
       options:
-        - "We do have freedom of speech to express opinions and debate public issues; defamation law sets a boundary where false statements would unjustly harm another person's reputation"
-        - "Sam is right: if speech has any legal boundary at all, it is no longer a democratic freedom"
-        - "Freedom of speech only applies to spoken words, never to anything written or posted online"
-        - "Defamation law bans all criticism of government policies as well as false personal rumours"
+        - "You can still share opinions; the limit is on harmful false claims about people"
+        - "Sam is right: any limit at all means the freedom is gone"
+        - "The limit is fine because it only covers posts, not what you say out loud"
+        - "The limit is fine because free speech mainly protects politicians"
       answer: 0
       feedback:
         - null
-        - "Every democracy balances freedoms with legal boundaries so one person's freedom does not destroy another person's rights."
-        - "Freedom of speech (or expression) covers writing, publishing and online posts as well as spoken words."
-        - "Defamation law targets false statements that harm a person's reputation; criticising government policies remains protected political speech."
-      explain: "A bounded freedom is still a real freedom: you can argue, criticise and debate, while others are protected from false reputational harm."
+        - "Democracies balance freedoms with limits so one person's freedom does not wreck another person's good name or safety."
+        - "Defamation law can cover spoken words as well as writing and posts."
+        - "Free speech protects everyone, including ordinary citizens criticising politicians."
+      explain: "A freedom with limits is still a real freedom: you can argue, criticise and debate, while other people are protected from harmful false claims."
   - check:
       type: question
-      q: "Which institution in Australia decides disputes if a citizen argues that a law has gone too far and breached the Constitution's limits?"
+      q: "A citizen argues that a law goes further than the Constitution allows. Who decides?"
       options:
-        - "The High Court (and the courts)"
-        - "The Prime Minister and Cabinet, because the executive decides whether its own laws are constitutional"
-        - "The Senate alone, without the courts"
-        - "The opposition party leader alone"
+        - "The courts, with the High Court at the top"
+        - "The Prime Minister and Cabinet, who run the government"
+        - "The Senate, by voting on the law again"
+        - "The Governor-General, who signs every new law"
       answer: 0
       feedback:
         - null
-        - "Under the separation of powers, the executive cannot be the judge of its own constitutional limits."
-        - "The Senate votes on bills in Parliament, but only independent courts can rule on whether an Act breaches the Constitution."
-        - "The Opposition debates laws in Parliament, but independent courts decide legal and constitutional disputes."
-      explain: "Independent courts — with the High Court at the top for constitutional questions — interpret the law and check whether government action stays within legal bounds."
+        - "The government cannot be the judge of its own limits. That job belongs to the courts."
+        - "The Senate votes on bills, but only courts decide whether a law breaks the Constitution."
+        - "The Governor-General signs laws, but does not decide legal disputes about them."
+      explain: "Independent courts, with the High Court at the top for questions about the Constitution, decide whether a law stays within its limits."
 ```
 
 ### Sam's claim about speech
@@ -187,7 +190,7 @@ stage: make
 insight: "Explaining one freedom, one legal limit on it, and why that limit exists puts the whole balance in your own words."
 check:
   type: reflect
-  text: "In my own book I chose one of the five democratic freedoms, gave an example of how citizens use it, described one legal limit on that freedom in Australia, and explained why that limit exists. A partner read it and agreed."
+  text: "In my own book I chose one of the five democratic freedoms, gave an example of how citizens use it, described one legal limit on that freedom in Australia, and explained why that limit exists. A partner read it and gave feedback."
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.
@@ -197,45 +200,47 @@ Write it in your own book or document, not on this page. Your partner or teacher
 ```step
 stage: make
 tier: typical
-insight: "In Australia, notifying police ahead of a public march is used to close roads safely and protect both marchers and bystanders, not to judge whether the marchers' opinion is popular."
+insight: "Telling police about a march ahead of time is for safety and traffic, not for judging the message. The rules differ between states and territories."
 check:
   type: question
-  q: "When a community group notifies police ahead of a large street march so traffic can be redirected safely, what is the purpose of that legal process?"
+  q: "In many places, a group planning a big street march tells the police ahead of time. What is that for?"
   options:
-    - "To keep both the marchers and other road users safe while allowing the peaceful assembly to go ahead"
-    - "To let police check whether they agree with the group's political opinions"
-    - "To require every participant to prove they voted in the last federal election"
-    - "To ban marches on any weekend or public street"
+    - "To plan traffic and keep marchers and other people safe"
+    - "To let police decide whether the group's message is acceptable"
+    - "To check that every marcher is old enough to vote"
+    - "To stop marches happening on busy streets"
   answer: 0
   feedback:
     - null
-    - "Public assembly rules are about safety and traffic order, not whether authorities agree with the message."
-    - "Peaceful assembly is open to everyone in the community, including young people and non-voters."
-    - "Notification procedures exist to manage public streets safely so weekend marches can take place."
+    - "Safety rules are about traffic and order, not whether police agree with the message."
+    - "Peaceful assembly is open to everyone, including young people."
+    - "The point is to plan so marches can go ahead safely, even on busy streets."
   explain: "Safety and traffic arrangements help freedom of assembly and freedom of movement work side by side."
 ```
+
+The exact rules (whether you must tell police, how far ahead, and what happens if you do not) are different in each state and territory.
 
 ## Wider: when the High Court tests a limit on political speech
 
 ```step
 stage: make
 tier: wider
-insight: "Because Australia has representative and responsible government in the Constitution, the High Court has ruled that Parliament cannot pass laws that choke off free political communication."
+insight: "Because the Constitution says Parliament is chosen by the people, the High Court has found that Parliament cannot freely shut down political discussion."
 check:
   type: question
-  q: "The High Court has found that because sections 7 and 24 of the Constitution say Parliament must be 'directly chosen by the people', there is an implied freedom of political communication. What does that mean if a law tries to ban citizens from discussing government policies?"
+  q: "The Constitution says members of Parliament are 'directly chosen by the people'. From this, the High Court has found an unwritten (implied) freedom to discuss politics. What could happen to a law that banned discussing government policies?"
   options:
-    - "The High Court can rule the law invalid if it burdens political communication without a legitimate, proportionate reason"
-    - "Parliament can ban all political discussion whenever it wants"
-    - "The High Court rewrites the Constitution without a referendum"
-    - "Voters are no longer allowed to talk about elections"
+    - "The High Court could rule the law invalid"
+    - "Nothing, because the freedom is not written down"
+    - "The High Court would rewrite the Constitution to fix it"
+    - "The law would apply only to members of Parliament"
   answer: 0
   feedback:
     - null
-    - "The implied freedom limits Parliament from shutting down political debate."
-    - "The High Court interprets what the Constitution's words require; only voters at a referendum can change the text."
-    - "It protects voters' ability to discuss elections and government affairs."
-  explain: "For voters to make a genuine choice at elections, they must be free to communicate about political and government matters."
+    - "An implied freedom still counts. The court reads it from what the Constitution's words require."
+    - "Courts decide what the Constitution means; only voters at a referendum can change its words."
+    - "The implied freedom protects everyone's political discussion, not only MPs."
+  explain: "For voters to make a real choice at elections, they need to be free to discuss politics. The court asks whether a law limits that discussion without a good enough reason."
 ```
 
 Typical and wider steps are extras on the same idea. You do not need them to finish the lesson.

@@ -1,5 +1,5 @@
 inquiry:
-  q: "In Wattle Creek, one resident writes a letter to the paper saying the council's new rubbish fee is unfair. Another resident posts a made-up story online claiming a local baker poisons bread. Why does Australian law protect the first resident's speech, but step in to limit the second?"
+  q: "In Wattle Creek, one resident writes a letter to the paper saying the council's new rubbish fee is unfair. Another resident posts a false story online claiming a local baker poisons bread. Why does Australian law protect the first resident's speech, but step in to limit the second?"
   prompts:
     - "Who is harmed when someone publishes a false accusation about a neighbour or small business?"
     - "Why does democracy need citizens to be free to criticise council fees, while still protecting people from defamation?"
@@ -26,8 +26,8 @@ questions:
     q: "Why are democratic freedoms in Australia subject to legal limits such as defamation law and peaceful-assembly rules?"
     options:
       - "To protect other people's rights, reputation and safety where one person's action would harm others"
-      - "To prevent citizens from ever questioning government policy"
-      - "Because freedoms only apply to members of Parliament"
-      - "Because Australia has no courts to interpret the law"
+      - "To stop people criticising the government too much"
+      - "Because freedoms only count on election day"
+      - "Because most people would misuse their freedoms"
     answer: 0
     explain: "Legal limits balance competing rights so that freedoms can be exercised without harming others' safety, rights or reputation."

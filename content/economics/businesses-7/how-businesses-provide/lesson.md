@@ -9,7 +9,7 @@ hook: "Fresh apples can reach Mia's family from a Saturday market stall, a natio
 ---
 You have met the **reasons businesses exist** (lesson 1) and the **structures** they use (lesson 2). This lesson joins them together: how a business's purpose and structure shape **what** it provides and **how** those goods and services reach customers.
 
-Businesses reach people through different channels: **local markets**, **small independent stores**, **shopping centres**, **online stores**, and **remote community stores**. The structure behind the business shapes how much money it can raise, who makes decisions, and which channel fits best. (All business names in this lesson, including Made-Up Grocers Corp and GreenBean Cafe, are made up.)
+Businesses reach people through different channels: **local markets**, **small independent stores**, **shopping centres**, **online stores**, and **remote community stores**. The structure behind the business shapes how much money it can raise, who makes decisions, and which channel fits best. (All business names in this lesson, including Made-Up Grocers Corp and Made-Up Cafe, are made up.)
 
 ## Predict: why not one structure for everyone?
 
@@ -20,25 +20,33 @@ check:
   type: predict
   q: "Why don't all businesses set up as large corporations?"
   options:
-    - "Different structures suit different purposes, scales and ways of reaching customers"
-    - "Only food businesses are allowed to be corporations"
-    - "Sole proprietors always make more money than corporations"
-    - "Corporations are not allowed to sell services"
-  actual: "Different structures fit different jobs. A solo bike repairer needs fast, personal decisions (sole proprietor), twenty orchards sharing a coolroom need equal member votes (cooperative), and a national grocery chain needs huge capital from shareholders (corporation)."
+    - "Different structures suit different purposes, sizes and ways of reaching customers"
+    - "A corporation needs thousands of shareholders, which a small business can't find"
+    - "Only businesses that sell goods can be corporations, not service businesses"
+    - "Most businesses would like to be corporations but are not allowed to be one"
+  actual: "Different structures fit different jobs. (A company can have just one shareholder, and it can sell goods or services, so size and type of product are not what stops anyone.) A solo bike repairer needs fast, personal decisions (sole proprietor), twenty orchards sharing a coolroom need equal member votes (cooperative), and a national grocery chain needs huge capital from shareholders (corporation)."
 ```
 
-## Try: order the chain
+## Try: the links in the chain
+
+One way to explain a business is a chain of five links: **why it exists** (purpose), **how ownership is set up** (structure), **how staff and tools are organised**, **what goods or services it provides**, and **how they reach customers**.
 
 ```step
 stage: run
-insight: "Putting the links in order shows how purpose leads to structure, and structure shapes how goods and services reach people."
+insight: "Each link in the chain is a different question about the same business; purpose and structure shape the rest."
 check:
-  type: parsons
-  code: "chain.txt#order"
-  text: "Put the chain in order, from why the business starts to how goods or services reach people."
+  type: match
+  q: "Riverbend Pantry (made up) sells low-cost groceries. Match each link in the chain to what it says about the pantry."
+  pairs:
+    - ["Purpose", "To keep fresh food affordable for local families"]
+    - ["Structure", "A not-for-profit, so any surplus goes back into lower prices"]
+    - ["Staff and tools", "Two paid workers, a coolroom and a donated delivery van"]
+    - ["Goods or services", "Fruit, bread, milk and other groceries"]
+    - ["How they reach customers", "A small shopfront on the main street, open six days a week"]
+  explain: "Each link answers a different question. The pantry's purpose helps explain why a not-for-profit structure fits, and that shapes the rest."
 ```
 
-Each step shapes the next. Change the purpose at the start and a different structure and channel make sense.
+This chain is one way to explain a business, starting from its purpose. Real businesses don't always go in this order: some pick a channel first (an online shop, say) and then choose a structure to suit it. What matters is the links: change the purpose and a different structure and channel can make sense.
 
 ## Worked example: two ways to provide food
 
@@ -84,16 +92,16 @@ tasks:
       type: question
       q: "Why does a cooperative structure suit twenty small orchards that want to supply fresh fruit to city grocers?"
       options:
-        - "Pooling their harvest in a member-owned packing shed lets small growers fill big orders they could not supply alone"
-        - "It hands ownership of all twenty orchards to a single sole proprietor"
-        - "It lets outside shareholders outvote the farmers on how the shed is run"
-        - "It requires the orchards to stop selling fruit at local markets"
+        - "Pooling their fruit in a shared shed lets small growers fill orders none could fill alone"
+        - "Each orchard gets a vote, so the shed is sure to make more profit than a company"
+        - "A cooperative has no costs, because the members do all the work for free"
+        - "Joining means each grower hands their own orchard over to the cooperative"
       answer: 0
       feedback:
         - null
-        - "Each grower keeps their own farm and co-owns the shared shed as a member."
-        - "In a cooperative, the member farmers own the shed and each member gets a vote."
-        - "Sharing a shed and trucks helps them reach wider markets alongside local ones."
+        - "Votes decide how the shed is run, but they don't guarantee a profit. The point is what the members can do together."
+        - "The shed still has costs (power for the coolroom, trucks, wages). The members share those costs."
+        - "Each grower keeps their own farm. What they co-own is the shared shed."
       explain: "The cooperative structure lets small independent producers share expensive equipment and reach customers they could not reach alone."
 ```
 
@@ -166,7 +174,7 @@ stage: make
 insight: "Connecting purpose, structure and provision for two businesses in your own words brings the whole course together."
 check:
   type: reflect
-  text: "In my own book I compared two different types of businesses, using the terms sole proprietor, partnership, cooperative, corporation, franchise or not-for-profit, and explained how each structure shapes the goods or services it provides and how they reach consumers. A partner read it and agreed."
+  text: "In my own book I compared two different types of businesses, using the terms sole proprietor, partnership, cooperative, corporation, franchise or not-for-profit, and explained how each structure shapes the goods or services it provides and how they reach consumers. A partner read it and gave feedback."
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.
@@ -181,16 +189,16 @@ check:
   type: question
   q: "How has selling online changed the way a sole proprietor making specialist guitar pedals in a country town can provide goods?"
   options:
-    - "They can sell goods to musicians across the country from one workshop, without paying rent in city shopping centres"
-    - "They must become a corporation before they are allowed to sell to customers in other states"
-    - "Online selling only works for digital services, never for physical goods that need posting"
-    - "They must open a franchise branch in every capital city before launching a website"
+    - "They can sell to musicians across the country from one workshop, without renting a city shop"
+    - "They must register as a company before they can sell to customers in other states"
+    - "Online selling suits digital goods, so pedals would still need a shop in each city"
+    - "They can sell online, but a sole trader may only post goods within their own state"
   answer: 0
   feedback:
     - null
-    - "Sole proprietors, partnerships and cooperatives can all sell interstate through an online store."
-    - "Physical goods are ordered online and delivered by post or courier."
-    - "An online store lets a single workshop take orders nationwide without opening city branches."
+    - "Sole traders, partnerships and cooperatives can all sell interstate through an online store."
+    - "Physical goods are ordered online and sent by post or courier. No city shop is needed."
+    - "There is no rule like that. A sole trader can post goods anywhere in Australia."
   explain: "Digital channels let a small structure reach a wide market that once required a chain of physical shops."
 ```
 
@@ -202,18 +210,18 @@ tier: wider
 insight: "A social enterprise trades commercially — selling goods or services — in order to fund and achieve a community mission."
 check:
   type: question
-  q: "GreenBean Cafe sells coffee and toasties to office workers at normal cafe prices. It is set up as a not-for-profit social enterprise: every trainee barista is a young person learning job skills, and all surplus pays for their training. How do its purpose and structure work together?"
+  q: "Made-Up Cafe (a made-up business) sells coffee and toasties to office workers at normal cafe prices. It is set up as a not-for-profit social enterprise: every trainee barista is a young person learning job skills, and all surplus pays for their training. How do its purpose and structure work together?"
   options:
-    - "Selling goods and services commercially funds the training mission, and the not-for-profit structure keeps every dollar of surplus inside that mission"
-    - "Because it sells coffee at normal commercial prices, it must pay dividends to private shareholders"
-    - "Because it has a community mission, it can only rely on donations and cannot sell goods or services"
-    - "Because trainees work there, it counts as a partnership owned equally by every customer"
+    - "Its sales pay for the training, and the not-for-profit structure keeps the surplus in that mission"
+    - "Because it charges normal cafe prices, it is really a for-profit business, not a not-for-profit"
+    - "Because it has a community mission, it should rely on donations instead of selling coffee"
+    - "Because it makes a surplus, it must be breaking the rules for a not-for-profit"
   answer: 0
   feedback:
     - null
-    - "A not-for-profit has no private shareholders taking dividends; surplus stays in the mission."
-    - "A social enterprise earns its income by selling goods (coffee, toasties) and hospitality service."
-    - "Customers buy coffee; the organisation is a not-for-profit, not a customer partnership."
+    - "Prices don't decide it. What decides it is where the surplus goes: here, into training, not to owners."
+    - "A social enterprise earns its money by selling things. Selling coffee is how it pays for the training."
+    - "A not-for-profit can make a surplus. The rule is that the surplus goes back into its purpose."
   explain: "A social enterprise combines commercial provision of goods and services with a structure that locks surplus into its community goal."
 ```
 

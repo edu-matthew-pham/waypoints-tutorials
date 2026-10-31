@@ -9,9 +9,9 @@ shape: primer
 hook: "You need to know how many students buy from the Parkside tuckshop each day. You could search the internet, ask a friend, or look at the till records. Which first?"
 assumes: [AC9HS6S02 n1, AC9HS6S02 n2, AC9HG7S02 n1, AC9HH7S02 n1]
 ---
-Once you have a question, ask **what would answer it, and who would have it**. A count may be in records or need collecting. A rule needs the relevant authority’s current documents. A view needs the people who hold it; a news report may quote some of them, but cannot represent everyone. Then you search, and a search works best when it is a few strong words.
+Once you have a question, ask **what would answer it, and who would have it**. A count might be in someone's records, or you might need to collect it. A rule comes from whoever makes the rule. A view comes from the people who hold it. A news report may quote some of them, but not everyone. Then you search. A search works best with a few strong words.
 
-All practice cases, records and addresses in this lesson are invented. Addresses end in `.example`; do not try to visit them. For this case, Parkside keeps anonymised daily buyer counts in its sales records. Ordinary transaction totals do not necessarily count distinct students.
+All the cases, records and addresses in this lesson are made up. The addresses end in `.example`, so don't try to visit them. In this case, Parkside's sales records count how many students buy something each day. (Real sales records often count sales, not students. One student might buy twice.)
 
 ## Think first
 
@@ -21,7 +21,7 @@ insight: "Committing to a choice shows the move: start from what the question ne
 check:
   type: predict
   q: "How many students buy from the Parkside tuckshop each day? Where do you look first?"
-  options: ["The tuckshop's own sales records", "A web search for tuckshops", "A news site", "Ask one friend"]
+  options: ["The tuckshop's own sales records", "A web search for tuckshops", "The local news website", "A friend who eats there a lot"]
   actual: "The tuckshop's own sales records. In this invented case, those records include daily buyer counts. A web search for 'tuckshops' finds tuckshops everywhere. A news site is unlikely to have it, and one friend only knows their own habits."
 ```
 
@@ -36,12 +36,12 @@ check:
   pairs:
     - ["How many students buy from the tuckshop each day?", "The tuckshop's own records (data)"]
     - ["What are the rules for closing a road?", "The council's website (a government source)"]
-    - ["What did local people say about closing Mill Road?", "A local news report"]
+    - ["What did local people say about closing Mill Road?", "Comments people sent to the council's consultation, or your own survey"]
     - ["How much has the Kilby River dropped since 2000?", "River records from the water authority (statistics)"]
     - ["What access problems might a road closure cause?", "A transport specialist's report (analysis of access)"]
 ```
 
-Was your guess right? Four kinds of source turn up a lot in a civics or economics investigation: **government websites** (rules and decisions), **news** (what people say and what happened), **specialist reports** (experts looking closely at something) and **statistics** (counts and measurements). Source types overlap: a government website can publish statistics or a specialist report. Match the information to your question, then check who produced it, when, how and for what purpose. Official does not automatically mean complete or reliable.
+Was your guess right? Four kinds of source turn up a lot in a civics or economics investigation: **government websites** (rules, decisions and comments sent in to a consultation), **news** (what happened, and what some people said), **specialist reports** (experts looking closely at something) and **statistics** (counts and measurements). To hear from many local people, a consultation's comments or your own survey reach more of them than a news story that quotes a few. Source types overlap: a government website can publish statistics or a specialist report. Match the information to your question, then check who produced it, when, how and for what purpose. Official does not automatically mean complete or reliable.
 
 ## The idea: strong words, not the first result
 
@@ -72,9 +72,9 @@ tasks:
   - check:
       type: question
       q: "A search for the Kilby River's water level gives too many pages. Which change helps most?"
-      options: ["Add the water authority's name, or limit the search to its site", "Use a shorter word", "Add 'please'", "Click the first result"]
+      options: ["Add the water authority's name, or search only its site", "Swap the words for one shorter word, like 'river'", "Type it as a full, polite question with 'please'", "Keep the search and just click the first result"]
       answer: 0
-      feedback: [null, "Fewer words usually finds more.", "Polite words do not narrow a search.", "Clicking does not narrow the search."]
+      feedback: [null, "Fewer words usually finds more pages, not fewer.", "Polite words don't narrow a search.", "The first result isn't always the right place. The search is still too wide."]
       explain: "Naming the maker or limiting to one site narrows it to the place that would have the records. Many search tools use site: followed by an address for this."
 ```
 
@@ -100,7 +100,7 @@ tasks:
   - check:
       type: question
       q: "Which is a better first place to look for how people in Wattle Flat used water in the dry year?"
-      options: ["The town's water authority and local news from that year", "A search for 'water'", "A video of a different town", "One neighbour's memory"]
+      options: ["The town's water authority and local news from that year", "A web search for 'water use in dry years'", "A video about a town in another state", "One neighbour who remembers that year"]
       answer: 0
       feedback: [null, "Too wide.", "A different town gives a different answer.", "One person's memory is worth hearing but is not enough."]
       explain: "Records and reports from the people who ran and reported on the water, in that year."
@@ -167,10 +167,10 @@ insight: "The same move in another subject's case."
 check:
   type: question
   q: "Which is the best first source for 'What might closing Mill Road change for shops?'"
-  options: ["Shop owners' views in a local news report, and traffic counts from the council", "The tuckshop", "A history textbook", "The first search result for 'shops'"]
+  options: ["A survey of Mill Road shop owners, and council traffic counts", "The Parkside tuckshop's sales records", "A history textbook about roads in Australia", "The first search result for 'shops'"]
   answer: 0
-  feedback: [null, "It does not cover shops or Mill Road.", "It will not cover a made-up road.", "That is the nearest, not the best."]
-  explain: "Views from shop owners, and counts from the council, both bear on the question."
+  feedback: [null, "The tuckshop's sales tell you about one school canteen, not the shops along Mill Road.", "It won't cover a made-up road or these shops.", "That is the nearest, not the best."]
+  explain: "A survey reaches the shop owners themselves, and the council's counts show how many people pass by."
 ```
 
 ## Wider: two searches compared

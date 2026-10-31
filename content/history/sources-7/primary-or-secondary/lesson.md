@@ -54,9 +54,9 @@ tasks:
   - check:
       type: question
       q: "A student keeps a diary on the day of the school fair last term. She is investigating that fair. Is the diary primary or secondary?"
-      options: ["Primary: it was written on the day of the event", "Secondary: it is only a diary", "Secondary: it is not very old", "Neither: it is too recent to be a source"]
+      options: ["Primary: it was written on the day of the event", "Secondary: a diary is one person's view, not the facts", "Secondary: it is only a few months old", "Primary, but only once it is many years old"]
       answer: 0
-      feedback: [null, "A diary can be a primary source. What matters is that it was written at the time.", "How old a source is does not decide it. The time of the event does.", "Recent sources can be sources too. For a recent event, a recent source can be primary."]
+      feedback: [null, "Being one person's view does not make it secondary. What matters is that it was written at the time.", "How old a source is does not decide it. The time of the event does.", "It is primary now. Age does not change whether it was made at the time."]
       explain: "Primary. It was made on the day of the event by someone there. A recent source can be primary when the event is recent."
   - check:
       type: bug
@@ -67,19 +67,19 @@ tasks:
       misconception: old-means-primary
       explain: "Line 4: Nib thinks a source is primary because it is old. Sima Qian wrote about a hundred years after the Qin. Old is not the test. It was made long after the events, so it is secondary."
     smaller:
-      check: { type: question, q: "Sima Qian wrote his history about 100 years after the Qin rulers. Was he alive when the First Emperor ruled?", options: ["No, so he was looking back", "Yes, he saw it happen", "It does not matter", "Nobody knows"], answer: 0, explain: "He was not there. He wrote about events that happened before he was born." }
+      check: { type: question, q: "Sima Qian wrote his history about 100 years after the Qin rulers. Was he alive when the First Emperor ruled?", options: ["No, so he was looking back", "Yes, he saw it happen", "Yes, because his book is over 2000 years old", "No, but his book is old, so it is still primary"], answer: 0, feedback: [null, "He wrote about 100 years later, so he could not have seen it.", "How old the book is does not tell you whether he was there.", "That is Nib's mistake. He was not there, so his book is secondary for the Qin."], explain: "He was not there. He wrote about events that happened before he was born." }
   - check:
       type: question
       q: "Which question best tells you whether a source is primary or secondary?"
-      options: ["Was it made at the time of the event I am investigating?", "Is it old?", "Is it in a museum?", "Is it true?"]
+      options: ["Was it made at the time of the event I am investigating?", "Is it more than a few hundred years old?", "Was it written by someone famous?", "Can I trust what it says?"]
       answer: 0
-      feedback: [null, "Old is a trap. A very old source can still be secondary.", "Where a source is kept does not decide what kind it is.", "True and primary are different things. A primary source can be wrong, and a secondary source can be right."]
+      feedback: [null, "Old is a trap. A very old source can still be secondary.", "Who wrote it does not decide when it was made compared with the event.", "Trust and primary are different things. A primary source can be wrong, and a secondary source can be right."]
       explain: "Primary or secondary depends on when it was made compared with the event. It does not depend on age, where it is kept or whether it is right."
 ```
 
 ### Same test, new source
 
-Two things are true about the school fair diary. It was written on the day, so it is primary for the fair. If you asked a different question, such as "how did people write diaries in our school in the past?", the same diary could answer that question too. The question you ask decides which kind of source it is.
+The school fair diary was written on the day, so it is primary for the fair. Now think about a source that **changes** with the question. A museum label written in 2019 about the clay warriors is secondary if you are investigating the First Emperor: it was written over 2000 years later. But if you are investigating how museums explained the warriors in 2019, the same label was made at the time, so it is primary. The question you ask decides which kind of source it is.
 
 ### Find Nib's mistake
 
@@ -103,9 +103,9 @@ tasks:
   - check:
       type: question
       q: "A 2019 museum label says the clay warriors were made for the First Emperor's tomb. You are investigating the museum's 2019 exhibition. Is the label primary or secondary?"
-      options: ["Primary: it was made at the time of the exhibition", "Secondary: it is about the Qin", "Secondary: it is a label", "Primary: it is modern"]
+      options: ["Primary: it was made at the time of the exhibition", "Secondary: it is about the Qin, who lived long before", "Secondary: museum staff were explaining things, not taking part", "Primary: modern sources are always primary"]
       answer: 0
-      feedback: [null, "Careful. What matters is which event you are investigating, not what the label talks about.", "Being a label does not decide it. The time of the event does.", "Modern is not the test. It is primary because of when it was made compared with the exhibition."]
+      feedback: [null, "Careful. What matters is which event you are investigating, not what the label talks about.", "Writing the label was part of the exhibition, so for this question the staff were taking part.", "Modern is not the test. A modern label is secondary for the Qin."]
       explain: "For the 2019 exhibition, the label is primary. For the Qin emperor's rule, the same label is secondary. The event you investigate decides."
 ```
 
@@ -131,9 +131,9 @@ tasks:
   - check:
       type: question
       q: "Ravi says: 'This book is 400 years old, so it must be a primary source about the Qin.' What is the best reply?"
-      options: ["It is old, but it was written long after the Qin, so it is secondary", "You are right, it is old enough", "Books are never primary", "It depends how many pages it has"]
+      options: ["It is old, but it was written long after the Qin, so it is secondary", "You are right: anything that old counts as primary", "No: books are always secondary, whenever they were written", "It is primary only if it quotes Qin sources"]
       answer: 0
-      feedback: [null, "Check when the Qin were. A book 400 years old is still far later.", "Books can be primary, such as a diary written at the time. The time it was written decides.", "Length has nothing to do with it."]
+      feedback: [null, "Check when the Qin were. A book 400 years old is still far later.", "Books can be primary, such as a diary written at the time. The time it was written decides.", "Quoting a Qin source does not make the book itself from the time. The quoted source is primary; the book is not."]
       explain: "Old is not the test. The Qin ruled over 2000 years ago, so a 400-year-old book is still a later retelling."
 ```
 
@@ -146,7 +146,7 @@ tasks:
 ```step
 stage: make
 insight: "Choosing sources about an event from your own life is how the test becomes yours."
-check: { type: reflect, text: "In my own book I chose an event from my own life or school. I wrote one primary source and one secondary source for it, and a reason for each. A partner read it and agreed." }
+check: { type: reflect, text: "In my own book I chose an event from my own life or school. I wrote one primary source and one secondary source for it, and a reason for each. A partner read it and gave feedback." }
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.
@@ -160,9 +160,9 @@ insight: "A copy or translation of a primary source is an edge case: the content
 check:
   type: question
   q: "A museum prints a photograph of one of the Qin bamboo slips. Which is the best way to think about it?"
-  options: ["The slip is primary. The photo is a copy of it, so use it carefully and check the slip", "The photo is secondary, and so is the slip", "The photo is primary because it is a photo", "Photos are never sources"]
+  options: ["The slip is primary. The photo is a later copy of it, so use it carefully and check the slip if you can", "The photo is new, so now the slip counts as secondary too", "The photo is primary for the Qin, because photos show things exactly", "The photo is useless, because only the real slip can be a source"]
   answer: 0
-  feedback: [null, "The slip itself was made at the time. The copy does not change that.", "A photo is not primary just because it is a photo. It is a copy of something that is.", "Photos can be sources. A copy of a source still carries what it shows."]
+  feedback: [null, "The slip itself was made at the time. A later copy does not change that.", "A photo is not primary for the Qin just because it is a photo. It is a later copy of something that is.", "Photos can be useful. A copy of a source still carries what it shows."]
   explain: "The slip is the primary source. The photo shows it, so it is useful, but it was made later. Historians say which one they used."
 ```
 

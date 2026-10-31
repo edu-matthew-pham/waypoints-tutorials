@@ -6,7 +6,7 @@ node: AC9HH7S04 n1
 assumes: [AC9HH7S03]
 summary: "A source often mixes factual claims (things that can be checked against evidence) with opinions (judgements or views). To check a source's accuracy, historians ask where it came from, what information it gives, whether each claim is a fact or an opinion, and what other sources could support or challenge it."
 language: maths
-hook: "A Roman writer says: 'Some gladiators wore bronze helmets, and all gladiators were brave.' One half of that sentence can be checked in a museum case. What about the other half?"
+hook: "Imagine a made-up Roman writer who says: 'Some gladiators wore bronze helmets, and all gladiators were brave.' One half of that sentence can be checked in a museum case. What about the other half?"
 ---
 In *Source origin and purpose*, you asked four questions of a source: who made it (**origin**), what it shows (**content**), what was going on (**context**), and why it was made (**purpose**).
 
@@ -30,13 +30,13 @@ stage: predict
 insight: "Committing first checks whether students separate a checkable claim from a value judgement inside the same source."
 check:
   type: predict
-  q: "Source C, the First Emperor's mountain inscription (219 BCE), claims that he set one system of weights and measures, and that his rule is 'glorious and without equal'. How should a historian treat those two claims?"
+  q: "Source C, the First Emperor's mountain inscription (219 BCE), claims that he set one system of weights and measures, and praises his rule as glorious and without equal. How should a historian treat those two claims?"
   options:
-    - "Treat the weights-and-measures claim as a factual claim that can be checked against archaeological finds, and 'glorious and without equal' as an opinion"
+    - "Treat the weights-and-measures claim as a fact that can be checked against finds, and the praise as an opinion"
     - "Treat both as facts, because the stone was carved during the First Emperor's reign"
-    - "Treat both as opinions, because the inscription is more than two thousand years old"
-    - "Ignore the whole inscription, because any source with an opinion in it has no facts"
-  actual: "One claim can be checked against excavated Qin weights and measures (factual claim); 'glorious and without equal' is praise (an opinion). A single source often contains both."
+    - "Treat both as opinions, because the inscription was made to praise the emperor"
+    - "Treat the praise as a fact too, because the emperor really did unite the kingdoms"
+  actual: "One claim can be checked against excavated Qin weights and measures (a factual claim); calling his rule glorious is praise (an opinion). A single source often contains both. (The card is our own summary, not a translation.)"
 ```
 
 ## Try: sort facts and opinions
@@ -70,13 +70,13 @@ tasks:
       q: "Historians want to check whether Source C is accurate when it claims the Qin introduced one standard system of weights and measures. Which other source would best support or challenge that claim?"
       options:
         - "Bronze weights and measuring vessels excavated from different parts of the Qin empire, stamped with the same official measure"
-        - "Another copy of the same praise poem carved by the same court officials"
-        - "Sima Qian's moral judgement that the First Emperor was a harsh ruler"
-        - "A modern textbook paragraph that repeats Source C's words without citing other evidence"
+        - "Another of the emperor's mountain inscriptions, which makes the same claim"
+        - "Sima Qian's history, which says the First Emperor was a harsh ruler"
+        - "A modern textbook that repeats Source C's claim without saying where it got it"
       answer: 0
       feedback:
         - null
-        - "A second copy from the same court officials has the same purpose and bias, so it does not independently test whether the weights were actually used."
+        - "A second inscription from the same court has the same purpose, so it does not test whether the weights were actually used."
         - "An opinion about whether the emperor was harsh does not test the factual claim about weights and measures."
         - "A secondary summary that simply repeats Source C is not independent evidence."
       explain: "Checking one source against a different kind of evidence — such as excavated bronze weights — is how historians test whether a factual claim is accurate."
@@ -95,25 +95,30 @@ tasks:
         options:
           - "No, it is still an opinion made to praise the ruler"
           - "Yes, anything written at the time is a fact"
-          - "It becomes a fact once the stone is two thousand years old"
-          - "It is a secondary source because it is carved in stone"
+          - "Yes, if he really was a successful ruler"
+          - "No, because a ruler would never say anything true about himself"
         answer: 0
+        feedback:
+          - null
+          - "That is Nib's slip. When it was written makes it primary, not a fact."
+          - "Even a successful ruler being 'the wisest of all time' is a judgement, not something you can check."
+          - "Rulers can state facts too, such as the laws they made. This sentence is an opinion because it is a judgement."
         explain: "When a statement was written tells you whether it is primary; whether it can be checked or is a value judgement tells you whether it is a fact or an opinion."
   - check:
       type: question
       q: "Why might Source C be less accurate when it claims that 'all people across the empire are happy and at peace'?"
       options:
-        - "Its purpose was official propaganda to win support after a war of conquest, so its makers had a strong reason to leave out discontent"
+        - "It was probably made to win support after a war of conquest, so its makers had a strong reason to leave out discontent"
         - "It is a secondary source written long after the Qin empire fell"
-        - "It gives only the perspective of conquered peasant farmers and leaves out the court's view"
-        - "Public stone monuments were only allowed to record neutral statistics"
+        - "It gives only the view of conquered farmers and leaves out the court's view"
+        - "Its carvers could not have known how people felt across such a big empire"
       answer: 0
       feedback:
         - null
         - "Source C is a primary source from 219 BCE; its limit comes from its propagandistic purpose, not from being written later."
         - "It gives the opposite: the imperial court's official view, leaving out conquered people's perspectives."
-        - "Public monuments were often commissioned to praise rulers and persuade the public, not to record neutral statistics."
-      explain: "A source's purpose and bias affect its accuracy: an official monument made to celebrate a conquest is not a neutral survey of how conquered people felt."
+        - "That is a fair limit, but it misses the bigger reason: the stone was made to praise him, so bad news would be left out even if it was known."
+      explain: "A source's purpose and bias affect its accuracy. Historians think this monument was made to celebrate a conquest, so it is not a fair picture of how conquered people felt."
 ```
 
 ### Testing Source C with the four accuracy questions
@@ -121,7 +126,7 @@ tasks:
 ```worked
 \text{1. Where does it come from?} :: Ordered by the First Emperor around 219 BCE, soon after conquering six rival kingdoms.
 \text{2. What information is provided?} :: Claims he united the land, standardised laws and measures, and brought universal peace and happiness.
-\text{3. Fact or opinion?} :: Standardising laws and measures is a factual claim; 'glorious rule' and 'everyone is happy' are opinions and praise.
+\text{3. Fact or opinion?} :: Standardising laws and measures is a factual claim; praising his rule as glorious, and saying everyone is happy, are opinions and praise.
 \text{4. What other sources check it?} :: Excavated Qin bronze weights and the Shuihudi legal slips support the standardisation claim; records of rebellions and harsh punishments challenge the 'everyone was happy' claim.
 ```
 
@@ -150,15 +155,15 @@ tasks:
       q: "Why do historians ask 'What other sources might support or challenge this source?' before accepting Sima Qian's sharpest criticisms of the First Emperor?"
       options:
         - "Sima Qian wrote under the Han dynasty, which overthrew the Qin and had a reason to make the previous dynasty look bad"
-        - "Because Sima Qian never read any older records"
-        - "Because written sources can never contain any accurate facts"
-        - "Because historians only trust sources that agree with everything the emperor said"
+        - "Because Sima Qian wrote about 100 years later, so everything he says is probably wrong"
+        - "Because a secondary source can only be used if a primary source says the same"
+        - "Because Sima Qian's book is a primary source, and primary sources are often biased"
       answer: 0
       feedback:
         - null
-        - "Sima Qian had access to imperial archives and earlier records, which is why many of his factual details are valuable."
-        - "Written sources contain many accurate facts, especially when corroborated by archaeology."
-        - "The emperor's own inscriptions were biased in his favour, so historians test both sides against independent evidence."
+        - "A time gap is a reason to check, not to throw it all out. Historians think he used older records."
+        - "Secondary sources can be used on their own, with care. Checking is about how far to trust a claim."
+        - "He wrote about 100 years later, so his book is secondary for the Qin."
       explain: "Because Sima Qian wrote under the dynasty that replaced the Qin, checking his claims against excavated Qin records helps separate accurate facts from Han-era spin."
 ```
 
@@ -182,18 +187,18 @@ tasks:
         - ["A chronicler writes 'Our city's laws are the fairest in the world'", "Opinion stated as fact", "'Fairest in the world' is a value judgement, not a checkable fact."]
   - check:
       type: question
-      q: "Mei reads a Qin bamboo slip (Source B) that records how many sacks of grain were stored in a county warehouse and the fine for losing them. Why is this likely to be more accurate about day-to-day rules than a mountain praise inscription?"
+      q: "Mei reads a rule on a Qin bamboo slip (Source B) that sets the fine for an official whose grain store comes up short. Why is this likely to be more accurate about day-to-day rules than a mountain praise inscription?"
       options:
-        - "It was a working record written for officials who actually had to count the grain and apply the fines, not a public boast"
-        - "Because it is older than the mountain inscription, and older sources are always more accurate"
-        - "Because government officials never have a point of view or make mistakes"
-        - "Because it is a secondary source written by neutral modern historians"
+        - "It was a working rule for officials who actually had to look after grain and pay the fines, not a public boast"
+        - "Because it is older than the mountain inscription, and older sources are more accurate"
+        - "Because it was written by officials, and officials had no reason to get things wrong"
+        - "Because it was found buried in a tomb, so no one could change it later"
       answer: 0
       feedback:
         - null
         - "Both sources come from the Qin dynasty (around 219–217 BCE); age alone does not make a source more accurate."
         - "Officials could still make mistakes or have bias, so historians still cross-check, but a working rulebook had a practical reason to state the real rules."
-        - "The Shuihudi bamboo slips are a primary source buried in 217 BCE, not a modern secondary source."
+        - "Being buried kept it safe from later changes, but that does not make what it says accurate in the first place."
       explain: "A working administrative record needed to be accurate enough for officials to use, whereas a public monument was designed to impress."
 ```
 
@@ -208,7 +213,7 @@ stage: make
 insight: "Applying the four accuracy questions and separating fact from opinion in your own book builds the habit."
 check:
   type: reflect
-  text: "In my own book I chose one source (from our unit, or Source C / Sima Qian), wrote one factual claim and one opinion from it, and answered two accuracy questions: what might limit its accuracy, and what other source could support or challenge it. A partner read it and agreed."
+  text: "In my own book I chose one source (from our unit, or Source C / Sima Qian), wrote one factual claim and one opinion from it, and answered two accuracy questions: what might limit its accuracy, and what other source could support or challenge it. A partner read it and gave feedback."
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.
@@ -224,9 +229,9 @@ check:
   q: "Sima Qian (writing a century later for the Han court) says the Qin had strict laws that punished officials for small mistakes. The Shuihudi bamboo slips (buried with a Qin official in 217 BCE) list fines for officials who miscount grain or miss deadlines. What does putting these two sources together tell a historian?"
   options:
     - "The bamboo slips corroborate Sima Qian's claim that Qin administrative rules were strict and detailed"
-    - "The bamboo slips are not needed, because a famous historian's book already proves the claim on its own"
-    - "A primary source from 217 BCE cannot be compared with an account written a hundred years later"
-    - "Agreeing on these fines proves that every moral opinion Sima Qian wrote about the First Emperor is also a fact"
+    - "The bamboo slips are not needed, because a famous historian's book already shows the claim"
+    - "They cannot be compared, because one is primary and the other is secondary"
+    - "Because they agree on the fines, Sima Qian's opinion that the emperor was cruel is now a fact too"
   answer: 0
   feedback:
     - null

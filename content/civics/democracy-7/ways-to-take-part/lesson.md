@@ -4,7 +4,7 @@ unit: participation
 title: Ways to take part in democracy
 node: AC9HC7K02 n3
 assumes: [AC9HC7K02 n1]
-summary: "Citizens participate in Australia's democracy in many ways — both through formal parliamentary and electoral processes (voting, standing for parliament, petitions, submissions to committees of inquiry) and through community and public action (volunteering, community organisations, social enterprise, campaigns and peaceful protest). Different methods suit different civic goals."
+summary: "Citizens take part in Australia's democracy through elections and Parliament (voting, standing for election, petitions, inquiry submissions) and through community action (volunteering, community groups, social enterprise, campaigns and peaceful protest). Different methods suit different goals."
 language: maths
 hook: "An election happens only once every few years. If a town problem needs fixing this month, what can citizens actually do?"
 ---
@@ -24,11 +24,11 @@ check:
   type: predict
   q: "In a made-up town, a group of Year 7 students and parents want the local council to add bike racks outside the town library. Which approach makes the most sense?"
   options:
-    - "Use a method that fits the goal, such as a local petition and a letter or presentation to the council"
-    - "Wait until they turn 18 and stand for the federal Senate"
-    - "Do nothing, because citizens cannot raise local issues between elections"
-    - "Ask the federal Parliament to hold a national referendum to change the Constitution"
-  actual: "Different civic goals call for different methods. A local facility request fits a local petition and council meeting; changing how a federal bill works fits a parliamentary committee submission."
+    - "Write to the council and collect signatures from library users"
+    - "Write to their federal member of Parliament"
+    - "Wait for the next council election and vote for change"
+    - "Start an online campaign and wait for the council to notice"
+  actual: "Bike racks at a library are a council decision, so writing to the council (with signatures to show support) reaches the people who decide. A federal MP does not run the library, and waiting for an election or hoping to be noticed is slow. Match the method to who makes the decision."
 ```
 
 ## Try: match each way of participating to what it involves
@@ -40,11 +40,11 @@ check:
   type: match
   q: "Match each way of participating in Australia's democracy to what it involves."
   pairs:
-    - ["Voting and standing for parliament", "Choosing representatives on election day, or putting yourself forward as a candidate to represent your electorate"]
-    - ["Contributing to a committee of inquiry", "Sending written evidence or speaking to a group of MPs or senators who are investigating a proposed law or issue"]
-    - ["Organising a petition", "Collecting signatures from citizens to formally ask a parliament or council to take action on an issue"]
-    - ["Peaceful protest or social media campaign", "Gathering in public or sharing messages online to raise public awareness and show how many people care"]
-    - ["Community organisations and volunteering", "Working together directly on a local need — such as a volunteer fire brigade, youth club or food bank"]
+    - ["Voting and standing for election", "Choosing representatives, or putting yourself forward as a candidate"]
+    - ["Contributing to a committee of inquiry", "Sending evidence to MPs or senators who are looking into a law or issue"]
+    - ["Organising a petition", "Collecting signatures to ask a parliament or council to act"]
+    - ["Peaceful protest or social media campaign", "Showing in public or online how many people care"]
+    - ["Community organisations and volunteering", "Working together on a local need, such as a food bank"]
 ```
 
 Notice that some methods **ask decision-makers to change a law or budget** (petitions, committee submissions, contacting an MP), while others **solve a community problem directly** (volunteering, community groups, social enterprise) or **build public attention** (campaigns, peaceful rallies).
@@ -57,19 +57,19 @@ insight: "Comparing how different participation methods work for different goals
 tasks:
   - check:
       type: question
-      q: "A Senate committee is holding an inquiry into a proposed law on teen online safety and has asked the public for submissions. Why is writing a submission to the committee an effective way for a youth organisation to participate here?"
+      q: "In a made-up example, a Senate committee is looking into a proposed law on safety at public swimming pools and asks the public for submissions. Why could a youth swimming club's submission be worth sending?"
       options:
-        - "The senators examining the bill read the evidence and can recommend changes to the law before Parliament votes on it"
-        - "A committee submission automatically becomes a binding law as soon as the committee receives it"
-        - "Committee submissions are only open to members of Parliament, not to citizens or community groups"
-        - "Committees only investigate past elections, never proposed bills"
+        - "The senators read the evidence and can recommend changes before the vote"
+        - "Once the committee receives it, the club's ideas become part of the law"
+        - "It is worth sending, but only adults and experts are allowed to send one"
+        - "It only helps if the club also gets thousands of people to sign it"
       answer: 0
       feedback:
         - null
-        - "A submission gives the committee evidence and recommendations; Parliament still has to debate and vote on the bill."
-        - "Parliamentary committees invite submissions from ordinary citizens, young people, experts and community organisations."
-        - "Inquiring into proposed bills before Parliament votes on them is one of the main jobs of Senate and House committees."
-      explain: "When Parliament is actively inquiring into the details of a bill, a well-argued committee submission puts evidence straight in front of the lawmakers."
+        - "A submission gives the committee evidence and ideas. The committee recommends; Parliament still debates and votes."
+        - "Committees invite submissions from anyone, including young people and community groups."
+        - "A submission is judged on its evidence and ideas, not on how many people sign it. That is closer to a petition."
+      explain: "When a committee is looking at a bill in detail, a clear submission puts evidence straight in front of the lawmakers before they vote."
   - check:
       type: bug
       code: "working.txt#nib"
@@ -83,27 +83,30 @@ tasks:
         type: question
         q: "Does a citizen have to wait for the next election day to raise a local safety problem with their representatives?"
         options:
-          - "No, they can contact their local member or council, organise a petition, or work with a community group at any time"
-          - "Yes, because citizens are only allowed to contact representatives during an election campaign"
-          - "Yes, because petitions can only be handed in on election day"
-          - "Yes, unless the citizen is already a member of Parliament"
+          - "No, they can contact their member or council at any time"
+          - "Yes, because representatives only listen during an election campaign"
+          - "Yes, because a new problem needs a new vote to fix it"
         answer: 0
-        explain: "Representatives, petitions, inquiries and community groups operate all year round between elections."
+        explain: "Representatives, petitions, inquiries and community groups work all year round, between elections."
+        feedback:
+          - null
+          - "Members of Parliament and councillors take letters, emails and meetings all year round."
+          - "Councils and parliaments can act on a problem at any time, without waiting for an election."
   - check:
       type: question
-      q: "Why might a social media campaign by itself be strong for raising quick awareness of an issue, but weaker than a committee submission or community project for actually fixing the detail of a law?"
+      q: "An online campaign can quickly show that many people care. Why is it often weaker for fixing the detail of a law?"
       options:
-        - "Online posts can reach thousands of people quickly, but a short post rarely explains the detailed evidence or practical changes a law needs"
-        - "A social media post automatically forces Parliament to vote on a bill within 7 days"
-        - "Members of Parliament are banned by law from reading anything posted online"
-        - "Only a formal parliamentary petition is allowed to mention a community issue"
+        - "Short posts rarely explain the evidence or exact changes a law needs"
+        - "MPs do not pay attention to anything posted online"
+        - "Online campaigns are not a real way of taking part in democracy"
+        - "If enough people share it, Parliament has to vote on it"
       answer: 0
       feedback:
         - null
-        - "Online posts build public awareness, but they do not trigger automatic parliamentary votes."
-        - "MPs and their staff regularly follow public debate online, though detailed lawmaking relies on fuller evidence like submissions."
-        - "Citizens can discuss community issues across social media, meetings, letters and petitions."
-      explain: "Each method has strengths and limits: online campaigns spread awareness fast, while submissions and local projects dig into detailed solutions."
+        - "MPs and their staff do follow online debate. The weakness is detail, not attention."
+        - "Online campaigns are a real way to take part. They are just better at awareness than at detail."
+        - "No number of shares forces Parliament to vote. Only members of Parliament bring bills to a vote."
+      explain: "Each method has strengths and limits: online campaigns spread awareness fast, while submissions and local projects work on detailed solutions."
 ```
 
 ### Choosing the right tool for the goal
@@ -128,14 +131,14 @@ stage: modify
 insight: "Sorting participation methods by how they work shows how formal parliamentary channels and community action complement each other."
 check:
   type: sort
-  q: "Sort each example into whether it participates mainly through a formal parliamentary/electoral process or through direct community/public action."
+  q: "Does each example work mainly through elections and Parliament, or through community action?"
   options: ["Parliamentary or electoral process", "Community or public action"]
   items:
-    - ["Voting in a House of Representatives and Senate election", "Parliamentary or electoral process", "Voting is the formal electoral mechanism for choosing representatives."]
-    - ["Submitting a formal e-petition through the Parliament website", "Parliamentary or electoral process", "A parliamentary petition is presented inside the House or Senate and can receive a ministerial response."]
-    - ["Presenting evidence to a parliamentary committee of inquiry", "Parliamentary or electoral process", "Committees are formal parliamentary bodies examining laws and government administration."]
-    - ["Volunteering every Tuesday at a neighbourhood meals kitchen", "Community or public action", "Volunteering directly supports the community outside parliament."]
-    - ["Holding a peaceful Saturday rally and awareness campaign to save a town pool", "Community or public action", "Rallies and campaigns build public awareness and pressure from outside parliament."]
+    - ["Voting in a federal election", "Parliamentary or electoral process", "Voting is the formal way of choosing representatives."]
+    - ["Starting an e-petition on the Parliament website", "Parliamentary or electoral process", "A petition that meets the rules is presented in Parliament."]
+    - ["Giving evidence to a parliamentary committee", "Parliamentary or electoral process", "Committees are part of Parliament and look closely at laws and issues."]
+    - ["Volunteering every Tuesday at a meals kitchen", "Community or public action", "Volunteering helps the community directly, outside Parliament."]
+    - ["Holding a peaceful rally to save a town pool", "Community or public action", "Rallies build public attention from outside Parliament."]
 ```
 
 ## Practise: compare effectiveness for a goal
@@ -146,34 +149,34 @@ insight: "Weighing which method (or combination of methods) best fits a specific
 tasks:
   - check:
       type: question
-      q: "Residents in a made-up regional town want two things: (1) immediate help clearing fallen branches from elderly neighbours' yards after a storm, and (2) better state funding for storm drains next year. Why does combining two forms of participation work better than using only one?"
+      q: "In a made-up town, residents want (1) help clearing storm branches from older neighbours' yards now, and (2) better state funding for storm drains next year. What is the best plan?"
       options:
-        - "Volunteering through a community group solves the immediate yard cleanup today, while a petition and meeting with the state MP targets next year's state budget"
-        - "Because a state petition is the only legal way neighbours are allowed to help clear fallen branches"
-        - "Because volunteering in a neighbour's yard automatically changes the state budget"
-        - "Because parliamentary petitions can only be signed by people who have never volunteered"
+        - "Volunteer for the clean-up now, and petition or meet the state MP about drains"
+        - "Petition the state MP about both, since the government should clear the yards"
+        - "Volunteer for both, since a strong local effort will fix the drains too"
+        - "Start an online campaign about both and wait for a response"
       answer: 0
       feedback:
         - null
-        - "Neighbours and local volunteers can help clear yards straight away; a petition is for asking Parliament or government to act."
-        - "Volunteering helps neighbours straight away, but changing state infrastructure funding requires engaging state decision-makers."
-        - "Anyone can combine community volunteering with formal petitions and contacting their MP."
-      explain: "Hands-on volunteering meets the immediate community need, while formal representation and petitions address the government funding decision."
+        - "Neighbours can clear yards today. Waiting for the government would leave older residents stuck."
+        - "Volunteers can clear branches, but new drains need state money, so state decision-makers have to be asked."
+        - "A campaign can build attention, but it does not clear any branches today or put a clear request to the people who decide."
+      explain: "Volunteering meets the need straight away, while a petition or meeting with the MP reaches the people who decide on funding."
   - check:
       type: question
       q: "Can people under 18 participate in Australia's democracy before they are old enough to vote?"
       options:
-        - "Yes: they can sign or start petitions, write to MPs, contribute to inquiries, volunteer, join community groups and take part in peaceful campaigns"
-        - "No: nobody under 18 is allowed to sign a parliamentary e-petition or write to an MP"
-        - "No: only enrolled voters aged 18 and over are allowed to join a community campaign or attend a public meeting"
-        - "Only by voting in state and local council elections, since the voting age is 18 only for federal elections"
+        - "Yes: they can write to MPs, sign petitions, volunteer and join campaigns"
+        - "Only by volunteering, because writing to MPs is for voters"
+        - "Yes: they can vote in council and state elections from 16"
+        - "No: taking part in democracy starts when you can vote at 18"
       answer: 0
       feedback:
         - null
-        - "Any resident or citizen, including school students under 18, can sign parliamentary petitions, write to their MP, or make a submission to an inquiry."
-        - "Freedom of speech, association and assembly apply to young people too, not only enrolled voters."
-        - "The voting age is 18 for state and local elections as well as federal elections, so under-18s participate through non-voting channels."
-      explain: "While formal voting starts at 18, almost every other form of democratic participation is open to young people right now."
+        - "MPs represent everyone in their electorate, including young people, and anyone can write to them."
+        - "The voting age is 18 for council, state and federal elections."
+        - "Voting starts at 18, but almost every other way of taking part is open to you now."
+      explain: "Voting starts at 18, but almost every other way of taking part in democracy is open to young people now."
 ```
 
 ### Combining two methods
@@ -187,7 +190,7 @@ stage: make
 insight: "Selecting three ways to participate and matching each to a realistic civic goal in your own book."
 check:
   type: reflect
-  text: "In my own book I named at least three different ways citizens can participate in Australia's democracy, explained what each involves, and explained which one would be most effective for a specific community problem I chose. A partner read it and agreed."
+  text: "In my own book I named at least three different ways citizens can participate in Australia's democracy, explained what each involves, and explained which one would be most effective for a specific community problem I chose. A partner read it and gave feedback."
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.
@@ -197,22 +200,22 @@ Write it in your own book or document, not on this page. Your partner or teacher
 ```step
 stage: make
 tier: typical
-insight: "An official parliamentary petition follows clear rules so citizens' requests are formally recorded in Parliament and can be sent to the relevant minister."
+insight: "A petition that meets the House's rules is put on Parliament's record and can be sent to a minister for a reply."
 check:
   type: question
-  q: "What happens when citizens submit an official petition that meets the rules of the House of Representatives?"
+  q: "What happens to a petition that meets the rules of the House of Representatives?"
   options:
-    - "It is checked by the Petitions Committee, presented to the House and recorded in Hansard, and the relevant minister is expected to respond within 90 days"
-    - "It automatically becomes a new law the moment 100 people sign it"
-    - "It is thrown away without being recorded"
-    - "It changes the Australian Constitution without a referendum"
+    - "It is presented to the House and recorded, and may be sent to a minister"
+    - "Parliament has to debate it and vote on what it asks for"
+    - "The minister has to do what it asks if enough people sign"
+    - "It goes to the Prime Minister, who decides whether to read it"
   answer: 0
   feedback:
     - null
-    - "A petition asks the House to take action; only a bill passed by Parliament becomes a law."
-    - "Valid petitions are formally presented and recorded in the parliamentary record."
-    - "Only a referendum can change the Constitution."
-  explain: "A petition does not pass a law by itself, but it puts citizens' request on the official record of Parliament and prompts a formal ministerial reply."
+    - "Presenting a petition puts it on the record, but Parliament does not have to vote on what it asks."
+    - "A minister may be asked to reply, but does not have to do what the petition asks."
+    - "Petitions go through a House committee, not the Prime Minister personally."
+  explain: "A petition does not make a law by itself. It puts the request on Parliament's official record, and when the Petitions Committee sends it to a minister, the minister is expected to reply."
 ```
 
 ## Wider: weighing the trade-offs of different methods
@@ -223,7 +226,7 @@ tier: wider
 insight: "Comparing methods across speed, effort, and direct power to change a rule."
 check:
   type: reasoning
-  q: "Compare two ways of participating on the same issue (for example, organising a peaceful street protest versus making a written submission to a parliamentary committee of inquiry). Explain what each method is good at and why a community group might use both."
+  q: "Compare two ways of taking part on the same issue (for example, a peaceful street protest and a written submission to a parliamentary committee). Explain what each is good at and why a group might use both."
   paper: true
   models:
     - title: "A strong answer"

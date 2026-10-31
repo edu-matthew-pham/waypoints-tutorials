@@ -3,7 +3,7 @@ order: 2
 unit: water
 title: "Water on the move: how it joins places"
 node: AC9HG7K01 n2
-summary: Trace water through a catchment, distinguish its forms, and explain what it carries between places.
+summary: "Water exists in different forms: surface water in rivers and lakes, soil moisture, groundwater, ice and water vapour. It moves between places as runoff, by soaking into the ground, and through the air as vapour and rain. Because water moves, a river or catchment joins places together, so a change upstream, such as soil washed off a farm, can reach a town downstream. This lesson traces water through a catchment and asks what it carries from one place to another."
 language: maths
 hook: A town has had no rain, but its river turns muddy. How could a change somewhere else reach it?
 ---

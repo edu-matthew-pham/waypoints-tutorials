@@ -104,7 +104,7 @@ tasks:
       options: ["Renewable", "Continuous", "Non-renewable"]
       items:
         - ["River water in the Murrumbidgee", "Renewable", "Rain and runoff refill it, but if people take more than comes back, the river can run low."]
-        - ["Water vapour in the air", "Continuous", "The sun keeps the water cycle going whatever we do. People cannot use it up."]
+        - ["Water vapour in the air (using this lesson's rule: can our use make it run out?)", "Continuous", "Using this lesson's rule: the sun keeps the water cycle going whatever we do, and people cannot use up the vapour in the air. Some books group all water as renewable instead."]
         - ["Water in a deep underground store that refills extremely slowly", "Non-renewable", "If it takes far longer than a lifetime to refill, it does not come back in our time."]
   - check:
       type: question
@@ -161,7 +161,7 @@ tasks:
 ```step
 stage: make
 insight: "Writing your own examples from where you live is how the idea becomes yours."
-check: { type: reflect, text: "In my own book I wrote one renewable, one continuous and one non-renewable resource I use or see around me, with a reason for each, and one example of a renewable resource that could be used up if we took it too fast. A partner read it and agreed." }
+check: { type: reflect, text: "In my own book I wrote one renewable, one continuous and one non-renewable resource I use or see around me, with a reason for each, and one example of a renewable resource that could be used up if we took it too fast. A partner read it and gave feedback." }
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.
@@ -192,7 +192,7 @@ insight: "Some resources do not fit neatly into one group. How fast it comes bac
 check: { type: reflect, text: "I read the card about the Great Artesian Basin and decided whether its groundwater is renewable, non-renewable, or somewhere in between, and I gave my reason." }
 ```
 
-The **Great Artesian Basin** is a huge store of water in rock under inland Australia. CSIRO calls it the only reliable source of fresh water for inland Australia, used since the first bores were sunk in the 1800s. In the west, it refills slowly now compared with thousands of years ago, and in parts of New South Wales and south-east Queensland, more water is taken out than refills it. *Source: CSIRO, "Deep water: the health of the Great Artesian Basin" (checked 30 October 2026).*
+The **Great Artesian Basin** is a huge store of water in rock under inland Australia. For much of inland Australia it is the only reliable source of fresh water, and it has been used since the first bores were sunk in the 1800s. In the west, it refills slowly now compared with thousands of years ago, and in parts of New South Wales and south-east Queensland, more water is taken out than refills it. *Source: CSIRO, "Deep water: the health of the Great Artesian Basin" (checked 30 October 2026).*
 
 ## Wider: can a resource change group?
 

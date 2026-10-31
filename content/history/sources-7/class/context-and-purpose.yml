@@ -23,7 +23,7 @@ questions:
   - at: investigate
     title: "Which is purpose?"
     type: question
-    q: "Which of these is the purpose of the stone inscription?"
-    options: ["To show the emperor's power and win support", "To show the emperor", "To say there is peace", "To be made of stone"]
+    q: "Which of these is the likely purpose of the stone inscription?"
+    options: ["Probably to show the emperor's power and win support", "To show the emperor", "To say there is peace", "To be made of stone"]
     answer: 0
     explain: "Purpose is why it was made. The others say what it shows, what it says or how it was made."

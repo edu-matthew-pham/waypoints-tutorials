@@ -1,3 +1,4 @@
+learning: "use origin, content, context and purpose together to say what a source can and cannot tell us about a question"
 summary: "Students use all four questions (origin, content, context, purpose) together to decide what a source can and cannot tell us about a particular question. A source is rarely useful or useless on its own: it depends on the question. This gives students a way to say what a source is good for, and prepares the next course, which looks at accuracy and usefulness."
 time: 40
 timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Typical and wider steps are extras and not counted in this."
@@ -11,17 +12,17 @@ before: |
 
   The next course in the pathway, Source usefulness, takes up accuracy (fact and opinion, reliability) and usefulness (value for a specific question). This lesson names the idea, 'what it can and cannot tell us', but does not ask students to judge accuracy. Keep them to describing.
 
-  The worked example is ancient China in the Qin and Han period. It is a model: swap in your own depth study's sources, keeping the questions the same. Everything else is plain-words descriptions, and the made-up students, Ravi and Dev, are the only people invented.
+  The worked example is ancient China in the Qin and Han period. It is a model: swap in your own depth study's sources, keeping the questions the same. Everything else is plain-words descriptions, and the museum label (Source D) is made up. The purposes of the ancient sources are historians' inferences (no Qin text states why the army or the inscription was made), so the lesson says "probably". The Try step is a match, not an ordering task: the four questions can be asked in any order, and only the conclusion has to come after them.
 running:
   - "Predict: ask for votes. The 'carved in stone so it must be true' option is a common first thought."
-  - "Try: the order is the same for every source. Ask why the conclusion comes last."
+  - "Try: the match has no fixed order. Ask what each answer adds, and why the conclusion needs all four."
   - "Worked example: the same source answers two questions differently. Ask students what changed between them."
   - "Vary: ask students to name the question first, then the source."
   - "Make: read one or two out if students are happy to, without names."
 stuck:
   - see: "A student says the inscription is true because it was made at the time."
     ask: "Made at the time by whom, and why?"
-    fix: "Go back to its purpose. It was made to win support. Primary does not mean it tells the whole truth."
+    fix: "Go back to its purpose. Historians think it was made to win support. Primary does not mean it tells the whole truth."
   - see: "A student says a source is useless because it praises someone."
     ask: "Useless for what question?"
     fix: "It is good evidence of how the maker wanted to be seen. Useful depends on the question."
@@ -29,7 +30,7 @@ stuck:
     ask: "What can it tell us, and what can't it?"
     fix: "Use the sentence frame: 'It shows ..., but it cannot show ...'."
 stretch: "Two sources, one inscription praising the emperor and one list of punishments for breaking the law, give different pictures of the same time. Why? This is the same idea at greater width. It does not go on to the next course."
-support: "A card with the four questions in order and a last line: 'So it can tell us ..., but it cannot tell us ...'. Students fill it in for one source."
+support: "A card with the four questions and a last line: 'So it can tell us ..., but it cannot tell us ...'. Students fill it in for one source."
 leads: |
   Next in the How we know pathway: Source usefulness (AC9HH7S04), planned: fact and opinion, accuracy and usefulness.
 

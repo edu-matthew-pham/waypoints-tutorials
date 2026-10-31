@@ -28,9 +28,9 @@ check:
   options:
     - "Yes: its bias and praise are direct evidence of the message the emperor wanted people to believe"
     - "No: because it is biased propaganda, a historian cannot use it for any question"
-    - "Yes, but only if we assume every word carved on the stone is literally true"
-    - "No: inscriptions are only useful for studying stone-carving tools"
-  actual: "Yes. When your question is about propaganda, beliefs or how a ruler presented himself, a biased official monument is prime evidence."
+    - "Yes, but only for the parts of it that we can prove are true"
+    - "No: it was made by the emperor's own officials, so it only tells us what they wanted"
+  actual: "Yes. When your question is about propaganda, beliefs or how a ruler presented himself, a biased official monument is prime evidence. 'It only tells us what they wanted' is exactly why it fits this question."
 ```
 
 ## Try: match the source to the question it helps answer
@@ -61,14 +61,14 @@ tasks:
       q: "What is the key difference between asking whether a source is *accurate* and asking whether it is *useful*?"
       options:
         - "Accuracy asks whether its claims are factually reliable; usefulness asks whether it helps answer a specific inquiry question"
-        - "Accuracy is only for primary sources; usefulness is only for secondary sources"
-        - "Accurate sources are written down; useful sources are always objects"
-        - "There is no difference: an inaccurate source is never useful"
+        - "Accuracy asks whether it is primary; usefulness asks whether it is secondary"
+        - "Accuracy asks whether it agrees with other sources; usefulness asks whether it is easy to read"
+        - "There is no real difference: if a source is inaccurate, it cannot be useful"
       answer: 0
       feedback:
         - null
-        - "Both primary and secondary sources are tested for accuracy and usefulness."
-        - "Both written texts and physical objects can be accurate or inaccurate, useful or not useful."
+        - "Primary or secondary is a separate question. Both kinds are tested for accuracy and usefulness."
+        - "Checking against other sources is one way to test accuracy, but usefulness is about your question, not how easy it is to read."
         - "A source can be inaccurate about what happened yet very useful for showing what its maker wanted people to think."
       explain: "Accuracy is about factual reliability; usefulness is about value as evidence for the question you are asking."
   - check:
@@ -84,11 +84,16 @@ tasks:
         type: question
         q: "Source C was carved to praise the First Emperor. Can it still help a historian answer the question: 'What achievements did the First Emperor want to be remembered for?'"
         options:
-          - "Yes, because the inscription lists the exact achievements he chose to boast about"
-          - "No, because it is biased"
-          - "Only if the historian believes nobody ever disagreed with him"
-          - "No, because it is over two thousand years old"
+          - "Yes, because it lists the achievements he chose to boast about"
+          - "No, because it is biased, so it cannot be used for any question"
+          - "Only if every achievement it lists really happened"
+          - "No, because only a later historian could say what he wanted"
         answer: 0
+        feedback:
+          - null
+          - "That is Nib's slip. Its bias is exactly what this question is about."
+          - "The question is what he wanted to be remembered for, so it is useful even if some boasts were not true."
+          - "A later historian might guess. The emperor's own monument shows it directly."
         explain: "Because the emperor ordered the inscription to praise his rule, it is direct evidence of what he wanted to be remembered for."
   - check:
       type: question
@@ -96,14 +101,14 @@ tasks:
       options:
         - "How the state taxed, conscripted and governed peasants, and how rulers viewed their place in the power structure"
         - "Nothing at all, because a source written by officials is biased and therefore useless for studying peasants"
-        - "Every private thought and opinion peasant families had about the emperor, just as if peasants had written it themselves"
-        - "Only how officials lived at court, because official records never mention taxation, grain or labour service"
+        - "What peasant families thought of the emperor, because officials lived among them and knew their views"
+        - "Only how officials lived, because records written by officials are always about officials"
       answer: 0
       feedback:
         - null
         - "Even though official records are written from the state's perspective, they are still useful evidence of how the state treated and controlled peasants."
-        - "Official records rarely capture peasants' private thoughts — that is their limit — but they do show how state power worked."
-        - "Official law slips and tax records deal constantly with peasant grain taxes, labour service and punishments."
+        - "Officials wrote from the state's side. Their records rarely show peasants' own thoughts. That is their limit."
+        - "Official records such as the law slips deal a lot with peasants: grain, labour service and punishments."
       explain: "Even when evidence for a group is limited or written from above, it provides useful insight into how power and obligations worked in that society."
 ```
 
@@ -111,7 +116,7 @@ tasks:
 
 ```worked
 \text{Source C} :: The First Emperor's mountain inscription (219 BCE).
-\text{Accuracy check} :: High accuracy on what the official court message was; low accuracy on whether conquered people actually felt happy and peaceful.
+\text{Accuracy check} :: Its claim that everyone was happy and at peace is probably not accurate: it was made to praise him. Its claim about one set of laws and measures can be checked, and other evidence supports it.
 \text{Usefulness for Question 1} :: "Did conquered people welcome Qin rule?" -> Low usefulness on its own (it hides opposition).
 \text{Usefulness for Question 2} :: "How did the Qin state present its power in public?" -> High usefulness (it is a surviving piece of official public propaganda).
 ```
@@ -142,15 +147,15 @@ tasks:
       q: "Ravi says: 'Sima Qian wrote his history a hundred years after the Qin fell, and he disliked the First Emperor, so his book is useless.' How should a historian reply?"
       options:
         - "His book has bias that affects its accuracy on some claims, but it is still very useful for seeing how Han writers judged the Qin and for the earlier records it preserves"
-        - "Ravi is right: once a historian finds bias or a time gap in a source, they must leave it out of their inquiry"
-        - "Sima Qian's book is useful only if we treat every claim in it as completely accurate"
-        - "Because Sima Qian wrote under the Han dynasty, his book is useful only for Han history and tells us nothing about the Qin"
+        - "Ravi is right: once a historian finds bias or a time gap in a source, they should leave it out of the inquiry"
+        - "His book is useful, but only for the parts that a Qin source also says, so the rest should be ignored"
+        - "His book is useful only for Han history, because he wrote under the Han, so it tells us nothing about the Qin"
       answer: 0
       feedback:
         - null
         - "Bias and time gaps are limits to account for, not reasons to throw away a major historical source."
-        - "A source does not have to be 100% accurate to be useful evidence."
-        - "Sima Qian had access to Qin archives, so his book is useful both for preserved Qin details (when cross-checked) and for Han perspectives on the Qin."
+        - "Checking against Qin sources is good practice, but parts that cannot be checked can still be useful, used with care."
+        - "Historians think Sima Qian used older records, so his book is useful both for Qin details (when cross-checked) and for Han views of the Qin."
       explain: "Naming a source's bias does not throw the source out; it tells you what to be careful of and what perspective the source reveals."
 ```
 
@@ -169,15 +174,15 @@ tasks:
       q: "A student is testing the interpretation: 'The Qin state used strict legal punishments to force officials to obey the central government.' Which detail from the sources is the most useful evidence to support this interpretation?"
       options:
         - "The Shuihudi bamboo slips specify exact fines and punishments for officials whose grain stores are short or whose reports are late"
-        - "The clay warriors in the First Emperor's tomb were originally painted in bright colours"
-        - "Farmers found the first clay warriors while digging a well in 1974"
-        - "Sima Qian lived during the Han dynasty"
+        - "Source C says the emperor gave everyone one set of laws, weights and measures"
+        - "Sima Qian, writing later, says the First Emperor was harsh and cruel"
+        - "The clay warriors show soldiers lined up in neat, ordered ranks"
       answer: 0
       feedback:
         - null
-        - "Paint on tomb figures shows craftsmanship and wealth, not legal punishments for officials."
-        - "How the figures were found in 1974 is a modern discovery fact, not evidence of Qin administrative law."
-        - "When Sima Qian lived is a fact about his origin, not evidence about Qin official fines."
+        - "One set of laws shows the laws were the same everywhere, not that punishments forced officials to obey."
+        - "Calling a ruler harsh is a later opinion. It does not show how officials were punished."
+        - "Ordered ranks suggest an organised army, not how officials were made to obey."
       explain: "Useful evidence must directly support the specific interpretation being made."
   - check:
       type: reflect
@@ -195,7 +200,7 @@ stage: make
 insight: "Writing two inquiry questions for the same source — one where it is useful and one where its limits get in the way — locks in the distinction."
 check:
   type: reflect
-  text: "In my own book I chose one source (from our unit, or Sources A to D), noted one limit on its accuracy, and wrote two inquiry questions: one question the source is useful evidence for (and why), and one question it cannot answer on its own. A partner read it and agreed."
+  text: "In my own book I chose one source (from our unit, or Sources A to D), noted one limit on its accuracy, and wrote two inquiry questions: one question the source is useful evidence for (and why), and one question it cannot answer on its own. A partner read it and gave feedback."
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.
@@ -208,19 +213,19 @@ tier: typical
 insight: "When sources from an ancient society record rulers and officials in detail but barely mention ordinary labourers, that gap is itself useful evidence of how power was arranged."
 check:
   type: question
-  q: "In the First Emperor's tomb complex, inscriptions on bronze weapons name the high minister who oversaw the workshops and the workshop supervisors, while the thousands of conscripted labourers who dug the pits are rarely named except on broken pottery tallies. What is this contrast useful evidence for?"
+  q: "Historians report that some bronze weapons from the clay army carry inscriptions naming the official in charge, the workshop and the worker who made them. Many figures are stamped with a craftsman's name. The thousands of labourers who dug the pits left far fewer records. What is this pattern useful evidence for?"
   options:
-    - "It provides useful insight into the power structure: the state recorded officials to hold them accountable, while ordinary labourers were treated as replaceable workforce"
-    - "It proves that only ministers and supervisors worked at the tomb site, since their full names were recorded on the weapons"
-    - "It means the weapons and tallies are useless because they do not list every worker's life story"
-    - "It shows that the inscriptions are accurate about the labourers' private feelings, not about workshop supervision"
+    - "How Qin work was organised and checked: historians think names were recorded so the state could hold officials and makers responsible"
+    - "That only officials and named craftsmen worked at the site, since theirs are the names that were recorded"
+    - "Nothing much, because the records do not tell us the life story of every worker at the site"
+    - "How the labourers felt about the work, since the craftsmen's stamps show they were proud of it"
   answer: 0
   feedback:
     - null
-    - "Leaving labourers off the bronze inscriptions reflects their low status in the hierarchy, not that ministers dug the pits themselves."
-    - "Even though evidence for individual labourers is limited, the way they were recorded reveals their place in the hierarchy."
-    - "Quality-control stamps record official supervision and rank, not workers' private feelings."
-  explain: "How a society keeps records — who gets a monument and who gets a tally mark — is useful evidence of its power structure."
+    - "Fewer records of labourers does not mean there were no labourers. It tells you whose work the state chose to record."
+    - "A source does not need to cover everyone to be useful. Who was recorded, and why, is evidence in itself."
+    - "A name stamped for checking work tells you about the system, not about anyone's feelings."
+  explain: "Who gets named in a record, and why, is useful evidence of how a society was organised. Historians think the names were for checking work, but the records do not say so directly."
 ```
 
 ## Wider: when myth or exaggeration is useful evidence
@@ -234,15 +239,15 @@ check:
   q: "Later stories claimed that the First Emperor's underground tomb had rivers of liquid mercury pumped by machines and crossbows triggered to shoot anyone who entered. Even before testing how much of that description is literally accurate, what is the story itself useful evidence of?"
   options:
     - "How later generations remembered the First Emperor's wealth, secrecy and obsession with guarding his power even after death"
-    - "Nothing at all unless a historian can first prove every crossbow worked"
-    - "That every technical detail in the story must be accepted as literal fact because it is useful"
-    - "How ordinary peasant farmers built their own village graves during the Qin dynasty"
+    - "Nothing, until archaeologists open the tomb and check whether it is true"
+    - "Exactly how the tomb was built, because the story gives so much detail"
+    - "Nothing, because a story told later is a secondary source"
   answer: 0
   feedback:
     - null
-    - "Even where a later description exaggerates, the exaggeration reveals the reputation the ruler left behind."
-    - "Being useful evidence of the emperor's reputation does not mean every detail is literally accurate."
-    - "The story is about the imperial mausoleum and court image, not ordinary village burials."
+    - "Checking would test its accuracy. But the story already shows how people remembered him."
+    - "Lots of detail does not make a story accurate. It may be exaggerated."
+    - "Secondary sources can be very useful, here for how the emperor was remembered."
   explain: "An exaggerated or partial account is still useful evidence of how people viewed and remembered a ruler."
 ```
 

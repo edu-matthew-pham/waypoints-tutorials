@@ -20,9 +20,10 @@ check:
   q: Australia has ministers who answer to Parliament and a Senate with equal representation for the states.
     What might explain that combination?
   options:
-    - It copied only one system
-    - It combined features from different systems
-    - Those features cannot exist together
+    - Australia copied Britain's system exactly
+    - Australia copied the United States' system exactly
+    - Australia mixed features from more than one system
+    - Australia invented both features from scratch
   actual: Australia combined features from the British parliamentary tradition and the US federal model.
 ```
 
@@ -43,8 +44,7 @@ check:
       - Responsible government came through the British tradition.
     - - Constitutional monarchy, with the Governor-General representing the monarch
       - "Westminster: British tradition"
-      - Australia retained a constitutional monarch. The Governor-General is the Australian representative
-        role.
+      - Australia kept the British monarch as head of state. The Governor-General represents the monarch here.
     - - A written constitution for a federation
       - "Washington: US federal model"
       - The US federal model influenced Australia’s written federal structure.
@@ -66,8 +66,8 @@ tasks:
       answer: 3
       fault: logic
       misconception: australia-only-westminster
-      explain: "Line 3: the written federal structure and equal state Senate show US influence alongside Westminster
-        responsible government."
+      explain: "Line 3: Australia did not copy Britain alone. The written federal constitution and a Senate with equal
+        numbers for each state came from the US model, alongside the British idea of ministers answering to Parliament."
     smaller:
       check:
         type: question
@@ -75,24 +75,28 @@ tasks:
         options:
           - Equal state representation in the Senate
           - Government answering to Parliament
+          - A monarch represented by a Governor-General
         answer: 0
-        explain: An equal state Senate is part of the federal model Australia borrowed from.
+        explain: A Senate with the same number of senators for each state is part of the US federal model.
         feedback:
           - null
-          - Responsible government points to Westminster.
+          - Government answering to Parliament comes from the British (Westminster) tradition.
+          - A monarch and Governor-General come from the British (Westminster) tradition.
   - check:
       type: question
       q: Why did smaller colonies value equal state representation in the Senate?
       options:
-        - It made their populations larger
-        - It removed the House
-        - It gave each state a voice that did not depend on its population
+        - It gave bigger states more senators, so they could lead
+        - It let a smaller state block any law it did not like
+        - It gave each state the same number of senators, whatever its population
+        - It meant smaller states did not need members in the House
       answer: 2
-      explain: Equal state representation was part of the compromise that made federation possible.
+      explain: Each state gets the same number of senators. This was part of the deal that made federation possible.
       feedback:
-        - Representation changes voting weight in a chamber, not population.
-        - The House remained, with representation broadly based on population.
+        - It is the other way round. Every state gets the same number of senators, however many people live there.
+        - Equal numbers give small states a stronger voice in the Senate, but no single state can block a law alone.
         - null
+        - Every state still has members in the House, with numbers based mostly on population.
 ```
 
 The founders wanted a national government without simply abolishing the colonies’ own governments. The colonies became states. Smaller colonies wanted protection from being outvoted just because they had fewer people.
@@ -115,18 +119,18 @@ check:
     - Westminster
     - Washington
   items:
-    - - An Opposition that scrutinises the government
+    - - An Opposition that questions and challenges the government
       - Westminster
       - An organised opposition is part of the parliamentary tradition.
     - - National and state governments sharing constitutional power
       - Washington
       - Federal structure drew on the US model.
-    - - A High Court that interprets the Constitution and can rule laws beyond power
+    - - A High Court that can rule a law invalid because it breaks the Constitution
       - Washington
-      - Constitutional judicial review reflects the US influence.
-    - - The government needs the confidence of the House
+      - A court that can strike down laws under a written constitution reflects US influence.
+    - - The government needs the support (confidence) of the House
       - Westminster
-      - Government remains responsible to an elected chamber.
+      - The government has to keep the support of the elected House.
 ```
 
 These are influences, not claims that Australia copied every detail or that either country invented every idea.
@@ -141,27 +145,30 @@ tasks:
       type: question
       q: Which explanation connects both influences?
       options:
-        - A monarch means the states have no powers
-        - Parliamentary accountability works alongside a written federal division of powers
-        - A written constitution puts ministers outside Parliament
+        - A written constitution means ministers sit outside Parliament, as in the USA
+        - Ministers answer to Parliament, and a written constitution shares power with the states
+        - The Senate comes from Britain, and ministers answering to Parliament comes from the USA
       answer: 1
-      explain: Australia combined responsible government with federal arrangements. Neither feature cancels the other.
+      explain: Australia kept ministers answering to Parliament and added a written federal division of powers. One
+        does not cancel the other.
       feedback:
-        - The federation preserves state governments and powers.
+        - Australia has a written constitution, but its ministers still sit in Parliament.
         - null
-        - Australia retained ministers in Parliament. A written constitution does not imply a US-style
-          executive.
+        - That swaps them. Ministers answering to Parliament is Westminster; the equal-state Senate is Washington.
   - check:
       type: question
       q: Does equal state representation mean every state and territory has the same Senate representation?
       options:
-        - Yes, all have identical constitutional status
-        - No, equal state representation does not make territories states
+        - Yes, every state and territory gets the same number of senators
+        - No, the equal rule is for states; territories have senators on a different basis
+        - No, territories have no senators at all
       answer: 1
-      explain: The equal-state rule concerns the states. Territory representation has a different basis.
+      explain: The equal rule in the Constitution is about the states. Territory senators are set by Commonwealth law.
       feedback:
-        - States and territories have different constitutional positions.
+        - The Constitution gives the same number to each state. Territories are not states, so the rule does not
+          cover them.
         - null
+        - The territories do have senators, but fewer than the states, set by Commonwealth law.
 ```
 
 Think back to why there are two houses.
@@ -211,7 +218,7 @@ check:
     - - Representative and responsible government
       - "Ministers answer to Parliament: Westminster influence"
     - - Power shared and checked
-      - Westminster executive–Parliament overlap alongside independent judicial checks
+      - "Ministers sit in Parliament (Westminster), with independent courts"
     - - Federation
       - "National and state division, with an equal-state Senate: Washington influence"
 ```

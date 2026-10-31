@@ -14,7 +14,7 @@ explainDiagram:
   caption: Different jobs, with an overlap
   role: explain
 ---
-**Popular sovereignty** means government authority comes from the people. **Representation** means people elect members to act on their behalf. Those members must also be accountable: they must explain their decisions and face checks on their power.
+**Popular sovereignty** means the government's power comes from the people. **Representation** means people elect members to act for them. Those members must also be **accountable**: they have to explain their decisions, and others can check how they use their power.
 
 ## Predict: which check matters?
 
@@ -25,11 +25,12 @@ check:
   type: predict
   q: A made-up minister is challenged for acting beyond a law. Who should settle the legal dispute?
   options:
-    - The minister alone
-    - An independent court
-    - Whoever has the loudest opinion
-  actual: An independent court decides legal disputes. The minister does not get the final legal judgement on
-    their own actions.
+    - The minister, because they are in charge of that law
+    - An independent court, which decides what the law means
+    - The Prime Minister, because ministers answer to them
+    - Parliament, by voting on whether the minister was right
+  actual: An independent court decides. A minister should not be the judge of whether they broke the law
+    themselves.
 ```
 
 ## Try: three different jobs
@@ -82,31 +83,35 @@ tasks:
         type: question
         q: Can one person be a member of Parliament and a minister?
         options:
-          - Yes
-          - No
+          - Yes, ministers are members of Parliament
+          - No, they must choose one job or the other
+          - Only if they resign from Parliament first
         answer: 0
-        explain: Ministers are drawn from Parliament.
+        explain: Ministers are drawn from Parliament and stay members of it.
         feedback:
           - null
-          - Remember how government is formed in the previous lesson.
+          - Think back to the last lesson. The government is formed from members of Parliament.
+          - Ministers keep their seats in Parliament. That is how Parliament can question them.
   - check:
       type: question
-      q: Which situation explains popular sovereignty?
+      q: Which statement explains popular sovereignty?
       options:
-        - A minister owns government authority
-        - Government authority comes from the people
-        - Courts choose all representatives
+        - Government power belongs to whoever holds the top job
+        - Government power comes from the people, who elect representatives
+        - Government power belongs to the Governor-General, who can use it freely
       answer: 1
-      explain: The people are the source of democratic authority; elected members exercise authority on their behalf.
+      explain: The people are where government power comes from. The members they elect use that power on their
+        behalf.
       feedback:
-        - Holding an office does not make authority personal property.
+        - Holding a job, even the top one, does not make the power that person's own.
         - null
-        - People elect representatives. Courts have a different job.
+        - The Governor-General has formal duties but normally acts on the advice of ministers. The power still comes
+          from the people.
 ```
 
-The three jobs have names: **legislative** (make laws), **executive** (carry them out) and **judicial** (decide legal disputes). At Commonwealth level Parliament includes the monarch, represented by the Governor-General, and the two houses. The executive includes the Prime Minister and ministers, and the monarch represented by the Governor-General. The judiciary includes the High Court and other federal courts.
+The three jobs have names: **legislative** (make laws), **executive** (carry them out) and **judicial** (decide legal disputes). In the Commonwealth, Parliament is made up of the monarch (represented by the Governor-General) and the two houses. The executive is the Prime Minister and ministers, with the Governor-General. The judiciary is the High Court and the other federal courts.
 
-Australia has a **partial separation of powers**. Ministers come from Parliament and answer to it. Courts stand apart from both and decide cases independently. An independent court follows the law, rather than taking instructions about its judgement from a minister. Courts give reasons for their decisions; appeals allow decisions to be reviewed where the law permits. That is different from a minister directing the result.
+Australia has a **partial separation of powers**. Ministers come from Parliament and answer to it, so those two jobs overlap. Courts stand apart from both. A court follows the law, not a minister's instructions. Courts explain their decisions in writing, and a higher court can review a decision on appeal. That is very different from a minister telling a court what to decide.
 
 ### Find Nib’s mistake
 
@@ -126,9 +131,9 @@ check:
     - - Representation
       - Who acts on our behalf? Elected members
     - - Accountability
-      - How must decision-makers explain their actions and face checks?
+      - Who must explain their decisions? People who hold power
     - - Partial separation of powers
-      - Which jobs overlap, and which must remain independent?
+      - Which jobs overlap, and which stay apart?
 ```
 
 ## Practise: find the check
@@ -141,14 +146,14 @@ tasks:
       type: question
       q: A made-up minister tells a court what judgement to give. What is the problem?
       options:
-        - A court should take instructions from ministers
-        - Only the Senate can give that instruction
-        - Judicial decisions must be independent
+        - There is no problem, because the court is part of the government
+        - There is no problem if that minister made the law in the first place
+        - Courts must decide cases by the law, not on a minister's orders
       answer: 2
-      explain: Courts decide cases according to law, independently of ministers.
+      explain: Courts decide cases by the law, separately from ministers.
       feedback:
-        - That would let the executive control the legal check on itself.
-        - The Senate cannot direct a court’s judgement either.
+        - Courts are separate from the executive. If a minister could direct them, nobody could check the minister.
+        - Parliament makes laws, and courts decide what they mean in a dispute. A minister cannot decide that alone.
         - null
   - check:
       type: sort
@@ -164,7 +169,7 @@ tasks:
         - - Administering a law through a department
           - Executive
           - This puts law into practice.
-        - - The High Court deciding if a law exceeds constitutional power
+        - - The High Court deciding if a law goes beyond what the Constitution allows
           - Judicial
           - A court decides a legal dispute about constitutional limits.
 ```
@@ -218,15 +223,17 @@ check:
   type: question
   q: In the USA, the President is separate from Congress. Which comparison is accurate?
   options:
-    - Australia also keeps ministers outside Parliament
-    - Australia overlaps ministers and Parliament; the USA separates its President from Congress
-    - The USA has no legislature
+    - Both countries keep their leaders and ministers outside the legislature
+    - Australian ministers sit in Parliament; the US President does not sit in Congress
+    - Both countries put their leaders and ministers inside the legislature
+    - The US President is chosen by Congress, the way a Prime Minister is
   answer: 1
-  explain: Both systems divide powers, but the executive–legislature relationship differs.
+  explain: Both countries divide powers, but they connect the executive and the legislature differently.
   feedback:
-    - Australian ministers come from Parliament.
+    - Australian ministers come from Parliament and sit in it.
     - null
-    - Congress is the US legislature.
+    - The US President is not a member of Congress.
+    - The US President is elected separately, not chosen by Congress.
 ```
 
 Congress is the US legislature. Its President is not a member of Congress. In Australia ministers come from Parliament. This is a comparison of structures, not a ranking of countries.

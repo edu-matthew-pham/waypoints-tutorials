@@ -113,8 +113,8 @@ check:
   models:
     - title: "A strong answer"
       text: "It had to choose because wants are larger than the one block, which is scarcity. The opportunity cost is the car park, the next best use. A sustainability point: a clinic keeps people well for the long term, but building uses up the last land."
-    - title: "A different choice that also works"
-      text: "Scarcity means only one can fit. The opportunity cost is the clinic if they pick the car park, since it was ranked first. A sustainability point: the car park may cause more traffic and pollution for years."
+    - title: "A different answer that also works"
+      text: "Scarcity means there is only one block, so the town cannot have both. It picked the clinic, so the opportunity cost is the car park, the next best use it gave up. A sustainability point: choosing the clinic over a car park may mean less traffic and pollution for years."
   criteria: ["I said why a choice was needed.", "I named one alternative as the opportunity cost.", "I gave one point about the future."]
 ```
 
@@ -123,7 +123,7 @@ check:
 ```step
 stage: make
 insight: "Using the chain on a decision you care about is how it becomes yours."
-check: { type: reflect, text: "In my own book I described a decision at school or in my town, and used scarcity, opportunity cost and one sustainability point to explain it. A partner read it and agreed." }
+check: { type: reflect, text: "In my own book I described a decision at school or in my town, and used scarcity, opportunity cost and one sustainability point to explain it. A partner read it and gave feedback." }
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.

@@ -3,8 +3,7 @@ order: 5
 unit: water
 title: "Putting it together: classify, connect, change"
 node: AC9HG7K01 n5
-summary: Use at least two of classification, connection and physical change in one explanation, then
-  optionally join all three.
+summary: "This lesson brings together the three ideas from the course: what kind of resource water is, how its movement connects places, and how moving water changes the land. Calling river water renewable is true, but it does not say where the water goes or what it changes. Using the Murray Mouth and a made-up bay, the lesson shows how one explanation can join two or three of these ideas."
 language: maths
 hook: Knowing that river water is renewable does not tell us where it goes or what it changes. Can one
   explanation join those ideas?

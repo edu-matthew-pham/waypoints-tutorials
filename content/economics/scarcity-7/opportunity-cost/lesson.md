@@ -153,7 +153,7 @@ tasks:
 ```step
 stage: make
 insight: "Describing one of your own choices and what it gave up makes the idea yours."
-check: { type: reflect, text: "In my own book I wrote a choice I made this week, listed at least three options, ranked them, and named the opportunity cost. A partner read it and agreed." }
+check: { type: reflect, text: "In my own book I wrote a choice I made this week, listed at least three options, ranked them, and named the opportunity cost. A partner read it and gave feedback." }
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.

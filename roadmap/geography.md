@@ -161,3 +161,11 @@ Next: trial the five K01 lessons with a class and review the lesson 1 prerequisi
 - **Teaching assets:** One legible, accurately sourced distribution map with student map task; simple causal diagrams, imaginary case cards and existing `question`, `match`, `sort`, `bug` / `reflect` checks. No board, recorded clip, custom print layout or shared-tool change planned. Prepare Print supplies worksheets.
 - **Self-check before any implementation push:** confirm five `node:` tags in order, maps meet n1 representation criteria, two hinges and `smaller:` checks work, n3's lived implications are explained, n4/n5 allow multiple evidence-based recommendations, teacher notes and class plans exist, no automatic judging of open writing, cases/sources are honest, and width is optional. Run `npm ci`, `npm run validate`, `npm run check-nodes`, `WP_NO_MAKECODE=1 npm run build`, `npm run check-decks -- geography/water-australia-7` and Chromium checks of lesson/course/teacher pages and mobile layouts; update this roadmap with results.
 - **Publishing:** Plan-only commit needs no publish. A future completed new course plus subject/teacher page changes will need a manual quick whole-site or full publish; never touch workflows or publishing branches.
+
+## Review fixes (1 Nov 2026)
+
+- Resource types: the water vapour sort item now says "using this lesson's rule", and its why notes that some books group all water as renewable.
+- GAB card: "for much of inland Australia". The CSIROpedia page (a podcast transcript) has the interviewer say "the only reliable source of freshwater for inland Australia"; "much of" is the safer, commonly used wording. Not checked against a separate CSIRO report.
+- Summaries of lessons 2–5 rewritten as plain descriptions; `learning:` added to all five teacher.yml files.
+- Taglines added to the seven planned courses in `geography/index.md`.
+- Resource types partner tick now "gave feedback".

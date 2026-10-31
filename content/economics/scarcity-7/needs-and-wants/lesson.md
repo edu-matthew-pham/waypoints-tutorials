@@ -160,7 +160,7 @@ tasks:
 ```step
 stage: make
 insight: "Writing your own examples from your own life is how the idea becomes yours."
-check: { type: reflect, text: "In my own book I wrote two needs and two wants from my own life, with a reason for each, and one example of a want that appeared after I got something I wanted. A partner read it and agreed." }
+check: { type: reflect, text: "In my own book I wrote two needs and two wants from my own life, with a reason for each, and one example of a want that appeared after I got something I wanted. A partner read it and gave feedback." }
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.
@@ -170,14 +170,18 @@ Write it in your own book or document, not on this page. Your partner or teacher
 ```step
 stage: make
 tier: typical
-insight: "A town has many people, and the wants of all of them together are large. The same idea at a larger size."
+insight: "A whole community has needs and wants too, and the same test sorts them: could people stay safe and well without it?"
 check:
-  type: question
-  q: "A town of 2000 people each write down three things they want for the town. About how many items on the list are there?"
-  options: ["Around 6000", "Exactly 3", "Around 100", "Nobody can say"]
-  answer: 0
-  feedback: [null, "Each person wrote three, and there are 2000 people.", "That is far fewer than 2000 people times three.", "Roughly 3 times 2000 is a good guess."]
-  explain: "About 6000 items, and many people will name different things. A community's wants add up to a very long list."
+  type: sort
+  q: "People in Wren Creek, a made-up town, wrote a list of what they want for the town. Is each one a need or a want?"
+  options: ["Need", "Want"]
+  items:
+    - ["Safe drinking water from the town taps", "Need", "Nobody in town stays well without clean water."]
+    - ["A skate park next to the oval", "Want", "Many people would enjoy it, but the town stays safe and well without it."]
+    - ["A doctor's clinic people can reach", "Need", "People need health care to stay well."]
+    - ["A bigger sign at the town entrance", "Want", "It might look good, but nobody needs it to be safe."]
+    - ["A cinema on the main street", "Want", "It would be fun, but the town can live without one."]
+  explain: "The test is the same for a town as for a person. Notice how much longer the list of wants is than the list of needs."
 ```
 
 ## Wider: where wants come from

@@ -9,9 +9,9 @@ shape: primer
 hook: "The school tuckshop has room for six items. Which of these questions would give a class something to investigate for a week?"
 assumes: [AC9HS6S01 n1]
 ---
-A useful **inquiry question** is focused enough to investigate with available evidence and gives you something to work out. A quick look-up can help, but usually cannot carry the whole inquiry. Counts and measurements are investigable supporting questions: you may need to collect new data to answer them.
+A good **inquiry question** gives you something to work out. You answer it by finding evidence and thinking about it. A quick look-up can help, but it can't carry a whole inquiry on its own. Counts and measurements are useful smaller questions. You might need to collect the data yourself.
 
-Judgements can use evidence too. “Is the tuckshop good?” needs clearer criteria: good for whom, and in what way? “How well does the menu meet students’ needs within its budget?” gives you evidence to gather and a judgement to explain. People may still weigh that evidence differently.
+Questions that ask for a judgement can use evidence too. “Is the tuckshop good?” needs clearer criteria. Good for whom, and in what way? “How well does the menu suit students on its budget?” gives you evidence to gather. People may still weigh that evidence differently.
 
 The cases in this lesson are made up: the Parkside School tuckshop, Riverbend Council and Mill Road, the town of Wattle Flat on the Kilby River, and a bronze mirror in the Hartley Museum.
 
@@ -23,8 +23,8 @@ insight: "Committing to a choice shows the test: an investigable question needs 
 check:
   type: predict
   q: "Which question about the Parkside tuckshop could a class investigate for a week?"
-  options: ["How does the tuckshop decide which six items to stock, and what do students miss out on?", "What is the tuckshop's phone number?", "Is the tuckshop good?", "Should schools have tuckshops?"]
-  actual: "The question about choosing stock. It asks how and why, so you would gather evidence such as sales records and student views and weigh it. The phone number is one fact. 'Is it good?' needs criteria; 'Should schools have them?' needs a narrower setting and evidence about benefits and costs. Neither is ready as written."
+  options: ["How does the tuckshop choose which six items to stock?", "What time does the tuckshop open each morning?", "Is the Parkside tuckshop a good tuckshop?", "Should every school in the world have a tuckshop?"]
+  actual: "The question about choosing stock. It asks how and why, so you would gather evidence such as sales records and student views and weigh it. The opening time is one fact. 'Is it good?' needs criteria; 'Should schools have them?' needs a narrower setting and evidence about benefits and costs. Neither is ready as written."
 ```
 
 ## Try: sort the questions
@@ -58,7 +58,7 @@ tasks:
   - check:
       type: question
       q: "Which of these is the best reason a question is investigable?"
-      options: ["Answering it means gathering evidence and thinking about it", "It is about the topic", "It has a short answer", "Lots of people have asked it"]
+      options: ["You answer it by gathering evidence and thinking about it", "It is clearly about the topic your class is studying", "It has a short, clear answer you can check", "Lots of people have already asked it online"]
       answer: 0
       feedback: [null, "A question can be about the topic and still be a quick look-up.", "Answer length does not decide this. A count may require data collection; a long answer may only copy a source.", "Being popular does not make it investigable."]
       explain: "If you can only answer it by finding evidence and weighing it, it is investigable."
@@ -99,14 +99,14 @@ tasks:
   - check:
       type: question
       q: "A Geography class asks: 'What is the capital of France?' Why is it too limited as the main inquiry question?"
-      options: ["It locates a place but does not yet investigate a spatial pattern, process or relationship", "It is too big", "It is only opinion", "Geography never asks about capitals"]
+      options: ["It finds a place but asks nothing about patterns or links", "It is too big to answer in a week", "It only asks for someone's opinion", "Geography classes never ask about capitals"]
       answer: 0
       feedback: [null, "It is small, not big.", "It is not opinion, and that is not the problem.", "Geography can use capitals. It does locate a place, but stops before investigating a pattern, process or relationship."]
       explain: "Locating places is geographical work. To build an inquiry, ask about a spatial pattern, process or relationship, such as how a capital is connected to other places."
   - check:
       type: question
       q: "An Economics class asks: 'Will everyone have enough in future?' What is the problem?"
-      options: ["It leaves everyone, enough and future undefined, so the scope and evidence are unclear", "It is a look-up", "It is about the past", "It is too small"]
+      options: ["Who is everyone, what is enough, and when is the future?", "It can be answered with one quick look-up", "It asks about the past, not the present", "It is too small to fill a whole inquiry"]
       answer: 0
       feedback: [null, "It is nowhere near a look-up.", "It looks ahead, not back, and that is not the main problem.", "It is far too wide, not too small."]
       explain: "Forecasts can use evidence, but need a defined group, resource, period and stated assumptions. A manageable version asks how Parkside could meet lunch demand next term with its current budget."
@@ -123,12 +123,12 @@ stage: practise
 insight: "A last check on the test across a new case before moving on."
 check:
   type: sort
-  q: "Which questions could guide the whole Mill Road inquiry, and which need developing or serve as supporting questions?"
-  options: ["Main inquiry question", "Supporting question or needs refining"]
+  q: "Which questions could guide the whole Mill Road inquiry, which would help answer part of it, and which need fixing first?"
+  options: ["Main inquiry question", "Supporting question", "Needs criteria first"]
   items:
-    - ["How many cars use Mill Road each day?", "Supporting question or needs refining", "A valid data-collection question. Counts can support an inquiry about the effects of closure."]
+    - ["How many cars use Mill Road each day?", "Supporting question", "A good data-collection question. Counts can help answer a bigger question about the effects of closing it."]
     - ["What might be the effects of closing Mill Road on students, drivers and shops?", "Main inquiry question", "Several kinds of evidence, weighed."]
-    - ["Is Mill Road the nicest road in Riverbend?", "Supporting question or needs refining", "Nicest needs criteria and a purpose before evidence can help."]
+    - ["Is Mill Road the nicest road in Riverbend?", "Needs criteria first", "Nicest in what way, and for whom? It needs criteria and a purpose before evidence can help."]
     - ["Who decides whether Mill Road closes, and why?", "Main inquiry question", "Documents and rules would answer it."]
 ```
 
@@ -171,7 +171,7 @@ insight: "The same test on a case from another subject."
 check:
   type: question
   q: "Which is investigable for a Civics class studying Riverbend Council?"
-  options: ["Who can the council ask for money to repair Mill Road, and why?", "How many councillors are there?", "Is the council good?", "What is a council?"]
+  options: ["Who can the council ask for money to fix Mill Road?", "How many councillors does Riverbend Council have?", "Is Riverbend Council a good council?", "What does the word council mean?"]
   answer: 0
   feedback: [null, "That is a count you look up.", "That needs clearer criteria for good.", "That is a definition. It is too small to investigate."]
   explain: "It asks who and why, and documents and rules would answer it."

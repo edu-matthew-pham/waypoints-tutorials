@@ -1,5 +1,5 @@
 inquiry:
-  q: "Maple Street Chess Club's committee wants to spend $500, but the rule says $200 without asking members. Tom says 'the committee runs the club, so it can change the rule.' Ana says 'then the rule means nothing.' Who is right, and what would change your mind?"
+  q: "In the made-up Maple Street Chess Club, the committee wants to spend $500, but the rule says $200 without asking members. Tom says 'the committee runs the club, so it can change the rule.' Ana says 'then the rule means nothing.' Who is right, and what would change your mind?"
   prompts:
     - "What is the rule for, if the committee can change it alone?"
     - "Who should have the final say on changing it, and why?"

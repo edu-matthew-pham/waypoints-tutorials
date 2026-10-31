@@ -108,3 +108,13 @@ Per `roadmap/checklist.md` › "Plan first, then build", here is the per-waypoin
 ## Starter prompt for the Economics chat
 
 > Read AGENTS.md, CLAUDE.md, ROADMAP.md, `roadmap/shared.md` › Decided (30 Oct 2026) entries, and `roadmap/economics.md`. Plan and build the next Economics course (K03, in the node file's order) in the same shape as `economics/scarcity-7` and `economics/businesses-7`, validate, test in a headless browser, commit and push.
+
+## Review fixes (1 Nov 2026)
+
+- Business structures: ACARA's six kept as "ways businesses are organised"; the lesson now says the main Australian legal structures are sole trader, partnership, company and trust (franchise an arrangement, not-for-profit a purpose, cooperative member-owned). "Sole trader" and "company" named beside ACARA's terms. Rosa's `smaller:` answer now says she runs it as a sole trader, not a company (one owner alone doesn't prove it). Franchisor/franchisee definition reworded.
+- Brand-like names replaced: Corner Bakery → Made-Up Bakery, Burger Barn → Made-Up Burgers, GreenBean Cafe → Made-Up Cafe (labelled made up).
+- Distractors rewritten as real student errors of similar length, feedback naming the slip (business-structures predict; how-businesses-provide predict, cooperative, online and social-enterprise checks; why-businesses-exist reason, Dev, Sam and remote-store checks).
+- Remote store Wider step labelled made up, purpose hedged with "might".
+- How businesses provide: the five-link chain is "one way to explain a business"; the Try parsons (fixed order) is now a match on Riverbend Pantry; `chain.txt` removed.
+- Needs and wants Typical: arithmetic step replaced by a needs/wants sort for made-up Wren Creek. Putting it together: second model answer keeps the clinic choice.
+- Partner ticks now "gave feedback", not "agreed".

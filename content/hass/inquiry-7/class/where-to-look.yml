@@ -17,6 +17,6 @@ questions:
     title: "Which source?"
     type: question
     q: "Which kind of source is best for what local people said about closing Mill Road?"
-    options: ["A local news report", "A government rule", "A table of rainfall", "A museum label"]
+    options: ["Comments sent to the council's consultation", "A government rule", "A table of rainfall", "A museum label"]
     answer: 0
-    explain: "News reports what people say. The others are about rules, rainfall and objects."
+    explain: "Consultation comments come from many local people. A news report quotes only a few. The others are about rules, rainfall and objects."

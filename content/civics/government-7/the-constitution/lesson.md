@@ -18,7 +18,7 @@ stage: predict
 insight: "Committing to an answer first shows that rules apply to the people who make decisions too."
 check:
   type: predict
-  q: "The Maple Street Chess Club has a written rule: the committee can spend up to $200 without asking the members. The committee wants to spend $500. What should happen?"
+  q: "In a made-up example, the Maple Street Chess Club has a written rule: the committee can spend up to $200 without asking the members. The committee wants to spend $500. What should happen?"
   options: ["The committee asks the members to vote, because the rule limits what the committee can decide alone", "The committee goes ahead, because it runs the club", "The committee changes the rule at its next meeting, then spends the money", "Nothing, because rules are only suggestions"]
   actual: "The committee asks the members. The written rule limits the committee, so it cannot just go past it."
 ```
@@ -160,7 +160,7 @@ tasks:
 ```step
 stage: make
 insight: "Writing the idea in your own words, with a club you know, is how it becomes yours."
-check: { type: reflect, text: "In my own book I wrote three things the Constitution does, and one thing Parliament cannot do on its own. I used the club to help explain it. A partner read it and agreed." }
+check: { type: reflect, text: "In my own book I wrote three things the Constitution does, and one thing Parliament cannot do on its own. I used the club to help explain it. A partner read it and gave feedback." }
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.

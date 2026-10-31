@@ -25,9 +25,9 @@ questions:
     type: question
     q: "Which participation method puts detailed written evidence directly in front of MPs and senators who are examining a proposed law?"
     options:
-      - "Contributing a submission to a parliamentary committee of inquiry"
-      - "Waiting three years and hoping someone else mentions it"
-      - "Only telling a friend at lunchtime"
-      - "Applying for a passport"
+      - "A submission to a parliamentary committee of inquiry"
+      - "A petition with thousands of signatures"
+      - "A peaceful rally outside Parliament House"
+      - "An online campaign that is shared widely"
     answer: 0
     explain: "Parliamentary committees of inquiry invite public submissions to gather evidence and improve proposed laws."

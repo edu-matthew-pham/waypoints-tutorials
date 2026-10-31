@@ -8,9 +8,9 @@ summary: Federation shares constitutional power between the Commonwealth and the
 language: maths
 hook: One country can have national laws and state laws. How can both matter?
 ---
-At Federation the colonies united as states in one country. The Constitution gave some powers to the new **Commonwealth**, or federal, Parliament and left others with the states. This is a **federation**, not a national government with states as its departments.
+At Federation in 1901, the six colonies joined together as states in one country. The Constitution gave some powers to the new **Commonwealth** (federal) Parliament and left the rest with the states. That is a **federation**: the states are not departments of the national government. They keep powers of their own.
 
-Two arguments for joining were easier trade between colonies and a united defence. The states also kept governments of their own.
+Two of the reasons people gave for joining were easier trade between the colonies and a shared defence force.
 
 ## Predict: who is the boss?
 
@@ -22,10 +22,13 @@ check:
   q: A national minister wants to make a decision in an area of state responsibility. Is being national enough
     to give them that power?
   options:
-    - Yes, the national government runs every level
-    - No, they need lawful authority
-  actual: No. Federal power has constitutional limits. Calling a government national does not give it every
-    state power.
+    - Yes, the national government is in charge of the states
+    - Only if the Constitution gives the Commonwealth power in that area
+    - Yes, as long as the Prime Minister agrees to it
+    - No, national ministers can never make decisions inside a state
+  actual: "Only if the Constitution gives the Commonwealth power in that area. Being the national government
+    does not mean it can make every decision. Some areas belong to the Commonwealth, and many are left with
+    the states."
 ```
 
 ## Try: which government does this job?
@@ -73,38 +76,43 @@ tasks:
       answer: 3
       fault: logic
       misconception: federal-is-state-boss
-      explain: "Line 3: federation is a constitutional division of powers. Commonwealth action needs a lawful basis;
-        being national does not create an unlimited power to run state services."
+      explain: "Line 3: federal does not mean boss. The Constitution splits powers between the Commonwealth and the
+        states, and the states run their own public schools. The Commonwealth can only act where it has power."
     smaller:
       check:
         type: question
         q: Does a state government keep powers of its own in a federation?
         options:
-          - No, it is just a federal department
-          - Yes, the Constitution leaves powers with states
+          - No, a state works like a department of the federal government
+          - Yes, the Constitution leaves many powers with the states
+          - Only the powers the Prime Minister decides to hand back
         answer: 1
-        explain: Federation combines national government with states retaining powers.
+        explain: In a federation the national government and the state governments each have powers of their own.
         feedback:
-          - That describes a hierarchy rather than the constitutional division.
+          - That is a ladder, with the states underneath. Federation is a division of powers, not a chain of command.
           - null
+          - The Prime Minister does not hand powers to the states. The Constitution sets out the division.
   - check:
       type: question
-      q: What is different about a territory’s constitutional position?
+      q: What is different about a territory compared with a state?
       options:
-        - It has exactly the same constitutional status as a state
-        - The Commonwealth can make laws for territories
-        - Its local councils control the Commonwealth
+        - A territory has exactly the same position in the Constitution as a state
+        - The Commonwealth Parliament can make laws for a territory
+        - A territory has no government of its own at all
       answer: 1
-      explain: The Constitution’s territory power is different from the division with states.
+      explain: The Constitution lets the Commonwealth Parliament make laws for territories. States keep their own
+        powers in a different way.
       feedback:
-        - State powers and territory self-government have different foundations.
+        - States keep powers under the Constitution. A territory's government gets its powers from a Commonwealth law,
+          so the two are not the same.
         - null
-        - Local councils do not control Commonwealth law-making.
+        - The ACT and the Northern Territory do have their own elected governments. Their powers come from
+          Commonwealth laws.
 ```
 
-The Constitution preserves states and their powers while giving the Commonwealth specified powers. **Territories are different**: the Commonwealth can make laws for territories, and their self-government arrangements come from Commonwealth laws.
+The Constitution kept the states and their powers. It gave the Commonwealth a list of powers of its own. **Territories are different**: the Commonwealth Parliament can make laws for a territory, and a territory's own government gets its powers from a Commonwealth law.
 
-Local councils are created under state or territory laws, not established as a separate level by the Australian Constitution. The ACT has no local councils; its Legislative Assembly handles territory and local responsibilities.
+Local councils are set up by state or territory laws. The Australian Constitution does not set them up. The ACT has no local councils; its Legislative Assembly handles territory and local responsibilities.
 
 ### Find Nib’s mistake
 
@@ -114,19 +122,19 @@ Local councils are created under state or territory laws, not established as a s
 
 ```step
 stage: modify
-insight: Local services do not create a third constitutional division of sovereign power.
+insight: Councils run local services under state or territory law; the Constitution does not set them up.
 check:
   type: match
   q: Match each description.
   pairs:
     - - Commonwealth Parliament
-      - National law-making within its constitutional powers
+      - Makes laws for the whole country, in the areas the Constitution lists
     - - State parliament
-      - State law-making with powers retained under the Constitution
-    - - Territory legislature
-      - Self-government under arrangements made by Commonwealth law
+      - Makes laws for its state, using the powers the states kept
+    - - Territory parliament
+      - Makes laws for its territory, under rules set by a Commonwealth law
     - - Local council
-      - Local responsibilities under state or territory law
+      - Runs local services, under rules set by a state or territory law
 ```
 
 ## Practise: explain the division
@@ -137,30 +145,33 @@ insight: Cases distinguish constitutional power, service operation and funding.
 tasks:
   - check:
       type: question
-      q: The Commonwealth contributes money to a public school program. What can you conclude?
+      q: The Commonwealth gives money to a state's public school program. What can you conclude?
       options:
-        - All schools become Commonwealth departments
-        - State governments no longer matter
-        - Funding can be shared while the state runs schools
-      answer: 2
-      explain: Funding a service and operating it are different jobs.
+        - The schools now become Commonwealth schools
+        - The state still runs the schools; the funding is shared
+        - The state must now do whatever the Commonwealth says about schools
+      answer: 1
+      explain: Paying for a service and running it are different jobs. More than one government can help pay.
       feedback:
-        - Contributing funds does not turn a state service into a federal department.
-        - State governments still operate their public schools.
+        - Giving money does not change who runs the schools. The state still runs them.
         - null
+        - Money can come with conditions, but the state still runs its own schools.
   - check:
       type: question
       q: Which statement best describes federation?
       options:
-        - The states give up every power
-        - National and state governments have a constitutional division of powers
-        - Local councils wrote the Constitution
+        - The states handed all their powers to the Commonwealth
+        - The Constitution splits law-making powers between the Commonwealth and the states
+        - The Commonwealth, the states and councils have equal powers under the Constitution
+        - The states make every law, and the Commonwealth only looks after defence
       answer: 1
-      explain: States retain their own government and powers alongside the Commonwealth.
+      explain: The states kept their own governments and powers, and the Commonwealth got powers of its own.
       feedback:
-        - States did not disappear into a single government.
+        - The states did not disappear. They kept their parliaments and many powers.
         - null
-        - Councils are created under state or territory laws.
+        - Councils are set up by state or territory laws. The Constitution divides powers between the Commonwealth
+          and the states.
+        - The Commonwealth has many powers, such as currency, passports and trade with other countries.
 ```
 
 These statements and situations are made up.
@@ -193,14 +204,14 @@ check:
   q: Match the label to its meaning.
   pairs:
     - - Exclusive
-      - Only the Commonwealth can legislate in this area, such as currency
+      - Only the Commonwealth can make laws in this area, such as currency
     - - Concurrent
-      - Both Commonwealth and states can legislate in the area, within their powers
+      - Both the Commonwealth and the states can make laws in this area
     - - Residual
-      - Powers left with states rather than given to the Commonwealth
+      - Powers the Constitution leaves with the states
 ```
 
-These labels describe the Commonwealth–state division. They are not a rule that a state subject can never overlap with a Commonwealth power.
+These three labels describe who can make laws in an area. Many areas overlap, so one label rarely tells the whole story.
 
 ## Typical: when laws clash
 
@@ -213,16 +224,18 @@ check:
   q: Suppose both laws are validly made. A made-up Commonwealth law requires a label; a made-up state law
     forbids that same label in the same circumstances. What happens under section 109?
   options:
-    - The newer law always wins
-    - The state law wins because it is local
-    - The Commonwealth law prevails to the extent of the inconsistency
+    - Whichever law was passed more recently wins
+    - The state law wins, because it is closer to the people
+    - The Commonwealth law wins, but only where the two laws clash
+    - Both laws stay, and people choose which one to follow
   answer: 2
-  explain: Section 109 makes the inconsistent part of the state law inoperative while the inconsistency exists.
-    It does not give the Commonwealth unlimited power.
+  explain: Under section 109, the state law stops working where it clashes with the Commonwealth law. The rest
+    of the state law still works. This rule does not give the Commonwealth any new powers.
   feedback:
-    - The test here is inconsistency, not simply which law is newer.
-    - State powers matter, but section 109 supplies this rule for valid conflicting laws.
+    - The test is whether the laws clash, not which one is newer.
+    - States have real powers, but section 109 says what happens when two valid laws clash.
     - null
+    - People cannot obey both laws here, so the Constitution has to settle which one applies.
 ```
 
 This is a made-up law pair, not a claim about an existing labelling rule. Assume the Commonwealth has a constitutional power to make its law. Section 109 concerns state laws; territory laws have a different constitutional basis.

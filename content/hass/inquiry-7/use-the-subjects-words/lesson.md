@@ -14,32 +14,29 @@ shape: primer
 hook: A paragraph can contain five specialist words and still tell the reader
   almost nothing.
 assumes:
-  - AC9HH7S03 n1
-  - AC9HH7S03 n2
-  - AC9HH7S03 n3
-  - AC9HH7S07 n1
-  - AC9HH7S07 n2
-  - AC9HH7S07 n3
+  # every subject: Year 6 presenting with terms; History only: its own source and interpretation skills, taught in History
+  - AC9HS6S07 n2
+  - AC9HH7S03
+  - AC9HH7S07
 ---
-A subject's words help you say **exactly what you mean**. Use them to describe the case, not just to sound expert. Tell the reader what the issue is and why it matters to them.
+A subject's words help you say **exactly what you mean**. Use them to describe the case, not just to sound clever. Tell the reader what the issue is and why it matters to them.
 
-All cases, figures and source cards here are invented practice material. Parkside School's tuckshop cannot stock everything; Riverbend Council is considering closing Mill Road outside the school; Wattle Flat is on the Kilby River in a dry year; Hartley Museum labels a bronze mirror as Han. The records do not establish facts about a real council, river or ancient society.
+Every case, number and source card in this lesson is made up for practice. Parkside School's tuckshop can't stock everything. Riverbend Council is thinking about closing Mill Road outside the school. Wattle Flat is a town on the Kilby River in a dry year. The Hartley Museum has a bronze mirror it labels as Han. None of these records tells you anything about a real council, river or ancient society.
 
 ## Think first
 
 ```step
 stage: predict
-insight: An opening needs meaningful vocabulary and context for a reader.
+insight: An opening needs subject words that mean something, and enough context for the reader.
 check:
   type: predict
-  q: Which opening would help Parkside students understand the equipment choice?
+  q: Which opening would help Parkside students understand the tuckshop's equipment choice?
   options:
-    - Economics includes scarcity and opportunity cost.
-    - "Our menu depends on this choice: scarcity prevents buying everything, and
-      the opportunity cost of a fridge is the oven we give up."
-    - The tuckshop has an important economic decision.
-  actual: The menu opening names what matters to students and uses both terms to
-    explain the choice.
+    - In economics, scarcity and opportunity cost are two important ideas.
+    - The money can't buy both, so a new fridge means no new oven.
+    - The tuckshop has an important economic decision to make soon.
+    - Scarcity and opportunity cost affect our tuckshop in many ways.
+  actual: The fridge-or-oven opening tells students what the choice is. It is a start, but it doesn't yet use the subject's words. The best opening does both, as you'll see below.
 ```
 
 
@@ -63,49 +60,50 @@ check:
       - An object made or changed by people
 ```
 
-Compare these models with a list of words such as 'scarcity, opportunity cost'. Each model tells the reader something about the case.
+Compare these models with a plain list of words such as 'scarcity, opportunity cost'. Each model tells the reader something about the case.
 
 | Subject | Words used to describe the case |
 |---|---|
-| Economics | Parkside students face an equipment choice that will affect the menu. Scarcity means it cannot buy everything; the opportunity cost of choosing a fridge is the oven it gives up. |
-| Civics | Riverbend Council is considering closing Mill Road. Its consultation invites views before deciding; parents can participate by sending comments. This participation lets them contribute their views. |
-| Geography | Wattle Flat is downstream of a storage dam in the Kilby catchment. This interconnection means water kept upstream can affect water reaching the town. |
-| History | Catalogue card M1 describes the bronze mirror as an artefact with a polished face. As a source, this object provides evidence about its surface, but the card cannot show how everyone lived. |
+| Economics | The tuckshop's choice of equipment will change our menu. Because of scarcity, it can't buy everything. If it picks a fridge, the opportunity cost is the oven it gives up. |
+| Civics | Riverbend Council is thinking about closing Mill Road. In a consultation, it asks for views before it decides. Parents can participate by sending in comments. |
+| Geography | Wattle Flat is downstream of a dam in the Kilby catchment. Because of this interconnection, water kept upstream can change how much reaches the town. |
+| History | Catalogue card M1 describes the bronze mirror as an artefact with a polished face. As a source, it tells us about the surface. It can't tell us how everyone lived. |
 
-The History description names its invented source. For real class work, use sources supplied or approved by your teacher and check the historical knowledge.
+The History model names its source, which is made up. For real class work, use sources your teacher gives you or approves.
 
 ## Check: describe the civic issue
 
 ```step
 stage: practise
-insight: Using civic terms means explaining what each does in this case.
+insight: Using civic terms means saying what each one means in this case.
 check:
   type: question
   q: "Nib writes: 'Council, consultation and participation are important.' What
     would improve this description most?"
   options:
-    - Add more civic words
-    - Replace every term with things
-    - Say what the council is considering, who is consulted and how people
-      participate
-  answer: 2
+    - Add two or three more civic words, such as democracy
+    - Say what each word means here, using Mill Road
+    - Explain what the three words mean in a dictionary
+    - Swap the words for simpler ones, like 'people'
+  answer: 1
   feedback:
-    - More terms do not explain this case.
-    - That removes the useful distinctions.
+    - More words don't help. The reader still doesn't know what is happening on Mill Road.
     - null
-  explain: Each term should tell the reader something about this decision.
+    - Dictionary meanings are general. The reader needs to know what each word means for Mill Road.
+    - The words are useful. The problem is that Nib hasn't linked them to the case.
+  explain: Each term should tell the reader something about this decision, such as what the council is thinking about and how people can take part.
 smaller:
   check:
     type: question
     q: Which phrase explains consultation?
     options:
-      - Inviting views before deciding
-      - A word that sounds official
+      - Asking people for views before deciding
+      - Telling people about a decision already made
     answer: 0
     feedback:
       - null
-      - A useful term has a meaning.
-    explain: It names a process before a decision.
+      - That is an announcement. Consultation happens before the decision.
+    explain: Consultation is asking for views before a decision is made.
 hint:
   - Point to something happening in the case.
   - What does each term let you say more precisely?
@@ -117,22 +115,22 @@ hint:
 
 ```step
 stage: practise
-insight: An economic opening must orient an audience as well as use terms correctly.
+insight: An economics opening must tell the reader what is going on, as well as use the terms correctly.
 check:
   type: question
   q: Which opening best introduces the equipment choice to students buying lunch?
   options:
-    - Scarcity is limited resources; opportunity cost is the next best
-      alternative given up.
-    - "Our menu depends on this choice: scarcity prevents buying everything, and
-      the opportunity cost of a fridge is the oven we give up."
-    - The tuckshop has made an economic decision using important terms.
+    - Scarcity means limited resources. Opportunity cost is the next best thing given up.
+    - Our menu depends on this choice. Due to scarcity, a fridge costs us the oven.
+    - The money can't buy both machines, so a new fridge means no new oven.
+    - The tuckshop faces scarcity and opportunity cost when it buys equipment.
   answer: 1
   feedback:
-    - Correct definitions, but they do not name this issue or why it matters.
+    - The definitions are right, but they don't tell students what the choice is or why it matters.
     - null
-    - Name the choice and explain it.
-  explain: The menu opening connects the issue, audience and terms.
+    - This tells students what is going on, but it doesn't use the subject's words.
+    - This uses the words, but students still don't know what the choice is or why they should care.
+  explain: The best opening says why students should care (the menu), names the choice, and uses both terms.
 smaller:
   check:
     type: question
@@ -153,21 +151,23 @@ smaller:
 
 ```step
 stage: modify
-insight: A historical description names evidence and stays within it.
+insight: A history description names its evidence and doesn't claim more than it shows.
 check:
   type: question
   q: Card M1 describes a polished face on the museum mirror. Which description
-    uses it responsibly?
+    uses it fairly?
   options:
-    - This artefact proves everyone in Han times owned a mirror.
-    - The mirror is an artefact; catalogue source M1 records its polished face.
-    - The source is significant because sources and artefacts are significant.
+    - This artefact proves that everyone in Han times owned a mirror.
+    - The mirror is an artefact. Source M1 records its polished face.
+    - The source is significant because artefacts are always significant.
+    - The mirror was polished, so it must have belonged to a rich person.
   answer: 1
   feedback:
-    - One object cannot show what everyone owned.
+    - One object can't show what everyone owned.
     - null
-    - This repeats terms without describing the object.
-  explain: The description uses two terms, names evidence and limits the claim.
+    - This repeats the words without saying anything about the mirror.
+    - M1 doesn't say who owned it. That is a guess, not something the source shows.
+  explain: The description uses two terms, names its evidence and stays within what M1 shows.
 smaller:
   check:
     type: question

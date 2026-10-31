@@ -7,7 +7,7 @@ summary: "Businesses exist to provide goods and services, make a profit, create 
 language: maths
 hook: "In Mia's town, a bakery sells bread, a bike workshop fixes punctures, and a community pantry sells low-cost groceries with no owner taking a profit. Are all three businesses, and why do they exist?"
 ---
-A **business** is an organisation that provides goods or services to people. (All businesses and people in this course — such as Mia, Corner Bakery, Pedal Fix Workshop and Riverbend Pantry — are made up.)
+A **business** is an organisation that provides goods or services to people. (All businesses and people in this course — such as Mia, Made-Up Bakery, Pedal Fix Workshop and Riverbend Pantry — are made up.)
 
 A **good** is a physical item you can touch and take away, such as a loaf of bread or a bicycle tyre. A **service** is work someone does for you, such as fixing a flat tyre, cutting hair or teaching a music lesson. Many businesses provide both at once.
 
@@ -93,23 +93,23 @@ tasks:
       type: question
       q: "Why does it matter for the rest of this course that businesses can exist for reasons beyond profit?"
       options:
-        - "Because some business types, such as cooperatives and not-for-profits, are set up around those other reasons"
-        - "Because only charities are allowed to employ local workers"
-        - "Because businesses that sell services are not allowed to make a profit"
-        - "Because once a business employs staff, its owners can no longer keep any profit"
+        - "Some business types, like cooperatives and not-for-profits, are set up around those reasons"
+        - "Businesses that don't aim for profit can't pay wages, so they need volunteers"
+        - "It shows that most business owners don't really care about making a profit"
+        - "Only businesses that don't make a profit can provide services to the community"
       answer: 0
       feedback:
         - null
-        - "For-profit businesses, cooperatives and not-for-profits can all employ workers."
-        - "Service businesses (such as hairdressers, vets and mechanics) can and often do make a profit."
-        - "Paying wages is a cost; a for-profit owner can still keep any profit left after costs."
+        - "Not-for-profits and cooperatives can and do pay wages. Riverbend Pantry pays two workers."
+        - "Profit is still a big reason for many businesses. The point is that it isn't the only one."
+        - "For-profit businesses provide services to communities too, such as a vet or a mechanic."
       explain: "Once you see that purpose varies, the different business structures in the next lesson make sense."
 ```
 
 ### Three businesses in Mia's town
 
 ```worked
-\text{Corner Bakery} :: Sells bread and pies (goods). Exists to provide food, earn a profit for the baker, and employ three staff.
+\text{Made-Up Bakery} :: Sells bread and pies (goods). Exists to provide food, earn a profit for the baker, and employ three staff.
 \text{Pedal Fix Workshop} :: Repairs bikes (service) and sells parts (goods). Exists to keep riders moving and earn the mechanics a living.
 \text{Riverbend Pantry} :: Sells low-cost groceries (goods). Exists to meet a community need and employ local workers, not for owner profit.
 \text{So} :: Profit is one reason businesses exist, alongside providing goods and services, creating jobs, and serving a community.
@@ -139,16 +139,16 @@ tasks:
       type: question
       q: "Dev opens a mobile phone repair stall. He wants to earn a living, give his cousin a Saturday job, and stop broken phones going to landfill. How many reasons for existing does Dev's business have?"
       options:
-        - "Several: earning a profit, providing a repair service, creating a job, and helping the community"
-        - "Only one: making a profit"
-        - "None, because repairing is not making a new good"
-        - "Only one: helping the environment"
+        - "Several: a profit, a repair service, a job for his cousin and less landfill"
+        - "One: making a profit, because the other reasons are just side effects"
+        - "Two: a profit and a service, because helping the planet isn't a business reason"
+        - "One: helping the environment, because that's the reason he cares most about"
       answer: 0
       feedback:
         - null
-        - "Earning a living is one reason, but the job and reducing waste are real reasons too."
-        - "Repairing is a service, and service businesses are real businesses."
-        - "Reducing waste is one of his reasons, alongside earning a living and employing his cousin."
+        - "Earning a living is one reason, but Dev also chose to give his cousin a job and cut waste. Those count."
+        - "Meeting a community or environmental need is one of the reasons businesses exist."
+        - "Caring most about one reason doesn't cancel the others. He also wants to earn a living and employ his cousin."
       explain: "Most real businesses combine several reasons at once."
 ```
 
@@ -175,16 +175,16 @@ tasks:
       type: question
       q: "Sam says: 'The local vet clinic doesn't make anything in a factory, so it isn't a real business.' What is the best reply?"
       options:
-        - "It is a business that provides a service — checking and treating animals — and goods are not the only thing businesses sell"
-        - "Sam is right: a business must manufacture physical objects"
-        - "The vet clinic is only a business on days when it sells pet food"
-        - "The vet clinic is a charity because treating animals is a service"
+        - "It sells a service, checking and treating animals, and services count as much as goods"
+        - "Sam is right, because a business has to make or sell something you can touch"
+        - "It counts as a business only because it also sells pet food and medicine"
+        - "It isn't a business; it's a health service, like a hospital run by the government"
       answer: 0
       feedback:
         - null
-        - "Service businesses are a major part of the economy."
-        - "Treating animals is a service, which counts every day."
-        - "Providing a service does not make a business a charity; most vet clinics are for-profit businesses."
+        - "Businesses provide goods, services or both. Service businesses are a big part of the economy."
+        - "Treating animals is a service. It would be a business even if it sold no goods at all."
+        - "Most vet clinics are privately owned businesses that charge for their services."
       explain: "Businesses provide goods, services, or both. Treating animals is a service."
 ```
 
@@ -199,7 +199,7 @@ stage: make
 insight: "Naming one goods-providing and one service-providing business and explaining why each exists turns the terms into your own."
 check:
   type: reflect
-  text: "In my own book I named one business that provides a good and one that provides a service (real or made up), explained what each provides, and listed at least two reasons why businesses exist beyond making a profit. A partner read it and agreed."
+  text: "In my own book I named one business that provides a good and one that provides a service (real or made up), explained what each provides, and listed at least two reasons why businesses exist beyond making a profit. A partner read it and gave feedback."
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.
@@ -220,27 +220,27 @@ check:
     - ["Small independent store", "A single local shop offers specialist advice and knows its regular customers"]
 ```
 
-## Wider: a remote community store
+## Wider: a remote town's store (made up)
 
 ```step
 stage: make
 tier: wider
-insight: "In a remote community, the local store is often the only source of fresh food and everyday essentials for hundreds of kilometres, so community health and steady supply matter alongside covering costs."
+insight: "Where a store is the only one for a long way, steady supply and community health might matter alongside covering costs."
 check:
   type: question
-  q: "A store in a remote town 500 km from the nearest city is the only place to buy fresh fruit, medicine and fuel, and roads flood in the wet season. How does its purpose differ from one of twenty supermarkets in a big city?"
+  q: "Imagine a made-up store in a remote town 500 km from the nearest city. It is the only place to buy fresh fruit, medicine and fuel, and roads can flood in the wet season. How might its purpose differ from one of twenty supermarkets in a big city?"
   options:
-    - "Keeping essentials available and affordable for the community is vital, because residents cannot simply walk to another shop"
-    - "Its main purpose is to maximise quick profits by selling only luxury goods"
-    - "It only needs to open during the dry season when freight trucks can get through easily"
-    - "It competes with twenty other grocery shops on the same street for passing shoppers"
+    - "Keeping essentials in stock all year might matter more, as there is no other shop nearby"
+    - "Its purpose is the same as any supermarket, because every shop just sells groceries"
+    - "It might as well close in the wet season, since fewer trucks can reach it then"
+    - "Profit can't matter to it at all, so it has to be run as a charity"
   answer: 0
   feedback:
     - null
-    - "A remote community store focuses on everyday essentials like fresh food, medicine and fuel, not luxury-only lines."
-    - "Residents need food, medicine and fuel all year round, so the store plans storage ahead of the wet season."
-    - "It is the only store for hundreds of kilometres, which is why reliable supply for the community matters so much."
-  explain: "Where a store is the community's lifeline, reliable supply of essentials and community wellbeing sit at the centre of why it exists."
+    - "Where a shop is matters. With no other shop for 500 km, what the town needs from it is different."
+    - "People still need food, medicine and fuel in the wet season. A store like this might stock up before the roads flood."
+    - "A remote store still has to cover its costs, and some aim to make a profit. Profit can sit alongside community need."
+  explain: "A store like this might put reliable supply of essentials near the centre of why it exists, alongside covering its costs."
 ```
 
 Typical and wider steps are extras on the same idea. You do not need them to finish the lesson.

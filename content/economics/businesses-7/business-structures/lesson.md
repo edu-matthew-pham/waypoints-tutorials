@@ -3,19 +3,19 @@ order: 2
 unit: structures
 title: Ways a business can be set up
 node: AC9HE7K02 n2
-summary: "Businesses can be set up in different ways depending on who owns them, who decides, and where any surplus goes. The main types in Year 7 are a sole proprietorship, a partnership, a cooperative, a corporation, a franchise and a not-for-profit organisation. Each structure suits a different purpose."
+summary: "Businesses can be organised in different ways depending on who owns them, who decides, and where any surplus goes. The six ways met in Year 7 are a sole proprietorship (sole trader), a partnership, a cooperative, a corporation (company), a franchise and a not-for-profit organisation. Each suits a different purpose."
 language: maths
-hook: "In Mia's town, one baker owns the corner bakery alone, two vets own the animal clinic together, and twenty apple growers own the packing shed together. Why didn't they all set up the same way?"
+hook: "In Mia's town, one baker owns the bakery alone, two vets own the animal clinic together, and twenty apple growers own the packing shed together. Why didn't they all set up the same way?"
 ---
 Last lesson showed that businesses exist for different reasons. They also have different **business structures**: the legal and practical way a business is owned and run.
 
-Six structures come up across Australia (all businesses named in this lesson — Rosa's Car Yard, Priya & Tom Vets, Valley Growers' Shed, Made-Up Grocers Corp and Burger Barn — are made up):
+This lesson looks at six ways businesses are organised. They are not all the same kind of thing. In Australian law, the main legal structures are a **sole trader**, a **partnership**, a **company** and a **trust**. A franchise is an arrangement between two businesses. A not-for-profit is about purpose: what the money is for. A cooperative is a business owned by its members. (All businesses named in this lesson, such as Rosa's Car Yard, Priya & Tom Vets, Valley Growers' Shed, Made-Up Grocers Corp and Made-Up Burgers, are made up.)
 
-- **Sole proprietorship:** owned and run by one person (a **sole proprietor**), who makes the decisions and keeps any profit (and carries the losses).
+- **Sole proprietorship** (in Australia, a **sole trader**): owned and run by one person, who makes the decisions and keeps any profit (and carries the losses).
 - **Partnership:** owned by two or more people who share the skills, decisions, profits and responsibilities.
 - **Cooperative:** owned and run by its members (such as growers, workers or local shoppers) to meet their shared needs; members each get a say.
-- **Corporation:** a separate legal body owned by **shareholders**, often used by larger businesses such as a national supermarket chain.
-- **Franchise:** an independent business owner (**franchisee**) pays to use an established brand's name, products and system (**franchisor**).
+- **Corporation** (in Australia, a **company**): a separate legal body owned by **shareholders**. Many large businesses, such as a national supermarket chain, are companies.
+- **Franchise:** an independent business owner (the **franchisee**) pays the owner of an established brand (the **franchisor**) to use its name, products and system.
 - **Not-for-profit organisation:** exists for a community, charitable or social purpose; any surplus left after costs goes back into that purpose, not to private owners.
 
 ## Predict: what decides the type?
@@ -25,13 +25,13 @@ stage: predict
 insight: "Committing first checks whether students confuse a business's ownership structure with how many workers are on shift."
 check:
   type: predict
-  q: "Mia's aunt owns the Corner Bakery by herself and employs four bakers. What makes her business a sole proprietorship?"
+  q: "Mia's aunt owns Made-Up Bakery by herself, runs it as a sole trader, and employs four bakers. Why is it still a sole proprietorship?"
   options:
-    - "It has one owner who controls the business, even though she employs staff"
+    - "It has one owner who controls it, even though she employs staff"
     - "A sole proprietorship is not allowed to employ anyone else"
-    - "Any shop that sells bread is automatically a sole proprietorship"
-    - "It is a corporation because five people work in the building"
-  actual: "One person owns it. A sole proprietor can employ staff; the structure is about who owns and controls the business, not how many people work there."
+    - "It is small and local, and small local shops are always sole traders"
+    - "It isn't one: five people work there, so it must be a partnership"
+  actual: "One person owns it and runs it as a sole trader. A sole trader can employ staff. The structure is about who owns and controls the business, not how many people work there."
 ```
 
 ## Try: match the structure to its feature
@@ -87,12 +87,12 @@ tasks:
         type: question
         q: "Rosa owns a car yard by herself and pays six salespeople. How many owners does the car yard have?"
         options:
-          - "One owner (Rosa), so it is a sole proprietorship"
+          - "One owner: Rosa runs it as a sole trader, not a company"
           - "Seven owners, because seven people work there"
           - "Six owners, because the six salespeople run the lot"
           - "Two owners, Rosa and the head salesperson"
         answer: 0
-        explain: "Employees are paid wages for their work, but Rosa is the single owner."
+        explain: "Employees are paid wages for their work, but Rosa is the single owner. Having one owner is not enough on its own: one person can also own a company. Rosa has set it up as a sole trader."
   - check:
       type: question
       q: "Twenty dairy farmers in a valley each put in money to own a milk-chilling shed together so every member farm can store its milk and each member gets one vote. Which structure is this?"
@@ -113,7 +113,7 @@ tasks:
 ### How ownership works in town
 
 ```worked
-\text{Rosa's Car Yard} :: One owner (Rosa) who employs six staff -> Sole proprietorship.
+\text{Rosa's Car Yard} :: One owner (Rosa), set up as a sole trader, who employs six staff -> Sole proprietorship.
 \text{Priya & Tom Vets} :: Two owners sharing skills, costs and profits -> Partnership.
 \text{Valley Growers' Shed} :: Owned by 20 member farms for shared packing -> Cooperative.
 \text{Made-Up Grocers Corp} :: Owned by thousands of shareholders across Australia -> Corporation.
@@ -142,7 +142,7 @@ tasks:
         - ["Riverbend Pantry sells low-cost groceries and puts all surplus back into food parcels", "Not-for-profit", "Surplus goes back into its community mission rather than to owners."]
   - check:
       type: question
-      q: "Amir wants to open a burger shop. Instead of inventing his own menu and logo, he pays a fee to 'Burger Barn' to use its well-known name, recipes and supplier network in his town. What has Amir opened?"
+      q: "Amir wants to open a burger shop. Instead of inventing his own menu and logo, he pays a fee to Made-Up Burgers (a made-up chain) to use its well-known name, recipes and supplier network in his town. What has Amir opened?"
       options:
         - "A franchise"
         - "A cooperative"
@@ -152,8 +152,8 @@ tasks:
       feedback:
         - null
         - "A cooperative is owned jointly by members with equal votes, not licensed from a brand."
-        - "Amir and Burger Barn both operate to make a profit."
-        - "Because Amir pays to use Burger Barn's established brand, menu and system, he is operating a franchise."
+        - "Amir and Made-Up Burgers both operate to make a profit."
+        - "Because Amir pays to use Made-Up Burgers' established brand, menu and system, he is operating a franchise."
       explain: "Paying a franchisor to operate a branch under an established brand and system is a franchise."
 ```
 
@@ -210,7 +210,7 @@ stage: make
 insight: "Writing your own table of three structures, their distinguishing features and an example of each locks in the categories."
 check:
   type: reflect
-  text: "In my own book I drew a three-column table for at least three business structures, wrote the key feature that sets each one apart, and gave a realistic example for each. A partner read it and agreed."
+  text: "In my own book I drew a three-column table for at least three business structures, wrote the key feature that sets each one apart, and gave a realistic example for each. A partner read it and gave feedback."
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.
@@ -223,10 +223,10 @@ tier: typical
 insight: "A franchise gives a local owner a head start with a known brand, but limits what they can change."
 check:
   type: sort
-  q: "In Amir's Burger Barn franchise, sort each item into an advantage for Amir (the franchisee) or a limit he must accept."
+  q: "In Amir's Made-Up Burgers franchise, sort each item into an advantage for Amir (the franchisee) or a limit he must accept."
   options: ["Advantage for franchisee", "Limit on franchisee"]
   items:
-    - ["Customers already know and trust the Burger Barn name on opening day", "Advantage for franchisee", "Known branding brings customers in faster."]
+    - ["Customers already know and trust the Made-Up Burgers name on opening day", "Advantage for franchisee", "Known branding brings customers in faster."]
     - ["Training and recipes are supplied by the head office", "Advantage for franchisee", "He does not have to invent the system from scratch."]
     - ["Amir cannot change the menu to sell pizza without head-office approval", "Limit on franchisee", "The franchisor controls the menu so every branch matches."]
     - ["Amir must pay an ongoing share of his sales to the franchisor", "Limit on franchisee", "Franchise fees reduce the share of revenue he keeps."]

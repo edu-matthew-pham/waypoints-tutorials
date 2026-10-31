@@ -167,7 +167,7 @@ tasks:
 ```step
 stage: make
 insight: "Finding scarcity in your own school is how the idea becomes yours."
-check: { type: reflect, text: "In my own book I wrote one place at school where there is scarcity (not just a shortage), named the limited resource, and used one allocation question to say how the choice gets made. A partner read it and agreed." }
+check: { type: reflect, text: "In my own book I wrote one place at school where there is scarcity (not just a shortage), named the limited resource, and used one allocation question to say how the choice gets made. A partner read it and gave feedback." }
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.

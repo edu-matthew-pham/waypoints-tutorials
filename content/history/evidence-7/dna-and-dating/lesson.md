@@ -9,204 +9,198 @@ summary: Describe how ancient DNA can reveal biological relationships. Distingui
 language: maths
 hook: One report says two ancient people were close biological relatives. Another gives an estimated age range for charcoal. Have the labs answered the same question?
 ---
-**DNA** carries inherited biological information. Scientists can compare surviving DNA from ancient human remains to investigate biological relationships. DNA does not tell us a person's name or beliefs by itself. The comparison and the question matter.
+**DNA** is the information passed down from parents to children in the body. Sometimes DNA survives in ancient bones or teeth. Scientists can compare DNA from two people to see whether they were likely to be related. DNA does not tell you a person's name, or what they believed.
 
-**Radiocarbon dating** estimates when once-living material stopped exchanging carbon with its surroundings. It can help date charcoal or other suitable organic samples. It does not directly date a stone wall. Reports give uncertainty, often as a range. A date for a sample is evidence to compare with its archaeological context.
+**Radiocarbon dating** estimates when something that was once alive (wood, charcoal, bone, seeds) died. It cannot date stone, so it cannot date a stone wall directly. The answer always comes as a range, such as "between 300 and 200 BCE", because there is uncertainty in the measurement. The lab dates the sample. Whether that sample tells you when an event happened depends on where it was found.
 
-These two reports are **invented teaching examples** about an ancient settlement. No actual people or laboratory results are described.
+These two reports are **made up** for this lesson. They are not about real people or a real lab.
 
-- **Report A:** DNA from two ancient individuals is consistent with a close biological relationship.
-- **Report B:** a charcoal sample has a modelled calendar range of 300 to 200 BCE at the stated confidence level.
+- **Report A:** DNA from two ancient people suggests they were close biological relatives.
+- **Report B:** a piece of charcoal most likely dates to between 300 and 200 BCE.
 
-## Predict: commit to a claim
+## Predict: what is Report A about?
 
 ```step
 stage: predict
-insight: Surface the initial rule students would use before they compare it with evidence.
+insight: Students commit to what a DNA report can answer before comparing it with a dating report.
 check:
   type: predict
-  q: Which question does Report A address?
+  q: Which question does Report A answer?
   options:
     - Were these people biologically related?
     - In which exact year was the settlement built?
     - What language did they speak?
-  actual: Report A concerns biological relationships. It does not supply a calendar date or a language.
+  actual: Report A is about whether two people were related. It gives no date and no language.
 ```
 
-
-
-## Try: sort the evidence
+## Try: which method?
 
 ```step
 stage: run
-insight: Separate the kinds of evidence or claims before using them together.
+insight: Students match each question to the method that can answer it before combining the reports.
 check:
   type: sort
-  q: Choose the method for the question.
+  q: Which method could help answer each question?
   options:
     - DNA comparison
     - Radiocarbon dating
   items:
-    - - Could two ancient individuals be biological relatives?
+    - - Could two ancient people have been biological relatives?
       - DNA comparison
-      - Compare inherited biological information.
-    - - When might a charcoal sample date from?
+      - Relatives share more of their DNA.
+    - - When might a piece of charcoal date from?
       - Radiocarbon dating
-      - Charcoal is suitable once-living material.
-    - - Do ancient groups share genetic ancestry?
+      - Charcoal is burnt wood, which was once alive.
+    - - Do two ancient groups share ancestors?
       - DNA comparison
-      - Compare DNA across samples and interpret it with other evidence.
+      - Scientists compare DNA across many samples, then use other evidence to explain the result.
 ```
 
-Compare the result with your prediction. What would you keep or change?
+Was your guess right? The two methods answer different questions. One is about family links, the other about time.
 
-## Worked example: follow the reasoning
+## Worked example: putting the reports together
 
 ```step
 stage: investigate
-insight: Test the main inference, then repair the planted misconception before carrying it into a new case.
+insight: Students combine the two reports carefully, then repair the planted misconception that a sample date is the exact date of an event.
 tasks:
   - check:
       type: question
-      q: Which conclusion combines the two reports carefully?
+      q: Which conclusion uses both reports carefully?
       options:
-        - The people were certainly named in a royal family tree
+        - The two people were members of a royal family
         - The DNA gives an exact date for the charcoal
-        - There is evidence of a biological relationship and a separate estimated sample date
+        - Two people were probably related, and a charcoal sample has an estimated date
       answer: 2
-      explain: The reports contribute different evidence. Their connection to the settlement still depends on the find records.
+      explain: Each report adds a different piece of evidence. How they connect to the settlement still depends on where the bones and charcoal were found.
       feedback:
-        - A relationship estimate is not a historical name.
+        - DNA can suggest two people were related. It cannot tell you they were royal.
         - DNA comparison and radiocarbon dating answer different questions.
         - null
   - check:
       type: question
-      q: Nib records Report B as “the settlement was built in exactly 250 BCE”. What is the problem?
+      q: Nib writes down Report B as “the settlement was built in exactly 250 BCE”. What is the problem?
       options:
-        - The range should be read backwards
-        - The range is an estimate for a sample, not an exact construction date
-        - Charcoal cannot ever be dated
+        - The range should be read the other way round
+        - The range is an estimate for the charcoal, not the year the settlement was built
+        - Charcoal cannot be dated at all
       answer: 1
-      explain: 250 BCE is inside the range, but the report does not select that year or directly date construction.
+      explain: 250 BCE is inside the range, but the report does not pick that year. And it dates the charcoal, not the building.
       feedback:
-        - BCE counts towards 1 BCE, but the stated range is already valid.
+        - BCE years count down towards 1 BCE, so 300 BCE is earlier than 200 BCE. The range is already the right way round.
         - null
-        - Suitable charcoal is organic material and can be radiocarbon dated.
+        - Charcoal was once wood, so it can be radiocarbon dated.
       fault: logic
       misconception: sample-date-is-exact-event
     smaller:
       check:
         type: question
-        q: The report gives 300 to 200 BCE. Has it selected one exact year?
+        q: The report says 300 to 200 BCE. Has it picked one exact year?
         options:
           - Yes
           - No
         answer: 1
-        explain: A range leaves uncertainty about the date.
+        explain: A range means the date could be anywhere in it. There is uncertainty.
         feedback:
-          - Look at what the evidence actually records.
+          - It gives a span of 100 years. Any year in that span is possible.
           - null
     hint:
-      - Read the report as a statement about the sample.
-      - Ask what connects the charcoal to building the settlement.
+      - What did the lab actually test?
+      - What would link the charcoal to the building of the settlement?
 ```
 
-Report A adds information that layer depth cannot give: a biological relationship. Report B gives a time estimate. Read the whole range, not just its middle. Neither report proves why people lived together or whether a charcoal sample belongs to the event you are investigating.
+Report A tells you something layers cannot: that two people were probably related. Report B gives a time estimate. Read the whole range, not just the middle year. Neither report tells you why people lived together, or whether the charcoal belongs to the event you are investigating.
 
-### What follows from the evidence?
+### Use both reports
 
 ### Check Nib’s claim
 
-Explain which part of the claim goes beyond what the evidence supports.
+Which part of Nib's claim says more than Report B can show?
 
-## Vary: change one condition
+## Vary: old charcoal in a new pit
+
+Now change one thing. A later pit has two things in its filling: a stone tool, and old charcoal that was washed or thrown in from somewhere else. The lab tests the charcoal. The archaeologist notes that the pit filling is mixed.
 
 ```step
 stage: modify
-insight: Keep the same idea while testing a changed condition.
+insight: Students see that a correct lab date can still mislead if the sample was moved.
 check:
   type: question
-  q: What has the lab dated directly?
+  q: What has the lab actually dated?
   options:
     - The charcoal sample
     - The stone tool
-    - The digging of the later pit
+    - When the pit was dug
   answer: 0
-  explain: The charcoal result needs its context before it can help date the pit or other finds.
+  explain: The lab dated the charcoal. Because it was moved, its date may be older than the pit.
   feedback:
     - null
-    - Stone is not the organic sample tested.
-    - Old charcoal moved into a later pit can predate the pit.
+    - Stone was never alive, so it was not the sample tested.
+    - Old charcoal moved into a later pit can be older than the pit itself.
 ```
 
-Now a later pit contains both old charcoal moved from elsewhere and a stone tool. The lab tests the charcoal. The excavator records the mixing.
-
-## Practise: a fresh case
+## Practise: which evidence?
 
 ```step
 stage: practise
-insight: Apply the same test independently to another case.
+insight: Students choose the right evidence for a relationship question on their own.
 check:
   type: question
-  q: You want to investigate whether two ancient individuals were biological relatives. Which is the best starting evidence?
+  q: You want to find out whether two ancient people were biological relatives. Which is the best evidence to start with?
   options:
-    - Similar pots alone
-    - The depth of their finds alone
-    - A comparison of surviving DNA, alongside the context records
+    - Similar pots buried with each of them
+    - How deep each of them was buried
+    - A comparison of their DNA, along with records of where they were found
   answer: 2
-  explain: DNA comparison can test biological relationship; the archaeological records help interpret the result.
+  explain: Comparing DNA can test whether they were related. The dig records help you make sense of the result.
   feedback:
-    - Pots can be shared by people who are not relatives.
-    - Depth helps with relative order, not biological relationship.
+    - People who were not related can own the same kind of pot.
+    - Depth helps with order, not with family links.
     - null
 ```
-
-
 
 ## Make: explain it in your own book
 
 ```step
 stage: make
-insight: Produce an explanation that names both evidence and a limit, checked by a person.
+insight: Students write an explanation that names evidence and a limit, read by a person.
 check:
   type: reflect
-  text: In my own book I wrote one question that ancient DNA could help answer and what a comparison might reveal. I added a different question for radiocarbon dating and one limit of each method. A partner checked that the methods answer different questions.
+  text: In my own book I wrote one question that ancient DNA could help answer and what a comparison might show. I added a different question for radiocarbon dating, and one limit of each method. A partner read it and gave feedback.
 ```
 
-Write in your own book or document. Include a claim, the evidence for it and a limit. Your partner or teacher reads your explanation; this page only records your tick.
+Write in your own book or document. Say what each method could show, and one thing each cannot. Your partner or teacher reads it; this page only keeps your tick.
 
-## Typical: another example
+## Typical: when the DNA does not survive
 
 ```step
 stage: make
 tier: typical
-insight: Add another context at the same level without changing the required idea.
+insight: Students separate "no result" from "a negative result".
 check:
   type: question
-  q: An ancient sample gives too little usable DNA. What follows?
+  q: A sample from an ancient burial has too little DNA left to test. What follows?
   options:
     - The person had no relatives
-    - The method cannot settle the relationship from that sample
-    - Layer order is now useless
+    - DNA cannot answer the question from that sample
+    - The layer order is now no use either
   answer: 1
-  explain: Failure to recover usable DNA is a limit of the sample. It is not evidence that relatives did not exist.
+  explain: Not getting a result is a limit of the sample. It is not evidence that the person had no relatives.
   feedback:
-    - No usable result does not prove no relationship.
+    - No result does not mean no relatives. It just means no answer.
     - null
-    - The layer records remain another source of evidence.
+    - The layer records are separate evidence and can still be used.
 ```
 
-
-
-## Wider: test the limit
+## Wider: a right answer that misleads
 
 ```step
 stage: make
 tier: wider
-insight: Explore the limits of the same idea through discussion and an explanation.
+insight: Students explain how a correct lab result can give a misleading date for an event.
 check:
   type: reflect
-  text: I explained how an old charcoal sample moved into a newer pit could produce a valid lab result but a misleading date for the pit. I named the field record that would help.
+  text: I explained how an old charcoal sample moved into a newer pit could give a correct lab result but a misleading date for the pit. I named the dig record that would help.
 ```
 
-Typical and wider steps are optional breadth on this idea. They are not needed to finish.
+Typical and wider steps are extras on the same idea. You do not need them to finish the lesson.

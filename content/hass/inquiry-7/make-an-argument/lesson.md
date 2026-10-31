@@ -12,11 +12,11 @@ shape: primer
 hook: Saying 'I strongly believe it' tells us your view. What would give a
   reader a reason to agree?
 ---
-An **argument** takes a position on a question someone could reasonably disagree about. Give supporting points, name evidence and explain how it supports your position. Consider an alternative fairly.
+An **argument** takes a position on a question people could fairly disagree about. Give supporting points. Name your evidence and explain how it supports your position. Then look fairly at another view.
 
-All cases, figures and source cards here are invented practice material. Parkside School's tuckshop cannot stock everything; Riverbend Council is considering closing Mill Road outside the school; Wattle Flat is on the Kilby River in a dry year; Hartley Museum labels a bronze mirror as Han. The records do not establish facts about a real council, river or ancient society.
+Every case, number and source card in this lesson is made up for practice. Parkside School's tuckshop can't stock everything. Riverbend Council is thinking about closing Mill Road outside the school. Wattle Flat is a town on the Kilby River in a dry year. The Hartley Museum has a bronze mirror it labels as Han. None of these records tells you anything about a real council, river or ancient society.
 
-Use this lesson for Civics or History. Economics’ responses and Geography’s action stay in those subjects.
+Use this lesson for Civics or History. Economics and Geography teach their own kind of argument in their own courses.
 
 ## Think first
 
@@ -27,12 +27,11 @@ check:
   type: predict
   q: Which plan gives readers reasons to agree?
   options:
-    - Repeat the position three times
-    - State a position, develop two points with evidence and consider an
-      alternative
-    - List everything found without choosing a position
-  actual: Two supported points give reasons to agree; an alternative tests the
-    position.
+    - Say the position three times, more strongly each time
+    - Give a position, two points with evidence, and another view
+    - List everything you found, and let readers choose
+    - Give a position and the one best piece of evidence
+  actual: Two points with evidence give readers reasons to agree. Looking at another view tests your position.
 ```
 
 
@@ -56,11 +55,11 @@ check:
       - "Counter-consideration: an issue to address"
 ```
 
-**Invented source cards:** C2 and C3 are as above. Neither records crashes or proves a closure will be safe. Notice C1 invites comments before a decision.
+**Made-up source cards:** C2 and C3 are as above. Neither one records crashes, and neither proves a closure will be safe. Notice C1 asks for comments before a decision.
 
 **Model addressed to Riverbend Council:**
 
-*Please consider a trial closure of Mill Road during arrival time. First, C2 records 40 vehicles crossing the school entrance then; reducing those movements could reduce opportunities for conflict, though the count does not measure crashes. Second, survey C3 places six shops' deliveries later, suggesting a timed trial could avoid many delivery periods. Consultation under C1 should include the other two shops so their access needs shape the trial. This offers participation before deciding rather than assuming everyone agrees.*
+*Please consider closing Mill Road for a trial during arrival time. First, count C2 records 40 vehicles crossing the school entrance at that time. Fewer cars could mean fewer near misses, although the count doesn't measure crashes. Second, survey C3 shows that six of eight shops get their deliveries later in the day. So a timed trial would miss most deliveries. The consultation in C1 should include the other two shops, so their needs shape the trial. That way people take part before the decision, and no one assumes everyone agrees.*
 
 The points do different work: one concerns the entrance, the other deliveries. Each names evidence and explains the connection.
 
@@ -84,12 +83,11 @@ smaller:
     type: question
     q: Which adds a different supporting point?
     options:
-      - A trial is a really good idea
-      - C3 suggests many deliveries occur later, so a timed trial could avoid
-        them
+      - I really, truly think a trial is the best idea
+      - C3 shows most deliveries come later, so a trial misses them
     answer: 1
     feedback:
-      - That repeats an opinion.
+      - That repeats the opinion more strongly. It gives no new reason.
       - null
     explain: A new point adds a different reason with evidence.
 hint:
@@ -106,19 +104,20 @@ stage: modify
 insight: A historical position also needs evidence and limits.
 check:
   type: question
-  q: M1 records a polished mirror face; M2 says wear may have reduced the shine.
-    Which position is supported for a display about change?
+  q: M1 records a polished mirror face. M2 says wear may have reduced the shine.
+    Which position do the records support for a display about change?
   options:
-    - Include the artefact to discuss possible change, using both records and
-      acknowledging uncertainty.
-    - Use it to prove what every person in Han society looked like.
-    - Leave out M2 because uncertainty weakens every argument.
+    - Show the mirror, use both records, and say the cause isn't certain.
+    - Show the mirror as proof of how all Han people lived.
+    - Show the mirror with M1 only, since "may" makes M2 too weak.
+    - Leave the mirror out, because the records don't agree.
   answer: 0
   feedback:
     - null
-    - These records cannot support a claim about everyone.
-    - Acknowledging uncertainty makes the position more accurate.
-  explain: Use both records and acknowledge what they cannot settle.
+    - Two records about one object can't support a claim about everyone.
+    - Saying what is uncertain makes an argument more honest, not weaker.
+    - The records don't disagree. M1 describes how it looked; M2 suggests why it changed.
+  explain: Use both records and say what they can't settle.
 smaller:
   check:
     type: question
@@ -133,7 +132,7 @@ smaller:
     explain: Keep that uncertainty in the argument.
 ```
 
-**History model:** *For the display about change, include the mirror as an artefact showing how a surface may change. First, catalogue source M1 records a polished face, giving evidence of a reflective surface. Second, conservation source M2 identifies wear as a possible cause of reduced shine, helping explain change over time. However, neither settles its original appearance. Present this interpretation as possible, rather than as a complete account of life in Han times.*
+**History model:** *The display about change should include the mirror. It is an artefact that shows how a surface can change. First, catalogue source M1 records a polished face, so it was once shiny. Second, conservation source M2 says wear may have dulled it, which helps explain the change. Neither record tells us exactly how it first looked. So the display should call this a possible explanation, not the full story of life in Han times.*
 
 For a real historical topic, your teacher supplies or approves real sources and checks historical knowledge.
 

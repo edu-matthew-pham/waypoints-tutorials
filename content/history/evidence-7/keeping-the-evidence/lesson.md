@@ -9,201 +9,195 @@ summary: Explain why destroying archaeological evidence closes off future questi
 language: maths
 hook: A road could be built quickly across an excavation. The objects can be moved to a museum. What might still be lost?
 ---
-**Conservation** means caring for remains and sites so their evidence survives. A find's position, its layer and its relation to other finds can be evidence too. Once those relationships are destroyed without records, putting the objects in a museum cannot recreate them. Careful excavation also changes a site, which is why recording and conservation planning matter.
+**Conservation** means looking after old remains and sites so the evidence in them lasts. The evidence is not only the objects. Where something was found, which layer it was in, and what was next to it are evidence too. If a site is destroyed before anyone records those things, putting the objects in a museum cannot bring that information back. Even a careful dig changes a site, which is why recording and planning matter.
 
-Governments can establish protected areas, control building work and support site management. UNESCO coordinates the World Heritage system and international cooperation; listing does not itself replace local protection or daily care.
+Governments can protect sites by law, control building work nearby and pay for their care. UNESCO, an international organisation, runs the World Heritage list and helps countries work together. Being on the list does not replace the local protection and daily care a site needs.
 
-**Real example:** UNESCO's account of the Mausoleum of the First Qin Emperor describes the terracotta figures and a conservation plan that sets protection boundaries and construction controls. See [UNESCO's site account](https://whc.unesco.org/en/list/441). The road cases below are **made up**, not proposals for that site.
+**A real example:** UNESCO's [page on the Mausoleum of the First Qin Emperor](https://whc.unesco.org/en/list/441) describes the clay figures and a conservation plan that sets protection boundaries and limits on building. The road cases below are **made up**. They are not plans for that site.
 
-## Predict: commit to a claim
+## Predict: is the evidence saved?
 
 ```step
 stage: predict
-insight: Surface the initial rule students would use before they compare it with evidence.
+insight: Students commit to whether saving objects saves all the evidence before they sort actions.
 check:
   type: predict
-  q: If objects are saved but their layer records are lost, is all the evidence saved?
+  q: If the objects are saved but the records of their layers are lost, is all the evidence saved?
   options:
-    - Yes, objects are the only evidence
-    - No, their original relationships may be lost
-    - Yes, a photograph of the objects replaces the site
-  actual: No. A photograph or saved object cannot by itself recover the original layer and position relationships.
+    - Yes, the objects are the only evidence
+    - No, how the finds were placed may be lost
+    - Yes, a photo of the objects replaces the site
+  actual: No. A saved object, or a photo of it, cannot tell you which layer it came from or what lay next to it.
 ```
 
-
-
-## Try: sort the evidence
+## Try: protect or lose?
 
 ```step
 stage: run
-insight: Separate the kinds of evidence or claims before using them together.
+insight: Students separate actions that keep evidence from actions that destroy it.
 check:
   type: sort
-  q: Which action protects evidence, and which loses it?
+  q: Does each action protect evidence or lose it?
   options:
     - Protects evidence
     - Loses evidence
   items:
-    - - Record layers and find locations before removal
+    - - Record the layers and where each find was before removing anything
       - Protects evidence
-      - This preserves information about context.
-    - - Bulldoze the layers, keeping only attractive objects
+      - The record keeps the information about where things were.
+    - - Bulldoze the layers, keeping only the best-looking objects
       - Loses evidence
-      - The relationships between finds disappear.
-    - - Set construction limits around a protected site
+      - The links between the finds are gone for good.
+    - - Set limits on building work around a protected site
       - Protects evidence
-      - Limits can reduce damage before it happens.
+      - Limits can stop damage before it happens.
 ```
 
-Compare the result with your prediction. What would you keep or change?
+Was your guess right? Keeping evidence means keeping the record of where things were, not just the things.
 
-## Worked example: follow the reasoning
+## Worked example: two routes for a road
+
+A made-up council is choosing between two routes for a road. Route A is shorter, but it cuts through layers nobody has recorded. Route B goes around those layers, but it costs more. A good recommendation names the evidence at risk, an action to protect it, and the trade-off that is left. It does not pretend every cost is known.
 
 ```step
 stage: investigate
-insight: Test the main inference, then repair the planted misconception before carrying it into a new case.
+insight: Students make a recommendation from the evidence criterion, then repair the planted misconception that saving objects saves their context.
 tasks:
   - check:
       type: question
-      q: Which recommendation uses the evidence criterion most clearly?
+      q: Which recommendation uses the evidence most clearly?
       options:
-        - Choose A because speed is the only issue
-        - Ignore the excavation because some objects look plain
-        - Investigate B because it avoids the layers; compare costs before deciding
+        - Choose Route A, because the only thing that matters is speed
+        - Ignore the dig, because some of the objects look plain
+        - Look closely at Route B because it avoids the layers, and compare the costs before deciding
       answer: 2
-      explain: Avoiding irreplaceable layers protects evidence. Costs and practical effects still need consideration.
+      explain: Going around layers that cannot be replaced protects the evidence. The cost and other effects still need weighing up.
       feedback:
-        - The decision has more than one consequence.
-        - An ordinary find can still carry information about past activity.
+        - Speed is one thing to weigh, but losing the layers is a cost too.
+        - A plain object can still tell you about what people did there.
         - null
   - check:
       type: question
       q: "Nib says: “We kept the pots, so nothing important was lost.” What is the best correction?"
       options:
-        - The original positions and layers may have been lost
+        - Where the pots were and which layers they came from may have been lost
         - Every object should always stay buried
-        - A museum can work out every original position
+        - A museum can work out where every pot was
       answer: 0
-      explain: The pots survive, but their relationships may not. Evidence includes context.
+      explain: The pots survive, but the information about where they were may not. That information is evidence too.
       feedback:
         - null
-        - Conservation decisions can include careful recording and authorised excavation.
-        - Without records, original relationships cannot simply be reconstructed.
+        - Careful recording and a planned dig can be part of good conservation.
+        - Without records, a museum cannot rebuild where things were.
       fault: logic
       misconception: saved-objects-save-context
     smaller:
       check:
         type: question
-        q: Does a pot on a shelf tell you which layer it came from?
+        q: Does a pot on a museum shelf tell you which layer it came from?
         options:
           - Always
-          - Only if that information was recorded
+          - Only if someone recorded it
         answer: 1
-        explain: The object and its context record answer different questions.
+        explain: The pot and the record of where it was found answer different questions.
         feedback:
-          - Look at what the evidence actually records.
+          - The pot itself does not carry its layer. Someone has to write it down.
           - null
     hint:
-      - "Think back to the first lesson: what made the sequence readable?"
-      - Which information would a museum need alongside the pot?
+      - "Think back to the first lesson: what let you read the order of the layers?"
+      - What would a museum need to know, besides the pot itself?
 ```
 
-A made-up council compares two routes. Route A is shorter but cuts through unrecorded layers. Route B avoids those layers but costs more. A useful recommendation names the evidence at risk, a protection action and the remaining trade-off. It does not pretend every cost or consequence is known.
-
-### What follows from the evidence?
+### Choose a route
 
 ### Check Nib’s claim
 
-Explain which part of the claim goes beyond what the evidence supports.
+Which part of Nib's claim says more than the pots can show?
 
-## Vary: change one condition
+## Vary: who does what?
+
+Now change one thing. An international organisation says a site is important. The local site manager still needs money and staff to keep drains working, control who goes in, and watch for damage.
 
 ```step
 stage: modify
-insight: Keep the same idea while testing a changed condition.
+insight: Students separate what international recognition does from what local authorities still have to do.
 check:
   type: question
-  q: Which division of roles makes sense?
+  q: Which way of sharing the jobs makes sense?
   options:
-    - International recognition automatically repairs the site
-    - World Heritage recognition supports protection; authorities and managers still need to act
-    - Visitors alone set the construction rules
+    - Being on the World Heritage list repairs the site by itself
+    - World Heritage listing supports protection; local authorities and managers still have to act
+    - Visitors decide the building rules on their own
   answer: 1
-  explain: Recognition and cooperation help, while protection and ongoing care require action by the responsible bodies.
+  explain: Recognition and working together help, but someone still has to protect and care for the site every day.
   feedback:
-    - A listing is not physical maintenance.
+    - Being on a list does not fix drains or stop damage.
     - null
-    - Visitors do not take over the authorities’ protection role.
+    - Visitors do not take over the authorities' job of protecting the site.
 ```
 
-An international organisation recognises a site’s significance. The local manager still needs resources to maintain drainage, control access and monitor damage.
-
-## Practise: a fresh case
+## Practise: a lost record
 
 ```step
 stage: practise
-insight: Apply the same test independently to another case.
+insight: Students apply the same reasoning to a new case on their own.
 check:
   type: question
-  q: A made-up site can keep its finds but loses all records of their locations. Which future question becomes harder?
+  q: At a made-up site, the finds are kept but every record of where they were found is lost. Which question becomes harder to answer?
   options:
-    - What colour is this surviving pot?
-    - How heavy is this surviving tool?
-    - Which activity came before another at this site?
+    - What colour is this pot?
+    - How heavy is this tool?
+    - What happened first at this site, and what happened later?
   answer: 2
-  explain: The lost locations and layers weaken the sequence that could answer the timing question.
+  explain: Without the layers and positions, you lose the order that would answer the question about time.
   feedback:
-    - A surviving object can still show its colour.
-    - The tool can still be weighed.
+    - You can still look at the pot and see its colour.
+    - You can still weigh the tool.
     - null
 ```
-
-
 
 ## Make: explain it in your own book
 
 ```step
 stage: make
-insight: Produce an explanation that names both evidence and a limit, checked by a person.
+insight: Students write a recommendation that names evidence and a limit, read by a person.
 check:
   type: reflect
-  text: In my own book I recommended a protection action for a made-up site. I explained what evidence could be lost, named one government or international role, and acknowledged a cost or limit. A partner checked that my reason was about evidence.
+  text: In my own book I recommended a way to protect a made-up site. I explained what evidence could be lost, named one job a government or international body does, and noted a cost or limit. A partner read it and gave feedback.
 ```
 
-Write in your own book or document. Include a claim, the evidence for it and a limit. Your partner or teacher reads your explanation; this page only records your tick.
+Write in your own book or document. Say what you recommend, what evidence it protects, and one cost or limit. Your partner or teacher reads it; this page only keeps your tick.
 
-## Typical: another example
+## Typical: the real Qin site
 
 ```step
 stage: make
 tier: typical
-insight: Add another context at the same level without changing the required idea.
+insight: Students link the government role to the real Qin conservation case described by UNESCO.
 check:
   type: question
-  q: Which is a government role in the Qin example described by UNESCO?
+  q: In UNESCO's account of the Qin site, which is a job done by government?
   options:
-    - Setting protection boundaries and construction controls
-    - Guaranteeing every past event can be known
-    - Replacing all site care with a label
+    - Setting protection boundaries and limits on building
+    - Making sure everything about the past can be known
+    - Putting up a sign instead of caring for the site
   answer: 0
-  explain: The account describes planning controls to protect the site from development pressures.
+  explain: The account describes planning rules that protect the site from building pressure.
   feedback:
     - null
-    - Conservation preserves evidence; it cannot guarantee complete knowledge.
-    - A label does not supply daily care.
+    - Conservation keeps evidence safe. It cannot promise we will know everything.
+    - A sign does not do the daily work of looking after a site.
 ```
 
-
-
-## Wider: test the limit
+## Wider: two good plans
 
 ```step
 stage: make
 tier: wider
-insight: Explore the limits of the same idea through discussion and an explanation.
+insight: Students compare two defensible proposals and name what each protects and costs.
 check:
   type: reflect
-  text: I compared two defensible protection proposals for the made-up road case. I named the evidence each protects, a cost or limit, and what further information I would request before deciding.
+  text: I compared two reasonable ways to protect the made-up road site. I named the evidence each one protects, a cost or limit, and what more I would want to know before deciding.
 ```
 
-Typical and wider steps are optional breadth on this idea. They are not needed to finish.
+Typical and wider steps are extras on the same idea. You do not need them to finish the lesson.

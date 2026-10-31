@@ -21,8 +21,8 @@ insight: "Committing to a choice shows the move: a question takes the big idea a
 check:
   type: predict
   q: "Which of these is a question that uses the big idea of opportunity cost?"
-  options: ["What did the Parkside tuckshop give up when it chose a second fridge over a new oven?", "Opportunity cost", "What is the tuckshop's budget?", "Is a tuckshop good?"]
-  actual: "The question about the fridge and oven. It names the case and asks what was given up. 'Opportunity cost' is only the idea. A budget is a look-up. 'Is a tuckshop good?' needs criteria for good."
+  options: ["What did Parkside's tuckshop miss out on with its new equipment?", "Opportunity cost at the Parkside tuckshop", "How much is the tuckshop's budget this year?", "Is the tuckshop a good use of the school's money?"]
+  actual: "The question about what the tuckshop missed out on. It names the case and asks what was given up, and you would need evidence to find out. 'Opportunity cost at the Parkside tuckshop' names the idea and the case but asks nothing. The budget is a look-up. 'A good use of money' needs criteria for good."
 ```
 
 ## Try: match the question to its big idea
@@ -34,7 +34,7 @@ check:
   type: match
   q: "Which big idea does each question use?"
   pairs:
-    - ["What did the Parkside tuckshop give up when it chose a second fridge over a new oven?", "Opportunity cost (Economics)"]
+    - ["When the Parkside tuckshop could buy only one new machine, what did it give up, and why that one?", "Opportunity cost (Economics)"]
     - ["Which level of government looks after Mill Road, and why that one?", "Who decides (Civics)"]
     - ["How has the Kilby River's flow changed over twenty years, and what changed with it?", "Change (Geography)"]
     - ["Why might the bronze mirror have mattered to the person who owned it?", "Significance (History)"]
@@ -60,9 +60,9 @@ tasks:
   - check:
       type: question
       q: "Which one turns the big idea 'cause' into a question about the bronze mirror?"
-      options: ["Why was the mirror made, and what caused its design to change?", "Cause", "Who made the mirror?", "How old is the mirror?"]
+      options: ["What might have caused the mirror's surface to change?", "Cause and the bronze mirror", "Is the bronze mirror more beautiful than others?", "Where in the museum is the mirror kept now?"]
       answer: 0
-      feedback: [null, "That is only the idea, not a question.", "That is a look-up.", "That is a look-up."]
+      feedback: [null, "That names the idea and the case, but it doesn't ask anything.", "That asks for a view and needs criteria. It doesn't use cause.", "That is a look-up: the museum's label answers it."]
       explain: "It names the case, asks why and how, and needs evidence to answer."
   - check:
       type: bug
@@ -80,9 +80,9 @@ tasks:
   - check:
       type: question
       q: "Which question uses the Geography big idea of connection?"
-      options: ["How is Wattle Flat connected to the Kilby River, and what happens in the town when it runs low?", "Where is Wattle Flat?", "Is the Kilby River pretty?", "Connection"]
+      options: ["What happens in Wattle Flat when the Kilby River runs low?", "Where is Wattle Flat on a map?", "Is the Kilby River the prettiest river?", "Connection between Wattle Flat and the river"]
       answer: 0
-      feedback: [null, "That is a look-up.", "That needs criteria before evidence could help answer it.", "That is only the idea."]
+      feedback: [null, "That is a look-up. A map answers it in one go.", "That asks for taste and needs criteria before evidence could help.", "That names the idea and the places, but it doesn't ask anything."]
       explain: "It links the town and the river and asks what changes."
 ```
 
@@ -101,17 +101,17 @@ tasks:
   - check:
       type: question
       q: "Civics: which is the better question about who decides?"
-      options: ["Who decides whether Mill Road closes, and how do they decide?", "Who is in charge?"]
+      options: ["Who decides whether Mill Road closes, and how?", "Who is in charge of the roads?"]
       answer: 0
-      feedback: [null, "It does not name a case, and 'in charge' of what? You could not tell what to look for."]
+      feedback: [null, "It names no case: which roads, and which decision? You could not tell what to look for."]
       explain: "The better one names the case and asks how."
   - check:
       type: question
       q: "History: which is the better question using change?"
-      options: ["How did bronze mirrors change over time, and what does that show about the people who made them?", "Did things change?"]
+      options: ["How did Han bronze mirrors change over time?", "Did things change in the past?"]
       answer: 0
       feedback: [null, "It has no case and no evidence to look for."]
-      explain: "The better one names the thing and says what the change would show."
+      explain: "The better one names the thing, so you know what evidence to look for."
 ```
 
 ### Civics
@@ -140,7 +140,7 @@ The move is the same: take a big idea, name a case, ask something about it. The 
 
 | | Ask about | A starter that works |
 |---|---|---|
-| **Economics** | what is given up, who gets what | "What did [group] give up when they chose [this]?" |
+| **Economics** | what is given up, who gets what | "When [group] couldn't have everything, what did they give up, and why?" |
 | **Civics** | who decides, and by what rules | "Who decides [this], and how?" |
 | **Geography** | places, links and changes | "How has [this place] changed, and what changed with it?" |
 | **History** | why, what changed, what mattered | "Why did [this] happen, and what changed?" |
@@ -173,9 +173,9 @@ insight: "The same move in another subject's case."
 check:
   type: question
   q: "Which question uses scarcity for the Wattle Flat water supply?"
-  options: ["When water runs low, how does Wattle Flat decide who gets how much?", "Water", "Where is the dam?", "Is water important?"]
+  options: ["When water runs low, who in Wattle Flat gets how much?", "Water shortages in Wattle Flat in a dry year", "Where is the dam that supplies Wattle Flat?", "Is water important to people in Wattle Flat?"]
   answer: 0
-  feedback: [null, "That is a topic.", "That is a look-up.", "That needs criteria before evidence could help answer it."]
+  feedback: [null, "That is a topic. It doesn't ask anything yet.", "That is a look-up. A map answers it.", "Almost everyone would say yes. It needs criteria and a focus before evidence helps."]
   explain: "It asks about the choice when there is not enough."
 ```
 

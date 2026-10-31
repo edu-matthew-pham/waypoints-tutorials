@@ -3,8 +3,7 @@ order: 3
 unit: water
 title: Good for some, bad for others
 node: AC9HG7K01 n3
-summary: Explain an effect of moving water, distinguish benefits and harms, and use environmental, economic
-  and social lenses.
+summary: "When water moves from one place to another, it changes things in both places. Those changes are its effects. Some effects help people or the environment and some harm them, and the same change can help one group and harm another. Geographers often sort effects into environmental, economic and social ones, though a single change can fit more than one. This lesson looks at the Snowy Mountains scheme and made-up cases to see who gains and who loses when water is moved."
 language: maths
 hook: If water is moved to help one place, does every connected place benefit?
 ---

@@ -26,8 +26,8 @@ questions:
     q: "Which list names the five key democratic freedoms in AC9HC7K02?"
     options:
       - "Freedom of speech, association, assembly, religion and movement"
-      - "Parliament, the Executive, the High Court, the Senate and the States"
-      - "Taxation, defence, passports, roads and rubbish collection"
-      - "Full-time, part-time, casual, volunteer and unpaid work"
+      - "Freedom of speech, voting, assembly, religion and movement"
+      - "Freedom of speech, association, assembly, education and movement"
+      - "Freedom of speech, association, protest, religion and privacy"
     answer: 0
     explain: "The five democratic freedoms are freedom of speech, association, assembly, religion and movement."

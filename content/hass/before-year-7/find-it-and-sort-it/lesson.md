@@ -8,7 +8,7 @@ language: science
 shape: primer
 hook: "You want to know when the school garden was started. Search, ask, or look something up?"
 ---
-Pick **how** to find out to suit the question. You can ask a person, look at records, read a book, or search online. When you search, use **key words** and look at the address: `.gov` for a government, `.edu` for a school, `.com` for a business.
+Pick **how** to find out to suit the question. You can ask a person, look at records, read a book, or search online. When you search, use **key words** and look at the address: `.gov` for a government, `.edu` for a school, `.com` usually for a business (but anyone can buy a `.com` address).
 
 The pages here are made up and end in `.example`.
 

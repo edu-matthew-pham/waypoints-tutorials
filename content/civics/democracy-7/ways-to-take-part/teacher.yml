@@ -10,7 +10,9 @@ struggle: "Students often think voting is the only 'real' way to participate, or
 before: |
   This lesson builds on the five democratic freedoms (Lesson 1) and their legal bounds (Lesson 2). It shows how citizens put those freedoms to work in practice.
 
-  The facts about House of Representatives petitions in the Typical step (checked by the Petitions Committee, presented to the House, 90-day ministerial response rule under Standing Order 209) come from the Parliamentary Education Office and APH.
+  The facts about House of Representatives petitions in the Typical step come from the Parliamentary Education Office and APH: a petition that meets the rules is considered by the Petitions Committee and presented to the House. If the Committee refers it to a minister, the minister is expected to respond within 90 days (House Standing Orders). Not every petition is referred, so the student text says "may be sent to a minister". Senate petitions follow different rules.
+
+  The committee inquiry in the worked example (pool safety) is made up and labelled so; it avoids echoing any real recent inquiry.
 running:
   - "Predict: ask why waiting years for a federal election wouldn't make sense for getting bike racks outside the town library."
   - "Try: pause on 'committee of inquiry' — many Year 7s have heard of protests and voting, but don't realise ordinary citizens and school classes can send submissions to parliamentary committees."
@@ -20,7 +22,7 @@ running:
 stuck:
   - see: "A student says a petition automatically becomes a law if enough people sign it."
     ask: "Who has the constitutional power to make laws in Australia?"
-    fix: "Parliament makes laws by voting on bills. A petition formally puts an issue before Parliament and gets a response from a minister, which can persuade MPs to act."
+    fix: "Parliament makes laws by voting on bills. A petition formally puts an issue before Parliament, may be referred to a minister for a response, and can persuade MPs to act."
   - see: "A student thinks volunteering at a food pantry or bushcare group isn't civic participation because it doesn't involve politicians."
     ask: "Does a democracy only depend on politicians, or also on citizens looking after their community together?"
     fix: "Volunteering, community organisations and social enterprise are active civic participation — citizens solving shared problems directly."
