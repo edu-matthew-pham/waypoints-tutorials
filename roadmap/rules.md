@@ -1,19 +1,16 @@
-# Rules proposal: each rule with its reason, scope, source and weight (1 Nov 2026)
+# Rules: each with its reason, scope, source and weight
 
-**Status: proposal, waiting for Matthew's "go".** Nothing in `AGENTS.md` or `CLAUDE.md` has changed yet. Step 1 of Project doc `claude/handoff-rules-audit.md`; the read-only lesson audit (step 2) comes after.
+The one full list of rules for every chat and agent (set up 1 Nov 2026, Matthew said go; Project doc `claude/handoff-rules-audit.md`, step 1). `AGENTS.md` carries the short version and `CLAUDE.md` the working detail; subject roadmaps point here and list only their own rules. Add a rule here first, then a short line where it is used.
 
-Why (`roadmap/shared.md` › Proposed: rules carry their reason): rules get shortened each time they are copied, lose their reason and scope, and agents then over-apply the short version.
+**Why this file:** rules got shortened each time they were copied and lost their reason and scope; agents then over-applied the short version (counted English write boxes became "no write boxes" everywhere; "wants are unlimited" was taught as fact). Matthew's intent is almost always a default with a reason, not a blanket rule (`roadmap/shared.md` › Proposed: rules carry their reason).
 
-**Weights.** **Firm**: don't depart without asking Matthew. **Default**: use judgement; if you depart, say why in your roadmap file. Firm, per Matthew (30 Oct): First Nations content, no real brands or people, no AI marking, safeguarding. Everything else is default unless a roadmap records Matthew deciding otherwise. Rows marked **?** need Matthew's call (questions at the end).
+**Weights.** **Firm**: don't depart without asking Matthew (First Nations content; no real brands or living people in made-up scenarios; no AI marking; safeguarding, including privacy and contained ethical hacking; repo safety). **Default**: use judgement; if you depart, say why in your roadmap file. Everything not marked firm is a default.
 
-**Proposed shape after "go":**
-- `AGENTS.md`: the short version (rule, one-line reason, scope, weight). Draft in §2.
-- `roadmap/rules.md` (new; this file renamed and trimmed): the register below, the one place for longer reasoning and history. Subject roadmaps point to it instead of copying rules out.
-- `CLAUDE.md`: small fixes where its wording has drifted from the decision. Draft in §3.
+**When Matthew decides something,** write its reason, scope, who and when, and its weight here in the same commit (W6).
 
-## 1. Register
+## Register
 
-Source = where Matthew's decision is recorded. "None found" = the rule exists but I found no record of Matthew deciding it.
+Decided = where the decision is recorded. "None found" = no record of Matthew deciding it; kept as a default by Matthew on 1 Nov.
 
 ### Teaching rules (all subjects unless scoped)
 
@@ -29,7 +26,7 @@ Source = where Matthew's decision is recorded. "None found" = the rule exists bu
 | T8 | **Contestable or simplified ideas are labelled where students meet them** ("in economics…", "one view is…", "this model leaves out…"); keep the descriptor's terms; settled facts stay plain; a short phrase is enough, not a disclaimer on every line. Distractors are real errors, not disagreements with an assumption. | Honesty: ACARA tells us what to teach, not how sure to sound ("wants are unlimited" was taught as fact). | Every subject; science models included. | Matthew 30 Oct (`fab91a8`, widened `a362055`) | Default (judgement) |
 | T9 | **Pace-agnostic:** same waypoints in Kit order; untiered path = minimum; `tier:` steps are optional width on the same waypoint, never a faster track; no Consolidating/Steady/Advancing labels; a check (with `smaller:`) before leaving a hinge. A teacher note may say where a slower or faster class could spend extra time. | A tutorial never knows the class; pace is the teacher's call (matches Kit). | Every subject: lessons, guides, class plans. | Matthew 30 Oct (`shared.md` › Decided: pace-agnostic) | Default |
 | T10 | **Width is not year grouping,** and years are suggestions ("usually Years X to Y"), never gates. | Wider means more contexts at the same level; schools decide adoption. | Every subject, AI included. | Matthew 27 Oct (`shared.md` › Decided: year grouping) | Default |
-| T11 | **Lesson shape is a default.** The ICT shape (Predict, Try, Worked example, Vary, Practise, Make) suits skill and concept waypoints with a planted answer; a discussion or weighing-views waypoint may suit `shape: 5e` or `primer`. In Code, PRIMM stages are step jobs, not a required order: read or trace before writing, start from given code. | One shape over-applied gives padded, checklist lessons. | Every subject (AGENTS currently says humanities only). | Matthew 30 Oct (`25cbb99`); Code: Project doc `claude/lesson-shape.md` (12 Oct) | Default |
+| T11 | **Lesson shape is a default.** The ICT shape (Predict, Try, Worked example, Vary, Practise, Make) suits skill and concept waypoints with a planted answer; a discussion or weighing-views waypoint may suit `shape: 5e` or `primer`. In Code, PRIMM stages are step jobs, not a required order: read or trace before writing, start from given code. | One shape over-applied gives padded, checklist lessons. | Every subject. | Matthew 30 Oct (`25cbb99`); Code: Project doc `claude/lesson-shape.md` (12 Oct) | Default |
 | T12 | **Facts about people, places, studies and dates are checked against a source;** unverified ones are marked. Claims about studies keep their limits (who, what); figures are dated. | Accuracy; teachers will trust it. | Every subject. | AI evidence audit 18 Oct; `checklist.md` › Claims. Matthew's decision not found | Default |
 | T13 | **AI in lessons:** scripted response labs are the core; real AI only through optional prompt cards with a no-AI alternative and "only if your teacher says you can"; coach prompts on recap pages only in general lessons. | Beneficial, not harmful, cognitive offloading; tool age limits. | AI courses (cards); every other subject (recap only). | Matthew 18 Oct (`learning-with-ai.md`) | Default |
 | T14 | **Plan first, then build:** a per-waypoint plan in the roadmap, push, stop for "go". | Most fix rounds were things a plan would catch. | New courses and waypoints. | Matthew 30 Oct (`35946d2`) | Default |
@@ -48,59 +45,17 @@ Source = where Matthew's decision is recorded. "None found" = the rule exists bu
 | W3 | Test before pushing (validate, build, headless check); don't re-render clips locally. | No CI on push; the publish run records the real voice. | All chats. | 11–19 Oct (CLAUDE.md) | Default |
 | W4 | Don't reformat whole data files; add single lines. | Merge conflicts between parallel chats. | Shared data files. | None found | Default (kept 1 Nov) |
 | W5 | Quote YAML values with colons; site-specific `wpt-` class names. | YAML parsing; ad blockers hide generic names (25 Oct). | All page code. | Technical (CLAUDE.md › Gotchas) | Default |
-| W6 | When Matthew decides something, write its reason and scope beside it in the same commit. | This proposal's point. | All chats. | Matthew 30 Oct (`shared.md` › Proposed: rules carry their reason) | Default (added to `checklist.md` now) |
+| W6 | When Matthew decides something, write its reason and scope beside it in the same commit. | This proposal's point. | All chats. | Matthew 30 Oct (`shared.md` › Proposed: rules carry their reason) | Default (`checklist.md` › Before every push 7) |
 
-### Humanities rules lists (`civics.md`, `history.md`, `geography.md`, `humanities-inquiry.md`, `economics.md`)
+### Subject rules lists
 
-Shared rows copy T1, T5, T8, T9, T11 nearly word for word. Subject-only rules stay where they are (all Matthew, 30 Oct, default): one course per standard and one lesson per waypoint; inquiry skills in the shared course; examples from Year 7 content; Preview label and "Coming later"; Before Year 7 catch-ups; History's China worked example and the deep-time pointer page; Geography's Kit gap. Proposed: each list opens with one line, "Shared rules: `roadmap/rules.md` (T1, T5, T8, T9, T11)", and keeps only its subject rows.
+Shared rules are not copied into subject roadmaps. The humanities lists (`civics.md`, `history.md`, `geography.md`, `humanities-inquiry.md`, `economics.md`) open with "Shared rules: `roadmap/rules.md`" and keep only their subject rules (all Matthew, 30 Oct, default): one course per standard and one lesson per waypoint; inquiry skills in the shared course; examples from Year 7 content; Preview label and "Coming later"; Before Year 7 catch-ups; History's China worked example and the deep-time pointer page; Geography's Kit gap.
 
-## 2. Proposed `AGENTS.md` › Rules that matter most
+## History
 
-```markdown
-## Rules that matter most
+**Settled with Matthew, 1 Nov 2026:** publishing (W1: lesson-only batches publish when finished, wider publishes ask first); real people (T2: firm for made-up scenarios only); privacy and security both firm, security redefined from "defensive only" to contained ethical hacking (T4, T7); repo safety firm (W2); phones never required, optional QR beside a link (T15); rules with no source kept as defaults, Prepare Print scoped to worksheets students write on (T16–T18, W4, editorial pass); this file as the one register.
 
-Each rule is **firm** (don't depart without asking Matthew) or a **default** (use judgement; if you depart, say why in your roadmap file). Matthew's stance is defaults with reasons, not blanket rules. Reasons, scope and history: `roadmap/rules.md`.
-
-Firm
-- **First Nations content** (every subject): we write no student explanation of First Nations history or culture. Where a skill lesson needs an example, use the custodians' own words: one short sourced line and a link. Teacher notes start from ACARA's elaborations. *Why:* we are not the right authors. Details: `roadmap/rules.md` T1.
-- **Made-up scenarios never use real brands or real living people;** made-up names are labelled and read as made up. *Why:* nothing promoted or misrepresented. Real people, places and sources are fine when the subject needs them (checked against a source).
-- **No AI marking** of student work, and nothing listens to or judges a voice. *Why:* feedback, not judgement.
-- **Safeguarding:** student writing is never sent anywhere, nothing personal is asked, progress stays in the browser; wellbeing topics carry review and disclosure notes. Hacking techniques only on our pretend boards or a teacher-approved isolated lab, never on real systems or accounts students aren't authorised to test, and nothing that works outside the lab. *Why:* child safety, privacy, and white-hat work rests on permission and scope.
-- **Never add automatic publish triggers.** *Why:* publishing stays manual by choice. **Pull before starting and before every push; never force-push.** *Why:* other chats work in parallel.
-
-Defaults
-- **Don't mark free writing,** but use writing where it helps (own book or document, or a small browser-only box, read by a partner or teacher). *Why:* the site is an activity guide, not a marker; "no writing" was never the rule.
-- **Label contestable or simplified ideas where students meet them** ("in economics…", "this model leaves out…"); settled facts stay plain; a short phrase is enough. *Why:* ACARA says what to teach, not how sure to sound.
-- **Pace-agnostic:** no pace labels; the untiered path is the minimum; `tier:` steps are optional width, never a faster track; check before leaving a hinge. A teacher note may say where a slower or faster class could spend extra time. *Why:* a tutorial never knows the class.
-- **Lesson shape is a default.** Pick the shape that fits the waypoint and say why if you leave the usual one (ICT shape for planted-answer skills; inquiry for discussion; in Code, PRIMM stages are jobs, not an order). *Why:* one shape copied everywhere pads lessons.
-- **Publishing:** lesson-only batches, publish when finished (`git push origin main:publish-lessons`) and say so; whole-site, navigation or Create publishes, ask Matthew first.
-- **Check facts about people, places, studies and dates against a source;** prefer made-up cases; mark anything unverified.
-- **Plan, then build:** plan each waypoint in your roadmap file and stop for "go" (`roadmap/checklist.md`).
-- **Test before you push** (`npm ci`, `validate`, `build`, a headless check of changed pages); don't re-render clips locally.
-- Add single lines to data files rather than reformatting them; quote YAML values with colons; give new page parts `wpt-` class names.
-- **When Matthew decides something, write its reason and scope beside it** in the same commit.
-```
-
-## 3. Proposed `CLAUDE.md` edits
-
-```diff
-@@ How we work
--- Do not add rigid pedagogy rules. Clips only where useful (hook, expected result without code, explaining why).
-+- Do not add rigid pedagogy rules: rules are defaults with a reason, and only a few are firm (`roadmap/rules.md`). Clips only where useful (hook, expected result without code, explaining why).
-@@ Teaching decisions
--- PRIMM (code lessons only; maths uses Predict, Try, Worked example, Vary, Practise, Make, and science uses 5E on the same stages): Predict (lock in, compare after Run), Run, Investigate, Modify, Make. Investigate tools must follow the lesson insight. Several tasks per step show as sub-pills only when more than one.
-+- PRIMM (code lessons only; maths uses Predict, Try, Worked example, Vary, Practise, Make, and science uses 5E on the same stages): the stages are step jobs, not a required order (Project doc lesson-shape, 12 Oct): read or trace before writing, start from given code, then use the stages the move needs. Predict locks in and is compared after Run. Investigate tools must follow the lesson insight. Several tasks per step show as sub-pills only when more than one.
-@@ Teaching decisions
--- Pace-agnostic (30 Oct 2026, every subject): lessons never assume a class pace (no Consolidating/Steady/Advancing, no assumed Steady). Untiered path = minimum width; `tier:` steps are optional width on the same waypoint, never a faster track; hinge waypoints get a check before moving on. Pace is the teacher's call in class (roadmap/shared.md › Decided).
-+- Pace-agnostic (30 Oct 2026, every subject, default; roadmap/rules.md T9): lessons never assume a class pace (no Consolidating/Steady/Advancing, no assumed Steady). Untiered path = minimum width; `tier:` steps are optional width on the same waypoint, never a faster track; hinge waypoints get a check before moving on. A teacher note may say where a slower or faster class could spend extra time. Pace is the teacher's call in class.
-@@ Publishing
--  Pushes to main still run nothing; Matthew is happy for Claude to publish finished batches this way.
-+  Pushes to main still run nothing. Publish finished lesson-only batches this way and say so; ask before a whole-site, navigation or Create publish (roadmap/rules.md W1).
-```
-(The write-box line under English, 30 Oct, is already narrowed correctly and stays.)
-
-## 4. Flags: rules copied wider or shorter than decided, or with no source
-
+**What the 1 Nov review found** (fixed in `AGENTS.md`, `CLAUDE.md`, `checklist.md` and the humanities roadmaps the same day):
 1. **First Nations, shortened in `AGENTS.md`.** It drops the custodians'-own-words option, the pointer pages and the review before use beyond CGGS, so an agent could remove a sanctioned example (Budj Bim). Meanwhile the full paragraph is pasted into three roadmaps. Fix: one home (T1), short line plus pointer elsewhere.
 2. **Write boxes.** Decided for English (27 Oct: counted boxes removed), spread to "no write boxes" everywhere, narrowed 30 Oct. The humanities lists still copy "Make steps written in the student's own book with a `reflect` tick" as a pattern, without the browser-box option. Fix: point to T5.
 3. **Contestable or simplified.** The humanities copies say "taught as models or views" and drop "simplified", "settled facts stay plain" and "a short phrase is enough", so they invite both under-labelling of models and over-hedging of facts. CLAUDE.md › Science still says simplifications go in teacher notes only, which is narrower than the 30 Oct rule (step 2 will count where it matters).
@@ -111,12 +66,4 @@ Defaults
 8. **No QR codes** is a CGGS fact applied to a site for any school.
 9. **No source decision found:** effort fields (T17), three checks per step (T18), data-file reformatting (W4), and the editorial pass in `checklist.md` (31 Oct, `5e81a98`).
 
-## 5. Questions for Matthew
-
-1. ~~Publishing (W1)~~ **Decided 1 Nov:** publish lesson-only batches when finished; ask before whole-site, navigation or Create publishes.
-2. ~~Real people (T2)~~ **Decided 1 Nov:** firm for made-up scenarios (no real brands or living people); real people, places and sources fine when the subject needs them.
-3. ~~Safeguarding scope (T4, T7)~~ **Decided 1 Nov:** both firm. Security is defined by authorisation and containment, not "defensive only": white-hat skills are fine inside our boards or an approved isolated lab.
-4. ~~Repo safety (W2)~~ **Decided 1 Nov:** firm. Rebase, never force-push.
-5. ~~QR codes (T15)~~ **Decided 1 Nov:** no step needs a phone; optional QR beside a link is fine. (A QR beside the course strip's "Copy link for students" would be a separate build.)
-6. ~~Rules with no source~~ **Decided 1 Nov:** all kept as defaults. Prepare Print is for worksheets students write on only; cheat sheets, briefs, cue cards and reference pages may have their own print layouts. Editorial pass (`checklist.md`, 31 Oct) kept.
-7. **Shape of the fix:** OK to add `roadmap/rules.md` as the register, cut `AGENTS.md` to §2, and have subject roadmaps point to it rather than copy?
+Lessons are checked against these rules in step 2 (read-only audit beyond humanities); no lesson text changed here.

@@ -4,21 +4,31 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with live 
 
 **Read `CLAUDE.md` first.** It is the full set of working notes for every agent, not only Claude (the name is historical). It is long, so read these parts before starting, and search it for the rest as needed: *Publishing*, *How we work*, *Teaching decisions*, *Gotchas*, and the section for the subject you are working on.
 
-Then read `ROADMAP.md` (index and rules for parallel work) and the roadmap file for your subject: `roadmap/<subject>.md` (`maths`, `science`, `code`, `english`, `economics`, `history`, `geography`, `civics`, `humanities-inquiry`, `ict`, `systems`, `engineering`, `learning-with-ai`, or `shared.md` for the build and shared tools). Authoring format is in `AUTHORING.md`, how to build a course in `BUILDING.md`, testing and review steps in `roadmap/checklist.md`.
+Then read `ROADMAP.md` (index and rules for parallel work) and the roadmap file for your subject: `roadmap/<subject>.md` (`maths`, `science`, `code`, `english`, `economics`, `history`, `geography`, `civics`, `humanities-inquiry`, `ict`, `systems`, `engineering`, `learning-with-ai`, or `shared.md` for the build and shared tools). Authoring format is in `AUTHORING.md`, how to build a course in `BUILDING.md`, testing and review steps in `roadmap/checklist.md`, every rule with its reason in `roadmap/rules.md`.
 
 ## Rules that matter most
 
-- **Never publish.** Pushes to `main` publish nothing, on purpose. Do not run, add or change workflow triggers, and do not push to `gh-pages`, `publish-*` branches or `makecode-editor`. Matthew runs the manual publish workflows. After a push, say what is ready to publish.
-- **Pull before starting and before every push** (`git pull --rebase`), never force-push, and keep notes in your own subject's roadmap file. Other agents work in parallel (one per subject).
-- **Test before you push:** `npm ci`, `npm run validate`, `npm run build`, and a headless-browser check of any page you changed (Chromium via Playwright, serve `dist/`). Do not re-render clips locally.
-- **Tutorials are pace-agnostic in every subject** (`roadmap/shared.md` › Decided, 30 Oct 2026): no Consolidating, Steady or Advancing labels; the untiered path is the minimum; `tier:` steps are optional width on the same idea, never a faster track.
-- **First Nations content:** no student-facing explanations of First Nations history or culture written by us; teacher notes start from ACARA's elaborations and ask the teacher to add local, community-approved material.
-- **Student writing:** the site does not mark or pass/fail free writing (no counting words as a check, no LLM marking) and does not send it anywhere. Writing is fine and often useful: students can write in their own book or document, or in a small box that stays in their browser, and a partner or the teacher reads it (a `reflect` tick). Don't build a lesson around write boxes and don't avoid writing either; use it where it helps. Printable sheets come from Prepare Print (the generated `worksheet.md` per lesson, or a guide page offered through it); do not build custom blank-line or fill-in layouts on pages.
-- **Do not state contestable or simplified ideas as settled truth, even when ACARA words them that way.** The descriptor tells us what to teach, not how sure to sound. Where a claim is a model, an assumption, a theory, a contested view or a simplification that is wrong in detail (human wants are unlimited, a historian's interpretation, electrons in shells, a one-layer greenhouse), say what it is where students meet it: "in economics...", "one view is...", "this model leaves out...". Keep the descriptor's terms. A short phrase is enough; this is about honesty and judgement, not a checklist or a disclaimer on every sentence. Distractors and misconception slips should be genuine errors of the model or of fact, not disagreements with an assumption. Teacher notes say what is assumed, what the model leaves out, who disagrees, and may offer a discussion prompt. Settled facts (dates, places, defined terms, well-established science) stay plain.
-- **Lesson shape is a default, not a rule.** Humanities courses copy `economics/scarcity-7/needs-and-wants`, which suits skill waypoints with a planted answer. If a waypoint is mostly discussion or weighing views, an inquiry shape (`shape: 5e` or `primer`) may suit better: say why in your roadmap file.
-- **Facts about people, places, studies and dates must be checked against a source.** Made-up cases are preferred; say so in the notes when something is unverified.
-- Do not reformat whole data files (for example `misconceptions.json`): add single lines.
-- Quote YAML values that contain colons. Give new page parts site-specific `wpt-` class names.
+Each rule is **firm** (don't depart without asking Matthew) or a **default** (use judgement; if you depart, say why in your roadmap file). Matthew's stance is defaults with reasons, not blanket rules. The full list, with reasons, scope and who decided: `roadmap/rules.md` (T = teaching, W = working).
+
+Firm
+- **First Nations content** (every subject): we write no student explanation of First Nations history or culture. Where a skill lesson needs an example, use the custodians' own words: one short sourced line and a link. Teacher notes start from ACARA's elaborations. *Why:* we are not the right authors. (T1)
+- **Made-up scenarios never use real brands or real living people;** made-up names are labelled and read as made up. Real people, places and sources are fine when the subject needs them, checked against a source. *Why:* nothing promoted or misrepresented. (T2)
+- **No AI marking** of student work, and nothing listens to or judges a voice. *Why:* feedback, not judgement. (T3)
+- **Safeguarding:** student writing is never sent anywhere, nothing personal is asked, progress stays in the browser; wellbeing topics carry review and disclosure notes. Hacking techniques only on our pretend boards or a teacher-approved isolated lab, never against real systems or accounts students aren't authorised to test, and nothing that works outside the lab. *Why:* child safety and privacy; white-hat work rests on permission and scope. (T4, T6, T7)
+- **Pull before starting and before every push (`git pull --rebase`); never force-push. Never add automatic publish triggers.** *Why:* other chats work in parallel; publishing stays manual by choice. (W1, W2)
+
+Defaults
+- **Don't mark free writing,** but use writing where it helps (own book or document, or a small browser-only box, read by a partner or teacher). *Why:* the site is an activity guide, not a marker; "no writing" was never the rule. (T5)
+- **Label contestable or simplified ideas where students meet them** ("in economics…", "this model leaves out…"); keep the descriptor's terms; settled facts stay plain; a short phrase is enough. *Why:* ACARA says what to teach, not how sure to sound. (T8)
+- **Pace-agnostic:** no pace labels; the untiered path is the minimum; `tier:` steps are optional width, never a faster track; check before leaving a hinge. A teacher note may say where a slower or faster class could spend extra time. *Why:* a tutorial never knows the class. (T9, T10)
+- **Lesson shape is a default.** Pick the shape that fits the waypoint and say why if you leave the usual one (ICT shape for planted-answer skills, inquiry for discussion, PRIMM stages as jobs rather than an order in Code). *Why:* one shape copied everywhere pads lessons. (T11)
+- **Check facts about people, places, studies and dates against a source;** prefer made-up cases where real ones would date; mark anything unverified. (T12)
+- **Plan, then build:** plan each waypoint in your roadmap file and stop for "go" (`roadmap/checklist.md`). (T14)
+- **No step needs a phone;** a QR code may sit beside a link, never instead of one. Worksheets students write on come from Prepare Print; cheat sheets, briefs and reference pages may have their own print layout. (T15, T16)
+- **Test before you push** (`npm ci`, `npm run validate`, `npm run build`, a headless-browser check of pages you changed; Chromium via Playwright, serve `dist/`); don't re-render clips locally. (W3)
+- **Publishing:** lesson-only batches, publish when finished (`git push origin main:publish-lessons`) and say so; whole-site, navigation or Create publishes, ask Matthew first. Keep notes in your own subject's roadmap file. (W1)
+- Add single lines to data files (for example `misconceptions.json`) rather than reformatting them; quote YAML values with colons; give new page parts `wpt-` class names. (W4, W5)
+- **When Matthew decides something, write its reason and scope beside it** in `roadmap/rules.md` and your roadmap, in the same commit. (W6)
 
 ## Commits
 
@@ -26,4 +36,4 @@ Use a plain commit message that says what changed. Do not add Claude's `Co-Autho
 
 ## When you finish
 
-Say in plain words what changed, what you tested, what you could not test, and what needs a publish (whole-site, quick, navigation, or lessons only: see *Publishing* in `CLAUDE.md`). Record anything you decided or learned in your subject's roadmap file in the same push.
+Say in plain words what changed, what you tested, what you could not test, and what was published or needs a publish (whole-site, quick, navigation, or lessons only: see *Publishing* in `CLAUDE.md`). Record anything you decided or learned in your subject's roadmap file in the same push.

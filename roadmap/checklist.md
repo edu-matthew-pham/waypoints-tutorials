@@ -1,6 +1,6 @@
 # Checklist: before a push, a review pass, and after a push
 
-One place for the testing and review steps. Handoffs and roadmaps link here instead of repeating them. Add a line when a chat finds a step that should have been on it. Last updated 25 Oct 2026.
+One place for the testing and review steps (the rules themselves, with reasons, are in `roadmap/rules.md`). Handoffs and roadmaps link here instead of repeating them. Add a line when a chat finds a step that should have been on it. Last updated 25 Oct 2026.
 
 ## Plan first, then build (new course or waypoint; added 30 Oct 2026)
 
@@ -9,7 +9,7 @@ Plan well rather than fix a poor draft. Most fix rounds so far (weak distractors
 1. **Write a plan for each waypoint before any lesson file**, in the subject's roadmap file: node and descriptor wording, the one insight, the planted misconception (id in `misconceptions.json`), the made-up case (and where it is labelled made up), two or three distractor ideas that are each a real student error, the shape and why (the default is a default, not a rule), and any First Nations element (teacher notes only).
 2. **Commit and push the plan, then stop** and say so. Matthew or a reviewer reads it. Build only after "go".
 3. **Build from the approved plan.** Change the plan in the roadmap file if the build has to depart from it.
-4. **Self-check before saying done:** run `npm run validate`; every answer index matches its option; each distractor is a plausible error and its feedback names the slip; wording matches the curriculum descriptor (use its terms, no invented aliases); made-up cases and names are labelled and read as made up, with no real brands; free writing never marked or pass/fail by counting; no pace labels; no contestable or simplified idea presented as settled truth (a model or view is labelled where students meet it, a short phrase is enough); `summary:` is a description and `teacher.yml` has the deck's learning goal (see shared.md audit note); teacher notes and the class plan are present; shared files (`misconceptions.json`, search index, Teachers page) touched only as agreed.
+4. **Self-check before saying done:** run `npm run validate`; every answer index matches its option; each distractor is a plausible error and its feedback names the slip; wording matches the curriculum descriptor (use its terms, no invented aliases); made-up cases and names are labelled and read as made up, with no real brands or living people in made-up scenarios; free writing never marked or pass/fail by counting; no pace labels; no contestable or simplified idea presented as settled truth (a model or view is labelled where students meet it, a short phrase is enough); `summary:` is a description and `teacher.yml` has the deck's learning goal (see shared.md audit note); teacher notes and the class plan are present; shared files (`misconceptions.json`, search index, Teachers page) touched only as agreed.
 5. **Report** what was built, what departs from the plan, and anything unsure, in a few lines.
 
 ## Before every push
@@ -28,7 +28,7 @@ Plan well rather than fix a poor draft. Most fix rounds so far (weak distractors
    - Create: `node experiments/<name>-test.mjs`; its browser smoke tests are listed in `claude/handoff-create-generic.md`
 5. Commit with the `Co-Authored-By:` and `Claude-Session:` lines from the session reminder. `git push origin HEAD:main`.
 6. Notes go in your own roadmap file. Pushing deploys nothing.
-7. When Matthew makes a decision, write its reason and scope beside it in the same commit (who decided, when, and whether it is a default or firm: `roadmap/rules-proposal.md`). Added 1 Nov 2026.
+7. When Matthew makes a decision, write its reason and scope beside it in the same commit in `roadmap/rules.md` (who decided, when, and whether it is a default or firm). Added 1 Nov 2026.
 
 ## Editorial pass before handover
 
@@ -61,4 +61,4 @@ Revise the text, rather than only noting concerns. In the handover, briefly stat
   - `tools/`, playgrounds, widgets, snippets, data, subject or home pages: **full publish**;
   - navbar or Create only: **publish-navigation**.
 - A clip's hash covers its lesson folder except `lesson.md`, so edits to `board.yml`, `teacher.yml` or a widget re-record that lesson's clips; `lesson.md`-only edits do not. Say how many lessons will re-record.
-- Do not publish unless Matthew asks. After a publish, spot-check one changed lesson and one shared page on the live site.
+- Publishing (`roadmap/rules.md` W1): lesson-only batches, publish when finished (`git push origin main:publish-lessons`) and say so; whole-site, navigation or Create, ask Matthew first. After a publish, spot-check one changed lesson and one shared page on the live site.

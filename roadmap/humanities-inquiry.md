@@ -4,7 +4,7 @@ One course shared by Economics and Business, Civics and Citizenship, Geography a
 
 ## Rules
 
-- Same rules as the subjects, including First Nations content (`roadmap/shared.md` › First Nations content, refined: teacher notes from ACARA's elaborations; in student lessons only the custodians' own words, linked) and pace-agnostic.
+- Shared rules (First Nations T1, made-up cases T2, writing T5, contestable ideas T8, pace-agnostic T9, lesson shape T11) are in `roadmap/rules.md`, with their reasons (1 Nov 2026). Subject rules:
 - Examples come from Year 7 content only, so skill lessons also build what the class needs to know. Mark the subject and its courses **Preview** (pilot, not finished) and show planned lessons as "Coming later" (Project doc humanities-y7-plan › Placeholders; log the shared code change in `roadmap/shared.md`).
 - Before Year 7 catch-up lessons (Year 6 HASS) go with the first course where a prerequisite link needs one (Project doc humanities-y7-plan › Before Year 7).
 - Framing: dip in, not done first. Lessons are short, linked from the subject lessons that use each skill ("Build up to this"); each has an "In each subject" note on what differs (History asks why and how we know, Geography where and why there, Economics choices and trade-offs, Civics who decides). Catch-ups: "Questions that guide an inquiry" (AC9HS6S01) and "Find it and sort it" (AC9HS6S02).

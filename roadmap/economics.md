@@ -2,7 +2,7 @@
 
 `content/economics/` (subject and courses `economics/scarcity-7` and `economics/businesses-7` built 30 Oct 2026; Preview, not yet tried with a class). Started 30 Oct 2026 with Year 7, standards AC9HE7K01 (Opportunity cost and scarcity) and AC9HE7K02 (Types of businesses). Node content comes from waypoints-kit `data/economics/` (copy in `data/curriculum/economics.json`).
 
-Rules this subject follows: `roadmap/shared.md` › Decided (30 Oct 2026): tutorials are pace-agnostic, and `roadmap/shared.md` › Decided: humanities. In short: same waypoints in the same order, untiered path = minimum width, `tier:` steps are optional width on the same waypoint, a check (with `smaller:`) before leaving each hinge, pace is the teacher's call.
+Rules this subject follows: `roadmap/rules.md` (the shared rules with their reasons, 1 Nov 2026) and `roadmap/shared.md` › Decided: humanities.
 
 ## Proposed (30 Oct 2026; built below): course `economics/scarcity-7`, *Scarcity and opportunity cost*
 

@@ -17,11 +17,12 @@ Split by workstream on 11 Oct 2026 so separate chats can work at the same time (
 - [`roadmap/geography.md`](roadmap/geography.md): Geography (`content/geography/`, not built yet; rules in `shared.md` › Decided: humanities), added 30 Oct 2026.
 - [`roadmap/history.md`](roadmap/history.md): History (`content/history/`: Source origin and purpose, with a Before Year 7 catch-up; a Preview pilot; rules in `shared.md` › Decided: humanities), added 30 Oct 2026.
 - [`roadmap/humanities-inquiry.md`](roadmap/humanities-inquiry.md): the shared inquiry-skills course for the four humanities subjects (not built yet), added 30 Oct 2026.
+- [`roadmap/rules.md`](roadmap/rules.md): every rule for chats and agents, with its reason, scope, who decided and whether it is firm or a default (1 Nov 2026). Subject roadmaps point here instead of copying rules.
 - [`roadmap/shared.md`](roadmap/shared.md): shared and general: the build, publishing, home and plain pages, and shared tools.
 - [`roadmap/diagrams-plan.md`](roadmap/diagrams-plan.md): Mermaid diagrams across lesson parts, decks and worksheets (proposed 19 Oct 2026); the tools to follow it are in `shared.md` › Proposed: visual and quality tools.
 - [`roadmap/maths-when-where-why.md`](roadmap/maths-when-where-why.md): the when, where and why of maths: a library of purposes and real situations per node (`data/connections/maths.yml`), how lessons use it, and pictures (hand SVG, Mermaid, charts) (decided 22–23 Oct 2026).
 
-**Every subject, current and future:** tutorials are pace-agnostic (`roadmap/shared.md` › Decided (30 Oct 2026): tutorials are pace-agnostic). Read it before planning a new subject or course.
+**Every subject, current and future:** read `roadmap/rules.md`; tutorials are pace-agnostic (`roadmap/shared.md` › Decided (30 Oct 2026): tutorials are pace-agnostic). Read it before planning a new subject or course.
 
 "ROADMAP › <section>" in CLAUDE.md, AUTHORING.md and BUILDING.md means that section in the subject's file. Older sections moved to `roadmap/archive/` when a file was tidied (the code file on 12 Oct 2026: `roadmap/archive/code-to-2026-10-12.md`), so look there if a section is not in the current file.
 
