@@ -11,6 +11,8 @@ Tools to **unpack curriculum, plan, teach and check understanding**. Use whichev
 | **Planning and preparation · Prepare** | Turn those ideas into teaching resources and strategies. | [prepare.learningwaypoints.com](https://prepare.learningwaypoints.com/) |
 | **Tutorials** | Try checks, feedback and smaller steps with your class. | [tutorials.learningwaypoints.com](https://tutorials.learningwaypoints.com/) |
 
+On [learningwaypoints.com](https://learningwaypoints.com/), Unpack is the ACARA curriculum view (**ACARA Progressions** under **Curriculum**); Prepare and Tutorials are under **Lessons**.
+
 A **waypoint** is an idea students need to understand to meet a curriculum expectation. The waypoints draw on ACARA descriptors; their sequence and teaching suggestions reflect professional judgement.
 
 ## Find teaching resources again
@@ -40,3 +42,5 @@ Choose one part that helps with a unit you already teach.
 Keep notes for a conversation with the pilot facilitator. No student information is needed. **Humanities is a preview and has not yet been tried with classes.**
 
 **Continue:** [Teachers hub](https://tutorials.learningwaypoints.com/teachers/) · [Self-paced introduction](https://tutorials.learningwaypoints.com/teachers/getting-started/) · [Humanities pilot](https://tutorials.learningwaypoints.com/humanities-pilot/).
+
+Curriculum content © ACARA, used under CC BY 4.0.

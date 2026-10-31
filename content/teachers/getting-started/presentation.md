@@ -21,7 +21,7 @@ Work out what students need to understand and what to teach first. Use that to *
 
 Use whichever part helps you. You do not have to use all three.
 
-<!-- 0:00–1:00 (1 minute, including transition). Say: The waypoints draw on ACARA descriptors. Their sequence and teaching suggestions reflect professional judgement; ACARA does not prescribe them. Use them alongside the unit you already teach. You can benefit from any part without using all three. We will spend three minutes trying Tutorials so you can see how the curriculum analysis and planning work in an activity. That extra demo time does not mean it matters more than the other parts. The three-lesson self-paced guide is linked at the end. -->
+<!-- 0:00–1:00 (1 minute, including transition). Say: The waypoints draw on ACARA descriptors. Their sequence and teaching suggestions reflect professional judgement; ACARA does not prescribe them. Use them alongside the unit you already teach. You can benefit from any part without using all three. We will spend three minutes trying Tutorials so you can see how the curriculum analysis and planning work in an activity. That extra demo time does not mean it matters more than the other parts. The three-lesson self-paced guide is linked at the end. Names on learningwaypoints.com: Unpack is the ACARA curriculum view, listed as ACARA Progressions under Curriculum; Prepare and Tutorials are under Lessons. Before the meeting: pre-open the three tabs, test the Unpack link on the school network, export this deck to PDF from Prepare as an offline fallback, and click through all six slides after publishing. -->
 
 ---
 
@@ -31,9 +31,11 @@ Use whichever part helps you. You do not have to use all three.
 
 ![The actual Year 7 Geography curriculum view](https://tutorials.learningwaypoints.com/teach/teachers/getting-started/presentation-assets/unpack.png)
 
-[Live: Unpack Year 7 Geography](https://acara.learningwaypoints.com/hass/year/7)
+[Optional live link: Unpack Year 7 Geography](https://acara.learningwaypoints.com/hass/year/7)
 
-<!-- 1:00–2:30 (1:30, including switch back). Open the direct Year 7 HASS link. Choose Geography Concepts, AC9HG7K01 Water as an environmental resource, expand Show waypoint sequence, then Show details for 1. Resource classification framework. Point out the descriptor, insight and prerequisite or hinge/hard-part detail in the node. The key distinction for our example is whether people's use can exhaust the resource, even when it is replenished. Say: this curriculum analysis informs the checks and teaching choices we will see next; it can also help your planning without using a tutorial. Do not open K02 Water distribution. Fallback: use this authentic screenshot and the direct link; explain what students need to understand first. -->
+<small>Curriculum content © ACARA, used under CC BY 4.0</small>
+
+<!-- 1:00–2:30 (1:30). Talk from the screenshot; do not navigate live. It shows Geography Concepts, AC9HG7K01 Water as an environmental resource, with the waypoint sequence open and details for 1. Resource classification framework. Point out the descriptor, insight and prerequisite or hinge/hard-part detail in the node. The key distinction for our example is whether people's use can exhaust the resource, even when it is replenished. Say: this curriculum analysis informs the checks and teaching choices we will see next; it can also help your planning without using a tutorial. The link is there for teachers to explore later, or to open only if you are ahead of time. -->
 
 ---
 
@@ -45,7 +47,7 @@ Use whichever part helps you. You do not have to use all three.
 
 [Live: Renewable, non-renewable or continuous?](https://tutorials.learningwaypoints.com/geography/water-7/resource-types/)
 
-<!-- 2:30–5:30 (3:00, including transitions). Keep the real lesson ready in another tab. 0:00–0:30: choose a prediction and Lock in my prediction; compare your choice with the written explanation under Try. 0:30–1:20: in Worked example, choose Fish are a continuous resource, press Check answer and read its answer-specific feedback before correcting it. Ask what the choice might tell you, and what you would ask the student to find out more. 1:20–2:30: select 2 · Find Nib's mistake. Nib says both come back so they are both renewable. Open Build up to it, answer which people can use up, then return to the original Nib line task and select line 3. The smaller step supports the same concept; it is not an alternative track. 2:30–3:00: switch Minimum to Typical and point to Typical: more resources: more examples of the same idea. You choose which examples to use and how long to spend. Say: this is one way to use the curriculum analysis and teaching suggestions in an activity. Fallback: screenshot shows the original task and support. Use the direct link later; do not demonstrate clips or recording. -->
+<!-- 2:30–5:30 (3:00, including transitions). This is the only live demo. Keep the real lesson ready in another tab. 0:00–0:30: choose a prediction and Lock in my prediction; compare your choice with the written explanation under Try. 0:30–1:20: in Worked example, choose Fish are a continuous resource, press Check answer and read its answer-specific feedback before correcting it. Ask what the choice might tell you, and what you would ask the student to find out more. 1:20–2:30: select 2 · Find Nib's mistake. Nib says both come back so they are both renewable. Open Build up to it, answer which people can use up, then return to the original Nib line task and select line 3. The smaller step supports the same concept; it is not an alternative track. 2:30–3:00: switch Minimum to Typical and point to Typical: more resources: more examples of the same idea. You choose which examples to use and how long to spend. Say: this is one way to use the curriculum analysis and teaching suggestions in an activity. Fallback: screenshot shows the original task and support. Use the direct link later; do not demonstrate clips or recording. -->
 
 ---
 
@@ -55,9 +57,9 @@ Use whichever part helps you. You do not have to use all three.
 
 ![A slide opened in the actual Prepare tool](https://tutorials.learningwaypoints.com/teach/teachers/getting-started/presentation-assets/prepare.png)
 
-[Geography: List for teachers](https://tutorials.learningwaypoints.com/geography/) → [Water Teacher guide](https://tutorials.learningwaypoints.com/teach/geography/water-7/) → [Lesson resources](https://tutorials.learningwaypoints.com/teach/geography/water-7/resource-types/)
+Optional links: [Geography: List for teachers](https://tutorials.learningwaypoints.com/geography/) → [Water Teacher guide](https://tutorials.learningwaypoints.com/teach/geography/water-7/) → [Lesson resources](https://tutorials.learningwaypoints.com/teach/geography/water-7/resource-types/)
 
-<!-- 5:30–7:00 (1:30, including transitions). 0:00–0:25: begin at Geography, select List for teachers and open Water as a resource. 0:25–0:45: open Teacher guide, then Renewable, non-renewable or continuous?. 0:45–1:15: under Classroom resources select Open in Prepare beside Slides, show one slide and advance once. Point to Open in Print beside Worksheet and open the student copy; the Teacher edition reveals answers. 1:15–1:30: say these resources support your teaching strategy; they do not replace discussion, investigation or writing. Fallback: use this authentic Prepare screenshot and the lesson guide's direct links. If necessary download Markdown and Import, or Copy address for Prepare and Load URL. No follow-along demonstration is needed in this talk. -->
+<!-- 5:30–7:00 (1:30). Talk from the screenshot; do not navigate live. Trace the route in the links: Geography, List for teachers, Water as a resource, Teacher guide, then the lesson's Classroom resources. The screenshot is that lesson's Slides opened in Prepare. Beside it, Open in Print gives the Worksheet; the student copy hides answers and the Teacher edition shows them. Say these resources support your teaching strategy; they do not replace discussion, investigation or writing. The links are there for teachers to follow after the meeting. -->
 
 ---
 
@@ -75,7 +77,7 @@ Use whichever part helps you. You do not have to use all three.
 
 [Find the subject lists, guides and inquiry skeletons again](https://tutorials.learningwaypoints.com/humanities-pilot/)
 
-<!-- 7:00–8:30 (1:30). Open the companion only if useful; it contains each subject's teacher-list route, built introductory course, course guide and subject inquiry skeleton. Show that the subject list can be found again after the meeting: select List for teachers, choose a built course, then Teacher guide. The contextual onboarding links in that view also lead back to this presentation and the pilot companion. Planned courses are Coming later, not lessons to promise. Try whichever part helps with your unit. You could explore how the ideas build or try a Prepare resource without using a Tutorials lesson. The complete inquiry, local knowledge, source selection and extended writing remain class work. Fallback: all direct subject links are on this slide and the companion. -->
+<!-- 7:00–8:30 (1:30). Open the companion only if useful; it contains each subject's teacher-list route, built introductory course, course guide and subject inquiry skeleton. Show that the subject list can be found again after the meeting: select List for teachers, choose a built course, then Teacher guide. The contextual onboarding links in that view also lead back to this presentation and the pilot companion. Planned courses are Coming later, not lessons to promise. Try whichever part helps with your unit. You could explore how the ideas build or try a Prepare resource without using a Tutorials lesson. The complete inquiry, local knowledge, source selection and extended writing remain class work. Fallback: all direct subject links are on this slide and the companion. First Nations perspectives are teacher-led, starting from ACARA's elaborations and local, community-approved material; the site writes no student-facing explanations, and a First Nations educator will review before use beyond CGGS. -->
 
 ---
 

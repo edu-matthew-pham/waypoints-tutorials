@@ -10,7 +10,9 @@ Print the [teacher quick reference](https://tutorials.learningwaypoints.com/teac
 
 ### Before the meeting
 
-Open the deck in Prepare, check all six slides and use **P** to show the speaker notes. Keep three tabs ready: [Unpack](https://acara.learningwaypoints.com/hass/year/7), [resource-types tutorial](https://tutorials.learningwaypoints.com/geography/water-7/resource-types/) and [Geography](https://tutorials.learningwaypoints.com/geography/). Each demo slide includes a screenshot and a direct link. If a tool is slow, use the screenshot and continue within the allotted time. No video demonstration is needed.
+**Checklist:** pre-open the three tabs below, test the Unpack link on the school network, export the deck to PDF from Prepare as an offline fallback, and click through all six slides after publishing.
+
+Open the deck in Prepare and open presenter view to see the speaker notes. Keep three tabs ready: [Unpack](https://acara.learningwaypoints.com/hass/year/7), [resource-types tutorial](https://tutorials.learningwaypoints.com/geography/water-7/resource-types/) and [Geography](https://tutorials.learningwaypoints.com/geography/). Slide 3 (Tutorials) is the only live demo. Slides 2 and 4 use their screenshots; their links are optional, for later. If the tutorial is slow, use its screenshot and continue within the allotted time. No video demonstration is needed.
 
 Prepare reads the Markdown through the **Open** link above. Alternatively, download **Opening and closing slides (Markdown)** from this page and **Import** it in Prepare, or paste the file address into **Load URL**. The six-slide talk has its own running order. The individual lesson decks are below.
 
