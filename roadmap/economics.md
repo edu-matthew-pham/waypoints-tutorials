@@ -126,3 +126,10 @@ Per `roadmap/checklist.md` › "Plan first, then build", here is the per-waypoin
 ## Boards and clips (1 Nov 2026)
 - Already decided 30 Oct (above): `sheet` for budgeting (`consumers-7` lesson 4) and `graph`/`sheet` for the data skills (AC9HE7S03). No clips planned; a clip would only follow a board where the idea is change over time (for example a budget as spending changes).
 - Per-course choice, not a rule (`roadmap/shared.md` › Decided: humanities).
+
+## Proposed (1 Nov 2026, Matthew agreed in principle): a light trade-off board for opportunity cost
+- **What:** a made-up tuckshop with one oven and a fixed number of baking hours. Students move hours between two products (pies and muffins) and the board shows what each choice makes and what it gives up. Planted checks only, for example "Move to 4 hours of pies: what did that cost?" (answer: the muffins given up, not the money). No graph at Year 7; Years 9–10 could add the production possibilities curve to the same board later.
+- **Why:** it makes scarcity and opportunity cost something students act on and see change, which a read-only case can't. Light on purpose: two sliders and a result, so it builds fast and fits a phone.
+- **Where:** one step in `scarcity-7/opportunity-cost` (and optionally `putting-together`). This is a narrow exception to the 30 Oct "no board for concept and case lessons" decision, which still holds for the case lessons. A short captioned clip of the trade-off moving suits Explain it to me.
+- **Next:** the Economics chat plans it (widget name, starter, checks) and Matthew says go. Could be the first humanities board, a pattern for others (`roadmap/shared.md` › Decided: humanities, per-course choice).
+
