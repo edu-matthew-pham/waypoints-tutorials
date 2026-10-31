@@ -235,3 +235,11 @@ One short captioned clip for lesson 2's Explain it to me (about 20 s, four lines
 1. Board steps on the minimum path in lessons 2–4 (recommended: the interaction is the point, and lesson 2 is a hinge), or as `tier: typical` extras?
 2. The clip: lesson 2 only, or none for now?
 3. Keep the farm to two choices (lighter), or add "crops with fertiliser" so lesson 2's fertiliser example shows on the board?
+
+### Decided (Matthew, 1 Nov 2026): catchment board choices (default, revisit after the pilot)
+
+1. **Board steps on the minimum path** in lessons 2, 3 and 4 (lesson 4's Wider stays `tier: wider`). Reason: the board is where students change something and see the consequence downstream; optional steps are skipped by the students who most need them, and lesson 2 is a hinge. Revisit if the pilot shows it slows classes or the board misbehaves.
+2. **No clip for now; flagged to revisit** once a class has used the widget and it has settled. Reason: a clip forces a full publish, needs a port range and re-records on every widget tweak; a board still (`explainPicture`) covers most of the ground meanwhile.
+3. **Farm keeps two choices** (grazed, ploughed bare); no fertiliser. Reason: a third material adds reading on a phone and a dissolved-load rule that is easy to get wrong; lesson 2's text questions already carry the dissolved idea. Add it only if the trial shows students think water carries only mud.
+
+**Alongside the Economics trade-off board** (`roadmap/economics.md` › Plan, 1 Nov; not necessarily the first humanities board, so this one follows its pattern rather than setting it): same light shape (buttons, no dragging; a "made-up model" label; `wpt-` class names; values set only after the student acts). Both add a `<script>` line to `playground-board/index.html`: whichever builds second pulls first and keeps both lines. Both need a whole-site publish, so they can share one run (ask Matthew first). The Humanities pilot page and deck link "the first humanities board" (`shared.md` › Next for the Humanities pilot page): whichever lands first.
