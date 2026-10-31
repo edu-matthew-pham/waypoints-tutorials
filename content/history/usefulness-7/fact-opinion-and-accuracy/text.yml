@@ -1,0 +1,9 @@
+# Board for "Fact, opinion and accuracy": Source C in our own plain words (not a translation).
+# Chain a = claims that can be checked; chain b = opinions (praise).
+
+# region: run
+widget: cohesion
+mode: chain
+colours: 2
+p: [[He defeated six rival kingdoms#a]] and [[joined them into one empire#a]]. [[He set one system of weights and measures#a]]. His rule is [[glorious#b]] and [[without equal#b]].
+# endregion

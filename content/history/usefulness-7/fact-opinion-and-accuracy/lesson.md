@@ -59,6 +59,18 @@ check:
 
 Notice the pattern. A factual claim does not mean a source is automatically right — someone can still get a fact wrong or lie — but it is a claim that **can be checked** against other evidence. An opinion expresses a judgement or attitude.
 
+## Practise: one source, two kinds of statement
+
+Here is Source C again, in our own plain words (not a translation). One source can hold both kinds of statement, sometimes in the same sentence.
+
+```step
+stage: practise
+insight: "Colouring the checkable claims and the opinions inside one source shows that a single source mixes both, which is what Nib misses next."
+try: { playground: board, starter: "text.yml#run", height: 300 }
+hint: ["For each part, ask: could someone check this against an object or another record?", "Glorious is not something you can measure. What else on the card is praise?"]
+check: { type: board, text: "Colour the claims that can be checked one colour and the opinions another.", when: "chains_ok = 2 and n_stray = 0", explain: "Defeating six kingdoms, joining them into one empire and setting one system of weights and measures can all be checked against other evidence. Glorious and without equal are praise. A claim you can check is not always true: checking it is the next step." }
+```
+
 ## Worked example: checking Source C's accuracy
 
 ```step

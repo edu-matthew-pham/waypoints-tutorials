@@ -1,0 +1,16 @@
+# Board for "Who made it, and what does it show?": Source A's card, one sentence per block.
+
+# region: run
+widget: cohesion
+mode: parts
+layout: blocks
+roles: origin content found
+role origin: Origin (who, when, where made)
+role content: Content (what it shows)
+role found: Where it was found
+s content: It is dressed as a soldier, with armour and a belt.
+s origin: It was made by craftsmen in Qin workshops.
+s found: It was found in pits near the First Emperor's tomb, in what is now Shaanxi province, China.
+s content: Each figure has a different face.
+s origin: It was made during the First Emperor's reign, before he died in 210 BCE.
+# endregion

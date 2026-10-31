@@ -88,6 +88,18 @@ Look at Source C, the stone inscription.
 
 ### Say the purpose
 
+## Practise: what the card tells you
+
+Label each sentence of Source C's card. Think carefully before you use every label.
+
+```step
+stage: practise
+insight: "Labelling the card shows that it states its origin, content and context, but not its purpose: purpose is worked out from the others."
+try: { playground: board, starter: "text.yml#run", height: 420 }
+hint: ["Context is what was going on around the source, not what the source says.", "Does any sentence say why the stone was made? Or only what it says?"]
+check: { type: board, text: "Label each sentence: origin, content, context or purpose.", when: "n_right = 5 and n_wrong = 0", explain: "No sentence says why the stone was made. The card tells you what it says (content) and what was going on (context). Purpose is something historians work out from those, which is why it is said with 'probably'." }
+```
+
 ## Vary: another source
 
 ```step

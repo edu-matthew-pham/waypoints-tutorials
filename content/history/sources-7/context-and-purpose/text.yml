@@ -1,0 +1,18 @@
+# Board for "Why was it made, and what was going on?": Source C's card with its context.
+# Purpose is offered as a label but no sentence states it: purposes are worked out, not written on the card.
+
+# region: run
+widget: cohesion
+mode: parts
+layout: blocks
+roles: origin content context purpose
+role origin: Origin (who, when, where)
+role content: Content (what it says)
+role context: Context (what was going on)
+role purpose: Purpose (why it was made)
+s origin: It was set up on a mountain by order of the First Emperor, around 219 BCE.
+s content: It says the emperor brought peace and order.
+s context: A few years earlier, the Qin had defeated six rival kingdoms and joined them into one empire.
+s content: It says everyone now lives under one set of laws, weights and measures.
+s context: Many people in the new empire had been enemies of the Qin.
+# endregion

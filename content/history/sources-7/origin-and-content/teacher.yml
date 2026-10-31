@@ -18,6 +18,7 @@ before: |
 running:
   - "Predict: ask for votes. 'Who made it?' and 'What does it show?' sound alike on purpose."
   - "Try: after the sort, stop at the note on findspots. Where the warriors were found (pits near the tomb) is not where they were made. Origin is who made it, when and where it was made."
+  - "Label the card (board): the same ideas on the card's own sentences, with a third label for where it was found. Students who label the pits sentence as origin have mixed findspot and origin; send them back to the note. The board only checks the labels we planted."
   - "Worked example: let Nib's mistake sit before explaining it. Ask which line is wrong, then why."
   - "Vary: ask students to give the reason as well as the answer."
   - "Make: read one or two out if students are happy to, without names."

@@ -52,6 +52,18 @@ Was your guess right? Origin is about the maker, and when and where it was made.
 
 One thing to watch: where a source was **found** is not always where it was **made**. The warriors were found in pits near the emperor's tomb. Historians record that too, but it is the findspot, not the origin.
 
+## Practise: label the card
+
+Now find the same things on the card itself. Watch for the sentence about where the figures were found.
+
+```step
+stage: practise
+insight: "Labelling the card's own sentences moves from sorting facts someone pulled out to finding origin and content in the source, and gives the findspot note a check."
+try: { playground: board, starter: "text.yml#run", height: 420 }
+hint: ["Does the sentence say who made it, when or where it was made? Or what you can see in it?", "Found and made are different. Which sentence is about the pits?"]
+check: { type: board, text: "Label each sentence: origin, content, or where it was found.", when: "n_right = 5", explain: "Craftsmen in Qin workshops, during the First Emperor's reign, is the origin. The soldier's armour and the different faces are content. The pits near the tomb are where the figures were found, not where they were made." }
+```
+
 ## Worked example: a different source
 
 ```step

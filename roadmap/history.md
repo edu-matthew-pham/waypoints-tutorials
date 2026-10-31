@@ -333,3 +333,10 @@ The plan above (written 30 Oct, still waiting for "go") was checked against `rul
 
 - Build both courses, or `land-7` first (the lens order in Next) and `migration-7` after?
 - Topic cards in a course `reference.md` (item 8): OK as the format?
+
+## Built (1 Nov 2026, Matthew said go): the three cohesion-board steps
+
+- As planned above, with one change: each board is a **Practise** step, not a Try step. A second Run step after a Predict shows the "No prediction locked in" compare box as soon as the board loads (`lesson-view.mjs` gives every Run step after a Predict one), which is noise here; Practise avoids it without a shared change. Titles: *Practise: one source, two kinds of statement*, *Practise: label the card*, *Practise: what the card tells you*; positions as planned.
+- `text.yml` (region `run`) in each lesson folder; one `running:` line in each `teacher.yml`. Purpose label kept as the planted trap in context-and-purpose.
+- Tested: `validate`, `check-cohesion history` (3 boards start, fail at the start, pass solved), whole build, each board answered in Chromium at 1280 and 390 px (a wrong label or stray colour says "Keep going", the right answers tick, no page errors, no sideways scroll), `check-decks` for both courses (the board slide embeds; all slides fit). Not yet tried with a class.
+- Publish: lesson folders only, so Publish changed lessons (nothing to record).
