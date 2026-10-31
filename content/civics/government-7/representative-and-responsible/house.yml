@@ -1,0 +1,24 @@
+# A made-up, smaller House of Representatives for "We elect them, they answer to us".
+# Sides A and B and every member are made up; the real House is bigger, but the rule is the same.
+
+# region: hung
+widget: house
+seats: 15
+side A: 7
+side B: 6
+# endregion
+
+# region: hung-5
+widget: house
+seats: 5
+side A: 2
+side B: 2
+# endregion
+
+# region: governing
+widget: house
+seats: 15
+side A: 7
+side B: 6
+backs A: 1
+# endregion

@@ -1,0 +1,8 @@
+# Display-only reasoning: nothing runs.
+
+# region: nib
+Morgan has been charged with taking a watch from a Wattle Creek market stall.
+The case will be heard in court, and Morgan can have a lawyer.
+Nib says: "Morgan was charged, so Morgan has to prove they didn't do it."
+Nib says: "If Morgan can't show where they were, the court should find Morgan guilty."
+# endregion

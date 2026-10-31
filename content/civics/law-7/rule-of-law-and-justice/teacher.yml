@@ -1,0 +1,58 @@
+summary: "Students learn the rule of law (public laws that apply to everyone, the government included) and the principles of a fair criminal trial: the presumption of innocence, the burden of proof on the prosecution, proof beyond reasonable doubt, equality before the law and the right to a lawyer."
+learning: "explain the rule of law and how the presumption of innocence and the burden of proof protect a person who is charged"
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 6 min · Practise 6 min · Make and exit 8 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can explain the rule of law in my own words.
+  - I can explain who has to prove what in a criminal trial, and why.
+  - I can tell when a made-up case fits or breaks the principles of justice.
+struggle: "Students reverse the burden of proof: being charged feels like being guilty, so they expect the person charged to prove their innocence. Keep asking 'Who brought the charge? So who has to prove it?'"
+before: |
+  Hinge n2. Kit's reason: the rule of law and fair trial principles are the conceptual core of the legal system; without them students can't judge whether the system is working, and K04 and K05 rely on why impartial law matters. Use the smaller check before moving on.
+
+  The rule of law is taught as a principle Australia aims for, not a guarantee. The student text says it can fall short in practice. One example for teachers: Parliament can pass laws that apply to past conduct (retrospective laws), and occasionally does, which is why the Vary step says such a law breaks the principles rather than that it is illegal.
+
+  This lesson is about criminal cases. In civil cases (disputes between people or businesses, such as Lin's ladder in lesson 1) the side bringing the case must prove it on the balance of probabilities (more likely than not), a lower bar. It is left out of student text to keep one standard in view.
+
+  Simplified on purpose: a few laws place a burden on the person charged ("reverse onus"), usually only to point to evidence, sometimes to prove a matter on the balance of probabilities (Commonwealth Criminal Code ss 13.1 to 13.3). The general rule taught here is the prosecution's burden, beyond reasonable doubt (Attorney-General's Department guidance, below).
+
+  First Nations content (Kit's wider item for this node): Kit suggests exploring how Aboriginal and Torres Strait Islander peoples have experienced the Australian legal system, including historical inequalities in how law was applied. Following the site's First Nations rule, there is no student step on this. If you take it up, start from ACARA's elaborations (below) and use First Nations-led sources and local, community-approved material; ask your school's Indigenous education contact first. Suggested starting points have not yet been checked by a First Nations educator, so none are linked here.
+
+  Morgan, Wattle Creek, its market and council, and the minister are all made up. Morgan is an adult on purpose.
+running:
+  - "Predict: take a vote. Expect many to say Morgan has to prove it. Leave it open."
+  - "Try: stop on 'beyond reasonable doubt'. Ask why the bar is set so high."
+  - "Worked example: ask 'Who brought the charge?' before students find Nib's mistake."
+  - "Vary: the made-up retrospective law is the hardest item. Ask how anyone could have followed a law that didn't exist yet."
+  - "Make: the student writes in their own book or document; a partner or teacher reads it. The site only records a reflect tick."
+stuck:
+  - see: "A student says the person charged must prove their innocence."
+    ask: "Who brought the charge to court?"
+    fix: "The prosecution brought it, so the prosecution has to prove it beyond reasonable doubt."
+  - see: "A student says the rule of law just means having strict laws."
+    ask: "If the rulers didn't have to obey those laws, would that be the rule of law?"
+    fix: "The rule of law is about everyone, the government included, being under the same law."
+support: "Write CHARGE on one side of the board and PROOF on the other. Draw one arrow from the prosecution to both."
+stretch: "Why might it be better for a guilty person to go free than for an innocent person to be punished?"
+exit:
+  q: "In a criminal trial, who has to prove what, and why?"
+  a: "The prosecution has to prove guilt beyond reasonable doubt. The person charged is presumed innocent, which protects people from being punished for something they didn't do."
+explain: |
+  Under the **rule of law**, laws are public, known in advance and apply to everyone, including the government.
+
+  In a criminal trial the person charged is **presumed innocent**. The prosecution brought the charge, so it carries the **burden of proof**: it must prove guilt **beyond reasonable doubt**. The person charged doesn't have to prove anything, and can have a lawyer.
+sources:
+  - title: Presumption of innocence (Attorney-General's Department, human rights scrutiny guidance)
+    url: https://ag.gov.au/node/1425
+    checked: 2026-11-01
+  - title: Australian Constitution, Chapter III (Federal Register of Legislation)
+    url: https://www.legislation.gov.au/C2004Q00685/latest/text
+    checked: 2026-11-01
+leads: >-
+  Next in this course: Courts and a fair trial.
+
+
+  ACARA elaborations for AC9HC7K03 (examples, not a checklist): "explaining the principles of justice, fairness,
+  equality, the rule of law and the importance of equal access to the protections provided by the law";
+  "explaining Australia's legal and justice system, including the principles of the rule of law, presumption of
+  innocence, burden of proof, and right to a fair trial and legal representation"

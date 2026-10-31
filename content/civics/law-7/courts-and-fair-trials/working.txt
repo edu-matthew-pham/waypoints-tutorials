@@ -1,0 +1,16 @@
+# Display-only reasoning: nothing runs.
+
+# region: nib
+Morgan's trial is in front of a judge and a jury.
+Witnesses tell the court what they saw, and Morgan has a lawyer.
+Nib says: "The jury found Morgan guilty, so now the jury picks the punishment."
+Nib says: "The judge's only job was to keep everyone quiet."
+# endregion
+
+# region: appeal
+A magistrate hears the case.
+One side appeals the decision.
+A higher state court checks it.
+The Supreme Court hears an appeal.
+The High Court has the last word.
+# endregion

@@ -203,6 +203,9 @@ ACARA Progressions and Planner hold each standard's elaborations in `static/data
 
 Lessons 2–5 add four single-line entries to `misconceptions.json`: `directly-elect-pm`, `complete-separation-australia`, `federal-is-state-boss`, `australia-only-westminster`. No shared tools changed.
 
+## Changed by the Civics chat (1 Nov 2026): `house` board widget
+New widget `playground-board/widgets/house.js` (a made-up, smaller House: crossbench members back Side A or B; values a, b, u, n, m, g), one `<script>` line in `playground-board/index.html` (so no other board clip re-records), AUTHORING › `widget: house`. Four single lines in `misconceptions.json` (`only-parliament-makes-law`, `accused-must-prove-innocence`, `jury-decides-law-and-sentence`, `equal-laws-guarantee-equal-access`). Note: `tools/check-lesson-boards.mjs` walks only maths and English, so humanities boards are not covered by it yet (Civics tested its boards with its own script).
+
 ## Changed by the History chat (30 Oct 2026): node check and catch-up links
 
 - `history` added to `CHECKED` in `tools/progressions.mjs`, so History lessons must name their node (roadmap/history.md).

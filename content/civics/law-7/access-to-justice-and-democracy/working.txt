@@ -1,0 +1,8 @@
+# Display-only reasoning: nothing runs.
+
+# region: nib
+Tarn is in a dispute with a landlord about a bond in Wattle Creek.
+Tarn can't afford a lawyer, but the landlord has one.
+Nib says: "The law is the same for everyone, so Tarn has the same chance as the landlord."
+Nib says: "So there's no need for legal aid or community legal centres."
+# endregion

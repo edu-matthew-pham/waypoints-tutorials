@@ -1,0 +1,31 @@
+inquiry:
+  q: "Why should someone who has been charged with a crime be treated as innocent?"
+  prompts:
+    - "What could happen to an innocent person if they had to prove they didn't do it?"
+    - "Why should the law apply to ministers and police too?"
+  notes: "Steer to how the principles protect anyone who is charged. Keep to made-up cases; no real trials or people."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Who has to prove it?"
+    minutes: 4
+    do: "Read the Morgan case aloud. Hands up: Morgan proves innocence, or the prosecution proves guilt? Don't reveal yet."
+    notes: "Most will pick Morgan. Come back to the vote after the worked example."
+  - at: make
+    kind: check
+    title: "Check a partner's principles"
+    minutes: 4
+    do: "Partners check there are two fair-trial principles, each with who it protects."
+    notes: "Students write elsewhere; the site does not take or mark writing."
+questions:
+  - at: investigate
+    title: "Burden of proof"
+    type: question
+    q: "In a criminal trial, who carries the burden of proof?"
+    options:
+      - "The prosecution, which brought the charge"
+      - "The person charged, who must show they're innocent"
+      - "The judge, who must work out what happened"
+      - "The jury, which must find the evidence itself"
+    answer: 0
+    explain: "The side that brings the charge has to prove it, beyond reasonable doubt."

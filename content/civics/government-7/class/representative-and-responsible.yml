@@ -14,6 +14,13 @@ activities:
     do: Give pairs the five chain cards. Ask them to order them and explain the link from House support to
       government. Return to the cards after Nib’s mistake.
     notes: Lay out five chain cards. Ask which arrow explains why the government must keep the support of the House.
+  - at: modify
+    kind: activity
+    title: Who has the numbers?
+    minutes: 4
+    do: Put the House board up. Ask who can form government before anyone presses a crossbench member. Then give
+      one crossbench member to Side A, then show Side B can govern with both.
+    notes: Expect "Side A, it's the biggest" first. The test is more than half the members, not the biggest side.
   - at: make
     kind: check
     title: Check a partner’s explanation

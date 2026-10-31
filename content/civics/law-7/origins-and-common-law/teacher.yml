@@ -1,0 +1,61 @@
+summary: "Students learn that Australia's law has two sources, Acts of Parliament and common law built up from judges' decisions (precedent), both inherited from Britain, and that judges must be independent. Magna Carta is taught as the charter later read as meaning no one is above the law."
+learning: "explain the two sources of Australia's law and why judges must be independent"
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 6 min · Practise 6 min · Make and exit 8 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can name the two sources of Australia's law and give an example of each.
+  - I can explain what precedent is and why lower courts follow higher ones.
+  - I can explain why judges must be independent of the government.
+struggle: "The new idea is that courts make law as well as Parliament. Students expect all law to be written by Parliament, so common law sounds like judges making things up. Keep coming back to precedent: judges are bound by what higher courts decided before."
+before: |
+  Hinge n1. Kit's reason: without the idea of common law and precedent, students treat the court system as arbitrary bureaucracy rather than a principled institution, and the court hierarchy in lesson 3 makes no sense. Spend the time on Lin's case and Nib's slip, and use the smaller check before moving on.
+
+  Magna Carta is taught as how it came to be read, not as a democratic charter. In 1215 it was a settlement between King John and his barons, and clause 39 protected "free men" from being punished except by lawful judgement or the law of the land. Later generations read it as meaning no one, not even the ruler, is above the law. Students who say it "gave everyone rights" are repeating the later reading; a short "at the time, who did it protect?" is enough.
+
+  Judicial independence in the English tradition owes more to the Act of Settlement 1701 (judges could not simply be removed for decisions the Crown disliked) than to Magna Carta. In Australia, section 72 of the Constitution protects federal judges: they can be removed only by the Governor-General after both houses ask, for proved misbehaviour or incapacity. The student text says only that no one can tell a judge how to decide.
+
+  What is simplified: "two sources" leaves out delegated legislation (regulations) and the Constitution as a source in its own right; a statute that clashes with common law usually wins, unless the statute itself is invalid. The courts' order in the Typical step is the general shape: Tasmania, the ACT and the Northern Territory have no middle court, and the Federal Court and Federal Circuit and Family Court sit beside the state courts (lesson 3).
+
+  Lin, Wattle Creek and Wattle Creek Hardware are made up. No real case is used.
+running:
+  - "Predict: take a vote. Many will say the judge decides by feel or the case waits for Parliament. Don't settle it yet."
+  - "Try: pause on precedent. Ask why it would be unfair if two courts decided the same kind of case in opposite ways."
+  - "Worked example: let Nib's slip sit. Ask what happens if no Act covers ladders exactly."
+  - "Vary: the minister's phone call is the one that isn't allowed. Ask why."
+  - "Make: the student writes in their own book or document; a partner or teacher reads it. The site only records a reflect tick."
+stuck:
+  - see: "A student says judges make up the law in each case."
+    ask: "If a higher court decided a case like this last year, can this judge ignore it?"
+    fix: "Judges are bound by precedent. Common law grows step by step from earlier decisions, not from a judge's feelings."
+  - see: "A student says Magna Carta gave everyone the vote."
+    ask: "In 1215, who was it protecting?"
+    fix: "It protected mainly barons and free men. Much later it was read as meaning no one is above the law."
+support: "Draw two columns, Parliament and the courts, and put Lin's case in the middle with an arrow from each."
+stretch: "Why might it be useful to have law built up from real cases, as well as Acts written in advance?"
+exit:
+  q: "Name the two sources of Australia's law, and say why judges must be independent."
+  a: "Acts of Parliament and common law (judges' decisions that later courts follow). Judges must be independent so the government has to obey the law too."
+explain: |
+  Australia's law has two sources. **Acts of Parliament** are laws Parliament passes. **Common law** is law judges have built up from past cases: lower courts follow what higher courts decided before (**precedent**).
+
+  Both came from Britain, along with the idea that no one, not even the government, is above the law. That is why judges are independent: no one can tell them how to decide.
+sources:
+  - title: "Clause 39 (Magna Carta, Museum of Australian Democracy)"
+    url: https://magnacarta.moadoph.gov.au/clause/39/
+    checked: 2026-11-01
+  - title: End of appeals from the High Court to the Privy Council (Parliamentary Education Office)
+    url: https://peo.gov.au/understand-our-parliament/history-of-parliament/history-milestones/australian-parliament-history-timeline/events/end-of-appeals-from-the-high-court-to-the-privy-council/
+    checked: 2026-11-01
+  - title: Australian courts (overview of state and territory courts)
+    url: https://en.wikipedia.org/wiki/Australian_courts
+    checked: 2026-11-01
+  - title: Australian Constitution, section 72 (Federal Register of Legislation)
+    url: https://www.legislation.gov.au/C2004Q00685/latest/text
+    checked: 2026-11-01
+leads: >-
+  Next in this course: The same law for everyone.
+
+
+  ACARA elaboration for AC9HC7K03 (an example, not a checklist): "exploring the origins of Australia's legal
+  system, including British common law, the Magna Carta, an independent judiciary and the Court hierarchies, both
+  federal and state/territory"

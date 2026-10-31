@@ -1,0 +1,15 @@
+# Display-only reasoning: nothing runs.
+
+# region: nib
+Lin's ladder broke, and Lin is taking Wattle Creek Hardware to the local court.
+The magistrate will check whether an Act of Parliament covers faulty ladders.
+Nib says: "Judges just read out the laws Parliament wrote. They never make law."
+Nib says: "So if no Act covers ladders exactly, the court can't decide the case."
+# endregion
+
+# region: up
+High Court of Australia
+A state's Supreme Court
+A middle court (most states)
+A local or Magistrates Court
+# endregion

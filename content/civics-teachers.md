@@ -1,17 +1,18 @@
 ---
 title: For Civics teachers
-summary: "What is built so far in Year 7 Civics and Citizenship (how Australia is governed, and freedoms and taking part), how it fits your unit, and what is planned."
+summary: "What is built so far in Year 7 Civics and Citizenship (how Australia is governed, freedoms and taking part, and law and justice), how it fits your unit, and what is planned."
 ---
 ## What is here
 
-**This is a preview.** Two courses are built (nine lessons in total), and none of it has been tried with a class.
+**This is a preview.** Three courses are built (thirteen lessons in total), and none of it has been tried with a class.
 
 - [**How Australia is governed**](../civics/government-7/): five lessons for AC9HC7K01, in the order the ideas depend on each other: *The Constitution* (hinge), *Representative and responsible government* (hinge), *Power shared, power checked*, *One country, several governments (federation)*, and *Borrowed from Britain and America*.
 - [**Freedoms and taking part**](../civics/democracy-7/): four lessons for AC9HC7K02, in waypoint order: *The five democratic freedoms* (speech, association, assembly, religion and movement, hinge), *Within the bounds of law* (why legal limits such as defamation and public safety exist), *Ways to take part in democracy* (comparing voting, petitions, committee inquiries, volunteering, community groups and peaceful protest), and *Formal and active citizenship* (legal status versus active participation, and historical exclusion and change in Australia).
+- [**Law and justice**](../civics/law-7/): four lessons for AC9HC7K03, in waypoint order: *Where our law comes from* (Acts, common law and precedent, independent judges, Magna Carta as later read; hinge), *The same law for everyone* (the rule of law, presumption of innocence, burden of proof; hinge), *Courts and a fair trial* (the court ladder, appeals, judge and jury), and *Fair courts and democracy* (access to justice and why it matters for democracy). Every case and person is made up.
 
 ## What is real and what is made up
 
-The institutions are the content, so they are real: the Constitution, Parliament's two houses, the Governor-General, the High Court. Everything else is made up: the people, the proposals, the results, a club. The lessons name no current office holders and no parties, so they do not date and do not lean.
+The institutions are the content, so they are real: the Constitution, Parliament's two houses, the Governor-General, the courts. Everything else is made up: the people, the proposals, the results, a club. The lessons name no current office holders and no parties, so they do not date and do not lean. The House board in *Representative and responsible government* uses a made-up House with two sides named by letter; its teacher notes offer the 2010 hung parliament as a real example for you to use if you choose.
 
 ## How a lesson runs
 
@@ -23,7 +24,7 @@ Where the standards reach religion, heritage, values, migrants and refugees (AC9
 
 ## What is planned
 
-These are plans, not promises. Next are the Australian legal system (AC9HC7K03), a secular and pluralist society (AC9HC7K04), and values and social cohesion (AC9HC7K05), plus Civics' own skills (AC9HC7S03 and AC9HC7S04). A Year 6 catch-up, *Three levels of government*, is planned in [Before Year 7: HASS](../hass/before-year-7/).
+These are plans, not promises. Next are a secular and pluralist society (AC9HC7K04), and values and social cohesion (AC9HC7K05), plus Civics' own skills (AC9HC7S03 and AC9HC7S04). A Year 6 catch-up, *Three levels of government*, is planned in [Before Year 7: HASS](../hass/before-year-7/).
 
 ## For you
 

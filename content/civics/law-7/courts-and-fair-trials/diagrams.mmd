@@ -1,0 +1,9 @@
+%% region: ladder
+flowchart TD
+  H["High Court of Australia"]
+  S["State or territory Supreme Court"] -->|appeal| H
+  D["District or County Court (most states)"] -->|appeal| S
+  L["Local or Magistrates Court"] -->|appeal| D
+  F["Federal Court of Australia"] -->|appeal| H
+  C["Federal Circuit and Family Court"] -->|appeal| F
+%% endregion

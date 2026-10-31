@@ -1,0 +1,31 @@
+inquiry:
+  q: "If the law is the same for everyone, why do we need legal aid?"
+  prompts:
+    - "What does someone need, apart from equal laws, to use the law well?"
+    - "What would happen to democracy if the government didn't have to obey the courts?"
+  notes: "Keep to how the system works. How much legal aid should be funded is a debated policy question; don't take a side."
+activities:
+  - at: predict
+    kind: discussion
+    title: "The same chance?"
+    minutes: 4
+    do: "Read the Tarn and company case. Hands up: same chance or not? Ask two students on each side for a reason."
+    notes: "Listen for 'the law is the same'. That is Nib's mistake later."
+  - at: make
+    kind: check
+    title: "Check a partner's link"
+    minutes: 4
+    do: "Partners check there is one link to democracy and one kind of help with what it does."
+    notes: "Students write elsewhere; the site does not take or mark writing."
+questions:
+  - at: investigate
+    title: "Access to justice"
+    type: question
+    q: "Which of these helps someone who can't afford a lawyer?"
+    options:
+      - "A community legal centre"
+      - "A higher court fee"
+      - "A longer drive to court"
+      - "Forms written in legal jargon"
+    answer: 0
+    explain: "Community legal centres give free legal advice, often to people who can't afford a lawyer."

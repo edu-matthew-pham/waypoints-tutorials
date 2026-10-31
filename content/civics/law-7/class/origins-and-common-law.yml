@@ -1,0 +1,32 @@
+inquiry:
+  q: "If Parliament can't write a law for every situation in advance, how can courts still decide cases fairly?"
+  prompts:
+    - "What would go wrong if every judge decided similar cases differently?"
+    - "Why shouldn't the government be able to tell a judge what to decide?"
+  notes: "Aim for precedent (consistency) and independence (no one above the law). Keep to how the system works, not views on particular judges or cases."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Two columns, one case"
+    minutes: 6
+    do: |
+      Draw two columns on the board: Parliament and the courts. Read Lin's ladder case. Pairs say what each column gives the magistrate, then find Nib's mistake.
+    notes: "Listen for 'earlier cases' or 'higher courts' in the courts column. That is precedent."
+  - at: make
+    kind: check
+    title: "Check a partner's two sources"
+    minutes: 4
+    do: "Partners swap books and check there is one example of each source and a reason judges are independent."
+    notes: "Students write elsewhere; the site does not take or mark writing."
+questions:
+  - at: investigate
+    title: "Where does common law come from?"
+    type: question
+    q: "Where does common law come from?"
+    options:
+      - "Judges' decisions in past cases, which later courts follow"
+      - "Acts that Parliament passes for the whole country"
+      - "A list of rules written by the first Australian Parliament"
+      - "Agreements that people make with each other in a dispute"
+    answer: 0
+    explain: "Common law is built up by courts from earlier decisions, through precedent."

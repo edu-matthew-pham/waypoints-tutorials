@@ -1,0 +1,37 @@
+inquiry:
+  q: "Why does Australia have so many courts, instead of one?"
+  prompts:
+    - "What would happen if every case went to the High Court?"
+    - "Why might someone need a second court to check a decision?"
+  notes: "Aim for seriousness (cases start at the level that fits) and appeals (mistakes can be checked)."
+activities:
+  - at: run
+    kind: activity
+    title: "Trace a case up the ladder"
+    minutes: 4
+    do: "Put the court diagram up. Trace one made-up case from a local court to the High Court, naming each appeal."
+    notes: "Mention that Tasmania, the ACT and the NT skip the middle court."
+  - at: investigate
+    kind: activity
+    title: "Mock courtroom roles"
+    minutes: 5
+    do: "Give five students a role card each: judge, juror, witness, prosecution, defence lawyer. Each says their job in one sentence. The class corrects any mix-ups."
+    notes: "Listen for the jury picking the sentence. That is Nib's mistake."
+  - at: make
+    kind: check
+    title: "Check a partner's ladder"
+    minutes: 4
+    do: "Partners check the ladder against the diagram and the fair-trial note."
+    notes: "Students write elsewhere; the site does not take or mark writing."
+questions:
+  - at: investigate
+    title: "Judge or jury?"
+    type: question
+    q: "In a jury trial, who decides the sentence if the person is found guilty?"
+    options:
+      - "The judge"
+      - "The jury"
+      - "The prosecution"
+      - "The witnesses"
+    answer: 0
+    explain: "The jury decides guilty or not guilty. The judge decides the sentence."

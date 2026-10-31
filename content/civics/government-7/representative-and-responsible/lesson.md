@@ -134,6 +134,38 @@ check:
       - Largest non-government grouping in the House; challenges government and offers alternatives
 ```
 
+## Practise: who has the numbers?
+
+This is a made-up House with 15 members, much smaller than the real one. The rule is the same: a side needs the support of more than half the members. The crossbench is members who are in neither side. They can back a side without joining it.
+
+```step
+stage: practise
+insight: "Giving and taking crossbench support shows that majority support in the House, not being the biggest side, decides who can form government."
+try: { playground: board, starter: "house.yml#hung", height: 460 }
+tasks:
+  - check:
+      type: board
+      text: "Side A has the most members, but not a majority. Give Side A just enough support to reach a majority."
+      when: "a = 8"
+      explain: "More than half of 15 is 8. Side A has 7, so it needs one crossbench member to back it."
+    smaller:
+      starter: "house.yml#hung-5"
+      check:
+        type: board
+        text: "In this tiny House of 5, more than half is 3. Give Side A a majority."
+        when: "a = 3"
+        explain: "Side A has 2. One more makes 3, which is more than half of 5."
+  - check:
+      type: board
+      text: "Press Start again. Now show that Side B could form government, even though it has fewer members than Side A."
+      when: "b >= 8"
+      explain: "If both crossbench members back Side B, it has 8 of 15. The biggest side does not automatically govern. The side with majority support does."
+```
+
+### Give Side A a majority
+
+### Could Side B govern?
+
 ## Practise: the link stays in place
 
 ```step
@@ -218,17 +250,28 @@ A **convention** is an established practice of government. It is different from 
 stage: make
 insight: Different accountability tools ask different questions of government.
 tier: wider
-check:
-  type: match
-  q: Match the made-up situation to the accountability tool.
-  pairs:
-    - - A minister is asked in the chamber why a made-up program missed its target
-      - "Question Time: ministers explain decisions on sitting days"
-    - - The House formally tests whether it still supports a made-up government
-      - "No-confidence motion: a vote on whether the House still supports the government"
-    - - Senators question officials about a made-up spending estimate
-      - "Senate estimates: committees examine proposed spending and administration"
+try: { playground: board, starter: "house.yml#governing", height: 460 }
+tasks:
+  - check:
+      type: match
+      q: Match the made-up situation to the accountability tool.
+      pairs:
+        - - A minister is asked in the chamber why a made-up program missed its target
+          - "Question Time: ministers explain decisions on sitting days"
+        - - The House formally tests whether it still supports a made-up government
+          - "No-confidence motion: a vote on whether the House still supports the government"
+        - - Senators question officials about a made-up spending estimate
+          - "Senate estimates: committees examine proposed spending and administration"
+  - check:
+      type: board
+      text: "In the made-up House on the board, Side A governs with one crossbench member's support. That member stops backing Side A. Show it."
+      when: "a < 8"
+      explain: "Side A now has 7 of 15, not a majority. A government that loses the House's support cannot just carry on (see below)."
 ```
+
+### Match the tool
+
+### Support is lost
 
 A government needs the support of the House (its "confidence") to stay in office. If it loses that support, it normally resigns or asks for an election; what happens next depends on the situation. A hard question in Question Time does not remove a government on its own.
 

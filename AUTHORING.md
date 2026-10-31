@@ -1688,6 +1688,14 @@ Vary, Practise, Make).
     the first use), `a` and `b` (how many of each), `u` and `v` (change in each since the start), so checks read
     `when: "h = 4"` or `"v < 0"`. A straight-line model on purpose (every unit makes the same amount): say so where
     students meet it. No graph yet; a production possibilities line for Years 9–10 would be an addition.
+  - `widget: house` (Civics › How Australia is governed, `representative-and-responsible`, 1 Nov 2026): a made-up,
+    smaller House of Representatives. `seats: 15` (3 to 25), `side A: 7` and `side B: 6` (named lines; the rest are
+    the crossbench), optional `backs A: 1` and `backs B: 0` (crossbench members backing a side at the start). Side
+    seats are fixed; each crossbench member is a button that cycles Undecided, Backs Side A, Backs Side B, and the
+    board shows each side's support against the majority line (more than half). Values: `a` and `b` (members backing
+    each side, its own seats included), `u` (undecided), `n`, `m` (the majority) and `g` (0 none, 1 Side A, 2 Side B),
+    so checks read `when: "a = 8"` or `"b >= 8"`. Neutral on purpose: sides named by letter, colours not tied to any
+    real party. The model leaves out the Speaker and the Senate: say so in teacher notes.
 - **Maths cards** (`snippets/maths-<course>.json`, one per course, for the course named by its `course:`; the format note is in `maths-algebra-7.json`): the words and methods of the course,
   one card each, with `label`, `code` (TeX, shown typeset), `hint` (may use `$...$`), `unit` (the unit whose cheat sheet
   lists it) and optionally `board` (a board setup, drawn as the card's picture by `npm run render`) with `shows` (its

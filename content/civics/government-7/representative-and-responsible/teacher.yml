@@ -1,9 +1,9 @@
 summary: Voters choose representatives. The government is drawn from Parliament and must answer to it, with
   the support of the House of Representatives.
 learning: "explain how a House vote leads to a government and why ministers must answer to Parliament"
-time: 40
-timing: Predict and Try 8 min · Worked example 12 min · Vary 6 min · Practise 6 min · Make and exit 8 min.
-  Optional width is extra.
+time: 44
+timing: Predict and Try 8 min · Worked example 12 min · Vary 6 min · House board 4 min · Practise 6 min · Make
+  and exit 8 min. Optional width is extra.
 goals:
   - I can trace a House vote through to the formation of government.
   - I can explain how ministers come from and answer to Parliament.
@@ -15,14 +15,32 @@ before: "Hinge n2: without the accountability link between executive and legisla
   support, not merely being the largest grouping, is the test; support can come from members outside the
   governing grouping. The chain is a teaching sequence, not a full legal timetable. Section 64 permits a
   minister to hold office outside Parliament for up to three months: the core states the continuing rule, not
-  that exception. No current office holders, named parties or real election results are used. Nib and all
-  situations are made up. The 1975 dismissal is left for a teacher-led extension after understanding is
-  secure."
+  that exception. No current office holders, named parties or real election results are used in student
+  steps. Nib and all situations are made up. The 1975 dismissal is left for a teacher-led extension after
+  understanding is secure.
+
+
+  The House board (Practise: who has the numbers?) is a model. It is a made-up House of 15 with two made-up
+  sides named by letter, coloured so neither looks like a real party. It leaves out the Speaker, who is a
+  member but usually votes only to break a tie, so real majorities are counted with more care. \"Backing\" a
+  side means supporting it on confidence and supply (keeping it in office and passing its budget), not agreeing
+  with it on everything or joining it. The Senate is left out because it does not decide who forms government.
+
+
+  A real example, if you want one (teacher-led; not in student steps): the 2010 federal election gave the first
+  hung parliament since 1940. No party or coalition won a majority of House seats (Labor 72, the Coalition 73,
+  with 76 needed). Labor formed a minority government on 7 September 2010 after 4 of the 5 crossbench members
+  agreed to support it. Keep it to what happened, as the board does: who backed whom, not whether they were
+  right."
 stuck:
   - see: A student says they vote for Prime Minister.
     ask: What electorate is on the House ballot?
     fix: A House ballot chooses a local member; the leader able to command House support is appointed Prime
       Minister.
+  - see: A student says the side with the most seats always forms government.
+    ask: On the board, how many members does Side A need, and how many does it have?
+    fix: A side governs with the support of more than half the House, which can include crossbench members who
+      back it without joining it.
   - see: A student says the executive is outside Parliament.
     ask: What other job does a minister still have?
     fix: They are a parliamentarian as well as a minister.
@@ -33,10 +51,17 @@ exit:
   q: How is the government connected to the voters, and who checks it between elections?
   a: Voters elect representatives. House majority support allows government to form; ministers come from
     Parliament and answer to it between elections.
-explain: We elect representatives. Government needs majority support in the House. The Governor-General
+explain: We elect representatives. Government needs majority support in the House, which can include members
+  who back a side without joining it. The Governor-General
   formally appoints the Prime Minister and ministers. Ministers come from Parliament and remain answerable to
   it.
 sources:
+  - title: Minority government (Parliamentary Education Office)
+    url: https://peo.gov.au/understand-our-parliament/history-of-parliament/history-milestones/australian-parliament-history-timeline/events/minority-government/
+    checked: 2026-11-01
+  - title: Hung parliament (Parliamentary Library, Briefing Book for the 43rd Parliament)
+    url: https://www.aph.gov.au/About_Parliament/Parliamentary_Departments/Parliamentary_Library/pubs/BriefingBook43p/hungparliament
+    checked: 2026-11-01
   - title: "Constitution Chapter II, section 64 (Parliamentary Education Office)"
     url: https://peo.gov.au/understand-our-parliament/how-parliament-works/the-australian-constitution/the-australian-constitution-online/chapter-ii
     checked: 2026-10-30
@@ -74,6 +99,8 @@ running:
   - "Predict: collect answers before revealing the result."
   - "Try and worked example: give the chain time; ask students to explain the support and accountability
     arrows."
+  - "House board: put it up for the class. Ask who can form government before anyone presses a crossbench member;
+    expect \"Side A, it's the biggest\". Then give one crossbench member to Side B, then both."
   - "Vary and Practise: ask for reasons, not just labels."
   - "Make: the student writes in their own book or document; a partner or teacher reads it. The site only
     records a reflect tick."

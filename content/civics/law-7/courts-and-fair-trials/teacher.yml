@@ -1,0 +1,53 @@
+summary: "Students learn Australia's court ladder (lower courts, higher courts, the High Court; state and federal) and what an appeal is, and the elements of a fair trial: an impartial judge, a jury in most serious criminal trials, witnesses, a lawyer for each side and due process."
+learning: "describe Australia's court hierarchy and explain the roles of the judge, jury, witnesses and lawyers in a fair trial"
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 6 min · Practise 6 min · Make and exit 8 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can describe Australia's court ladder from a local court to the High Court.
+  - I can explain what an appeal is.
+  - I can explain who does what in a jury trial, and why it is fair.
+struggle: "Students mix up the jury's job and the judge's. Separate them firmly: the jury decides the facts (guilty or not), the judge decides the law and the sentence."
+before: |
+  The ladder in the diagram is the general shape. Tasmania, the ACT and the Northern Territory have no middle (District or County) court: cases go from the Magistrates Court (the Local Court in the NT) to the Supreme Court. Supreme Courts have their own appeal divisions (a Court of Appeal or Full Court), left out of the diagram. Federal Circuit and Family Court appeals can also go to that court's own appeal division. Tribunals are left out.
+
+  Juries: most serious criminal trials have a jury of 12 chosen at random from the electoral roll. Some states and territories allow a judge-alone trial in some cases, and many allow majority verdicts in some cases; trials on indictment for Commonwealth offences must be by jury (Constitution s 80). Civil juries are rare. Student text says "in most serious criminal trials" and leaves the rest out.
+
+  Jess, Morgan and Wattle Creek are made up. Morgan's trial carries over from the last lesson, so students already know the burden of proof.
+running:
+  - "Predict: ask why the High Court doesn't hear every case. Expect 'it's too busy'; push for 'cases start at the level that fits'."
+  - "Try: put the diagram up. Trace one made-up case up the ladder with your finger."
+  - "Worked example: ask 'Who decides guilty? Who decides the punishment?' before Nib's mistake."
+  - "Vary and Practise: the appeal to the Prime Minister is the most common slip. Link back to independent judges in lesson 1."
+  - "Make: the student draws in their own book or document; a partner or teacher reads it. The site only records a reflect tick."
+stuck:
+  - see: "A student says the jury chooses the punishment."
+    ask: "What does the jury say at the end of a trial?"
+    fix: "The jury says guilty or not guilty. If guilty, the judge decides the sentence."
+  - see: "A student says you appeal to the Prime Minister."
+    ask: "Can the government tell a court what to decide?"
+    fix: "An appeal goes to a higher court. Courts are independent of the government."
+support: "Draw three rungs on the board: lower court, higher court, High Court. Place each made-up case on a rung together."
+stretch: "Why might it be fairer for twelve citizens, rather than one judge, to decide whether someone is guilty? Is there any downside?"
+exit:
+  q: "What is an appeal, and who decides the verdict and the sentence in a jury trial?"
+  a: "An appeal asks a higher court to check a lower court's decision. The jury decides guilty or not guilty; the judge decides the sentence."
+explain: |
+  Australia's courts form a ladder. Cases start at the level that fits how serious they are. An **appeal** asks a higher court to check a decision, and the **High Court** is at the top.
+
+  In a jury trial, the **jury** decides whether guilt is proved, and the **judge** runs the trial fairly, explains the law and decides the sentence. Witnesses give evidence and each side can have a lawyer.
+sources:
+  - title: Australian courts (overview of state and territory courts)
+    url: https://en.wikipedia.org/wiki/Australian_courts
+    checked: 2026-11-01
+  - title: Australian Court Hierarchy posters (Rule of Law Education Centre)
+    url: https://www.ruleoflaw.org.au/wp-content/uploads/Australian-Court-Hierarchy.pdf
+    checked: 2026-11-01
+  - title: Australian Constitution, section 80 (Federal Register of Legislation)
+    url: https://www.legislation.gov.au/C2004Q00685/latest/text
+    checked: 2026-11-01
+leads: >-
+  Next in this course: Fair courts and democracy.
+
+
+  ACARA elaboration for AC9HC7K03 (an example, not a checklist): "discussing the elements of a 'fair trial',
+  including citizens' roles as witnesses and jurors, legal representation and due process"
