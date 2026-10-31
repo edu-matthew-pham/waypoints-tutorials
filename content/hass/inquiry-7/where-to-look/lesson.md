@@ -59,7 +59,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is looking for the daily count. Click the line where Nib's thinking goes wrong."
+      text: "Nib is looking for the daily count. Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: first-result-is-the-place

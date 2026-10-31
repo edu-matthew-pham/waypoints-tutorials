@@ -62,7 +62,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is choosing a question for the week. Click the line where Nib's thinking goes wrong."
+      text: "Nib is choosing a question for the week. Click the first line where Nib's thinking goes wrong."
       answer: 2
       fault: logic
       misconception: bigger-question-better

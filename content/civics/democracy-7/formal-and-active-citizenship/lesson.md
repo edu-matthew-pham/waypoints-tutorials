@@ -4,18 +4,18 @@ unit: participation
 title: Formal and active citizenship
 node: AC9HC7K02 n4
 assumes: [AC9HC7K02 n3]
-summary: "Formal citizenship is a person's legal membership of a nation, carrying legal rights (such as an Australian passport and standing for parliament) and obligations (such as obeying the law, compulsory voting, and jury service). Active citizenship is getting involved in the community and democratic life. Historically, not all people in Australia had equal access to citizenship rights — in particular, First Nations Australians were excluded from the federal voting roll until the Commonwealth Electoral Act was changed in 1962."
+summary: "Formal citizenship is your legal membership of a country, with rights such as a passport and duties such as voting and jury service. Active citizenship is taking part in your community and democracy. Not everyone in Australia has always had the same rights of formal citizenship."
 language: maths
-hook: "In a made-up example, two people are both legal Australian citizens. Orla only ever thinks about it when she renews her passport. Dev votes carefully, volunteers at the local bushfire brigade, and helps run a town youth group. What is the difference between the two?"
+hook: "In a made-up example, Orla and Dev are both Australian citizens. Orla only thinks about it when she renews her passport. Dev votes, volunteers with the local bushfire brigade and helps run a youth group. What is the difference between them?"
 ---
-The word **citizenship** is used in two connected ways in Civics:
+People use the word **citizenship** in two connected ways.
 
-1. **Formal citizenship:** your **legal status** as an official member of a country (under the *Australian Citizenship Act*). It brings legal **rights and privileges** — such as the right to vote in elections and referendums, apply for an Australian passport, stand for parliament, and return to Australia at any time — and legal **responsibilities** — such as obeying Australia's laws, enrolling and voting in federal and state elections, and serving on a jury if called.
-2. **Active citizenship:** how people **participate in and contribute to** their community and democracy — such as staying informed, volunteering, joining community groups, speaking up on public issues, and working with others to improve society.
+1. **Formal citizenship** is your **legal status** as a member of a country. In Australia it comes with **rights**, such as getting an Australian passport, voting and standing for parliament. It also comes with **responsibilities**, such as obeying the law, enrolling and voting once you are 18, and serving on a jury if you are called.
+2. **Active citizenship** is how people **take part** in their community and democracy: staying informed, volunteering, joining groups, speaking up and working with others to fix problems.
 
-Access to the legal rights of citizenship in Australia has not always been equal for everyone. When the Commonwealth was formed in 1901, many people — particularly **First Nations Australians** — were excluded by law from federal voting rights and full citizenship rights, and generations of active citizenship and advocacy went into changing those laws.
+Not everyone in Australia has always had the same rights of formal citizenship. The Australian Electoral Commission records that from 1962 Commonwealth law gave all First Nations people the right to enrol and vote in federal elections. [Read the AEC's electoral milestones for Indigenous Australians](https://www.aec.gov.au/indigenous/milestones.htm). Your teacher will share how First Nations people tell this history in their own words.
 
-## Predict: legal status vs active contribution
+## Predict: legal status or taking part?
 
 ```step
 stage: predict
@@ -24,118 +24,118 @@ check:
   type: predict
   q: "What is the main difference between *formal citizenship* and *active citizenship*?"
   options:
-    - "Formal citizenship is a person's legal status as a member of the nation with legal rights and duties; active citizenship is taking part to contribute to the community and democracy"
-    - "Formal citizenship only applies at federal elections; active citizenship only applies at local council elections"
-    - "Formal citizenship and active citizenship mean the exact same thing: anyone with a passport is automatically an active citizen"
-    - "Active citizenship is only for people who are not legal citizens"
-  actual: "Formal citizenship is legal membership of the nation; active citizenship is how people engage and participate in civic and community life."
+    - "Formal is your legal status, with rights and duties; active is taking part in community life"
+    - "Formal is for federal elections; active is for local council elections"
+    - "They mean the same thing: anyone with a passport is an active citizen"
+    - "Active citizenship is only for people who are not legal citizens yet"
+  actual: "Formal citizenship is legal membership of the country; active citizenship is how people take part in civic and community life."
 ```
 
-## Try: sort formal citizenship and active citizenship
+## Try: sort formal and active citizenship
 
 ```step
 stage: run
 insight: "Sorting legal rights and duties from everyday civic engagement makes the two categories clear."
 check:
   type: sort
-  q: "Sort each item into whether it describes a feature of *Formal citizenship* (legal status, rights and obligations) or an example of *Active citizenship* (engaged community and democratic participation)."
+  q: "Sort each item into *Formal citizenship* (legal status, rights and duties) or *Active citizenship* (taking part in the community and democracy)."
   options: ["Formal citizenship", "Active citizenship"]
   items:
-    - ["Holding legal status as an Australian citizen by birth, descent or conferral (naturalisation)", "Formal citizenship", "This is the legal definition of formal citizenship."]
-    - ["Having the legal right to apply for an Australian passport and re-enter Australia freely", "Formal citizenship", "A passport is a legal right attached to formal citizenship."]
-    - ["The legal obligation for adult citizens to enrol and vote at federal elections and serve on a jury if called", "Formal citizenship", "Voting and jury service are legal responsibilities of formal adult citizens."]
-    - ["Volunteering on weekends to replant riverbanks with a local landcare group", "Active citizenship", "Volunteering to improve the local community is active citizenship."]
-    - ["Organising a community forum and petition to improve public transport in your suburb", "Active citizenship", "Working with others to solve a public problem is active citizenship."]
-    - ["Staying informed about public issues and contributing to a parliamentary inquiry", "Active citizenship", "Taking an informed, constructive part in democratic processes is active citizenship."]
+    - ["Being an Australian citizen by birth, by descent or by applying and being granted it", "Formal citizenship", "This is the legal status itself."]
+    - ["Being allowed to get an Australian passport and come back to Australia", "Formal citizenship", "A passport is a legal right that comes with formal citizenship."]
+    - ["Having to enrol and vote at federal elections once you turn 18", "Formal citizenship", "The law requires it, so it is part of formal citizenship."]
+    - ["Replanting a riverbank on weekends with a local landcare group", "Active citizenship", "Volunteering to improve the community is active citizenship."]
+    - ["Starting a petition for a better bus service in your suburb", "Active citizenship", "Working with others on a public problem is active citizenship."]
+    - ["Reading about a local issue and sending ideas to council", "Active citizenship", "Taking an informed part in decisions is active citizenship."]
 ```
 
-Notice how the two connect: **formal citizenship** gives you legal standing and the ballot, while **active citizenship** is what brings a democracy and community to life every day.
+The two connect: **formal citizenship** gives you legal standing and a vote, and **active citizenship** is what keeps a community and a democracy going day to day.
 
-## Worked example: inclusion, exclusion and changing the law
+## Worked example: rights have changed over time
 
 ```step
 stage: investigate
-insight: "Examining who held formal voting rights over time shows that citizenship rights were not always equal in Australia, and catches Nib's two mistakes."
+insight: "Seeing that formal rights have changed over time, and that people without a vote can still take part, catches Nib's mistake."
 tasks:
   - check:
       type: question
-      q: "Have all people in Australia always had equal access to the formal rights of citizenship, such as voting in federal elections?"
+      q: "Have all adults in Australia always had the same right to vote in federal elections?"
       options:
-        - "No: for decades after Federation in 1901, Commonwealth law excluded most First Nations Australians from enrolling and voting in federal elections until the Commonwealth Electoral Act was amended in 1962"
-        - "Yes: every adult in Australia has had the exact same voting rights since 1 January 1901"
-        - "No: First Nations Australians gained the right to vote in federal elections at the 1967 referendum, not in 1962"
-        - "Yes: the 1901 Constitution gave every person in Australia an automatic passport and vote"
+        - "No: the law has changed over time about who could enrol and vote"
+        - "Yes: every adult has had the same vote since 1901"
+        - "No, but it changed only once, at the 1967 referendum"
+        - "Yes: the Constitution gave every person a vote in 1901"
       answer: 0
       feedback:
         - null
-        - "While women in Australia gained the federal vote in 1902, most First Nations Australians were legally excluded from the federal franchise until 1962."
-        - "That is a very common mix-up: the right to vote in federal elections was legislated in 1962 (Commonwealth Electoral Act), whereas the 1967 referendum changed two sections of the Constitution (s 51(xxvi) and s 127)."
-        - "The 1901 Constitution did not define Australian citizenship or guarantee universal voting rights for First Nations Peoples."
-      explain: "Under the Commonwealth Franchise Act 1902, Aboriginal and Torres Strait Islander peoples were barred from enrolling to vote in federal elections (unless already entitled under state law before 1902, with a partial exemption for defence service in 1949) until the Commonwealth Electoral Act 1962 guaranteed the right to enrol and vote."
+        - "Federal voting rules have changed several times since 1901. The AEC's milestones page lists the changes."
+        - "A very common mix-up. The AEC records that the federal voting law changed in 1962. The 1967 referendum changed the Constitution, which is a different thing."
+        - "The Constitution does not give everyone a vote. Parliament's laws decide who can enrol."
+      explain: "Who can vote in federal elections is set by laws Parliament passes, and those laws have changed over time. The AEC records the changes on its milestones page."
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is summarizing formal and active citizenship in Australia. Click the first line where Nib's thinking goes wrong."
+      text: "Nib is summing up formal and active citizenship. Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: formal-equals-active-citizenship
-      explain: "Line 3 (and Line 4): Nib confuses formal citizenship (legal status, such as holding a passport) with active citizenship (participating in civic life), and then wrongly assumes everyone had equal voting rights from 1901."
+      explain: "Line 3: Nib mixes up formal citizenship (legal status, such as holding a passport) with active citizenship (taking part in community life). Line 4 is true: you can take part before you can vote."
     smaller:
       check:
         type: question
-        q: "If a person is a legal Australian citizen with a passport, does that automatically mean they are practising active citizenship in their community?"
+        q: "If someone is an Australian citizen with a passport, does that mean they are taking part in their community?"
         options:
-          - "No: formal citizenship is their legal status, while active citizenship is choosing to get involved and contribute"
-          - "Yes: owning a passport is the only thing active citizenship means"
-          - "Yes: because voting is compulsory in Australia, every legal citizen is automatically participating in community life every week"
-          - "No: only people who were born overseas can practise active citizenship"
+          - "No: the passport shows legal status, and taking part is a separate choice"
+          - "Yes: holding a passport is what active citizenship means"
+          - "Yes: voting is compulsory, so every citizen takes part every week"
+          - "No: only people born overseas can be active citizens"
         answer: 0
-        explain: "Formal citizenship is the legal status; active citizenship is the active participation."
+        explain: "Formal citizenship is the legal status. Active citizenship is choosing to take part."
   - check:
       type: question
-      q: "How did active citizenship help change the laws that excluded First Nations Australians from full constitutional and voting rights?"
+      q: "In a made-up town, students aged 14 want a pedestrian crossing near their school. None of them can vote yet. What can they do?"
       options:
-        - "Over many decades, First Nations leaders and community organisations used petitions, public meetings, speeches and campaigns to persuade Parliament and Australian voters to change the laws and the Constitution"
-        - "The laws changed automatically on a fixed date written into the 1901 Constitution"
-        - "Only people who were already on the federal electoral roll were legally allowed to organise petitions or public meetings"
-        - "The High Court changed the Constitution by itself in 1967 without a public campaign or referendum"
+        - "Collect signatures, write to the council and speak at a council meeting"
+        - "Nothing: only people on the electoral roll can ask for change"
+        - "Wait until they turn 18, because petitions need voters to sign"
+        - "Ask the High Court to order the council to build it"
       answer: 0
       feedback:
         - null
-        - "There was no automatic sunset date in the Constitution; change took decades of sustained petitions, advocacy and campaigning."
-        - "People who were excluded from formal voting rights still used petitions, associations and public meetings to campaign for those rights."
-        - "Only voters at a national referendum can change the text of the Constitution, which followed years of public campaigning."
-      explain: "Even when people were excluded from formal voting rights, they used active citizenship — petitions, associations, assemblies and speech — to campaign for equal rights."
+        - "Anyone can sign a petition, write to council or speak at a public meeting. You don't need to be on the roll."
+        - "Many petitions accept anyone who signs. Writing and speaking up don't need a vote either."
+        - "Courts decide legal disputes. Asking for a crossing is a job for the council, and people persuade councils by taking part."
+      explain: "You don't need a vote to be an active citizen. Petitions, letters and public meetings are open to anyone."
 ```
 
-### Formal status, active participation, and historical change
+### Formal status and taking part
 
 ```worked
-\text{Formal citizenship} :: Legal membership of Australia -> Rights (vote, passport, stand for parliament) + Duties (obey laws, compulsory voting, jury service).
-\text{Active citizenship} :: Engaged participation -> Volunteering, community leadership, petitions, campaigns, informed debate.
-\text{Historical exclusion} :: From 1901/1902, federal law excluded most First Nations Australians from the federal vote until 1962 (with compulsory enrolment extended in 1984), and s 127 of the Constitution excluded them from the national census count until the 1967 referendum.
+\text{Formal citizenship} :: Legal membership of Australia -> Rights (passport, vote, stand for parliament) + Duties (obey laws, vote once 18, jury service).
+\text{Active citizenship} :: Taking part -> Volunteering, petitions, writing to council, joining groups, staying informed.
+\text{Change over time} :: Laws about who can vote have changed; the AEC records that from 1962 all First Nations people could enrol and vote in federal elections.
 ```
 
-Now: have citizenship rights always been equal in Australia, where did Nib go wrong, and how did active citizenship drive change?
+Now: how do formal and active citizenship differ, where did Nib go wrong, and how can people without a vote still take part?
 
 ### Find Nib's mistake
 
-### How active citizenship drove change
+### Taking part without a vote
 
-## Vary: rights, responsibilities and active citizenship
+## Vary: rights, responsibilities and taking part
 
 ```step
 stage: modify
 insight: "Distinguishing the legal rights and responsibilities of formal citizenship from active community participation."
 check:
   type: sort
-  q: "Sort each example into whether it is a *Legal right of citizenship*, a *Legal responsibility of citizenship*, or *Voluntary active citizenship*."
+  q: "Sort each example into *Legal right*, *Legal responsibility* or *Voluntary active citizenship*."
   options: ["Legal right", "Legal responsibility", "Voluntary active citizenship"]
   items:
-    - ["Voting in federal and state elections and referendums (both a right and a legal duty for adults)", "Legal responsibility", "In Australia, enrolling and voting at elections is a legal obligation for citizens aged 18 and over, as well as a democratic right."]
-    - ["Serving on a jury in court when summoned", "Legal responsibility", "Jury service is a legal duty of citizens on the electoral roll."]
-    - ["Standing for election to the Australian Parliament (subject to s 44 of the Constitution)", "Legal right", "Australian citizens have the legal right to stand for Parliament."]
-    - ["Mentoring younger students and helping organise a town clean-up day", "Voluntary active citizenship", "Volunteering to strengthen your community is active citizenship beyond legal obligations."]
+    - ["Obeying Australia's laws", "Legal responsibility", "Every citizen is required to obey the law."]
+    - ["Serving on a jury when you are called", "Legal responsibility", "Jury service is a legal duty for people on the electoral roll."]
+    - ["Getting an Australian passport", "Legal right", "Citizens have the right to an Australian passport."]
+    - ["Helping organise a town clean-up day", "Voluntary active citizenship", "Nobody is required to do it. Choosing to help is active citizenship."]
 ```
 
 ## Practise: explain formal and active citizenship
@@ -145,75 +145,75 @@ stage: practise
 insight: "Putting both parts of the endpoint together in a reasoned explanation."
 check:
   type: reasoning
-  q: "Explain the difference between formal citizenship and active citizenship, and explain one way that access to citizenship rights in Australia has changed over time."
+  q: "Explain the difference between formal citizenship and active citizenship, and give one way access to citizenship rights in Australia has changed over time."
   paper: true
   models:
     - title: "A strong answer"
-      text: "Formal citizenship is a person's legal status as a member of Australia, which carries legal rights like voting and getting a passport, and duties like obeying the law and jury service. Active citizenship is how people get involved to help their community and democracy, such as volunteering, petitioning or campaigning. Historically, not everyone had equal formal rights: most First Nations Australians were excluded from voting in federal elections until the law was changed in 1962."
+      text: "Formal citizenship is your legal status as a member of Australia. It gives you rights, like getting a passport and voting, and duties, like obeying the law and jury service. Active citizenship is how you take part to help your community and democracy, like volunteering or starting a petition. Not everyone has always had the same rights: the AEC records that all First Nations people could enrol and vote in federal elections from 1962."
     - title: "A different answer that also works"
-      text: "Formal citizenship is the legal side of being a citizen (status, rights and legal obligations), whereas active citizenship is participating in public and community life to make a positive difference. Even when First Nations Australians were excluded by law from full formal citizenship rights after 1901, First Nations campaigners practised active citizenship through petitions and public advocacy to win the federal vote in 1962 and constitutional change in the 1967 referendum."
+      text: "Formal citizenship is the legal side of being a citizen: the status, the rights and the legal duties. Active citizenship is choosing to take part, and you can do it before you can vote, like writing to the council. Who could vote in federal elections has changed over time, for example the law change in 1962 recorded by the AEC."
   criteria:
     - "I defined formal citizenship (legal status, rights and responsibilities)."
-    - "I defined active citizenship (engaged participation in the community and democracy) and distinguished it from formal citizenship."
-    - "I identified that not all people in Australia have always had equal access to citizenship rights, with reference to First Nations Australians."
+    - "I defined active citizenship (taking part in the community and democracy) and showed how it differs."
+    - "I gave one way access to citizenship rights in Australia has changed over time."
 ```
 
 ## Make: in your own book
 
 ```step
 stage: make
-insight: "Writing the distinction between formal and active citizenship and the historical change in your own book completes the course."
+insight: "Writing the distinction between formal and active citizenship and how rights have changed in your own book completes the course."
 check:
   type: reflect
-  text: "In my own book I explained the difference between formal citizenship and active citizenship with an example of each, and noted how First Nations Australians were historically excluded from full citizenship rights before changes such as the 1962 voting reform and 1967 referendum. A partner read it and agreed."
+  text: "In my own book I explained the difference between formal citizenship and active citizenship with an example of each, and one way access to citizenship rights in Australia has changed. A partner read it and gave feedback."
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.
 
-## Typical: how someone becomes a formal Australian citizen
+## Typical: how someone becomes an Australian citizen
 
 ```step
 stage: make
 tier: typical
-insight: "Australian law sets out how formal citizenship is acquired — by birth (to an Australian citizen or permanent resident parent), by descent, or by conferral (naturalisation) after meeting legal requirements and making the pledge."
+insight: "Australian law sets out how formal citizenship is gained: by birth, by descent, or by applying and being granted it (conferral) and making the pledge."
 check:
   type: question
-  q: "When a permanent resident becomes an Australian citizen by conferral (naturalisation) at a citizenship ceremony, what pledge do they make?"
+  q: "When someone becomes an Australian citizen at a citizenship ceremony, what do they promise in the pledge?"
   options:
-    - "They pledge loyalty to Australia and its people, whose democratic beliefs they share, whose rights and liberties they respect, and whose laws they will uphold and obey"
-    - "They pledge to give up their freedom of speech and never criticise government policies"
-    - "They pledge to vote for whichever party is currently in government"
-    - "They pledge to follow one official national religion chosen by Parliament"
+    - "Loyalty to Australia and its people, and to respect its rights and uphold its laws"
+    - "To give up free speech and never criticise the government"
+    - "To vote for whichever party is in government at the time"
+    - "To follow one official national religion chosen by Parliament"
   answer: 0
   feedback:
     - null
-    - "The pledge explicitly respects Australia's democratic beliefs, rights and liberties, which include freedom of speech."
-    - "Citizens are free to vote for any candidate or party by secret ballot."
-    - "Australia has freedom of religion (and no official national religion under s 116 of the Constitution)."
-  explain: "The Australian Citizenship Pledge links formal legal citizenship directly to democratic beliefs, rights and liberties, and upholding the law."
+    - "The pledge promises to respect Australia's rights and liberties, and free speech is one of them."
+    - "Citizens can vote for any candidate or party, in secret."
+    - "Australia has no official religion. Section 116 of the Constitution stops the Commonwealth from setting one up."
+  explain: "The pledge ties legal citizenship to Australia's democratic beliefs, its rights and liberties, and its laws."
 ```
 
-## Wider: the 1967 referendum and constitutional change
+## Wider: changing the Constitution
 
 ```step
 stage: make
 tier: wider
-insight: "In 1967, after a decade-long petition and public campaign, more than 90% of Australian voters approved a referendum changing two sections of the Constitution relating to First Nations Australians."
+insight: "Only voters can change the Constitution, at a referendum, which is formal citizenship at its most direct."
 check:
   type: question
-  q: "What did the 1967 referendum change in the Australian Constitution?"
+  q: "What does a referendum need to pass and change the Australian Constitution?"
   options:
-    - "It removed the words in section 51(xxvi) that prevented the Commonwealth Parliament from making laws for Aboriginal people in the states, and repealed section 127 so Aboriginal people were counted in the national census"
-    - "It gave First Nations Australians the right to vote in federal elections for the first time (which actually happened in 1962)"
-    - "It added a complete Bill of Rights to the Australian Constitution"
-    - "It allowed the Prime Minister to change the Constitution without a vote of the people"
+    - "A majority of voters across Australia, and a majority of voters in at least four of the six states"
+    - "A majority of voters across Australia, and nothing else"
+    - "A vote of the Prime Minister and Cabinet"
+    - "A decision of the High Court"
   answer: 0
   feedback:
     - null
-    - "Federal voting rights for First Nations Australians were legislated five years earlier in the Commonwealth Electoral Act 1962; the 1967 referendum changed sections 51(xxvi) and 127 of the Constitution."
-    - "The 1967 referendum amended section 51(xxvi) and repealed section 127; it did not add a Bill of Rights."
-    - "Only voters at a referendum under section 128 can change the Constitution."
-  explain: "Note the common mix-up: the right to vote in federal elections was legislated in 1962 (Commonwealth Electoral Act), while the 1967 referendum changed sections 51(xxvi) and 127 of the Constitution."
+    - "It also needs majorities in most states (four of six), so a few big states can't decide it alone."
+    - "The government can propose a change, but only voters can approve it."
+    - "The High Court interprets the Constitution. It cannot change its words."
+  explain: "Section 128 of the Constitution says a change needs a national majority of voters and a majority in at least four states. That's why it's often called a double majority."
 ```
 
 Typical and wider steps are extras on the same idea. You do not need them to finish the lesson.

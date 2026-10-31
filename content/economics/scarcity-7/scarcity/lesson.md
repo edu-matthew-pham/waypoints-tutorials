@@ -3,11 +3,11 @@ order: 2
 unit: scarcity
 title: Scarcity - not enough for everything
 node: AC9HE7K01 n2
-summary: "Scarcity is the gap between unlimited wants and limited resources. It is not the same as a shop running out of something for a day: a shortage can be fixed by ordering more, but scarcity is always there, because there is never enough land, workers and equipment to make everything everyone wants. So every community has to decide what to make, how to make it and who gets it."
+summary: "Economists start from the idea that wants are unlimited, so scarcity is the gap between those wants and limited resources. It is not the same as a shop running out of something for a day: a shortage can be fixed by ordering more, but scarcity is always there, because there is never enough land, workers and equipment to make everything everyone wants. So every community has to decide what to make, how to make it and who gets it."
 language: maths
 hook: "The school tuckshop has one oven, two helpers and a Friday lunch rush. Everyone wants a hot pie. What happens, and is that the same as 'running out'?"
 ---
-Last lesson showed that wants never run out. This lesson asks what happens when those wants meet a limited amount of stuff.
+Last lesson showed that wants keep growing, and that economists treat them as having no limit. This lesson asks what happens when those wants meet a limited amount of stuff.
 
 **Scarcity** is the problem that there are not enough resources to make everything people want. **Resources** are the things used to make goods and services: land and natural things (**land**), people's work (**labour**) and tools and equipment (**capital**).
 
@@ -61,20 +61,20 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is explaining the pies. Click the line where Nib's thinking goes wrong."
-      answer: 4
+      text: "Nib is explaining the pies. Click the first line where Nib's thinking goes wrong."
+      answer: 3
       fault: logic
       misconception: shortage-vs-scarcity
-      explain: "Line 4: ordering more pies fixes the shortage, but not scarcity. The oven can still bake only so many pies in a day, and the helpers can only serve so many. Scarcity remains because the resources are limited."
+      explain: "Line 3: Nib thinks scarcity just means something ran out. Running out is a shortage, and ordering more fixes it. Scarcity stays: the oven can still bake only so many pies a day, and the helpers can only serve so many. Line 4 follows from the same mistake."
     smaller:
       check: { type: question, q: "Even after the new batch comes in, the tuckshop still has one oven and two helpers. Can it make unlimited pies?", options: ["No, the oven and helpers are limited", "Yes, as long as it orders enough", "Yes, if the pies are cheap", "Yes, if students ask politely"], answer: 0, explain: "The oven and the helpers limit how much can be made. That limit is what scarcity is." }
   - check:
       type: question
       q: "Which best explains why scarcity is always there?"
-      options: ["Wants are unlimited, but resources are limited", "Shops forget to order enough", "People waste money", "Prices are too high"]
+      options: ["Wants keep growing, but resources are limited", "Shops forget to order enough", "People waste money", "Prices are too high"]
       answer: 0
       feedback: [null, "Shops sometimes do run short, but scarcity is there even when they order well.", "People can spend well or badly, and there is still not enough for everything.", "Prices come from scarcity. They are not the cause of it."]
-      explain: "Unlimited wants meet limited land, labour and capital, so there is never enough for everything."
+      explain: "In the economists' model, wants that keep growing meet limited land, labour and capital, so there is never enough for everything."
 ```
 
 ### Shortage or scarcity

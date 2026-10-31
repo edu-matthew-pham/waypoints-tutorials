@@ -67,7 +67,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is building a question from the big idea of scarcity. Click the line where Nib's thinking goes wrong."
+      text: "Nib is building a question from the big idea of scarcity. Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: topic-word-is-question

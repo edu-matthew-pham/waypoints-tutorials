@@ -72,7 +72,7 @@ insight: Repeating a position is not a second supporting point.
 check:
   type: bug
   code: working.txt#nib
-  text: Nib says this plan has two supporting points. Click the line where the
+  text: Nib says this plan has two supporting points. Click the first line where the
     reasoning goes wrong.
   answer: 3
   fault: logic

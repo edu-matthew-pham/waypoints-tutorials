@@ -62,7 +62,7 @@ tasks:
   - check:
       type: bug
       code: working.txt#nib
-      text: Click the line where Nib's explanation first goes wrong.
+      text: Click the first line where Nib's explanation first goes wrong.
       answer: 3
       fault: logic
       misconception: australia-only-westminster

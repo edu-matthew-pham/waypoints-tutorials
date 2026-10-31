@@ -1,15 +1,15 @@
 ---
 order: 1
 unit: wants
-title: Needs, wants and why wanting never stops
+title: Needs, wants and why wanting keeps going
 node: AC9HE7K01 n1
-summary: "A need is something you must have to be safe and well, such as water, food, shelter and clothing. A want is something you would like but could live without. People can meet their needs, but their wants keep growing: when one want is met, another takes its place. This is the first step towards scarcity, so it matters that wants are a permanent part of life and not a problem that enough stuff would solve."
+summary: "A need is something you must have to be safe and well, such as water, food, shelter and clothing. A want is something you would like but could live without. People can meet their needs, but their wants keep growing: when one want is met, another often takes its place. Economists start from the idea that wants have no limit. This is the first step towards scarcity."
 language: maths
 hook: "Mia saves up for a new bike and buys it. A month later she wants a helmet to match. What is going on, and will it ever stop?"
 ---
 A **need** is something you must have to be safe and well, such as clean water, food, a place to live and clothes to keep you warm. A **want** is something you would like but could live without, such as a games console or the newest trainers.
 
-Needs are few and can be met. Wants are different: they keep growing. That difference is where this whole topic starts.
+Needs are few and can be met. Wants are different: they tend to keep growing. Economists start from the idea that wants have no limit. People argue about how true that is, but it is where this whole topic starts.
 
 ## Predict: need or want?
 
@@ -59,19 +59,19 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is explaining Mia's story. Click the line where Nib's thinking goes wrong."
-      answer: 3
+      text: "Nib is explaining Mia's story. Click the first line where Nib's thinking goes wrong."
+      answer: 4
       fault: logic
       misconception: enough-stuff-ends-wanting
-      explain: "Line 3: Nib thinks that if factories made enough, wanting would stop. Mia shows the opposite. Each want she met made a new one, so more stuff does not end wanting."
+      explain: "Line 4: Nib thinks that if factories made enough, wanting would stop. Mia shows the opposite. Each want she met led to a new one, so making more stuff does not end wanting. Line 3 is right: it is what happened to Mia."
     smaller:
       check: { type: question, q: "Mia got her new bike. What did she want next?", options: ["A matching helmet, then a bell and a phone holder", "Nothing at all", "To sell the bike", "A second bike exactly the same"], answer: 0, explain: "Her wanting did not stop. It moved on to the next thing." }
   - check:
       type: question
-      q: "Which best explains why people's wants never run out?"
+      q: "Economists start from the idea that wants have no limit. Which best explains why they think so?"
       options: ["Meeting one want usually shows you another", "People are greedy", "There is never enough of anything", "Shops keep making new things"]
       answer: 0
-      feedback: [null, "Wanting more is normal for everyone. It is not a fault in some people.", "There being too little is a later idea. Here the point is about wanting itself.", "Advertising and new products can add to wants, but wants would grow even without them."]
+      feedback: [null, "Wanting more is normal for everyone. It is not a fault in some people.", "There being too little is a later idea. Here the point is about wanting itself.", "Advertising and new products can add to wants, but the bike story shows wants growing without an advert in sight."]
       explain: "Each want met tends to show you the next one, so the list keeps growing."
 ```
 
@@ -81,14 +81,14 @@ tasks:
 \text{Name the need} :: Mia's need is a way to get around, and her old bike already does that.
 \text{Name the want} :: A new bike, then a matching helmet, a bell and a phone holder.
 \text{Ask what happens next} :: After each want is met, a new one appears.
-\text{So} :: Wants are not a problem that enough stuff would solve. They keep growing.
+\text{So} :: More stuff did not end Mia's wanting. Economists build on this idea: wants have no limit.
 ```
 
 Now: what does Mia's story show?
 
 ### Find Nib's mistake
 
-### Why wanting never ends
+### Why wanting keeps going
 
 ## Vary: more needs and wants
 

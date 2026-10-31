@@ -1,16 +1,16 @@
-summary: "Students distinguish between formal citizenship (legal status, rights and responsibilities) and active citizenship (engaged participation in civic and community life), and identify that not all people in Australia have historically had equal access to citizenship rights, particularly in relation to First Nations Australians."
+summary: "Students distinguish formal citizenship (legal status, rights and responsibilities) from active citizenship (taking part in civic and community life), and identify that not all people in Australia have always had equal access to citizenship rights."
 learning: "distinguish formal citizenship from active citizenship and explain how access to citizenship rights in Australia has changed"
 time: 40
 timing: "Predict and Try 8 min · Worked example 10 min · Vary 8 min · Practise 8 min · Make 6 min. Typical and wider steps are extras and not counted in this."
 goals:
   - I can explain the difference between formal citizenship and active citizenship.
   - I can name examples of legal rights and responsibilities of formal citizenship, and examples of active citizenship.
-  - I can identify that First Nations Australians were historically excluded from full citizenship and voting rights, and that active citizenship helped change the law.
+  - I can give one way access to citizenship rights in Australia has changed over time.
 struggle: "Two things commonly trip students up here: (1) thinking 'citizenship' only means holding a passport, and (2) mixing up the 1962 Commonwealth Electoral Act (which gave First Nations Australians the right to enrol and vote in federal elections) with the 1967 referendum (which changed sections 51(xxvi) and 127 of the Constitution). Keep those two legal facts clear."
 before: |
   This is the final lesson of AC9HC7K02, bringing together formal legal status and active participation.
 
-  First Nations content and teacher guidance: Student steps state only the settled legal and constitutional facts (the *Commonwealth Franchise Act 1902* exclusion, the *Commonwealth Electoral Act 1962* federal voting right, compulsory enrolment in 1984, and the 1967 referendum changing s 51(xxvi) and repealing s 127). We do not write explanations of First Nations history, lived experience or culture from outside.
+  First Nations content and teacher guidance: student steps carry one short sourced line (the AEC records that from 1962 all First Nations people could enrol and vote in federal elections) and a link to the AEC's milestones page. We do not write explanations of First Nations history, lived experience or culture in student steps (1 Nov 2026 revision; the advocacy narrative and the 1967 referendum step moved out of the student lesson). For the teacher: the *Commonwealth Franchise Act 1902* excluded most First Nations people from the federal vote; the *Commonwealth Electoral Act 1962* gave all First Nations people the right to enrol and vote in federal elections; enrolment became compulsory for them in 1984; the 1967 referendum altered s 51(xxvi) and repealed s 127, which had left Aboriginal people out of the population counts the Constitution uses (it was not a ban on being counted in the census).
 
   ACARA's elaborations for AC9HC7K02 include:
   - "identifying characteristics of formal citizenship and the attributes of active citizenship, and identifying who has been included and excluded from the rights and freedoms of citizenship in Australia, particularly in relation to First Nations Australians"
@@ -20,7 +20,7 @@ before: |
 running:
   - "Predict: contrast Orla (legal status only) with Dev (legal status plus active contribution)."
   - "Try: note that voting in Australia is both a formal democratic right and a legal obligation for adults."
-  - "Worked example: walk through the timeline carefully so students see that even when people were excluded from formal voting rights, they used active citizenship (petitions, meetings, speeches) to win legal change."
+  - "Worked example: show that voting rules have changed over time, then the made-up crossing petition: people who cannot vote can still take part. For the history of how First Nations people campaigned for change, use First Nations-led accounts in their own words (see stretch and Sources)."
   - "Practise: students write their comparison in their own book first, then check against the two model answers and three criteria."
   - "Make: partner review in books."
 stuck:
@@ -29,7 +29,7 @@ stuck:
     fix: "Yes! Even before someone has the formal adult right to vote, they can practise active citizenship in their community."
   - see: "A student writes that the 1967 referendum 'gave Aboriginal people the right to vote'."
     ask: "Which year's law changed the federal voting rules, and what did the 1967 referendum actually change?"
-    fix: "The *Commonwealth Electoral Act 1962* gave First Nations Australians the right to enrol and vote in federal elections. The 1967 referendum changed two sections of the Constitution: s 51(xxvi) (law-making power) and s 127 (the census)."
+    fix: "The *Commonwealth Electoral Act 1962* gave First Nations Australians the right to enrol and vote in federal elections. The 1967 referendum changed two sections of the Constitution: s 51(xxvi) (law-making power) and s 127 (which left Aboriginal people out of the population counts the Constitution uses)."
   - see: "A student lists only rights (passport, voting) and forgets responsibilities."
     ask: "What does the law require an adult citizen to do in return?"
     fix: "Obey the law, enrol and vote at elections and referendums, and serve on a jury if called."
@@ -39,11 +39,12 @@ leads: |
   This completes Freedoms and taking part (AC9HC7K02). Next in Year 7 Civics and Citizenship: Law and justice (AC9HC7K03 — the legal system, the rule of law and the courts).
 exit:
   q: "What is the difference between formal citizenship and active citizenship, and give one example of how access to formal citizenship rights in Australia has changed since 1901."
-  a: "Formal citizenship is legal membership of a country with legal rights and duties; active citizenship is participating actively to contribute to the community and democracy. For example, most First Nations Australians were excluded from voting in federal elections after 1901 until the Commonwealth Electoral Act was changed in 1962."
+  a: "Formal citizenship is legal membership of a country with legal rights and duties; active citizenship is taking part to help the community and democracy. For example, the AEC records that from 1962 all First Nations people could enrol and vote in federal elections."
 explain: |
   - **Formal citizenship** is your legal status as a member of the nation, with legal rights (voting, passport, standing for parliament) and duties (obeying laws, compulsory voting, jury service).
   - **Active citizenship** is getting involved in community and democratic life (volunteering, petitioning, campaigning, staying informed).
-  - Not everyone in Australia has always had equal access to formal citizenship rights: First Nations Australians were excluded from the federal franchise until 1962 and from the constitutional census count until the 1967 referendum.
+  - Not everyone in Australia has always had the same formal rights. The AEC records that from 1962 all First Nations people could enrol and vote in federal elections.
+  - You don't need a vote to take part: anyone can sign a petition or write to the council.
 sources:
   - { title: "Australian citizenship (Parliamentary Education Office)", url: "https://peo.gov.au/understand-our-parliament/your-say/australian-citizenship", checked: 2026-10-30 }
   - { title: " Electoral milestones for Indigenous Australians (Australian Electoral Commission)", url: "https://www.aec.gov.au/indigenous/milestones.htm", checked: 2026-10-30 }

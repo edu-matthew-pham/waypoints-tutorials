@@ -20,8 +20,7 @@ stage: predict
 insight: Notice why classification alone cannot explain the whole case.
 check:
   type: predict
-  q: In made-up Rill Bay, a river refills after rain and carries soil from a hill to a lake. Is the water is
-    renewable a complete explanation?
+  q: "In made-up Rill Bay, a river refills after rain and carries soil from a hill to a lake. Is 'the water is renewable' a complete explanation?"
   options:
     - No, it leaves out connection and physical change
     - Yes, its label explains where all sediment travels

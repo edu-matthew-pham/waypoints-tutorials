@@ -2,8 +2,8 @@ inquiry:
   q: "Can a person who is excluded from formal voting rights — or a 13-year-old who isn't old enough to vote yet — still be an active citizen? How?"
   prompts:
     - "What is the difference between the legal badge of citizenship (formal) and the actions of a citizen (active)?"
-    - "How did people who were excluded from the federal voting roll before 1962 use active citizenship to change the law?"
-  notes: "Keep the two definitions clear, and ensure students distinguish the 1962 federal voting reform from the 1967 constitutional referendum."
+    - "What can someone who can't vote yet do to change something in their community?"
+  notes: "Keep the two definitions clear. If you discuss how First Nations people campaigned for voting and constitutional change, use First Nations-led accounts in their own words (teacher notes, Sources), and keep the 1962 voting law distinct from the 1967 referendum."
 activities:
   - at: run
     kind: activity

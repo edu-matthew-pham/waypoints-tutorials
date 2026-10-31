@@ -49,7 +49,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Click the line where Nib's plan goes wrong."
+      text: "Click the first line where Nib's plan goes wrong."
       answer: 3
       fault: logic
       misconception: one-question-enough

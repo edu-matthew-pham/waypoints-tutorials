@@ -61,7 +61,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is sorting a source for the First Emperor's rule. Click the line where Nib's thinking goes wrong."
+      text: "Nib is sorting a source for the First Emperor's rule. Click the first line where Nib's thinking goes wrong."
       answer: 4
       fault: logic
       misconception: old-means-primary

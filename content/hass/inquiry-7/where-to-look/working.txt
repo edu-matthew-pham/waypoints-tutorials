@@ -2,7 +2,7 @@
 
 # region: nib
 Nib needs to know how many students buy from the Parkside tuckshop each day.
-Nib types: tuckshops.
-Nib says: "The first result is always the best place to look, so I will stop there."
+Nib thinks about where a daily count might be kept.
+Nib searches online and says: "The first result is always the best place to look, so I will stop there."
 Nib writes down what the first result says and starts the report.
 # endregion

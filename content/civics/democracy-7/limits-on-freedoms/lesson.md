@@ -75,7 +75,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is explaining how freedom of speech and assembly work in the made-up town of Wattle Creek. Click the line where Nib's thinking goes wrong."
+      text: "Nib is explaining how freedom of speech and assembly work in the made-up town of Wattle Creek. Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: freedoms-are-unlimited

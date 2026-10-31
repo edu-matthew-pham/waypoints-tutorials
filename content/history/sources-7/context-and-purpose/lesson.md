@@ -62,7 +62,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is working out the context and purpose of Source C. Click the line where Nib's thinking goes wrong."
+      text: "Nib is working out the context and purpose of Source C. Click the first line where Nib's thinking goes wrong."
       answer: 2
       fault: logic
       misconception: context-is-setting

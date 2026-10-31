@@ -42,16 +42,16 @@ check:
 
 ```step
 stage: investigate
-insight: "Seeing Nib's search fail explains why key words and the address matter."
+insight: "Seeing Nib trust the first result, then choosing better key words, explains why both the key words and the address matter."
 tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Click the line where Nib's thinking goes wrong."
-      answer: 4
+      text: "Click the first line where Nib's thinking goes wrong."
+      answer: 3
       fault: logic
       misconception: first-result-is-the-place
-      explain: "Line 4: the first result is not always right. Nib should use key words, and check who made the page."
+      explain: "Line 3: Nib copies the first result without checking it. The first result is not always right. Check who made the page and whether it answers the question."
     smaller:
       check: { type: question, q: "Is the first search result always the best?", options: ["No", "Yes"], answer: 0, explain: "Check who made it." }
   - check:

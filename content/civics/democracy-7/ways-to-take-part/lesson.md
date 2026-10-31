@@ -73,7 +73,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is advising residents of the made-up town of Wattle Creek who want better flood warning signs before the next wet season. Click the line where Nib's thinking goes wrong."
+      text: "Nib is advising residents of the made-up town of Wattle Creek who want better flood warning signs before the next wet season. Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: voting-is-only-participation

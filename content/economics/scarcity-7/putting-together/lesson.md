@@ -3,7 +3,7 @@ order: 4
 unit: choice
 title: Putting it together - scarcity, choice and the future
 node: AC9HE7K01 n4
-summary: "Unlimited wants meet limited resources, which is scarcity. Scarcity forces choices about what, how and for whom, and every choice has an opportunity cost. Using resources now also affects what is left for later, so a good choice thinks about sustainability. This lesson links the four ideas into one chain and applies it to a made-up council decision."
+summary: "Economists start from the idea that wants are unlimited; when they meet limited resources, that is scarcity. Scarcity forces choices about what, how and for whom, and every choice has an opportunity cost. Using resources now also affects what is left for later, so a good choice thinks about sustainability. This lesson links the four ideas into one chain and applies it to a made-up council decision."
 language: maths
 hook: "A council has $2 million. People want a water recycling plant, a skate park and longer library hours. It can afford one. How should it decide, and who pays the cost?"
 ---
@@ -19,8 +19,8 @@ insight: "Committing to an order first shows which ideas students think come fir
 check:
   type: predict
   q: "Which comes first in the chain: scarcity, wants, or opportunity cost?"
-  options: ["Wants (they never run out)", "Scarcity", "Opportunity cost", "Choices"]
-  actual: "Wants. Unlimited wants meet limited resources and that is scarcity. Scarcity forces choices, and each choice has an opportunity cost."
+  options: ["Wants (they keep growing)", "Scarcity", "Opportunity cost", "Choices"]
+  actual: "Wants. In the economists' model, unlimited wants meet limited resources and that is scarcity. Scarcity forces choices, and each choice has an opportunity cost."
 ```
 
 ## Try: order the chain

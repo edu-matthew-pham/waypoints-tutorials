@@ -68,7 +68,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib has written an assessment of Source B for an inquiry question. Click the line where Nib's thinking falls short."
+      text: "Nib has written an assessment of Source B for an inquiry question. Click the first line where Nib's thinking falls short."
       answer: 3
       fault: logic
       misconception: separate-labels-without-reason

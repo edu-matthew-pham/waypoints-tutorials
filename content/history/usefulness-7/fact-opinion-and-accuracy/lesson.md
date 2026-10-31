@@ -83,7 +83,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is checking the accuracy of Source C, the mountain inscription. Click the line where Nib's thinking goes wrong."
+      text: "Nib is checking the accuracy of Source C, the mountain inscription. Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: primary-means-all-fact

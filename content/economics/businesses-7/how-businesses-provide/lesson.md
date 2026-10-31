@@ -64,7 +64,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is advising a solo piano teacher and a town food pantry on their business structure. Click the line where Nib's thinking goes wrong."
+      text: "Nib is advising a solo piano teacher and a town food pantry on their business structure. Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: one-best-structure

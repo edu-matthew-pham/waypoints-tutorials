@@ -74,7 +74,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is deciding whether to use Source C in an investigation of Qin rule. Click the line where Nib's thinking goes wrong."
+      text: "Nib is deciding whether to use Source C in an investigation of Qin rule. Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: biased-means-useless

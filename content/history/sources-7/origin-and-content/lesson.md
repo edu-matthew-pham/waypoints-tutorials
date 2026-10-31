@@ -68,7 +68,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is looking at Source A, the clay warrior. Click the line where Nib's thinking goes wrong."
+      text: "Nib is looking at Source A, the clay warrior. Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: origin-from-content
