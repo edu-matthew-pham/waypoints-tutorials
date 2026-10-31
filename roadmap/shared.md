@@ -1411,3 +1411,7 @@ No unresolved wording questions were identified. The pilot feedback collection r
 - Timing: slide 3 is the only live demo; slides 2 and 4 now talk from their screenshots, links kept as optional. Before-the-meeting checklist added to slide 1 notes and `teacher.md`.
 - "Use P for speaker notes" reworded to "open presenter view" (Prepare's key not verifiable from this repo).
 - Checks: `npm run -s validate` passed. Not built or deck-checked here; run `npm run check-decks -- teachers/getting-started` before publishing (slide 2 gained a credit line).
+
+## Parked (1 Nov 2026, Matthew): an interactive concept map or argument map for English and humanities
+Idea only, for later. A board where students drag ideas into place and draw labelled links (causes and effects in History, claim → reason → evidence in English persuade and HASS make-an-argument, an inquiry plan, how a business's purpose links to its structure). Fits the site's rules if checks only look at planted links on made-up content (for example "which card causes which", "which evidence backs which claim") and anything the student builds from their own ideas is unmarked, checked by a partner or the teacher. Could start from Mermaid's diagram logic (`tools/diagram-core.mjs`) or the cohesion board's link mode before a new widget. Revisit after the humanities and English pilots show where students get stuck.
+
