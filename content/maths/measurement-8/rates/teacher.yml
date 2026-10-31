@@ -36,7 +36,7 @@ support: "A card: 'rate = first quantity ÷ second quantity, units: first per se
 leads: |
   This starts AC9M8M05.
 
-  Where it leads: using rates to solve problems (next lesson), rate models, and gradient as a rate (Year 8 Algebra).
+  Where it leads: using rates to solve problems (next lesson), rate models, and gradient as a rate (Year 8 Algebra, Lines and their rules).
 exit:
   q: "A cyclist rides 45 km in 1.5 hours. Find her speed in km/h and m/s."
   a: "45 ÷ 1.5 = 30 km/h; 30 ÷ 3.6 ≈ 8.3 m/s."

@@ -34,7 +34,7 @@ support: "A model card: what do I need (units)? Ratio or rate? Calculation. Does
 leads: |
   This starts AC9M8M07.
 
-  Where it leads: checking models and their assumptions (next lesson), and linear models (Year 8 Algebra).
+  Where it leads: checking models and their assumptions (next lesson), and linear models (Year 8 Algebra, Solving and modelling with lines).
 exit:
   q: "A recipe uses 2 cups of rice to 3 cups of water. How much water for 5 cups of rice? Is this a ratio or a rate?"
   a: "A ratio (cups to cups): 5 × 1.5 = 7.5 cups of water."

@@ -36,7 +36,7 @@ support: "A frame: The model assumes … In real life … So the answer … A be
 leads: |
   This completes AC9M8M07.
 
-  Where it leads: linear models with a starting value (Year 8 Algebra: y = mx + c), and modelling in Years 9 and 10.
+  Where it leads: linear models with a starting value (Year 8 Algebra, Lines and their rules: y = mx + c), and modelling in Years 9 and 10.
 exit:
   q: "A model says 4 kg of apples at $3.50 per kg cost $14. The shop charges $12.60 for 4 kg. Name a possible assumption that failed."
   a: "A fixed price per kg: the shop may give a discount for buying more (a bulk price)."

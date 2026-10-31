@@ -11,7 +11,7 @@ before: |
 
   The new move is saying what the letter stands for before writing anything. Two common errors: letting the letter be the thing worked out ("Let n be the cost"), and reading the letter as the object (Pia's mistake: 3a means 3 apples). Insist on the sentence "Let ___ be the number of ___".
 
-  The once-only amount is a constant added on; the amount for each one is multiplied by the letter. This is the same structure as y = mx + c in Year 8 Algebra, so say so, but do not name it yet.
+  The once-only amount is a constant added on; the amount for each one is multiplied by the letter. This is the same structure as y = mx + c in Year 8 Algebra (Lines and their rules), so say so, but do not name it yet.
 running:
   - "Predict: take a show of hands. Ask a student who chose 'the total cost' what n would be for a trip of 30 students."
   - "Run: before moving n, ask what the cost is for 0 students. What does the 50 mean?"
@@ -30,7 +30,7 @@ stuck:
 stretch: "A shop sells pens at 2 dollars each and rulers at 3 dollars each, with a 1 dollar bag. Let p be pens and r rulers. Write the cost, then find it for 10 pens and 4 rulers."
 support: "Give a sentence frame: Let ___ be the number of ___. Paid once: ___. For each: ___. Expression: ___."
 leads: |
-  This finishes the Expressions unit. The Equations unit starts from expressions like these: what number of students makes the trip cost 290? In Year 8 Algebra the same structure becomes y = mx + c and its graph.
+  This finishes the Expressions unit. The Equations unit starts from expressions like these: what number of students makes the trip cost 290? In Year 8 Algebra (Lines and their rules) the same structure becomes y = mx + c and its graph.
 exit:
   q: "A gym costs 30 dollars to join plus 15 dollars a week. Write what your letter stands for, an expression for the total, and the cost after 8 weeks."
   a: "Let w be the number of weeks. Total = 15w + 30. After 8 weeks: 15 × 8 + 30 = 150 dollars."

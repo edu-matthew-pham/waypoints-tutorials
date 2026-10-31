@@ -29,7 +29,7 @@ stuck:
 stretch: "A rectangle's length is 3 cm more than its width, and its perimeter is 30 cm. Find both sides."
 support: "Give a template: formula; what I know; substitute; undo; check."
 leads: |
-  Next: the Expressions unit continues with writing expressions from words. Solving for an unknown is the Equations unit, and in Year 8 Algebra it becomes finding x for a given y on a graph.
+  Next: the Expressions unit continues with writing expressions from words. Solving for an unknown is the Equations unit, and in Year 8 Algebra (Solving and modelling with lines) it becomes finding x for a given y on a graph.
 exit:
   q: "A gym costs T = 15w + 30 dollars for w weeks. Someone paid 120 dollars. How many weeks? Check your answer."
   a: "120 = 15w + 30, so 15w = 90 and w = 6. Check: 15 × 6 + 30 = 120."
