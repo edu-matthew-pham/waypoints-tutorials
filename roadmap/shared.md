@@ -1415,3 +1415,8 @@ No unresolved wording questions were identified. The pilot feedback collection r
 ## Parked (1 Nov 2026, Matthew): an interactive concept map or argument map for English and humanities
 Idea only, for later. A board where students drag ideas into place and draw labelled links (causes and effects in History, claim → reason → evidence in English persuade and HASS make-an-argument, an inquiry plan, how a business's purpose links to its structure). Fits the site's rules if checks only look at planted links on made-up content (for example "which card causes which", "which evidence backs which claim") and anything the student builds from their own ideas is unmarked, checked by a partner or the teacher. Could start from Mermaid's diagram logic (`tools/diagram-core.mjs`) or the cohesion board's link mode before a new widget. Revisit after the humanities and English pilots show where students get stuck.
 
+## Next for the Humanities pilot page and deck (1 Nov 2026, Matthew: after the subject chats)
+- When the first humanities board is built (likely the Economics opportunity-cost trade-off or History fact-or-opinion on the `cohesion` board), add a link to it on `content/humanities-pilot.md` and in slide 6 of `content/teachers/getting-started/presentation.md`. Until then, an English example (`english/persuade`, Spot the bias) would do.
+- Add one reflection question to the same two places: "Where would your students learn more by doing something on screen (moving, sorting, counting, watching a change) than by reading about it?" Feeds the board proposals in each subject roadmap › "Boards in built lessons (1 Nov 2026)".
+- Run `npm run check-decks -- teachers/getting-started` after; a quick publish covers it.
+
