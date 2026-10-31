@@ -1,4 +1,4 @@
-// Maths cards (snippets/maths.json, and snippets/maths-<name>.json for other courses): the words and methods of a maths course, typeset with KaTeX, for the student
+// Maths cards (snippets/maths-<course>.json, one file per course): the words and methods of a maths course, typeset with KaTeX, for the student
 // Reference page, the printable cheat sheets (teacher and student copies) and the Markdown sheet for Prepare.
 // The code courses' versions (build-site refItem, teach.mjs cheatSheetBody) are built around program snippets;
 // these mirror their layout and CSS classes so both look the same.
@@ -16,7 +16,7 @@ import { snippetId } from './lesson-core.mjs';
 export const mathsCardId = (label) => `maths-${snippetId(label)}`;
 
 /** The card file, with ids and group names on every card; null when there is none. */
-export function loadMathsCards(path = 'snippets/maths.json') {
+export function loadMathsCards(path = 'snippets/maths-algebra-7.json') {
   if (!existsSync(path)) return null;
   const data = JSON.parse(readFileSync(path, 'utf8'));
   data.cards = data.groups.flatMap((g) => g.items.map((i) => ({ ...i, id: mathsCardId(i.label), group: g.name })));
@@ -24,7 +24,7 @@ export function loadMathsCards(path = 'snippets/maths.json') {
 }
 
 /**
- * Every card file: snippets/maths.json and snippets/maths-<name>.json, one per course (each names its course:).
+ * Every card file: snippets/maths-<course>.json, one per course (each names its course:).
  * Returns [{ file: 'maths-number', course, cards, ... }], in file-name order.
  */
 export function loadAllMathsCards(dir = 'snippets') {

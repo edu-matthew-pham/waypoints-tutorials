@@ -110,7 +110,7 @@ for i in range(4):
 `,
 };
 
-// Maths: the balance setups are from Equations as a balance (content/maths/algebra/equation-balance).
+// Maths: the balance setups are from Equations as a balance (content/maths/algebra-7/equation-balance).
 const MATHS_EXAMPLE = {
   'lesson.md': `---
 title: Equations as a balance

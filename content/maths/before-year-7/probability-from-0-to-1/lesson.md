@@ -156,5 +156,5 @@ exit:
   q: "A bag has 2 red and 8 blue counters. How likely is red, and what number is that?"
   a: "Unlikely, 2/10 or 0.2."
 leads: |
-  Leads into Year 7 Data and chance: *Sample space*, *Many trials* and *Predict and test*.
+  Leads into Year 7 Probability: *Sample space*, *Many trials* and *Predict and test*.
 ```

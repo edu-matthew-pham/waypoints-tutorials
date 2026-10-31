@@ -1,0 +1,31 @@
+briefs:
+  - id: sleep-and-reaction
+    title: Does sleep change reaction time?
+    after: a-good-question
+    nodes: ["AC9M10ST05 n2", "AC9M10ST05 n3"]
+    goal: |
+      Choose a question about **two things you can measure on the same people** (the lesson's example is hours of sleep and reaction time, but you can pick your own) and run the investigation with your class.
+
+      Collect the data, show it on a display that fits, describe the pattern you see, and write up what the data does and does not tell you. The write-up is for **a specified audience** you choose, for example the year level, the school council or a parent newsletter.
+    handin:
+      - "Your question, with the two variables, which is explanatory and which is the response, and how each was measured."
+      - "The data you collected, as a table."
+      - "A display that fits two measured variables, with a description of the pattern in words that name direction, strength and form."
+      - "A short report for your audience with a conclusion that uses careful wording, and at least two limitations of the investigation with a reason each one matters."
+    milestones:
+      - "Your question names two variables, and your teacher has agreed how you will collect the data."
+      - "Everyone who took part agreed to, and knows how their data will be used, and no one can be identified from your results."
+      - "You have drawn a display and described the pattern."
+      - "Your report has a careful conclusion, two limitations and a clear audience."
+    stretch:
+      - "Repeat the measurement on a second group and say whether the pattern holds."
+      - "Say what you would change to test whether one variable causes the other."
+      - "Draw a line by eye and use it to make one prediction, and say how far you trust it."
+    teacher: |
+      This is the class investigation for AC9M10ST05 nodes 2 and 3. The lesson A good question covers posing and sharpening the question (node 1).
+
+      Collecting data from classmates needs care. Before anyone collects data: check your school's rules for student surveys and measurements, make taking part voluntary, keep names off the data, and avoid anything sensitive (health conditions, family circumstances, grades, weight). Sleep hours are about as personal as a class should go; many teachers prefer less personal pairs such as arm span and height, hand span and jump distance, or time on a puzzle and age. Students whose data would be unusual should be able to leave it out without saying why.
+
+      A classroom reaction measurement (for example a ruler drop) is not a clean measurement, and students should say so in their limitations. Strong work states a conclusion such as "in our class, people who slept more tended to have faster reactions", with a reason the sample may not represent others, and does not claim sleep causes it.
+
+      Look for students who write "proves" or "causes", who describe only the display without the direction, strength and form, and who write limitations that could apply to any investigation instead of this one.

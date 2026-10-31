@@ -63,10 +63,10 @@ const prereqs = prerequisites(loadDirMeta, CONTENT_ROOT);
 const progs = loadProgressions();
 const base = auditNodes(real, prereqs, progs).warnings;
 ok(base.length === 0, `real lessons: no node warnings (${base.length})`);
-const sub = real.find((l) => l.slug === 'maths/algebra/substituting');
+const sub = real.find((l) => l.slug === 'maths/algebra-7/substituting');
 const changed = real.map((l) => (l === sub ? { ...l, node: [] } : l));
 const w2 = auditNodes(changed, prereqs, progs).warnings;
-ok(w2.some((x) => x.startsWith('maths/algebra/substituting › node: none')) && w2.some((x) => x.startsWith('maths/algebra/finding-unknowns › needs AC9M7A01 n2')), 'untagging Substituting warns there and in Finding an unknown');
+ok(w2.some((x) => x.startsWith('maths/algebra-7/substituting › node: none')) && w2.some((x) => x.startsWith('maths/algebra-7/finding-unknowns › needs AC9M7A01 n2')), 'untagging Substituting warns there and in Finding an unknown');
 
 console.log(fails ? `${fails} failed` : 'all passed');
 process.exit(fails ? 1 : 0);

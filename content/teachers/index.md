@@ -10,7 +10,7 @@ links:
   - { title: Make a lesson, href: teachers/make-a-lesson/, group: Make your own }
   - { title: My path, href: my-path/, group: Make your own, summary: "Pick lessons, put them in your order, add a note and share one link. No account." }
   - { title: English, href: english-teachers/, group: Core, summary: "What is built so far (a pilot course on cohesion), how it works without AI marking, and what is planned." }
-  - { title: Maths, href: maths-teachers/, group: Core, summary: "What is here for Years 7 and 8 maths, how a lesson runs, and a ten-minute tour." }
+  - { title: Maths, href: maths-teachers/, group: Core, summary: "One course per strand per year for Years 7 to 10, how a lesson runs and a ten-minute tour." }
   - { title: Science, href: science-teachers/, group: Core, summary: "How the science boards sit beside your class practicals, and a draft list of common practicals to correct." }
   - { title: Learning skills, href: learning-teachers/, group: Core, summary: "Self-regulation in any subject: the cycle, think-alouds, teaching a strategy, and when to prompt it." }
   - { title: Humanities skills, href: humanities-teachers/, group: Humanities, summary: "The shared Year 7 inquiry lessons (a preview): asking and finding, and how they fit beside your unit." }

@@ -1,0 +1,32 @@
+briefs:
+  - id: simulation-decision
+    title: What would a simulation tell us?
+    after: simulate-it
+    nodes: ["AC9M10P02 n3"]
+    goal: |
+      Real decisions are made with simulations when the situation is too costly, slow or risky to test for real. Pick **one decision** where someone could use a simulation of a chance process that depends on an earlier event (for example, how many people to roster at an event when some of them might not turn up, or how likely a test is to be right when the condition is rare).
+
+      Describe the decision, build or describe a **simple simulation** of it (a bag of coloured counters, dice, or a spreadsheet or program that picks at random), and say what the simulation tells the decision-maker that thinking alone would not.
+
+      Then change **one assumption** in your simulation and say how the result would change.
+    handin:
+      - "A description of the decision and who makes it."
+      - "Your simulation: how it works and the results of at least 200 trials (counts or a table)."
+      - "A paragraph on what the simulation tells the decision-maker, and what it cannot tell them."
+      - "The assumption you changed, and how and why the result moves."
+    milestones:
+      - "You have chosen a decision and named the chance process behind it."
+      - "Your simulation runs, and you have recorded at least 200 trials."
+      - "You have said what the simulation gives the decision-maker."
+      - "You have changed one assumption, re-run it, and explained the difference."
+    stretch:
+      - "Run the simulation with 20 trials and with 2 000, and say how the results differ."
+      - "Compare your simulated result with a calculation from a table or tree."
+    teacher: |
+      This is the class project for AC9M10P02 node 3. The lesson Simulate it covers designing a simulation and comparing it with the table (nodes 1 and 2).
+
+      The decision, the chances and the counts are the student's own and made up for the task. Real organisations use simulations for things like hospital waiting rooms, flood planning and flight scheduling; if you want a real example, read the source first yourself and pass it on as a case to discuss, not as a figure in the brief.
+
+      The assumption is the point of the second criterion. Strong work picks one that really matters (for example, that people turn up independently of each other) and shows how dropping it changes the result. Accept a bag of counters over a program: the design matters, not the tool.
+
+      Look for students who describe a simulation of the wrong structure (an event that should depend on the first outcome simulated as independent), or who say a decision is "proven" by 200 trials.

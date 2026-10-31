@@ -1,5 +1,5 @@
 {
- "note": "Made by tools/maths-split.mjs; do not edit by hand. Plan only: nothing has moved yet.",
+ "note": "The record of the maths course split (1 Nov 2026): every Years 7-10 lesson's old and new address. Made from each lesson's first node: by a script (tools/maths-split.mjs, removed after the move; see git history). tools/moved.mjs reads it to forward old addresses and reuse clips and pictures. Do not edit.",
  "made": "2026-10-31",
  "courses": [
   {

@@ -353,7 +353,7 @@ const PLAY = { 'code/python-foundations': { kind: 'turtle', dir: '_playground', 
   'code/ml': { kind: 'turtle', dir: '_playground-py', label: 'Python', id: 'free/ml', code: 'import pandas as pd\n\npenguins = pd.read_csv("penguins.csv")\nprint(penguins.head())\n' },
   'code/data': { kind: 'turtle', dir: '_playground-py', label: 'Python', id: 'free/data', code: 'import csv\n\nwith open("music.csv") as f:\n    songs = list(csv.DictReader(f))\n\nprint(songs[0])\n' },
   'code/deeper': { kind: 'turtle', dir: '_playground-py', label: 'Python', id: 'free/deeper', code: 'words = input("What do you do? ").strip().lower().split()\nprint(words)\n' } };
-// Maths cards (snippets/maths.json, maths-<name>.json): a Reference page and cheat sheets for the course each names.
+// Maths cards (snippets/maths-<course>.json, one per course): a Reference page and cheat sheets for the course each names.
 const MATHS_CARDS = loadAllMathsCards();
 const REFS = [{ file: 'turtle', path: 'code/python-foundations/reference' }, { file: 'turtle', path: 'code/python-functions/reference' }, { file: 'html', path: 'code/html/reference' }, { file: 'html', path: 'code/css/reference' }, { file: 'microbit', path: 'code/microbit/reference' }, { file: 'microbit', path: 'code/microbit-play/reference' }, { file: 'arcade', path: 'code/arcade/reference' }, { file: 'arcade', path: 'code/arcade-advanced/reference' }, { file: 'robot', path: 'code/robotics/reference' },
   { file: 'p5', path: 'code/p5/reference' }, { file: 'sql', path: 'code/sql/reference' }, { file: 'microstudio', path: 'code/games/reference' }, { file: 'microbit', path: 'code/microbit-computer/reference' }, { file: 'microbit', path: 'code/microbit-security/reference' },

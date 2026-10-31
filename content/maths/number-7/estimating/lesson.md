@@ -1,0 +1,241 @@
+---
+order: 10
+unit: placevalue
+node: AC9M7N05 n3
+uses: [AC9M7N05 n1]   # rounding (Rounding decimals)
+title: Estimating to check
+summary: "Round each number to its first digit, then calculate: 29 × 61 ≈ 30 × 60 = 1800. If the calculator says 176.9 or 17 690, something slipped."
+language: maths
+voice: { name: af_heart, speed: 1.1 }
+connection: receipt-check   # data/connections/maths.yml
+hook: "You type 3.2 × 48 and the calculator shows 15.36. Looks plausible. But before you trust it, how big should the answer be?"
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8289
+  url: http://127.0.0.1:8289/index.html
+  readySelector: "#sl-a"
+  layout: full
+explainPicture: { ref: es.yml#explain-pic, caption: "38 × 52 ≈ 40 × 50 = 2000. The exact answer 1976 is close, so it is reasonable." }
+explainClip:
+  query: { code: "@es.yml#explain", fresh: 1, id: explain }
+  caption: "An estimate and the exact answer"
+  say: "Round first, then calculate."
+  clip:
+    - caption: { text: "38 rounds to 40 and 52 to 50.", say: "Round each number to its first digit." }
+    - wait: 1200
+    - caption: { text: "40 × 50 = 2000 in your head.", say: "Forty times fifty is two thousand." }
+    - wait: 1200
+    - click: Make the first number bigger
+    - expect: { selector: "#gsum", contains: "≈ 40 × 50" }
+    - caption: { text: "Exact is close to the estimate: reasonable.", say: "The exact answer is close, so it is reasonable." }
+    - wait: 1400
+---
+An **estimate** is a quick answer that is close, found by rounding the numbers to something easy. A good habit: round each number to its **first digit** (keep its size), do the easy calculation, and compare with the real answer.
+
+$$29 \times 61 \approx 30 \times 60 = 1800$$
+
+If the exact answer is near the estimate, it is **reasonable**. If it is ten times too big or too small, check the decimal point.
+
+## Predict: estimate 38 × 52
+
+```step
+stage: predict
+insight: "Committing to an estimate shows whether they round to the first digit and keep the size (2000), lose a zero (200) or gain one (20 000)."
+check:
+  type: predict
+  q: "Which is the best estimate for $38 \\times 52$?"
+  options: ["2000", "200", "20 000", "90"]
+  actual: "2000. 38 is about 40 and 52 is about 50, and 40 × 50 = 2000. 90 is 38 + 52."
+```
+
+Is the exact answer going to be a bit more or a bit less than 2000? Why?
+
+## Run: estimate and exact
+
+```step
+stage: run
+insight: "Moving a and b shows the estimate (rounded numbers) staying close to the exact answer, and both bars the same size."
+try: { playground: board, starter: "es.yml#run", height: 420 }
+check: { type: board, text: "Set a = 49 and b = 21. What is the estimate? Is it more or less than the exact answer?", when: "a = 49 and b = 21", explain: "49 ≈ 50 and 21 ≈ 20, so the estimate is 50 × 20 = 1000. The exact answer is 1029, a little more." }
+```
+
+The orange bar is the estimate, the blue bar the exact answer. They are nearly the same length.
+
+## Investigate: estimates catch slips
+
+```step
+stage: investigate
+insight: "Keeping the size of each rounded number (19.6 is 20, not 2) is the whole skill; an estimate of the wrong size cannot catch a decimal slip."
+tasks:
+  - check:
+      type: answer
+      q: "Estimate $6.8 \\times 31$ by rounding each number to its first digit."
+      answer: "210"
+      feedback:
+        - ["21", "6.8 is about 7 and 31 is about 30. 7 × 30 = 210, not 21."]
+        - ["200", "Round each number: 7 × 30 = 210."]
+      explain: "6.8 ≈ 7 and 31 ≈ 30, so 7 × 30 = 210."
+  - check:
+      type: bug
+      code: "working.txt#lina"
+      text: "Lina estimates 19.6 × 4.1. Click the line where her working goes wrong."
+      answer: 2
+      fault: logic
+      misconception: est-zero-slip
+      explain: "Line 2: 19.6 is about 20, not 2: rounding keeps the size. 20 × 4 = 80, so 19.6 × 4.1 is about 80."
+  - check:
+      type: question
+      q: "You type $3.2 \\times 48$ and the calculator shows 15.36. Is that reasonable?"
+      options: ["No: 3 × 50 = 150, so the decimal point is in the wrong place", "Yes: 3 × 5 = 15 is close", "Yes: a calculator is always right", "No: the answer should be a whole number"]
+      answer: 0
+      feedback: [null, "3 × 5 is 15, but 48 is about 50, not 5. The size is wrong.", "A calculator does what you typed, so a slip when typing still gives a wrong answer.", "Decimals times whole numbers can be any kind of number."]
+      explain: "3.2 × 48 ≈ 3 × 50 = 150. The real answer is 153.6: the calculator shows 15.36 only if the 3.2 was typed as 0.32."
+```
+
+### Round, then calculate
+
+Round each number to its first digit.
+
+### Find the mistake
+
+### Is it reasonable?
+
+## Modify: other operations, other sizes
+
+```step
+stage: modify
+insight: "Estimating works for adding, dividing and with decimals; an estimate can be above or below the exact answer."
+try: { playground: board, starter: "es.yml#plus", height: 420 }
+tasks:
+  - check: { type: board, text: "Estimate 387 + 512 by rounding to the first digit. Set a near 387 and b near 512: what is the estimate?", when: "s = 900", explain: "387 ≈ 400 and 512 ≈ 500, so the estimate is 900. The exact answer is 899." }
+  - check:
+      type: answer
+      q: "Estimate $4.9 \\times 81$."
+      answer: "400"
+      feedback:
+        - ["40", "5 × 80 = 400, not 40: keep the size of each number."]
+        - ["4000", "5 × 80 is 400. Count the zeros."]
+      explain: "4.9 ≈ 5 and 81 ≈ 80, so 5 × 80 = 400."
+  - check:
+      type: answer
+      q: "Estimate $612 \\div 29$."
+      answer: "20"
+      feedback:
+        - ["200", "600 ÷ 30 = 20. Count the zeros."]
+        - ["2", "600 ÷ 30 = 20, not 2."]
+      explain: "612 ≈ 600 and 29 ≈ 30, so 600 ÷ 30 = 20."
+  - check:
+      type: question
+      q: "Is an estimate always smaller than the exact answer?"
+      options: ["No: 38 × 52 ≈ 2000, but the exact answer is 1976", "Yes: rounding always makes numbers smaller", "Yes: estimates are lower bounds", "No: an estimate is always bigger"]
+      answer: 0
+      feedback: [null, "Rounding can go up (38 to 40) or down (52 to 50).", "An estimate is neither a lower nor an upper limit.", "Sometimes it is smaller: 49 × 21 ≈ 1000, exact 1029."]
+      explain: "Rounding goes up for some numbers and down for others, so an estimate can be above or below. What matters is that it is close."
+```
+
+### Add them
+
+### Keep the size
+
+### Divide
+
+### Bigger or smaller?
+
+## Practise: estimating
+
+```step
+stage: practise
+insight: "Estimates for multiplying and for a decimal product, a calculator check with a division, and a rounding review."
+tasks:
+  - check:
+      type: answer
+      q: "Estimate $58 \\times 19$."
+      answer: "1200"
+      feedback:
+        - ["120", "60 × 20 = 1200: count the zeros."]
+        - ["77", "That is 58 + 19."]
+      explain: "58 ≈ 60 and 19 ≈ 20, so 60 × 20 = 1200."
+  - check:
+      type: answer
+      q: "Estimate $7.9 \\times 4.2$."
+      answer: "32"
+      feedback:
+        - ["320", "8 × 4 = 32: 7.9 is about 8, not 80."]
+      explain: "7.9 ≈ 8 and 4.2 ≈ 4, so 8 × 4 = 32."
+  - check:
+      type: question
+      q: "The calculator shows $504 \\div 6.3 = 8$. Is that reasonable?"
+      options: ["No: 500 ÷ 6 is about 80, so 8 has lost a zero", "Yes: 50 ÷ 6 is about 8", "Yes: 504 ÷ 6 is about 8", "No: you cannot divide by a decimal"]
+      answer: 0
+      feedback: [null, "50 ÷ 6 is about 8, but 504 is 500, not 50.", "504 ÷ 6 is 84, not 8.", "Dividing by a decimal is fine."]
+      explain: "504 ÷ 6.3 = 80. Estimating 500 ÷ 6 ≈ 80 shows 8 has lost a zero."
+  - check:
+      type: answer
+      q: "Review: round 6.45 to 1 decimal place."
+      answer: "6.5"
+      feedback:
+        - ["6.4", "Halfway rounds up."]
+      explain: "The next digit is 5, so 6.5."
+```
+
+### Two numbers
+
+### A decimal times
+
+### Check the calculator
+
+### Review: rounding
+
+## Make: close but under
+
+```step
+stage: make
+insight: "Finding numbers whose estimate is exactly 2000 but whose exact product is less shows an estimate is a close value, not a bound."
+try: { playground: board, starter: "es.yml#make", height: 420 }
+hint: ["The estimate must be 40 × 50, so a is near 40 and b near 50.", "Try a = 38 and b = 52."]
+check: { type: board, text: "Set a and b so that the estimate is exactly 2000 but the exact answer is less than 2000.", when: "s = 2000 and v < 2000", explain: "For example 38 × 52 = 1976: the estimate 40 × 50 = 2000 is a little bigger." }
+```
+
+Then find a pair where the exact answer is more than 2000, and write which rounding you used and why.
+
+## Make: a shopping receipt on paper
+
+```step
+stage: make
+insight: "An estimate is only useful if it is close enough to catch the slip; the paper task makes them judge the size of a gap against what rounding could cause."
+hint: ["Round each price to the nearest dollar, then add.", "Six prices rounded to the nearest dollar can be off by less than \\$3 altogether."]
+check:
+  type: reasoning
+  paper: true
+  q: "Six items at the checkout cost \\$4.95, \\$9.80, \\$12.10, \\$8.75, \\$10.20 and \\$3.90 (prices made up for the task). The checkout screen says the total is \\$59.50. Round each price to the nearest dollar and add them. What is your estimate, in dollars?"
+  steps:
+    - ["\\$4.95 ≈ \\$5, \\$9.80 ≈ \\$10, \\$12.10 ≈ \\$12, \\$8.75 ≈ \\$9, \\$10.20 ≈ \\$10, \\$3.90 ≈ \\$4", "round each price to the nearest dollar"]
+    - ["$5 + 10 + 12 + 9 + 10 + 4 = 50$, so the estimate is \\$50", "add the rounded prices"]
+    - ["The checkout total of \\$59.50 is about \\$10 above the estimate", "compare the total with the estimate"]
+    - ["Rounding six prices cannot cause a gap that big, so something has been scanned twice", "each price moves by less than 50 cents, so six of them move the total by less than \\$3"]
+  picks:
+    - step: 3
+      q: "What does the gap of about \\$10 tell you?"
+      options:
+        - "It is too big to be rounding, so the total needs checking"
+        - "It is close enough: estimates are never exact"
+        - "The estimate must be wrong, because the checkout is a computer"
+      answer: 0
+      feedback: [null, "Estimates are never exact, but this one is only a few dollars out at most. A gap of \\$10 is too much.", "The estimate is close to the real prices. A machine can still scan an item twice."]
+  answer: "50"
+  feedback:
+    - ["60", "That is the checkout total rounded, not an estimate from the prices. Round each price and add."]
+    - ["59.5", "That is the checkout's total. Round the six prices and add them yourself."]
+  criteria:
+    - "I rounded every price to the nearest dollar, and kept the size of each."
+    - "I compared my estimate with the checkout total."
+    - "I said whether the gap was bigger than rounding could explain."
+  explain: "5 + 10 + 12 + 9 + 10 + 4 = 50. The checkout total is about \\$10 higher, and rounding six prices moves the total by under \\$3, so something is wrong. (The exact prices add to \\$49.70, so the \\$9.80 item has been scanned twice.)"
+```
+
+Do this one in your book, not on the screen. The prices are made up for the task, but the question is real: checkouts do double-scan things, and a quick estimate is how you notice. Round, add, and type your estimate. The page marks the estimate and the reason you pick.
+
+**Also used in**
+
+- **Shopping.** A quick estimate in the aisle tells you whether the checkout total is believable before you pay.
+- **Calculators.** Pressing the wrong key gives a total that is ten times too big or too small, and an estimate catches it.
+- **Later maths.** Estimating the answer first is the check on Pythagoras and on any answer from a calculator.

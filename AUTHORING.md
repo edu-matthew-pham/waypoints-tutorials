@@ -651,7 +651,7 @@ Keep to core functions; every card says other apps work the same. `npm run valid
 
 ## 11. Maths lessons
 
-A lesson with `language: maths` (see `content/maths/algebra/`) gets maths notation, maths checks and the board.
+A lesson with `language: maths` (see `content/maths/algebra-7/`) gets maths notation, maths checks and the board.
 How maths lessons are sequenced, and why, is in the Project note `maths-structure.md` (Predict, Try, Worked example,
 Vary, Practise, Make).
 
@@ -700,7 +700,7 @@ Vary, Practise, Make).
   answer and picks; when they are right, the student's working and the model show side by side with the self-check
   (ticked by the student, not needed to complete). After three wrong tries, **Show a model solution** reveals the model
   without completing. Working, answer and ticks are kept in the browser (`wp-reasoning`). **`paper: true`** (25 Oct 2026): the working is done on paper or in an exercise book, not typed. The box becomes one line (maths: "Work it out on paper first, one step per line. Then type your answer."; other subjects: "Write it in your book or on paper first."), the answer and picks are marked as usual, and then the model shows with "Put your page beside this and compare, step by step" and a self-check written for the page (`criteria:`, worth writing per task: "I subtracted, because 13 is the hypotenuse"). Use it after a worked example (try one by hand, the example beside you, compare after) and in Make; say so in the step text, and add a `running:` line in `teacher.yml` so the teacher knows when books come out. No `placeholder:`. Any subject: a trace table in code, a force diagram in science, a binary conversion in Digital systems. Write without for a single
-  rule; use it where a chain of reasons is the point (first used by `maths/angles/angle-reasoning`).
+  rule; use it where a chain of reasons is the point (first used by `maths/measurement-7/angle-reasoning`).
 - **`board` check:** ticks when the board reports what the check asks for, and never on the starting position. It
   needs `try: { playground: board, starter: file#region }` on the step (`maths` is the old name and still works).
   - `when:` a condition on the board's named values (any board with sliders or points): `"m = -1 and c = 2"`,
@@ -757,7 +757,7 @@ Vary, Practise, Make).
     substitution but not the value, so students finish the arithmetic). Scope: each slider and the subject, so checks
     read `when: "P = 20 and l = 6"` or `when: "l = 2w"`. `hide: formula` shows only the sliders and the result (T = 13): a mystery rule
     for "write an expression, then check it against what the board gives" (the board still sets the scope, so checks work).
-  - `widget: numberline` (first used by `maths/number`): one line, `range: -10, 10` (required), numbered every 1 (or
+  - `widget: numberline` (first used by `maths/number-7`): one line, `range: -10, 10` (required), numbered every 1 (or
     `labels: 5`; on a narrow screen the board numbers every 2 or 5 by itself), `snap: 0.5` for where dragged points land
     (default 1), `fractions: 4` (values between whole numbers written as fractions and mixed numerals, −1 1/4, with the
     decimal beside them in readouts; points land on quarters unless `snap:` says otherwise), `context: Temperature (°C)`
@@ -775,7 +775,7 @@ Vary, Practise, Make).
       −1 left), with `x(P)`: `"x(P) = 5 and k = 0 and s = -1"` is x < 5. `ray: x >= -2` draws a fixed one (pictures).
     - Values for checks: points as `x(P)` (`"x(P) < -4"`, `"x(P) < x(Q) and x(P) + x(Q) < 0"`), the sliders, `r` the
       result and `o` the operation (1 add, −1 subtract): `"o = -1 and b < 0 and r = 10"`.
-  - `widget: geometry` (first used by `maths/angles`): a triangle or polygon on a square dot grid. Students drag the
+  - `widget: geometry` (first used by `maths/measurement-7`): a triangle or polygon on a square dot grid. Students drag the
     corners (they land on the dots); the interior angle at each corner is measured live, to the nearest degree, with the
     rounding shared out so the shown angles add to the shown total.
     - `shape: triangle` or `polygon` with `sides: 5` (3 to 10) or `sides: choose` (More sides and Fewer sides buttons);
@@ -792,7 +792,7 @@ Vary, Practise, Make).
     - Values for checks: each corner's angle by its lower-case letter (`a`, `b`, `c`, …), `s` the total, `m` the largest
       angle, `n` sides, `k` triangles shown by split (else 0), `t` 1 while torn, `v` 1 if no corner points in; corners as
       points (`x(A)`). Examples: `"m > 120"`, `"m = 90"`, `"n = 5 and k = 3"`, `"n = 4 and v = 0"`, `"s = 1260"`.
-    - `classify: on` (first used by `maths/angles/classifying-triangles`) marks equal sides with ticks (within 2%: a
+    - `classify: on` (first used by `maths/space-7/classifying-triangles`) marks equal sides with ticks (within 2%: a
       square grid cannot make an exact equilateral triangle), parallel sides with arrows and right angles with a small
       square, and names the shape under the angles (`#gclass`): a triangle by sides and angles, a quadrilateral by
       family with its other names ("Square: … (also a rectangle, a rhombus, a parallelogram and a kite)"), any other
@@ -800,43 +800,43 @@ Vary, Practise, Make).
       (most sides of one length), `q` (1 scalene, 2 isosceles, 3 equilateral), `r` (1 acute, 2 right, 3 obtuse), `g`
       (right angles), `p` (parallel pairs), `w` (1 regular), `z` (1 square, 2 rectangle, 3 rhombus, 4 parallelogram, 5
       trapezium, 6 kite, 0 other). Checks: `"q = 2 and r = 2"`, `"z = 3"`, `"z = 5 and g >= 1"`, `"n = 6 and v = 0"`.
-    - `diagonals: on` (first used by `maths/angles/quadrilateral-proofs`; quadrilaterals only) draws AC and BD dashed with
+    - `diagonals: on` (first used by `maths/space-8/quadrilateral-proofs`; quadrilaterals only) draws AC and BD dashed with
       the crossing point, and adds their lengths (in two parts from the crossing) to `#gsum`. Values `l` (1 if equal), `u`
       (1 if they cut each other in half), `y` (1 if at 90°). Checks: `"z = 2 and l = 1"`, `"z = 6 and y = 1 and u = 0"`.
-  - `widget: bars` (first used by `maths/number/equivalent-fractions`): fraction bars. The top bar is `a` of `b` equal
+  - `widget: bars` (first used by `maths/number-7/equivalent-fractions`): fraction bars. The top bar is `a` of `b` equal
     parts shaded (sliders or fixed values; b from 1 to 24); an optional second bar `c` of `d` (give both). `hundred: on`
     makes the second a 10 by 10 grid with `c` of 100 squares shaded. `show: decimal, percent` writes each fraction as a
     decimal and/or a percentage too. The panel says whether the two shade the same amount and how (× or ÷ on the top
     and the bottom). Values: `a`, `b`, `c`, `d`, `v` (a/b), `w` (c/d), `e` (1 when equal), `t` and `s` (1 when a/b, c/d
     are in lowest terms), `p` (a/b as a percentage). Checks: `"e = 1 and d = 6"`, `"e = 1 and s = 1"`, `"e = 1"` (grid).
-  - `widget: fracadd` (first used by `maths/number/adding-fractions`): two fraction bars `a/b` and `c/d` (sliders or fixed
+  - `widget: fracadd` (first used by `maths/number-7/adding-fractions`): two fraction bars `a/b` and `c/d` (sliders or fixed
     values; bottoms 1 to 24) and their sum or difference end to end below, every bar cut into `k` parts (`slider k`, or
     `k: 12`). When `k` is a common multiple of both bottoms the parts can be counted ("1/3 + 1/4 = 4/12 + 3/12 = 7/12");
     otherwise the panel says which bar does not split. `op: + | − | ?` (? gives + and − buttons). A second whole is
     drawn only when a sum is more than 1. Values: `a`, `b`, `c`, `d`, `k`, `e` (1 when k splits both), `l` (1 when k is
     the LCM), `o` (1 or −1), `p` (parts of k in the answer), `r` (its value). Checks: `"e = 1"`, `"e = 1 and l = 1"`,
     `"o = 1 and r = 1 and (b - d)^2 > 0"` (there is no `!=`).
-  - `widget: fracarea` (first used by `maths/number/multiplying-fractions`): a unit square with `a` of `b` columns (blue)
+  - `widget: fracarea` (first used by `maths/number-7/multiplying-fractions`): a unit square with `a` of `b` columns (blue)
     and `c` of `d` rows (orange) shaded; the purple overlap is a/b × c/d. Sliders or fixed values for each. Values: `a`,
     `b`, `c`, `d`, `p` (a × c), `q` (b × d), `v` (the product). Checks: `"a = 1 and b = 2 and c = 1 and d = 3"`,
     `"v = 0.25 and q > 4"`.
-  - `widget: percent` (first used by `maths/number/percentages`): a quantity `q` as a bar marked 0% to 100% above and in
+  - `widget: percent` (first used by `maths/number-7/percentages`): a quantity `q` as a bar marked 0% to 100% above and in
     amounts below, with `p`% shaded. `mode: of | increase | decrease` (an increase adds a part past 100%, up to 200%; a
     decrease marks the part taken off). Sliders `p` and `q` (with a step: `slider p: 0, 50, 0, 5`) or fixed values;
     `units: $` goes before amounts, other units after. Values: `q`, `p`, `v` (p% of q), `n` (the new amount; v for
     `of`), `m` (the multiplier). Checks: `"p = 15"`, `"v = 18"`.
-  - `widget: square` (first used by `maths/number/squares-and-roots`): a square of side `s` on a grid of unit squares
+  - `widget: square` (first used by `maths/number-7/squares-and-roots`): a square of side `s` on a grid of unit squares
     (`slider s: 1, 12, 3`, with an optional step such as 0.1, or `s: 6`), its area written as s × s. `target: 43` draws
     a square of that area dashed and says how far off the student's square is, and which perfect squares 43 is
     between; `units: cm`. Values: `s`, `a` (area), `t` (target or 0), `d` (a − t). Checks: `"a = 49"`, `"s = 6.6"`,
     `"a > 30 and a < 40"`.
-  - `widget: factortree` (first used by `maths/number/powers`): a factor tree for `number: 36` (and `second: 48`).
+  - `widget: factortree` (first used by `maths/number-7/powers`): a factor tree for `number: 36` (and `second: 48`).
     Students click a number that is not prime, or its Split button, then a factor-pair button; primes are circled and
     the panel writes the factorisation with exponents (36 = 2² × 3²). With two numbers, a Venn diagram of their primes
     appears when both trees are finished, with the HCF and LCM. `grown: on` starts finished (each number split by its
     middle factor pair), for pictures and cards. Values: `n`, `k` (primes so far), `c` (1 when finished), `N`, `K`, `C`
     for the second, `h` (HCF) and `l` (LCM) once both are finished. Checks: `"c = 1"`, `"c = 1 and C = 1"`.
-  - `widget: area` (first used by `maths/measurement/parallelograms`): `shape: parallelogram | triangle | rectangle` on
+  - `widget: area` (first used by `maths/measurement-7/parallelograms`): `shape: parallelogram | triangle | rectangle` on
     a grid of unit squares, with the base and the perpendicular height (dashed, with a right-angle mark) labelled.
     Sliders or fixed values `b` (base), `h` (height) and `s` (where the top sits: a parallelogram's top-left corner or a
     triangle's apex, measured along from the base's left end; default 2, or b ÷ 2 for a triangle). The top can also be
@@ -845,24 +845,24 @@ Vary, Practise, Make).
     (a triangle doubled into a parallelogram); `cut: shown` starts that way. `slant: on` also labels the left slanted
     side. `units: cm`. Values: `b`, `h`, `s`, `a` (area), `l` (slanted side, 2 dp), `c` (1 while cut or copied), `o` (1
     when the height falls outside the base). Checks: `"c = 1"`, `"s = 0"`, `"b = 8 and a = 24"`, `"o = 1"`, `"a = 18 and s^2 > 0"`.
-  - `widget: prism` (first used by `maths/measurement/volume-layers`): a right prism drawn in 3D, `base: rectangle`
+  - `widget: prism` (first used by `maths/measurement-7/volume-layers`): a right prism drawn in 3D, `base: rectangle`
     (unit cubes, the top layer orange) or `base: triangle` (a right triangle with legs `l` and `w`, the right angle at
     the front, layer lines on the faces). Sliders or fixed values `l`, `w` and `h` (layers; 0 allowed), whole numbers up
     to 12. `units: cm`; `capacity: on` adds mL or L. Values: `l`, `w`, `h`, `A` (base area), `v` (volume), `c` (mL, with
     cm). Checks: `"h = 5"`, `"v = 24 and h = 2"`, `"v = 1000"`.
-  - `widget: circle` (first used by `maths/measurement/parts-of-a-circle`): a circle of radius `r` (`slider r: 1, 6, 2`,
+  - `widget: circle` (first used by `maths/measurement-7/parts-of-a-circle`): a circle of radius `r` (`slider r: 1, 6, 2`,
     a step of 0.5 is fine, or `r: 3`) with its centre, radius, diameter, a chord and the circumference named
     (`show: none` gives just r = and d =). `roll: on` adds **Roll it out**: the circle rolls one turn along a line, the
     circumference is laid flat beside three diameters and a bit, and each size goes into a table of d, C and C ÷ d;
     `roll: shown` starts rolled (pictures). `units: cm`. Values: `r`, `d`, `c` (2 dp), `q` (C ÷ d), `o` (1 once this size
     is rolled), `n` (sizes in the table). Checks: `"d = 10"`, `"n >= 3"`, `"r = 2.5 and o = 1"`, `"c > 24.5 and c < 25.5"`.
-  - `widget: pythag` (first used by `maths/measurement/pythagoras`): a triangle with sides `a` and `b` (sliders or fixed,
+  - `widget: pythag` (first used by `maths/measurement-8/pythagoras`): a triangle with sides `a` and `b` (sliders or fixed,
     up to 20) meeting at angle `t` (default 90; `slider t: 60, 120, 90, 5` opens and closes it), with a square on each
     side drawn in unit squares and labelled with its area; the picture rescales to fit. At 90° the panel writes
     a² + b² = c² and c (exact or ≈ 2 dp); otherwise it compares a² + b² with c². `hide: c` hides c's length and area.
     Values: `a`, `b`, `c` (2 dp), `C` (c²), `s` (a² + b²), `t`, `r` (1 acute, 2 right, 3 obtuse). Checks:
     `"a = 3 and b = 4"`, `"c = 10"`, `"r = 1 and C < 20"`, `"(C - 169) * (C - 289) = 0"` (either of two values).
-  - `widget: placevalue` (first used by `maths/number/expanded-notation`): place value columns, each with its power of 10
+  - `widget: placevalue` (first used by `maths/number-7/expanded-notation`): place value columns, each with its power of 10
     (10⁰, 10¹, …), a digit 0 to 9 with ▲ and ▼ (drawn also as that many counters) and its value (4 × 1000). `places: 5`
     (2 to 8), `n: 4052` (the start), `shift: on` adds × 10 and ÷ 10 (every digit moves a column), `names: off` hides the
     column names. The panel writes the expanded notation. Values: `n`, `z` (digits that are not 0), `t` (the highest
@@ -1171,34 +1171,34 @@ Vary, Practise, Make).
     display: Switch it to HTTPS"; values o, r, n, u, w), `reorder` (`secret:` the message in base64, `size:`; buttons
     "Move packet 4 earlier"; values s, m, n), `lost` (`packets: 16`, `missing: 11`; values n, a), `route` (routers A to
     H with link delays, E overloaded; buttons "Router C", Clear; values v, t, b, p).
-  - `widget: rounding` (first used by `maths/number/rounding` and `estimating`): `mode: round` (default) puts `x` on a number line
+  - `widget: rounding` (first used by `maths/number-7/rounding` and `estimating`): `mode: round` (default) puts `x` on a number line
     between the two numbers with `d` decimal places (sliders or fixed; `d` 0 to 4), with the halfway mark; values `x`, `d`,
     `r` (rounded), `l`, `h` (the line's ends), `m` (halfway); checks `"d = 2 and r = 3.75"`. `mode: estimate` shows a op b
     (`op: ×` `+` `−` `÷`; sliders `a`, `b`), each rounded to its first digit, the estimate and the exact answer as two
     bars; values `a`, `b`, `p`, `q` (rounded), `s` (estimate), `v` (exact), `o`; checks `"s = 2000 and v < 2000"`.
-  - `widget: ratio` (first used by `maths/number/ratios`, `equivalent-ratios`, `sharing-in-a-ratio`): `mode: tape` draws a row of
+  - `widget: ratio` (first used by `maths/number-7/ratios`, `equivalent-ratios`, `sharing-in-a-ratio`): `mode: tape` draws a row of
     blocks per term (`a`, `b`, optional `c`; sliders or fixed) and `slider k:` copies of the ratio, with part to part and
     part to whole written; `mode: share` draws one bar of a + b (+ c) equal parts for `total` (slider or fixed; `units: $`
     or kg, L), with one part and each share. `labels: red, blue` names the terms. Up to 48 blocks in a row, 40 parts.
     Values (single letters): `a b c k`, `p q r` (terms times k), `t` (parts), `g` (common factor), `s` (1 if simplest),
     `w` (total), `u` (one part), `x y z` (shares). Checks: `"p = 6 and q = 9"`, `"a = 2 and b = 3 and s = 1"`, `"w = 60 and y = 36"`.
-  - `widget: transform` (first used by `maths/angles/translations`, `reflections`, `rotations`): a shape (`shape: 1,1; 3,1; 3,2`,
+  - `widget: transform` (first used by `maths/space-7/translations`, `reflections`, `rotations`): a shape (`shape: 1,1; 3,1; 3,2`,
     3 to 6 corners called A, B, C…) and its image on the coordinate plane (`range: 8` is the axes' half-width). `mode: translate`
     (`slider dx:` and `slider dy:` as min, max, start[, step], or fixed `dx: 3`), `mode: reflect` (buttons Reflect in the x-axis,
     Reflect in the y-axis and Show the original only, or `axis: x | y`), `mode: rotate` (`slider t: 0, 360, 0, 90`, anticlockwise
     degrees; `centre: 1, 0`). `show: none` hides the rule line. Values: `dx dy`, `m` (0 none, 1 x-axis, 2 y-axis), `t`, and
     points `A B C…` for the IMAGE corners. Checks: `"x(A) = 4 and y(A) = -1"`, `"m = 1"`, `"t = 270 and x(B) = 1"`.
-  - `widget: net` (first used by `maths/angles/nets`): `mode: cube` is a grid (`grid: 6, 4`) where students press squares to build a
+  - `widget: net` (first used by `maths/space-7/nets`): `mode: cube` is a grid (`grid: 6, 4`) where students press squares to build a
     net (`cells: 1,0; 0,1; …`, x,y with y down; at most 8 squares); the board rolls a cube over it, colours each square by the face
     it lands on and says whether it folds. Values `c` (squares), `f` (1 if it folds), `d` (different faces). `mode: prism` is the net
     of a triangular prism on a right triangle (`slider a: 1, 10, 3`, `slider b:`, `slider L:` or fixed `a: 3`; `units: cm`): values
     `a b L`, `c` (hypotenuse), `A` (net area = surface area), `v` (volume). Checks: `"f = 1 and c = 6"`, `"a = 3 and b = 4 and A > 90"`.
-  - `widget: views` (first used by `maths/angles/views`): piles of cubes on a `size: 3` base (2 to 4), drawn isometrically and as
+  - `widget: views` (first used by `maths/space-7/views`): piles of cubes on a `size: 3` base (2 to 4), drawn isometrically and as
     the top, front and side views. `start: 2,1,0; 0,1,0; 0,0,3` (rows from the back, left to right), `max: 4` (tallest pile),
     `numbers: on` (heights on the top view), `hide: iso | views`. Students press a cell to add a cube (back to 0 after the tallest).
     Front view looks at the front row; side view from the right. Values `n` (cubes), `h` (tallest), `t`, `f`, `s` (squares in the
     top, front and side views). Checks: `"t = 4 and f = 5"`, `"n = 12 and t = 4 and h = 3"`.
-  - `widget: composite` (first used by `maths/measurement/composite-shapes`, `irregular-shapes`): `mode: shape` draws a polygon
+  - `widget: composite` (first used by `maths/measurement-8/composite-shapes`, `irregular-shapes`): `mode: shape` draws a polygon
     (`corners: 0,0; a,0; a,3; 3,3; 3,6; 0,6`, numbers or slider letters, `slider a: 4, 10, 8`) on a unit grid with its side
     lengths (`hide: 3, 4` writes ? on those sides, counted from corner 1); `split: on` adds Cut across, Cut up and down, Take
     away from a rectangle and No cuts, which name each piece (rectangle, triangle, trapezium) and its area. Values `A`, `P`,
@@ -1207,52 +1207,52 @@ Vary, Practise, Make).
     Coarser grid (1, 0.5, 0.25), and `slider n:` straight pieces round the edge for the perimeter. Values `g`, `f`, `p`, `e`
     (full + half the part, times one square), `t` (measured area), `c` (1 once counted), `n`, `l` (pieces' length), `m`
     (measured perimeter); the measured values show on the finest grid. Checks: `"k = 3 and A = 60"`, `"c = 1 and g = 0.25"`.
-  - `widget: circlearea` (first used by `maths/measurement/circle-area`): a circle (`slider r:` or `r: 3`) cut into `n` slices
+  - `widget: circlearea` (first used by `maths/measurement-8/circle-area`): a circle (`slider r:` or `r: 3`) cut into `n` slices
     (even, 4 to 64); `cut: on` adds Rearrange the pieces (alternately up and down: nearly a rectangle πr by r) and Put the
     circle back (`cut: shown` starts rearranged); `squares: on` adds Compare with squares (the 4r² and 2r² squares and one r²).
     Values `r`, `n`, `a` (πr²), `c` (2πr), `w` (πr), `k` (1 while rearranged), `s` (1 while the squares show).
-  - `widget: timezone` (first used by `maths/measurement/time-zones`): `cities: Sydney +11; London +1` (2 to 4, UTC offsets) on
+  - `widget: timezone` (first used by `maths/measurement-8/time-zones`): `cities: Sydney +11; London +1` (2 to 4, UTC offsets) on
     24-hour lines at the same moment, `slider t:` the first city's time in hours (9.5 is 9:30), `day: Monday`; `flight: on`
     adds `slider f:` (hours; default 0.5 to 24) and marks the landing in the last city. Values `t`, `u v w` (other cities'
     times), `x y z` (their day compared with the first: −1, 0, 1), `f`, `a` (landing time), `b` (landing day). Checks:
     `"v = 9 and y = 0"`, `"a >= 9 and a <= 12"`. The prism board's `capacity: on` now also takes `units: m` (litres).
-  - `widget: longdiv` (first used by `maths/real-numbers/recurring-decimals`): a/b divided out step by step (remainder × 10,
+  - `widget: longdiv` (first used by `maths/number-8/recurring-decimals`): a/b divided out step by step (remainder × 10,
     digit, new remainder), the decimal with a bar over the repeating block; `slider a:`/`slider b:` or fixed (b 2 to 60);
     `factors: on` adds the simplest form and the denominator's primes with the 2s-and-5s rule. Values `a`, `b`, `t` (1 if it
     terminates), `p` (block length), `d` (digits before the block), `s` (simplified denominator), `f` (1 if only 2s and 5s).
-  - `widget: zoomline` (first used by `maths/real-numbers/irrational-numbers`): find `number:` (sqrt2, sqrt3, sqrt5, sqrt6, sqrt7,
+  - `widget: zoomline` (first used by `maths/number-8/irrational-numbers`): find `number:` (sqrt2, sqrt3, sqrt5, sqrt6, sqrt7,
     sqrt8, sqrt10, pi, phi or a fraction like 1/7) by pressing the tenth of the line it is in, zooming ten times each time
     (`places: 4`, `from: 0`; `found: 2` starts with that many found, for pictures). Wrong presses get the squares of the ends (roots)
     or too big/small. Values `k` (right presses), `w` (wrong), `d` (1 when done). Pieces are labelled "Between 1.4 and 1.5".
-  - `widget: indexlaws` (first used by `maths/real-numbers/index-laws`): powers as rows of factor chips. `mode: product | quotient |
+  - `widget: indexlaws` (first used by `maths/number-8/index-laws`): powers as rows of factor chips. `mode: product | quotient |
     power | zero`, sliders `a` (base), `m`, `n` (quotient keeps m ≥ n; zero sets n = m), `result: off`. Values `a m n`, `k`
     (resulting index), `v` (its value).
-  - `widget: money` (first used by `maths/number/percentage-change`, `money-models`): `mode: change` (q, then changes `a` and `b`
+  - `widget: money` (first used by `maths/number-8/percentage-change`, `money-models`): `mode: change` (q, then changes `a` and `b`
     in %, as bars with multipliers; values `q a b x y`, `m` overall multiplier, `c` overall % change) or `mode: tax` (`slider i:`
     income, `brackets: 18200: 0; 45000: 15; 135000: 30; 190000: 37; 45`; values `i`, `t` tax, `e` effective %, `r` marginal %,
     `n` after tax). `units: $` (default).
-  - `widget: rate` (first used by `maths/number/rates`): a double number line, `top: km, distance` over `bottom: h, time`, with
+  - `widget: rate` (first used by `maths/measurement-8/rates`): a double number line, `top: km, distance` over `bottom: h, time`, with
     `rate: 60` or `slider r:`, `slider x:` (the bottom amount; the line runs to its max), the unit rate dashed. `compare: 75, Car B`
     (and `name: Car A`) adds a second line; `base: 4.2` adds a fixed starting amount (top = base + rate × x); `money: top` writes
     dollars (automatic when a unit is `$`). km over h also gives the rate in m/s. Values `r`, `x`, `y` (base + r × x), `c`
     (the compared amount), `q`, `b`, `m` (m/s). Checks: `"r = 75 and x = 2"`, `"y = 460"`, `"m = 25"`.
-  - `widget: congruence` (first used by `maths/angles/congruent-triangles`): a triangle built from given parts on base AB,
+  - `widget: congruence` (first used by `maths/space-8/congruent-triangles`): a triangle built from given parts on base AB,
     drawing every triangle they allow (none, one, or two for SSA). `test: SSS | SAS | ASA | AAS | RHS | SSA | choose`
     (`choose` adds a "Give SSS" button for each). Parts are sliders or fixed values, sides `p`, `q`, `r` and angles `s`, `t`
     (defaults: sides 1 to 12 in halves, angles 10° to 170° in 5s), named by the test: SSS AB, AC, BC; SAS AB, AC, angle A;
     ASA AB, angles A, B; AAS BC (opposite A), angles A, B; RHS AB and hypotenuse BC = `r`; SSA AB, BC, angle A. Values `n`
     (0, 1 or 2 triangles), `k` (1 if the test always fixes the triangle, 0 for SSA), `p`, `q`, `r`, `s`, `t`. Sliders say
     "Make side q smaller", "Make angle s bigger". Checks: `"n = 2"`, `"p = 6 and r = 10"`.
-  - `widget: similar` (first used by `maths/angles/similar-shapes`): `shape: triangle` (`sides: 3, 4, 5`, `slider k:` or
+  - `widget: similar` (first used by `maths/space-8/similar-shapes`): `shape: triangle` (`sides: 3, 4, 5`, `slider k:` or
     `k: 2`, `hide: y` writes ? for that copy side; values `k`, `a`, `b`, `c`, copy sides `x`, `y`, `z`) or `shape: rectangle`
     (`first: 4, 2`, `slider w:` and `slider h:`; values `w`, `h`, `s` 1 if similar, `c` 1 if congruent, `k` the scale
     factor if similar). Sliders say "Make the scale factor bigger", "Make the width bigger". Checks: `"k = 2"`, `"y = 12"`,
     `"s = 1 and c = 0"`.
-  - `widget: space3d` (first used by `maths/angles/3d-coordinates`): x, y and z axes in isometric view (`size: 6`, 2 to 10)
+  - `widget: space3d` (first used by `maths/space-8/3d-coordinates`): x, y and z axes in isometric view (`size: 6`, 2 to 10)
     with a point P set by `slider x:`, `slider y:`, `slider z:` (or fixed), its path from the origin dashed. `target: 3, 2, 4`
     draws a ring Q; `box: on` draws the box from the origin to P. Values `x`, `y`, `z`, `d` (1 on the target), `v` (the box's
     volume). Use a height near 680. Checks: `"d = 1"`, `"v = 24"`.
-  - `widget: events` (first used by `maths/data/complementary-events`): the sample space of `first:` and optional `second:`
+  - `widget: events` (first used by `maths/probability-8/complementary-events`): the sample space of `first:` and optional `second:`
     (each `dice`, `dice 4` to `dice 12`, `coin`, or a list of equally likely outcomes `red, blue, green`; `names:` renames
     them), drawn as a row, a grid (`view: grid`) or a tree (`view: tree`, at most 16 outcomes; `both` adds a switch button).
     `show: sum` labels two dice by their total. Students click outcomes to make event A (`choose: off` stops them);
@@ -1261,13 +1261,13 @@ Vary, Practise, Make).
     Run 1 to 1000 and a frequency table (`seed:` for clips). Values `n` (in A), `m` (all), `p`, `q` (not A), `k` (not A
     shown), `r` (A matches the target), `u` (trials), `c`, `f` (relative frequency of A), `e` (|f − p|). Checks: `"r = 1"`,
     `"n = 9 and k = 1"`, `"u >= 1000 and e < 0.04"`.
-  - `widget: venn` (first used by `maths/data/two-way-tables`): `labels: Sport, Music` and `counts: 12, 8, 5, 5` (A only, both,
+  - `widget: venn` (first used by `maths/probability-8/two-way-tables`): `labels: Sport, Music` and `counts: 12, 8, 5, 5` (A only, both,
     B only, neither) as a Venn diagram and a two-way table with totals (`show: venn | table | both`). Students choose regions
     by clicking either, or with buttons named "Sport only", "Sport and Music", "Music only", "Neither"; `event: a or b` (a,
     b, a and b, a or b, not a, not b, a only, b only, neither, all; join with +) chooses at the start. `blank: table` or
     `blank: venn` turns the four counts into boxes to fill from the other picture. Values `x`, `y`, `z`, `w` (A only, both,
     B only, neither chosen), `n`, `t`, `p`, `k` (every box right). Checks: `"x = 1 and y = 1 and z = 1 and w = 0"`, `"k = 1"`.
-  - `widget: sample` (first used by `maths/data/collecting-data`): a made-up school of 200 students (four year groups of
+  - `widget: sample` (first used by `maths/statistics-8/collecting-data`): a made-up school of 200 students (four year groups of
     50, the same every time; sleep falls and sport drops with year level) and samples from it. `measure: sport | sleep`,
     `method: random | systematic | stratified | convenience | census | choose` (buttons "Use simple random sampling" ...;
     convenience is the front rows, Year 7), `slider n:` or `n:`, `population: hidden` (a Show the population button),
@@ -1277,7 +1277,7 @@ Vary, Practise, Make).
     population's proportion and mean), `e`, `r` (range of results), `k` (1 random, 2 systematic, 3 stratified, 4
     convenience, 5 census), `v` (population shown). Checks: `"k = 3 and s >= 1"`, `"n >= 100 and s >= 10"`, `"s >= 10 and r <= 0.15"`, `"v = 1"`.
   - Board variables in `when:` must be single letters: the evaluator reads a longer name such as `sb` as s × b.
-  - `widget: data` (first used by `maths/data`): a dot plot of `values: 4, 7, 7, 8` on `range: 0, 20` (default: around
+  - `widget: data` (first used by `maths/statistics-7`): a dot plot of `values: 4, 7, 7, 8` on `range: 0, 20` (default: around
     the data), with the mean (▲), median (dashed) and range (arrow) marked and written underneath (`show: mean, median,
     mode, range` or `none`). `edit: on`: students click the line to add a value (landing on `step:`, default 1), click a
     dot to remove it, or type the values in a box. `view: stem` draws an ordered stem-and-leaf plot instead (whole
@@ -1285,14 +1285,14 @@ Vary, Practise, Make).
     `names: Class A, Class B` draw a second set above (not editable). `label:` names the variable. Values: `n`, `s`
     (sum), `m` (mean), `d` (median), `o` (the mode, the smallest if several), `k` (how many modes; 0 if none), `r`, `l`,
     `h` (range, lowest, highest), and the same in capitals for the second set. Checks: `"n = 6 and m = 7"`, `"d > D"`.
-  - `widget: chance` (first used by `maths/data`): `device: coin | dice | spinner | bag` (`sides: 6`; `outcomes: red 2,
+  - `widget: chance` (first used by `maths/probability-7`): `device: coin | dice | spinner | bag` (`sides: 6`; `outcomes: red 2,
     blue 1` for spinner sector sizes or bag counters, drawn with replacement). Run 1, 10, 100 and 1000 buttons; a tally
     (count, relative frequency, probability, expected count) and a graph of the relative frequency of `watch:` (default
     the first outcome) against trials, with the probability dashed. `predict: off` hides the probability; `hide: on`
     hides the device too (a mystery to estimate); `seed: 7` fixes the randomness (pictures, clips); `start: 20` runs that
     many first. Values: `t` (trials), `c` (count of the watched outcome), `f` (its relative frequency), `p` (its
     probability), `e` (|f − p|), `w` (outcomes). Checks: `"t >= 1000"`, `"t >= 1000 and e <= 0.01"`.
-  - `widget: parallel` (first used by `maths/angles/parallel-lines`): two parallel lines (marked >>) crossed by a
+  - `widget: parallel` (first used by `maths/measurement-7/parallel-lines`): two parallel lines (marked >>) crossed by a
     transversal, with the eight angles a to h (upper crossing a above left, b above right, c below left, d below right;
     lower crossing e to h the same). `slider t: 30, 150, 60` (or `t: 60`) turns the transversal (step 5 unless given);
     optional `slider w: -20, 20, 0` tilts the lower line so the lines are not parallel. Students pick two angles (click
@@ -1301,13 +1301,13 @@ Vary, Practise, Make).
     with two picked (for pictures). Values: `t`, `w`, `a` to `h` (sizes), `m` (angles picked), `r` (the picked pair:
     1 corresponding, 2 alternate, 3 co-interior, 4 vertically opposite, 5 on a straight line, 6 alternate outside the
     lines, 0 other), `s` (sum of the picked sizes), `p` (1 when parallel). Checks: `"r = 2"`, `"c = 65 and r = 3"`, `"c = e"`.
-  - `widget: tiles` (first used by `maths/algebra/expanding`): algebra tiles for expanding `k(ax + b)`: k rows, each of a
+  - `widget: tiles` (first used by `maths/algebra-8/expanding`): algebra tiles for expanding `k(ax + b)`: k rows, each of a
     x-tiles and b unit tiles, with the bracket along the top and k down the side. Negative tiles are red with a minus;
     a negative k flips every tile. `slider k: -4, 5, 2`, `slider a`, `slider b` (whole numbers), or fixed values
     (`k: 3`); optional `slider p` and `slider q` add extra terms after the bracket (for "expand, then collect").
     `result: off` hides the expansion. The panel writes `3(2x + 4) = 6x + 12` and counts the tiles. Values for checks:
     `k`, `a`, `b`, `p`, `q`, `m` (x-tiles in all, k·a + p) and `c` (ones in all, k·b + q).
-    Factorising (first used by `maths/algebra/factorising`): give `s` x-tiles and `t` ones (sliders or fixed, 1 or more)
+    Factorising (first used by `maths/algebra-8/factorising`): give `s` x-tiles and `t` ones (sliders or fixed, 1 or more)
     and a `k` slider for the number of rows. When k divides both, the tiles share into k rows of `ax + b` and the panel
     writes `6x + 9 = 3(2x + 3)`; otherwise they stay in one heap ("2 rows do not work"). Values: `k`, `s`, `t`, `f`
     (1 when k rows work), `h` (1 when fully factorised: k is the highest common factor) and `g` (the HCF of s and t).
@@ -1671,7 +1671,7 @@ Vary, Practise, Make).
     board's chain and parts modes. `npm run check-wordchoice` tests the widget and every wordchoice board in a lesson
     (it starts, the check fails at the start and passes solved, explain pictures say `answer: on`). Like the sentence
     board, it never judges a student's own writing. Trays and swap choices are shown in a fixed, answer-blind order (hash of the text), so list order gives nothing away. A swap board shows each choice's band, so use `@n` where the band is the lesson idea, not where the task is to find the "best" word.
-- **Maths cards** (`snippets/maths.json`, for the course named by its `course:`): the words and methods of the course,
+- **Maths cards** (`snippets/maths-<course>.json`, one per course, for the course named by its `course:`; the format note is in `maths-algebra-7.json`): the words and methods of the course,
   one card each, with `label`, `code` (TeX, shown typeset), `hint` (may use `$...$`), `unit` (the unit whose cheat sheet
   lists it) and optionally `board` (a board setup, drawn as the card's picture by `npm run render`) with `shows` (its
   caption). They make the course's Reference page (`<course>/reference/`, with search), the student print sheets, and

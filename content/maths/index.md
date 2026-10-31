@@ -5,41 +5,73 @@ blurb: "Predict, try, then make your own"
 order: 2
 map: true
 trail: units
-summary: Interactive maths lessons. Predict, try it on a board, study a worked example, change one thing at a time, practise, then make your own. Four pathways follow the curriculum's strands; start with whichever your class is working on. Teachers will find a ten-minute tour on the page For maths teachers, under Teachers in the menu.
+summary: Interactive maths lessons. Predict, try it on a board, study a worked example, change one thing at a time, practise, then make your own. One course per strand per year, as the curriculum sets it out (Number, Algebra, Measurement, Space, Statistics, Probability); start with whichever your class is working on. Earlier years stay a click away under What you should already know. Teachers will find a ten-minute tour on the page For maths teachers, under Teachers in the menu.
+lookback:
+  - { year: 7, courses: [maths/number-7, maths/algebra-7, maths/measurement-7, maths/space-7, maths/statistics-7, maths/probability-7] }
+  - { year: 8, courses: [maths/number-8, maths/algebra-8, maths/measurement-8, maths/space-8, maths/statistics-8, maths/probability-8] }
+  - { year: 9, courses: [maths/number-9, maths/algebra-9, maths/measurement-9, maths/space-9, maths/statistics-9, maths/probability-9] }
+  - { year: 10, courses: [maths/number-10, maths/algebra-10, maths/measurement-10, maths/space-10, maths/statistics-10, maths/probability-10] }
 pathways:
-  - id: algebra
-    title: Algebra
-    summary: From patterns and expressions to solving equations, then graphs of linear relations.
-    fit: "Start here to use letters for numbers, solve equations, then turn rules into straight-line graphs."
-    about: "Start with **Algebra Foundations**: patterns, expressions and equations, solved three ways (try and check, backtracking, the balance method) and always checked, then (Year 8) brackets, formulas, harder equations and inequalities. **Linear relations** then turns patterns and rules into tables and straight-line graphs, reads graphs of real data, and solves and models with lines. It uses negative numbers from Number Foundations."
-    courses:
-      - { path: maths/algebra, stage: foundations, tagline: "Expressions and equations, solved three ways and checked." }
-      - { path: maths/linear-relations, id: linear-relations, stage: foundations, after: [maths/algebra, number-foundations], tagline: "Rules, tables and straight-line graphs." }
-      - { path: maths/functions, id: functions, stage: extensions, after: [linear-relations, real-numbers], tagline: "Curves: exponentials now, quadratics next." }
   - id: number
     title: Number
-    summary: Integers, fractions, decimals and percentages, ratios and powers.
-    fit: "Start here for negative numbers, powers, fractions and percentages: the tools every other trail uses."
-    about: "**Number Foundations** comes first for any course that uses negative numbers or the Cartesian plane, including Linear relations."
+    summary: Integers, fractions, decimals and percentages, ratios, powers and the real numbers.
+    fit: "Start here for negative numbers, fractions, percentages and powers: the tools every other strand uses."
+    about: "One course per year, as the curriculum sets it out. Rates and ratio models are in Measurement, and Year 9 and 10 index laws in Algebra, as the curriculum places them."
     courses:
-      - { path: maths/number, id: number-foundations, stage: foundations, tagline: "Integers, powers, fractions, decimals and percentages." }
-      - { path: maths/real-numbers, id: real-numbers, stage: extensions, after: [number-foundations], tagline: "Recurring decimals, irrational numbers and index laws." }
+      - { path: maths/number-7, stage: foundations, tagline: "Integers, powers, fractions, decimals, percentages and ratios." }
+      - { path: maths/number-8, stage: foundations, after: [maths/number-7], tagline: "Recurring and irrational numbers, index laws and percentage change." }
+      - { path: maths/number-9, stage: extensions, after: [maths/number-8], tagline: "The real numbers: exact or rounded." }
+      - { path: maths/number-10, stage: extensions, after: [maths/number-9], tagline: "Approximation and the error it adds." }
+  - id: algebra
+    title: Algebra
+    summary: Expressions and equations, rules and straight-line graphs, then quadratics, exponentials and models.
+    fit: "Start here to use letters for numbers, solve equations and turn rules into graphs."
+    about: "One course per year, as the curriculum sets it out. Year 9 and 10 index laws are here (the curriculum puts them in Algebra); Year 8 index laws are in Year 8 Number."
+    courses:
+      - { path: maths/algebra-7, stage: foundations, after: [maths/number-7], tagline: "Letters for numbers, rules and graphs, and equations." }
+      - { path: maths/algebra-8, stage: foundations, after: [maths/algebra-7, maths/number-8], tagline: "Brackets, harder equations, inequalities and straight lines." }
+      - { path: maths/algebra-9, stage: extensions, after: [maths/algebra-8], tagline: "Index laws, coordinate geometry and quadratics." }
+      - { path: maths/algebra-10, stage: extensions, after: [maths/algebra-9], tagline: "Quadratics by hand, two variables, exponentials and models." }
+  - id: measurement
+    title: Measurement
+    summary: Area, volume and circles, angle facts, Pythagoras, rates, then trigonometry, error and scale.
+    fit: "Start here to measure angles, areas and volumes, and see why the formulas work."
+    about: "One course per year, as the curriculum sets it out. Year 7 angle facts (parallel lines, angle sums) are here; Year 9 trigonometry starts in Year 9 Space (the ratios) and is used here (finding sides and angles)."
+    courses:
+      - { path: maths/measurement-7, stage: foundations, after: [maths/number-7, maths/algebra-7], tagline: "Area, volume, circles and angle facts." }
+      - { path: maths/measurement-8, stage: foundations, after: [maths/measurement-7], tagline: "Composite areas, circles, Pythagoras, time zones and rates." }
+      - { path: maths/measurement-9, stage: extensions, after: [maths/measurement-8], tagline: "Scientific notation, surface area, error and trigonometry in use." }
+      - { path: maths/measurement-10, stage: extensions, after: [maths/measurement-9], tagline: "Composite solids, trigonometry in practice, error, scale and log scales." }
   - id: space
-    title: Geometry and measurement
-    summary: Angles and shapes, nets, views, transformations and algorithms, then area, volume, circles and Pythagoras.
-    fit: "Start here to measure angles, shapes, areas and volumes, and see why the formulas work."
-    about: "**Angles and shapes** links to the coding pathway: the turtle already turns through exterior angles, and classifying shapes is an algorithm students can write."
+    title: Space
+    summary: Shapes, nets and transformations, congruence and similarity, then the trigonometric ratios, proof and networks.
+    fit: "Start here to name and draw shapes, move them around and prove things about them."
+    about: "One course per year, as the curriculum sets it out. Year 9 Space introduces sine, cosine and tangent; Year 9 Measurement uses them."
     courses:
-      - { path: maths/angles, id: angles-shapes, stage: foundations, tagline: "Angle facts, naming shapes, nets, transformations and algorithms." }
-      - { path: maths/measurement, id: area-volume, stage: foundations, after: [angles-shapes, number-foundations, maths/algebra], tagline: "Area, volume, circles, Pythagoras and time zones." }
-      - { title: Trigonometry, stage: extensions, summary: "Similar triangles and the trigonometric ratios.", after: [area-volume], tagline: "Similar triangles and sin, cos and tan." }
-  - id: data
-    title: Statistics and probability
-    summary: Collecting and displaying data, measures of centre, and chance.
-    fit: "Start here to collect and display data, and work out how likely things are."
+      - { path: maths/space-7, stage: foundations, after: [maths/measurement-7], tagline: "Naming shapes, nets, views, transformations and algorithms." }
+      - { path: maths/space-8, stage: foundations, after: [maths/space-7], tagline: "Congruence, similarity, quadrilateral proofs and 3D points." }
+      - { path: maths/space-9, stage: extensions, after: [maths/space-8], tagline: "The trigonometric ratios, enlargement and geometric algorithms." }
+      - { path: maths/space-10, stage: extensions, after: [maths/space-9], tagline: "Proof, networks and spatial algorithms." }
+  - id: statistics
+    title: Statistics
+    summary: Collecting and displaying data, averages and spread, samples, and judging claims made with data.
+    fit: "Start here to collect and display data, compare data sets and judge the claims people make with them."
+    about: "One course per year, as the curriculum sets it out. **Year 7 Statistics**: kinds of data, mean, median, mode and range, stem-and-leaf plots and a first investigation. **Year 8**: samples, bias and how samples vary. **Year 9**: where data came from, distributions and a whole investigation. **Year 10**: misleading graphs, boxplots, association and two-way tables."
     courses:
-      - { path: maths/data, id: data-chance, stage: foundations, after: [number-foundations], tagline: "Data displays, averages and chance." }
-      - { title: Statistical investigations, stage: extensions, summary: "Sampling, variation and investigations with real data.", after: [data-chance], tagline: "Samples and investigations with real data." }
+      - { path: maths/statistics-7, stage: foundations, tagline: "Kinds of data, averages, displays and comparing." }
+      - { path: maths/statistics-8, stage: foundations, after: [maths/statistics-7], tagline: "Samples, bias and how samples vary." }
+      - { path: maths/statistics-9, stage: extensions, after: [maths/statistics-8], tagline: "Where data came from, distributions and a whole investigation." }
+      - { path: maths/statistics-10, stage: extensions, after: [maths/statistics-9], tagline: "Misleading claims, boxplots, association and two-way tables." }
+  - id: probability
+    title: Probability
+    summary: Sample spaces and experiments, compound events, then conditional chance.
+    fit: "Start here to work out how likely things are, then test it with experiments and simulations."
+    about: "One course per year, as the curriculum sets it out. **Year 7 Probability**: sample spaces, probabilities and experiments. **Year 8**: complements, Venn diagrams, two-way tables, trees and simulations. **Year 9**: two-step events, with and without replacement, and simulations. **Year 10**: conditional chance and independence."
+    courses:
+      - { path: maths/probability-7, stage: foundations, after: [maths/number-7], tagline: "Sample spaces, probability and experiments." }
+      - { path: maths/probability-8, stage: foundations, after: [maths/probability-7], tagline: "Complements, Venn diagrams, two-way tables and trees." }
+      - { path: maths/probability-9, stage: extensions, after: [maths/probability-8], tagline: "Two-step chance, with and without replacement, and simulations." }
+      - { path: maths/probability-10, stage: extensions, after: [maths/probability-9], tagline: "Conditional chance: given, independent or not." }
   - id: before-year-7
     title: Before Year 7
     summary: Short catch-up lessons for the ideas Year 7 maths builds on, from tenths to probability.

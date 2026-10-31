@@ -1,10 +1,13 @@
-// Courses and lessons that moved (29 Oct 2026: science chemistry split by year, as ACARA does).
+// Courses and lessons that moved (29 Oct 2026: science chemistry split by year, as ACARA does; 1 Nov 2026: maths split
+// into one course per strand per year, from data/maths-split.json).
 // One list, used three ways:
 //   - build-site writes a small forwarding page at each old address (and its teacher guide), plus a 404 page that
 //     forwards anything else under an old course (recap, practice, reference, cheat sheets).
 //   - render.mjs and render-pictures.mjs look for a moved lesson's clips and pictures at its old address on the live
 //     site, so moving a lesson re-records nothing.
 // Add a line here whenever a course or lesson folder is renamed or moved. Old addresses stay forwarded for good.
+
+import { readFileSync } from 'node:fs';
 
 const CHEM_9 = ['inside-atom', 'isotopes', 'decay', 'half-life', 'decay-chains', 'word-equations', 'rearranging-atoms', 'balancing', 'conservation-of-mass'];
 const CHEM_10 = ['shells', 'groups', 'trends', 'predict-from-table', 'reaction-types', 'collision-theory'];
@@ -21,6 +24,17 @@ export const SPLIT_COURSES = {
     lessons: Object.fromEntries([...CHEM_9.map((l) => [l, 'science/chemistry-9']), ...CHEM_10.map((l) => [l, 'science/chemistry-10'])]),
   },
 };
+
+// Maths (1 Nov 2026): each old strand course split by its lessons' main node: (data/maths-split.json, the record of the
+// move). An old course page forwards to its first new course; each lesson to its own.
+const MATHS_MOVED = { number: 'number-7', 'real-numbers': 'number-8', algebra: 'algebra-7', 'linear-relations': 'algebra-7', functions: 'algebra-10', measurement: 'measurement-7', angles: 'space-7', data: 'statistics-7' };
+const MATHS_SPLIT = JSON.parse(readFileSync(new URL('../data/maths-split.json', import.meta.url), 'utf8'));
+for (const [old, to] of Object.entries(MATHS_MOVED)) {
+  SPLIT_COURSES[`maths/${old}`] = {
+    to: `maths/${to}`,
+    lessons: Object.fromEntries(MATHS_SPLIT.lessons.filter((l) => l.from.startsWith(`maths/${old}/`)).map((l) => [l.from.split('/')[2], l.to.split('/').slice(0, 2).join('/')])),
+  };
+}
 
 // Every moved lesson: old slug -> new slug.
 export function movedLessons(lessonSlugs) {

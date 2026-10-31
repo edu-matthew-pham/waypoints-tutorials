@@ -2,9 +2,9 @@
 
 Things more than one subject depends on: the build, publishing, the home and plain pages, and shared tools (`tools/*.mjs`, `tools/lesson-view.mjs`, `playground-shared/`, `playground-board/core.js`). Before changing one of these, check this file and `git log` for work in progress, and note here what you are changing.
 
-## Note (1 Nov 2026, maths chat): new tool `tools/maths-split.mjs`
+## Note (1 Nov 2026, maths chat): maths split into one course per strand per year
 
-A stand-alone script for the maths course split (`roadmap/maths.md` › Course split). It only reads `content/maths/` and writes `data/maths-split.json` and `roadmap/maths-split.md`; nothing in the build uses it. Maths lesson folders will move in step 2 through `tools/moved.mjs`, as science did.
+Shared files touched: `tools/moved.mjs` (maths forwarding read from `data/maths-split.json`, the record of the move), `tools/maths-cards.mjs` and `build-site.mjs` (comments, and the default card file is now `snippets/maths-algebra-7.json`), `tools/check-blockers.mjs` (sample page `maths/algebra-7/`), `misconceptions.json` and `data/link-blurbs.json` (lesson addresses), AUTHORING (examples). Maths card files are now one per course (`snippets/maths-<course>.json`). `tools/maths-split.mjs`, which made the mapping, was removed once it had run. Details: `roadmap/maths.md` › Course split.
 
 ## State of play (26 Oct 2026)
 

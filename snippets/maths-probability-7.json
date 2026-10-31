@@ -1,0 +1,42 @@
+{
+  "title": "Maths reference: Year 7 Probability",
+  "summary": "The words and methods from Year 7 Probability, each with an example and, where it helps, a picture of the board.",
+  "language": "maths",
+  "course": "maths/probability-7",
+  "_about": "Maths cards for maths/probability-7 (see snippets/maths-algebra-7.json for the format; split from the strand courses' card files on 1 Nov 2026).",
+  "groups": [
+    {
+      "name": "Chance",
+      "items": [
+        {
+          "label": "sample space",
+          "unit": "chance",
+          "code": "\\{1, 2, 3, 4, 5, 6\\}",
+          "hint": "Every possible outcome, listed once. Check whether the outcomes are equally likely."
+        },
+        {
+          "label": "probability",
+          "unit": "chance",
+          "code": "P(\\text{even}) = \\dfrac{\\text{favourable}}{\\text{total}} = \\dfrac{3}{6} = \\dfrac{1}{2}",
+          "hint": "For equally likely outcomes. Otherwise use sizes or counts. From 0 (impossible) to 1 (certain); all outcomes add to 1.",
+          "board": "widget: chance\ndevice: spinner\noutcomes: red 2, blue 1, green 1\nwatch: blue\nseed: 4",
+          "shows": "A half-red spinner: P(red) = 1/2, P(blue) = P(green) = 1/4"
+        },
+        {
+          "label": "expected count",
+          "unit": "chance",
+          "code": "60 \\times \\tfrac{1}{6} = 10",
+          "hint": "Expected count = probability × trials. Real results vary around it, more so in short experiments."
+        },
+        {
+          "label": "relative frequency",
+          "unit": "chance",
+          "code": "\\dfrac{\\text{count}}{\\text{trials}} = \\dfrac{13}{20} = 0.65",
+          "hint": "The experiment's estimate of the probability. Over many trials it settles close to the probability (the law of large numbers); nothing is ever 'due'.",
+          "board": "widget: chance\ndevice: coin\nseed: 2\nstart: 2000",
+          "shows": "2000 flips: the relative frequency of heads settles near 0.5"
+        }
+      ]
+    }
+  ]
+}

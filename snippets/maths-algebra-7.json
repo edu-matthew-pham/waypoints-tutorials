@@ -1,0 +1,180 @@
+{
+  "title": "Maths reference: Year 7 Algebra",
+  "summary": "The words and methods from Year 7 Algebra, each with an example and, where it helps, a picture of the board.",
+  "language": "maths",
+  "course": "maths/algebra-7",
+  "_about": "Maths cards, one file per course (snippets/maths-<course>.json, split from the strand courses' files on 1 Nov 2026). code is TeX (shown typeset); hint may use $...$; unit is the course unit that introduces the card (its cheat sheet lists it); board is a maths-board setup drawn as the card's picture by tools/render-pictures.mjs; shows captions the picture.",
+  "groups": [
+    {
+      "name": "Words",
+      "items": [
+        {
+          "label": "formula",
+          "unit": "expressions",
+          "code": "P = 2l + 2w",
+          "hint": "A rule that gives one quantity from others, written with letters. This one gives the perimeter of a rectangle.",
+          "board": "widget: formula\nformula: P = 2l + 2w\nslider l: 1, 10, 5\nslider w: 1, 6, 3\nshape: rectangle\nunits: cm",
+          "shows": "l = 5 and w = 3 give P = 16"
+        },
+        {
+          "label": "variable",
+          "unit": "expressions",
+          "code": "P, \\; l, \\; w",
+          "hint": "A letter for a quantity that can change. Each rectangle has its own $l$, $w$ and $P$."
+        },
+        {
+          "label": "constant",
+          "unit": "expressions",
+          "code": "C = 5h + \\mathbf{20}",
+          "hint": "A number that stays the same, such as a 20 dollar call-out fee. $\\pi$ is a constant too."
+        },
+        {
+          "label": "unknown",
+          "unit": "expressions",
+          "code": "3x + 2 = 14",
+          "hint": "In an equation, a letter can stand for one particular number: here only $x = 4$ works."
+        },
+        {
+          "label": "more than, less than",
+          "unit": "expressions",
+          "code": "n + 5 \\qquad n - 5",
+          "hint": "\"5 more than n\" is $n + 5$. \"5 less than n\" is $n - 5$: you start from $n$ and take 5 away, so $n$ comes first."
+        },
+        {
+          "label": "brackets",
+          "unit": "expressions",
+          "code": "2(n + 3) \\ne 2n + 3",
+          "hint": "Brackets keep a part together so it is worked out first. \"Add 3, then double the result\" is $2(n + 3)$; \"double, then add 3\" is $2n + 3$."
+        },
+        {
+          "label": "expression",
+          "unit": "equations",
+          "code": "2x + 3",
+          "hint": "A calculation with a letter in it. It has a value once you know the letter, but it does not say that anything is equal."
+        },
+        {
+          "label": "equation",
+          "unit": "equations",
+          "code": "2x + 3 = 11",
+          "hint": "Two expressions with = between them: a statement that they are equal, like a balanced scale.",
+          "board": "widget: balance\nleft: 2x + 3\nright: 11\nmin: 0\nmax: 10\nstart: 4",
+          "shows": "Balanced when x = 4"
+        },
+        {
+          "label": "solution",
+          "unit": "equations",
+          "code": "x = 4",
+          "hint": "The value of the letter that makes the equation true."
+        },
+        {
+          "label": "2x means 2 times x",
+          "unit": "expressions",
+          "code": "2x = 2 \\times x",
+          "hint": "With $x = 4$, $2x$ is 8, not 24."
+        },
+        {
+          "label": "inverse operations",
+          "unit": "equations",
+          "code": "+ \\leftrightarrow -\\qquad \\times \\leftrightarrow \\div",
+          "hint": "Each step has an opposite that undoes it: adding and subtracting, multiplying and dividing."
+        }
+      ]
+    },
+    {
+      "name": "Methods",
+      "items": [
+        {
+          "label": "write an expression for a situation",
+          "unit": "expressions",
+          "code": "\\begin{aligned} &\\text{Let } g = \\text{number of guests} \\\\ &C = 5g + 60 \\end{aligned}",
+          "hint": "Say what the letter stands for (a number that changes), multiply it by the amount for each one, then add anything paid once."
+        },
+        {
+          "label": "substitute",
+          "unit": "expressions",
+          "code": "\\begin{aligned} P &= 2l + 2w \\\\ &= 2 \\times 5 + 2 \\times 3 \\\\ &= 16 \\end{aligned}",
+          "hint": "Replace each letter with its value, write in the × signs, then work it out: brackets, then × and ÷, then + and −."
+        },
+        {
+          "label": "find an unknown in a formula",
+          "unit": "expressions",
+          "code": "\\begin{aligned} 20 &= 2 \\times 6 + 2w \\\\ 8 &= 2w \\\\ w &= 4 \\end{aligned}",
+          "hint": "Substitute what you know, then solve the equation that is left by undoing. Check by substituting back."
+        },
+        {
+          "label": "check by substitution",
+          "unit": "equations",
+          "code": "2(4) + 3 = 11 \\checkmark",
+          "hint": "Put the value in place of the letter and work out both sides. If they match, it is a solution. Check every answer in the first equation."
+        },
+        {
+          "label": "backtracking",
+          "unit": "equations",
+          "code": "\\begin{aligned} 3x + 7 &= 19 \\\\ 19 - 7 &= 12 \\\\ 12 \\div 3 &= 4 \\end{aligned}",
+          "hint": "Undo the steps done to $x$ with their opposites, last step first.",
+          "board": "widget: machine\nops: × 3, + 7\noutput: 19",
+          "shows": "Multiply by 3, then add 7. Undo + 7 first."
+        },
+        {
+          "label": "balance method",
+          "unit": "equations",
+          "code": "\\begin{aligned} 3x + 5 &= 20 \\\\ 3x &= 15 \\\\ x &= 5 \\end{aligned}",
+          "hint": "Do the same to both sides (take away, or share into equal groups) until $x$ is on its own.",
+          "board": "widget: balance\nleft: 3x + 5\nright: 20\nmin: 0\nmax: 10\nstart: 5",
+          "shows": "Take 5 from both sides, then share both into 3 groups."
+        },
+        {
+          "label": "x on both sides",
+          "unit": "equations",
+          "code": "\\begin{aligned} 5x &= 2x + 12 \\\\ 3x &= 12 \\\\ x &= 4 \\end{aligned}",
+          "hint": "Take the same number of $x$ from both sides first, so the bags are on one side only."
+        }
+      ]
+    },
+    {
+      "name": "Rules and tables",
+      "items": [
+        {
+          "label": "growing pattern",
+          "unit": "rules",
+          "code": "s = 3n + 1",
+          "hint": "What each new figure adds goes in front of $n$; what is there at the start goes on its own. Figure 4 has $3 \\times 4 + 1 = 13$ sticks.",
+          "board": "widget: pattern\nshape: squares\nn: 1, 8, 4\ncount: on",
+          "shows": "Figure 4: each square adds 3 sticks, plus 1 at the start"
+        },
+        {
+          "label": "rule",
+          "unit": "rules",
+          "code": "y = 2x + 1",
+          "hint": "A rule turns each input $x$ into an output $y$. Put the input in for $x$: $x = 3$ gives $y = 2 \\times 3 + 1 = 7$."
+        },
+        {
+          "label": "table of values",
+          "unit": "rules",
+          "code": "\\begin{array}{c|cccc} x & 0 & 1 & 2 & 3 \\\\ \\hline y & 1 & 3 & 5 & 7 \\end{array}",
+          "hint": "Choose inputs, work out each output from the rule ($y = 2x + 1$ here), and write them in pairs."
+        },
+        {
+          "label": "ordered pair",
+          "unit": "rules",
+          "code": "(x, y) = (2, 5)",
+          "hint": "Input first, then output. To plot it: across 2 on the $x$-axis, then up 5.",
+          "board": "widget: graph\nx: -1, 5\ny: -1, 8\npoint A: 2, 5",
+          "shows": "The point (2, 5): across 2, up 5"
+        },
+        {
+          "label": "reading a graph",
+          "unit": "rules",
+          "code": "\\text{axis} \\to \\text{line} \\to \\text{other axis}",
+          "hint": "Find the value you know on its axis, go to the line, then read across to the other axis. Sections of a graph increase, decrease or stay constant."
+        },
+        {
+          "label": "vary one variable",
+          "unit": "rules",
+          "code": "V = l \\times w \\times h \\quad (\\text{change } h \\text{ only})",
+          "hint": "To see what one letter does, change only that letter and keep the others the same. Record the results in a table."
+        }
+      ]
+    }
+  ]
+}

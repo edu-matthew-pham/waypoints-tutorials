@@ -1,6 +1,6 @@
 # Maths course split: mapping (plan, step 1)
 
-Made by `node tools/maths-split.mjs` on 2026-10-31 from each lesson's first `node:` (data in `data/maths-split.json`). Plan only: nothing has moved. Decisions and open questions are in `roadmap/maths.md` › Course split.
+Made by `tools/maths-split.mjs` (removed after the move) on 2026-10-31 from each lesson's first `node:` (data in `data/maths-split.json`). Done 1 Nov 2026: every lesson below has moved, and its old address forwards. Decisions and open questions are in `roadmap/maths.md` › Course split.
 
 ## New courses
 

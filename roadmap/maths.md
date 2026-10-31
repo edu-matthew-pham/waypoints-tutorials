@@ -2,9 +2,21 @@
 
 The maths chat's file. Lessons live in `content/maths/`. Design notes and status so far are in the project docs (`maths-structure`, `maths-boards-plan`, `maths-expressions-status`, `maths-graphs-7a04-status`, `board-embed-contract`); record new decisions here.
 
-## Course split: one course per strand per year (under way; step 1, the plan, pushed 1 Nov 2026, waiting for Matthew's "go")
+## Course split: one course per strand per year (done 1 Nov 2026; needs a whole-site publish)
 
-**Under way (1 Nov 2026).** Other chats: please don't move or rename maths lesson folders until this is done. Handoff: Project doc `claude/handoff-maths-course-split.md`; background: `claude/year-recaps-and-course-split-plan.md` Part 2. Agreed 29 Oct: today's courses run Years 7 to 10 inside one strand, which invites acceleration, so maths follows science (`chemistry-7` … `chemistry-10`): one course per ACARA v9 strand per year, old addresses forward through `tools/moved.mjs`, and `lookback:` year pages that are not marked and never count towards Done.
+**Done (1 Nov 2026, after Matthew's "go", with the ACARA defaults on all four mixed sequences below).** All 250 Years 7–10 lessons moved into 24 courses (`content/maths/<strand>-<year>/`), each with its own course page, units, primers, practice page, project briefs and maths cards. Details:
+
+- **Nothing re-records.** Only folders moved; nothing inside a lesson folder changed except `lesson.md` (order numbers, and six student-text mentions of old course names). Clips and pictures are found at the old live address (`tools/moved.mjs`).
+- **Forwarding.** `tools/moved.mjs` reads `data/maths-split.json` (the record of the move): every old lesson address and teacher guide forwards to its new one, each old course page to its first new course (Number → Year 7 Number, Real numbers → Year 8 Number, Algebra and Linear relations → Year 7 Algebra, Quadratics and exponentials → Year 10 Algebra, Measurement → Year 7 Measurement, Angles and shapes → Year 7 Space, Data and chance → Year 7 Statistics), and the 404 page forwards anything else under an old course (practice, recap, reference).
+- **Lesson order.** Each course numbers its lessons 1 to n in unit order. Year 10 Measurement starts with Log scales, because Where errors come from builds on it.
+- **Do first.** Each course comes after the same strand's previous year. Five same-year links keep what the old pathways said and clear the node check: Year 7 Algebra, Measurement and Probability after Year 7 Number; Year 7 Measurement also after Year 7 Algebra; Year 7 Space after Year 7 Measurement (shapes use the angle sums); Year 8 Algebra after Year 8 Number.
+- **Units that split** (Number › Integers, Fractions, Modelling; Measurement › Area, Volume, Circles, Trigonometry; Space › Solids, Algorithms; Data › Chance) keep their id in each course, with summaries trimmed to that year. Their primers are copied to each course, minus sections for later years. "Year 9:"/"Year 10:" prefixes came off unit titles.
+- **Cards** (`snippets/maths-<course>.json`, 12 files: the Year 7 and 8 courses) were split by unit, with cards in split units placed by the year their lesson teaches them (for example complementary events to Year 8 Probability, area of a circle to Year 8 Measurement, multiplying integers to Year 8 Number). Year 9 and 10 courses had no cards before and have none now.
+- **Subject page** (`content/maths/index.md`): six strand pathways of four courses each, then Before Year 7; `lookback:` makes `maths/look-back/year-7/` to `year-10/` (69, 52, 69 and 59 recap cards: every required lesson). Teacher page and Teachers menu rewritten for Years 7 to 10.
+- **Checks:** validate, build, check-nodes (after the two fixes above), check-practice (198 board setups) pass; check-lesson-boards finds the same 32 known problems (none caused by the move); headless browser: 11 old addresses forward correctly, 19 new pages (courses, practice, briefs, reference, look-backs, map, teacher guide) load with no page errors.
+- **Left as is (would re-record clips if changed):** 13 `teacher.yml` files still name old courses (for example "Number Foundations"), and 10 Year 10 teacher.yml source links point at the old addresses (they forward). Fix them the next time those lessons' clips are re-recorded anyway.
+
+**Plan (step 1, kept for the record).** Handoff: Project doc `claude/handoff-maths-course-split.md`; background: `claude/year-recaps-and-course-split-plan.md` Part 2. Agreed 29 Oct: today's courses run Years 7 to 10 inside one strand, which invites acceleration, so maths follows science (`chemistry-7` … `chemistry-10`): one course per ACARA v9 strand per year, old addresses forward through `tools/moved.mjs`, and `lookback:` year pages that are not marked and never count towards Done.
 
 **Decided (Matthew, 1 Nov 2026).** Place each lesson by its first (main) `node:`; other tags stay as tags. Year 10A gets separate optional courses per strand, not `tier: wider`. Thin courses stay their own course (no merging).
 
@@ -25,7 +37,7 @@ The maths chat's file. Lessons live in `content/maths/`. Design notes and status
 3. **Number › Modelling unit** splits four ways: Modelling with money → Number 7, Money models and Percentage change → Number 8, Modelling with ratios → Measurement 7, Ratio and rate models and Checking a model → Measurement 8. Checking a model is general modelling, not really rates. Alternative: keep it with Ratio and rate models anyway (it is), or Number 8.
 4. **Index laws.** Year 8 (Index laws, Using index laws) stays in Number 8; Year 9–10 (Negative powers, All the index laws, With letters, Powers of terms) → Algebra 9–10. Fine by ACARA; listed only because the old Real numbers course read as one thread.
 
-**Next (after "go"):** step 2 pilot, Statistics and Probability from `data` (57 lessons into 8 courses, practice pages, briefs, forwarding, look-back data, browser check), then the other strands, look-back pages, the teacher page and the subject page; then the checks in the handoff and a whole-site publish.
+**Order followed:** Statistics and Probability first as the pilot, then the other strands, then the subject, look-back and teacher pages, then the checks.
 
 ## Pilot: when, where and why (22 Oct 2026, a trial for maths teachers, not a rule)
 
