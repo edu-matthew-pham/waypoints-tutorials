@@ -2,6 +2,10 @@
 
 Things more than one subject depends on: the build, publishing, the home and plain pages, and shared tools (`tools/*.mjs`, `tools/lesson-view.mjs`, `playground-shared/`, `playground-board/core.js`). Before changing one of these, check this file and `git log` for work in progress, and note here what you are changing.
 
+## Note (1 Nov 2026, maths chat): new tool `tools/maths-split.mjs`
+
+A stand-alone script for the maths course split (`roadmap/maths.md` › Course split). It only reads `content/maths/` and writes `data/maths-split.json` and `roadmap/maths-split.md`; nothing in the build uses it. Maths lesson folders will move in step 2 through `tools/moved.mjs`, as science did.
+
 ## State of play (26 Oct 2026)
 
 Audit chat, 26 Oct, against `main` at 46e271f and gh-pages ("Site build from d47854a", 25 Oct 15:18 UTC). Counts are `lesson.md` files (courses = folders with an `index.md`).

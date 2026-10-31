@@ -2,9 +2,30 @@
 
 The maths chat's file. Lessons live in `content/maths/`. Design notes and status so far are in the project docs (`maths-structure`, `maths-boards-plan`, `maths-expressions-status`, `maths-graphs-7a04-status`, `board-embed-contract`); record new decisions here.
 
-## Proposed (29 Oct 2026): one course per strand per year, then year look-backs
+## Course split: one course per strand per year (under way; step 1, the plan, pushed 1 Nov 2026, waiting for Matthew's "go")
 
-Plan: Project doc year-recaps-and-course-split-plan (Part 2). Matthew agreed the direction; not started. Today's courses run Years 7 to 10 inside one strand, which invites acceleration; split them by ACARA v9 strand (Number, Algebra, Measurement, Space, Statistics, Probability) and year, about 24 courses, then add `lookback:` year pages as science has. Moves use `tools/moved.mjs` (forwarding and clip and picture reuse, tried on science chemistry). Pilot Data and chance first. Open: lessons that span two strands (place by content descriptor), Year 10A, thin courses.
+**Under way (1 Nov 2026).** Other chats: please don't move or rename maths lesson folders until this is done. Handoff: Project doc `claude/handoff-maths-course-split.md`; background: `claude/year-recaps-and-course-split-plan.md` Part 2. Agreed 29 Oct: today's courses run Years 7 to 10 inside one strand, which invites acceleration, so maths follows science (`chemistry-7` … `chemistry-10`): one course per ACARA v9 strand per year, old addresses forward through `tools/moved.mjs`, and `lookback:` year pages that are not marked and never count towards Done.
+
+**Decided (Matthew, 1 Nov 2026).** Place each lesson by its first (main) `node:`; other tags stay as tags. Year 10A gets separate optional courses per strand, not `tier: wider`. Thin courses stay their own course (no merging).
+
+**The mapping** (step 1): `node tools/maths-split.mjs` writes `data/maths-split.json` (what step 2 moves by) and the table in [`roadmap/maths-split.md`](maths-split.md) (every lesson, old → new course and unit, and the script's flags). It moves nothing.
+
+- 250 lessons (Before Year 7's 12 stay as they are) go into 24 courses, `content/maths/<strand>-<year>/` with strands `number`, `algebra`, `measurement`, `space`, `statistics`, `probability`; titles as science's ("Year 7 Number"). All 250 have a `node:`, so none were placed by guesswork; no folder names clash inside a new course.
+- Lessons per course (matches the 1 Nov count): Year 7: Number 21, Algebra 15, Measurement 15, Space 9, Statistics 6, Probability 3. Year 8: 10, 11, 14, 6, 6, 5. Year 9: 4, 20, 16, 8, 12, 9. Year 10: 3, 20, 13, 8, 12, 4.
+- Units: each lesson keeps its old unit (id and summary) inside its new course. Ten old units straddle a year or strand and split (listed in the table); in step 2 their summaries get trimmed to what's left, and "Year 9:" / "Year 10:" prefixes come off unit titles, since the course now says the year.
+- ACARA v9 puts some topics in a different strand from today's course, and the mapping follows ACARA: angle facts (parallel lines, angle sums, 6 lessons) go to Measurement 7 (AC9M7M04–05), rates and ratio/rate models to Measurement 7–8, Year 9–10 index laws to Algebra 9–10, and the first three trigonometry lessons to Space 9.
+- Move with the lessons: practice files (`<course>/practice/<lesson>.yml`) and the project briefs in `angles/briefs.yml` and `data/briefs.yml` (split by lesson). Maths has no `class/` folders. About 10 files outside the courses link old addresses (maths-teachers.md, link-blurbs, misconceptions.json, Create starters, AUTHORING, some checks); step 2 fixes them.
+
+**Year 10A: nothing to do yet (found 1 Nov).** `data/curriculum/maths.json` has no 10A descriptors and no lesson is tagged 10A. The "20 lessons touch Year 10A" in the handoff were the 20 tagged `AC9M10A0x`, which is Year 10 *Algebra* (the A is the strand), and they go to Algebra 10. So no `-10a` courses are made now; the decision applies when 10A nodes come into the curriculum data from Kit and lessons are written for them.
+
+**For Matthew: genuinely mixed? (decide; nothing is hand-sorted).** No single lesson's main node looked wrong for its work. What the script did surface is four places where ACARA's own split breaks up what is taught as one sequence today. Default in each is to follow ACARA and cross-link (the course pages say where the rest is):
+
+1. **Year 9 trigonometry.** Name the sides, Same angle same ratio, Sine cosine and tangent (AC9M9SP01) → Space 9; Find a side, Find an angle, Similar triangles and scale, Ramp to a door (AC9M9M03) → Measurement 9. Alternative: keep all seven in Measurement 9, tagged as now.
+2. **Angle facts in Year 7.** Parallel lines and angle sums (6 lessons) → Measurement 7, away from shapes and nets in Space 7. Teachers may look for them under Space. Alternative: Space 7.
+3. **Number › Modelling unit** splits four ways: Modelling with money → Number 7, Money models and Percentage change → Number 8, Modelling with ratios → Measurement 7, Ratio and rate models and Checking a model → Measurement 8. Checking a model is general modelling, not really rates. Alternative: keep it with Ratio and rate models anyway (it is), or Number 8.
+4. **Index laws.** Year 8 (Index laws, Using index laws) stays in Number 8; Year 9–10 (Negative powers, All the index laws, With letters, Powers of terms) → Algebra 9–10. Fine by ACARA; listed only because the old Real numbers course read as one thread.
+
+**Next (after "go"):** step 2 pilot, Statistics and Probability from `data` (57 lessons into 8 courses, practice pages, briefs, forwarding, look-back data, browser check), then the other strands, look-back pages, the teacher page and the subject page; then the checks in the handoff and a whole-site publish.
 
 ## Pilot: when, where and why (22 Oct 2026, a trial for maths teachers, not a rule)
 
