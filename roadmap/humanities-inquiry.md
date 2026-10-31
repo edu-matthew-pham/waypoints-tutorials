@@ -453,7 +453,7 @@ The course renderer uses frontmatter summaries rather than an `index.md` body, s
 - **Ready to add (reuse, no new code):** `inquiry-7/organise-it`, Nib's messy notes go into the ICT `sheet` board's table and students sort it until the busiest day shows (planted answer). One step; keep the existing checks.
 - Other inquiry lessons stay as they are. Plan, then Matthew's go.
 
-### Plan (1 Nov 2026, awaiting Matthew's go): `organise-it` board step
+### Plan (1 Nov 2026; Matthew said go on the leans, built the same day): `organise-it` board step
 
 - **Where:** a new step straight after "The idea" (Find Nib's mistake, Choose the headings), before "Vary". `stage: investigate` (the primer shape already has two investigate steps: The idea, Worked example). Heading: `## Fix it: sort Nib's notes`. Existing checks unchanged; the investigate step's insight ("…then fixing it") becomes true.
 - **Board:** new `organise-it/sheet.yml`, region `nib`. Nib's five notes exactly as in `working.txt#nib` (planted, nothing typed):
@@ -467,7 +467,7 @@ The course renderer uses frontmatter summaries rather than an `index.md` body, s
 - **Clips and publish:** the course has no clips, so nothing re-records. Lessons-only publish should cover it (new `sheet.yml` in the lesson folder; confirm in the build that the lessons route copies it).
 - **Test:** validate, build, `check-decks -- hass/inquiry-7`; Chromium: open the step, sort B high to low (ticks), low to high (doesn't), reload keeps it, 390px no overflow, deck shows the board step as a link.
 
-### Remaining checks where the right answer is noticeably longer (1 Nov 2026, suggested fixes, awaiting go)
+### Remaining checks where the right answer is noticeably longer (1 Nov 2026; built the same day, see Built below)
 
 Measured by option length (right option vs the longest wrong one). Fixes even the lengths without changing what each option means; feedback stays unless noted.
 
@@ -489,3 +489,12 @@ Measured by option length (right option vs the longest wrong one). Fixes even th
 11. Practise, C1 and N1 layout (56 vs 46, borderline). Right → "One row per theme, each source's notes side by side".
 
 Not flagged: predicts and smaller checks where the right option is the same length or shorter; sorts and matches (no options to lead).
+
+### Built (1 Nov 2026, Matthew: "go on the leans")
+
+- **Board step** as planned: separate step "Fix it: sort Nib's notes" after The idea, `sheet.yml#nib`, sort only, `edit: none`, check `down_B = 1 and c_B2 = 230`. Board height 460 (360 hid the Start again row). Teacher timing, running line and `before:` note added.
+- **Class plan** `class/organise-it.yml` aligned to Nib's numbers (Wednesday 230 busiest), so the slide and the board agree. Default, Matthew's call: the second dataset had no stated purpose.
+- **Length fixes** applied: #1 to #6 and #8 to #10, with #2's three feedbacks now naming what each fact is about. Skipped #7 (mild; "Is the council good?" being blunt is the point) and #11 (borderline). After the fixes no right option is more than 1.25 times the longest wrong one in the three lessons.
+- **#10 content change:** right answer is now "Theme | What the council says | What the news says", matching the intro, the stuck note and the Check step; new distractor "All the council notes | All the news notes" plants the two-piles slip.
+- **Tested:** `npm run validate`, `WP_NO_MAKECODE=1 npm run build`, `npm run check-decks -- hass/inquiry-7` (all fit). Chromium at 1280 and 390 px: the board loads, low-to-high does not tick, high-to-low ticks, no page errors, no horizontal overflow. Not tried with a class.
+- **Publish:** lessons only (keep-what-answers, right-sized, organise-it with its class plan); no clips in this course.

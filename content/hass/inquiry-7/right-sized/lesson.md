@@ -55,7 +55,7 @@ tasks:
   - check:
       type: question
       q: "How can you tell a question is the right size?"
-      options: ["It names a case, and you can say what evidence would answer it and where you would get it", "It is about something important", "It has a one-word answer", "Everyone agrees it is a good question"]
+      options: ["You can name the case and the evidence that would answer it", "It is about something important to lots of people", "It can be answered in one word from one source", "Everyone in the class agrees it's a good question"]
       answer: 0
       feedback: [null, "Important questions can still be too big.", "A one-word answer usually means a look-up.", "People can agree on a question that is too big."]
       explain: "If you can name the case and the evidence, you can plan the investigation."
@@ -97,14 +97,14 @@ tasks:
   - check:
       type: question
       q: "A made-up news story says: 'Riverbend Council votes to close Mill Road outside Parkside School from next term.' Which question links the story to a bigger idea about how government works?"
-      options: ["Which level of government can close a road, and what rules does it have to follow?", "When did the council vote?", "Which councillor spoke first?", "Do councils always close roads?"]
+      options: ["Which level of government can close a road, and by what rules?", "On which day did Riverbend Council vote on the closure?", "Which councillor spoke first at the Mill Road meeting?", "Do councils always close roads when people complain?"]
       answer: 0
       feedback: [null, "That is a supporting date, not a question about the wider civic process.", "That asks for one detail rather than investigating the rules governing this decision.", "That is closed and too wide."]
       explain: "It starts from the story, asks about the bigger idea (who decides, by what rules) and names the case."
   - check:
       type: question
       q: "A made-up story says: 'Parkside tuckshop replaces pies with wraps because it has limited oven space.' Which question investigates opportunity cost?"
-      options: ["What was the next best option given up when the tuckshop chose wraps?", "Why do people like pies?", "When did pies stop?", "What colour is the tuckshop sign?"]
+      options: ["What was the next best option the tuckshop gave up for wraps?", "Why do so many Parkside students like pies more?", "On what date did the tuckshop stop selling pies?", "What colour is the sign on the Parkside tuckshop?"]
       answer: 0
       feedback: [null, "That is a different topic.", "That is a look-up.", "That is a detail about the shop, not about an economic choice."]
       explain: "It asks for the next best alternative given up, rather than treating every cost or benefit as opportunity cost."
@@ -122,7 +122,7 @@ insight: "A last check on size and evidence across a new case before moving on."
 check:
   type: question
   q: "Which is the best one-line plan for the question 'Why did the Kilby River run low last summer?'"
-  options: ["Look at river height records and rainfall figures for last summer, and a map of what draws water from the river", "Read everything about rivers", "Ask one student what they think", "Look up the river's length"]
+  options: ["Last summer's river height and rainfall records, plus what draws water from the river", "Read everything you can find about rivers in Australia and the world", "Ask one classmate who lives near the river what they think", "Look up how long the Kilby River is and where it starts and ends"]
   answer: 0
   feedback: [null, "That is far too big. A plan names what to gather.", "One view is not enough evidence.", "That does not answer the question."]
   explain: "These records could test possible causes. Include a comparison period and check other influences before concluding why it ran low."

@@ -65,7 +65,7 @@ tasks:
   - check:
       type: question
       q: "You keep 'On Monday 212 students bought something.' Which reason is best?"
-      options: ["It is a daily count of students, which is what my question asks", "It is a number", "It was near the top of the page", "It looks official"]
+      options: ["It's a daily count, which my question asks for", "It is a number, and numbers make good evidence", "It was the first fact at the top of the record", "It comes from a record, so it looks official"]
       answer: 0
       feedback: [null, "Many numbers are not relevant.", "Position does not make it relevant.", "Looking official does not make it relevant."]
       explain: "A good reason points back to the question."
@@ -91,9 +91,9 @@ tasks:
   - check:
       type: question
       q: "Mill Road question: Who decides whether Mill Road closes? A council page has these. Which do you keep?"
-      options: ["The council's roads committee decides closures.", "Mill Road is 1.2 km long.", "The road was built in 1950.", "Trees line the road."]
+      options: ["The council's roads committee decides closures.", "Mill Road is 1.2 km long from end to end.", "The road was built in 1950 to reach the mill.", "Trees line both sides of the road near the school."]
       answer: 0
-      feedback: [null, "Not about who decides.", "Not about who decides.", "Not about who decides."]
+      feedback: [null, "That is about how long the road is, not who decides.", "That is about when the road was built, not who decides.", "That is about what the road looks like, not who decides."]
       explain: "Only the first answers who decides."
 ```
 

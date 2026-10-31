@@ -69,7 +69,7 @@ tasks:
   - check:
       type: question
       q: "Which is the best set of column headings for a table of what three groups say about Mill Road?"
-      options: ["Group | What they say | Where I found it", "Page 1 | Page 2 | Page 3", "Interesting | Boring | Other", "Monday | Tuesday | Wednesday"]
+      options: ["Group | What they say | Where I found it", "Page 1 | Page 2 | Page 3 | Page 4", "Interesting | Boring | Not sure yet", "Monday | Tuesday | Wednesday | Thursday"]
       answer: 0
       feedback: [null, "Pages are about where you found it, not what it says.", "That sorts by how you feel.", "Days do not fit this information."]
       explain: "Headings name the groups and what you need to compare."
@@ -78,6 +78,18 @@ tasks:
 ### Find Nib's mistake
 
 ### Choose the headings
+
+## Fix it: sort Nib's notes
+
+Here are Nib's notes as a table. Sort it so the busiest day is at the top.
+
+```step
+stage: investigate
+insight: "Sorting Nib's notes in a table makes the busiest day show at a glance: like with like, then the order that fits the question."
+try: { playground: board, starter: "sheet.yml#nib", height: 460 }
+hint: ["Choose B in 'Sort by', then High to low, then click Sort.", "Read row 2: which day, and how many?"]
+check: { type: board, text: "Sort Nib's table so the busiest day is at the top.", when: "down_B = 1 and c_B2 = 230", explain: "Wednesday (230) is now in row 2. Each day kept its own number because the whole row moved. In day order the table shows the week; sorted by number it shows the busiest day. The question decides." }
+```
 
 ## Vary: a different kind of information
 
@@ -88,16 +100,16 @@ tasks:
   - check:
       type: question
       q: "You collect the water level of the Kilby River for each year since 2000. Which suits best?"
-      options: ["A line graph with years along the bottom", "A paragraph", "A pie chart", "A list ordered by surprise"]
+      options: ["A line graph with years along the bottom", "A paragraph listing each year's level", "A pie chart with a slice for each year", "A list from most to least surprising year"]
       answer: 0
       feedback: [null, "A paragraph hides the trend.", "A pie shows parts of a whole, not change over time.", "That hides the order."]
       explain: "Change over time is clearest on a line graph."
   - check:
       type: question
       q: "You have notes from two sources on Mill Road, one from the council and one from the news. Which headings let you compare them?"
-      options: ["Source | What it says | Same or different?", "Interesting | Boring", "A | B | C", "Date found"]
+      options: ["Theme | What the council says | What the news says", "All the council notes | All the news notes", "Interesting | Boring | Not sure yet", "Date I found it | Page number | Website"]
       answer: 0
-      feedback: [null, "That does not help you compare.", "These name nothing.", "Only one heading."]
+      feedback: [null, "Two piles keep the sources apart, so you can't line up what each says on the same point.", "That sorts by how you feel, not by what the sources say.", "That records where you found each note, but doesn't let you compare what they say."]
       explain: "Keep the source attached, but group related ideas so you can compare what they say about the same issue."
 ```
 

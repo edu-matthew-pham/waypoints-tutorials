@@ -1,0 +1,20 @@
+# Sheet for "Organise what you found": Nib's notes from working.txt#nib, as a table.
+
+# region: nib
+widget: sheet
+cell A1: Day
+cell B1: Students buying
+cell A2: Monday
+cell B2: 212
+cell A3: Tuesday
+cell B3: 198
+cell A4: Wednesday
+cell B4: 230
+cell A5: Thursday
+cell B5: 205
+cell A6: Friday
+cell B6: 190
+table: A1:B6
+tools: sort
+edit: none
+# endregion

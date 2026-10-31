@@ -1,17 +1,18 @@
 summary: "Students organise what they kept so the answer is visible: a table with a row for each item, themes across sources, a graph for change over time. Economics uses a digital tool on the required path."
 learning: "organise collected information in a table or graph so the answer to a question shows"
 time: 40
-timing: "Think first and Try 10 min · The idea 10 min · Vary 6 min · Check 5 min · Make 8 min."
+timing: "Think first and Try 10 min · The idea and the sort 13 min · Vary 5 min · Check 5 min · Make 7 min."
 goals:
   - I can pick a table or a graph to suit my information.
   - I can name columns so I can compare.
   - I can say why a shape fits my question.
 struggle: "Students often copy notes in the order found. Ask 'What do you want to compare?'"
 before: |
-  This closes Finding information. The Economics node asks for a digital tool, so its Make task requires a digital table or graph. A paper draft can support planning but is not the completed digital outcome. Civics requires related ideas from two sources grouped together: use the C1/N1 theme table as the model, retaining differing views and source references. ICT's Working with data covers the tool itself. Representing geographical data (maps, geospatial) is in Geography's course.
+  This closes Finding information. The Economics node asks for a digital tool, so its Make task requires a digital table or graph. A paper draft can support planning but is not the completed digital outcome. Civics requires related ideas from two sources grouped together: use the C1/N1 theme table as the model, retaining differing views and source references. ICT's Working with data covers the tool itself; the sort on Nib's notes is ICT's Put the rows in order, used here only to make the answer show, not to teach the tool. Representing geographical data (maps, geospatial) is in Geography's course.
 running:
   - "Think first: vote for the format."
   - "Try: ask what each kind of information is doing."
+  - "The idea: sort Nib's notes on the board. Ask which day, and whether each day kept its number."
   - "Make: use the current class question and selected notes. Check units, dates and source references. In Civics, check grouping by theme across two sources; in Economics, check the digital outcome and format justification."
 stuck:
   - see: "A student has a long list of notes."
