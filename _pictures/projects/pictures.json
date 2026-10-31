@@ -1,0 +1,212 @@
+{
+ "code/bootstrap/business": {
+  "hash": "c5d0160d05077e18",
+  "w": 1040,
+  "h": 1400,
+  "div": 2
+ },
+ "code/bootstrap/yours": {
+  "hash": "5ae639456bed7502",
+  "w": 1040,
+  "h": 1400,
+  "div": 2
+ },
+ "code/console/quiz": {
+  "hash": "353a93caaabe9483",
+  "w": 852,
+  "h": 448,
+  "div": 2
+ },
+ "code/console/fortune": {
+  "hash": "3e99d6070ff4dd49",
+  "w": 852,
+  "h": 448,
+  "div": 2
+ },
+ "code/css/recipe-card": {
+  "hash": "6351e2a495461f6c",
+  "w": 1040,
+  "h": 776,
+  "div": 2
+ },
+ "code/css/event-page": {
+  "hash": "32cab6349711b9a3",
+  "w": 1040,
+  "h": 728,
+  "div": 2
+ },
+ "code/dom/looks": {
+  "hash": "d41a85aa9dd31b07",
+  "w": 1040,
+  "h": 362,
+  "div": 2
+ },
+ "code/dom/flashcards": {
+  "hash": "0455afb74e9b6e47",
+  "w": 1040,
+  "h": 274,
+  "div": 2
+ },
+ "code/dom/story": {
+  "hash": "81a38410f134a53f",
+  "w": 1040,
+  "h": 406,
+  "div": 2
+ },
+ "code/dom/habits": {
+  "hash": "05c7c33559681194",
+  "w": 1040,
+  "h": 438,
+  "div": 2
+ },
+ "code/html/about-me": {
+  "hash": "8781a4e001ae72ca",
+  "w": 1040,
+  "h": 1016,
+  "div": 2
+ },
+ "code/html/order-form": {
+  "hash": "e5db7c9013e5c39e",
+  "w": 1040,
+  "h": 614,
+  "div": 2
+ },
+ "code/microbit-computer/live-dashboard-2": {
+  "hash": "fd85ba416c341cfe",
+  "w": 1040,
+  "h": 356,
+  "div": 2
+ },
+ "code/microbit-computer/press-counter-2": {
+  "hash": "22254d43fb8af57c",
+  "w": 1040,
+  "h": 410,
+  "div": 2
+ },
+ "code/microbit-computer/radio-packets-2": {
+  "hash": "56366860e8811057",
+  "w": 1040,
+  "h": 294,
+  "div": 2
+ },
+ "code/microbit-computer/data-logger-2": {
+  "hash": "8f8f021948e78b4e",
+  "w": 1040,
+  "h": 418,
+  "div": 2
+ },
+ "code/microbit-computer/press-counter-bench-1": {
+  "hash": "d946e781c5b446d9",
+  "w": 1040,
+  "h": 410,
+  "div": 2
+ },
+ "code/microbit-computer/press-counter-bench-2": {
+  "hash": "7ed863bf1b88dd51",
+  "w": 1040,
+  "h": 478,
+  "div": 2
+ },
+ "code/microbit-computer/radio-packets-bench-1": {
+  "hash": "701ebd7b078ccdad",
+  "w": 1040,
+  "h": 476,
+  "div": 2
+ },
+ "code/microbit-computer/radio-packets-bench-2": {
+  "hash": "7fedb0501292818a",
+  "w": 1040,
+  "h": 476,
+  "div": 2
+ },
+ "code/microbit-computer/data-logger-bench-1": {
+  "hash": "35699f636489f0db",
+  "w": 1040,
+  "h": 418,
+  "div": 2
+ },
+ "code/microbit-computer/data-logger-bench-2": {
+  "hash": "3ad7611bb6c39501",
+  "w": 1040,
+  "h": 546,
+  "div": 2
+ },
+ "code/objects/race": {
+  "hash": "6169ede763177c8b",
+  "w": 1137,
+  "h": 708,
+  "div": 2
+ },
+ "code/objects/aquarium": {
+  "hash": "286f18e840a04e6b",
+  "w": 650,
+  "h": 866,
+  "div": 2
+ },
+ "code/p5/sky": {
+  "hash": "e346e3393c125715",
+  "w": 800,
+  "h": 600,
+  "div": 2
+ },
+ "code/p5/bounce": {
+  "hash": "0e6f14e7f404bf13",
+  "w": 800,
+  "h": 600,
+  "div": 2
+ },
+ "code/p5/pattern": {
+  "hash": "5168f0d3a27d8af6",
+  "w": 800,
+  "h": 600,
+  "div": 2
+ },
+ "code/python-foundations/pattern-maker": {
+  "hash": "ea4bab5bfcac828a",
+  "w": 1237,
+  "h": 205,
+  "div": 2
+ },
+ "code/python-functions/street": {
+  "hash": "a8c15ed5eee3ea76",
+  "w": 1015,
+  "h": 357,
+  "div": 2
+ },
+ "code/python-functions/bar-chart": {
+  "hash": "55b45ef5effc8db3",
+  "w": 787,
+  "h": 552,
+  "div": 2
+ },
+ "code/python-functions/stamp-art": {
+  "hash": "9516bf59578c338d",
+  "w": 938,
+  "h": 156,
+  "div": 2
+ },
+ "code/python-functions/my-game": {
+  "hash": "65ba1e40f8f10aec",
+  "w": 810,
+  "h": 299,
+  "div": 2
+ },
+ "code/vue/poll": {
+  "hash": "894534f7e042e2a5",
+  "w": 1040,
+  "h": 368,
+  "div": 2
+ },
+ "code/vue/reading-log": {
+  "hash": "4f53dd3a9370a3f5",
+  "w": 1040,
+  "h": 508,
+  "div": 2
+ },
+ "code/vue/gallery": {
+  "hash": "0bde090af45a7e18",
+  "w": 1040,
+  "h": 942,
+  "div": 2
+ }
+}

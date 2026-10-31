@@ -1,0 +1,1367 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Teacher guide: Pattern Detector projects</title><style>
+:root{--bg:#fbfaf8;--ink:#1d2430;--muted:#5d6978;--card:#fff;--line:#e4e1da;--accent:#c2570a;--code:#141a22;--codeink:#e6edf3;
+--kw:#ff7b72;--str:#a5d6ff;--fn:#d2a8ff;--com:#7f8fa1;--num:#79c0ff;
+--predict:#8a5cf6;--run:#16a05d;--investigate:#2b7de9;--modify:#c2570a;--practise:#0e7f86;--make:#d63384;--info:#5d6978}
+@media(prefers-color-scheme:dark){:root{--bg:#0f141a;--ink:#e6edf3;--muted:#9aa7b6;--card:#161d26;--line:#26303c;--accent:#ff9d3d;--code:#0b0f14;
+--predict:#b794ff;--run:#4ade80;--investigate:#6cb6ff;--modify:#ff9d3d;--practise:#4fd1c5;--make:#ff8fc0}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px 80px}
+header.top{padding:44px 0 18px}header.top .crumb{font-size:14px;color:var(--muted);text-decoration:none}
+h1{font-size:2.1rem;line-height:1.2;margin:.3em 0 .2em}.by{margin:-.6em 0 1em;color:var(--muted);font-size:14px}.lede{color:var(--muted);font-size:1.1rem;margin:0 0 1em}
+nav.steps{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:8px;margin:18px 0 8px;position:sticky;top:calc(var(--nav,0px) + var(--cb,0px));z-index:9;padding:10px 0;background:var(--bg);border-bottom:1px solid var(--line);scrollbar-width:thin}
+nav.steps a{flex:none;white-space:nowrap}
+nav.steps a.here{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c)}
+section.step{scroll-margin-top:calc(var(--nav,0px) + var(--cb,0px) + 64px)}
+.coursebar{position:sticky;top:var(--nav,0px);z-index:11;display:flex;align-items:center;justify-content:space-between;gap:8px;height:46px;background:var(--bg);border-bottom:1px solid var(--line)}
+.coursebar a,.cb-toggle{font:inherit;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;background:none;border:0;cursor:pointer;padding:6px 8px;border-radius:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:34vw}
+.coursebar a:hover,.cb-toggle:hover{background:var(--card)}
+.cb-prev,.cb-next{flex:0 1 auto;min-width:34px}.cb-next{text-align:right}
+.cb-mid{position:relative;flex:1;min-width:0;text-align:center}.cb-toggle{max-width:100%}
+.cb-menu{position:absolute;left:50%;transform:translateX(-50%);top:42px;width:min(92vw,440px);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:0 8px 28px rgba(0,0,0,.18);text-align:left}
+.cb-menu[hidden]{display:none}.cb-menu ul{list-style:none;margin:0;padding:0}
+.cb-menu li a{display:flex;gap:8px;align-items:center;max-width:none;white-space:normal;font-weight:500}.cb-menu li a[aria-current]{font-weight:700;background:var(--bg)}
+.cb-menu .tick{flex:none;width:18px;height:18px;border-radius:50%;border:2px solid var(--line);display:inline-block}.cb-menu .tick.on{background:var(--run);border-color:var(--run)}
+.cb-menu .cb-tools{display:flex;flex-wrap:wrap;gap:4px;border-top:1px solid var(--line);margin-top:6px;padding-top:6px}
+@media(max-width:560px){.cb-prev span,.cb-next span{display:none}}
+.nextcard{display:block;margin:34px 0 0;padding:18px 22px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);text-decoration:none}
+.nextcard small{display:block;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.04em}.nextcard b{display:block;font-size:1.15rem}.nextcard span{color:var(--muted);font-size:15px}
+.nextcard:hover{border-color:var(--accent)}
+.nowcan{margin:34px 0 0;padding:16px 22px;border-left:4px solid var(--accent);background:var(--card);border-radius:0 14px 14px 0}.nowcan small{display:block;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.04em}.nowcan ul{margin:6px 0 0;padding-left:20px}.nowcan+.nextcard{margin-top:14px}.practicecard+.nextcard{margin-top:14px}.practicecard{border-left:4px solid var(--accent)}
+.rules{list-style:none;margin:6px 0 0;padding:0}.rules li{display:flex;gap:8px;align-items:center;margin:3px 0}.rules li::before{content:"";width:16px;height:16px;border-radius:50%;border:2px solid var(--line);flex:none}.rules li.ok::before{background:var(--run);border-color:var(--run)}
+
+nav.steps a{font-size:13px;font-weight:600;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--card);padding:5px 11px;border-radius:99px}
+nav.steps a i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;background:var(--c)}
+section.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 28px;margin:26px 0;border-top:4px solid var(--c)}
+section.step h2{font-size:1.4rem;line-height:1.3;margin:.15em 0 .5em}
+.chip{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
+.chip small{font-weight:500;letter-spacing:0;text-transform:none;color:var(--muted);margin-left:8px;font-size:13px}
+.code{margin:16px 0;border-radius:10px;overflow:hidden;background:var(--code)}
+.code-head{display:flex;justify-content:space-between;align-items:center;padding:7px 14px;font:12px ui-monospace,Menlo,Consolas,monospace;color:#8b98a8;border-bottom:1px solid #26303c}
+.code-head button{font:inherit;background:none;border:1px solid #3a4756;color:#c3cdd9;border-radius:6px;padding:2px 9px;cursor:pointer}
+.code pre{margin:0;padding:14px 16px;overflow-x:auto;color:var(--codeink);font:14px/1.55 ui-monospace,Menlo,Consolas,monospace}
+.kw{color:var(--kw)}.str{color:var(--str)}.fn{color:var(--fn)}.com{color:var(--com)}.num{color:var(--num)}
+p code,li code{background:color-mix(in srgb,var(--ink) 9%,transparent);padding:1px 6px;border-radius:5px;font-size:.9em}
+figure.clip{margin:18px 0}figure.clip video{width:100%;border-radius:10px;border:1px solid var(--line);display:block;background:#0b0f14}
+figure.clip figcaption{font-size:14px;color:var(--muted);margin-top:6px}
+figure.clip .voiced-note{white-space:nowrap}
+figure.clip .vpick{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px;margin-left:6px;white-space:nowrap}figure.clip .vpick button{font:inherit;font-size:13px;padding:2px 9px;border-radius:99px;border:1px solid var(--line);background:transparent;color:inherit;cursor:pointer}figure.clip .vpick button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.placeholder{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;aspect-ratio:16/9;border:2px dashed var(--line);border-radius:10px;color:var(--muted);text-align:center;font-size:15px;padding:12px}
+.placeholder b{color:var(--ink)}
+.try{margin:20px 0 6px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.try-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:9px 14px;font-size:14px;background:color-mix(in srgb,var(--c) 10%,transparent);border-bottom:1px solid var(--line)}
+.try-head span{color:var(--muted);flex:1}
+.try-full{font:inherit;font-size:13px;padding:2px 10px;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--ink);cursor:pointer}.try-full:hover{border-color:var(--c,var(--accent))}
+.try.full{position:fixed;inset:0;z-index:50;margin:0;border:0;border-radius:0;display:flex;flex-direction:column;background:var(--bg)}
+.try-task,.tt-toggle{display:none}.try.full .try-task{display:block;max-height:38vh;overflow:auto;padding:6px 14px 8px;border-bottom:1px solid var(--line);background:var(--card);font-size:15px}
+.try.full .tt-toggle{display:inline-block;margin-left:auto;margin-right:8px;font:inherit;font-size:13px;padding:2px 10px;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--ink);cursor:pointer}
+.tt-title{font-weight:700;margin:.2em 0 .3em}.tt-body p,.tt-body ul,.tt-body ol{margin:.3em 0}.tt-body img{max-height:24vh;width:auto}.tt-body .hints{margin:.3em 0;padding-top:4px;padding-bottom:4px}.tt-smaller{font-size:13px;color:var(--muted);margin:.4em 0}
+.try-task.closed .tt-body{display:none}.try-checks{display:flex;flex-wrap:wrap;gap:4px 16px;padding:6px 0 2px;margin-top:4px;position:sticky;bottom:-8px;background:var(--card);border-top:1px dashed var(--line);font-size:14px;color:var(--muted)}.try-task.closed .try-checks{border-top:0;margin-top:0}.try-checks .ok{color:var(--run);font-weight:600}.try.full iframe{flex:1;height:auto!important}
+body.try-open{overflow:hidden}
+.try iframe{display:block;width:100%;border:0;background:var(--card)}
+.try iframe[hidden]{display:none}.mkload{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--card);color:var(--muted);font-size:14px;text-align:center;padding:16px}.try.full .mkload{height:calc(100% - 40px)!important}
+.mkopen{font:inherit;font-size:16px;font-weight:600;padding:10px 18px;border-radius:10px;border:0;background:var(--c,var(--accent));color:#fff;cursor:pointer}@media(prefers-color-scheme:dark){.mkopen{color:#0f141a}}
+figure.diagram{margin:12px 0 18px}figure.diagram img{max-width:100%;height:auto;display:block}figure.diagram figcaption{font-size:13px;color:var(--muted);margin-top:4px}figure.dmis figcaption::before{content:'A drawing to question: ';font-weight:600}figure.shown{margin:10px 0 16px}figure.shown img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff;display:block}figure.shown figcaption{font-size:13px;color:var(--muted);margin-top:4px}
+details.expected figure{margin:8px 0 14px}details.expected img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff;display:block}details.expected figcaption{font-size:13px;color:var(--muted);margin-top:4px}
+details.reveal{margin:16px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
+.wpt-strat{font-size:.9em;color:var(--muted);margin:.2em 0 .6em}details.hints{margin:12px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
+details.smaller{margin:12px 0;border:1px dashed var(--line);border-radius:10px;padding:0 16px}details.smaller>summary{cursor:pointer;font-weight:600;padding:10px 0}details.smaller[open]>summary{border-bottom:1px solid var(--line);margin-bottom:6px}details.smaller .check{margin:8px 0 12px}
+details.hints summary{cursor:pointer;font-weight:600;padding:10px 0}
+details.hints[open] summary{border-bottom:1px solid var(--line);margin-bottom:6px}
+.tasks{margin:14px 0}
+.taskpills{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.taskpills .tp{font:inherit;font-size:14px;font-weight:600;padding:5px 12px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.taskpills .tp i{width:10px;height:10px;border-radius:50%;border:2px solid var(--c)}.taskpills .tp.done i{background:var(--c)}
+.taskpills .tp.active{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c)}
+.tpanel{display:none}.tpanel.active{display:block}
+.tmsg{margin:8px 0 0;font-size:14px;font-weight:600;color:var(--run)}
+.resetstart{font:inherit;font-size:13px;margin:6px 0;padding:4px 12px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer}
+nav.steps a .cnt{font-weight:500;color:var(--muted);margin-left:5px}
+.buglines{margin:6px 0;padding:0 0 0 2.2em;overflow-x:auto;background:var(--code);border-radius:10px;font:14px/1.7 ui-monospace,Menlo,Consolas,monospace;list-style:decimal;color:var(--com)}
+.buglines li{padding-right:6px}.check .buglines button{display:block;width:100%;margin:0;padding:0 8px;border:0;border-radius:6px;background:none;text-align:left;color:var(--codeink);cursor:pointer}
+.check .buglines button:hover{background:rgba(255,255,255,.1)}.check .buglines button.no{background:rgba(255,100,100,.25)}.check .buglines button.yes{background:rgba(74,222,128,.28)}
+.buglines code{white-space:pre;font:inherit}
+.bugfile{margin:8px 0}.bugfile-name,.files .code-head span{font:600 13px ui-monospace,Menlo,Consolas,monospace}.bugfile-name{margin:0 0 2px;color:var(--ink)}.files{display:grid;gap:8px}
+.mrow{display:flex;gap:10px;align-items:center;margin:6px 0;flex-wrap:wrap}.mrow span{flex:1 1 180px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}.mrow select{font:inherit;font-size:14px;padding:4px 6px;border-radius:6px;max-width:100%}
+.mrow select.ok{outline:2px solid var(--run)}.mrow select.no{outline:2px solid var(--make)}
+.tscroll{overflow-x:auto}.trace{border-collapse:collapse;margin:8px 0;font:14px ui-monospace,Menlo,Consolas,monospace}.trace th,.trace td{border:1px solid var(--line);padding:4px 10px;text-align:center}.trace th{background:var(--card)}
+.trace input{width:5em;font:inherit;text-align:center;padding:3px;border-radius:4px;border:1px solid var(--line)}.trace input.ok{outline:2px solid var(--run)}.trace input.no{outline:2px solid var(--make)}
+.numrow input{font:inherit;padding:5px 8px;border-radius:6px;border:1px solid var(--line);width:9em}
+.parsons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}@media(max-width:620px){.parsons{grid-template-columns:1fr}}
+.pcol b{font-size:13px;color:var(--muted)}.pcol ul,.pcol ol{margin:4px 0;padding:0;list-style:none;min-height:3em;border:1px dashed var(--line);border-radius:10px;padding:6px}
+.pcol li{display:flex;align-items:center;gap:6px;margin:3px 0;background:var(--code);border-radius:6px;padding:2px 6px}.pcol code{flex:1;white-space:pre;color:var(--codeink);font:13px ui-monospace,Menlo,Consolas,monospace;overflow-x:auto}
+.check .pcol button{margin:0;padding:1px 8px;border-radius:6px;font-size:13px}.check .pcol button.piece{flex:1;text-align:left;background:none;border:0;padding:0}
+.pcol,.check .pcol button.piece{min-width:0}.check[data-subj=science] .pcol code{white-space:pre-wrap}.pprog li[draggable=true]{cursor:grab}
+details.insights{margin:10px 0}
+details.teachers{margin:28px 0 0;border:1px solid var(--line);border-radius:8px;padding:0 16px}
+details.teachers summary{cursor:pointer;font-weight:600;padding:12px 0}
+details.teachers h3{font-size:1rem;margin:16px 0 4px}.tguide{background:color-mix(in srgb,var(--accent) 8%,transparent);border-radius:8px;padding:8px 12px}
+.xbtn{flex:none;display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13px;font-weight:600;color:var(--investigate);border:1px solid var(--investigate);background:var(--card);padding:4px 11px 4px 5px;border-radius:99px;cursor:pointer}.xbtn b{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--investigate);color:#fff;font-size:12px}.xbtn[aria-expanded=true]{box-shadow:inset 0 0 0 1px var(--investigate)}.xdrawer{position:fixed;z-index:40;right:0;top:var(--nav,0px);bottom:0;width:min(520px,100vw);overflow:auto;background:var(--card);border-left:1px solid var(--line);box-shadow:-8px 0 24px rgba(0,0,0,.12);padding:0 20px 24px}.xd-head{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--card);padding:14px 0 10px;border-bottom:1px solid var(--line);margin-bottom:12px}.xd-head h2{margin:0;font-size:1.1rem;color:var(--investigate)}.xd-close{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:4px 10px;cursor:pointer}.xpop{position:fixed;z-index:41;max-width:min(300px,calc(100vw - 32px));margin:0;padding:9px 13px;font-size:14px;line-height:1.4;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--predict,#7c3aed);border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.14)}.xd-body video{max-width:100%}details.explain{margin:12px 0 4px;border:1px solid var(--line);border-left:4px solid var(--investigate);border-radius:8px;padding:0 16px;background:var(--card)}details.explain summary{cursor:pointer;font-weight:600;padding:10px 0;color:var(--investigate)}
+.wpt-backfrom{margin:0 0 10px;font-size:14px;font-weight:600}.wpt-backfrom a{color:inherit}.clinks{margin:-6px 0 14px;font-size:14px;color:var(--muted,#5d6675)}.clinks p{margin:2px 0}.wpt-prior ul{margin:2px 0 6px;padding-left:1.3em}.wpt-prior li{margin:1px 0}.clinks .clw{opacity:.8}.clinks a{color:inherit;text-decoration:underline}
+.hook{margin:0 0 16px;padding:8px 14px;border-left:4px solid var(--c,#2563eb);background:rgba(37,99,235,.07);border-radius:4px}
+details.reveal summary{cursor:pointer;font-weight:600;padding:12px 0;color:var(--c)}
+details.reveal[open] summary{border-bottom:1px solid var(--line);margin-bottom:6px}
+.legendbox{margin:10px 0 0;font-size:15px;color:var(--muted)}.legendbox>summary{cursor:pointer;width:fit-content}.legendbox[open]>summary{margin-bottom:6px}
+.legend{display:grid;gap:6px;margin:10px 0 0;padding:0;list-style:none;font-size:15px;color:var(--muted)}
+.legend b{color:var(--c)}
+.widthbar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px 14px;margin:14px 0 0}
+.widthbar .wnote{display:block;font-size:14px;color:var(--muted)}.wseg{display:inline-flex;gap:2px;border:1px solid var(--line);border-radius:99px;padding:3px;background:var(--bg)}
+.wseg button{font:inherit;font-size:14px;font-weight:600;border:0;background:transparent;color:var(--ink);border-radius:99px;padding:5px 12px;cursor:pointer}.wseg button[aria-pressed=true]{background:var(--accent);color:#fff}
+@media(prefers-color-scheme:dark){.wseg button[aria-pressed=true]{color:#0f141a}}.wseg button:disabled{opacity:.4;cursor:not-allowed}
+.tierchip{font-size:11px;letter-spacing:.06em;padding:1px 7px;border-radius:99px;border:1px solid currentColor;margin-left:6px}
+[data-tier][hidden]{display:none!important}footer code{overflow-wrap:anywhere}.srow{flex-wrap:wrap}.srow span{font-family:inherit;font-size:15px}.srow .swhy{flex-basis:100%;color:var(--muted)}
+ul.lessons{list-style:none;padding:0;display:grid;gap:14px}ul.lessons a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px;text-decoration:none;color:inherit}
+.ctop{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.ctop h1{margin-bottom:0}
+.chips{display:flex;gap:8px}.chip{font-size:14px;font-weight:600;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--card);padding:6px 14px;border-radius:99px;text-transform:none;letter-spacing:normal}.chip:hover{border-color:var(--accent)}
+.continue{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;align-items:center;margin:22px 0 18px;padding:16px 20px;border-radius:14px;text-decoration:none;color:#fff;background:var(--accent)}
+.continue .ck{grid-row:span 2;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:6px 12px;border-radius:99px;background:rgba(255,255,255,.2)}
+.continue b{font-size:1.15rem}.continue .cstep{font-size:14px;opacity:.9}.continue .cstep:empty{display:none}.continue:hover{filter:brightness(1.06)}
+@media(prefers-color-scheme:dark){.continue{color:#1a1006}.continue .ck{background:rgba(0,0,0,.15)}}
+.pathway{margin:30px 0 8px}.pathway h2{margin:0;font-size:1.4rem}.pathway h2 a{color:inherit;text-decoration:none}.pathway h2 a:hover{color:var(--accent)}.pathway h2 a::after{content:' ›';color:var(--muted)}.pabout{max-width:680px}.home-about h2,.approach h2{font-size:1.2rem;margin:28px 0 8px}.home-about p,.approach p,.approach li{line-height:1.6}.home-subjects{font-size:1.2rem;margin:34px 0 12px}.home-about a,.approach a{color:var(--accent)}.pnote{background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:12px 16px;color:var(--muted)}.psum{margin:2px 0 10px;color:var(--muted)}
+.pstage h3{margin:14px 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.pcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.pcard{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}.pcard:hover{border-color:var(--accent)}
+.pcard b{display:block;font-size:1.05rem}.pcard .ptag{color:var(--ink);font-size:15px;margin-top:4px}.pcard.pmap{margin:6px 0 4px;border-color:var(--accent)}.pcard.pmap b::after{content:' →';color:var(--accent)}.pafter{display:block;font-size:12.5px;color:var(--muted);margin-top:6px}.pcard span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+.pcard.soon{background:transparent;border-style:dashed}.pcard.soon b{color:var(--muted)}.pcard em{display:inline-block;margin-top:8px;font-style:normal;font-size:12px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:1px 9px}
+.pcard .cprog{display:block;font-style:normal;font-weight:400;font-size:13px;color:var(--muted);margin-top:8px;border:0;padding:0;border-radius:0}.pcard .cbar{display:block;height:6px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:4px}.pcard .cbar i{display:block;height:100%;background:var(--run)}
+.ptools{margin:34px 0 0;color:var(--muted);font-size:14px}
+.course{display:grid;gap:22px}.unit .uhead{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:0 12px;margin:0 2px 8px}
+.unit .uhead h2{margin:0;font-size:1.05rem}.unit .uhead p{grid-column:1/-1;margin:2px 0 0;color:var(--muted);font-size:14px}.ustat{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.urows{border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
+.crow{border-top:1px solid var(--line)}.crow:first-child{border-top:0}
+.crow summary{display:grid;grid-template-columns:30px 1fr auto auto;gap:12px;align-items:center;padding:11px 16px;cursor:pointer;list-style:none}.crow summary::-webkit-details-marker{display:none}
+.crow summary:hover{background:color-mix(in srgb,var(--accent) 4%,transparent)}.crow summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.crow summary::after{content:'▸';color:var(--muted);font-size:12px;transition:transform .15s}.crow[open] summary::after{transform:rotate(90deg)}
+.crow summary .cstat{grid-column:3}.crow summary::after{grid-column:4}
+.cnum{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;font-weight:700;font-size:14px;border:2px solid var(--line);color:var(--muted)}
+.crow.started .cnum{border-color:var(--accent);color:var(--accent)}.crow.done .cnum{background:var(--run);border-color:var(--run);color:#fff;font-size:0}.crow.done .cnum::after{content:'✓';font-size:15px}
+.crow.next>summary{background:color-mix(in srgb,var(--accent) 7%,transparent)}
+.ctitle{font-weight:650;color:var(--ink);min-width:0}.opt{font-style:normal;font-weight:600;font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:1px 8px;margin-left:6px;vertical-align:2px}
+.crow summary .segs{grid-column:2;grid-row:2;display:flex;gap:3px;max-width:340px;margin-top:-4px}.seg{flex:1;height:6px;border-radius:3px;background:color-mix(in srgb,var(--c) 16%,var(--line))}.seg.on{background:var(--c)}
+.cstat{font-size:13px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}.crow.done .cstat{color:var(--run);font-weight:600}
+.cbody{padding:2px 16px 14px 58px}.csum{margin:0 0 8px;color:var(--muted);font-size:15px}
+.csteps{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:2px}.csteps a{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink);text-decoration:none;padding:3px 0}.csteps a:hover{text-decoration:underline}
+.sdot{flex:none;width:12px;height:12px;border-radius:50%;border:2px solid var(--c)}.sdot.on{background:var(--c)}
+.cgo{display:inline-block;font-size:14px;font-weight:600;text-decoration:none;color:#fff;background:var(--accent);padding:6px 14px;border-radius:8px}@media(prefers-color-scheme:dark){.cgo{color:#1a1006}}
+.badge{display:inline-block;margin-top:10px;font-size:14px;font-weight:700;color:#7a4b00;background:#ffe9a8;border-radius:99px;padding:4px 12px}.badge[hidden]{display:none}
+.cfoot{margin:14px 2px;color:var(--muted);font-size:14px}.cfoot b{color:var(--ink);font-weight:600}
+@media(max-width:560px){.crow summary{grid-template-columns:30px 1fr auto;padding:10px 12px}.crow summary::after{display:none}.cbody{padding:2px 12px 12px 54px}.crow summary .segs{max-width:none}}
+ul.lessons a:hover{border-color:var(--accent)}ul.lessons .cprog{display:block;font-style:normal;font-size:13px;color:var(--muted);margin-top:8px}ul.lessons .cbar{display:block;height:6px;max-width:260px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:4px}ul.lessons .cbar i{display:block;height:100%;background:var(--run)}ul.lessons b{display:block;font-size:1.15rem}ul.lessons span{color:var(--muted);font-size:15px}
+.compare{margin:14px 0;padding:12px 16px;border-left:4px solid var(--predict);background:color-mix(in srgb,var(--predict) 8%,transparent);border-radius:0 8px 8px 0}.compare p{margin:2px 0}
+.check{margin:20px 0 4px;padding:14px 16px;border:1px dashed var(--c);border-radius:10px;background:color-mix(in srgb,var(--c) 6%,transparent)}
+.check legend,.check .check-q{font-weight:600;margin:0 0 8px;padding:0}.check fieldset{border:0;margin:0;padding:0}
+.check label{display:flex;gap:10px;align-items:flex-start;margin:6px 0;cursor:pointer}.check input{margin-top:.35em;accent-color:var(--c)}
+.check button{font:inherit;font-size:14px;margin-top:6px;padding:5px 14px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.check .msg{margin:8px 0 0;font-size:14px;color:var(--muted)}.check .msg.ok{color:var(--run);font-weight:600}.check .msg.no{color:var(--make)}
+.check.done{border-style:solid}
+.ref-group{margin:28px 0 8px;font-size:1.15rem}.ref-item{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr);gap:6px 18px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
+.ref-item .code{margin:0}.ref-item .ref-id{font-size:12px;margin-top:2px}
+.ref-ex{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:10px 0 4px}.ref-pic{margin:8px 0 0}.ref-pic img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:#fff;display:block}.ref-pic figcaption{font-size:12px;color:var(--muted);margin-top:3px}.ref-print{margin:14px 0 0}.ref-item p{margin:0;color:var(--muted);font-size:15px}.ref-item b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+.ref-search{width:100%;box-sizing:border-box;margin:18px 0 0;padding:10px 14px;font:inherit;font-size:16px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}.ref-search:focus{outline:2px solid var(--accent);outline-offset:1px}.ref-item[hidden],.ref-section[hidden]{display:none}
+@media(max-width:640px){.ref-item{grid-template-columns:1fr}}
+@media print{.ref-search{display:none}}
+@media print{body{background:#fff;color:#000}.ref-item{break-inside:avoid}}
+footer{margin-top:50px;color:var(--muted);font-size:14px}
+/*wp-nav-css*/.sitenav{background:var(--card);border-bottom:1px solid var(--line);font-size:14px;position:sticky;top:0;z-index:20}
+html{scroll-padding-top:var(--nav,0px)}
+.sn-in{max-width:1080px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:4px;min-height:48px;flex-wrap:wrap}
+.sitenav a{color:var(--ink);text-decoration:none;font-weight:600;padding:6px 10px;border-radius:8px;white-space:nowrap}
+.sitenav a:hover{background:var(--bg)}.sitenav a[aria-current]{color:var(--accent);box-shadow:inset 0 -2px 0 var(--accent);border-radius:0}
+.sitenav .sn-brand{font-weight:800;letter-spacing:-.01em;margin-right:4px;color:var(--muted)}.sn-brand span{font-weight:400}
+.sn-main,.sn-tools{display:flex;gap:2px;align-items:center}.sn-grow{flex:1}
+.sn-dd{position:relative;display:flex;align-items:center}.sn-dd.on>.sn-top{color:var(--accent)}
+.sn-caret{font:inherit;background:none;border:0;color:var(--muted);cursor:pointer;padding:6px 4px;margin-left:-8px;border-radius:6px}.sn-caret:hover{color:var(--ink)}
+.sn-sub{display:none;position:absolute;top:100%;left:0;min-width:180px;background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.08);padding:6px;flex-direction:column}
+.sn-sub a{display:block}.sn-sub a[aria-current]{box-shadow:inset 3px 0 0 var(--accent);border-radius:4px}
+.sn-dd:hover .sn-sub,.sn-dd:focus-within .sn-sub,.sn-dd.open .sn-sub{display:flex}
+.sn-grid{min-width:0;width:max-content;max-width:min(760px,92vw);gap:4px 10px}.sn-dd:hover .sn-grid,.sn-dd:focus-within .sn-grid,.sn-dd.open .sn-grid{display:grid;grid-template-columns:repeat(3,minmax(150px,1fr))}
+.sn-dd:hover .sn-grid2,.sn-dd:focus-within .sn-grid2,.sn-dd.open .sn-grid2{grid-template-columns:repeat(3,minmax(160px,1fr))}.sn-ghead{font-weight:700;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em;padding:6px 10px 2px}.sn-grp{display:flex;flex-direction:column;padding:2px 0 6px}.sitenav .sn-grp .sn-pw{font-weight:400;font-size:13px;padding:3px 10px 3px 18px;color:var(--muted)}.sitenav .sn-grp .sn-pw:hover{color:var(--ink)}
+.sn-menu{display:none;font:inherit;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:8px;padding:4px 10px;cursor:pointer}
+.sitenav .sn-back{color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:99px;margin-right:6px;max-width:42vw;overflow:hidden;text-overflow:ellipsis}
+.sitenav .sn-back[hidden]{display:none}
+@media(min-width:701px) and (max-width:1100px){.sn-main .sn-top,.sn-main>a{padding:6px 6px}.sn-caret{margin-left:-6px}}
+@media(max-width:700px){.sn-menu{display:inline-block;margin-left:auto}.sn-main{display:none;order:9;flex-basis:100%;flex-direction:column;align-items:stretch;padding:4px 0 8px}.sitenav.open .sn-main{display:flex;max-height:calc(100vh - 120px);overflow-y:auto}
+.sn-dd{flex-direction:column;align-items:stretch}.sn-caret{display:none}.sn-sub{display:flex;position:static;border:0;box-shadow:none;padding:0 0 0 16px;min-width:0;background:none}.sn-dd .sn-grid{display:flex!important;width:auto;max-width:none}.sitenav .sn-grp .sn-pw{padding:4px 10px 4px 22px}
+.sitenav a[aria-current]{box-shadow:none}.sn-tools{order:8;flex-basis:100%;justify-content:flex-start;padding-bottom:6px;overflow-x:auto}.sitenav .sn-back{order:7;flex-basis:100%;max-width:none;margin:2px 0 6px;text-align:center}}
+@media print{.sitenav{display:none}}/*wp-nav-css-end*/</style></head><body><nav class="sitenav" data-here="home" aria-label="Site"><div class="sn-in"><a class="sn-brand" href="https://learningwaypoints.com/" title="Learning Waypoints: the main site">Learning Waypoints <span aria-hidden="true">↗</span></a><button type="button" class="sn-menu" aria-expanded="false" aria-controls="sn-main">Menu ▾</button><div class="sn-main" id="sn-main"><div class="sn-dd on"><a class="sn-top" href="../../../">Subjects</a><button type="button" class="sn-caret" aria-expanded="false" aria-controls="sn-subjects" aria-label="Subjects menu">▾</button><div class="sn-sub sn-grid" id="sn-subjects"><div class="sn-grp"><span class="sn-ghead">Core</span><a class="sn-subj" href="../../../english/">English</a><a class="sn-subj" href="../../../maths/">Maths</a><a class="sn-subj" href="../../../science/">Science</a><a class="sn-subj" href="../../../learning/">Learning skills</a></div><div class="sn-grp"><span class="sn-ghead">Humanities</span><a class="sn-subj" href="../../../hass/">Humanities skills</a><a class="sn-subj" href="../../../history/">History</a><a class="sn-subj" href="../../../geography/">Geography</a><a class="sn-subj" href="../../../civics/">Civics and Citizenship</a><a class="sn-subj" href="../../../economics/">Economics and Business</a></div><div class="sn-grp"><span class="sn-ghead">Technologies</span><a class="sn-subj" href="../../../systems/">How computers work</a><a class="sn-subj" href="../../../code/" aria-current="page">Code</a><a class="sn-subj" href="../../../engineering/">Engineering</a><a class="sn-subj" href="../../../ict/">ICT skills</a><a class="sn-subj" href="../../../ai/">Learning with AI</a></div></div></div><div class="sn-dd"><a class="sn-top" href="../../../teachers/">Teachers</a><button type="button" class="sn-caret" aria-expanded="false" aria-controls="sn-teachers" aria-label="Teachers menu">▾</button><div class="sn-sub sn-grid sn-grid2" id="sn-teachers"><div class="sn-grp"><span class="sn-ghead">Start here</span><a class="sn-pw" href="../../../teachers/getting-started/">Getting Started with Learning Waypoints</a><a class="sn-pw" href="../../../teach/teachers/getting-started/">Learning Waypoints in 10 Minutes</a><a class="sn-pw" href="../../../humanities-pilot/">Humanities pilot</a></div><div class="sn-grp"><span class="sn-ghead">Make your own</span><a class="sn-pw" href="../../../code/create/">Create lessons and courses</a><a class="sn-pw" href="../../../teachers/make-a-lesson/">Make a lesson</a><a class="sn-pw" href="../../../my-path/">My path</a><a class="sn-pw" href="https://prepare.learningwaypoints.com/" title="Waypoints Prepare: slide decks and print resources for teachers">Prepare <span aria-hidden="true">↗</span></a></div><div class="sn-grp"><span class="sn-ghead">Core</span><a class="sn-pw" href="../../../english-teachers/">English</a><a class="sn-pw" href="../../../maths-teachers/">Maths</a><a class="sn-pw" href="../../../science-teachers/">Science</a><a class="sn-pw" href="../../../learning-teachers/">Learning skills</a></div><div class="sn-grp"><span class="sn-ghead">Humanities</span><a class="sn-pw" href="../../../humanities-teachers/">Humanities skills</a><a class="sn-pw" href="../../../history-teachers/">History</a><a class="sn-pw" href="../../../geography-teachers/">Geography</a><a class="sn-pw" href="../../../civics-teachers/">Civics</a><a class="sn-pw" href="../../../economics-teachers/">Economics</a></div><div class="sn-grp"><span class="sn-ghead">Technologies</span><a class="sn-pw" href="../../../systems-teachers/">How computers work</a><a class="sn-pw" href="../../../code-teachers/">Code</a><a class="sn-pw" href="../../../engineering-teachers/">Engineering</a><a class="sn-pw" href="../../../ict-teachers/">ICT skills</a><a class="sn-pw" href="../../../ai-teachers/">Learning with AI</a></div><div class="sn-grp"><span class="sn-ghead">AI</span><a class="sn-pw" href="../../../teachers/ai-and-your-tasks/">AI and your tasks</a><a class="sn-pw" href="../../../choosing-ai-tools/">Choosing AI tools</a></div><div class="sn-grp"><span class="sn-ghead">Set up</span><a class="sn-pw" href="../../../check/">Check your school</a></div></div></div><a href="../../../about/">About</a></div><span class="sn-grow"></span><a class="sn-back" href="#" hidden></a><div class="sn-tools"><a href="../../../code/pattern-detector/">My progress</a></div></div></nav><div class="wrap"><style>.tg{margin:26px 0}.tg h2{font-size:1.15rem;margin:0 0 8px}.tg h3{font-size:1rem;margin:16px 0 6px}
+.tmeta{color:var(--muted);font-size:14px}.ans{font-weight:600;color:var(--run)}.muted{color:var(--muted);font-size:14px}
+.answers li{margin:0 0 10px}.stuck{width:100%;border-collapse:collapse;font-size:14px}.stuck th,.stuck td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}.stuck th{background:var(--card)}
+@media(max-width:560px){.stuck,.stuck tbody,.stuck tr,.stuck td{display:block}.stuck thead{display:none}.stuck tr{border:1px solid var(--line);border-radius:8px;margin:0 0 10px;padding:4px 0}.stuck td{border:0;padding:4px 10px;overflow-wrap:anywhere}.stuck td::before{content:attr(data-label);display:block;font-weight:700;font-size:12px;color:var(--muted)}}
+.dl{list-style:none;padding:0;display:grid;gap:8px}.dl li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.openin{font-size:13px;margin-right:6px}.copyurl{font:inherit;font-size:13px;margin-left:6px;padding:2px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--ink);cursor:pointer}
+.blocks{margin:8px 0}.blocks img{max-width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px}.mkjs summary{cursor:pointer;color:var(--muted);font-size:14px}
+.coachp{white-space:pre-wrap;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13.5px}.tunit{margin:26px 0}.tunit h2{margin:0 0 4px;font-size:1.15rem}.tunit ul{margin:6px 0}.primer{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 18px}</style><header class="top"><a class="crumb" href="../../">← Teacher guides</a><h1>Teacher guide: Pattern Detector projects</h1><p class="lede">Build an app that sorts an input (text, answers, a photo, a pose or a sound) into groups and responds usefully. One short lesson trains a model in the Pattern Trainer and runs it in Python; then three open projects: A uses rules you write, B a model you train, C joins the two. The apps run on your own computer, from the Pattern Detector starters.</p><p class="tmeta"><a href="../../../code/pattern-detector/">Open the student course</a> · <a href="../../code/ideas/">How the ideas build</a></p></header><p>Each lesson works two ways. Students can work through the online tutorial at their own pace (it checks their answers and saves their progress in their browser), or you can teach it to the whole class from the slides, then send students into the tutorial for the Modify and Make steps.</p><p>Every lesson guide has plain-language notes, the answers to every check, a solution for every task, and slides and a worksheet for <a href="https://prepare.learningwaypoints.com/" target="_blank" rel="noopener">Waypoints Prepare</a>. These guide pages are not linked from student pages, but they are not secret either: keep printed Teacher editions for answers you do not want students to find.</p><p><b>Course resources:</b> <a href="https://prepare.learningwaypoints.com/?src=https%3A%2F%2Ftutorials.learningwaypoints.com%2Fteach%2Fcode%2Fpattern-detector%2Fcourse-deck.md" target="_blank" rel="noopener">Open course presentation in Prepare</a> · <a href="course-deck.md" download>Opening and closing slides (Markdown)</a></p><section class="tunit"><h2>Course teaching guidance</h2><p>These projects are written to be adopted or adapted. Nothing here belongs to one school&#39;s programme, task sheet or marking scheme: use the parts you want and change the rest.</p>
+<p><strong>What a pattern detector is.</strong> An app that takes an input (text someone types, answers to a few questions, a photo, a pose, a sound), sorts it into groups, and responds in a way that helps a real person. There are two ways to build the sorting part: <strong>rules you write</strong> (project A) or <strong>a model you train from examples</strong> (project B). Project C lets a trained model feed your rules. Students meet the trade-off first-hand: rules are easy to explain and fix but cannot cover every case; a trained model copes with messy inputs but can be sure and wrong, and cannot say why.</p>
+<p><strong>Where it sits, and the first lesson.</strong> After Apps with Gradio, beside Machine learning with Gradio (either first): this is the easier way into machine learning, because the Pattern Trainer does the training and the starters hide the numbers, so students need only Gradio apps, functions, <code>if</code>/<code>elif</code> and dictionaries. Machine learning with Gradio shows how a model works inside. The one lesson, <strong>Train a model, then use it in Python</strong> (about 40 minutes): a tiny two-class model trained in the Pattern Trainer, tested on the site&#39;s board, then the same <code>my_model.json</code> run in the Python starter. Install the starters before it (below). Brief A can come before or after it; B and C build on it.</p>
+<p><strong>How the apps run.</strong> The apps are Python with Gradio and run on the student&#39;s own laptop, starting from the <a href="https://github.com/edu-matthew-pham/pattern-detector-starters">Pattern Detector starters</a>. Setup is once per laptop (a virtual environment and <code>pip install -r requirements.txt</code>; about 0.5 GB). Try it on a school laptop before the lesson: project A&#39;s starters need only Gradio (and numpy for the colour and sound starters), so they are the quickest to test. No camera or microphone is needed for A; the photo and sound starters also accept uploaded files.</p>
+<p><strong>Adapting a project.</strong> Each project&#39;s guide below lists what to change. The pattern is the same for all of them:</p>
+<ul>
+<li><em>The problem and the user.</em> Students choose their own; if you want a shared context (a class, a club, a subject), say so in the brief you give them.</li>
+<li><em>The starters.</em> Keep the four on offer, offer fewer to narrow the choice, or add your own starter in the same style (a header comment, <code># ADAPT:</code> lines, a short <code>IDEAS</code> list).</li>
+<li><em>The checklist.</em> The &quot;Check your app&quot; list is the success criteria. Reword it, add a line for your own priorities, or drop one.</li>
+<li><em>The marking points.</em> Each guide gives points to look for against each checklist line. Replace them with your own criteria; nothing on this site is a mark scheme.</li>
+<li><em>The help.</em> Hints are always on offer and anything a student opens appears on their Show your teacher card as &quot;Help used&quot;. &quot;Show one way&quot; is part of the example solution, so if you would rather no student sees any of it, note that the guide shows the example in full and leave it on and read the Help used list when you mark, or turn it off (see below).</li>
+<li><em>The hand-in.</em> Set your own. Students can show the badge card on screen, and &quot;Download my code&quot; saves what they pasted into the page.</li>
+</ul>
+<p><strong>Using the badge.</strong> Badges and ticks live in the student&#39;s browser. Ask students to press <strong>Show your teacher</strong> and show you the card (milestones ticked, help used, their own words on the hardest part). It is a self-assessed record, not a marked result.</p>
+</section><p><b>Strategies for getting unstuck:</b> <a href="../../../learning/how-you-learn/reference/#code-say-what-it-does">Say what it should do</a>, <a href="../../../learning/how-you-learn/reference/#code-test-small">Test a small piece</a>, <a href="../../../learning/how-you-learn/reference/#code-read-the-error">Read the error</a>, <a href="../../../learning/how-you-learn/reference/#code-trace-it">Trace it</a>. A student who is stuck can try one before asking for a hint. The optional course <a href="../../../learning/how-you-learn/">How you learn best</a> introduces them, and a few lesson decks have a short teach, show or nudge slide for one. <span class="muted">(Each lesson page links to the cards from its first hint.)</span></p><p><b>Whole-course cheat sheet:</b> <a href="cheatsheet/">Open to print</a> <span class="muted">(every command, grouped by unit: a handout for the final challenge)</span></p><section class="tunit"><h2>Start here</h2><p class="muted">Train a model in the Pattern Trainer, then use the same file in a Python app.</p><p>Cheat sheet: <a href="cheatsheet-start/">Open to print</a> <span class="muted">(A4, with a picture of what each command draws)</span> · <a href="https://prepare.learningwaypoints.com/print?src=https%3A%2F%2Ftutorials.learningwaypoints.com%2Fteach%2Fcode%2Fpattern-detector%2Fcheatsheet-start.md" target="_blank" rel="noopener">Open in Print</a> · <a href="cheatsheet-start.md" download>Markdown</a> <button type="button" class="copyurl" data-url="https://tutorials.learningwaypoints.com/teach/code/pattern-detector/cheatsheet-start.md">Copy address for Prepare</button></p><ul><li><a href="train-a-model/">1. Train a model, then use it in Python</a> <span class="muted">· <a href="https://prepare.learningwaypoints.com/?src=https%3A%2F%2Ftutorials.learningwaypoints.com%2Fteach%2Fcode%2Fpattern-detector%2Ftrain-a-model%2Fdeck.md" target="_blank" rel="noopener" title="Open the slides in Prepare">slides</a> · <a href="https://prepare.learningwaypoints.com/print?src=https%3A%2F%2Ftutorials.learningwaypoints.com%2Fteach%2Fcode%2Fpattern-detector%2Ftrain-a-model%2Fworksheet.md" target="_blank" rel="noopener" title="Open the worksheet in Print">worksheet</a></span></li></ul></section><section class="tunit" id="projects"><h2>Open projects</h2><p class="muted">Self-paced briefs students can pick up (after the lesson named on each, where one is named). Students tick their own milestones and claim a badge; the page lights the skills their code uses. Badges stay in the student's browser: ask them to press Show your teacher. <a href="../../../code/pattern-detector/projects/">Open the projects page</a></p><details class="primer"><summary><b>A. Rules-based pattern detector</b> <span class="muted">(a function with parameters, elif, a dictionary ({k: v}), return)</span></summary><p>Build a Python app that <strong>sorts an input into groups using rules you write yourself</strong>, then responds in a way that helps someone.</p>
+<p>Some problems can be described exactly: does the message contain this phrase? Is the soil drier than this? For those, rules are quick and predictable, and you can always say why the app answered as it did. When it is wrong, you can find the rule and fix it.</p>
+<p>Before you start, write one sentence: <strong>who is it for, and what will it help them do?</strong></p>
+<p><strong>What to hand in</strong></p>
+<ul>
+<li>Your app: the <code>.py</code> file and any data files (your dictionary or lists).</li>
+<li>Your rules in plain English: a short list or a flowchart.</li>
+<li>A testing record: input, expected result, what the app did, with boundary cases.</li>
+<li>A reflection: what your rules can&#39;t handle, and who could be affected if your app got it wrong.</li>
+</ul>
+<p><strong>Check your app before you hand it in</strong></p>
+<ul>
+<li><strong>Clear result</strong>, in words your user understands.</li>
+<li><strong>Honest</strong>: says when an input doesn&#39;t match any rule.</li>
+<li><strong>Useful response</strong>: advice, a next step or an explanation, not just a label.</li>
+<li><strong>Fits your user</strong>: at least one setting or option they can change.</li>
+<li><strong>Tested</strong> on edge cases, not just the ones you designed it for.</li>
+</ul>
+<p><b>Milestones:</b></p><ul><li>My problem, my user and my rules are written in plain English.<ol class="muted"><li>Start with one sentence: who is it for, and what will it help them do?</li><li>List your groups, then ask of each one: what can I check to tell it apart?</li><li>Write each rule as a sentence first, such as &quot;if the soil is drier than 30%, water it&quot;. Turning it into an if comes later.</li></ol><div class="muted">Students can earn this piece (reveal on): <code># Rules in plain English (written first, before any code):<br>#   1. Nothing typed                    -&gt; ask for a password.<br>#   2. On the list of common passwords  -&gt; Weak, whatever its length.<br>#   3. Shorter than the minimum length  -&gt; Weak, say how many more characters.</code></div></li><li>My app runs, built from the closest starter with its ADAPT lines changed.<ol class="muted"><li>Run the starter exactly as it is first, so you know what working looks like.</li><li>Change one ADAPT line at a time and run it again, so you know which change broke it.</li><li>Put the numbers your rules use together at the top, so they are easy to find and change after testing.</li></ol><div class="muted">Students can earn this piece (reveal on): <code>if len(password) &lt; min_length:<br>    return &quot;Weak&quot;, f&quot;{len(password)} characters. Aim for at least {min_length} ({min_length - len(password)} more).&quot;</code></div></li><li>I tested the edges and fixed what broke.<ol class="muted"><li>Try an input exactly on the boundary of a rule, then one just either side of it.</li><li>Try nothing at all, odd spellings, and something your rules were never meant for.</li><li>Write what you expect before you run each test, so a surprise is easy to spot. A testing record can be as simple as what you typed, any settings, and the first word you expect back.</li></ol><div class="muted">Students can earn this piece (reveal on): <code>(&quot;abc1234&quot;, False, &quot;Weak&quot;),     # 7 characters: one under the boundary<br>(&quot;abc12345&quot;, False, &quot;Strong&quot;),  # exactly 8: on the boundary</code></div></li><li>I can say what my rules can't handle, and why a trained model might do better.<ol class="muted"><li>Find one input where your app gives a poor answer, and ask how many rules it would take to get it right.</li><li>Think about who is affected if the app is wrong, and whether they would know it was wrong.</li></ol></li></ul><p><strong>What this project is.</strong> The rules-based half of a pair (project B trains a model instead; project C joins them). Students sort an input into groups with rules they write, respond usefully, and then test and reflect honestly. The learning is in the testing and the reflection as much as in the app: at the boundary of a rule, with an empty input, and with the case no rule covers.</p>
+<p><strong>Running it.</strong> Each student works on their own laptop from a starter (links on the project page). Do the one-off setup before the lesson, or as a first step, and run an unchanged starter on a school laptop beforehand. Project A needs no camera or microphone; the photo and sound starters also accept uploaded files.</p>
+<p><strong>What to change when you adapt it</strong></p>
+<ul>
+<li><em>Problem and user.</em> Students choose, or you set a shared context (a class, a club, a subject area). Say which in the brief you hand out.</li>
+<li><em>Starters on offer.</em> Offer all four, fewer to narrow the choice, or add a starter of your own in the same style (a header comment, <code># ADAPT:</code> lines, a short ideas list).</li>
+<li><em>The skills list.</em> &quot;You&#39;ll use&quot; lights up from pasted code and is only a prompt: the unchanged starters already light some of it, or all (the page tells students so), so it shows which skills are in play, not that a student wrote them. Read the code for that. Change <code>uses:</code> in <code>projects.yml</code> if you want other skills.</li>
+<li><em>Check your app.</em> This is the success criteria. Reword a line, add your own, or remove one. The page lists them in the goal; the marking points below follow the same order.</li>
+<li><em>Hand-in.</em> Set your own. The Show your teacher card lists milestones ticked, the skills found in pasted code, help used and the student&#39;s own words on the hardest part.</li>
+<li><em>Help.</em> Hints are on offer to everyone. &quot;Show one way&quot; opens after the milestones before it are ticked or every hint for it has been used. Both are listed as <strong>Help used</strong> on the card, so you can see it when you mark. Set <code>reveal: false</code> (or remove <code>reveal:</code>) to turn &quot;Show one way&quot; off.</li>
+</ul>
+<p><strong>Marking points to look for</strong> (replace with your own criteria):</p>
+<ul>
+<li><em>Clear result.</em> The output is a word or sentence the named user would understand, not a variable name or number.</li>
+<li><em>Honest.</em> Some input leads to &quot;I don&#39;t know&quot; or &quot;none of my rules fits&quot;, and the app does not pick a group anyway. In the example, symbols-only input is not rated.</li>
+<li><em>Useful response.</em> Each result comes with a reason, advice or next step. In the example, &quot;Weak&quot; always says why and how many characters are missing.</li>
+<li><em>Fits the user.</em> There is a setting the user can change (strict mode in the example) and the student can say why it helps this user.</li>
+<li><em>Tested.</em> The record includes an empty input, input exactly on a boundary (the example tests 7 and 8 characters), input that is nearly right (capital letters, a stray space), and something the rules were not made for.</li>
+<li><em>Reflection.</em> Names a real input that fails, says why more rules would not fix it, and says who would be affected, not just &quot;it might be wrong&quot;.</li>
+</ul>
+<p><strong>Usual mistakes, and a question to ask.</strong></p>
+<ul>
+<li><em>Rules that overlap.</em> Two rules both fit and the first one wins by accident. Ask: &quot;Which rule fires for this input, and is that the one you meant?&quot; (A rule order that matters should be written down.)</li>
+<li><em>Numbers buried in the code.</em> Boundaries typed in several places drift apart. Ask: &quot;If you change this cut-off after testing, how many lines do you edit?&quot;</li>
+<li><em>Testing only the easy cases.</em> All tests pass because they were designed to. Ask: &quot;What is the smallest change to this input that should flip the answer?&quot;</li>
+<li><em>A label with no reason.</em> The app says &quot;Weak&quot; and nothing else. Ask: &quot;What would the user do next?&quot;</li>
+<li><em>Boundary off by one</em> (<code>&lt;</code> where <code>&lt;=</code> was meant). Ask: &quot;What happens at exactly 8?&quot;</li>
+</ul>
+<p><strong>Ways it could look.</strong> Students see two screenshots of finished apps that work quite differently (a study method picker, a working checker): output only, never code, so they show the standard without giving one answer to copy. Replace them with your own screenshots if you like (a PNG in <code>content/code/pattern-detector/projects/</code>, listed under <code>benchmark:</code>).</p>
+<p><strong>The example below</strong> is one complete rules app (a password checker with a strict-mode setting, a list of common passwords, an honest &quot;not sure&quot; and a small testing record). It is for you, to calibrate marking. Students who unlock &quot;Show one way&quot; see only a short piece of it for the milestone they are on. If a student chooses a password checker, expect to see something different from this one.</p>
+<p><strong>A filled-in testing record</strong> (the example password checker; yours will look different):</p>
+<table>
+<thead>
+<tr>
+<th>I typed</th>
+<th>Strict</th>
+<th>I expected</th>
+<th>The app said</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>(nothing)</td>
+<td>off</td>
+<td>ask for a password</td>
+<td>Type a password first.</td>
+<td>ok</td>
+</tr>
+<tr>
+<td>PASSWORD</td>
+<td>off</td>
+<td>Weak</td>
+<td>Weak: &quot;the most guessed password&quot;</td>
+<td>capitals still caught</td>
+</tr>
+<tr>
+<td>abc1234</td>
+<td>off</td>
+<td>Weak</td>
+<td>Weak: 7 characters, 1 more</td>
+<td>one under the boundary</td>
+</tr>
+<tr>
+<td>abc12345</td>
+<td>off</td>
+<td>Strong</td>
+<td>Strong</td>
+<td>exactly 8: on the boundary</td>
+</tr>
+<tr>
+<td>abcdefgh</td>
+<td>off</td>
+<td>OK</td>
+<td>OK: only one kind of character</td>
+<td>ok</td>
+</tr>
+<tr>
+<td>!!!!!!!!</td>
+<td>off</td>
+<td>Not sure</td>
+<td>Not sure: no rule fits</td>
+<td>honest, no guess</td>
+</tr>
+<tr>
+<td>abc12345</td>
+<td>on</td>
+<td>Weak</td>
+<td>Weak: 8 characters, 4 more</td>
+<td>strict mode moves the boundary</td>
+</tr>
+<tr>
+<td>Passw0rd!</td>
+<td>off</td>
+<td>Weak (I guessed)</td>
+<td>Strong</td>
+<td>surprise: a common pattern, but my rules cannot see it. Goes in the reflection.</td>
+</tr>
+</tbody></table>
+<p><strong>A sample reflection</strong> (strong): &quot;My rules only check length, kinds of characters and a short list of common passwords, so &#39;Passw0rd!&#39; is rated Strong even though guessers try it early. To catch it I would need to know every common pattern, such as swapping a letter for a number, and that list has no end. A model trained on many real leaked passwords could learn that pattern, though I could not say why it rated one weak. If my app is wrong, a student might trust a weak password. They would not know, because the app says Strong with confidence.&quot;</p>
+<p><strong>What a weaker reflection looks like:</strong> &quot;My app could be improved by adding more rules.&quot; Ask: which input, and how many rules would that take?</p>
+<div class="code"><div class="code-head"><span>One possible solution</span><button type="button" class="copy">Copy</button></div><pre><code><span class="com"># Rules in plain English (written first, before any code):</span>
+<span class="com">#   1. Nothing typed                    -&gt; ask for a password.</span>
+<span class="com">#   2. On the list of common passwords  -&gt; Weak, whatever its length.</span>
+<span class="com">#   3. Shorter than the minimum length  -&gt; Weak, say how many more characters.</span>
+<span class="com">#   4. Long enough, letters and numbers -&gt; Strong.</span>
+<span class="com">#   5. Long enough, only one kind       -&gt; OK, suggest mixing.</span>
+<span class="com">#   6. None of these fit                -&gt; say so, don't guess.</span>
+
+<span class="kw">import</span> gradio <span class="kw">as</span> gr
+
+<span class="com"># The numbers the rules use, together at the top</span>
+MIN_LENGTH = <span class="num">8</span>
+STRICT_LENGTH = <span class="num">12</span>
+COMMON = {
+    <span class="str">"password"</span>: <span class="str">"the most guessed password in the world"</span>,
+    <span class="str">"123456"</span>: <span class="str">"a counting sequence"</span>,
+    <span class="str">"qwerty"</span>: <span class="str">"the first letters on a keyboard"</span>,
+    <span class="str">"letmein"</span>: <span class="str">"a phrase everyone tries"</span>,
+}
+
+
+<span class="kw">def</span> <span class="fn">check</span>(password, strict):
+    password = (password <span class="kw">or</span> <span class="str">""</span>).<span class="fn">strip</span>()
+    min_length = STRICT_LENGTH <span class="kw">if</span> strict <span class="kw">else</span> MIN_LENGTH
+    <span class="kw">if</span> <span class="kw">not</span> password:
+        <span class="kw">return</span> <span class="str">"Type a password first."</span>, <span class="str">""</span>
+    <span class="kw">if</span> <span class="fn">password.lower</span>() <span class="kw">in</span> COMMON:
+        <span class="kw">return</span> <span class="str">"Weak"</span>, <span class="str">f"That is {COMMON[password.lower()]}. Guessers try these first."</span>
+    <span class="kw">if</span> <span class="fn">len</span>(password) &lt; min_length:
+        <span class="kw">return</span> <span class="str">"Weak"</span>, <span class="str">f"{len(password)} characters. Aim for at least {min_length} ({min_length - len(password)} more)."</span>
+    has_letter = <span class="fn">any</span>(<span class="fn">ch.isalpha</span>() <span class="kw">for</span> ch <span class="kw">in</span> password)
+    has_digit = <span class="fn">any</span>(<span class="fn">ch.isdigit</span>() <span class="kw">for</span> ch <span class="kw">in</span> password)
+    <span class="kw">if</span> has_letter <span class="kw">and</span> has_digit:
+        <span class="kw">return</span> <span class="str">"Strong"</span>, <span class="str">"Long enough, with letters and numbers."</span>
+    <span class="kw">elif</span> has_letter <span class="kw">or</span> has_digit:
+        <span class="kw">return</span> <span class="str">"OK"</span>, <span class="str">"Long enough, but only one kind of character. Mix in letters and numbers."</span>
+    <span class="kw">else</span>:
+        <span class="kw">return</span> <span class="str">"Not sure"</span>, <span class="str">"None of my rules fits a password with no letters or numbers, so I won't guess."</span>
+
+
+<span class="com"># Testing record: what I typed, strict mode, the first word I expect</span>
+TESTS = [
+    (<span class="str">""</span>, <span class="kw">False</span>, <span class="str">"Type"</span>),
+    (<span class="str">"PASSWORD"</span>, <span class="kw">False</span>, <span class="str">"Weak"</span>),    <span class="com"># capitals, same rule</span>
+    (<span class="str">"abc1234"</span>, <span class="kw">False</span>, <span class="str">"Weak"</span>),     <span class="com"># 7 characters: one under the boundary</span>
+    (<span class="str">"abc12345"</span>, <span class="kw">False</span>, <span class="str">"Strong"</span>),  <span class="com"># exactly 8: on the boundary</span>
+    (<span class="str">"abcdefgh"</span>, <span class="kw">False</span>, <span class="str">"OK"</span>),
+    (<span class="str">"!!!!!!!!"</span>, <span class="kw">False</span>, <span class="str">"Not"</span>),
+    (<span class="str">"abc12345"</span>, <span class="kw">True</span>, <span class="str">"Weak"</span>),     <span class="com"># strict mode moves the boundary to 12</span>
+]
+<span class="kw">for</span> given, strict, expected <span class="kw">in</span> TESTS:
+    result = <span class="fn">check</span>(given, strict)[<span class="num">0</span>]
+    <span class="fn">print</span>(<span class="str">"ok  "</span> <span class="kw">if</span> <span class="fn">result.startswith</span>(expected) <span class="kw">else</span> <span class="str">"FAIL"</span>, <span class="fn">repr</span>(given), <span class="str">"-&gt;"</span>, result)
+
+<span class="fn">gr.Interface</span>(
+    fn=check,
+    inputs=[<span class="fn">gr.Textbox</span>(label=<span class="str">"Password to check"</span>), <span class="fn">gr.Checkbox</span>(label=<span class="str">"Strict mode (12 or more characters)"</span>)],
+    outputs=[<span class="fn">gr.Textbox</span>(label=<span class="str">"Rating"</span>), <span class="fn">gr.Textbox</span>(label=<span class="str">"Why"</span>)],
+).<span class="fn">launch</span>(show_error=<span class="kw">True</span>)
+</code></pre></div></details><details class="primer"><summary><b>B. Trained pattern detector</b> <span class="muted">(a function with parameters, a dictionary ({k: v}), comparing (== != &lt; &gt;), return)</span></summary><p>Build a Python app that <strong>recognises your own groups of pictures, body poses or sounds, using a model you train yourself</strong>, then responds in a way that helps someone.</p>
+<p>Some things are easy for people to recognise but almost impossible to describe as rules. Every breed of dog, every angle and every kind of light would need its own rule. Instead you show the computer lots of examples of each group (a <strong>class</strong>), it finds its own patterns, and then it uses them on things it has never seen. Its confidence in an answer, a number from 0 to 1 (0.8 means 80% sure), is not the same as being right.</p>
+<p>Before you start, write one sentence: <strong>who is it for, and what will it tell or do for them?</strong></p>
+<p><strong>What to hand in</strong></p>
+<ul>
+<li>Your app: the <code>.py</code> file and your model file.</li>
+<li>A testing record: input, what you expected, what the app said and how sure it was. Include at least five inputs it had not seen before, and at least two that are not in any of your classes.</li>
+<li>A reflection: what fooled it, what you changed because of it (more examples, a new class, a different cut-off), one thing a simple rule would do better than your model and why, and who could be affected if your app got it wrong.</li>
+</ul>
+<p><strong>Check your app before you hand it in</strong></p>
+<ul>
+<li><strong>Clear result</strong>, in words your user understands.</li>
+<li><strong>Honest about how sure it is</strong>: it says when it is not sure instead of guessing.</li>
+<li><strong>Useful response</strong>: advice, a next step or a score, not just a label.</li>
+<li><strong>Fits your user</strong>: at least one setting or option they can change.</li>
+<li><strong>Tested</strong> on things you did not train it on.</li>
+</ul>
+<p><strong>Good habits.</strong> Only record yourself, or people who have said yes. Check what is behind you before you record. Your pictures and sounds stay on your computer. The model file holds only your class names and trained numbers, but a saved project file also holds tiny copies of your photos (in Sounds mode, just sound scores), so do not share it if it shows people.</p>
+<p><b>Milestones:</b></p><ul><li>My problem, my user and my classes are planned, and I have collected 20 or more examples of each.<ol class="muted"><li>Start with one sentence: who is it for, and what will it tell or do for them?</li><li>Pick two to five classes that look (or sound) clearly different to you. Add a &quot;nothing&quot; class only if your app will often see none of the others. In Sounds mode the trainer hears kinds of sound (a dog, a knock, music, speech), not which word was said, so two spoken words sound the same to it: hover over an example to see what it heard.</li><li>Collect examples in different places, at different times and from different angles, not twenty copies of one situation. The model learns whatever is the same in all of them, including the background.</li></ol><div class="muted">Students can earn this piece (reveal on): <code># Plan (written before training):<br>#   User:     someone hard of hearing, at home.<br>#   Job:      tell them about sounds they would want to know about.<br>#   Classes:  Baby crying, Dog barking, Fire crackling, Nothing urgent</code></div></li><li>I trained it, checked it, and tried hard to fool it.<ol class="muted"><li>Try new examples that were not used for training, and write down what you expect before you try each one.</li><li>Try to fool it: a new place, a different person who has said yes, a different angle, something that is not any of your classes. Note how sure it was, not just what it said.</li><li>Every time it gets one wrong, add examples like that one to the class it should have been, and train again. Write down what you changed.</li></ol><div class="muted">Students can earn this piece (reveal on): <code># I tried                      I expected       It said          How sure<br># a sneeze                     Nothing urgent   Baby crying      0.61   (now &quot;Not sure&quot;)<br># a rooster                    Nothing urgent   Dog barking      0.998  (fooled, and sure)<br># a chainsaw, first model      Nothing urgent   Fire crackling   1.00   (fixed by adding chainsaws)</code></div></li><li>My app runs, built from the closest starter with my model file and my ADAPT lines changed.<ol class="muted"><li>Run the starter exactly as it is first, with its sample model, so you know what working looks like.</li><li>Put your model file in the same folder as the starter, replacing the sample one, and run it again. Your class names come from the file.</li><li>Say something different for each class, and keep those messages together in one place so they are easy to change.</li></ol><div class="muted">Students can earn this piece (reveal on): <code>ADVICE = {<br>    &quot;Baby crying&quot;: &quot;The baby is crying. Go and check on them.&quot;,<br>    &quot;Dog barking&quot;: &quot;The dog is barking. Someone may be at the door.&quot;,<br>    &quot;Fire crackling&quot;: &quot;Something is crackling like a fire. Check the kitchen and the heaters now.&quot;,<br>    &quot;Nothing urgent&quot;: &quot;Nothing to worry about.&quot;,<br>}</code></div></li><li>I chose my cut-off from my testing, and I can name one thing a simple rule would do better.<ol class="muted"><li>Look down your testing record: how sure was it when it was right, and how sure was it when it was shaky or wrong? Pick the cut-off from those numbers, not a guess.</li><li>Remember that a model can be very sure and still wrong. A cut-off catches the shaky answers, not the confident mistakes.</li><li>For the rule: is there a part of your problem you could say exactly, with a measurement or a list, that the model only guesses?</li></ol><div class="muted">Students can earn this piece (reveal on): <code>if score &lt; cutoff:<br>    # Not sure is passed on, not dropped: a missed alert costs more than a false one.<br>    return &quot;Not sure&quot;, f&quot;I heard something, maybe {label} ({score:.0%}). Have a look to be safe.&quot;<br>return label, ADVICE[label]</code></div></li></ul><p><strong>What this project is.</strong> The trained half of a pair (project A uses rules; project C joins them). Students train a model from their own examples, build an app around it, and then test whether it can be trusted. The learning is in the testing and the reflection as much as in the app: new people, new places and things outside every class, and a cut-off picked from evidence rather than a guess.</p>
+<p><strong>Running it.</strong> Students train in the browser-based Pattern Trainer, download one small model file, and run a starter on their own laptop. Do the one-off setup before the lesson, or as a first step, and run an unchanged starter with its sample model on a school laptop beforehand.</p>
+<p><strong>Check before class</strong> (these vary by school; two minutes on one student-account laptop):</p>
+<ul>
+<li><em>The trainer loads.</em> Open the Pattern Trainer in the browser students will use, and check the school filter does not block it.</li>
+<li><em>The camera or microphone is allowed.</em> The picture and pose modes need the camera, and the sound mode needs the microphone (or students can upload sound files). Check the browser prompts and shows the permission.</li>
+<li><em>The install works without help.</em> If students cannot install packages on their laptops, run the setup yourself or use shared machines.</li>
+</ul>
+<p><strong>For your IT team.</strong> The Pattern Trainer is a static page: it runs in the student&#39;s browser with no backend, database or accounts. Its libraries (TensorFlow.js, MediaPipe) and model files are in the trainer&#39;s repository and served from the same site, and its own code makes no <code>fetch</code>, XMLHttpRequest, WebSocket or beacon calls and uses no browser storage (checked against <code>waypoints-tools</code> at commit <code>8c7ec47</code>, 27 Oct 2026; the vendored libraries were not audited). The camera or microphone is requested through the normal browser prompt, only when a student picks that mode. The only file output is the model file, or a saved project, that the student chooses to download. The starters run on the student&#39;s laptop and need Python, <code>pip</code> access for one install, and the model files in their own repository. Your IT team will make its own call; the trainer&#39;s privacy page says the same in plain words. To see it yourself: load the trainer, switch off Wi-Fi, and train a model, or watch the Network tab in the browser&#39;s developer tools while you add examples.</p>
+<p><strong>What to change when you adapt it</strong></p>
+<ul>
+<li><em>Problem and user.</em> Students choose, or you set a shared context (a class, a club, a subject area). Say which in the brief you hand out.</li>
+<li><em>Modes on offer.</em> Offer pictures, poses and sounds, or narrow it. Poses and sounds suit students who are not comfortable on camera, since poses use only 33 body points and sounds use no pictures. Steer voice-command ideas away from the Sounds mode: it keeps only YAMNet&#39;s scores for 521 kinds of sound, so spoken words all come out as &quot;speech&quot; and look alike to the trained part (a model on four words from Speech Commands scored about chance on new speakers, 28 Oct 2026). It is the same lesson as CreateAI, which measures movement, so two held-still positions look alike: what the fixed part can notice limits what any model can learn.</li>
+<li><em>Public datasets.</em> An optional extra, not the main route: students collect their own examples for their own user. A dataset helps a student with no camera or microphone, and &quot;train on theirs, test on yours&quot; shows how a model fits the world it was trained in. Two with clear licences: <a href="https://github.com/karolpiczak/ESC-50">ESC-10</a> (environmental sounds, CC BY 3.0, the example&#39;s data) and <a href="https://laurencemoroney.com/datasets.html">Rock Paper Scissors</a> (computer-generated hands, CC BY 4.0, project C&#39;s). Avoid datasets of people&#39;s faces and bodies.</li>
+<li><em>Amount of data.</em> &quot;20 or more examples of each class&quot; is a prompt. Raise it for stronger models, or lower it for a short unit.</li>
+<li><em>The skills list.</em> &quot;You&#39;ll use&quot; lights up from pasted code and is only a prompt: the unchanged starters already light some of it, or all (the page tells students so), so it shows which skills are in play, not that a student wrote them. Read the code for that. Change <code>uses:</code> in <code>projects.yml</code> if you want other skills.</li>
+<li><em>Check your app.</em> This is the success criteria. Reword a line, add your own, or remove one. The page lists them in the goal; the marking points below follow the same order.</li>
+<li><em>Hand-in.</em> Set your own. The Show your teacher card lists milestones ticked, the skills found in pasted code, help used and the student&#39;s own words on the hardest part.</li>
+<li><em>Help.</em> Hints are on offer to everyone. &quot;Show one way&quot; opens after the milestones before it are ticked or every hint for it has been used. Both are listed as <strong>Help used</strong> on the card. Set <code>reveal: false</code> (or remove <code>reveal:</code>) to turn &quot;Show one way&quot; off.</li>
+</ul>
+<p><strong>Safety and consent.</strong> Students record themselves or people who have said yes. Remind them to check what is behind them. Pictures and sounds stay on the student&#39;s computer; the model file has only class names and trained numbers; a saved project file in the trainer also holds tiny copies of photos, so it should not be shared if it shows people. Decide before the unit what students may keep and where.</p>
+<p><strong>Marking points to look for</strong> (replace with your own criteria):</p>
+<ul>
+<li><em>Clear result.</em> The output names the class and says what it means for the named user, not a bare label or number.</li>
+<li><em>Honest about how sure it is.</em> There is a cut-off, the app says &quot;not sure&quot; under it, and the student can say where the number came from. Look for a cut-off taken from the testing record, not a round number picked early. In the example, 0.85 sits above the four shaky wrong answers (0.61 to 0.79) and below all but one right answer.</li>
+<li><em>Useful response.</em> Each class leads to different advice or a next step. In the example, each alert says what to do, and &quot;not sure&quot; still tells the user to look, because a missed alert costs more than a false one.</li>
+<li><em>Fits the user.</em> There is a setting the user can change (the cut-off slider in the example) and the student can say why it helps this user.</li>
+<li><em>Tested.</em> The record has at least five unseen inputs and at least two not in any class, with what was expected written before the result, and what the student changed in response.</li>
+<li><em>Reflection.</em> Names a real input that fooled the model, says what was changed, makes a fair rule-versus-model point, and says who would be affected by a wrong answer.</li>
+</ul>
+<p><strong>Usual mistakes, and a question to ask.</strong></p>
+<ul>
+<li><em>Testing only the training examples.</em> Everything scores 0.99. Ask: &quot;Which of these did the model not see before?&quot;</li>
+<li><em>Examples that are all the same.</em> Twenty near-identical photos or sounds. Ask: &quot;What would change if you moved to a different room, or someone else did it?&quot;</li>
+<li><em>Trusting the confidence.</em> A high score is taken to mean right. Ask: &quot;Is there an input it was very sure about and wrong?&quot;</li>
+<li><em>A cut-off picked by guessing.</em> Ask: &quot;Which numbers in your testing record did you use to choose it?&quot;</li>
+<li><em>No &quot;nothing&quot; case.</em> The app always picks a class, even for something else. Ask: &quot;What does it say if the camera sees an empty room?&quot;</li>
+<li><em>Class that is really the background.</em> All the &quot;dog&quot; photos are outdoors and all the &quot;cat&quot; photos indoors. Ask: &quot;Would it still say cat in the garden?&quot;</li>
+<li><em>Classes the mode cannot tell apart.</em> Spoken words in Sounds mode, or two still positions on a movement sensor. Ask: &quot;What does the trainer say it heard for each one?&quot;</li>
+</ul>
+<p><strong>Ways it could look.</strong> Students see two screenshots of finished apps (a home sound alert, and a door knock listener from the starters&#39; sample sound model): output only, never code, so they show the standard without giving one answer to copy. Replace them with your own screenshots if you like (a PNG in <code>content/code/pattern-detector/projects/</code>, listed under <code>benchmark:</code>).</p>
+<p><strong>The example below</strong> is one complete trained app: a home sound alert for someone hard of hearing, with advice for each class, a &quot;not sure&quot; answer that still tells the user to look, a cut-off slider and a few made-up tests of its wording. Its model was trained in the Pattern Trainer&#39;s Sounds mode, as a student would (Upload sounds, Train model, Download), on ESC-10 clips: 32 to 33 five-second clips per class from folds 1 to 4 (Nothing urgent is rain, waves and a clock), tested on fold 5, which the model never heard. To run it, take <code>my_home_sounds_model.json</code> from <a href="https://github.com/edu-matthew-pham/waypoints-tutorials/tree/main/experiments/pattern-detector-examples">the examples folder</a>, put it in the starters folder beside <code>pattern_model.py</code>, and run the example like a starter. Students who unlock &quot;Show one way&quot; see only a short piece of it for the milestone they are on.</p>
+<p><strong>A filled-in testing record</strong> (the example app on ESC-10 fold 5, cut-off 0.85; yours will look different). The first model was tested, fooled, changed and tested again, as milestone 2 asks:</p>
+<table>
+<thead>
+<tr>
+<th>I tried</th>
+<th>I expected</th>
+<th>First model said</th>
+<th>After the change</th>
+<th>How sure (after)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>8 babies crying</td>
+<td>Baby crying</td>
+<td>7 right, 1 Dog barking</td>
+<td>same</td>
+<td>1.00 (wrong one 0.73)</td>
+<td>the wrong one is now &quot;Not sure&quot;</td>
+</tr>
+<tr>
+<td>8 dogs barking</td>
+<td>Dog barking</td>
+<td>8 right</td>
+<td>same</td>
+<td>0.997 or more</td>
+<td>ok</td>
+</tr>
+<tr>
+<td>8 fires crackling</td>
+<td>Fire crackling</td>
+<td>7 right, 1 Nothing urgent</td>
+<td>same</td>
+<td>1.00</td>
+<td><strong>a missed fire, and sure</strong>: no cut-off catches it</td>
+</tr>
+<tr>
+<td>24 rain, waves, clocks</td>
+<td>Nothing urgent</td>
+<td>23 right, 1 rain as Fire (0.99)</td>
+<td>23 right, rain as Fire (0.65)</td>
+<td>0.87 or more</td>
+<td>the rain is now &quot;Not sure&quot;</td>
+</tr>
+<tr>
+<td>8 chainsaws (never trained)</td>
+<td>Nothing urgent</td>
+<td><strong>6 as Fire crackling</strong> (0.997 to 1.00)</td>
+<td>8 Nothing urgent</td>
+<td>1.00</td>
+<td>false fire alarms; fixed by adding chainsaws</td>
+</tr>
+<tr>
+<td>8 sneezes (never trained)</td>
+<td>Nothing urgent</td>
+<td><strong>6 as Baby crying</strong> (0.99 to 1.00), 2 Nothing urgent</td>
+<td>6 Nothing urgent, 2 Baby crying</td>
+<td>0.61 and 1.00</td>
+<td>one now &quot;Not sure&quot;, one still fooled</td>
+</tr>
+<tr>
+<td>8 roosters (never trained)</td>
+<td>Nothing urgent</td>
+<td>8 Nothing urgent</td>
+<td><strong>8 as Dog barking</strong> (0.79 to 1.00)</td>
+<td></td>
+<td><strong>the change broke something that worked</strong></td>
+</tr>
+<tr>
+<td>8 helicopters (never trained)</td>
+<td>Nothing urgent</td>
+<td>6 Nothing urgent, 2 Fire (0.51 and 1.00)</td>
+<td>7 Nothing urgent, 1 Fire (1.00)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><em>What changed:</em> 11 chainsaw and 11 sneeze clips (from folds 1 to 4) were added to Nothing urgent and the model retrained. The chainsaws and most sneezes are fixed, but now every rooster is called Dog barking: adding examples to one class moved where the model draws its lines, and sounds it never heard landed somewhere new. The cut-off (0.85) turns the four shaky wrong answers into &quot;not sure&quot;; the confident ones (a fire called Nothing urgent, a sneeze, the roosters) need more examples, not a cut-off.</p>
+<p><strong>A sample reflection</strong> (strong): &quot;The model was sure a chainsaw was a fire, 100% sure. I had trained Nothing urgent on rain, waves and a clock, so it only knew quiet sounds as &#39;nothing&#39;, and anything loud and rough sounded like fire to it. I added chainsaws and sneezes to Nothing urgent and the chainsaws were fixed, but then it called every rooster a dog barking, which had worked before. So I learned that fixing one mistake can make another, and I have to retest everything after every change. My cut-off is 0.85 because the shaky wrong answers were all under 0.80. A simple rule would do better at loudness: &#39;tell me about anything louder than talking&#39; can be measured exactly. If my app is wrong, a deaf person might not go to a crying baby or a real fire, so &#39;not sure&#39; still tells them to look, and I say it does not replace a smoke alarm.&quot;</p>
+<p><strong>What a weaker reflection looks like:</strong> &quot;My app works well and the confidence was high.&quot; Ask: on which input did you not expect it to work, and what happened?</p>
+<div class="code"><div class="code-head"><span>One possible solution</span><button type="button" class="copy">Copy</button></div><pre><code><span class="com"># EXAMPLE (teachers): a home sound alert, built from audio_pattern_trainer.py.</span>
+<span class="com"># Its model (my_home_sounds_model.json) was trained in the Pattern Trainer's</span>
+<span class="com"># Sounds mode on clips from ESC-10 (CC BY 3.0, Karol Piczak). Yours will look different.</span>
+<span class="com">#</span>
+<span class="com"># Who it is for: someone who is hard of hearing, at home.</span>
+<span class="com"># What it does: listens to a short recording and says whether it heard a baby</span>
+<span class="com"># crying, a dog barking or a fire crackling, and what to do about it. Anything</span>
+<span class="com"># it is not sure about is passed on as "not sure", never dropped.</span>
+<span class="com">#</span>
+<span class="com"># Plan (written before training):</span>
+<span class="com">#   User:     someone hard of hearing, at home.</span>
+<span class="com">#   Job:      tell them about sounds they would want to know about.</span>
+<span class="com">#   Classes:  Baby crying, Dog barking, Fire crackling, Nothing urgent</span>
+<span class="com">#             (rain, waves, a clock: sounds that need no action)</span>
+<span class="com">#</span>
+<span class="com"># Cut-off, chosen from the testing record (see the teacher notes): the four</span>
+<span class="com"># shaky wrong answers scored 0.61 to 0.79, and all but one right answer scored</span>
+<span class="com"># 0.87 or more, so 0.85 catches the shaky ones for the cost of one right answer</span>
+<span class="com"># (0.76). Some wrong answers are still 0.95 or more sure, which no cut-off catches.</span>
+
+<span class="kw">import</span> os
+<span class="kw">import</span> gradio <span class="kw">as</span> gr
+<span class="kw">from</span> pattern_model <span class="kw">import</span> PatternModel
+
+MODEL_FILE = <span class="fn">os.path.join</span>(<span class="fn">os.path.dirname</span>(<span class="fn">os.path.abspath</span>(__file__)), <span class="str">"my_home_sounds_model.json"</span>)
+model = <span class="fn">PatternModel.load</span>(MODEL_FILE)
+
+DEFAULT_CUTOFF = <span class="num">0.85</span>
+
+<span class="com"># What to say for each class (the names come from the model file)</span>
+ADVICE = {
+    <span class="str">"Baby crying"</span>: <span class="str">"The baby is crying. Go and check on them."</span>,
+    <span class="str">"Dog barking"</span>: <span class="str">"The dog is barking. Someone may be at the door."</span>,
+    <span class="str">"Fire crackling"</span>: <span class="str">"Something is crackling like a fire. Check the kitchen and the heaters now."</span>,
+    <span class="str">"Nothing urgent"</span>: <span class="str">"Nothing to worry about."</span>,
+}
+
+
+<span class="kw">def</span> <span class="fn">reply</span>(label, score, cutoff):
+    <span class="str">"""Turn the model's answer into words for the user."""</span>
+    <span class="kw">if</span> label is <span class="kw">None</span>:
+        <span class="kw">return</span> <span class="str">"Nothing heard"</span>, <span class="str">"That recording was empty. Try again."</span>
+    <span class="kw">if</span> score &lt; cutoff:
+        <span class="com"># Not sure is passed on, not dropped: a missed alert costs more than a false one.</span>
+        <span class="kw">return</span> <span class="str">"Not sure"</span>, <span class="str">f"I heard something, maybe {label} ({score:.0%}). Have a look to be safe."</span>
+    <span class="kw">return</span> label, ADVICE[label]
+
+
+<span class="kw">def</span> <span class="fn">listen</span>(sound, cutoff):
+    <span class="kw">if</span> sound is <span class="kw">None</span>:
+        <span class="kw">return</span> <span class="str">"Record or upload a sound first."</span>, <span class="str">""</span>
+    label, score = <span class="fn">model.top</span>(sound)
+    headline, advice = <span class="fn">reply</span>(label, score, cutoff)
+    <span class="kw">return</span> headline, advice
+
+
+<span class="com"># Made-up answers, to test the wording and the cut-off without a microphone</span>
+TESTS = [
+    (<span class="kw">None</span>, <span class="num">0.0</span>, <span class="str">"Nothing heard"</span>),
+    (<span class="str">"Baby crying"</span>, <span class="num">0.99</span>, <span class="str">"Baby crying"</span>),
+    (<span class="str">"Dog barking"</span>, <span class="num">0.84</span>, <span class="str">"Not sure"</span>),      <span class="com"># just under the cut-off</span>
+    (<span class="str">"Dog barking"</span>, <span class="num">0.85</span>, <span class="str">"Dog barking"</span>),   <span class="com"># exactly on it</span>
+    (<span class="str">"Nothing urgent"</span>, <span class="num">0.97</span>, <span class="str">"Nothing urgent"</span>),
+]
+<span class="kw">for</span> label, score, expected <span class="kw">in</span> TESTS:
+    got = <span class="fn">reply</span>(label, score, DEFAULT_CUTOFF)[<span class="num">0</span>]
+    assert got == expected, (label, score, got)
+
+<span class="fn">gr.Interface</span>(
+    fn=listen,
+    inputs=[
+        <span class="fn">gr.Audio</span>(sources=[<span class="str">"microphone"</span>, <span class="str">"upload"</span>], type=<span class="str">"numpy"</span>, label=<span class="str">"Record a few seconds, or upload a sound:"</span>),
+        <span class="fn">gr.Slider</span>(<span class="num">0.5</span>, <span class="num">0.95</span>, value=DEFAULT_CUTOFF, step=<span class="num">0.05</span>, label=<span class="str">"How sure should I be before I say what it is?"</span>),
+    ],
+    outputs=[<span class="fn">gr.Textbox</span>(label=<span class="str">"What I heard"</span>), <span class="fn">gr.Textbox</span>(label=<span class="str">"What to do"</span>)],
+    title=<span class="str">"Home sound alert"</span>,
+    description=<span class="str">"For someone who is hard of hearing: sounds at home you would want to know about."</span>,
+    flagging_mode=<span class="str">"never"</span>,
+).<span class="fn">launch</span>(show_error=<span class="kw">True</span>)
+
+<span class="com"># Testing record (cut-off 0.85; the full table is in the teacher notes):</span>
+<span class="com"># I tried                      I expected       It said          How sure</span>
+<span class="com"># a sneeze                     Nothing urgent   Baby crying      0.61   (now "Not sure")</span>
+<span class="com"># a rooster                    Nothing urgent   Dog barking      0.998  (fooled, and sure)</span>
+<span class="com"># a chainsaw, first model      Nothing urgent   Fire crackling   1.00   (fixed by adding chainsaws)</span>
+</code></pre></div></details><details class="primer"><summary><b>C. Combined pattern detector</b> <span class="muted">(a function with parameters, a dictionary ({k: v}), and / or, return)</span></summary><p>Build a Python app where <strong>a trained model recognises something, and rules you write decide what to do about it.</strong></p>
+<p>Each part does the job it is best at. The model handles the messy, real-world input, such as a photo, a pose or a sound. The rules handle the parts you can describe exactly: counting, scoring, looking things up, and deciding what to do when the model is not sure.</p>
+<p><strong>Before you start:</strong> you have built one rules-based app (project A) and one trained app (project B).</p>
+<p>The parts fit together like this:</p>
+<p><code>input → trained model → label + how sure → your rules → response</code></p>
+<p>Your rules should use how sure the model is, not only its label. What does your app do when it is not sure?</p>
+<p>Before you start, write one sentence: <strong>who is it for, and what will it tell or do for them?</strong></p>
+<p><strong>What to hand in</strong></p>
+<ul>
+<li>Your app: the <code>.py</code> file, your model file and any data files.</li>
+<li>A pipeline diagram, with the reason each part is a model or rules.</li>
+<li>A testing record for each part on its own and for the whole app, including inputs where the model was unsure or wrong.</li>
+<li>A reflection: which part caused the most problems, what you would change, and who could be affected if your app got it wrong.</li>
+</ul>
+<p><strong>Check your app before you hand it in</strong></p>
+<ul>
+<li><strong>Clear result</strong>, in words your user understands.</li>
+<li><strong>Honest about how sure it is</strong>: low-confidence results are handled, not hidden.</li>
+<li><strong>Useful response</strong> that needs both parts: take either part away and the response gets worse.</li>
+<li><strong>Fits your user</strong>: settings or options they can change.</li>
+<li><strong>Tested</strong> as a whole, not just part by part.</li>
+</ul>
+<p><strong>Good habits.</strong> Only record yourself, or people who have said yes. Check what is behind you before you record. Your pictures and sounds stay on your computer.</p>
+<p><b>Milestones:</b></p><ul><li>My problem and my user are clear, and my pipeline is drawn, with the reason each part is a model or rules.<ol class="muted"><li>Start with one sentence: who is it for, and what will it tell or do for them? Then say what the response needs that a model alone, or rules alone, could not give.</li><li>Draw boxes for the input, the model, the label and how sure it is, your rules, and the response. Put an arrow wherever one part hands something to the next.</li><li>Under each box, write why it is a model or rules. If you can describe it exactly, it is probably rules. If it is too messy to describe, it is probably the model.</li></ol><div class="muted">Students can earn this piece (reveal on): <code># Pipeline:<br>#   photo -&gt; MODEL (Rock/Paper/Scissors + how sure) -&gt; RULES (cut-off, who wins, score) -&gt; result<br>#   MODEL: telling a hand shape apart in a photo is too messy for rules.<br>#   RULES: who beats whom, keeping score and when the game ends are exact.</code></div></li><li>I built and tested each part on its own.<ol class="muted"><li>Get your model part working first, from the closest trainer starter, and check what it says on a few inputs it has not seen.</li><li>Write your rules as a function that takes the model's answer as inputs, so you can test it with made-up labels and scores before the model is connected.</li><li>Make up the awkward readings on purpose: unsure, nobody there, and the same answer many times in a row. Write what you expect before you run them.</li></ol><div class="muted">Students can earn this piece (reveal on): <code>assert run([(&quot;Rock&quot;, 0.95, &quot;Scissors&quot;)]) == ({&quot;you&quot;: 1, &quot;computer&quot;: 0}, &quot;You win the round&quot;)<br>assert run([(&quot;Rock&quot;, 0.95, &quot;Paper&quot;)]) == ({&quot;you&quot;: 0, &quot;computer&quot;: 1}, &quot;I win the round&quot;)<br>assert run([(&quot;Rock&quot;, 0.95, &quot;Rock&quot;)]) == (NEW_GAME, &quot;Draw&quot;)<br>assert run([(&quot;Paper&quot;, 0.65, &quot;Rock&quot;)]) == (NEW_GAME, &quot;Show it again&quot;)              # unsure: not played</code></div></li><li>I joined the parts, and my rules use how sure the model is.<ol class="muted"><li>Call the model first, then pass its label and its confidence to your rules function.</li><li>Decide what your rules do below your cut-off: ignore the answer, ask again, or say so. Whichever you choose, the user should be able to tell.</li><li>If your rules remember something between checks (a count, a score, a list), keep it in one place and change it in one place.</li></ol><div class="muted">Students can earn this piece (reveal on): <code>label, confidence = model.top(image)          # the MODEL part<br>computer = random.choice(list(BEATS))<br>score, headline, detail = play(score, label, confidence, computer, int(target))   # the RULES part</code></div></li><li>I tested the joins, including when the model was unsure or wrong, and I can say who would be affected.<ol class="muted"><li>Test the whole app on a run of inputs, not one at a time, and include one the model is unsure about and one it gets wrong.</li><li>Ask of each join: what does the rest of my app do with this answer? A confident wrong answer looks exactly like a confident right one, so what do your rules do with it?</li><li>Decide who is affected if the app is wrong, and whether they would know. Then change one thing so the app handles it better, and test again.</li></ol><div class="muted">Students can earn this piece (reveal on): <code>if label is None or confidence &lt; CUTOFF:<br>    return score, &quot;Show it again&quot;, f&quot;I'm not sure that was {label} ({confidence:.0%}), so that throw doesn't count.&quot;</code></div></li></ul><p><strong>What this project is.</strong> The joined-up half of the set. Project A used rules and project B used a trained model; here a model feeds rules. The learning is in the joins: what the rules do with the model&#39;s label and confidence, and what happens when the model is unsure or confidently wrong. A strong project cannot work with either part taken away.</p>
+<p><strong>Running it.</strong> Same as project B: students train in the browser-based Pattern Trainer, download a model file, and run a starter on their own laptop, adding rules of their own. Run an unchanged starter with its sample model on a school laptop beforehand. The &quot;Check before class&quot; and &quot;For your IT team&quot; notes in project B apply here too.</p>
+<p><strong>When to offer it.</strong> After students have built one app of each kind, since the pipeline diagram only makes sense when they have met both a rule and a trained model. If a class has done only A or only B, offer it as an extension.</p>
+<p><strong>What to change when you adapt it</strong></p>
+<ul>
+<li><em>Problem and user.</em> Students choose, or you set a shared context. Say which in the brief you hand out.</li>
+<li><em>The model part.</em> Offer pictures, poses and sounds, or narrow it. Students may reuse the model they trained for project B.</li>
+<li><em>The rules part.</em> The starters give simple examples to build from (<code>choice_rules.py</code>, <code>sound_rules.py</code>, <code>measure.py</code>); students may also write their own from scratch.</li>
+<li><em>State.</em> Many good ideas need the app to remember something between checks (a streak, a score, a list), which Gradio keeps with <code>gr.State</code> as in the example. Offer a worked example in class if students have not met it, or pick ideas that avoid it.</li>
+<li><em>Live video or sound.</em> The starters carry an optional live version. It runs the model on every frame, so test the speed on your laptops first.</li>
+<li><em>The skills list.</em> &quot;You&#39;ll use&quot; lights up from pasted code and is only a prompt: the unchanged starters already light some of it, or all (the page tells students so), so it shows which skills are in play, not that a student wrote them. Read the code for that. Change <code>uses:</code> in <code>projects.yml</code> if you want other skills.</li>
+<li><em>Check your app.</em> This is the success criteria. Reword a line, add your own, or remove one. The marking points below follow the same order.</li>
+<li><em>Hand-in.</em> Set your own. The Show your teacher card lists milestones ticked, the skills found in pasted code, help used and the student&#39;s own words on the hardest part.</li>
+<li><em>Help.</em> Hints are on offer to everyone. &quot;Show one way&quot; opens after the milestones before it are ticked or every hint for it has been used. Both are listed as <strong>Help used</strong> on the card. Set <code>reveal: false</code> (or remove <code>reveal:</code>) to turn &quot;Show one way&quot; off.</li>
+</ul>
+<p><strong>Marking points to look for</strong> (replace with your own criteria):</p>
+<ul>
+<li><em>Clear result.</em> Words the named user would understand, not a label and a number.</li>
+<li><em>Honest about how sure it is.</em> Low confidence changes what the app does, and the user can tell. In the example, an unsure throw is not played and the app says so.</li>
+<li><em>Useful response that needs both parts.</em> Ask: &quot;If I removed the model, what would the app do? If I removed the rules?&quot; In the example, the model alone can only name a hand shape, and the rules alone have no throw to play.</li>
+<li><em>Fits the user.</em> A setting the user can change (rounds to win in the example), and the student can say why.</li>
+<li><em>Tested as a whole.</em> A record of runs of inputs through the whole app, not only one input at a time, with at least one unsure case and at least one wrong case, and what the student did about each.</li>
+<li><em>Pipeline diagram.</em> Shows both parts and the hand-off between them, and gives a reason for each part, not just labels.</li>
+<li><em>Reflection.</em> Names the part that caused the most trouble, a real input that broke a join, and who would be affected.</li>
+</ul>
+<p><strong>Usual mistakes, and a question to ask.</strong></p>
+<ul>
+<li><em>A model with a few rules stuck on the end.</em> The rules only rename the label. Ask: &quot;What does the rules part know that the model does not?&quot;</li>
+<li><em>Ignoring confidence.</em> The app takes the label at face value. Ask: &quot;What happens when the model is 60% sure?&quot;</li>
+<li><em>Testing the parts but not the joins.</em> Each part passes on its own, but the app fails together. Ask: &quot;What is the first input that makes them disagree?&quot;</li>
+<li><em>Trusting a confident wrong answer.</em> A rule acts on every label as if it were true. Ask: &quot;What does your app do if the model is sure and wrong?&quot;</li>
+<li><em>A pipeline diagram that is decoration.</em> It shows boxes but gives no reasons. Ask: &quot;Why is this part not the other kind?&quot;</li>
+<li><em>Forgetting what the app remembers.</em> A score that never resets, or resets at the wrong time. Ask: &quot;When does this go back to zero?&quot;</li>
+</ul>
+<p><strong>Two models in a row: detect, then judge</strong> (a stretch idea, with a worked example). Several models make sense when each looks at something different or answers a separate question: two senses (a sound and a picture), separate questions (which sign and which hand: 4 + 2 classes, not 8 combinations), a gate before a specialist, or a closer look for the second step. Splitting one question about one photo into a chain rarely helps at this scale (both models read the same 1,280 numbers, and their mistakes multiply).</p>
+<p>The worked example, <a href="https://github.com/edu-matthew-pham/waypoints-tutorials/tree/main/experiments/pattern-detector-examples"><code>combined-banana-checker.py</code></a>, is the strongest case: a <strong>ready-made</strong> model and the student&#39;s <strong>own</strong> model, each doing what the other can&#39;t. MediaPipe&#39;s Object Detector (EfficientDet-Lite0, Apache 2.0; it ships with the same MediaPipe the trainer and starters use, and knows COCO&#39;s 80 everyday things, banana, apple and orange among them) finds each banana and its box; the app cuts each one out; a ripeness model trained in the Pattern Trainer on BananaID (single bananas on a plain background; Mutrofin, Fatichah, Yuniarti and Setiawan, Mendeley Data, CC BY 4.0) judges it; rules apply two cut-offs (is it a banana: 0.30; how sure of the ripeness: 0.60), count and advise. Students cannot train a detector (it took thousands of photos with boxes drawn on them), but they can train the part that is theirs. <strong>The point is knowing where it fails, not a perfect app.</strong></p>
+<p><em>Testing record</em> (28 Oct 2026; 62 photos from COCO val2017 with an open per-photo licence, 27 of them with bananas; ripeness of the cut-outs judged by eye, as a student would):</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>What I tried</th>
+<th>What happened</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ripeness model alone</td>
+<td>120 BananaID photos of bananas it never saw (same plain background)</td>
+<td>82 right. Overripe 27 of 30, Ripe 27 of 30, Unripe 21 of 30, <strong>Half ripe 7 of 30</strong>: the in-between stage is hardest</td>
+</tr>
+<tr>
+<td>Detector alone, cut-off 0.30</td>
+<td>27 photos with bananas, 35 without</td>
+<td>found a banana in 15 of the 27; no false bananas</td>
+</tr>
+<tr>
+<td>Detector alone, cut-off 0.20</td>
+<td>the same</td>
+<td>found one in 21 of the 27, but called 4 apples and oranges bananas</td>
+</tr>
+<tr>
+<td>The join at 0.20</td>
+<td>an apple in a bowl</td>
+<td>the detector said banana (0.24), and <strong>my model said &quot;Unripe&quot; at 0.97</strong>: it judged an apple&#39;s ripeness as a banana&#39;s, sure of itself</td>
+</tr>
+<tr>
+<td>Missed bananas</td>
+<td>bowls in kitchens, small or half hidden bananas</td>
+<td>6 photos with no detection at all, so my model never saw those bananas and the app said &quot;no bananas&quot;</td>
+</tr>
+<tr>
+<td>Counting</td>
+<td>a bunch of 13 bananas</td>
+<td>one box around the bunch: counted as 1 banana</td>
+</tr>
+<tr>
+<td>The whole app</td>
+<td>27 cut-outs it kept</td>
+<td>green bananas: all Unripe or &quot;not sure&quot; (right). Yellow bananas alone on a table: mostly right. <strong>Yellow bunches and close-ups: 10 called Overripe at 0.86 to 1.00</strong>, wrong by eye</td>
+</tr>
+<tr>
+<td>Confidence</td>
+<td>median confidence on BananaID test photos vs kitchen cut-outs</td>
+<td>0.95 vs 0.94: <strong>the model was just as sure on photos unlike its training ones</strong></td>
+</tr>
+</tbody></table>
+<p>The last two rows are the lesson: the ripeness model learned from single bananas on a plain grey background, and a cut-out from a bunch or a kitchen photo looks nothing like that (shadows between bananas may read as the brown patches of an overripe one; we can&#39;t see inside the model to be sure). Confidence did not warn us, so only testing on the real photos showed it. Fixes a student might try and test: train on cut-outs from the app&#39;s own photos, a cut-off from this testing record, or telling the user &quot;one box may be a whole bunch&quot;. Model, data and every result: <a href="https://github.com/edu-matthew-pham/waypoints-tutorials/tree/main/experiments/pattern-detector-examples">the examples folder</a>.</p>
+<p><strong>Ways it could look.</strong> Students see two screenshots of finished apps where the model feeds the rules in different ways (rock paper scissors, where rules play the round and keep score, and a secret knock door that checks the last three sounds against a pattern): output only, never code. Replace them with your own screenshots if you like (a PNG in <code>content/code/pattern-detector/projects/</code>, listed under <code>benchmark:</code>).</p>
+<p><strong>The example below</strong> is one complete combined app: rock paper scissors against the computer, first to 2. The model reads the throw; the rules skip a throw under the cut-off (&quot;show it again&quot;), decide the round, keep score with <code>gr.State</code>, end the game and start a new one, and are tested on their own with made-up readings before they are joined to the model. Its model was trained in the Pattern Trainer as a student would (Upload photos, Train model, Download) on 60 pictures per class from the Rock Paper Scissors dataset&#39;s training set, and tested on its separate test set (30 per class, different hands, never seen). To run it, take <code>my_rps_model.json</code> from <a href="https://github.com/edu-matthew-pham/waypoints-tutorials/tree/main/experiments/pattern-detector-examples">the examples folder</a>, put it in the starters folder beside <code>pattern_model.py</code>, and run the example like a starter. The dataset&#39;s hands are computer-generated, so try your own hand on the webcam too: expect it to do worse, which is &quot;train on theirs, test on yours&quot; first-hand. Students who unlock &quot;Show one way&quot; see only a short piece of it for the milestone they are on.</p>
+<p><strong>A filled-in testing record</strong> (the example app on the dataset&#39;s test set, cut-off 0.70, first to 2; yours will look different):</p>
+<p><em>Rules on their own (made-up readings)</em></p>
+<table>
+<thead>
+<tr>
+<th>Throw (how sure) and the computer&#39;s</th>
+<th>I expected</th>
+<th>The rules said</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Rock (0.95) v Scissors</td>
+<td>you win the round, 1-0</td>
+<td>&quot;You win the round&quot;, 1-0</td>
+</tr>
+<tr>
+<td>Rock (0.95) v Paper</td>
+<td>I win the round, 0-1</td>
+<td>&quot;I win the round&quot;, 0-1</td>
+</tr>
+<tr>
+<td>Rock (0.95) v Rock</td>
+<td>draw, 0-0</td>
+<td>&quot;Draw&quot;, 0-0</td>
+</tr>
+<tr>
+<td>Paper (0.65) v Rock</td>
+<td>not played</td>
+<td>&quot;Show it again&quot;, 0-0</td>
+</tr>
+<tr>
+<td>Paper (0.70) v Rock</td>
+<td>played, exactly on the cut-off</td>
+<td>&quot;You win the round&quot;, 1-0</td>
+</tr>
+<tr>
+<td>two wins, first to 2</td>
+<td>game over, new game</td>
+<td>&quot;You win the game!&quot;, back to 0-0</td>
+</tr>
+</tbody></table>
+<p><em>Model on its own (90 test pictures it never saw)</em></p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Right</th>
+<th>What went wrong</th>
+<th>How sure</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Rock</td>
+<td>30 of 30</td>
+<td></td>
+<td>0.79 or more</td>
+</tr>
+<tr>
+<td>Scissors</td>
+<td>30 of 30</td>
+<td></td>
+<td>0.87 or more</td>
+</tr>
+<tr>
+<td>Paper</td>
+<td>20 of 30</td>
+<td>10 called Rock</td>
+<td>wrong ones 0.54 to 0.97; right ones as low as 0.40</td>
+</tr>
+</tbody></table>
+<p><em>Choosing the cut-off.</em> From 0.70 up to 0.85, the cut-off catches the same 5 of the 10 wrong answers; 0.70 asks again least often (12 of the 80 right answers). Asking again costs little in a game, losing a round you won does not. 5 wrong answers were 0.85 or more sure: a cut-off can&#39;t catch those.</p>
+<p><em>The whole app, in games</em></p>
+<table>
+<thead>
+<tr>
+<th>Game</th>
+<th>Throws (what the model read, how sure) v the computer</th>
+<th>The app said</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>rock (Rock 1.00) v Scissors; scissors (Scissors 0.99) v Rock; scissors (Scissors 0.99) v Paper</td>
+<td>win, loss, &quot;You win the game!&quot;</td>
+<td>ok</td>
+</tr>
+<tr>
+<td>2</td>
+<td>rock (Rock 1.00) v Scissors; <strong>paper (Rock 0.59)</strong> v Rock; paper (Paper 0.93) v Rock</td>
+<td>win, &quot;Show it again&quot;, &quot;You win the game!&quot;</td>
+<td>the unsure throw was not played, so a shaky read cost nothing</td>
+</tr>
+<tr>
+<td>3</td>
+<td>rock (Rock 1.00) v Paper; <strong>paper (Rock 0.97)</strong> v Rock; scissors (Scissors 0.99) v Paper</td>
+<td>loss, <strong>&quot;Draw&quot;</strong>, win: 1-1</td>
+<td><strong>the player won that round, but the model was sure and wrong, so it was called a draw</strong></td>
+</tr>
+</tbody></table>
+<p>Game 3 is the point of the project: each part passes on its own, and the whole app still gets a round wrong, because the rules trust a confident wrong answer. Students may fix it in different ways (show what the model read and add a &quot;That&#39;s not my throw&quot; button that replays the round, or ask for the same throw twice), and a fix that lets the person catch the model&#39;s mistake is worth marking up.</p>
+<p><strong>A sample reflection</strong> (strong): &quot;The rules were the easy part and they passed every test. The trouble was the join. In one game my paper was read as rock with 97% confidence, so my round was called a draw when I had won. The cut-off only caught the shaky reads, not that one. I changed the app so it always says what it read (&#39;I read your throw as Rock&#39;) and added a &#39;That&#39;s not my throw&#39; button that replays the round, then tested the same game again and got my point back. The model was trained on computer-made hands, and on my own hand it was much less sure, especially for paper, so I would add photos of real hands next. If it is wrong, the player loses a round they won, which is unfair but not dangerous, so I let them overrule it.&quot;</p>
+<p><strong>What a weaker reflection looks like:</strong> &quot;It works well and the model and the rules work together.&quot; Ask: which input did you expect to break it, and what happened?</p>
+<div class="code"><div class="code-head"><span>One possible solution</span><button type="button" class="copy">Copy</button></div><pre><code><span class="com"># EXAMPLE (teachers): a combined app. A trained model reads your hand;</span>
+<span class="com"># rules play the game. Built from image_pattern_trainer.py, with a model</span>
+<span class="com"># (my_rps_model.json) trained in the Pattern Trainer on 60 pictures per class</span>
+<span class="com"># from the Rock Paper Scissors dataset (CC BY 4.0, Laurence Moroney; the hands</span>
+<span class="com"># are computer-generated). Yours will look different.</span>
+<span class="com">#</span>
+<span class="com"># Who it is for: anyone who wants a quick game against the computer.</span>
+<span class="com"># What it does: you show a throw to the camera, the computer picks one, and the</span>
+<span class="com"># rules say who won the round. First to 2 wins. A throw it can't read well</span>
+<span class="com"># enough is not played: you show it again.</span>
+<span class="com">#</span>
+<span class="com"># Pipeline:</span>
+<span class="com">#   photo -&gt; MODEL (Rock/Paper/Scissors + how sure) -&gt; RULES (cut-off, who wins, score) -&gt; result</span>
+<span class="com">#   MODEL: telling a hand shape apart in a photo is too messy for rules.</span>
+<span class="com">#   RULES: who beats whom, keeping score and when the game ends are exact.</span>
+<span class="com">#</span>
+<span class="com"># Cut-off, chosen from the testing record (see the teacher notes): from 0.70 to</span>
+<span class="com"># 0.85 it catches the same 5 of the 10 wrong answers; 0.70 asks you to show it</span>
+<span class="com"># again least often (12 of 80 right answers). Asking again costs little in a</span>
+<span class="com"># game; losing a round you won does not. 5 wrong answers were 0.85 or more sure.</span>
+
+<span class="kw">import</span> os
+<span class="kw">import</span> random
+<span class="kw">import</span> gradio <span class="kw">as</span> gr
+<span class="kw">from</span> pattern_model <span class="kw">import</span> PatternModel
+
+MODEL_FILE = <span class="fn">os.path.join</span>(<span class="fn">os.path.dirname</span>(<span class="fn">os.path.abspath</span>(__file__)), <span class="str">"my_rps_model.json"</span>)
+model = <span class="fn">PatternModel.load</span>(MODEL_FILE)
+
+CUTOFF = <span class="num">0.70</span>          <span class="com"># under this, the throw is not played</span>
+DEFAULT_TARGET = <span class="num">2</span>     <span class="com"># rounds to win the game</span>
+
+BEATS = {<span class="str">"Rock"</span>: <span class="str">"Scissors"</span>, <span class="str">"Paper"</span>: <span class="str">"Rock"</span>, <span class="str">"Scissors"</span>: <span class="str">"Paper"</span>}   <span class="com"># each beats the one it names</span>
+NEW_GAME = {<span class="str">"you"</span>: <span class="num">0</span>, <span class="str">"computer"</span>: <span class="num">0</span>}
+
+
+<span class="kw">def</span> <span class="fn">round_winner</span>(you, computer):
+    <span class="str">"""RULES: who wins one round."""</span>
+    <span class="kw">if</span> you == computer:
+        <span class="kw">return</span> <span class="str">"draw"</span>
+    <span class="kw">if</span> BEATS[you] == computer:
+        <span class="kw">return</span> <span class="str">"you"</span>
+    <span class="kw">return</span> <span class="str">"computer"</span>
+
+
+<span class="kw">def</span> <span class="fn">play</span>(score, label, confidence, computer, target):
+    <span class="str">"""RULES: one throw. Returns the new score and what to say. An unsure throw is not played."""</span>
+    <span class="kw">if</span> label is <span class="kw">None</span> <span class="kw">or</span> confidence &lt; CUTOFF:
+        <span class="kw">return</span> score, <span class="str">"Show it again"</span>, <span class="str">f"I'm not sure that was {label} ({confidence:.0%}), so that throw doesn't count."</span>
+    score = <span class="fn">dict</span>(score)
+    winner = <span class="fn">round_winner</span>(label, computer)
+    <span class="kw">if</span> winner != <span class="str">"draw"</span>:
+        score[winner] += <span class="num">1</span>
+    said = <span class="str">f"I read your throw as {label} ({confidence:.0%}). I threw {computer}."</span>
+    <span class="kw">if</span> score[<span class="str">"you"</span>] &gt;= target:
+        <span class="kw">return</span> <span class="fn">dict</span>(NEW_GAME), <span class="str">"You win the game!"</span>, said + <span class="str">f" Final score {score['you']}-{score['computer']}. New game."</span>
+    <span class="kw">if</span> score[<span class="str">"computer"</span>] &gt;= target:
+        <span class="kw">return</span> <span class="fn">dict</span>(NEW_GAME), <span class="str">"I win the game!"</span>, said + <span class="str">f" Final score {score['you']}-{score['computer']}. New game."</span>
+    headline = {<span class="str">"you"</span>: <span class="str">"You win the round"</span>, <span class="str">"computer"</span>: <span class="str">"I win the round"</span>, <span class="str">"draw"</span>: <span class="str">"Draw"</span>}[winner]
+    <span class="kw">return</span> score, headline, said + <span class="str">f" You {score['you']}, me {score['computer']}."</span>
+
+
+<span class="kw">def</span> <span class="fn">throw</span>(image, score, target):
+    <span class="kw">if</span> image is <span class="kw">None</span>:
+        <span class="kw">return</span> <span class="str">"Show a throw first."</span>, <span class="str">""</span>, score
+    label, confidence = <span class="fn">model.top</span>(image)          <span class="com"># the MODEL part</span>
+    computer = <span class="fn">random.choice</span>(<span class="fn">list</span>(BEATS))
+    score, headline, detail = <span class="fn">play</span>(score, label, confidence, computer, <span class="fn">int</span>(target))   <span class="com"># the RULES part</span>
+    <span class="kw">return</span> headline, detail, score
+
+
+<span class="com"># The rules tested on their own, with made-up readings and no camera.</span>
+<span class="com"># Each throw is (my label, how sure, the computer's throw).</span>
+<span class="kw">def</span> <span class="fn">run</span>(throws, target=DEFAULT_TARGET):
+    score, said = <span class="fn">dict</span>(NEW_GAME), <span class="kw">None</span>
+    <span class="kw">for</span> label, confidence, computer <span class="kw">in</span> throws:
+        score, said, _ = <span class="fn">play</span>(score, label, confidence, computer, target)
+    <span class="kw">return</span> score, said
+
+assert <span class="fn">run</span>([(<span class="str">"Rock"</span>, <span class="num">0.95</span>, <span class="str">"Scissors"</span>)]) == ({<span class="str">"you"</span>: <span class="num">1</span>, <span class="str">"computer"</span>: <span class="num">0</span>}, <span class="str">"You win the round"</span>)
+assert <span class="fn">run</span>([(<span class="str">"Rock"</span>, <span class="num">0.95</span>, <span class="str">"Paper"</span>)]) == ({<span class="str">"you"</span>: <span class="num">0</span>, <span class="str">"computer"</span>: <span class="num">1</span>}, <span class="str">"I win the round"</span>)
+assert <span class="fn">run</span>([(<span class="str">"Rock"</span>, <span class="num">0.95</span>, <span class="str">"Rock"</span>)]) == (NEW_GAME, <span class="str">"Draw"</span>)
+assert <span class="fn">run</span>([(<span class="str">"Paper"</span>, <span class="num">0.65</span>, <span class="str">"Rock"</span>)]) == (NEW_GAME, <span class="str">"Show it again"</span>)              <span class="com"># unsure: not played</span>
+assert <span class="fn">run</span>([(<span class="str">"Paper"</span>, <span class="num">0.70</span>, <span class="str">"Rock"</span>)]) == ({<span class="str">"you"</span>: <span class="num">1</span>, <span class="str">"computer"</span>: <span class="num">0</span>}, <span class="str">"You win the round"</span>)   <span class="com"># on the cut-off</span>
+assert <span class="fn">run</span>([(<span class="str">"Rock"</span>, <span class="num">0.9</span>, <span class="str">"Scissors"</span>)] * <span class="num">2</span>) == (NEW_GAME, <span class="str">"You win the game!"</span>)    <span class="com"># first to 2, then a new game</span>
+assert <span class="fn">run</span>([(<span class="str">"Rock"</span>, <span class="num">0.9</span>, <span class="str">"Scissors"</span>)] * <span class="num">2</span>, target=<span class="num">3</span>) == ({<span class="str">"you"</span>: <span class="num">2</span>, <span class="str">"computer"</span>: <span class="num">0</span>}, <span class="str">"You win the round"</span>)
+
+<span class="fn">gr.Interface</span>(
+    fn=throw,
+    inputs=[
+        <span class="fn">gr.Image</span>(type=<span class="str">"pil"</span>, sources=[<span class="str">"webcam"</span>, <span class="str">"upload"</span>], label=<span class="str">"Show your throw:"</span>,
+                 image_mode=<span class="str">"RGBA"</span>, webcam_options=<span class="fn">gr.WebcamOptions</span>(mirror=<span class="kw">False</span>)),
+        <span class="fn">gr.State</span>(<span class="fn">dict</span>(NEW_GAME)),
+        <span class="fn">gr.Slider</span>(<span class="num">1</span>, <span class="num">5</span>, value=DEFAULT_TARGET, step=<span class="num">1</span>, label=<span class="str">"Rounds to win the game:"</span>),
+    ],
+    outputs=[<span class="fn">gr.Textbox</span>(label=<span class="str">"Result"</span>), <span class="fn">gr.Textbox</span>(label=<span class="str">"What happened"</span>), <span class="fn">gr.State</span>()],
+    title=<span class="str">"Rock paper scissors"</span>,
+    description=<span class="str">"Show rock, paper or scissors. First to win the rounds wins the game."</span>,
+    flagging_mode=<span class="str">"never"</span>,
+).<span class="fn">launch</span>(show_error=<span class="kw">True</span>)
+</code></pre></div></details></section></div><script>var evalRules=function evalRules(rules, text, kind, output) {
+  // kind 'sql': the query text and the result table. Case and spacing never matter; comments (-- and /* */) are ignored.
+  //   contains: fragments the query must have   rows: how many rows come back   columns: the column names, in order
+  //   result: the table the query must make (header line, then one line per row, values joined by " | ")
+  if (kind === 'sql') {
+    const src = String(text).replace(/\/\*[\s\S]*?\*\//g, '').replace(/--.*$/gm, '').toLowerCase().replace(/\s+/g, '');
+    const lines = String(output || '').split('\n').filter((l) => l.trim() !== '');
+    const norm = (s) => String(s).split('\n').map((l) => l.split('|').map((c) => c.trim().toLowerCase()).join('|')).filter((l) => l !== '').join('\n');
+    const out = [];
+    (rules.contains || []).forEach((frag) => out.push({ label: `Your query has ${frag}`, ok: src.includes(String(frag).toLowerCase().replace(/\s+/g, '')) }));
+    if (rules.columns) out.push({ label: `The table has the columns ${rules.columns.join(', ')}`, ok: lines.length > 0 && norm(lines[0]) === rules.columns.map((c) => String(c).trim().toLowerCase()).join('|') });
+    if (rules.rows !== undefined) out.push({ label: rules.rows === 0 ? 'The query finds no rows' : `The table has ${rules.rows} row${rules.rows === 1 ? '' : 's'}`, ok: Math.max(0, lines.length - 1) === rules.rows && (rules.rows > 0 || lines.length === 0 || lines.length === 1) });
+    if (rules.result) out.push({ label: 'The table is the one asked for', ok: norm(output || '') === norm(rules.result) });
+    return out;
+  }
+  // kind 'html': HTML and CSS (comments are <!-- --> and /* */; # is a colour or a link, not a comment; case does not matter).
+  if (kind === 'html') {
+    const src = String(text).replace(/<!--[\s\S]*?-->/g, '').replace(/\/\*[\s\S]*?\*\//g, '').toLowerCase();
+    const out = [];
+    (rules.tags || []).forEach((t) => out.push({ label: `Use <${t}>`, ok: new RegExp('<' + String(t).toLowerCase() + '[\\s>/]').test(src) }));
+    const flatH = src.replace(/\s+/g, '');
+    (rules.contains || []).forEach((frag) => out.push({ label: `Your code has ${frag}`, ok: flatH.includes(String(frag).toLowerCase().replace(/\s+/g, '')) }));
+    return out;
+  }
+  // kind 'p5': JavaScript for p5.js. Comments are // and /* */ (quotes respected). defs/params/calls read the student's own
+  // functions (`function name(a, b)`); p5's own hooks (setup, draw, mousePressed...) are not counted as theirs.
+  if (kind === 'p5') {
+    const HOOKS = ['setup', 'draw', 'preload', 'mousePressed', 'mouseReleased', 'mouseClicked', 'mouseMoved', 'mouseDragged', 'doubleClicked', 'mouseWheel', 'keyPressed', 'keyReleased', 'keyTyped', 'windowResized', 'touchStarted', 'touchEnded', 'touchMoved'];
+    const noJs = (l) => { let q = null; for (let i = 0; i < l.length; i++) { const c = l[i]; if (q) { if (c === '\\') i++; else if (c === q) q = null; } else if (c === '"' || c === "'" || c === '`') q = c; else if (c === '/' && l[i + 1] === '/') return l.slice(0, i); } return l; };
+    const lines = String(text).replace(/\/\*[\s\S]*?\*\//g, '').split('\n').map(noJs);
+    const src = lines.join('\n');
+    const fdefs = []; src.replace(/\bfunction\s+([A-Za-z_$][\w$]*)\s*\(([^)]*)\)/g, (m, n, ps) => { if (!HOOKS.includes(n)) fdefs.push({ name: n, params: ps.split(',').filter((x) => x.trim()).length }); return m; });
+    const esc$ = (n) => String(n).replace(/\$/g, '\\$');
+    const fcalls = (n) => (src.match(new RegExp('(^|[^\\w$.])' + esc$(n) + '\\s*\\(', 'g')) || []).length - (src.match(new RegExp('function\\s+' + esc$(n) + '\\s*\\(', 'g')) || []).length;
+    const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+    const out = [];
+    if (rules.defs) out.push({ label: `Write at least ${plural(rules.defs, 'function')} of your own`, ok: fdefs.length >= rules.defs });
+    if (rules.params) out.push({ label: `Write a function with at least ${plural(rules.params, 'parameter')}`, ok: fdefs.some((d) => d.params >= rules.params) });
+    if (rules.calls) out.push({ label: rules.calls === 1 ? 'Call your function' : `Call one of your functions at least ${rules.calls} times`, ok: Math.max(0, ...fdefs.map((d) => fcalls(d.name))) >= rules.calls });
+    if (rules.loops) out.push({ label: rules.loops === 1 ? 'Use a loop' : `Use at least ${rules.loops} loops`, ok: lines.filter((l) => /\b(for|while)\s*\(/.test(l)).length >= rules.loops });
+    if (rules.returns) out.push({ label: 'Use return to give a value back', ok: lines.filter((l) => /\breturn\b/.test(l)).length >= rules.returns });
+    (rules.uses || []).forEach((n) => out.push({ label: `Use ${n}`, ok: new RegExp('(^|[^\\w$])' + esc$(n) + '([^\\w$]|$)').test(src) }));
+    const flatP = src.replace(/\s+/g, '');
+    (rules.contains || []).forEach((frag) => out.push({ label: `Your code has ${frag}`, ok: flatP.includes(String(frag).replace(/\s+/g, '')) }));
+    return out;
+  }
+  // kind 'microbit' / 'arcade': MakeCode JavaScript (main.ts). Comments are // and /* */; everything is compared with
+  // spaces removed, so `basic.forever(function () {` and `basic.forever(function(){` match.
+  //   inside: { "basic.forever": [fragments] }   fragments in the first { ... } block after each place the key appears
+  //   count: { "basic.show": 3 }                 a fragment appears at least this many times
+  //   defs / params / calls                      named functions (`function name (points: number)`); event blocks
+  //                                              are anonymous `function ()`, so they never count as a definition
+  // Labels are for teachers and the validator; students working in blocks see the check's own text instead.
+  if (kind === 'microbit' || kind === 'arcade') {
+    const plain = String(text).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '');
+    const flatM = (s) => String(s).replace(/\s+/g, '');
+    const fm = flatM(plain);
+    const block = (key) => {
+      const out = []; let i = 0; const k = flatM(key);
+      while ((i = fm.indexOf(k, i)) >= 0) {
+        const j = fm.indexOf('{', i + k.length); if (j < 0) break; let d = 0;
+        for (let x = j; x < fm.length; x++) { if (fm[x] === '{') d++; else if (fm[x] === '}' && --d === 0) { out.push(fm.slice(j + 1, x)); break; } }
+        i = j;
+      }
+      return out.join('|');
+    };
+    const fdefs = []; plain.replace(/function\s+([A-Za-z_]\w*)\s*\(([^)]*)\)/g, (m, n, ps) => { fdefs.push({ name: n, params: ps.split(',').filter((x) => x.trim()).length }); return m; });
+    const fcalls = (n) => (plain.match(new RegExp('\\b' + n + '\\s*\\(', 'g')) || []).length - 1;
+    const out = [];
+    (rules.contains || []).forEach((frag) => out.push({ label: `Has ${frag}`, ok: fm.includes(flatM(frag)) }));
+    Object.keys(rules.inside || {}).forEach((key) => { const b = block(key); [].concat(rules.inside[key]).forEach((frag) => out.push({ label: `Inside ${key}: ${frag}`, ok: b.includes(flatM(frag)) })); });
+    Object.keys(rules.count || {}).forEach((frag) => out.push({ label: `${frag} at least ${rules.count[frag]} times`, ok: fm.split(flatM(frag)).length - 1 >= rules.count[frag] }));
+    if (rules.defs) out.push({ label: `At least ${rules.defs} function${rules.defs === 1 ? '' : 's'} of your own`, ok: fdefs.length >= rules.defs });
+    if (rules.params) out.push({ label: `A function with at least ${rules.params} parameter${rules.params === 1 ? '' : 's'}`, ok: fdefs.some((d) => d.params >= rules.params) });
+    if (rules.calls) out.push({ label: rules.calls === 1 ? 'Call your function' : `Call one of your functions at least ${rules.calls} times`, ok: Math.max(0, ...fdefs.map((d) => fcalls(d.name))) >= rules.calls });
+    return out;
+  }
+  // Comments end at the line's end; a # inside quotes ("#" * 5, "#ff0000") is text, not a comment.
+  const noComment = (l) => { let q = null; for (let i = 0; i < l.length; i++) { const c = l[i]; if (q) { if (c === '\\') i++; else if (c === q) q = null; } else if (c === '"' || c === "'") q = c; else if (c === '#') return l.slice(0, i); } return l; };
+  const code = String(text).split('\n').map(noComment);
+  const defs = [];
+  code.forEach((l) => { const m = l.match(/^\s*def\s+([A-Za-z_]\w*)\s*\(([^)]*)\)/); if (m) defs.push({ name: m[1], params: m[2].split(',').filter((x) => x.trim()).length }); });
+  const count = (re) => code.filter((l) => re.test(l)).length;
+  const callsOf = (name) => code.filter((l) => !/^\s*def\s/.test(l)).reduce((n, l) => n + (l.match(new RegExp('\\b' + name + '\\s*\\(', 'g')) || []).length, 0);
+  const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+  const out = [];
+  if (rules.defs) out.push({ label: `Define at least ${plural(rules.defs, 'function')} with def`, ok: defs.length >= rules.defs });
+  if (rules.params) out.push({ label: `Write a function with at least ${plural(rules.params, 'parameter')}`, ok: defs.some((d) => d.params >= rules.params) });
+  if (rules.calls) out.push({ label: rules.calls === 1 ? 'Call your function' : `Call one of your functions at least ${rules.calls} times`, ok: Math.max(0, ...defs.map((d) => callsOf(d.name))) >= rules.calls });
+  if (rules.loops) out.push({ label: rules.loops === 1 ? 'Use a loop' : `Use at least ${rules.loops} loops`, ok: count(/^\s*(for|while)\b/) >= rules.loops });
+  if (rules.returns) out.push({ label: 'Use return to give a value back', ok: count(/^\s*return\b/) >= rules.returns });
+  (rules.uses || []).forEach((n) => out.push({ label: `Use ${n}`, ok: code.some((l) => new RegExp('\\b' + n + '\\b').test(l)) }));
+  (rules.imports || []).forEach((m) => out.push({ label: `Import from ${m}`, ok: code.some((l) => new RegExp('^\\s*(from|import)\\s+' + m + '\\b').test(l)) }));
+  // contains: code fragments that must appear somewhere (spaces ignored, comments skipped), shown as written.
+  const flat = code.join('\n').replace(/\s+/g, '');
+  (rules.contains || []).forEach((frag) => out.push({ label: `Your code has ${frag}`, ok: flat.includes(String(frag).replace(/\s+/g, '')) }));
+  return out;
+};
+var WPM=(function makeMath() {
+  function tokens(s) {
+    s = String(s).replace(/[−–]/g, '-').replace(/×|·/g, '*').replace(/÷/g, '/').replace(/\s+/g, '');
+    var out = [], i = 0;
+    while (i < s.length) {
+      var c = s[i], m;
+      if ((m = /^\d+(\.\d+)?|^\.\d+/.exec(s.slice(i)))) { out.push({ t: 'n', v: parseFloat(m[0]) }); i += m[0].length; }
+      // A name with an underscore is one variable (acc_messy, has_neither): board values with long names. Students
+      // never type "_" in algebra, so 2xy is still 2 × x × y.
+      else if ((m = /^[a-zA-Z]\w*_\w*/.exec(s.slice(i)))) { out.push({ t: 'v', v: m[0] }); i += m[0].length; }
+      else if (/[a-zA-Z]/.test(c)) { out.push({ t: 'v', v: c }); i++; }
+      else if ('+-*/^()='.indexOf(c) >= 0) { out.push({ t: c }); i++; }
+      else throw new Error('I do not understand "' + c + '".');
+    }
+    // Implicit multiplication: 2x, 2(x + 1), (x + 1)(x - 1), x(3), xy
+    var r = [];
+    for (var k = 0; k < out.length; k++) {
+      var a = r[r.length - 1], b = out[k];
+      if (a && (a.t === 'n' || a.t === 'v' || a.t === ')') && (b.t === 'n' || b.t === 'v' || b.t === '(') && !(a.t === 'n' && b.t === 'n')) r.push({ t: '*' });
+      r.push(b);
+    }
+    return r;
+  }
+  // Recursive descent: expr = term (+|- term)*, term = unary (*|/ unary)*, unary = -unary | power, power = atom (^ unary)?
+  function parse(s) {
+    var tk = tokens(s), p = 0;
+    function peek() { return tk[p] && tk[p].t; }
+    function expr() { var n = term(); while (peek() === '+' || peek() === '-') { var o = tk[p++].t; n = { o: o, a: n, b: term() }; } return n; }
+    function term() { var n = unary(); while (peek() === '*' || peek() === '/') { var o = tk[p++].t; n = { o: o, a: n, b: unary() }; } return n; }
+    function unary() { if (peek() === '-') { p++; return { o: 'neg', a: unary() }; } if (peek() === '+') { p++; return unary(); } return power(); }
+    function power() { var n = atom(); if (peek() === '^') { p++; n = { o: '^', a: n, b: unary() }; } return n; }
+    function atom() {
+      var t = tk[p++];
+      if (!t) throw new Error('Something is missing at the end.');
+      if (t.t === 'n') return { n: t.v };
+      if (t.t === 'v') return { v: t.v };
+      if (t.t === '(') { var n = expr(); if (peek() !== ')') throw new Error('A bracket is not closed.'); p++; return n; }
+      throw new Error('Something is missing before "' + t.t + '".');
+    }
+    if (!tk.length) throw new Error('Type an answer first.');
+    var tree = expr();
+    if (p < tk.length) throw new Error(tk[p].t === '=' ? 'Use only one = sign.' : 'Check the end of your answer.');
+    return tree;
+  }
+  function ev(n, vars) {
+    if (n.n !== undefined) return n.n;
+    if (n.v !== undefined) { if (!(n.v in vars)) throw new Error('What is ' + n.v + '?'); return vars[n.v]; }
+    var a = ev(n.a, vars);
+    if (n.o === 'neg') return -a;
+    var b = ev(n.b, vars);
+    return n.o === '+' ? a + b : n.o === '-' ? a - b : n.o === '*' ? a * b : n.o === '/' ? a / b : Math.pow(a, b);
+  }
+  function names(n, set) { set = set || {}; if (n.v !== undefined) set[n.v] = 1; if (n.a) names(n.a, set); if (n.b) names(n.b, set); return set; }
+  function evaluate(s, vars) { return ev(parse(s), vars || {}); }
+  var close = function (a, b) { return Math.abs(a - b) <= 1e-9 * Math.max(1, Math.abs(a), Math.abs(b)); };
+  // Same value for every tested value of each variable (both directions, so extra variables are caught).
+  function equivalent(a, b) {
+    var ta = parse(a), tb = parse(b), vs = Object.keys(Object.assign(names(ta), names(tb)));
+    var pts = [-2.5, -1, 0.5, 1.75, 3, 7.25];
+    for (var i = 0; i < pts.length; i++) {
+      var vars = {};
+      vs.forEach(function (v, j) { vars[v] = pts[(i + j * 2) % pts.length] + j * 0.37; });
+      var x = ev(ta, vars), y = ev(tb, vars);
+      if (!isFinite(x) || !isFinite(y)) continue;
+      if (!close(x, y)) return false;
+    }
+    return true;
+  }
+  // "x = 4" -> { name: 'x', value: '4' }; "4" -> { name: null, value: '4' }
+  function splitAnswer(s) { var m = /^\s*([a-zA-Z])\s*=\s*(.+)$/.exec(String(s)); return m ? { name: m[1], value: m[2] } : { name: null, value: String(s) }; }
+  // An equation's two sides, or null if there is not exactly one "=".
+  function sides(s) { var parts = String(s).split('='); return parts.length === 2 && parts[0].trim() && parts[1].trim() ? parts : null; }
+  // Does this value make the equation true?
+  function satisfies(eq, vars) { var sd = sides(eq); if (!sd) throw new Error('An equation needs one = sign with something on each side.'); return close(evaluate(sd[0], vars), evaluate(sd[1], vars)); }
+  // A parsed expression as a function of its variables: compile("mx + c")({ m: 2, c: 1, x: 3 }) = 7.
+  function compile(s) { var t = parse(s); return function (vars) { return ev(t, vars || {}); }; }
+  // Conditions on a board's scope ({ vars: { m: 2 }, points: { A: [1, 3] } }), for board checks:
+  //   "m = 2", "c > 0", "2m + c <= 7"          compare two expressions (= is equal, within rounding)
+  //   "A on y = 2x + 1"                        the point's coordinates make the equation true
+  //   "x(A) = 3", "y(B) > y(A)"                a point's coordinates in an expression
+  //   clause and clause                        all must hold
+  var CMP = /<=|>=|≤|≥|<|>|=/;
+  function clauses(cond) {
+    var cs = String(cond).split(/\band\b/i).map(function (c) { return c.trim(); });
+    if (!cs.every(Boolean)) throw new Error('Something is missing next to "and".');
+    return cs.map(function (c) {
+      var on = /^([A-Z])\s+on\s+(.+)$/.exec(c);
+      if (on) { if (!sides(on[2])) throw new Error('"' + c + '": after "on", write an equation, such as y = 2x + 1.'); return { on: on[1], eq: on[2] }; }
+      var m = CMP.exec(c);
+      if (!m) throw new Error('"' + c + '" needs a comparison (=, <, >, <= or >=), or "A on y = ...".');
+      var a = c.slice(0, m.index), b = c.slice(m.index + m[0].length);
+      if (CMP.test(b)) throw new Error('"' + c + '": use one comparison per part (join parts with "and").');
+      return { a: a, op: { '≤': '<=', '≥': '>=' }[m[0]] || m[0], b: b };
+    });
+  }
+  // x(A), y(A) -> numbers from the scope (or a placeholder when only checking that it parses)
+  function coords(s, points) {
+    return String(s).replace(/\b([xy])\(([A-Z])\)/g, function (m, k, n) {
+      if (!points) return '1';
+      if (!points[n]) throw new Error('There is no point ' + n + '.');
+      var v = points[n][k === 'x' ? 0 : 1]; return '(' + v + ')';
+    });
+  }
+  // Throws a message when the condition cannot be read; returns the point and variable names it uses.
+  function checkCondition(cond) {
+    var used = { vars: {}, points: {} };
+    clauses(cond).forEach(function (c) {
+      String(c.on ? c.eq : c.a + ' ' + c.b).replace(/\b[xy]\(([A-Z])\)/g, function (m, n) { used.points[n] = 1; return m; });
+      if (c.on) { used.points[c.on] = 1; var sd = sides(c.eq); parse(sd[0]); parse(sd[1]); Object.assign(used.vars, names(parse(sd[0])), names(parse(sd[1]))); delete used.vars.x; delete used.vars.y; }
+      else { var ta = parse(coords(c.a)), tb = parse(coords(c.b)); Object.assign(used.vars, names(ta), names(tb)); }
+    });
+    return { vars: Object.keys(used.vars), points: Object.keys(used.points) };
+  }
+  function holds(cond, scope) {
+    scope = scope || {};
+    var vars = scope.vars || {}, points = scope.points || {};
+    return clauses(cond).every(function (c) {
+      if (c.on) {
+        var P = points[c.on];
+        if (!P) throw new Error('There is no point ' + c.on + '.');
+        return satisfies(c.eq, Object.assign({}, vars, { x: P[0], y: P[1] }));
+      }
+      var a = evaluate(coords(c.a, points), vars), b = evaluate(coords(c.b, points), vars), eq = close(a, b);
+      return c.op === '=' ? eq : c.op === '<' ? a < b && !eq : c.op === '>' ? a > b && !eq : c.op === '<=' ? a < b || eq : a > b || eq;
+    });
+  }
+  return { parse: parse, evaluate: evaluate, compile: compile, equivalent: equivalent, splitAnswer: splitAnswer, sides: sides, satisfies: satisfies, holds: holds, checkCondition: checkCondition, vars: function (s) { return Object.keys(names(parse(s))); } };
+})();
+(function(){var t=document.querySelector('.cb-toggle'),m=document.getElementById('cb-menu');if(!t||!m)return;
+t.addEventListener('click',function(){var o=m.hidden;m.hidden=!o;t.setAttribute('aria-expanded',String(o))});
+document.addEventListener('click',function(e){if(!m.hidden&&!e.target.closest('.cb-mid')){m.hidden=true;t.setAttribute('aria-expanded','false')}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden){m.hidden=true;t.setAttribute('aria-expanded','false');t.focus()}});
+var d=(function(){try{return JSON.parse(localStorage.getItem('wp-progress'))||{}}catch(e){return {}}})().done||{};
+[].forEach.call(m.querySelectorAll('li a'),function(a){var ks=(a.dataset.checks||'').split('|').filter(Boolean);
+if(ks.length&&ks.every(function(k){return d[k]}))a.querySelector('.tick').classList.add('on')});
+var h=document.querySelector('h1');try{localStorage.setItem('wp-last-lesson',JSON.stringify({href:location.pathname,title:h?h.textContent:document.title}))}catch(e){}})();
+(function(){var links=[].slice.call(document.querySelectorAll('nav.steps a'));if(!links.length||!window.IntersectionObserver)return;
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+var io=new IntersectionObserver(function(){var cur=0;secs.forEach(function(el,i){if(el&&el.getBoundingClientRect().top<window.innerHeight*0.4)cur=i});
+links.forEach(function(a,i){a.classList.toggle('here',i===cur);if(i===cur)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current')})},{threshold:[0,0.1,0.5,1]});
+secs.forEach(function(el){if(el)io.observe(el)});window.addEventListener('scroll',function(){io.takeRecords()},{passive:true})})();
+document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){
+var t=b.closest('.code').querySelector('code').innerText;navigator.clipboard&&navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1200)})})});
+(function(){
+var KEY='wp-progress';
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return {}}}
+function save(s){try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){}}
+var ov=new URLSearchParams(location.search).get('unlock');
+if(ov){var s0=load();s0.all=ov==='all';save(s0)}
+function sync(wrap){var s=load(),d=s.done||{},keys=(wrap.dataset.keys||'').split('|').filter(Boolean),n=0;keys.forEach(function(k){if(d[k])n++});
+[].forEach.call(wrap.querySelectorAll('.tp'),function(p){p.classList.toggle('done',!!d[p.dataset.key])});
+var cnt=document.querySelector('nav.steps a[href="#'+wrap.dataset.step+'"] .cnt');if(cnt)cnt.textContent=keys.length?n+'/'+keys.length:'';
+var tm=wrap.querySelector('.tmsg');
+if(keys.length&&n===keys.length){var ids=(wrap.dataset.unlocks||'').split(',').filter(Boolean);
+if(!d[wrap.dataset.stepkey]){s.done=s.done||{};s.done[wrap.dataset.stepkey]=true;s.unlocked=s.unlocked||{};ids.forEach(function(id){s.unlocked[wrap.dataset.kind+':'+id]=true});save(s)}
+tm.textContent='All tasks done.'+(ids.length?' Unlocked: '+(wrap.dataset.names||'').split('|').join(', ')+'.':'')}else{tm.textContent=''}}
+document.querySelectorAll('.check').forEach(function(box){
+var key=box.dataset.key,kind=box.dataset.kind,ids=(box.dataset.unlocks||'').split(',').filter(Boolean),names=(box.dataset.names||'').split('|');
+var msg=box.querySelector('.msg');var wrap=box.closest('.tasks'),ty=box.dataset.type||'';
+function pass(){
+var s=load();s.done=s.done||{};s.unlocked=s.unlocked||{};s.done[key]=true;
+ids.forEach(function(id){s.unlocked[kind+':'+id]=true});save(s);show(true);if(wrap)sync(wrap)}
+function show(fresh){
+box.classList.add('done');
+if(ids.length){msg.className='msg ok';msg.textContent=(fresh?'Unlocked: ':'Unlocked: ')+names.join(', ')+'. Find '+(names.length>1?'them':'it')+' under Reference in the playground.'}
+else{msg.className='msg ok';msg.textContent='Got it.'}}
+if((load().done||{})[key])show(false);
+if(box.dataset.type==='code'){var rules=JSON.parse(box.dataset.rules),ul=box.querySelector('.rules');
+// The last report from each playground, so a task's check can catch up when its pill opens (window.wpLast, below).
+if(!window.wpLast){window.wpLast={};window.addEventListener('message',function(e){var m=e.data;if(e.origin===location.origin&&m&&m.wp==='run'&&m.id)window.wpLast[m.id]=m})}
+function paint(res){ul.replaceChildren();res.forEach(function(r){var li=document.createElement('li');li.textContent=r.label;if(r.ok)li.className='ok';ul.appendChild(li)})}
+var done0=(load().done||{})[key];paint(evalRules(rules,'',kind).map(function(r){return {label:r.label,ok:!!done0}}));
+window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.id!==(box.dataset.play||key))return;var pn=box.closest('.tpanel'),stp=box.closest('.step');
+// Only the open task listens. MakeCode in full screen is the exception: the bar shows every task of the step and pills cannot be switched.
+if(pn&&!pn.classList.contains('active')&&!((m.kind==='microbit'||m.kind==='arcade')&&stp&&stp.querySelector('.try.full')))return;
+var res=evalRules(rules,m.code||'',kind,m.output);paint(res);
+if(m.quiet&&!(load().done||{})[key]){}
+else if(res.every(function(r){return r.ok})&&(m.status==='done'||m.status==='stopped')){pass()}
+else if(m.kind==='html'){if(!m.quiet){msg.className='msg';msg.textContent='Not quite yet. Keep going: the list shows what your page still needs.'}}
+else if(m.kind==='microbit'||m.kind==='arcade'){if(!m.quiet){msg.className='msg';msg.textContent='Not quite yet. Keep building: this ticks by itself when your blocks do what is asked.'}}
+else{msg.className='msg';msg.textContent=m.status==='done'?'Not quite yet. Change your code, then run it again.':'Fix the error, then run it again.'}})}
+var cb=box.querySelector('input[type=checkbox]');
+if(cb){if((load().done||{})[key])cb.checked=true;cb.addEventListener('change',function(){if(cb.checked)pass()})}
+var go=ty==='question'?box.querySelector('button'):null;
+if(go){go.addEventListener('click',function(){
+var pick=box.querySelector('input[type=radio]:checked');
+if(!pick){msg.className='msg no';msg.textContent='Choose an answer first.';return}
+if(Number(pick.value)===Number(box.dataset.answer)){pass();if(box.dataset.explain)msg.textContent=box.dataset.explain+' '+msg.textContent}
+else{msg.className='msg no';var fbk=box.dataset.feedback?JSON.parse(box.dataset.feedback)[Number(pick.value)]:'';msg.textContent=fbk?'Not quite. '+fbk:(box.dataset.subj==='maths'||box.dataset.subj==='science'||kind==='science')?'Not quite. Read it again and try another answer.':'Not quite. Look at the code again and try another answer.'}})}
+function win(){pass();if(box.dataset.explain)msg.textContent=box.dataset.explain+' '+msg.textContent}
+function bad(t){msg.className='msg no';msg.textContent=t}
+var btn=box.querySelector('button');
+if(ty==='number'&&btn){btn.addEventListener('click',function(){var v=parseFloat(box.querySelector('input').value);if(isNaN(v))return bad('Type a number first.');
+if(Math.abs(v-Number(box.dataset.answer))<=Number(box.dataset.tol||0))return win();var nf=JSON.parse(box.dataset.feedback||'[]');for(var q=0;q<nf.length;q++){if(Math.abs(v-nf[q][0])<=Math.max(Number(box.dataset.tol||0),1e-9))return bad('Not quite. '+nf[q][1])}bad(box.dataset.subj==='maths'?'Not quite. Check your working and try another number.':'Not quite. Look at the code again and try another number.')})}
+if(ty==='flag'&&btn){btn.addEventListener('click',function(){var t=box.querySelector('input').value.trim().toLowerCase();if(!t)return bad('Type the flag first.');
+if(!(window.crypto&&crypto.subtle))return bad('This needs a secure page (https).');
+crypto.subtle.digest('SHA-256',new TextEncoder().encode('wp-flag:'+t)).then(function(b){var h=[].map.call(new Uint8Array(b),function(x){return ('0'+x.toString(16)).slice(-2)}).join('');if(h===box.dataset.hash)win();else bad('Not the flag. Check it is exactly what the puzzle gives, including the WP{ } part.')})})}
+if(ty==='bug'){var good=JSON.parse(box.dataset.answers).map(String),found={};[].forEach.call(box.querySelectorAll('.buglines button'),function(b){b.addEventListener('click',function(){
+var n=String(b.dataset.line);if(good.indexOf(n)>=0){b.className='yes';found[n]=1;var left=good.filter(function(g){return !found[g]}).length;if(!left)win();else{msg.className='msg';msg.textContent='Yes. '+left+' more to find.'}}else{b.className='no';bad(box.dataset.subj==='maths'?'Not that line. Read the working again, one line at a time.':'Not that line. Read the code again, one line at a time.')}})})}
+if(ty==='sort'&&btn){btn.addEventListener('click',function(){var want=JSON.parse(box.dataset.answers),all=true;
+[].forEach.call(box.querySelectorAll('.srow'),function(r,i){var sel=r.querySelector('select'),ok=sel.value===want[i];sel.className=sel.value?(ok?'ok':'no'):'';if(!ok)all=false;var w=r.querySelector('.swhy');if(w)w.hidden=!ok});
+if(all)win();else bad('Some are not in the right group yet. Check the ones outlined in red.')})}
+if(ty==='match'&&btn){btn.addEventListener('click',function(){var want=JSON.parse(box.dataset.answers),all=true;
+[].forEach.call(box.querySelectorAll('select'),function(sel,i){var ok=sel.value===want[i];sel.className=sel.value?(ok?'ok':'no'):'';if(!ok)all=false});
+if(all)win();else bad('Some do not match yet. Check the ones outlined in red.')})}
+if(ty==='trace'&&btn){btn.addEventListener('click',function(){var all=true;
+[].forEach.call(box.querySelectorAll('input.tcell'),function(inp){var nz=function(t){return t.trim().replace(/÷/g,'/').replace(/×/g,'*').replace(/[−–]/g,'-').replace(/\s*([+*\/-])\s*/g,'$1')};var a=inp.dataset.answer,v=inp.value.trim(),ok=v!==''&&(v===a||nz(v)===nz(a)||(!isNaN(Number(v))&&!isNaN(Number(a))&&Number(v)===Number(a)));inp.className='tcell '+(ok?'ok':'no');if(!ok)all=false});
+if(all)win();else bad(box.dataset.subj==='maths'?'Some cells are not right yet. Work through it again, one step at a time.':'Some cells are not right yet. Trace the code again, one step at a time.')})}
+if(ty==='predict'&&btn){var PK='wp-predict';
+function pload(){try{return JSON.parse(localStorage.getItem(PK))||{}}catch(e){return {}}}
+function plock(v){var p=pload();p[key]=v;try{localStorage.setItem(PK,JSON.stringify(p))}catch(e){}}
+function freeze(v){[].forEach.call(box.querySelectorAll('input'),function(i){i.disabled=true;if(i.type==='radio')i.checked=(i.value===v);else i.value=v});btn.hidden=true;msg.className='msg ok';msg.textContent=kind==='science'?'Locked in. Now try it on the board and compare.':'Locked in. Now run it and compare.'}
+var saved=pload()[key];if(saved!==undefined&&saved!==null)freeze(saved);
+btn.addEventListener('click',function(){var r=box.querySelector('input[type=radio]:checked'),i=box.querySelector('input.pin'),v=r?r.value:(i?i.value.trim():'');
+if(!v)return bad('Make a prediction first. You cannot change it after you lock it in.');plock(v);freeze(v);pass();freeze(v);try{document.dispatchEvent(new CustomEvent('wp-predict',{detail:key}))}catch(e){}})}
+if(ty==='parsons'){parsons(box,win,bad)}
+if(ty==='working'&&btn){var ta=box.querySelector('textarea'),ol=box.querySelector('.wk-lines');btn.addEventListener('click',function(){var lines=ta.value.split('\n');if(!lines.join('').trim())return bad('Write your working, one step per line.');if(!window.WPF_READY)return bad('The checker did not load. Reload the page and try again.');msg.className='msg';msg.textContent='Checking...';window.WPF_READY.then(function(F){var r=F.working(lines,box.dataset.start,box.dataset.form),shown=lines.map(function(l){return l.trim()}).filter(Boolean);ol.replaceChildren();r.lines.forEach(function(x,i){var li=document.createElement('li');li.className=x.ok?'ok':'no';li.textContent=(x.ok?'\u2713 ':'\u2717 ')+shown[i];ol.appendChild(li)});if(r.ok)win();else bad(r.why)})})}
+if(ty==='answer'&&btn){var inp=box.querySelector('input'),fb=JSON.parse(box.dataset.feedback||'[]');
+function tryIt(){var v=inp.value.trim();if(!v)return bad('Type your answer first.');
+try{if(box.dataset.equation){var vals=JSON.parse(box.dataset.equation),sd=WPM.sides(v);if(!sd)return bad('An equation needs one = sign, with something on each side.');
+var need=Object.keys(vals),used=WPM.vars(sd[0]).concat(WPM.vars(sd[1]));if(!need.some(function(n){return used.indexOf(n)>=0}))return bad('Use '+need.join(' and ')+' in your equation.');
+if(WPM.satisfies(v,vals))return win();var shown=need.map(function(n){return n+' = '+vals[n]}).join(', ');return bad('Not quite: when '+shown+', the two sides are not equal. Check each side.')}
+if(box.dataset.form){if(!window.WPF_READY)return bad('The checker did not load. Reload the page and try again.');msg.className='msg';msg.textContent='Checking...';return window.WPF_READY.then(function(F){var r=F.check(v,box.dataset.answer,box.dataset.form);if(r.ok){win();if(r.unsure){msg.textContent=r.why}return}
+if(!r.equivalent)for(var i=0;i<fb.length;i++){try{if(!F.check(v,String(fb[i][0]),box.dataset.form).equivalent)continue;return bad(fb[i][1])}catch(e){}}
+else{var nm=function(t){return String(t).replace(/[\u2212\u2013]/g,'-').replace(/[\u00d7\u00b7]/g,'*').replace(/\s+/g,'')};for(var j=0;j<fb.length;j++){if(nm(fb[j][0])===nm(v))return bad(fb[j][1])}}
+bad(r.why)})}
+var a=WPM.splitAnswer(v).value.replace(/s*(%|°)s*$/,'');if(WPM.equivalent(a,box.dataset.answer))return win();
+for(var i=0;i<fb.length;i++){try{if(WPM.equivalent(a,String(fb[i][0])))return bad(fb[i][1])}catch(e){}}
+bad('Not quite. Check your working and try again.')}catch(e){bad(e.message)}}
+btn.addEventListener('click',tryIt);inp.addEventListener('keydown',function(e){if(e.key==='Enter')tryIt()})}
+if(ty==='reasoning'){var mk=JSON.parse(box.dataset.marks),ta=box.querySelector('.rs-in'),ai=box.querySelector('.rs-ans input'),go2=box.querySelector('.rs-go'),sh=box.querySelector('.rs-show'),md=box.querySelector('.rs-model'),tries=0;
+var RK='wp-reasoning',rl=function(){try{return JSON.parse(localStorage.getItem(RK)||'{}')}catch(e){return {}}},rs=function(o){try{localStorage.setItem(RK,JSON.stringify(o))}catch(e){}};
+var keep=rl()[key];if(keep){if(ta)ta.value=keep.text||'';if(ai&&keep.answer)ai.value=keep.answer;(keep.crit||[]).forEach(function(c,i){var cb=box.querySelectorAll('.rs-crit input')[i];if(cb)cb.checked=!!c})}
+function store(){var o=rl();o[key]={text:ta?ta.value:'',answer:ai?ai.value:'',crit:[].map.call(box.querySelectorAll('.rs-crit input'),function(c){return c.checked})};rs(o)}
+if(ta)ta.addEventListener('input',store);if(ai)ai.addEventListener('input',store);box.querySelectorAll('.rs-crit input').forEach(function(c){c.addEventListener('change',store)});
+function reveal(){var mn=box.querySelector('.rs-mine');if(mn)mn.textContent=ta.value.trim()||'(nothing written)';md.hidden=false}
+if((load().done||{})[key])reveal();
+function wrong(t){tries++;bad(t);if(tries>=3)sh.hidden=false}
+sh.addEventListener('click',function(){reveal();msg.className='msg';msg.textContent='Compare, then fix your answer and choices above.'});
+go2.addEventListener('click',function(){if(ta&&!ta.value.trim())return bad(mk.maths===false?'Write your thinking first: your own notes and reasons. This part is not marked.':'Write your working first: your own notes and reasons. This part is not marked.');
+if(ai&&mk.answer!==null){var v=ai.value.replace(/°|degrees?/g,'').trim();if(!v)return bad('Type your answer.');try{var a=WPM.splitAnswer(v).value;if(!WPM.equivalent(a,mk.answer)){for(var i=0;i<mk.feedback.length;i++){try{if(WPM.equivalent(a,String(mk.feedback[i][0])))return wrong(mk.feedback[i][1])}catch(e){}}return wrong('Not quite: check your answer against your working.')}}catch(e){return wrong(e.message)}}
+var fs=box.querySelectorAll('.rs-pick');for(var j=0;j<fs.length;j++){var pk=mk.picks[j],ch=fs[j].querySelector('input:checked');if(!ch)return bad('Choose a reason for each question.');var n=Number(ch.value);if(n!==pk.answer)return wrong('Not that reason. '+(pk.feedback[n]||(mk.maths===false?'Look at the case again.':'Look at where the two angles are.')))}
+reveal();sh.hidden=true;win();store()})}
+if(ty==='board'){var want=JSON.parse(box.dataset.expect||'{}');
+window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||(m.kind==='maths'?'board':m.kind)!==(box.dataset.kind==='maths'?'board':box.dataset.kind)||m.id!==box.dataset.play||!m.moved)return;var pn=box.closest('.tpanel');if(pn&&!pn.classList.contains('active'))return;
+var ok=Object.keys(want).every(function(k){var a=m.state&&m.state[k],b=want[k];return typeof b==='number'?Math.abs(Number(a)-b)<1e-9:a===b});if(ok&&box.dataset.when){try{ok=WPM.holds(box.dataset.when,m.state&&m.state.scope)}catch(er){ok=false}}
+if(ok){if(!box.classList.contains('done'))win()}else if(!box.classList.contains('done')){msg.className='msg';msg.textContent='Keep going.'}})}
+});
+document.querySelectorAll('.compare').forEach(function(c){var pk=c.dataset.predict;
+function mine(){try{return (JSON.parse(localStorage.getItem('wp-predict'))||{})[pk]}catch(e){return undefined}}
+var last=null;
+document.addEventListener('wp-predict',function(e){if(e.detail===pk&&last)show(last)});
+window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='run'||m.id!==c.dataset.play||m.status!=='done'&&m.status!=='stopped')return;last=m;show(m)});
+function show(m){
+var v=mine();c.replaceChildren();
+function line(label,text){var p=document.createElement('p');var b=document.createElement('b');b.textContent=label+' ';p.appendChild(b);p.appendChild(document.createTextNode(text));c.appendChild(p)}
+if(v===undefined||v===null){line('No prediction locked in.','Go back to the Predict step if you want to compare next time.')}
+else{line('You predicted:',v);var out=(m.output||'').trim(),a=c.dataset.actual||'';
+if(a)line('It actually:',a);else if(out)line('It printed:',out);else line('Now compare:','look at the '+(m.kind==='html'?'page':m.kind==='microbit'?'micro:bit':m.kind==='arcade'?'game':'drawing')+'. Was your prediction right? What did you notice?')}
+c.hidden=false}});
+// Full screen / inline for each playground: a class, not the Fullscreen API, so it works on iPads and the
+// playground keeps its state. Esc (on the page, or in the playground when its drawer is closed) comes back.
+function mkOpen(t){var f=t.querySelector('iframe[data-src]'),l=t.querySelector('.mkload');if(!f||f.src)return;f.src=f.dataset.src;f.hidden=false;if(l)l.remove()}
+document.querySelectorAll('details.smaller').forEach(function(d){d.addEventListener('toggle',function(){if(d.open)[].forEach.call(d.querySelectorAll('iframe[data-src]'),function(f){if(!f.src&&!f.closest('.mkload'))f.src=f.dataset.src})})});
+document.querySelectorAll('.mkopen').forEach(function(b){b.addEventListener('click',function(){var t=b.closest('.try');mkOpen(t);if(t.dataset.wide&&t._full)t._full(true)})});
+// In full screen the step's instructions and checks are hidden behind the playground, so a task drawer repeats them:
+// the step's (or the open task's) text, hints and code pictures, then the code checks with their ticks. Hide task folds the text away.
+document.querySelectorAll('.try').forEach(function(t){var s=t.closest('.step'),h=t.querySelector('.try-head');if(!s||!h||t.closest('details.smaller'))return;
+var w=t.closest('.tasks'),cs=[].slice.call(s.querySelectorAll('.check[data-type="code"]'));
+var box=document.createElement('div');box.className='try-task';var body=document.createElement('div');body.className='tt-body';
+var bar=document.createElement('div');bar.className='try-checks';bar.setAttribute('aria-live','polite');box.appendChild(body);if(cs.length)box.appendChild(bar);
+function strip(n){if(n.removeAttribute)n.removeAttribute('id');if(n.querySelectorAll)[].forEach.call(n.querySelectorAll('[id]'),function(x){x.removeAttribute('id')});return n}
+function fill(){var title=document.createElement('p');title.className='tt-title';var src;
+if(w){var tp=w.querySelector('.tp.active');title.textContent=tp?tp.textContent:'';src=[w.querySelector(':scope > .tpanel.active[role="tabpanel"]')]}
+else{var h2=s.querySelector('h2');title.textContent=h2?h2.textContent:'';src=[].filter.call(s.children,function(ch){return !(ch.matches('.chip,h2,.try,.check,.compare,.tasks,video')||ch.querySelector('video,iframe'))})}
+var cl=src.filter(Boolean).map(function(n){return strip(n.cloneNode(true))}),sm=0;
+// A smaller step (smaller:) is a live check: a clone would be dead, so the drawer points back to the page instead.
+cl=cl.filter(function(n){if(n.matches&&n.matches('details.smaller')){sm++;return false}[].forEach.call(n.querySelectorAll?n.querySelectorAll('details.smaller'):[],function(x){sm++;x.remove()});return true});
+if(sm){var sn=document.createElement('p');sn.className='tt-smaller';sn.textContent='Stuck? There’s a smaller step on the page: press Esc or Exit full screen to find it above the hints.';cl.push(sn)}
+body.replaceChildren.apply(body,[title].concat(cl))}
+function upd(){bar.replaceChildren.apply(bar,cs.map(function(c){var d=c.classList.contains('done'),e=document.createElement('span'),q=c.querySelector('.check-q');e.className=d?'ok':'';e.textContent=(d?'✓ ':'○ ')+(q?q.textContent:'');return e}))}
+fill();upd();cs.forEach(function(c){new MutationObserver(upd).observe(c,{attributes:true,attributeFilter:['class']})});
+if(w)[].forEach.call(w.querySelectorAll(':scope > .tpanel[role="tabpanel"]'),function(p){new MutationObserver(fill).observe(p,{attributes:true,attributeFilter:['class']})});
+var tg=document.createElement('button');tg.type='button';tg.className='tt-toggle';tg.setAttribute('aria-expanded','true');tg.textContent='Hide task';
+tg.addEventListener('click',function(){var off=box.classList.toggle('closed');tg.textContent=off?'Show task':'Hide task';tg.setAttribute('aria-expanded',String(!off))});
+h.insertBefore(tg,h.querySelector('.try-full'));h.after(box)});
+document.querySelectorAll('.try').forEach(function(t){var b=t.querySelector('.try-full');if(!b)return;
+t._full=function(on){t.classList.toggle('full',on);document.body.classList.toggle('try-open',!!document.querySelector('.try.full'));b.setAttribute('aria-pressed',String(on));b.textContent=on?'Exit full screen':'Full screen';if(!on)b.focus()};
+b.addEventListener('click',function(){mkOpen(t);t._full(!t.classList.contains('full'))})});
+document.addEventListener('keydown',function(e){var f=document.querySelector('.try.full');if(e.key==='Escape'&&f)f._full(false)});
+(function(){var id=new URLSearchParams(location.search).get('full');if(!id)return;var sec=document.getElementById(id);var t=sec&&[].find.call(sec.querySelectorAll('.try'),function(x){return !x.closest('details.smaller')});if(!t||!t._full)return;
+var ifr=t.querySelector('iframe');if(ifr)ifr.loading='eager';mkOpen(t);setTimeout(function(){t._full(true)},50)})();
+window.addEventListener('message',function(e){var m=e.data;if(e.origin!==location.origin||!m||m.wp!=='esc')return;
+document.querySelectorAll('.try.full').forEach(function(f){var i=f.querySelector('iframe');if(i&&i.contentWindow===e.source)f._full(false)})});
+document.querySelectorAll('.worked').forEach(function(w){var lis=w.querySelectorAll('li'),nx=w.querySelector('.wnext'),al=w.querySelector('.wall');if(!nx)return;
+function upd(){var left=[].filter.call(lis,function(l){return l.hidden}).length;nx.hidden=al.hidden=!left;nx.textContent=left?'Next step ('+left+' left)':''}
+nx.addEventListener('click',function(){var h=[].find.call(lis,function(l){return l.hidden});if(h){h.hidden=false;h.classList.add('new')}upd()});
+al.addEventListener('click',function(){[].forEach.call(lis,function(l){l.hidden=false});upd()});upd()});
+function parsons(box,win,bad){var lines=JSON.parse(box.dataset.lines),extra=JSON.parse(box.dataset.extra||'[]');
+var pool=box.querySelector('.ppool'),prog=box.querySelector('.pprog'),inProg=[];
+var all=lines.concat(extra).map(function(t,i){return {t:t,i:i}});
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),x=a[i];a[i]=a[j];a[j]=x}return a}
+var order=shuffle(all),tries=0;
+while(tries++<8&&JSON.stringify(order.slice(0,lines.length).map(function(o){return o.t}))===JSON.stringify(lines))order=shuffle(all);
+function code(t){var c=document.createElement('code');c.textContent=t;return c}
+function draw(){pool.replaceChildren();prog.replaceChildren();
+order.filter(function(o){return inProg.indexOf(o)<0}).forEach(function(o){var li=document.createElement('li'),b=document.createElement('button');b.type='button';b.className='piece';b.title='Add to your program';b.appendChild(code(o.t));b.addEventListener('click',function(){inProg.push(o);draw()});li.appendChild(b);pool.appendChild(li)});
+inProg.forEach(function(o,n){var li=document.createElement('li');li.draggable=true;li.appendChild(code(o.t));
+[['↑',-1,'Move up'],['↓',1,'Move down'],['×',0,'Remove']].forEach(function(a){var b=document.createElement('button');b.type='button';b.textContent=a[0];b.setAttribute('aria-label',a[2]);
+b.addEventListener('click',function(){if(a[1]===0)inProg.splice(n,1);else{var m=n+a[1];if(m<0||m>=inProg.length)return;var t=inProg[n];inProg[n]=inProg[m];inProg[m]=t}draw()});li.appendChild(b)});
+li.addEventListener('dragstart',function(e){e.dataTransfer.setData('text/plain',String(n))});li.addEventListener('dragover',function(e){e.preventDefault()});
+li.addEventListener('drop',function(e){e.preventDefault();var f=Number(e.dataTransfer.getData('text/plain'));if(isNaN(f)||f===n)return;var t=inProg.splice(f,1)[0];inProg.splice(n,0,t);draw()});
+prog.appendChild(li)})}
+draw();
+box.querySelector('.pcheck').addEventListener('click',function(){if(JSON.stringify(inProg.map(function(o){return o.t}))===JSON.stringify(lines))win();else bad(inProg.length<lines.length?'Keep going: some lines are still in the pieces list, or not needed.':(box.dataset.subj==='maths'?'Not in the right order yet. Read your steps top to bottom: does each line follow from the one above?':'Not in the right order yet. Read your program top to bottom and picture what it does.'))});
+box.querySelector('.preset').addEventListener('click',function(){inProg=[];draw()})}
+[].forEach.call(document.querySelectorAll('.tasks'),function(w){
+[].forEach.call(w.querySelectorAll('.tp'),function(p){p.addEventListener('click',function(){var i=p.dataset.i;
+[].forEach.call(w.querySelectorAll('.tp,.tpanel'),function(el){var on=el.dataset.i===i;el.classList.toggle('active',on);if(el.classList.contains('tp'))el.setAttribute('aria-selected',String(on))});
+// MakeCode: the newly opened task checks the work already in the editor (the last report), without waiting for an edit.
+var oc=w.querySelector('.tpanel.active .check[data-type="code"][data-play]');if(oc&&(oc.dataset.kind==='microbit'||oc.dataset.kind==='arcade')&&window.wpLast&&window.wpLast[oc.dataset.play])window.postMessage(window.wpLast[oc.dataset.play],location.origin);
+if(w.dataset.kind==='board'||w.dataset.kind==='maths'||w.dataset.kind==='science'){var rs=w.querySelector('.tpanel.active .resetstart'),f=[].find.call(w.querySelectorAll('iframe'),function(x){return !x.closest('details.smaller')});if(rs&&f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:rs.dataset.code},location.origin)}})});
+[].forEach.call(w.querySelectorAll('.resetstart'),function(b){b.addEventListener('click',function(){var f=[].find.call(w.querySelectorAll('iframe'),function(x){return !x.closest('details.smaller')});if(f&&f.contentWindow)f.contentWindow.postMessage({wp:'set-code',code:b.dataset.code},location.origin)})});
+sync(w)});
+})();/*wp-nav-js*/(function(){var n=document.querySelector('.sitenav');if(!n)return;var K='wp-from',here=n.dataset.here;
+// Sticky navbar: publish its height as --nav (course bar, step pills and anchors sit below it).
+var nh=function(){document.documentElement.style.setProperty('--nav',n.offsetHeight+'px')};nh();if(window.ResizeObserver)new ResizeObserver(nh).observe(n);else window.addEventListener('resize',nh);
+var mb=n.querySelector('.sn-menu');if(mb)mb.addEventListener('click',function(){var o=n.classList.toggle('open');mb.setAttribute('aria-expanded',String(o))});
+[].forEach.call(n.querySelectorAll('.sn-caret'),function(c){var d=c.parentNode;c.addEventListener('click',function(){var o=d.classList.toggle('open');c.setAttribute('aria-expanded',String(o))})});
+document.addEventListener('click',function(e){[].forEach.call(n.querySelectorAll('.sn-dd.open'),function(d){if(!d.contains(e.target)){d.classList.remove('open');d.querySelector('.sn-caret').setAttribute('aria-expanded','false')}})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')[].forEach.call(n.querySelectorAll('.sn-dd.open'),function(d){d.classList.remove('open')})});
+if(here==='lesson'){var h=document.querySelector('h1'),worked=null;
+// The step to come back to is the last one the student worked in (clicked, typed, used its playground), not the
+// one in view (the student may scroll elsewhere before using the navbar). Before any work, the step in view.
+function pill(id){var a=id?document.querySelector('nav.steps a[href="#'+id+'"]'):(document.querySelector('nav.steps a.here')||document.querySelector('nav.steps a')),t='';if(a)[].forEach.call(a.childNodes,function(c){if(c.nodeType===3)t+=c.textContent});return {a:a,t:t.trim()}}
+var save=function(){var s=pill(worked);try{sessionStorage.setItem(K,JSON.stringify({href:location.pathname+(s.a?s.a.getAttribute('href'):''),title:h?h.textContent:document.title,step:s.t}))}catch(e){}};
+function mark(el){var sec=el&&el.closest&&el.closest('section.step');if(sec&&sec.id){worked=sec.id;save()}}
+['click','input','focusin'].forEach(function(ev){document.addEventListener(ev,function(e){if(!(e.target.closest&&e.target.closest('.sitenav,.coursebar,nav.steps')))mark(e.target)},true)});
+window.addEventListener('blur',function(){setTimeout(function(){var f=document.activeElement;if(f&&f.tagName==='IFRAME')mark(f)},0)});
+try{var prev=JSON.parse(sessionStorage.getItem(K));if(prev&&prev.href&&prev.href.split('#')[0]===location.pathname&&prev.href.indexOf('#')>0)worked=prev.href.split('#')[1]}catch(e){}
+save();window.addEventListener('pagehide',save);return}
+var b=n.querySelector('.sn-back'),f=null;try{f=JSON.parse(sessionStorage.getItem(K))}catch(e){}
+if(f&&f.href){b.href=f.href;b.textContent='\u2190 Back to '+f.title+(f.step?' \u203a '+f.step:'');b.title=b.textContent;b.hidden=false;return}
+if(here==='playground'||here==='reference'){try{var l=JSON.parse(localStorage.getItem('wp-last-lesson'));if(l&&l.href){b.href=l.href;b.textContent='Continue: '+(l.title||'your lesson');b.hidden=false}}catch(e){}}})();/*wp-nav-js-end*/</script><script>document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.copyurl');if(!b)return;var u=b.dataset.url,done=function(){var t=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=t},1500)};
+if(navigator.clipboard)navigator.clipboard.writeText(u).then(done,function(){prompt('Copy this address:',u)});else prompt('Copy this address:',u)});</script></body></html>

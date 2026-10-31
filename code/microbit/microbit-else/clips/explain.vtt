@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.625
+If else chooses between two things.
+
+2
+00:00:03.503 --> 00:00:06.703
+If the question is true, the first part runs.
+
+3
+00:00:07.506 --> 00:00:10.456
+If it's false, the else part runs instead.
+
+4
+00:00:13.188 --> 00:00:18.188
+Exactly one part runs each time round. Never both, and never neither.

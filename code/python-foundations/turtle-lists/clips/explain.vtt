@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.101 --> 00:00:03.651
+A list keeps many values in order, under one name.
+
+2
+00:00:04.651 --> 00:00:07.851
+Here is a list of three colours, called colours.
+
+3
+00:00:08.676 --> 00:00:13.401
+Each item has a place, counted from zero. Place zero is red.
+
+4
+00:00:14.103 --> 00:00:18.378
+The len of colours counts the items, so the loop runs three times.

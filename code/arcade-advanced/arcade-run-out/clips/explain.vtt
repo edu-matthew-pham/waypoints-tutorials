@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.600
+ammo counts the shots that are left.
+
+2
+00:00:03.277 --> 00:00:06.452
+A fires only if ammo is more than zero.
+
+3
+00:00:09.194 --> 00:00:12.169
+Each shot changes ammo by minus one.

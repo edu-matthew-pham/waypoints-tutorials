@@ -1,0 +1,206 @@
+{
+ "ai/foundations/training-examples/explain": {
+  "hash": "6c64d70491630abe",
+  "w": 420,
+  "h": 780,
+  "div": 1
+ },
+ "code/console/console-menu/step-6": {
+  "hash": "d38d1fbc4b95b8bb",
+  "w": 683,
+  "h": 476,
+  "div": 1
+ },
+ "code/console/console-while/explain": {
+  "hash": "12eeb9487cf86008",
+  "w": 441,
+  "h": 488,
+  "div": 1
+ },
+ "code/console/console-while/class-q0": {
+  "hash": "055d4034a0a4c7f1",
+  "w": 317,
+  "h": 488,
+  "div": 1
+ },
+ "code/flask/flask-routes/step-6": {
+  "hash": "4a24408bc1eb8bc7",
+  "w": 714,
+  "h": 326,
+  "div": 1
+ },
+ "code/microbit-security/challenge-response/explain": {
+  "hash": "1298653ef903f4e9",
+  "w": 532,
+  "h": 327,
+  "div": 1
+ },
+ "code/microbit-security/key-sharing/explain": {
+  "hash": "5db74c86656fd68e",
+  "w": 539,
+  "h": 377,
+  "div": 1
+ },
+ "code/objects/objects-classes/explain": {
+  "hash": "2533a979a338483a",
+  "w": 845,
+  "h": 175,
+  "div": 1
+ },
+ "code/python-foundations/turtle-decisions/step-1": {
+  "hash": "3296abeaa9a58671",
+  "w": 376,
+  "h": 426,
+  "div": 1
+ },
+ "code/python-functions/turtle-read/step-3-t1": {
+  "hash": "b4fe92e62febf864",
+  "w": 600,
+  "h": 565,
+  "div": 1
+ },
+ "code/python-functions/turtle-returns/explain": {
+  "hash": "f55325f305c0c6ec",
+  "w": 670,
+  "h": 278,
+  "div": 1
+ },
+ "ict/safe/when-something-goes-wrong/explain": {
+  "hash": "fe755f5984a798c1",
+  "w": 493,
+  "h": 595,
+  "div": 1
+ },
+ "ict/safe/when-something-goes-wrong/step-3": {
+  "hash": "fe755f5984a798c1",
+  "w": 493,
+  "h": 595,
+  "div": 1
+ },
+ "maths/angles/classifying-algorithms/step-1": {
+  "hash": "187afb2507d5f4ac",
+  "w": 771,
+  "h": 1100,
+  "div": 1
+ },
+ "maths/angles/classifying-algorithms/step-7": {
+  "hash": "187afb2507d5f4ac",
+  "w": 771,
+  "h": 1100,
+  "div": 1
+ },
+ "maths/angles/eulers-rule/step-1": {
+  "hash": "331576283d5970e7",
+  "w": 468,
+  "h": 152,
+  "div": 1
+ },
+ "maths/angles/eulers-rule/step-2": {
+  "hash": "e50ee3a0444aa655",
+  "w": 211,
+  "h": 552,
+  "div": 1
+ },
+ "maths/angles/every-street-once/step-1": {
+  "hash": "9f832fd34db9cf0c",
+  "w": 109,
+  "h": 258,
+  "div": 1
+ },
+ "maths/angles/every-street-once/step-2": {
+  "hash": "faf7c5e09f69f424",
+  "w": 74,
+  "h": 260,
+  "div": 1
+ },
+ "maths/angles/nodes-and-edges/step-1": {
+  "hash": "ba354709532d3752",
+  "w": 325,
+  "h": 431,
+  "div": 1
+ },
+ "maths/angles/pin-the-problem-down/step-3": {
+  "hash": "b3f6ac097a4019e0",
+  "w": 492,
+  "h": 281,
+  "div": 1
+ },
+ "maths/angles/write-the-algorithm/step-3": {
+  "hash": "b383f2c94824e469",
+  "w": 506,
+  "h": 870,
+  "div": 1
+ },
+ "science/biology-9/feedback/step-3": {
+  "hash": "e5e66632508f166a",
+  "w": 399,
+  "h": 623,
+  "div": 1
+ },
+ "science/biology-9/feedback/step-3-t3": {
+  "hash": "2266c49d8ad1b75a",
+  "w": 231,
+  "h": 449,
+  "div": 1
+ },
+ "science/biology-9/pathways/explain": {
+  "hash": "9b8a251e0d74618c",
+  "w": 243,
+  "h": 459,
+  "div": 1
+ },
+ "science/biology-9/pathways/step-3": {
+  "hash": "def9a30e63c2325c",
+  "w": 410,
+  "h": 441,
+  "div": 1
+ },
+ "science/biology-9/pathways/step-3-blank": {
+  "hash": "78dc69a8de34522c",
+  "w": 410,
+  "h": 441,
+  "div": 1
+ },
+ "science/chemistry-9/decay-chains/step-3": {
+  "hash": "672e22a25c48a6f1",
+  "w": 190,
+  "h": 511,
+  "div": 1
+ },
+ "science/chemistry-9/decay-chains/step-3-blank": {
+  "hash": "0bd9b39fa5a445c6",
+  "w": 190,
+  "h": 511,
+  "div": 1
+ },
+ "science/earth-9/carbon-life/step-6": {
+  "hash": "09596a05f58f06cc",
+  "w": 683,
+  "h": 339,
+  "div": 1
+ },
+ "science/earth-9/carbon-stores/step-6": {
+  "hash": "afaf6c3fe5f2a2a9",
+  "w": 672,
+  "h": 298,
+  "div": 1
+ },
+ "science/earth-9/fossil-fuels/step-6": {
+  "hash": "a973da8a4930a202",
+  "w": 703,
+  "h": 362,
+  "div": 1
+ },
+ "systems/cyber/threats/step-3": {
+  "hash": "dd2a44c256769f17",
+  "w": 362,
+  "h": 334,
+  "div": 1
+ },
+ "systems/cyber/threats/step-3-blank": {
+  "hash": "44e9cec4e99f4ec8",
+  "w": 362,
+  "h": 334,
+  "div": 1
+ }
+}

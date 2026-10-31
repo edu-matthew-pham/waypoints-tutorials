@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:04.625
+else if adds more questions. The micro:bit asks them from the top.
+
+2
+00:00:05.350 --> 00:00:09.300
+The first true question runs its part, and the rest are skipped.
+
+3
+00:00:12.016 --> 00:00:15.791
+else runs only when every question above it is false.
+
+4
+00:00:16.695 --> 00:00:20.295
+So the order of the questions decides the ranges.
