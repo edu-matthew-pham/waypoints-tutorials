@@ -9,7 +9,7 @@ hook: "Fresh apples can reach Mia's family from a Saturday market stall, a natio
 ---
 You have met the **reasons businesses exist** (lesson 1) and the **structures** they use (lesson 2). This lesson joins them together: how a business's purpose and structure shape **what** it provides and **how** those goods and services reach customers.
 
-Businesses reach people through different channels: **local markets**, **small independent stores**, **shopping centres**, **online stores**, and **remote community stores**. The structure behind the business shapes how much money it can raise, who makes decisions, and which channel fits best. (All business names in this lesson, including Made-Up Grocers Corp and Made-Up Cafe, are made up.)
+Businesses reach people through different channels: **local markets**, **small independent stores**, **shopping centres**, **online stores**, and **remote community stores**. The structure behind the business shapes how much money it can raise, who makes decisions, and which channel fits best. (All business names in this lesson, including Brightbasket Supermarkets and Riverbend Cafe, are made up.)
 
 ## Predict: why not one structure for everyone?
 
@@ -56,7 +56,7 @@ insight: "Comparing two structures side by side shows how ownership and purpose 
 tasks:
   - check:
       type: question
-      q: "How does Made-Up Grocers Corp's structure (a corporation owned by thousands of shareholders) help it run supermarkets in shopping centres across every state?"
+      q: "How does Brightbasket Supermarkets' structure (a corporation owned by thousands of shareholders) help it run supermarkets in shopping centres across every state?"
       options:
         - "Shareholder investment lets it fund warehouses, trucks and large stores across the country"
         - "Having one solo owner lets it make fast decisions without consulting anyone"
@@ -66,7 +66,7 @@ tasks:
       feedback:
         - null
         - "A corporation is owned by many shareholders, not one solo owner."
-        - "Made-Up Grocers Corp is a for-profit corporation that can pay dividends to shareholders, not a not-for-profit."
+        - "Brightbasket Supermarkets is a for-profit corporation that can pay dividends to shareholders, not a not-for-profit."
         - "It is a shareholder-owned corporation selling to the public, not a farmers' cooperative."
       explain: "A corporation can raise large amounts of capital from shareholders, which funds the warehouses and store network needed for national distribution."
   - check:
@@ -110,7 +110,7 @@ tasks:
 ```worked
 \text{Solo Bike Mechanic} :: Purpose: earn a living fixing local bikes -> Structure: Sole proprietorship -> Provision: personal repair service from an independent workshop.
 \text{Valley Growers} :: Purpose: help 20 small farms reach buyers -> Structure: Cooperative -> Provision: shared coolroom and weekly market & grocer deliveries.
-\text{Made-Up Grocers Corp} :: Purpose: national grocery sales and shareholder profit -> Structure: Corporation -> Provision: hundreds of supermarkets in shopping centres and online.
+\text{Brightbasket Supermarkets} :: Purpose: national grocery sales and shareholder profit -> Structure: Corporation -> Provision: hundreds of supermarkets in shopping centres and online.
 ```
 
 Now: why do different business structures provide goods and services in different ways?
@@ -210,7 +210,7 @@ tier: wider
 insight: "A social enterprise trades commercially — selling goods or services — in order to fund and achieve a community mission."
 check:
   type: question
-  q: "Made-Up Cafe (a made-up business) sells coffee and toasties to office workers at normal cafe prices. It is set up as a not-for-profit social enterprise: every trainee barista is a young person learning job skills, and all surplus pays for their training. How do its purpose and structure work together?"
+  q: "Riverbend Cafe (a made-up business) sells coffee and toasties to office workers at normal cafe prices. It is set up as a not-for-profit social enterprise: every trainee barista is a young person learning job skills, and all surplus pays for their training. How do its purpose and structure work together?"
   options:
     - "Its sales pay for the training, and the not-for-profit structure keeps the surplus in that mission"
     - "Because it charges normal cafe prices, it is really a for-profit business, not a not-for-profit"

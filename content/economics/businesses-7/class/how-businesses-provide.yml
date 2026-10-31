@@ -10,7 +10,7 @@ activities:
     title: "Trace the chain"
     minutes: 4
     do: |
-      Give each pair one business from the course (Made-Up Bakery, Priya & Tom Vets, Valley Growers' Cooperative, Made-Up Grocers Corp, Riverbend Pantry). Ask them to speak the five links of the chain for their business in one minute, then say whether their business might have chosen the links in a different order.
+      Give each pair one business from the course (Riverbend Bakery, Priya & Tom Vets, Valley Growers' Cooperative, Brightbasket Supermarkets, Riverbend Pantry). Ask them to speak the five links of the chain for their business in one minute, then say whether their business might have chosen the links in a different order.
     notes: "Listen for the causal link between structure (who owns and funds it) and provision (how it reaches customers)."
   - at: make
     kind: discussion

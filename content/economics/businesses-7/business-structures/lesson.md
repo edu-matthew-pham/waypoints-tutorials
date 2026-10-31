@@ -9,7 +9,7 @@ hook: "In Mia's town, one baker owns the bakery alone, two vets own the animal c
 ---
 Last lesson showed that businesses exist for different reasons. They also have different **business structures**: the legal and practical way a business is owned and run.
 
-This lesson looks at six ways businesses are organised. They are not all the same kind of thing. In Australian law, the main legal structures are a **sole trader**, a **partnership**, a **company** and a **trust**. A franchise is an arrangement between two businesses. A not-for-profit is about purpose: what the money is for. A cooperative is a business owned by its members. (All businesses named in this lesson, such as Rosa's Car Yard, Priya & Tom Vets, Valley Growers' Shed, Made-Up Grocers Corp and Made-Up Burgers, are made up.)
+This lesson looks at six ways businesses are organised. They are not all the same kind of thing. In Australian law, the main legal structures are a **sole trader**, a **partnership**, a **company** and a **trust**. A franchise is an arrangement between two businesses. A not-for-profit is about purpose: what the money is for. A cooperative is a business owned by its members. (All businesses named in this lesson, such as Rosa's Car Yard, Priya & Tom Vets, Valley Growers' Shed, Brightbasket Supermarkets and Stackstone Burgers, are made up.)
 
 - **Sole proprietorship** (in Australia, a **sole trader**): owned and run by one person, who makes the decisions and keeps any profit (and carries the losses).
 - **Partnership:** owned by two or more people who share the skills, decisions, profits and responsibilities.
@@ -25,7 +25,7 @@ stage: predict
 insight: "Committing first checks whether students confuse a business's ownership structure with how many workers are on shift."
 check:
   type: predict
-  q: "Mia's aunt owns Made-Up Bakery by herself, runs it as a sole trader, and employs four bakers. Why is it still a sole proprietorship?"
+  q: "Mia's aunt owns Riverbend Bakery by herself, runs it as a sole trader, and employs four bakers. Why is it still a sole proprietorship?"
   options:
     - "It has one owner who controls it, even though she employs staff"
     - "A sole proprietorship is not allowed to employ anyone else"
@@ -116,7 +116,7 @@ tasks:
 \text{Rosa's Car Yard} :: One owner (Rosa), set up as a sole trader, who employs six staff -> Sole proprietorship.
 \text{Priya & Tom Vets} :: Two owners sharing skills, costs and profits -> Partnership.
 \text{Valley Growers' Shed} :: Owned by 20 member farms for shared packing -> Cooperative.
-\text{Made-Up Grocers Corp} :: Owned by thousands of shareholders across Australia -> Corporation.
+\text{Brightbasket Supermarkets} :: Owned by thousands of shareholders across Australia -> Corporation.
 ```
 
 Now: how do you tell a partnership from a sole proprietorship or a cooperative?
@@ -142,7 +142,7 @@ tasks:
         - ["Riverbend Pantry sells low-cost groceries and puts all surplus back into food parcels", "Not-for-profit", "Surplus goes back into its community mission rather than to owners."]
   - check:
       type: question
-      q: "Amir wants to open a burger shop. Instead of inventing his own menu and logo, he pays a fee to Made-Up Burgers (a made-up chain) to use its well-known name, recipes and supplier network in his town. What has Amir opened?"
+      q: "Amir wants to open a burger shop. Instead of inventing his own menu and logo, he pays a fee to Stackstone Burgers (a made-up chain) to use its well-known name, recipes and supplier network in his town. What has Amir opened?"
       options:
         - "A franchise"
         - "A cooperative"
@@ -152,8 +152,8 @@ tasks:
       feedback:
         - null
         - "A cooperative is owned jointly by members with equal votes, not licensed from a brand."
-        - "Amir and Made-Up Burgers both operate to make a profit."
-        - "Because Amir pays to use Made-Up Burgers' established brand, menu and system, he is operating a franchise."
+        - "Amir and Stackstone Burgers both operate to make a profit."
+        - "Because Amir pays to use Stackstone Burgers' established brand, menu and system, he is operating a franchise."
       explain: "Paying a franchisor to operate a branch under an established brand and system is a franchise."
 ```
 
@@ -223,10 +223,10 @@ tier: typical
 insight: "A franchise gives a local owner a head start with a known brand, but limits what they can change."
 check:
   type: sort
-  q: "In Amir's Made-Up Burgers franchise, sort each item into an advantage for Amir (the franchisee) or a limit he must accept."
+  q: "In Amir's Stackstone Burgers franchise, sort each item into an advantage for Amir (the franchisee) or a limit he must accept."
   options: ["Advantage for franchisee", "Limit on franchisee"]
   items:
-    - ["Customers already know and trust the Made-Up Burgers name on opening day", "Advantage for franchisee", "Known branding brings customers in faster."]
+    - ["Customers already know and trust the Stackstone Burgers name on opening day", "Advantage for franchisee", "Known branding brings customers in faster."]
     - ["Training and recipes are supplied by the head office", "Advantage for franchisee", "He does not have to invent the system from scratch."]
     - ["Amir cannot change the menu to sell pizza without head-office approval", "Limit on franchisee", "The franchisor controls the menu so every branch matches."]
     - ["Amir must pay an ongoing share of his sales to the franchisor", "Limit on franchisee", "Franchise fees reduce the share of revenue he keeps."]
@@ -240,13 +240,13 @@ tier: wider
 insight: "Comparing a member-owned cooperative with a shareholder-owned corporation shows how ownership changes decision-making."
 check:
   type: reasoning
-  q: "Compare the Valley Growers' Cooperative (owned by 20 local farms) with Made-Up Grocers Corp (owned by distant shareholders). Explain how who owns each business changes how decisions are made and who benefits."
+  q: "Compare the Valley Growers' Cooperative (owned by 20 local farms) with Brightbasket Supermarkets (owned by distant shareholders). Explain how who owns each business changes how decisions are made and who benefits."
   paper: true
   models:
     - title: "A strong answer"
       text: "In the cooperative, the 20 member farms both use the shed and own it, with one vote each, so they choose fees and opening hours that help local growers stay afloat. In the corporation, shareholders invest to earn a financial return and votes depend on how many shares you hold, so managers focus on profit across all stores."
     - title: "A different answer that also works"
-      text: "The cooperative exists to serve its members, so any surplus is used to lower packing costs for the 20 farms. Made-Up Grocers Corp is owned by shareholders who may never visit the town, so its decisions aim to grow sales and pay dividends to shareholders."
+      text: "The cooperative exists to serve its members, so any surplus is used to lower packing costs for the 20 farms. Brightbasket Supermarkets is owned by shareholders who may never visit the town, so its decisions aim to grow sales and pay dividends to shareholders."
   criteria:
     - "I named who owns the cooperative and who owns the corporation."
     - "I explained how votes or decisions work differently in the two structures."

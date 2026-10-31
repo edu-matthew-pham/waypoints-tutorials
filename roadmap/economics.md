@@ -118,3 +118,8 @@ Per `roadmap/checklist.md` › "Plan first, then build", here is the per-waypoin
 - How businesses provide: the five-link chain is "one way to explain a business"; the Try parsons (fixed order) is now a match on Riverbend Pantry; `chain.txt` removed.
 - Needs and wants Typical: arithmetic step replaced by a needs/wants sort for made-up Wren Creek. Putting it together: second model answer keeps the clinic choice.
 - Partner ticks now "gave feedback", not "agreed".
+
+## Naming made-up cases (1 Nov 2026, Matthew agreed)
+- The place carries the "made up" label, not each name: a lesson says once that its town or businesses are made up. Use one standing made-up town (Riverbend; Wattle Creek and Parkside are already in Civics and inquiry), with businesses named for the owner or the town plus what they do (Rosa's Car Yard, Riverbend Bakery). National chains need a coined name, checked with a web search before use (Brightbasket Supermarkets, Stackstone Burgers). No catchy two-word brand-style names (Burger Barn) and no "Made-Up" in names. Avoid names drawn from First Nations culture (for example bunyip).
+- Applied 1 Nov: "Made-Up Bakery / Cafe / Grocers Corp / Burgers" in `businesses-7` renamed to Riverbend Bakery, Riverbend Cafe, Brightbasket Supermarkets and Stackstone Burgers.
+
