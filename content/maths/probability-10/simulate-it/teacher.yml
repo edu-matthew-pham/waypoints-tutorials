@@ -46,4 +46,4 @@ explain: |
   - The chance given a positive is the positives with the condition over all the positives.
   - The simulated chance differs a little from the calculated one, and the gap shrinks as the trials grow.
 sources:
-  - { title: "Made up for this lesson: the screening test and its rates (as in the last lesson), the simulated counts, and the bags of counters.", url: "https://tutorials.learningwaypoints.com/maths/data/simulate-it/", checked: 2026-10-25 }
+  - { title: "Made up for this lesson: the screening test and its rates (as in the last lesson), the simulated counts, and the bags of counters.", url: "https://tutorials.learningwaypoints.com/maths/probability-10/simulate-it/", checked: 2026-10-25 }

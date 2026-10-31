@@ -35,7 +35,7 @@ support: "Use the board for every question: set a and b, choose + or −, and sa
 leads: |
   Next in Number: negative fractions and decimals on the same line, then multiplying and dividing integers.
 
-  Where it leads: tables of values with negative inputs (Tables from rules in Linear relations has a quick check of this), gradients and intercepts below zero, and changes in temperature, height and money.
+  Where it leads: tables of values with negative inputs (Tables from rules in Year 7 Algebra has a quick check of this), gradients and intercepts below zero, and changes in temperature, height and money.
 exit:
   q: "Work out −3 + 7, 2 − 9 and 4 − (−5)."
   a: "4, −7 and 9."

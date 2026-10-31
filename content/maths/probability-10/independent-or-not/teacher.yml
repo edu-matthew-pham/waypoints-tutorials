@@ -46,4 +46,4 @@ explain: |
   - Counts mislead because the groups are different sizes.
   - Events that cannot both happen are not independent: if one happens, the other's chance drops to 0.
 sources:
-  - { title: "Made up for this lesson: the 100-student walking and sport survey, the rain and late-bus days, the chess and choir counts and the 120-student survey.", url: "https://tutorials.learningwaypoints.com/maths/data/independent-or-not/", checked: 2026-10-25 }
+  - { title: "Made up for this lesson: the 100-student walking and sport survey, the rain and late-bus days, the chess and choir counts and the 120-student survey.", url: "https://tutorials.learningwaypoints.com/maths/probability-10/independent-or-not/", checked: 2026-10-25 }

@@ -7,7 +7,7 @@ goals:
   - I can explain why a decay graph never reaches the x-axis.
 struggle: "Believing repeated halving eventually reaches 0. Keep halving a number on paper or a calculator and look at how small it gets without ever being 0."
 before: |
-  Do the Run and Modify boards yourself first. Students need the ratio from the last lesson (Same ratio each time) and where a line crosses the y-axis from Linear relations.
+  Do the Run and Modify boards yourself first. Students need the ratio from the last lesson (Same ratio each time) and where a line crosses the y-axis from Year 8 Algebra.
 
   The one idea: the base b decides growth (more than 1) or decay (between 0 and 1), and a decay graph gets closer and closer to y = 0 without reaching it. The tea comes back at the end: the gap between tea and room decays, so the tea settles above room temperature.
 

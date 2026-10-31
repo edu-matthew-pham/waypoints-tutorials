@@ -13,7 +13,7 @@ before: |
 
   The common mistake is to use the addition rule for multiplication ("two negatives make a bigger negative"); it is planted after the method, in Kai's working, and the review question puts −4 + (−3) next to −4 × (−3).
 
-  This lesson is Year 8 (AC9M8N04). It sits in Number Foundations so that Expanding brackets and the Year 8 Linear relations lessons can rely on it.
+  This lesson is Year 8 (AC9M8N04). Expanding brackets and the Year 8 lines lessons (Year 8 Algebra) rely on it.
 running:
   - "Predict: take a show of hands. Students who chose −6 usually say 'two negatives make a negative'. Do not correct it yet."
   - "Run: have the class say each answer aloud before the click: −6, −4, −2, 0, … and then 2. Ask: why would it suddenly stop going up?"
@@ -37,7 +37,7 @@ support: "Use the board for every product: set a and b and read R. A printed sig
 leads: |
   Next in Number: squares, powers and primes (AC9M7N01, AC9M7N02), then fractions. Negative fractions and decimals (node 2) close the fractions unit.
 
-  Where it leads: expanding brackets with negatives (−2(x − 5) = −2x + 10), gradients and rules with negative values in Linear relations, and powers of negative numbers.
+  Where it leads: expanding brackets with negatives (−2(x − 5) = −2x + 10), gradients and rules with negative values in Year 8 Algebra, and powers of negative numbers.
 exit:
   q: "Work out −7 × (−4), 24 ÷ (−6) and (−1)⁴."
   a: "28, −4 and 1."

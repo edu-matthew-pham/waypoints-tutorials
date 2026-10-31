@@ -47,4 +47,4 @@ explain: |
   2. Zoom in on that window, or make a table of the two values in it.
   3. Find where the one in front changes, and halve the gap again if you need more figures.
 sources:
-  - { title: "Made up for this lesson: Plan A ($2,000 and $300 a year) and Plan B ($1,000 and 20% a year) are not real accounts.", url: "https://tutorials.learningwaypoints.com/maths/functions/where-they-meet/", checked: 2026-10-25 }
+  - { title: "Made up for this lesson: Plan A ($2,000 and $300 a year) and Plan B ($1,000 and 20% a year) are not real accounts.", url: "https://tutorials.learningwaypoints.com/maths/algebra-10/where-they-meet/", checked: 2026-10-25 }

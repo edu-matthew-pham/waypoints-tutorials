@@ -7,7 +7,7 @@ goals:
   - I can convert a speed between km/h and m/s, and tell a rate from a ratio.
 struggle: "Dividing in the right order. Ask students to say the rate in words ('dollars per kilogram') before they divide: the 'per' quantity goes second."
 before: |
-  Do the Run board yourself first. Students need ratios (Number Foundations, Ratios).
+  Do the Run board yourself first. Students need ratios (Year 7 Number, Ratios).
 
   The one idea: a rate is "this much per one of that", with two different units; divide the first by the second. The common mistake is dividing the wrong way round (Mia's mistake).
 
@@ -36,7 +36,7 @@ support: "A card: 'rate = first quantity ÷ second quantity, units: first per se
 leads: |
   This starts AC9M8M05.
 
-  Where it leads: using rates to solve problems (next lesson), rate models, and gradient as a rate (Linear relations).
+  Where it leads: using rates to solve problems (next lesson), rate models, and gradient as a rate (Year 8 Algebra).
 exit:
   q: "A cyclist rides 45 km in 1.5 hours. Find her speed in km/h and m/s."
   a: "45 ÷ 1.5 = 30 km/h; 30 ÷ 3.6 ≈ 8.3 m/s."

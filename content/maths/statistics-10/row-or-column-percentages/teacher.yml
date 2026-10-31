@@ -46,4 +46,4 @@ explain: |
 
   A column percentage divides by the column total and answers another question: 'Of the players, 29.1% ride.'
 sources:
-  - { title: "Made up for this lesson: the school, the 200 students, how they travel and whether they play sport.", url: "https://tutorials.learningwaypoints.com/maths/data/row-or-column-percentages/", checked: 2026-10-25 }
+  - { title: "Made up for this lesson: the school, the 200 students, how they travel and whether they play sport.", url: "https://tutorials.learningwaypoints.com/maths/statistics-10/row-or-column-percentages/", checked: 2026-10-25 }

@@ -2,7 +2,7 @@
 order: 1
 unit: brackets
 node: AC9M8A01 n1
-assumes: [AC9M8N04 n1]   # multiplying negatives (−2 × −5): Number Foundations' Multiplying and dividing integers; Algebra does not need that course first, so a quick check in Modify retrieves it
+assumes: [AC9M8N04 n1]   # multiplying negatives (−2 × −5): Year 8 Number's Multiplying and dividing integers; Algebra does not need that course first, so a quick check in Modify retrieves it
 title: Expanding brackets
 summary: The number outside a bracket multiplies every term inside it. 3(2x + 4) is 3 rows of 2x + 4, so 6x + 12. Then collect any like terms.
 language: maths

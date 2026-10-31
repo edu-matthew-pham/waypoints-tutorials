@@ -47,4 +47,4 @@ explain: |
   - The right side is the radius **squared**.
   - A circle is a **relation**, but not a **function**: most $x$ values have two $y$ values.
 sources:
-  - { title: "Made up for this lesson: the pivot and the arm length (5 squares of 100 m) and the tree at (4, 3.5) are not from a real farm.", url: "https://tutorials.learningwaypoints.com/maths/functions/circles-as-relations/", checked: 2026-10-25 }
+  - { title: "Made up for this lesson: the pivot and the arm length (5 squares of 100 m) and the tree at (4, 3.5) are not from a real farm.", url: "https://tutorials.learningwaypoints.com/maths/algebra-10/circles-as-relations/", checked: 2026-10-25 }

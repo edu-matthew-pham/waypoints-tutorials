@@ -47,4 +47,4 @@ explain: |
   - Swapping the events changes the group, so P(A | B) is usually not P(B | A).
 sources:
   - { title: "Interpreting BOM forecasts (FarmPoint, Tasmanian Government): chance of rain is the likelihood of more than the minimum measurable rainfall (0.2 mm)", url: "https://farmpoint.tas.gov.au/news/interpreting-bom-forecasts", checked: 2026-10-22 }
-  - { title: "Made up for this lesson: the 100 days with their rain and cloudy-morning counts, and the bike, scooter, netball and sport counts.", url: "https://tutorials.learningwaypoints.com/maths/data/given/", checked: 2026-10-25 }
+  - { title: "Made up for this lesson: the 100 days with their rain and cloudy-morning counts, and the bike, scooter, netball and sport counts.", url: "https://tutorials.learningwaypoints.com/maths/probability-10/given/", checked: 2026-10-25 }

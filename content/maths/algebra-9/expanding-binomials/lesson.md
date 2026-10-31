@@ -3,7 +3,7 @@ order: 4
 unit: binomials
 node: AC9M9A02 n1
 uses: [AC9M8A01 n1]
-assumes: [AC9M9A01 n1, AC9M9A01 n2, AC9M9A01 n3]   # only x × x = x², from Year 8 index laws; the Year 9 index laws come in Irrational numbers and index laws
+assumes: [AC9M9A01 n1, AC9M9A01 n2, AC9M9A01 n3]   # only x × x = x², from Year 8 index laws; the Year 9 index laws are in this course's Index laws unit
 connection: garden-extend
 title: Two brackets
 summary: "(x + 4)(x + 3) is the area of a rectangle x + 4 wide and x + 3 tall. Cut it into four pieces, x², 3x, 4x and 12, and add them: x² + 7x + 12."

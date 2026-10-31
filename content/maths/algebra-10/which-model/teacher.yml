@@ -45,4 +45,4 @@ explain: |
 
   Say which test worked, and show the numbers.
 sources:
-  - { title: "Made up for this lesson: the car prices (30,000 new, 20% off each year) are not real listings. Real prices also depend on kilometres and condition.", url: "https://tutorials.learningwaypoints.com/maths/functions/which-model/", checked: 2026-10-25 }
+  - { title: "Made up for this lesson: the car prices (30,000 new, 20% off each year) are not real listings. Real prices also depend on kilometres and condition.", url: "https://tutorials.learningwaypoints.com/maths/algebra-10/which-model/", checked: 2026-10-25 }

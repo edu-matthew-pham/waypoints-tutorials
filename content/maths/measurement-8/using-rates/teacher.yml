@@ -36,7 +36,7 @@ support: "A card: total = rate × amount; amount = total ÷ rate; units in every
 leads: |
   This completes AC9M8M05.
 
-  Where it leads: rate models (next lessons), gradient as a rate (Linear relations), and speed in science.
+  Where it leads: rate models (next lessons), gradient as a rate (Year 8 Algebra), and speed in science.
 exit:
   q: "A plane flies 2100 km at 700 km/h. How long does it take?"
   a: "2100 ÷ 700 = 3 hours."

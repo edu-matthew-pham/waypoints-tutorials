@@ -47,4 +47,4 @@ explain: |
   - **Test it** by changing one number at a time, and include a case that might break it (zero, a negative, a very small number).
   - **Cases that agree support it**; they don't prove it. **One case that disagrees rejects it**, and you can then refine the claim.
 sources:
-  - { title: "Made up for this lesson: the 20 m cliff, the planets and every value of a. The rule h = 20 − at² is a simple model of a dropped ball without air resistance.", url: "https://tutorials.learningwaypoints.com/maths/functions/make-a-conjecture/", checked: 2026-10-25 }
+  - { title: "Made up for this lesson: the 20 m cliff, the planets and every value of a. The rule h = 20 − at² is a simple model of a dropped ball without air resistance.", url: "https://tutorials.learningwaypoints.com/maths/algebra-10/make-a-conjecture/", checked: 2026-10-25 }

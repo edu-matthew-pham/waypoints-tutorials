@@ -23,7 +23,7 @@ stuck:
 stretch: "Find a news headline that reports a statistic. Say what it frames, what it leaves out and who gains if you believe it."
 support: "Give two sentences that report the same number with different words and ask which words push the reader."
 leads: |
-  Back in class: a discussion of a real report you have read; the sleep investigation brief on the Data and chance briefs page raises consent and privacy when collecting data from classmates.
+  Back in class: a discussion of a real report you have read; the sleep investigation brief on the Year 10 Statistics briefs page raises consent and privacy when collecting data from classmates.
 exit:
   q: "Name one way a report can be accurate and still unfair."
   a: "It leaves out some results, frames the numbers to push a reader, uses a misleading scale, overstates what a small sample shows, or hides who paid for it."

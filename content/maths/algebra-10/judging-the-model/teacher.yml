@@ -47,4 +47,4 @@ explain: |
   - Range: past the point where the food or room runs out, the model's numbers describe something that does not exist.
 sources:
   - { title: "The 2-hour/4-hour rule (NSW Food Authority): food left between 5 °C and 60 °C: under 2 hours use or refrigerate; 2 to 4 hours use but do not refrigerate; 4 hours or more throw out", url: "https://www.foodauthority.nsw.gov.au/sites/default/files/2021-07/2_hour_4_hour_rule.pdf", checked: 2026-10-25 }
-  - { title: "Made up for this lesson: the 100 cells, the doubling times, the 1,000,000-cell dish, the lab count, the plant, the yeast and the car.", url: "https://tutorials.learningwaypoints.com/maths/functions/judging-the-model/", checked: 2026-10-25 }
+  - { title: "Made up for this lesson: the 100 cells, the doubling times, the 1,000,000-cell dish, the lab count, the plant, the yeast and the car.", url: "https://tutorials.learningwaypoints.com/maths/algebra-10/judging-the-model/", checked: 2026-10-25 }

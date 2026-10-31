@@ -48,4 +48,4 @@ explain: |
   - Form: a straight line (linear) or a curve (non-linear).
   - Outliers: a dot far from the rest. Report it, then check it.
 sources:
-  - { title: "Made up for this lesson: hours slept and reaction times for 14 students, ages and heights, month of birth and height, study time and test marks, and the eight arm span and height pairs. A class could collect real data with a reaction-time test.", url: "https://tutorials.learningwaypoints.com/maths/data/describing-association/", checked: 2026-10-25 }
+  - { title: "Made up for this lesson: hours slept and reaction times for 14 students, ages and heights, month of birth and height, study time and test marks, and the eight arm span and height pairs. A class could collect real data with a reaction-time test.", url: "https://tutorials.learningwaypoints.com/maths/statistics-10/describing-association/", checked: 2026-10-25 }

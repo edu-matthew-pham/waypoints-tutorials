@@ -7,7 +7,7 @@ goals:
   - I can explain why a remainder coming back means the digits repeat.
 struggle: "Trusting the remainders over the calculator. Ask students to predict the next remainder before the board shows it."
 before: |
-  Do the Run board yourself first. Students need fractions as decimals (Number Foundations).
+  Do the Run board yourself first. Students need fractions as decimals (Year 7 Number).
 
   The one idea: the remainders are always less than the denominator, so either one is 0 (the decimal stops) or one comes back (the digits repeat). The common mistake is calling a recurring decimal irrational (Zoe's mistake): a recurring decimal is a fraction.
 

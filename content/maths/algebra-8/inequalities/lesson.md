@@ -2,7 +2,7 @@
 order: 5
 unit: solving
 node: AC9M8A02 n3
-assumes: [AC9M8A02 n1]   # graphing inequalities: Linear relations, Lines and regions; the boards here draw the lines
+assumes: [AC9M8A02 n1]   # graphing inequalities: Year 8 Algebra, Lines and regions; the boards here draw the lines
 title: Inequalities
 summary: "Solve an inequality like an equation, doing the same to both sides, but when you multiply or divide by a negative, reverse the inequality sign. Show the answer on a number line: open circle for < and >, closed for ≤ and ≥. Check with a value."
 language: maths

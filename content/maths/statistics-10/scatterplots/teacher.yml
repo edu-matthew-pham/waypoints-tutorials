@@ -45,4 +45,4 @@ explain: |
   - Up: the second measurement (height here).
   - A reference line such as height = arm span shows where the two numbers are equal: dots above it have the bigger second number, dots below it have the smaller.
 sources:
-  - { title: "Made up for this lesson: Tom, the twelve students' arm spans and heights, and the five pairs for the paper task. A real class would give its own numbers.", url: "https://tutorials.learningwaypoints.com/maths/data/scatterplots/", checked: 2026-10-25 }
+  - { title: "Made up for this lesson: Tom, the twelve students' arm spans and heights, and the five pairs for the paper task. A real class would give its own numbers.", url: "https://tutorials.learningwaypoints.com/maths/statistics-10/scatterplots/", checked: 2026-10-25 }

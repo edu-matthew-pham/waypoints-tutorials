@@ -3,7 +3,7 @@ order: 4
 unit: solving
 node: AC9M8A02 n2
 uses: [AC9M8A01 n1]   # expanding brackets first
-assumes: [AC9M8A02 n1]   # graphing lines: Linear relations (Lines and their rules); the Run board draws both lines, so plotting is not needed here
+assumes: [AC9M8A02 n1]   # graphing lines: Year 8 Algebra (Lines and their rules); the Run board draws both lines, so plotting is not needed here
 title: Solving harder equations
 summary: "Get the x terms on one side and the numbers on the other, doing the same to both sides; expand any brackets first. Then check by substituting into the first equation."
 language: maths

@@ -33,7 +33,7 @@ stuck:
 stretch: "A third plan costs 25 dollars plus 3 per GB. Where does it cross Plan A and Plan B? Which plan is cheapest for 2, 5 and 10 GB?"
 support: "Give a table with g = 0 to 8 for both plans to fill in first; the crossing is where the two columns match."
 leads: |
-  This finishes the Linear relations course so far. Later courses use the same ideas: simultaneous equations (two lines, one crossing, solved with algebra), inequalities (which side of a line), and non-linear models when a straight line stops fitting.
+  This finishes the Year 8 lines units. Year 9 and 10 Algebra use the same ideas: simultaneous equations (two lines, one crossing, solved with algebra), inequalities (which side of a line), and non-linear models when a straight line stops fitting.
 
   Where it leads in class: any "which deal is better" question, break-even in business, and checking whether a model's answer makes sense in science.
 exit:
