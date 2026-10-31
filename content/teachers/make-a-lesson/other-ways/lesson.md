@@ -63,3 +63,14 @@ check: { type: reflect, text: "I know which start I will use for the next thing 
 ```
 
 Think of what you teach next. Which of the four starts fits what you already have? Open Create or a lesson page and take that first step.
+
+```teacher
+summary: "Teachers match four starts (Make your own version, Start from a project, My path, a waypoint) to what they already have, then pick one for their next lesson."
+time: 10
+goals:
+  - "I can choose a way to start a lesson from what I already have."
+struggle: "Teachers may default to starting from nothing. Ask what they already have before they open Create."
+exit:
+  q: "Which start will you use for your next lesson, and why?"
+  a: "Whichever matches what they hold: a nearly-right lesson, a project, only a topic, or existing lessons to order."
+```

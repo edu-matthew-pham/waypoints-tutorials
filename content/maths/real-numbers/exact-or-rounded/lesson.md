@@ -100,7 +100,7 @@ tasks:
     check: { type: number, q: "Round $\\sqrt{50}$ to 2 decimal places (7.07), then square it. What do you get?", answer: 49.98, tolerance: 0.01, explain: "7.07² = 49.9849, a little under 50." }
     smaller:
       check: { type: "number", q: "Just the first part: what's $7.07 \\times 7.07$ to the nearest whole number?", answer: 50, explain: "7.07 × 7.07 = 49.98…, which is about 50." }
-  - hint: ["Round √50 to 3 decimal places: 7.071.", "Then square it."]
+  - hint: ["Squaring means multiplying the number by itself.", "Work out 7.071 × 7.071 on the calculator, then round to 1 decimal place."]
     check: { type: number, q: "Round $\\sqrt{50}$ to 3 decimal places (7.071), then square it. What do you get, to 1 decimal place?", answer: 50, tolerance: 0.05, explain: "7.071² = 49.999…, so 50.0 to 1 decimal place." }
   - hint: ["50 = 25 × 2.", "√25 = 5."]
     check: { type: question, q: "Edge case: which one is exactly equal to $\\sqrt{50}$?", options: ["$5\\sqrt{2}$", "$7\\sqrt{1}$", "$25\\sqrt{2}$", "$\\sqrt{25}$"], answer: 0, feedback: [null, "7 × 1 = 7, but √50 is 7.07….", "5√2 squared is 50, but 25√2 squared is 1250.", "√25 = 5."], explain: "√50 = √(25 × 2) = √25 × √2 = 5√2. Both are exact." }

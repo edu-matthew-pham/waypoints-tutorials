@@ -131,6 +131,7 @@ stuck:
   - see: "A student says anything on a page is a fact."
     ask: "Could you check it? How?"
     fix: "Go back to 'best'. You can measure a pond. You cannot measure best."
+struggle: "Sorting a sentence into fact or opinion is meant to take a moment's thought. Don't sort it for them; ask 'Could you check that? How?' and let them decide."
 leads: |
   Next: Year 7 History › Source origin and purpose, where origin and content get their names.
 exit:

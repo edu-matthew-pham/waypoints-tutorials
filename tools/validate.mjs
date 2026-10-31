@@ -165,14 +165,22 @@ else console.log('✓ error tasks: every planted error names its fault and an on
 // the teacher guide and the slides, and swallows the text after it. Write tags as `<h1>`.
 {
   const TAG = /<\/?(?:[a-z][a-z0-9]*)(?:\s[^<>]*)?>|<!DOCTYPE[^>]*>/i;
-  const bare = (md) => String(md || '').replace(/```[\s\S]*?```/g, '').replace(/`[^`\n]*`/g, '').replace(/<!--[\s\S]*?-->/g, '').match(TAG);
+  // Deliberate drawn figures in non-web lessons (1 Nov 2026): a <figure> with a class and role="img", or a
+  // `situation` or `wpt-` class, is authored HTML (maths situations, geography catchments), so its whole block is
+  // skipped. HTML, CSS and JavaScript lessons still warn on every bare tag, figures included.
+  const WEB = new Set(['html', 'javascript']);
+  const FIG = /<figure\b([^<>]*)>[\s\S]*?<\/figure>/gi;
+  const meant = (a) => /\bclass\s*=\s*"[^"]*\b(?:situation|wpt-[\w-]+)/i.test(a) || (/\bclass\s*=/i.test(a) && /\brole\s*=\s*"img"/i.test(a));
+  const figs = (md) => md.replace(FIG, (all, a) => (meant(a) ? '' : all));
+  const bare = (md, web) => { let t = String(md || '').replace(/```[\s\S]*?```/g, '').replace(/`[^`\n]*`/g, '').replace(/<!--[\s\S]*?-->/g, ''); if (!web) t = figs(t); return t.match(TAG); };
   let n = 0;
   for (const l of lessons) {
+    const web = WEB.has(l.language);
     const hints = (c, w) => [].concat(c.hint ?? []).map((h, i) => [`${w} hint ${i + 1}`, h]);
     const where = [['intro', l.intro], ...l.steps.flatMap((s) => [[`${s.id} "${s.title}"`, s.body], ...hints(s.config, s.id), ...s.tasks.flatMap((t) => [[`${t.id} "${t.title}"`, t.body], ...hints(t.config, t.id)])])];
     for (const k of ['before', 'leads', 'explain']) where.push([`teacher.yml ${k}`, l.teacher?.[k]]);
     (l.teacher?.running || []).forEach((r, i) => where.push([`teacher.yml running ${i + 1}`, r]));
-    for (const [w, md] of where) { const m = bare(md); if (m) { n++; console.warn(`⚠ ${l.slug} › ${w}: ${m[0]} outside backticks becomes a real tag; write it as \`${m[0]}\``); } }
+    for (const [w, md] of where) { const m = bare(md, web); if (m) { n++; console.warn(`⚠ ${l.slug} › ${w}: ${m[0]} outside backticks becomes a real tag; write it as \`${m[0]}\``); } }
   }
   if (!n) console.log('✓ markdown: no bare tags outside backticks');
 }

@@ -3,9 +3,9 @@
 # region: run
 widget: indexlaws
 mode: product
-slider a: 2, 10, 3
-slider m: 1, 6, 2
-slider n: 1, 6, 3
+slider a: 2, 10, 2
+slider m: 1, 6, 1
+slider n: 1, 6, 1
 # endregion
 
 # region: explain

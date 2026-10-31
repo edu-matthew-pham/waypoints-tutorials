@@ -97,9 +97,9 @@ tasks:
 Here's a conversion the other way, from micrograms to milligrams.
 
 ```worked
-250 \text{ µg} :: The label.
-2.5 \times 10^{2} \text{ µg} :: In scientific notation.
-1 \text{ µg} = 10^{-3} \text{ mg} :: A microgram is a thousandth of a milligram.
+250 \,\mu\text{g} :: The label.
+2.5 \times 10^{2} \,\mu\text{g} :: In scientific notation.
+1 \,\mu\text{g} = 10^{-3} \text{ mg} :: A microgram is a thousandth of a milligram.
 2.5 \times 10^{2} \times 10^{-3} :: Multiply by the power of 10.
 2.5 \times 10^{-1} \text{ mg} = 0.25 \text{ mg} :: Add the powers: 2 + (−3) = −1.
 ```
@@ -190,8 +190,8 @@ tasks:
       paper: true
       q: "The label says 250 micrograms. Someone reads it as 250 milligrams. How many times too much is that?"
       steps:
-        - ["$1 \\text{ mg} = 10^{3} \\text{ µg}$", "a milligram is 1000 micrograms"]
-        - ["$250 \\text{ mg} = 250 \\times 10^{3} \\text{ µg}$", "convert the milligrams to micrograms"]
+        - ["$1 \\text{ mg} = 10^{3} \\,\\mu\\text{g}$", "a milligram is 1000 micrograms"]
+        - ["$250 \\text{ mg} = 250 \\times 10^{3} \\,\\mu\\text{g}$", "convert the milligrams to micrograms"]
         - ["$(250 \\times 10^{3}) \\div 250 = 10^{3}$", "compare with the real dose"]
       answer: "1000"
       answerLabel: "Times too much"

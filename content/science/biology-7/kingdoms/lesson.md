@@ -18,7 +18,7 @@ explainClip:
   caption: "Sorting into kingdoms"
   say: "Living things are sorted into kingdoms by features you can observe."
   clip:
-    - caption: { text: "Sort a kangaroo, one question at a time. Is it just one cell? No: many cells.", say: "Let's sort a kangaroo, one question at a time. Is it just one cell? No, it has many cells." }
+    - caption: { text: "Sort a kangaroo, one question at a time. Is it just one cell? No: many cells.", say: "Let's sort a kangaroo: is it just one cell? No, it has many." }
     - click: "No"
     - caption: { text: "Does it make its own food using sunlight? No: it eats grass.", say: "Does it make its own food using sunlight? No. It eats grass." }
     - click: "No"
