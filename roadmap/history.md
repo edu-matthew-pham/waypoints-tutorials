@@ -234,3 +234,10 @@ Not verified, left as is: the Rosetta Stone wording (reworded to "versions of th
 - **Source annotation:** reuse the English `cohesion` board's parts mode on a source card, with students marking origin, purpose and claims. No new widget needed; try it in `sources-7` or `usefulness-7` first.
 - **Timeline or layers board:** dating and stratigraphy in `evidence-7` (deeper is usually older; a coin dates a layer). A short clip of layers building up suits Explain it to me.
 - Per-course choice, not a rule (`roadmap/shared.md` › Decided: humanities).
+
+## Boards in built lessons (1 Nov 2026, Matthew agreed; for the History chat)
+- **Ready to add (reuse, no new code):**
+  - `usefulness-7/fact-opinion-and-accuracy`: mark each phrase of the Qin inscription as fact or opinion on the English `cohesion` board's chain mode, coloured by kind (as English `persuade` does). Planted answers only.
+  - `sources-7/origin-and-content` and `sources-7/context-and-purpose`: click the parts of a source card that tell you origin, purpose or content on `cohesion` parts mode.
+- **Needs a new light board:** `evidence-7/reading-the-layers`, a dig through layers (deeper is usually older; a dated coin dates its layer). A short clip suits Explain it to me.
+- Add each as one step; keep the existing checks. Plan, then Matthew's go.

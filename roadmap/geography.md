@@ -174,3 +174,7 @@ Next: trial the five K01 lessons with a class and review the lesson 1 prerequisi
 - **Catchment board:** place a dam or clear land and see what reaches the town downstream (water, soil, sediment). Fits `water-7` lessons 2–4 and the Valuing and managing water courses. A short captioned clip of water and soil moving downstream would suit the hook or Explain it to me.
 - **Map-reading board:** scale, legend, direction and distribution on one made-up or properly sourced map; a still map remains the default until a lesson needs interaction.
 - Per-course choice, not a rule (`roadmap/shared.md` › Decided: humanities).
+
+## Boards in built lessons (1 Nov 2026, Matthew agreed; for the Geography chat)
+- **Needs a new light board:** the catchment board (above) in `water-7/water-connects-places`, `effects-of-water-movement` and `water-changes-land`: change land use or add a dam upstream and see what reaches the town.
+- `resource-types` and `classify-connect-change` stay as they are (their sort checks already are the interaction). Plan, then Matthew's go.

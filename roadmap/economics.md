@@ -133,3 +133,5 @@ Per `roadmap/checklist.md` › "Plan first, then build", here is the per-waypoin
 - **Where:** one step in `scarcity-7/opportunity-cost` (and optionally `putting-together`). This is a narrow exception to the 30 Oct "no board for concept and case lessons" decision, which still holds for the case lessons. A short captioned clip of the trade-off moving suits Explain it to me.
 - **Next:** the Economics chat plans it (widget name, starter, checks) and Matthew says go. Could be the first humanities board, a pattern for others (`roadmap/shared.md` › Decided: humanities, per-course choice).
 
+## Boards in built lessons (1 Nov 2026)
+- `scarcity-7/opportunity-cost`: the trade-off board (Proposed above) is the only one. The case lessons stay as they are.

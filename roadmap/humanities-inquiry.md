@@ -448,3 +448,7 @@ The course renderer uses frontmatter summaries rather than an `index.md` body, s
 - `learning:` added to every HASS teacher.yml; vague summaries in lessons 7–9 rewritten.
 - Before Year 7 › Find it and sort it: ".com usually for a business".
 - Line ~160 ("No code or skeleton content…") marked superseded.
+
+## Boards in built lessons (1 Nov 2026, Matthew agreed; for the inquiry chat)
+- **Ready to add (reuse, no new code):** `inquiry-7/organise-it`, Nib's messy notes go into the ICT `sheet` board's table and students sort it until the busiest day shows (planted answer). One step; keep the existing checks.
+- Other inquiry lessons stay as they are. Plan, then Matthew's go.

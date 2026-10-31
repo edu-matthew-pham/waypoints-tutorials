@@ -185,3 +185,7 @@ Per `roadmap/checklist.md` › "Plan first, then build", here is the per-waypoin
 ## Boards and clips (proposed, 1 Nov 2026; not decided)
 - **Preferential-vote counter:** a made-up electorate's ballots counted round by round, lowest candidate out and votes moved on, so students see why first preferences alone don't decide the seat. Fits `government-7` (representative democracy) and any later elections lesson. A short captioned clip of one count suits Explain it to me.
 - Per-course choice, not a rule (`roadmap/shared.md` › Decided: humanities).
+
+## Boards in built lessons (1 Nov 2026, Matthew agreed; for the Civics chat)
+- **Needs a new light board:** `government-7/representative-and-responsible`, drag a made-up election's House seats into parties and see when one side reaches a majority and can form government (pairs with the proposed preferential-vote counter above).
+- Plan, then Matthew's go.
