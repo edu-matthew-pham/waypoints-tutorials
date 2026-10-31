@@ -20,7 +20,7 @@ Source = where Matthew's decision is recorded. "None found" = the rule exists bu
 | # | Rule | Reason | Scope | Decided (source) | Weight |
 |---|---|---|---|---|---|
 | T1 | **First Nations content:** we write no student explanation of First Nations history or culture; where a skill lesson needs an example, the custodians' own words (one short sourced line plus a link; evidence and technology only; no remains, no images of people who have died, no belief). Teacher notes start from ACARA's elaborations and ask for local, community-approved material. Values and Country items are pointer pages. A First Nations educator reviews before use beyond CGGS. | We are not the right authors; protocols and consultation come first. | Every subject (decided in humanities; Economics "and the others follow"). | Matthew 30 Oct (`shared.md` › Decided: humanities, First Nations refined) | **Firm** |
-| T2 | **No real brands or people in made-up cases;** made-up names, places and businesses are labelled and read as made up. | A real brand is promoted or misrepresented; made-up cases don't date. | Every subject's scenarios. | Matthew 30 Oct (firm list); `checklist.md` | **Firm**, scope **?** (Q2: real historical people and real places as content) |
+| T2 | **Firm:** made-up scenarios never use real brands or real living people; their names are labelled as made up and don't read as real. **Default:** prefer made-up cases where real ones would date or distract; real people, places, events and sources are fine when the subject needs them, checked against a source. | No brand promoted or person misrepresented; but studying real history, places and sources is often the point. | Every subject. | Matthew 30 Oct (firm list), scope settled 1 Nov | **Firm** (scenarios) / Default (real content) |
 | T3 | **No AI marking** of student work, and nothing listens to or judges a voice. | The site gives formative feedback on activities, not judgement of a student's own work; responsible AI use. | Every subject. | Matthew 26 Oct (English plan), 27 Oct (speaking), 30 Oct (firm list) | **Firm** |
 | T4 | **Student writing is never sent anywhere,** and nothing personal is asked or collected; progress stays in the browser. | Privacy; no accounts, no tracking. | Every subject. | Matthew 27 Oct (site intent; Learning skills), 12 Oct (progress) | **Firm?** (Q3: treat as safeguarding) |
 | T5 | **Don't mark or pass/fail free writing** (no word counts as a check). Writing is fine and often useful: in the student's book or document, or a small browser-only box; a partner or teacher reads it (`reflect` tick). Don't build a lesson around write boxes, don't avoid writing either. | The site is a learning-activity guide, not a marker; Matthew never meant "no writing". | Every subject. | Matthew 27 Oct (English, counted boxes removed), narrowed 30 Oct (`a784b9c`) | Default |
@@ -43,7 +43,7 @@ Source = where Matthew's decision is recorded. "None found" = the rule exists bu
 
 | # | Rule | Reason | Scope | Decided (source) | Weight |
 |---|---|---|---|---|---|
-| W1 | **Don't publish unless Matthew asks;** never add push or schedule triggers; never push to `gh-pages`, `publish-*` or `makecode-editor` unasked. | Publishing is manual by choice (after the Oct suspension); one run ships every chat's work. | All chats. | Matthew 10–13 Oct (CLAUDE.md › Publishing) | **?** (Q1: three versions disagree) |
+| W1 | **Lesson-only batches: publish when finished** (`publish-lessons`) and say so. **Whole-site, navigation or Create publishes: ask first.** Never add automatic triggers; never push to `gh-pages` or `makecode-editor` directly. | Matthew is happy to publish; wider publishes ship every chat's work; manual triggers by choice since the Oct suspension. | All chats. | Matthew 10–13 Oct; settled 1 Nov | Default (no automatic triggers: firm) |
 | W2 | Pull before starting and before every push; never force-push; notes in your own roadmap file; shared files: check `git log`, small change, note it in `shared.md`. | Parallel chats; cloud sessions lose unpushed work. | All chats. | Matthew 11 Oct (ROADMAP split), 19 Oct | **Firm?** (Q4) |
 | W3 | Test before pushing (validate, build, headless check); don't re-render clips locally. | No CI on push; the publish run records the real voice. | All chats. | 11–19 Oct (CLAUDE.md) | Default |
 | W4 | Don't reformat whole data files; add single lines. | Merge conflicts between parallel chats. | Shared data files. | None found | Default, source **?** (Q6) |
@@ -63,16 +63,17 @@ Each rule is **firm** (don't depart without asking Matthew) or a **default** (us
 
 Firm
 - **First Nations content** (every subject): we write no student explanation of First Nations history or culture. Where a skill lesson needs an example, use the custodians' own words: one short sourced line and a link. Teacher notes start from ACARA's elaborations. *Why:* we are not the right authors. Details: `roadmap/rules.md` T1.
-- **No real brands or people** in made-up cases; made-up names are labelled and read as made up. *Why:* nothing promoted or misrepresented.
+- **Made-up scenarios never use real brands or real living people;** made-up names are labelled and read as made up. *Why:* nothing promoted or misrepresented. Real people, places and sources are fine when the subject needs them (checked against a source).
 - **No AI marking** of student work, and nothing listens to or judges a voice. *Why:* feedback, not judgement.
 - **Safeguarding:** student writing is never sent anywhere and nothing personal is asked; wellbeing topics carry review and disclosure notes; security is defensive only. *Why:* child safety and privacy.
-- **Don't publish unless Matthew asks**, and never add workflow triggers. *Why:* publishing is manual by choice and ships every chat's work. **Pull before starting and before every push; never force-push.** *Why:* other chats work in parallel.
+- **Never add automatic publish triggers.** *Why:* publishing stays manual by choice. **Pull before starting and before every push; never force-push.** *Why:* other chats work in parallel.
 
 Defaults
 - **Don't mark free writing,** but use writing where it helps (own book or document, or a small browser-only box, read by a partner or teacher). *Why:* the site is an activity guide, not a marker; "no writing" was never the rule.
 - **Label contestable or simplified ideas where students meet them** ("in economics…", "this model leaves out…"); settled facts stay plain; a short phrase is enough. *Why:* ACARA says what to teach, not how sure to sound.
 - **Pace-agnostic:** no pace labels; the untiered path is the minimum; `tier:` steps are optional width, never a faster track; check before leaving a hinge. A teacher note may say where a slower or faster class could spend extra time. *Why:* a tutorial never knows the class.
 - **Lesson shape is a default.** Pick the shape that fits the waypoint and say why if you leave the usual one (ICT shape for planted-answer skills; inquiry for discussion; in Code, PRIMM stages are jobs, not an order). *Why:* one shape copied everywhere pads lessons.
+- **Publishing:** lesson-only batches, publish when finished (`git push origin main:publish-lessons`) and say so; whole-site, navigation or Create publishes, ask Matthew first.
 - **Check facts about people, places, studies and dates against a source;** prefer made-up cases; mark anything unverified.
 - **Plan, then build:** plan each waypoint in your roadmap file and stop for "go" (`roadmap/checklist.md`).
 - **Test before you push** (`npm ci`, `validate`, `build`, a headless check of changed pages); don't re-render clips locally.
@@ -94,9 +95,9 @@ Defaults
 +- Pace-agnostic (30 Oct 2026, every subject, default; roadmap/rules.md T9): lessons never assume a class pace (no Consolidating/Steady/Advancing, no assumed Steady). Untiered path = minimum width; `tier:` steps are optional width on the same waypoint, never a faster track; hinge waypoints get a check before moving on. A teacher note may say where a slower or faster class could spend extra time. Pace is the teacher's call in class.
 @@ Publishing
 -  Pushes to main still run nothing; Matthew is happy for Claude to publish finished batches this way.
-+  Pushes to main still run nothing. Publish only when Matthew asks (roadmap/rules.md W1).
++  Pushes to main still run nothing. Publish finished lesson-only batches this way and say so; ask before a whole-site, navigation or Create publish (roadmap/rules.md W1).
 ```
-(The last line depends on Q1. The write-box line under English, 30 Oct, is already narrowed correctly and stays.)
+(The write-box line under English, 30 Oct, is already narrowed correctly and stays.)
 
 ## 4. Flags: rules copied wider or shorter than decided, or with no source
 
@@ -112,8 +113,8 @@ Defaults
 
 ## 5. Questions for Matthew
 
-1. **Publishing (W1):** which is right: never publish, publish finished batches via publish-lessons, or only when you ask? And firm?
-2. **Real people (T2):** firm for made-up scenarios only, with real historical people, real places and checked real facts allowed as content with a source?
+1. ~~Publishing (W1)~~ **Decided 1 Nov:** publish lesson-only batches when finished; ask before whole-site, navigation or Create publishes.
+2. ~~Real people (T2)~~ **Decided 1 Nov:** firm for made-up scenarios (no real brands or living people); real people, places and sources fine when the subject needs them.
 3. **Safeguarding scope (T4, T7):** count "writing never sent, nothing personal asked, progress in the browser" and "defensive security only, LiPo sign-off" as safeguarding, so firm?
 4. **Repo safety (W2):** firm (never force-push, pull first), even though it isn't on your firm list?
 5. **QR codes (T15):** keep as a default for every school, or a CGGS note?
