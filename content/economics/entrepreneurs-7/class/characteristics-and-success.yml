@@ -1,0 +1,29 @@
+inquiry:
+  q: "Two people open the same kind of business in the same street and work just as hard. One succeeds and one closes. What could explain the difference?"
+  prompts:
+    - "What might each of them have done differently?"
+    - "What might have happened to them that they couldn't control?"
+  notes: "Collect both kinds of reason on the board. The lesson uses the first kind as one way to explain success, and keeps the second kind in view."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Cause or result?"
+    minutes: 4
+    do: |
+      Read out statements about a made-up shop ("it has lots of customers", "it started opening at 6 am", "it's popular", "it fixed its leaking roof before winter"). Students stand for a cause and sit for a result.
+    notes: "Results sound like reasons. Ask 'what came first?' each time."
+  - at: make
+    kind: discussion
+    title: "Something outside its control"
+    minutes: 4
+    do: |
+      Pairs read each other's explanations and check that each one names a thing the business didn't control.
+    notes: "This keeps the explanation honest: characteristics matter, but they are not the whole story."
+questions:
+  - at: investigate
+    title: "Explaining or describing?"
+    type: question
+    q: "Which of these explains why a business succeeded?"
+    options: ["It ran a trial before anyone asked", "It became popular", "It made lots of money", "It grew fast"]
+    answer: 0
+    explain: "Running a trial is an action, so it can be a cause. The others describe the success."

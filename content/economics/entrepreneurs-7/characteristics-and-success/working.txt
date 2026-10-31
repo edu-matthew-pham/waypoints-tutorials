@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Riverbend Cargo Bikes ran a lunchtime trial for three cafes before anyone asked.
+It fitted its bikes with cool boxes so it could carry medicine and fresh food.
+Nib says: "It succeeded because it made lots of money and grew."
+Nib says: "So the trial and the cool boxes didn't really matter."
+# endregion

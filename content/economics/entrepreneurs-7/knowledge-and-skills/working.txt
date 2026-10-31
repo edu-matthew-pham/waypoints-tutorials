@@ -1,0 +1,10 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Maya noticed that farm boxes arrived wilted on hot days.
+She got three growers and two drivers to agree: picked this morning, delivered by lunch.
+She chose the routes, set the prices and switched to reusable cool crates.
+Nib says: "Spotting the wilting boxes was a real entrepreneurial skill."
+Nib says: "Getting the growers on board and choosing routes are just chores, not entrepreneurial skills."
+Nib says: "So having the idea was the only skill Maya used."
+# endregion

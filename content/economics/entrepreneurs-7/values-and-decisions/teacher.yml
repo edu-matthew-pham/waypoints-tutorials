@@ -1,0 +1,48 @@
+summary: "Students analyse how values shape entrepreneurs' decisions in three areas: taking an opportunity, negotiating with stakeholders, and complying with the law and regulations. This is the hinge for AC9HE7K03: lesson 3 asks students to explain business success, and an explanation that leaves out values and stakeholders will be thin. The planted mistake is confusing stakeholders with shareholders."
+learning: "explain how a value shaped an entrepreneur's decision about an opportunity, stakeholders or compliance, and what it cost or gained"
+time: 45
+timing: "Predict and Try 8 min · Worked example 14 min · Vary 8 min · Practise 6 min · Make 9 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can say what a value is and give an example of one shaping a business decision.
+  - I can explain who a business's stakeholders are, and how they differ from shareholders.
+  - I can say what a value might cost or gain a business.
+struggle: "Two things: students treat values as private opinions with no effect on what a business does, and they read 'stakeholder' as 'shareholder'. Keep tracing a value to something the business actually does, and keep asking 'who is affected?'"
+before: |
+  This is a hinge lesson. The Worked example's stakeholder check, with its Build up to it question, is the check before moving on; give it the class time.
+
+  The node file lists "identifying opportunities, stakeholder negotiation, and compliance" as if they were values. ACARA's elaboration wording is that values influence decisions about these, which is what the lesson teaches.
+
+  The lesson does not claim that good values pay off. Sometimes they cost a business money and it does fine; sometimes they cost it and it struggles; sometimes they bring loyal customers. The point is that values shape decisions. If students argue that ethics always pays, ask for a case where it didn't.
+
+  Legal facts used: in Australia it is an offence to trade under an unregistered business name unless it is your own name (business.gov.au, checked 1 Nov 2026), and businesses must keep records for tax. Consumer guarantees are not stated for second-hand goods on purpose: the ACCC pages say most guarantees don't apply to one-off private sales but do not spell out second-hand goods from a business. Food-safety rules vary by state, so the wider step doesn't name a specific record.
+
+  All Riverbend businesses and people are made up.
+running:
+  - "Predict: take a vote. Ask those who chose 'always the option that earns the most' to think of a shop they go to for another reason."
+  - "Try: after the sort, ask which decisions a different owner, with different values, might make differently."
+  - "Worked example: put Nib's lines up and ask 'Who is affected if Leo pays Sunita two months late?' before revealing the mistake. This is the hinge check."
+  - "Vary: the match has one value per decision; ask pairs which ones cost the business something."
+  - "Make: books out. More than one answer is good; ask two students with different decisions to read theirs."
+stuck:
+  - see: "A student says a stakeholder is someone who owns shares."
+    ask: "Who is affected if Leo changes his opening hours?"
+    fix: "Anyone affected is a stakeholder. Owning shares makes you a shareholder, which is one kind of stakeholder."
+  - see: "A student says values don't matter because a business just wants money."
+    ask: "Why does Leo spend an hour wiping each laptop?"
+    fix: "Values show up in what the business actually does, even when they cost time or money."
+  - see: "A student says following the law is optional if you are careful."
+    ask: "What happens to the takeaway's customers if it cuts the corner?"
+    fix: "Laws and regulations must be followed. Values shape how seriously an entrepreneur takes them, not whether they apply."
+stretch: "Find a decision where two of Leo's values pull against each other (for example, helping students versus paying Sunita on time when cash is short). What would you do, and why? It does not go on to the next lesson."
+support: "A three-box chain on the board: Value → Decision → What it cost or gained. Students fill one chain for Leo before the Make step."
+leads: |
+  Next in Entrepreneurs and business success: Characteristics and business success.
+
+  Wider (teacher choice, not part of the student steps): ACARA's elaborations for AC9HE7K03 include "describing the characteristics of First Nations Australian entrepreneurs; for example, community-run companies such as the Gumatj Aboriginal Corporation and individuals such as Dean Foley and Tahnee Edwards, by asking questions such as 'What is their story?', 'How did they achieve success?' and 'What processes did they apply?'" The node's wider items suggest looking at how community and economic values meet in decisions. If you do, start from ACARA's wording, then use the entrepreneurs' or corporation's own published words and local, community-approved material. The lesson writes nothing about them.
+exit:
+  q: "Name one of Leo's stakeholders who is not an owner, and one value that shaped a decision he made."
+  a: "Stakeholders: Sunita the supplier, his customers, his neighbours. Values: less waste, fairness, privacy, honesty, each linked to a decision such as refurbishing laptops, paying within a week, wiping files or registering his name."
+explain: |
+  **Values** are what a person thinks matters. They shape an entrepreneur's decisions about **taking an opportunity**, **negotiating with stakeholders** and **complying with the law and regulations**.
+
+  **Stakeholders** are everyone affected by a business's decisions: workers, customers, suppliers, neighbours and owners. Shareholders are only one kind.

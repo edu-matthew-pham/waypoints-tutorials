@@ -1,0 +1,29 @@
+inquiry:
+  q: "Leo earns less on each refurbished laptop than he would on new gadgets. One student says he's making a bad business decision. Another says it's a good one. What would you want to know before deciding?"
+  prompts:
+    - "What does Leo care about?"
+    - "Who else is affected by his choice?"
+  notes: "There is no single answer here. Steer towards how values shape the decision, not whether the decision was right."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Who is affected?"
+    minutes: 5
+    do: |
+      Write "Leo pays Sunita two months late" on the board. Pairs list everyone affected. Then ask which of them own part of Leo's business.
+    notes: "This is the hinge. Wait until the class sees that most stakeholders own nothing before naming the shareholder mix-up."
+  - at: make
+    kind: discussion
+    title: "Two answers that both work"
+    minutes: 4
+    do: |
+      Ask two students who chose different decisions to read their answers. The class says which value and which area each one names.
+    notes: "The point is the chain from value to decision to cost or gain, not the right decision."
+questions:
+  - at: investigate
+    title: "Stakeholder or shareholder?"
+    type: question
+    q: "Which of these is a stakeholder in Leo's business, but not a shareholder?"
+    options: ["Sunita, who supplies his parts", "Someone who owns shares in it", "No one, because Leo owns it alone", "Only the bank"]
+    answer: 0
+    explain: "Sunita is affected by Leo's decisions, so she is a stakeholder. She owns no part of the business."

@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Leo buys parts from Sunita's Parts Supply and sells refurbished laptops to students.
+Leo owns the business himself, so it has no shareholders.
+Nib says: "Stakeholders are the people who own shares in a business."
+Nib says: "So Leo's business has no stakeholders, and he doesn't need to think about Sunita or his customers."
+# endregion

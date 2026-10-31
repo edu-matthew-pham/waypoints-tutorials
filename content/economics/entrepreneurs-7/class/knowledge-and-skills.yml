@@ -1,0 +1,29 @@
+inquiry:
+  q: "Lots of people in Riverbend noticed the wilting farm boxes. Only Maya started a business. What did she do that they didn't?"
+  prompts:
+    - "Could Maya have done it on her own?"
+    - "Which of her choices could have gone wrong?"
+  notes: "Let the class list what Maya did before naming the three skills. Most lists start with the idea and miss the people."
+activities:
+  - at: run
+    kind: activity
+    title: "Idea, people, decisions"
+    minutes: 4
+    do: |
+      Read out Maya's four actions. Students hold up one finger for the idea, two for getting people on board, three for a running decision.
+    notes: "Knowledge (what she knew about vegetables) is the odd one out; ask where it helped."
+  - at: make
+    kind: discussion
+    title: "Our class set"
+    minutes: 5
+    do: |
+      Pairs share the real business they chose and one skill they found in its story. Add each to the class set of entrepreneur profiles.
+    notes: "Use the business's own words where possible. Keep First Nations examples to what the class has read in the entrepreneurs' or community's own words."
+questions:
+  - at: investigate
+    title: "Which skill?"
+    type: question
+    q: "Maya gets three growers to agree on 'picked this morning, delivered by lunch'. Which skill is that?"
+    options: ["Establishing a shared vision", "Recognising an opportunity", "Designing a logo", "Making a profit"]
+    answer: 0
+    explain: "The people involved agreed on the aim, so they pull the same way."
