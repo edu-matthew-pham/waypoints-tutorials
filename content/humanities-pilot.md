@@ -44,11 +44,11 @@ First Nations perspectives are teacher-led, starting from ACARA's elaborations a
 
 Choose one part that helps with a unit you already teach. Try it, then reflect:
 
-1. What did you learn about the topic or students’ understanding?
-2. What helped, and what got in the way?
-3. What would make you more likely to use Learning Waypoints again?
+1. Did it save you planning or prep time compared with what you'd normally use? Roughly how much?
+2. Did a check show you a misunderstanding you wouldn't otherwise have noticed? What was it?
+3. What helped, what got in the way, and what would make you use it again?
 4. Where would your students learn more by doing something on screen (moving, sorting, counting, watching a change) than by reading about it?
 
-Feedback on any part is useful. Keep notes for a conversation with the pilot facilitator; the feedback collection route is still to be decided. No account, form or upload of student information is needed.
+Feedback on any part is useful. Share it whichever way suits you: talk to the pilot facilitator, add to the shared pilot notes, or use the feedback form (links to both are added before the pilot starts). No account, form or upload of student information is needed.
 
 Curriculum content © ACARA, used under CC BY 4.0. Teachers may use and adapt these lessons for their classes: see [Using these lessons](/about/).

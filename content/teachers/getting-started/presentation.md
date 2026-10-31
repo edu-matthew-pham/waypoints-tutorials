@@ -86,9 +86,9 @@ Optional links: [Geography: List for teachers](https://tutorials.learningwaypoin
 Choose **Curriculum**, **Planning and preparation**, or **Tutorials**.
 Fit one useful part into an existing unit, try it, then reflect:
 
-1. What did you learn about the topic or students’ understanding?
-2. What helped, and what got in the way?
-3. What would make you use Learning Waypoints again?
+1. Did it save you planning or prep time? Roughly how much?
+2. Did a check show you a misunderstanding you wouldn't otherwise have noticed?
+3. What helped, what got in the way, and what would make you use it again?
 4. Where would your students learn more by doing something on screen than by reading about it?
 
 [Humanities pilot: starting points and reflection](https://tutorials.learningwaypoints.com/humanities-pilot/)

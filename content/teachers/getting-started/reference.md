@@ -35,11 +35,12 @@ You still guide discussion and inquiry, select sources and assess extended reaso
 
 Choose one part that helps with a unit you already teach.
 
-1. What did you learn about the topic or students’ understanding?
-2. What helped, and what got in the way?
-3. What would make you use Learning Waypoints again?
+1. Did it save you planning or prep time? Roughly how much?
+2. Did a check show you a misunderstanding you wouldn't otherwise have noticed?
+3. What helped, what got in the way, and what would make you use it again?
+4. Where would your students learn more by doing something on screen than by reading about it?
 
-Keep notes for a conversation with the pilot facilitator. No student information is needed. **Humanities is a preview and has not yet been tried with classes.**
+Share feedback by talking to the pilot facilitator, in the shared pilot notes or through the feedback form (links on the Humanities pilot page). No student information is needed. **Humanities is a preview and has not yet been tried with classes.**
 
 **Continue:** [Teachers hub](https://tutorials.learningwaypoints.com/teachers/) · [Self-paced introduction](https://tutorials.learningwaypoints.com/teachers/getting-started/) · [Humanities pilot](https://tutorials.learningwaypoints.com/humanities-pilot/).
 
