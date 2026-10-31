@@ -44,7 +44,7 @@ Source = where Matthew's decision is recorded. "None found" = the rule exists bu
 | # | Rule | Reason | Scope | Decided (source) | Weight |
 |---|---|---|---|---|---|
 | W1 | **Lesson-only batches: publish when finished** (`publish-lessons`) and say so. **Whole-site, navigation or Create publishes: ask first.** Never add automatic triggers; never push to `gh-pages` or `makecode-editor` directly. | Matthew is happy to publish; wider publishes ship every chat's work; manual triggers by choice since the Oct suspension. | All chats. | Matthew 10–13 Oct; settled 1 Nov | Default (no automatic triggers: firm) |
-| W2 | Pull before starting and before every push; never force-push; notes in your own roadmap file; shared files: check `git log`, small change, note it in `shared.md`. | Parallel chats; cloud sessions lose unpushed work. | All chats. | Matthew 11 Oct (ROADMAP split), 19 Oct | **Firm?** (Q4) |
+| W2 | Pull before starting and before every push; never force-push; notes in your own roadmap file; shared files: check `git log`, small change, note it in `shared.md`. | Parallel chats; a force-push or stale push can silently wipe another chat's work. `git pull --rebase` replays your commits on top, so a normal push always works and force is never needed. | All chats. | Matthew 11 Oct (ROADMAP split), 19 Oct | **Firm** (settled 1 Nov) |
 | W3 | Test before pushing (validate, build, headless check); don't re-render clips locally. | No CI on push; the publish run records the real voice. | All chats. | 11–19 Oct (CLAUDE.md) | Default |
 | W4 | Don't reformat whole data files; add single lines. | Merge conflicts between parallel chats. | Shared data files. | None found | Default, source **?** (Q6) |
 | W5 | Quote YAML values with colons; site-specific `wpt-` class names. | YAML parsing; ad blockers hide generic names (25 Oct). | All page code. | Technical (CLAUDE.md › Gotchas) | Default |
@@ -116,7 +116,7 @@ Defaults
 1. ~~Publishing (W1)~~ **Decided 1 Nov:** publish lesson-only batches when finished; ask before whole-site, navigation or Create publishes.
 2. ~~Real people (T2)~~ **Decided 1 Nov:** firm for made-up scenarios (no real brands or living people); real people, places and sources fine when the subject needs them.
 3. ~~Safeguarding scope (T4, T7)~~ **Decided 1 Nov:** both firm. Security is defined by authorisation and containment, not "defensive only": white-hat skills are fine inside our boards or an approved isolated lab.
-4. **Repo safety (W2):** firm (never force-push, pull first), even though it isn't on your firm list?
+4. ~~Repo safety (W2)~~ **Decided 1 Nov:** firm. Rebase, never force-push.
 5. **QR codes (T15):** keep as a default for every school, or a CGGS note?
 6. **Rules with no source (T16, T17, T18, W4, editorial pass):** keep as defaults, change, or drop?
 7. **Shape of the fix:** OK to add `roadmap/rules.md` as the register, cut `AGENTS.md` to §2, and have subject roadmaps point to it rather than copy?
