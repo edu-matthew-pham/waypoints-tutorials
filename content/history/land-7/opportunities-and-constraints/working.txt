@@ -1,0 +1,8 @@
+# Nib's draft paragraph for the "find the mistake" task (made up for this lesson). Plain text: students click the wrong line.
+
+# region: nib
+The Yellow River's silt fed millions of farmers.
+Its floods forced people to build dykes again and again.
+Nib says: "So geography decided everything. The Qin and Han could not change anything about their land."
+Nib says: "Their history was set by the rivers and mountains before anyone was born."
+# endregion

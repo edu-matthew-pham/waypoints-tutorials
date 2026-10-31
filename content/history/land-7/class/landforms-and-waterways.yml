@@ -1,0 +1,29 @@
+inquiry:
+  q: "If you had to start a farming village 7,000 years ago somewhere on this map, where would you put it, and why there?"
+  prompts:
+    - "What does your spot give you that other places do not?"
+    - "What might go wrong there?"
+  notes: "Most will choose a river or plain. Push for the reason (water, soil, protection), and bank 'what might go wrong' for lesson 3."
+activities:
+  - at: run
+    kind: activity
+    title: "Point and explain"
+    minutes: 4
+    do: |
+      Project the map. Point to one feature at a time; pairs say one thing it gave people or one way it got in their way.
+    notes: "Accept 'both' answers for rivers (water, but floods). That is lesson 3's idea arriving early."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Why could the Wei River valley support a capital, when the Gobi Desert could not?"
+    options:
+      - "The valley had river water and farmland; the desert had neither"
+      - "The desert was too far from the sea"
+      - "The valley had no floods"
+    answer: 0
+    explain: "Water and farmland fed a large population. A desert could not."
+    feedback:
+      - null
+      - "The valley was inland too. Water and soil are the difference."
+      - "Rivers do flood. The difference is water and soil."

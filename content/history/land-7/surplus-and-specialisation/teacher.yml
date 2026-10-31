@@ -1,0 +1,51 @@
+learning: "explain how fertile land and water control produced a food surplus, and how that surplus fed people who did not farm"
+summary: "Explain how fertile land and water control let farmers grow a surplus, and how that surplus fed people who did not farm, such as craftworkers, officials and soldiers."
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 6 min · Practise 6 min · Make 8 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can say what a surplus is and work it out from a record.
+  - I can explain how a surplus fed people who did not farm.
+  - I can explain why farming had to come before cities and governments.
+struggle: "Students think of a surplus as 'leftovers' and miss that it is what feeds everyone who is not farming. Keep asking 'who eats this grain?'"
+before: |-
+  This is the second hinge of AC9HH7K09. AC9HH7K10 (roles and groups in ancient society) depends on it: without the surplus chain, nobles, officials and specialists look like they appear from nowhere.
+
+  The chain (fertile land and water → reliable harvests → surplus → people who do not farm → cities and government) is presented in the lesson as one way historians explain it, not the only one. Some historians stress the other direction too: rulers and officials who demanded grain as tax pushed farmers to grow more. If a student raises that, it is a good point; the lesson's planted slip is only the claim that emperors and cities came before farming, which the chronology rules out (farming along the middle Yellow River dates to about 7,800 years ago; the Qin unified China in 221 BCE).
+
+  The village and its grain record are made up (labelled once, in the lesson). Dujiangyan is real: built by the state of Qin around 256 BCE on the Min River, still in use, and on UNESCO's World Heritage list with Mount Qingcheng. UNESCO credits it with flood control, irrigation and water transport for the Chengdu Plain.
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips. The number check is the one place a calculation appears; the explanation matters more than the subtraction.
+
+  Relevant ACARA AC9HH7K09 elaborations (examples, not a checklist): "examining the role of climate in enabling the establishment and expansion of agriculture around the Yellow River and how this supported the ancient society"; "explaining the role of the fertile soil of the Po and Tiber River regions in enabling trade through surplus production"; "describing Roman methods to manage resources; for example, water supply through aqueducts and plumbing systems".
+
+  First Nations: none in this standard's elaborations; we write none.
+running:
+  - "Predict: take the hook literally. Ask the class to list everyone they can think of in a Qin city who never farmed."
+  - "Try: if students give 600 or 400, ask what each number stands for."
+  - "Worked example: read the match as a chain aloud, link by link. Then let Nib's mistake sit."
+  - "Vary: ask why anyone would bother building Dujiangyan if good soil were enough."
+  - "Make: students write in their own book; a partner gives feedback."
+stuck:
+  - see: "A student says surplus food is wasted food."
+    ask: "Who ate the 100 sacks paid as tax?"
+    fix: "Surplus grain fed officials, soldiers and workers, or was stored for bad years."
+  - see: "A student says the emperor told people to start farming."
+    ask: "How long ago did millet farming start along the Yellow River, and when did the Qin unite China?"
+    fix: "Farming came thousands of years first. Rulers grew out of farming societies, not the other way round."
+  - see: "A student says a surplus made every farmer rich."
+    ask: "Where did half of the village's surplus go?"
+    fix: "Much of the surplus was taxed or stored; farmers still worked hard and a bad year could wipe them out."
+support: "Use counters: 6 piles for the harvest, 4 eaten, then ask the group to decide where the last 2 go."
+stretch: "Some historians argue that rulers demanding grain tax made farmers grow more, not just that surplus made rulers possible. How could both be true at once?"
+leads: "Continue to Help and limits."
+exit:
+  q: "Explain in two sentences how farming along the Yellow River made it possible for some people in Qin China to be officials or craftworkers."
+  a: "Fertile soil and river water let farmers grow more grain than their families needed. That surplus, stored or collected as tax, fed people who did other jobs."
+explain: "Fertile land and water control let farmers grow a surplus. Stored, traded or taxed, that surplus fed people who did not farm, which is one way historians explain the growth of cities and governments."
+sources:
+  - title: "Zhang et al. (2012), Early mixed farming of millet and rice 7800 years ago in the middle Yellow River region, PLoS ONE"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3524165
+    checked: 2026-11-01
+  - title: "UNESCO: Mount Qingcheng and the Dujiangyan Irrigation System"
+    url: https://whc.unesco.org/en/list/1001
+    checked: 2026-11-01

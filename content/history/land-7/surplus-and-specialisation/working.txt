@@ -1,0 +1,8 @@
+# Nib's explanation for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+People were growing millet along the Yellow River about 7,800 years ago.
+The Qin united China in 221 BCE.
+Nib says: "First the emperor built cities and an army. Then he ordered people to start farming to feed them."
+Nib says: "So the cities came first, and the farming came after."
+# endregion

@@ -1,0 +1,52 @@
+learning: "explain how the land of ancient China created both opportunities and constraints, and how people responded"
+summary: "Explain how the physical environment shaped settlement, trade and development in ancient China by weighing opportunities and constraints together, including how people changed their land in response."
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 6 min · Practise 5 min · Make 9 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can say how one feature of the land can be both an opportunity and a constraint.
+  - I can tell a natural feature from a change people made to the land.
+  - I can write a balanced explanation that includes what people did, not only what the land did.
+struggle: "Students swing between 'the land helped' and 'the land decided everything'. Ask for one opportunity, one constraint and one human response every time."
+before: |-
+  AC9HH7K09's integration waypoint: students combine lesson 1 (what the land is like) and lesson 2 (surplus) into a balanced explanation. The planted slip is environmental determinism: geography sets opportunities and limits, but people's choices (dykes, canals, walls, routes) change what it makes possible.
+
+  Real cases: the Yellow River's floods and course changes ("China's Sorrow" is a nickname used in English, per Britannica; "cradle of Chinese civilisation" is another label you may meet, but archaeology finds several early centres, including along the Yangtze, so treat it as a traditional label, not a settled fact); the Hexi Corridor; the Lingqu Canal (finished 214 BCE on the First Emperor's orders, joining the Xiang and Li rivers; UNESCO's tentative list describes it as built to carry grain and later used in the Qin conquest of the south); Zhang Qian's Han mission west in the 2nd century BCE and the Silk Roads' Chang'an–Tianshan corridor (UNESCO). The Grand Canal is deliberately not used: it is Sui dynasty, centuries later. Nib's draft paragraph is made up.
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips (a cohesion-board step colouring opportunities and constraints in a made-up paragraph could be added later).
+
+  Relevant ACARA AC9HH7K09 elaborations (examples, not a checklist): "describing the impact of topographic features, such as the Himalayas, rivers and seas, on contact with other societies, including trade and warfare"; "explaining the role of topography in providing barriers of defence for city-states, such as the surrounding seas, mountain ranges and river systems; for example, the Axios (Vardar), Strimonas (Struma) and Nestos rivers".
+
+  First Nations: none in this standard's elaborations; we write none.
+running:
+  - "Predict: ask students who chose 'help' or 'problem' to argue for the other side."
+  - "Try: point out that the river and the mountains each appear twice."
+  - "Worked example: ask what the Lingqu Canal tells us about the people, not just the land. Then let Nib's mistake sit."
+  - "Vary: trace the Hexi Corridor on the map with a finger: why that strip?"
+  - "Make: students write in their own book; a partner gives feedback using the three parts (opportunity, constraint, response)."
+stuck:
+  - see: "A student says natural barriers stopped all contact."
+    ask: "How did traders get west, if not over the highest mountains?"
+    fix: "Barriers squeeze contact into a few routes; they rarely stop it."
+  - see: "A student calls the Lingqu Canal a river or a landform."
+    ask: "Who made it, and when?"
+    fix: "People dug it in 214 BCE. It is a human change to the land, made because of a constraint."
+  - see: "A student writes only advantages of a feature."
+    ask: "What did the same feature make hard?"
+    fix: "Name the opportunity and the constraint for the same feature."
+support: "Give a three-column frame (feature, opportunity, constraint) and do the Yellow River together before students choose their own feature."
+stretch: "Choose one feature and argue: did people's response to it change the society more than the feature itself did? What evidence would you need?"
+leads: "Next in this pathway: the other ancient-world lenses (planned)."
+exit:
+  q: "Choose one feature of ancient China's land. Name an opportunity it gave, a constraint it set, and one thing people did in response."
+  a: "For example: the Yellow River gave fertile soil (opportunity) but flooded (constraint), so people built dykes (response)."
+explain: "The same feature of the land can open opportunities and impose constraints, and people respond by changing their land, so geography helps explain a society without deciding everything about it."
+sources:
+  - title: "Britannica: Yellow River"
+    url: https://www.britannica.com/place/Yellow-River
+    checked: 2026-11-01
+  - title: "UNESCO tentative list: Lingqu Canal"
+    url: https://whc.unesco.org/en/tentativelists/5814
+    checked: 2026-11-01
+  - title: "UNESCO: Silk Roads, the Routes Network of Chang'an–Tianshan Corridor"
+    url: https://whc.unesco.org/en/list/1442
+    checked: 2026-11-01

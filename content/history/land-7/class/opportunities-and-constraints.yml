@@ -1,0 +1,29 @@
+inquiry:
+  q: "Gift or curse: was the Yellow River good or bad for the people of ancient China?"
+  prompts:
+    - "What would change your mind?"
+    - "What did people do about the bad side?"
+  notes: "Steer to 'both', then to the human response (dykes, granaries). Avoid letting the class settle on 'geography decided everything'."
+activities:
+  - at: run
+    kind: discussion
+    title: "Same feature, two sides"
+    minutes: 4
+    do: |
+      Name a feature (the western mountains, the Hexi Corridor, the steppe). Half the room gives an opportunity, half a constraint. Then everyone gives one thing people did about it.
+    notes: "Three parts every time: opportunity, constraint, response."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Which sentence gives the most balanced explanation?"
+    options:
+      - "The mountains protected the heartland but made trade west slow, so traffic went through the Hexi Corridor"
+      - "The mountains protected the heartland, so they were only good for China"
+      - "The mountains decided China's whole history"
+    answer: 0
+    explain: "It names an opportunity, a constraint and what people did."
+    feedback:
+      - null
+      - "That gives only the opportunity. What did the mountains make hard?"
+      - "The land set limits, but people's choices mattered too."

@@ -1,0 +1,29 @@
+inquiry:
+  q: "Think of a job in our school or town that does not grow any food. Who feeds that person, and how does the food reach them?"
+  prompts:
+    - "What would happen to that job if farms grew only enough for farmers?"
+    - "How is that like a Qin city?"
+  notes: "Make the link to surplus concrete before the village record. Modern supply chains are more complicated; keep it to 'someone else grows more than they need'."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Build the chain"
+    minutes: 5
+    do: |
+      Give pairs the four links of the chain on strips (fertile land and water, reliable harvests, surplus, people who do not farm). They lay them out and say each 'because' aloud. Then ask: is there a link that could also run backwards?
+    notes: "Some may say rulers demanding tax pushed farmers to grow more. Good: that is a real point historians make. The one order that cannot work is cities before farming."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Which had to come first in northern China?"
+    options:
+      - "Farming that grew more than farm families needed"
+      - "An emperor with an army"
+      - "Cities full of craftworkers"
+    answer: 0
+    explain: "People who do not farm need a surplus to eat. Farming came thousands of years before the first emperors."
+    feedback:
+      - null
+      - "An army needs feeding. Someone has to grow that food first."
+      - "Craftworkers in cities ate grain grown by farmers."

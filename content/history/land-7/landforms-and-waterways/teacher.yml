@@ -1,0 +1,49 @@
+learning: "describe the landforms, waterways, climate and resources of ancient China's heartland and explain why people could settle there"
+summary: "Describe the landforms, rivers, climate and resources of the region where ancient China grew, and explain why the river valleys and plains could support many people while deserts and mountains could not."
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 5 min · Practise 6 min · Make 8 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can name the main landforms, rivers and climate of the place an ancient society grew.
+  - I can say what each feature gave people, or how it got in their way.
+  - I can explain why people could settle in a place, using its geography.
+struggle: "Students list place names without saying what they did for people. Ask 'so what did that give them?' after every feature."
+before: |-
+  This is the first hinge of AC9HH7K09: without a concrete picture of the place, the next two lessons (surplus, then opportunities and constraints) have nothing to reason from. The map is a schematic sketch (labelled so on the picture), not an accurate map; use an atlas or your textbook's map beside it if you have one.
+
+  Usually Year 7; Preview, not yet tried with a class. The untiered path is the minimum. Time and optional width are the teacher's choices. No board or clips.
+
+  Ancient China in the Qin and Han period is the worked example because many Year 7 classes study it. It is a model, not a requirement: the Reference page has short swap-in cards for Egypt, Greece, Rome and India, and the same questions work on any society. Nib's map note is made up. The hook's claim (most people in China live in the east, on the plains and along rivers) is general and safe to discuss with an atlas.
+
+  Relevant ACARA AC9HH7K09 elaborations (examples, not a checklist): "examining the role of climate in enabling the establishment and expansion of agriculture around the Yellow River and how this supported the ancient society"; "explaining the role of topography in providing barriers of defence for city-states, such as the surrounding seas, mountain ranges and river systems"; "explaining how the Nile River enabled the establishment of ancient Egyptian society through farming (including the role of the inundation), transportation, defence (for example, the cataract fortifications) and religion". The Nile elaboration's religion part belongs with beliefs (AC9HH7K11), so the typical step leaves it out.
+
+  First Nations: AC9HH7K09's elaborations have no First Nations content, and this course writes none. Deep time Australia (AC9HH7K02 to K07) stays a pointer page to First Nations-led resources.
+running:
+  - "Predict: ask for votes, then ask what the desert lacks."
+  - "Try: after the match, ask students to point to each feature on the map."
+  - "Worked example: let Nib's mistake sit before explaining it. Ask: 'Could the same cities have grown in the Gobi?'"
+  - "Vary: compare the two climate labels on the map before the question."
+  - "Make: students write in their own book; a partner gives feedback."
+stuck:
+  - see: "A student lists features (Yellow River, Gobi, mountains) but says nothing about what they did."
+    ask: "What did that river give people? What did that desert stop them doing?"
+    fix: "Each feature needs a 'so what': water, soil, protection, or a limit."
+  - see: "A student says the rivers were good because they were safe."
+    ask: "What happens when the Yellow River floods?"
+    fix: "Rivers gave water and soil, but floods were a danger. Lesson 3 comes back to this."
+  - see: "A student says the Qin heartland was chosen because it was near the sea."
+    ask: "Where is the Wei valley on the map, and where is the sea?"
+    fix: "The heartland was inland: river water, farmland and mountains around it."
+support: "Give pairs three cards (Yellow River, loess soil, Gobi) and ask for one 'gave people' or 'got in their way' sentence each before the full map."
+stretch: "Why might a society on a big river and a society in small mountain valleys (China and Greece) end up organised so differently? What else, besides geography, would you want to know?"
+leads: "Continue to From farming to cities."
+exit:
+  q: "Name one feature of the land of ancient China, what it gave people or how it got in their way, and why that matters for where people lived."
+  a: "For example: the Yellow River gave water and fresh soil, so farming villages and later cities grew along it; the Gobi was too dry to farm, so few people settled there."
+explain: "Where an ancient society grew depended on its land: rivers and plains gave water and soil for farming, while deserts and mountains limited farming and travel but could protect a heartland."
+sources:
+  - title: "Britannica: Yellow River"
+    url: https://www.britannica.com/place/Yellow-River
+    checked: 2026-11-01
+  - title: "Zhang et al. (2012), Early mixed farming of millet and rice 7800 years ago in the middle Yellow River region, PLoS ONE"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3524165
+    checked: 2026-11-01

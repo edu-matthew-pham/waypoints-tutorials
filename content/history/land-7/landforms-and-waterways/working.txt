@@ -1,0 +1,8 @@
+# Nib's map note for the "find the mistake" task (made up for this lesson). Plain text: students click the wrong line.
+
+# region: nib
+The Qin capital was in the Wei River valley, a branch of the Yellow River.
+The valley had river water, good soil, and mountains and passes around it.
+Nib says: "The rivers and mountains just happened to be nearby. The Qin could have built the same cities anywhere."
+Nib says: "So the land doesn't help explain where people lived."
+# endregion
