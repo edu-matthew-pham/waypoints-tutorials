@@ -229,3 +229,8 @@ Editorial and accuracy pass on all three built courses after review. Validated (
 - `learning:` added to every sources-7 and evidence-7 `teacher.yml`. Make-step ticks now say "gave feedback", not "agreed". Distractors rewritten across sources-7 and usefulness-7 as real slips of similar length (old means primary, content as origin, setting as context, biased means useless, primary means fact), each with feedback naming the slip.
 
 Not verified, left as is: the Rosetta Stone wording (reworded to "versions of the same decree", British Museum not rechecked this pass); the Sima Qian "used older records" claim (now said as "historians think"). Not changed: the Before Year 7 lesson, class plans beyond the purpose wording, and the K08 SVG.
+
+## Boards and clips (proposed, 1 Nov 2026; not decided)
+- **Source annotation:** reuse the English `cohesion` board's parts mode on a source card, with students marking origin, purpose and claims. No new widget needed; try it in `sources-7` or `usefulness-7` first.
+- **Timeline or layers board:** dating and stratigraphy in `evidence-7` (deeper is usually older; a coin dates a layer). A short clip of layers building up suits Explain it to me.
+- Per-course choice, not a rule (`roadmap/shared.md` › Decided: humanities).

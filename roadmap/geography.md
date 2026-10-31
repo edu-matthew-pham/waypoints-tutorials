@@ -169,3 +169,8 @@ Next: trial the five K01 lessons with a class and review the lesson 1 prerequisi
 - Summaries of lessons 2–5 rewritten as plain descriptions; `learning:` added to all five teacher.yml files.
 - Taglines added to the seven planned courses in `geography/index.md`.
 - Resource types partner tick now "gave feedback".
+
+## Boards and clips (proposed, 1 Nov 2026; not decided)
+- **Catchment board:** place a dam or clear land and see what reaches the town downstream (water, soil, sediment). Fits `water-7` lessons 2–4 and the Valuing and managing water courses. A short captioned clip of water and soil moving downstream would suit the hook or Explain it to me.
+- **Map-reading board:** scale, legend, direction and distribution on one made-up or properly sourced map; a still map remains the default until a lesson needs interaction.
+- Per-course choice, not a rule (`roadmap/shared.md` › Decided: humanities).

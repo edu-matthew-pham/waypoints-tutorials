@@ -123,3 +123,6 @@ Per `roadmap/checklist.md` › "Plan first, then build", here is the per-waypoin
 - The place carries the "made up" label, not each name: a lesson says once that its town or businesses are made up. Use one standing made-up town (Riverbend; Wattle Creek and Parkside are already in Civics and inquiry), with businesses named for the owner or the town plus what they do (Rosa's Car Yard, Riverbend Bakery). National chains need a coined name, checked with a web search before use (Brightbasket Supermarkets, Stackstone Burgers). No catchy two-word brand-style names (Burger Barn) and no "Made-Up" in names. Avoid names drawn from First Nations culture (for example bunyip).
 - Applied 1 Nov: "Made-Up Bakery / Cafe / Grocers Corp / Burgers" in `businesses-7` renamed to Riverbend Bakery, Riverbend Cafe, Brightbasket Supermarkets and Stackstone Burgers.
 
+## Boards and clips (1 Nov 2026)
+- Already decided 30 Oct (above): `sheet` for budgeting (`consumers-7` lesson 4) and `graph`/`sheet` for the data skills (AC9HE7S03). No clips planned; a clip would only follow a board where the idea is change over time (for example a budget as spending changes).
+- Per-course choice, not a rule (`roadmap/shared.md` › Decided: humanities).

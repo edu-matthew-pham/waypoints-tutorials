@@ -181,3 +181,7 @@ Per `roadmap/checklist.md` › "Plan first, then build", here is the per-waypoin
 - `ways-to-take-part` teacher note and Typical step: the 90-day ministerial response applies when the Petitions Committee refers a petition to a minister; the student option now says "may be sent to a minister".
 - Make reflect ticks: "A partner read it and gave feedback." (the-constitution, democratic-freedoms, limits-on-freedoms, ways-to-take-part; formal-and-active had none). `learning:` added to all five government-7 teacher.yml files.
 - Unverified / left: the petition rule was not re-checked against the current House Standing Orders text (wording relies on the earlier APH/PEO check); the implied-freedom wording ("could rule the law invalid") is a simplification of the proportionality test, flagged in the explain. Teacher notes in democratic-freedoms still cite s 116 and s 92 (teacher-facing only). Not clicked through in a browser; validate clean for civics (an unrelated history error remains).
+
+## Boards and clips (proposed, 1 Nov 2026; not decided)
+- **Preferential-vote counter:** a made-up electorate's ballots counted round by round, lowest candidate out and votes moved on, so students see why first preferences alone don't decide the seat. Fits `government-7` (representative democracy) and any later elections lesson. A short captioned clip of one count suits Explain it to me.
+- Per-course choice, not a rule (`roadmap/shared.md` › Decided: humanities).
