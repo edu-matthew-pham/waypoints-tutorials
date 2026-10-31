@@ -452,3 +452,40 @@ The course renderer uses frontmatter summaries rather than an `index.md` body, s
 ## Boards in built lessons (1 Nov 2026, Matthew agreed; for the inquiry chat)
 - **Ready to add (reuse, no new code):** `inquiry-7/organise-it`, Nib's messy notes go into the ICT `sheet` board's table and students sort it until the busiest day shows (planted answer). One step; keep the existing checks.
 - Other inquiry lessons stay as they are. Plan, then Matthew's go.
+
+### Plan (1 Nov 2026, awaiting Matthew's go): `organise-it` board step
+
+- **Where:** a new step straight after "The idea" (Find Nib's mistake, Choose the headings), before "Vary". `stage: investigate` (the primer shape already has two investigate steps: The idea, Worked example). Heading: `## Fix it: sort Nib's notes`. Existing checks unchanged; the investigate step's insight ("…then fixing it") becomes true.
+- **Board:** new `organise-it/sheet.yml`, region `nib`. Nib's five notes exactly as in `working.txt#nib` (planted, nothing typed):
+  `A1 Day, B1 Students buying` · Monday 212 · Tuesday 198 · Wednesday 230 · Thursday 205 · Friday 190. `table: A1:B6`, `tools: sort`, `edit: none` (sort only, as ICT's Put the rows in order). No filter or chart: one move.
+- **Step text (one line):** "Here are Nib's notes as a table. Sort it so the busiest day is at the top."
+- **Check:** `{ type: board, text: "Sort Nib's table so the busiest day is at the top.", when: "down_B = 1 and c_B2 = 230", explain: "Wednesday (230) is now in row 2. Each day kept its own number because the whole row moved. In day order the table shows the week; sorted by number it shows the busiest day. The question decides." }`. Hints: "Choose B in 'Sort by', then High to low, then Sort." · "Read row 2: which day, and how many?" Low-to-high leaves Friday at the top, so it doesn't tick.
+- **Insight:** "Sorting Nib's notes in a table makes the busiest day show at a glance: like with like, then the order that fits the question."
+- **Teacher layer:** `teacher.yml` timing becomes "Think first and Try 10 min · The idea and the sort 13 min · Vary 5 min · Check 5 min · Make 7 min" (still 40); one `running:` line: "The idea: sort Nib's notes on the board. Ask which day, and whether each day kept its number." `before:` gains one sentence that the sort is ICT's Put the rows in order, so this is not teaching the tool.
+- **Class plan (`class/organise-it.yml`):** its activity uses different counts (Wed 205, Fri 220, so Friday is busiest) from Nib's (Wednesday). Suggest aligning it to Nib's numbers so the slide and the board agree; or keep it as a deliberate second dataset and say so in its notes. Your call.
+- **Not changed:** no new code, no shared files, no `misconceptions.json` line (the planted slip stays `notes-in-order-found` on the bug task; `sort-one-column` stays ICT's). No context block, since the data is planted.
+- **Clips and publish:** the course has no clips, so nothing re-records. Lessons-only publish should cover it (new `sheet.yml` in the lesson folder; confirm in the build that the lessons route copies it).
+- **Test:** validate, build, `check-decks -- hass/inquiry-7`; Chromium: open the step, sort B high to low (ticks), low to high (doesn't), reload keeps it, 390px no overflow, deck shows the board step as a link.
+
+### Remaining checks where the right answer is noticeably longer (1 Nov 2026, suggested fixes, awaiting go)
+
+Measured by option length (right option vs the longest wrong one). Fixes even the lengths without changing what each option means; feedback stays unless noted.
+
+**keep-what-answers**
+1. Investigate, "Which reason is best?" (63 vs 31). Right → "It's a daily count, which my question asks for". Wrong → "It is a number, and numbers make good evidence" · "It was the first fact at the top of the record" · "It comes from a record, so it looks official".
+2. Modify, "Who decides whether Mill Road closes?" (47 vs 27). Wrong → "Mill Road is 1.2 km long from end to end." · "The road was built in 1950 to reach the mill." · "Trees line both sides of the road near the school." Optional: the three identical feedbacks ("Not about who decides.") could each name what the fact is about (length, age, trees).
+
+**right-sized**
+3. Investigate, "How can you tell a question is the right size?" (89 vs 37). Right → "You can name the case and the evidence that would answer it". Wrong → "It is about something important to lots of people" · "It can be answered in one word from one source" · "Everyone in the class agrees it's a good question".
+4. Modify, Mill Road news to a bigger idea (82 vs 31). Right → "Which level of government can close a road, and by what rules?" Wrong → "On which day did Riverbend Council vote on the closure?" · "Which councillor spoke first at the Mill Road meeting?" · "Do councils always close roads when people complain?"
+5. Modify, opportunity cost (69 vs 33). Right → "What was the next best option the tuckshop gave up for wraps?" Wrong → "Why do so many Parkside students like pies more?" · "On what date did the tuckshop stop selling pies?" · "What colour is the sign on the Parkside tuckshop?"
+6. Practise, Kilby River plan (111 vs 31). Right → "Last summer's river height and rainfall records, plus what draws water from the river". Wrong → "Read everything you can find about rivers in Australia and the world" · "Ask one classmate who lives near the river what they think" · "Look up how long the Kilby River is and where it starts and ends".
+7. Mild, optional: Think first predict (68 vs 51). Wrong "Is the council good?" → "Is Riverbend Council a good council for the town?"
+
+**organise-it**
+8. Investigate, column headings for three groups (40 vs 28). Wrong → "Page 1 | Page 2 | Page 3 | Page 4" · "Interesting | Boring | Not sure yet" · "Monday | Tuesday | Wednesday | Thursday".
+9. Modify, Kilby River each year (40 vs 26). Wrong → "A paragraph listing each year's level" · "A pie chart with a slice for each year" · "A list from most to least surprising year".
+10. Modify, headings to compare two sources (42 vs 20). Wrong → "All the council notes | All the news notes" (new feedback: "Two piles keep the sources apart, so you can't line up what each says on the same point.") · "Interesting | Boring | Not sure yet" · "Date I found it | Page number | Website". **Content flag:** the right answer, "Source | What it says | Same or different?", is a table by source, which the intro and the stuck note ("A table of sources alone is not enough") steer away from. Suggest the right answer becomes "Theme | What the council says | What the news says", matching the C1/N1 model and the Check step.
+11. Practise, C1 and N1 layout (56 vs 46, borderline). Right → "One row per theme, each source's notes side by side".
+
+Not flagged: predicts and smaller checks where the right option is the same length or shorter; sorts and matches (no options to lead).
