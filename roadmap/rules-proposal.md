@@ -33,7 +33,7 @@ Source = where Matthew's decision is recorded. "None found" = the rule exists bu
 | T12 | **Facts about people, places, studies and dates are checked against a source;** unverified ones are marked. Claims about studies keep their limits (who, what); figures are dated. | Accuracy; teachers will trust it. | Every subject. | AI evidence audit 18 Oct; `checklist.md` › Claims. Matthew's decision not found | Default |
 | T13 | **AI in lessons:** scripted response labs are the core; real AI only through optional prompt cards with a no-AI alternative and "only if your teacher says you can"; coach prompts on recap pages only in general lessons. | Beneficial, not harmful, cognitive offloading; tool age limits. | AI courses (cards); every other subject (recap only). | Matthew 18 Oct (`learning-with-ai.md`) | Default |
 | T14 | **Plan first, then build:** a per-waypoint plan in the roadmap, push, stop for "go". | Most fix rounds were things a plan would catch. | New courses and waypoints. | Matthew 30 Oct (`35946d2`) | Default |
-| T15 | **No QR codes or phone steps.** | No phones in class. | Every subject. | Matthew (CLAUDE.md, Teacher layer); scope **?** (Q5: a CGGS fact, site is for any school) | Default |
+| T15 | **No lesson step needs a phone.** A QR code may be offered as an optional shortcut, always beside a link or "Copy link" that works without it. | Many schools (CGGS included) don't allow phones in class; where they do, a QR saves typing. | Every subject. | Matthew (CLAUDE.md, Teacher layer); settled 1 Nov | Default |
 | T16 | **Printable sheets come from Prepare Print;** no custom blank-line or fill-in layouts on pages. | One print route; custom layouts drift and break. | Every subject. | None found (`28bbc08`, agent commit; humanities inquiry chat) | Default, source **?** (Q6) |
 | T17 | **Effort:** new lessons get `struggle:`, goals a student would recognise, escalating hints (up to three, none giving the answer). | Students expect coding to be easy; name the hard part. | Every subject (written for Code, 11 Oct). | None found beyond AUTHORING › Effort | Default, source **?** (Q6) |
 | T18 | **Class plans:** at most about three checks per site step. | Deck pacing. | Every class plan. | 12 Oct (CLAUDE.md); Matthew's decision not found | Default |
@@ -117,6 +117,6 @@ Defaults
 2. ~~Real people (T2)~~ **Decided 1 Nov:** firm for made-up scenarios (no real brands or living people); real people, places and sources fine when the subject needs them.
 3. ~~Safeguarding scope (T4, T7)~~ **Decided 1 Nov:** both firm. Security is defined by authorisation and containment, not "defensive only": white-hat skills are fine inside our boards or an approved isolated lab.
 4. ~~Repo safety (W2)~~ **Decided 1 Nov:** firm. Rebase, never force-push.
-5. **QR codes (T15):** keep as a default for every school, or a CGGS note?
+5. ~~QR codes (T15)~~ **Decided 1 Nov:** no step needs a phone; optional QR beside a link is fine. (A QR beside the course strip's "Copy link for students" would be a separate build.)
 6. **Rules with no source (T16, T17, T18, W4, editorial pass):** keep as defaults, change, or drop?
 7. **Shape of the fix:** OK to add `roadmap/rules.md` as the register, cut `AGENTS.md` to §2, and have subject roadmaps point to it rather than copy?
