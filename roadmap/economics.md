@@ -174,15 +174,15 @@ Builds the Proposed item above. Light on purpose: one new widget, one new step, 
 
 **Teacher layer:** `running:` line for the new step ("Put the board up. Move one hour at a time and ask: what did we get, what did we give up?"); one more `stuck:` entry ("A student says the cost is the pastry" → "Could that oven hour have done anything else?"); `timing:` adds 4 minutes to Predict and Try; class plan `class/opportunity-cost.yml` gets the board slide (the `{{embed}}` board slide decks already use for maths and science; `npm run check-decks` after); `explain` gains one sentence about the oven.
 
-**Optional clip (Explain it to me):** recommended, since the idea is a change you watch (shared.md › Decided: humanities: a clip follows a board when the idea is a sequence of change). About 15 seconds on `oven.yml#explain`, captions first, muted by default, `say:` lines for the default Heart voice:
+**Clip (Explain it to me): in (Matthew, 1 Nov 2026).** Default for this lesson, not a rule for humanities. Reason: it serves students who open Explain it to me before touching the board, Economics pilot teachers (play it to the class or leave it to students), and the self-paced teacher course later, where no one drives the board. Scope: not for the ten-minute Humanities pilot talk, which demos the live board with a screenshot fallback (shared.md › Feasibility refinement, 30 Oct). It fits because the idea is a change you watch (shared.md › Decided: humanities: a clip follows a board when the idea is a sequence of change). About 15 seconds on `oven.yml#explain`, captions first, muted by default, `say:` lines for the default Heart voice:
 1. "One oven, six hours. Each hour bakes 10 pies or 20 muffins." (board at 3 and 3)
 2. Click "Move an hour to pies". "One more hour on pies: 10 more pies."
 3. "That hour can't bake muffins as well: 20 fewer muffins. Those muffins are the opportunity cost."
-Plus an `explainPicture` of the board at 4 and 2 for anyone without video. The clip records on the next full publish (this lesson only). If you'd rather keep humanities clip-free for the pilot, the picture alone does the job.
+Plus an `explainPicture` of the board at 4 and 2 for anyone without video. The clip records on the next full publish (this lesson only).
 
 **Testing at build:** a small Node check of the widget's sums (every split from 0 to 6, `da`/`db` signs), validate, build, then Chromium: the step loads, the board check ticks at `h = 4` and not at the start, keyboard and buttons both work, phone width (375 px) has no horizontal scroll, `check-decks` for the class plan.
 
-**Publish:** full publish (new widget and board page). The only clip recorded is this lesson's Explain clip, if you say yes to it.
+**Publish:** full publish (new widget and board page). The only clip recorded is this lesson's Explain clip.
 
 **After it's built:** link it from `content/humanities-pilot.md` and slide 6 of the teachers' getting-started deck (shared.md › Next for the Humanities pilot page), in the same push if you agree; otherwise that waits for the pilot-page chat.
 
