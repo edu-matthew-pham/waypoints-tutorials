@@ -28,6 +28,7 @@ Plan well rather than fix a poor draft. Most fix rounds so far (weak distractors
    - Create: `node experiments/<name>-test.mjs`; its browser smoke tests are listed in `claude/handoff-create-generic.md`
 5. Commit with the `Co-Authored-By:` and `Claude-Session:` lines from the session reminder. `git push origin HEAD:main`.
 6. Notes go in your own roadmap file. Pushing deploys nothing.
+7. When Matthew makes a decision, write its reason and scope beside it in the same commit (who decided, when, and whether it is a default or firm: `roadmap/rules-proposal.md`). Added 1 Nov 2026.
 
 ## Editorial pass before handover
 

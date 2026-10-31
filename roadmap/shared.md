@@ -158,6 +158,7 @@ Why: rules get shortened each time they are copied, and the reason and scope are
 - **When Matthew makes a decision,** write the reason and the scope with it, in the same commit.
 - **Repeat now and then:** list rules with no reason beside them, and rules copied into more places than they were decided for.
 - **Known cases to fix first:** write boxes (narrowed 30 Oct), the lesson shape default, pace-agnostic wording, the contestable-or-simplified rule.
+- **Step 1 proposal pushed (1 Nov 2026, rules chat):** `roadmap/rules-proposal.md` (register of every rule with reason, scope, source and default/firm; draft `AGENTS.md` and `CLAUDE.md` wording; nine flags; seven questions). Waiting for Matthew's "go" before `AGENTS.md` or `CLAUDE.md` change. The checklist line on recording reasons went in now. Step 2 (read-only lesson audit beyond humanities) follows.
 
 ## Decided (30 Oct 2026, Matthew): humanities (Economics, Civics, Geography, History)
 
