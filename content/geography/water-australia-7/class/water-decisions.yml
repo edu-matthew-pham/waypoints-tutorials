@@ -1,5 +1,5 @@
 inquiry:
-  q: "Pennerby's council has one budget. What should it spend it on first?"
+  q: "Tarnbridge's council has one budget. What should it spend it on first?"
   prompts:
     - "What does the evidence say is causing the shortage?"
     - "Who else would your choice affect?"
@@ -15,5 +15,5 @@ activities:
     kind: activity
     title: "Write the plan"
     minutes: 15
-    do: "Students write Pennerby's plan in four parts in their books, then swap. The partner checks the four parts are there and the four words are used correctly."
+    do: "Students write Tarnbridge's plan in four parts in their books, then swap. The partner checks the four parts are there and the four words are used correctly."
     notes: "The site does not mark this writing. Different strategies can all be good if the four parts are there."

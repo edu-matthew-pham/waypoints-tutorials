@@ -60,7 +60,7 @@ tasks:
   - check:
       type: board
       text: "Make the farm ploughed bare, then send a storm. Get some soil to reach the town."
-      when: "n_storms >= 1 and town_soil >= 2"
+      when: "farm_bare = 1 and n_storms >= 1 and town_soil >= 2"
     smaller:
       starter: "boards.yml#storm-farm"
       height: 520

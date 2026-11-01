@@ -13,7 +13,7 @@ before: |
 
   The map is drawn from Natural Earth (public domain) and simplified: coastline, state borders, some major rivers and capital cities. The basins come from the official boundaries, simplified for the screen: the Murray–Darling Basin as defined in the Water Act 2007 (Murray–Darling Basin Authority, CC BY 4.0), and Geoscience Australia's revised Great Artesian Basin boundary from the Great Artesian Basin Water Resource Assessment (CC BY 3.0 AU). Other published Great Artesian Basin boundaries differ a little at the edges (the 1997 hydrogeology map is the one the department's own maps use), so accept small differences on students' maps. Only some major rivers are drawn; the Murrumbidgee, for example, is not in Natural Earth's river set at this scale.
 
-  Real facts used, each from a named source: the Great Artesian Basin lies under parts of Queensland, New South Wales, South Australia and the Northern Territory and is the largest groundwater basin in Australia (Geoscience Australia); the Murray–Darling Basin covers parts of Queensland, New South Wales, Victoria and South Australia and all of the ACT (Bureau of Meteorology, National Water Account); in the north almost all rain falls in a wet season from about November to April (Bureau of Meteorology chapter, ABS Year Book Australia 2005). No figures that date are used. The town in Predict and Nib are made up.
+  Real facts used, each from a named source: the Great Artesian Basin lies under parts of Queensland, New South Wales, South Australia and the Northern Territory and is the largest groundwater basin in Australia (Geoscience Australia); the Murray–Darling Basin covers parts of Queensland, New South Wales, Victoria and South Australia and all of the ACT (Bureau of Meteorology, National Water Account); Hume Reservoir is the main storage on the River Murray system (WaterNSW; typical step). The river pattern is described as what this map shows, since it draws only some major rivers. No figures that date are used. The town in Predict and Nib are made up.
 
   Not covered here, on purpose: why water runs short (next lesson), who it affects (lesson 3), and comparisons with Asian countries (a node wider item, left to the teacher).
 running:
@@ -42,18 +42,18 @@ leads: |
   ACARA elaborations for AC9HG7K02 (examples, not a checklist): representing the location of Australia's water resources, such as surface water and groundwater; describing the distribution of Australia's water resources, and its implications for people; for example, limited access to water for people in rural and remote places and its implications; identifying the causes of variability in water resources or water scarcity; for example, an absolute shortage of water (physical cause), inadequate development of water resources (economic cause), or the ways water is used (such as farming, industry, drinking, washing or watering); explaining the factors that contribute to variability in water resources or water scarcity; for example, location, climate, topography, seasonality or evaporation; examining why water is a difficult resource for communities to manage and sustain; for example, because of its shared and competing uses, and variability of supply over time; examining how a strategy may manage the sustainability of water resources; for example, recycling ('grey water'), stormwater harvesting and re-use, desalination, inter-regional transfer of water and trade in virtual water, and reducing water consumption.
 exit:
   q: "Name one surface water and one groundwater resource in Australia, and describe where Australia's major rivers are."
-  a: "For example the Murray River (surface water) and the Great Artesian Basin (groundwater). Most major rivers are in the north and the south-east; few cross the centre or the west."
+  a: "For example the Murray River (surface water) and the Great Artesian Basin (groundwater). On the lesson map, most major rivers are in the north and the south-east; few cross the centre or the west."
 explain: |
   **Surface water** is water you can see: rivers, lakes and dams. **Groundwater** is stored under the ground in rock and soil.
 
-  To describe the **distribution** of water, say where there is more and where there is less, with direction words. Most of Australia's major rivers are in the north and the south-east.
+  To describe the **distribution** of water, say where there is more and where there is less, with direction words. On the lesson's map, most major rivers are in the north and the south-east.
 
   Where water is and who can use it are two questions. Water under a place still needs a bore, and it has to be fit to use.
 sources:
   - { title: "Great Artesian Basin (Geoscience Australia)", url: "https://ga.gov.au/scientific-topics/water/groundwater/gab", checked: 2026-11-01 }
   - { title: "Murray–Darling Basin: physical information (Bureau of Meteorology, National Water Account)", url: "https://www.bom.gov.au/water/nwa/2014/mdb/contextual/physicalinformation.shtml", checked: 2026-11-01 }
-  - { title: "Australia's climate (Bureau of Meteorology chapter, ABS Year Book Australia 2005)", url: "https://www.abs.gov.au/ausstats/abs@.nsf/0/35F9CDF3307C036ECA256F7200832F12", checked: 2026-11-01 }
   - { title: "Natural Earth (public domain map data)", url: "https://www.naturalearthdata.com/", checked: 2026-11-01 }
   - { title: "Murray–Darling Basin map (Inspector-General of Water Compliance)", url: "https://www.igwc.gov.au/who-we-are/mdb-map", checked: 2026-11-01 }
   - { title: "Murray–Darling Basin boundary, Water Act 2007 s 4(1) (Murray–Darling Basin Authority data library)", url: "https://library-mdba.opendata.arcgis.com/datasets/ba731d77d80947fbbcbf7524364372ff_0", checked: 2026-11-01 }
   - { title: "Great Artesian Basin Boundary, Subregions and Cartographic Mask (GABWRA; Geoscience Australia)", url: "https://data.gov.au/data/dataset/241d11ac-649d-46a5-8cae-3dddb53a8010", checked: 2026-11-01 }
+  - { title: "Hume Dam (WaterNSW)", url: "https://waternsw.com.au/nsw-dams/regional-nsw-dams/hume-dam", checked: 2026-11-01 }

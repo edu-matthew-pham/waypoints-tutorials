@@ -20,6 +20,6 @@ activities:
   - at: make
     kind: activity
     title: "Swap and check"
-    minutes: 4
+    minutes: 6
     do: "Students write their two causes and two factors in their books, swap, and the partner checks each cause is named and each factor says how it works."
     notes: "The reflect tick records completion. A partner or the teacher reads the writing; the site does not mark it."

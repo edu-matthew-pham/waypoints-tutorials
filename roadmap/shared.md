@@ -206,7 +206,7 @@ Five misconceptions added to `misconceptions.json` (single lines, after `dam-cre
 
 - New widget `playground-board/widgets/catchment.js`, one `<script>` line in `playground-board/index.html` (after `consent.js`), a `wpt-cbar`/`wpt-cres` section at the end of `playground-board/style.css`, an AUTHORING entry (before `widget: rate`). `core.js` untouched; adding a widget re-records no other clip.
 - `tools/check-lesson-boards.mjs` now also walks `dist/geography/` (it read only maths and English). One regex word and one line.
-- One misconception added (`dam-creates-water`). Test: `node experiments/catchment-check.mjs`. Details: `roadmap/geography.md` › Built (1 Nov 2026).
+- One misconception added (`dam-creates-water`). Test: `node experiments/catchment-check.mjs`. Later the same day: the widget reports `dam_compared` (storms sent with and without the dam on the same land) and its model label is larger; only catchment clips would re-record, and there are none. Details: `roadmap/geography.md` › Built (1 Nov 2026).
 - The Economics `tradeoff` widget landed first; both `<script>` lines are kept. Board value names need an underscore or a single letter (checks read `storms` as s·t·o·r·m·s).
 
 ## Changed by the Economics chat (30 Oct 2026): node check

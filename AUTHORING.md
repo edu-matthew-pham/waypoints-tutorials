@@ -1238,7 +1238,8 @@ Vary, Practise, Make).
     the other choices for a lead-in; `storm: on` shows one storm's results at the start, for pictures. A simple model,
     labelled on the board: it shows which way things change, not amounts. Values (levels 0–3, all 0 until a storm is sent
     with the current choices; changing a choice clears them): `n_storms`, `dam_on`, `slope_bare`, `farm_bare`, `soil_lost`,
-    `town_water`, `town_soil`, `lake_water`, `lake_soil`, `dam_soil`, `town_steady`, `covers_tried`. Rules tested by
+    `town_water`, `town_soil`, `lake_water`, `lake_soil`, `dam_soil`, `town_steady`, `covers_tried`, `dam_compared` (storms sent with and without the dam on the same
+    land). Rules tested by
     `node experiments/catchment-check.mjs`.
   - `widget: rate` (first used by `maths/measurement-8/rates`): a double number line, `top: km, distance` over `bottom: h, time`, with
     `rate: 60` or `slider r:`, `slider x:` (the bottom amount; the line runs to its max), the unit rate dashed. `compare: 75, Car B`

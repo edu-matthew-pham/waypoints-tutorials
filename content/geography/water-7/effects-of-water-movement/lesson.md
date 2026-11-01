@@ -179,7 +179,7 @@ tasks:
   - check:
       type: board
       text: "Send a storm with no dam first. Then add the dam and send another storm. Compare the town and the lake."
-      when: "dam_on = 1 and n_storms >= 1"
+      when: "dam_compared = 1 and dam_on = 1 and n_storms >= 1"
     hint:
       - Send one storm as it is, and read the list under the buttons.
       - Choose Dam, then send another storm.
@@ -193,15 +193,15 @@ tasks:
         - Social
         - Description, not an effect
       items:
-        - - Less water and soil reach the lake's wetland
+        - - Less water and soil reach the lake
           - Environmental
-          - This is about the lake's habitat.
+          - This is about the lake and the plants and animals that live there.
         - - Town businesses can count on a steadier water supply
           - Economic
           - This is about work and income.
-        - - Families in town are less worried about muddy tap water
+        - - Families in town see less muddy water in their river
           - Social
-          - This is about daily life.
+          - This is about daily life by the river.
         - - The dam sits on the river above the town
           - Description, not an effect
           - Where the dam is does not say what changed.

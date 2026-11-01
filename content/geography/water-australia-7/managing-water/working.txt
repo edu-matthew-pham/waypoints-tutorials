@@ -3,6 +3,6 @@
 # region: nib
 Perth is a real city on the coast.
 Perth gets part of its water from desalination plants.
-So the Drybank farms should build a desalination plant too.
+So the farms around Drybank should build a desalination plant too.
 It will give them all the water they want, with no costs to worry about.
 # endregion

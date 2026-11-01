@@ -12,10 +12,11 @@
 // state: { slope, farm, dam, scope: { vars: { n_storms (storms since the last change of choice), dam_on (1 or 0),
 //   slope_bare, farm_bare (1 when bare), soil_lost (soil washed off the land), town_water, town_soil, lake_water,
 //   lake_soil (soil settling at the lake entrance), dam_soil (soil settling behind the dam), town_steady (1 when the
-//   dam evens out the town's supply), covers_tried (different slope covers sent a storm over) } } }
+//   dam evens out the town's supply), covers_tried (different slope covers sent a storm over), dam_compared (1 once
+//   storms have been sent with and without the dam on the same land) } } }
 // Names have an underscore because board checks read a plain run of letters as letters multiplied together.
 // Every result is 0 until a storm is sent with the current choices, so no check holds at the start.
-// Checks: "n_storms >= 1 and town_soil >= 2", "dam_on = 1 and n_storms >= 1", "soil_lost >= 2 and lake_soil >= 1",
+// Checks: "farm_bare = 1 and n_storms >= 1 and town_soil >= 2", "dam_compared = 1 and dam_on = 1 and n_storms >= 1", "soil_lost >= 2 and lake_soil >= 1",
 // "covers_tried >= 2".
 (function (B) {
   'use strict';
@@ -35,7 +36,7 @@
     return { soil_lost: soil_lost, town_water: 2, town_soil: past, lake_water: Math.max(1, water - 1), lake_soil: past, dam_soil: soil_lost, town_steady: 1 };
   }
 
-  var spec = null, st = {}, res = null, tried = {}, storms = 0, anim = 0, ui = {};
+  var spec = null, st = {}, res = null, tried = {}, damTried = {}, storms = 0, anim = 0, ui = {};
 
   function parse(s) {
     var pick = function (key, def) {
@@ -118,7 +119,7 @@
     add('text', { x: 6, y: 20 }, 'High slope', g); add('text', { x: 160, y: 98 }, 'Farm', g);
     add('text', { x: 298, y: 150 }, 'Town', g); add('text', { x: 412, y: 254 }, 'Lake', g);
     if (st.dam) add('text', { x: 232, y: 228 }, 'Dam', g);
-    add('text', { x: 6, y: 292, 'font-size': 14, 'font-weight': 400, fill: ink }, 'Made up and simple: which way things change, not amounts.');
+    add('text', { x: 6, y: 274, 'font-size': 16, 'font-weight': 600, fill: ink }, 'Made up and simple:'); add('text', { x: 6, y: 293, 'font-size': 16, 'font-weight': 400, fill: ink }, 'which way things change, not amounts.');
 
     svg.setAttribute('aria-label', 'Made-up Kerrin catchment. High slope: ' + COVERS.slope[st.slope].label.toLowerCase() + '. Farm: ' + COVERS.farm[st.farm].label.toLowerCase() + '. ' + (st.dam ? 'A dam on the river above the town. ' : 'No dam. ') + (res ? summary() : 'No storm yet.'));
     return svg;
@@ -173,6 +174,7 @@
       b.addEventListener('click', function () {
         if (String(st[name]) === String(o[0])) return;
         st[name] = o[0]; res = null; storms = 0; anim++; B.moved = true;
+        if (name !== 'dam') damTried = {};   // comparing with and without the dam means the same land
         row.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
         report('Choices changed. Send a storm to see what happens.');
       });
@@ -188,11 +190,11 @@
     var bar = document.createElement('div'); bar.className = 'wpt-cbar';
     var go = document.createElement('button'); go.type = 'button'; go.className = 'go'; go.textContent = 'Send a storm';
     go.addEventListener('click', function () {
-      res = model(st.slope, st.farm, st.dam); storms++; tried[st.slope] = 1; B.moved = true;
+      res = model(st.slope, st.farm, st.dam); storms++; tried[st.slope] = 1; damTried[st.dam ? 1 : 0] = 1; B.moved = true;
       report(null, true);
     });
     var again = document.createElement('button'); again.type = 'button'; again.className = 'quiet'; again.textContent = 'Start again';
-    again.addEventListener('click', function () { tried = {}; B.restart(); });
+    again.addEventListener('click', function () { tried = {}; damTried = {}; B.restart(); });
     bar.append(go, again); panel.appendChild(bar);
     ui.out = document.createElement('dl'); ui.out.className = 'wpt-cres'; ui.out.setAttribute('aria-live', 'polite'); panel.appendChild(ui.out);
   }
@@ -204,7 +206,7 @@
     var text = msg || (res ? summary() : 'Choose the ground cover, then send a storm.');
     B.say(msg || (res ? 'Storm sent. The list above says what reached the town and the lake.' : text));
     var r = res && storms ? res : { soil_lost: 0, town_water: 0, town_soil: 0, lake_water: 0, lake_soil: 0, dam_soil: 0, town_steady: 0 };
-    var vars = Object.assign({ n_storms: storms, dam_on: st.dam ? 1 : 0, slope_bare: st.slope === 'bare' ? 1 : 0, farm_bare: st.farm === 'bare' ? 1 : 0, covers_tried: Object.keys(tried).length }, r);
+    var vars = Object.assign({ n_storms: storms, dam_on: st.dam ? 1 : 0, slope_bare: st.slope === 'bare' ? 1 : 0, farm_bare: st.farm === 'bare' ? 1 : 0, covers_tried: Object.keys(tried).length, dam_compared: damTried[0] && damTried[1] ? 1 : 0 }, r);
     B.save({ st: st, tried: tried });
     B.post({ slope: st.slope, farm: st.farm, dam: st.dam, scope: { vars: vars, points: {} } }, text);
   }
@@ -218,7 +220,7 @@
     start: function (fresh) {
       spec = B.spec; var sv = fresh ? null : B.saved();
       st = Object.assign({}, spec.start, sv && sv.st ? sv.st : {});
-      tried = sv && sv.tried ? sv.tried : {}; storms = 0; anim++;
+      tried = sv && sv.tried ? sv.tried : {}; damTried = {}; storms = 0; anim++;
       res = spec.pre ? model(st.slope, st.farm, st.dam) : null;
       paintPanel(); report();
     },

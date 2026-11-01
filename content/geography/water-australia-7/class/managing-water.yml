@@ -9,13 +9,13 @@ activities:
     kind: discussion
     title: "Copy Perth?"
     minutes: 3
-    do: "Vote on whether the Drybank farms should copy Perth's desalination. Ask what a plant needs nearby."
+    do: "Vote on whether the farms around Drybank should copy Perth's desalination. Ask what a plant needs nearby."
     notes: "Perth's use of desalination is a sourced fact; Drybank is made up."
   - at: investigate
     kind: discussion
     title: "Cause first"
     minutes: 5
-    do: "For Mellick Bay and the Drybank farms, pairs name the cause before any strategy, then suggest two strategies each."
+    do: "For Mellick Bay and the farms around Drybank, pairs name the cause before any strategy, then suggest two strategies each."
     notes: "Accept more than one strategy. Ask for how it works on the cause."
   - at: make
     kind: activity

@@ -24,10 +24,10 @@ check:
   type: predict
   q: "A made-up town sits above the Great Artesian Basin, a huge store of groundwater. What is most likely?"
   options:
-    - "The water is there, but the town needs bores and water that is fit to use before it can rely on it"
-    - "Every house in the town has as much water as it wants"
-    - "Water underground cannot be used at all"
-    - "The town gets the same water as a town beside a big river"
+    - "The water is there, but the town needs a bore to reach it and water fit to use"
+    - "Every house in the town has as much water as it wants, because the basin is huge"
+    - "Underground water is too deep for any town to use, so the town has none at all"
+    - "The town has the same water as a town beside a big river, since both have water near"
   actual: "Water under a place is a resource, but using it depends on reaching it (a bore and a pump) and on its quality. Where water is and who can use it are two different questions."
 ```
 
@@ -73,7 +73,7 @@ tasks:
         - "That lists the symbols. A pattern says where there is more and where there is less."
         - "Look at Western Australia and the centre. Are the blue lines spread evenly?"
         - "Read the note at the bottom of the map. Some flow only part of the year."
-      explain: "A distribution pattern uses direction words: more in the north and south-east, few or none in the centre and west."
+      explain: "A distribution pattern uses direction words. On this map: more major rivers in the north and south-east, few or none in the centre and west."
   - check:
       type: bug
       code: "working.txt#nib"
@@ -96,10 +96,10 @@ tasks:
       - "What would someone need before they could use water deep under the ground?"
 ```
 
-### Where, then who
+### Describe the pattern
 
 ```worked
-\text{Look where there is a lot} :: Major rivers cluster in the north and in the south-east (the Murray and Darling).
+\text{Look where there is a lot} :: On this map, major rivers cluster in the north and in the south-east (the Murray and Darling).
 \text{Look where there is little} :: Few major rivers cross the centre or most of the west.
 \text{Say it with direction words} :: More surface water in the north and south-east, much less in the centre and west.
 \text{Add the groundwater} :: The Great Artesian Basin lies under much of the inland east, where there are few major rivers.
@@ -167,7 +167,7 @@ tasks:
           - "Says what each symbol means"
   - check:
       type: question
-      q: "Which statement keeps 'where water is' separate from 'who can use it'?"
+      q: "Which statement about inland Queensland is accurate?"
       options:
         - "Much of inland Queensland has groundwater under it, but using it needs bores and water fit to use"
         - "There is groundwater under much of inland Queensland, so everyone living there has plenty of water"
@@ -184,7 +184,7 @@ tasks:
 
 ### Words for maps
 
-### Where, then who
+### Inland Queensland
 
 ## Make: your own water map
 
@@ -196,27 +196,27 @@ check: { type: reflect, text: "On a blank outline I drew two major rivers, shade
 
 <figure class="wpt-ausmap" style="margin:0 0 14px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 596" role="img" aria-label="Blank outline of Australia with state borders." style="width:100%;max-width:300px;height:auto;background:#f4f8fa;border-radius:12px"><path d="M9.1 262.4L9.5 264.7L6.7 259.8L5.9 256.4L7 255.6L9.1 262.4ZM41.3 179.4L42.4 178.2L42.8 178.9L41.8 181.3L40.7 181.1L41.3 179.4ZM174.2 92.1L174.9 94.2L173.8 94.5L173.2 93.2L174.2 92.1ZM183.6 79.4L183.6 81L182.7 82L182 81.2L182.4 79.6L183.6 79.4ZM238.6 263.2L238.6 354L225.1 360L214.3 363.1L194 363.7L177.2 373L169.8 375.1L164.4 384.4L159.1 389.5L157.1 389.3L154.8 390.6L152.8 389.2L148.6 389.1L139.5 390.7L138.2 388.8L128.7 388.1L114.5 390.2L106.3 390.4L103.2 392.5L100.5 396.7L97.6 398.1L92.5 398.5L81.5 406.6L77.5 407.7L73.5 408.3L58.1 406.6L50.4 403.5L44.3 397.6L40.2 395.7L38 396.3L36.3 394.9L36.1 383.1L38.8 385.1L41.3 385.1L43.6 383.4L46 378L45.1 369.6L46.4 368L46.6 365.3L46.2 354.1L37.3 336L35.7 327.7L35.6 318L34.1 313.4L30.8 309L29.5 303.8L24.1 296.4L22.1 284.7L9.9 266.1L11.9 267.1L12.4 264.5L15.6 272.1L17.8 272.7L19.3 271.2L19.6 268.5L15.7 264.8L12.9 258.6L13.8 256.8L17.5 260.5L17.7 265.3L18.3 265.8L19.6 263.4L21.6 268.3L23 269.5L24.8 267.8L24.8 260.8L16.9 246.9L13.3 238.3L14.3 229.2L18.2 222L18.7 214L17.1 209.6L18.7 204.7L21.1 198.4L23.5 196.7L23.7 207.1L26.1 206.2L31.9 196.6L42.7 191.3L50.8 183.9L60.8 177.9L67.1 177.7L70.9 179L74.9 177.8L82.4 173.5L90.4 171.7L95.5 167.4L102.4 168.1L114.7 165L122.9 161.2L127.8 156.7L134.9 143.2L142.3 137.4L142.6 136.2L140.8 135.1L139.5 128.4L139.7 124.6L141.1 121.8L147.8 116.3L150.6 110.6L151.4 110.7L153.9 117.5L159.9 128L160.4 120.1L163.8 121.6L164.4 118.3L158.9 111.5L160.9 110.3L160.6 107.3L162.3 106.8L164.2 109.8L166.9 107.9L170.6 109.9L177.4 110.1L172.1 108.5L172.3 105.8L174.6 105.5L175.6 101.6L175.6 100.6L175 100.9L173.6 103.3L171.8 99.8L172.6 95.6L174.4 95.7L176.3 93.5L176.3 92.1L181 95.2L181.6 94.8L181.8 92.6L179.4 92.7L178.4 90.3L181.1 88.9L181.3 87.8L185.9 89.6L186.3 88L184.2 86.9L183.3 83.2L184.8 81.1L189.1 79.5L189.8 75.9L190.9 76.4L190.3 80.2L191.4 78.9L192.6 79.3L193.6 81.6L195.5 79.7L196.8 73.6L196 71.4L197.8 71.8L198.9 74.4L201 72.1L203.4 74.4L206.5 71.1L206.4 68.4L208.2 67.7L216.3 72.3L227 83.8L225.3 89.1L225.1 93L226.3 91.3L227.8 92.5L226.6 88.4L231 84.4L238.6 85.7L238.6 263.2ZM238.6 263.2L238.6 85.7L240.9 87.5L241.7 90.3L242.4 85.7L245.2 86.7L247.7 90L247.8 85.4L250.8 85L247.3 82.1L248.6 80.7L247.3 80.7L244 78L245.2 75.2L248.8 71.5L250.7 65L255 63L256.8 60.7L255 58.2L255.4 55.2L257.6 54L258.8 50.9L261.9 50.2L262 46.8L263.7 46.7L265.6 48.8L265.6 45.7L267.8 45.4L267.8 43.3L270.7 42.7L271.7 41L273.8 44.3L280.3 43.6L282.9 44.4L285.6 42.8L287.9 44.6L289.3 42L292.2 41.9L291 40.4L291.7 34.3L288.8 31.8L283 31.5L279.2 28.3L281.4 26.8L284.8 28.8L285.7 27.2L290 29.8L291.8 32L294.3 30.2L295.8 30.4L299.1 35.2L304.1 36.9L309.5 37.2L316.9 40.7L321.4 39.6L325.7 43L328.5 43.4L338.6 37.1L337.4 39.1L338.2 39.8L335.5 43.2L336.1 43.7L338.9 42.3L339.9 42.9L340.9 46.6L343.5 46.8L344.5 44.8L343.4 42.6L346.2 39.1L347.6 39.2L348.6 42L350.2 43.5L352.7 43.8L353.5 45.5L347.5 52.4L348.4 55.9L346.4 59.4L344 58L338.7 60.7L339.6 68.8L338.1 74.2L331.2 83.9L333 87.7L342.7 94.2L344 96.8L348.2 99L349.9 98.7L349.9 101.1L351.1 102L354.2 101.7L364.4 107.4L368.7 112.6L368.7 263.2L238.6 263.2ZM355.2 98.3L355 100.9L354 99.3L353.4 99.1L354.4 97.2L355.2 98.3ZM348.2 96.3L348.3 97.8L347.2 97.7L347.3 96.4L348.2 96.3ZM353.3 74.6L352.7 76.5L344.6 75.2L345.9 73.8L345.9 69.6L349.9 66.7L350.7 69.3L352 67.8L352.9 69L351.2 70.9L350.6 73.6L353.3 74.6ZM342.9 66.4L343.7 68.5L341.5 68.9L342.9 66.4ZM346.3 31.7L344.7 33.5L342.4 34.7L343.6 33.1L346.3 31.7ZM261.4 35.7L261.8 37L260.3 37.3L257.6 36.2L254.1 37.1L254.1 34.8L255.9 34.4L255.7 32.6L255.2 31.5L257.9 29.3L259.7 34.8L261.4 35.7ZM274.3 30L275.3 30.9L274.1 33.3L273 33.2L271.7 35.3L266.8 38.7L260.4 33.8L259.1 31L258.8 26.8L262 29.9L267.8 29.3L271.3 27L274.3 30ZM350.3 24.3L351 24.1L350.5 27L348.4 30L347.4 30.9L347.9 29.6L350 26.5L350.3 24.3ZM290.5 23.9L290.5 28.8L289.1 26.5L288.9 24.5L290.5 23.9ZM238.6 354L238.6 263.2L412.1 263.2L412.4 391.5L411.6 390.9L411.6 455.8L406.7 455.1L403.2 453L400.7 448.9L394.5 442.6L393.8 439.6L395.5 433.3L393.7 428.7L391.1 424.3L382.7 416.1L384.1 416.3L385.7 415.1L387.3 416.5L387.2 412.8L385.9 412.3L381.3 415.4L376.2 417L371.3 416.6L374.5 412L376.1 407.2L375.8 403L370 393.5L367.5 398.1L366.9 402.4L364.2 409.1L360.9 408.9L356.3 410.6L352.5 410.6L354.4 405.4L359.9 405.4L361.3 400.4L361.4 393.4L363.6 388.6L367.7 384.1L366.5 378.1L367.6 377.5L368.6 376.4L367.4 371.2L365.5 368.2L365.7 372.1L360.6 378L357.6 384.9L346 391.3L338.2 401.4L339.3 406.5L336.8 404.6L334.7 405.8L330 401.1L327.1 400.2L328.4 398.6L330.8 400.4L331.8 400.1L328.5 390.2L323.7 384.9L321.2 379L319.6 377.9L315.2 377.5L312.3 370.9L314.1 370.6L314.2 367.7L309.8 365.5L306 362.2L299.5 361.9L292.9 358.2L285 359L277.9 354.1L269.5 350.9L264.3 352.6L254.9 352.2L238.6 354ZM367.6 418.4L369.3 418.8L370.5 420.4L369.6 421.2L363.9 421.1L362.8 423.2L360.7 423.9L357.2 422.5L356.4 423.4L353 423.5L350.7 423.3L347.6 421L349 418.7L359 416.2L362.7 416.7L363.4 417.3L362.8 418.6L367.6 418.4ZM368.7 263.2L368.7 112.6L372.2 115.2L383.3 118L386.7 124.9L398.1 130.9L405 129.6L409.6 126.3L411.6 119.9L416.3 111.1L418 104.8L418.6 97.4L421.1 88.6L419.6 79.3L420.6 74.2L418.9 68.6L421.4 60L420.9 54.9L423.4 52.3L425.4 52.7L425.5 51.7L424.4 49.1L421.8 47.7L422 45.5L424.6 39.5L425.9 40.7L428.9 23.1L431.2 22.1L433.1 19.3L435.3 19.9L434.5 21.9L437.8 25.8L439.1 37L440.8 38.6L443.6 39.2L442.6 44.7L444.6 46.2L446.8 50.1L449.4 62.9L448.9 67.7L451.9 77.3L454.9 79.2L458.5 76.6L462.3 75.5L464.8 79.6L474 86.8L473.8 95.3L476.5 104.6L476 110.2L480.8 117.7L483.1 118.2L482.9 120.8L486.2 129.8L484.8 139.9L487.6 143.7L489.2 144.4L488.6 149L491.3 152.8L498.8 155.6L500.8 157.8L504.8 157.6L509.5 163.8L514.4 165.9L518.6 168.9L521.9 169.8L524.2 172.1L526 175.2L523.8 175L523.1 176.8L530.7 185.4L532.5 191L534.3 192.7L535.3 199.8L537.9 206.4L539.6 205.6L541.8 208.2L541.3 204.3L542.5 202.1L550 208.3L550.4 205.5L551.2 205.3L553.2 208.6L554.4 222.7L558.9 227.9L563.9 231.5L568.6 233.3L573 240.8L577.7 244.1L580.5 250.5L584.3 254.2L585.3 260.3L587.9 262.6L586.8 268.1L587.9 278.9L587.2 282.3L593 297.4L591.1 298.9L588.3 299.2L587.3 300.7L582 300.8L578.2 299.3L570.6 303.6L572.1 306.4L571.4 309.1L568.5 310.6L567.2 309.3L564.6 310.4L562.3 313.3L560 309.4L556.4 306.4L544.3 304L537.5 304.9L535.1 304.4L527.3 311L412.1 311.1L412.1 263.2L368.7 263.2ZM593.3 286.1L592.1 290.5L591.3 289.8L591.3 287.2L591.8 285.6L593.3 286.1ZM591.8 279.6L591.6 284.4L590.8 281.4L591.8 279.6ZM589.6 243.1L590.6 248.3L586.3 259.7L585.2 256.1L586.3 252.9L586.1 250.3L588.3 248.4L589 246L587.6 244.3L589.6 243.1ZM559.9 224.8L560.9 226.8L560.1 227.7L557.1 223.8L557.5 222.7L560.1 223.8L559.9 224.8ZM549.2 202.8L550.1 204.3L549.2 204.6L549.2 202.8ZM527.4 169.9L528 172.3L526.8 172L527.4 169.9ZM488.4 139.3L489.1 142.8L487.7 142.8L487.1 141.4L485.8 139.6L488.4 139.3ZM390.3 119.5L391.4 121.1L389.2 121.7L390.3 119.5ZM391.6 110L393.2 111.9L391.2 112.1L387.2 115.2L385.3 115.1L386.4 112.1L391.6 110ZM428.4 18.2L429.4 17.4L430.5 19.2L429.3 20.1L428.4 18.2ZM429.7 10.4L431.4 11L430.5 12L429.3 11.2L429.7 10.4ZM503.3 538.9L503.9 540.7L503.3 542.4L501 542.4L500.3 541L501.2 541.3L503.3 538.9ZM503.9 535.7L505.1 538.2L503.7 537.3L503.1 537L503.9 535.7ZM514.3 527.9L515.7 528.9L514 529.9L514.3 527.9ZM518.2 520.2L517.5 522.5L517.3 520.6L515.9 519.5L516.7 518.8L516.3 518L513.6 522.6L512 529L513 536.9L510.2 537.9L508.2 534.7L510 534.5L510.4 533.3L507.1 531.9L506.6 534.4L505.3 534.9L503.1 531.1L503.8 533.2L502.3 537.9L501.3 538.5L498.8 536.9L498.6 537.9L499.9 538.8L497 544.2L494.4 544L492.3 542.5L485 543.1L484.3 540.4L487.6 540.1L487.3 539.5L482.5 539.1L478.1 533.9L476.9 533.2L473.8 527.1L472.8 522.1L475.3 523.9L476.7 526.3L477.3 524.1L474.7 520.8L473.3 521.6L473.3 518.8L466.5 508.7L464.8 502.2L465.8 497.3L470.5 499.1L474 498.8L481.8 502.9L488.9 505.1L494.8 503.7L496.6 505.2L496.7 503.4L498.6 502.4L503.4 501.8L505.4 502.5L507.8 500L511.4 500.5L513.7 499L517.5 501.7L518.2 520.2ZM516.4 494.6L516 496L515.1 495.2L516.4 494.6ZM466.7 493.5L466.2 496L465.7 494.3L466.7 493.5ZM519.3 492.4L520.1 493.4L519.1 494.3L517.9 493.5L514.7 493.8L513.5 493L514.1 492.2L518 491.4L519.3 492.4ZM516.9 488.1L517.8 489.3L514.8 490.7L511.7 486.8L511.5 485L509.9 484.5L512.3 482.2L513.3 482.7L517.6 486.3L516.9 488.1ZM457.2 483.1L457.5 485.8L455.9 487.8L454 488.5L453.1 485L454.7 479.9L456.7 480.8L457.2 483.1ZM411.6 455.8L411.6 390.9L418.8 393.8L423.1 392.6L428.8 393.6L431.9 396.1L432.7 400.3L434.8 403.2L437.7 400.2L445.7 403.4L446.8 409.5L451.3 413.4L457.8 416.9L465.1 424.1L468.7 424.4L470 420.9L476.1 420.1L487.5 423.6L491.1 422.6L499.5 424.4L501.1 423.3L503.5 423.8L505.4 422L509.8 422L512.3 423L516.1 432.7L515.2 435.1L516.4 435.5L541.2 447.1L539.4 447.4L534.7 451L517 451.9L511.5 453.6L504.5 458.1L496.7 465.2L487.5 466.3L489.2 468.9L491.1 468.1L491.3 471.6L490.1 472.9L486.6 468.5L485.3 468L483.4 469L481.3 465.3L478.6 465.1L475.6 463.2L477.7 460.9L476.8 458.5L474.1 458.4L472.6 460.8L469.3 462.6L465.8 460.1L468.6 460.1L471.6 456.1L468.3 453L461.1 456.8L465 458L456.9 462L452.7 465.8L448.8 467.7L444.2 466.5L433.1 460.8L429.2 461L425.4 459.2L422.5 459L420.6 460.8L418.2 460.4L415.1 457.4L411.6 455.8ZM474.4 462.5L475 463.5L471.7 463.1L473 462L474.4 462.5ZM476 459.7L476.9 460.3L474.7 461.4L473.9 460.9L474.1 459.7L476 459.7ZM533.5 412L529.7 413.8L528.5 421.4L526.3 419.9L524.5 417L525.2 411.8L529.2 409.1L533.5 412ZM412.4 391.5L412.1 311.1L527.3 311L535.1 304.4L537.5 304.9L544.3 304L556.4 306.4L560 309.4L562.3 313.3L564.6 310.4L567.2 309.3L568.5 310.6L571.4 309.1L572.1 306.4L570.6 303.6L578.2 299.3L582 300.8L587.3 300.7L588.3 299.2L591.1 298.9L593 297.4L593.9 299L594.3 308.8L590.6 315.7L589.5 325.3L586 336L586.2 341.5L584.7 349.9L582.4 355.5L579.2 359.7L577.9 365.9L574.2 369.7L573.1 369.7L573.5 371L568.4 373.3L563.6 380.4L562.9 383.2L560.8 384.2L560.7 389.7L558.4 390.9L560 391.3L556.1 395.6L553.5 405.1L553.8 407L552.3 407.5L552.4 408.7L550.4 410.2L545 420.1L541.6 436.2L541.3 446.7L515.2 435.1L516.1 432.7L512.3 423L509.8 422L505.4 422L503.5 423.8L501.1 423.3L499.5 424.4L491.1 422.6L487.5 423.6L476.1 420.1L470 420.9L469.1 422.4L469.4 423.9L467 424.7L463 422.6L457.8 416.9L451.3 413.4L446.8 409.5L445.7 403.4L437.7 400.2L434.8 403.2L432.7 400.3L431.9 396.1L428.8 393.6L423.1 392.6L418.8 393.8L412.4 391.5Z" fill="#eef1e6" stroke="#6b7a64" stroke-width="1.2" stroke-linejoin="round"/><text x="122.9" y="263.2" font-family="sans-serif" font-size="15" fill="#162c38" font-weight="600" fill-opacity="0.65">WA</text><text x="303.6" y="167.5" font-family="sans-serif" font-size="15" fill="#162c38" font-weight="600" fill-opacity="0.65">NT</text><text x="318.1" y="327" font-family="sans-serif" font-size="15" fill="#162c38" font-weight="600" fill-opacity="0.65">SA</text><text x="469.9" y="191.4" font-family="sans-serif" font-size="15" fill="#162c38" font-weight="600" fill-opacity="0.65">Qld</text><text x="521.9" y="349.4" font-family="sans-serif" font-size="15" fill="#162c38" font-weight="600" fill-opacity="0.65">NSW</text><text x="448.2" y="438.7" font-family="sans-serif" font-size="15" fill="#162c38" font-weight="600" fill-opacity="0.65">Vic</text><text x="491.6" y="518.5" font-family="sans-serif" font-size="15" fill="#162c38" font-weight="600" fill-opacity="0.65">Tas</text><path d="M570 52 l9 22 -9 -6 -9 6Z" fill="#162c38"/><text x="565" y="44" font-family="sans-serif" font-size="14" fill="#162c38" font-weight="700">N</text><path d="M20 536 l71.7 0 M20 531 l0 10 M91.7 531 l0 10" stroke="#162c38" stroke-width="2"/><text x="20" y="526" font-family="sans-serif" font-size="11" fill="#162c38">500 km (about)</text><text x="10" y="576" font-family="sans-serif" font-size="11" fill="#162c38">Outline: Natural Earth (public domain), simplified.</text></svg><figcaption>A blank outline to copy or print. Draw on paper, not on this page.</figcaption></figure>
 
-## Typical: when the water is there
+## Typical: a storage on the river
 
 ```step
 stage: make
 tier: typical
-insight: "A map shows where water is, not always when. Seasons change how much is there."
+insight: "Adding a third kind of water resource tests whether you can pick the right symbol."
 check:
   type: question
-  q: "In northern Australia almost all rain falls in the wet season, from about November to April (Bureau of Meteorology). What does that add to your map?"
+  q: "Hume Reservoir is the main storage on the River Murray system (WaterNSW). How should you show it on your map?"
   options:
-    - "A river may run high in the wet season and low or dry for much of the year"
-    - "Northern rivers carry about the same amount of water every month, wet season or dry"
-    - "The north has no water in the dry season, so its rivers should be left off the map"
-    - "The wet season only changes groundwater, so the rivers on the map stay the same"
+    - "As a small blue area on the Murray, with its own entry in the legend"
+    - "As another blue line, the same as the rivers, so it fits in with them"
+    - "As brown dots, because water stored for later counts as groundwater"
+    - "Leave it off, because a storage people built is not a water resource"
   answer: 0
   feedback:
     - null
-    - "Rain falls mostly in a few months, so river flow changes through the year."
-    - "The rivers are still there; they carry much less, and some stop flowing for a while."
-    - "Rivers fill from rain and runoff, so the season matters for surface water."
-  explain: "A map shows where water is. When and how much can change through the year, which matters for the next lesson."
+    - "A reservoir covers an area of water. A line is for something long and thin, like a river."
+    - "Groundwater is under the ground. A reservoir holds surface water you can see."
+    - "Stored water is still surface water, and towns and farms use it."
+  explain: "A reservoir is surface water held behind a dam. Show it as an area and add it to your legend."
 ```
 
 ## Wider: water here, or water you can use here?

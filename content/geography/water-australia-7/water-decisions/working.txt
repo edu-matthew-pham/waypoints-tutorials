@@ -1,8 +1,8 @@
 # Nib's notes for the "find the slip" task. Plain text: students click the wrong line, nothing runs.
 
 # region: nib
-Pennerby runs short of water in dry years.
+Tarnbridge runs short of water in dry years.
 So the first step is to build a pipeline from another catchment.
-Then Pennerby will have enough water, whatever happens.
+Then Tarnbridge will have enough water, whatever happens.
 And the other catchment will not notice the water is gone.
 # endregion

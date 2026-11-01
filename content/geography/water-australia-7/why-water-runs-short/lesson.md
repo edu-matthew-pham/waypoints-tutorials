@@ -3,7 +3,7 @@ order: 2
 unit: water-australia
 title: "Why does water run short?"
 node: AC9HG7K02 n2
-summary: "Water scarcity means not having enough usable water for what people need. This lesson sorts its causes three ways: not enough water in the place (a physical cause), water that is there but cannot reach people because pipes, pumps or treatment are missing (an economic cause), and more water being used than the place can supply. It also explains why the amount of water in a place varies: climate, seasons, evaporation, location and the shape of the land."
+summary: "Water scarcity means not having enough usable water. This lesson sorts its causes three ways: too little water in the place, water that is there but cannot reach people, and more water being used than the place can supply. It also looks at why the amount of water changes: seasons, evaporation, location and the shape of the land."
 language: maths
 hook: "A town has a river running right past it, yet its taps keep running dry. How can that be?"
 ---
@@ -25,9 +25,9 @@ check:
   q: "Made-up Corrowin has a river beside it all year, but its taps often run dry. What is the most likely reason?"
   options:
     - "The town has no working way to get the river water to its houses"
-    - "It must not be raining at Corrowin"
-    - "River water can never be used by a town"
-    - "Corrowin is too close to the river"
+    - "It must not be raining enough at Corrowin to fill the taps"
+    - "The river must be too small to supply a whole town"
+    - "People in Corrowin must be wasting too much water"
   actual: "The water is there. What is missing is a way to get it, clean, into people's houses: pumps, pipes and treatment. That is an economic cause, not a lack of rain."
 ```
 
@@ -64,13 +64,13 @@ tasks:
         - "Physical: there is not enough water in the place"
         - "Economic: the town has the wrong pipes"
         - "The ways water is used: the town uses too much"
-        - "No cause: a dam always refills by itself"
+        - "Economic: Drybank's dam must be too small"
       answer: 0
       feedback:
         - null
-        - "Pipes cannot deliver water that is not there. Look at the rainfall."
+        - "That blames the pipes, but pipes cannot deliver water that is not there. The rain stopped."
         - "Use could make it worse, but the case says the rain stopped."
-        - "A dam refills from rain and runoff, which have stopped."
+        - "A bigger dam cannot fill without rain and runoff, and both have stopped."
       explain: "The water itself is missing, so it is a physical cause."
   - check:
       type: bug
@@ -86,7 +86,7 @@ tasks:
         q: "In made-up Corrowin the river is full, but the pump to the houses is broken. What is missing?"
         options: ["A way to get the water to people", "Water in the river"]
         answer: 0
-        feedback: [null, "The river is full. Look at what happens between the river and the houses."]
+        feedback: [null, "That assumes the shortage is in the river, but the river is full. The break is between the river and the houses."]
         explain: "The water is there. What is missing is the way to deliver it."
     hint:
       - "Line 1 says where the water is."
@@ -122,7 +122,7 @@ tasks:
         - - "Topography"
           - "The shape of the land decides where water runs and collects"
         - - "Location"
-          - "Inland places usually get less rain than coastal ones"
+          - "In Australia the driest areas are inland, far from the coast"
       explain: "Each factor changes how much water there is, or when. Name the factor and say how it works."
   - check:
       type: question
@@ -157,13 +157,13 @@ tasks:
       options:
         - "Physical: now the water itself is short"
         - "Economic: the pipes must have broken again"
-        - "None: a town with good pipes cannot run short"
+        - "Economic: if the pipes are fixed, it must be the pumps now"
         - "The ways water is used: Corrowin must be wasting water"
       answer: 0
       feedback:
         - null
         - "The case says the pipes were fixed. What changed is the river."
-        - "Good pipes cannot deliver water that is not there."
+        - "That sticks with the first diagnosis. The evidence changed: the river itself is low."
         - "The case does not say use went up. It says the rain stopped."
       explain: "The same town can have different causes at different times. Diagnose from the evidence."
   - check:
@@ -173,13 +173,13 @@ tasks:
         - "Repair or replace the pipes"
         - "Build a bigger dam to catch more rain"
         - "Ask people to wait for wetter years"
-        - "Move the town further from the river"
+        - "Ask everyone in Corrowin to use less water"
       answer: 0
       feedback:
         - null
         - "More stored water still has to travel through the same leaking pipes."
         - "Rain is not the problem here, so waiting does not fix it."
-        - "Being near the river helps. The problem is the pipes."
+        - "Using less does not help if the water never reaches the houses."
       explain: "An economic cause needs a fix to the system that delivers the water."
 ```
 

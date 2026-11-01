@@ -23,10 +23,10 @@ check:
   type: predict
   q: "Made-up Pennerby and Fennow are in the same area. What is most likely?"
   options:
-    - "Their water can be very different, because of where it comes from and what has been built"
+    - "Their water can be very different, because of its source and what has been built"
     - "They must have exactly the same water, because they are in the same area"
-    - "Fennow will have more reliable water, because it is smaller"
-    - "Neither can ever run short, because they share a sky"
+    - "Fennow will have more reliable water, because a small place needs less of it"
+    - "Both will run short at the same time, because the same rain falls on both"
   actual: "Being in the same area does not give two places the same water. Pennerby has a river, a treatment plant and pipes. Fennow has tanks and one bore. Their supply, its reliability and its cost are different."
 ```
 
@@ -124,13 +124,13 @@ tasks:
         - "Town water can be limited too; the type of place alone does not decide access"
         - "Towns can never run short of water, so the council must have made a mistake"
         - "Pennerby now has exactly the same water and the same problems as Fennow"
-        - "Only remote places ever have limits, so this town must count as remote now"
+        - "The limits mean Pennerby's treatment plant must have broken down"
       answer: 0
       feedback:
         - null
         - "Even a town's river can run low in a long dry spell."
         - "Pennerby still has its treatment plant and pipes. The limit is different from Fennow's."
-        - "Pennerby is a regional town, and it has a limit now."
+        - "That blames the plant, but the case says the river ran low. The water itself is short."
       explain: "Access depends on the source, how reliable it is, and what has been built, not only on whether a place is a town."
 ```
 
