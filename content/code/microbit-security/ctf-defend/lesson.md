@@ -92,6 +92,16 @@ Replace the locked code with a **knock** that carries a keyed checksum. The lock
 
 Instead of a fixed code, the lock sends a **random challenge**; the key answers it, and the lock opens only on the right answer. The functions **checksum** and **answer** are already in the starter: you built them in earlier lessons.
 
+## Optional: try another pair's lock
+
+```step
+stage: make
+tier: typical
+check: { type: reflect, text: "With the other pair's permission, we tried to open their lock, explained how we got in (or why we couldn't) and told them how to fix it." }
+```
+
+Only if your teacher runs this round. Swap with another pair, **with their permission**, and try to open their lock using only the radio: no reading their code. If you get in, explain how, and tell them how to fix it. If you don't, say which protection stopped you. Only these locks, in this room.
+
 ## Report
 
 ```step

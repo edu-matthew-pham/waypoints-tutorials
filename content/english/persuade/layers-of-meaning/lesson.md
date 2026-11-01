@@ -8,7 +8,7 @@ node: [AC9E8LA02 n1, AC9E8LA02 n2]
 explainPicture: { ref: text.yml#explain-pic, caption: "Three devices. Each one says one thing and means another." }
 hook: "'Super speedy,' said Dad, watching the snail cross the path. Does he mean it?"
 ---
-Some writing says one thing and means another. Three devices do this:
+Some writing says one thing and means another. Three **rhetorical devices** do this:
 
 - **Irony**: saying the opposite of what is meant, so the reader sees the gap. *'Super speedy,' said Dad, watching the snail cross the path.*
 - **Hyperbole**: exaggerating. *The soup was hot enough to melt the sun.*
@@ -37,7 +37,7 @@ try: { playground: board, starter: "text.yml#run", height: 520 }
 hint: ["Is it making a thing bigger, smaller, or the opposite?", "What would the plain version say?"]
 smaller:
   check: { type: question, q: "'I could eat a horse.' Which device exaggerates?", options: ["Irony", "Hyperbole", "Understatement"], answer: 1, feedback: ["Irony says the opposite.", null, "Understatement plays things down."], explain: "Nobody can eat a horse. Exaggerating is hyperbole." }
-check: { type: board, text: "Label each line: exaggerates, plays down, or says the opposite.", when: "n_right = 6", explain: "A million times and the end of the universe exaggerate. A bit damp and a small hiccup play down. What lovely weather and I just love getting soaked say the opposite of what is meant." }
+check: { type: board, text: "Label each line: hyperbole, understatement or irony.", when: "n_right = 6", explain: "A million times and the end of the universe are hyperbole: they exaggerate. A bit damp and a small hiccup are understatement: they play down. What lovely weather and I just love getting soaked are irony: they say the opposite of what is meant." }
 ```
 
 Which was harder to separate, irony or understatement? Ask what the plain version would say.
@@ -97,7 +97,7 @@ stage: modify
 insight: "Choosing words to finish a line in the right device shows how the gap is made."
 try: { playground: board, starter: "text.yml#vary", height: 340 }
 hint: ["Is the device playing down or exaggerating?", "What would the plain version be?"]
-check: { type: board, text: "Choose the words that finish each device: understatement first, then exaggeration.", when: "n_gaps_right = 2", explain: "A slight breeze plays down a toppled tent. Higher than the sky exaggerates the pile." }
+check: { type: board, text: "Choose the words that finish each device: understatement first, then hyperbole.", when: "n_gaps_right = 2", explain: "A slight breeze is understatement for a toppled tent. Higher than the sky is hyperbole for the pile." }
 ```
 
 ## Practise: label the device
@@ -107,12 +107,12 @@ stage: practise
 insight: "Labelling six new lines applies the three devices to fresh examples."
 try: { playground: board, starter: "text.yml#practise", height: 520 }
 hint: ["What is the line doing to the size of the thing?", "Is the speaker saying the opposite?"]
-check: { type: board, text: "Label each line: exaggerates, plays down, or says the opposite.", when: "n_right = 6", explain: "A tonne and I'd die for exaggerate. A trifle warm and a minor wobble play down. Perfect timing and How exciting say the opposite of what is meant." }
+check: { type: board, text: "Label each line: hyperbole, understatement or irony.", when: "n_right = 6", explain: "A tonne and I'd die for are hyperbole. A trifle warm and a minor wobble are understatement. Perfect timing and How exciting are irony: they say the opposite of what is meant." }
 ```
 
 ## Make: a scene with devices
 
-In your own document, write a short scene of at least four sentences. Include two spoken lines in quotation marks: one that plays something down (understatement) and one that blows something up (exaggeration).
+In your own document, write a short scene of at least four sentences. Include two spoken lines in quotation marks: one that plays something down (understatement) and one that blows something up (hyperbole).
 
 Here is one example: The bus broke down on the hill. "**A minor delay**," said the driver, as smoke poured from the engine. "**We will be here until the end of time**," groaned Mia. The sun set slowly over the stopped bus.
 
@@ -120,9 +120,9 @@ Then swap with a partner. Name the device in each spoken line and say what it ad
 
 ```step
 stage: make
-insight: "Writing a short scene with understatement and exaggeration in speech puts devices to use."
+insight: "Writing a short scene with understatement and hyperbole in speech puts devices to use."
 hint: ["What happens in your scene?", "Which line plays it down, and which blows it up?"]
-check: { type: reflect, text: "I wrote a scene of at least four sentences with one line that plays something down and one that exaggerates, and a partner and I named the device in each." }
+check: { type: reflect, text: "I wrote a scene of at least four sentences with one line of understatement and one of hyperbole, and a partner and I named the device in each." }
 ```
 
 ## In your own writing
@@ -131,7 +131,7 @@ check: { type: reflect, text: "I wrote a scene of at least four sentences with o
 stage: make
 tier: typical
 insight: "Spotting a device in a real text puts the idea to use outside the board."
-check: { type: reflect, text: "I found a real example of irony, exaggeration or understatement and said what extra meaning it adds." }
+check: { type: reflect, text: "I found a real example of irony, hyperbole or understatement and said what extra meaning it adds." }
 ```
 
 ## Wider: a funny headline
@@ -142,7 +142,7 @@ tier: wider
 insight: "Writing a one-line headline with a device applies layered meaning to funny writing at the same level."
 check:
   type: reasoning
-  q: "Write a one-line headline for a made-up school news story that uses exaggeration. Say what is being made fun of and which word does it."
+  q: "Write a one-line headline for a made-up school news story that uses hyperbole (exaggeration). Say what is being made fun of and which word does it."
   placeholder: "Headline ... It makes fun of ..."
   models:
     - title: "A strong answer"

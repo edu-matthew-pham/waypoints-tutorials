@@ -10,6 +10,21 @@ before: |
   A Quick check: a few questions on what students should know for AC9S8U04 nodes 1, 3, 4 and 5, which you teach in class. It has no board, no clip and no new teaching, and it is optional, so it never holds up course completion. Set the width with `?width=minimum`, `typical` (default) or `wider`.
   
   Use it as a self-test after your teaching, a starter, or revision. Igneous rocks (node 2) are on screen in the Igneous lesson. A hands-on rock collection is the best way to teach these nodes; the questions check the ideas afterwards. For traditional stone selection, local knowledge and community guidance are richer than anything on screen.
+
+  For First Nations educator review: moved from student text, 1 Nov 2026
+
+  ACARA elaboration (AC9S8U04): "investigating how First Nations Australians have used quarrying to access rocks for use as or production of everyday objects such as grindstones, hammerstones, anvils and cutting tools"
+
+  ACARA elaboration (AC9S8U04): "exploring the traditional geological knowledges of First Nations Australians that are used in the selection of different rock types for different purposes"
+
+  Moved from question, task "Choosing stone" in "Properties and uses" (task removed):
+
+  > For thousands of years Wurundjeri people quarried greenstone at Wil-im-ee Moor-ring (Mount William, Victoria) to make axe heads, which were traded across south-eastern Australia. Why choose that stone?
+
+  Moved from that question's explain:
+
+  > Choosing this stone and trading it widely shows detailed knowledge of rock properties. Its fine, interlocking grains come from how it formed, and they are what make it tough.
+
 running:
   - "Do each node as a pair: the questions, then the \"I can\" line."
   - "The pathway question is a good prompt to draw the rock cycle diagram on the board and number the processes."

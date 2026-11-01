@@ -13,7 +13,7 @@ Who says so matters. A claim is stronger when the writer names **a specific sour
 - **Vague**: *Some people say… Experts say… They say…*
 - **Named**: *Ms Iqbal, the pool supervisor who checks the water each morning, says…*
 
-A named source helps only if the source knows about this claim. A baker may know about bread. A baker does not know whether a bridge is safe.
+A named source helps only if the source knows about this claim. A source that knows the topic is called an **authoritative** source. A baker may know about bread. A baker does not know whether a bridge is safe.
 
 ## Predict: who do you trust?
 

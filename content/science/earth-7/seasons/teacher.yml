@@ -11,6 +11,15 @@ before: |
   The hinge misconception is that summer happens because the Earth is closer to the sun. The board shows the real distance for each date: closest (147 million km) in early January, farthest (152) in early July.
 
   Board notes: day lengths and noon sun heights are calculated for each city's latitude and date (ignoring the bending of light by the air, which adds a few minutes). The wider tier's tilt slider is a "what if": the real tilt is 23.4°. The Kakadu six seasons are described by Parks Australia with Bininj/Mungguy people; check local sources if you want students to explore a calendar from your own area.
+
+  For First Nations educator review: moved from student text, 1 Nov 2026
+
+  ACARA elaboration (AC9S7U03): "investigating First Nations Australians' calendars and how they are used to predict seasonal changes"
+
+  Moved from question in the Wider step, task "Six seasons" (task removed):
+
+  > In Kakadu, Bininj people recognise six seasons, marked by changes in rain, wind, plants and animals, rather than four. Why can both systems be useful?
+
 running:
   - "Engage: count how many chose 'closer to the sun'."
   - "Explore: ask what the distance was in December and in June."

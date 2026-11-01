@@ -117,20 +117,6 @@ check:
     - ["Crops growing faster after the rain", "Biosphere"]
 ```
 
-## Elaborate: managing interactions
-
-```step
-stage: modify
-tier: wider
-insight: "Seeing land management as deliberately changing sphere interactions extends the framework to people."
-check:
-  type: question
-  q: "For tens of thousands of years, many First Nations peoples have used small, cool fires to manage Country. Which spheres does a cool burn involve?"
-  options: ["All four: plants burn (biosphere), smoke and CO₂ enter the air (atmosphere), soil is warmed and enriched (geosphere), and later rain and regrowth (hydrosphere, biosphere)", "Only the biosphere", "Only the atmosphere", "None: fire isn't part of the spheres"]
-  answer: 0
-  feedback: [null, "What else happens besides the plants burning?", "The plants and soil are involved too.", "Fire moves matter between all of them."]
-```
-
 ## Evaluate: look back
 
 ```step

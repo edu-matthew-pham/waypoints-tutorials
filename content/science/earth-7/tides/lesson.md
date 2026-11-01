@@ -140,7 +140,6 @@ check:
   options: ["Near a new or full moon, at low tide: spring tides give the lowest lows", "At a quarter moon", "Any day: low tides are always the same", "When the moon is high overhead"]
   answer: 0
   feedback: [null, "Quarter moons give neap tides, which have the smallest range, so the lows are not very low.", "The chart shows that the range changes through the month.", "In the bulge model, having the moon overhead puts your coast under a bulge, and that means high tide, not low."]
-  explain: "Many coastal First Nations communities have long timed fishing and gathering by the moon and tides, so ask local knowledge holders about your own coast."
 hint: ["Which tides have the biggest range, and what does that mean for how low the water gets?", "Check the chart for which moon phases go with the lowest lows."]
 ```
 

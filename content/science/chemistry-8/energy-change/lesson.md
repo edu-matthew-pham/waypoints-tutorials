@@ -3,7 +3,7 @@ order: 9
 node: [AC9S8U07 n4, AC9S8U07 n5]
 unit: changes
 title: Hotter or colder?
-summary: "Some reactions give out energy to their surroundings, so the surroundings get hotter: they are exothermic (burning, respiration, hand warmers). Others take in energy, so the surroundings get colder: they are endothermic (instant ice packs, photosynthesis, cooking)."
+summary: "Some reactions give out energy to their surroundings, so the surroundings get hotter: they are exothermic (burning, respiration, hand warmers). Others take in energy, so the surroundings get colder: they are endothermic (citric acid and bicarb soda, photosynthesis, cooking)."
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:
@@ -23,20 +23,20 @@ explainClip:
     - wait: 3800
     - caption: { text: "Energy out to the surroundings: exothermic. Energy in: endothermic, and it gets colder.", say: "Energy out is exothermic. Energy in is endothermic, and it gets colder." }
     - wait: 1200
-hook: "Snap an instant ice pack and it goes freezing cold. Shake a hand warmer and it gets hot. Neither is plugged in. Where does the heat go, and where does it come from?"
+hook: "Mix citric acid and bicarb soda in water and it fizzes and goes cold. Shake a hand warmer and it gets hot. Neither is plugged in. Where does the heat go, and where does it come from?"
 ---
 A change in temperature is one sign that a reaction has happened, so which way does it go, and why?
 
-## Engage: the ice pack
+## Engage: the cold fizz
 
 ```step
 stage: predict
 insight: "Students often think cold is something added ('cold energy'); the endothermic idea needs energy taken in from the surroundings."
 check:
   type: predict
-  q: "An instant ice pack contains two chemicals that react when you snap it. It goes cold. What is happening?"
-  options: ["The reaction takes in energy from the pack and your hand", "The reaction makes 'cold', which flows into your hand", "The chemicals were stored in a freezer", "The reaction gives out energy, so the pack cools down"]
-  actual: "The reaction takes in energy from its surroundings (the pack, the air, your hand), so they get colder. A reaction that takes in energy is endothermic. There is no 'cold energy': cold just means less thermal energy."
+  q: "Citric acid and bicarb soda react when you mix them in a cup of water. It fizzes and the cup goes cold. What is happening?"
+  options: ["The reaction takes in energy from the water, the cup and your hand", "The reaction makes 'cold', which flows into your hand", "The powders were stored in a freezer", "The reaction gives out energy, so the cup cools down"]
+  actual: "The reaction takes in energy from its surroundings (the water, the cup, the air, your hand), so they get colder. A reaction that takes in energy is endothermic. There is no 'cold energy': cold just means less thermal energy."
 ```
 
 ## Explore: hotter and colder
@@ -82,10 +82,18 @@ tasks:
         - ["Wood burning", "Exothermic (gives energy out)"]
         - ["Respiration in your cells", "Exothermic (gives energy out)", "That's how you stay at 37 °C."]
         - ["A hand warmer (iron rusting quickly)", "Exothermic (gives energy out)"]
-        - ["An instant ice pack", "Endothermic (takes energy in)"]
+        - ["Citric acid and bicarb soda fizzing in water", "Endothermic (takes energy in)", "Hold the cup: it gets noticeably colder."]
         - ["Photosynthesis (taking in light energy)", "Endothermic (takes energy in)", "It takes in energy from sunlight to make glucose."]
         - ["Bicarb soda reacting with vinegar and fizzing", "Endothermic (takes energy in)", "Feel the cup: it cools a little."]
     hint: ["For each one, ask whether the reaction gives energy out to what's around it or takes energy in from it.", "Getting colder doesn't mean cold is being added but that energy is being taken from the surroundings, and for a plant, think about which way the sunlight's energy goes."]
+  - check:
+      type: question
+      q: "An instant ice pack goes cold when you snap it: it takes in heat. Is it a chemical reaction?"
+      options: ["No: a salt (usually ammonium nitrate or urea) dissolves in water, which is a physical change", "Yes: anything that takes in heat is a chemical reaction", "Yes: a change in temperature proves a new substance was made"]
+      answer: 0
+      feedback: [null, "Taking in heat isn't enough: dissolving can take heat in too, and no new substance is made.", "A temperature change is a sign to check, not proof. Ask whether the particles are still the same."]
+      explain: "Inside the pack, a salt (usually ammonium nitrate or urea) dissolves in water. The particles spread out but stay the same, so it is a physical change, as in Physical change. Dissolving can still take in energy from the surroundings, which is why the pack gets cold."
+    hint: "Think back to Physical change: when a salt dissolves, are the particles still the same?"
   - check:
       type: question
       q: "On the board, the nitrogen and oxygen only reacted at 1800 K, and the temperature fell. Why might an endothermic reaction stop on its own?"
@@ -107,6 +115,8 @@ tasks:
 
 ### Sort them
 
+### Cold, but is it a reaction?
+
 ### Stopping on its own
 
 ### Where the energy comes from
@@ -127,10 +137,10 @@ tasks:
   - check:
       type: question
       q: "A sports trainer needs something to reduce swelling on a sprained ankle, at a game far from a freezer. Which product, and why?"
-      options: ["An instant ice pack: its endothermic reaction takes energy from the ankle", "A hand warmer: its reaction is exothermic", "Either: both change temperature"]
+      options: ["An instant ice pack: as its salt dissolves, it takes in energy from the ankle", "A hand warmer: its reaction is exothermic", "Either: both change temperature"]
       answer: 0
       feedback: [null, "Warming would increase swelling.", "Their energy goes opposite ways."]
-      explain: "Endothermic for cooling, exothermic for warming: the direction of energy transfer is the design choice."
+      explain: "Taking energy in for cooling, giving it out for warming: the direction of energy transfer is the design choice. (The ice pack does this by dissolving, a physical change; the hand warmer by a reaction.)"
     hint: "Does a swollen ankle need energy taken away from it or added to it? Then think about which way each pack's energy goes."
 ```
 
@@ -157,7 +167,7 @@ check:
 
 ```step
 stage: info
-check: { type: reflect, text: "I compared my prediction about the ice pack with what endothermic means." }
+check: { type: reflect, text: "I compared my prediction about the cold fizz with what endothermic means." }
 ```
 
 Write one sentence: "At first I thought… Now I think… because…"
@@ -165,6 +175,6 @@ Write one sentence: "At first I thought… Now I think… because…"
 **Revision summary**
 
 - **Exothermic** reactions give out energy to their surroundings, so the surroundings get hotter: burning, respiration, hand warmers.
-- **Endothermic** reactions take in energy from their surroundings, so the surroundings get colder: instant ice packs, photosynthesis, bicarb and vinegar.
+- **Endothermic** reactions take in energy from their surroundings, so the surroundings get colder: citric acid and bicarb soda, photosynthesis, bicarb and vinegar.
 - Energy is never made or destroyed; it moves between the reaction and its surroundings.
 - There is no "cold energy": colder means less thermal energy.

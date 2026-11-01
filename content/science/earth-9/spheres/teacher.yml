@@ -1,16 +1,25 @@
 summary: Students name and describe Earth's four spheres, give examples of matter and processes in each, and recognise that spheres overlap and interact (AC9S9U03, node 1, a hinge node).
 time: 18
-timing: "Engage and Explore 7 min · Explain 6 min · Evaluate 3 min · Typical adds 1 min, Wider about 1 min"
+timing: "Engage and Explore 7 min · Explain 6 min · Evaluate 3 min · Typical adds 1 min"
 goals:
   - I can name the four spheres and say what each contains.
   - I can give an example of matter in each sphere.
   - I can explain that the spheres interact, with examples where they meet.
 before: |
-  A concept tutorial for introducing or revising the idea. Set the width with `?width=minimum`, `typical` (default) or `wider`.
+  A concept tutorial for introducing or revising the idea. Set the width with `?width=minimum` or `typical` (default); the wider step moved to these notes (1 Nov 2026).
 
   The hinge is the framework itself: students who can't place things in spheres can't place carbon flows between them. The board accepts two answers for the cloud (atmosphere or hydrosphere) and the soil (geosphere or biosphere) and explains why.
 
   Board notes: a simple drawn landscape; students click a thing, then choose its sphere. The wider question on cool burning is general; use local First Nations sources for detail about practice on your Country.
+
+  For First Nations educator review: moved from student text, 1 Nov 2026
+
+  ACARA elaboration (AC9S9U03): "investigating how First Nations Australians use fire-mediated chemical reactions to facilitate energy and nutrient transfer through firestick farming"
+
+  Moved from question in the Wider step "Elaborate: managing interactions" (step removed):
+
+  > For tens of thousands of years, many First Nations peoples have used small, cool fires to manage Country. Which spheres does a cool burn involve?
+
 running:
   - "Engage: count how many chose 'more than one'."
   - "Explore: discuss the cloud and the soil."

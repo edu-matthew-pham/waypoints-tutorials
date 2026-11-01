@@ -8,7 +8,7 @@ goals:
 before: |
   **The idea:** the course's three tools answer three different questions: **who can read it** (a cipher), **was it changed** (a checksum with a key) and **is this a fresh message from someone who has the key** (challenge and response). A secure system usually needs all three.
 
-  **Framing:** this is the defender's job. Students audit and harden their own system. The lesson does not have them attack each other's locks. If students want to test each other, run it as 'pass the pair': swap pairs' final locks, and try the real key against the lock; the lock should open for the key and refuse everything else.
+  **Framing:** this is the defender's job. Students audit and harden their own system. The optional step "try another pair's lock" (`tier: typical`, never required) is a teacher-led white-hat round (roadmap/rules.md T7): pairs try to open each other's lock only with that pair's permission, only on the classroom micro:bits, using the radio alone, then explain how they got in and how to fix it. Authorised, contained: find, understand, fix, report. Run it only if you want to; otherwise 'pass the pair' still works: swap pairs' final locks and try the real key against the lock; it should open for the key and refuse everything else.
 
   **The final system:** the key micro:bit knocks with a keyed checksum; the lock checks it, sends a random challenge, the key answers using the secret key, and the lock opens only on the right answer. The secret key never crosses the air.
 

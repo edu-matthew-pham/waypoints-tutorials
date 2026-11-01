@@ -158,7 +158,6 @@ tasks:
         - ["Small native mammals could recover as dingoes keep foxes in check", "Environmental"]
         - ["Sheep graziers could lose stock, and income, to dingo attacks", "Economic"]
         - ["Keeping thousands of kilometres of fence in repair costs a lot every year", "Economic", "Money spent or saved is an economic consideration, even when the spender is a government."]
-        - ["Dingoes matter in many First Nations cultures, and Traditional Owners want a say in how they are managed", "Social", "Who is heard, and whose culture is affected, is a social consideration."]
         - ["Is it fair to kill a native predator to protect introduced livestock?", "Ethical", "A question about what is right or fair is ethical, even when it also has costs."]
   - check:
       type: question

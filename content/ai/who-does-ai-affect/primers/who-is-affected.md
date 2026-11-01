@@ -16,7 +16,7 @@ The lens is like asking about a new school bus route: who gets a shorter trip, w
 
 ## Where the picture breaks
 
-Real systems affect people the lens can miss (families, taxpayers, people in other countries). Ask "who's missing?" as a fifth question with older students.
+Real systems affect people the lens can miss (families, taxpayers, people in other countries). Ask "who's missing?" as a fifth question when a class is ready for it.
 
 ## Cautions
 

@@ -1,6 +1,6 @@
 ---
 title: Who Does AI Affect?
-summary: "Real cases of AI in society, judged with one lens: who gains, who loses, who decides, and what's the catch? Automated decisions (exam grades, hiring), AI that acts, energy and water, the people who label data, whose work trained it, jobs and rules. Years 7–10: core ideas at Year 7, wider steps for older students."
+summary: "Real cases of AI in society, judged with one lens: who gains, who loses, who decides, and what's the catch? Automated decisions (exam grades, hiring), AI that acts, energy and water, the people who label data, whose work trained it, jobs and rules. Years 7–10: core ideas work from Year 7; wider steps add more cases, data and policy, for classes ready for them (your call)."
 tagline: "Find out who wins, who loses and who decides when AI is used."
 order: 3
 recap: true

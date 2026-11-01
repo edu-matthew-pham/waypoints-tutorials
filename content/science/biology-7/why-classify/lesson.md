@@ -123,28 +123,6 @@ tasks:
 
 ### Which system
 
-## Elaborate: other ways of knowing
-
-```step
-stage: modify
-tier: wider
-insight: "Different knowledge systems classify for different purposes; comparing them shows classification as purposeful and made by people."
-try: { playground: board, starter: "boards.yml#key", height: 600 }
-tasks:
-  - check: { type: board, text: "Identify two animals with the key again.", when: "n >= 2" }
-  - check:
-      type: question
-      q: "Many Aboriginal and Torres Strait Islander peoples group plants and animals in ways tied to Country: by uses, seasons, relationships between species and cultural knowledge. Scientific classification groups by shared features and ancestry. What does comparing them show?"
-      options: ["Each system is built for its purposes, and each holds knowledge the other may not", "Only one of them can be correct", "Classification systems never change"]
-      answer: 0
-      feedback: [null, "The two systems answer different questions, and they can even inform each other, so it isn't a matter of one being right.", "Scientific classification has itself changed many times, as you saw in Kingdoms."]
-      explain: "Every classification reflects the purposes and knowledge of the people who built it, and ecologists increasingly work with First Peoples' knowledge of species and seasons."
-```
-
-### The key again
-
-### Different purposes
-
 ## Evaluate: look back
 
 ```step

@@ -184,24 +184,6 @@ check:
     - ["Wet clothes on a washing line dry out.", "Evaporation", "Water particles escape from the wet cloth into the air as vapour, so the clothes dry."]
 ```
 
-## Elaborate: First Nations separation techniques
-
-```step
-stage: modify
-tier: wider
-insight: "Traditional techniques use the same property differences as lab methods."
-check:
-  type: sort
-  q: "Which property difference does each technique use?"
-  options: ["Some parts are lighter than others", "Some parts are bigger or look different", "Different boiling points"]
-  items:
-    - ["Winnowing: seeds are tossed in a coolamon so the breeze carries the husks away.", "Some parts are lighter than others", "Husks are lighter than seeds of the same size, so the breeze carries them off."]
-    - ["Yandying: the coolamon is rocked in a rhythm so seeds and heavier grit move to different parts of the dish.", "Some parts are lighter than others", "Grit is heavier than seed, so it moves differently when shaken."]
-    - ["Hand-picking: sticks and stones are picked out of the seeds by hand.", "Some parts are bigger or look different", "Sticks and stones are easy to see and grab, so you can just pick them out."]
-```
-
-Many Aboriginal communities have long processed grass seeds into flour. A coolamon, a shallow wooden dish, is one of the tools used.
-
 ## Elaborate: does the filter paper matter?
 
 ```step

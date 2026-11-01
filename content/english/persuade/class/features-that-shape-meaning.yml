@@ -22,7 +22,7 @@ questions:
     title: "Which feature?"
     type: question
     q: "\"Your school needs you.\" is…"
-    options: ["Speaking to the reader", "A question with an obvious answer", "Repetition"]
+    options: ["Speaking to the reader", "A rhetorical question", "Repetition"]
     answer: 0
     feedback: [null, "It does not ask anything.", "No phrase comes round twice."]
     explain: "It talks straight to the reader."

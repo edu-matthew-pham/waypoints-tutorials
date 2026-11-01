@@ -82,14 +82,11 @@ insight: "Node 5: properties come from formation and decide uses."
 tasks:
   - check: {"type":"question","q":"Granite is used for kitchen benchtops. Why is it suitable?","options":["Its minerals, mainly quartz and feldspar, are hard, and slow cooling locked them into large interlocking crystals","It is soft and easy to cut","It is made of layers","It cooled quickly, so it has no crystals"],"answer":0,"feedback":[null,"Softness would be a weakness on a benchtop.","Layers describe sedimentary rock.","Granite cooled slowly underground; quick cooling gives tiny crystals or glass."],"explain":"Granite's hard minerals resist scratching, and the tightly locked crystals make it strong and durable. Both come from how it formed: slow cooling of magma deep underground."}
   - check: {"type":"question","q":"Marble is used for statues but wears away faster outdoors in acid rain. Why?","options":["Marble is made of calcium carbonate, which reacts with acid","Marble is a soft sedimentary rock","Rain wears every rock away at the same rate","Marble is full of holes that let water in"],"answer":0,"feedback":[null,"Marble is metamorphic, not sedimentary.","Granite statues last far longer in the same rain; what the rock is made of matters.","Marble is dense, with tightly locked crystals; the acid attacks the surface."],"explain":"Marble forms from limestone, which is calcium carbonate. Acid slowly dissolves it, so details blur over time."}
-  - check: {"type":"question","q":"For thousands of years Wurundjeri people quarried greenstone at Wil-im-ee Moor-ring (Mount William, Victoria) to make axe heads, which were traded across south-eastern Australia. Why choose that stone?","options":["It is hard and tough, with fine, tightly locked grains, so a ground edge stays sharp and doesn't shatter","It is soft, so it is quick to shape","Its green colour made it easy to find","Any nearby stone would have worked as well"],"answer":0,"feedback":[null,"A soft stone would blunt quickly on wood.","Colour helps you recognise a stone, but it isn't why it works as an axe.","Stones differ a lot; this quarry was used and its axes traded far because the stone is good for the job."],"explain":"Choosing this stone and trading it widely shows detailed knowledge of rock properties. Its fine, interlocking grains come from how it formed, and they are what make it tough."}
   - check: {"type":"reflect","text":"I can link a rock property to how it formed and say why it suits a particular use."}
 ```
 
 ### A benchtop
 
 ### Marble outdoors
-
-### Choosing stone
 
 ### I can

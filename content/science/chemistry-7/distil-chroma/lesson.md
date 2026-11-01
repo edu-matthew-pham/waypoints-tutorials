@@ -172,25 +172,6 @@ check:
     - ["Distillation: alcohol is separated from water.", "Boiling point", "Alcohol boils at about 78 °C and water at 100 °C, so the alcohol turns to vapour first."]
 ```
 
-## Elaborate: First Nations knowledge and plant oils
-
-```step
-stage: modify
-tier: wider
-insight: "Traditional and modern methods of getting substances out of plants both rely on property differences."
-check:
-  type: sort
-  q: "Which property or process does each step use?"
-  options: ["Breaking up the leaves so substances can get out", "Some substances dissolve in water", "The oil is carried away with steam, then condensed", "The oil floats on the water"]
-  items:
-    - ["Crushing tea tree leaves", "Breaking up the leaves so substances can get out"]
-    - ["Soaking crushed leaves in water", "Some substances dissolve in water"]
-    - ["Modern steam distillation: steam passes through the leaves", "The oil is carried away with steam, then condensed"]
-    - ["Modern steam distillation: separating the collected liquid", "The oil floats on the water", "The oil is drawn off the top of the condensed water."]
-```
-
-The Bundjalung people of northern New South Wales have long used the leaves of the tea tree, crushing them or soaking them in water to use as medicine. Today tea tree oil is extracted by steam distillation.
-
 ## Elaborate: reading a chromatogram
 
 ```step

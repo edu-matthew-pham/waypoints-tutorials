@@ -8,7 +8,7 @@ goals:
 before: |
   A concept tutorial for introducing or revising the idea; it is best beside a hands-on test with a thermometer (citric acid and bicarb gets colder; magnesium in acid gets hotter). Set the width with `?width=minimum`, `typical` (default) or `wider`. One lesson for two nodes, after How can you tell a reaction happened?
 
-  Neither is a hinge node. The misconception: cold is a thing that flows ("cold energy"). The prediction targets it.
+  Neither is a hinge node. The misconception: cold is a thing that flows ("cold energy"). The prediction targets it. The instant ice pack appears only as a contrast: it gets cold because a salt (usually ammonium nitrate or urea) dissolves, a physical change, not a reaction.
 
   Board notes: the reaction board warms or cools the gas as reactions give out or take in energy. The endothermic reaction (nitrogen + oxygen → nitrogen monoxide, about +180 kJ per mole of N₂) is real: it is how engines and lightning make nitrogen oxides, and it only goes at a useful rate above about 1500 to 1800 K, so the board starts at 1800 K and cools as the reaction takes energy in. In a real engine the burning fuel keeps supplying energy, so the temperature doesn't fall; with no fuel on the board, it does. The board runs its particles at a third of the temperature it shows (`kscale: 3`) so they stay countable on screen; the speeds are a model, the temperatures are real. Both reactions stop at their target.
 running:
@@ -18,7 +18,7 @@ running:
   - "In your own words: the two thermometers with energy arrows are the evidence."
 struggle: "Thinking about the surroundings, not the reaction. When a student says 'the reaction gets cold, so it gives out cold', ask where the energy went and let them redraw the arrow."
 stuck:
-  - see: "A student says the ice pack gives out cold."
+  - see: "A student says the cold fizz gives out cold."
     ask: "Is cold something you can add, or is it less of something?"
     fix: "Less thermal energy. The reaction takes energy in from your hand, so your hand cools."
   - see: "A student mixes up exo and endo."
@@ -39,4 +39,4 @@ exit:
 explain: |
   **Exothermic** reactions give out energy to their surroundings, which get hotter: burning, respiration, hand warmers.
 
-  **Endothermic** reactions take in energy from their surroundings, which get colder: instant ice packs, photosynthesis. Energy moves; it is never made or destroyed.
+  **Endothermic** reactions take in energy from their surroundings, which get colder: citric acid and bicarb soda, photosynthesis. Energy moves; it is never made or destroyed.

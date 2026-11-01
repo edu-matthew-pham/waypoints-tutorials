@@ -27,7 +27,7 @@ explainClip:
     - wait: 3600
 hook: "A roller coaster has no engine after the first climb. Yet it races down, swoops up the next hill and keeps going for a minute or more. Where does its energy come from?"
 ---
-In earlier years you met sound, heat, light and electricity one at a time, and here you'll sort them, and a few others, into two big families.
+In earlier years you met sound, heat, light and electricity one at a time, and here you'll sort them, and a few others, into two big families. In the Australian Curriculum we sort energy into two families; some books sort it differently, into stores and transfers. However it is sorted, the total amount of energy stays the same.
 
 ## Engage: the book on the shelf
 
@@ -89,9 +89,9 @@ tasks:
   - check:
       type: question
       q: "What do all kinds of kinetic energy have in common, and how is potential energy different?"
-      options: ["Kinetic energy is active now (something moving, vibrating or flowing); potential energy is stored, ready to be released", "Kinetic energy is only in moving objects; heat, light and sound aren't kinetic", "Potential energy is energy that might exist one day but doesn't yet", "Kinetic energy is useful; potential energy is wasted"]
+      options: ["Kinetic energy is active now (something moving, vibrating or flowing); potential energy is stored, ready to be released", "Kinetic energy is energy that's about to be used", "Potential energy is energy that might exist one day but doesn't yet", "Kinetic energy is useful; potential energy is wasted"]
       answer: 0
-      feedback: [null, "Heat is particles moving, sound is vibrating air and electricity is moving charge: all active, so all kinetic.", "Potential energy is really there now, just stored: a stretched rubber band has it before you let go.", "Both can be useful. The difference is whether the energy is active now or stored."]
+      feedback: [null, "Energy waiting to be used is stored: that's potential. Kinetic energy is being used right now: something moving, vibrating or flowing.", "Potential energy is really there now, just stored: a stretched rubber band has it before you let go.", "Both can be useful. The difference is whether the energy is active now or stored."]
       explain: "Ask 'is it active now, or stored?' Active (moving, vibrating, flowing) is kinetic; stored and ready to be released is potential."
   - check: { type: reflect, text: "I can sort energy into kinetic and potential, with examples of each." }
 ```

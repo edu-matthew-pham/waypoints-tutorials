@@ -9,6 +9,8 @@ before: |
   A Quick check: a few questions on what students should know for AC9S9U02 nodes 2, 4 and 5, which you teach in class. It has no board, no clip and no new teaching, and it is optional, so it never holds up course completion. Set the width with `?width=minimum`, `typical` (default) or `wider`.
   
   Use it as a self-test after your teaching, a starter, or revision. The Gametes and Reproduction lessons on screen cover gametes and why sexual reproduction makes variation; structures and strategies are for class. Reproductive systems are taught under your school's own program and guidelines; the questions use only structure and function.
+
+  Family-tree tasks use made-up families. Never ask students about their own; a student who wants to use their own family can choose to.
 running:
   - "Node 2: use a flower dissection or labelled diagram before the sort."
   - "Node 5: ask for a named context (a bare paddock, a new disease) before the answer."

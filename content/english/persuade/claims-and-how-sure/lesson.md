@@ -2,7 +2,7 @@
 order: 2
 unit: warmup
 title: "Claims and how sure"
-summary: "A bare assertion is a claim with nothing behind it. A writer can back a claim with evidence or a source, and can soften it with small words such as may, often, some and it seems. Softening is honest about how sure the writer is, and it changes how a reader trusts the writer."
+summary: "A bare assertion is a claim with nothing behind it. A writer can back a claim with evidence or a source, and can soften it with modal verbs such as may and small words such as often, some and it seems. Softening is honest about how sure the writer is, and it changes how a reader trusts the writer."
 language: maths
 node: [AC9E5LA02 n1, AC9E5LA02 n2]
 explainPicture: { ref: text.yml#explain-pic, caption: "Words that say how sure the writer is. A reader can tell a guess from a promise." }
@@ -12,12 +12,12 @@ A **bare assertion** is a claim with nothing behind it: *The new timetable is a 
 
 A writer can **back up** a claim with evidence, such as a count, or with a named source. A writer can also **temper** a claim, which means choose words so it is exactly as sure as what the writer knows. Four small moves do this:
 
-- A **can-or-will word**: *may*, *might* and *could* leave room for doubt; *will* and *must* leave none.
+- A **can-or-will word**: *may*, *might* and *could* leave room for doubt; *will* and *must* leave none. These are called **modal verbs**.
 - A **how-often word**: *sometimes* and *often* are careful; *always* and *never* are firm.
 - A **how-many word**: *some* and *most* are careful; *all* is firm.
 - A **distancing phrase**: *it seems that*, *research suggests*.
 
-Pick the word that fits the evidence. A claim that admits its limits is honest, and that can make a careful reader trust the writer more.
+How sure a claim sounds is called its **modality**: *might* is low modality, and *will* and *must* are high. Pick the word that fits the evidence. A claim that admits its limits is honest, and that can make a careful reader trust the writer more.
 
 ## Predict: which claim would you trust?
 
@@ -43,7 +43,7 @@ smaller:
 check: { type: board, text: "Place each sentence: possible, probably or certain.", when: "n_right = 6 and n_wrong = 0", explain: "Might and could leave the closing as a possibility. Will probably and is likely to say it is more likely than not. Will and is certain to leave no doubt." }
 ```
 
-Did a small word change how sure the sentence sounded? That is tempering.
+Did one modal verb change how sure the sentence sounded? That is modality, and choosing it to fit the evidence is tempering.
 
 ## Worked example: bare or backed?
 
@@ -95,7 +95,7 @@ tasks:
 
 ```step
 stage: modify
-insight: "Choosing a can-or-will word that fits the evidence shows how much a claim should say."
+insight: "Choosing a modal verb that fits the evidence shows how much a claim should say."
 try: { playground: board, starter: "text.yml#vary", height: 340 }
 hint: ["How much evidence is there?", "Which word says no more than the evidence does?"]
 check: { type: board, text: "Choose the word that fits what the evidence shows.", when: "n_right = 2 and n_wrong = 0", explain: "Six of thirty is a small group, so 'might' fits. Rain two kilometres away and heading this way makes 'will probably' fit." }
@@ -113,7 +113,7 @@ check: { type: board, text: "Colour every softening word.", when: "chains_ok = 1
 
 ## Make: a claim that earns trust
 
-In your own document, write at least three sentences about school lunches. Include a claim with a word that says how sure you are (such as *may*, *might*, *could*, *probably* or *will*), and at least one thing that backs it up.
+In your own document, write at least three sentences about school lunches. Include a claim with a word that says how sure you are (a modal verb such as *may*, *might*, *could* or *will*, or a word such as *probably*), and at least one thing that backs it up.
 
 Here is one example: "School lunches **may** be too small for older students. A survey in my class found that **most** of us are hungry by two o'clock. The canteen **might** sell bigger rolls."
 

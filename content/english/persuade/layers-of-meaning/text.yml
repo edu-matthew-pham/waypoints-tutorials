@@ -5,9 +5,9 @@ widget: cohesion
 mode: parts
 layout: inline
 roles: big small opposite
-role big: Exaggerates
-role small: Plays down
-role opposite: Says the opposite
+role big: Hyperbole (exaggerates)
+role small: Understatement (plays down)
+role opposite: Irony (says the opposite)
 s opposite: 'What lovely weather,' she said, shaking the rain off her coat.
 para:
 s big: I've told you a million times to close the gate.
@@ -32,9 +32,9 @@ widget: cohesion
 mode: parts
 layout: inline
 roles: big small opposite
-role big: Exaggerates
-role small: Plays down
-role opposite: Says the opposite
+role big: Hyperbole (exaggerates)
+role small: Understatement (plays down)
+role opposite: Irony (says the opposite)
 s big: My bag weighs a tonne.
 para:
 s small: 'It is a trifle warm,' said the explorer, in the desert at noon.
@@ -54,9 +54,9 @@ mode: parts
 layout: inline
 answer: on
 roles: big small opposite
-role big: Exaggerates
-role small: Plays down
-role opposite: Says the opposite
+role big: Hyperbole (exaggerates)
+role small: Understatement (plays down)
+role opposite: Irony (says the opposite)
 s big: The line was a mile long.
 para:
 s small: 'Just a scratch,' she said, holding a broken arm.

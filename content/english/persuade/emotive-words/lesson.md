@@ -12,6 +12,8 @@ Some sentences **report**: *The new road will carry 2,000 cars a day.* Some sent
 
 Words that push a feeling are called **emotive words**. Some praise (*marvellous*, *charming*) and some criticise (*ghastly*, *grim*). A writer picks them to move the reader toward a view, so the words **position** the reader for or against the topic.
 
+Reporting words are **objective** language. Emotive words are one kind of **subjective** language.
+
 Emotive words are not always wrong. A review or a speech can use them on purpose. The skill is to notice them and ask what they are doing.
 
 ## Predict: which one pushes a feeling?
@@ -26,7 +28,7 @@ check:
   actual: "'The river savagely swallowed the street.' Savagely and swallowed make the river sound like a hungry animal. The other two only report."
 ```
 
-## Try: colour the pushing words
+## Try: colour the emotive words
 
 ```step
 stage: run
@@ -60,7 +62,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Here is Nib's news report on a council meeting, one sentence per line. A news report should only report. One sentence pushes a feeling. Click it."
+      text: "Here is Nib's news report on a council meeting, one sentence per line. A news report should only report. One sentence uses emotive words. Click it."
       answer: 4
       fault: logic
       misconception: emotive-in-news
@@ -74,7 +76,7 @@ tasks:
       explain: "Cramped and filthy are emotive. They steer the reader to dislike the room."
 ```
 
-### Pushing or reporting?
+### Emotive or reporting?
 
 ```worked
 \text{Read the word} :: Does it only describe, or does it praise or criticise?
@@ -82,11 +84,11 @@ tasks:
 \text{Ask: who is it steering?} :: The word positions the reader for or against.
 ```
 
-### Spot the pushing word in the report
+### Spot the emotive word in the report
 
 ### How does the wording position the reader?
 
-## Vary: choose the pushing word
+## Vary: choose the emotive word
 
 ```step
 stage: modify
@@ -96,7 +98,7 @@ hint: ["Which word shows admiration?", "Which word shows dislike?"]
 check: { type: board, text: "Choose the word that fits what each sentence needs to do: praise the library, then criticise the pie.", when: "n_gaps_right = 2", explain: "Splendid praises the library. Greasy criticises the pie." }
 ```
 
-## Practise: colour the pushing words
+## Practise: colour the emotive words
 
 ```step
 stage: practise
@@ -112,13 +114,13 @@ In your own document, write at least four sentences about the school canteen: tw
 
 Here is one example: "The canteen has a **warm**, **friendly** feel. Its fresh rolls are **delicious**. The queue, however, is a **dreary** crawl. The tables are **sticky** and the floor is **filthy**."
 
-Then swap with a partner. Circle the words that push each feeling. Which words could you swap for plain reporting words?
+Then swap with a partner. Circle the emotive words. Which words could you swap for plain reporting words?
 
 ```step
 stage: make
 insight: "Writing about one place twice, once to praise and once to criticise, puts emotive words to use."
 hint: ["Which words would make a reader like the canteen?", "Which would make a reader dislike it?"]
-check: { type: reflect, text: "I wrote two sentences that praise the canteen and two that criticise it, and a partner and I circled the words that push each feeling." }
+check: { type: reflect, text: "I wrote two sentences that praise the canteen and two that criticise it, and a partner and I circled the emotive words." }
 ```
 
 ## In your own writing

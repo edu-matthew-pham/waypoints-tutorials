@@ -5,7 +5,7 @@ woven: [AC9S9H01, AC9S9I06]
 assumes: [AC9S10U03 n1]   # scale and structure of the universe: taught in class (no tutorial yet)
 unit: universe
 title: How did the universe begin?
-summary: "The big bang theory: space, time, matter and energy began about 13.8 billion years ago in an extremely hot, dense state, and the universe has expanded and cooled ever since: from particles to atoms, stars, galaxies and planets."
+summary: "The big bang theory: the universe was very hot and dense 13.8 billion years ago, and has been expanding and cooling since, from particles to atoms, stars, galaxies and planets. Whether time itself began then is still an open question."
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:
@@ -17,7 +17,7 @@ explainPicture: { ref: boards.yml#explain, caption: "A patch of the universe soo
 explainClip:
   query: { code: "@boards.yml#explain", fresh: 1, id: explain }
   caption: "The big bang"
-  say: "The universe began hot and dense, and has expanded and cooled ever since."
+  say: "The universe was very hot and dense, and has expanded and cooled ever since."
   clip:
     - caption: { text: "13.8 billion years ago: extremely hot and dense, and space began to expand.", say: "Thirteen point eight billion years ago, the universe was extremely hot and dense." }
     - wait: 3940
@@ -43,8 +43,8 @@ insight: "Students who picture an explosion at a point in empty space expect a c
 check:
   type: predict
   q: "What does the big bang theory say happened?"
-  options: ["A huge explosion at one point in empty space, throwing matter outwards", "Space, time and matter began together in a hot, dense state, and space itself has been expanding ever since", "Stars collided to make the universe", "The universe has always looked the way it does now"]
-  actual: "Space, time and matter began together, extremely hot and dense, and space itself has been expanding and cooling ever since. There was no empty space for it to explode into, and there is no centre."
+  options: ["A huge explosion at one point in empty space, throwing matter outwards", "The universe was very hot and dense 13.8 billion years ago, and space itself has been expanding ever since", "Stars collided to make the universe", "The universe has always looked the way it does now"]
+  actual: "The universe was very hot and dense 13.8 billion years ago, and has been expanding since; whether time itself began then is still an open question. Space itself has been expanding and cooling everywhere: it wasn't an explosion into empty space, and there is no centre."
 ```
 
 ## Explore: 13.8 billion years
@@ -87,7 +87,7 @@ tasks:
       options: ["About 13.8 billion years ago; it has been expanding and cooling ever since", "About 4.6 billion years ago; it has been expanding and cooling ever since", "About 13.8 billion years ago; it has been expanding and heating up", "About 13.8 billion years ago; it expanded at first and has stayed the same size since the galaxies formed"]
       answer: 0
       feedback: [null, "4.6 billion years is the age of the sun and Earth, which formed long after the big bang.", "As the universe expands, its energy spreads out and it cools: that is why atoms could form at 380 000 years.", "It is still expanding: distant galaxies are still moving apart (next lesson)."]
-  - check: { type: reflect, text: "I can describe the big bang as the origin of space, time and matter 13.8 billion years ago, and outline the main stages as the universe expanded and cooled." }
+  - check: { type: reflect, text: "I can describe the big bang (the universe very hot and dense 13.8 billion years ago, expanding since), and outline the main stages as the universe expanded and cooled." }
 ```
 
 ### Order
@@ -141,6 +141,6 @@ Write one sentence: "At first I thought… Now I think… because…"
 
 **Revision summary**
 
-- The **big bang theory**: space, time, matter and energy began about **13.8 billion years ago**, extremely hot and dense; the universe has been **expanding and cooling** ever since.
-- Stages: inflation → protons and neutrons → hydrogen and helium nuclei (3 min) → atoms and free light (380 000 years) → first stars (about 200 million years) → galaxies → the sun and Earth (9.2 billion years).
+- The **big bang theory**: the universe was very hot and dense **13.8 billion years ago**, and has been **expanding and cooling** since; whether time itself began then is still an open question.
+- Stages: inflation (a leading idea) → protons and neutrons → hydrogen and helium nuclei (3 min) → atoms and free light (380 000 years) → first stars (about 200 million years) → galaxies → the sun and Earth (9.2 billion years).
 - Heavier elements were made **in stars**.

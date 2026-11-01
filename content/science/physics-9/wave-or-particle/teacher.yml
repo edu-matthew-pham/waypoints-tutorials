@@ -23,7 +23,7 @@ stuck:
   - see: "A student says light is both a wave and a particle at once."
     ask: "In which experiments does it act like each?"
     fix: "Like a wave when it bends and spreads, like photons when it hands over energy to single electrons. It is one thing described by two models."
-stretch: "Can you think of a model from another subject that is a useful tool but not a literal copy? (A map, a circuit diagram, the water-flow model of electricity.)"
+stretch: "Can you think of a model from another subject that is a useful tool that shows some things well and leaves others out? (A map, a circuit diagram, the water-flow model of electricity.)"
 support: "Give a two-column table (Wave model, Particle model) with the six phenomena on slips to place, and a sentence starter for each: 'The ___ model fits because ___.'"
 leads: |
   Next: Year 9 energy (conservation and efficiency).
@@ -35,4 +35,4 @@ exit:
 explain: |
   The **particle model** explains conduction, convection and static charge. The **wave model** explains sound, reflection, refraction and the electromagnetic spectrum. Light also behaves as **photons** when it gives energy to single electrons.
 
-  A model is a **tool** with a domain of usefulness, not a literal description.
+  A model is a **tool** that doesn't tell the whole story: each one shows some things well and leaves others out.

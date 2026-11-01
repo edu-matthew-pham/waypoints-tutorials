@@ -170,7 +170,7 @@ tasks:
       options: ["Air conducts poorly, and trapped in small pockets it can't form convection currents", "Air is warm", "Air reflects heat back"]
       answer: 0
       feedback: [null, "Air is not warm in itself: it is good at not passing energy on.", "Reflecting is radiation, which shiny surfaces do. Fibres work by trapping air."]
-      explain: "Gas particles are far apart, so conduction is poor; in tiny pockets the air can't circulate, so convection is blocked too. Possum-skin cloaks, made and worn by many First Nations peoples of south-eastern Australia, use the same idea: dense fur trapping air."
+      explain: "Gas particles are far apart, so conduction is poor; in tiny pockets the air can't circulate, so convection is blocked too."
 ```
 
 ### Saucepans

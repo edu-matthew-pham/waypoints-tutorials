@@ -9,6 +9,8 @@ before: |
   A Quick check: a few questions on what students should know for AC9S10U01 nodes 2, 5 and 6, which you teach in class. It has no board, no clip and no new teaching, and it is optional, so it never holds up course completion. Set the width with `?width=minimum`, `typical` (default) or `wider`.
   
   Use it as a self-test after your teaching, a starter, or revision. DNA, meiosis and Punnett squares are on screen (nodes 1, 3 and 4). The notation here is XN for the normal allele and Xn for the condition allele; use whichever your class uses, as long as it is consistent.
+
+  Family-tree tasks use made-up families. Never ask students about their own; a student who wants to use their own family can choose to.
 running:
   - "Node 2: sort first, then ask students to draw a cell dividing both ways."
   - "Node 6: have students draw the Punnett square before they read the options."

@@ -2,13 +2,13 @@
 order: 9
 unit: challenge
 title: "Challenge: judge the review"
-summary: "A made-up film review has strong words, a source, a bare claim and an exaggeration. Students judge it in steps: name each feature, judge whether it works for the audience, judge two sources, then write their own verdict with evidence from the review."
+summary: "A made-up film review has emotive words, a source, a bare assertion and hyperbole. Students judge it in steps: name each feature, judge whether it works for the audience, judge two sources, then write their own verdict with evidence from the review."
 language: maths
 node: [AC9E8LY03 n1, AC9E8LY03 n2]
 explainPicture: { ref: text.yml#explain-pic, caption: "A review has parts. Judge each part for its audience and purpose." }
 hook: "A review says a film is 'the best of the year' and 'a must-see'. Should you buy a ticket?"
 ---
-This is a made-up review of a made-up film, *Lantern Cove*, written to persuade **parents choosing a family film**. You will judge it step by step using what you learned in this course: strong words, sources, bare claims and devices. An optional last step asks you to judge a real review you find yourself.
+This is a made-up review of a made-up film, *Lantern Cove*, written to persuade **parents choosing a family film**. You will judge it step by step using what you learned in this course: emotive words, sources, bare assertions and rhetorical devices. An optional last step asks you to judge a real review you find yourself.
 
 A good judgement says **what works, for whom, and why**. A review can be effective for its purpose and still have a weak part.
 
@@ -34,8 +34,8 @@ insight: "Labelling the sentences by their feature shows what each part of the r
 try: { playground: board, starter: "text.yml#run", height: 520 }
 hint: ["Is there a named person who knows?", "Is it a judging word, an exaggeration or a claim with nothing behind it?"]
 smaller:
-  check: { type: question, q: "'The queue was a thousand years long.' Which feature is this?", options: ["A named source", "An exaggeration", "A bare assertion"], answer: 1, feedback: ["No one is named.", null, "It is not a claim to check. It stretches the truth for effect."], explain: "A queue cannot be a thousand years long, so the line exaggerates." }
-check: { type: board, text: "Label each sentence with its feature.", when: "n_right = 6", explain: "Heart-melting hero and glorious gold light are strong judging words. Tessa Wren and the school librarian are named sources. A million years exaggerates. Everyone knows is a bare assertion." }
+  check: { type: question, q: "'The queue was a thousand years long.' Which feature is this?", options: ["A named source", "Hyperbole (an exaggeration)", "A bare assertion"], answer: 1, feedback: ["No one is named.", null, "It is not a claim to check. It stretches the truth for effect."], explain: "A queue cannot be a thousand years long, so the line exaggerates." }
+check: { type: board, text: "Label each sentence with its feature.", when: "n_right = 6", explain: "Heart-melting hero and glorious gold light are emotive words. Tessa Wren and the school librarian are named sources. A million years is hyperbole. Everyone knows is a bare assertion." }
 ```
 
 Which labels needed you to look back at an earlier lesson?
@@ -54,7 +54,7 @@ tasks:
         - ["Critic Tessa Wren, who has reviewed films for twenty years, says the first scene took four months to draw by hand.", "Works for this audience", "A named critic who knows films."]
         - ["Everyone knows it will win awards.", "Weak for this audience", "A bare assertion with no source."]
         - ["Some critics say it is good.", "Weak for this audience", "A vague source."]
-        - ["The brave little tugboat is a heart-melting hero.", "Works for this audience", "Warm words suit a family film."]
+        - ["Warm words like 'heart-melting' suit parents choosing a film for young children.", "Works for this audience", "Emotive words are weak as evidence, but warm ones can suit this reader and purpose: parents choosing a gentle family film."]
         - ["ToyBarn, a shop that sells toys from the film, says it is the finest film ever made.", "Weak for this audience", "Named, but it gains from selling the film's toys."]
         - ["The school librarian who runs the film club says it kept her group silent for two hours.", "Works for this audience", "A named source who watched a group."]
   - check:
@@ -77,7 +77,7 @@ tasks:
 ### Judge a part of the review
 
 ```worked
-\text{Name the feature} :: Strong words, a source, a bare claim or a device?
+\text{Name the feature} :: Emotive words, a source, a bare assertion or a device?
 \text{Name the audience and purpose} :: Parents choosing a family film.
 \text{Judge it with a reason} :: Works or weak, because...
 ```

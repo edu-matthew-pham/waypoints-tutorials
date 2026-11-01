@@ -11,6 +11,17 @@ before: |
   Not a hinge node, but its misconception is stubborn: students expect a sample to be gone after two half-lives, or each nucleus to decay at its half-life. The prediction tests the first; the "one nucleus" question tests the second.
 
   Board notes: the sample is simulated: in each tenth of a half-life every remaining nucleus decays with the same chance (about 6.7%), so the count halves on average each half-life but wobbles, more so with 100 nuclei than with 400. Each Start again is a new random sample. The dashed curve (exact halving) appears once a run has finished. Time is shown in the isotope's own unit.
+
+  For First Nations educator review: moved from student text, 1 Nov 2026
+
+  Moved from question, task "More than 60 000 years" in the Wider step "Elaborate: dating the past" (task removed):
+
+  > Sites in northern Australia show First Peoples were there more than 60 000 years ago. Radiocarbon dates the younger layers; older layers are dated by other methods, such as luminescence (when sand grains were last in sunlight). Why does using more than one method matter?
+
+  Moved from that question's explain:
+
+  > Where their ranges overlap the methods are checked against each other, and agreement between independent methods is strong evidence. Together with First Peoples' own knowledge of Country, they show people have lived in Australia for more than 60 000 years.
+
 running:
   - "Engage: tally 20 / 0 / 40 / 60. The zeros are the misconception to work on."
   - "Explore: after two runs, ask which nuclei decayed (different ones) and whether the graph changed much (not much)."

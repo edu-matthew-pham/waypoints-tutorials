@@ -20,7 +20,7 @@ before: |
 running:
   - "Predict: ask which feeling each sentence wants."
   - "Try: ask students to say why each word is in its colour."
-  - "Make: partners circle the pushing words."
+  - "Make: partners circle the emotive words."
 stuck:
   - see: "A student colours 'large' as praise."
     ask: "Does it say if the size is good or bad?"

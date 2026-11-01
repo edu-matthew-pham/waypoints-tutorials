@@ -1,4 +1,4 @@
-summary: Students describe the big bang as the origin of space, time and matter about 13.8 billion years ago and outline the main stages as the universe expanded and cooled (AC9S10U03, node 2, a hinge node).
+summary: Students describe the big bang (the universe very hot and dense 13.8 billion years ago, expanding since; whether time began then is an open question) and outline the main stages as the universe expanded and cooled (AC9S10U03, node 2, a hinge node).
 time: 22
 timing: "Engage and Explore 7 min · Explain 9 min · Evaluate 3 min · Typical adds 1 min, Wider about 2 min"
 goals:
@@ -15,10 +15,10 @@ running:
   - "Engage: count how many chose the explosion."
   - "Explore: ask what happened to the temperature at every step."
   - "Explain: the atoms question is the checkpoint (cooling is the cause)."
-struggle: "Picturing space itself expanding, not an explosion into empty space. When a student asks what it expanded into, ask whether the model has an 'outside' if space itself began then."
+struggle: "Picturing space itself expanding, not an explosion into empty space. When a student asks what it expanded into, ask whether space needs an 'outside' to stretch."
 stuck:
   - see: "A student asks what was before the big bang, or what it expanded into."
-    ask: "If space itself began then, is there an 'outside' or a 'before' in the model?"
+    ask: "Does the model describe an 'outside' or a 'before'?"
     fix: "Not in the model: it describes the universe from the first instant. Those are open questions."
 stretch: "Why does looking at very distant galaxies mean looking back in time?"
 support: "Give a timeline strip with the stage names to place."
@@ -28,4 +28,4 @@ exit:
   q: "Outline three stages of the universe after the big bang."
   a: "For example: the first nuclei of hydrogen and helium (3 minutes), atoms forming and light set free (380 000 years), the first stars (about 200 million years), galaxies (about 1 billion years)."
 explain: |
-  **The big bang theory:** space, time, matter and energy began about 13.8 billion years ago in an extremely hot, dense state; the universe has expanded and cooled since, forming nuclei, atoms, stars and galaxies. Heavier elements were made in stars.
+  **The big bang theory:** The universe was very hot and dense 13.8 billion years ago, and has been expanding since; whether time itself began then is still an open question. As it expanded it cooled, forming nuclei, atoms, stars and galaxies. Heavier elements were made in stars.

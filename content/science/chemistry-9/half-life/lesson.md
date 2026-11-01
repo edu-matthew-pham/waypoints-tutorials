@@ -174,13 +174,6 @@ tasks:
       answer: 0
       feedback: [null, "It keeps decaying at the same rate; there is just very little left.", "Old charcoal and bone still contain carbon, but almost none of it is carbon-14."]
       explain: "Each half-life halves what is left: after 9 half-lives (about 52 000 years) less than 0.2% remains, and tiny traces of modern carbon would swamp it."
-  - check:
-      type: question
-      q: "Sites in northern Australia show First Peoples were there more than 60 000 years ago. Radiocarbon dates the younger layers; older layers are dated by other methods, such as luminescence (when sand grains were last in sunlight). Why does using more than one method matter?"
-      options: ["Independent methods that agree make the dates much more trustworthy", "Radiocarbon is always wrong", "It doesn't: one method is enough"]
-      answer: 0
-      feedback: [null, "Radiocarbon is reliable within its range; it just can't reach that far back.", "Each method has its own assumptions; agreement between them is strong evidence."]
-      explain: "Where their ranges overlap the methods are checked against each other, and agreement between independent methods is strong evidence. Together with First Peoples' own knowledge of Country, they show people have lived in Australia for more than 60 000 years."
 ```
 
 ### Carbon-14
@@ -188,8 +181,6 @@ tasks:
 ### An old fireplace
 
 ### The limit
-
-### More than 60 000 years
 
 ## Evaluate: look back
 

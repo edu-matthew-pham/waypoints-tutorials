@@ -17,9 +17,9 @@ pathways:
   - id: inquiry
     title: Does AI Help Us Learn?
     summary: Investigate the meaning of learning, the evidence about AI and the changing role of tools and education.
-    fit: "Years 7–10: core ideas at Year 7, wider steps for older students."
+    fit: "Usually Years 7–10. Core ideas work from Year 7; wider steps add real research studies, for classes ready for them."
     about: |
-      Comes after AI Foundations: it tests whether the Foundations habits actually help students learn. A sustained inquiry that tests ideas without prescribing a final position. Each lesson's core idea runs through a personal case at Year 7 level; typical and wider steps add real studies, assessment and policy for older students (add `?width=wider` to a lesson link to start a class there).
+      Comes after AI Foundations: it tests whether the Foundations habits actually help students learn. A sustained inquiry that tests ideas without prescribing a final position. Each lesson's core idea runs through a personal case that works from Year 7; typical and wider steps add real research studies, assessment and policy, for classes ready to read them (your call; add `?width=wider` to a lesson link to start a class there).
 
       For teachers: [Choosing AI tools for learning](../../../choosing-ai-tools/) applies this course's questions about evidence to choosing and trialling tools.
     courses:
@@ -27,9 +27,9 @@ pathways:
   - id: society
     title: AI and society
     summary: "Judge real cases of AI in people's lives and in society with one lens: who gains, who loses, who decides, and what's the catch?"
-    fit: "Years 7–10: core ideas at Year 7, wider steps for older students."
+    fit: "Usually Years 7–10. Core ideas work from Year 7; wider steps add more cases, data and policy, for classes ready for them."
     about: |
-      Two parallel courses after AI Foundations. Neither needs the other, or Does AI Help Us Learn?. Cases, not lectures; every activity works on paper. Add `?width=wider` to a lesson link to start an older class at the wider steps.
+      Two parallel courses after AI Foundations. Neither needs the other, or Does AI Help Us Learn?. Cases, not lectures; every activity works on paper. Wider steps add more cases, data and policy, for classes ready for them (your call); add `?width=wider` to a lesson link to start a class there.
 
       Privacy basics (digital footprint, the Australian Privacy Principles) are taught in How computers work › Cyber safety and privacy; these courses link there.
 

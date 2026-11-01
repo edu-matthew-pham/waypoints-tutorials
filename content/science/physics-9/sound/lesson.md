@@ -150,21 +150,6 @@ tasks:
 
 ### Why faster
 
-## Elaborate: an instrument
-
-```step
-stage: modify
-tier: wider
-insight: "Applying the wave model to a real instrument shows pitch and loudness set by the vibrating air and the size of the instrument."
-check:
-  type: question
-  q: "A yidaki (didjeridu) is a hollow wooden tube. The player's lips vibrate the air inside it. A longer tube makes a lower note. Using the wave model, which is the best explanation?"
-  options: ["The longer column of air vibrates more slowly, so the frequency is lower and the pitch is lower", "A longer tube makes the sound louder, so it sounds lower", "Sound travels slower in longer tubes"]
-  answer: 0
-  feedback: [null, "Loudness and pitch are different properties.", "The speed in the air stays about the same; the vibration slows down."]
-  explain: "A longer air column vibrates at a lower frequency, so the pitch is lower. The material and shape of the tube also affect how the sound carries."
-```
-
 ## Evaluate: look back
 
 ```step

@@ -142,22 +142,6 @@ check:
 hint: "For each one, ask whether it is speeding up, slowing down or staying at the same speed, and what the forward and backward forces would have to be doing to make that happen."
 ```
 
-## Elaborate: a boomerang
-
-```step
-stage: modify
-tier: wider
-insight: "A shaped object in flight shows forces that aren't pushes in contact, extending the list of forces students can name."
-check:
-  type: question
-  q: "First Peoples of Australia shaped boomerangs with a curved upper surface, like an aircraft wing. In flight, as air moves over it, which force does that shape mainly create?"
-  options: ["Lift: air pushing the boomerang up (and sideways, which curves its path)", "Thrust: the shape keeps pushing it forward, like an engine", "More weight"]
-  answer: 0
-  feedback: [null, "Nothing pushes it forward once it leaves the hand, so it keeps moving because it was thrown, and it's the shape that makes the air push on it.", "Weight depends only on mass and gravity, so the shape can't change it."]
-  explain: "The aerofoil shape makes the air push on it, and that push is lift. Because the boomerang is spinning, the lift tilts it so it curves back, and its force diagram shows weight down, lift, and air resistance against its motion."
-hint: ["Think about what a wing does to the air going over it, and what the air then does to the wing.", "Once the boomerang has left the hand, ask what is still touching it."]
-```
-
 ## Evaluate: look back
 
 ```step

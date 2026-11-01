@@ -148,19 +148,11 @@ tasks:
       answer: 0
       feedback: [null, "Check the daylight at three different dates.", "Try a bigger tilt, because that's what makes the seasons stronger.", "Look again, because the daylight stops changing through the year."]
     hint: ["With the tilt gone, what would make one month different from another?", "Set the tilt to 0° and slide the date through the year, watching the daylight hours and the noon sun in the line under the board."]
-  - check:
-      type: question
-      q: "In Kakadu, Bininj people recognise six seasons, marked by changes in rain, wind, plants and animals, rather than four. Why can both systems be useful?"
-      options: ["The tilt model explains why the year changes; a six-season calendar describes the changes people actually observe in that place", "Only the four-season model is science", "The six seasons are caused by a different tilt", "Kakadu has no seasons"]
-      answer: 0
-      feedback: [null, "Careful observation of local signs over many generations is knowledge too, so it isn't worth less.", "It's the same Earth with the same tilt, so the tilt doesn't change from place to place.", "Near the tropics the big change is between wet and dry, and a four-season calendar doesn't show that well."]
 ```
 
 ### No tilt
 
 ### Seasons without tilt
-
-### Six seasons
 
 ## Evaluate: look back
 

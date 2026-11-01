@@ -5,10 +5,10 @@ widget: cohesion
 mode: parts
 layout: inline
 roles: strong source bare device
-role strong: Strong judging words
+role strong: Emotive words
 role source: Named source
 role bare: Bare assertion
-role device: Exaggeration
+role device: Hyperbole (exaggeration)
 s source: Critic Tessa Wren, who has reviewed films for twenty years, says the first scene took four months to draw by hand.
 para:
 s strong: The brave little tugboat is a heart-melting hero.
@@ -45,7 +45,7 @@ mode: parts
 layout: inline
 answer: on
 roles: strong source bare
-role strong: Strong judging words
+role strong: Emotive words
 role source: Named source
 role bare: Bare assertion
 s strong: The villain is a dazzling delight.

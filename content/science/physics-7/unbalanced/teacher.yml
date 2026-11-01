@@ -11,6 +11,15 @@ before: |
   Not a hinge node, but its misconception is common: students apply "unbalanced force" to speeding up and miss slowing down, reversing and turning (and often think a backward force can only stop things). The Explore board shows one steady force slowing, stopping and reversing the puck. It builds on node 2 (Balanced), so set that first.
 
   Board notes: the puck slides on frictionless ice and moves left and right only; turning and falling are covered by the sort and the round-the-bend question, not the board. Speeds below zero on the graph mean moving to the left. The Typical board has friction that matches the push up to 4 N while the box is still.
+
+  For First Nations educator review: moved from student text, 1 Nov 2026
+
+  ACARA elaboration (AC9S7U04): "investigating the effect of forces through the application of simple machines, such as the bow and arrows used by Torres Strait Islander Peoples or the spearthrowers used by First Peoples of Australia"
+
+  Moved from the spearthrower question's explain, Wider step "Elaborate: longer pushes" (sentence removed; the question kept):
+
+  > Spearthrowers, used by First Peoples across much of mainland Australia, extend the throwing arm so the push lasts longer.
+
 running:
   - "Engage: tally the predictions. 'Slows down and stops, then stays still' is the one to watch."
   - "Explore: ask what the graph does at the moment the speed crosses zero, and which way the net force points before and after."

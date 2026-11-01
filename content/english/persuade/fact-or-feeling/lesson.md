@@ -2,20 +2,20 @@
 order: 1
 unit: warmup
 title: "Fact or feeling?"
-summary: "A fact can be checked (and can turn out wrong). An opinion shows what a writer thinks or feels. Thinking words (I think, I believe) and feeling words (terrific, awful) give an opinion away. Reports use plain words, numbers and verbs such as found or shows. Any kind of text can be factual or opinionated, depending on its purpose."
+summary: "A fact can be checked (and can turn out wrong). An opinion shows what a writer thinks or feels. Thinking verbs (I think, I believe) and emotive words (terrific, awful) mark subjective language. Reports use objective language: plain words, numbers and summary verbs such as found or shows. Any kind of text can be factual or opinionated, depending on its purpose."
 language: maths
 node: [AC9E4LA02 n1, AC9E4LA02 n2, AC9E4LA02 n3]
 explainPicture: { ref: text.yml#explain-pic, caption: "One school fair, two sentences. One can be checked and one shows what the writer feels." }
 hook: "'The play ran for 40 minutes.' 'The play was tedious.' Which one could you check with a clock?"
 ---
-A **fact** can be checked (and can turn out wrong). An **opinion** shows what someone thinks or feels, and people can disagree with it.
+A **fact** can be checked (and can turn out wrong). An **opinion** shows what someone thinks or feels, and people can disagree with it. Language that gives an opinion is called **subjective** language.
 
 Opinions leave clues:
 
-- **Thinking words** such as *I think*, *I believe* and *in my view*.
-- **Feeling words** such as *terrific*, *awful* and *dull*.
+- **Thinking words** such as *I think*, *I believe* and *in my view*. These are called **thinking verbs**.
+- **Feeling words** such as *terrific*, *awful* and *dull*. These are called **emotive words**.
 
-Facts are usually written with plain words and numbers. Writers who report what they found often use words such as *found*, *shows* and *reports*. Which one a writer uses depends on what the text is for, not on whether it is a report or a review.
+Facts are usually written with plain words and numbers. This is called **objective** language. Writers who report what they found often use **summary verbs** such as *found*, *shows* and *reports*. Which one a writer uses depends on what the text is for, not on whether it is a report or a review.
 
 ## Predict: which is the opinion?
 
@@ -52,14 +52,14 @@ tasks:
   - check:
       type: sort
       q: "What does each word do in a sentence?"
-      options: ["Shows a thought (opinion)", "Shows a feeling (opinion)", "Reports a finding"]
+      options: ["Thinking verb (opinion)", "Emotive word (opinion)", "Summary verb (reports a finding)"]
       items:
-        - ["I believe", "Shows a thought (opinion)", "A thinking word, so the sentence is an opinion."]
-        - ["dreadful", "Shows a feeling (opinion)", "A feeling word that judges."]
-        - ["The survey shows", "Reports a finding", "It reports what the survey found."]
-        - ["in my view", "Shows a thought (opinion)", "A thinking phrase."]
-        - ["delightful", "Shows a feeling (opinion)", "A feeling word that judges."]
-        - ["The study found", "Reports a finding", "It reports a result."]
+        - ["I believe", "Thinking verb (opinion)", "A thinking verb, so the sentence is an opinion."]
+        - ["dreadful", "Emotive word (opinion)", "A feeling word that judges."]
+        - ["The survey shows", "Summary verb (reports a finding)", "It reports what the survey found."]
+        - ["in my view", "Thinking verb (opinion)", "A thinking phrase."]
+        - ["delightful", "Emotive word (opinion)", "An emotive word that judges."]
+        - ["The study found", "Summary verb (reports a finding)", "It reports a result."]
   - check:
       type: bug
       code: "working.txt#nib"
@@ -67,10 +67,10 @@ tasks:
       answer: 2
       fault: logic
       misconception: opinion-in-report
-      explain: "Line 2 says clay soil is 'horrible'. That is a feeling word, so it shows an opinion. A report would say how long the clay took to drain."
+      explain: "Line 2 says clay soil is 'horrible'. That is an emotive word, so it is subjective. A report would say how long the clay took to drain."
   - check:
       type: question
-      q: "Which text could use plain, checkable language?"
+      q: "Which text could use objective (plain, checkable) language?"
       options: ["Only a news article", "Only a science report", "Any text, such as a review that lists measurements"]
       answer: 2
       feedback: ["News articles also include opinions, such as quotes.", "Many other texts can list facts too.", null]
@@ -81,8 +81,8 @@ tasks:
 
 ```worked
 \text{Read the sentence} :: Could you check it with a count, a clock or a record?
-\text{Look for a clue} :: A thinking word or a feeling word means an opinion.
-\text{Think about the purpose} :: A report needs facts. A review welcomes opinion.
+\text{Look for a clue} :: A thinking verb or an emotive word means subjective language.
+\text{Think about the purpose} :: A report needs objective language. A review welcomes opinion.
 ```
 
 ### Spot the opinion in the report
@@ -93,7 +93,7 @@ tasks:
 
 ```step
 stage: modify
-insight: "Choosing the wording that reports a fact shows how a number replaces a feeling word."
+insight: "Choosing the wording that reports a fact shows how a number replaces an emotive word."
 try: { playground: board, starter: "text.yml#vary", height: 340 }
 hint: ["Which choice can be counted or checked?", "Which choice judges?"]
 check: { type: board, text: "Choose the wording that reports a fact.", when: "n_right = 2 and n_wrong = 0", explain: "Ten minutes late and has 40 computers can be checked. Dreadfully late and is the loveliest room are judgements." }
@@ -145,7 +145,7 @@ check:
   placeholder: "The review ... The letter ..."
   models:
     - title: "A strong answer"
-      text: "A review is mostly opinion, with feeling words such as 'thrilling', because its purpose is to give a view. A letter to the editor also gives a view, but it often adds facts such as dates and numbers to persuade."
+      text: "A review is mostly opinion, with emotive words such as 'thrilling', because its purpose is to give a view. A letter to the editor also gives a view, but it often adds facts such as dates and numbers to persuade."
     - title: "A different view that also works"
       text: "Both give opinions, but the review is about enjoyment and uses personal words, while the letter argues for a change and uses facts to back it up."
   criteria: ["I gave two differences.", "I said why, using the text's purpose.", "I used fact and opinion words, not 'good' or 'bad'."]

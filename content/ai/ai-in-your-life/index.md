@@ -1,6 +1,6 @@
 ---
 title: AI in your life
-summary: "The AI inside everyday apps: how feeds choose, features built to keep you, chatbots that feel like friends, what happens to what you type, telling what's real, and fakes that hurt. Years 7–10: core ideas at Year 7, wider steps for older students. Two lessons are flagged for review with the school's wellbeing lead."
+summary: "The AI inside everyday apps: how feeds choose, features built to keep you, chatbots that feel like friends, what happens to what you type, telling what's real, and fakes that hurt. Years 7–10: core ideas work from Year 7; wider steps add more cases, research and design detail, for classes ready for them (your call). Two lessons are flagged for review with the school's wellbeing lead."
 tagline: "See how the AI in your apps works, and what it wants from you."
 order: 4
 recap: true

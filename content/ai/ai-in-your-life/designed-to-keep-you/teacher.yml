@@ -8,6 +8,7 @@ before: |
   **Core idea:** design choices serve the app's goal (time), and most aren't AI. Kind: the feed is predict or sort; autoplay, endless scroll, streaks and notifications are design.
   **The board** (`feed` widget, mode design) is a made-up additive model, labelled on screen: 10 base minutes; autoplay +8, infinite scroll +12, streaks +5, notifications +6, "all caught up" −8, time reminder −6 (minimum 5). It starts at 41 minutes. It illustrates the idea; it is not a measurement.
   **Wellbeing:** keep it non-personal. Use Sam; don't ask students how long they spend on apps or which ones they use. Some students may be worried about their own use: point to the school's wellbeing team. **Review with the school's wellbeing lead before teaching:** share this lesson and these notes with them, and agree the support pathway and any local wording first.
+  Laws and age rules here were checked in October 2026; check eSafety before teaching.
   **Re-check each term:** the minimum-age evaluation (next eSafety report; statutory review about Dec 2027), the EU TikTok decision, the US states v Meta trial (no verdict as at 18 Oct 2026; not in student text).
   Sources (checked 18 Oct 2026, research brief claims 47, 49–53):
   - eSafety, Recommender systems position paper (May 2026): engagement ranking; infinite scroll and autoplay encourage excessive use. https://www.esafety.gov.au/sites/default/files/2026-05/Recommender-systems-position-paper-May2026.pdf

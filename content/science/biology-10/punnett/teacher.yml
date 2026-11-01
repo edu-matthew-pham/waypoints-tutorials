@@ -11,6 +11,8 @@ before: |
   The hinge misconceptions are that a 3 : 1 ratio is a guaranteed count, and that offspring must show a parent's phenotype. Pea flower colour is used because it really is controlled by one gene with complete dominance; human eye colour is not, so it is avoided.
 
   Board notes: students click to cycle each gamete and cell; "Breed 100 offspring" draws random gametes, so the percentage varies around the prediction. The typical tier's board lets students choose the parents.
+
+  Family-tree tasks use made-up families. Never ask students about their own; a student who wants to use their own family can choose to.
 running:
   - "Engage: count how many chose 'all purple' or 'a blend'."
   - "Explore: collect the class's breeding percentages on the board: they cluster near 75% but vary."

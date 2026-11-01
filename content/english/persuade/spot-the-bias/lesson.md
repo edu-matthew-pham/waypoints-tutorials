@@ -12,7 +12,7 @@ hook: "'The coach strolled in.' 'The coach slunk in.' Same person, same door. Wh
 
 A text can talk about several groups, so look at the words used for each one.
 
-To weigh a text, ask: which words favour whom? A fair report picks plain words for every side.
+To weigh a text, ask: which words favour whom? A fair report uses **objective** language: plain words for every side.
 
 ## Predict: which side?
 
@@ -77,9 +77,9 @@ tasks:
 ### Whose side is the word on?
 
 ```worked
-\text{Find the word that judges} :: Praise or blame, not just a fact.
+\text{Find the emotive word} :: Praise or blame, not just a fact.
 \text{Ask: who benefits?} :: Which side looks better because of it?
-\text{Try a plain version} :: Could the same fact be said without a judging word?
+\text{Try a plain version} :: Could the same fact be said in objective language?
 ```
 
 ### Spot the line that takes a side

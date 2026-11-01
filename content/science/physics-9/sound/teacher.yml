@@ -1,16 +1,25 @@
 summary: "Students describe sound as a longitudinal wave that needs a medium, use compressions and rarefactions to explain how energy is transferred, and link frequency to pitch and amplitude to loudness (AC9S9U04, node 2, a hinge node)."
 time: 25
-timing: "Engage and Explore 8 min · Explain 10 min · Evaluate 3 min · Typical adds 4 min, Wider about 2 min"
+timing: "Engage and Explore 8 min · Explain 10 min · Evaluate 3 min · Typical adds 4 min"
 goals:
   - I can describe a sound wave with compressions and rarefactions.
   - I can say what changes when a sound gets higher or louder.
   - I can explain why sound cannot travel through a vacuum.
 before: |
-  A concept tutorial for introducing or revising the idea. Set the width with `?width=minimum`, `typical` (default) or `wider`. It follows How does heat get through? and comes before the charge lessons.
+  A concept tutorial for introducing or revising the idea. Set the width with `?width=minimum` or `typical` (default); the wider step moved to these notes (1 Nov 2026). It follows How does heat get through? and comes before the charge lessons.
 
   The hinge: the wave model first appears here. Students who picture particles flowing from speaker to ear cannot go on to light as a wave or to compare the wave and particle models later. The prediction targets it, and the orange particle on the board is the answer.
 
   Board notes: the animation is slowed down, the speeds in the three media are not to scale (the numbers shown are the real ones), and the particles are drawn in one row of 7 for clarity. Real sound waves have far more particles per wavelength.
+
+  For First Nations educator review: moved from student text, 1 Nov 2026
+
+  ACARA elaboration (AC9S9U04): "investigating the impact of material selection on the transfer of sound energy in First Nations Australians' traditional musical, hunting and communication instruments"
+
+  Moved from question in the Wider step "Elaborate: an instrument" (step removed):
+
+  > A yidaki (didjeridu) is a hollow wooden tube. The player's lips vibrate the air inside it. A longer tube makes a lower note. Using the wave model, which is the best explanation?
+
 running:
   - "Engage: tally the predictions. Ask where the 'travels to your ear' group thinks the air at the speaker goes."
   - "Explore: ask what moved, the particles or the pattern."

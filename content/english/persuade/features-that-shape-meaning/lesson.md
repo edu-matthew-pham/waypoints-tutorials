@@ -2,7 +2,7 @@
 order: 7
 unit: core
 title: "Features that shape meaning"
-summary: "Writers choose language features, such as speaking to you, a question with an obvious answer, repetition and strong verbs. Each shapes what the reader understands or feels. The features change with the audience and the purpose."
+summary: "Writers choose language features, such as speaking to you, a rhetorical question (a question with an obvious answer), repetition and strong verbs. Each shapes what the reader understands or feels. The features change with the audience and the purpose."
 language: maths
 node: [AC9E7LY03 n1, AC9E7LY03 n2]
 explainPicture: { ref: text.yml#explain-pic, caption: "Four features on one poster. Each does a different job." }
@@ -11,7 +11,7 @@ hook: "A poster asks, 'Would you leave a puppy out in the cold?' Does the writer
 Writers choose **language features** on purpose. Four common ones:
 
 - **Speaking to the reader**: *your*, *we need you*.
-- **A question with an obvious answer**: *Would you leave a puppy out in the cold?*
+- **A question with an obvious answer**: *Would you leave a puppy out in the cold?* This is called a **rhetorical question**.
 - **Repetition**: *read more, learn more, be more*.
 - **A strong verb**: *crushes* instead of *hurts*.
 
@@ -40,7 +40,7 @@ try: { playground: board, starter: "text.yml#run", height: 620 }
 hint: ["Is it talking to the reader, asking, repeating or using a strong verb?", "What is the sentence doing?"]
 smaller:
   check: { type: question, q: "'Read more, learn more, be more.' Which feature is this?", options: ["A strong verb", "Repetition", "Speaking to the reader"], answer: 1, feedback: ["There is no verb doing heavy work here.", null, "It does not say you."], explain: "The words learn and more come round again, so it is repetition." }
-check: { type: board, text: "Label each sentence with its feature.", when: "n_right = 8", explain: "We need your help and Your voice counts speak to the reader. Who wants and Would you swim are questions with an obvious answer. The two lists repeat. Strangles and smothers are strong verbs." }
+check: { type: board, text: "Label each sentence with its feature.", when: "n_right = 8", explain: "We need your help and Your voice counts speak to the reader. Who wants and Would you swim are rhetorical questions. The two lists repeat. Strangles and smothers are strong verbs." }
 ```
 
 Which sentence was hardest to label? Say what made you choose.
@@ -56,7 +56,7 @@ tasks:
       q: "Match each feature to what it does."
       pairs:
         - ["Speaking to 'you'", "Makes the reader feel part of it"]
-        - ["A question with an obvious answer", "Nudges the reader to agree"]
+        - ["A rhetorical question", "Nudges the reader to agree"]
         - ["Repeating a phrase", "Makes the idea stick"]
         - ["A strong verb such as strangles", "Makes a problem sound serious"]
       explain: "Each feature has a different job in shaping what the reader feels or remembers."
@@ -80,7 +80,7 @@ tasks:
 ### Name it, then say what it does
 
 ```worked
-\text{Name the feature} :: Talking to you, a question, repetition or a strong verb?
+\text{Name the feature} :: Talking to you, a rhetorical question, repetition or a strong verb?
 \text{Say the effect} :: What does it make the reader feel or remember?
 \text{Ask: why for this reader?} :: How does the audience or purpose explain the choice?
 ```
@@ -111,7 +111,7 @@ check: { type: board, text: "Colour the words that speak to the reader one colou
 
 ## Make: a short poster
 
-In your own document, write a poster of at least four sentences about keeping a school garden tidy. Include at least two short sentences (five words or fewer). Use at least two language features on purpose, such as a question to the reader, repetition, a direct invitation or strong verbs.
+In your own document, write a poster of at least four sentences about keeping a school garden tidy. Include at least two short sentences (five words or fewer). Use at least two language features on purpose, such as a rhetorical question, repetition, a direct invitation or strong verbs.
 
 Here is one example: "Our garden needs you. **Who wants weeds?** Pick up your litter. A tidy garden grows better beans and a happier school. **Join us on Friday.**"
 

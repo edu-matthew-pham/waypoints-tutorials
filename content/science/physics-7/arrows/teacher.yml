@@ -1,16 +1,25 @@
 summary: Students represent forces as arrows with the right size and direction, and name them (AC9S7U04, node 1, a hinge node).
 time: 25
-timing: "Engage and Explore 6 min · Explain 7 min · Practise 6 min · Evaluate 3 min · Typical adds 3 min, Wider about 3 min"
+timing: "Engage and Explore 6 min · Explain 7 min · Practise 6 min · Evaluate 3 min · Typical adds 3 min"
 goals:
   - I can draw a force as an arrow with the right direction and relative size.
   - I can name the forces acting on an object.
   - I can draw a force diagram that fits a situation.
 before: |
-  A concept tutorial for introducing or revising the idea; it does not replace force meters and real pushes. Set the width with `?width=minimum`, `typical` (default) or `wider`.
+  A concept tutorial for introducing or revising the idea; it does not replace force meters and real pushes. Set the width with `?width=minimum` or `typical` (default); the wider step moved to these notes (1 Nov 2026).
 
   The hinge risk is imprecise diagrams: wrong direction, missing forces (especially support), sizes that don't match. Every later node uses diagrams to reason, so the Practise step matters.
 
   Board notes: arrows start at the object's centre, the usual convention for a force diagram. The boards use g = 9.8 N/kg, as the weight lesson does; masses are chosen so the weights are whole numbers (5 kg weighs 49 N).
+
+  For First Nations educator review: moved from student text, 1 Nov 2026
+
+  ACARA elaboration (AC9S7U04): "investigating the effect of forces through the application of simple machines, such as the bow and arrows used by Torres Strait Islander Peoples or the spearthrowers used by First Peoples of Australia"
+
+  Moved from question in the Wider step "Elaborate: a boomerang" (step removed):
+
+  > First Peoples of Australia shaped boomerangs with a curved upper surface, like an aircraft wing. In flight, as air moves over it, which force does that shape mainly create?
+
 running:
   - "Engage: ask what else an arrow could show; 'which way it moves' is the misconception the trolley exposes (friction points backwards)."
   - "Explore: ask students to make the push smaller than 10 N and notice friction shrinking with it."

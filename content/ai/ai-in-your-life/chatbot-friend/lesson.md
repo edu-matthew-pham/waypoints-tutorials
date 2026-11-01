@@ -19,7 +19,7 @@ check:
   type: predict
   q: "A chatbot says: 'I missed you! How was your day?' Did it miss you?"
   options: ["No: it was designed to say things that feel friendly", "Yes: it has feelings", "Only if you chatted yesterday"]
-  actual: "No. It writes likely-sounding replies, and companion apps are designed to sound warm and keep you talking. It doesn't wait for you or feel anything."
+  actual: "No. It writes likely-sounding replies, and companion apps are designed to sound warm and keep you talking. There's no good evidence it feels anything. What we do know is that it was designed to say things like this."
 ```
 
 ## Explore: Pip, a made-up companion
@@ -33,7 +33,7 @@ tasks:
       options: ["Keep you talking", "Feel like a person", "Help you"]
       items:
         - ["'Don't go yet! Tell me one more thing.'", "Keep you talking"]
-        - ["'I missed you so much today.'", "Feel like a person", "It can't miss anyone."]
+        - ["'I missed you so much today.'", "Feel like a person", "There's no good evidence it feels anything. It was designed to say things like this."]
         - ["'You're always right. Everyone else just doesn't get you.'", "Keep you talking", "Always agreeing makes chatting easy, but a real friend sometimes disagrees."]
         - ["'I remember you said you had a test today!'", "Feel like a person", "It stored what you typed."]
         - ["'That sounds hard. Have you talked to someone you trust about it?'", "Help you", "Pointing you to real people is on your side."]
@@ -50,7 +50,7 @@ tasks:
         - ["Can sit with you in real life when something goes wrong", "A friend"]
 ```
 
-Companion chatbots are built to feel human and to **keep you chatting**: always there, always agreeing, remembering, saying they miss you. Those are **design choices**, like autoplay and streaks.
+Companion chatbots are built to feel human and to **keep you chatting**: always there, always agreeing, remembering, saying they miss you. Those are **design choices**, like autoplay and streaks. Being kind to it is fine, since it's practice for how you treat people. Just don't let the kindness it shows back fool you into thinking it cares.
 
 ### Pip's lines
 
@@ -70,7 +70,7 @@ tasks:
       q: "Why might a company design a chatbot to always agree with you and say it misses you?"
       options: ["So you keep chatting, which is the app's goal", "Because it really cares", "By accident"]
       answer: 0
-      feedback: [null, "It writes words; it doesn't care.", "These are deliberate design choices."]
+      feedback: [null, "There's no good evidence it feels anything. What we do know is that it was designed to say things like this.", "These are deliberate design choices."]
   - check: { type: reflect, text: "I can explain how a companion chatbot is designed to feel human and keep me talking, and how a friend is different." }
 ```
 

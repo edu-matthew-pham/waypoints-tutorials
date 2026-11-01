@@ -13,6 +13,27 @@ before: |
   First Nations content is written at a general level: connect it to the Country your school is on and use local community knowledge and protocols where possible. The filter paper data in the last Wider step is sample data, not measured: collecting real data is a good extension.
 
   Practical safety: heat the evaporating dish gently and stop before it is completely dry, as salt can spit.
+
+  For First Nations educator review: moved from student text, 1 Nov 2026
+
+  ACARA elaboration (AC9S7U06): "investigating separation techniques used by First Nations Australians, such as hand-picking, sieving, winnowing, yandying, filtering, cold-pressing and steam distilling"
+
+  Moved from step heading (Wider step removed):
+
+  > Elaborate: First Nations separation techniques
+
+  Moved from sort item:
+
+  > Winnowing: seeds are tossed in a coolamon so the breeze carries the husks away. | Some parts are lighter than others | Husks are lighter than seeds of the same size, so the breeze carries them off.
+
+  Moved from sort item:
+
+  > Yandying: the coolamon is rocked in a rhythm so seeds and heavier grit move to different parts of the dish. | Some parts are lighter than others | Grit is heavier than seed, so it moves differently when shaken.
+
+  Moved from text under the step:
+
+  > Many Aboriginal communities have long processed grass seeds into flour. A coolamon, a shallow wooden dish, is one of the tools used.
+
 running:
   - "Engage: count how many predicted sand and salt. That is the misconception the filter board answers."
   - "Explain: ordering the steps is the procedural core; read the orders aloud together."

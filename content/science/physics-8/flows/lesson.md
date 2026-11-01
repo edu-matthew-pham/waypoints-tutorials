@@ -59,8 +59,6 @@ tasks:
 
 ### A fire drill
 
-People have made fire by spinning a stick against a piece of wood for many thousands of years, including many First Peoples of Australia.
-
 ## Explain: tracing systems
 
 ```step

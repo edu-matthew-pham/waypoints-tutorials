@@ -2,19 +2,19 @@
 order: 6
 unit: core
 title: "Judging and backing it up"
-summary: "Evaluative words say how a writer feels, what they think of a person's actions, or how good a thing is. A judgement is stronger when it is backed up with a detail from the text or a trusted outside source, and weaker when it stands alone."
+summary: "Evaluative language says how a writer feels (emotional response), what they think of a person's actions (judgement), or how good a thing is (appreciation). A judgement is stronger when it is backed up (substantiated) with a detail from the text or a trusted outside source, and weaker when it stands alone."
 language: maths
 node: [AC9E7LA02 n1, AC9E7LA02 n2]
-explainPicture: { ref: text.yml#explain-pic, caption: "Three kinds of judging word: a feeling, a person and a thing. A judgement backed by a detail is stronger." }
+explainPicture: { ref: text.yml#explain-pic, caption: "Three kinds of evaluative word: a feeling, a person and a thing. A judgement backed by a detail is stronger." }
 hook: "'The play was good.' Why should anyone believe you? What would make it stronger?"
 ---
-When we review a story, a film or an event, we use **judging words**. They come in three kinds:
+When we review a story, a film or an event, we use **judging words**. Words that judge are called **evaluative language**. They come in three kinds:
 
-- **How it made me feel**: *amused*, *anxious*.
-- **What I think of a person's actions**: *generous*, *selfish*.
-- **How good the thing is**: *smooth*, *dull*.
+- **How it made me feel**: *amused*, *anxious*. This is an **emotional response**.
+- **What I think of a person's actions**: *generous*, *selfish*. This is a **judgement** of a person.
+- **How good the thing is**: *smooth*, *dull*. This is **appreciation** of the thing.
 
-A judgement on its own is easy to ignore. It is stronger when it is **backed up** with a detail from the text, such as what a character does, or with a trusted outside source. A review that does both is easier to believe.
+A judgement on its own is easy to ignore. It is stronger when it is **backed up** with a detail from the text, such as what a character does, or with a trusted outside source. Backing up a judgement is called **substantiating** it. A review that does both is easier to believe.
 
 ## Predict: what would convince you?
 
@@ -28,16 +28,16 @@ check:
   actual: "A detail showing a tense moment. A reader can check it against the book. Saying it louder or longer adds nothing to check."
 ```
 
-## Try: what kind of judging word?
+## Try: what kind of evaluative word?
 
 ```step
 stage: run
-insight: "Labelling six judging phrases by their kind shows that judging comes in feelings, actions and quality."
+insight: "Labelling six judging phrases by their kind shows that evaluative language comes in three kinds: emotional response, judgement and appreciation."
 try: { playground: board, starter: "text.yml#run", height: 520 }
 hint: ["Is it about a feeling, a person or the thing itself?", "What is the word describing?"]
 smaller:
   check: { type: question, q: "'Ben was sly.' Which kind of judging is this?", options: ["How I felt", "What I think of a person's actions", "How good the thing is"], answer: 1, feedback: ["Sly does not say how the reader felt.", null, "Sly is not about the book's quality."], explain: "Sly judges a person's actions, so it is the second kind." }
-check: { type: board, text: "Label each phrase: feeling, character or quality.", when: "n_right = 6", explain: "Thrilled and terrified are feelings. Brave and cruel judge people's actions. Graceful and beautifully drawn judge how good the thing is." }
+check: { type: board, text: "Label each phrase: emotional response, judgement or appreciation.", when: "n_right = 6", explain: "Thrilled and terrified are emotional responses. Brave and cruel are judgements of people's actions. Graceful and beautifully drawn are appreciation: they judge how good the thing is." }
 ```
 
 Which was hardest? For each one, ask what is being judged: the book, a person or the reader.
@@ -76,10 +76,10 @@ tasks:
       explain: "A quote shows where the judgement comes from, so a reader can check it."
 ```
 
-### What kind of judging, and is it backed?
+### What kind of evaluation, and is it backed?
 
 ```worked
-\text{Find the judging word} :: Is it a feeling, a view of a person or a view of the thing?
+\text{Find the evaluative word} :: Emotional response, judgement of a person or appreciation of the thing?
 \text{Look for backing} :: A detail from the text or a trusted outside source?
 \text{Decide the strength} :: Backed means a reader can check. Unbacked means they must take your word.
 ```
@@ -98,14 +98,14 @@ hint: ["What exactly is the judgement?", "Which detail shows that?"]
 check: { type: board, text: "Choose the detail that backs each judgement.", when: "n_gaps_right = 2", explain: "Giving half his lunch away shows generosity. Fog that hides the path and echoing sounds make the setting eerie." }
 ```
 
-## Practise: find the judging words
+## Practise: find the evaluative words
 
 ```step
 stage: practise
-insight: "Colouring the judging words in a short review applies the idea to a new text."
+insight: "Colouring the evaluative words in a short review applies the idea to a new text."
 try: { playground: board, starter: "text.yml#practise", height: 340 }
 hint: ["Which words say how good or bad something is?", "Which words only report?"]
-check: { type: board, text: "Colour every judging word in the review.", when: "chains_ok = 1 and n_stray = 0", explain: "Stunning, courageous and dreadful all judge. Some scenes last ten minutes is a fact." }
+check: { type: board, text: "Colour every evaluative word in the review.", when: "chains_ok = 1 and n_stray = 0", explain: "Stunning, courageous and dreadful all judge. Some scenes last ten minutes is a fact." }
 ```
 
 ## Make: a short review
@@ -140,7 +140,7 @@ tier: wider
 insight: "Judging one event in three ways builds a word bank at the same level."
 check:
   type: reasoning
-  q: "For a school play you imagine, write one judging word of each kind: a feeling, a view of a person, and a view of the thing. Then say which is easiest to back up."
+  q: "For a school play you imagine, write one evaluative word of each kind: an emotional response (a feeling), a judgement (a view of a person) and appreciation (a view of the thing). Then say which is easiest to back up."
   placeholder: "Feeling ... Person ... Thing ..."
   models:
     - title: "A strong answer"

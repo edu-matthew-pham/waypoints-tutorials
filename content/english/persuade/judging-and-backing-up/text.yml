@@ -1,13 +1,13 @@
-# Texts for "Judging and backing it up" (parts labels the kind; gaps choose backing; chain colours judging words).
+# Texts for "Judging and backing it up" (parts labels the kind; gaps choose backing; chain colours evaluative words).
 
 # region: run
 widget: cohesion
 mode: parts
 layout: inline
 roles: feeling character quality
-role feeling: How it made me feel
-role character: What I think of a person's actions
-role quality: How good the thing is
+role feeling: Emotional response (how it made me feel)
+role character: Judgement (what I think of a person's actions)
+role quality: Appreciation (how good the thing is)
 s feeling: I was thrilled by the ending.
 para:
 s character: Maya is a brave and loyal friend.
@@ -40,9 +40,9 @@ mode: parts
 layout: inline
 answer: on
 roles: feeling character quality
-role feeling: How it made me feel
-role character: What I think of a person's actions
-role quality: How good the thing is
+role feeling: Emotional response (how it made me feel)
+role character: Judgement (what I think of a person's actions)
+role quality: Appreciation (how good the thing is)
 s feeling: I was delighted.
 para:
 s character: The captain was honest.

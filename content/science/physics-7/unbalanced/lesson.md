@@ -169,7 +169,7 @@ tasks:
       options: ["The unbalanced force acts on the spear for longer, so its speed keeps increasing for longer", "The spearthrower makes the spear lighter", "The spearthrower stores the spear's speed and releases it"]
       answer: 0
       feedback: [null, "The spear's mass doesn't change, so that can't be the reason.", "Nothing is stored up, because the speed builds up while the push acts."]
-      explain: "The longer an unbalanced force acts, the more the motion changes. Spearthrowers, used by First Peoples across much of mainland Australia, extend the throwing arm so the push lasts longer."
+      explain: "The longer an unbalanced force acts, the more the motion changes."
     hint: "Think about what happens to the spear's speed for as long as the thrower is still pushing on it."
 ```
 

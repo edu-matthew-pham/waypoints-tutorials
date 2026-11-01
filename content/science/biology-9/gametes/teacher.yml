@@ -11,6 +11,8 @@ before: |
   The hinge misconception is that gametes have the full set of chromosomes. The Engage question asks it directly.
 
   Board notes: diagrams are not to scale (a human egg is about 0.1 mm across, roughly 20 times the width of a sperm's head). The pollen grain carries the male nucleus; strictly, the male gametes form inside it.
+
+  Family-tree tasks use made-up families. Never ask students about their own; a student who wants to use their own family can choose to.
 running:
   - "Engage: count how many chose 46."
   - "Explore: ask which feature they think is most important for getting in."

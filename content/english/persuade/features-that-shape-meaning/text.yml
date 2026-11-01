@@ -6,7 +6,7 @@ mode: parts
 layout: inline
 roles: you question repeat verb
 role you: Speaks to the reader
-role question: Question with an obvious answer
+role question: Rhetorical question
 role repeat: Repetition
 role verb: Strong verb
 s question: Who wants a dirty beach?
@@ -46,7 +46,7 @@ layout: inline
 answer: on
 roles: you question repeat verb
 role you: Speaks to the reader
-role question: Question with an obvious answer
+role question: Rhetorical question
 role repeat: Repetition
 role verb: Strong verb
 s you: You can help.

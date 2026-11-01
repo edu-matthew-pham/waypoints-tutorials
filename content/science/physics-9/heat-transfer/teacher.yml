@@ -13,6 +13,15 @@ before: |
   Assumed: density from Year 7 (Properties: fewer particles in each cm³, less dense). The "Why it rises" question links it to convection and names the model's shortcut.
 
   Model note: in the simulation hot particles are pushed up directly; real hot fluid rises because its particles spread out (less dense). The wider step mentions possum-skin cloaks of south-eastern Australia; for richer context, use local resources and community guidance about First Nations clothing and bedding in your region.
+
+  For First Nations educator review: moved from student text, 1 Nov 2026
+
+  ACARA elaboration (AC9S9U04): "investigating aspects of heat transfer and conservation in the design of First Nations Australians' bedding and clothing in the various climatic regions of Australia"
+
+  Moved from the explain of the "Trapped air" question (sentence removed; the question kept):
+
+  > Possum-skin cloaks, made and worn by many First Nations peoples of south-eastern Australia, use the same idea: dense fur trapping air.
+
 running:
   - "Engage: ask who chose 'hot particles travel up the handle'. The bar answers it."
   - "Explore: on the bar, point to one particle for a few seconds. On the beaker, follow the ring the whole way round."

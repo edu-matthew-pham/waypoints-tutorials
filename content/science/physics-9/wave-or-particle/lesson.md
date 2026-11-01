@@ -58,9 +58,9 @@ tasks:
   - check:
       type: question
       q: "Which statement about scientific models is best?"
-      options: ["A model is a tool with a domain of usefulness, not a literal description of reality", "A good model is true in every situation", "A model that fails once should be thrown away completely"]
+      options: ["A model doesn't tell the whole story: each one shows some things well and leaves others out", "A good model is true in every situation", "A model that fails once should be thrown away completely"]
       answer: 0
-      feedback: [null, "No model covers everything; that is why scientists keep several.", "A model that works well in its domain stays useful, even if it needs another model beside it."]
+      feedback: [null, "No model covers everything; that is why scientists keep several.", "A model that shows some things well stays useful, even if it needs another model beside it."]
       explain: "We keep a model for as long as it helps us explain and predict, and we know where it stops working."
     hint: "Think about the particle model: what is it good at explaining, and what can't it explain at all?"
   - check: { type: reflect, text: "I can say where the wave model and the particle model are each useful, and why models are tools." }
@@ -121,4 +121,4 @@ Write one sentence: "At first I thought… Now I think… because…"
 
 - The **particle model** explains conduction, convection and static charge; the **wave model** explains sound, reflection, refraction and the electromagnetic spectrum.
 - Light behaves like a wave when it bends and spreads, and like **photons** when it gives energy to single electrons.
-- A scientific **model is a tool** with a domain of usefulness, not a literal picture of reality.
+- A scientific **model is a tool** that doesn't tell the whole story: each one shows some things well and leaves others out.
