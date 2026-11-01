@@ -58,7 +58,7 @@ tasks:
   - check:
       type: question
       q: "A message asks Leo for his password 'to send the gems'. What should he do?"
-      options: ["Never give it; close the message and ask a trusted adult", "Give it, because the gems are free", "Give it but change it later", "Give only half of it"]
+      options: ["Never give it; close it and tell a trusted adult", "Give it, because the gems are free", "Give it but change it later", "Give only half of it"]
       answer: 0
       feedback: [null, "Nothing real needs your password to give you something.", "Someone could use it straight away.", "Any part of it helps someone guess the rest."]
       explain: "Passwords and codes are only typed into the real app or site, never sent to anyone. Real companies don't ask for them in a message."

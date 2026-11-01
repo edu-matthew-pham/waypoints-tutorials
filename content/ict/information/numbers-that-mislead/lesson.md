@@ -52,10 +52,10 @@ tasks:
   - check:
       type: question
       q: "A pie chart of 'What students do at lunch' has slices for sport 60%, reading 30% and talking 50%. What is wrong?"
-      options: ["The parts add to 140%, so they are not parts of one whole: students could pick more than one", "Nothing: the biggest slice is sport", "Pie charts can't show percentages", "There should be more colours"]
+      options: ["The parts add to 140%, not 100%", "Nothing: the biggest slice is sport", "Pie charts can't show percentages", "There should be more colours"]
       answer: 0
       feedback: [null, "Add the slices. A pie must add to 100%.", "Pie charts often show percentages, if they add to 100%.", "Colour is not the problem. Add the numbers."]
-      explain: "A pie shows parts of one whole, adding to 100%. When people can choose more than one thing, a column chart of each choice fits better."
+      explain: "A pie shows parts of one whole, adding to 100%. Students could pick more than one, so these are not parts of one whole. When people can choose more than one thing, a column chart of each choice fits better."
   - check:
       type: bug
       code: "working.txt#kai"
@@ -128,10 +128,10 @@ insight: "A line chart of temperatures adds a context: an axis above zero can be
 check:
   type: question
   q: "A line chart shows a fever going from 37.0 °C to 39.0 °C, with its axis starting at 36. Is that misleading?"
-  options: ["Not here: a line shows change, and 2 degrees is a big change for a body, so zooming in helps", "Yes: every axis must start at zero", "Yes: 39 is not much bigger than 37", "It is a pie chart, so it can't be"]
+  options: ["Not here: 2 degrees is a big change for a body", "Yes: every axis must start at zero", "Yes: it makes a 2 degree rise look huge", "No: line charts can never mislead"]
   answer: 0
-  feedback: [null, "Columns compare amounts by height, so they need zero. A line shows change, and zooming in can be fair when the axis is labelled.", "From zero, a dangerous fever would look like nothing. The question decides the axis.", "It is a line chart."]
-  explain: "Column charts compare amounts by height, so they start at zero. A line chart shows change, and starting near the data is fair when the labels are clear and the change matters."
+  feedback: [null, "Columns compare amounts by height, so they need zero. A line shows change, and zooming in can be fair when the axis is labelled.", "It looks big because it is big: 2 degrees is a serious fever. From zero it would look like nothing.", "A line chart can mislead too. This one does not, because the change matters and the axis is labelled."]
+  explain: "Column charts compare amounts by height, so they start at zero. A line chart shows change, and starting near the data is fair when the labels are clear and the change matters. Here zooming in helps."
 ```
 
 ## Evaluate: numbers first

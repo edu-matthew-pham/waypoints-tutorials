@@ -67,9 +67,9 @@ tasks:
   - check:
       type: question
       q: "Page A says its drops make beans grow 300% faster. What is the best reason to doubt it?"
-      options: ["It sells the drops and gives no source for the number", "300 is too big a number", "It uses capital letters", "Nobody likes beans that big"]
+      options: ["It sells the drops and gives no source", "300 is too big a number", "It uses capital letters", "It was not on the first page of results"]
       answer: 0
-      feedback: [null, "Big numbers can be true. The problem is that nothing says where it came from.", "Capitals are a style, not evidence either way.", "That is about taste, not evidence."]
+      feedback: [null, "Big numbers can be true. The problem is that nothing says where it came from.", "Capitals are a style, not evidence either way.", "Where a page shows up in a search says nothing about whether it is right."]
       explain: "The page wants to sell the drops, and it gives no source you can check for the number."
   - check:
       type: bug
@@ -80,7 +80,7 @@ tasks:
       misconception: looks-mean-trust
       explain: "Line 2: Zoe trusted Page A because it looked exciting and professional. Looks are not a reason. She never asked who made it, when or where its facts came from."
     smaller:
-      check: { type: question, q: "What on Page A could Zoe have looked up or checked?", options: ["Almost nothing: it has no author, no date and no source", "Its big headings", "Its exclamation marks"], answer: 0, explain: "Page A gives nothing you can check. Page B gives an author, a date and a source." }
+      check: { type: question, q: "What on Page A could Zoe have looked up or checked?", options: ["Nothing: no author, date or source", "Its big headings", "Its exclamation marks"], answer: 0, feedback: [null, "Anyone can make big headings. They tell you nothing you can check.", "Excitement is not evidence, and there is nothing to look up."], explain: "Page A gives nothing you can check. Page B gives an author, a date and a source." }
 ```
 
 ### Page A's number
@@ -95,10 +95,10 @@ insight: "Two pages that are both reasonable change the task: the answer is to w
 check:
   type: question
   q: "Page C, from a plant nursery, says water every day. Page B, the garden club, says every one or two days. Both name an author and a date. What is the best next move?"
-  options: ["Check a third source, such as the state agriculture guide Page B names", "Pick the one with the nicer design", "Average them: every one and a half days", "Give up: nobody knows"]
+  options: ["Check a third source, such as the guide Page B names", "Pick the one with the nicer design", "Average them: every one and a half days", "Give up: nobody knows"]
   answer: 0
   feedback: [null, "Design is not a reason.", "Averaging two claims is not checking either of them.", "You can find out: there is a source to check."]
-  explain: "When two good pages disagree, a third source can settle it. Page B names one. Both pages may also be right for different soils or weather."
+  explain: "When two good pages disagree, a third source can settle it. Page B names one: the state agriculture guide. Both pages may also be right for different soils or weather."
 ```
 
 ## Practise: what would you ask?

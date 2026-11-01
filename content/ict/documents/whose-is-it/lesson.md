@@ -120,7 +120,7 @@ tasks:
   - check:
       type: question
       q: "A picture's licence says you cannot use it without permission. What should you do?"
-      options: ["Choose a different picture or ask permission", "Use it with a credit", "Use it and hope", "Change it a little"]
+      options: ["Pick another picture or ask permission", "Use it with a credit", "Use it and hope", "Change it a little"]
       answer: 0
       feedback: [null, "A credit does not replace permission when the licence does not allow it.", "Hoping is not permission.", "A small change is still using their work."]
       explain: "If the licence does not allow it, choose another picture or ask the owner."

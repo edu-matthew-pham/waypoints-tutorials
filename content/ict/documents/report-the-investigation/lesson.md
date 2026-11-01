@@ -74,7 +74,7 @@ insight: "Choosing what a report should say, and no more than the data shows, is
 check:
   type: question
   q: "Which sentence should the Conclusion part of the report say?"
-  options: ["On average, the beans grown in the sun were taller (about 13 cm) than those in the dark (about 5 cm), for these plants.", "Sunlight makes every bean in the world grow taller.", "Light is the only thing that affects how tall beans grow.", "The beans did not grow in the dark."]
+  options: ["On average, sun beans grew to about 13 cm, dark beans about 5 cm.", "Sunlight makes every bean in the world grow taller.", "Light is the only thing that affects how tall beans grow.", "The beans did not grow in the dark."]
   answer: 0
   feedback: [null, "The data covers only these beans, so it cannot say what every bean does.", "The test changed only light, so it cannot say nothing else matters.", "The dark beans grew to about 5 cm, so they did grow."]
   explain: "The best sentence says what the averages show, for these plants, with numbers, and no more than the data supports."

@@ -68,7 +68,7 @@ tasks:
   - check:
       type: question
       q: "A friend says her cloud folder is her backup. She deletes a file from her laptop by mistake. What happens in the cloud folder?"
-      options: ["The deletion usually syncs, and the file goes from the cloud copy too", "The cloud keeps it for ever", "Nothing, the cloud is separate", "The file comes back on its own"]
+      options: ["The deletion syncs, so the cloud copy goes too", "The cloud keeps it for ever", "Nothing, the cloud is separate", "The file comes back on its own"]
       answer: 0
       feedback: [null, "Some services keep deleted files for a while, but you cannot count on it.", "A synced folder is not separate: it mirrors changes.", "It does not come back by itself."]
       explain: "Sync copies deletions and mistakes as well. Find out whether your service keeps old versions or deleted files, and for how long."
@@ -142,7 +142,7 @@ tasks:
   - check:
       type: question
       q: "Which is a backup?"
-      options: ["The report on the laptop and a copy in school-approved storage", "Two copies in the same folder", "A shortcut on the desktop", "The same file saved twice"]
+      options: ["The report on the laptop and a copy in approved storage", "Two copies of the report in the same folder", "A shortcut on the desktop", "The same file saved twice"]
       answer: 0
       feedback: [null, "Same folder, same place.", "A shortcut points to the same file.", "Saving twice in the same place is still one place."]
       explain: "A backup is a copy in a different place."
@@ -160,9 +160,9 @@ insight: "Planning protection for real work has students use the move on their o
 check:
   type: question
   q: "You are doing a big project over four weeks. Which plan protects it best?"
-  options: ["Save a dated version each week, and keep a copy in approved storage", "Keep it on the laptop and be careful", "Save it once at the end", "Email it to a friend now and then"]
+  options: ["Save a dated version each week, and keep a copy in approved storage", "Save over the same file each day on the laptop", "Save it once at the end", "Email it to a friend now and then"]
   answer: 0
-  feedback: [null, "Careful is not a plan, and the laptop is one place.", "Four weeks is too long to risk.", "Emailing to a friend is not approved storage, and it is irregular."]
+  feedback: [null, "Saving over loses the older versions, and the laptop is one place.", "Four weeks is too long to risk.", "Emailing to a friend is not approved storage, and it is irregular."]
   explain: "Versions protect against a bad edit, a copy elsewhere protects against a lost place, and weekly means you lose at most a week."
 ```
 

@@ -48,9 +48,9 @@ tasks:
   - check:
       type: question
       q: "What does the $ in $B$7 do?"
-      options: ["Keeps the name B7 from moving when the formula is copied", "Makes the answer a price in dollars", "Adds 7 to B", "Makes the cell bold"]
+      options: ["Keeps B7 fixed when the formula is copied", "Makes the answer a price in dollars", "Fixes only the column, B", "Locks B7 so nobody can type in it"]
       answer: 0
-      feedback: [null, "In a formula the $ has nothing to do with money.", "It is part of the name, not an operation.", "It has nothing to do with the look of the cell."]
+      feedback: [null, "In a formula the $ has nothing to do with money.", "There are two $ signs: one fixes the column B, the other fixes the row 7.", "Anyone can still type in B7. The $ only changes what happens to the name when the formula is copied."]
       explain: "A $ in front of a column letter or a row number fixes it. $B$7 fixes both, so the name stays on B7 wherever the formula is copied."
   - check:
       type: bug

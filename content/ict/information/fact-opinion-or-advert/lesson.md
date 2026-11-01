@@ -126,9 +126,9 @@ insight: "An advert written like a news story adds a context: spotting the clues
 check:
   type: question
   q: "A page looks like a news story: Local kids grow giant beans! Halfway down it says Sponsored by BeanBoost and has a Buy now button. What is it?"
-  options: ["An advert written to look like news", "A news story", "An opinion", "A fact"]
+  options: ["An advert made to look like news", "A news story from the local paper", "An opinion piece about beans", "A fact"]
   answer: 0
-  feedback: [null, "Sponsored and Buy now show who paid for it and why.", "Someone may have their own view of beans, but the page is paid for.", "A whole page can contain facts and still be an advert."]
+  feedback: [null, "Sponsored and Buy now show who paid for it and why: it is selling, not reporting.", "Someone may have their own view of beans, but the page is paid for.", "A whole page can contain facts and still be an advert."]
   explain: "Sponsored, paid or Buy now are the clues. Read it as an advert: it may contain facts, and it wants a sale."
 ```
 

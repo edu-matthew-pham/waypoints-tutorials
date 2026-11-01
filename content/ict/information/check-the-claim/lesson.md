@@ -77,7 +77,7 @@ tasks:
       misconception: many-copies-agree
       explain: "Line 3: Raj counted Place 3 as a second source, but it gave no source and appeared after the blog. A copy is not a check. Two places that found it out for themselves would be."
     smaller:
-      check: { type: question, q: "Place 3 says the same as the blog. What does it say about where its fact came from?", options: ["Nothing: it gives no source, and it was posted after the blog", "It names the league", "It names the Gazette"], answer: 0, explain: "It gives no source and came after the blog, so it may have copied it." }
+      check: { type: question, q: "Place 3 says the same as the blog. What does it say about where its fact came from?", options: ["No source, and it came after the blog", "It got it from the league's results", "It got it from the Gazette's report"], answer: 0, feedback: [null, "Place 3 names no source. The league's results are Place 1.", "Place 3 names no source. The Gazette is Place 2."], explain: "It gives no source and came after the blog, so it may have copied it." }
 ```
 
 ### Put the steps in order

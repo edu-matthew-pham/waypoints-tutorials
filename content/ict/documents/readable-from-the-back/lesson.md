@@ -107,7 +107,7 @@ tasks:
   - check:
       type: question
       q: "The slide has seven bullets at 28 points and runs off the bottom. What should you do?"
-      options: ["Cut the bullets to the most important few", "Change to 12 points", "Squeeze the margins", "Use a pale colour"]
+      options: ["Cut to the most important few", "Change to 12 points so it fits", "Squeeze the margins", "Use a pale colour"]
       answer: 0
       feedback: [null, "It would fit, but nobody could read it.", "Margins do not solve having too many words.", "A pale colour does not help."]
       explain: "Keep the text large and cut the words. If there are many ideas, make more slides."

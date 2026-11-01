@@ -85,7 +85,7 @@ insight: "Years 7 and 8: bigger chats, screenshots and pressure to join in; the 
 check:
   type: question
   q: "In a year-group chat of 80 people, someone posts an embarrassing screenshot of a private message Mei sent. Most people are reacting. What is the best thing to do?"
-  options: ["Don't react or share, check on Mei privately, and tell a trusted adult", "React too, so you don't stand out", "Reply with a joke to change the subject", "Forward it to Mei so she knows"]
+  options: ["Don't react or share, check on Mei privately, and tell a trusted adult", "React too, so you don't stand out", "Reply with a joke to change the subject", "Forward it to Mei so she knows it is going round"]
   answer: 0
   feedback: [null, "Reacting adds to it, even if you don't mean it.", "That leaves the screenshot there and may add to it.", "Mei may already know, and getting it again can hurt more. Ask her how she is instead."]
   explain: "Not adding to it, a private check-in and telling a trusted adult are the bystander's three moves. An adult can help get it taken down."

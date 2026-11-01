@@ -59,10 +59,10 @@ tasks:
   - check:
       type: question
       q: "Who is a trusted adult?"
-      options: ["An adult you know in real life who looks out for you, such as a parent, carer, teacher or school counsellor", "Any adult online who is kind to you", "Whoever has the most followers", "An older player in your game"]
+      options: ["An adult you know in real life who looks out for you", "Any adult online who is kind to you", "Whoever has the most followers", "An older player in your game"]
       answer: 0
       feedback: [null, "Someone you only know online is the person you might be checking about.", "Followers don't make someone trustworthy.", "You may not know who they are in real life."]
-      explain: "Someone you know in real life, whose job or role is to look out for you. Most people have more than one."
+      explain: "Someone you know in real life, such as a parent, carer, teacher or school counsellor, whose job or role is to look out for you. Most people have more than one."
 ```
 
 You only see what someone chooses to show. Most people online are who they say. But because anyone can make a profile, **friendly is not the same as known**.

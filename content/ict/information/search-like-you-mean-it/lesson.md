@@ -77,10 +77,10 @@ tasks:
   - check:
       type: question
       q: "What does the word Ad on a result tell you?"
-      options: ["Someone paid to put it there, so its place says nothing about how good it is", "It is the best answer", "It is a news story", "The search engine checked it"]
+      options: ["Someone paid to put it there", "It is the best answer", "It is a news story", "The search engine checked it"]
       answer: 0
       feedback: [null, "Its place was paid for, not earned by answering your question well.", "Ad means advert. News pages are not marked Ad.", "Paying for a place is not a check."]
-      explain: "An advert is paid for. It may be useful, but its place at the top is bought."
+      explain: "An advert is paid for. It may be useful, but its place at the top is bought, so it says nothing about how good it is."
   - check:
       type: bug
       code: "working.txt#leo"
@@ -111,10 +111,10 @@ tasks:
   - check:
       type: question
       q: "Your search for Riverbend netball training times finds nothing useful. What is a good next move?"
-      options: ["Change one word, such as training to practice, or add the club name", "Give up: it is not online", "Type the same words again", "Click the adverts"]
+      options: ["Change one word, or add the club name", "Give up: it is not online", "Type the same words again", "Click the adverts"]
       answer: 0
       feedback: [null, "Pages may use other words for the same thing. Try again with a change.", "The same words find the same pages.", "Adverts are paid places, not answers."]
-      explain: "Different pages use different words. Swap one word, or add a name, and search again."
+      explain: "Different pages use different words. Swap one word (training for practice), or add the club name, and search again."
 ```
 
 ### The pool

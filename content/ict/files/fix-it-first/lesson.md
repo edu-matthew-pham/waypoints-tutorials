@@ -57,7 +57,7 @@ tasks:
   - check:
       type: question
       q: "Your video has no sound. What is the best first thing to try?"
-      options: ["Check one thing, such as whether the volume or mute is on, then test", "Change every sound setting", "Reinstall the app", "Delete the video"]
+      options: ["Check one thing, such as mute, then test", "Change every sound setting", "Reinstall the app", "Delete the video"]
       answer: 0
       feedback: [null, "Then you cannot tell which one mattered, and you may break something else.", "That is a big step. Start with something small.", "The video is probably fine."]
       explain: "Start with the simplest possible cause, change one thing, and test."
@@ -72,9 +72,9 @@ tasks:
   - check:
       type: question
       q: "Which help request is most useful?"
-      options: ["The video has no sound. The volume is up, headphones are unplugged, and a restart did not help", "It's broken", "Nothing works", "Fix my computer"]
+      options: ["No sound on my video. Volume is up, headphones out, restart did not help", "My video has no sound. Can you fix it for me please?", "Something is wrong with the sound and I tried everything", "Fix my computer"]
       answer: 0
-      feedback: [null, "Broken how? What did you see?", "That could be anything.", "The helper has to start from the beginning."]
+      feedback: [null, "It says what you saw, but not what you tried, so the helper starts from the beginning.", "Tried what? The helper cannot tell what is already ruled out.", "The helper has to start from the beginning."]
       explain: "It says what you saw and what you tried, so the helper can go on from there."
 ```
 
@@ -166,9 +166,9 @@ insight: "Writing a help message has students use the routine on a problem of th
 check:
   type: question
   q: "Your slides will not open. You read the message ('file is corrupt'), you tried another computer, and it did not help. Which message do you send?"
-  options: ["My slides file says it is corrupt on two computers. Can you check it or an earlier version?", "My slides are broken.", "Fix it.", "Nothing works!!!"]
+  options: ["'File is corrupt' on two computers. Is there an earlier version?", "My slides will not open. Can you fix them please?", "My slides say they are corrupt. What do I do?", "Nothing works!!!"]
   answer: 0
-  feedback: [null, "Broken how, and what did you try?", "A helper needs details.", "That does not say what happened."]
+  feedback: [null, "It does not give the message or say what you already tried.", "It gives the message, but not that you tried another computer.", "That does not say what happened."]
   explain: "It names the file, the message, what you tried and what you want."
 ```
 

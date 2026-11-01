@@ -61,7 +61,7 @@ tasks:
   - check:
       type: question
       q: "A scripted reply says bean seeds sprout in about 2 days. What is the best way to check it?"
-      options: ["Look it up in a place that would know, such as a garden club guide or a science book", "Ask the AI: Are you sure?", "Ask a different chatbot", "Trust it: it gave a number"]
+      options: ["Look it up in a garden guide or a science book", "Ask the AI: Are you sure?", "Ask a different chatbot the same question", "Trust it: it gave a number"]
       answer: 0
       feedback: [null, "The same AI may just say yes, or change its answer without a source. Neither is a check.", "Another chatbot works the same way and may repeat the same mistake. Find a place that would know.", "A number sounds exact. That is not the same as checked."]
       explain: "Leave the reply and find a place that would know. Asking an AI again is not an independent check."
@@ -87,7 +87,7 @@ insight: "A reply that names a source changes the task: the source can be checke
 check:
   type: question
   q: "A scripted reply says: According to riverbend-council.example, the pool opens on 1 December. What should you do?"
-  options: ["Open the council's page and see if it really says that", "Trust it: it named a source", "Ignore it: AI can't name sources", "Ask the AI for a second source"]
+  options: ["Open the council's page and check it", "Trust it: it named a source", "Ignore it: AI can't name sources", "Ask the AI for a second source"]
   answer: 0
   feedback: [null, "AI can name sources that don't exist or don't say what it claims. Open it.", "A named source is a good start: open it and check.", "The AI made the source line. You still have to open it."]
   explain: "A named source is something you can check. Open it: it might not exist, or it might say something else."

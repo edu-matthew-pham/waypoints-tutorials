@@ -56,7 +56,7 @@ tasks:
   - check:
       type: question
       q: "Where is the best place to find out who made a page?"
-      options: ["Its About page, the address and any name on it", "The colours and pictures", "How many adverts it has", "How long the page is"]
+      options: ["Its About page, address and names", "The colours and pictures", "How many adverts it has", "How long the page is"]
       answer: 0
       feedback: [null, "Anyone can make a page look good. Looks say nothing about who.", "Adverts tell you how it earns money, not who made it.", "Length says nothing about who wrote it."]
       explain: "The About page, the address and names on the page say who made it. If you cannot find out, that is a clue too."
@@ -93,10 +93,10 @@ tasks:
   - check:
       type: question
       q: "You cannot find any name, About page or date on a page. What does that tell you?"
-      options: ["You cannot check who made it or when, so trust it less and look for another page", "It must be true: it has nothing to hide", "It is from the government", "Nothing at all"]
+      options: ["Trust it less: you cannot check who made it or when", "It must be true: it has nothing to hide", "It is from the government", "Nothing at all"]
       answer: 0
       feedback: [null, "No name means no one to check, not nothing to hide.", "Nothing on the page says so.", "Missing details are a clue: you cannot check who or when."]
-      explain: "A page with no maker and no date is hard to check. It might be fine, but find a page you can check."
+      explain: "A page with no maker and no date is hard to check. It might be fine, but trust it less and look for a page you can check."
 ```
 
 ### Does the date matter?

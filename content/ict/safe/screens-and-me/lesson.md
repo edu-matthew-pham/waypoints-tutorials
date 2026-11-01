@@ -60,7 +60,7 @@ tasks:
   - check:
       type: question
       q: "Which of these is a habit Noah could choose for himself?"
-      options: ["Decide one or two videos before he starts, then do something else", "Never watch videos again", "Watch until his dad takes the device", "Feel bad about it"]
+      options: ["Pick one or two videos first, then do something else", "Never watch videos again", "Watch until his dad takes the device", "Feel bad about it"]
       answer: 0
       feedback: [null, "Videos can be fun and useful. A habit works better than a ban he made up for himself.", "That leaves the choice to someone else.", "Feeling bad doesn't change the habit. A small plan does."]
       explain: "A small plan made before he starts gives him a place to stop."

@@ -45,7 +45,7 @@ tasks:
   - check:
       type: question
       q: "Why is a paragraph that starts at the same left edge on every line easier to read than a centred one?"
-      options: ["The eye knows where each new line starts", "It uses less paper", "It looks fancier", "It is shorter"]
+      options: ["The eye finds where each line starts", "It uses less paper", "It looks fancier", "It is shorter"]
       answer: 0
       feedback: [null, "The amount of paper does not change what the reader sees.", "Centred text can look neat, but it is harder to follow.", "The words are the same."]
       explain: "With a left edge the eye jumps straight back to the same place. With centred lines it has to hunt for the start of each one."
@@ -92,10 +92,10 @@ tasks:
   - check:
       type: question
       q: "A title at the top of a poster should be centred. Why is this one of the few times centring is fine?"
-      options: ["It is one short line, so there is no left edge to follow", "Titles must always be centred", "It uses less space", "The reader reads titles last"]
+      options: ["It is one short line", "Titles must always be centred", "It uses less space", "The reader reads titles last"]
       answer: 0
       feedback: [null, "Titles can be left-aligned too. Centring is a choice for short lines.", "It makes no difference to space.", "Titles are read first."]
-      explain: "Centring is fine for a few short words. For a paragraph of lines, it gets harder."
+      explain: "Centring is fine for a few short words: there is no left edge to follow. For a paragraph of lines, it gets harder."
   - check:
       type: question
       q: "Your report is 3 pages and the limit is 2. What is the best first thing to try?"

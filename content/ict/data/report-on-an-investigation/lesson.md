@@ -85,7 +85,7 @@ insight: "Writing a conclusion that matches the evidence, and no more, is the la
 check:
   type: question
   q: "Which sentence does this data support best?"
-  options: ["On average, the beans grown in the sun were taller (about {{round(avg(sun), 0)}} cm) than those grown in the dark (about {{round(avg(dark), 0)}} cm).", "Sunlight makes every bean in the world grow taller.", "Light is the only thing that affects how tall beans grow.", "Beans in the dark did not grow at all."]
+  options: ["On average, sun beans grew to about {{round(avg(sun), 0)}} cm, dark beans about {{round(avg(dark), 0)}} cm.", "Sunlight makes every bean in the world grow taller.", "Light is the only thing that affects how tall beans grow.", "Beans in the dark did not grow at all."]
   answer: 0
   feedback: [null, "The data covers only these fifteen beans, so it cannot say what every bean everywhere does.", "The investigation changed light only, but it cannot say nothing else matters.", "The dark beans grew to about {{round(avg(dark), 0)}} cm, so they did grow."]
   explain: "The best sentence says what the averages show, for these plants, with numbers. It does not claim more than the data."

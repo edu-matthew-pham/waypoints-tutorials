@@ -67,7 +67,7 @@ tasks:
   - check:
       type: question
       q: "Why does the plan say keep it, not delete it?"
-      options: ["So a trusted adult can see what happened and help report it", "So you can read it again later", "So you can send it to friends", "Because deleting is against the rules"]
+      options: ["So a trusted adult can see it and help report it", "So you can read it again later", "So you can send it to friends", "Because deleting is against the rules"]
       answer: 0
       feedback: [null, "Reading it again usually makes you feel worse. You can ask an adult to keep it for you.", "Sending it on spreads it.", "It's not a rule. It's about getting help."]
       explain: "A screenshot or the username helps an adult help you, and helps an app act on a report."
@@ -122,10 +122,10 @@ tasks:
   - check:
       type: question
       q: "Zara's trusted adult isn't around. What could she do?"
-      options: ["Tell another trusted adult, such as a teacher or the school counsellor, or call Kids Helpline", "Wait until she forgets about it", "Reply to the sender to sort it out herself", "Post about it so everyone knows"]
+      options: ["Tell another trusted adult, or call Kids Helpline", "Wait until she forgets about it", "Reply to the sender to sort it out herself", "Post about it so everyone knows"]
       answer: 0
       feedback: [null, "It may keep happening, and she's alone with it.", "Replying can keep it going.", "That makes the audience bigger."]
-      explain: "Most people have more than one trusted adult, and Kids Helpline (1800 55 1800) is free, any time."
+      explain: "Most people have more than one trusted adult, such as a teacher or the school counsellor, and Kids Helpline (1800 55 1800) is free, any time."
   - check: { type: reflect, text: "I know the plan: stop, keep it, tell a trusted adult, block and report, look after myself." }
 ```
 

@@ -45,7 +45,7 @@ tasks:
   - check:
       type: question
       q: "Why does a slide hold one idea?"
-      options: ["The audience takes in one idea at a glance while listening", "Slides can only be a few words long", "It makes the file smaller", "The software only allows one"]
+      options: ["People can take in one idea while listening", "Slides can only be a few words long", "It makes the file smaller", "The software only allows one"]
       answer: 0
       feedback: [null, "Slides can hold lots of words, but people cannot read lots of words while listening.", "The number of ideas does not change the size of the file.", "Software allows as many as you like."]
       explain: "People read a slide in a few seconds while listening. One idea is what they can take in."

@@ -47,9 +47,9 @@ tasks:
   - check:
       type: question
       q: "Which alt text is best for a bar chart that shows beans in the sun grew 13 cm and beans in the dark grew 4 cm?"
-      options: ["A bar chart: beans in the sun grew 13 cm, beans in the dark 4 cm", "Image of chart", "chart.png", "A chart"]
+      options: ["A bar chart: beans in the sun grew 13 cm, beans in the dark 4 cm", "A green bar and a brown bar on a white background", "A bar chart of the bean heights", "chart.png"]
       answer: 0
-      feedback: [null, "It names the kind of thing but says nothing about what it shows.", "A file name tells a listener nothing.", "Too little: what does the chart show?"]
+      feedback: [null, "It describes how the chart looks, not what it shows.", "It names the topic, but not what the chart shows: which beans grew more?", "A file name tells a listener nothing."]
       explain: "Good alt text gives the idea: what kind of picture it is and what it shows."
   - check:
       type: bug
@@ -62,10 +62,10 @@ tasks:
   - check:
       type: question
       q: "A picture is tiny in the corner of the slide. What is the problem?"
-      options: ["The audience cannot make it out from the back", "It uses too much memory", "It is too colourful", "It breaks the slide"]
+      options: ["The audience cannot make it out", "It uses too much memory", "It is too colourful", "It breaks the slide"]
       answer: 0
-      feedback: [null, "Size on the slide does not change what the audience can see in the way that matters.", "Colour is not the problem here.", "It will show, but not usefully."]
-      explain: "If the audience cannot make it out, it is not helping. Make it large enough to see from the back."
+      feedback: [null, "Memory is not the problem. The problem is what the audience can see.", "Colour is not the problem here.", "It will show, but not usefully."]
+      explain: "If the audience cannot make it out from the back, it is not helping. Make it large enough to see from the back."
 ```
 
 ### Does it show the idea?
@@ -92,7 +92,7 @@ tasks:
   - check:
       type: question
       q: "A slide says beans in the dark are pale. Which picture helps most?"
-      options: ["A pale bean seedling next to a green one", "A logo of the school", "A picture of the sun", "A photo of a crowd"]
+      options: ["A pale seedling beside a green one", "A logo of the school", "A picture of the sun", "A photo of a crowd"]
       answer: 0
       feedback: [null, "It does not show anything about the beans.", "It is about the sun, not the pale beans.", "It is about people, not beans."]
       explain: "A picture should show the idea: pale beans compared with green beans."
@@ -108,9 +108,9 @@ tasks:
   - check:
       type: question
       q: "Which alt text is better for a picture of three bean pots in different places?"
-      options: ["Three pots of beans: one in the dark, one in shade, one in the sun", "Beans", "Picture", "IMG_2041"]
+      options: ["Three pots of beans: one in the dark, one in shade, one in the sun", "Three pots of beans", "Three brown pots with green leaves against a white wall", "IMG_2041"]
       answer: 0
-      feedback: [null, "One word does not say what the picture shows.", "It does not describe anything.", "A file name tells a listener nothing."]
+      feedback: [null, "It says what is there, but not where each pot is, and that is the idea.", "It describes the colours, not the idea.", "A file name tells a listener nothing."]
       explain: "It says what is in the picture and how it relates to the idea."
 ```
 

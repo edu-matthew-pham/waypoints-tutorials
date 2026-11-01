@@ -168,7 +168,7 @@ insight: "Planning a folder for a real set of work has students use the move on 
 check:
   type: question
   q: "You have Science, Maths and Art work this term. Which plan is easiest to search?"
-  options: ["A folder for each subject, with a folder inside for each topic", "One folder with every file in it", "A new folder for every day", "Everything on the desktop"]
+  options: ["A folder per subject, with topic folders inside", "One folder with every file in it", "A new folder for every day", "Everything on the desktop"]
   answer: 0
   feedback: [null, "A long list is hard to look through, and names must carry everything.", "Dates are in the name already. Days mix every subject together.", "The desktop fills up and is not backed up like your folders."]
   explain: "One folder for each subject, with topic folders inside, so the path says what and where."

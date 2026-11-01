@@ -58,10 +58,10 @@ tasks:
   - check:
       type: question
       q: "Why do apps and screen readers use headings?"
-      options: ["To jump straight to a part without reading everything", "To make the file smaller", "To check the spelling", "To make the pages the same length"]
+      options: ["To list the parts and jump to one", "To make the file smaller", "To check the spelling", "To make the pages the same length"]
       answer: 0
       feedback: [null, "File size is not affected by styles.", "Spelling is checked in every part, whatever its style.", "Styles do not change the length of pages."]
-      explain: "A reader, or a screen reader, can list the headings and jump to the part they want."
+      explain: "A reader, or a screen reader, can list the headings and jump straight to the part they want, without reading everything."
 ```
 
 ### Choosing Heading 1

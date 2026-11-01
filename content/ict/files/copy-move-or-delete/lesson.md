@@ -116,7 +116,7 @@ tasks:
   - check:
       type: question
       q: "You are not sure whether a file is still needed. What is the safest thing?"
-      options: ["Move it to a folder called Old and keep it", "Delete it", "Empty the bin", "Rename it final"]
+      options: ["Move it to an Old folder", "Delete it", "Empty the bin", "Rename it final"]
       answer: 0
       feedback: [null, "You cannot be sure of getting it back.", "Emptying the bin removes it for good.", "Renaming does not make it safer."]
       explain: "Move it somewhere you can find it. Deleting is for files you are sure about."
@@ -162,10 +162,10 @@ insight: "Planning the action for a real job has students use the move on their 
 check:
   type: question
   q: "You finish a poster on a school computer and want to work on it at home. What is the best plan?"
-  options: ["Copy it to approved storage, then check it is there before you leave", "Move it onto a USB stick and delete the rest", "Email nothing and hope", "Leave it on the desktop"]
+  options: ["Copy it to approved storage and check it is there", "Move it onto a USB stick and delete the rest", "Save it again with a new name", "Leave it on the desktop"]
   answer: 0
-  feedback: [null, "Then the only copy is on the stick, and sticks get lost.", "Hoping is not a plan.", "You cannot reach it from home."]
-  explain: "Copy to approved storage and check it is there. Then there are two."
+  feedback: [null, "Then the only copy is on the stick, and sticks get lost.", "That is still on the school computer, which you cannot reach from home.", "You cannot reach it from home."]
+  explain: "Copy to approved storage and check it is there before you leave. Then there are two."
 ```
 
 ## In your school's storage
