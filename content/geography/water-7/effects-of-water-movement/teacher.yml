@@ -35,13 +35,13 @@ support: "Use the smaller two-place question, then the frame: water moves from _
 stretch: Use both viewpoints in the invented case without making up evidence about actual communities.
 exit:
   q: Explain one effect of the Snowy Scheme and a contrasting consequence.
-  a: Diversion supplies irrigation supporting crop production, an economic benefit. Reduced Snowy flows changed
-    the channel; environmental releases help restore habitat.
+  a: Diversion supplies water for irrigation, an economic benefit for farms. Much lower Snowy River flows changed
+    the channel greatly; environmental releases now flush sediment to reclaim a deeper channel.
 explain: An effect says what changes because water moves. Environmental focuses on nature, economic on
   production and income, social on daily life. One movement can help one place and harm another.
 sources:
-  - title: Snowy Scheme (NSW Government, Water)
-    url: https://www.water.nsw.gov.au/our-work/projects-and-programs/snowy-scheme
+  - title: Moving water through the Snowy Scheme (Snowy Hydro fact sheet)
+    url: https://www.snowyhydro.com.au/wp-content/uploads/2025/11/3-Moving-water-thru-SS_Water-scheme-Factsheet.pdf
     checked: 2026-10-30
   - title: "Managing water for the environment: Snowy and montane rivers (NSW Environment and Heritage)"
     url: https://www.environment.nsw.gov.au/topics/water/water-for-the-environment/catchments/snowy-and-montane/managing

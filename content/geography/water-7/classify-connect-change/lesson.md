@@ -56,7 +56,7 @@ tasks:
       type: question
       q: Which explanation links connection and physical change in the Murray Mouth card?
       options:
-        - Low river outflow allows sand build-up that can restrict the opening towards the ocean
+        - Low river outflow lets sand build up until the mouth silts up and can close
         - Renewable river water guarantees steady outflow that keeps the opening clear throughout the year
         - Low river outflow prevents any movement of sand, so the opening cannot change shape
         - Sand build-up proves river flow has increased and the sand must all come from upstream
@@ -65,7 +65,7 @@ tasks:
         - null
         - Renewable does not guarantee steady flow or an open mouth.
         - Sand can build up under low outflow; low flow does not freeze the landscape.
-        - Ocean tides influence the mouth too. Do not assume all sand comes from upstream.
+        - "That gets it backwards: the sand comes in from the ocean when river flow is low."
       explain: It links a water pathway with a physical change that can restrict the opening.
   - check:
       type: bug
@@ -82,11 +82,11 @@ tasks:
         q: In made-up Rill Bay, water carries soil to a lake where it settles. Which two tools are linked?
         options:
           - Connection and physical change
-          - Two unrelated place names
+          - Classification and connection
         answer: 0
         feedback:
           - null
-          - The soil travels between places, then changes the lake bed.
+          - Nothing here says whether the water refills. The soil moves, then changes the lake bed.
         explain: Carrying soil connects places; settling changes the receiving place.
 ```
 
@@ -94,14 +94,14 @@ tasks:
 
 ```worked
 \text{Connection} :: Water moves from Lake Alexandrina towards the Murray Mouth.
-\text{Change} :: When outflow is low, sand can build up inside the mouth.
+\text{Change} :: When outflow is low, sand from the ocean builds up in the mouth.
 \text{Link} :: Build-up can restrict the opening and the connection.
 \text{So} :: Connection and physical change explain parts of the same case.
 ```
 
-The **Murray Mouth**, near Goolwa in South Australia, connects with **Lake Alexandrina** through channels controlled by barrages (gated barriers). River outflow and ocean tides influence it. When river outflow is low, sand can build up inside the mouth and restrict the opening. This does not mean all the sand comes down the river.
+The **Murray Mouth** in South Australia is where the River Murray meets the sea, after flowing through **Lake Alexandrina**. Barrages (gated barriers) are operated to keep seawater out of the lake. When too little river water flows out, sand from the ocean builds up and the mouth can silt up and close, so dredges have been used to keep it open.
 
-*Source: [Coorong, Lower Lakes and Murray Mouth (SA Department for Environment and Water)](https://www.environment.sa.gov.au/topics/water-and-river-murray/basin-river-murray-lakes-and-the-coorong/about-the-river-murray/coorong-lower-lakes-and-murray-mouth), checked 30 October 2026.*
+*Sources: [River Murray flow report, 9 July 2021 (SA Department for Environment and Water)](https://www.waterconnect.sa.gov.au/Content/Flow%20Reports/RM-Flow-Report-20210709.pdf); [Murray Mouth barrage outflow and dredging (SA report card, 2023)](https://data.environment.sa.gov.au/Content/Publications/RC2023_RC_WA_SW_MurrayMouthBarrageOutflowAndDredging.pdf), checked 1 November 2026.*
 
 ### Find Nib’s slip
 
@@ -133,15 +133,15 @@ tasks:
       q: A made-up town takes river water faster than rain refills it. Which classification and reason fit?
       options:
         - "Renewable: it refills, but taking too much can run it low"
-        - "Continuous: rainfall means its supply can never be depleted"
-        - "Non-renewable: using any of the water changes its category"
-        - "Continuous: moving water always belongs in this category"
+        - "Continuous: rain keeps falling, so the river can never be run low"
+        - "Non-renewable: once a town uses river water, it is gone for good"
+        - "Continuous: water that keeps moving always belongs in this group"
       answer: 0
       feedback:
         - null
-        - Rainfall does not guarantee an unlimited supply.
-        - Use alone does not make a resource non-renewable.
-        - Movement is not the test for continuous resources.
+        - That treats rain as unlimited. Rain refills at its own pace, so the river can run low.
+        - That forgets refilling. Used water comes back with rain and runoff.
+        - That makes it about moving. The test is whether our use can run it low.
       explain: Classify from replenishment and possible depletion, then explain connections separately.
 ```
 
@@ -161,7 +161,7 @@ insight: Transfer the tools before writing a joined explanation.
 tasks:
   - check:
       type: question
-      q: Made-up Wattle Creek flows from a bare slope past a village to a pond, carrying soil. Which sentence
+      q: Made-up Pebblewash Creek flows from a bare slope past a village to a pond, carrying soil. Which sentence
         explains a connection?
       options:
         - The creek carries soil from the slope past the village to the pond
@@ -180,19 +180,19 @@ tasks:
       q: Flow slows in that pond and sand settles. Which physical change follows?
       options:
         - Sand builds up as a deposit on the pond bed
-        - The pond bed loses every piece of its rock
-        - The water becomes non-renewable as sand settles
-        - The land cannot change while sand still exists
+        - The pond bed is worn away as the water slows down
+        - The sand is carried straight on out of the pond
+        - Nothing changes, because the water stays in the pond
       answer: 0
       feedback:
         - null
-        - The case describes settling, not removal of all rock.
-        - Deposition does not decide how the water refills.
-        - The location of material changes, building up the bed.
+        - That swaps the processes. Slowing water drops sand; it does not wear the bed away.
+        - That misses the slowing. When flow slows, it can no longer carry all the sand.
+        - "Something does change: sand moves to the pond bed and builds it up."
       explain: Deposition changes the physical landscape.
 ```
 
-### Trace Wattle Creek
+### Trace Pebblewash Creek
 
 
 
@@ -207,7 +207,7 @@ stage: make
 insight: Meet minimum width by linking at least two concepts in one case.
 check:
   type: reflect
-  text: In my own book I explained the Murray Mouth case or made-up Wattle Creek using at least two of
+  text: In my own book I explained the Murray Mouth case or made-up Pebblewash Creek using at least two of
     classification, connection and physical change. I named places, a water form and a process or
     classification reason. A partner or teacher checked that my sentences link the ideas.
 ```

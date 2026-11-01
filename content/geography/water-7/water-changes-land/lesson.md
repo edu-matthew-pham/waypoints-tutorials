@@ -102,7 +102,7 @@ tasks:
         - null
         - Soil must be removed and carried before it settles elsewhere.
         - Removal comes before carrying that material towards the lake.
-        - Start with moving water; settling is the final part of this case.
+        - That puts settling before the soil was removed. Moving water comes first, settling last.
       explain: Gravity pulls runoff downhill. Flow removes soil, carries it and deposits some where it slows.
   - check:
       type: bug
@@ -157,27 +157,27 @@ tasks:
         - Released flows scour and carry sediment from the bed
         - The river’s location alone explains its changing depth
         - All the sediment stays fixed once it reaches the river
-        - The river’s name tells us how its channel was formed
+        - The channel deepened because the river runs in a low valley
       answer: 0
       feedback:
         - null
         - Location omits the process acting on the material.
         - Flow can pick up and carry sediment from the bed.
-        - A name does not explain physical change.
+        - That uses the river's position as the reason. Name the process acting on the bed.
       explain: Scouring removes material and flow transports it, reshaping the channel.
   - check:
       type: question
       q: Why might a deposit form where runoff enters Kerrin’s lake?
       options:
         - Flow slows enough for some carried particles to settle
-        - The water must vanish as soon as it enters the lake
-        - All carried soil instantly turns into dissolved salt
+        - The lake is lower, so the soil is pulled down into it
+        - Soil only settles in water that is not moving at all
         - Deposition lifts material off the slope upstream
       answer: 0
       feedback:
         - null
-        - Water can keep moving while particles settle.
-        - Sediment need not dissolve to move or settle.
+        - That makes it about height. Particles settle because the flow slows, not because the lake is lower.
+        - Water does not have to stop. Slower flow is enough for heavier particles to settle.
         - That describes removal, not settling.
       explain: Deposition occurs when flow can no longer carry some of its sediment.
 ```

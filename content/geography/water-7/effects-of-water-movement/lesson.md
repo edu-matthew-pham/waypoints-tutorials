@@ -68,10 +68,10 @@ tasks:
       type: question
       q: According to the real-place card, what is one economic effect of the Snowy Scheme’s water movement?
       options:
-        - Diverted water supports farmers growing crops for sale
+        - Diverted water supplies irrigation for farms downstream
         - Changed river flow alters conditions in the river channel
-        - Mountain water moves inland towards other river systems
-        - The scheme captures water from mountain rivers and streams
+        - Water moves west through tunnels into other river systems
+        - The scheme collects and stores water in its dams
       answer: 0
       feedback:
         - null
@@ -105,18 +105,18 @@ tasks:
 ### One real change, different effects
 
 ```worked
-\text{Movement} :: The Snowy Scheme diverts mountain water inland for irrigation.
+\text{Movement} :: The Snowy Scheme diverts water west into the Murray and Murrumbidgee for irrigation.
 \text{Consequence} :: Irrigation supplies water to crops.
 \text{Effect} :: Supporting crop production is an economic effect.
 ```
 
-The **Snowy Mountains Scheme** captures mountain water and diverts some inland to the **Murray and Murrumbidgee rivers** for irrigation and electricity generation. Irrigation supplies water to crops.
+The **Snowy Mountains Scheme** collects, stores and diverts water westward through tunnels and hydro-electric power stations into the **Murray and Murrumbidgee rivers**, for town water supplies, irrigation and the environment. It also generates hydro-electric power.
 
-*Source: [Snowy Scheme (NSW Government, Water)](https://www.water.nsw.gov.au/our-work/projects-and-programs/snowy-scheme), checked 30 October 2026.*
+*Source: [Moving water through the Snowy Scheme (Snowy Hydro fact sheet)](https://www.snowyhydro.com.au/wp-content/uploads/2025/11/3-Moving-water-thru-SS_Water-scheme-Factsheet.pdf), checked 1 November 2026.*
 
-NSW Environment and Heritage describes how diversion reduced flows below **Jindabyne Dam** on the Snowy River and changed the channel. Environmental releases help restore river habitat. This is an environmental consequence alongside the economic uses.
+NSW Environment and Heritage describes how flows in the Snowy River below **Jindabyne Dam** were cut to a tiny share of their usual amount for decades, and how the river channel changed greatly. Environmental releases now flush sediment out to help reclaim a deeper channel. This is an environmental consequence alongside the economic uses.
 
-*Source: [Managing water for the environment: Snowy and montane rivers (NSW Environment and Heritage)](https://www.environment.nsw.gov.au/topics/water/water-for-the-environment/catchments/snowy-and-montane/managing), checked 30 October 2026.*
+*Source: [Managing water for the environment: Snowy and montane rivers (NSW Environment and Heritage)](https://www.environment.nsw.gov.au/topics/water/water-for-the-environment/catchments/snowy-and-montane/managing), checked 1 November 2026.*
 
 ### Find Nib’s slip
 
@@ -133,7 +133,7 @@ tasks:
       q: Which sentence explains an effect of moving water?
       options:
         - Diversion supplies irrigation, supporting crop production
-        - The Snowy Scheme captures mountain water in its storages
+        - The Snowy Scheme collects and stores water in its dams
         - The Murray and Murrumbidgee are both named river systems
         - The scheme has structures that help it move water inland
       answer: 0
@@ -157,7 +157,7 @@ tasks:
         - null
         - The case says swimmers lose access.
         - A swimming area becoming unusable is a change to daily life.
-        - Check the direction and focus of each stated change.
+        - "That swaps them: the farms gain water (economic) and the swimmers lose access (social)."
       explain: The same diversion affects groups differently.
 ```
 
@@ -217,7 +217,7 @@ tasks:
       feedback:
         - null
         - A dam stores and releases water. It does not make rain.
-        - Look at the lake's lines before and after the dam.
+        - That ignores the lake. With the dam, less water and soil reached it.
         - The lake is downstream of the town. What reached it?
       explain: A dam can help the town and leave the lake with less water and soil. Both effects are real.
       fault: logic

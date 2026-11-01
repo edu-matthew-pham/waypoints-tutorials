@@ -80,7 +80,7 @@ tasks:
       answer: 0
       feedback:
         - null
-        - The town's ground did not change. Look at where the gullies appeared.
+        - That blames the town's land, but the gullies were on the farm upstream.
         - Rain fell upstream, but flowing water carried the soil further.
         - Length alone carries nothing. Name what moved and how.
       explain: The farm and the town are joined by the river. Soil washed off upstream travelled with the water.
@@ -111,7 +111,7 @@ tasks:
       feedback:
         - null
         - River connections do not mean identical weather.
-        - Follow the flow from the farm to the town.
+        - That treats each place as separate, but the river joins the farm to the town.
         - Flow can carry loose particles beyond a boundary.
       explain: The farm and town are connected by surface water carrying soil, with a consequence for water quality.
     smaller:
@@ -167,13 +167,13 @@ tasks:
         - Murrumbidgee headwaters to its junction with the Murray
         - Murray junction to Murrumbidgee headwaters
         - The rivers have no surface-water connection
-        - Every river journey must first pass through the air
+        - The Murrumbidgee stays inside the ACT and never reaches the Murray
       answer: 0
       feedback:
         - null
-        - Follow the direction from headwaters towards the junction.
+        - That reverses the direction. Water flows from the headwaters down to the junction.
         - A junction is where river channels join.
-        - Evaporation is one pathway, not a step in every river journey.
+        - That stops at the ACT border. The card follows the river all the way to the Murray.
       explain: The Murrumbidgee carries surface water from its headwaters towards the Murray.
   - check:
       type: match
@@ -226,9 +226,9 @@ tasks:
       q: Which explanation goes beyond saying water flows downhill?
       options:
         - Runoff carries fertiliser from a field to a lake, affecting water quality
-        - The river flows from high land to low land through the catchment
-        - There is water in the river and a lake farther downstream
-        - The river and the lake are both stores of surface water
+        - The river flows from high land down to low land through the whole catchment
+        - There is water in the river and in a lake farther downstream from the field
+        - The river and the lake are both stores of surface water in the catchment
       answer: 0
       feedback:
         - null

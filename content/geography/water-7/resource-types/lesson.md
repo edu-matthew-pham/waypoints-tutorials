@@ -54,7 +54,7 @@ tasks:
   - check:
       type: question
       q: "A fishing company catches fish faster than they breed. Over the years the fish get harder to find. What does this show?"
-      options: ["A renewable resource can be used up if it is used faster than it comes back", "Fish are a non-renewable resource", "Fish are a continuous resource", "Nothing, because fish always come back"]
+      options: ["A renewable resource can run out if used faster than it comes back", "Fish are non-renewable, so they were always going to run out", "Fish are continuous, so they come back however many are caught", "Nothing, because fish always come back in time, whatever happens"]
       answer: 0
       feedback: [null, "Fish do breed and come back. The problem is the speed they are taken.", "Continuous resources, like sunlight, cannot be used up by what we do. Fish can.", "They come back only if enough are left to breed."]
       explain: "Renewable does not mean it can never run out. It means it comes back, and only if we do not take it faster than it does."
@@ -71,9 +71,9 @@ tasks:
   - check:
       type: question
       q: "What is the main difference between a renewable and a continuous resource?"
-      options: ["A renewable one can be used up if we take it too fast, a continuous one cannot", "A renewable one is cheaper", "A renewable one is found only on land", "There is no difference"]
+      options: ["A renewable one can run out if over-used; a continuous one cannot", "A continuous one just comes back faster than a renewable one", "A renewable one is cheaper to collect than a continuous one", "A renewable one is found only on land, a continuous one in the sky"]
       answer: 0
-      feedback: [null, "Cost does not decide the kind of resource.", "Both kinds are found in many places, on land and at sea.", "They are different: one can run out if we over-use it and the other cannot."]
+      feedback: [null, "That makes it about speed. Sunlight does not come back at all: it is always there, and nothing we do uses it up.", "That makes it about cost, but cost does not decide the kind of resource.", "That makes it about place, but both kinds are found on land and at sea."]
       explain: "The question that separates them is: can our use make it run out?"
 ```
 
@@ -109,16 +109,16 @@ tasks:
   - check:
       type: question
       q: "A town takes water from a river faster than rain and runoff refill it. What should the town expect?"
-      options: ["The river can run low, because river water is renewable but can be used up", "Nothing, because water is continuous", "The river will never be affected, because the sun refills it", "The river will turn into non-renewable water straight away"]
+      options: ["The river can run low, because river water is renewable but can be used up", "Nothing, because water is continuous", "The river will never be affected, because the sun refills it", "The river will refill just as fast as the town takes water"]
       answer: 0
-      feedback: [null, "Water in a river is not the same as sunlight. People can use it up.", "Rain and runoff refill it at their own pace, not at the pace of the town.", "It is still renewable. The problem is the speed it is taken."]
+      feedback: [null, "Water in a river is not the same as sunlight. People can use it up.", "Rain and runoff refill it at their own pace, not at the pace of the town.", "That assumes refilling keeps up with any amount taken. It refills at its own speed, not the town's."]
       explain: "River water comes back, but only at the speed that rain and runoff refill it."
   - check:
       type: question
       q: "Which reason places a resource in the continuous group?"
-      options: ["Nothing people do can use it up", "It is free", "It is found in the sky", "It comes back when it rains"]
+      options: ["Nothing people do can use it up", "It is free", "It moves around all the time, like air", "It comes back when it rains"]
       answer: 0
-      feedback: [null, "Free does not mean continuous. Plenty of free things can run out.", "Where it is found does not decide it. Wind blows near the ground and is continuous, and the tides are continuous in the sea.", "A resource that comes back when something refills it is renewable."]
+      feedback: [null, "Free does not mean continuous. Plenty of free things can run out.", "That makes it about moving. Rivers move too, and they can still be used up.", "A resource that comes back when something refills it is renewable."]
       explain: "Continuous means our use cannot make it run out."
 ```
 
@@ -146,9 +146,9 @@ tasks:
   - check:
       type: question
       q: "Ben says: 'Timber is renewable, so we can cut as many trees as we like.' What is the best reply?"
-      options: ["Renewable only works if new trees grow as fast as old ones are cut", "He is right, renewable means it never runs out", "Timber is actually continuous", "Trees are non-renewable"]
+      options: ["Only if new trees grow back as fast as old ones are cut", "He is right, because renewable means it can never run out", "Timber is continuous, so cutting more makes no difference", "Trees are non-renewable, so we should not cut any at all"]
       answer: 0
-      feedback: [null, "Think about the fishing company. Renewable did not mean it could not run out.", "Timber needs time to regrow, and we cannot use up sunlight. They are different.", "Trees do regrow, so they are not non-renewable."]
+      feedback: [null, "That treats renewable as unlimited. Like the fish, trees can be taken faster than they come back.", "That mixes timber up with sunlight. Timber has to regrow; sunlight is always there.", "That goes too far the other way. Trees do regrow, so they are renewable."]
       explain: "Renewable means it comes back, not that it comes back no matter what we take."
 ```
 

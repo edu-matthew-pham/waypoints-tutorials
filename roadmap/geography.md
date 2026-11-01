@@ -277,6 +277,14 @@ A report-only review agent (different model, no shared context) read water-austr
 - **Not changed:** "Typical"/"Wider" step labels (a site-wide convention, not this course's to change).
 - **Checked again:** validate, build, `check-lesson-boards geography`, `check-decks` for both courses, all 118 checks answered at phone and desktop with every wrong answer rejected, the board click-through (25 checks), and the tightened board checks rejecting the shortcuts.
 
+## Source check and fixes (1 Nov 2026, `water-7`; Matthew said go)
+Checked every real-place card in `water-7` against its source and swept the questions for silly distractors.
+- Sources: the Snowy Scheme card now follows the Snowy Hydro water scheme fact sheet (collects, stores and diverts water west into the Murray and Murrumbidgee; also generates power). The Jindabyne card keeps NSW Environment and Heritage. The Murray Mouth card now cites two SA documents that load (River Murray flow report, 9 July 2021; SA report card 2023, Murray Mouth barrage outflow and dredging), because the old DEW topic page no longer did. The card now says the mouth silts up with ocean sand when outflow is low, and dredges keep it open. All checked 1 Nov 2026.
+- T2: made-up "Wattle Creek" is a real name in several places, so it is now Pebblewash Creek (lesson, teacher notes, class plan). Kerrin and Rill Bay were searched and kept (no real place found).
+- Distractors: options that no student would pick were replaced with real slips, and their feedback now names the slip instead of saying "look at…" (all five lessons). `check-options -- geography` flags nothing. The option-length baseline was not updated: `--update` refuses while another chat's History questions are flagged and not baselined, so geography was left out of it on purpose.
+- Not done (could): Nib's bug line is always line 3 across the course.
+- Tested: validate, build, every non-board check answered in Chromium (right answers tick, 68 of 68 wrong ones refused), catchment board clicks and model check, lesson-board check, decks fit. Lesson-only: the next whole-site publish carries it.
+
 ## Parked (1 Nov 2026; revisit after a class has used water-7 and water-australia-7)
 
 - **Catchment clip** for `water-7/water-connects-places` Explain it to me (Decided above: no clip until the widget has settled after a class trial).
