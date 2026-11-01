@@ -18,12 +18,12 @@ questions:
     type: question
     q: "Which ending makes an argument about interpretations strongest?"
     options:
-      - "So they differ mainly because each side could see different evidence"
-      - "So they just have different opinions"
-      - "So the Han writers were right"
+      - "So they differ because of the evidence, questions or values behind each"
+      - "So they differ because people just have different opinions"
+      - "So the Han writers were right, and today's historians are wrong"
     answer: 0
-    explain: "It names the reason behind the difference."
+    explain: "It names a reason behind the difference. Any of the three kinds will do; there is no single right reason."
     feedback:
       - null
-      - "Why are their opinions different?"
-      - "The question is why they differ, not who wins."
+      - "That says they differ but not why. Why are their opinions different?"
+      - "That picks a winner. The question is why they differ, not who wins."

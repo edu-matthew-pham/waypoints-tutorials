@@ -67,7 +67,7 @@ tasks:
       type: question
       q: "Historians often point out that the Wei River valley was a strong base for the state of Qin. Which reason uses the geography best?"
       options:
-        - "It had river water and good farmland, with mountains and passes around it that made it harder to attack"
+        - "It had river water, good farmland and mountains that slowed attackers"
         - "It was close to the sea, so the Qin could trade by ship"
         - "It was in the middle of the Gobi Desert, far from any enemies"
         - "It was the warmest and wettest part of China, so rice grew easily"
@@ -187,10 +187,10 @@ check:
   type: question
   q: "In ancient Egypt, almost everyone lived in a narrow strip of land along the Nile. Which reason uses the geography best? (See the Egypt card on the Reference page.)"
   options:
-    - "Desert lay on both sides, and the Nile's yearly flood left rich soil and water for crops"
-    - "The river was the only place that was cool enough to live"
-    - "The desert was full of cities already, so there was no room"
-    - "People lived by the river mainly to be near the sea"
+    - "Desert lay on both sides, and the Nile's flood left soil and water"
+    - "The river was the only place cool enough to live in the heat"
+    - "The desert was full of cities already, so there was no room left"
+    - "People lived by the river mainly to be near the sea for trade"
   answer: 0
   feedback:
     - null
@@ -210,10 +210,10 @@ check:
   type: question
   q: "Ancient Greece had many separate city-states rather than one big river kingdom. How did its geography help make that so? (See the Greece card.)"
   options:
-    - "Mountains split the land into small valleys and coasts, so communities grew apart, and the sea linked them by boat"
+    - "Mountains split it into small valleys, and the sea linked them by boat"
     - "Greece had one huge river plain, so everyone lived in the same place"
-    - "The sea kept the Greeks from ever meeting each other"
-    - "Greece was a desert, so people had to live in tiny groups"
+    - "The sea kept the Greeks from ever meeting or trading with each other"
+    - "Greece was a desert, so people had to live in tiny scattered groups"
   answer: 0
   feedback:
     - null

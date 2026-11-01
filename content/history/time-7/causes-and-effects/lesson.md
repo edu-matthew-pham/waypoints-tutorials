@@ -26,10 +26,10 @@ check:
   type: predict
   q: "Why do you think Qin, out of seven rival states, ended up ruling them all?"
   options:
-    - "Several things together: a strong army, a lot of food and a determined king"
-    - "Only because King Zheng was a brilliant leader"
-    - "Only because Qin was lucky in its last few battles"
-    - "Only because the other six states were weak"
+    - "Its farms and army grew strong over a century, then its king used them"
+    - "King Zheng was a brilliant leader who outplanned every rival king"
+    - "Qin had luck on its side in the last few battles, when it counted"
+    - "The other six states were weak, so Qin was bound to beat them"
   actual: "Historians usually point to several causes working together: reforms over a century that made Qin's army and farms strong, grain from irrigated land, and King Zheng's campaigns at the end. No single one explains it alone."
 ```
 
@@ -83,22 +83,22 @@ tasks:
       fault: logic
       misconception: single-cause-event
       explain: "Line 3: Nib turns one cause into the whole explanation. King Zheng's campaigns mattered, but they rested on a century of reforms and the grain to feed his armies."
-    hint: ["Could King Zheng have won with no grain and no army?", "Look for the line that says 'only'."]
+    hint: ["Could King Zheng have won with no grain and no army?", "Think about what Qin built up long before King Zheng was king. Which of Nib's lines leaves all of that out?"]
     smaller:
       check:
         type: question
         q: "A netball team wins the grand final. Which explanation is best?"
         options:
           - "Hard training all season, a strong defence and a great last quarter"
-          - "Only the captain, because she shot the winning goal"
-          - "Only luck, because the other team missed a shot"
-          - "Only the last quarter, because that is when they won"
+          - "The captain shot the winning goal, so the win was down to her"
+          - "The other team missed a late shot, so really it was luck"
+          - "They won the last quarter, and that is the part that decided it"
         answer: 0
         feedback:
           - null
-          - "The captain mattered, but she was one player in a team that had trained all season."
-          - "Luck may have helped, but a team does not reach a final by luck alone."
-          - "The last quarter was the trigger for the win. The season's work made it possible."
+          - "That turns one player into the whole reason. She was one player in a team that had trained all season."
+          - "That turns luck into the whole reason. A team does not reach a final by luck alone."
+          - "That treats the trigger as the whole reason. The last quarter set off the win; the season's work made it possible."
         explain: "Big results usually have several causes: some build up over time, some happen right at the end."
   - check:
       type: question
@@ -123,7 +123,7 @@ tasks:
 
 ## Vary: what was the trigger?
 
-In 209 BCE, the year after the First Emperor died, a revolt began. **According to Sima Qian**, a Han court historian writing about a century later, a group of men called up for service were held up by heavy rain. They knew they would arrive late and feared being punished, so they rebelled instead. Revolts spread across the old states, and the Qin dynasty fell in 206 BCE.
+In 209 BCE, the year after the First Emperor died, a revolt began. **According to Sima Qian**, a Han court historian writing about a century later, a group of men called up for service were held up by heavy rain. They knew they would arrive late and feared being punished, so they rebelled instead. Revolts spread across the old states, and by 206 BCE the Qin dynasty had fallen.
 
 ```step
 stage: modify
@@ -170,6 +170,8 @@ check: { type: reflect, text: "In my own book I explained one event from the soc
 ```
 
 Write it in your own book or document, not on this page. Your partner or teacher reads it.
+
+Several causes matter whenever historians ask why something happened. If your class does the course Contact and conflict, you will meet the same idea there, in why societies came into contact and fought.
 
 ## Typical: Rome gets an emperor
 

@@ -18,9 +18,9 @@ There is no writing from the time people first spread out of Africa. So historia
 | **DNA** | How groups of people are related, and roughly when they split apart. | Ancient DNA does not always survive. |
 | **Oral history** | Accounts passed down by speaking, across generations. | Like any source, it is understood through its community and its purpose. |
 
-You met layers, dating and DNA in *How we know*. Here the question is how they work **together**.
+If you have done the course *How we know*, you met layers, dating and DNA there. In short: layers give an order, dating methods give an age, and DNA shows how people are related. Here the question is how they work **together**.
 
-> **A made-up dig report (made up for this lesson).** At a rock shelter, archaeologists dig through five layers. In layer 4 they find stone tools and a hearth with charcoal. The charcoal is radiocarbon dated to about 45,000 years ago. Layer 5, below it, has more tools but no charcoal; luminescence dating of its sand gives about 60,000 years ago. No human bones are found.
+> **A made-up dig report (made up for this lesson).** At a made-up rock shelter somewhere in western Asia (not in Australia, and not a real site), archaeologists dig through five layers. In layer 4 they find stone tools and a hearth with charcoal. The charcoal is radiocarbon dated to about 45,000 years ago. Layer 5, below it, has more tools but no charcoal; luminescence dating of its sand gives about 60,000 years ago. No human bones are found.
 
 ## Predict: one tool
 
@@ -31,10 +31,10 @@ check:
   type: predict
   q: "A single stone tool is found lying on the surface of a cave floor, not in any layer. What can it tell you on its own?"
   options:
-    - "That someone made a tool, but not when, or who they were, or where they came from"
-    - "Exactly when the cave was first used"
+    - "That someone made a tool, but not when, who or where from"
+    - "Exactly when the cave was first used by people"
     - "Which kind of human made it and where they travelled from"
-    - "Nothing at all, so it is not evidence"
+    - "Nothing at all, so it does not count as evidence"
   actual: "That someone made a tool. With no layer, no date and no bones, it cannot say when, who or from where. It is still evidence, just a small piece."
 ```
 
@@ -65,9 +65,9 @@ tasks:
       type: question
       q: "Why did the archaeologists use luminescence, not radiocarbon, for layer 5?"
       options:
-        - "Layer 5 had no charcoal or bone to date, and it may be older than radiocarbon can reach"
-        - "Radiocarbon dating only works on stone tools"
-        - "Luminescence is always more exact than radiocarbon"
+        - "There was no charcoal or bone, and it may be too old for radiocarbon"
+        - "Radiocarbon dating only works on stone tools, not on sand"
+        - "Luminescence is always more exact than radiocarbon, so it is best"
         - "Layer 5 is above layer 4, so it needed a different method"
       answer: 0
       feedback:
@@ -104,16 +104,16 @@ tasks:
       type: question
       q: "The archaeologists say people used the shelter at least twice, about 15,000 years apart. Which evidence supports that?"
       options:
-        - "Tools in both layers, one dated to about 60,000 and one to about 45,000 years ago, in order"
-        - "The hearth on its own"
-        - "The lack of human bones"
-        - "The shape of the rock shelter"
+        - "Tools in two dated layers, about 60,000 and 45,000 years old"
+        - "The hearth and its charcoal, dated to about 45,000 years ago"
+        - "No human bones were found, so the visits must be far apart"
+        - "The five layers, since each layer means one more visit"
       answer: 0
       feedback:
         - null
-        - "One hearth is one moment. Two visits need two dated layers."
-        - "No bones means we cannot say who. It does not show how long."
-        - "The shelter's shape does not tell you when people were there."
+        - "That uses one piece for a two-part claim. One hearth is one moment; two visits need two dated layers."
+        - "That reads a gap as evidence of time. No bones means we cannot say who. It does not show how long."
+        - "That treats every layer as a visit. Layers can build up with nobody there; only layers with tools show people."
       explain: "Two dated layers, both with tools, in the right order, show two times of use. Whether people came back in between is still open. That is an interpretation built from several pieces."
 ```
 
@@ -132,7 +132,7 @@ check:
   type: question
   q: "Suppose a later dig at the same shelter finds a human tooth in layer 5, and its DNA can be read. What happens to the interpretation?"
   options:
-    - "It can be added to: now there is evidence of who was there, as well as when"
+    - "It can be added to: now there is evidence of who, as well as when"
     - "The whole interpretation was a guess, so it should be thrown away"
     - "Nothing, because interpretations never change"
     - "The dates are now wrong, because the tooth replaces them"
@@ -182,10 +182,10 @@ check:
   type: question
   q: "Why is Out of Africa stronger because fossils, stone tools and DNA all point the same way?"
   options:
-    - "Each kind of evidence was found and tested in a different way, so their agreement is hard to explain by chance"
+    - "Each kind was tested a different way, so agreeing is unlikely by chance"
     - "Three kinds of evidence means the theory is proved forever"
-    - "Fossils alone would have been enough"
-    - "Because DNA is always more reliable than fossils"
+    - "Fossils alone would have been enough, so the rest just repeats it"
+    - "Because DNA is always more reliable than fossils or tools"
   answer: 0
   feedback:
     - null
@@ -205,17 +205,17 @@ check:
   type: question
   q: "Two dating methods give different ages for the same layer. What should historians do?"
   options:
-    - "Look at why they might differ (the samples, the methods, any disturbance), and say how sure they can be"
-    - "Pick the date they like best"
-    - "Decide the layer cannot be dated, so ignore it"
-    - "Average the two and treat it as exact"
+    - "Work out why they differ, and say how sure they can be"
+    - "Pick the date that fits the story they like best"
+    - "Decide the layer cannot be dated, so leave it out"
+    - "Average the two and treat the average as exact"
   answer: 0
   feedback:
     - null
     - "Choosing by preference is not evidence. They need a reason."
     - "The layer is still evidence. The question is how sure they can be."
     - "An average can hide a real problem. They should find out why the dates differ first."
-  explain: "Historians explain disagreements and show how certain they are. That is part of an honest interpretation."
+  explain: "Historians look at why the dates differ (the samples, the methods, any disturbance) and say how certain they can be. That is part of an honest interpretation."
 ```
 
 Typical and wider steps are extras on the same idea. You do not need them to finish the lesson.

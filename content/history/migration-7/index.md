@@ -9,7 +9,7 @@ recap: true
 units:
   - { id: theories, title: "Theories of human origins", summary: "What the main theories say about where our species began, and what historians and scientists mean by a theory." }
   - { id: causes, title: "Why people moved", summary: "How changes in rainfall, deserts and sea levels over many generations are thought to have opened and closed routes out of Africa." }
-  - { id: evidence, title: "How we know", summary: "How several kinds of evidence, read together, build an interpretation that can change when new evidence turns up." }
+  - { id: evidence, title: "Evidence for the first people", summary: "How several kinds of evidence, read together, build an interpretation that can change when new evidence turns up." }
   - id: deep-time
     title: "Deep time Australia"
     summary: "Six standards about the deep history of First Nations Australians (AC9HH7K02 to K07), taught by your teacher with local, community-approved material and First Nations-led resources. This site does not explain them itself."

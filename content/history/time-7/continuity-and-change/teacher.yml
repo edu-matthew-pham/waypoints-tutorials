@@ -10,7 +10,7 @@ struggle: "Students treat a turning point as all change ('a new dynasty, so ever
 before: |-
   AC9HH7S05 n3. Not a hinge, but it relies on n2: holding several things true at once.
 
-  Facts (checked 1 Nov 2026): Han dynasty 206 BCE to 220 CE, Western Han capital Chang'an, Emperor Wu made Confucianism the basis for official conduct and education, the Han kept the Qin's borders (The Met); Liu Bang founded the Han in 206 BCE and the Han kept the Qin's centralised system of appointed officials; Wang Mang's Xin dynasty 9 to 25 CE (Britannica, an encyclopedia); Emperor Wu's imperial academy founded 124 BCE (Strayer, Ways of the World, a world history textbook); the Zhangjiashan legal texts were buried in about 186 BCE and show how the Han "adopted and adapted" Qin legal and administrative precedents (Anthony Barbieri-Low, UCSB, who translated them with Robin Yates). Shuihudi dates as in Source origin and purpose.
+  Facts (checked 1 Nov 2026): Han dynasty 206 BCE to 220 CE, Western Han capital Chang'an, the Han kept the Qin's borders (The Met); the Han count their rule from 206 BCE, and Liu Bang won the war in 202 BCE (the last Qin ruler surrendered in late 207 BCE; many books date the end to 206 BCE, so checks say "by 206 BCE"); in 136 BCE Emperor Wu gave official posts to scholars of the Confucian classics, and in 124 BCE he founded an academy to train officials in them. Later Han writers described this as Confucian teaching winning out; many historians think the change was slower (Indiana University course notes, "The canonization of Confucianism"; Loewe, Dong Zhongshu, a "Confucian" Heritage, Brill 2011; Nylan, The Five "Confucian" Classics, Yale 2001). The Han kept the Qin's centralised system of appointed officials; Wang Mang's Xin dynasty 9 to 25 CE (Britannica, an encyclopedia); Emperor Wu's imperial academy founded 124 BCE (Strayer, Ways of the World, a world history textbook); the Zhangjiashan legal texts were buried in about 186 BCE and show how the Han "adopted and adapted" Qin legal and administrative precedents (Anthony Barbieri-Low, UCSB, who translated them with Robin Yates). Shuihudi dates as in Source origin and purpose.
 
   The sources are described in our words, not quoted. The Zhangjiashan texts are a digest, not a complete law code; "historians report that many follow Qin rules" keeps that limit.
 
@@ -26,7 +26,7 @@ running:
   - "Vary: ask what else farmers lived through between 221 BCE and 100 BCE."
   - "Make: students write in their own book; a partner checks that each claim has a date."
 stuck:
-  - see: "A student says everything changed in 206 BCE."
+  - see: "A student says everything changed when the Han took over."
     ask: "What did a Han official do each day? Was it different from a Qin official?"
     fix: "The Han kept the commanderies, officials, script and many laws."
   - see: "A student says continuity means nothing happened."
@@ -54,4 +54,7 @@ sources:
     checked: 2026-11-01
   - title: "Strayer, Ways of the World, ch. 5: Emperor Wu's imperial academy, 124 BCE (textbook)"
     url: https://digfir-published.macmillanusa.com/strayer3e/strayer3e_ch5_5.html
+    checked: 2026-11-01
+  - title: "The canonization of Confucianism (Indiana University course notes, H425): 136 and 124 BCE, and why historians think the change was slower"
+    url: https://dchenlin.pages.iu.edu/h425/canonizationofconfucian.htm
     checked: 2026-11-01

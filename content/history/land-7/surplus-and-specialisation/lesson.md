@@ -90,9 +90,9 @@ tasks:
         q: "Before there could be thousands of full-time soldiers, what had to exist?"
         options:
           - "Farmers growing enough extra grain to feed them"
-          - "An emperor to give the orders"
-          - "Walls for the soldiers to guard"
-          - "Bronze weapons for every soldier"
+          - "An emperor to give the orders and pay them"
+          - "Walls and forts for the soldiers to guard"
+          - "Bronze weapons and armour for every soldier"
         answer: 0
         feedback:
           - null
@@ -104,10 +104,10 @@ tasks:
       type: question
       q: "What does the 200-sack surplus in the village record mean?"
       options:
-        - "Food beyond what the farm families needed, which could be stored or taxed to feed other people"
-        - "Every farmer in the village was now rich"
-        - "Spare grain that nobody needed, so it was thrown away"
-        - "The whole harvest that the village grew that year"
+        - "Food beyond what the families needed, to store or tax to feed others"
+        - "Every farmer in the village was now rich, with grain to spare"
+        - "Spare grain that nobody needed, so the village threw it away"
+        - "The whole harvest that the village grew and stored that year"
       answer: 0
       feedback:
         - null
@@ -136,7 +136,7 @@ check:
   type: question
   q: "How does the Dujiangyan water system fit the chain from farming to cities?"
   options:
-    - "Controlling floods and watering the fields made harvests more reliable, so the plain could produce a bigger surplus"
+    - "Reliable water and flood control gave steadier harvests and a bigger surplus"
     - "It shows that good soil always produces a surplus without any work"
     - "It was built to carry soldiers by boat, so it has nothing to do with farming"
     - "It made every farmer on the plain rich, so nobody needed to pay tax"
@@ -168,8 +168,8 @@ tasks:
       type: question
       q: "The Yellow River's floods sometimes wiped out a whole year's crops. What does that tell you about fertile land?"
       options:
-        - "Good soil helped, but harvests could still fail, so people stored grain and built dykes"
-        - "Good soil meant every harvest was large"
+        - "Good soil helped, but harvests could fail, so people stored grain"
+        - "Good soil meant every harvest was large, whatever the weather"
         - "Floods only ever helped, because they brought fresh soil"
         - "Floods meant nobody could farm near the river at all"
       answer: 0
@@ -229,14 +229,14 @@ check:
   type: question
   q: "Imagine floods ruin the harvest in a region for three years in a row, and the granaries run low. Who is likely to be affected, and why?"
   options:
-    - "Everyone, including officials, soldiers and craftworkers, because they all ate grain that farmers grew"
-    - "Only the farmers, because only they eat the grain"
-    - "Nobody, because cities make their own food"
-    - "Only the emperor, because the tax grain was all his"
+    - "Everyone who ate farmers' grain, including officials and soldiers"
+    - "Mainly the farmers, since they are the ones who grow the grain"
+    - "Nobody much, because cities could make their own food"
+    - "Only the emperor, because all the tax grain belonged to him"
   answer: 0
   feedback:
     - null
-    - "Officials, soldiers and craftworkers ate grain too. They did not grow it."
+    - "That forgets who else ate the grain. Officials, soldiers and craftworkers ate grain too, and they did not grow it."
     - "Cities depended on grain grown in the countryside."
     - "Tax grain fed soldiers, officials and workers, not just the ruler."
   explain: "The surplus held the whole system up. When it shrank, people far from the fields felt it."

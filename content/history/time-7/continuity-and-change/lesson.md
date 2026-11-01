@@ -3,9 +3,9 @@ order: 3
 unit: change
 title: Qin to Han, what changed and what stayed?
 node: AC9HH7S05 n3
-summary: "Explain continuity (what stayed the same) and change (what was different) across a turning point, using dated evidence for each, and see that both happen at the same time. The worked case is the Han dynasty taking over from the Qin in 206 BCE: a new family on the throne, but much of the Qin way of running the empire kept."
+summary: "Explain continuity (what stayed the same) and change (what was different) across a turning point, using dated evidence for each, and see that both happen at the same time. The worked case is the Han dynasty taking over from the Qin (the Han count their rule from 206 BCE): a new family on the throne, but much of the Qin way of running the empire kept."
 language: maths
-hook: "In 206 BCE the Qin dynasty fell and a new family took the throne. Did everything start again?"
+hook: "By 206 BCE the Qin dynasty had fallen, and soon a new family took the throne. Did everything start again?"
 ---
 When historians look at a turning point, they ask two questions:
 
@@ -14,7 +14,7 @@ When historians look at a turning point, they ask two questions:
 
 The answer is nearly always *both*. A new ruler can change some things while most people's lives, and much of how the country is run, carry on.
 
-In 206 BCE the Qin dynasty fell. After a few years of war, a commoner called Liu Bang won and became the first emperor of the **Han** dynasty. The Han ruled, with one short break, for about 400 years.
+By 206 BCE the Qin dynasty had fallen. A commoner called Liu Bang won the war that followed, in 202 BCE, and became the first emperor of the **Han** dynasty. The Han count their rule from 206 BCE, and they ruled, with one short break, for about 400 years.
 
 ## Predict: start again?
 
@@ -25,10 +25,10 @@ check:
   type: predict
   q: "When the Han took over from the Qin, how much do you think changed?"
   options:
-    - "Some things changed, and many things stayed the same"
-    - "Everything changed, because it was a new dynasty"
-    - "Nothing changed except the emperor's name"
-    - "Nothing changed at all, because it was still China"
+    - "The ruling family changed, but the way of running the empire mostly stayed"
+    - "Everything changed, because it was a new dynasty with new rulers"
+    - "Probably most things changed, since the Han had just won a war"
+    - "Nothing changed at all, because it was still the same China"
   actual: "Some things changed (the ruling family, and later the ideas used to choose officials), but much stayed: officials running commanderies, the written script, standard measures, the empire's borders, and most people's lives as farmers."
 ```
 
@@ -77,7 +77,7 @@ tasks:
       fault: logic
       misconception: new-dynasty-new-everything
       explain: "Line 3: a new dynasty changed the ruling family, but the Han kept much of what the Qin built. The Han legal texts show many laws carried on."
-    hint: ["Look at the Zhangjiashan row in the table.", "Does a new ruler mean new laws, new officials and a new script all at once?"]
+    hint: ["Does a new ruler mean new laws, new officials and a new script all at once?", "Look at the Zhangjiashan row in the table."]
     smaller:
       check:
         type: question
@@ -118,9 +118,9 @@ check:
   q: "Under both the Qin and the Han, most people were farmers who paid grain tax. What does that continuity tell us?"
   options:
     - "Farm life and tax carried on, even while rulers and their ideas changed"
-    - "Nothing at all happened to farmers for 400 years"
-    - "Farmers did not notice the Qin falling"
-    - "The Han must have copied the Qin on everything"
+    - "Nothing at all happened to farmers in those 400 years of Han rule"
+    - "Farmers did not even notice when the Qin fell and the Han took over"
+    - "The Han must have copied the Qin on everything, not just on tax"
   answer: 0
   feedback:
     - null
@@ -190,16 +190,16 @@ check:
   type: question
   q: "Confucius died in 479 BCE. The Qin did not favour his ideas, but the Han later trained officials in them. Is the Han's use of Confucian ideas continuity or change?"
   options:
-    - "It depends on the timescale: a change from the Qin, but a continuity from earlier"
-    - "Only change, because the Qin had not used Confucian ideas"
-    - "Only continuity, because Confucius lived long before"
-    - "Neither, because ideas cannot be continuity or change"
+    - "Both: a change from the Qin, but a continuity from the centuries before"
+    - "Change, because the Qin had not used Confucian ideas to run things"
+    - "Continuity, because Confucius had lived long before the Han began"
+    - "It depends on your opinion, so there is no way to decide either way"
   answer: 0
   feedback:
     - null
     - "Compared with the Qin, yes. But the ideas had been taught for centuries before the Qin."
     - "Over the long run, yes. But compared with the Qin, using them to train officials was new."
-    - "Ideas carry on and change like anything else in history."
+    - "It does depend, but on what you compare it with, not on opinion. Name the comparison and you can decide."
   explain: "Whether something counts as continuity or change depends on what you compare it with and how long a stretch you look at."
 ```
 

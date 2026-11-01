@@ -19,8 +19,8 @@ questions:
     q: "Why could the Wei River valley support a capital, when the Gobi Desert could not?"
     options:
       - "The valley had river water and farmland; the desert had neither"
-      - "The desert was too far from the sea"
-      - "The valley had no floods"
+      - "The desert was too far from the sea for trade by ship"
+      - "The valley never flooded, so crops were always safe"
     answer: 0
     explain: "Water and farmland fed a large population. A desert could not."
     feedback:

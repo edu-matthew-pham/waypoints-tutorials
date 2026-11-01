@@ -11,7 +11,7 @@ struggle: "Reading BCE numbers like ordinary counting numbers, so 500 BCE looks 
 before: |-
   AC9HH7S05 n1 (hinge). The checkpoint: use BC/AD, BCE/CE and BP correctly, sequence events and sources, and explain why order matters for cause and change. Kit's hinge reason is the slip in this lesson's bug task: treating 500 BCE as more recent than 100 BCE.
 
-  Dates used (checked 1 Nov 2026): Confucius 551 to 479 BCE (Stanford Encyclopedia of Philosophy); Qin dynasty 221 to 206 BCE (The Met); the salt and iron monopolies 119 BCE and Wang Mang's reign from 9 CE are standard dates already used in People and power. BP: "years before AD 1950" is the definition the journal Radiocarbon uses. The millet date (about 7,800 years ago) is from Shaped by the land.
+  Dates used (checked 1 Nov 2026): Confucius 551 to 479 BCE (Stanford Encyclopedia of Philosophy); Qin dynasty 221 to 206 BCE (The Met; the last Qin ruler surrendered in late 207 BCE, and many books date the end to 206 BCE); the salt and iron monopolies 119 BCE and Wang Mang's reign from 9 CE are standard dates already used in People and power. BP: "years before AD 1950" is the definition the journal Radiocarbon uses. The millet date (about 7,800 years ago) is from Shaped by the land.
 
   The timeline board snaps to the nearest 10 years, so the targets are 480 BCE, 220 BCE, 120 BCE and 10 CE. The board shows a "no year 0" gap marker; its spacing treats the line as continuous, so it is for order, not for counting years exactly across BCE and CE (the Vary step does that by hand).
 

@@ -16,12 +16,12 @@ questions:
     type: question
     q: A made-up site can keep its finds but loses all records of their locations. Which future question becomes harder?
     options:
-      - What colour is this surviving pot?
-      - How heavy is this surviving tool?
+      - What is this pot made of, and how was it fired?
+      - What was this tool used for, judging by its edge?
       - Which activity came before another at this site?
     answer: 2
     explain: The lost locations and layers weaken the sequence that could answer the timing question.
     feedback:
-      - A surviving object can still show its colour.
-      - The tool can still be weighed.
+      - The pot survived, so you can still study the pot itself.
+      - The tool survived, so you can still study its edge.
       - null

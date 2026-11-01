@@ -27,8 +27,8 @@ check:
   type: predict
   q: Which source is automatically more reliable?
   options:
-    - The inscription, because it is written
-    - The dig, because it is physical
+    - The inscription, because people wrote it at the time
+    - The dig, because objects cannot lie the way words can
     - Neither; ask what each can show about the question
   actual: Neither wins on its own. It depends on the question, who made each source, why, and what each one leaves out.
 ```
@@ -68,27 +68,27 @@ tasks:
       type: question
       q: What would help you most to compare the two cards?
       options:
-        - Believe the inscription and stop there
+        - Believe the inscription, since a ruler would know best
         - Check the dates, purpose and dig records of both cards
-        - Go with whichever card says more
+        - Go with whichever card gives more detail about the town
       answer: 1
       explain: Find out what each source supports, and whether they are even about the same time.
       feedback:
-        - Being written down does not make a claim true.
+        - That trusts the writer's rank. Being written down by a ruler does not make a claim true.
         - null
-        - Saying more does not make a source more reliable.
+        - That trusts detail. Saying more does not make a source more reliable.
   - check:
       type: question
       q: "Nib says: “It was carved in stone, so the town must have been prosperous for everyone.” Which reply is best?"
       options:
-        - Writing in stone can never be used as evidence
-        - The burnt floor tells you the whole story instead
-        - The inscription shows what the ruler claimed; check why it was made and what other evidence says
+        - Writing in stone can never be used as evidence, so ignore it
+        - The burnt floor tells the whole story, so use that instead
+        - It shows what the ruler claimed; check it against other evidence
       answer: 2
       explain: An inscription is good evidence of what someone chose to record. Whether it was true for everyone needs more evidence.
       feedback:
-        - A source can still be useful when its claim needs checking.
-        - Objects have limits too. The floor cannot tell you how people lived.
+        - That throws the source away. A source can still be useful when its claim needs checking.
+        - That swaps one source for another. Objects have limits too; the floor cannot tell you how people lived.
         - null
       fault: logic
       misconception: writing-wins-automatically
@@ -128,15 +128,15 @@ check:
   type: question
   q: How should you use the damaged word?
   options:
-    - Say it is uncertain, and look for other texts or records that could help
+    - Say it is uncertain, and look for other texts that could help
     - Choose the translation that makes the better story
-    - Write it as if the word were clear
+    - Use "gift", since the first translation is usually right
   answer: 0
   explain: Keep both readings in view, and look for evidence that could decide between them.
   feedback:
     - null
     - A better story is not a reason to pick a translation.
-    - The damage is still there. Pretending otherwise hides a real limit.
+    - Coming first is not a reason either. Both readers gave reasons, and the damage is still there.
 ```
 
 ## Practise: an order to repair a road
@@ -148,14 +148,14 @@ check:
   type: question
   q: A second made-up inscription orders a road to be repaired. What does it show most directly?
   options:
-    - Every part of the road was repaired at once
-    - No one used the road before the order
-    - Someone gave an order to repair it; whether it was done needs other evidence
+    - That the road was repaired, since the order was carved
+    - That the road was broken by a war or a flood
+    - That a repair was ordered, not that it was done
   answer: 2
   explain: An order is not proof that it was carried out. The remains of the road, or later records, could help.
   feedback:
-    - An order does not show the work was finished.
-    - The order says nothing about who used the road before.
+    - That treats the order as the work. An order does not show the work was finished.
+    - That guesses a cause. The order says nothing about why the road needed repair.
     - null
 ```
 

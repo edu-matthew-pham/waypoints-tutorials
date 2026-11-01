@@ -18,9 +18,9 @@ questions:
     type: question
     q: "Which description of early migration out of Africa fits the evidence best?"
     options:
-      - "Groups shifted their range over many generations, following water and food as the climate changed"
-      - "A group planned a trip to a new continent"
-      - "Everyone left Africa in one season"
+      - "Groups shifted over many generations, following water and food"
+      - "A group planned a long trip to find a new continent"
+      - "Most people left Africa together in one big move"
     answer: 0
     explain: "Movement was slow and followed the environment."
     feedback:

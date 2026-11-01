@@ -34,9 +34,9 @@ check:
   type: predict
   q: "How do scientists think our species spread out of Africa?"
   options:
-    - "Bit by bit over many generations, as groups followed water and food when the climate changed"
-    - "One group set off on a planned journey to a new continent"
-    - "Everyone left Africa at once, in one big move"
+    - "Bit by bit over many generations, following water and food as climate changed"
+    - "One group set off on a planned journey to find a new continent"
+    - "Everyone left Africa at once, in one big move to a new land"
     - "People left because they had heard about better land on other continents"
   actual: "Bit by bit, over many generations. Nobody knew where the journey would lead; groups followed food and water as the climate changed around them."
 ```
@@ -68,10 +68,10 @@ tasks:
       type: question
       q: "In the made-up valley model, why did the group end up in the next valley?"
       options:
-        - "The rain fell away, the lake dried, the animals moved, and the group followed them over 500 years"
+        - "The rain lessened, the lake dried and the animals moved, so they followed"
         - "The group decided one day to walk to a better valley they had heard about"
         - "The group was forced out by another group, and the climate had nothing to do with it"
-        - "The lake flooded and pushed them north"
+        - "The lake flooded over many years and pushed them north"
       answer: 0
       feedback:
         - null
@@ -107,10 +107,10 @@ tasks:
       type: question
       q: "Which of these is a pull (something drawing people to a place) rather than a push (something driving them away)?"
       options:
-        - "Fresh grassland and lakes in a corridor that has just turned green"
-        - "The home valley's lake drying up"
-        - "The animals they hunt leaving the area"
-        - "A spreading desert"
+        - "New grassland and a lake in a corridor that just turned green"
+        - "The home valley's lake drying up over many years"
+        - "The animals they hunt leaving the area for good"
+        - "A desert spreading slowly towards their camp"
       answer: 0
       feedback:
         - null
@@ -137,10 +137,10 @@ check:
   type: question
   q: "What does the Al Wusta find suggest about why people could live there?"
   options:
-    - "A wetter period turned the desert into grassland with a lake, so people could live and travel there"
+    - "It was wetter then, with a lake and grassland, so people could live there"
     - "People have always been able to live in the desert there without water"
-    - "The finger bone proves people planned a trip to Arabia"
-    - "It shows the climate never changes"
+    - "The finger bone proves people planned a long trip to reach Arabia"
+    - "It shows the climate there has never really changed at all"
   answer: 0
   feedback:
     - null
@@ -188,10 +188,10 @@ check:
   type: question
   q: "During the coldest part of the last ice age, about 20,000 years ago, what was the world like?"
   options:
-    - "Large ice sheets covered the far north, so the sea was much lower and coasts stretched further out"
+    - "Ice sheets held so much water that the sea was lower and coasts larger"
     - "The whole planet was covered in ice, so nobody could travel"
-    - "The sea was much higher, so coasts were under water"
-    - "Nothing changed: the ice age only affected the poles"
+    - "The sea was much higher, so many coasts were under water"
+    - "Nothing changed, because the ice age only affected the poles"
   answer: 0
   feedback:
     - null
@@ -211,17 +211,17 @@ check:
   type: question
   q: "A historian writes: 'Climate change was the only reason people left Africa.' What is the best response?"
   options:
-    - "Climate change is a leading explanation, but scientists also point to things like growing numbers of people and food along coasts"
-    - "That is right: nothing else could make people move"
-    - "Climate had nothing to do with it"
-    - "We cannot say anything about why people moved"
+    - "Climate is a leading explanation, but other causes are argued too"
+    - "That is right: nothing else could make people move so far"
+    - "Climate had nothing to do with it; people just liked exploring"
+    - "We cannot say anything about why people moved, so it is a guess"
   answer: 0
   feedback:
     - null
-    - "Most explanations have more than one cause. The evidence for climate is strong, but other factors are argued too."
-    - "Finds like Al Wusta link people to wetter periods, so climate mattered."
-    - "We can say a lot from the evidence, just not with complete certainty."
-  explain: "Historians weigh several causes. Environmental change is a strong part of the explanation, not the whole of it."
+    - "That turns one cause into the only one. The evidence for climate is strong, but other causes are argued too."
+    - "That throws out a cause with strong evidence. Finds like Al Wusta link people to wetter periods, so climate mattered."
+    - "That gives up too soon. We can say a lot from the evidence, just not with complete certainty."
+  explain: "Historians weigh several causes. Environmental change is a strong part of the explanation, not the whole of it: scientists also point to things like growing numbers of people and food along coasts."
 ```
 
 Typical and wider steps are extras on the same idea. You do not need them to finish the lesson.

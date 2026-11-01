@@ -4,13 +4,13 @@ unit: facts
 title: Fact or interpretation?
 node: AC9HH7S07 n1
 assumes: [AC9HH7S06]
-summary: "A historical fact is something the evidence directly shows, such as when something happened. A historical interpretation is an argument about what the facts mean: why something happened, or how important it was. Interpretations are built from evidence, so they are not just opinions, but historians can build different ones from the same facts. The worked case is the fall of the Qin dynasty in 206 BCE."
+summary: "A historical fact is something the evidence directly shows, such as when something happened. A historical interpretation is an argument about what the facts mean: why something happened, or how important it was. Interpretations are built from evidence, so they are not just opinions, but historians can build different ones from the same facts. The worked case is the fall of the Qin dynasty, which was over by 206 BCE."
 language: maths
 hook: "The Qin unified China in 221 BCE. By 206 BCE the dynasty was gone. That much is fact. Why it fell is another kind of statement."
 ---
 Historians make two kinds of statement:
 
-- A **fact** is something the evidence directly shows, and the evidence agrees on. *The First Emperor died in 210 BCE.*
+- A **fact** is something the evidence directly shows, and the sources agree on. *The First Emperor died in 210 BCE.* If you have done Source usefulness, you checked factual claims there; a fact is a claim that has passed those checks.
 - An **interpretation** is an **argument** about what the facts mean: why something happened, what caused it, or how much it mattered. *The Qin fell because its rule was too harsh.*
 
 An interpretation is not just an opinion. A historian has to back it with evidence and reasons. But two careful historians can look at the same facts and build **different** interpretations, which is why you need to know which kind of statement you are reading.
@@ -23,7 +23,7 @@ Here are some facts about the end of the Qin:
 | 210 BCE | The First Emperor dies while touring his empire. |
 | 209 BCE | A revolt begins and spreads across the old states. |
 | 207 BCE | The last Qin ruler surrenders. |
-| 206 BCE | The Qin dynasty is over. Years of war follow before the Han take over. |
+| 206 BCE | The Qin dynasty is over. Years of war follow: Liu Bang wins in 202 BCE, though the Han count their rule from 206 BCE. |
 
 ## Predict: which kind?
 
@@ -34,10 +34,10 @@ check:
   type: predict
   q: "'The Qin fell because it ruled too harshly.' Is that a fact or an interpretation?"
   options:
-    - "An interpretation: it explains why, and historians argue about it"
-    - "A fact: it is in history books"
-    - "A fact: Han writers said so"
-    - "Neither: it is just a made-up story"
+    - "An interpretation: it argues why the Qin fell"
+    - "A fact: it is written in lots of history books"
+    - "A fact: Han writers who lived just after said so"
+    - "Neither: it is just an opinion, so it is made up"
   actual: "An interpretation. It is an argument about why the Qin fell, made first by Han writers and argued about ever since. It is built from evidence, so it isn't made up, but it isn't the only way to read the facts."
 ```
 
@@ -85,7 +85,7 @@ tasks:
       fault: logic
       misconception: interpretation-as-fact
       explain: "Line 3: 'the Qin fell because it was too harsh' is an argument about why, not something the evidence directly shows. It belongs in the interpretation column, however often it is repeated."
-    hint: ["Which line explains why?", "Does any line contain 'because'?"]
+    hint: ["A fact is what the evidence directly shows. An interpretation argues why something happened or how much it mattered.", "Read Nib's 'Fact' lines one at a time. Is each one reporting what happened, or arguing about it?"]
     smaller:
       check:
         type: question
@@ -194,7 +194,7 @@ check:
 ```step
 stage: make
 tier: wider
-insight: "Judging the strength of an interpretation by its evidence and reasoning prepares for weighing interpretations later."
+insight: "Judging an interpretation by its evidence and reasoning, not by who wrote it or when, is what makes it more than an opinion."
 check:
   type: question
   q: "Two interpretations explain the same event. Which is likely to be stronger?"

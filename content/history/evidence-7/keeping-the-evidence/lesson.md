@@ -68,8 +68,8 @@ tasks:
       q: Which recommendation uses the evidence most clearly?
       options:
         - Choose Route A, because the only thing that matters is speed
-        - Ignore the dig, because some of the objects look plain
-        - Look closely at Route B because it avoids the layers, and compare the costs before deciding
+        - Ignore the layers, because the objects in them look plain
+        - Look at Route B, which avoids the layers, then compare costs
       answer: 2
       explain: Going around layers that cannot be replaced protects the evidence. The cost and other effects still need weighing up.
       feedback:
@@ -80,15 +80,15 @@ tasks:
       type: question
       q: "Nib says: “We kept the pots, so nothing important was lost.” What is the best correction?"
       options:
-        - Where the pots were and which layers they came from may have been lost
-        - Every object should always stay buried
-        - A museum can work out where every pot was
+        - Where the pots were, and their layers, may have been lost
+        - Every object should always stay buried, so digging was wrong
+        - A museum can work out later where every pot was found
       answer: 0
       explain: The pots survive, but the information about where they were may not. That information is evidence too.
       feedback:
         - null
-        - Careful recording and a planned dig can be part of good conservation.
-        - Without records, a museum cannot rebuild where things were.
+        - That swings too far the other way. Careful recording and a planned dig can be part of good conservation.
+        - That expects the pot to carry its own record. Without notes made at the dig, a museum cannot rebuild where things were.
       fault: logic
       misconception: saved-objects-save-context
     smaller:
@@ -96,7 +96,7 @@ tasks:
         type: question
         q: Does a pot on a museum shelf tell you which layer it came from?
         options:
-          - Always
+          - Yes, the pot itself shows its layer
           - Only if someone recorded it
         answer: 1
         explain: The pot and the record of where it was found answer different questions.
@@ -126,14 +126,14 @@ check:
   q: Which way of sharing the jobs makes sense?
   options:
     - Being on the World Heritage list repairs the site by itself
-    - World Heritage listing supports protection; local authorities and managers still have to act
-    - Visitors decide the building rules on their own
+    - Listing supports protection, but local managers still have to act
+    - Once listed, UNESCO staff take over the site's daily care
   answer: 1
   explain: Recognition and working together help, but someone still has to protect and care for the site every day.
   feedback:
-    - Being on a list does not fix drains or stop damage.
+    - That treats the list as the repair. Being on a list does not fix drains or stop damage.
     - null
-    - Visitors do not take over the authorities' job of protecting the site.
+    - That gives UNESCO the local job. UNESCO keeps the list and helps countries work together; daily care stays with local authorities and site managers.
 ```
 
 ## Practise: a lost record
@@ -145,14 +145,14 @@ check:
   type: question
   q: At a made-up site, the finds are kept but every record of where they were found is lost. Which question becomes harder to answer?
   options:
-    - What colour is this pot?
-    - How heavy is this tool?
-    - What happened first at this site, and what happened later?
+    - What is this pot made of, and how was it fired?
+    - What was this tool used for, judging by its edge?
+    - What happened first at this site, and what came later?
   answer: 2
   explain: Without the layers and positions, you lose the order that would answer the question about time.
   feedback:
-    - You can still look at the pot and see its colour.
-    - You can still weigh the tool.
+    - The pot survived, so you can still study the pot itself to answer that.
+    - The tool survived, so you can still study its edge.
     - null
 ```
 
