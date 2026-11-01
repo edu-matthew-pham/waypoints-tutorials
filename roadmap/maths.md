@@ -2,6 +2,15 @@
 
 The maths chat's file. Lessons live in `content/maths/`. Design notes and status so far are in the project docs (`maths-structure`, `maths-boards-plan`, `maths-expressions-status`, `maths-graphs-7a04-status`, `board-embed-contract`); record new decisions here.
 
+## Proposed (1 Nov 2026, Matthew: "at some point", after the Humanities pilot): a maths pilot
+
+Not started; Matthew is following up the Humanities pilot first. When it comes, reuse that pilot's pieces rather than building new ones (`roadmap/shared.md` › Planned: teacher introduction and Humanities pilot): a short `content/maths-pilot.md` page beside `humanities-pilot.md`, a maths version of the 10-minute talk's demo slides (one Year 7–8 lesson with a board, a planted mistake and its feedback, a `smaller:` step, and the same lesson's teacher guide and Prepare deck), the existing Getting Started course as the self-paced route, and the same three feedback routes. Things to settle then:
+
+- **Which lessons to demo.** Candidates from the `when, where and why` pilot (Finding a side, Changing the subject, Algorithms for classifying shapes) already carry pilot notes for teachers.
+- **Questions to ask.** The open ones in the Project doc `maths-connections-pilot-status` (does the opening question help; is a "step on the way" use honest), plus the split: do one course per strand per year and the ACARA placements (angles in Measurement, trig across Space and Measurement) match how the department teaches?
+- **Who.** Maths teachers try the whole site when it suits them (Matthew doesn't teach maths), so the ask is "try one lesson with a class", as in Humanities.
+- **Before it:** a whole-site publish of the split, and the `$` in maths feedback found by the Economics chat (`roadmap/shared.md`: `plain()` strips `$…$` pairs from `explain` and `feedback` in `language: maths` lessons, so some prices lose their dollar signs).
+
 ## Done (1 Nov 2026): board checks after the split (handoff `claude/handoff-maths-board-checks.md`)
 
 `npm run check-lesson-boards maths`: 924 boards, 664 checks, 0 problems (English and Geography also clean). Of the 13 problems the site-health sweep listed:
