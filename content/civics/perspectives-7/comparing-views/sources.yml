@@ -1,0 +1,31 @@
+# Made-up sources for "Why views differ" (Wattle Creek Gazette editorial and the Main Street Traders' post).
+
+# region: run
+widget: cohesion
+mode: parts
+layout: blocks
+roles: want care fact
+role want: What they want
+role care: Why it matters to them
+role fact: A fact anyone could check
+s fact: Gazette: Markets in other towns draw crowds.
+s fact: Gazette: Our street is half empty by ten o'clock.
+s care: Gazette: A lively street on a Saturday is what holds a town together.
+s want: Gazette: The council should make the trial permanent.
+s care: Traders: Some of our members rely on customers who drive in for a quick stop.
+s want: Traders: We ask the council to keep a loading zone open.
+# endregion
+
+# region: explain-pic
+widget: cohesion
+mode: parts
+layout: blocks
+answer: on
+roles: want care fact
+role want: What they want
+role care: Why it matters to them
+role fact: A fact anyone could check
+s fact: The library opens at nine.
+s care: Quiet study space matters to students.
+s want: Open it at eight on exam days.
+# endregion

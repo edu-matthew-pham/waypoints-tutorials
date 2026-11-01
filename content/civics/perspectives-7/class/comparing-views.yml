@@ -1,0 +1,30 @@
+inquiry:
+  q: "If two people disagree about the market, does one of them have to be wrong?"
+  prompts:
+    - "What does each source care about, or stand to gain or lose?"
+    - "What does each one know that the other might not?"
+  notes: "Keep to the made-up Wattle Creek sources."
+activities:
+  - at: run
+    kind: activity
+    title: "Label the sentences together"
+    minutes: 5
+    do: "Put the board up. Label one sentence of each kind together, then let pairs label the rest."
+    notes: "Listen for students labelling a value as a fact. Ask: could anyone check it?"
+  - at: make
+    kind: check
+    title: "Check a partner's comparison"
+    minutes: 4
+    do: "Partners check there is an agree point, a disagree point and a reason from the four."
+    notes: "Students write elsewhere; the site does not take or mark writing."
+questions:
+  - at: investigate
+    title: "Why views differ"
+    type: question
+    q: "The traders could lose sales; the growers could gain customers. Which reason explains their different views?"
+    options:
+      - "Interests"
+      - "Information"
+      - "Role"
+    answer: 0
+    explain: "They stand to gain or lose different things: that's interests."

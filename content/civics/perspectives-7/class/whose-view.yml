@@ -1,0 +1,31 @@
+inquiry:
+  q: "Can any source about a town decision be completely neutral?"
+  prompts:
+    - "Who made each source, and what do they want?"
+    - "What did each one leave out?"
+  notes: "Keep to the made-up Wattle Creek sources. Don't ask students what they or their families think about real issues."
+activities:
+  - at: predict
+    kind: activity
+    title: "Read the four sources"
+    minutes: 4
+    do: "Read the four sources aloud. Pairs underline one line in each that shows what its maker wants."
+    notes: "The bus notice has the least obvious line. That's fine; come back to it in Practise."
+  - at: make
+    kind: check
+    title: "Check a partner's three questions"
+    minutes: 4
+    do: "Partners check all three questions are answered for one source, including something left out."
+    notes: "Students write elsewhere; the site does not take or mark writing."
+questions:
+  - at: investigate
+    title: "Official but not neutral"
+    type: question
+    q: "Why does an official council notice still have a perspective?"
+    options:
+      - "It's written by the council, which has its own aims"
+      - "Because councils always get the facts wrong"
+      - "Because it's printed rather than spoken"
+      - "It doesn't; official notices are always neutral"
+    answer: 0
+    explain: "The council chose what to include, including its hopes, so the notice comes from its point of view."

@@ -1,0 +1,8 @@
+# Display-only reasoning: nothing runs.
+
+# region: nib
+The council notice gives the times, the dates and the trial period.
+It says the market will bring the town together and support local growers.
+Nib says: "The notice comes from the council, so it's just facts, not a view."
+Nib says: "So I don't need to ask what the council left out."
+# endregion

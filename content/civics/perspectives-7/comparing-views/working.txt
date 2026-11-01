@@ -1,0 +1,8 @@
+# Display-only reasoning: nothing runs.
+
+# region: nib
+Ines likes the idea of a market but needs to park near the chemist.
+The Gazette wants the market made permanent.
+Nib says: "They disagree, so one of them must be lying."
+Nib says: "I just need to work out which one is telling the truth."
+# endregion

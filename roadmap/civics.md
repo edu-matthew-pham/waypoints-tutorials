@@ -289,7 +289,7 @@ Tested: validate clean (two expected warnings above); build; headless Chromium a
 
 Publish: whole-site (build tool, subject and teacher pages changed). Ask Matthew first.
 
-## Plan (1 Nov 2026; awaiting Matthew's "go"): course `civics/perspectives-7`, *Whose view is it?* (AC9HC7S03)
+## Plan (1 Nov 2026; Matthew said go, built 1 Nov): course `civics/perspectives-7`, *Whose view is it?* (AC9HC7S03)
 
 Per `roadmap/checklist.md` › "Plan first, then build". Tagline *Whose view is this, and whose is missing?* One unit (`perspectives`), Usually Year 7, after `diversity-7` (it can run after any Civics course; `after:` keeps the trail order). Descriptor: "analyse information, data and ideas about political, legal or civic issues to identify and explain differences in perspectives and potential challenges". Prior: AC9HS6S03, AC9HS6S04 (Year 6 HASS skills).
 
@@ -342,3 +342,16 @@ Misconception ids to add as single lines: `official-source-is-neutral`, `disagre
 1. **The one made-up issue** (Saturday market on Main Street). OK, or another low-stakes local issue (a skate park site, a school-zone speed limit)?
 2. **Reuse the `cohesion` board in lesson 2** for marking claims and values words, or keep the course to checks only (no board)?
 3. **Wheelchair-user resident as the access voice.** It makes the values trade-off real; the character is written with care (a person with a practical need, not a symbol). OK, or a different access voice (an older resident, a delivery driver)?
+
+## Built (1 Nov 2026; Matthew said go; not yet tried with a class): `civics/perspectives-7` *Whose view is it?*
+
+- Three lessons for AC9HC7S03 on the made-up Wattle Creek Saturday market: `whose-view` (n1, hinge), `comparing-views` (n2), `hard-to-settle` (n3, integration), each with teacher notes, a class plan and one Nib slip with a `smaller:` check. Three misconception lines added.
+- **Board reused, nothing extended:** lesson 2 uses the `cohesion` board's parts mode with three course labels (what they want, why it matters to them, a fact anyone could check). Parts mode already takes custom `role` labels, so no widget change was needed. `node tools/check-cohesion.mjs perspectives` passes (fails at the start, passes solved; the explain picture solves).
+- Departures from the plan: the survey moved from lesson 1 to lesson 2 (lesson 1 reads four sources, so the hinge stays light); the resident is named Ines; lesson 3's Vary sorts council responses by the challenge each mainly addresses.
+- Ines is written as an ordinary resident with a practical need, in her own voice, who likes the market. Everything is made up; nothing personal is asked; the wider steps (a missing voice, facts vs values, whether the market should go ahead) are unmarked discussion.
+- First Nations: S03's elaborations have none; Kit's n1 wider item (First Nations perspectives on land rights and constitutional recognition) is a teacher note only (T1).
+- `content/civics/index.md` links the course; `content/civics-teachers.md` updated (five courses, nineteen lessons).
+
+Tested: validate clean; build; headless Chromium answered all 18 question and bug checks (each rejecting a wrong answer first); the cohesion board loads on the lesson page with the sources and its check doesn't tick at the start; phone width 390 px with no sideways scroll on the subject, course, lessons, guides and teacher page; deck fit check. Labelling on the board was solved by `check-cohesion` (the widget's own solver), not clicked in a browser. Not tried with a class.
+
+Publish: whole-site (subject and teacher pages changed). Ask Matthew first.

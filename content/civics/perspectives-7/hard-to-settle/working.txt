@@ -1,0 +1,8 @@
+# Display-only reasoning: nothing runs.
+
+# region: nib
+The survey found 110 of 200 residents support the Saturday market.
+Ines needs parking near the chemist, and the traders need deliveries.
+Nib says: "Most people support the market, so there's no problem left to solve."
+Nib says: "The council can close the street and ignore everyone else."
+# endregion

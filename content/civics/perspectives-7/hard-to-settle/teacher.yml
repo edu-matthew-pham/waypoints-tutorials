@@ -1,0 +1,48 @@
+summary: "Students explain why the Wattle Creek market decision is hard to settle: competing values (a lively street versus access), competing interests (growers versus some traders) and missing evidence (what happens to sales). They see that majority support doesn't settle it alone, match council responses to the challenges they address, and recognise that some people may still lose out."
+learning: "identify a challenge arising from competing perspectives on a civic decision and explain what makes it hard to resolve"
+time: 40
+timing: "Recap 3 min · Predict and Try 6 min · Worked example 10 min · Vary 6 min · Practise 7 min · Make and exit 8 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can explain why a civic decision is hard, using values, interests or missing evidence.
+  - I can explain why majority support doesn't settle a decision on its own.
+  - I can suggest a response and say who might still be unhappy.
+struggle: "Students expect a decision to have a right answer that someone just needs to find, or to be settled by a vote. Keep asking 'Who still loses out, and why?'"
+before: |
+  Integration node (n3): it pulls the course together with what students know about councils and democratic decisions.
+
+  Values: majority support matters in a democracy, and the lesson doesn't say otherwise. The point is narrower: counting supporters doesn't remove a practical problem or a competing value, so a council still has to weigh them. Some people may still lose out; that is part of why civic decisions are hard, not a sign the process failed.
+
+  The wider step asks students for their own view on the made-up market. It is never marked; the criteria are about giving a reason, stating the other side fairly and suggesting a change. Keep the discussion on Wattle Creek; don't extend it to real local disputes unless you've chosen one that is not party-political or live in your school community.
+
+  Ines is an ordinary resident with a practical need who likes the idea of a market. The access response (an accessible parking zone) is offered as one option, not as the answer.
+
+  Everything is made up. Nothing personal is asked.
+running:
+  - "Recap: read the one-line summary of each source aloud."
+  - "Predict: take a vote. Many will say the survey settles it. Leave it open."
+  - "Worked example: ask 'Does a vote move a parking space closer?'"
+  - "Vary: some responses address more than one challenge. Ask for the main one."
+  - "Make: the student writes in their own book or document; a partner or teacher reads it. The site only records a reflect tick."
+stuck:
+  - see: "A student says the survey settles the decision."
+    ask: "Who still loses out if the council just says yes?"
+    fix: "Support doesn't remove Ines's parking problem or the traders' deliveries. The council still has to weigh them."
+  - see: "A student says a compromise means everyone gets what they want."
+    ask: "Does the parking zone give the Gazette its whole car-free street?"
+    fix: "A compromise gives each side some of what it wants. Some people may still be unhappy."
+support: "Draw three boxes: VALUES, INTERESTS, EVIDENCE. Place each challenge in one together, then each council response."
+stretch: "Which challenge in Wattle Creek do you think is hardest to settle, and why?"
+exit:
+  q: "Name one challenge in the Wattle Creek decision and explain what makes it hard."
+  a: "For example, access: a car-free street and nearby accessible parking are both good values that pull in different directions, so majority support doesn't settle it."
+explain: |
+  A civic decision is hard when **values compete**, **interests compete** or **evidence is missing**.
+
+  Majority support matters, but it doesn't remove the problems of people who lose out. A council can trial an idea, change it to meet a need, or find a middle way, and some people may still be unhappy.
+leads: >-
+  This is the last lesson in Whose view is it?
+
+
+  ACARA elaboration for AC9HC7S03 (an example, not a checklist): "evaluating data from surveys or reports to draw
+  conclusions about a current issue of challenge; for example, a Lowy Institute poll on important issues facing
+  Australia or media reports on the effectiveness of the court system"

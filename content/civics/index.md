@@ -17,6 +17,6 @@ pathways:
       - { path: civics/democracy-7, id: democracy-7, after: [government-7], stage: foundations, tagline: "What are our democratic freedoms, and how do citizens take part?" }
       - { path: civics/law-7, id: law-7, after: [government-7], stage: foundations, tagline: "Where do laws come from, and how do courts work?" }
       - { path: civics/diversity-7, id: diversity-7, after: [democracy-7], stage: foundations, tagline: "How does a secular, multi-faith democracy live together?" }
-      - { title: "Whose view is it?", after: [diversity-7], summary: "Spotting and comparing perspectives in civic sources, and why some issues are hard to settle (AC9HC7S03).", tagline: "Whose view is this, and whose is missing?", stage: foundations }
+      - { path: civics/perspectives-7, id: perspectives-7, after: [diversity-7], stage: foundations, tagline: "Whose view is this, and whose is missing?" }
       - { title: "Values and living together", after: [democracy-7], summary: "Shared values and social cohesion (AC9HC7K05).", tagline: "What shared values hold a diverse society together?", stage: foundations }
 ---

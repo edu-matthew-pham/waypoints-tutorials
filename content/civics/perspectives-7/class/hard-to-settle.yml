@@ -1,0 +1,31 @@
+inquiry:
+  q: "If most people want the market, why is the decision still hard?"
+  prompts:
+    - "Who loses out, and what do they need?"
+    - "What doesn't the council know yet?"
+  notes: "Keep to Wattle Creek. Students' own views on the market are welcome in the wider step; nothing is marked."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Who still loses out?"
+    minutes: 5
+    do: "Ask: if the council says yes to the market as planned, who loses out? List them on the board, then ask what the council could change for each."
+    notes: "Listen for 'most people want it' as a reason to ignore the list. That is Nib's mistake."
+  - at: make
+    kind: check
+    title: "Check a partner's challenge"
+    minutes: 4
+    do: "Partners check there is a challenge, why it's hard, a response and who might still be unhappy."
+    notes: "Students write elsewhere; the site does not take or mark writing."
+questions:
+  - at: investigate
+    title: "Does the vote settle it?"
+    type: question
+    q: "Why doesn't majority support settle the market decision on its own?"
+    options:
+      - "People who lose out still have needs to weigh"
+      - "Surveys never count in council decisions"
+      - "The council must do what the newspaper says"
+      - "Only the traders' views count"
+    answer: 0
+    explain: "Support matters, but competing values and interests still have to be weighed."
