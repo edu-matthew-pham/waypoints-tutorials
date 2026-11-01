@@ -1,0 +1,29 @@
+inquiry:
+  q: "A new school rule says every class must start at 8:45. Who has to do what for that one sentence to change your morning?"
+  prompts:
+    - "Who passes it on, and who checks?"
+    - "What would happen if nobody did?"
+  notes: "A quick model of action, how it worked and what changed. Then switch to the First Emperor's standard measures."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Who made it happen?"
+    minutes: 5
+    do: |
+      Pairs take one achievement (script, measures, roads, laws) and list every kind of person who had to act for it to change things, from the emperor to the farmer.
+    notes: "Bring out advisers (Li Si), officials, generals and labourers, and that Qin was strong before him."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Which sentence explains how an achievement changed things?"
+    options:
+      - "Officials used the same measures for tax, so grain was counted the same way everywhere"
+      - "He made standard measures, which was very important"
+      - "He made standard measures all by himself"
+    answer: 0
+    explain: "Action, how it worked, what changed."
+    feedback:
+      - null
+      - "That says it mattered, not how."
+      - "Officials carried it out; he gave the order."

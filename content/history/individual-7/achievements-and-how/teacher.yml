@@ -1,0 +1,74 @@
+learning: "describe the First Emperor's main achievements with evidence and explain how each one changed the society, including who carried it out"
+summary: "Describe the First Emperor's achievements (standard script, weights, measures and coins; roads, canals and walls; one system of laws run by officials) and explain each as action, how it worked and what changed, using more than one kind of evidence."
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 5 min · Practise 6 min · Make 9 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can describe two of the First Emperor's achievements with evidence.
+  - I can explain how an achievement changed things, not just that it did.
+  - I can name the other people who made the changes happen.
+struggle: "Students list achievements ('he made one script') and stop. The middle link, how it worked, is the hard part. Keep asking: who did what differently because of it?"
+before: |-
+  AC9HH7K13 n2, a hinge: lesson 3's legacy argument needs students to know how each change actually worked, not only that it happened. The action → how it worked → what changed table is the scaffold the node calls for. Links People and power (commanderies, appointed officials) by mention only.
+
+  Facts used (checked 1 Nov 2026): standardised weights, measures, cart axle lengths, script and laws; roads and canals; northern fortresses linked into an early wall; 213 BCE burning at Li Si's urging, with books on agriculture, medicine and prognostication spared (Britannica). Single system of writing, money, weights and measures (UNESCO 441). An inscribed Qin weight carries the 221 BCE edict to "clarify and unify" measures, so grain tax could be collected at one rate (Metropolitan Museum, object on loan from Gansu Provincial Museum). Shang Yang's reforms in Qin (about 356 to 338 BCE: appointed governors, uniform law, standard measures) "paved the way" for unification (Britannica), which is the context in Vary. Li Si's memorial on the burning is preserved in the Shiji.
+
+  Contested (T8): the burning of books and killing of scholars is told "according to Sima Qian". More than 460 scholars is Sima Qian's figure; "buried alive" is a later reading of his word (often translated as bury, it most likely meant kill), so the lesson says "killed" and gives no detail. Historians such as Michael Nylan and Martin Kern doubt the scale; the Qin did destroy some texts. The coin is the ban liang (round with a square hole); it existed in Qin before 221 and was spread across the empire. Labour numbers are left vague on purpose.
+
+  Made up in this lesson: Nib's notes only.
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips.
+
+  Relevant ACARA AC9HH7K13 elaborations (examples, not a checklist): "examining the historical context, early life and achievements of a significant historical figure such as Confucius or Qin Shi Huang, and how each was perceived by their contemporaries"; "evaluating the significance of Rameses II, including military victories, expansion of the Egyptian empire and architectural endeavours"; "examining the historical context, early life and achievements of a significant historical figure such as Julius Caesar, Augustus, Agrippina the Younger, Marcus Aurelius or Jesus Christ, and how they were perceived by their contemporaries".
+
+  First Nations: AC9HH7K13 has no First Nations elaborations; we write none. Deep time Australia (AC9HH7K02 to K07) is listed as taught in class in Early human migration.
+running:
+  - "Predict: ask how many people it takes to build one road, then one thousand kilometres of road."
+  - "Try: point at the middle column of the table. That is the part most answers leave out."
+  - "Worked example: read Nib's notes aloud and let the class find who is missing."
+  - "Vary: ask what would have happened if Qin had been weak when he became king."
+  - "Make: students write in their own book; a partner checks each achievement has a 'how'."
+stuck:
+  - see: "A student writes 'he made one script, which changed China a lot'."
+    ask: "Who did something differently because of the script?"
+    fix: "Officials everywhere read orders the same way: that is how it worked."
+  - see: "A student says the emperor did it all himself."
+    ask: "Who called up the workers, led the armies, ran each county?"
+    fix: "Officials, generals, advisers like Li Si and labourers; Qin was also strong before him."
+  - see: "A student retells the burning of books as certain fact, with extra detail."
+    ask: "Who tells us this, and when did he write?"
+    fix: "Sima Qian, about a century later, for the Han; historians agree some books were destroyed and doubt the scale."
+support: "Give the three-column table blank for one achievement; fill the first row together, then students fill the second."
+stretch: "Pick one achievement. What did it set in motion that the emperor probably did not intend? (For example, heavy labour demands and resentment.)"
+leads: "Continue to What lasted, and how was he remembered?"
+exit:
+  q: "Explain one achievement as action, how it worked and what changed."
+  a: "For example: standard measures; officials used them to collect grain tax; tax was counted the same way everywhere and was harder to cheat."
+explain: "The First Emperor made one script, standard weights, measures and coins, roads and walls, and one system of laws. Each worked through officials and called-up labourers, and each changed how the empire was run. Some stories, like the burning of books, come from Sima Qian and are treated with care."
+sources:
+  - title: "Qin Shi Huang (Britannica)"
+    url: https://www.britannica.com/biography/Qin-Shi-Huang
+    checked: 2026-11-01
+  - title: "Mausoleum of the First Qin Emperor (UNESCO World Heritage List 441)"
+    url: https://whc.unesco.org/en/list/441/
+    checked: 2026-11-01
+  - title: "Inscribed Weight, Qin dynasty (Metropolitan Museum of Art)"
+    url: https://www.metmuseum.org/art/collection/search/695640
+    checked: 2026-11-01
+  - title: "Shang Yang (Britannica)"
+    url: https://www.britannica.com/biography/Shang-Yang
+    checked: 2026-11-01
+  - title: "Li Si's memorial on the burning of books, from the Shiji (Georgetown University teaching text)"
+    url: https://faculty.georgetown.edu/jod/texts/burn.html
+    checked: 2026-11-01
+  - title: "Burning of books and burying of scholars (encyclopedia summary of Nylan, Kern and others; for the historians' doubts)"
+    url: https://en.wikipedia.org/wiki/Burning_of_books_and_burying_of_scholars
+    checked: 2026-11-01
+  - title: "Ramesses II (World History Encyclopedia)"
+    url: https://www.worldhistory.org/Ramesses_II/
+    checked: 2026-11-01
+  - title: "Monumentum Ancyranum / Res gestae (Britannica)"
+    url: https://www.britannica.com/print/article/391203
+    checked: 2026-11-01
+  - title: "Tacitus, Annals 1.10 (translation on sacred-texts.com)"
+    url: https://sacred-texts.com/cla/tac/a01010.htm
+    checked: 2026-11-01

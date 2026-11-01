@@ -1,0 +1,64 @@
+learning: "identify Qin Shi Huang by name, period and position, describe the world he lived in, and explain why he is significant using criteria, not fame"
+summary: "Identify the First Emperor (when he lived, his position, the Warring States context) and use three tests of significance (changed many lives, effects lasted, remembered and argued about) to explain why he matters."
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 5 min · Practise 6 min · Make 9 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can say who the First Emperor was, when he lived and what position he held.
+  - I can describe the world he grew up in.
+  - I can use a test of significance, with evidence, instead of saying someone is famous.
+struggle: "Students reach for fame ('everyone knows the clay army') or power ('he was emperor'). Keep asking: what changed, for whom, and did it last?"
+before: |-
+  AC9HH7K13 n1, a hinge: lessons 2 and 3 judge his achievements and legacy, and those judgements need the identity facts and context first. Without them, "significance" claims float free of evidence. It follows Contact and conflict (AC9HH7K12) and People and power, which built the commanderies and officials met here.
+
+  Facts used (checked 1 Nov 2026): born about 259 BCE; king of Qin from 246 BCE at about 13; the last rival kingdom fell in 221 BCE and he took the title huangdi; died 210 BCE on a tour (Britannica). Unification 221 BCE (UNESCO). The Warring States period's "about 250 years" is the conventional 475 to 221 BCE. Li Si's part in planning the reforms is given as "historians think" (Britannica: centralisation "following Li Si's advice"; traditional accounts credit him with the standard script).
+
+  Simplified: the three tests are one common way to judge significance (similar criteria appear in many school frameworks); historians use others too, and the lesson says so in one line. Accept other reasoned criteria.
+
+  The made-up material in this lesson is Nib's notes only (and the singer in the smaller step, labelled made up).
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips.
+
+  Relevant ACARA AC9HH7K13 elaborations (examples, not a checklist): "examining the historical context, early life and achievements of a significant historical figure such as Confucius or Qin Shi Huang, and how each was perceived by their contemporaries"; "developing questions to establish the significance of key individuals such as Homer (800–701 BCE), Draco (7th century BCE), Socrates (470–399 BCE), Aspasia (470–400 BCE), Plato (428–348 BCE), Aristotle (384–322 BCE), Archimedes (287–212 BCE), Hippocrates (460–370 BCE), Alexander the Great (356–323 BCE), and/or Pericles (495–429 BCE)"; "examining the historical context, early life and achievements of a significant historical figure from ancient Egypt, such as Hatshepsut or Akhenaten, and how they were perceived by their contemporaries".
+
+  Religious figures named in the elaborations (for example Jesus Christ) are left to the teacher and the school's approach; the cards do not include them.
+
+  First Nations: AC9HH7K13 has no First Nations elaborations; we write none. Deep time Australia (AC9HH7K02 to K07) is listed as taught in class in Early human migration.
+running:
+  - "Predict: ask for a show of hands on the clay army option, then ask what it actually changed."
+  - "Try: ask which statements could be true of someone who changed nothing."
+  - "Worked example: read the three tests aloud, then let Nib's mistake sit."
+  - "Vary: Li Si is the reverse case: little known, possibly very significant."
+  - "Make: students write in their own book; a partner checks for a test plus evidence."
+stuck:
+  - see: "A student says he is significant because he is famous."
+    ask: "What changed because of him, and for whom?"
+    fix: "Use a test: many lives changed, lasting effects, or remembered and argued about, each with evidence."
+  - see: "A student lists facts (born, died, king) and calls that significance."
+    ask: "Is that who he was, or why he matters?"
+    fix: "Identity facts come first; significance needs a change."
+  - see: "A student says only rulers can be significant."
+    ask: "Could an adviser or thinker change many lives?"
+    fix: "The tests apply to anyone; Li Si and Confucius are examples."
+support: "Give a two-column frame (Who he was / Why he matters) with the three tests as row labels in the second column."
+stretch: "Which of the three tests do you think matters most, and why? Would your answer change for a thinker like Confucius?"
+leads: "Continue to What did he do, and how did it change things?"
+exit:
+  q: "Give the First Emperor's position and dates, and one reason he is significant using a test and evidence."
+  a: "For example: King of Qin from 246 BCE and emperor from 221 to 210 BCE; his officials and script were kept by later dynasties, so his effects lasted."
+explain: "Qin Shi Huang was King of Qin from 246 BCE and the First Emperor from 221 to 210 BCE, after Qin defeated the rival Warring States. Historians call him significant because he changed many lives, his changes lasted, and people still argue about him, not because he is famous."
+sources:
+  - title: "Qin Shi Huang (Britannica)"
+    url: https://www.britannica.com/biography/Qin-Shi-Huang
+    checked: 2026-11-01
+  - title: "Mausoleum of the First Qin Emperor (UNESCO World Heritage List 441)"
+    url: https://whc.unesco.org/en/list/441/
+    checked: 2026-11-01
+  - title: "Qin dynasty (c. 221–206 B.C.E.), an introduction (National Museum of Asian Art, Smithsonian, on Smarthistory)"
+    url: https://smarthistory.org/qin-dynasty-intro
+    checked: 2026-11-01
+  - title: "Hatshepsut (World History Encyclopedia)"
+    url: https://www.worldhistory.org/Hatshepsut/
+    checked: 2026-11-01
+  - title: "Socrates (Stanford Encyclopedia of Philosophy)"
+    url: https://plato.stanford.edu/entries/socrates/
+    checked: 2026-11-01

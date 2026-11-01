@@ -29,7 +29,7 @@ pathways:
       - { path: history/contact-7, id: contact-7, stage: foundations, after: [people-7], tagline: "What changed when societies met?" }
       - { path: history/beliefs-7, id: beliefs-7, stage: foundations, after: [people-7], tagline: "What mattered to them, and how can we tell?" }
       - { title: "Contact and conflict", summary: "How contact and conflict with others changed an ancient society (AC9HH7K12).", stage: foundations, tagline: "What changed when societies met?" }
-      - { title: "A significant individual", summary: "The role and significance of one person in an ancient society (AC9HH7K13).", stage: foundations, tagline: "How much difference can one person make?" }
+      - { path: history/individual-7, id: individual-7, stage: foundations, after: [people-7], tagline: "How much difference can one person make?" }
   - id: before-year-7
     title: Before Year 7
     summary: "A short catch-up lesson on the Year 6 idea Year 7 History builds on."

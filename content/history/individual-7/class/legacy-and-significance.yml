@@ -1,0 +1,29 @@
+inquiry:
+  q: "Can someone be important to history and also have done terrible things?"
+  prompts:
+    - "What does 'significant' ask about?"
+    - "What does 'good' ask about?"
+  notes: "Keep to ancient examples. The aim is two separate questions, not a debate about any modern person."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Three views"
+    minutes: 5
+    do: |
+      Pairs read the three views (his inscriptions, Han writers, historians today) and say for each: who held it, when, and what they had reason to stress.
+    notes: "Bring out that each view tells us about the people who held it as well as about him."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Many judged the First Emperor cruel. Is he significant?"
+    options:
+      - "Yes: what he set up changed many lives and lasted"
+      - "No: a cruel ruler cannot be significant"
+      - "Yes: because significant rulers are always good"
+    answer: 0
+    explain: "Significant means important to history, not good."
+    feedback:
+      - null
+      - "Significant does not mean good."
+      - "Significant does not mean good either way."

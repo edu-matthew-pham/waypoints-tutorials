@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+The First Emperor was King of Qin and then emperor, until he died in 210 BCE.
+His clay army is visited by millions of people every year.
+Nib says: "He is so famous today, so that makes him significant."
+Nib says: "So I don't need to say what changed because of him."
+# endregion
