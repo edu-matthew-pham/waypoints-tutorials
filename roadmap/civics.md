@@ -258,7 +258,13 @@ Per `roadmap/checklist.md` › "Plan first, then build". Tagline *How does a sec
 
 Misconception ids to add as single lines: `secular-means-no-religion`, `heritage-means-official-religion`, `diversity-is-new-or-one-source`. Facts to check at build: s 116 text (Federal Register), prayers and oath or affirmation (PEO, APH), national public holidays, Census 2011–2021 religion figures and the optional religion question (ABS).
 
-### Decisions for Matthew
+### Decided (1 Nov 2026, Matthew)
+1. **n3 is a pointer, not a lesson** (default). Reason: it is about culture and Country (T1), and teachers are generally expected to teach First Nations content with local, community-approved material already; the pointer page gives them ACARA's elaborations to start from.
+2. **Keep the one line in n2's student text** (default). Reason: transparency for students and a prompt for the teacher; it names that impacts differed and explains nothing (T1).
+3. **Real ABS Census figures** on the n4 board (default). Reason: public, official data is what the descriptor asks for; label the year everywhere and update when newer Census data comes out.
+4. Skills (S03, S04): still being discussed.
+
+### Decisions for Matthew (as first asked)
 1. **n3 as a pointer, not a lesson** (as planned 30 Oct). OK?
 2. **n2's one First Nations line** in student text (names that impacts differed, explains nothing). Keep it, or leave First Nations out of student text entirely and put it all in teacher notes?
 3. **Real Census figures** on the n4 board (dated, ABS). OK, or made-up data in the same shape?
