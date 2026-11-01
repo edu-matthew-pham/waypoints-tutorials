@@ -262,3 +262,12 @@ One short captioned clip for lesson 2's Explain it to me (about 20 s, four lines
 - **Amendments carried:** scarcity causes framed as one way of sorting (T8); the n3 wider item about a remote Indigenous community is not used, and teacher notes say why (T1); options rebalanced so the right answer is not the longest (the 1 Nov review's length giveaway).
 - **Checked:** `npm run validate`, `check-nodes`, build, `check-decks -- geography/water-australia-7` (all slides fit, after shrinking the blank outline on the Make slide), and Chromium at 390 px and 1280 px answering all 58 checks per width (116 in all, smaller and optional steps included): every check ticks with the right answer, every question and bug task rejects a wrong one first, no sideways scroll, no page errors. Course, subject and teacher-guide pages load. Editorial pass done on all five lessons. Not clicked through as a full lesson for tone, and not reviewed by fresh eyes.
 - **Publish:** whole-site (new course and a subject-page change). No clips or board pictures, so a quick whole-site publish is enough. Ask Matthew first (W1).
+
+## Parked (1 Nov 2026; revisit after a class has used water-7 and water-australia-7)
+
+- **Catchment clip** for `water-7/water-connects-places` Explain it to me (Decided above: no clip until the widget has settled after a class trial).
+- **Catchment board in `water-australia-7/managing-water`**: an optional `tier: typical` step putting a dam or transfer upstream to see who downstream gets less (Stage 1 re-check, amendment 1). Not planned until Matthew says so.
+- **Fertiliser on the catchment farm** (Decided above: add only if the trial shows students think water carries only mud).
+- **Kit prior links for K03 to K08**: still missing in waypoints-kit; list candidates for Matthew to approve, don't guess.
+- **Next course**: What water is worth (K03), plan first. K03 n2 is a First Nations pointer page.
+- **Map**: more rivers or a different Great Artesian Basin boundary go through `experiments/water-australia-map/make-map.mjs` (sources in its header).
