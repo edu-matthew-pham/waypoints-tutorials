@@ -356,5 +356,5 @@ Built from the 30 Oct plan with every change in the 1 Nov re-check (items 1–14
 - First Nations: K09's elaborations have none; teacher notes say so and point to the deep-time pointer page. Nothing written by us.
 - `content/history/index.md`: new pathway **The ancient world** (this course built; K10–K13 and K01 as Coming later); How we know's about text updated. `content/history-teachers.md` lists the course. Three single-line entries in `misconceptions.json`.
 - Tested: `validate` (no History warnings), `check-nodes`, `effort`, build, all 34 checks per page answered with their stored answers in Chromium at 1280 and 390 px (every task pill, smaller step, typical and wider step; 38 wrong answers tried, feedback shown), course, Reference, subject, pathway, teacher and guide pages load with no errors or sideways scroll, `check-decks` for the course.
-- Known small thing: the map's labels are small on a phone (the table under it repeats them).
+- Map redrawn 1 Nov for phones: a narrower sketch (420 × 470) with bigger labels, readable at 390 px.
 - **Publish:** needs a whole-site publish (subject page pathway, History teacher page). Not run: Matthew's call (W1).

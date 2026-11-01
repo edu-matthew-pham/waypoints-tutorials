@@ -1,25 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 430" role="img" aria-labelledby="t d"><title id="t">A schematic map of the Qin and Han heartland</title><desc id="d">Not to scale. Gobi Desert and steppe in the north and north-west, the Tibetan Plateau in the west, the Loess Plateau in the north centre, the Yellow River looping through the north to the North China Plain and the sea, the Wei River valley joining it from the west, the narrow Hexi Corridor in the north-west, the Sichuan Basin in the south-west, and the Yangtze River crossing the south to the sea.</desc>
-<rect width="640" height="430" fill="#faf7f0"/>
-<g font-family="sans-serif" fill="#202422">
-<path d="M0 0H640V70C520 95 400 60 300 85C200 110 120 80 0 105Z" fill="#ead9a8"/>
-<text x="250" y="40" font-size="19">Gobi Desert and steppe (dry)</text>
-<path d="M0 105C60 120 90 150 110 200C120 260 90 330 0 360Z" fill="#cfc6bb"/>
-<text x="8" y="235" font-size="17">Tibetan</text><text x="8" y="256" font-size="17">Plateau</text>
-<path d="M60 70L210 130L200 145L50 88Z" fill="#e3c98f" stroke="#a5843f" stroke-dasharray="5 4"/>
-<text x="38" y="66" font-size="15">Hexi Corridor</text>
-<path d="M230 120C280 105 340 110 360 140C365 175 330 200 280 200C240 195 220 160 230 120Z" fill="#e6c98d"/>
-<text x="250" y="158" font-size="16">Loess</text><text x="250" y="177" font-size="16">Plateau</text>
-<path d="M420 170C480 150 560 160 600 190L600 290C540 300 470 280 430 250Z" fill="#dfe8c8"/>
-<text x="452" y="228" font-size="16">North China Plain</text>
-<rect x="600" y="70" width="40" height="360" fill="#bcd6e6"/><text x="606" y="360" font-size="16" transform="rotate(-90 616 360)">Sea</text>
-<path d="M150 300C200 280 250 290 260 330C255 370 200 380 160 365C135 350 135 315 150 300Z" fill="#d6e4c6" stroke="#7d8f6a"/>
-<text x="160" y="333" font-size="15">Sichuan</text><text x="160" y="351" font-size="15">Basin</text>
-<path d="M120 160C180 95 300 80 380 100C420 115 400 170 430 190C470 215 540 200 600 215" fill="none" stroke="#c7962b" stroke-width="6"/>
-<text x="330" y="92" font-size="16" font-weight="bold" fill="#8a6414">Yellow River</text>
-<path d="M200 225C260 215 330 215 422 192" fill="none" stroke="#c7962b" stroke-width="4"/>
-<text x="225" y="244" font-size="15">Wei River valley</text><path d="M185 268L215 254L245 268L275 254L305 268L335 254L365 268L395 254L425 268" fill="none" stroke="#7a6a5a" stroke-width="3"/><text x="300" y="290" font-size="15">Qinling Mountains</text>
-<circle cx="330" cy="214" r="6" fill="#202422"/><text x="300" y="200" font-size="14">Qin and Han capitals</text>
-<path d="M100 390C200 360 300 330 380 340C460 350 530 330 600 345" fill="none" stroke="#2f7fb0" stroke-width="7"/>
-<text x="360" y="378" font-size="16" font-weight="bold" fill="#1f5f86">Yangtze River (warmer, wetter)</text>
-<text x="10" y="420" font-size="14">Schematic, not to scale: places are roughly where they are, not exact.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 470" role="img" aria-labelledby="t d"><title id="t">A schematic map of the Qin and Han heartland</title><desc id="d">Not to scale. Gobi Desert and steppe in the north, the Hexi Corridor in the north-west, the Tibetan Plateau in the west, the Loess Plateau inside the Yellow River's bend, the Wei River valley with the capitals, the Qinling Mountains to its south, the North China Plain in the east, the Sichuan Basin in the south-west, the Yangtze River across the south, and the sea in the east.</desc>
+<rect width="420" height="470" fill="#faf7f0"/>
+<g font-family="sans-serif" fill="#202422" font-size="17">
+<path d="M0 0H420V58C330 78 240 50 150 70C90 82 40 70 0 86Z" fill="#ead9a8"/>
+<text x="120" y="34">Gobi Desert and steppe</text>
+<path d="M0 86C45 105 70 150 72 210C70 280 45 330 0 360Z" fill="#cfc6bb"/>
+<text x="6" y="200">Tibetan</text><text x="6" y="221">Plateau</text>
+<path d="M30 70L130 128L120 142L22 86Z" fill="#e3c98f" stroke="#a5843f" stroke-dasharray="5 4"/>
+<text x="62" y="160" font-size="15">Hexi</text><text x="62" y="177" font-size="15">Corridor</text>
+<path d="M155 120C195 106 238 114 246 140C248 172 220 188 188 186C160 182 148 152 155 120Z" fill="#e6c98d"/>
+<text x="166" y="146">Loess</text><text x="166" y="167">Plateau</text>
+<path d="M290 200C330 188 370 196 392 214L392 300C350 306 316 290 296 268Z" fill="#dfe8c8"/>
+<text x="300" y="242">North</text><text x="300" y="262">China</text><text x="300" y="282">Plain</text>
+<rect x="392" y="60" width="28" height="410" fill="#bcd6e6"/><text x="400" y="420" font-size="15" transform="rotate(-90 410 420)">Sea</text>
+<path d="M90 110C140 70 230 72 270 95C292 112 280 170 300 192C320 210 360 204 392 214" fill="none" stroke="#c7962b" stroke-width="6"/>
+<text x="196" y="94" font-weight="bold" fill="#7a5810">Yellow River</text>
+<path d="M120 222C170 214 230 214 296 196" fill="none" stroke="#c7962b" stroke-width="4"/>
+<circle cx="216" cy="214" r="6" fill="#202422"/>
+<text x="112" y="246">Wei River valley</text>
+<text x="150" y="208" font-size="15">capitals</text>
+<path d="M110 270L132 258L154 270L176 258L198 270L220 258L242 270L264 258L286 270" fill="none" stroke="#7a6a5a" stroke-width="3"/>
+<text x="130" y="294">Qinling Mountains</text>
+<path d="M80 330C115 312 160 318 168 350C166 382 128 392 98 380C78 368 72 344 80 330Z" fill="#d6e4c6" stroke="#7d8f6a"/>
+<text x="92" y="352" font-size="15">Sichuan</text><text x="92" y="370" font-size="15">Basin</text>
+<path d="M40 410C110 386 190 362 260 372C320 380 360 366 392 372" fill="none" stroke="#2f7fb0" stroke-width="7"/>
+<text x="200" y="404" font-weight="bold" fill="#1f5f86">Yangtze River</text>
+<text x="200" y="424" font-size="15">(warmer, wetter)</text>
+<text x="8" y="458" font-size="14">Schematic sketch, not to scale.</text>
 </g></svg>
