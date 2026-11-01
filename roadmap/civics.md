@@ -288,3 +288,52 @@ Misconception ids to add as single lines: `secular-means-no-religion`, `heritage
 Tested: validate clean (two expected warnings above); build; headless Chromium answered every question and bug check in the three new lessons and the two tagged lessons (26 checks, each rejecting a wrong answer first); typed the five change formulas into the Census sheet on the lesson page (the check holds back with four rows done and ticks at five; E3 = 16.6); the *Taught in class* row and the teacher-guide link render, and Before Year 7: HASS still shows its Coming later rows; 390 px phone width with no sideways scroll on the subject, course, lessons, guides and teacher page; deck fit check; law-7 and House smoke rerun. Match, sort and wider reasoning not clicked (validate only). Not tried with a class; worth a First Nations educator and a colleague's read before use beyond CGGS.
 
 Publish: whole-site (build tool, subject and teacher pages changed). Ask Matthew first.
+
+## Plan (1 Nov 2026; awaiting Matthew's "go"): course `civics/perspectives-7`, *Whose view is it?* (AC9HC7S03)
+
+Per `roadmap/checklist.md` › "Plan first, then build". Tagline *Whose view is this, and whose is missing?* One unit (`perspectives`), Usually Year 7, after `diversity-7` (it can run after any Civics course; `after:` keeps the trail order). Descriptor: "analyse information, data and ideas about political, legal or civic issues to identify and explain differences in perspectives and potential challenges". Prior: AC9HS6S03, AC9HS6S04 (Year 6 HASS skills).
+
+**One made-up issue across all three lessons.** Wattle Creek council (made up, labelled once per lesson) is deciding whether to close Main Street to cars on Saturday mornings for a market. It is local, low-stakes and has no party or national-politics echo, yet real people would genuinely disagree. Six short made-up sources, written for the course (nothing copied, no real outlets, no real people):
+- a council notice (the proposal, times, a trial period);
+- an editorial in the made-up *Wattle Creek Gazette* (for the market);
+- a post from the made-up Main Street Traders group (worried about car access and deliveries, though some traders want the crowds);
+- a letter from a made-up resident who uses a wheelchair and parks on Main Street (access);
+- a made-up youth council survey of 200 residents (a small table: support, against, unsure, by age group), standing in for the polls and reports ACARA's elaborations mention;
+- a bus company timetable note (a route change), a source with a perspective that hardly looks like one.
+
+**Why one issue:** students learn the skill, not the topic, and each lesson builds on sources they already know. The issue is a model: teacher notes suggest using a real local issue in class only if it is not party-political or a live debate in the school community.
+
+**Overlap, said plainly:** English *Who says so?* and *Spot the bias*, ICT *Who made it and why?* and History *Source origin and purpose* teach nearby moves. Lessons mention them in one line ("you may have met this in…"), never assume them (rules: lessons don't assume other pathways). What is Civics' own: perspectives on a **civic decision**, why they differ (values, interests, information, role), and why the decision is hard.
+
+**Real and made up:** all sources, people, groups, the survey and the town are made up. Real only: the general idea that councils consult the public. No current issues, parties, outlets, polls or office holders.
+
+### Lessons
+
+1. **`whose-view`** (n1, hinge): *Whose view is it?*
+   - **Insight:** every civic source comes from someone with a position. Ask who made it, what they want to happen, and how that shapes what they put in and leave out. Official sources have a perspective too.
+   - **Planted slip (`official-source-is-neutral`):** Nib says "The council notice is from the government, so it's just facts, not a view." `smaller:` "The council notice says the market will 'bring the town together'. Is that a fact, or what the council hopes?"
+   - **Distractors:** a perspective is "just someone's opinion, so it's wrong"; the longest source "must be the most balanced"; a survey "has no perspective because it's numbers" (who asked, what question, who answered).
+   - **Steps:** predict (which source is neutral?), match each source to who made it and what they want, worked example on the notice and bug, sort (what the Traders' post includes / leaves out), practise (whose view is missing from the editorial?), Make (pick one source: who, what they want, one thing left out). Typical: the bus timetable note as a hidden perspective. Wider: why a source can be accurate and still one-sided.
+   - **Shape:** default worked-example: who made it and what it wants have defensible planted answers.
+2. **`comparing-views`** (n2): *Why views differ*
+   - **Insight:** compare two sources by where they agree and disagree, then explain why: different values (community vs convenience), interests (sales, access), information (one saw the survey, one didn't) or roles (a council must weigh everyone).
+   - **Planted slip (`disagreement-means-lying`):** Nib says "The editorial and the traders disagree, so one of them must be lying." `smaller:` "Can two people look at the same street and want different things for good reasons?"
+   - **Distractors:** they disagree "because one has the facts wrong" (sometimes, but not here); the side with more people "has the better view"; reasons are "just feelings".
+   - **Board (light, existing tool):** the `cohesion` board in parts mode on two short made-up sources, marking the claim each makes and one word that shows its values (planted answers only, as in English *Spot the bias*). Reuses a built widget; no new code. If the parts mode doesn't fit civic sources cleanly at build time, drop the board and use a `sort` (say so in the roadmap).
+   - **Steps:** predict, board Try (mark claim and values words in each source), worked example (one point of agreement, one of disagreement, one reason) and bug, sort reasons (values / interests / information / role), practise on the resident's letter vs the survey, Make (compare two sources: agree, disagree, why). Typical: the survey by age group (what younger and older residents said). Wider: a factual disagreement vs a values disagreement, and which more evidence could settle.
+   - **Shape:** default.
+3. **`hard-to-settle`** (n3, integration): *Why it's hard to decide*
+   - **Insight:** a civic decision is hard when good values pull in different directions (a lively street vs access for people who need to park), interests compete, or evidence is missing. Counting supporters doesn't settle a values trade-off on its own; a council can trial, adjust, or find a middle way, and some people may still lose out.
+   - **Planted slip (`majority-settles-it`):** Nib says "More people in the survey support the market, so there's no problem left to solve." `smaller:` "If most people want it, what happens to the resident who can't reach the shops?"
+   - **Distractors:** a challenge is hard "because people don't understand the facts"; the council should "do whatever the loudest group wants"; a compromise "means everyone gets everything".
+   - **Steps:** predict, match each challenge to what makes it hard (competing values, competing interests, missing evidence), worked example on the access problem and bug, sort possible council responses (trial, accessible parking zone, delivery window, doing nothing) by which challenge each addresses, practise, Make (one challenge, why it's hard, one way a council might respond and who might still be unhappy). Typical: what a trial period can and can't tell you. Wider: discussion only, never marked: "Should the market go ahead?" with reasons on more than one side; the teacher keeps it about Wattle Creek.
+   - **Shape:** default for the required path (the challenges and responses have planted answers); the decision itself stays unmarked discussion.
+
+Misconception ids to add as single lines: `official-source-is-neutral`, `disagreement-means-lying`, `majority-settles-it`. Nothing personal asked; no step asks students what they or their family think about a real issue.
+
+**First Nations:** S03's elaborations have none; Kit's n1 wider item (First Nations perspectives on civic issues such as land rights and constitutional recognition) is not used in student text. Teacher notes say why (T1: we don't write those perspectives; they are live and need First Nations voices) and point to local, community-approved material.
+
+### Decisions for Matthew
+1. **The one made-up issue** (Saturday market on Main Street). OK, or another low-stakes local issue (a skate park site, a school-zone speed limit)?
+2. **Reuse the `cohesion` board in lesson 2** for marking claims and values words, or keep the course to checks only (no board)?
+3. **Wheelchair-user resident as the access voice.** It makes the values trade-off real; the character is written with care (a person with a practical need, not a symbol). OK, or a different access voice (an older resident, a delivery driver)?
