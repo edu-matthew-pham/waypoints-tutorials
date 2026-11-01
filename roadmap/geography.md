@@ -283,5 +283,64 @@ A report-only review agent (different model, no shared context) read water-austr
 - **Catchment board in `water-australia-7/managing-water`**: an optional `tier: typical` step putting a dam or transfer upstream to see who downstream gets less (Stage 1 re-check, amendment 1). Not planned until Matthew says so.
 - **Fertiliser on the catchment farm** (Decided above: add only if the trial shows students think water carries only mud).
 - **Kit prior links for K03 to K08**: still missing in waypoints-kit; list candidates for Matthew to approve, don't guess.
-- **Next course**: What water is worth (K03), plan first. K03 n2 is a First Nations pointer page.
+- **Next course**: What water is worth (K03): provisional plan below (1 Nov), waiting for Matthew's five calls.
 - **Map**: more rivers or a different Great Artesian Basin boundary go through `experiments/water-australia-map/make-map.mjs` (sources in its header).
+
+## Provisional plan (1 Nov 2026; plan only, needs Matthew's calls before any build): `geography/water-values-7`, *What water is worth* (AC9HG7K03)
+
+**Status: provisional.** Written before the water courses are tried with a class, so the shape may change after the pilot. Nothing is built. Follows `roadmap/checklist.md` › Plan first.
+
+**The standard.** "The economic, cultural, spiritual and aesthetic value of water for people, including First Nations Australians." Five nodes; **n1 and n2 are both hinges.** No prior links in Kit (the K03–K08 gap above). Elaborations: irrigation economies in Australia and Asia (Murrumbidgee Irrigation Area and the Mekong Delta named); multilayered meanings of water for First Nations Australians; water features listed as World Heritage sites or national parks in Australia and Asia; the spiritual significance of water in an Asian culture.
+
+**Why this course is different.** It is about values, not processes, so more of it is discussion and weighing than planted answers, and the second hinge is First Nations content, which our rules (T1, firm) keep out of student text. The plan below works around that rather than through it, and needs Matthew's calls (end of section).
+
+### Waypoints
+
+**1. `four-values` — What makes water valuable? (n1, hinge).** Default shape (planted answers work here).
+- **Checkpoint:** name and tell apart economic, cultural, spiritual and aesthetic values with an example each; one water body that holds more than one value.
+- **One insight:** the four values are lenses on the same water; the same river can be valued in all four ways at once, and economic value is one of four, not the "real" one.
+- **Misconception:** `economic-is-the-real-value` (Nib: "the only real value of a river is the money it makes; the rest is just feelings"). Second slip in the smaller step: cultural and spiritual treated as the same word. `smaller:` sort two items only (an irrigation channel, a swimming hole the town has used for generations).
+- **Case:** made-up river town (one place, four uses: irrigation, a yearly river festival, a lookout tourists photograph, a place a made-up faith group treats as sacred, written generically with no real religion). Labelled made up.
+- **Distractors:** value equals money; cultural means "old"; aesthetic means "useful"; a place can have only one value.
+- **Labelled as lenses** (T8): the four values overlap, and the lesson says a value can fit two lenses if the student explains which part they mean (as `water-7/effects-of-water-movement` does).
+- **Width:** typical, the same lenses on a real Australian and an Asian example from lessons 3 and 4; wider, when two values clash (made-up case only).
+
+**2. `water-and-country` — Water and Country (n2, hinge).** **Pointer page, not a lesson** (T1; this roadmap's rule that items about First Nations values or connection to Country are pointer pages). Teacher-facing: ACARA's elaboration quoted, the hinge reason, and links to First Nations-led resources chosen with the school's Indigenous education contact. No student explanation of First Nations culture, belief or Country written by us, and no checks.
+- **The problem to name:** the node's hinge check (explain two dimensions of water's significance for First Nations Australians with a specific example) can only be met in class, with local, community-approved material. The site cannot protect this hinge; the teacher does. The node's wider items (Mutitjulu Waterhole, custodianship, dispossession) stay teacher-led.
+- **Proposed:** ask the school's Indigenous education contact or RAP group before this course is built, not only before it goes beyond CGGS, since K03 is the standard where it matters most.
+
+**3. `water-for-food` — Water that grows food (n3).** Default shape with two real-place cards.
+- **Checkpoint:** explain the economic role of water in one irrigation region; one similarity and one difference between an Australian and an Asian irrigation region.
+- **Cases (real, light):** the Murrumbidgee Irrigation Area (NSW) and the Mekong Delta (Vietnam), both named in the elaboration. Two or three settled facts per card, each with a named source checked at build (for example NSW government or irrigation-company pages; FAO or the Vietnamese government for the Delta). No figures that date. If a comparison point needs heavy checking, the student compares using the cards only.
+- **Misconception:** `irrigation-water-is-free-value` or similar (Nib: "the water itself is worth nothing; only the rice is"), final id at build.
+- **Distractors:** irrigation helps only farmers (not towns and jobs); both places must work the same way; more water always means more money.
+- **Width:** typical, other jobs and towns that depend on the same water; wider, what changes when water for irrigation is short (links to K02).
+
+**4. `water-worth-protecting` — Water worth protecting (n4).** Default shape with two real-place cards.
+- **Checkpoint:** explain the aesthetic or cultural value of one listed water feature and why it was listed.
+- **Cases (real, light):** two bays, one in Australia and one in Asia, both on the World Heritage List, each with UNESCO's own listing reason quoted briefly: proposed **Shark Bay** (Western Australia) and **Ha Long Bay** (Vietnam, which keeps one Asian country across lessons 3 and 4). Check each site's listing criteria on UNESCO's pages at build; swap a site if its listing is not for aesthetic or cultural value.
+- **Misconception:** `listing-creates-value` (Nib: "the bay became beautiful when it was listed"); listing recognises a value people already saw.
+- **Distractors:** aesthetic value is the same for everyone; a listed site has no economic value; listing is only about animals.
+- **Labelled** (T8): "outstanding" and "beauty" reflect the listing body's criteria; whose values are centred is a wider question for discussion.
+- **Asian spiritual significance** (elaboration 4 and the node's wider item): **left to the teacher** with sources they choose, not written by us, for the same reason as First Nations content (we are not the right authors of a faith's beliefs). Needs Matthew's call.
+
+**5. `weighing-water-values` — When values clash (n5, integration).** `shape: primer` (weighing, not a planted answer).
+- **Checkpoint:** apply at least three of the four values to one case and name one tension between groups.
+- **Case:** made-up river and a made-up proposal (a weir for irrigation that would flood a swimming hole and change a view), with stated groups and their reasons. No real community's views written by us.
+- **Misconception:** `one-value-wins` (Nib: "the value worth the most money should always win").
+- **Checks:** only the parts with an answer (which lens a stated reason uses; which groups disagree and over what). The judgement is written in the student's book and read by a partner (`reflect`, "gave feedback"); never marked.
+- **Width:** typical, a local water place of the class's choosing; wider, the node's Darling/Baaka and Daintree items stay teacher-led (First Nations content).
+
+### Whole course
+- **No board, no clip:** nothing here is a system students change and watch respond (`shared.md` › Decided: humanities, per course). Sorts, matches, bug tasks and cards. The parked concept-map board (`shared.md` › Parked) could suit lesson 5 later.
+- **Real facts:** MIA, Mekong Delta, Shark Bay and Ha Long Bay facts checked at build with `checked:` dates; nothing about any faith or First Nations community in student text.
+- **Teacher notes:** quote ACARA's elaborations, including the First Nations and Asian spiritual ones, with the "teacher-led, local and community-approved" note.
+- **Kit gap:** propose prior links for K03 in waypoints-kit (Year 4–6 HASS on environments and resources) for Matthew to approve before build; not guessed here.
+- **Publish:** a new course is a whole-site publish (ask first).
+
+### For Matthew
+1. **n2 as a pointer page**, with the hinge protected in class only: agree? And ask the Indigenous education contact before building, rather than only before going beyond CGGS?
+2. **Asian spiritual significance** (elaboration 4): teacher-led only, or one carefully sourced student card?
+3. **Vietnam** as the one Asian country for lessons 3 and 4 (Mekong Delta, Ha Long Bay)?
+4. **Shark Bay** as the Australian bay, or another listed Australian water feature you would rather use?
+5. **Timing:** build after the water courses' class trial, or sooner?
