@@ -102,7 +102,7 @@ tasks:
       type: question
       q: "The worst case for the fence is 30 cm out. What does that number tell you?"
       options:
-        - "The most it could be out; it will usually be less, because some errors go up and others down"
+        - "The most it could be out; usually it's less"
         - "How far out it is: exactly 30 cm"
         - "It cannot be out by more than 1 cm"
         - "Nothing: the errors cancel out completely"
@@ -224,7 +224,7 @@ tasks:
       type: question
       q: "The builder wants a tighter beam length. What would make the highest total closer to 20 m?"
       options:
-        - "Measure the whole wall in one go, with one reading to the nearest 10 cm"
+        - "Measure the whole wall in one reading"
         - "Use more pieces"
         - "Measure each piece to the nearest metre"
         - "Nothing: the error is fixed"

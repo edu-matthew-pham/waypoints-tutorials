@@ -135,10 +135,10 @@ tasks:
     check:
       type: question
       q: "Edge case: set $b$ to 1. What are the difference and the ratio between neighbouring prices?"
-      options: ["The difference is 0 and the ratio is 1: the price never changes", "The difference is 1 and the ratio is 0", "The price drops to 0"]
+      options: ["Difference 0, ratio 1", "Difference 1, ratio 0", "The price drops to 0"]
       answer: 0
       feedback: [null, "Swapped: nothing is taken off, and multiplying by 1 changes nothing.", "A ratio of 1 keeps the price at 30,000."]
-      explain: "Multiplying by 1 changes nothing, so the table is flat. It is both a line (difference 0) and an exponential (ratio 1)."
+      explain: "Multiplying by 1 changes nothing, so the price never changes and the table is flat. It is both a line (difference 0) and an exponential (ratio 1)."
 ```
 
 ### Another car
@@ -224,7 +224,7 @@ tasks:
   - check:
       type: question
       q: "A buyer fits a model to five prices from a dealer's site. What else would you want to check before trusting it for every car of that model?"
-      options: ["The kilometres and condition: the model only uses age, and they also change a price", "Nothing: a model that fits five prices is exact", "That the table only has whole numbers", "That the graph goes through (0, 0)"]
+      options: ["Its kilometres and condition", "Nothing: a model that fits five prices is exact", "That the table only has whole numbers", "That the graph goes through (0, 0)"]
       answer: 0
       feedback: [null, "A model that fits some prices isn't exact. Other things change the price too.", "Whole numbers aren't the point; the pattern is.", "A price is not 0 when the car is new."]
       explain: "The model uses only age. Kilometres and condition also change a price, so test it against more listings."

@@ -73,10 +73,10 @@ tasks:
   - check:
       type: question
       q: "Why is each part square counted as half a square?"
-      options: ["Some are mostly in and some mostly out, so on average about half is inside", "Because half of them are inside", "Because the grid is half a kilometre", "So the answer is smaller"]
+      options: ["On average about half of each is inside", "Because half of them are inside", "Because the grid is half a kilometre", "So the answer is smaller"]
       answer: 0
       feedback: [null, "It is about each square, not how many.", "The grid size does not decide this.", "It can make the estimate bigger or smaller than the full squares alone."]
-      explain: "The edge cuts each part square somewhere: on average, half of it is inside."
+      explain: "The edge cuts each part square somewhere: some are mostly in, some mostly out, so on average half of it is inside."
   - check:
       type: bug
       code: "working.txt#sam"
@@ -88,10 +88,10 @@ tasks:
   - check:
       type: question
       q: "You estimate a curved edge with straight pieces between points on it. How does the estimate compare with the real perimeter?"
-      options: ["A little shorter: a straight piece is the shortest way between its two points", "A little longer", "Exactly the same", "Twice as long"]
+      options: ["A little shorter", "A little longer", "Exactly the same", "Twice as long"]
       answer: 0
       feedback: [null, "A curve between two points is longer than the straight line.", "Only for straight edges.", "Far too much."]
-      explain: "Each straight piece cuts the corner of the curve, so the total is a little short; more pieces get closer."
+      explain: "A straight piece is the shortest way between its two points. Each one cuts the corner of the curve, so the total is a little short; more pieces get closer."
 ```
 
 ### Half a square
@@ -120,10 +120,10 @@ tasks:
   - check:
       type: question
       q: "Your estimate on a 1 km grid is 26.5 km². How should you report it?"
-      options: ["About 27 km² (to the nearest km²): the grid cannot be more precise", "26.500 km²", "Exactly 26.5 km²", "Between 0 and 100 km²"]
+      options: ["About 27 km², to the nearest km²", "26.500 km²", "Exactly 26.5 km²", "Between 0 and 100 km²"]
       answer: 0
       feedback: [null, "Extra decimal places claim a precision the grid does not have.", "It is an estimate, not exact.", "True, but far less useful than it could be."]
-      explain: "A 1 km grid gives an estimate to about the nearest km²; say so."
+      explain: "A 1 km grid cannot be more precise than about the nearest km², so round and say so."
 ```
 
 ### More pieces

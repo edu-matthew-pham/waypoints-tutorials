@@ -158,17 +158,17 @@ tasks:
   - check:
       type: question
       q: "Edge case: plan X is $c = 10 + 3g$ and plan Y is $c = 14 + 3g$. Setting them equal gives $10 + 3g = 14 + 3g$. What does that tell you?"
-      options: ["The plans never cost the same: taking 3g from both sides gives 10 = 14, which is never true", "The plans cost the same at g = 4", "The plans cost the same at g = 0"]
+      options: ["The plans never cost the same", "The plans cost the same at g = 4", "The plans cost the same at g = 0"]
       answer: 0
       feedback: [null, "4 is the difference of the fees. It is not a solution.", "At g = 0 the fees differ: 10 and 14."]
-      explain: "10 = 14 is false whatever g is, so there is no solution. The lines are parallel: same price per GB, different fees."
+      explain: "Taking 3g from both sides gives 10 = 14, which is false whatever g is, so there is no solution. The lines are parallel: same price per GB, different fees."
   - check:
       type: question
       q: "Edge case: plan P is $c = 5 + 2g$ and plan Q is $c = 2g + 5$. Setting them equal gives $5 + 2g = 2g + 5$. What does that tell you?"
-      options: ["They cost the same at every g: taking 2g and 5 from both sides gives 0 = 0, which is always true", "They cost the same at g = 5", "They never cost the same"]
+      options: ["They cost the same at every g", "They cost the same at g = 5", "They never cost the same"]
       answer: 0
       feedback: [null, "Only the numbers 5 and 5 matched. g can be anything.", "They are the same rule written two ways."]
-      explain: "0 = 0 is always true, so every g is a solution: the two rules draw the same line."
+      explain: "Taking 2g and 5 from both sides gives 0 = 0, which is always true, so every g is a solution: the two rules draw the same line."
 ```
 
 ### A different Big plan
@@ -273,10 +273,10 @@ tasks:
   - check:
       type: question
       q: "Mia uses 7 GB a month. Which is cheaper for her, Lite ($c = 12 + 4g$) or Mid ($c = 20 + 2g$)?"
-      options: ["Mid: 20 + 14 = 34 dollars, against Lite's 12 + 28 = 40 dollars", "Lite: it has the lower monthly fee", "They cost the same"]
+      options: ["Mid: it costs 34 dollars", "Lite: it has the lower monthly fee", "They cost the same"]
       answer: 0
       feedback: [null, "The fee is only part of the cost. Work out both at 7 GB.", "They only match at 4 GB."]
-      explain: "At 7 GB, Lite costs 40 dollars and Mid 34 dollars. The crossing at 4 GB tells you which plan wins on each side."
+      explain: "At 7 GB, Lite costs 12 + 28 = 40 dollars and Mid 20 + 14 = 34 dollars. The crossing at 4 GB tells you which plan wins on each side."
 ```
 
 ### Lite and Mid

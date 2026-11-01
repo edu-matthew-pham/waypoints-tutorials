@@ -111,10 +111,10 @@ tasks:
     check:
       type: question
       q: "Which report is best supported by the data on the board?"
-      options: ["Sleep is shorter on school nights (median 8 h, against 9.75 h), and weekends vary more (range 4.5 h, against 3.5 h)", "Everyone sleeps more at weekends", "School nights have the longer range", "The medians are the same"]
+      options: ["School nights are shorter (median 8 h against 9.75 h); weekends vary more", "Everyone sleeps more at weekends, by 1.75 hours each", "School nights vary more: their range is longer", "The medians are the same, so sleep is about the same"]
       answer: 0
-      feedback: [null, "It describes the centres, not every student.", "The weekend range is 4.5 h, the school nights 3.5 h.", "They are 8 and 9.75."]
-      explain: "A good report gives both medians and both ranges, in context, and does not claim more than the samples show."
+      feedback: [null, "The medians differ by 1.75 h, but that describes the centres, not every student.", "The weekend range is 4.5 h, the school nights 3.5 h.", "They are 8 and 9.75."]
+      explain: "A good report gives both medians (8 h and 9.75 h) and both ranges (3.5 h and 4.5 h), in context, and does not claim more than the samples show."
   - starter: "data.yml#fair"
     hint: ["School nights has 7 values; the weekend has 10.", "Add three values to the school nights."]
     check: { type: board, text: "Make the comparison fairer by giving school nights as many values as the weekend (10).", when: "n = N", explain: "The range and spread depend on how many values there are, so sets of equal size compare more fairly." }
@@ -122,24 +122,24 @@ tasks:
     check:
       type: question
       q: "Look at the dot plot of school nights (6.5, 7, 7.5, 8, 8, 8, 8.5, 9, 9.5, 10). How would you describe its shape?"
-      options: ["Roughly symmetrical, bunched around 8, with no outliers", "Skewed to the right with an outlier", "Two separate clusters", "Skewed to the left"]
+      options: ["Roughly symmetrical around 8", "Skewed to the right with an outlier", "Two separate clusters", "Skewed to the left"]
       answer: 0
       feedback: [null, "No value is far from the others.", "There is no gap.", "The values taper off evenly on both sides."]
       explain: "The values are spread fairly evenly on both sides of 8, with no gaps or outliers: roughly symmetrical."
   - check:
       type: question
       q: "One student reports 2 hours of sleep on a school night, far below the rest. What should the investigator do first?"
-      options: ["Check the value, then report the results with and without it", "Delete it without saying", "Include it and ignore it", "Change it to 6 hours"]
+      options: ["Check it, then report with and without it", "Delete it: outliers are always mistakes", "Include it and ignore it", "Change it to 6 hours, like the others"]
       answer: 0
-      feedback: [null, "Removing data without a reason hides it.", "An outlier can change the mean.", "Never change collected data."]
+      feedback: [null, "Removing data without a reason hides it, and an outlier can be real.", "An outlier can change the mean.", "Never change collected data."]
       explain: "Check whether it is a mistake. If it is real, say so, and show the effect on the summary."
   - check:
       type: question
       q: "A claim says 'Year 7 students get 9 hours of sleep'. The sample's median is 8 hours. What can you say?"
-      options: ["The sample is evidence against the claim, but only for the students measured", "The claim is false for all of Year 7", "The claim is true", "The sample shows nothing"]
+      options: ["Evidence against it, but not proof for everyone", "The claim is false for all of Year 7", "The claim is true: 8 is close to 9", "The sample shows nothing"]
       answer: 0
-      feedback: [null, "A sample cannot prove it for everyone.", "The sample's median is lower.", "It gives evidence against the claim."]
-      explain: "Report what the sample shows (evidence against) and what it cannot show (all of Year 7)."
+      feedback: [null, "A sample cannot prove it for everyone.", "The sample's median is lower: 8, not 9.", "It gives evidence against the claim."]
+      explain: "Report what the sample shows (evidence against the claim, for the students measured) and what it cannot show (all of Year 7)."
 ```
 
 ### The best report
@@ -176,9 +176,9 @@ tasks:
   - check:
       type: question
       q: "A survey asks only students who walk to school about how long they sleep. What is the problem?"
-      options: ["The sample is biased: walkers may not be like everyone else", "The sample is too big", "Sleep cannot be measured", "Nothing"]
+      options: ["It is biased: walkers may differ from others", "The sample is too big", "Sleep should be asked in minutes, not hours", "Nothing: every student was asked the same question"]
       answer: 0
-      feedback: [null, "A big sample is not a problem.", "Time can be measured.", "The sample might favour one answer."]
+      feedback: [null, "A big sample is not a problem.", "Hours are fine; the problem is who was asked.", "The same question is fair, but only walkers were asked."]
       explain: "A sample must represent the group the question is about."
   - check:
       type: answer

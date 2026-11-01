@@ -117,7 +117,7 @@ tasks:
   - hint: ["The highest point is halfway: x = 4.", "Put x = 4 into 8x − x²."]
     check: { type: number, q: "For $y = 8x - x^2$, what is the highest height?", answer: 16, explain: "At x = 4: 8 × 4 − 4² = 32 − 16 = 16 m." }
   - hint: ["Look at the curve after the ball lands.", "A height below 0 is below the ground."]
-    check: { type: question, q: "Edge case: the formula gives $y = -7$ at $x = 7$ for $y = 6x - x^2$. What does that mean for the ball?", options: ["Nothing: the ball has already landed, so the model stops at 6 s", "The ball is 7 m under the ground", "The ball bounced", "The formula is wrong"], answer: 0, feedback: [null, "A ball can't go under the ground: it landed at 6 s.", "The formula doesn't include bounces.", "The formula is fine for 0 to 6 s."], explain: "The formula describes the ball only while it's in the air. Past 6 s, it has landed." }
+    check: { type: question, q: "Edge case: the formula gives $y = -7$ at $x = 7$ for $y = 6x - x^2$. What does that mean for the ball?", options: ["The ball has already landed", "The ball is 7 m under the ground", "The ball bounced", "The formula is wrong"], answer: 0, feedback: [null, "A ball can't go under the ground: it landed at 6 s.", "The formula doesn't include bounces.", "The formula is fine for 0 to 6 s."], explain: "The formula describes the ball only while it's in the air. Past 6 s, it has landed, so the model stops at 6 s." }
 ```
 
 ### Land at 8
@@ -197,10 +197,10 @@ tasks:
   - check:
       type: question
       q: "What does this model leave out?"
-      options: ["Air resistance, so a real ball would be slightly lower", "The weight of the ball", "Nothing: it's exact", "The colour of the ball"]
+      options: ["Air resistance", "The weight of the ball", "Nothing: it's exact", "The pull of gravity"]
       answer: 0
-      feedback: [null, "The model doesn't use weight in this form, but the main thing missing is the air.", "Real balls slow in the air, so it's an approximation.", "Colour doesn't affect the flight."]
-      explain: "A real throw is slowed by the air. The parabola is a good approximation, and the height here is made up for the task."
+      feedback: [null, "The model doesn't use weight in this form, but the main thing missing is the air.", "Real balls slow in the air, so it's an approximation.", "Gravity is in the model: it is what bends the path back down."]
+      explain: "A real throw is slowed by the air, so a real ball would be slightly lower. The parabola is a good approximation, and the height here is made up for the task."
 ```
 
 ### The greatest height

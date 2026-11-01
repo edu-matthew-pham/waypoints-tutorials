@@ -191,10 +191,10 @@ tasks:
   - check:
       type: question
       q: "Why does the exact way give a whole number when the rounded way doesn't?"
-      options: ["The two roots multiply into √100, which is 10, but rounded decimals no longer multiply to that", "The exact way rounds more places", "10 is always the answer for any square", "The calculator guesses"]
+      options: ["√50 × √2 = √100 = 10, but rounded roots lose that", "The exact way rounds more places", "10 is always the answer for any square", "The calculator guesses"]
       answer: 0
       feedback: [null, "The exact way doesn't round at all.", "It depends on the area: this one happens to give a whole number.", "A calculator keeps many digits of each root; it isn't guessing."]
-      explain: "√50 × √2 = √100 = 10 exactly. Once each root is cut short, that match is lost."
+      explain: "√50 × √2 = √100 = 10 exactly. Once each root is cut short, the rounded decimals no longer multiply to 10."
 ```
 
 ### The path

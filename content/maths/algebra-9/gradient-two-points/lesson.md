@@ -136,7 +136,7 @@ tasks:
       answer: -2
       explain: "Rise 0 − 8 = −8, run 4 − 0 = 4. −8 ÷ 4 = −2: the line goes down."
     smaller:
-      check: { type: "question", q: "From $(0, 8)$ to $(4, 0)$, does the line go up or down?", options: ["Down", "Up"], answer: 0, explain: "y goes from 8 to 0, so it goes down: the rise is negative." }
+      check: { type: "question", q: "From $(0, 8)$ to $(4, 0)$, does the line go up or down?", options: ["Down", "Up"], answer: 0, feedback: [null, "Read y as x goes right: 8 falls to 0, so the line goes down."], explain: "y goes from 8 to 0, so it goes down: the rise is negative." }
   - check:
       type: number
       q: "Find the gradient of the line through $(2, 5)$ and $(7, 5)$."

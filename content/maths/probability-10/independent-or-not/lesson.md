@@ -78,10 +78,10 @@ tasks:
   - check:
       type: question
       q: "In that survey the chance a student plays chess is $\\frac{24}{80} = 0.3$, and the chance given the choir is $0.4$. What does that say?"
-      options: ["Not independent: knowing a student is in the choir changes the chance they play chess", "Independent: both chances are small", "Independent: 8 students do both", "It cannot be said, because the survey is only one sample"]
+      options: ["Not independent: the choir changes the chance", "Independent: both chances are small", "Independent: 8 students do both", "It cannot be said, because the survey is only one sample"]
       answer: 0
       feedback: [null, "Independence is about the two chances being equal, not about them being small. 0.4 is not 0.3.", "The number who do both is a count. Compare the two chances.", "One survey can't prove a link, but it does show the two chances differ here, so these events are not independent in this survey."]
-      explain: "0.4 is not equal to 0.3, so the choir changes the chance of chess in this survey. The events are dependent."
+      explain: "0.4 is not equal to 0.3, so knowing a student is in the choir changes the chance of chess in this survey. The events are dependent."
   - check:
       type: bug
       code: "working.txt#aiden"
@@ -129,7 +129,7 @@ tasks:
     check:
       type: question
       q: "Edge case: no student both walks and takes the bus to school (the board). Are 'walks' and 'takes the bus' independent?"
-      options: ["No: given that a student walks, the chance they take the bus is 0, but on its own it is 0.25", "Yes: they have nothing to do with each other", "Yes: the chance given walking is 0, so it never changes", "It cannot be told without more students"]
+      options: ["No: given walking, the bus chance drops to 0", "Yes: they have nothing to do with each other", "Yes: the chance given walking is 0, so it never changes", "It cannot be told without more students"]
       answer: 0
       feedback: [null, "Events that cannot happen together are linked in the strongest way: one rules the other out.", "A chance of 0 against 0.25 is a change, so the events are not independent.", "The board has all 100 students, and the two chances already differ."]
       explain: "Walking rules out the bus, so the chance of the bus given walking is 0 while on its own it is 25/100 = 0.25. Events that can't happen together are not independent."
@@ -194,10 +194,10 @@ tasks:
   - check:
       type: question
       q: "On its own the chance of sport in the new survey is $\\frac{70}{120} \\approx 0.58$. Which sentence is the most careful?"
-      options: ["In this survey walkers were a little less likely to play a sport (0.5 against 0.58), so the two do not look independent, but one survey can't show why", "Walking stops students playing sport", "Walking and sport are independent because 0.5 is close to 0.58", "The survey proves walkers are lazy"]
+      options: ["Here walkers were a little less likely to play sport (0.5 vs 0.58)", "Walking stops students playing sport (0.5 vs 0.58)", "Walking and sport are independent: 0.5 is close to 0.58", "Walkers are twice as likely to skip sport (0.5 vs 0.58)"]
       answer: 0
-      feedback: [null, "The survey does not show a cause.", "0.5 is not equal to 0.58. Close is a judgement: say what the numbers are and don't claim they are equal.", "The numbers say nothing about being lazy."]
-      explain: "A careful claim states the two chances, says what they show in this survey, and does not claim a cause."
+      feedback: [null, "The survey does not show a cause.", "0.5 is not equal to 0.58. Close is a judgement: say what the numbers are and don't claim they are equal.", "Skipping sport is 0.5 for walkers against 0.42 overall, nowhere near twice. Divide before you say 'twice'."]
+      explain: "The two chances differ, so the events do not look independent in this survey, but one survey can't show why. A careful claim states the two chances, says what they show in this survey, and does not claim a cause."
 ```
 
 ### The new survey

@@ -92,6 +92,7 @@ tasks:
       q: "The pair $(5, 13)$ is in the table for $y = 2x + 3$. Which number is the input?"
       options: ["5", "13", "Both are inputs"]
       answer: 0
+      feedback: [null, "13 is the output: it comes from putting 5 into the rule.", "A pair is input first, then output. Only one of them is the input."]
       explain: "The first number is the input: x = 5. The rule gives the output 2 × 5 + 3 = 13."
 ```
 
@@ -200,12 +201,14 @@ tasks:
         - "x: 0, 1, 2 and y: 0, 4, 8"
         - "x: 4, 5, 6 and y: 0, 1, 2"
       answer: 0
+      feedback: [null, "These outputs are 4 × x (0, 4, 8), not x + 4.", "Inputs and outputs are swapped: x = 4 should give y = 8, not 0."]
       explain: "Each output is 4 more than its input: 0 + 4 = 4, 1 + 4 = 5, 2 + 4 = 6. The third table has inputs and outputs swapped."
   - check:
       type: question
       q: "For $y = 3x + 1$, which is an ordered pair from its table?"
       options: ["$(2, 7)$", "$(7, 2)$", "$(2, 2)$"]
       answer: 0
+      feedback: [null, "Swapped: the input 2 comes first, then the output 7.", "The output is 3 × 2 + 1 = 7, not 2."]
       explain: "Input 2, output 3 × 2 + 1 = 7: the pair is (2, 7)."
   - check:
       type: answer

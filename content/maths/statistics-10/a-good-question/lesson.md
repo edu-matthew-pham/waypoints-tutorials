@@ -72,9 +72,9 @@ tasks:
   - check:
       type: question
       q: "Which rewrite of Zoe's question fixes it?"
-      options: ["Among Year 10 students at our school, do students who slept fewer hours last night have slower reaction times on a ruler-drop test?", "Is sleep good?", "Do people who sleep a lot like school?", "Does sleep matter to everyone in the world?"]
+      options: ["Do Year 10s here who slept less last night react slower in a ruler-drop test?", "Is sleep good for Year 10 students at our school?", "Do Year 10 students here who sleep a lot like school more?", "Do people around the world who sleep less react more slowly?"]
       answer: 0
-      feedback: [null, "It still doesn't say what is measured or who is asked.", "That swaps in a different variable, liking school, and doesn't say how it is measured.", "That is a much bigger group than the class could ask, and still doesn't say what is measured."]
+      feedback: [null, "It names a group, but 'good' has no measure and there is only one variable.", "That swaps in a different variable, liking school, and doesn't say how it is measured.", "That is a much bigger group than the class could ask, and it doesn't say how reaction is measured."]
       explain: "It names the group, both variables, how reaction time is measured and the direction the class expects (fewer hours, slower)."
   - check:
       type: question
@@ -104,17 +104,17 @@ tasks:
   - check:
       type: question
       q: "Edge case: the class wants to ask how 'happy' students are. Which change makes that part measurable?"
-      options: ["Choose a measure, such as a mood score out of 10 at the same time each day", "Ask 'are you happy?' and leave it", "Decide happiness can't be a variable", "Ask only the happiest students"]
+      options: ["Use a mood score out of 10 at the same time each day", "Ask 'are you happy?' and leave it", "Decide happiness can't be a variable", "Ask only the happiest students"]
       answer: 0
       feedback: [null, "A yes or no answer loses detail and everyone may read 'happy' differently.", "It can be a variable once you say how to measure it.", "Asking only the happiest students would bias the data."]
       explain: "A variable needs a way to be measured, written down before collecting: a score out of 10, taken at the same time each day."
   - check:
       type: question
       q: "Edge case: the class asks only the 8 students in the sleep club. What is wrong?"
-      options: ["The group is small and chosen by sleep habits, so it may not be like the Year 10 group the question is about", "Nothing: they know about sleep", "The sample is too big", "It proves sleep matters"]
+      options: ["They were picked for their sleep habits, so they may not be typical", "Nothing: sleep club students know the most about sleep", "The sample is too big for a class to handle", "Nothing, as long as all 8 answer honestly"]
       answer: 0
-      feedback: [null, "Knowing about sleep isn't the issue. Their habits may not be typical.", "Eight students is small, not big.", "A biased group can't prove anything about everyone."]
-      explain: "The question is about Year 10 students, so the students asked should be chosen to represent them, not picked for their sleep habits."
+      feedback: [null, "Knowing about sleep isn't the issue. Their habits may not be typical.", "Eight students is small, not big.", "Honest answers don't fix who was picked: sleep club students may not be like other Year 10s."]
+      explain: "The question is about Year 10 students, so the students asked should be chosen to represent them, not picked for their sleep habits. Eight is also a small group, so a different 8 could give a different answer."
   - check:
       type: question
       q: "Edge case: which of these questions can data NOT answer?"
@@ -147,7 +147,7 @@ tasks:
   - check:
       type: question
       q: "Is 'Are students who play more sport more fit?' ready to investigate?"
-      options: ["Not yet: it needs a measure of 'more sport' and of 'fit', and a group", "Yes: it has two variables", "Yes: everyone knows what fit means", "No: sport and fitness can't be measured"]
+      options: ["Not yet: 'more sport' and 'fit' need measures, and a group", "Yes: it has two variables", "Yes: everyone knows what fit means", "No: sport and fitness can't be measured"]
       answer: 0
       feedback: [null, "It names two ideas, but neither has a measure yet.", "People mean different things by 'fit'.", "They can be measured, for example hours of sport per week and a one-minute step count."]
       explain: "Two variables are there, but the question isn't ready until each has a measure and the group is named."
@@ -179,10 +179,10 @@ tasks:
   - check:
       type: question
       q: "Which checklist describes a question that is ready?"
-      options: ["Two named variables, a group, a measure for each, and which one might explain the other", "One interesting word and a big group", "A question that everyone agrees on already", "A question with a yes or no answer and no measures"]
+      options: ["Two variables, a group, a measure for each, and a direction", "One interesting word and a big group", "A question that everyone agrees on already", "A question with a yes or no answer and no measures"]
       answer: 0
       feedback: [null, "A ready question names two variables and says how to measure them.", "If everyone agrees already, the data will not tell you anything new.", "Yes/no without measures can't be tested."]
-      explain: "Two variables, a group, measures and direction are what the later steps (collect, display, judge) depend on."
+      explain: "Two named variables, a group, a measure for each and a direction (which one might explain the other) are what the later steps (collect, display, judge) depend on."
 ```
 
 ### Your question

@@ -188,10 +188,10 @@ tasks:
   - check:
       type: question
       q: "Why didn't you need π's digits to decide which is more pizza?"
-      options: ["π was on both sides, so only the other numbers mattered", "π is exactly 3", "π doesn't affect area"]
+      options: ["π was on both sides", "π is exactly 3", "π doesn't affect area"]
       answer: 0
       feedback: [null, "π isn't 3: it's 3.14159… and never ends.", "π is in the area formula."]
-      explain: "225π against 264.5π: comparing 225 with 264.5 is enough."
+      explain: "225π against 264.5π: π is on both sides, so only the other numbers matter. Comparing 225 with 264.5 is enough."
 ```
 
 ### The extra pizza

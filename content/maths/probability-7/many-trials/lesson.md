@@ -83,10 +83,10 @@ tasks:
   - check:
       type: question
       q: "Why does the relative frequency settle down over many trials?"
-      options: ["Each new trial changes the total by less and less, so the fraction moves less", "The coin starts landing heads more to catch up", "After 1000 trials the outcomes stop being random"]
+      options: ["Each new trial moves the fraction less and less", "The coin starts landing heads more to catch up", "After 1000 trials the outcomes stop being random"]
       answer: 0
       feedback: [null, "The coin has no memory: each flip is still 1/2.", "Every flip is still random."]
-      explain: "One more head changes 7/10 a lot, but 501/1000 hardly at all."
+      explain: "Each new trial changes the total by less and less. One more head changes 7/10 a lot, but 501/1000 hardly at all."
 ```
 
 ### Settling, not balancing
@@ -131,7 +131,7 @@ tasks:
   - check:
       type: question
       q: "Edge case: in 10 000 flips of a fair coin, will there be any runs of 5 tails in a row?"
-      options: ["Almost certainly, many: long runs happen in long experiments", "No: the law of large numbers stops them", "Only if the coin is unfair"]
+      options: ["Yes, many: long runs happen in long experiments", "No: the law of large numbers stops them", "Only if the coin is unfair"]
       answer: 0
       feedback: [null, "The law is about the relative frequency, not about each flip.", "Runs happen with fair coins."]
       explain: "In 10 000 flips, a run of 5 or more tails comes up about 150 times (more if you count overlapping runs); the overall fraction still settles near 1/2."

@@ -102,7 +102,7 @@ tasks:
   - hint: ["The unknown is on the bottom this time.", "hypotenuse = adjacent ÷ cos 60°."]
     check: { type: number, q: "A ramp's horizontal run is $10$ m and it makes $60°$ with the ground. How long is the ramp surface? ($\\cos 60° = 0.5$)", answer: 20, tolerance: 0.1, explain: "adjacent = hypotenuse × cos, so hypotenuse = 10 ÷ 0.5 = 20 m." }
   - hint: ["Is a 70° ladder steep or shallow?", "The wall height has to be less than the ladder."]
-    check: { type: question, q: "A calculation gives a ladder's reach as $11$ m for an $8$ m ladder. What does that tell you?", options: ["There is a mistake: the height can't be more than the ladder", "The ladder is very steep", "The ladder is long enough", "Nothing: ladders can stretch"], answer: 0, feedback: [null, "Even a vertical ladder only reaches 8 m.", "It can't reach further than its length.", "A ladder has a fixed length."], explain: "The opposite side is shorter than the hypotenuse. If it isn't, check for dividing instead of multiplying." }
+    check: { type: question, q: "A calculation gives a ladder's reach as $11$ m for an $8$ m ladder. What does that tell you?", options: ["There is a mistake somewhere", "The ladder is very steep", "The ladder is long enough", "Nothing: ladders can stretch"], answer: 0, feedback: [null, "Even a vertical ladder only reaches 8 m.", "It can't reach further than its length.", "A ladder has a fixed length."], explain: "The height can't be more than the ladder: the opposite side is shorter than the hypotenuse. If it isn't, check for dividing instead of multiplying." }
 ```
 
 ### Ladder reach

@@ -95,7 +95,7 @@ tasks:
   - hint: ["Divide the new length by the old.", "15 ÷ 6."]
     check: { type: number, q: "A side of $6$ cm becomes $15$ cm. What is the scale factor?", answer: 2.5, tolerance: 0.001, explain: "15 ÷ 6 = 2.5." }
   - hint: ["Does every length get the same factor?", "Compare 1920 ÷ 1080 with 2400 ÷ 1080."]
-    check: { type: question, q: "A $1920$ by $1080$ picture is stretched to $2400$ by $1080$. Is that an enlargement?", options: ["No: the width grew by more than the height, so the shape changed", "Yes: it is bigger", "Yes: the height is the same", "Can't tell"], answer: 0, feedback: [null, "Bigger isn't enough: every length needs the same factor.", "The width was multiplied by 1.25 and the height by 1.", "You can tell: the factors differ."], explain: "2400 ÷ 1920 = 1.25 but 1080 ÷ 1080 = 1. The factors aren't the same, so it's stretched, not enlarged." }
+    check: { type: question, q: "A $1920$ by $1080$ picture is stretched to $2400$ by $1080$. Is that an enlargement?", options: ["No: the width grew more than the height", "Yes: it is bigger", "Yes: the height is the same", "Can't tell"], answer: 0, feedback: [null, "Bigger isn't enough: every length needs the same factor.", "The width was multiplied by 1.25 and the height by 1.", "You can tell: the factors differ."], explain: "2400 ÷ 1920 = 1.25 but 1080 ÷ 1080 = 1. The factors aren't the same, so it's stretched, not enlarged." }
 ```
 
 ### A smaller copy
@@ -165,10 +165,10 @@ tasks:
   - check:
       type: question
       q: "So how does a video fill a screen of a different shape?"
-      options: ["It leaves bars or crops, because one scale factor can't fit both lengths", "It changes the angles", "It uses a different scale factor for each side", "It always fits"]
+      options: ["It leaves bars or crops the picture", "It changes the angles", "It uses a different scale factor for each side", "It always fits"]
       answer: 0
       feedback: [null, "Angles stay the same in an enlargement.", "Different factors would stretch the picture.", "Only the same shape fits exactly."]
-      explain: "An enlargement keeps the shape, so a different-shaped screen leaves bars or crops the picture (or stretches it)."
+      explain: "One scale factor can't fit both lengths. An enlargement keeps the shape, so a different-shaped screen leaves bars or crops the picture (or stretches it)."
 ```
 
 ### The height

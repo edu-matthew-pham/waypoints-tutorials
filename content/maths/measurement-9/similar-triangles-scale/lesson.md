@@ -95,7 +95,7 @@ tasks:
   - hint: ["Area scales by the factor squared.", "Factor 3 gives 3 × 3."]
     check: { type: number, q: "A triangle has area 6. A similar copy has all sides tripled. What is the area of the copy?", answer: 54, explain: "The area is multiplied by 3² = 9: 6 × 9 = 54." }
   - hint: ["Compare each angle with the matching one.", "Equal angles but a different shape is impossible."]
-    check: { type: question, q: "Two triangles have sides 3, 4, 5 and 6, 8, 11. Are they similar?", options: ["No: the factor is 2 for two sides but 2.2 for the third", "Yes: the sides are all bigger", "Yes: 6 and 8 are doubles", "Can't tell"], answer: 0, feedback: [null, "Bigger isn't enough: the factor has to match.", "Two sides doubling isn't enough.", "You can test: 3, 4, 5 doubles to 6, 8, 10."], explain: "Similar triangles need the same factor for every pair. 11 ÷ 5 = 2.2 is not 2." }
+    check: { type: question, q: "Two triangles have sides 3, 4, 5 and 6, 8, 11. Are they similar?", options: ["No: the third side's factor is 2.2", "Yes: the sides are all bigger", "Yes: 6 and 8 are doubles", "Can't tell"], answer: 0, feedback: [null, "Bigger isn't enough: the factor has to match.", "Two sides doubling isn't enough.", "You can test: 3, 4, 5 doubles to 6, 8, 10."], explain: "Similar triangles need the same factor for every pair. The factor is 2 for two sides, but 11 ÷ 5 = 2.2 is not 2." }
 ```
 
 ### A smaller copy
@@ -164,7 +164,7 @@ tasks:
   - check:
       type: question
       q: "What would make this method wrong?"
-      options: ["Sloping ground, or measuring at different times", "A very tall flagpole", "A short person", "A cloudy day"]
+      options: ["Sloping ground or different times", "A very tall flagpole", "A short person", "A cloudy day"]
       answer: 0
       feedback: [null, "Tall flagpoles are fine.", "Short people are fine.", "You need the shadows, so cloud is a problem for measuring, but not for the idea."]
       explain: "The two shadows must be made by the sun at the same angle, on level ground."

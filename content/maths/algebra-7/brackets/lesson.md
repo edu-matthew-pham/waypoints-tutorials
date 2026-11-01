@@ -78,6 +78,7 @@ tasks:
       q: "Which expression means \"subtract 3 from $n$, then divide the result by 2\"?"
       options: ["$\\frac{n - 3}{2}$", "$n - \\frac{3}{2}$", "$\\frac{n}{2} - 3$"]
       answer: 0
+      feedback: [null, "This divides only the 3 by 2. The whole of n − 3 must sit on top of the fraction bar.", "This divides n first, then subtracts 3: the steps are in the wrong order."]
       explain: "The whole of n − 3 is divided by 2. The fraction bar works like brackets. Check with n = 11: 11 − 3 = 8, and 8 ÷ 2 = 4."
   - check:
       type: bug
@@ -190,6 +191,7 @@ tasks:
       q: "When $n = 5$, which is bigger, $2(n + 3)$ or $2n + 3$?"
       options: ["$2(n + 3)$, which is 16", "$2n + 3$, which is 13", "They are the same"]
       answer: 0
+      feedback: [null, "2n + 3 is 2 × 5 + 3 = 13, but 2(n + 3) is 2 × 8 = 16, which is bigger.", "Work both out: 2 × 8 = 16 and 2 × 5 + 3 = 13. The brackets make them different."]
       explain: "2(5 + 3) = 2 × 8 = 16 and 2 × 5 + 3 = 13. Brackets change the answer."
   - check:
       type: answer

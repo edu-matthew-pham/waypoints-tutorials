@@ -221,7 +221,7 @@ tasks:
   - check:
       type: question
       q: "Which sentence best answers 'Is your arm span the same as your height?' for these twelve students?"
-      options: ["About the same: every dot is near the dashed line, with about half above and half below", "Exactly the same, because the dots are on the line", "No, because most of the dots are not on the line", "It can't be answered from a plot"]
+      options: ["About the same: every dot is near the line", "Exactly the same, because the dots are on the line", "No, because most of the dots are not on the line", "It can't be answered from a plot"]
       answer: 0
       feedback: [null, "Only dots exactly on the line would be exactly the same, and none of the dots is on it.", "None is exactly on the line, but all are within 4 cm of it. That is close.", "A plot is just the way to see it: the dots show how close the two measurements are."]
       explain: "All twelve dots are within 4 cm of the dashed line, six above and six below. So arm span and height are about the same for these students, not exactly."

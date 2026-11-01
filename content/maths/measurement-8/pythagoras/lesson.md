@@ -145,7 +145,7 @@ tasks:
   - check:
       type: question
       q: "Edge case: why is the hypotenuse always the longest side?"
-      options: ["c² = a² + b² is bigger than a² and bigger than b²", "It is always drawn longest", "Because it is at the bottom"]
+      options: ["c² = a² + b² is more than either", "It is always drawn longest", "Because it is at the bottom"]
       answer: 0
       feedback: [null, "Drawings can mislead; the theorem decides.", "The hypotenuse can point any way."]
       explain: "c² is a² plus something, so c² > a², and c > a; the same for b."
@@ -189,7 +189,7 @@ tasks:
         - ["70", "That is walking round two sides."]
       explain: "The diagonal is a hypotenuse: 900 + 1600 = 2500, √2500 = 50 m."
     smaller:
-      check: { type: "question", q: "Which length is the hypotenuse, the side across from the right angle?", options: ["The path from corner to corner", "The 40 m side", "The 30 m side"], answer: 0, explain: "The right angle is at the corner of the park, and the path across doesn't touch it. So the path is the hypotenuse." }
+      check: { type: "question", q: "Which length is the hypotenuse, the side across from the right angle?", options: ["The path from corner to corner", "The 40 m side", "The 30 m side"], answer: 0, feedback: [null, "The 40 m side touches the right angle at the corner, so it is a shorter side.", "The 30 m side touches the right angle at the corner, so it is a shorter side."], explain: "The right angle is at the corner of the park, and the path across doesn't touch it. So the path is the hypotenuse." }
   - check:
       type: answer
       q: "Review: work out $\\sqrt{144}$."

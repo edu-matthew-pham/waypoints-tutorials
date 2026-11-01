@@ -68,7 +68,7 @@ tasks:
       answer: 3
       explain: "(x − 3)(x − 4) = 0, so x = 3 or x = 4. The smaller is 3."
     smaller:
-      check: { type: "question", q: "Two numbers multiply to 12 and add to $-7$. Which pair?", options: ["−3 and −4", "3 and 4", "−2 and −6", "−1 and −12"], answer: 0, explain: "−3 × −4 = 12 and −3 + −4 = −7." }
+      check: { type: "question", q: "Two numbers multiply to 12 and add to $-7$. Which pair?", options: ["−3 and −4", "3 and 4", "−2 and −6", "−1 and −12"], answer: 0, feedback: [null, "3 × 4 = 12, but 3 + 4 = 7, not −7: both need to be negative.", "−2 × −6 = 12, but they add to −8.", "−1 × −12 = 12, but they add to −13."], explain: "−3 × −4 = 12 and −3 + −4 = −7." }
   - check:
       type: bug
       code: "working.txt#alex"
@@ -145,7 +145,7 @@ tasks:
       answer: 5
       explain: "(x − 5)(x + 2) = 0, so x = 5 or x = −2."
     smaller:
-      check: { type: "question", q: "Two numbers multiply to $-10$ and add to $-3$. Which pair?", options: ["−5 and 2", "5 and −2", "−5 and −2", "−10 and 1"], answer: 0, explain: "−5 × 2 = −10 and −5 + 2 = −3." }
+      check: { type: "question", q: "Two numbers multiply to $-10$ and add to $-3$. Which pair?", options: ["−5 and 2", "5 and −2", "−5 and −2", "−10 and 1"], answer: 0, feedback: [null, "5 + −2 = 3, not −3: the signs are swapped.", "−5 × −2 = +10, not −10.", "−10 × 1 = −10, but −10 + 1 = −9, not −3."], explain: "−5 × 2 = −10 and −5 + 2 = −3." }
   - check:
       type: question
       q: "A rectangle is $x$ m wide and $(x + 4)$ m long with area 32 m². The equation gives $x = 4$ or $x = -8$. Which is the width?"

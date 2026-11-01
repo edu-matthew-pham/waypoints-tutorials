@@ -135,7 +135,7 @@ tasks:
   - check:
       type: question
       q: "Edge case: can a triangle have two right angles?"
-      options: ["No: two right angles already make 180°, leaving nothing for the third", "Yes, if it is isosceles", "Yes, if it is very long"]
+      options: ["No: two right angles already make 180°", "Yes, if it is isosceles", "Yes, if it is very long"]
       answer: 0
       feedback: [null, "The angles must still add to 180°.", "90° + 90° = 180° leaves 0° for the third corner: the sides never meet."]
       explain: "90° + 90° = 180°, so the third angle would be 0°: the two sides would be parallel and never meet."

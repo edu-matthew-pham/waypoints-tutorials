@@ -234,6 +234,7 @@ tasks:
         - "$47 \\times 62$"
         - "$38 \\times 73$"
       answer: 0
+      feedback: [null, "47 and 62 are not the same distance either side of a round number, so the pattern doesn't fit.", "38 and 73 are not the same distance either side of a round number, so the pattern doesn't fit."]
       explain: "49 and 51 are 1 below and 1 above 50: 2500 − 1 = 2499. The others aren't the same distance from a round number."
 ```
 

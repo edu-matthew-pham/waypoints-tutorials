@@ -163,7 +163,7 @@ tasks:
       type: question
       q: "Edge case: a timer's stopwatch runs slightly fast, and the timer is also slow to press stop. Can one result have more than one source of error?"
       options:
-        - "Yes: the stopwatch is an instrument error and the slow press is a person error"
+        - "Yes: an instrument error and a person error"
         - "No: an error has exactly one source"
         - "Yes, but only if the method is also wrong"
         - "No: the two errors cancel"
@@ -173,7 +173,7 @@ tasks:
         - "A result can be out for several reasons at once; name each one."
         - "Two sources are enough. The method need not be wrong too."
         - "A fast watch makes the time bigger and a slow press makes it bigger too. They don't cancel."
-      explain: "Errors add up from every source. Name each source separately, so you know what to fix."
+      explain: "The fast stopwatch is an instrument error and the slow press is a person error. Errors add up from every source. Name each source separately, so you know what to fix."
 ```
 
 ### The mean
@@ -193,7 +193,7 @@ tasks:
       type: question
       q: "A group measures how long a ball takes to fall by starting the stopwatch when they let go and stopping it when they hear it land, from the top of a tall building. What is the main source of error?"
       options:
-        - "The method: sound takes time to travel, so the time is too long"
+        - "The method: sound takes time to travel"
         - "The instrument: the stopwatch is broken"
         - "The person: they are not careful"
         - "None: the time is exact"
@@ -203,7 +203,7 @@ tasks:
         - "Nothing says the stopwatch is wrong."
         - "Even a very careful person gets a too-long time this way."
         - "A reading is never exact."
-      explain: "Waiting for the sound adds a delay to every drop, a systematic error from the method. Watching the ball land instead would remove it."
+      explain: "Waiting for the sound makes every time too long: a delay on every drop, a systematic error from the method. Watching the ball land instead would remove it."
   - hint: ["All the same direction means systematic."]
     check:
       type: question
@@ -261,7 +261,7 @@ tasks:
       type: question
       q: "That leaves 0.02 mm between A (20.04) and B (20.06). Which could still explain it?"
       options:
-        - "A slightly different place or squeeze on the hole (method), or a small difference in reading the scale (person)"
+        - "Where and how hard each one measured, or how they read the scale"
         - "Nothing: it must be the calipers again"
         - "Nothing: measurements from two people must be identical"
         - "Only rounding"

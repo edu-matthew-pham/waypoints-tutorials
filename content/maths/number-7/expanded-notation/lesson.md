@@ -187,10 +187,10 @@ tasks:
   - check:
       type: question
       q: "Why is $6300 \\times 100$ the same as $6300 \\times 10^2$, and why is it easy?"
-      options: ["10² = 100, and × 10² moves every digit two columns left (add two zeros)", "× 10² means × 10 × 2 = × 20", "10² = 20, so it doubles", "It is not the same"]
+      options: ["10² = 100: each digit moves two columns left", "× 10² means × 10 × 2 = × 20", "10² = 20, so it doubles", "It is not the same"]
       answer: 0
       feedback: [null, "10² is 10 × 10 = 100, not 10 × 2.", "10² is 10 × 10 = 100.", "10² = 100, so they are the same."]
-      explain: "10² = 100. Multiplying by 100 moves each digit two columns left: 630 000."
+      explain: "10² = 100. Multiplying by 100 moves each digit two columns left (add two zeros): 630 000."
   - check:
       type: answer
       q: "Review: what is $2^5$?"

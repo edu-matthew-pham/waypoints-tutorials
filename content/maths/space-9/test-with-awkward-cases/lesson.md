@@ -75,7 +75,7 @@ stage: "practise"
 insight: "Running the algorithm on a list of cases and counting its wrong answers."
 tasks:
   - {"check": {"type": "number", "q": "Test 4, 5 and 9. By how much does S exceed L?", "answer": 0, "tolerance": 0, "explain": "S = 9 and L = 9: a boundary case."}}
-  - {"check": {"type": "question", "q": "The check S >= L says triangle for 4, 5 and 9. Is it right?", "options": ["No: the strips lie flat", "Yes"], "answer": 0, "feedback": [null, "They cannot enclose any space."], "explain": "No: S = L means a flat line."}}
+  - {"check": {"type": "question", "q": "The check S >= L says triangle for 4, 5 and 9. Is it right?", "options": ["No: the strips lie flat", "Yes: 4 + 5 = 9, so S >= L holds"], "answer": 0, "feedback": [null, "The check holds, but S = L means the strips lie flat and cannot enclose any space."], "explain": "No: S = L means a flat line."}}
   - {"check": {"type": "number", "q": "Review: strips 6, 9 and 14. What is S minus L?", "answer": 1, "tolerance": 0, "explain": "15 − 14 = 1."}}
 ```
 

@@ -95,9 +95,9 @@ tasks:
   - hint: ["Rise × 14.", "0.3 × 14."]
     check: { type: number, q: "A different door is $0.3$ m above the path. How long is the run for a 1 in 14 ramp? (metres)", answer: 4.2, tolerance: 0.01, explain: "0.3 × 14 = 4.2 m." }
   - hint: ["The run is 6.3 m.", "Is the ramp surface longer than the run?"]
-    check: { type: question, q: "A student finds the ramp surface is $6.1$ m for a $6.3$ m run. What is wrong?", options: ["The hypotenuse can't be shorter than a shorter side", "Nothing", "The run is too long", "The ramp is too steep"], answer: 0, feedback: [null, "The ramp surface is the hypotenuse, so it must be the longest side.", "The run is a leg, and legs can be long.", "Steepness isn't the issue here."], explain: "The hypotenuse is always longer than either shorter side. 6.1 < 6.3 means a mistake." }
+    check: { type: question, q: "A student finds the ramp surface is $6.1$ m for a $6.3$ m run. What is wrong?", options: ["The surface is shorter than the run", "Nothing", "The run is too long", "The ramp is too steep"], answer: 0, feedback: [null, "The ramp surface is the hypotenuse, so it must be the longest side.", "The run is a leg, and legs can be long.", "Steepness isn't the issue here."], explain: "The hypotenuse is always longer than either shorter side. 6.1 < 6.3 means a mistake." }
   - hint: ["0.9 × 14.", "The limit applies up to 9 m."]
-    check: { type: question, q: "A door is $0.9$ m up, so a 1 in 14 ramp needs a run of $12.6$ m. Is the 1 in 14 rule enough?", options: ["No: that rule is for ramps up to 9 m, so a longer ramp needs the standard's other rules", "Yes: 1 in 14 always works", "Yes: it is shorter than 14", "No: a 0.9 m door needs stairs"], answer: 0, feedback: [null, "The limit given is for ramps up to 9 m long.", "The length of the ramp, not the number 14, is the issue.", "The standard allows longer ramps with other rules."], explain: "The 1 in 14 figure is for ramps up to 9 m. Longer ramps are covered by other rules, such as flatter slopes and landings: check the standard." }
+    check: { type: question, q: "A door is $0.9$ m up, so a 1 in 14 ramp needs a run of $12.6$ m. Is the 1 in 14 rule enough?", options: ["No: the rule is for ramps up to 9 m", "Yes: 1 in 14 always works", "Yes: it is shorter than 14", "No: a 0.9 m door needs stairs"], answer: 0, feedback: [null, "The limit given is for ramps up to 9 m long.", "The length of the ramp, not the number 14, is the issue.", "The standard allows longer ramps with other rules."], explain: "The 1 in 14 figure is for ramps up to 9 m. Longer ramps are covered by other rules, such as flatter slopes and landings: check the standard." }
 ```
 
 ### A lower door
@@ -125,7 +125,7 @@ tasks:
       feedback: [null, "tan⁻¹ gives an angle.", "A scale factor needs a similar shape.", "That gives the run from the rise."]
       explain: "Two shorter sides give the hypotenuse by Pythagoras."
     smaller:
-      check: { type: "question", q: "Is the ramp surface a shorter side or the hypotenuse?", options: ["The hypotenuse", "A shorter side", "Neither", "Both"], answer: 0, explain: "It is across from the right angle." }
+      check: { type: "question", q: "Is the ramp surface a shorter side or the hypotenuse?", options: ["The hypotenuse", "A shorter side", "Neither", "Both"], answer: 0, feedback: [null, "The shorter sides touch the right angle. The ramp surface is across from it.", "Every side of a right triangle is a shorter side or the hypotenuse.", "Only one side is across from the right angle."], explain: "It is across from the right angle." }
   - check:
       type: number
       q: "Review: tan⁻¹ of 1 is what angle?"

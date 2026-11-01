@@ -136,7 +136,7 @@ tasks:
     check:
       type: question
       q: "Edge case: set $b$ to 1. What does the graph look like?"
-      options: ["A flat line at height $a$: it doesn't grow or decay", "A curve that grows slowly", "A curve that decays slowly"]
+      options: ["A flat line at height $a$", "A curve that grows slowly", "A curve that decays slowly"]
       answer: 0
       feedback: [null, "Multiplying by 1 changes nothing, so it can't grow.", "Multiplying by 1 changes nothing, so it can't decay."]
       explain: "Multiplying by 1 each step leaves the value where it is: a flat line at a."
@@ -239,10 +239,10 @@ tasks:
   - check:
       type: question
       q: "Back to the question: will the tea ever get colder than the room?"
-      options: ["No: the gap keeps halving but never reaches 0, so the tea stays above the room", "Yes, after about 70 minutes, when the gap has gone", "Yes, once the gap reaches 0 it keeps going down"]
+      options: ["No: the gap never reaches 0", "Yes, after about 70 minutes, when the gap has gone", "Yes, once the gap reaches 0 it keeps going down"]
       answer: 0
       feedback: [null, "Halving 70 never lands on 0, so the gap never goes. Check the dashed line on the board.", "The gap never reaches 0, so there's no time when the tea has gone below the room."]
-      explain: "The gap is a decay graph, and a decay graph never reaches 0. The tea gets closer to 20 °C, and the dashed line on the board is its asymptote."
+      explain: "The gap is a decay graph: it keeps halving but never reaches 0, so the tea stays above the room. The tea gets closer to 20 °C, and the dashed line on the board is its asymptote."
 ```
 
 ### Tea after 30 minutes

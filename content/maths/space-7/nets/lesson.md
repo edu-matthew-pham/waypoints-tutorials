@@ -81,10 +81,10 @@ tasks:
   - check:
       type: question
       q: "What is the best way to test a net for a cube?"
-      options: ["Fold it (or roll a cube over it) and check that every face is covered once", "Count that it has six squares", "Check that it is a rectangle", "Check that it is symmetrical"]
+      options: ["Fold it and check each face is covered once", "Count that it has six squares", "Check that it is a rectangle", "Check that it is symmetrical"]
       answer: 0
       feedback: [null, "Six squares is needed, but a row of six fails.", "A 2 by 3 block is a rectangle and does not fold.", "A row of six is symmetrical and does not fold."]
-      explain: "Fold it, in your head or on the board: each face must be covered exactly once."
+      explain: "Fold it, in your head or on the board (or roll a cube over it): each face must be covered exactly once."
 ```
 
 ### How many squares?

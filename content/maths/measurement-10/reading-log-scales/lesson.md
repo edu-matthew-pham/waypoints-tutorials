@@ -93,7 +93,7 @@ tasks:
       type: question
       q: "The ruler shows a red blood cell, a hair and the distance to the Sun. Why are its marks 10 times apart each time instead of 1 metre apart?"
       options:
-        - "The sizes cover so many powers of 10 that 1 metre apart would squash the cell and the hair together, and the Sun off the page"
+        - "Equal 1 m steps would squash the cell and hair together"
         - "Because 10 is an easier number than 1"
         - "Because the Sun is exactly 10 times bigger than a hair"
         - "It's only a style: either ruler shows the same picture"
@@ -103,7 +103,7 @@ tasks:
         - "It isn't about easy numbers. It's that the sizes differ by many powers of 10."
         - "The Sun's distance is billions of billions of times a hair."
         - "Equal metre steps would put the cell and hair on top of each other."
-      explain: "A log ruler gives every power of 10 the same space, so tiny and enormous sizes both fit on one page."
+      explain: "The sizes cover so many powers of 10 that 1 metre steps would squash the cell and hair together and push the Sun off the page. A log ruler gives every power of 10 the same space, so tiny and enormous sizes both fit on one page."
   - check:
       type: bug
       code: "working.txt#priya"

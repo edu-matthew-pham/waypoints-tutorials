@@ -76,6 +76,7 @@ tasks:
       q: "Between 2 and 3 hours, which sentence is true?"
       options: ["As time increases, the distance from home stays constant", "As time increases, the distance from home increases", "As time increases, the distance from home decreases"]
       answer: 0
+      feedback: [null, "Check the line from 2 to 3 hours: it is flat, so the distance does not go up.", "The line is flat there, not going down. Going down comes after 3 hours."]
       explain: "The line is flat from 2 to 3 hours: the distance is 60 km at both times, so it does not change. The cyclist has stopped."
   - picture: { ref: data.yml#ride-plain, caption: "The same ride." }
     check:
@@ -83,6 +84,7 @@ tasks:
       q: "What is the cyclist doing between 3 and 5 hours?"
       options: ["Riding back towards home", "Riding down a hill", "Riding away from home"]
       answer: 0
+      feedback: [null, "The graph shows distance from home, not the shape of the road. A line going down means getting closer to home.", "Away from home would make the distance increase, but it falls from 60 km to 0 km."]
       explain: "The distance from home decreases from 60 km to 0 km: the cyclist is riding back towards home."
   - check:
       type: bug
@@ -127,6 +129,7 @@ tasks:
       q: "Beth waits for 5 minutes, then walks. What does the graph say at 10 minutes?"
       options: ["Beth has walked further than Ali", "Ali has walked further than Beth", "They are at the same place"]
       answer: 0
+      feedback: [null, "Read both lines at 10 minutes: Beth is at 1000 m and Ali at 800 m.", "Their lines cross before 10 minutes; at 10 minutes they are at different heights."]
       explain: "At 10 minutes Beth is at 1000 m and Ali is at 800 m. Beth waited, then walked faster, and passed Ali."
   - picture: { ref: data.yml#cooling-plain, caption: "A hot drink cooling: temperature (°C) against time (min)." }
     check:
@@ -134,6 +137,7 @@ tasks:
       q: "Which sentence describes the graph?"
       options: ["As time increases, the temperature decreases, quickly at first and then more slowly", "As time increases, the temperature decreases at the same rate", "As time increases, the temperature decreases and then increases"]
       answer: 0
+      feedback: [null, "The line is steep at first and flattens out, so the rate is not the same: it slows down.", "The line never goes back up: the temperature only decreases."]
       explain: "The line always goes down, so the temperature decreases. It drops 30 degrees in the first 10 minutes but only 3 degrees in the last 10: it slows down."
 ```
 
@@ -157,6 +161,7 @@ tasks:
       q: "Which sentence describes the ride from 0 to 2 hours?"
       options: ["As time increases, the distance from home increases", "As time increases, the distance from home stays constant", "The cyclist rides up a hill"]
       answer: 0
+      feedback: [null, "Stays constant would be a flat line. From 0 to 2 hours the line goes up.", "The graph shows distance from home, not height. A line going up means further from home."]
       explain: "The line goes up from 0 to 60 km: the distance from home increases."
   - picture: { ref: data.yml#tank-plain, caption: "Water in a tank (L) against time (min)." }
     check:
@@ -164,6 +169,7 @@ tasks:
       q: "Which story fits the graph?"
       options: ["The tank fills slowly, the water is left, then it fills faster", "The tank fills, then drains, then fills again", "The tank fills at the same rate the whole time"]
       answer: 0
+      feedback: [null, "The line never goes down between 3 and 6 minutes; it is flat, so no water drains.", "The steepness changes: flat from 3 to 6 minutes, then steeper than at the start."]
       explain: "From 0 to 3 min it rises (30 L). From 3 to 6 min it is flat (nothing added). From 6 to 9 min it rises 60 L, faster than before."
   - picture: { ref: data.yml#cooling-plain, caption: "The cooling drink." }
     check:
@@ -179,6 +185,7 @@ tasks:
       q: "Between 6 and 8 minutes, the amount of water..."
       options: ["increases", "decreases", "stays constant"]
       answer: 1
+      feedback: ["The line goes down from 80 L to 40 L between 6 and 8 minutes, so the water is going down.", null, "A flat line means constant. Here the line slopes down."]
       explain: "The line goes down from 80 L to 40 L: the water decreases (the plug is pulled)."
 ```
 

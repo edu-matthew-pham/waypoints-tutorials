@@ -182,7 +182,7 @@ tasks:
         - ["60", "6 cm is the slanted side. Use the height, 4.5 cm."]
       explain: "10 × 4.5 = 45 cm²."
     smaller:
-      check: { type: question, q: "Cut the triangle off one end and move it, and the slanted side is gone. Which length is left as the rectangle's side: 6 cm or 4.5 cm?", options: ["6 cm", "4.5 cm"], answer: 1, explain: "The cut goes straight down, at a right angle to the base, so the height 4.5 cm is the rectangle's side. The slanted side disappears." }
+      check: { type: question, q: "Cut the triangle off one end and move it, and the slanted side is gone. Which length is left as the rectangle's side: 6 cm or 4.5 cm?", options: ["6 cm", "4.5 cm"], answer: 1, feedback: ["6 cm is the slanted side, and that side is cut away. The rectangle's side is the straight-down height.", null], explain: "The cut goes straight down, at a right angle to the base, so the height 4.5 cm is the rectangle's side. The slanted side disappears." }
   - check:
       type: question
       q: "A parallelogram's base is 5 m and its height 2 m. How is its area written?"

@@ -85,10 +85,10 @@ tasks:
   - check:
       type: question
       q: "You type $3.2 \\times 48$ and the calculator shows 15.36. Is that reasonable?"
-      options: ["No: 3 × 50 = 150, so the decimal point is in the wrong place", "Yes: 3 × 5 = 15 is close", "Yes: a calculator is always right", "No: the answer should be a whole number"]
+      options: ["No: it should be about 3 × 50 = 150", "Yes: 3 × 5 = 15 is close", "Yes: a calculator is always right", "No: the answer should be a whole number"]
       answer: 0
       feedback: [null, "3 × 5 is 15, but 48 is about 50, not 5. The size is wrong.", "A calculator does what you typed, so a slip when typing still gives a wrong answer.", "Decimals times whole numbers can be any kind of number."]
-      explain: "3.2 × 48 ≈ 3 × 50 = 150. The real answer is 153.6: the calculator shows 15.36 only if the 3.2 was typed as 0.32."
+      explain: "3.2 × 48 ≈ 3 × 50 = 150, so the decimal point is in the wrong place. The real answer is 153.6: the calculator shows 15.36 only if the 3.2 was typed as 0.32."
 ```
 
 ### Round, then calculate

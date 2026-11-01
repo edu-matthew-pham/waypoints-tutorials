@@ -93,7 +93,7 @@ tasks:
   - check:
       type: question
       q: "A height is recorded as $152$ cm, to the nearest centimetre. What could the real height be?"
-      options: ["Anything from 151.5 cm up to (but not including) 152.5 cm", "Exactly 152 cm", "Anything from 152 cm to 153 cm"]
+      options: ["From 151.5 cm up to (not including) 152.5 cm", "Exactly 152 cm", "From 152 cm up to (not including) 153 cm"]
       answer: 0
       feedback: [null, "A measurement is never exact: it is rounded.", "Rounding to the nearest cm goes half a centimetre either way."]
       explain: "Measured values are rounded: 152 cm to the nearest cm means from 151.5 cm up to 152.5 cm."
@@ -127,9 +127,9 @@ tasks:
   - check:
       type: question
       q: "Same topic, two variables: the number of apples in a bag, and the mass of the bag. Which is which?"
-      options: ["Apples: discrete. Mass: continuous.", "Both discrete", "Both continuous"]
+      options: ["Apples: discrete. Mass: continuous.", "Both discrete", "Both continuous", "Apples: continuous. Mass: discrete."]
       answer: 0
-      feedback: [null, "Mass is measured: it can be any value.", "Apples are counted."]
+      feedback: [null, "Mass is measured: it can be any value.", "Apples are counted.", "Swapped: apples are counted (discrete), mass is measured (continuous)."]
       explain: "Count the apples (discrete); weigh the bag (continuous)."
   - check:
       type: question
@@ -148,7 +148,7 @@ tasks:
   - check:
       type: question
       q: "Edge case: age. You are 12 years old, but you are not exactly 12. What kind of data is age?"
-      options: ["Continuous (time is measured), though we often record it as whole years", "Discrete, because we say whole numbers"]
+      options: ["Continuous, though we record it in whole years", "Discrete, because we say whole numbers"]
       answer: 0
       feedback: [null, "Age keeps growing between birthdays: it is measured time, rounded down to whole years."]
       explain: "Age is a length of time, so continuous; recording it in whole years rounds it, which is why it looks discrete."

@@ -117,7 +117,7 @@ tasks:
       type: question
       q: "The median bar in a boxplot sits close to the left end of the box (the quartiles are 3 and 12 and the median is 5). What does this tell you?"
       options:
-        - "The values between 3 and 5 are bunched closer together than the values between 5 and 12"
+        - "Values from 3 to 5 are closer together than from 5 to 12"
         - "More days are on the left than on the right"
         - "The data has no outliers"
         - "The mean equals the median"

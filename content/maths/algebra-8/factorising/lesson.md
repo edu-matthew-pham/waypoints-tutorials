@@ -155,10 +155,10 @@ tasks:
   - check:
       type: question
       q: "Edge case: can $7x + 5$ be factorised?"
-      options: ["No: no number bigger than 1 goes into 7 and 5", "Yes: 7(x + 5)", "Yes: 5(7x + 1)"]
+      options: ["No: the HCF of 7 and 5 is 1", "Yes: 7(x + 5)", "Yes: 5(7x + 1)"]
       answer: 0
       feedback: [null, "Expand it: 7(x + 5) = 7x + 35.", "Expand it: 5(7x + 1) = 35x + 5."]
-      explain: "The HCF of 7 and 5 is 1, so 7x + 5 is already as simple as it gets. On the board, only 1 row works."
+      explain: "No number bigger than 1 goes into both 7 and 5 (their HCF is 1), so 7x + 5 is already as simple as it gets. On the board, only 1 row works."
 ```
 
 ### On the board

@@ -193,7 +193,7 @@ tasks:
   - check:
       type: question
       q: "A student says: 'Rounding is always right, so it's the only fair way.' What's wrong with that?"
-      options: ["Each rounded price is still a little off, but the errors go both ways and cancel", "Nothing: rounding is never off", "Rounding is only fair for discounts", "Chopping is fairer for surcharges"]
+      options: ["Each price is off, but errors cancel", "Nothing: rounding is never off", "Rounding is only fair for discounts", "Chopping is fairer for surcharges"]
       answer: 0
       feedback: [null, "A rounded price of $3.35 for $3.3490 is off by 0.1 cent.", "Rounding doesn't depend on what the price was for.", "Chopping always goes down, whatever the price is for."]
       explain: "Every rounded price is a little off. The point is that the errors point both ways, so the total stays close."

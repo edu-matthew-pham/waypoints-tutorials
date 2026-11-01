@@ -75,6 +75,7 @@ tasks:
       q: "A plumber charges $C = 5h + 20$ dollars for a job of $h$ hours. Which are the variables?"
       options: ["$C$ and $h$", "5 and 20", "Only $h$"]
       answer: 0
+      feedback: [null, "5 and 20 are the same for every job: they are constants.", "C changes too: a longer job costs more."]
       explain: "C and h change from job to job. 5 (dollars an hour) and 20 (the call-out fee) are constants: the same for every job."
   - check:
       type: bug
@@ -89,6 +90,7 @@ tasks:
       q: "In the equation $3x + 2 = 14$, what does $x$ stand for?"
       options: ["An unknown: one number makes it true", "A variable that can be any number", "The letter x, not a number"]
       answer: 0
+      feedback: [null, "In an equation only one value works (x = 4), so x is an unknown, not a variable.", "x stands for a number: 3x means 3 × that number."]
       explain: "In an equation, the letter is an unknown: only x = 4 makes 3x + 2 = 14 true. In a formula, a letter is a variable that can take many values."
 ```
 
@@ -133,6 +135,7 @@ tasks:
       q: "A car travels at 60 km/h: $d = 60t$. Which part stays the same for the whole trip?"
       options: ["60, the speed", "$d$, the distance", "$t$, the time"]
       answer: 0
+      feedback: [null, "The distance grows as the trip goes on, so d changes.", "The time keeps going up during the trip, so t changes."]
       explain: "The speed 60 is a constant. The time t and the distance d both change as the trip goes on."
   - starter: "formula.yml#area"
     check:
@@ -140,12 +143,14 @@ tasks:
       q: "In $A = lw$ (the area of a rectangle), what happens to $A$ if $l$ doubles and $w$ stays the same?"
       options: ["$A$ doubles", "$A$ stays the same", "$A$ goes up by 2"]
       answer: 0
+      feedback: [null, "A depends on l: when l changes, A changes too.", "l doubles, so A is multiplied by 2, not increased by 2."]
       explain: "lw means l × w. Twice the length times the same width gives twice the area. Try it on the board."
   - check:
       type: question
       q: "The circumference of a circle is $C = \\pi d$. $\\pi$ is a letter. Is it a variable or a constant?"
       options: ["A constant: about 3.14 for every circle", "A variable: it changes with the circle", "An unknown we need to solve for"]
       answer: 0
+      feedback: [null, "π is the same for every circle; C and d are what change.", "π is not unknown: it is a known number, about 3.14."]
       explain: "π (pi) is a Greek letter for one particular number, about 3.14, the same for every circle. C and d are the variables."
 ```
 
@@ -170,18 +175,21 @@ tasks:
       q: "Water in a tank: $V = 3t + 10$ litres after $t$ minutes. What does the 10 mean?"
       options: ["10 litres in the tank at the start", "10 litres added every minute", "The tank fills in 10 minutes"]
       answer: 0
+      feedback: [null, "3 litres are added every minute; the 10 is there when t = 0.", "Nothing in the rule says when the tank is full. Put t = 0: V = 10."]
       explain: "When t = 0, V = 10: the 10 litres were there at the start. 3 litres are added each minute."
   - check:
       type: question
       q: "Which letters are variables in $T = 12n + 6$ (the cost of $n$ concert tickets)?"
       options: ["$T$ and $n$", "12 and 6", "Only $T$"]
       answer: 0
+      feedback: [null, "12 and 6 stay the same for every order: they are constants.", "n changes too: it is how many tickets."]
       explain: "T and n change with the order. 12 (dollars a ticket) and 6 (the booking fee) stay the same."
   - check:
       type: question
       q: "In $2y + 1 = 9$, what is $y$?"
       options: ["An unknown: $y = 4$ makes it true", "A variable: any value works", "A constant"]
       answer: 0
+      feedback: [null, "Try y = 1: 2 + 1 = 3, not 9. Only y = 4 works, so y is an unknown.", "y is a letter whose value we find; only y = 4 makes it true, so it is an unknown."]
       explain: "It is an equation, so y is an unknown: 2 × 4 + 1 = 9, and no other value works."
 ```
 

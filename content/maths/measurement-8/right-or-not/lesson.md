@@ -153,9 +153,9 @@ tasks:
   - check:
       type: question
       q: "Edge case: what kind of triangle has sides 2 cm, 3 cm and 6 cm?"
-      options: ["None: 2 + 3 is less than 6, so the sides cannot meet", "Obtuse", "Acute"]
+      options: ["None: 2 + 3 is less than 6", "Obtuse: 36 is more than 4 + 9", "Acute"]
       answer: 0
-      feedback: [null, "Check first that the two short sides can reach across the long one.", "Check first that the two short sides can reach across the long one."]
+      feedback: [null, "36 > 13 would mean obtuse, but check first that the two short sides can reach across the long one.", "Check first that the two short sides can reach across the long one."]
       explain: "2 + 3 = 5 is less than 6: the short sides cannot meet, so there is no triangle to test."
 ```
 

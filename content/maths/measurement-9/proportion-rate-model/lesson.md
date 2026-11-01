@@ -167,10 +167,10 @@ tasks:
   - check:
       type: question
       q: "Is 2.35 hours a precise answer, or a rule-of-thumb estimate?"
-      options: ["An estimate: a rule of thumb built for walkers on good tracks", "Exact", "A measurement", "Wrong"]
+      options: ["An estimate", "Exact", "A measurement", "Wrong"]
       answer: 0
       feedback: [null, "Rules of thumb are only approximate.", "It's a model's output, not something measured.", "It's a fair estimate, not wrong."]
-      explain: "The rule says 'about 5 km/h'. The answer is a good first estimate, not a promise."
+      explain: "The rule says 'about 5 km/h', a rule of thumb built for walkers on good tracks. The answer is a good first estimate, not a promise."
 ```
 
 ### The time

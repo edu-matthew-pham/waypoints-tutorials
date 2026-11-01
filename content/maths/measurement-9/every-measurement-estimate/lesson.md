@@ -94,9 +94,9 @@ tasks:
   - hint: ["The smallest mark is 0.01 mm.", "Half of that is 0.005."]
     check: { type: number, q: "Calipers read $20.04$ mm to the nearest $0.01$ mm. What is the upper bound? (mm)", answer: 20.045, tolerance: 0.0005, explain: "20.04 + 0.005 = 20.045 mm." }
   - hint: ["The part passes if it's between 19.95 and 20.05.", "Is the upper bound inside?"]
-    check: { type: question, q: "The hole must be $20$ mm give or take $0.05$ mm ($19.95$ to $20.05$). The calipers read $20.04$ mm (bounds $20.035$ to $20.045$). Does it pass?", options: ["Yes: the whole range is inside the tolerance", "No: 20.04 is too big", "Only if it's exactly 20", "Can't tell"], answer: 0, feedback: [null, "20.04 is less than 20.05.", "Nothing is exactly 20 in measurement.", "You can tell: both bounds are inside."], explain: "Both 20.035 and 20.045 are between 19.95 and 20.05, so it passes." }
+    check: { type: question, q: "The hole must be $20$ mm give or take $0.05$ mm ($19.95$ to $20.05$). The calipers read $20.04$ mm (bounds $20.035$ to $20.045$). Does it pass?", options: ["Yes: both bounds are inside", "No: 20.04 is too big", "Only if it's exactly 20", "Can't tell"], answer: 0, feedback: [null, "20.04 is less than 20.05.", "Nothing is exactly 20 in measurement.", "You can tell: both bounds are inside."], explain: "Both 20.035 and 20.045 are between 19.95 and 20.05, so it passes." }
   - hint: ["Compute the upper bound for 20.05.", "20.05 + 0.005."]
-    check: { type: question, q: "A second hole reads $20.05$ mm on the same calipers. Does it pass for sure?", options: ["No: its upper bound is 20.055, above the 20.05 limit, so it might fail", "Yes: 20.05 is exactly the limit", "Yes: it is under 20.1", "No: it is exactly 20.05"], answer: 0, feedback: [null, "The true value could be a little above the limit.", "The limit is 20.05, not 20.1.", "Reading isn't exact: the true value may be less."], explain: "The reading is 20.05 but the true value could be up to 20.055, so you can't be certain." }
+    check: { type: question, q: "A second hole reads $20.05$ mm on the same calipers. Does it pass for sure?", options: ["No: the true value could be above 20.05", "Yes: 20.05 is exactly the limit", "Yes: it is under 20.1", "No: it is exactly 20.05"], answer: 0, feedback: [null, "The true value could be a little above the limit.", "The limit is 20.05, not 20.1.", "Reading isn't exact: the true value may be less."], explain: "The reading is 20.05 but the true value could be up to 20.055, so you can't be certain." }
 ```
 
 ### Upper bound
@@ -167,7 +167,7 @@ tasks:
   - check:
       type: question
       q: "Why does a good inspector care about the instrument's precision as well as the reading?"
-      options: ["The bounds decide whether you can be sure the part passes", "Precision doesn't matter", "Readings are always exact", "Only the limit matters"]
+      options: ["The bounds decide if it surely passes", "Precision doesn't matter", "Readings are always exact", "Only the limit matters"]
       answer: 0
       feedback: [null, "It can change the decision.", "Every measurement is an estimate.", "Both matter."]
       explain: "The same reading could pass with fine calipers and be uncertain with a coarse ruler."

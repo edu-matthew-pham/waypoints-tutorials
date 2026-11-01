@@ -97,6 +97,7 @@ tasks:
       q: "Which line is parallel to $y = 3x + 1$?"
       options: ["$y = x + 3$", "$y = 3x - 4$", "$y = -3x + 1$"]
       answer: 1
+      feedback: ["The 3 moved to c. The gradient here is 1, so it is less steep.", null, "m = −3 goes down, not up: same size, opposite direction, so the lines cross."]
       explain: "y = 3x − 4 has the same m, 3, so it is just as steep: it is y = 3x + 1 moved down 5."
 ```
 
@@ -179,6 +180,7 @@ tasks:
         - "$y = 4x + 1$ and $y = x + 4$"
         - "$y = 4x + 1$ and $y = 2x + 1$"
       answer: 0
+      feedback: [null, "Same numbers, different places: the gradients are 4 and 1, so the lines cross.", "Same c, different m (4 and 2): these cross at (0, 1)."]
       explain: "Both have m = 4, so they are equally steep. y = 4x + 1 and y = x + 4 use the same numbers but in different places; y = 4x + 1 and y = 2x + 1 cross at (0, 1)."
   - check:
       type: answer

@@ -71,6 +71,7 @@ tasks:
       q: "For 2 GB a month, which plan is cheaper?"
       options: ["Plan A", "Plan B", "They cost the same"]
       answer: 0
+      feedback: [null, "Plan B costs 40 dollars; Plan A is 20 + 5 × 2 = 30. Read the lines left of the crossing.", "They cost the same only at the crossing point, not at 2 GB."]
       explain: "For 2 GB, Plan A costs 20 + 5 × 2 = 30 dollars and Plan B costs 40. Left of the crossing, Plan A's line is lower."
   - check:
       type: bug
@@ -84,11 +85,12 @@ tasks:
       type: question
       q: "The rule $T = 5g + 20$ gives $T = 10$ when $g = -2$. Why does that answer not make sense?"
       options:
-        - "You cannot use negative data, so the rule only works for g of 0 or more"
+        - "Data used cannot be negative"
         - "The rule is wrong: it should be T = 5g − 20"
         - "Phone plans can cost less than their fee"
       answer: 0
-      explain: "A model only fits the situation for some values. Data used cannot be negative, so the rule (and its line) starts at g = 0."
+      feedback: [null, "The rule is right for real plans: 5 dollars a GB plus a 20 dollar fee. The problem is the input −2.", "The fee is paid even with no data, so a month never costs less than 20 dollars."]
+      explain: "A model only fits the situation for some values. Data used cannot be negative, so the rule only works for g of 0 or more: its line starts at g = 0."
 ```
 
 ### Comparing the plans
@@ -131,19 +133,21 @@ tasks:
     check:
       type: question
       q: "Two electricians charge $T = 15h + 30$ and $T = 15h + 50$. When does the second one cost less?"
-      options: ["Never: the lines are parallel, so the first is always 20 dollars cheaper", "After 2 hours", "After 4 hours"]
+      options: ["Never: the lines are parallel", "After 2 hours", "After 4 hours"]
       answer: 0
+      feedback: [null, "Check 2 hours: 60 and 80 dollars. Both add 15 an hour, so the gap of 20 never closes.", "Check 4 hours: 90 and 110 dollars. The second is still 20 dollars more."]
       explain: "Both charge 15 dollars an hour, so the lines are parallel and never cross. The first is always 20 dollars cheaper, for any job."
   - starter: "graph.yml#battery"
     check:
       type: question
       q: "A battery is modelled by $B = -10h + 100$. What does the model give after 12 hours, and does it make sense?"
       options:
-        - "−20%: it does not make sense, so the model only works from 0 to 10 hours"
+        - "−20%: impossible, so the model stops at 10 hours"
         - "−20%: the battery is 20% below empty"
         - "120%: the battery is overcharged"
       answer: 0
-      explain: "−10 × 12 + 100 = −20. A battery cannot go below 0%: it is flat at 10 hours, and the model stops there."
+      feedback: [null, "The calculation is right, but a battery cannot be below empty: 0% is as low as it goes.", "Sign slip: −10 × 12 is −120, and −120 + 100 = −20, not 120."]
+      explain: "−10 × 12 + 100 = −20. A battery cannot go below 0%: it is flat at 10 hours, so the model only works from 0 to 10 hours."
 ```
 
 ### Gyms
@@ -181,12 +185,14 @@ tasks:
       q: "Using Plans C and D, which is cheaper for 5 GB?"
       options: ["Plan D", "Plan C", "They cost the same"]
       answer: 0
+      feedback: [null, "Plan C is 10 + 8 × 5 = 50 dollars, more than Plan D's 34.", "They are equal only at the crossing, 3 GB. At 5 GB they differ."]
       explain: "Plan C: 10 + 8 × 5 = 50 dollars. Plan D: 34 dollars. Above 3 GB, D is cheaper."
   - check:
       type: question
       q: "Concert tickets cost $T = 12n + 6$ dollars for $n$ tickets. Which values of $n$ make sense?"
       options: ["Whole numbers from 1 up", "Any number, including 2.5", "Any number, including negatives"]
       answer: 0
+      feedback: [null, "You cannot buy half a ticket: n must be a whole number.", "You cannot buy a negative number of tickets: n starts at 1."]
       explain: "You buy whole tickets, and at least one. The line joins the points, but only the whole numbers are real orders."
   - check:
       type: answer

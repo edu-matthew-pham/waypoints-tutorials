@@ -137,10 +137,10 @@ tasks:
   - check:
       type: question
       q: "What is the mode of $2, 5, 7, 9$?"
-      options: ["There is no mode: every value appears once", "2", "9"]
+      options: ["There is no mode", "2", "9", "6, the middle value"]
       answer: 0
-      feedback: [null, "2 appears only once, like the others.", "9 appears only once, like the others."]
-      explain: "No value appears more than once, so there is no mode."
+      feedback: [null, "2 appears only once, like the others.", "9 appears only once, like the others.", "6 is the median, the middle. The mode is the most common value."]
+      explain: "Every value appears once, so no value is most common: there is no mode."
   - check:
       type: answer
       q: "Temperatures over four mornings were $-3, 2, 5, -1$ °C. Find the range."

@@ -102,7 +102,7 @@ tasks:
   - hint: ["Divide the opposite by the ratio.", "9 ÷ 0.6."]
     check: { type: number, q: "A triangle at this angle has an opposite side of $9$. What is the hypotenuse?", answer: 15, explain: "9 ÷ 0.6 = 15." }
   - hint: ["A different angle needs a different ratio.", "Look at the board with a bigger angle."]
-    check: { type: question, q: "A triangle has a bigger angle than the first one. Is opposite ÷ hypotenuse bigger or smaller than 0.6?", options: ["Bigger: a bigger angle has a bigger opposite side", "Smaller", "The same", "It depends on the size"], answer: 0, feedback: [null, "A bigger angle opens up the opposite side.", "Only the same angle gives the same ratio.", "The size doesn't change the ratio."], explain: "As the angle grows, the opposite side grows relative to the hypotenuse." }
+    check: { type: question, q: "A triangle has a bigger angle than the first one. Is opposite ÷ hypotenuse bigger or smaller than 0.6?", options: ["Bigger", "Smaller", "The same", "It depends on the size"], answer: 0, feedback: [null, "A bigger angle opens up the opposite side.", "Only the same angle gives the same ratio.", "The size doesn't change the ratio."], explain: "As the angle grows, the opposite side grows relative to the hypotenuse." }
 ```
 
 ### Find the opposite
@@ -172,7 +172,7 @@ tasks:
   - check:
       type: question
       q: "Why can you use the person's ratio for the tree?"
-      options: ["The sun's angle is the same for both, so the triangles have the same ratio", "The tree and the person are the same height", "The shadows are the same length", "The ground is flat"]
+      options: ["The sun's angle is the same for both", "The tree and the person are the same height", "The shadows are the same length", "The ground is flat"]
       answer: 0
       feedback: [null, "They aren't: that's what we're finding out.", "The tree's shadow is 12 m and the person's is 2 m.", "Flat ground matters, but it's the angle that fixes the ratio."]
       explain: "The same sun angle makes the two triangles similar, so height ÷ shadow is the same for both."

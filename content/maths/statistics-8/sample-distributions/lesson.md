@@ -121,10 +121,10 @@ tasks:
     check:
       type: question
       q: "The plot shows a sample of 15 Year 7s (top) and 15 Year 10s (bottom). Which is true?"
-      options: ["Year 7s sleep more: their median is about 1 hour higher", "Year 10s sleep more", "They sleep the same", "You can't compare samples"]
+      options: ["Year 7s sleep more", "Year 10s sleep more", "They sleep the same", "You can't compare samples"]
       answer: 0
       feedback: [null, "Look at where the middle of each plot sits.", "The middles are about an hour apart.", "Comparing centres and spreads is how samples are compared."]
-      explain: "Year 7's median is 9.0 hours and Year 10's is 8.0 hours."
+      explain: "Year 7's median is 9.0 hours and Year 10's is 8.0 hours: about 1 hour more for Year 7s."
   - starter: "board.yml#two"
     check:
       type: number
@@ -135,10 +135,10 @@ tasks:
   - check:
       type: question
       q: "Which sentence is the best report for the Year 10 sample?"
-      options: ["In a random sample of 15 Year 10s, the median sleep was 8 hours (range 3 hours), so Year 10s at this school sleep about 8 hours", "All Year 10s sleep 8 hours", "Year 10s sleep badly", "The data shows 15 numbers"]
+      options: ["In a random sample of 15, the median was 8 h (range 3 h): about 8 h for the school", "All Year 10s at this school sleep exactly 8 hours each night", "Year 10s sleep badly: 8 hours is not enough for teenagers", "The data shows 15 numbers"]
       answer: 0
       feedback: [null, "Not all: the values vary, and it is a sample.", "That is an opinion, not a summary.", "That describes nothing about the data."]
-      explain: "A report gives the sample, the centre and spread, and an estimate for the population."
+      explain: "A report gives the sample, the centre and spread, and an estimate for the population: Year 10s at this school sleep about 8 hours."
 ```
 
 ### Stratified sample
@@ -164,14 +164,14 @@ tasks:
   - check:
       type: question
       q: "A sample's dot plot has most values between 2 and 5, and a long tail of a few values up to 15. How would you describe its shape?"
-      options: ["Skewed: a long tail to the high side", "Symmetric", "Evenly spread", "Two clusters"]
+      options: ["Skewed to the right", "Symmetric", "Skewed to the left", "Two clusters"]
       answer: 0
-      feedback: [null, "One side has a long tail, so it isn't balanced.", "Most values are bunched together.", "There is one main group."]
+      feedback: [null, "One side has a long tail, so it isn't balanced.", "The tail points to the high values, so it is skewed to the right.", "There is one main group."]
       explain: "A tail stretching to the high values is skewed to the right (positively skewed); the mean is pulled above the median."
   - check:
       type: question
       q: "From a random sample of 50 students, 30 walk to school. What is the best claim about the school?"
-      options: ["About 60% of the school's students walk to school", "Exactly 60% walk", "30 students walk", "Nobody can say anything"]
+      options: ["About 60% of the school walks", "Exactly 60% of the school walks", "30 students walk", "Nobody can say anything"]
       answer: 0
       feedback: [null, "A sample gives an estimate.", "That is only the sample.", "A random sample gives a reasonable estimate."]
       explain: "30/50 = 60% is an estimate for the school: 'about 60%'."

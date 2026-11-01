@@ -25,7 +25,7 @@ check: {"type": "predict", "q": "Which is the best statistical question for the 
 ```step
 stage: "run"
 insight: "A plan names the variable to measure and how: here the percentage of each bin's contents that is recyclable."
-check: {"type": "question", "q": "What should you measure in each bin?", "options": ["The percentage of its contents that is recyclable", "How heavy the bin is", "How many items are in the bin", "How full the bin is"], "answer": 0, "feedback": [null, "Weight alone doesn't say how much is recyclable.", "A count doesn't say how much of it is recyclable.", "How full tells you little about the contents."], "explain": "The percentage that is recyclable, found by sorting the bin's contents."}
+check: {"type": "question", "q": "What should you measure in each bin?", "options": ["The percentage that is recyclable", "How heavy the bin is", "How many items are in the bin", "How full the bin is"], "answer": 0, "feedback": [null, "Weight alone doesn't say how much is recyclable.", "A count doesn't say how much of it is recyclable.", "How full tells you little about the contents."], "explain": "The percentage that is recyclable, found by sorting the bin's contents."}
 ```
 
 ## Investigate: sample and skew
@@ -57,7 +57,7 @@ tasks:
 stage: "modify"
 insight: "Judging plans and fixing weak ones."
 tasks:
-  - {"check": {"type": "question", "q": "Which is a weakness in a plan that only checks the bins outside the canteen?", "options": ["Bins elsewhere may be used differently", "It is cheap", "It is easy", "It is quick"], "answer": 0, "feedback": [null, "Cheap is not a weakness.", "Easy is not a weakness.", "Quick is not a weakness."], "explain": "Different places may have different habits, so sample across the school."}}
+  - {"check": {"type": "question", "q": "Which is a weakness in a plan that only checks the bins outside the canteen?", "options": ["Other bins may be used differently", "Canteen bins are easy to reach", "It only takes one lunchtime", "It uses the percentage recyclable"], "answer": 0, "feedback": [null, "Being easy to reach isn't the weakness. Checking only one place is.", "Being quick isn't a weakness on its own.", "The percentage recyclable is the right measure."], "explain": "Bins elsewhere may be used differently: different places may have different habits, so sample across the school."}}
   - {"check": {"type": "question", "q": "How could you reduce the chance that people change their behaviour because they know the bins are being checked?", "options": ["Check without announcing which days", "Tell everyone the exact day", "Only check the bins on a Friday", "Check one bin"], "answer": 0, "feedback": [null, "That changes how they behave on that day.", "Fridays may differ.", "One bin is too few."], "explain": "Unannounced checks reduce the effect of being watched."}}
   - {"check": {"type": "question", "q": "To make a result more trustworthy you should...", "options": ["Check more bins over more days", "Check fewer bins", "Pick the cleanest bins", "Skip the dirty bins"], "answer": 0, "feedback": [null, "Fewer bins vary more.", "That is biased.", "That is biased."], "explain": "More bins and days steady the estimate; choose them fairly."}}
 ```

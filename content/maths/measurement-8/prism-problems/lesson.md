@@ -92,10 +92,10 @@ tasks:
   - check:
       type: question
       q: "The end of a triangular prism is a right triangle with sides 3 cm, 4 cm and 5 cm. Which do you need for its area?"
-      options: ["The 3 cm and 4 cm sides (they meet at the right angle)", "All three sides", "The 5 cm side and the length", "Only the 5 cm side"]
+      options: ["The 3 cm and 4 cm sides", "All three sides", "The 5 cm side and the length", "Only the 5 cm side"]
       answer: 0
       feedback: [null, "The longest side is not used in ½ × base × height here.", "The 5 cm side is not a height.", "One side cannot give an area."]
-      explain: "The two legs are a base and its perpendicular height: ½ × 3 × 4 = 6 cm²."
+      explain: "The 3 cm and 4 cm sides meet at the right angle, so they are a base and its perpendicular height: ½ × 3 × 4 = 6 cm²."
 ```
 
 ### Any prism

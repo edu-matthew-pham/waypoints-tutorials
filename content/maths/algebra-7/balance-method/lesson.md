@@ -63,6 +63,7 @@ tasks:
       q: "To solve $3x + 5 = 20$, which first step keeps whole numbers?"
       options: ["Take 5 from both sides", "Divide both sides by 3"]
       answer: 0
+      feedback: [null, "Allowed, but 20 ÷ 3 is not a whole number, so you get fractions straight away. Undo the + 5 first."]
       explain: "Both are allowed, but dividing first gives x + 5/3 = 20/3. Taking 5 first gives 3x = 15, then x = 5."
 ```
 

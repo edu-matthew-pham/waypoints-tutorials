@@ -202,6 +202,7 @@ tasks:
       q: "Review: in $V = 3t + 10$, which are the constants?"
       options: ["3 and 10", "$V$ and $t$", "Only 10"]
       answer: 0
+      feedback: [null, "V and t change: they are the variables. Constants are the numbers that stay the same.", "3 stays the same too: it is the number of litres added each minute."]
       explain: "3 and 10 stay the same; V and t are variables that change."
 ```
 

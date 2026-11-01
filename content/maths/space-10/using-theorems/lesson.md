@@ -107,14 +107,14 @@ tasks:
   - check:
       type: question
       q: "A cantilever toolbox tray hangs on four arms. The top and bottom arms are the same length, and the two side arms are the same length. Which theorem shows the tray stays level (the top and bottom arms stay parallel)?"
-      options: ["The parallelogram test: both pairs of opposite sides equal, so it is a parallelogram", "The rectangle test: equal diagonals", "Pythagoras' converse", "None: it only works if the arms are at right angles"]
+      options: ["The parallelogram test: both pairs of opposite sides equal", "The rectangle test: equal diagonals", "Pythagoras' converse", "None: it only works if the arms are at right angles"]
       answer: 0
       feedback: [null, "No diagonals are measured, and the arms swing, so the shape is not a rectangle.", "There is no triangle with a longest side to compare.", "The arms swing through all kinds of angles, and the tray stays level, so right angles are not needed."]
       explain: "Both pairs of opposite sides are equal, so the shape is a parallelogram at every position. Opposite sides of a parallelogram are parallel, so the tray stays level."
   - check:
       type: question
       q: "Opposite sides of a shelf frame measure 1.2 m and 1.2 m, and 0.8 m and 0.8 m. What can you say about it?"
-      options: ["It is a parallelogram, but it could still lean over to one side", "It is a rectangle", "It is a square", "You can say nothing without a protractor"]
+      options: ["A parallelogram, but it could still lean", "It is a rectangle", "It is a square", "You can say nothing without a protractor"]
       answer: 0
       feedback: [null, "Equal opposite sides give a parallelogram. A rectangle needs a right angle too, or equal diagonals.", "A square also needs equal neighbouring sides.", "The parallelogram test needs only the lengths."]
       explain: "The parallelogram test gives a parallelogram. To be sure it is a rectangle, measure both diagonals: if they are equal, the rectangle test applies."

@@ -130,10 +130,10 @@ tasks:
     check:
       type: question
       q: "Edge case: in this board no day has rain (the Rain circle is empty). The board is given rain. What does it say about the chance of a cloudy morning, given rain?"
-      options: ["It has no value: there are no rainy days to look at, so there is nothing to divide", "It is 0, because nothing happened", "It is 1, because cloudy is the only option", "It is 20 out of 100"]
+      options: ["It has no value: there are no rainy days", "It is 0, because nothing happened", "It is 1, because cloudy is the only option", "It is 20 out of 100"]
       answer: 0
       feedback: [null, "A chance of 0 would mean there were rainy days and none of them was cloudy.", "A chance of 1 would mean every rainy day was cloudy, and there are none.", "That is the share of days that were cloudy only, out of all 100. Given rain, the whole is empty."]
-      explain: "With 0 rainy days there is no group to look in, so 'given rain' has no chance. The board says it is not defined."
+      explain: "With 0 rainy days there is no group to look in and nothing to divide by, so 'given rain' has no chance. The board says it is not defined."
 ```
 
 ### Clear morning
@@ -189,7 +189,7 @@ tasks:
   - check:
       type: question
       q: "Which sentence says what the table shows?"
-      options: ["On days with a cloudy morning it rained on 3 in 5, but on all days it rained on 2 in 5", "It rained on 3 in 5 days", "A cloudy morning makes rain certain", "A cloudy morning has nothing to do with rain"]
+      options: ["Rain on 3 in 5 cloudy mornings, 2 in 5 days overall", "It rained on 3 in 5 days", "A cloudy morning makes rain certain", "A cloudy morning has nothing to do with rain"]
       answer: 0
       feedback: [null, "3 in 5 is only for days with a cloudy morning. Say which days.", "3 in 5 is a long way from certain.", "0.6 against 0.4 shows that cloudy mornings and rain go together a little."]
       explain: "A conditional chance always needs its group: 0.6 given a cloudy morning, 0.4 on any day."

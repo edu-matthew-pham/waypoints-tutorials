@@ -246,7 +246,7 @@ tasks:
       type: question
       q: "What if the lifeguard's reading of the angle is out by 1°, and the true angle is 7°? How far out is the swimmer then?"
       options:
-        - "About 49 m: roughly 6 m further out, so a small error matters a lot at a flat angle"
+        - "About 49 m: roughly 6 m further out"
         - "About 43 m: one degree can't make a real difference"
         - "About 37 m: roughly 6 m closer"
         - "About 85 m: twice as far"
@@ -256,7 +256,7 @@ tasks:
         - "6 ÷ tan 7° is about 48.9 m, nearly 6 m more than 42.7 m."
         - "A smaller angle puts the swimmer further out, not closer."
         - "Nothing doubles here: 6 ÷ tan 7° is 48.9 m."
-      explain: "6 ÷ tan 7° = 48.9 m. One degree out shifts the answer by about 6 m, because the angle is so flat."
+      explain: "6 ÷ tan 7° = 48.9 m. One degree out shifts the answer by about 6 m: a small error matters a lot at a flat angle."
 ```
 
 ### How far out

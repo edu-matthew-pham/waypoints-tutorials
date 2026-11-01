@@ -146,7 +146,7 @@ tasks:
   - check:
       type: question
       q: "Edge case: is 50 a perfect square?"
-      options: ["No: 7² = 49 and 8² = 64, and no whole number squares to 50", "Yes: 50 = 25 × 2", "Yes: √50 = 25"]
+      options: ["No: 7² = 49 and 8² = 64", "Yes: 50 = 25 × 2", "Yes: √50 = 25"]
       answer: 0
       feedback: [null, "25 × 2 is not a number times itself.", "25 × 25 = 625, not 50."]
       explain: "50 is between 49 (7²) and 64 (8²), so no whole number squares to 50. The next lesson finds roots like √50."

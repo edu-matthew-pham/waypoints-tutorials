@@ -158,10 +158,10 @@ tasks:
   - check:
       type: question
       q: "Edge case: what is $\\tfrac{1}{3}$ as a decimal?"
-      options: ["0.333…, with the 3s going on for ever", "0.3 exactly", "0.33 exactly", "3.3"]
+      options: ["0.333… (recurring)", "0.3 exactly", "0.33 exactly", "3.3"]
       answer: 0
       feedback: [null, "3 × 0.3 = 0.9, not 1.", "3 × 0.33 = 0.99, not 1.", "1 ÷ 3 is less than 1."]
-      explain: "1 ÷ 3 = 0.333…: a recurring decimal. Still a rational number (a fraction); the grid shows about 33.3 squares."
+      explain: "1 ÷ 3 = 0.333…, with the 3s going on for ever: a recurring decimal. Still a rational number (a fraction); the grid shows about 33.3 squares."
 ```
 
 ### Fifths

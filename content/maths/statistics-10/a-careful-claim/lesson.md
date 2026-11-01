@@ -75,17 +75,17 @@ tasks:
   - check:
       type: question
       q: "Which is a possible third thing that could sit behind both riding to school and playing sport?"
-      options: ["Living close to school, so riding is easy and there is time and a nearby field", "Playing sport makes the bike lighter", "Having a bike is always the cause of playing sport", "Nothing: a link in a table has no other explanation"]
+      options: ["Living close to school, with time and a field nearby", "Riding makes students fit, so they then play sport", "Having a bike is always the cause of playing sport", "Nothing: a link in a table has no other explanation"]
       answer: 0
-      feedback: [null, "That doesn't make sense as a reason.", "That assumes the cause, which the table can't show.", "A link always leaves other explanations open: a third thing, the other direction, or chance."]
-      explain: "Students who live close can ride, and may also have time and a place to play. That would give the link without riding causing anything."
+      feedback: [null, "That is riding causing sport, not a third thing behind both.", "That assumes the cause, which the table can't show.", "A link always leaves other explanations open: a third thing, the other direction, or chance."]
+      explain: "Students who live close can ride easily, and may also have time and a nearby field to play on. That would give the link without riding causing anything."
   - check:
       type: question
       q: "Which sentence is the most careful claim from the table?"
-      options: ["In this survey, students who ride were more likely to play sport (75%) than students who come by bus or car (40%)", "Riding to school makes students play sport", "Every student who rides plays sport", "Bus and car students don't like sport"]
+      options: ["In this survey, riders were more likely to play sport (75% vs 40%)", "Riding to school makes students play sport (75% vs 40%)", "Every student who rides plays sport", "Bus and car students don't like sport as much"]
       answer: 0
       feedback: [null, "The table shows a link. It doesn't show that riding makes students play sport.", "Only 30 of the 40 riders play sport, so not every rider does.", "The table says 40% of them play sport. It doesn't say what they like."]
-      explain: "It names the group ('students who ride'), gives the percentages, says 'in this survey' and says 'more likely', which is what the table shows."
+      explain: "It names the group ('students who ride'), gives the percentages, says 'in this survey' and says 'more likely', which is what the table shows: 75% of riders against 40% of bus or car students."
 ```
 
 ### Writing it carefully
@@ -116,24 +116,24 @@ tasks:
   - check:
       type: question
       q: "Edge case: in a new survey (made up) only 5 students ride, and 4 of them play sport (80%). How should the school report that?"
-      options: ["With care: 5 students is a very small group, so one more student would change the percentage a lot", "As a strong result: 80% is high", "As proof that riding causes sport", "Not at all: percentages can't be used on small groups"]
+      options: ["With care: 5 students is too few for a firm percentage", "As a strong result: 80% is high", "As proof that riding causes sport", "Not at all: percentages can't be used on small groups"]
       answer: 0
       feedback: [null, "The percentage is high, but it rests on 5 students.", "A link in a table doesn't prove a cause, and 5 students is too few.", "You can report it, with a note about how few students it rests on."]
-      explain: "A small group gives a shaky percentage. Say how many it is based on, so a reader can judge."
+      explain: "A small group gives a shaky percentage: one more student would change it a lot. Say how many it is based on, so a reader can judge."
   - check:
       type: question
       q: "Edge case: the survey was handed out only to students staying for after-school sport. How does that change the claim?"
-      options: ["It limits it: those students may not be like the whole school, so the claim can only be about them", "It makes the claim stronger because they know about sport", "It doesn't change anything", "It proves riding causes sport"]
+      options: ["It limits it: the claim can only be about students like them", "It makes the claim stronger because they know about sport", "It doesn't change anything", "It proves riding causes sport"]
       answer: 0
       feedback: [null, "Asking only sporty students leaves out the ones who don't play. That is a bias.", "Who was asked matters to who the claim is about.", "A biased sample can't prove a cause."]
-      explain: "If the sample leaves some students out, the claim only covers those who were asked. Say who was in the survey."
+      explain: "Those students may not be like the whole school. If the sample leaves some students out, the claim only covers those who were asked. Say who was in the survey."
   - check:
       type: question
       q: "What more would the school need to find out whether riding itself makes students more likely to play sport?"
-      options: ["Evidence that changes only the travel, such as asking students who started riding whether they began playing more, or a fair trial", "A bigger poster", "The same table again", "More students from the same group"]
+      options: ["Evidence where only the travel changes, like a fair trial", "The same table, drawn as a bigger chart", "The same survey repeated next year", "More students asked the same questions"]
       answer: 0
-      feedback: [null, "A bigger poster doesn't add any evidence.", "The same table has the same limits.", "More from the same survey gives a steadier percentage, not a reason."]
-      explain: "A cause needs more than a table: evidence where one thing changes and the rest is kept the same, or careful comparison of like with like."
+      feedback: [null, "A bigger chart shows the same link, not the reason.", "A repeat survey shows the link again, not why it happens.", "More students give a steadier percentage, not a reason."]
+      explain: "A cause needs more than a table: evidence where one thing changes and the rest is kept the same (such as asking students who started riding whether they began playing more, or a fair trial), or careful comparison of like with like."
 ```
 
 ### A small group
@@ -209,7 +209,7 @@ tasks:
   - check:
       type: question
       q: "Which is the best claim for the breakfast table?"
-      options: ["In this survey, students who ate breakfast were more likely to pass (80%) than those who didn't (50%)", "Eating breakfast makes students pass", "Skipping breakfast makes students fail", "80% of all students pass"]
+      options: ["In this survey, breakfast eaters were more likely to pass (80% vs 50%)", "Eating breakfast makes students pass (80% vs 50%)", "Skipping breakfast makes students fail", "80% of all the students in the survey passed"]
       answer: 0
       feedback: [null, "The table shows a link, not that breakfast is the reason.", "That also assumes a cause.", "80% is for the breakfast group, not for all students."]
       explain: "It names both groups, gives both percentages, says 'in this survey' and 'more likely'."

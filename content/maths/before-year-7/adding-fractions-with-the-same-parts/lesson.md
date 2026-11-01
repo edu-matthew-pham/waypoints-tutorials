@@ -64,10 +64,10 @@ tasks:
     check:
       type: question
       q: "Why does the bottom stay the same when you add?"
-      options: ["The bottom is the size of the parts, and you are still counting the same size of part","You add the bottoms but leave one out","The bottom is not important","It only stays the same when the answer is under 1"]
+      options: ["You are still counting parts of the same size","You add the bottoms but leave one out","The bottom is not important","It only stays the same when the answer is under 1"]
       answer: 0
       feedback: [null,"The size of the part has not changed, so the bottom stays.","The bottom tells you the size of the parts, so it matters.","It stays the same when the answer is over 1 too."]
-      explain: "The bottom names the part. 2 fifths + 1 fifth is 3 fifths, as 2 apples + 1 apple is 3 apples."
+      explain: "The bottom is the size of the parts, and you are still counting the same size of part. 2 fifths + 1 fifth is 3 fifths, as 2 apples + 1 apple is 3 apples."
 ```
 
 $\tfrac{2}{5} + \tfrac{1}{5} = \tfrac{3}{5}$. The bottom number names the part, like a unit, so it stays the same. Add the tops. When the tops add to more than the bottom, the sum is more than one whole: $\tfrac{6}{5} = 1\tfrac{1}{5}$.

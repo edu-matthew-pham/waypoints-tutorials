@@ -221,7 +221,7 @@ tasks:
       type: question
       q: "An orienteer follows a compass bearing exactly, but ends up beside the control, not on it. Which is a reason that the triangle can't show?"
       options:
-        - "The compass needle points to magnetic north, which is not quite the map's north"
+        - "The needle points to magnetic north, not map north"
         - "A bearing can only be measured to the nearest 10°"
         - "North and east are always the same distance"
         - "Cosine and sine are only accurate for 40°"

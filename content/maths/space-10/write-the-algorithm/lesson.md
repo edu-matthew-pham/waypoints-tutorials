@@ -203,7 +203,7 @@ tasks:
       type: question
       q: "On that 11.5 m by 4 m oval, one sprinkler in the middle is only about 6.1 m from a corner, well inside 8 m. What does that tell you about the algorithm?"
       options:
-        - "It always covers the oval, but it doesn't always use the fewest sprinklers"
+        - "It always covers, but not always with the fewest"
         - "It left a dry spot, so it is wrong"
         - "It always uses the fewest sprinklers"
         - "It tells you nothing"
@@ -218,7 +218,7 @@ tasks:
       type: question
       q: "The new sprinklers reach 5 m instead of 8 m. Which step of the algorithm has to be rewritten?"
       options:
-        - "None: only the input r changes, and step 3 works out the new s"
+        - "None: only the input r changes"
         - "Step 3 only"
         - "Steps 3 and 4"
         - "All of the steps"
@@ -228,7 +228,7 @@ tasks:
         - "Step 3 uses r, so it already adapts."
         - "Steps 3 and 4 use r through s, so they adapt too."
         - "The algorithm is written for any r."
-      explain: "The steps use r rather than 8, so changing r changes every later number without rewriting a step."
+      explain: "Step 3 works out the new s from r. The steps use r rather than 8, so changing r changes every later number without rewriting a step."
 ```
 
 ### An exact fit

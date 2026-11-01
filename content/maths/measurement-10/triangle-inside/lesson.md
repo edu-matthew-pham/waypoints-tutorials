@@ -206,7 +206,7 @@ tasks:
       type: question
       q: "The longest line inside the suitcase is 99 cm. What can you say about the 120 cm umbrella?"
       options:
-        - "It doesn't fit, and it wouldn't even if the suitcase were completely empty"
+        - "It doesn't fit, even in an empty suitcase"
         - "It fits, because 99 cm is nearly 120 cm"
         - "It fits if you bend it"
         - "It doesn't fit, but only because of the clothes"

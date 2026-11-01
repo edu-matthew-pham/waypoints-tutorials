@@ -73,7 +73,7 @@ tasks:
   - check:
       type: question
       q: "A newspaper wants to know what people in its city think of a new bridge. Why does it survey a sample of 800, not everyone?"
-      options: ["Asking every person in the city would take too long and cost too much", "A sample is more accurate than a census", "Opinions can't be measured", "The law says so"]
+      options: ["Asking everyone would cost too much and take too long", "A sample is more accurate than a census", "Opinions can't be measured", "The law says so"]
       answer: 0
       feedback: [null, "A census would be exact; the sample is chosen for other reasons.", "Surveys measure opinions.", "It is a practical choice, not a rule."]
       explain: "When measuring everyone costs too much or takes too long, a fair sample is the sensible choice."
@@ -88,10 +88,10 @@ tasks:
   - check:
       type: question
       q: "Some students revise with music and some without, chosen at random, then all sit the same test. What technique is this?"
-      options: ["An experiment: the researcher changes something on purpose", "An observation", "A census", "Not a way to collect data"]
+      options: ["An experiment", "An observation", "A census", "Not a way to collect data"]
       answer: 0
       feedback: [null, "An observation changes nothing; here the music is given or not.", "Not every student in a population is measured.", "It collects test scores."]
-      explain: "The music is the thing changed on purpose; the scores show its effect."
+      explain: "The researcher changes something on purpose (the music); the scores show its effect. That makes it an experiment."
 ```
 
 ### Why a sample
@@ -132,10 +132,10 @@ tasks:
   - check:
       type: question
       q: "Why is Australia's census taken only every five years?"
-      options: ["It costs a great deal and takes months to collect and process", "The population never changes", "Five is a lucky number", "A sample would be impossible"]
+      options: ["It is very costly and slow to run", "The population never changes", "People would refuse to answer more often", "A sample would be impossible"]
       answer: 0
-      feedback: [null, "The population changes every day.", "It is a practical choice.", "Surveys of samples are run in between."]
-      explain: "A census of millions of homes is expensive and slow. Smaller samples (such as the ABS Monthly Population Survey, about 26,000 households a month) fill the gaps."
+      feedback: [null, "The population changes every day.", "The census must be answered by law; cost and time are the reason.", "Surveys of samples are run in between."]
+      explain: "A census of millions of homes costs a great deal and takes months to collect and process. Smaller samples (such as the ABS Monthly Population Survey, about 26,000 households a month) fill the gaps."
   - check:
       type: question
       q: "A council wants to know how many cars use a road each morning. Which technique fits best?"
@@ -169,14 +169,14 @@ tasks:
   - check:
       type: question
       q: "A company wants to know if a new toothpaste reduces cavities. What technique fits?"
-      options: ["An experiment: some use the new toothpaste, some the old, chosen at random", "A census of everyone who brushes their teeth", "An observation of shop shelves", "Asking the company's staff"]
+      options: ["An experiment: new or old toothpaste, chosen at random", "A census of everyone who brushes their teeth", "An observation of shop shelves", "Asking the company's staff"]
       answer: 0
       feedback: [null, "Far too many people, and nothing is compared.", "Shelves don't show cavities.", "Staff may want a certain answer."]
       explain: "To see the effect of a change, compare groups given different treatments."
   - check:
       type: question
       q: "A juice factory checks the sugar in its bottles. A manager says: 'Test every bottle, so we know for sure.' What is wrong with that plan?"
-      options: ["Testing opens the bottle, so there would be nothing left to sell", "Nothing: a census is always best", "Sugar can't be measured", "The bottles are too small"]
+      options: ["Testing opens it, so none would be left to sell", "Nothing: a census is always best", "Sugar can't be measured", "The bottles are too small"]
       answer: 0
       feedback: [null, "Not when measuring destroys the product.", "Sugar is easy to measure.", "Size isn't the issue."]
       explain: "When measuring destroys the item, a sample is the only sensible choice."

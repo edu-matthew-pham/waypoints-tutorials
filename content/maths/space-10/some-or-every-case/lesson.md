@@ -102,7 +102,7 @@ tasks:
       type: question
       q: "Which is a proof that the angles of every triangle add to $180^\\circ$?"
       options:
-        - "Draw a line through one corner parallel to the opposite side. The alternate angles are equal, and the three angles at that corner make a straight line"
+        - "Draw a line through one corner parallel to the opposite side; use alternate angles and the straight line"
         - "Tear the corners off 30 different triangles. Every set makes a straight line"
         - "Measure 100 triangles with a protractor: every one adds to 180°, give or take 1°"
         - "Drag the triangle on the board: it always says 180°"
@@ -179,10 +179,10 @@ tasks:
   - check:
       type: question
       q: "Which is a proof that the sum of any two even numbers is even?"
-      options: ["Two even numbers are $2m$ and $2n$, and $2m + 2n = 2(m + n)$, which is twice a whole number", "$2 + 4 = 6$, $8 + 10 = 18$ and $20 + 22 = 42$, all even", "I tried 50 pairs of even numbers and every sum was even", "A calculator checked every pair up to 1000"]
+      options: ["$2m + 2n = 2(m + n)$, twice a whole number", "$2 + 4 = 6$, $8 + 10 = 18$ and $20 + 22 = 42$, all even", "I tried 50 pairs of even numbers and every sum was even", "A calculator checked every pair up to 1000"]
       answer: 0
       feedback: [null, "Three pairs are three cases.", "Fifty pairs are fifty cases.", "Every pair up to 1000 is still not every pair."]
-      explain: "2m and 2n stand for any two even numbers, so the algebra covers every pair."
+      explain: "Two even numbers are 2m and 2n, and 2m + 2n = 2(m + n), which is twice a whole number. 2m and 2n stand for any two even numbers, so the algebra covers every pair."
   - check:
       type: question
       q: "Mei measures the exterior angle of 25 different triangles and it equals $a + b$ every time. What is the honest thing to say?"

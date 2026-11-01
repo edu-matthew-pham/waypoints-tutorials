@@ -84,10 +84,10 @@ tasks:
   - check:
       type: question
       q: "Which is true of the number line?"
-      options: ["Every point is a real number, and there are rational and irrational numbers between any two points", "Only rational numbers have a place on it", "Irrational numbers sit between the whole numbers only", "√2 has no exact point"]
+      options: ["Between any two points there are rationals and irrationals", "Only rational numbers have a place on it", "Irrational numbers sit between the whole numbers only", "√2 has no exact point"]
       answer: 0
       feedback: [null, "√2 is the length of a diagonal: it has a point.", "They are everywhere, not just in some gaps.", "It has an exact point; only its decimal is endless."]
-      explain: "The real numbers fill the whole line, rationals and irrationals mixed together."
+      explain: "Every point is a real number. The real numbers fill the whole line, rationals and irrationals mixed together."
 ```
 
 ### Squares either side
@@ -120,7 +120,7 @@ tasks:
   - check:
       type: question
       q: "A right triangle has legs of 1 m, so its long side is exactly √2 m. A carpenter cuts a brace. What should she use?"
-      options: ["1.41 m: close enough to cut, though √2 m is the exact length", "Exactly √2 m on the tape", "1 m", "2 m"]
+      options: ["About 1.41 m, rounded from √2 m", "Exactly √2 m on the tape", "1 m", "2 m"]
       answer: 0
       feedback: [null, "A tape measure cannot show an endless decimal, so she rounds.", "That is the length of a leg.", "That is the two legs added."]
       explain: "Exact in the maths (√2), rounded for the job: 1.41 m to the centimetre, or 1.414 m to the millimetre."

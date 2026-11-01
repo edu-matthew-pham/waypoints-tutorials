@@ -87,10 +87,10 @@ tasks:
   - check:
       type: question
       q: "Year 7s sleep more than Year 10s. Why is a stratified sample (by year) a good choice for a sleep survey?"
-      options: ["Each year group gets its fair share, so no year is over- or under-represented", "It is quicker than random", "It only asks Year 7s", "It makes the result exact"]
+      options: ["Each year gets its fair share of the sample", "It is quicker than a simple random sample", "It only asks Year 7s", "It makes the result exact"]
       answer: 0
       feedback: [null, "It takes a little more planning.", "It asks every year.", "It is still an estimate."]
-      explain: "When groups differ on what you measure, stratifying stops chance from tipping the sample towards one group."
+      explain: "No year is over- or under-represented. When groups differ on what you measure, stratifying stops chance from tipping the sample towards one group."
 ```
 
 ### Every kth
@@ -137,7 +137,7 @@ tasks:
   - check:
       type: question
       q: "An interviewer is told to ask 10 people from each age group, choosing whoever she likes in a shopping centre. What kind of sample is this?"
-      options: ["A quota sample: fixed shares, but not chosen at random", "A stratified random sample", "A simple random sample", "A census"]
+      options: ["A quota sample", "A stratified random sample", "A simple random sample", "A census"]
       answer: 0
       feedback: [null, "Stratified sampling chooses at random within each group.", "She chooses the people.", "Most people aren't asked."]
       explain: "Quota samples fill shares like stratified ones, but the collector chooses who, so bias can creep in."
@@ -180,10 +180,10 @@ tasks:
   - check:
       type: question
       q: "Review: a survey of people at a vegan festival asks how often they eat meat. What is the main problem?"
-      options: ["Sampling bias: festival-goers eat less meat than most people", "The sample is too small", "Measurement bias from scales", "Nothing"]
+      options: ["Sampling bias: the group is not typical", "The sample is too small", "Measurement bias from scales", "Nothing"]
       answer: 0
-      feedback: [null, "Size wasn't given; the group is the problem.", "Nothing is weighed.", "The group is not typical."]
-      explain: "Who was asked pushes the result down."
+      feedback: [null, "Size wasn't given; the group is the problem.", "Nothing is weighed.", "Vegan festival-goers eat less meat than most people."]
+      explain: "Festival-goers eat less meat than most people, so who was asked pushes the result down."
 ```
 
 ### Names in a hat

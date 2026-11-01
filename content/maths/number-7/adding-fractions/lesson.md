@@ -145,10 +145,10 @@ tasks:
   - check:
       type: question
       q: "Edge case: what is the lowest common denominator for $\\tfrac{1}{4} + \\tfrac{3}{8}$?"
-      options: ["8, since 8 is already a multiple of 4", "32 = 4 × 8", "12 = 4 + 8", "4"]
+      options: ["8", "32 = 4 × 8", "12 = 4 + 8", "4"]
       answer: 0
       feedback: [null, "32 works, but 8 is lower: 4 divides 8.", "12 is not a multiple of 8.", "Eighths do not split into quarters."]
-      explain: "4 divides 8, so only the 1/4 changes: 2/8 + 3/8 = 5/8."
+      explain: "8 is already a multiple of 4, so only the 1/4 changes: 2/8 + 3/8 = 5/8."
 ```
 
 ### Subtract

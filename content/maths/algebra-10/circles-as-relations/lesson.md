@@ -232,10 +232,10 @@ tasks:
   - check:
       type: question
       q: "Someone tries to write the whole circle as one rule $y = \\ldots$. Why can't they?"
-      options: ["Most x values have two y values, a top one and a bottom one, so it isn't a function", "The circle doesn't have an x", "A circle needs a y² and a function can't have squares", "A circle has no centre"]
+      options: ["Most x values have two y values", "The circle doesn't have an x", "A function can't have squares", "The centre isn't at (0, 0)"]
       answer: 0
-      feedback: [null, "The circle has an x and a y; each x has two points on the circle.", "A function can have squares: a quadratic is a function. The issue is two y values for one x.", "The centre is the pivot."]
-      explain: "A function gives one y for each x. The circle gives two, the top half and the bottom half, so it has to be written as an equation of x and y, or as two functions."
+      feedback: [null, "The circle has an x and a y; each x has two points on the circle.", "A function can have squares: a quadratic is a function. The issue is two y values for one x.", "Moving the centre doesn't help: any circle still has two y values for most x."]
+      explain: "A function gives one y for each x. The circle gives two for most x, a top one and a bottom one: the top half and the bottom half, so it has to be written as an equation of x and y, or as two functions."
 ```
 
 ### Is the tree watered?

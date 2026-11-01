@@ -219,10 +219,10 @@ tasks:
   - check:
       type: question
       q: "A friend says: 'The model A = 1000(1.05ⁿ) says my money grows forever.' What would you say?"
-      options: ["It's a model with made-up rates: real rates change, and there are fees and tax", "It's exactly right: rates never change", "It's wrong because the balance can't grow", "It's wrong because n must be 0"]
+      options: ["Real rates change, and there are fees", "It's exactly right: rates never change", "It's wrong because the balance can't grow", "It's wrong because n must be 0"]
       answer: 0
       feedback: [null, "Rates change, and accounts have fees and tax. The model assumes one fixed rate.", "The balance does grow in the model.", "n is the number of years and can be any number of years."]
-      explain: "The model holds one rate for every year. Real accounts change the rate and may charge fees and tax."
+      explain: "It's a model with a made-up rate. The model holds one rate for every year. Real accounts change the rate and may charge fees and tax."
 ```
 
 ### Compound against simple

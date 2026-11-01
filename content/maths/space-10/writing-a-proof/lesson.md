@@ -89,7 +89,7 @@ tasks:
       check:
         type: question
         q: "Just the first line. Which first statement, with its reason, starts the proof?"
-        options: ["$c = 180^\\circ - a - b$, because angles in a triangle add to $180^\\circ$", "$x = a + b$, because it looks the same", "$c = x$, because they are next to each other"]
+        options: ["$c = 180^\\circ - a - b$ (angle sum of a triangle)", "$x = a + b$, because it looks the same", "$c = x$, because they are next to each other"]
         answer: 0
         feedback: [null, "That is what we want to prove, so it cannot be a reason.", "c and x are on a straight line: they add to 180°, they are not equal."]
         explain: "Start with what you know: the three angles of the triangle add to 180°, so c = 180° − a − b."
@@ -223,10 +223,10 @@ tasks:
   - check:
       type: question
       q: "Why could Mia's four measured parallelograms not do what the proof does?"
-      options: ["Four parallelograms are four cases, and the proof's reason works for every parallelogram", "Her protractor was not accurate enough", "She should have measured more than four", "Parallelograms cannot be measured"]
+      options: ["Four are only four cases; the proof covers every one", "Her protractor was not accurate enough", "She should have measured more than four", "Parallelograms cannot be measured"]
       answer: 0
       feedback: [null, "Better measuring improves the cases but does not add the ones not measured.", "Forty parallelograms are still forty cases.", "They can be measured. The measurements are evidence, not a proof."]
-      explain: "Measurements are cases. The proof used only the two pairs of parallel sides, which every parallelogram has."
+      explain: "Measurements are cases, and the proof's reason works for every parallelogram. The proof used only the two pairs of parallel sides, which every parallelogram has."
 ```
 
 ### Angle B and angle D

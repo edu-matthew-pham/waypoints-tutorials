@@ -66,7 +66,7 @@ tasks:
   - check:
       type: question
       q: "A model says a 300 km trip takes 300 ÷ 100 = 3 hours. What does it assume?"
-      options: ["The car travels at exactly 100 km/h the whole way, with no stops", "The road is straight", "The car uses no petrol", "Nothing: it is exact"]
+      options: ["A steady 100 km/h with no stops", "The road is straight", "The car uses no petrol", "Nothing: it is exact"]
       answer: 0
       feedback: [null, "Bends matter only if they change the speed.", "Petrol is not part of this model.", "Every model assumes something."]
       explain: "Steady speed, no stops, no traffic."
@@ -81,10 +81,10 @@ tasks:
   - check:
       type: question
       q: "How could you refine the trip model?"
-      options: ["Add the time for a stop, or use a lower average speed", "Divide 300 by 100 again", "Make the trip shorter", "Use 3.14 instead of 3"]
+      options: ["Add time for a stop", "Divide 300 by 100 again", "Make the trip shorter", "Round 3 hours up to 4"]
       answer: 0
-      feedback: [null, "The same calculation gives the same answer.", "That changes the trip, not the model.", "π has nothing to do with it."]
-      explain: "Add what the model left out: a 30-minute stop makes it 3.5 hours."
+      feedback: [null, "The same calculation gives the same answer.", "That changes the trip, not the model.", "Rounding up is a guess. Add the thing the model left out."]
+      explain: "Add what the model left out: a 30-minute stop makes it 3.5 hours. A lower average speed for traffic works too."
 ```
 
 ### The trip
@@ -117,10 +117,10 @@ tasks:
   - check:
       type: question
       q: "A money model says 500 Australian dollars buys 500 × 0.65 = 325 US dollars. At the airport you get 305. What assumption failed?"
-      options: ["No fees: the exchange counter charges a fee or a worse rate", "500 × 0.65 is not 325", "US dollars are worth more", "The model should divide"]
+      options: ["No fees or worse rates", "500 × 0.65 is not 325", "US dollars are worth more", "The model should divide"]
       answer: 0
       feedback: [null, "The arithmetic is right.", "Not a reason for the gap.", "Multiplying is right for this direction."]
-      explain: "The model ignores fees and the counter's own rate."
+      explain: "The model ignores fees and the counter's own, worse rate."
   - check:
       type: number
       q: "Refine the trip model: 300 km at 100 km/h, plus two 15-minute stops. How many hours does it take?"

@@ -128,10 +128,10 @@ tasks:
     check:
       type: question
       q: "Edge case: after the crossing, does Plan A ever overtake Plan B again (with 20% a year)?"
-      options: ["No: the curve adds more each year, and the line adds only $300 each year", "Yes: lines are always ahead in the end", "Yes: at about 20 years", "No: curves never come back"]
+      options: ["No: the curve adds more each year", "Yes: lines are always ahead in the end", "Yes: at about 20 years", "No: curves never come back"]
       answer: 0
       feedback: [null, "A line adds the same amount each year. The curve adds 20% of a growing balance, which gets bigger.", "After the crossing the gap grows: at 10 years it is about 1,192 in B's favour.", "Curves can swing back; here it doesn't happen because the curve adds more each year."]
-      explain: "After 8.2 years Plan B adds more each year than $300, so the gap only grows."
+      explain: "The line (Plan A) adds only $300 each year. After 8.2 years Plan B adds more each year than $300, so the gap only grows."
 ```
 
 ### Reading the window
@@ -154,7 +154,7 @@ tasks:
       feedback: [null, "At 6 years A is still ahead (4,300 against 4,000).", "At 6 years the plans are 300 apart.", "At 7 years B is already ahead."]
       explain: "A is ahead at 6 years and B is ahead at 7 years, so they swap between 6 and 7."
     smaller:
-      check: { type: question, q: "At 6 years A is worth $4,300$ and B is worth $4,000$. Which is ahead?", options: ["A", "B", "Neither"], answer: 0, explain: "4,300 is more than 4,000, so A is ahead." }
+      check: { type: question, q: "At 6 years A is worth $4,300$ and B is worth $4,000$. Which is ahead?", options: ["A", "B", "Neither"], answer: 0, feedback: [null, "B is worth 4,000, which is less than A's 4,300.", "They are 300 apart, so one is ahead: the bigger value, A."], explain: "4,300 is more than 4,000, so A is ahead." }
   - check:
       type: number
       q: "A table shows $2^x$ and $x + 12$. At $x = 3$ they are $8$ and $15$. At $x = 4$ they are $16$ and $16$. At what $x$ do they meet?"
@@ -214,10 +214,10 @@ tasks:
   - check:
       type: question
       q: "A friend plans to save for 5 years only. Using these plans with 20% a year, which should they pick?"
-      options: ["Plan A: the plans don't meet until about 8.2 years, and A is ahead until then", "Plan B: it grows faster", "Either: they are equal at 5 years", "Plan B: curves always win"]
+      options: ["Plan A: it is ahead until 8.2 years", "Plan B: it grows faster", "Either: they are equal at 5 years", "Plan B: curves always win"]
       answer: 0
       feedback: [null, "B grows faster in the end, but at 5 years A is worth 3,500 and B is worth about 2,488.", "They are equal only at the crossing, about 8.2 years.", "A curve wins only after the crossing."]
-      explain: "Before about 8.2 years A is worth more. A saver for 5 years should pick A, and one for 10 should pick B."
+      explain: "The plans don't meet until about 8.2 years, and before then A is worth more. A saver for 5 years should pick A, and one for 10 should pick B."
 ```
 
 ### How far ahead?

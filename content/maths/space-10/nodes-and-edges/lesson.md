@@ -74,7 +74,7 @@ tasks:
   - check:
       type: question
       q: "On this map, what does one line stand for?"
-      options: ["A track that joins two stations with no stop in between", "The distance between two stations", "The time a train takes", "A street you can walk along"]
+      options: ["Two stations joined with no stop between", "The distance between two stations", "The time a train takes", "A street you can walk along"]
       answer: 0
       feedback: [null, "The map doesn't show distances. A short line and a long line can be the same ride.", "Times aren't on this map either.", "It's a rail line, not a street."]
       explain: "A line (an edge) says the two stations are joined. That's all this kind of map keeps."
@@ -124,7 +124,7 @@ tasks:
   - check: { type: number, q: "The council adds a new station, Lakeside, joined by one new line to Hilltop. What's Hilltop's degree now?", answer: 2, explain: "Hilltop had one line, to Market. The new line makes two." }
   - check: { type: number, q: "Edge case: a new station, Marina, opens with no line to any other station yet. What's Marina's degree?", answer: 0, explain: "No lines meet there, so its degree is 0. It's still a node." }
     smaller:
-      check: { type: question, q: "Marina has no line to any other station. How many lines meet at Marina?", options: ["None", "One", "Six"], answer: 0, explain: "None. Degree counts lines, so Marina's degree is 0." }
+      check: { type: question, q: "Marina has no line to any other station. How many lines meet at Marina?", options: ["None", "One", "Six"], answer: 0, feedback: [null, "Count only lines that touch Marina: it has none.", "Count only lines that touch Marina, not the other stations."], explain: "None. Degree counts lines, so Marina's degree is 0." }
   - check:
       type: question
       q: "Can you ride from Fernbank to Marina?"

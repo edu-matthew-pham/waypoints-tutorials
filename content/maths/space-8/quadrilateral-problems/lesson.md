@@ -97,10 +97,10 @@ tasks:
   - check:
       type: question
       q: "Kite ABCD has AB = AD and CB = CD, and angle B = 100°. Which other angle must be 100°, and why?"
-      options: ["Angle D: triangles ABC and ADC are congruent (SSS)", "Angle A: it is opposite", "Angle C: it is next to B", "None of them"]
+      options: ["Angle D: congruent triangles", "Angle A: it is opposite", "Angle C: it is next to B", "None of them"]
       answer: 0
       feedback: [null, "A is next to B, not opposite it; D is opposite B.", "C is between CB and CD, next to B.", "The congruent triangles give one equal pair."]
-      explain: "AB = AD, CB = CD and AC is shared, so the triangles are congruent and angle B = angle D."
+      explain: "AB = AD, CB = CD and AC is shared, so triangles ABC and ADC are congruent (SSS) and angle B = angle D."
 ```
 
 ### Neighbours

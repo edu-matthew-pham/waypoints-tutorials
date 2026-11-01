@@ -137,7 +137,7 @@ tasks:
       answer: -2
       explain: "Turn ½ upside down to get 2, then change the sign: −2."
     smaller:
-      check: { type: "question", q: "Turn $\\frac{1}{2}$ upside down. What do you get?", options: ["2", "−½", "½"], answer: 0, explain: "1/2 upside down is 2/1 = 2." }
+      check: { type: "question", q: "Turn $\\frac{1}{2}$ upside down. What do you get?", options: ["2", "−½", "½"], answer: 0, feedback: [null, "Turning it upside down doesn't change the sign. The minus comes later, for a perpendicular gradient.", "That is where you started. Swap top and bottom: 2/1 = 2."], explain: "1/2 upside down is 2/1 = 2." }
   - check:
       type: question
       q: "Line A goes through $(0, 0)$ and $(2, 6)$. Line B goes through $(0, 5)$ and $(6, 3)$. Which is true?"

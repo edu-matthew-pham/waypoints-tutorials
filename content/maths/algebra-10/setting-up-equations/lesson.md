@@ -153,17 +153,17 @@ tasks:
   - check:
       type: question
       q: "Edge case: a stall sells adult tickets and student tickets. Solving the pair gives $a = 2.5$ adult tickets. Does that answer make sense?"
-      options: ["No: you cannot sell half a ticket, so look again at the equations or the numbers", "Yes: 2.5 is a number", "Yes: round it to 3 and carry on"]
+      options: ["No: you cannot sell half a ticket", "Yes: 2.5 is a number", "Yes: round it to 3 and carry on"]
       answer: 0
       feedback: [null, "It solves the equations, but tickets come in whole numbers.", "Rounding changes the totals, so the pair is no longer solved."]
       explain: "Check the answer against the situation. Tickets are whole, so 2.5 means something was set up or copied wrongly, or there is no exact answer."
   - check:
       type: question
       q: "Edge case: Plan P is $c = 100 + 20k$ and Plan Q is $c = 140 + 25k$. Setting them equal gives $k = -8$. What does that mean?"
-      options: ["The plans never cost the same: usage cannot be negative, so P is always cheaper", "The plans cost the same at 8 kWh a day", "Plan Q is cheaper"]
+      options: ["They never cost the same: P is always cheaper", "The plans cost the same at 8 kWh a day", "Plan Q is cheaper"]
       answer: 0
       feedback: [null, "−8 is not 8. A negative number of kWh cannot be used.", "At k = 0 P costs 100 and Q costs 140, and P climbs more slowly."]
-      explain: "Negative kWh is impossible, so the lines cross only to the left of the graph's real part. P has the lower fee and the lower rate, so it is cheaper at every usage."
+      explain: "Usage cannot be negative, so the lines cross only to the left of the graph's real part. P has the lower fee and the lower rate, so it is cheaper at every usage."
   - check:
       type: question
       q: "Which method is quickest for $c = 120 + 24k$ and $c = 72 + 28k$?"
@@ -209,10 +209,10 @@ tasks:
   - check:
       type: question
       q: "Solving a pair for a school trip gives $b = -3$ buses. What should you conclude?"
-      options: ["The answer cannot be right: a number of buses cannot be negative", "Three buses are needed", "The trip needs no buses"]
+      options: ["Something has gone wrong", "Three buses are needed", "The trip needs no buses"]
       answer: 0
       feedback: [null, "The sign matters: −3 is not 3.", "Zero is not −3."]
-      explain: "A negative number of buses is impossible, so check the setup and the arithmetic before using the answer."
+      explain: "The answer cannot be right: a number of buses cannot be negative, so check the setup and the arithmetic before using the answer."
   - check:
       type: number
       q: "Review (elimination): solve $x + y = 10$ and $x - y = 2$. What is $x$?"

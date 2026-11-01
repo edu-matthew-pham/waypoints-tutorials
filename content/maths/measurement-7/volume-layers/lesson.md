@@ -92,7 +92,7 @@ tasks:
   - check:
       type: question
       q: "Why is the volume of a box the area of its base times its height?"
-      options: ["Each layer has one cube for each square of the base, and there are as many layers as the height", "Because volume is always three numbers multiplied", "Because the base is the biggest face"]
+      options: ["There are h layers, each with one cube per base square", "Because volume is always three numbers multiplied", "Because the base is the biggest face"]
       answer: 0
       feedback: [null, "That is true for boxes, but the reason is the layers: it also works for prisms with other bases.", "Any face can be the base, as long as the layers repeat it."]
       explain: "Each layer is the base (A cubes), and there are h layers: V = A × h."

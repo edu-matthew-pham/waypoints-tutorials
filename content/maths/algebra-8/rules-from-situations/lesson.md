@@ -94,6 +94,7 @@ tasks:
       q: "A phone plan costs $T = 5g + 20$ dollars a month for $g$ GB of data. What does the 5 mean?"
       options: ["5 dollars for each GB used", "5 GB of data are included", "The monthly fee is 5 dollars"]
       answer: 0
+      feedback: [null, "The rule has no included data. 5 multiplies g, so it is dollars for each GB.", "The fee is c, the 20 on its own. 5 is the rate per GB."]
       explain: "5 is m, the rate: each extra GB adds 5 dollars. The 20 is c, the fee you pay even with no data."
 ```
 
@@ -176,6 +177,7 @@ tasks:
       q: "A plumber charges $T = 80h + 60$ dollars for a job of $h$ hours. What does the 60 mean?"
       options: ["A 60 dollar call-out fee, paid once", "60 dollars for each hour", "The cost of a 60-hour job"]
       answer: 0
+      feedback: [null, "80 is multiplied by h, so 80 is the hourly rate. 60 is added once.", "For a 60-hour job you would put h = 60 into the rule. The 60 here is the fee."]
       explain: "60 is c: what you pay even for 0 hours, the call-out fee. 80 is the hourly rate."
   - check:
       type: answer

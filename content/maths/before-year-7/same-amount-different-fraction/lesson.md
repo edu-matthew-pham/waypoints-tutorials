@@ -65,10 +65,10 @@ tasks:
   - check:
       type: question
       q: "Why does 2/4 show the same amount as 1/2?"
-      options: ["Each half is cut into 2 parts, so there are twice as many parts and twice as many shaded","4 is bigger than 2, so it is a bigger fraction","You add 2 to the top and the bottom","It only works for 1/2"]
+      options: ["Twice as many parts, and twice as many shaded","4 is bigger than 2, so it is a bigger fraction","You add 2 to the top and the bottom","It only works for 1/2"]
       answer: 0
       feedback: [null,"Bigger numbers do not make a bigger fraction. The parts are smaller.","Adding changes the amount. Multiplying the top and bottom by the same number does not.","It works for every fraction."]
-      explain: "Cutting every part into 2 gives twice as many parts, and twice as many shaded. The amount does not change."
+      explain: "Each half is cut into 2 parts. Cutting every part into 2 gives twice as many parts, and twice as many shaded. The amount does not change."
 ```
 
 Fractions are **equivalent** when they show the same amount. Cut every part into the same number of smaller parts: the top and bottom are multiplied by the same number, and the amount stays the same.

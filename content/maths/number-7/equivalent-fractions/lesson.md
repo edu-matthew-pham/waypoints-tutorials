@@ -93,10 +93,10 @@ tasks:
   - check:
       type: question
       q: "Why is $\\tfrac{2}{3} = \\tfrac{8}{12}$?"
-      options: ["Each third is split into 4 twelfths, so 2 thirds are 8 twelfths", "8 − 2 = 6 and 12 − 3 = 9", "8 and 12 are both even"]
+      options: ["Each third splits into 4 twelfths", "8 − 2 = 6 and 12 − 3 = 9", "8 and 12 are both even"]
       answer: 0
       feedback: [null, "Subtracting does not tell you about the amount.", "Many fractions with even numbers are not equal to 2/3, such as 4/12."]
-      explain: "× 4 on the top and the bottom: the same amount, cut into 4 times as many parts."
+      explain: "Each third is split into 4 twelfths, so 2 thirds are 8 twelfths: × 4 on the top and the bottom, the same amount cut into 4 times as many parts."
 ```
 
 ### Simplest form

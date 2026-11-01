@@ -104,7 +104,7 @@ tasks:
   - hint: ["The line goes up by a for each 1 across.", "Go from 14 to 22 in 2 steps."]
     check: { type: number, q: "A line starts at 10 when x = 0 and reaches 22 when x = 2. What is $a$?", answer: 6, explain: "(22 − 10) ÷ 2 = 6." }
   - hint: ["Compare the two rules at x = 0.", "Compare the two rules at x = 4."]
-    check: { type: question, q: "Plan A is $y = 3x + 7$. Plan B is $y = 5x + 1$. Which is cheaper for 1 gigabyte, and which for 10?", options: ["B is cheaper for 1 gigabyte, A is cheaper for 10", "A at both", "B at both", "They are always equal"], answer: 0, feedback: [null, "At 10 GB, A costs 37 and B costs 51.", "At 1 GB, A costs 10 and B costs 6.", "They only meet once."], explain: "At 1 GB: A = 10, B = 6, so B is cheaper. At 10 GB: A = 37, B = 51, so A is cheaper." }
+    check: { type: question, q: "Plan A is $y = 3x + 7$. Plan B is $y = 5x + 1$. Which is cheaper for 1 gigabyte, and which for 10?", options: ["B for 1 GB, A for 10 GB", "A at both", "B at both", "They are always equal"], answer: 0, feedback: [null, "At 10 GB, A costs 37 and B costs 51.", "At 1 GB, A costs 10 and B costs 6.", "They only meet once."], explain: "At 1 GB: A = 10, B = 6, so B is cheaper. At 10 GB: A = 37, B = 51, so A is cheaper." }
 ```
 
 ### The fee

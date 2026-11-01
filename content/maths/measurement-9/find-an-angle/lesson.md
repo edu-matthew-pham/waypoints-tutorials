@@ -101,7 +101,7 @@ tasks:
   - hint: ["Adjacent and hypotenuse: cosine.", "cos⁻¹(1 ÷ 4)."]
     check: { type: number, q: "A $4$ m ladder has its foot $1$ m from the wall. What angle does the ladder make with the ground, to the nearest degree?", answer: 76, tolerance: 0.6, explain: "cos⁻¹ 0.25 = 75.5°, about 76°." }
   - hint: ["Check which side is the hypotenuse.", "The hypotenuse is the longest side."]
-    check: { type: question, q: "A student uses $\\sin^{-1}(7 \\div 5)$ and gets an error. Why?", options: ["Sine can't be more than 1: the opposite side can't be longer than the hypotenuse", "The calculator is broken", "They should use tangent", "7 is too big"], answer: 0, feedback: [null, "The calculator is right: no such angle.", "The sides given suit sine or tan; the issue is the order.", "The size of 7 isn't the problem."], explain: "The hypotenuse is the longest side, so opposite ÷ hypotenuse is below 1. Put the hypotenuse underneath." }
+    check: { type: question, q: "A student uses $\\sin^{-1}(7 \\div 5)$ and gets an error. Why?", options: ["Sine can't be more than 1", "The calculator is broken", "They should use tangent", "7 is too big"], answer: 0, feedback: [null, "The calculator is right: no such angle.", "The sides given suit sine or tan; the issue is the order.", "The size of 7 isn't the problem."], explain: "The opposite side can't be longer than the hypotenuse, so opposite ÷ hypotenuse is below 1. Put the hypotenuse underneath." }
 ```
 
 ### A 3-4 triangle

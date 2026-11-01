@@ -226,17 +226,17 @@ tasks:
       type: question
       q: "Why does the report quote the quartiles rather than the lowest and highest prices?"
       options:
-        - "The quartiles describe where most sales are, and one very high sale doesn't stretch them"
+        - "They show the middle half, which one huge sale can't stretch"
         - "The lowest and highest prices are always wrong"
-        - "Quartiles are bigger numbers"
+        - "The quartiles are always closer to the mean"
         - "The highest price doesn't count as a sale"
       answer: 0
       feedback:
         - null
         - "They are real sales, they just tell you about the extremes."
-        - "Quartiles aren't bigger, they are in the middle."
+        - "Quartiles aren't chosen for being near the mean. They mark the middle half."
         - "It is a real sale. It just isn't typical."
-      explain: "The highest and lowest are single sales at the extremes. The quartiles show where the typical sales sit."
+      explain: "The highest and lowest are single sales at the extremes. The quartiles show where most of the typical sales sit, and one very high sale doesn't stretch them."
 ```
 
 ### The middle half

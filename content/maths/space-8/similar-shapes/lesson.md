@@ -143,10 +143,10 @@ tasks:
   - check:
       type: question
       q: "Which is true?"
-      options: ["All squares are similar, but not all rectangles are", "All rectangles are similar", "No two squares are similar", "All rectangles are congruent"]
+      options: ["All squares are similar", "All rectangles are similar", "No two squares are similar", "All rectangles are congruent"]
       answer: 0
       feedback: [null, "A 4 by 2 and a 4 by 3 rectangle are not.", "Any square is an enlargement of any other.", "Congruent needs the same size."]
-      explain: "A square's sides are always in the ratio 1 : 1. A rectangle's width and height can be in any ratio."
+      explain: "All squares are similar, but not all rectangles are. A square's sides are always in the ratio 1 : 1. A rectangle's width and height can be in any ratio."
 ```
 
 ### Similar, not congruent

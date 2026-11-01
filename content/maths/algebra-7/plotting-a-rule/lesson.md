@@ -59,6 +59,7 @@ tasks:
       q: "Which point is $(3, 2)$?"
       options: ["The point 3 across and 2 up", "The point 2 across and 3 up", "The point 3 across and 3 up"]
       answer: 0
+      feedback: [null, "Swapped: the first number is across (x) and the second is up (y).", "The second number is 2, so the point is only 2 up."]
       explain: "The first number is how far across (x); the second is how far up (y). (2, 3) is a different point."
   - check:
       type: bug
@@ -73,6 +74,7 @@ tasks:
       q: "The table for $y = 10 - x$ is $(0, 10)$, $(1, 9)$, $(2, 8)$, $(3, 7)$. Which describes its graph?"
       options: ["A straight line going down 1 for each step right", "A straight line going up 1 for each step right", "A curve going down"]
       answer: 0
+      feedback: [null, "The y-values go 10, 9, 8, 7: they fall, so the line goes down.", "The steps are all the same size (down 1), so it is straight, not curved."]
       explain: "y goes down by 1 each time x goes up by 1: the same step each time, so a straight line, going down."
 ```
 
@@ -136,6 +138,7 @@ tasks:
       q: "A point is 4 across and 1 up from $(0, 0)$. What are its coordinates?"
       options: ["$(4, 1)$", "$(1, 4)$", "$(4, 4)$"]
       answer: 0
+      feedback: [null, "Swapped: across comes first (x), then up (y).", "It is only 1 up, so the second number is 1."]
       explain: "Across is x, up is y: (4, 1)."
   - check:
       type: question
@@ -145,6 +148,7 @@ tasks:
         - "(0, 2), (1, 3), (2, 6), (3, 11)"
         - "(0, 1), (1, 2), (2, 4), (3, 8)"
       answer: 0
+      feedback: [null, "The steps are 1, 3, 5: they change, so the points curve.", "The steps are 1, 2, 4 (each one doubles), so the points curve."]
       explain: "y goes up 3 every time in the first table. In the others the steps change (1, 3, 5 and 1, 2, 4), so the points curve."
   - check:
       type: answer

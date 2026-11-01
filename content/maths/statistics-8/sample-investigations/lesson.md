@@ -66,7 +66,7 @@ tasks:
   - check:
       type: question
       q: "Which is the most important ethical step in a survey about students' sleep?"
-      options: ["Students agree to take part and their answers are kept anonymous", "Every student must answer", "Names are written on each form", "Teachers read the answers aloud"]
+      options: ["Students agree, and answers are anonymous", "Every student must answer", "Names are written on each form", "Teachers read the answers aloud"]
       answer: 0
       feedback: [null, "Taking part should be a choice.", "Names make answers traceable.", "That breaks privacy."]
       explain: "Ethical data collection asks permission, keeps answers private, and does no harm."
@@ -81,10 +81,10 @@ tasks:
   - check:
       type: question
       q: "Which sentence states the uncertainty best?"
-      options: ["From a random sample of 40, students at our school probably sleep about 8.8 hours; a bigger sample would give a closer estimate", "Students sleep exactly 8.8 hours", "We are certain students sleep 8.8 hours", "Students sleep 8.8 hours, which proves they are tired"]
+      options: ["From a random sample of 40, our students probably sleep about 8.8 hours", "Students sleep exactly 8.8 hours", "We are certain students sleep 8.8 hours", "Students sleep 8.8 hours, which proves they are tired"]
       answer: 0
       feedback: [null, "A sample gives an estimate.", "A sample can't make you certain.", "The data doesn't show tiredness."]
-      explain: "Name the sample, use 'about' or 'probably', and say how the estimate could improve."
+      explain: "Name the sample, use 'about' or 'probably', and say how the estimate could improve: a bigger sample would give a closer estimate."
 ```
 
 ### Ethics
@@ -123,10 +123,10 @@ tasks:
   - check:
       type: question
       q: "An investigation into bullying asks students to write their name on the survey. What is the problem?"
-      options: ["It isn't anonymous: students may not answer honestly, and it could cause harm", "Names take too long to write", "It makes it a census", "There is no problem"]
+      options: ["It isn't anonymous", "Names take too long to write", "It makes it a census", "There is no problem"]
       answer: 0
       feedback: [null, "Time isn't the main issue.", "Who answers decides census or sample, not names.", "Privacy matters on sensitive topics."]
-      explain: "On sensitive topics, anonymity protects people and makes answers more honest."
+      explain: "Without anonymity, students may not answer honestly, and it could cause harm. On sensitive topics, anonymity protects people and makes answers more honest."
   - check:
       type: question
       q: "Two students estimate the school's mean sleep: one from a random sample of 15, one from a random sample of 60. Whose estimate is more reliable?"

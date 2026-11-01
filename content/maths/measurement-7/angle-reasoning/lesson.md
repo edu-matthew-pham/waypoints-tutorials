@@ -182,7 +182,7 @@ tasks:
     check:
       type: question
       q: "Are these two lines parallel?"
-      options: ["No: c and f are alternate angles, but they are not equal", "Yes: c and f are alternate angles", "You cannot tell from angles"]
+      options: ["No: the alternate angles c and f are not equal", "Yes: c and f are alternate angles", "You cannot tell from angles"]
       answer: 0
       feedback: [null, "Alternate angles are equal only when the lines are parallel. These are not equal.", "You can: if the lines were parallel, c and f would be equal."]
       explain: "If the lines were parallel, the alternate angles c and f would be equal. They are not, so the lines are not parallel."
@@ -240,7 +240,7 @@ tasks:
     check:
       type: question
       q: "Review: Tom says \"$b$ and $c$ are alternate angles\". Which is right?"
-      options: ["They are vertically opposite: both at the top crossing", "Tom is right", "They are corresponding"]
+      options: ["They are vertically opposite", "Tom is right", "They are corresponding"]
       answer: 0
       feedback: [null, "Alternate angles are one at each crossing, between the lines.", "Corresponding angles are one at each crossing."]
       explain: "b and c are at the same crossing, opposite each other: vertically opposite (and equal for that reason)."

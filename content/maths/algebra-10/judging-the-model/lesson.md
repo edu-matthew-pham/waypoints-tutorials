@@ -131,10 +131,10 @@ tasks:
     check:
       type: question
       q: "Edge case: with $d = 20$, the model at $x = -1$ gives $100 \\times 2^{-3} = 12.5$ cells. What should you say about that?"
-      options: ["It makes no sense: half a cell can't exist, and the dish had no cells before the start", "It is fine: the model works at every time", "It means the dish loses 12.5 cells", "It means the doubling time is 12.5 minutes"]
+      options: ["It makes no sense: x = −1 is before the start", "It is fine: the model works at every time", "It means the dish loses 12.5 cells", "It means the doubling time is 12.5 minutes"]
       answer: 0
       feedback: [null, "The model was built for time after the start. Before that there was no dish.", "A negative time is before the start, not a loss of cells.", "12.5 is a count of cells, not a doubling time."]
-      explain: "The model was built for hours after the dish was started. Outside that range the formula still gives a number, and the number means nothing."
+      explain: "Half a cell can't exist, and the dish had no cells before the start. The model was built for hours after the dish was started. Outside that range the formula still gives a number, and the number means nothing."
 ```
 
 ### Fitting the lab
@@ -160,10 +160,10 @@ tasks:
   - check:
       type: question
       q: "The same car model gives about $\\$153$ for a car 30 years old. What is the best comment?"
-      options: ["Far outside the ages it was checked on, so don't trust it: a car that old could be worth much more or much less", "It is exact, because the model fitted at 3 years", "It is wrong because the value can't go below $20,000$", "It is wrong because 30 is not a whole number"]
+      options: ["Don't trust it: 30 years is far outside its range", "It is exact, because the model fitted at 3 years", "It is wrong because the value can't go below $20,000$", "It is fine: the model never reaches 0"]
       answer: 0
-      feedback: [null, "Fitting at 3 years says nothing about 30.", "A car does lose value. The problem is how far the model is being pushed.", "30 is a whole number of years."]
-      explain: "The model was only checked near 3 years. At 30 years it is guessing, and a very old car can be a collector's item or scrap."
+      feedback: [null, "Fitting at 3 years says nothing about 30.", "A car does lose value. The problem is how far the model is being pushed.", "Never reaching 0 is true of the formula, but that doesn't make its answer at 30 years reliable."]
+      explain: "The model was only checked near 3 years. At 30 years it is guessing: a car that old could be worth much more or much less, since a very old car can be a collector's item or scrap."
   - check:
       type: number
       q: "Review: solve $4^x = 64$. What is $x$?"
@@ -208,10 +208,10 @@ tasks:
   - check:
       type: question
       q: "Which is the best report of the model's answer for a tray left out for 4 hours?"
-      options: ["About 25,600 cells, from a made-up 30-minute doubling time, so only a rough guide, and not reliable once the food and room run low (past about hour 6 or 7 in the dish)", "25,600 cells exactly", "There will be 25,600 cells because maths says so", "The model is useless because it is a model"]
+      options: ["About 25,600 cells: a rough guide only", "25,600 cells exactly", "25,600 cells, as the doubling never stops", "The model is useless because it is a model"]
       answer: 0
-      feedback: [null, "'Exactly' hides the made-up doubling time and the assumption.", "A model's answer depends on what it assumes. Say what it assumes.", "A model can be useful inside its range. The report says how far to trust it."]
-      explain: "A good report gives the answer in words, names the made-up input and the assumption, and says where the model stops being reliable."
+      feedback: [null, "'Exactly' hides the made-up doubling time and the assumption.", "Doubling stops once the food and room run low, so the answer is only a rough guide.", "A model can be useful inside its range. The report says how far to trust it."]
+      explain: "About 25,600 cells, from a made-up 30-minute doubling time, so only a rough guide, and not reliable once the food and room run low (past about hour 6 or 7 in the dish). A good report gives the answer in words, names the made-up input and the assumption, and says where the model stops being reliable."
 ```
 
 ### Compare two hours with four

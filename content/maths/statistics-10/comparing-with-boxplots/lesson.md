@@ -149,7 +149,7 @@ tasks:
       type: question
       q: "Edge case: two routes have the same median and the same interquartile range, but one has a longer upper whisker. What can you say?"
       options:
-        - "Their typical days and middle halves match, but the longer-whisker route has some days that are further out"
+        - "Same middle half, but one route has some days further out"
         - "The routes are exactly the same"
         - "The longer-whisker route has a higher median"
         - "The shorter-whisker route has more outliers"
@@ -159,7 +159,7 @@ tasks:
         - "The medians and boxes match, but the whiskers differ, so the days aren't all alike."
         - "The medians were said to be the same."
         - "Outliers aren't decided by whisker length like that."
-      explain: "The box and median describe the middle half. The whiskers show how far the rest of the days reach, and that can differ."
+      explain: "Their typical days and middle halves match: the box and median describe the middle half. The whiskers show how far the rest of the days reach, and that can differ."
   - check:
       type: question
       q: "Edge case: the two boxes overlap a lot (Route 1 from 2 to 6, Route 2 from 4 to 6). Which claim is NOT supported?"
@@ -235,17 +235,17 @@ tasks:
       type: question
       q: "Which statement would you tell a friend about the two routes?"
       options:
-        - "Route 1 is usually about a minute earlier, but it varies twice as much and had one day 15 minutes late. Route 2 is steadier."
-        - "Route 1 is better because its median is lower."
+        - "Route 1 is usually a minute earlier but varies more, with one very late day."
+        - "Route 1 is better because its median is a minute lower."
         - "Route 2 is better because its median is higher."
-        - "The routes are the same."
+        - "The routes are the same, as their boxes overlap."
       answer: 0
       feedback:
         - null
         - "That uses only the medians. The spread matters for reliability."
         - "A higher median means later on a typical day, not better."
-        - "The medians and boxes both differ."
-      explain: "It uses the centre, the spread and the outlier. Which route you pick depends on whether you'd rather save a minute on a typical day or avoid the very late days."
+        - "Overlapping boxes don't make them the same: the medians and spreads both differ."
+      explain: "Route 1 varies about twice as much as Route 2 and had one day 15 minutes late; Route 2 is steadier. The statement uses the centre, the spread and the outlier. Which route you pick depends on whether you'd rather save a minute on a typical day or avoid the very late days."
 ```
 
 ### The spread difference

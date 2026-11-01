@@ -57,10 +57,10 @@ tasks:
   - check:
       type: question
       q: "Which design simulates one person in the screening test correctly?"
-      options: ["Pick a random whole number from 1 to 50 (1 means has the condition). If it was 1, pick from 1 to 10 (1 to 9 mean positive). Otherwise pick from 1 to 20 (1 means positive)", "Pick a random whole number from 1 to 10 for everyone: 1 to 9 mean positive", "Toss a coin for every person: heads means positive", "Pick a random whole number from 1 to 1000 and say the first 67 are positive"]
+      options: ["Pick 1 to 50 (1 = has it), then 1 to 10 or 1 to 20 for the test", "Pick a random whole number from 1 to 10 for everyone: 1 to 9 mean positive", "Toss a coin for every person: heads means positive", "Pick a random whole number from 1 to 1000 and say the first 67 are positive"]
       answer: 0
       feedback: [null, "That gives every person the same chance of a positive. The chance is different for people with and without the condition.", "A coin gives 1 in 2 for everyone and ignores both rates.", "That fixes the count, so every run gives 67 positives. A simulation should pick people at random."]
-      explain: "The first pick decides who has the condition, with chance 1 in 50. The second pick uses the chance that goes with that result, 9 in 10 or 1 in 20. That is how the condition is built in."
+      explain: "Pick a whole number from 1 to 50 (1 means has the condition). If it was 1, pick from 1 to 10 (1 to 9 mean positive). Otherwise pick from 1 to 20 (1 means positive). The first pick decides who has the condition, with chance 1 in 50. The second pick uses the chance that goes with that result, 9 in 10 or 1 in 20. That is how the condition is built in."
   - check:
       type: reasoning
       paper: true
@@ -153,10 +153,10 @@ tasks:
   - check:
       type: question
       q: "The table says 0.27. Run A (1000 trials) gave 0.31. Run B (50 000 trials) gave 0.28. Which sentence is right?"
-      options: ["Both are close to 0.27, and the larger run is the closer one, as expected, because more trials settle nearer the true chance", "Run A is wrong because it is not 0.27", "Run B is exactly right because it used more trials", "Run A is better because it was quicker"]
+      options: ["Both are close, and the bigger run is closer, as expected", "Run A is wrong because it is not 0.27", "Run B is exactly right because it used more trials", "Run A is better because it was quicker"]
       answer: 0
       feedback: [null, "A simulation is not wrong for being a little off. The gap is what you expect from chance.", "50,000 trials give a result near 0.27, not exactly 0.27.", "Speed doesn't matter. What matters is how many trials there are."]
-      explain: "Run A is 0.04 from 0.27 and Run B is 0.01. Both are near, and the one with more trials is nearer: a simulation settles as the trials grow."
+      explain: "Run A is 0.04 from 0.27 and Run B is 0.01. Both are near, and the one with more trials is nearer: more trials settle nearer the true chance."
   - check: { type: number, q: "Review: a coin is tossed and a die is rolled, so there are 12 outcomes. How many of them are heads with a die showing 5 or 6?", answer: 2, tolerance: 0, explain: "Heads with 5 and heads with 6: 2 of the 12." }
 ```
 
@@ -196,10 +196,10 @@ tasks:
   - check:
       type: question
       q: "Which sentence best compares the simulation with the table?"
-      options: ["The simulated chance of 0.27 matches the table's 18/67 = 0.27, as expected for 10 000 trials, and a run of only 100 would be likely to wander further", "The simulation proves the table is exactly right", "The simulation is different so the table is wrong", "The simulation and the table are different things and can't be compared"]
+      options: ["They match (0.27 and 18/67), as 10 000 trials should", "The simulation proves the table is exactly right", "The simulation is different so the table is wrong", "The simulation and the table are different things and can't be compared"]
       answer: 0
       feedback: [null, "A simulation agrees closely with the table. It does not prove anything exactly.", "A small gap is what chance gives, and here there is hardly a gap.", "They estimate the same chance, so they can be compared."]
-      explain: "A simulation estimates the same chance as the table. A good comparison gives both numbers and says what the number of trials does to the gap."
+      explain: "The simulated chance of 0.27 matches the table's 18/67 = 0.27, as expected for 10 000 trials; a run of only 100 would be likely to wander further. A simulation estimates the same chance as the table. A good comparison gives both numbers and says what the number of trials does to the gap."
 ```
 
 ### Check against the table

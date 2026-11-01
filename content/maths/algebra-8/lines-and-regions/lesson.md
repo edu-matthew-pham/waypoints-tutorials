@@ -131,18 +131,18 @@ tasks:
   - check:
       type: question
       q: "Is $(2, 5)$ in the region $y > 2x + 1$?"
-      options: ["No: 5 > 5 is false, so it is on the dashed boundary, not in the region", "Yes: 5 is more than 2", "Yes: it is on the line"]
+      options: ["No: it is on the dashed boundary", "Yes: 5 is more than 2", "Yes: it is on the line"]
       answer: 0
       feedback: [null, "Use both coordinates: 2 × 2 + 1 = 5.", "On a dashed line means not included."]
-      explain: "2 × 2 + 1 = 5, and 5 > 5 is false: the point is on the boundary, which > leaves out."
+      explain: "2 × 2 + 1 = 5, and 5 > 5 is false: the point is on the dashed boundary, which > leaves out, so it is not in the region."
   - picture: { ref: graph.yml#below-pic, caption: "The region $y < 3$." }
     check:
       type: question
       q: "Edge case: which points are in $y < 3$?"
-      options: ["Every point below the horizontal line y = 3, whatever its x", "Only points with x less than 3", "Only the point (0, 3)"]
+      options: ["Every point below the line y = 3", "Only points with x less than 3", "Only the point (0, 3)"]
       answer: 0
       feedback: [null, "There is no x in y < 3: only y matters.", "That point is on the boundary, which < leaves out."]
-      explain: "x can be anything; y must be less than 3: the half below the dashed line y = 3."
+      explain: "x can be anything; y must be less than 3: every point below the horizontal dashed line y = 3, whatever its x."
 ```
 
 ### Vertical and horizontal

@@ -81,7 +81,7 @@ tasks:
   - check:
       type: question
       q: "How could the library survey be made less biased?"
-      options: ["Ask students chosen at random from the whole school roll", "Ask more students in the library", "Ask only Year 7s", "Ask the librarians"]
+      options: ["Ask a random sample from the whole school", "Ask more students in the library", "Ask only Year 7s", "Ask the librarians, who know the library best"]
       answer: 0
       feedback: [null, "More of the same group repeats the bias.", "That is another narrow group.", "They may want a bigger library too."]
       explain: "Random choice from the whole population gives every student the same chance of being asked."
@@ -117,14 +117,14 @@ tasks:
   - check:
       type: question
       q: "A survey asks: 'Would you support a new skate park, which would keep teenagers busy and off the streets?' What is the problem?"
-      options: ["It is a leading question: it gives reasons to say yes", "It is too short", "Nobody skates", "It should be a census"]
+      options: ["It is a leading question", "It is too short", "It doesn't say where the park would go", "It should be a census"]
       answer: 0
-      feedback: [null, "Length isn't the issue.", "Opinions about skate parks vary.", "Asking everyone the same leading question is still biased."]
-      explain: "A fair question doesn't argue for one answer: 'Would you support a new skate park?'"
+      feedback: [null, "Length isn't the issue.", "That could be added, but the bigger problem is the reasons built into the question.", "Asking everyone the same leading question is still biased."]
+      explain: "It gives reasons to say yes. A fair question doesn't argue for one answer: 'Would you support a new skate park?'"
   - check:
       type: question
       q: "A class measures their heights with a tape whose first 2 cm has been cut off, so it reads 2 cm too much. What happens to the mean height?"
-      options: ["Every height is 2 cm too high: measurement bias", "It is right on average", "It changes randomly", "Nothing: it is a census"]
+      options: ["Too high by 2 cm: measurement bias", "It is right on average: errors cancel out", "It changes randomly", "Nothing: it is a census"]
       answer: 0
       feedback: [null, "Every measurement is off the same way.", "The error is the same each time, not random.", "Measuring everyone with a faulty tool is still biased."]
       explain: "A faulty tool shifts every value the same way, so the mean is wrong by the same amount."
@@ -161,14 +161,14 @@ tasks:
   - check:
       type: question
       q: "An online poll gets 50 000 votes. Why might it still be biased?"
-      options: ["Voters choose themselves, so people who care a lot are overrepresented", "50 000 is too few", "Online polls can't count", "It isn't biased: it is so big"]
+      options: ["It is self-selected: keen voters join in more", "50 000 is too few for a whole country", "Polls always have a margin of error", "It isn't biased: 50 000 votes is huge"]
       answer: 0
-      feedback: [null, "Size isn't the problem.", "Counting works fine.", "Size doesn't remove bias."]
-      explain: "Self-selected samples are biased however big they are."
+      feedback: [null, "Size isn't the problem.", "That is random variation, not bias; bigger polls shrink it.", "Size doesn't remove bias."]
+      explain: "Voters choose themselves, so people who care a lot are overrepresented. Self-selected samples are biased however big they are."
   - check:
       type: question
       q: "Which is a fair sample of 30 from a school's 600 students?"
-      options: ["30 students picked by a random number generator from the roll", "The first 30 students at the gate", "30 volunteers", "One Year 9 class of 30"]
+      options: ["30 picked at random from the roll", "The first 30 students at the gate", "30 volunteers", "One Year 9 class of 30"]
       answer: 0
       feedback: [null, "Early arrivers may differ, such as bus students.", "Volunteers choose themselves.", "One class may differ from the rest."]
       explain: "Random choice from the whole roll gives every student the same chance."

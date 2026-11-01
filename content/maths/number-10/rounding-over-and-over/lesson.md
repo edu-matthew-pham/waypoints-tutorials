@@ -72,10 +72,10 @@ tasks:
   - check:
       type: question
       q: "Why is the gap after 10 years more than ten times the gap after 1 year?"
-      options: ["The extra money from the higher rate also earns the higher rate", "The bank makes mistakes", "Rounding always doubles errors", "The gap isn't more: it's $40"]
+      options: ["The extra money earns interest too", "The bank makes mistakes", "Rounding always doubles errors", "The gap isn't more: it's $40"]
       answer: 0
       feedback: [null, "The bank's sums aren't wrong: the two rates are just different.", "Rounding doesn't double errors. Repeated multiplying grows them.", "The gap is $61, which is more than 10 × $4."]
-      explain: "With the higher rate each year's balance is bigger, so the next year's extra is bigger too. Differences grow by the same repeated multiplying as the balances."
+      explain: "The extra money from the higher rate also earns the higher rate. Each year's balance is bigger, so the next year's extra is bigger too. Differences grow by the same repeated multiplying as the balances."
 ```
 
 ### The gap after 5 years

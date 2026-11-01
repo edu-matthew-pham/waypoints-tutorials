@@ -93,7 +93,7 @@ tasks:
   - hint: ["Try both rates.", "Compare 8 ÷ 5 with 8 ÷ 4."]
     check: { type: number, q: "How many minutes longer is the 8 km distance at $4$ km/h than at $5$ km/h?", answer: 24, tolerance: 0.5, explain: "2 − 1.6 = 0.4 hours = 24 minutes." }
   - hint: ["A very steep, rough track.", "The rule only mentions distance and climb."]
-    check: { type: question, q: "Which case is the rule LEAST likely to fit?", options: ["A rough track in hot weather with heavy packs", "A flat smooth path", "A short easy loop", "A paved road"], answer: 0, feedback: [null, "A smooth path is close to what the rule was built for.", "Easy walks fit the rule.", "A paved road is the easiest case."], explain: "The rule has nothing for rough ground, heat or load, so those cases are where it can be wrong." }
+    check: { type: question, q: "Which case is the rule LEAST likely to fit?", options: ["A hot, rough track with heavy packs", "A flat smooth path", "A short easy loop", "A paved road"], answer: 0, feedback: [null, "A smooth path is close to what the rule was built for.", "Easy walks fit the rule.", "A paved road is the easiest case."], explain: "The rule has nothing for rough ground, heat or load, so those cases are where it can be wrong." }
   - hint: ["The park's own guide time is real data.", "Compare the model with it."]
     check: { type: question, q: "The park's sign says the lookout walk takes 3 hours up. The rule says 2.35 hours. What should you trust more for planning?", options: ["The sign, and treat the rule as a check", "The rule, because it is mathematics", "Neither", "Whichever is shorter"], answer: 0, feedback: [null, "A model gives an estimate, not the truth.", "The sign comes from people who walked it.", "Shorter is risky for planning."], explain: "Real times from the track beat a rule of thumb. Use the model as a check and a way to understand." }
 ```
@@ -118,12 +118,12 @@ tasks:
   - check:
       type: question
       q: "Which is the best report for a trip time?"
-      options: ["About 2.4 to 2.8 hours: the rule says 2.35 for fit walkers, and a group with packs is slower", "Exactly 2.35 hours", "Probably less", "No idea"]
+      options: ["About 2.4 to 2.8 hours", "Exactly 2.35 hours", "Probably less", "2.35 hours, give or take a minute"]
       answer: 0
-      feedback: [null, "No model gives an exact time.", "The reasons point to more.", "A model helps even if it's imperfect."]
-      explain: "A good report gives a range and says what it depends on."
+      feedback: [null, "No model gives an exact time.", "The reasons point to more.", "A minute either way claims more precision than a rule of thumb has, and packs make the group slower."]
+      explain: "The rule says 2.35 for fit walkers, and a group with packs is slower. A good report gives a range and says what it depends on."
     smaller:
-      check: { type: "question", q: "Is 'exactly 2.35 hours' a safe claim for a group with packs?", options: ["No: the rule was built for fit walkers with light loads", "Yes", "Only on flat tracks", "Only in summer"], answer: 0, explain: "The rule has no pack weight in it." }
+      check: { type: "question", q: "Is 'exactly 2.35 hours' a safe claim for a group with packs?", options: ["No: the rule is for light loads", "Yes", "Only on flat tracks", "Only in summer"], answer: 0, feedback: [null, "The rule gives one time, but it was built for fit walkers with light loads.", "Flat ground doesn't put the packs into the rule.", "The season doesn't put the packs into the rule."], explain: "The rule was built for fit walkers with light loads. It has no pack weight in it." }
   - check:
       type: number
       q: "Review: 8 km at 5 km/h plus 450 m of climb. How many hours?"
@@ -167,9 +167,9 @@ tasks:
   - check:
       type: question
       q: "Which sentence is the better report?"
-      options: ["The walk up should take about 2.75 hours for our group (the rule says 2.35 for fit walkers), so plan for about 3 hours.", "The walk takes 2.35 hours.", "The walk is long.", "The rule is wrong."]
+      options: ["About 2.75 hours for us (the rule's 2.35 is for fit walkers), so plan for 3.", "The walk takes 2.35 hours, because that is what the rule gives.", "The walk is long, so allow plenty of time.", "The rule is wrong for us, so we can't say how long it takes."]
       answer: 0
-      feedback: [null, "It hides who the rule is for.", "It gives no number.", "The rule isn't wrong, it's used outside what it was built for."]
+      feedback: [null, "It hides who the rule is for: fit walkers, not a group with packs.", "It gives no number.", "The rule isn't wrong, it's used outside what it was built for. It still gives a starting estimate."]
       explain: "A good report gives the answer, the assumption and a margin."
 ```
 

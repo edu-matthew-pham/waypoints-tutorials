@@ -87,7 +87,7 @@ tasks:
   - check:
       type: question
       q: "Shop A takes $\\tfrac{1}{3}$ off a $90 jacket. Shop B takes 30% off. Which is the better deal, and why?"
-      options: ["Shop A: $\\tfrac{1}{3}$ is about 33%, more than 30%", "Shop B: 30 is bigger than 3", "They are the same", "You cannot tell"]
+      options: ["Shop A: $\\tfrac{1}{3}$ is about 33%", "Shop B: 30 is bigger than 3", "They are the same", "You cannot tell"]
       answer: 0
       feedback: [null, "30 and 3 are different kinds of numbers. Write both as a percentage or both as fractions first.", "$\\tfrac{1}{3}$ of $90 is $30; 30% is $27.", "Write both in the same form and you can."]
       explain: "$\\tfrac{1}{3}$ of $90 = $30 off; 30% of $90 = $27 off. Writing both as percentages (33⅓% and 30%) makes the comparison immediate."
@@ -133,7 +133,7 @@ tasks:
   - check:
       type: question
       q: "You model the top with 50 × 1.4 × 0.8. What does the model assume about the 20% off?"
-      options: ["It is 20% of the marked-up price, not of $50", "It is 20% of $50", "It is 20 dollars", "It is added to the 40%"]
+      options: ["It is 20% of the marked-up price", "It is 20% of the $50 starting price", "It is 20 dollars", "It is added to the 40%"]
       answer: 0
       feedback: [null, "That would be 50 × 1.4 − 10. The model takes 20% of the new price.", "20% is a percentage, not an amount in dollars.", "That would be 50 × 1.2: percentages of different amounts do not add."]
       explain: "Writing × 0.8 after × 1.4 assumes the sale is 20% of the marked-up price. Stating assumptions like this is part of the model."

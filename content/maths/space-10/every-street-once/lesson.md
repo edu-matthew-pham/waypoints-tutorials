@@ -175,7 +175,7 @@ tasks:
   - check:
       type: question
       q: "A student draws a suburb with exactly one junction that has an odd number of streets. What's wrong?"
-      options: ["The degrees add up to twice the number of streets, so there are always an even number of odd junctions", "Nothing: the sweeper starts there and finishes anywhere", "Every suburb needs two odd junctions", "The suburb isn't connected"]
+      options: ["The number of odd junctions is always even", "Nothing: the sweeper starts there and finishes anywhere", "Every suburb needs two odd junctions", "The suburb isn't connected"]
       answer: 0
       feedback: [null, "A route that starts at the odd junction has to finish at another odd one. There isn't one.", "A suburb can have none.", "It could be connected. The count of odd junctions is the problem."]
       explain: "Every street has two ends, so the degrees add up to twice the number of streets: an even number. One odd junction would make the total odd, so it can't happen."

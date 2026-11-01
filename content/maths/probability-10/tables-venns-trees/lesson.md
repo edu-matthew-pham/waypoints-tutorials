@@ -185,10 +185,10 @@ tasks:
   - check:
       type: question
       q: "Which sentence best explains the result to a friend who tested positive?"
-      options: ["About 1 in 4 people who test positive have the condition, because the condition is rare and many people without it also test positive, so a second test is a good idea", "The test is right 9 times out of 10, so you almost certainly have it", "A positive test means you do not have it", "The test is no good because it is sometimes wrong"]
+      options: ["Only about 1 in 4 positives have it, so get a second test", "The test is right 9 times in 10, so you almost certainly have it", "The condition is rare, so a positive test means you do not have it", "The test is sometimes wrong, so the result tells you nothing"]
       answer: 0
       feedback: [null, "9 in 10 is the chance of a positive test, given the condition. It is not the chance of the condition, given a positive test.", "A positive test does raise the chance: from 2 in 100 to about 27 in 100.", "The test is useful: it raises the chance a lot. It just does not decide it."]
-      explain: "The chance rises from 2 in 100 before the test to about 27 in 100, which is a lot, but it does not decide. A good report gives the group it is given."
+      explain: "About 1 in 4 people who test positive have the condition, because the condition is rare and many people without it also test positive. The chance rises from 2 in 100 before the test to about 27 in 100, which is a lot, but it does not decide. A good report gives the group it is given."
 ```
 
 ### The table

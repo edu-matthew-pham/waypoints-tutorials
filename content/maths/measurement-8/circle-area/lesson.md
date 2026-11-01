@@ -76,10 +76,10 @@ tasks:
   - check:
       type: question
       q: "Why is the rearranged shape πr long?"
-      options: ["Half the slices' curved edges are along the bottom: half of the circumference 2πr", "Because the circle has radius r", "Because π is about 3", "Because there are n slices"]
+      options: ["Half the circumference is along the bottom", "Because the circle has radius r", "Because π is about 3", "Because there are n slices"]
       answer: 0
       feedback: [null, "The radius is the height.", "π comes from the circumference.", "The length does not depend on how many slices."]
-      explain: "The curved edges of the slices make the circumference; half is on top, half on the bottom: πr each."
+      explain: "The curved edges of the slices make the circumference; half is on top, half on the bottom. Half of 2πr is πr."
   - check:
       type: bug
       code: "working.txt#jo"
@@ -91,10 +91,10 @@ tasks:
   - check:
       type: question
       q: "A circle has radius 5 cm. Why must its area be between 50 and 100 cm²?"
-      options: ["It is more than the inside square (2r² = 50) and less than the outside square (4r² = 100)", "Because 5 × 10 = 50", "Because π is between 2 and 4 exactly", "Because the diameter is 10"]
+      options: ["It is between the inside and outside squares", "Because 5 × 10 = 50", "Because π is between 2 and 4 exactly", "Because the diameter is 10"]
       answer: 0
-      feedback: [null, "That is not the reason.", "π is about 3.14; the squares give the bounds.", "The diameter helps draw the outside square, but not alone."]
-      explain: "The outside square has side 2r (area 4r² = 100); the square on the diagonals has area 2r² = 50."
+      feedback: [null, "That multiplies the radius by the diameter, which is not an area rule.", "π is about 3.14; the squares give the bounds.", "The diameter helps draw the outside square, but not alone."]
+      explain: "The circle is more than the inside square and less than the outside square. The outside square has side 2r (area 4r² = 100); the square on the diagonals has area 2r² = 50."
 ```
 
 ### The long side

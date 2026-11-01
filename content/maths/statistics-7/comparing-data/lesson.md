@@ -74,7 +74,7 @@ tasks:
     check:
       type: question
       q: "Which describes the shape of this data?"
-      options: ["Skewed: most values are low, with a tail of a few high values", "Symmetrical about the middle", "Every value is equally common"]
+      options: ["Skewed: mostly low, with a tail of high values", "Symmetrical about the middle", "Every value is equally common"]
       answer: 0
       feedback: [null, "Most dots are bunched at the low end, with a few far to the right.", "Count the dots: 2 is much more common than 9."]
       explain: "Most students read 1 to 3 books, a few read many: the data is skewed, with a tail to the right."
@@ -89,10 +89,10 @@ tasks:
   - check:
       type: question
       q: "Which is the best comparison of Class A and Class B?"
-      options: ["The classes have similar medians (15 and 16), but Class A's scores are much less spread (range 6 against 16), so A was more consistent.", "Class B is better because it has a 22.", "Class A is better because 15 + 14 is more than 6 + 10."]
+      options: ["Medians are close, but A's range is much smaller (6 against 16)", "Class B is better because it has the highest score, 22.", "Class A is better because 15 + 14 is more than 6 + 10.", "B is more consistent: its median, 16, is higher than A's 15"]
       answer: 0
-      feedback: [null, "One score is not the class.", "That compares a few values, not the whole data."]
-      explain: "A good comparison names the centre and the spread of both, with numbers, and says what they mean."
+      feedback: [null, "One score is not the class.", "That compares a few values, not the whole data.", "The median is the centre. Consistency is about spread: compare the ranges."]
+      explain: "A good comparison names the centre and the spread of both, with numbers, and says what they mean: the medians (15 and 16) are close, but the ranges (6 and 16) are not."
 ```
 
 ### Shape, centre, spread
@@ -149,10 +149,10 @@ tasks:
   - check:
       type: question
       q: "Edge case: two sets have the same mean, 10: Set P is $9, 10, 11$ and Set Q is $0, 10, 20$. Are they alike?"
-      options: ["No: same centre, but Q is much more spread (range 20 against 2)", "Yes: same mean, same data"]
+      options: ["No: same centre, but Q is far more spread", "Yes: they have the same mean, so they match"]
       answer: 0
-      feedback: [null, "Look at the spread: 2 against 20."]
-      explain: "A centre alone hides the spread: always compare both."
+      feedback: [null, "Same mean, but look at the spread: range 2 against 20."]
+      explain: "Ranges 2 and 20: a centre alone hides the spread, so always compare both."
 ```
 
 ### Same centre, smaller spread
@@ -176,9 +176,9 @@ tasks:
   - check:
       type: question
       q: "Two bakeries' delivery times (min). Bakery X: median 25, range 10. Bakery Y: median 22, range 30. Which statement is right?"
-      options: ["Y is usually a bit faster, but X is more reliable", "X is faster and more reliable", "Y is slower and more reliable"]
+      options: ["Y is usually faster, but X is more reliable", "X is usually faster, and also more reliable", "Y is usually slower, but Y is more reliable"]
       answer: 0
-      feedback: [null, "X's median (25) is higher: slower on a typical day.", "Y's median (22) is lower: faster on a typical day."]
+      feedback: [null, "X's median (25) is higher: slower on a typical day.", "Y's median (22) is lower: faster on a typical day. Its bigger range (30) makes it less reliable."]
       explain: "Lower median: Y is faster typically. Smaller range: X is more reliable."
   - check:
       type: question

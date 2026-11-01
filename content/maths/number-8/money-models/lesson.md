@@ -93,10 +93,10 @@ tasks:
   - check:
       type: question
       q: "Someone earns $60 000. Why is their effective tax rate (14.2%) lower than their marginal rate (30%)?"
-      options: ["Most of their income is taxed at 0% or 15%; only the top part is taxed at 30%", "The marginal rate is wrong", "Effective rates are always half the marginal rate", "Because of the Medicare levy"]
+      options: ["Only the top part of the income is taxed at 30%", "The marginal rate is wrong", "Effective rates are always half the marginal rate", "Because of the Medicare levy"]
       answer: 0
       feedback: [null, "It is the rate on the last dollar: 30%.", "There is no such rule.", "The model leaves the levy out."]
-      explain: "The lower brackets pull the average down."
+      explain: "Most of their income is taxed at 0% or 15%; only the top part is taxed at 30%. The lower brackets pull the average down."
 ```
 
 ### Tax on $30 000

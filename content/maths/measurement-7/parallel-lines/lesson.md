@@ -135,7 +135,7 @@ tasks:
     check:
       type: question
       q: "The lower line is tilted by $w$, so the lines are not parallel. Are $c$ and $f$ still alternate angles?"
-      options: ["Yes: they are in alternate places, but they need not be equal", "No: alternate angles need parallel lines", "Yes, and they are still equal"]
+      options: ["Yes, but they need not be equal", "No: alternate angles need parallel lines", "Yes, and they are still equal"]
       answer: 0
       feedback: [null, "The name is about where the angles are. What parallel lines add is that they are equal.", "Look at the sizes: with w = 15°, c is 60° and f is 45°."]
       explain: "The names say where the angles are. Only when the lines are parallel are alternate (and corresponding) angles equal, and co-interior angles add to 180°."

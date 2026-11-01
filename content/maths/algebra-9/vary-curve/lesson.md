@@ -59,10 +59,10 @@ tasks:
   - check:
       type: question
       q: "What does a negative $a$ do, as in $y = -(x - 4)^2 + 1$?"
-      options: ["Flips the curve: the turning point is a peak", "Moves the curve left", "Moves the curve down 1", "Makes the curve narrower"]
+      options: ["Flips the curve upside down", "Moves the curve left", "Moves the curve down 1", "Makes the curve narrower"]
       answer: 0
       feedback: [null, "Left and right is h.", "Up and down is k.", "Narrower comes from a bigger size of a, not its sign."]
-      explain: "A negative a turns the curve upside down: a peak instead of a valley, like a thrown ball."
+      explain: "A negative a turns the curve upside down: the turning point is a peak instead of a valley, like a thrown ball."
   - check:
       type: bug
       code: "working.txt#lee"

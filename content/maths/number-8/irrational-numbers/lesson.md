@@ -129,10 +129,10 @@ tasks:
   - check:
       type: question
       q: "Is π equal to 22/7?"
-      options: ["No: 22/7 = 3.142857… repeats; π = 3.14159… does not", "Yes, exactly", "Yes, to 5 decimal places", "Only for big circles"]
+      options: ["No: 22/7 is only close to π", "Yes, exactly", "Yes, to 5 decimal places", "Only for big circles"]
       answer: 0
       feedback: [null, "22/7 is a fraction; π is not.", "They differ in the third decimal place.", "π is the same for every circle."]
-      explain: "22/7 is a close rational approximation of the irrational π."
+      explain: "22/7 = 3.142857… repeats; π = 3.14159… does not. 22/7 is a close rational approximation of the irrational π."
   - check:
       type: question
       q: "√2 × √2 = 2. What does this show?"

@@ -168,10 +168,10 @@ tasks:
   - check:
       type: question
       q: "Should the group plan to leave at 12:03 pm exactly?"
-      options: ["No: the rule is an estimate, so leave earlier to allow for a slower pace", "Yes: the rule is exact", "Yes: it is always right", "No: they should leave later"]
+      options: ["No: leave earlier to allow time", "Yes: the rule is exact", "Yes: it is always right", "No: they should leave later"]
       answer: 0
       feedback: [null, "It's an estimate.", "A rule of thumb isn't a guarantee.", "Later makes it worse."]
-      explain: "The rule says 'about'. Adding extra time keeps the group safe."
+      explain: "The rule says 'about': it is an estimate. Leaving earlier allows for a slower pace and keeps the group safe."
 ```
 
 ### Total time

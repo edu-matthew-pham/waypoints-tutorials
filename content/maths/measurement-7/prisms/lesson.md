@@ -94,10 +94,10 @@ tasks:
   - check:
       type: question
       q: "How do you find a prism's cross-section?"
-      options: ["It is the face that is the same shape all the way along, like a slice of bread", "It is always the face it stands on", "It is the biggest face"]
+      options: ["The shape that is the same all the way along", "It is always the face it stands on", "It is the biggest face"]
       answer: 0
       feedback: [null, "A tent stands on a rectangle, but its cross-section is the triangle end.", "The biggest face of a tent is a sloping rectangle; the slices are triangles."]
-      explain: "Cut straight across anywhere: the cross-section is what every slice looks like."
+      explain: "Cut straight across anywhere, like slicing bread: the cross-section is what every slice looks like."
 ```
 
 ### Any prism

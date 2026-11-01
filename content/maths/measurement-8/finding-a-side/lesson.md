@@ -173,10 +173,10 @@ tasks:
   - check:
       type: question
       q: "Edge case: Jo finds a shorter side of 13 cm in a triangle whose hypotenuse is 12 cm. What does that tell her?"
-      options: ["She made a mistake: a shorter side can't be longer than the hypotenuse", "The triangle is very thin", "She should round to 12 cm"]
+      options: ["Her answer must be wrong", "The triangle is very thin", "She should round to 12 cm"]
       answer: 0
       feedback: [null, "No right-angled triangle has a side longer than its hypotenuse.", "Rounding does not fix a method slip: she probably added instead of subtracting."]
-      explain: "The hypotenuse is always the longest side, so she probably added the squares instead of subtracting."
+      explain: "A shorter side can't be longer than the hypotenuse, which is always the longest side, so she probably added the squares instead of subtracting."
 ```
 
 ### On the board
@@ -219,7 +219,7 @@ tasks:
         - ["2", "Subtract the squares, not the lengths."]
       explain: "100 − 64 = 36, √36 = 6 m."
     smaller:
-      check: { type: "question", q: "Which length is the hypotenuse here?", options: ["The 10 m ladder", "The 8 m up the wall", "The distance from the wall"], answer: 0, explain: "The right angle is where the wall meets the ground, and the ladder is opposite it. So the ladder is the hypotenuse." }
+      check: { type: "question", q: "Which length is the hypotenuse here?", options: ["The 10 m ladder", "The 8 m up the wall", "The distance from the wall"], answer: 0, feedback: [null, "The wall touches the right angle, so the 8 m is a shorter side.", "The ground touches the right angle, so that distance is a shorter side."], explain: "The right angle is where the wall meets the ground, and the ladder is opposite it. So the ladder is the hypotenuse." }
   - check:
       type: answer
       q: "Review: the sides at the right angle are 9 cm and 12 cm. Hypotenuse, in cm?"
@@ -267,7 +267,7 @@ tasks:
       type: question
       q: "The gutter is 3.9 m up. Set up by the 1-in-4 rule, does the 4.1 m ladder reach it?"
       options:
-        - "Yes: 3.98 m is above 3.9 m, and 1 m out for about 4 m up fits the rule"
+        - "Yes: 3.98 m is above 3.9 m"
         - "No: 3.98 m is below 3.9 m"
         - "Only if the foot is moved closer than 1 m"
         - "You can't tell without the angle"

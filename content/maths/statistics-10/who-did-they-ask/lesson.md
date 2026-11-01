@@ -53,7 +53,7 @@ tasks:
       type: question
       q: "A shopping centre asks 300 people leaving its café whether the town needs more cafés, and 81% say yes. What is the biggest problem with the claim 'the town wants more cafés'?"
       options:
-        - "The people asked were café customers picked for being easy to reach, so people who don't use cafés are missing"
+        - "Only café customers were asked, so non-café-goers are missing"
         - "300 is a small number, so the claim is always wrong"
         - "81% is too high to be true"
         - "The centre asked people outside"
@@ -63,12 +63,12 @@ tasks:
         - "A small random sample can still be fair. The trouble is who was asked."
         - "A high percentage isn't a fault in itself. Look at who the 81% are."
         - "Where they stood isn't the fault. It's who was standing there."
-      explain: "The sample was chosen for being convenient and it is full of café-goers. It can say what café customers think, but not what the town thinks."
+      explain: "The people asked were picked for being easy to reach, so the sample is full of café-goers. It can say what café customers think, but not what the town thinks."
   - check:
       type: question
       q: "How were the club poll's voters chosen?"
       options:
-        - "They chose themselves: it was a voluntary poll on the club's site"
+        - "They chose themselves to vote"
         - "A random draw from the electoral roll"
         - "Every tenth person in the city"
         - "One person from each suburb"
@@ -78,7 +78,7 @@ tasks:
         - "That's how the council chose its 400."
         - "That would be a systematic sample."
         - "That would be a stratified sample."
-      explain: "A voluntary poll lets the people who care most answer. They can be very different from everyone else."
+      explain: "It was a voluntary poll on the club's site, so the voters chose themselves. A voluntary poll lets the people who care most answer. They can be very different from everyone else."
   - check:
       type: bug
       code: "working.txt#lee"
@@ -151,7 +151,7 @@ tasks:
       type: question
       q: "The club also posts its poll on the council's website, and 80 000 people vote. Is it a fair picture of the city now?"
       options:
-        - "No: people still chose themselves to vote, and the fans are likely still the keenest"
+        - "No: voters still chose themselves"
         - "Yes: more votes always make a poll fair"
         - "Yes: the council's site makes it official"
         - "No, because 80 000 is too many"
@@ -161,12 +161,12 @@ tasks:
         - "More of the same kind of voter doesn't fix who is missing."
         - "Where it is posted doesn't change who chose to vote."
         - "A large number isn't a fault. Who chose to vote is."
-      explain: "More places to vote still leaves it voluntary. What makes a sample fair is how people are picked, not how many."
+      explain: "More places to vote still leaves it voluntary, and the fans are likely still the keenest to vote. What makes a sample fair is how people are picked, not how many."
   - check:
       type: question
       q: "Edge case: the council randomly picks only 30 residents. Is that sample biased, reliable, both or neither?"
       options:
-        - "Not biased, but not very reliable, because 30 is small and a different 30 could give a different answer"
+        - "Not biased, but not very reliable, as 30 is small"
         - "Biased, because it is small"
         - "Perfectly reliable, because it is random"
         - "Reliable, because it is small"
@@ -248,7 +248,7 @@ tasks:
       type: question
       q: "The club says '92% of the city backs a bigger stadium.' Which reply is best supported?"
       options:
-        - "The 92% comes from people who chose to vote on the club's site, so it speaks for them, not for the city"
+        - "The 92% speaks for the club's own voters, not the city"
         - "The club must be right because 50 000 is a lot"
         - "The council's survey is wrong because only 400 people were asked"
         - "Neither result means anything"
@@ -258,7 +258,7 @@ tasks:
         - "A lot of self-chosen voters is still self-chosen."
         - "A small sample picked at random can be fair."
         - "The random survey is worth using, with the limits that come with 400 people."
-      explain: "The poll tells you about its voters. The random survey is a fair slice of the city, so it says more about the city, even though it is much smaller."
+      explain: "The 92% comes from people who chose to vote on the club's site. The poll tells you about its voters. The random survey is a fair slice of the city, so it says more about the city, even though it is much smaller."
 ```
 
 ### The council's result

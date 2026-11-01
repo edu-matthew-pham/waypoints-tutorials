@@ -93,10 +93,10 @@ tasks:
   - check:
       type: question
       q: "How can you tell that a polygon is concave?"
-      options: ["At least one corner points in, with an angle more than 180°", "It has more than six sides", "Its sides are not all equal", "It has a right angle"]
+      options: ["A corner points in, past 180°", "It has more than six sides", "Its sides are not all equal", "It has a right angle"]
       answer: 0
       feedback: [null, "A regular octagon has eight sides and is convex.", "That makes it irregular, not concave.", "A square has right angles and is convex."]
-      explain: "A concave polygon has a corner that points in: a reflex angle, over 180°."
+      explain: "A concave polygon has at least one corner that points in: a reflex angle, more than 180°."
 ```
 
 ### Count, then check

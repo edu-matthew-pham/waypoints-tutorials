@@ -98,7 +98,7 @@ tasks:
   - hint: ["It is a filling question.", "Volume."]
     check: { type: question, q: "You want to know how much a can holds. Volume or surface area?", options: ["Volume", "Surface area", "Both", "Neither"], answer: 0, feedback: [null, "Holding means the space inside.", "Only the inside space counts.", "Holding is about the space inside."], explain: "How much it holds is the volume, in cubic units." }
   - hint: ["Real cans must be stacked, held and printed.", "Height about the width is best for metal; real cans are often taller."]
-    check: { type: question, q: "The least-metal can has its height about equal to its width. Real drink cans are taller. Why might that be?", options: ["Taller cans are easier to hold and stack, so metal isn't the only thing that matters", "The calculation is wrong", "Taller cans use less metal", "Real cans are the same shape"], answer: 0, feedback: [null, "The calculation is fine: the design has other goals.", "That is the opposite of what the table shows.", "They are taller than the minimum."], explain: "A model for one goal (least metal) ignores others: grip, stacking, labels and cost." }
+    check: { type: question, q: "The least-metal can has its height about equal to its width. Real drink cans are taller. Why might that be?", options: ["Metal isn't the only thing that matters", "The calculation is wrong", "Taller cans use less metal", "Real cans are the same shape"], answer: 0, feedback: [null, "The calculation is fine: the design has other goals.", "That is the opposite of what the table shows.", "They are taller than the minimum."], explain: "A model for one goal (least metal) ignores others: taller cans are easier to hold and stack, and labels and cost matter too." }
 ```
 
 ### Paint a box
@@ -168,7 +168,7 @@ tasks:
   - check:
       type: question
       q: "Why is a table of three radii not enough to be sure which is best?"
-      options: ["The best radius could be between the ones tried", "Tables are always wrong", "Only one radius is allowed", "Surface area doesn't matter"]
+      options: ["The best could be between them", "Tables are always wrong", "Only one radius is allowed", "Surface area doesn't matter"]
       answer: 0
       feedback: [null, "A table is a fair start.", "Any radius could be used.", "It's the goal of the problem."]
       explain: "The true best is near r = 3.9, between 3 and 4. A finer table would show it."

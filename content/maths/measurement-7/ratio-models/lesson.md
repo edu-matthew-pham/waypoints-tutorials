@@ -89,9 +89,9 @@ tasks:
   - check:
       type: question
       q: "Orange paint is red and yellow in the ratio 2 : 3. You need 10 L. What should you do first?"
-      options: ["Say what is known (ratio, total 10 L) and what is unknown (litres of red and yellow)", "Multiply 2 × 3 × 10", "Divide 10 by 2", "Start mixing and see"]
+      options: ["Say what is known and what is unknown", "Multiply 2 × 3 × 10", "Divide 10 by 2", "Find 2/3 of 10 L"]
       answer: 0
-      feedback: [null, "That has no meaning in the situation. Decide what is known and unknown first.", "That gives 5, which is not an amount of anything yet.", "Mixing without a plan wastes paint."]
+      feedback: [null, "That has no meaning in the situation. Decide what is known and unknown first.", "That gives 5, which is not an amount of anything yet.", "2 : 3 is not the fraction 2/3: red is 2 parts out of 5. Sort out what is known first."]
       explain: "Known: ratio 2 : 3 and total 10 L. Unknown: litres of each. Relationship: 5 equal parts of 2 L, so red is 4 L and yellow 6 L."
 ```
 

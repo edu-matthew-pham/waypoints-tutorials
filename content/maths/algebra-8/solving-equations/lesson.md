@@ -155,10 +155,10 @@ tasks:
   - check:
       type: question
       q: "Edge case: solve $2x + 3 = 2x + 5$. What happens?"
-      options: ["No value works: taking 2x away leaves 3 = 5, which is never true", "x = 1", "x = 0"]
+      options: ["No value works", "x = 1", "x = 0"]
       answer: 0
       feedback: [null, "Check: 2 + 3 = 5 but 2 + 5 = 7.", "Check: 3 is not 5."]
-      explain: "Taking 2x from both sides leaves 3 = 5: false for every x, so there is no solution. On a graph, the two lines are parallel and never meet."
+      explain: "Taking 2x from both sides leaves 3 = 5, which is never true: false for every x, so there is no solution. On a graph, the two lines are parallel and never meet."
 ```
 
 ### A bracket

@@ -86,10 +86,10 @@ tasks:
   - check:
       type: question
       q: "What stays the same when a shape is translated?"
-      options: ["Its size, its shape and the way it faces", "Only its size", "Its position", "Its coordinates"]
+      options: ["Its size, shape and direction", "Only its size", "Its position", "Its coordinates"]
       answer: 0
       feedback: [null, "The shape and direction stay the same too.", "The position is what changes.", "Every coordinate changes."]
-      explain: "A translation only changes the position. The image is congruent to the object."
+      explain: "Its size, its shape and the way it faces all stay the same: a translation only changes the position. The image is congruent to the object."
 ```
 
 ### Where does B land?

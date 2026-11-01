@@ -150,10 +150,10 @@ tasks:
     check:
       type: question
       q: "If the class must spend less than 120 dollars, the inequality is $24p + 12d < 120$. Is the plan $(3, 4)$ allowed?"
-      options: ["No: 72 + 48 = 120, and 120 < 120 is false. It sits on the dashed line", "Yes: 72 + 48 is 120, which fits", "Yes: (3, 4) is below the line"]
+      options: ["No: it sits on the dashed line", "Yes: 72 + 48 is 120, which fits", "Yes: (3, 4) is below the line"]
       answer: 0
       feedback: [null, "That is for ≤. This time the limit is strict.", "Points on the line are not below it."]
-      explain: "72 + 48 = 120. With <, spending exactly 120 dollars is not allowed: the line is dashed and (3, 4) is on it."
+      explain: "72 + 48 = 120, and 120 < 120 is false. With <, spending exactly 120 dollars is not allowed: the line is dashed and (3, 4) is on it."
   - starter: "budget.yml#prices"
     hint: ["Pizzas cost 24 dollars and packs 12 dollars, but now the class has 144 dollars.", "The region shown is $d \\le 12 - 2p$: the same as $24p + 12d \\le 144$."]
     check: { type: board, text: "The class has 144 dollars now. Drag $P$ to the plan with the most packs that still fits when they buy 3 pizzas.", when: "x(P) = 3 and y(P) = 6", explain: "3 pizzas cost 72, leaving 72, which is 6 packs. The point (3, 6) is on the line d = 12 − 2p." }
@@ -168,10 +168,10 @@ tasks:
   - check:
       type: question
       q: "Edge case: the class can only afford $24p + 12d \\le 120$ with whole pizzas and whole packs. Is the plan $(1.5, 6)$ possible?"
-      options: ["No: you cannot buy half a pizza, even though it is inside the shaded region", "Yes: it is in the shaded region", "Yes: 1.5 pizzas costs 36 dollars"]
+      options: ["No: you cannot buy half a pizza", "Yes: it is in the shaded region", "Yes: 1.5 pizzas costs 36 dollars"]
       answer: 0
       feedback: [null, "The region holds every point, including ones the shop cannot sell.", "It costs 36 + 72 = 108, which fits, but you cannot buy half a pizza."]
-      explain: "The whole shaded region includes points between the whole numbers. Only points with whole p and d are real plans: the region is where to look, not the final answer."
+      explain: "(1.5, 6) is inside the shaded region, but the region includes points between the whole numbers. Only points with whole p and d are real plans: the region is where to look, not the final answer."
 ```
 
 ### On the line
@@ -260,10 +260,10 @@ tasks:
   - check:
       type: question
       q: "Is the point $(4, 3)$ a good plan for this class?"
-      options: ["No: it is outside the region. 4 pizzas and 3 packs cost 96 + 36 = 132", "Yes: it has 4 pizzas for 24 students", "Yes: 3 packs is more than 2"]
+      options: ["No: it costs 132 dollars", "Yes: it has 4 pizzas for 24 students", "Yes: 3 packs is more than 2"]
       answer: 0
       feedback: [null, "It feeds the class, but it costs 132 and the budget is 120.", "More packs is not allowed: the cost is over 120."]
-      explain: "The region at p = 4 stops at d = 2. (4, 3) costs 132 dollars, over budget."
+      explain: "4 pizzas and 3 packs cost 96 + 36 = 132 dollars, over budget, so (4, 3) is outside the region: at p = 4 it stops at d = 2."
 ```
 
 ### Pick a plan

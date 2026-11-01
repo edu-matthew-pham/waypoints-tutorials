@@ -74,10 +74,10 @@ tasks:
   - check:
       type: question
       q: "The distance a car travels while the driver reacts grows in step with speed. The braking distance grows with the square of the speed. What shape is the total stopping distance?"
-      options: ["Curved upward: a mix of a straight part and a squared part", "A straight line", "A curve that bends downward", "A flat line"]
+      options: ["A curve that bends upward", "A straight line", "A curve that bends downward", "A flat line"]
       answer: 0
       feedback: [null, "The squared part makes it curve.", "A squared term curves upward, not downward.", "The distance changes with speed."]
-      explain: "Reaction distance is linear and braking distance is quadratic, so the total curves upward."
+      explain: "Reaction distance is linear and braking distance is quadratic. A mix of a straight part and a squared part curves upward."
   - check:
       type: bug
       code: "working.txt#pat"
@@ -121,9 +121,9 @@ tasks:
   - hint: ["Use the published figures for 50 and 60 km/h.", "56 − 37."]
     check: { type: number, q: "A council cuts a speed limit from 60 to 50 km/h. How many metres shorter is the typical stopping distance?", answer: 19, explain: "56 − 37 = 19 m. A 10 km/h cut saves a lot more at the high end." }
   - hint: ["A line through the last two points goes up 19 per 10 km/h.", "The data is curving upward."]
-    check: { type: question, q: "A line through the last two points (50 and 60 km/h) predicts 75 m at 70 km/h. Is that likely to be a safe estimate?", options: ["No: the real distance probably grows faster, so it would be an underestimate", "Yes: a line is always safe", "Yes: the data is already linear", "No: it's an overestimate"], answer: 0, feedback: [null, "The data curves upward, so a line falls short further out.", "The first differences keep growing.", "The data is curving upward, so the line falls below it."], explain: "The first differences have been growing, so the next one is likely bigger than 19. The line would underestimate." }
+    check: { type: question, q: "A line through the last two points (50 and 60 km/h) predicts 75 m at 70 km/h. Is that likely to be a safe estimate?", options: ["No: it would be an underestimate", "Yes: a line is always safe", "Yes: the data is already linear", "No: it's an overestimate"], answer: 0, feedback: [null, "The data curves upward, so a line falls short further out.", "The first differences keep growing.", "The data is curving upward, so the line falls below it."], explain: "The first differences have been growing, so the next one is likely bigger than 19: the real distance probably grows faster, so the line would underestimate." }
   - hint: ["At 0 km/h the car is already stopped.", "What does the line y = 9x − 8 give at x = 0?"]
-    check: { type: question, q: "Edge case: the line $y = 9x - 8$ gives $-8$ at $x = 0$ (0 km/h). What does that tell you?", options: ["The line isn't a good model near 0: a stopped car needs 0 m", "A stopped car needs −8 m to stop", "The line is exact", "The speed can be negative"], answer: 0, feedback: [null, "A distance can't be negative.", "An impossible answer shows the model has limits.", "Speed isn't negative here."], explain: "A model fitted to speeds from 30 to 60 km/h is only reliable in that range." }
+    check: { type: question, q: "Edge case: the line $y = 9x - 8$ gives $-8$ at $x = 0$ (0 km/h). What does that tell you?", options: ["The line isn't a good model near 0", "A stopped car needs −8 m to stop", "The line is exact", "The speed can be negative"], answer: 0, feedback: [null, "A distance can't be negative.", "An impossible answer shows the model has limits.", "Speed isn't negative here."], explain: "A stopped car needs 0 m. A model fitted to speeds from 30 to 60 km/h is only reliable in that range." }
 ```
 
 ### Cutting the limit
@@ -155,10 +155,10 @@ tasks:
   - check:
       type: question
       q: "A table gives $y = 3, 4, 7, 13$ for $x = 1, 2, 3, 4$. Which is the best description?"
-      options: ["Curving upward: neither exact, but a curve fits better than a line", "A perfect line", "A perfect quadratic", "No pattern at all"]
+      options: ["Curving upward, not exact", "A perfect line", "A perfect quadratic", "No pattern at all"]
       answer: 0
       feedback: [null, "The first differences are 1, 3, 6: not equal.", "The second differences are 2 and 3: not equal.", "The values grow faster and faster: a curve describes that better than a line."]
-      explain: "First differences 1, 3, 6 and second differences 2, 3: not exact, but clearly curving upward."
+      explain: "First differences 1, 3, 6 and second differences 2, 3: neither a perfect line nor a perfect quadratic, but clearly curving upward, so a curve fits better than a line."
   - check:
       type: number
       q: "Review: solve $x^2 - 5x + 4 = 0$. What is the larger solution?"

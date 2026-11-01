@@ -104,7 +104,7 @@ tasks:
   - hint: ["Put x = 6 into the model.", "6² + 6 + 7."]
     check: { type: number, q: "What stopping distance does the model give at 60 km/h ($x = 6$)? The published figure is 56 m.", answer: 49, explain: "36 + 6 + 7 = 49 m. The model is 7 m short of the real figure." }
   - hint: ["Compare the 7 m miss at 60 km/h with 70 km/h.", "The data curves faster than the model."]
-    check: { type: question, q: "The model is 7 m short at 60 km/h. Is the 67 m it gives for 70 km/h more or less trustworthy?", options: ["Less: it is further from the three figures it was fitted to", "More: bigger numbers are more accurate", "The same: a model is exact", "More: it is a quadratic"], answer: 0, feedback: [null, "The further from the data, the less reliable.", "The model already missed at 60 km/h.", "A fitted model is only an estimate."], explain: "The model was fitted to 30, 40 and 50 km/h. The miss grows the further out you go, so treat 67 m as too low." }
+    check: { type: question, q: "The model is 7 m short at 60 km/h. Is the 67 m it gives for 70 km/h more or less trustworthy?", options: ["Less: it is further from the data", "More: bigger numbers are more accurate", "The same: a model is exact", "More: it is a quadratic"], answer: 0, feedback: [null, "The further from the data, the less reliable.", "The model already missed at 60 km/h.", "A fitted model is only an estimate."], explain: "The model was fitted to the three figures for 30, 40 and 50 km/h; 70 km/h is further from them. The miss grows the further out you go, so treat 67 m as too low." }
 ```
 
 ### Another distance
@@ -127,10 +127,10 @@ tasks:
   - check:
       type: question
       q: "A ball's height is $h = 20t - 5t^2$ metres. Solving $h = 15$ gives $t = 1$ and $t = 3$. How do you report this?"
-      options: ["Both are real: the ball is at 15 m going up and coming down", "Only t = 1", "Only t = 3", "Neither"]
+      options: ["Both: up, then down", "Only t = 1", "Only t = 3", "Neither"]
       answer: 0
       feedback: [null, "It is also at 15 m on the way down.", "It is also at 15 m on the way up.", "Both times are real."]
-      explain: "Here both answers fit the situation. The check is whether each makes sense, not always to throw one out."
+      explain: "The ball is at 15 m going up (t = 1) and coming down (t = 3), so both answers fit the situation. The check is whether each makes sense, not always to throw one out."
     smaller:
       check: { type: "number", q: "What is $20 \\times 1 - 5 \\times 1^2$?", answer: 15, explain: "20 − 5 = 15." }
   - check:
@@ -175,10 +175,10 @@ tasks:
   - check:
       type: question
       q: "The model is 7 m short at 60 km/h. What should the council do with its answer for 70 km/h?"
-      options: ["Treat 67 m as the least it could be, and check with real data", "Use 67 m exactly", "Ignore the model entirely", "Use 49 m"]
+      options: ["Treat 67 m as a minimum", "Use 67 m exactly", "Ignore the model entirely", "Use 49 m"]
       answer: 0
       feedback: [null, "The model under-estimates further out.", "The model works near the data it was fitted to.", "49 m is the model's value at 60 km/h."]
-      explain: "A model is a tool. State the answer, say how far it is trusted, and check with real data."
+      explain: "The model is short at 60 km/h, so 67 m is the least it could be. A model is a tool: state the answer, say how far it is trusted, and check with real data."
 ```
 
 ### Find the speed

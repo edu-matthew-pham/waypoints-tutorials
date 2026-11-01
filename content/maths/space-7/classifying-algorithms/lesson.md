@@ -91,10 +91,10 @@ tasks:
   - check:
       type: question
       q: "How can you fix the one-question triangle algorithm?"
-      options: ["Ask 'Are all three sides equal?' first, then 'Are two sides equal?'", "Ask 'Are two sides equal?' twice", "Remove the scalene answer", "Ask about angles instead"]
+      options: ["Ask 'All three sides equal?' first", "Ask 'Are two sides equal?' twice", "Remove the scalene answer", "Ask about angles instead"]
       answer: 0
       feedback: [null, "Asking twice changes nothing.", "Then a scalene triangle has nowhere to go.", "Angles can work, but the one-question problem remains."]
-      explain: "Test the most specific class first. An equilateral triangle then gets its own name before the wider question is asked."
+      explain: "Ask 'Are all three sides equal?' first, then 'Are two sides equal?'. Test the most specific class first. An equilateral triangle then gets its own name before the wider question is asked."
   - check:
       type: bug
       code: "working.txt#pia"
@@ -106,10 +106,10 @@ tasks:
   - check:
       type: question
       q: "How should you test a classification algorithm?"
-      options: ["Run it on at least one shape of every class and check each name", "Run it on one shape and check the name", "Read it through once", "Count its steps"]
+      options: ["Run it on a shape of every class", "Run it on one shape and check the name", "Read it through once", "Count its steps"]
       answer: 0
       feedback: [null, "One shape can hide a missing case.", "An error in the order only shows when it is run.", "A short algorithm can still be wrong."]
-      explain: "One example of every class shows missing branches and wrong orders."
+      explain: "Run it on at least one shape of every class and check each name: one example of every class shows missing branches and wrong orders."
 ```
 
 ### Fix the algorithm
@@ -142,10 +142,10 @@ tasks:
   - check:
       type: question
       q: "A kite (two pairs of equal neighbouring sides, no parallel sides) is put through the quadrilateral algorithm. What happens?"
-      options: ["It is called a trapezium, which is wrong: the algorithm has no kite branch", "It is called a kite", "The algorithm stops with no answer", "It is called a rhombus"]
+      options: ["It is wrongly called a trapezium", "It is called a kite", "The algorithm stops with no answer", "It is called a rhombus"]
       answer: 0
       feedback: [null, "The algorithm has no kite name.", "Every path ends in a name.", "A kite does not have four equal sides in general."]
-      explain: "It answers 'no' to the first questions and ends at trapezium. An algorithm only works for the cases it was designed for: add a branch for kites."
+      explain: "The algorithm has no kite branch. It answers 'no' to the first questions and ends at trapezium, which is wrong. An algorithm only works for the cases it was designed for: add a branch for kites."
 ```
 
 ### Order the steps
@@ -175,7 +175,7 @@ tasks:
   - check:
       type: question
       q: "A rhombus (four equal sides, angles 60° and 120°) goes through the quadrilateral algorithm. Which answers does it give, in order?"
-      options: ["Yes (four equal sides), then No (not all right angles)", "No, then Yes", "Yes, then Yes", "No, then No"]
+      options: ["Yes, then No", "No, then Yes", "Yes, then Yes", "No, then No"]
       answer: 0
       feedback: [null, "A rhombus has four equal sides.", "Its angles are not all right angles.", "It has four equal sides."]
       explain: "Four equal sides: yes. All right angles: no. So it is a rhombus."
@@ -225,10 +225,10 @@ tasks:
   - check:
       type: question
       q: "How should the key be fixed?"
-      options: ["Ask one more question before naming the fairy-wren, and add 'not in this key' as an answer", "Put the questions in a different order", "Leave the myna out: it is not one of the five birds", "Ask about the beak first"]
+      options: ["Add a question and a 'not in this key' answer", "Put the questions in a different order", "Leave the myna out: it is not one of the five birds", "Ask about the beak first"]
       answer: 0
       feedback: [null, "Whatever the order, some bird still reaches the last 'no' and gets a name it may not deserve.", "Bird-watchers will meet mynas. A key has to say when a bird is not in it.", "The trouble is not the first question; it is the last 'no'."]
-      explain: "Every path must end in a right answer, and 'not in this key' is a right answer. For example, ask 'Bright blue on its head?' before naming a fairy-wren."
+      explain: "Ask one more question before naming the fairy-wren, and add 'not in this key' as an answer. Every path must end in a right answer, and 'not in this key' is a right answer. For example, ask 'Bright blue on its head?' before naming a fairy-wren."
   - hint: ["One box for each question. Draw an arrow out for yes and another for no.", "Write her answer next to each question as you go."]
     check:
       type: reasoning

@@ -67,6 +67,7 @@ tasks:
       q: "Which one is an equation?"
       options: ["$2x + 3$", "$5x$", "$2x + 3 = 11$", "$x + 7 - 2$"]
       answer: 2
+      feedback: ["This is an expression: it has no = sign, so it does not say two things are equal.", "This is an expression: it has a value but no = sign.", null, "This is an expression: no = sign, even though it has several parts."]
       explain: "An equation has an = sign: it says two things are equal. The others are expressions: they have a value, but they do not say that anything is equal."
 ```
 
@@ -107,9 +108,10 @@ tasks:
     check:
       type: question
       q: "Can you balance $2x = 7$ with a whole number?"
-      options: ["Yes, with $x = 3$", "Yes, with $x = 4$", "No: $2x$ is always even when $x$ is whole, and 7 is odd"]
+      options: ["Yes, with $x = 3$", "Yes, with $x = 4$", "No whole number works"]
       answer: 2
-      explain: "x = 3 gives 6 and x = 4 gives 8, so 7 is skipped. The solution is x = 3.5, which is not a whole number."
+      feedback: ["2 × 3 = 6, not 7: the scale is one block short.", "2 × 4 = 8, not 7: the scale is one block over.", null]
+      explain: "x = 3 gives 6 and x = 4 gives 8, so 7 is skipped: 2x is always even when x is whole, and 7 is odd. The solution is x = 3.5, which is not a whole number."
 ```
 
 ### Four bags
@@ -152,8 +154,9 @@ tasks:
       options:
         - "Yes: both sides are 9"
         - "No: the left side is 9 and the right side is 10"
-        - "No: the left side is 42 and the right side is 34"
+        - "No: the left side is 43 and the right side is 36"
       answer: 1
+      feedback: ["The left side is 9, but the right side is 3 × 2 + 4 = 10. Work out both sides.", null, "It looks like 4x became 42 and 3x became 32. 4x means 4 × x, so 4 × 2 = 8."]
       explain: "4 × 2 + 1 = 9 and 3 × 2 + 4 = 10. The sides are different, so x = 2 is not a solution. (x = 3 is: both sides are 13.)"
 ```
 

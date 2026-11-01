@@ -76,11 +76,12 @@ tasks:
       type: question
       q: "Zoe starts with \"Let $n$ be the cost\" for tickets that cost 9 dollars each. Why is that not a good start?"
       options:
-        - "The cost changes with the number of tickets, so the letter should stand for the number of tickets"
+        - "The letter should stand for the number of tickets"
         - "A letter can never stand for a cost"
         - "9 should be the letter"
       answer: 0
-      explain: "The cost depends on how many tickets there are. Let n be the number of tickets, then the cost is 9n."
+      feedback: [null, "A letter can stand for a cost when the cost is what changes. Here the cost depends on the number of tickets.", "9 is the same for every ticket, so it stays a number. The letter is for what changes."]
+      explain: "The cost changes with the number of tickets, so the cost is not the thing to choose. Let n be the number of tickets, then the cost is 9n."
   - check:
       type: bug
       code: "working.txt#pia"
@@ -191,6 +192,7 @@ tasks:
       q: "Cupcakes cost 3 dollars each. What should the letter $c$ stand for in the expression $3c$ for the total cost?"
       options: ["The number of cupcakes", "Cupcakes", "The cost"]
       answer: 0
+      feedback: [null, "A letter stands for a number, not a thing. 3c means 3 × (how many cupcakes).", "The cost is 3c, the whole expression. c is how many cupcakes."]
       explain: "c is a number: how many cupcakes. 3c is then 3 dollars times that number."
   - check:
       type: answer

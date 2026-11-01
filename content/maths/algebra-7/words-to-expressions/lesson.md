@@ -79,6 +79,7 @@ tasks:
       q: "A number $n$ is divided by 4. Which expression is that?"
       options: ["$\\frac{n}{4}$", "$\\frac{4}{n}$", "$4n$"]
       answer: 0
+      feedback: [null, "Upside down: 4/n is 4 ÷ n. The number being divided goes on top.", "4n is n × 4, not n ÷ 4."]
       explain: "n ÷ 4 puts n on top: n/4. Check with n = 20: 20 ÷ 4 = 5. 4/n would be 4 ÷ 20."
   - check:
       type: bug

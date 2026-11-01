@@ -86,7 +86,7 @@ tasks:
   - check:
       type: question
       q: "Why do the three torn corners always make a straight line?"
-      options: ["Because the angles add to $180°$, and a straight line is $180°$", "Because every triangle has a $90°$ angle", "Because the corners are all the same size"]
+      options: ["They add to $180°$, the same as a straight line", "Because every triangle has a $90°$ angle", "Because the corners are all the same size"]
       answer: 0
       feedback: [null, "Try the board: many triangles have no right angle.", "Look at the torn pieces: they are often different sizes."]
       explain: "Side by side at one point, the three angles fill a straight line exactly. Angles on a straight line add to 180°, so the triangle's angles do too."
@@ -138,7 +138,7 @@ tasks:
   - check:
       type: question
       q: "Edge case: can a triangle have two right angles?"
-      options: ["No: two right angles already make $180°$, leaving $0°$ for the third", "Yes, if it is big enough", "Yes, if the third angle is very small"]
+      options: ["No: that would leave $0°$ for the third", "Yes, if it is big enough", "Yes, if the third angle is very small"]
       answer: 0
       feedback: [null, "Size does not change the angles. Add the two right angles: what is left for the third?", "The third angle would have to be 0°. Try it on the board: the sides would never meet."]
       explain: "90° + 90° = 180°, so the third angle would be 0°: the two sides would be parallel and never meet."

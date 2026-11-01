@@ -94,7 +94,7 @@ tasks:
   - check:
       type: question
       q: "Two triangles both have angles of 50°, 60° and 70°. Are they congruent?"
-      options: ["Not necessarily: they are the same shape but can be different sizes", "Yes: all three angles match", "Yes, by ASA", "No, never"]
+      options: ["Not necessarily: sizes can differ", "Yes: all three angles match", "Yes, by ASA", "No, never"]
       answer: 0
       feedback: [null, "Matching angles fix the shape, not the size.", "ASA needs a side too.", "They could be congruent if a side matches as well."]
       explain: "Equal angles make them similar (same shape). A matching side is needed for congruence."
@@ -172,10 +172,10 @@ tasks:
   - check:
       type: question
       q: "Both triangles have sides 9 cm and 6 cm, and a 35° angle opposite the 6 cm side (not between the two sides). Must they be congruent?"
-      options: ["No: SSA is not a congruence test", "Yes, by SAS", "Yes, by SSS", "Yes, by RHS"]
+      options: ["Not necessarily (SSA)", "Yes, by SAS", "Yes, by SSS", "Yes, by RHS"]
       answer: 0
       feedback: [null, "The angle is not between the sides.", "Only two sides are given.", "No right angle is given."]
-      explain: "Two sides and a non-included angle can make two different triangles."
+      explain: "SSA is not a congruence test: two sides and a non-included angle can make two different triangles."
   - check:
       type: number
       q: "Review: a triangle has angles of 47° and 68°. What is the third angle, in degrees?"

@@ -172,9 +172,9 @@ tasks:
   - check:
       type: question
       q: "Which names fit a square?"
-      options: ["Square, rectangle, rhombus, parallelogram, trapezium and kite", "Only square", "Square and rectangle only", "Square and rhombus only"]
+      options: ["Square, rectangle, rhombus, parallelogram, trapezium and kite", "Only square", "Square, rectangle, rhombus and parallelogram", "Square and rhombus only"]
       answer: 0
-      feedback: [null, "A square has every property on the rectangle's and the rhombus's lists.", "It also has the rectangle's and the rhombus's properties.", "It has the rhombus's four equal sides too."]
+      feedback: [null, "A square has every property on the rectangle's and the rhombus's lists, so it has those names too.", "A square also has at least one pair of parallel sides (trapezium) and two pairs of equal neighbouring sides (kite).", "A square has four right angles too, so it is a rectangle, and every family above it as well."]
       explain: "A square has all these properties, so it belongs to all these families."
   - check:
       type: answer

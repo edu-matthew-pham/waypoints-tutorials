@@ -79,15 +79,15 @@ tasks:
     check:
       type: question
       q: "Which description of the sleep and reaction time plot is best?"
-      options: ["Negative, moderate, roughly linear: more sleep tends to go with a faster reaction, with plenty of scatter", "Positive, strong and linear", "Negative, strong and not linear", "No association"]
+      options: ["Negative, moderate and roughly linear", "Positive, strong and linear", "Negative, strong and not linear", "No association"]
       answer: 0
       feedback: [null, "The dots go down from left to right, so the direction is negative. They are also fairly spread out, not strong.", "The dots are not tight, so not strong, and a straight line suits them better than a curve.", "There is a pattern: the dots drift downwards as sleep goes up, though not tightly."]
-      explain: "The dots fall from left to right (negative), they drift rather than hug a line (moderate), and a straight line suits them (linear). No dot is far from the rest."
+      explain: "More sleep tends to go with a faster reaction, with plenty of scatter. The dots fall from left to right (negative), they drift rather than hug a line (moderate), and a straight line suits them (linear). No dot is far from the rest."
   - picture: { ref: assoc.yml#age, caption: "Age (years) across and height (cm) up, 13 students (made up)." }
     check:
       type: question
       q: "Age against height: which sentence describes the form?"
-      options: ["Positive and strong, but not a straight line: it rises quickly, then levels off", "Negative and linear", "Positive and linear: a straight line fits perfectly", "No association"]
+      options: ["Positive and strong, but curved: it rises, then levels off", "Negative and linear", "Positive and linear: a straight line fits perfectly", "No association"]
       answer: 0
       feedback: [null, "Older students are taller, so the direction is positive, not negative.", "A straight line would miss the dots at both ends: the rise slows down after about 14.", "The dots follow a clear curve, so there is an association."]
       explain: "Height rises with age (positive), the dots hug a curve (strong), and the curve is steep at first and then flat, so it is not linear."
@@ -135,16 +135,16 @@ tasks:
   - check:
       type: question
       q: "One outlier is added to the plot of twelve students. How should the plot be described?"
-      options: ["The twelve dots still show a strong, positive, linear pattern, and the outlier is reported on its own, with a reason to check (a measuring slip, say)", "The association is now weak", "The direction is now negative", "The outlier is deleted and not mentioned"]
+      options: ["Still strong, positive and linear, with the outlier reported on its own", "The association is now weak, because of the outlier", "The direction is now negative", "The outlier is deleted and not mentioned"]
       answer: 0
       feedback: [null, "One dot does not change how tightly the other twelve follow the line. Report the outlier, but the pattern is still strong.", "The dots still rise from left to right, so the direction has not changed.", "Hiding it would hide something worth checking: a measuring slip or something unusual about that student."]
-      explain: "An outlier is a separate thing to say. The pattern of the others stays strong, positive and linear, and the outlier is named, with a reason to check it."
+      explain: "An outlier is a separate thing to say. The pattern of the other twelve stays strong, positive and linear, and the outlier is named, with a reason to check it (a measuring slip, say)."
   - check:
       type: question
       q: "Edge case: every student in a plot has a height of $165$ cm, whatever their arm span (a flat row of dots). What is the association?"
-      options: ["None: the height does not change as the arm span changes", "Strong and positive", "Strong and negative", "Weak and positive"]
+      options: ["None: height doesn't change as arm span changes", "Strong and positive", "Perfect, because the dots make a straight line", "Weak and positive"]
       answer: 0
-      feedback: [null, "The dots do not rise. A positive association needs the second measurement to go up as the first goes up.", "The dots do not fall either.", "A flat row of dots has no direction, so it is not weak and positive: there is none."]
+      feedback: [null, "The dots do not rise. A positive association needs the second measurement to go up as the first goes up.", "A straight row of dots only shows an association if it slopes. A flat row means height doesn't depend on arm span.", "A flat row of dots has no direction, so it is not weak and positive: there is none."]
       explain: "If the second measurement stays the same however the first changes, the first tells you nothing about the second: there is no association."
 ```
 
@@ -164,7 +164,7 @@ tasks:
     check:
       type: question
       q: "Which sentence describes the month of birth and height plot?"
-      options: ["No association: the dots show no pattern", "Weak and positive", "Strong and positive", "Strong and negative"]
+      options: ["None: the dots show no pattern", "Weak and positive", "Strong and positive", "Strong and negative"]
       answer: 0
       feedback: [null, "A weak positive association still needs the dots to drift up. Here they go up and down with no drift.", "The dots do not follow any line.", "The dots do not follow any line."]
       explain: "The dots are spread over the whole plot with no pattern: when the month changes, the height does not tend to change. No association."
@@ -224,10 +224,10 @@ tasks:
   - check:
       type: question
       q: "Which sentence best describes the sleep plot?"
-      options: ["As hours slept goes up, reaction time tends to go down: a moderate, negative, roughly linear association with no outliers", "Sleeping more makes reactions faster", "A strong positive association", "The students who slept 9 hours are the fastest, so everyone should sleep 9 hours"]
+      options: ["A moderate, negative, roughly linear association with no outliers", "Sleeping more makes reactions faster", "A strong positive association", "The students who slept 9 hours are the fastest, so everyone should sleep 9 hours"]
       answer: 0
       feedback: [null, "The plot shows the two measurements go together. It does not show that one makes the other change; that is the next lesson.", "The dots fall from left to right, so the direction is negative, and they are fairly spread out, not strong.", "That reads one or two dots, not the pattern of all fourteen."]
-      explain: "A good description uses direction, strength, form and outliers about the whole plot. It says what the data show, and not why."
+      explain: "As hours slept goes up, reaction time tends to go down. A good description uses direction, strength, form and outliers about the whole plot. It says what the data show, and not why."
 ```
 
 ### Reading the line

@@ -132,9 +132,9 @@ tasks:
   - check:
       type: question
       q: "A square is a rectangle and a rhombus. Which properties must its diagonals have?"
-      options: ["Equal, cutting each other in half, at 90°", "Equal only", "At 90° only", "None of these"]
+      options: ["Equal, cut in half, at 90°", "Equal and cut in half only", "Cut in half, at 90° only", "Cut in half only"]
       answer: 0
-      feedback: [null, "A square is a rhombus too.", "A square is a rectangle too.", "It has every property of both."]
+      feedback: [null, "That is the rectangle's list. A square is a rhombus too, so its diagonals also cross at 90°.", "That is the rhombus's list. A square is a rectangle too, so its diagonals are also equal.", "That is every parallelogram's. A square has the rectangle's and the rhombus's extras too."]
       explain: "It has the rectangle's diagonal properties and the rhombus's."
 ```
 
@@ -162,10 +162,10 @@ tasks:
   - check:
       type: question
       q: "Which is a proof that a rhombus's diagonals cross at 90°?"
-      options: ["The four small triangles are congruent by SSS, so the four angles at the centre are equal and add to 360°", "I measured one and got 90°", "It looks like a plus sign", "All rhombuses are squares"]
+      options: ["The four triangles are congruent (SSS), so the centre angles are equal", "I measured all four angles and each was 90°", "In every rhombus I drew they looked like a plus sign", "A rhombus is a square, and a square's cross at 90°"]
       answer: 0
-      feedback: [null, "One measurement is an example.", "A picture is not a reason.", "Most rhombuses are not squares."]
-      explain: "Four equal angles that make 360° are 90° each."
+      feedback: [null, "Measuring checks one drawing. A proof shows it must be true for every rhombus.", "Drawings are examples, not a reason. A proof gives a reason that works every time.", "Most rhombuses are not squares: a square is a special rhombus, not the other way round."]
+      explain: "The four small triangles are congruent by SSS, so the four angles at the centre are equal. They add to 360°, so each is 90°."
   - check:
       type: question
       q: "Which quadrilateral's diagonals always cut each other in half, but are not always equal?"

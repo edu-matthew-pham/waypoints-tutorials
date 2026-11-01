@@ -95,7 +95,7 @@ tasks:
   - hint: ["Radius is half the diameter.", "r = 1.5."]
     check: { type: number, q: "A cylinder has diameter $3$ cm and height $10$ cm. What is its volume? (cm³, nearest whole number, $\\pi \\approx 3.14$)", answer: 71, tolerance: 1, explain: "r = 1.5, so 3.14 × 1.5² × 10 = 70.65, about 71 cm³." }
   - hint: ["1 m³ = 1000 L.", "Use the volume you've found."]
-    check: { type: question, q: "A tank holds $7.6$ m³. A roof of $100$ m² gets $76$ mm of rain, which gives $76 \\times 100 = 7600$ L. Does the tank fill, and is the result exact?", options: ["It just fills in theory, but real roofs lose some water, so it is approximate", "It overflows", "It is exactly full", "It can't be calculated"], answer: 0, feedback: [null, "7600 L is the tank's capacity, so no overflow.", "The BoM calls the figure approximate.", "It can be estimated."], explain: "1 mm of rain on 1 m² is about a litre (approximate). Some water is lost, so the tank is likely a little under full." }
+    check: { type: question, q: "A tank holds $7.6$ m³. A roof of $100$ m² gets $76$ mm of rain, which gives $76 \\times 100 = 7600$ L. Does the tank fill, and is the result exact?", options: ["It just fills, but only roughly", "It overflows", "It is exactly full", "It can't be calculated"], answer: 0, feedback: [null, "7600 L is the tank's capacity, so no overflow.", "The BoM calls the figure approximate.", "It can be estimated."], explain: "1 mm of rain on 1 m² is about a litre (approximate), so in theory it just fills. Real roofs lose some water, so the tank is likely a little under full." }
 ```
 
 ### A triangular prism

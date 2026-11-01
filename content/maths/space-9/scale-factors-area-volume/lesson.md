@@ -162,10 +162,10 @@ tasks:
   - check:
       type: question
       q: "So what must a real giant animal look like?"
-      options: ["Thicker legs than a scaled-up copy, to keep up with the weight", "The same as a small animal", "Thinner legs", "Smaller overall"]
+      options: ["Thicker legs than a scaled-up copy", "The same as a small animal", "Thinner legs", "Smaller overall"]
       answer: 0
       feedback: [null, "The model says a scaled copy can't hold up.", "That's worse for strength.", "The question is about big animals."]
-      explain: "Elephants have thick legs compared with a deer's. It's a model, not a real anatomy lesson."
+      explain: "Weight grows faster than leg strength, so legs must be thicker to keep up. Elephants have thick legs compared with a deer's. It's a model, not a real anatomy lesson."
 ```
 
 ### The load

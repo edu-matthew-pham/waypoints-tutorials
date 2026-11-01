@@ -125,10 +125,10 @@ tasks:
   - check:
       type: question
       q: "Test scores out of 20: $14, 15, 15, 16, 17, 18$. No outliers. Which measure is a good summary?"
-      options: ["The mean, 15.83: it uses every score and nothing drags it", "Only the mode", "The range"]
+      options: ["The mean, 15.83", "Only the mode, 15", "The range, 4"]
       answer: 0
       feedback: [null, "The mode (15) is fine too, but the mean uses all the scores.", "The range describes spread, not a typical score."]
-      explain: "With no outliers, the mean is a fair summary that uses every value."
+      explain: "With no outliers, nothing drags the mean, so it is a fair summary that uses every score."
   - check:
       type: question
       q: "The mean of $4, 6, 8$ is 6. You add another value of 6. What happens to the mean?"
@@ -139,10 +139,10 @@ tasks:
   - check:
       type: question
       q: "Edge case: the heights (cm) $148, 151, 153, 156, 160$ have no repeated value. How useful is the mode?"
-      options: ["Not useful: there is no mode, so use the mean or median", "Very useful: it is 148"]
+      options: ["Not useful: there is no mode", "Very useful: it is 148"]
       answer: 0
       feedback: [null, "148 appears once, like every height."]
-      explain: "Continuous measurements rarely repeat, so the mode often tells nothing."
+      explain: "Continuous measurements rarely repeat, so the mode often tells nothing: use the mean or median instead."
 ```
 
 ### Make them agree

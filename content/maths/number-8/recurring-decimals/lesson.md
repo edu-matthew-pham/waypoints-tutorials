@@ -70,7 +70,7 @@ tasks:
   - check:
       type: question
       q: "How should 0.272727… be written with a bar?"
-      options: ["A bar over 27: 0.27 with the bar over both digits", "A bar over 2 only", "A bar over the last 7 only", "0.27 with no bar"]
+      options: ["A bar over both digits, 27", "A bar over 2 only", "A bar over the last 7 only", "0.27 with no bar"]
       answer: 0
       feedback: [null, "Both digits repeat.", "The 2 repeats too.", "0.27 stops; 0.2727… does not."]
       explain: "The repeating block is 27, so the bar goes over both digits."

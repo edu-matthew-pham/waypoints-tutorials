@@ -120,7 +120,7 @@ tasks:
   - check:
       type: question
       q: "Visit $v$ and class $k$ at another gym: $2v + k = 22$ and $3v + 2k = 36$. No letter has matching coefficients. What do you do first?"
-      options: ["Multiply the first equation by 2, so both have $2k$", "Subtract them as they are", "Add them as they are"]
+      options: ["Multiply the first equation by 2", "Subtract them as they are", "Add them as they are"]
       answer: 0
       feedback: [null, "Subtracting as they are gives v + k = 14: no letter cancels.", "Adding leaves both letters."]
       explain: "2 × (2v + k = 22) gives 4v + 2k = 44. Now both equations have 2k, and subtracting removes it."
@@ -131,17 +131,17 @@ tasks:
   - check:
       type: question
       q: "Edge case: $2v + 3k = 12$ and $4v + 6k = 20$. Multiply the first by 2 to get $4v + 6k = 24$. Subtracting the second from it gives $0 = 4$. What does that tell you?"
-      options: ["There is no solution: no visit and class price can make both true", "v = 0", "There are infinitely many solutions"]
+      options: ["There is no solution", "v = 0", "There are infinitely many solutions"]
       answer: 0
       feedback: [null, "0 = 4 is false whatever v and k are. It does not say v is 0.", "Infinitely many solutions give a true result such as 0 = 0."]
-      explain: "0 = 4 can never be true, so no pair of prices works on both receipts. On a graph the two lines are parallel."
+      explain: "0 = 4 can never be true, so no visit and class price can make both true: no pair works on both receipts. On a graph the two lines are parallel."
   - check:
       type: question
       q: "Edge case: $2v + 3k = 12$ and $4v + 6k = 24$. Multiply the first by 2 and subtract. You get $0 = 0$. What does that tell you?"
-      options: ["Every pair that works on the first works on the second: infinitely many solutions", "There is no solution", "v = 0 and k = 0"]
+      options: ["Infinitely many solutions", "There is no solution", "v = 0 and k = 0"]
       answer: 0
       feedback: [null, "0 = 0 is true, so there is no contradiction.", "0 = 0 says nothing about v or k."]
-      explain: "The second equation is the first one doubled, so it adds no new information. Many pairs work, such as v = 3, k = 2 and v = 6, k = 0."
+      explain: "The second equation is the first one doubled, so it adds no new information: every pair that works on the first works on the second. Many pairs work, such as v = 3, k = 2 and v = 6, k = 0."
 ```
 
 ### Multiply first
@@ -183,10 +183,10 @@ tasks:
   - check:
       type: question
       q: "Which is the best first step for $x + 2y = 11$ and $3x + 2y = 17$?"
-      options: ["Subtract the first from the second: the $2y$ cancels", "Add them: the $2y$ cancels", "Multiply the first by 3 and add"]
+      options: ["Subtract the first from the second", "Add the two equations", "Multiply the first by 3 and add"]
       answer: 0
       feedback: [null, "Adding gives 4x + 4y. The 2y terms have the same sign, so they only cancel when subtracted.", "That does not make a letter cancel."]
-      explain: "Both have +2y, so subtract: 2x = 6, x = 3. Then 3 + 2y = 11, so y = 4."
+      explain: "Both have +2y, so subtracting cancels it: 2x = 6, x = 3. Then 3 + 2y = 11, so y = 4."
   - check:
       type: number
       q: "Review (substitution): solve $y = 3x$ and $x + y = 20$. What is $x$?"

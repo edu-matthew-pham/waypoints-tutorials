@@ -131,6 +131,7 @@ tasks:
       q: "What happens to the plant's height from week 3 to week 6?"
       options: ["It increases", "It decreases", "It stays the same (a flat line)"]
       answer: 2
+      feedback: ["The line does not go up from week 3 to week 6: it stays at 14 cm.", "The line does not go down there: it stays at 14 cm.", null]
       explain: "The line is flat from week 3 to week 6: the height is 14 cm each time, so it does not change."
   - picture: { ref: data.yml#night-plain, caption: "Temperature (°C) through a winter night. Below the axis is below zero." }
     hint: "A point below the Time axis has a negative temperature."
@@ -178,6 +179,7 @@ tasks:
       q: "A graph of cost ($) against time (hours) has the point $(4, 30)$. Which sentence is true?"
       options: ["4 hours cost $30", "30 hours cost $4", "The cost went up by $4 over 30 hours"]
       answer: 0
+      feedback: [null, "Swapped: the first number is the time (across), the second is the cost (up).", "A single point gives one time and its cost, not a change between two points."]
       explain: "The first number is the time (4 hours) and the second is the cost ($30)."
   - check:
       type: answer

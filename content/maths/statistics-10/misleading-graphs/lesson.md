@@ -146,7 +146,7 @@ tasks:
       type: question
       q: "Edge case: a line graph of a city's highest temperature each day runs from 14 °C to 26 °C, with the vertical axis starting at 10 °C. Is that misleading?"
       options:
-        - "Not really: a reader wants to see how the temperature changes, and 0 °C doesn't mean 'no temperature'"
+        - "Not really: 0 °C doesn't mean 'no temperature'"
         - "Yes: every vertical axis must start at 0"
         - "Yes: line graphs are never fair"
         - "No, because the line is straight"
@@ -156,27 +156,27 @@ tasks:
         - "Zero is a good start for bars that compare sizes. A line graph of change over time can start higher."
         - "Line graphs are fine for change over time."
         - "How straight the line is has nothing to do with the axis."
-      explain: "The reader is looking at ups and downs, not comparing heights as ratios, and the scale is labelled. A cut axis misleads when the picture invites you to compare sizes."
+      explain: "A reader wants to see how the temperature changes, and 0 °C is not a true zero. The reader is looking at ups and downs, not comparing heights as ratios, and the scale is labelled. A cut axis misleads when the picture invites you to compare sizes."
   - check:
       type: question
       q: "A report on sales shows only the three months when sales went up and leaves out the other nine. What is the trick?"
       options:
         - "The window is chosen to suit the story"
-        - "The report uses months"
-        - "The report shows sales"
-        - "The report has a table"
+        - "Three months is too few to show anything"
+        - "The months should be shown as percentages"
+        - "The sales figures must have been made up"
       answer: 0
       feedback:
         - null
-        - "Months are a fine unit."
-        - "Sales are what it's about."
-        - "A table is fine."
+        - "Three months can be shown fairly. The trick is which three were picked."
+        - "Percentages wouldn't fix it. The other nine months are still missing."
+        - "The figures can be true. Leaving out the bad months is what misleads."
       explain: "Picking the favourable months supports a story that the whole year doesn't."
   - check:
       type: question
       q: "A 3D pie chart is tilted so the front slice looks much bigger than the same-sized slice at the back. How does this mislead?"
       options:
-        - "The slice nearest the eye is drawn larger, so size no longer matches the share"
+        - "The front slice is drawn bigger than its share"
         - "Pie charts show too many numbers"
         - "The back slice is a different colour"
         - "The slices don't add to 100%"
@@ -186,7 +186,7 @@ tasks:
         - "The number of slices isn't the problem."
         - "Colour isn't the problem."
         - "They may add to 100%. The trick is the tilt."
-      explain: "The tilt makes the front slice take up more of the picture than its share of the whole."
+      explain: "The slice nearest the eye is drawn larger, so size no longer matches the share. The tilt makes the front slice take up more of the picture than its share of the whole."
 ```
 
 ### A cut axis that is fine

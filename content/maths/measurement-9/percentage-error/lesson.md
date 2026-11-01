@@ -93,7 +93,7 @@ tasks:
   - hint: ["Each time may be out by 0.001.", "Together they could be out by 0.002."]
     check: { type: number, q: "Two times are each accurate to $\\pm 0.001$ s. By how much could the gap between them be out, at most? (s)", answer: 0.002, tolerance: 0.0001, explain: "0.001 + 0.001 = 0.002 s." }
   - hint: ["The gap is 0.010 s.", "Compare with 0.020 s."]
-    check: { type: question, q: "The same race is timed by a stopwatch accurate to $\\pm 0.01$ s each. The gap is still $0.010$ s. Is it real?", options: ["Not necessarily: the gap could be out by 0.02 s, more than the gap itself", "Yes: the gap is the same", "Yes: 0.01 is exact", "No: the stopwatch is wrong"], answer: 0, feedback: [null, "The error is now bigger than the gap.", "A reading isn't exact.", "The stopwatch isn't wrong, just less precise."], explain: "Combined error 0.02 s is bigger than the 0.010 s gap, so the order could be reversed." }
+    check: { type: question, q: "The same race is timed by a stopwatch accurate to $\\pm 0.01$ s each. The gap is still $0.010$ s. Is it real?", options: ["Not necessarily: the error could be bigger", "Yes: the gap is the same", "Yes: 0.01 is exact", "No: the stopwatch is wrong"], answer: 0, feedback: [null, "The error is now bigger than the gap.", "A reading isn't exact.", "The stopwatch isn't wrong, just less precise."], explain: "Combined error 0.02 s is bigger than the 0.010 s gap, so the order could be reversed." }
   - hint: ["Find the percentage of 50.", "0.05 ÷ 50 × 100."]
     check: { type: number, q: "A length of $50$ cm is out by $0.05$ cm. What is the percentage error? (%)", answer: 0.1, tolerance: 0.001, explain: "0.05 ÷ 50 = 0.001, × 100 = 0.1%." }
 ```
@@ -166,7 +166,7 @@ tasks:
   - check:
       type: question
       q: "What would make you doubt the result?"
-      options: ["A timer much less precise, with an error as big as the gap", "A winner by a clear second", "A timer accurate to 0.001 s", "A long race"]
+      options: ["A timer with an error as big as the gap", "A winner by a clear second", "A timer accurate to 0.001 s", "A long race"]
       answer: 0
       feedback: [null, "A big gap is easy to trust.", "That's the case where we trust it.", "Length alone doesn't matter."]
       explain: "If the combined error is as big as the gap, you can't say who won."

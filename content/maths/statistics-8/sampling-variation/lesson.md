@@ -116,10 +116,10 @@ tasks:
   - check:
       type: question
       q: "Why do political polls usually ask at least 1000 people?"
-      options: ["Bigger samples vary less, so the result is more reliable", "1000 is a census", "Smaller polls are biased", "It is the law"]
+      options: ["Bigger samples vary less", "1000 is a census", "Smaller polls are biased", "It is the law"]
       answer: 0
       feedback: [null, "A country has millions of voters.", "Small random samples aren't biased; they vary more.", "It is a choice about reliability."]
-      explain: "With about 1000 people, poll results usually land within a few percent of the population's value."
+      explain: "Bigger samples vary less, so the result is more reliable. With about 1000 people, poll results usually land within a few percent of the population's value."
 ```
 
 ### Bigger samples
@@ -162,10 +162,10 @@ tasks:
   - check:
       type: question
       q: "A census of the whole school is taken twice on the same day. How do the two results compare?"
-      options: ["They are the same: a census has no sampling variation", "They vary like samples", "They are very different", "You can't take a census twice"]
+      options: ["They are the same", "They vary like samples", "They are very different", "You can't take a census twice"]
       answer: 0
       feedback: [null, "A census measures everyone, so no one is left out by chance.", "Every student is measured both times.", "You can, though it is slow."]
-      explain: "Sampling variation comes from who happens to be in a sample. A census includes everyone."
+      explain: "A census has no sampling variation: that comes from who happens to be in a sample, and a census includes everyone."
   - check:
       type: question
       q: "Review: which is the best claim from a random sample of 40 students where the median sleep was 9 hours?"

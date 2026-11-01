@@ -157,7 +157,7 @@ tasks:
   - check:
       type: question
       q: "The caretaker adds: 'The cricket pitch strip in the middle can't have a sprinkler on it.' Which part of the pinned-down problem changes?"
-      options: ["What must be true: where sprinklers can stand", "The inputs", "The output", "The assumption of no wind"]
+      options: ["What must be true", "The inputs", "The output", "The assumption of no wind"]
       answer: 0
       feedback:
         - null
@@ -212,7 +212,7 @@ tasks:
       type: question
       q: "Which of these is an exact success criterion for the sprinkler job?"
       options:
-        - "Every point of the oval is within the spray's reach of a sprinkler"
+        - "Every point is within reach of a sprinkler"
         - "The oval looks green all over"
         - "Most of the oval gets wet"
         - "The sprinklers are spread out evenly"
@@ -222,7 +222,7 @@ tasks:
         - "A person could argue about 'looks green'. A machine can't check it."
         - "'Most' isn't a number. Which points may stay dry?"
         - "Even spacing is a way to get there, not the thing you're after."
-      explain: "You can test it for any point, and a layout either passes or it doesn't."
+      explain: "Every point of the oval must be within the spray's reach of a sprinkler. You can test it for any point, and a layout either passes or it doesn't."
   - check:
       type: number
       q: "Review: a rectangle is 6 m by 8 m. How long is its diagonal, in metres?"
@@ -271,7 +271,7 @@ tasks:
       type: question
       q: "What did the caretaker's note, 'Cover the oval with as few sprinklers as you can', leave out?"
       options:
-        - "The oval's size and shape, the spray's reach, and what 'cover' means"
+        - "The sizes, the reach, and what 'cover' means"
         - "The price of a sprinkler"
         - "The colour of the sprinklers"
         - "Nothing: it was already exact"

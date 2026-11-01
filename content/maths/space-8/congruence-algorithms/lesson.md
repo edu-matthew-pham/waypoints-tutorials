@@ -79,10 +79,10 @@ tasks:
   - check:
       type: question
       q: "Two triangles both have angles 50° and 60°. The sides between those angles are 5 cm and 10 cm. Trace the Run algorithm. Where does it end?"
-      options: ["Similar (AA): two angles equal, but the matching sides are not", "Congruent (ASA)", "Congruent (SSS)", "Neither"]
+      options: ["Similar (AA)", "Congruent (ASA)", "Congruent (SSS)", "Neither"]
       answer: 0
       feedback: [null, "The matching sides are 5 and 10, not equal.", "No sides are equal.", "Two equal angles make them similar."]
-      explain: "A no, B no, C yes (two angles), D no (5 ≠ 10): similar with scale factor 2."
+      explain: "A no, B no, C yes (two angles), D no (5 ≠ 10): two angles are equal but the matching sides are not, so they are similar with scale factor 2."
 ```
 
 ### Order the steps
@@ -105,10 +105,10 @@ tasks:
   - check:
       type: question
       q: "One triangle has sides 4 cm and 6 cm with 50° between them; the other has 8 cm and 12 cm with 50° between them. Where does the first algorithm (the Run board) send this pair?"
-      options: ["Neither, or not enough to tell: it has no step for this", "Similar (AA)", "Congruent (SAS)", "Similar (SSS)"]
+      options: ["Not enough to tell", "Similar (AA)", "Congruent (SAS)", "Similar (SSS)"]
       answer: 0
       feedback: [null, "Only one pair of angles is known.", "The sides are not equal.", "Only two pairs of sides are known."]
-      explain: "It answers no at every step. But the pair is similar: two sides in the ratio 2 with the angle between them equal (SAS similarity)."
+      explain: "It has no step for this, so it answers no at every step and ends at neither, or not enough to tell. But the pair is similar: two sides in the ratio 2 with the angle between them equal (SAS similarity)."
   - starter: "keys.yml#better"
     check: { type: board, text: "This algorithm has a new step G. Run it on all seven pairs. Does every pair, including the new one, reach the right answer?", when: "n = 7", explain: "Step G catches SAS similarity, and the six old pairs still get the same answers." }
   - check:
@@ -159,10 +159,10 @@ tasks:
   - check:
       type: question
       q: "Which describes the algorithm best?"
-      options: ["It checks the congruence tests first, then the similarity conditions, and says 'not enough to tell' if none fit", "It measures every side and angle", "It checks similarity first, then congruence", "It only checks sides"]
+      options: ["Congruence, then similarity, then 'not enough to tell'", "It measures every side and angle", "It checks similarity first, then congruence", "It only checks sides"]
       answer: 0
       feedback: [null, "It uses only what is known to be equal.", "Similar first would name congruent pairs 'similar'.", "Angles are checked at B, C and E."]
-      explain: "Most specific first (congruent), then the wider class (similar), then a catch-all."
+      explain: "It checks the congruence tests first, then the similarity conditions, and says 'not enough to tell' if none fit: most specific first (congruent), then the wider class (similar), then a catch-all."
   - check:
       type: number
       q: "Review: in parallelogram ABCD, angle A = 75°. What is angle B, in degrees?"

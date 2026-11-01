@@ -170,7 +170,7 @@ tasks:
       feedback: [null, "That is a fact about one curve. A conjecture covers the whole family.", "That isn't a claim a new case could show wrong.", "That is one calculation, not a claim about every a."]
       explain: "It says what happens for every positive $a$, so a new value could show it wrong."
     smaller:
-      check: { type: question, q: "'The curve $y = 3x^2$ passes through $(1, 3)$.' Is that about one value of $a$ or every value?", options: ["One value", "Every value"], answer: 0, explain: "It's about a = 3 only. A conjecture says something about every a in the family." }
+      check: { type: question, q: "'The curve $y = 3x^2$ passes through $(1, 3)$.' Is that about one value of $a$ or every value?", options: ["One value", "Every value"], answer: 0, feedback: [null, "The 3 in $3x^2$ fixes a = 3. A claim about every value would have to work for a = 1, 2, 5 and so on."], explain: "It's about a = 3 only. A conjecture says something about every a in the family." }
   - check:
       type: number
       q: "A student's conjecture: 'In $y = ax^2$, doubling $a$ doubles $y$ at $x = 3$.' Test it. For $a = 2$, $y = 18$ at $x = 3$. What is $y$ at $x = 3$ for $a = 4$?"
@@ -231,10 +231,10 @@ tasks:
   - check:
       type: question
       q: "A class drops a real ball from a roof, films it and compares the landing time with the rule. It lands a little later than the rule says. What is the best response?"
-      options: ["The rule is a model that leaves things out, such as air pushing back on the ball; say so and check how big the gap is", "The conjecture is proved wrong, so throw the rule away", "The film must be wrong, since the rule is maths", "The rule is proved right, since the times are close"]
+      options: ["Say the rule leaves out air, and check the gap", "The conjecture is proved wrong, so throw the rule away", "The film must be wrong, since the rule is maths", "The rule is proved right, since the times are close"]
       answer: 0
       feedback: [null, "A small gap doesn't mean the rule is useless. It means the rule leaves something out.", "Measurements can be a little off, but the rule is a simplified model, not the truth.", "Close doesn't prove a rule right. It supports it, as in the conjecture tests."]
-      explain: "The rule leaves out air resistance, so a real ball falls a little more slowly. Saying what a model leaves out, and how much it matters, is part of testing it."
+      explain: "The rule is a model that leaves things out, such as air pushing back on the ball, so a real ball falls a little more slowly. Saying what a model leaves out, and how much it matters, is part of testing it."
 ```
 
 ### The planet that lands at 2 seconds

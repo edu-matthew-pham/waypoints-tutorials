@@ -141,7 +141,7 @@ tasks:
       feedback: [null, "That leaves out 5 but keeps 9.", "That keeps 9: it says 'less than 9'.", "That leaves out 5: it says 'at least 5'."]
       explain: "At least 5 includes 5 (≤). Less than 9 leaves out 9 (<)."
     smaller:
-      check: { type: "question", q: "'At least 5' includes 5. Which sign keeps the end?", options: ["≤", "<"], answer: 0, explain: "≤ and ≥ keep the end point." }
+      check: { type: "question", q: "'At least 5' includes 5. Which sign keeps the end?", options: ["≤", "<"], answer: 0, feedback: [null, "< leaves the end out, but at least 5 includes 5."], explain: "≤ and ≥ keep the end point." }
   - check:
       type: number
       q: "Three holes are measured: $19.94$, $20.03$ and $20.05$ mm. How many pass the range $19.95 \\le x \\le 20.05$?"

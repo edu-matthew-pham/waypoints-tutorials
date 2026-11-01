@@ -129,7 +129,7 @@ tasks:
       feedback: [null, "Sine uses the opposite side.", "Tangent uses opposite and adjacent.", "Each ratio uses a particular pair of sides."]
       explain: "Adjacent and hypotenuse give the cosine."
     smaller:
-      check: { type: "question", q: "Which side does the cosine use alongside the hypotenuse?", options: ["The adjacent side", "The opposite side", "Neither", "Both"], answer: 0, explain: "Cosine is adjacent ÷ hypotenuse." }
+      check: { type: "question", q: "Which side does the cosine use alongside the hypotenuse?", options: ["The adjacent side", "The opposite side", "Neither", "Both"], answer: 0, feedback: [null, "Opposite ÷ hypotenuse is sine, not cosine.", "Cosine is a ratio of two sides: the hypotenuse and one other.", "Cosine uses just two sides: adjacent and hypotenuse."], explain: "Cosine is adjacent ÷ hypotenuse." }
   - check:
       type: number
       q: "Review: scale a triangle with opposite 3 and hypotenuse 5 so the hypotenuse is 20. What is the new opposite side?"

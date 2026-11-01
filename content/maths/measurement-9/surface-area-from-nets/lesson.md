@@ -167,7 +167,7 @@ tasks:
   - check:
       type: question
       q: "A label has to overlap by 1 cm to be glued. How does that change the width?"
-      options: ["It is 1 cm wider than the circumference", "It is the same", "It is 1 cm narrower", "It is the diameter"]
+      options: ["It is the circumference plus 1 cm", "It is the same", "It is 1 cm narrower", "It is the diameter"]
       answer: 0
       feedback: [null, "An overlap needs extra paper.", "An overlap adds paper.", "The diameter doesn't go round."]
       explain: "The paper has to go round the can and overlap a little."

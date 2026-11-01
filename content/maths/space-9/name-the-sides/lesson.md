@@ -60,7 +60,7 @@ tasks:
       feedback: [null, "The bottom side can be opposite or adjacent depending on the angle.", "The upright side can be opposite or adjacent depending on the angle.", "That describes the adjacent side."]
       explain: "The hypotenuse is across from the right angle. It is the longest side and does not change with the marked angle."
     smaller:
-      check: { type: "question", q: "Which angle in the triangle is the right angle?", options: ["The corner marked with a small square", "The corner marked with an arc", "The top corner", "The biggest angle in every triangle"], answer: 0, explain: "The small square marks the right angle." }
+      check: { type: "question", q: "Which angle in the triangle is the right angle?", options: ["The corner marked with a small square", "The corner marked with an arc", "The top corner", "The biggest angle in every triangle"], answer: 0, feedback: [null, "An arc marks the angle you are working from, not the right angle.", "The right angle can be at any corner: look for the small square.", "Only in a right-angled triangle is the right angle the biggest, and you still find it by the small square."], explain: "The small square marks the right angle." }
   - check:
       type: question
       q: "The marked angle moves to the top corner. The upright side was opposite. What is it now?"
@@ -132,7 +132,7 @@ tasks:
       feedback: [null, "The 5 cm side touches the angle.", "The 13 cm side is the hypotenuse.", "Exactly one side is opposite."]
       explain: "The 12 cm side doesn't touch the marked angle."
     smaller:
-      check: { type: "question", q: "Which two sides touch the marked angle (the 5 cm and the 13 cm), and which doesn't?", options: ["The 12 cm side doesn't touch it", "The 5 cm side doesn't touch it", "The 13 cm side doesn't touch it", "All three touch it"], answer: 0, explain: "The marked angle sits between the 5 and the 13, so the 12 cm side is across from it." }
+      check: { type: "question", q: "Which two sides touch the marked angle (the 5 cm and the 13 cm), and which doesn't?", options: ["The 12 cm side doesn't touch it", "The 5 cm side doesn't touch it", "The 13 cm side doesn't touch it", "All three touch it"], answer: 0, feedback: [null, "The 5 cm side runs from the marked angle, so it touches it.", "The 13 cm side runs from the marked angle, so it touches it.", "An angle sits between only two sides; the third is across from it."], explain: "The marked angle sits between the 5 and the 13, so the 12 cm side is across from it." }
   - check:
       type: number
       q: "Review: a ladder is 5 m long and its foot is 3 m out. How high does it reach? (Pythagoras)"

@@ -70,10 +70,10 @@ tasks:
   - check:
       type: question
       q: "Why do only 2s and 5s in the denominator give a terminating decimal?"
-      options: ["10 = 2 × 5, so only those can multiply up to 10, 100, 1000…", "2 and 5 are the smallest primes", "Because 2 + 5 = 7", "Because even numbers always terminate"]
+      options: ["Because 10 = 2 × 5", "2 and 5 are the smallest primes", "Because 2 + 5 = 7", "Because even numbers always terminate"]
       answer: 0
       feedback: [null, "3 is smaller than 5 and does not work.", "Adding has nothing to do with it.", "6 is even, and 1/6 recurs."]
-      explain: "A terminating decimal is a fraction over a power of 10, and 10 = 2 × 5."
+      explain: "A terminating decimal is a fraction over 10, 100, 1000…, and 10 = 2 × 5, so only 2s and 5s can multiply up to one of those."
   - check:
       type: bug
       code: "working.txt#max"

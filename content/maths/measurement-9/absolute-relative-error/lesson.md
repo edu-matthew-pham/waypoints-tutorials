@@ -167,10 +167,10 @@ tasks:
   - check:
       type: question
       q: "Which should an engineer worry about more?"
-      options: ["The hole: the same absolute error is a much bigger share", "The beam: it's longer", "They are equal", "Neither"]
+      options: ["The hole: the error is a bigger share", "The beam: it's longer", "They are equal", "Neither"]
       answer: 0
       feedback: [null, "The beam's error is tiny for its size.", "The absolute errors are equal, the relative errors are not.", "A hole 5% out might not fit a bolt."]
-      explain: "A 5% error could stop a bolt fitting; 0.05% on a beam is invisible."
+      explain: "The same absolute error is a much bigger share of the hole. A 5% error could stop a bolt fitting; 0.05% on a beam is invisible."
 ```
 
 ### How many times bigger

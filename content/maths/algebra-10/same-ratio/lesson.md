@@ -130,18 +130,18 @@ tasks:
     check:
       type: question
       q: "Set $b$ to 0.5. The numbers get smaller each step. Is it still an exponential table?"
-      options: ["Yes: each value is 0.5 times the one before, so the ratio is still the same every step", "No: exponential tables only go up", "No: the ratio has to be a whole number"]
+      options: ["Yes: the ratio is the same every step", "No: exponential tables only go up", "No: the ratio has to be a whole number"]
       answer: 0
       feedback: [null, "A ratio below 1 makes the numbers fall. Each value is half the one before, and that's still a constant ratio.", "A ratio can be a fraction or a decimal. 0.5 is the same as ÷ 2."]
-      explain: "A constant ratio is all it takes. With b = 0.5 each value is half the one before: 100, 50, 25, 12.5..."
+      explain: "A constant ratio is all it takes. With b = 0.5 each value is 0.5 times (half) the one before: 100, 50, 25, 12.5..."
   - hint: "Set $b$ to 1 and look at the table."
     check:
       type: question
       q: "Edge case: set $b$ to 1. The values stay at 100. What are the difference and the ratio between neighbours?"
-      options: ["The difference is 0 and the ratio is 1: both are the same every step", "The difference is 1 and the ratio is 0", "The difference is 0 and the ratio is 0"]
+      options: ["Difference 0, ratio 1", "The difference is 1 and the ratio is 0", "The difference is 0 and the ratio is 0"]
       answer: 0
       feedback: [null, "Swapped: nothing is added, and multiplying by 1 changes nothing.", "Multiplying by 0 would make every value 0. The ratio here is 1."]
-      explain: "100 + 0 = 100 and 100 × 1 = 100. A ratio of 1 means nothing changes, so it's a flat line."
+      explain: "100 + 0 = 100 and 100 × 1 = 100: the difference 0 and the ratio 1 are both the same every step. A ratio of 1 means nothing changes, so it's a flat line."
 ```
 
 ### Triple
@@ -230,10 +230,10 @@ tasks:
   - check:
       type: question
       q: "A friend says: 'The rule throws the food out at 4 hours, but 4 is only double 2, so it's only twice as risky.' In the doubling model, what's wrong with that?"
-      options: ["Doubling every half hour means 4 hours has 16 times the germs of 2 hours, not 2 times", "Nothing: twice as long means twice as many germs", "4 hours has 8 times the germs of 2 hours"]
+      options: ["4 hours has 16 times the germs of 2 hours", "Nothing: twice as long means twice as many germs", "4 hours has 8 times the germs of 2 hours"]
       answer: 0
       feedback: [null, "That's what an adding table does. These germs multiply, so the last hours add the most.", "That would be only 3 extra doublings. From 2 hours to 4 hours is 4 half-hours."]
-      explain: "Each half hour doubles the count, so the extra 2 hours double it 4 times: 16 times as many."
+      explain: "Each half hour doubles the count, so the extra 2 hours double it 4 times: 16 times as many, not 2 times."
 ```
 
 ### 4 hours against 2

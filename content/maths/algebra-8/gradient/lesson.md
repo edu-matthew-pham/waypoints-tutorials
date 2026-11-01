@@ -184,6 +184,7 @@ tasks:
       q: "Which line goes down from left to right?"
       options: ["$y = 3x - 2$", "$y = -2x + 5$", "$y = 0x + 4$"]
       answer: 1
+      feedback: ["The −2 here is c, where the line crosses the y-axis. m = 3 is positive, so it goes up.", null, "m = 0 makes a flat line: it neither goes up nor down."]
       explain: "Only a negative m makes a line go down: y = −2x + 5 goes down 2 for each step right. The −2 in y = 3x − 2 is c, so that line still goes up 3 for each step; y = 0x + 4 is flat."
   - check:
       type: answer

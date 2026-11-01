@@ -114,7 +114,7 @@ tasks:
       type: question
       q: "The area could be out by about 0.35 m², much more than the 0.05 m each length could be out by. Why?"
       options:
-        - "Both lengths are out, and each error is multiplied by the other length: about 4 × 0.05 + 3 × 0.05"
+        - "Each length's error is multiplied by the other length"
         - "The tape is worse at measuring areas"
         - "The error is always multiplied by 7 for any room"
         - "Because the area is in square metres"
@@ -124,7 +124,7 @@ tasks:
         - "Nothing changed about the tape. The same two readings give the area."
         - "7 is 4 + 3 for this room. A different room gives a different number."
         - "Square metres are just the unit. The reason is in the multiplication."
-      explain: "A strip 4 m long and 0.05 m wide plus a strip 3 m long and 0.05 m wide is about 0.2 + 0.15 = 0.35 m² of extra floor."
+      explain: "Both lengths are out: about 4 × 0.05 + 3 × 0.05. A strip 4 m long and 0.05 m wide plus a strip 3 m long and 0.05 m wide is about 0.2 + 0.15 = 0.35 m² of extra floor."
 ```
 
 ### Highest and lowest

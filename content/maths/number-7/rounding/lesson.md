@@ -128,10 +128,10 @@ tasks:
   - check:
       type: question
       q: "A ruler marked in millimetres measures a pencil. The calculator gives 14.2857 cm. Which is the most sensible way to report it?"
-      options: ["14.3 cm, to the nearest millimetre", "14.2857 cm", "14 cm", "14.29 cm"]
+      options: ["14.3 cm", "14.2857 cm", "14 cm", "14.29 cm"]
       answer: 0
       feedback: [null, "A ruler cannot show a ten-thousandth of a centimetre; the extra digits claim accuracy we do not have.", "That throws away accuracy the ruler does have: it can show tenths of a centimetre.", "14.29 claims to be accurate to 0.01 cm, finer than the millimetres on the ruler."]
-      explain: "One millimetre is 0.1 cm, so the ruler supports 1 decimal place: 14.3 cm."
+      explain: "One millimetre is 0.1 cm, so the ruler supports 1 decimal place: 14.3 cm, to the nearest millimetre."
 ```
 
 ### The stopwatch

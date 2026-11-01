@@ -90,10 +90,10 @@ tasks:
   - check:
       type: question
       q: "Is every chord a diameter?"
-      options: ["No: only a chord that passes through the centre is a diameter", "Yes: they both go across the circle", "No: a chord is always curved"]
+      options: ["No: only a chord through the centre", "Yes: they both go across the circle", "No: a chord is always curved"]
       answer: 0
       feedback: [null, "A chord near the edge goes across but misses the centre: it is shorter.", "A chord is straight; the circumference is the curved part."]
-      explain: "Every diameter is a chord (the longest one), but most chords miss the centre."
+      explain: "Only a chord that passes through the centre is a diameter. Every diameter is a chord (the longest one), but most chords miss the centre."
 ```
 
 ### Two radii make a diameter

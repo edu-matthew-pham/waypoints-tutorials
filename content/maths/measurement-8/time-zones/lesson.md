@@ -87,10 +87,10 @@ tasks:
   - check:
       type: question
       q: "Why do flight times use 24-hour time?"
-      options: ["21:30 cannot be mixed up with 9:30 in the morning", "It is shorter to write", "Airports are open 24 hours", "It changes the time zone"]
+      options: ["It can't mix up am and pm", "It is shorter to write", "Airports are open 24 hours", "It changes the time zone"]
       answer: 0
-      feedback: [null, "Not the reason.", "Not the reason.", "The zone does not change."]
-      explain: "With 12-hour time, a missing am or pm causes 12-hour mistakes."
+      feedback: [null, "Being short is not the point: being clear is.", "Opening hours don't change how a time is written.", "The zone does not change."]
+      explain: "21:30 cannot be mixed up with 9:30 in the morning. With 12-hour time, a missing am or pm causes 12-hour mistakes."
 ```
 
 ### Perth
@@ -134,10 +134,10 @@ tasks:
   - check:
       type: question
       q: "An office in Sydney works 9:00 to 17:00, and one in London (10 hours behind) works 9:00 to 17:00 their time. Is there an hour when both are at work?"
-      options: ["No: when Sydney starts at 9:00, it is 23:00 in London; when London starts, Sydney has gone home", "Yes: 9:00 to 17:00 in both", "Yes: 12:00 to 13:00", "Only on Mondays"]
+      options: ["No: Sydney's 9:00 is 23:00 in London", "Yes: 9:00 to 17:00 in both", "Yes: 12:00 to 13:00", "Yes: for 2 hours a day"]
       answer: 0
-      feedback: [null, "Their 9:00 is not the same moment.", "Noon in Sydney is 2:00 am in London.", "The days do not matter here."]
-      explain: "Sydney's working day is London's 23:00 to 07:00: no overlap. A meeting needs someone to start early or stay late."
+      feedback: [null, "Their 9:00 is not the same moment.", "Noon in Sydney is 2:00 am in London.", "Change Sydney's 9:00 and 17:00 to London time: 23:00 and 07:00. No hours overlap."]
+      explain: "When Sydney starts at 9:00, it is 23:00 in London; when London starts, Sydney has gone home. Sydney's working day is London's 23:00 to 07:00: no overlap. A meeting needs someone to start early or stay late."
   - starter: "zones.yml#run"
     hint: ["Perth is 3 hours behind Sydney.", "Perth's 9:00 is Sydney's 12:00."]
     check: { type: board, text: "Plan a call between Sydney and Perth that is between 9:00 and 17:00 in both cities. Set Sydney's time, then write the time in both.", when: "t >= 12 and t <= 17", explain: "Perth is 3 hours behind, so Sydney's 12:00 to 17:00 is Perth's 9:00 to 14:00." }
@@ -166,7 +166,7 @@ tasks:
         - ["13", "Perth's offset is smaller: it is behind. Take 3 hours away."]
       explain: "Perth is 3 hours behind: 10:00 − 3 = 07:00."
     smaller:
-      check: { type: question, q: "Sydney is UTC+11 and Perth is UTC+8. Is Perth's clock earlier or later than Sydney's?", options: ["Earlier", "Later"], answer: 0, explain: "Perth's offset is 3 less, so it is 3 hours earlier. Its time is Sydney's time with 3 hours taken off." }
+      check: { type: question, q: "Sydney is UTC+11 and Perth is UTC+8. Is Perth's clock earlier or later than Sydney's?", options: ["Earlier", "Later"], answer: 0, feedback: [null, "Perth's offset is smaller (8 not 11), so its clock is behind Sydney's."], explain: "Perth's offset is 3 less, so it is 3 hours earlier. Its time is Sydney's time with 3 hours taken off." }
   - check:
       type: number
       q: "A train leaves at 08:45 and arrives at 17:20 the same day (one time zone). How many minutes is the trip?"

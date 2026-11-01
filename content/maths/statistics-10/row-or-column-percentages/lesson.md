@@ -82,7 +82,7 @@ tasks:
   - check:
       type: question
       q: "Riders: 30 of 40 play sport. Bus or car: 40 of 100. Which comparison is fair?"
-      options: ["75% of riders against 40% of bus or car students, because each is a percentage of its own group", "30 against 40, because the more the better", "30 against 100, because 100 is the biggest total", "Riders can't be compared with bus or car students"]
+      options: ["75% of riders against 40% of bus or car students", "30 against 40, because the more the better", "30 against 100, because 100 is the biggest total", "Riders can't be compared with bus or car students"]
       answer: 0
       feedback: [null, "Counts depend on how big each group is. The bus or car group is two and a half times as big as the riders.", "That mixes a count with a group total.", "They can be compared, once each is a percentage of its own group."]
       explain: "Groups of different sizes are compared by percentages of their own totals. 75% of riders play sport and 40% of bus or car students."
@@ -150,7 +150,7 @@ tasks:
   - check:
       type: question
       q: "Edge case: a group has only 4 students, and 3 of them play sport (75%). Is that as strong a sign as the 75% of the 40 riders?"
-      options: ["No: with only 4 students, one student changes the percentage a lot, so be careful about reading much into it", "Yes: 75% is 75%", "Yes: the smaller the group the better", "No: percentages can't be used on small groups"]
+      options: ["No: with 4 students, one student changes it a lot", "Yes: 75% is 75%", "Yes: the smaller the group the better", "No: percentages can't be used on small groups"]
       answer: 0
       feedback: [null, "The percentage is the same, but 4 students is a very small group. One more student who did not play sport would drop it to 60%.", "A small group varies a lot, so it tells you less.", "You can work the percentage out. Just be careful how much you read into it."]
       explain: "A percentage from a very small group can swing with one student. 30 of 40 is much firmer evidence than 3 of 4."

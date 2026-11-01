@@ -80,7 +80,7 @@ tasks:
     check:
       type: question
       q: "Which statement do the three lines support?"
-      options: ["In the warm months, ice-cream sales, drownings and temperature are all high, and in the cool months all are low", "Ice-cream sales cause drownings", "Drownings cause ice-cream sales", "Temperature has nothing to do with either"]
+      options: ["All three are high in warm months and low in cool ones", "Ice-cream sales cause drownings", "Drownings cause ice-cream sales", "Temperature has nothing to do with either"]
       answer: 0
       feedback: [null, "The lines show that the two go together. They don't show that one causes the other.", "The lines show the same pattern in the other direction too, with no way to see which came first.", "Temperature follows the same pattern as both. It is the obvious thing to look at next."]
       explain: "All three lines are high in summer and low in winter. That is a link between each pair, which is what the data show. Why they are linked needs more than the lines."
@@ -138,14 +138,14 @@ tasks:
   - check:
       type: question
       q: "Edge case: a town has only one summer of data, three months, and ice-cream sales and drownings rise together in it. How much should that pattern be trusted?"
-      options: ["Not much: a short run of data can line up by chance, so look at more months and other towns", "Fully: the dots rise, so it is proved", "It proves ice cream causes drownings", "It proves ice cream does not cause drownings"]
+      options: ["Not much: three months can line up by chance", "Fully: the dots rise, so it is proved", "It proves ice cream causes drownings", "It proves ice cream does not cause drownings"]
       answer: 0
       feedback: [null, "Rising dots show a link in these months. Three months are a small sample.", "A link in three months says nothing about cause.", "A short run can't show that either."]
-      explain: "Few data points can line up by chance. More months and more towns would show whether the link is steady."
+      explain: "A short run of data can line up by chance. More months and more towns would show whether the link is steady."
   - check:
       type: question
       q: "Edge case: could one thing really cause the other even if a third thing is also behind both?"
-      options: ["Yes: a link on its own cannot tell, so you need more evidence, such as an experiment that changes one thing and holds the rest fixed", "No: once there is a third thing, there can be no other cause", "Yes, and the plot proves it", "No, because correlation never has any meaning"]
+      options: ["Yes: a link alone can't tell, so you need more evidence", "No: once there is a third thing, there can be no other cause", "Yes, and the plot proves it", "No, because correlation never has any meaning"]
       answer: 0
       feedback: [null, "Both can be true together. Smoking is a cause of lung disease, and age is also linked to both, for example.", "A plot of two variables can't prove a cause either way.", "A link is real evidence that something is going on. It just doesn't say what."]
       explain: "A link can't tell a cause from a third thing. To find a cause you need more: an experiment that changes one thing and keeps the other conditions the same, or careful comparison of like with like."
@@ -173,10 +173,10 @@ tasks:
   - check:
       type: question
       q: "Sia says: 'Students who sit at the front get better marks, so moving a student to the front will raise their mark.' What is the best reply?"
-      options: ["Maybe not: keen students may choose the front, so keenness could be behind both", "She is right: the data show the cause", "She is wrong: seating never matters", "She needs a bigger plot, and then she will be sure"]
+      options: ["Maybe not: keen students may choose the front", "She is right: the data show the cause", "She is wrong: seating never matters", "She needs a bigger plot, and then she will be sure"]
       answer: 0
       feedback: [null, "Data that show students at the front have better marks only show a link.", "Seating might matter. The point is that the link does not prove it.", "A bigger plot of the same kind has the same problem: a link in the data, no way to see why."]
-      explain: "The link may be due to something behind both, such as how keen a student is. Moving someone to the front tests whether seating itself matters."
+      explain: "Keenness could be behind both: the link may be due to how keen a student is, not the seat. Moving someone to the front tests whether seating itself matters."
   - check:
       type: number
       q: "Review: $18$ of the $24$ students at the front sit there by choice. What percentage is that?"
@@ -238,10 +238,10 @@ tasks:
   - check:
       type: question
       q: "Which reply best answers 'Should the council ban ice cream?'"
-      options: ["Not on this evidence: ice-cream sales and drownings both rise with the temperature, so the link may be the hot weather, and a ban would not address it", "Yes: the dots prove ice cream causes drownings", "No: the link is chance", "The data can't tell us anything"]
+      options: ["Not on this evidence: hot weather may be behind both", "Yes: the dots prove ice cream causes drownings", "No: the link is chance", "The data can't tell us anything"]
       answer: 0
       feedback: [null, "A link between two things does not prove one causes the other.", "The link is steady across the whole year, so chance is unlikely. The issue is the reason for it.", "The data do tell us something: the two go up together. They just don't say why."]
-      explain: "The data show a link and a third thing that could be behind both. A good reply says what the data show, names the third thing and says what more is needed."
+      explain: "Ice-cream sales and drownings both rise with the temperature, so the link may be the hot weather, and a ban would not address it. The data show a link and a third thing that could be behind both. A good reply says what the data show, names the third thing and says what more is needed."
 ```
 
 ### How many times as many

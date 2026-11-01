@@ -93,6 +93,7 @@ tasks:
       q: "The lines $y = x + 5$ and $y = 2x + 1$ meet at $(4, 9)$. Which equation has the solution $x = 4$?"
       options: ["$x + 5 = 2x + 1$", "$x + 5 = 4$", "$2x + 1 = 4$"]
       answer: 0
+      feedback: [null, "4 is x, not y. Put x = 4 in: 4 + 5 = 9, not 4.", "4 is x, not y. Put x = 4 in: 2 × 4 + 1 = 9, not 4."]
       explain: "The meeting point is where the two sides are equal, so it solves x + 5 = 2x + 1. Check: 4 + 5 = 9 and 2 × 4 + 1 = 9."
 ```
 
@@ -140,10 +141,11 @@ tasks:
       q: "Where do $y = 2x + 1$ and $y = 2x + 4$ meet?"
       options:
         - "At $(0, 1)$"
-        - "Nowhere: they are parallel, so $2x + 1 = 2x + 4$ has no solution"
+        - "Nowhere: they are parallel"
         - "At $x = 3$"
       answer: 1
-      explain: "Both have m = 2, so they are parallel and never meet: 2x + 1 is always 3 less than 2x + 4. The equation has no solution."
+      feedback: ["(0, 1) is only on the first line: the second crosses the y-axis at 4.", null, "Check x = 3: 7 and 10. The lines are always 3 apart."]
+      explain: "Both have m = 2, so they are parallel and never meet: 2x + 1 is always 3 less than 2x + 4, so 2x + 1 = 2x + 4 has no solution."
 ```
 
 ### Subtraction
@@ -193,6 +195,7 @@ tasks:
       q: "The lines $y = 5$ and $y = x + 2$ meet. Which equation does the meeting point solve?"
       options: ["$x + 2 = 5$", "$x + 5 = 2$", "$x = 5$"]
       answer: 0
+      feedback: [null, "The 5 and 2 are swapped. Set the two rules equal: x + 2 = 5.", "y = 5, not x = 5. Set the rules equal: x + 2 = 5, so x = 3."]
       explain: "Set the two rules equal: x + 2 = 5. They meet at (3, 5), so x = 3."
   - check:
       type: answer
