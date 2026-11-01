@@ -1,0 +1,71 @@
+learning: "describe several causes of contacts and conflicts involving Qin and Han China, sort them into kinds, and explain how one cause shaped what happened"
+summary: "Describe the causes of the Qin wars of unification, the Han–Xiongnu conflict and Zhang Qian's mission, sort them into power, land, security, and trade and resources, and explain how a cause shaped the contact that followed."
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 5 min · Practise 6 min · Make 9 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can describe at least two causes of a contact or conflict.
+  - I can sort causes into kinds, such as power, land, security and trade.
+  - I can explain how one cause shaped what happened next.
+struggle: "Students give one cause ('they wanted land') and stop. Keep asking: what else made them want this, and what kind of reason is that?"
+before: |-
+  AC9HH7K12 n1, a hinge. The Kit's reason: students who reduce contacts and conflicts to single causes cannot do the effects lesson, because conquest, trade and peace agreements each come from a different mix of causes. Check the Make step and the class plan question before moving on.
+
+  Real cases (checked 1 Nov 2026): the Qin wars of unification, 230 to 221 BCE (Han state first, Qi last); the Han–Xiongnu conflict, with Emperor Wu attacking from 133 BCE after decades of peace-buying; Zhang Qian's mission from 138 BCE (held by the Xiongnu about ten years, home after about thirteen); the Ferghana campaigns, the first failing in 104 BCE and the second returning with horses in 101 BCE. The purpose of Zhang Qian's mission (an alliance with the Yuezhi) comes from Sima Qian's history, so the lesson says "according to Sima Qian"; some sources stress horses instead. The causes of the Qin wars are "historians think". Britannica adds Qin strategy, bribery and reforms; those explain how Qin won, not why it fought, so they are left out.
+
+  Simplified: the four kinds of cause are a teaching frame, not fixed categories (the Kit also names religion; no case here has a religious cause, so it is left out). Real causes overlap: land is also power. Accept a reasoned case for a second kind. Britannica notes Emperor Wu's wish for Ferghana's "blood-sweating" horses was partly about their meaning as a sign of Heaven's favour, not only cavalry; a good stretch point.
+
+  The Xiongnu are described from Han sources: they left no writing of their own. Say so if students ask who tells us this.
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips. Conquest and war are described factually, without violent detail.
+
+  Relevant ACARA AC9HH7K12 elaborations (examples, not a checklist): "identifying the short-term triggers of a conflict, such as the Peloponnesian war"; "explaining the rise of imperial China; for example, through chariot warfare and the adoption of mass infantry armies, the building of the first phase of the Great Wall of China, military strategies as codified in Sun Tzu's The Art of War"; "explaining the nature of contact and conflict with other societies, such as the commodities that formed the trade with Egypt, Greek colonisation of the Mediterranean, the Persian Wars, the Battle of Salamis, the empire of Alexander the Great and the reach of Greek culture".
+
+  First Nations: AC9HH7K12 has no First Nations elaborations; we write none.
+running:
+  - "Predict: take a show of hands for each option, then ask the 'only one reason' voters what else could matter."
+  - "Try: put the four kinds on the board and ask which kinds the Han and Xiongnu case touches."
+  - "Worked example: read Nib's lines aloud and let the slip sit. Ask: does land explain the horses?"
+  - "Vary: ask students to take away a different cause and see what is left."
+  - "Make: students write in their own book; a partner gives feedback."
+stuck:
+  - see: "A student gives only one cause."
+    ask: "Why did the Han want horses? Is that the same reason as wanting land?"
+    fix: "Different kinds: security, resources and power sit beside land."
+  - see: "A student lists causes but cannot say what kind each is."
+    ask: "Is this about being stronger, getting land, staying safe, or getting goods?"
+    fix: "Use the four-kind table as a sorting frame."
+  - see: "A student mixes up causes and results."
+    ask: "Did this happen before the contact, or because of it?"
+    fix: "Causes come first; Zhang Qian's news and the horses were results."
+support: "Give a two-column frame (cause; kind of cause) and fill the Han–Xiongnu row together before students choose their own case."
+stretch: "Emperor Wu wanted Ferghana's horses partly as a sign of Heaven's favour. Is that a power cause, a resources cause, or something else? What would you need to know?"
+leads: "Continue to What did contact and conflict lead to?"
+exit:
+  q: "Name two causes of different kinds for one contact or conflict, and say what kind each is."
+  a: "For example, the Han–Xiongnu conflict: Xiongnu raids on Han farms (security) and the Han wish for strong horses (trade and resources)."
+explain: "Contacts and conflicts between ancient societies usually had several causes at once: power, land, security, and trade and resources. The Han fought the Xiongnu to stop raids, to get horses and to be the stronger power, and those causes shaped what the Han did next, such as sending Zhang Qian west."
+sources:
+  - title: "Zhang Qian (Britannica)"
+    url: https://www.britannica.com/biography/Zhang-Qian
+    checked: 2026-11-01
+  - title: "Wudi, emperor of Han dynasty (Britannica)"
+    url: https://www.britannica.com/biography/Wudi-emperor-of-Han-dynasty
+    checked: 2026-11-01
+  - title: "China: The Qin empire, 221–207 BCE (Britannica)"
+    url: https://www.britannica.com/place/China/The-Qin-empire-221-207-bce
+    checked: 2026-11-01
+  - title: "China: Relations with other peoples, Han dynasty (Britannica)"
+    url: https://www.britannica.com/place/China/Relations-with-other-peoples
+    checked: 2026-11-01
+  - title: "Qin's wars of unification (order and dates of the conquests)"
+    url: https://en.wikipedia.org/wiki/Qin%27s_wars_of_unification
+    checked: 2026-11-01
+  - title: "The opening of the Silk Route (UNESCO Silk Roads knowledge bank)"
+    url: https://en.unesco.org/silkroad/sites/default/files/knowledge-bank-article/the%20opening%20of%20the%20silk%20route.pdf
+    checked: 2026-11-01
+  - title: "Greeks colonize the Mediterranean and Black Sea regions (EBSCO Research Starters)"
+    url: https://www.ebsco.com/research-starters/history/greeks-colonize-mediterranean-and-black-sea-regions
+    checked: 2026-11-01
+  - title: "Greco-Persian Wars (Britannica)"
+    url: https://www.britannica.com/event/Greco-Persian-Wars
+    checked: 2026-11-01

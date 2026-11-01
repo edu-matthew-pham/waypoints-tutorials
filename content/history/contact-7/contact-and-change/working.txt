@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Rome was in the west and Han China was in the east.
+No Roman we know of ever met a Han merchant face to face.
+Nib says: "So Rome and Han China each developed on their own, without the other."
+Nib says: "Contact only changes a society when people meet."
+# endregion

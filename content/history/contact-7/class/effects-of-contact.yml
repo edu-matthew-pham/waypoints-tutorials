@@ -1,0 +1,29 @@
+inquiry:
+  q: "When two teams play a grand final, does only the winning team change?"
+  prompts:
+    - "What changes for the losing team?"
+    - "What about the fans, or the town?"
+  notes: "A quick way into 'effects on every side'. Then switch to the Han and the Xiongnu."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Two-sided ledger"
+    minutes: 5
+    do: |
+      Pairs draw a line down a page: the Han on one side, the Xiongnu on the other. For the heqin, the Hexi conquest and silk trade, they write one change on each side.
+    notes: "Push for specific changes (lost grazing land, new taxes), not 'they were sad' or 'they won'."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Who changed because of the Han conquest of the Hexi Corridor?"
+    options:
+      - "Both the Han and the Xiongnu"
+      - "Only the Han, because they won"
+      - "Only the Xiongnu, because they lost"
+    answer: 0
+    explain: "Contact changes every society involved."
+    feedback:
+      - null
+      - "The Xiongnu lost grazing land and a route. That is a change too."
+      - "The Han gained towns and trade, and paid for the wars in taxes."

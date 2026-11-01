@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+In 121 BCE a Han army drove the Xiongnu out of the Hexi Corridor.
+The Han set up commanderies there and built towns for soldiers and settlers.
+Nib says: "The Han won, so the Han are the only ones whose lives changed."
+Nib says: "For the Xiongnu, it was just one lost battle."
+# endregion

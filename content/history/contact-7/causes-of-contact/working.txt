@@ -1,0 +1,8 @@
+# Nib's explanation for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+The Han and the Xiongnu clashed again and again for more than a hundred years.
+Xiongnu horsemen raided Han farms, and the Han wanted Xiongnu horses.
+Nib says: "The Han fought the Xiongnu because they wanted more land. That's the reason."
+Nib says: "So the horses and the raids are not really part of the story."
+# endregion
