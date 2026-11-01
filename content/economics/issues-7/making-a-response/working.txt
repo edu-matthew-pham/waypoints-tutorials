@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Plan A benefits: lots of data, a short 12-month contract, good coverage at the skate park.
+Plan B benefit: it costs less each month.
+Nib says: "Plan A has three benefits on the list, and Plan B has one."
+Nib says: "So Plan A is the answer, because it has more things on the list."
+# endregion

@@ -1,0 +1,44 @@
+summary: "Students read a made-up scatter of Riverbend households' weekly income and saving, place a new household on the pattern, and explain the relationship with a cause, an effect and an economic because. The planted mistake is reversing cause and effect and saying the pattern proves it. The lesson says that two things going together doesn't prove a cause, and that this habit transfers beyond economics."
+learning: "identify a cause-and-effect relationship in data, naming the cause, the effect and the economic reason, and say why a pattern alone doesn't prove it"
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can read a pattern in a graph and use it to predict.
+  - I can name the cause, the effect and the because.
+  - I can explain why two things going together doesn't prove one causes the other.
+struggle: "Students treat 'they go together' as 'one causes the other', and often get the direction wrong. Ask: which comes first? What is the economic reason? Could something else cause both?"
+before: |
+  All data is made up: twelve households, shaped to show one clear upward pattern.
+
+  **What the lesson claims and doesn't.** It says the income-to-saving link is a likely cause with an economic reason (more left over after needs), and that the pattern alone doesn't prove it. Real saving depends on much more (household size, costs, debts, choices), which the typical step starts to show. If students ask whether rich people always save more, the honest answer is "often, not always".
+
+  **The same idea elsewhere (Matthew, 1 Nov 2026).** The student text says once that the habit isn't only for economics. Places students meet it again, as mentions only (no lesson assumes another course): in science, a fair test changes one thing at a time so a cause can be shown; in English, judging whether evidence backs a claim (`english/persuade`: Judging and backing it up, Claims and how sure); in ICT, misleading numbers (`ict/information`: Numbers that mislead); in maths, the strength and direction of an association on a scatterplot is Year 10 (AC9M10ST03, AC9M10ST05). Year 7 Economics only reads the pattern and says it doesn't prove cause, so the maths link is a mention, not a preview.
+running:
+  - "Predict: take a vote. Ask the 'saving makes you earn more' group what would have to come first."
+  - "Try: drag P together on the board; ask what in the graph told you where to put it."
+  - "Worked example: write cause, effect, because on the board and fill them in together."
+  - "Vary: the hot days question is the key one; ask what else goes up on hot days."
+  - "Make: students write the cafe sentence and one other possible cause."
+stuck:
+  - see: "A student says the pattern proves a cause."
+    ask: "Could something else make both go up together?"
+    fix: "A pattern is evidence, not proof. Look for the because, and for anything that could cause both."
+  - see: "A student reverses cause and effect."
+    ask: "Which has to happen first?"
+    fix: "The cause comes first; the effect follows because of it."
+  - see: "A student gives the pattern as the because."
+    ask: "Why would that happen, in money terms?"
+    fix: "The because is the economic reason, not 'the dots go up'."
+stretch: "Find a pair of things in the news that go together, and argue both ways: one causes the other, or something else causes both. It does not go on to the next lesson."
+support: "A three-box card: Cause → Effect, because ___. Plus a fourth box: Could something else cause both?"
+leads: |
+  Next in Responding to an economic issue: Costs and benefits.
+
+  Wider (teacher choice, not part of the student steps): the node's wider items include a cause-and-effect relationship in a First Nations community economic issue, such as access to financial services and saving in remote communities. If you take this up, use First Nations-led sources and the community's own published words. The lesson writes nothing about it.
+exit:
+  q: "Write a cause-effect-because sentence about income and saving, and say why the graph alone doesn't prove it."
+  a: "Higher income can lead to more saving, because more is left over after needs. The graph shows they go together, but going together doesn't prove one causes the other; something else could be involved."
+explain: |
+  A **cause-and-effect relationship** has a **cause** (what changes first), an **effect** (what changes because of it), and a **because** (the economic reason).
+
+  Two things going together in data doesn't prove one causes the other. Something else might cause both. This is true in science, the news and persuasive writing too.

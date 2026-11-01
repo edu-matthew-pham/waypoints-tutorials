@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Saturday shoppers on the main street: 900, then 750, then 600.
+Parcels delivered each week: 1200, then 1650, then 2100.
+Nib says: "So the issue is that shopper numbers fell from 900 to 600."
+Nib says: "That's all the data tells us."
+# endregion

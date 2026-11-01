@@ -1,0 +1,56 @@
+# Two made-up phone plans for "Developing a response".
+
+# region: run
+widget: sheet
+cell B1: Plan A
+cell C1: Plan B
+cell A2: Cost each month ($)
+cell B2: 35
+cell C2: 25
+cell A3: Data each month (GB)
+cell B3: 30
+cell C3: 10
+cell A4: Contract length (months)
+cell B4: 12
+cell C4: 24
+cell A5: Cost for 12 months ($)
+edit: B5:C5
+# endregion
+
+# region: modify
+widget: sheet
+cell B1: Plan A
+cell C1: Plan B
+cell A2: Cost each month ($)
+cell B2: 35
+cell C2: 25
+cell A3: Data each month (GB)
+cell B3: 30
+cell C3: 10
+cell A4: Contract length (months)
+cell B4: 12
+cell C4: 24
+cell A5: Cost for 12 months ($)
+cell B5: =B2*12
+cell C5: =C2*12
+edit: B2:C2
+# endregion
+
+# region: make
+widget: sheet
+cell B1: Plan A
+cell C1: Plan B
+cell A2: Cost each month ($)
+cell B2: 35
+cell C2: 25
+cell A3: Data each month (GB)
+cell B3: 30
+cell C3: 10
+cell A4: Contract length (months)
+cell B4: 12
+cell C4: 24
+cell A5: Cost for 12 months ($)
+cell B5: =B2*12
+cell C5: =C2*12
+edit: B2:C4
+# endregion

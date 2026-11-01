@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+In year 4 there were 510 casual workers in Riverbend.
+In year 5 there were 440.
+Nib says: "Casual work went down, so casual work in Riverbend is falling."
+Nib says: "Over the ten years, there are fewer casual jobs."
+# endregion

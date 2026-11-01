@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+In the graph, households with more income also save more each week.
+The two go up together.
+Nib says: "So the graph proves that saving more makes you earn more."
+Nib says: "If you want a pay rise, just save more."
+# endregion

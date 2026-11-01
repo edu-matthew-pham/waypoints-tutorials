@@ -1,0 +1,29 @@
+inquiry:
+  q: "Plan A has three good points; Plan B has one. Is Plan A the better choice?"
+  prompts:
+    - "Does every good point matter the same amount?"
+    - "Could someone sensible choose Plan B?"
+  notes: "Let the class argue it out before naming 'weighing, not counting'."
+activities:
+  - at: run
+    kind: activity
+    title: "Totals first"
+    minutes: 4
+    do: |
+      Put the plans sheet up. Students write the 12-month formulas, then say what the totals don't show.
+    notes: "Data and contract length are the points the totals leave out."
+  - at: make
+    kind: discussion
+    title: "Two good answers"
+    minutes: 5
+    do: |
+      Ask two students who chose different plans to read their because. The class says what each one weighed most.
+    notes: "Judge the reasoning, not the choice."
+questions:
+  - at: investigate
+    title: "Response or list?"
+    type: question
+    q: "Which is a response?"
+    options: ["I choose Plan B, because saving 120 a year matters more to me than extra data", "Plan A has more data", "Plan B costs 300 a year", "Both plans have good points"]
+    answer: 0
+    explain: "A response makes a choice and gives a reason that weighs the points."

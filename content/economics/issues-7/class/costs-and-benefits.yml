@@ -1,0 +1,29 @@
+inquiry:
+  q: "Sam's offered Saturday shifts. The pay is good and the bus is cheap. Should he take them?"
+  prompts:
+    - "What would he gain?"
+    - "What would he give up, including things that aren't money?"
+  notes: "Collect costs and benefits on the board before sorting them into financial and non-financial."
+activities:
+  - at: run
+    kind: activity
+    title: "Four corners"
+    minutes: 4
+    do: |
+      Label four corners of the room: financial cost, non-financial cost, financial benefit, non-financial benefit. Read out Sam's points; students move to the corner.
+    notes: "Use pointing instead of moving if space is tight."
+  - at: investigate
+    kind: discussion
+    title: "What isn't money?"
+    minutes: 5
+    do: |
+      Pairs list everything Sam gives up that isn't money, then name his opportunity cost.
+    notes: "This is the hinge. Every list should go beyond the bus fare."
+questions:
+  - at: investigate
+    title: "Only money?"
+    type: question
+    q: "Which of Sam's costs is non-financial?"
+    options: ["Giving up Saturday mornings", "The bus fare", "Buying a uniform", "A bakery apron"]
+    answer: 0
+    explain: "Time given up isn't money, but it's a real cost."

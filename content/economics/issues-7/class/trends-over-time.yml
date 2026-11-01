@@ -1,0 +1,29 @@
+inquiry:
+  q: "Casual work in Riverbend dropped one year. Does that mean it's falling?"
+  prompts:
+    - "What else would you want to see before you decided?"
+    - "How would you describe a change over ten years in one sentence?"
+  notes: "Steer towards the whole period before showing the graph."
+activities:
+  - at: run
+    kind: activity
+    title: "Read it together"
+    minutes: 4
+    do: |
+      Put the graph up. Move the cursor to a few years and have the class call out both values.
+    notes: "Point out that R reads casual and S reads full-time."
+  - at: investigate
+    kind: discussion
+    title: "Three parts"
+    minutes: 4
+    do: |
+      Write "direction, how much, over what period" on the board. Pairs write the casual trend in one sentence and compare.
+    notes: "Check every sentence covers the whole ten years."
+questions:
+  - at: investigate
+    title: "Trend or one year?"
+    type: question
+    q: "Which describes a trend?"
+    options: ["Over ten years, casual work rose from 420 to 650", "In year 5 casual work fell to 440", "There were 650 casual workers", "Year 4 had 510 casual workers"]
+    answer: 0
+    explain: "Only the first gives a direction, an amount and the whole period."

@@ -1,0 +1,22 @@
+# Made-up weekly income and saving for twelve Riverbend households, for "Cause and effect in data".
+
+# region: run
+widget: graph
+axes: Weekly income ($), Weekly saving ($)
+x: 400, 1900
+y: 0, 350
+grid: 100, 50
+snap: 100, 10
+series Households: 500,20; 600,40; 700,50; 800,80; 900,90; 1000,120; 1100,130; 1200,170; 1300,180; 1500,240; 1600,250; 1800,300, dots
+point P: 1400, 0, drag y
+# endregion
+
+# region: look
+widget: graph
+axes: Weekly income ($), Weekly saving ($)
+x: 400, 1900
+y: 0, 350
+grid: 100, 50
+snap: 100, 10
+series Households: 500,20; 600,40; 700,50; 800,80; 900,90; 1000,120; 1100,130; 1200,170; 1300,180; 1500,240; 1600,250; 1800,300, dots
+# endregion

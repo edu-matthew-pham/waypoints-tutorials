@@ -1,0 +1,44 @@
+summary: "Students interpret information to identify an economic or business issue, making a reasonable inference beyond the data. The three-part move (the data shows, this suggests, so the issue is) is the scaffold. This is the hinge lesson for AC9HE7S03: students who repeat the data and call it the issue can't use data to say anything in the next two lessons."
+learning: "interpret information to identify an economic issue, using an inference one step beyond the data"
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can say what a piece of information shows.
+  - I can make a reasonable inference one step beyond it.
+  - I can name the economic issue it points to.
+struggle: "Two opposite slips: repeating the numbers as if that were the issue, and leaping to a dramatic conclusion. Ask: what does the data say? What might that mean? Is that one step, or ten?"
+before: |
+  This is a hinge lesson. The Worked example's bug task, with its Build up to it question, is the check before moving on.
+
+  All data is made up, chosen to show one clear pattern so students practise the move rather than hunt for it. If you want real data, the ABS publishes retail trade figures, including online sales; choose a table yourself and check the figures before using them.
+
+  "A reasonable inference" is a judgement. Accept others that are one step from the data and fit it; push back on ones that need things the data doesn't show (closures, everyone's opinion). The elaboration's example (online shopping and store customers) is the main street case.
+running:
+  - "Predict: take a vote. Ask the 'fell from 900 to 600' group whether that says what it means."
+  - "Try: after the sort, ask what makes a statement 'go too far'."
+  - "Worked example: write the three-part sentence frame on the board. This is the hinge check."
+  - "Vary: students try the frame on the bakery and the bus before the questions."
+  - "Make: students write their own three-part sentence about the pool."
+stuck:
+  - see: "A student repeats the numbers as the issue."
+    ask: "What might that mean for the shops, or the people?"
+    fix: "The issue is what the data points to, one step beyond it."
+  - see: "A student leaps to a dramatic conclusion."
+    ask: "Does the data show that, or something smaller?"
+    fix: "Keep the inference to one reasonable step."
+  - see: "A student gives an opinion about what should happen."
+    ask: "Is that the issue, or your answer to it?"
+    fix: "The issue is the problem. What to do about it comes later in the course."
+stretch: "Find an inference about the main street that fits the data but is wrong. What extra information would show it was wrong? It does not go on to the next lesson."
+support: "The sentence frame on a card: 'The data shows ___. This suggests ___. So the issue is ___.'"
+leads: |
+  Next in Responding to an economic issue: Reading a trend.
+
+  Wider (teacher choice, not part of the student steps): the node's wider items include identifying an economic issue affecting a First Nations community from community economic data or a published community report. If you take this up, use the community's own published report and local, community-approved material. The lesson writes nothing about it.
+exit:
+  q: "Riverbend Cafe's lunchtime customers dropped by half after a new food court opened nearby. Write the three-part sentence."
+  a: "For example: the data shows lunchtime customers halved; this suggests people are eating at the food court; so the issue is the cafe losing lunch trade to new competition."
+explain: |
+  **Information** shows what happened. An **issue** is the problem or question it points to.
+
+  Make one reasonable step beyond the data: "The data shows ___. This suggests ___. So the issue is ___." Repeating the numbers isn't an inference, and a huge leap goes too far.

@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Sam could work Saturday mornings at the bakery for 90 dollars.
+The bus there and back costs 8 dollars.
+Nib says: "The only cost is the bus fare."
+Nib says: "So the shifts are 82 dollars of pure benefit."
+# endregion

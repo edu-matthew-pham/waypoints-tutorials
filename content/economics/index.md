@@ -18,5 +18,5 @@ pathways:
       - { path: economics/entrepreneurs-7, id: entrepreneurs-7, after: [businesses-7], stage: foundations, tagline: "What does it take to start and run a business?" }
       - { path: economics/work-7, id: work-7, after: [scarcity-7], stage: foundations, tagline: "Why people work, and how they earn a living." }
       - { path: economics/consumers-7, id: consumers-7, after: [scarcity-7], stage: foundations, tagline: "What can you expect when you buy something?" }
-      - { title: "Responding to an economic issue", after: [scarcity-7], summary: "Reading economic data and weighing financial and non-financial costs and benefits to choose a response (AC9HE7S03, AC9HE7S04).", tagline: "Read the data, weigh the trade-offs, and choose.", stage: foundations }
+      - { path: economics/issues-7, id: issues-7, after: [scarcity-7], stage: foundations, tagline: "Read the data, weigh the trade-offs, and choose." }
 ---

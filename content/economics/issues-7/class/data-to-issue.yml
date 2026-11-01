@@ -1,0 +1,29 @@
+inquiry:
+  q: "Fewer shoppers on Riverbend's main street, more parcels arriving in town. What's going on, and why might it matter?"
+  prompts:
+    - "What do the numbers actually say?"
+    - "What might they mean for the shops?"
+  notes: "Write students' answers in three columns without naming them: shows, suggests, too far. Name the columns after."
+activities:
+  - at: run
+    kind: activity
+    title: "Shows, suggests, or too far?"
+    minutes: 4
+    do: |
+      Read out statements about the main street. Students hold up one finger for "the data shows", two for "a reasonable inference", three for "goes too far".
+    notes: "The 'too far' ones are often the most fun to argue about."
+  - at: investigate
+    kind: discussion
+    title: "The three-part move"
+    minutes: 5
+    do: |
+      Put the sentence frame up. Pairs write it for the main street, then compare with Nib's line 3.
+    notes: "This is the hinge. Every pair should have a 'this suggests' that isn't just the numbers."
+questions:
+  - at: investigate
+    title: "Data or issue?"
+    type: question
+    q: "Which of these is an issue, not just data?"
+    options: ["Main-street shops may be losing customers", "Shoppers fell from 900 to 600", "Parcels rose to 2100", "Year 3 had the fewest shoppers"]
+    answer: 0
+    explain: "The others repeat the table. The issue is what it points to."

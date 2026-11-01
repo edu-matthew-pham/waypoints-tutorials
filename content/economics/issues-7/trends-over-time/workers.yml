@@ -1,0 +1,45 @@
+# Made-up counts of casual and full-time workers in Riverbend, for "Reading a trend".
+
+# region: run
+widget: graph
+axes: Year of the count, Workers
+x: 0, 11
+y: 0, 1000
+grid: 1, 100
+series Casual: 1,420; 2,450; 3,480; 4,510; 5,440; 6,500; 7,560; 8,590; 9,620; 10,650
+series Fulltime: 1,900; 2,890; 3,880; 4,870; 5,850; 6,840; 7,840; 8,830; 9,820; 10,810
+cursor R: 1
+# endregion
+
+# region: investigate
+widget: graph
+axes: Year of the count, Workers
+x: 0, 11
+y: 0, 1000
+grid: 1, 100
+series Casual: 1,420; 2,450; 3,480; 4,510; 5,440; 6,500; 7,560; 8,590; 9,620; 10,650
+series Fulltime: 1,900; 2,890; 3,880; 4,870; 5,850; 6,840; 7,840; 8,830; 9,820; 10,810
+cursor R: 1
+# endregion
+
+# region: modify
+widget: graph
+axes: Year of the count, Workers
+x: 0, 11
+y: 0, 1000
+grid: 1, 100
+series Casual: 1,420; 2,450; 3,480; 4,510; 5,440; 6,500; 7,560; 8,590; 9,620; 10,650
+series Fulltime: 1,900; 2,890; 3,880; 4,870; 5,850; 6,840; 7,840; 8,830; 9,820; 10,810
+cursor R: 1, 10
+# endregion
+
+# region: practise
+widget: graph
+axes: Year of the count, Workers
+x: 0, 11
+y: 0, 1000
+grid: 1, 100
+series Casual: 1,420; 2,450; 3,480; 4,510; 5,440; 6,500; 7,560; 8,590; 9,620; 10,650
+series Fulltime: 1,900; 2,890; 3,880; 4,870; 5,850; 6,840; 7,840; 8,830; 9,820; 10,810
+cursor R: 1
+# endregion

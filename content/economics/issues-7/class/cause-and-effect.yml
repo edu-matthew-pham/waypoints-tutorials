@@ -1,0 +1,29 @@
+inquiry:
+  q: "On hot days, both pool entries and ice cream sales go up. Does swimming make people buy ice cream?"
+  prompts:
+    - "What else is going on on hot days?"
+    - "How could you tell if one really causes the other?"
+  notes: "A low-stakes way in to 'going together isn't proof' before the income graph."
+activities:
+  - at: run
+    kind: activity
+    title: "Where would it go?"
+    minutes: 4
+    do: |
+      Put the income and saving graph up. Ask where a household earning 1400 a week would sit, then drag P together.
+    notes: "Ask what in the graph told them."
+  - at: investigate
+    kind: discussion
+    title: "Cause, effect, because"
+    minutes: 5
+    do: |
+      Pairs fill in cause, effect and because for income and saving, then for the pie price. Then ask: could anything else cause both?
+    notes: "Name that the same habit is used in science (fair tests) and English (does the evidence back the claim)."
+questions:
+  - at: investigate
+    title: "Proof or pattern?"
+    type: question
+    q: "Two things go up together in a graph. What can you say for sure?"
+    options: ["They go together, but that alone doesn't prove one causes the other", "One definitely causes the other", "Neither has any effect on the other", "The graph is wrong"]
+    answer: 0
+    explain: "A pattern is evidence for a cause, not proof."

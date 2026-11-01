@@ -207,7 +207,7 @@ Tagline: *What can you expect when you buy something?* Four lessons in node orde
 - Tested: validate, `check-nodes`, build, `check-decks` (course), and a headless run at 1100 px and 375 px (each lesson loads with no errors, each bug check ticks only on its answer line, no horizontal scroll; on the budget board, typing 30 in B11 doesn't tick, writing `=B4-B9` does, and changing B8 to 25 ticks the vary check; dollar amounts show as text).
 - Publish: whole-site (subject and teacher pages).
 
-## Plan (1 Nov 2026, awaiting Matthew's "go"): course `economics/issues-7`, *Responding to an economic issue* (AC9HE7S03, AC9HE7S04)
+## Plan (1 Nov 2026; built the same day, see Built below): course `economics/issues-7`, *Responding to an economic issue* (AC9HE7S03, AC9HE7S04)
 
 Tagline: *Read the data, weigh the trade-offs, and choose.* Economics' own Year 7 skills; the shared ones (questions S01, finding and organising S02, communicating S05) are in `hass/inquiry-7`. Five lessons in node order, two units: `data` (S03 n1–n3) and `response` (S04 n1–n2). After `scarcity-7` (the subject page already says so). No clips.
 
@@ -258,6 +258,14 @@ Tagline: *Read the data, weigh the trade-offs, and choose.* Economics' own Year 
 **Self-check at build:** as for the other Economics courses, plus every data point labelled made up, graph checks never ticking at the start, and the S04 Make steps unmarked.
 
 **Publish:** whole-site (subject page; existing widgets only, no new widget code).
+
+## Built: `economics/issues-7`, *Responding to an economic issue* (1 Nov 2026, Matthew said go; Preview, not yet tried with a class)
+
+- Course `economics/issues-7` (units `data`, `response`), after `scarcity-7`. Lessons: `data-to-issue` (S03 n1 hinge, the main street table, show/infer/too-far sort, bug line 3 with `smaller:`), `trends-over-time` (S03 n2, `graph` with two made-up series over years 1 to 10 and a cursor, bug line 3), `cause-and-effect` (S03 n3, `graph` scatter of twelve households with a draggable new household P, bug line 3; the transfer line in student text and the science, English, ICT and Year 10 maths mentions in teacher notes), `costs-and-benefits` (S04 n1 hinge, Sam's Saturday shifts, four-way sort, bug line 3 with `smaller:`), `making-a-response` (S04 n2, two phone plans on the `sheet` board, bug line 4, unmarked Make with two models choosing different plans). Teacher notes and class plans for all five. Misconceptions `data-is-the-issue`, `one-point-is-a-trend`, `pattern-proves-cause`, `costs-are-only-money`, `list-not-reason`. Subject page lists the course as built; `economics-teachers.md` updated (every Year 7 Economics and Business standard is now built).
+- Departures from the plan: lesson 1 has no board (as planned) but uses a table; the S03 n2 years are numbered 1 to 10 so the made-up data isn't read as real years; the full-time series is named "Fulltime" because board names can't contain a hyphen (noted in the teacher notes). Amounts in S04 lessons are mostly written as "90 dollars" because of the dollar-sign gotcha (shared.md).
+- **Validate doesn't start boards.** A setup line the board rejects (here, the hyphen) passes `npm run validate` and shows "This board cannot start" on the page. The headless test now opens every board in each lesson and checks none shows that error (`.render-tmp/boarderr.mjs`, scratch); all Economics boards pass.
+- Tested: validate, build, `check-decks` (course), and headless runs at 1100 px and 375 px: each lesson loads with no errors, each bug check ticks only on its answer line, no horizontal scroll; the trend cursor check ticks at year 10 and not at the start; the scatter check doesn't tick with P at 100 and does at 210; the plans sheet ticks only when both total formulas are written, and the vary sheet ticks when B2 is 28. `check-nodes` fails on two Civics warnings (`civics/democracy-7/ways-to-take-part`), not Economics.
+- Publish: whole-site (subject and teacher pages).
 
 ## Decided: interactive boards (30 Oct 2026, Matthew)
 
