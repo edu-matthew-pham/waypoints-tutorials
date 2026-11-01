@@ -20,6 +20,8 @@ Order steps so students **Predict** before they run, then **Run**, **Investigate
 Guidelines: one concept per step; one short clip per concept (10–25 s); write
 Investigate prompts as questions; put a prediction question *before* any output is shown.
 
+The stages are step jobs, not a required order or count (Project doc lesson-shape, 12 Oct 2026; `roadmap/rules.md` T11): a student reads or traces before they write, and starts from given code; otherwise use the stages the lesson's move needs.
+
 ## 2. `lesson.md` layout
 
 Frontmatter keys: `title`, `summary`, `author` (optional, shown as "By …"), `language`, `app`, `pacing`.
@@ -1754,7 +1756,7 @@ revising one idea, beside practical work, never instead of it. One tutorial per 
   the minimum path. The page shows a Minimum / Typical / Wider control; `?width=` in the link sets the floor (a
   teacher's choice), students can widen but not narrow, and the default is typical. Tiered steps' checks are not
   needed to finish the lesson and are left out of course progress. Worksheets wrap them in `:::typical` / `:::wider`.
-  Wider means more contexts, never harder content.
+  Wider means more contexts, never harder content (`roadmap/rules.md` T10; the Learning with AI courses may add depth, worded by what a step adds, never by age: T10a).
 - **`sort` check, sort into groups** (any lesson; not ordering, which is `parsons`): `options:` are groups, `items:` are `[text, group]` or `[text, group, why]`; a group can
   be used many times (unlike `match`), and extra groups act as distractors. The why shows once an item is right.
 - **`question` feedback** (any lesson): `feedback:` is one entry per option (text, or `null`), shown when that wrong
