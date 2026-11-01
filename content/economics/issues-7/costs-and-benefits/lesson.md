@@ -34,7 +34,7 @@ check:
     - "Only the $8 bus fare"
     - "Nothing: he earns more than the fare, so there's no cost"
     - "Only the $90 he earns"
-  actual: "The bus fare is a financial cost. Giving up his Saturday mornings (time with friends, a netball game) is a non-financial cost, and it is his opportunity cost."
+  actual: "The bus fare is a financial cost. Giving up his Saturday mornings is a non-financial cost. His next best choice for that time, his Saturday netball game, is his opportunity cost."
 ```
 
 ## Try: sort Sam's costs and benefits
@@ -49,8 +49,8 @@ check:
   items:
     - ["Pay of $90 each Saturday", "Financial benefit", "Money gained."]
     - ["An $8 bus fare there and back", "Financial cost", "Money given up."]
-    - ["Saturday mornings he can't spend with friends", "Non-financial cost", "Time given up: his opportunity cost."]
-    - ["Missing his Saturday netball game", "Non-financial cost", "Something he gives up that isn't money."]
+    - ["Saturday mornings he can't spend with friends", "Non-financial cost", "Time with friends given up, though it isn't money."]
+    - ["Missing his Saturday netball game", "Non-financial cost", "His next best choice for Saturday mornings: his opportunity cost."]
     - ["Learning to serve customers and run the till", "Non-financial benefit", "A skill gained, not money."]
     - ["A reference from the bakery for future jobs", "Non-financial benefit", "Useful later, but not money now."]
 ```
@@ -73,32 +73,37 @@ tasks:
       check:
         type: question
         q: "What will Sam not be able to do on Saturday mornings if he takes the shifts?"
-        options: ["Play netball or see friends then", "Nothing at all", "Earn any money", "Catch the bus"]
+        options: ["Play netball or see friends then", "Nothing, since he's getting paid", "Earn any money on Saturdays", "Catch the bus on Saturdays"]
         answer: 0
+        feedback:
+          - null
+          - "Being paid doesn't give him back the time."
+          - "He earns $90 on Saturdays. That's a benefit."
+          - "He catches the bus to get there. The fare is a cost, but it isn't what he misses."
         explain: "That's time he gives up. It's a cost, even though it isn't money."
   - check:
       type: question
       q: "What is Sam's opportunity cost of taking the shifts?"
       options:
-        - "The next best thing he'd have done with Saturday mornings, like playing netball"
-        - "The $8 bus fare"
-        - "The $90 he earns"
-        - "Nothing, because he is earning money"
+        - "His Saturday netball game, his next best choice"
+        - "The $8 bus fare he pays to get there and back"
+        - "The $90 he earns at the bakery each Saturday"
+        - "Nothing, because he is earning money for it"
       answer: 0
       feedback:
         - null
         - "The fare is a financial cost, but the opportunity cost is the next best use of his time."
         - "That's a benefit, not a cost."
         - "Earning money doesn't remove what he gives up."
-      explain: "Opportunity cost is the next best alternative given up: here, what he'd otherwise do on Saturday mornings."
+      explain: "Opportunity cost is the one next best alternative given up: here, his Saturday netball game. Less time with friends is another non-financial cost."
   - check:
       type: question
       q: "Which of these is a non-financial benefit?"
       options:
         - "Making new friends among the bakery staff"
-        - "The $90 pay"
-        - "The bus fare"
-        - "Missing netball"
+        - "The $90 pay he takes home each Saturday"
+        - "The bus fare he pays to get to work"
+        - "Missing his Saturday netball game"
       answer: 0
       feedback:
         - null
@@ -113,7 +118,7 @@ tasks:
 ```worked
 \text{Financial benefit} :: $90 pay each Saturday.
 \text{Financial cost} :: $8 bus fare.
-\text{Non-financial costs} :: Saturday mornings, netball, time with friends (his opportunity cost).
+\text{Non-financial costs} :: Netball (his next best choice, so his opportunity cost), and less time with friends.
 \text{Non-financial benefits} :: Skills, a reference, new friends.
 \text{So} :: Money is part of the picture, not all of it.
 ```
@@ -145,14 +150,14 @@ tasks:
       options:
         - "Losing part of the grass where people kick a ball"
         - "The money to build the playground"
-        - "The cost of the equipment"
-        - "The builder's bill"
+        - "Families meeting each other at the park"
+        - "Yearly repairs to the swings and slides"
       answer: 0
       feedback:
         - null
         - "That's counted in money, so it's financial."
-        - "Equipment is paid for in money."
-        - "A bill is a money cost."
+        - "That's non-financial, but it's a benefit, not a cost."
+        - "Repairs are paid for in money, so they're a financial cost."
       explain: "Losing open grass isn't money, but it is something the community gives up."
 ```
 
@@ -170,16 +175,16 @@ tasks:
       type: question
       q: "Mia is deciding whether to join the school band. Lessons are free. Dev says, 'It's free, so there are no costs.' What is the best reply?"
       options:
-        - "There are still costs, like the time she gives up for practice"
+        - "Still costs: the time she gives up to practise"
         - "Dev is right: no money means no costs"
         - "The only cost is buying an instrument"
-        - "Costs only matter for businesses"
+        - "There's no cost, since she'll enjoy it"
       answer: 0
       feedback:
         - null
         - "Free in money isn't free in time. Practice uses up time she could spend on something else."
         - "That might be one cost, but time is a cost too."
-        - "People's decisions have costs too."
+        - "Enjoying it is a benefit, but the time is still given up."
       explain: "Non-financial costs, like time, count even when something is free."
   - check:
       type: question

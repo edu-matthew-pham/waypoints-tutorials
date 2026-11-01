@@ -44,7 +44,7 @@ check:
     - ["Refurbishing old laptops for students instead of selling cheap new gadgets", "Taking an opportunity", "He is choosing which chance to go after."]
     - ["Agreeing to pay his parts supplier within a week, so she isn't left waiting for her money", "Negotiating with stakeholders", "The supplier is affected by how and when he pays."]
     - ["Registering 'Leo's Laptop Repairs' as a business name before he opens", "Complying with the law and regulations", "A business that trades under a name other than the owner's own name must register it."]
-    - ["Asking students what they need most from a laptop before buying stock", "Negotiating with stakeholders", "Customers are stakeholders, and he is working out what suits them."]
+    - ["Agreeing a lower price with the school for fixing ten laptops at once", "Negotiating with stakeholders", "The school is a customer and a stakeholder; they settle on terms that suit both."]
     - ["Keeping records of what he earns so he can pay the right tax", "Complying with the law and regulations", "Keeping records for tax is a legal requirement for businesses."]
 ```
 
@@ -83,6 +83,11 @@ tasks:
         q: "If Leo pays Sunita two months late, is Sunita affected?"
         options: ["Yes, she has to wait for her money", "No, because she isn't an owner", "Only if she complains", "No, it's Leo's business, not hers"]
         answer: 0
+        feedback:
+          - null
+          - "You don't have to own part of a business to be affected by it. That's what a stakeholder is."
+          - "She is affected whether or not she complains."
+          - "It's Leo's business, but his decisions still reach her."
         explain: "She is affected, so she is a stakeholder, even though she owns no part of Leo's business."
   - check:
       type: question
@@ -251,7 +256,7 @@ check:
     - "The customer, the owner, the staff and everyone who eats there"
     - "Only the owner, because it's her business"
     - "Only the council inspector"
-    - "No one, because records are just paperwork"
+    - "No one, because the checks are just paperwork"
   answer: 0
   feedback:
     - null

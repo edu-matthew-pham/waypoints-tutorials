@@ -68,8 +68,13 @@ tasks:
       check:
         type: question
         q: "The coach isn't paid. What does she get from coaching?"
-        options: ["Pride, friendships and a part in the club", "Nothing at all", "A secret wage", "Only tiredness"]
+        options: ["Pride, friends and a part in the club", "Nothing, because she isn't paid", "Just a way to fill her free time", "Only tiredness and lost weekends"]
         answer: 0
+        feedback:
+          - null
+          - "She isn't paid, but she still gets something from it."
+          - "It does more than fill time: pride, friends, belonging."
+          - "It can be tiring, but she gets other things too."
         explain: "She gets things money can't buy. That is why people volunteer."
   - check:
       type: question
@@ -165,10 +170,10 @@ tasks:
       type: question
       q: "Leo says he loves seeing a student's face when a laptop he fixed starts up. Which reason for working is that?"
       options:
-        - "Self-esteem: he feels good about doing something well"
-        - "Material living standards"
-        - "Earning an income"
-        - "Identity, because he owns a business"
+        - "Self-esteem: he feels good about doing a job well"
+        - "Material living standards: what his pay can buy"
+        - "Earning an income: the customer pays for the fix"
+        - "Identity: owning a business is who he is"
       answer: 0
       feedback:
         - null
@@ -226,17 +231,17 @@ check:
   type: question
   q: "Mai could earn $100 more a week at a bigger shop, but she stays at the pantry because she values knowing the families. What is the opportunity cost of her choice?"
   options:
-    - "The extra $100 a week she could have earned"
-    - "Nothing, because she is happy"
-    - "The families she helps"
-    - "Her whole wage at the pantry"
+    - "The job at the bigger shop, with its extra $100 a week"
+    - "Nothing, because she is happy with her choice"
+    - "The families she helps at the pantry each week"
+    - "Her whole wage from working at the pantry"
   answer: 0
   feedback:
     - null
     - "Being happy with a choice doesn't mean nothing was given up."
     - "She keeps the families. They are what she chose."
     - "She still earns her pantry wage. What she gives up is the extra she could have had."
-  explain: "Mai trades some material living standards (the extra $100) for non-material ones (community and purpose)."
+  explain: "Her next best choice was the job at the bigger shop, with the extra $100 a week and whatever else came with it. Mai trades some material living standards for non-material ones (community and purpose)."
 ```
 
 ## Wider: reasons across a working life

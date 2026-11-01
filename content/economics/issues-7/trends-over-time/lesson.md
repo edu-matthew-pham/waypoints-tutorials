@@ -19,7 +19,7 @@ Describe a trend in three parts:
 
 For example: "Over the ten years, casual work rose from 420 to 650 workers."
 
-**Casual** and **full-time** work are the types from Work, income and identity: casual has no set hours; full-time is a full working week.
+**Casual** and **full-time** work are the types from Work, income and identity: casual has no promise of ongoing hours; full-time is a full working week.
 
 ## Predict: what's the trend?
 
@@ -88,6 +88,11 @@ tasks:
         q: "Was casual work higher in year 10 or in year 1?"
         options: ["Year 10", "Year 1", "They were the same", "You can't tell from the graph"]
         answer: 0
+        feedback:
+          - null
+          - "Year 1 was 420, and year 10 was 650."
+          - "They're different: 420 and 650."
+          - "Move the cursor to year 1 and year 10 and read both values."
         explain: "650 in year 10, 420 in year 1. Over the whole period it went up."
   - check:
       type: number
@@ -98,10 +103,10 @@ tasks:
       type: question
       q: "Which sentence describes the trend in casual work best?"
       options:
-        - "Over the ten years, casual work rose from 420 to 650 workers"
-        - "Casual work fell from 510 to 440"
-        - "Casual work went up and down"
-        - "There were 650 casual workers"
+        - "Over ten years it rose from 420 to 650 workers"
+        - "It fell from 510 to 440 workers, in year 5"
+        - "Casual work went up and down over the years"
+        - "There were 650 casual workers in year 10"
       answer: 0
       feedback:
         - null
@@ -142,16 +147,16 @@ tasks:
       type: question
       q: "Which sentence describes the trend in full-time work?"
       options:
-        - "Over the ten years, full-time work fell slowly, from 900 to 810 workers"
-        - "Full-time work stayed exactly the same every year"
-        - "Full-time work rose from 810 to 900"
-        - "Full-time work crashed in year 5"
+        - "Over ten years it fell slowly, from 900 to 810 workers"
+        - "It stayed exactly the same from year to year"
+        - "Over ten years it rose, from 810 up to 900 workers"
+        - "It crashed in year 5, and that is the trend"
       answer: 0
       feedback:
         - null
         - "It changed a little each year. Look at year 1 and year 10."
         - "Check the order: year 1 is 900 and year 10 is 810."
-        - "It fell by only 20 that year, much like the others."
+        - "It did fall most in year 5, but 20 isn't a crash. The trend is the whole period."
       explain: "Direction (fell slowly), how much (900 to 810), over what period (ten years)."
 ```
 
@@ -185,14 +190,14 @@ tasks:
       type: question
       q: "What do the two trends together suggest about work in Riverbend?"
       options:
-        - "More of the town's work may be casual, and a bit less full-time, than ten years ago"
-        - "Everyone in Riverbend now works casually"
-        - "Full-time work will disappear next year"
+        - "More of the town's work may now be casual, and less full-time"
+        - "Most people in Riverbend now work as casuals"
+        - "Full-time work in Riverbend will disappear next year"
         - "The two lines have nothing to do with each other"
       answer: 0
       feedback:
         - null
-        - "Full-time work is still the larger group: 810 against 650."
+        - "Full-time work is still the larger group: 810 against 650 in year 10."
         - "That goes much further than the data."
         - "Both describe work in the same town over the same years, so it makes sense to read them together."
       explain: "A reasonable inference from the two trends, one step beyond the data."
@@ -224,10 +229,10 @@ check:
   type: question
   q: "Casual work went from 420 to 440 over years 1 to 5, and from 500 to 650 over years 6 to 10. What does that show?"
   options:
-    - "The rise in casual work was much faster in the second half"
-    - "Casual work rose evenly the whole time"
-    - "Casual work fell in the first half"
-    - "The second half doesn't count"
+    - "The rise was much faster in the second half"
+    - "Casual work rose evenly over the whole time"
+    - "Casual work fell over the first five years"
+    - "Only the last five years count as the trend"
   answer: 0
   feedback:
     - null
@@ -249,7 +254,7 @@ check:
   paper: true
   models:
     - title: "One view"
-      text: "It could be worse for workers, because casual work has no set hours, so income can change from week to week and is harder to plan around."
+      text: "It could be worse for workers, because casual work has no promise of ongoing hours, so income can change from week to week and is harder to plan around."
     - title: "Another view"
       text: "It could suit some people, like students or carers, who want to choose when they work. It depends on whether people chose casual work or couldn't find full-time."
   criteria: ["I gave a view and a reason.", "I gave a reason someone might see it differently.", "I used the words casual or full-time."]

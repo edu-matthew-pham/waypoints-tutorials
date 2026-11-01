@@ -87,6 +87,11 @@ tasks:
           - "She should form a twenty-member cooperative to teach two afternoons a week"
           - "She must pay a franchise fee to a national chain before she can teach"
         answer: 0
+        feedback:
+          - null
+          - "Many service businesses are run by one person. Shareholders are for companies that need to raise lots of money."
+          - "A cooperative needs many members. Lin works alone, so she doesn't need one."
+          - "Lin isn't part of a chain. She can run her own lessons without a franchise."
         explain: "A small, personal service needs low setup costs and direct control, which suits a sole proprietorship."
   - check:
       type: question

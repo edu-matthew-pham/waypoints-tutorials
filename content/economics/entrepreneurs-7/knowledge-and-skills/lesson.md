@@ -84,8 +84,13 @@ tasks:
       check:
         type: question
         q: "If Maya had the idea but no grower agreed to supply her, would the business run?"
-        options: ["No, she needs people to agree to her plan", "Yes, the idea is enough", "Yes, if she buys a van", "Only if she has a website"]
+        options: ["No, she needs people to agree to her plan", "Yes, a good enough idea runs itself", "Yes, if she does the deliveries herself", "Only if she sets up a website first"]
         answer: 0
+        feedback:
+          - null
+          - "An idea alone delivers nothing. Someone has to grow the food and drive it."
+          - "She'd still have nothing to deliver without growers."
+          - "A website helps people order, but there's still nothing to sell without growers."
         explain: "Without growers there is nothing to deliver. Getting people behind the plan is a skill of its own."
   - check:
       type: question
@@ -174,7 +179,7 @@ tasks:
       answer: 0
       feedback:
         - null
-        - "Copying what is already there doesn't meet an unmet need. That is not spotting an opportunity."
+        - "It doesn't fill a gap no one is meeting: two shops already sell the same menu there."
         - "A sign is a small running decision. It doesn't spot a need."
         - "A loan might help later, but no need has been spotted yet."
       explain: "An opportunity is a need that no one is meeting well yet. Adult swimming lessons fill a gap."

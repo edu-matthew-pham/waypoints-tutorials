@@ -26,7 +26,7 @@ stuck:
     fix: "Price is what you pay. Opportunity cost is the best thing you did not do."
   - see: "A student says the extra pies cost the pastry."
     ask: "Could that oven hour have done anything else?"
-    fix: "The pastry is a price. The opportunity cost is the 20 muffins the hour could have baked."
+    fix: "The pastry money is a real cost too, with its own opportunity cost. In oven time, the cost is the 20 muffins the hour could have baked."
   - see: "A student lists everything they gave up."
     ask: "If the pool was closed, which one would she have picked?"
     fix: "Only the next best option counts, because you could choose just one."

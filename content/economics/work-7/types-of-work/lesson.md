@@ -16,7 +16,7 @@ Paid work comes in different arrangements:
 
 - **Full-time:** a full working week, usually around 38 hours.
 - **Part-time:** regular, set hours, but fewer than full-time.
-- **Casual:** no set or guaranteed hours. You work when you are offered shifts.
+- **Casual:** no promise of ongoing hours. You work the shifts you are offered, even if they often fall on the same days.
 - **At home:** paid work done from home instead of a workplace.
 
 **Unpaid** work includes **volunteering** (giving your time to a group or cause) and caring or housework for your family. A lot of unpaid work is **unrecognised**: no one pays for it or counts it, even though people rely on it.
@@ -48,7 +48,7 @@ check:
   options: ["Full-time", "Part-time", "Casual", "At home (paid)", "Unpaid"]
   items:
     - ["Rosa runs her car yard five long days a week", "Full-time", "A full working week is full-time."]
-    - ["Sam works shifts at Riverbend Bakery whenever they ring him", "Casual", "No set hours: he works when he is offered shifts."]
+    - ["Sam works shifts at Riverbend Bakery whenever they ring him", "Casual", "No promise of ongoing hours: he works the shifts he is offered."]
     - ["Mai works at Riverbend Pantry every Monday, Tuesday and Wednesday", "Part-time", "Regular set days, fewer than a full week."]
     - ["Jo designs websites for clients from a desk in her spare room", "At home (paid)", "Paid work done from home."]
     - ["Ana cares for her father every day", "Unpaid", "Caring for family is unpaid work."]
@@ -77,22 +77,27 @@ tasks:
         q: "If Ana stopped caring for her father, would someone else have to do it, maybe for pay?"
         options: ["Yes, someone would have to do it", "No, it doesn't need doing", "Only if he asked", "No, it isn't a real job"]
         answer: 0
+        feedback:
+          - null
+          - "Her father can't live on his own, so it does need doing."
+          - "It needs doing whether or not he asks."
+          - "Being unpaid doesn't stop it being work."
         explain: "The work still needs doing. That is a sign it is work, even when it is unpaid."
   - check:
       type: question
       q: "Sam works at the bakery whenever they ring him. Mai works three set days every week. What is the difference?"
       options:
-        - "Sam is casual (no set hours) and Mai is part-time (regular set hours)"
+        - "Sam is casual (no promised hours) and Mai is part-time (set hours)"
         - "There's no difference: casual and part-time mean the same thing"
         - "Sam is part-time because he works fewer hours than Mai"
         - "Mai is casual because she only works three days"
       answer: 0
       feedback:
         - null
-        - "They are different. Part-time has regular set hours. Casual has none guaranteed."
-        - "It isn't about how many hours. Sam has no set hours, which makes him casual."
+        - "They are different. Part-time has regular set hours. Casual has no hours promised ahead."
+        - "It isn't about how many hours. Sam has no hours promised ahead, which makes him casual."
         - "Three set days every week is regular, so Mai is part-time."
-      explain: "Part-time means regular set hours, fewer than full-time. Casual means no set or guaranteed hours."
+      explain: "Part-time means regular set hours, fewer than full-time. Casual means no promise of ongoing hours."
   - check:
       type: question
       q: "Why does it matter that unpaid work counts as work?"

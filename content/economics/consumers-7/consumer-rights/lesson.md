@@ -18,7 +18,7 @@ A business can't take these away. A "no refunds" sign doesn't remove them.
 
 - A **warranty** is an **extra promise** a business or maker can choose to give, such as "12 months' warranty". It sits on top of the guarantees and doesn't replace them.
 - **Change of mind** is different: if nothing is wrong and you just don't want it, the business doesn't have to give a refund, though many choose to.
-- A **cooling-off period** gives you time to change your mind after some agreements you didn't ask for, such as a door-to-door sale. For those, it is 10 business days.
+- A **cooling-off period** gives you time to change your mind after some agreements you didn't ask for, such as a door-to-door sale or a sales phone call. For those, it is usually 10 business days.
 - **Returning goods:** start by contacting the business that sold it, and keep your receipt or proof of purchase.
 
 ## Predict: the NO REFUNDS sign
@@ -72,6 +72,11 @@ tasks:
         q: "Is a warranty an extra promise, or is it the only protection you get?"
         options: ["An extra promise, on top of the consumer guarantees", "The only protection you get", "A promise that replaces the guarantees", "A kind of refund"]
         answer: 0
+        feedback:
+          - null
+          - "The consumer guarantees come with the purchase anyway. A warranty adds to them."
+          - "A warranty can't take away the guarantees. It sits on top of them."
+          - "A refund is one remedy. A warranty is a promise about what the seller will do."
         explain: "The guarantees come with every purchase from a business. A warranty is extra."
   - check:
       type: question
@@ -168,15 +173,15 @@ tasks:
       q: "Riverbend Appliances says Mia must buy an extended warranty, or she'll have no protection at all if the kettle breaks. Is that true?"
       options:
         - "No: the consumer guarantees come with the kettle anyway"
-        - "Yes: without it she has no rights"
-        - "Yes, but only for the first week"
-        - "No, because kettles never break"
+        - "Yes: without the warranty she has no rights at all"
+        - "Yes, but only for the first week after she buys it"
+        - "Yes, if she has thrown away the box it came in"
       answer: 0
       feedback:
         - null
         - "The guarantees come automatically. An extended warranty is an extra she can choose."
         - "The guarantees don't stop after a week."
-        - "Kettles can break. The point is the guarantees apply either way."
+        - "The box doesn't matter. The guarantees apply anyway, and proof of purchase helps."
       explain: "An extended warranty is an extra promise. It can't replace the consumer guarantees."
   - check:
       type: question
@@ -217,10 +222,10 @@ check:
   type: question
   q: "Sam signs up for a phone plan with a 12-month contract. The coverage at his house is much worse than the company promised. Which of these is right?"
   options:
-    - "The service must match what was promised and be done with care and skill, so he can ask the company to fix it"
-    - "He signed a contract, so he has no rights for 12 months"
-    - "He can only complain once the 12 months are up"
-    - "Rights only apply to things you can touch, not services"
+    - "He can ask them to fix it: the service must match what was promised"
+    - "He signed a contract, so he has to accept whatever coverage he gets"
+    - "He can only complain once the 12-month contract has finished"
+    - "Rights only cover things you can touch, not services like phone plans"
   answer: 0
   feedback:
     - null

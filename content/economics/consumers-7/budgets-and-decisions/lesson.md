@@ -3,7 +3,7 @@ order: 4
 unit: planning
 title: Plan before you buy
 node: AC9HE7K05 n4
-summary: "A budget lists the money coming in and going out, so you can see what is left over, what you can afford, and how long saving for something will take, before you commit. Paying later still has an opportunity cost: each repayment is money you can't use for something else then. Knowing your rights and responsibilities is the other half of a good decision: check what you are agreeing to, and keep the receipt."
+summary: "A budget lists the money coming in and going out, so you can see what is left over, what you can afford, and how long saving for something will take, before you commit. Paying later still has an opportunity cost: each repayment is money you can't use for something else then. Knowing your rights and responsibilities is the other half of a good decision: check what you are agreeing to before you sign up."
 language: maths
 hook: "Sam wants a $240 bike. A sign says he can take it home today and pay later. Should he?"
 ---
@@ -148,17 +148,17 @@ tasks:
       type: question
       q: "Sam saves up and buys the bike. Which is his responsibility now?"
       options:
-        - "Keeping the receipt, in case something goes wrong"
-        - "Getting a bike that is safe and works"
-        - "Getting a refund if he changes his mind"
-        - "Getting a warranty from the shop"
+        - "Using the bike the way it's meant to be used"
+        - "Getting a bike that is safe and works properly"
+        - "Getting a refund if he changes his mind later"
+        - "Getting a free warranty from the bike shop"
       answer: 0
       feedback:
         - null
         - "That's something Sam can claim: a right, under the consumer guarantees."
         - "The shop doesn't have to refund a change of mind."
         - "A warranty is something the shop may choose to give. It isn't Sam's responsibility."
-      explain: "Keeping the receipt is something Sam should do. It helps him use his rights if the bike is faulty."
+      explain: "Using a product as it's meant to be used is the buyer's part: damage from misuse isn't covered by the guarantees. Keeping the receipt is a good habit too, though other proof of purchase also works."
   - check:
       type: question
       q: "Mia says: 'Budgets are only for people who are short of money.' What is the best reply?"
@@ -194,7 +194,7 @@ check:
     - title: "A strong answer"
       text: "The budget shows Sam has $30 left a week, so the pay-later payments would use all of it. If he cuts going out to $25, he can save the $240 in 6 weeks instead. Before he buys, he should know the bike must be of acceptable quality, and keep the receipt in case it isn't."
     - title: "A different plan that also works"
-      text: "Sam could do two more lawns a week ($40 more), leaving $70 a week. Then the $60 payments would fit with $10 spare each week. He should still read the pay-later terms first, because that is his responsibility."
+      text: "Sam could do two more lawns a week ($40 more), leaving $70 a week. Then the $60 payments every two weeks ($30 a week) would fit with $40 spare each week. He should still read the pay-later terms first, because that is his responsibility."
   criteria: ["I used the budget to show what Sam can afford.", "I said how long saving would take, or whether the payments fit.", "I named one right or responsibility."]
 ```
 
@@ -233,10 +233,10 @@ check:
   type: question
   q: "A made-up toy maker keeps some money aside each year in case it has to run a recall. How does that connect to the last lesson?"
   options:
-    - "It can afford to warn people and give refunds quickly if a toy is unsafe"
-    - "It means the maker never has to recall anything"
-    - "It lets the maker skip the mandatory standards"
-    - "It's just extra profit for the owners"
+    - "It can pay to warn people and refund them if a toy is unsafe"
+    - "It means the maker will never have to recall anything"
+    - "It lets the maker skip the mandatory safety standards"
+    - "It's spare profit the owners can take out at year's end"
   answer: 0
   feedback:
     - null

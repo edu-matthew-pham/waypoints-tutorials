@@ -88,6 +88,11 @@ tasks:
           - "It only provides a service, not goods"
           - "It only provides goods, because not-for-profits cannot pay wages"
         answer: 0
+        feedback:
+          - null
+          - "Profit is one reason a business exists, not the only one. The pantry still sells groceries and pays staff."
+          - "Groceries are goods. The pantry provides goods and jobs."
+          - "Not-for-profits can pay wages. Its two staff are paid."
         explain: "Providing goods and jobs are reasons a business exists, even without an owner taking a profit."
   - check:
       type: question

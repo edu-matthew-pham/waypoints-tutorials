@@ -61,13 +61,13 @@ tasks:
       explain: "Four hours of pies bake 40 pies. That leaves two hours for muffins, so 40 muffins, not 60."
   - check:
       type: question
-      q: "The tuckshop moved one oven hour from muffins to pies. What was the opportunity cost of the 10 extra pies?"
-      options: ["The 20 muffins the oven could have baked in that hour", "The $15 the tuckshop paid for the extra pastry", "Nothing, because the school already owns the oven", "The 40 muffins it still bakes in the other two hours"]
+      q: "The tuckshop moved one oven hour from muffins to pies. In oven time, what was the opportunity cost of the 10 extra pies?"
+      options: ["The 20 muffins the oven could have baked in that hour", "The 10 pies the oven baked in that extra hour", "Nothing, because the school already owns the oven", "The 40 muffins it still bakes in the other two hours"]
       answer: 0
-      feedback: [null, "That is a price the tuckshop paid. The cost here is what the oven hour could have made instead.", "The oven costs nothing to use, but each hour can bake only one thing. Using it for pies uses up muffin time.", "Those are the muffins it kept. The cost is the muffins it gave up."]
+      feedback: [null, "Those pies are what it chose. The cost is what the hour could have made instead.", "Owning the oven doesn't make its hours free: each hour can bake only one thing, so pies use up muffin time.", "Those are the muffins it kept. The cost is the muffins it gave up."]
       explain: "That hour could have baked 20 muffins. Baking pies gave them up, so the 20 muffins are the opportunity cost of the 10 pies."
     smaller:
-      check: { type: question, q: "In one oven hour, can the tuckshop bake pies and muffins at the same time?", options: ["No, the hour bakes one or the other", "Yes, if the oven is big enough", "Yes, if it bakes faster", "Only on footy day"], answer: 0, explain: "The hour goes to one thing. Whatever it would have baked instead is given up." }
+      check: { type: question, q: "In this made-up oven, if an hour bakes pies, how many muffins does it bake in that hour?", options: ["0", "20", "10", "40"], answer: 0, feedback: [null, "20 is what the hour bakes if it goes to muffins. It went to pies.", "10 is the number of pies that hour bakes, not muffins.", "40 is two hours of muffins."], explain: "In this oven the hour goes to one thing, so no muffins. The 20 it could have baked are given up." }
 ```
 
 ### Give pies four hours
@@ -113,11 +113,11 @@ tasks:
       misconception: opportunity-cost-is-price
       explain: "Line 3: the $8 is the price Mia paid. Opportunity cost is what she gave up, the book. Line 4 makes a second mistake: it counts everything she did not do, when only the next best option counts."
     smaller:
-      check: { type: question, q: "Mia paid $8 and went to the pool. Is the $8 what she gave up, or what she paid?", options: ["What she paid", "What she gave up", "Both", "Neither"], answer: 0, explain: "The $8 is the price. What she gave up is the next best thing she could have done with the day." }
+      check: { type: question, q: "Mia paid $8 and went to the pool. Is the $8 what she gave up, or what she paid?", options: ["What she paid", "What she gave up", "Both", "Neither"], answer: 0, feedback: [null, "The $8 is the price. What she gave up is the next best thing she could have done.", "The $8 could have gone elsewhere too, but here it's the price. What she gave up is the next best thing to do.", "She paid it, so it's the price. The question is what she gave up."], explain: "The $8 is the price. What she gave up is the next best thing she could have done with the day." }
   - check:
       type: question
       q: "Why is the opportunity cost not 'the book, the savings and the sleep-in'?"
-      options: ["Only the next best option counts, because you could only have chosen one", "Because those are cheap", "Because Mia did not want them", "Because opportunity cost is always money"]
+      options: ["She could only have picked one, so only the next best counts", "Because the book and the sleep-in are cheap", "Because Mia did not really want the others", "Because opportunity cost is always money"]
       answer: 0
       feedback: [null, "Price does not matter here. What matters is that you could only choose one.", "She may have wanted all of them, but she could only pick one instead.", "Opportunity cost can be time, land or anything given up, not only money."]
       explain: "You could only have made one different choice, so the cost is the best of the ones you did not pick."

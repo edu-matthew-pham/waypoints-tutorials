@@ -84,28 +84,33 @@ tasks:
       answer: 3
       fault: logic
       misconception: pattern-proves-cause
-      explain: "Line 3: two things going up together doesn't prove a cause, and Nib has it backwards. The economic reasoning says more income makes saving possible, not the other way round. So line 4 doesn't follow."
+      explain: "Line 3: two things going up together doesn't prove a cause, and Nib mostly has it the wrong way round. The economic reasoning says more income makes saving possible. So line 4 doesn't follow."
     smaller:
       check:
         type: question
         q: "Which usually comes first for a household: getting more income, or having more to save?"
-        options: ["Getting more income", "Having more to save", "They always happen at the same moment", "Neither, saving is random"]
+        options: ["Getting more income", "Having more to save", "They always happen at the same moment", "Neither, saving is just luck"]
         answer: 0
+        feedback:
+          - null
+          - "You need money coming in before there's any left over to save."
+          - "Usually income comes first, then saving out of what's left."
+          - "Saving depends on what's left after spending. It isn't luck."
         explain: "You need the income before there's anything left over to save."
   - check:
       type: question
       q: "Which sentence explains the relationship with a cause, an effect and a because?"
       options:
-        - "Higher income can lead to more saving, because more is left over after paying for needs"
-        - "Income and saving both go up in the graph"
+        - "More income can lead to more saving, because more is left after needs"
+        - "Income and saving both go up together across the graph"
         - "Saving goes up, so income goes up, because the dots go up"
-        - "Some households save more than others"
+        - "Some households save more than others, so income varies"
       answer: 0
       feedback:
         - null
         - "That describes the pattern, but doesn't say which causes which or why."
-        - "That's backwards, and 'the dots go up' isn't an economic reason."
-        - "True, but it doesn't link income and saving."
+        - "That's mostly the wrong way round, and 'the dots go up' isn't an economic reason."
+        - "That's a pattern, not a cause and effect, and it gives no because."
       explain: "Cause (income), effect (saving), and an economic because (more left after needs)."
   - check:
       type: question
@@ -246,15 +251,15 @@ check:
   type: question
   q: "Some of the Riverbend households that earn and save the most have two adults working. What does that add to the picture?"
   options:
-    - "Having two earners could explain both the higher income and the higher saving"
-    - "Nothing: the number of earners can't matter"
-    - "It proves that saving causes income"
-    - "It means the graph is useless"
+    - "Two earners could explain both the income and the saving"
+    - "Nothing: how many people earn can't change the pattern"
+    - "It proves that saving more is what causes higher income"
+    - "It means the graph is wrong and should be ignored"
   answer: 0
   feedback:
     - null
     - "Two earners can raise income, which can raise saving."
-    - "That's backwards, and nothing here proves it."
+    - "That's mostly the wrong way round, and nothing here proves it."
     - "The graph is still useful. It just isn't the whole story."
   explain: "A third thing (the number of earners) can help explain a pattern. Good explanations look for it."
 ```

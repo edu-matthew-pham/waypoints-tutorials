@@ -11,7 +11,7 @@ activities:
     minutes: 4
     do: |
       Read out the six Riverbend people one at a time. Students hold up one hand for paid and two for unpaid, then call out the type.
-    notes: "Pause on Sam and Mai: set days or no set hours?"
+    notes: "Pause on Sam and Mai: set days, or no hours promised ahead?"
   - at: investigate
     kind: discussion
     title: "Is it work?"

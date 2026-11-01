@@ -13,7 +13,7 @@ Riverbend is a made-up town, and so are its people and shops.
 A **consumer** is someone who buys goods or services for their own use.
 
 - A **right** is something you can **claim**: something you are entitled to.
-- A **responsibility** is something you **must do**: something you owe to someone else.
+- A **responsibility** is something you **must do**: your part of the deal, which you owe to someone else.
 
 In a sale, both sides have both. Often they pair up: what one side can claim is what the other side must do.
 
@@ -71,6 +71,11 @@ tasks:
         q: "Is reading the kettle's instructions before using it something Mia can claim, or something she should do?"
         options: ["Something she should do: a responsibility", "Something she can claim: a right", "Both a right and a responsibility", "Neither, it's the shop's job"]
         answer: 0
+        feedback:
+          - null
+          - "Mia can't claim it from the shop. It's something she has to do herself."
+          - "It's only something she does, not something she can claim."
+          - "The shop gives her the instructions. Reading them is up to Mia."
         explain: "It's something she must do, so it's one of her responsibilities."
   - check:
       type: match
@@ -84,13 +89,13 @@ tasks:
       q: "Which of these is a right, not a responsibility?"
       options:
         - "Getting a product that matches how it was described"
-        - "Keeping the receipt in case something goes wrong"
+        - "Using the product the way it is meant to be used"
         - "Reading the terms before you sign up"
         - "Paying the bill on time"
       answer: 0
       feedback:
         - null
-        - "Keeping the receipt is something you should do. That makes it a responsibility."
+        - "Using it as it's meant to be used is your part of the deal: damage from misuse isn't covered. That's a responsibility."
         - "Reading the terms is something you should do. That's a responsibility."
         - "Paying on time is something you must do, so it's a responsibility."
       explain: "Getting what was described is something you can claim. The others are things you must do."
@@ -131,10 +136,10 @@ tasks:
       type: question
       q: "Ana opens a savings account at a bank. Which of these is her responsibility?"
       options:
-        - "Reading the account's terms, such as any fees, before she signs up"
+        - "Reading the account's terms before she signs up"
         - "Having her money kept safely by the bank"
-        - "Getting the interest the bank promised"
-        - "Being told clearly what the account costs"
+        - "Getting the interest the bank promised her"
+        - "Being told clearly what fees the account has"
       answer: 0
       feedback:
         - null

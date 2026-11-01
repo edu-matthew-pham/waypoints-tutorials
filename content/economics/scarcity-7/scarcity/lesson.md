@@ -67,7 +67,7 @@ tasks:
       misconception: shortage-vs-scarcity
       explain: "Line 3: Nib thinks scarcity just means something ran out. Running out is a shortage, and ordering more fixes it. Scarcity stays: the oven can still bake only so many pies a day, and the helpers can only serve so many. Line 4 follows from the same mistake."
     smaller:
-      check: { type: question, q: "Even after the new batch comes in, the tuckshop still has one oven and two helpers. Can it make unlimited pies?", options: ["No, the oven and helpers are limited", "Yes, as long as it orders enough", "Yes, if the pies are cheap", "Yes, if students ask politely"], answer: 0, explain: "The oven and the helpers limit how much can be made. That limit is what scarcity is." }
+      check: { type: question, q: "Even after the new batch comes in, the tuckshop still has one oven and two helpers. Can it make unlimited pies?", options: ["No, the oven and helpers are limited", "Yes, as long as it orders enough", "Yes, if it works the helpers longer", "Yes, if it buys pies from a shop"], answer: 0, feedback: [null, "More ingredients don't give it a bigger oven or more helpers.", "Longer hours make more for a while, but the hours are limited too.", "Buying pies uses money, which is limited as well."], explain: "The oven and the helpers limit how much can be made. That limit is what scarcity is." }
   - check:
       type: question
       q: "Which best explains why scarcity is always there?"
@@ -145,7 +145,7 @@ tasks:
   - check:
       type: question
       q: "A rich town has shops with full shelves every day. Is there scarcity there?"
-      options: ["Yes: the land, workers and equipment are still limited, and people still want more than can be made", "No, because the shelves are full", "Only in poor towns", "Only on days when a shop sells out"]
+      options: ["Yes: land, workers and equipment are still limited", "No, because the shelves are full every day", "Only in towns where people have less money", "Only on days when a shop sells out"]
       answer: 0
       feedback: [null, "Full shelves today do not remove the limits. Think about the oven and the helpers.", "Scarcity affects every community, rich or poor.", "A shop selling out is a shortage. Scarcity is there on the days nothing sells out too."]
       explain: "Every town has limited land, labour and capital, and wants keep growing. Full shelves show that this week's shortage is fixed, not that scarcity is gone."

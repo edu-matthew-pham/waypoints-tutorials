@@ -71,6 +71,11 @@ tasks:
         q: "Every week Mrs Ng's tenants pay her for the flat. Is that money coming in to her?"
         options: ["Yes, so it is income", "No, because she didn't go to work", "Only if she spends it", "No, it belongs to the tenants"]
         answer: 0
+        feedback:
+          - null
+          - "Income doesn't have to come from going to work."
+          - "Income is what comes in, whether she spends it or not."
+          - "The tenants pay it to Mrs Ng, so it's hers."
         explain: "Money she receives regularly is income, wherever it comes from."
   - check:
       type: question
@@ -91,16 +96,16 @@ tasks:
       type: question
       q: "Theo owns shares in a company. Why is he paid dividends?"
       options:
-        - "He owns part of the company, so he gets a share of its profit"
-        - "He works at the company every day"
+        - "He owns part of the company, so he shares its profit"
+        - "He works at the company, so it pays him for his work"
         - "The government pays people who own shares"
-        - "He lends the company his car"
+        - "He lent the company money, so it pays him back"
       answer: 0
       feedback:
         - null
         - "Shareholders don't have to work there. They are paid because they own part of it."
         - "Dividends come from the company's profit, not the government."
-        - "That would be rent or a fee, not a dividend."
+        - "A loan is paid back with interest. A dividend is a share of profit paid to owners."
       explain: "Dividends are a share of profit paid to the company's owners, the shareholders."
 ```
 
@@ -182,16 +187,16 @@ tasks:
       type: question
       q: "Which person has more than one source of income?"
       options:
-        - "Leo, who earns profit from his business and a wage teaching an evening class"
-        - "Sam, who works at the bakery"
-        - "The principal, who is paid a salary"
-        - "Theo, who owns shares in one company"
+        - "Leo: business profit, plus a wage for an evening class"
+        - "Sam, who works lots of shifts at the bakery"
+        - "The principal, who is paid a salary monthly"
+        - "Theo, who gets dividends twice a year"
       answer: 0
       feedback:
         - null
-        - "Sam has one source: his wage."
-        - "The principal has one source: a salary."
-        - "Theo has one source: dividends."
+        - "Many shifts still come from one source: his wage."
+        - "Being paid every month is still one source: a salary."
+        - "Two payments a year still come from one source: dividends."
       explain: "Leo has two: profit from his business and a wage from teaching."
 ```
 
@@ -249,17 +254,17 @@ check:
   type: question
   q: "Kai delivers food in Riverbend through a delivery app. He is paid for each delivery, and some nights there are few orders. What kind of income is this, and what does it mean for him?"
   options:
-    - "Neither: he's paid per job, so his income changes from night to night"
+    - "Neither: he works for himself through the app, so it changes nightly"
     - "A salary, because the app pays him regularly every week"
     - "A wage, because he is paid for each hour he is out"
-    - "Social security, because a big company pays him"
+    - "Social security, because the government sets a minimum for it"
   answer: 0
   feedback:
     - null
     - "A salary is a set yearly amount. Kai's pay depends on how many deliveries he does."
-    - "He is paid for each delivery, not each hour, so a slow night pays less."
-    - "Social security comes from the government, not a company."
-  explain: "Paid per job, Kai's income is less steady than a wage or salary. That is one reason people weigh up gig work carefully."
+    - "A wage is paid to an employee. Delivery riders like Kai usually aren't employees: they work for themselves through the app."
+    - "The government sets a minimum, but the app pays Kai for his work. Social security is a payment from the government."
+  explain: "Delivery riders are usually treated as contractors who work for themselves, so their income is closer to running a small business than to a wage, and it is less steady. That is one reason people weigh up gig work carefully."
 ```
 
 Typical and wider steps are extras on the same idea. You do not need them to finish the lesson.

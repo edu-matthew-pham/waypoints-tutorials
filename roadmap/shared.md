@@ -205,6 +205,11 @@ Why: rules get shortened each time they are copied, and the reason and scope are
 - Split across chats or reviewers by subject. A reviewer that did not write the lesson checks a sample of each course before it is marked done.
 - Lesson text only (`lesson.md`), so no clips re-record; each course can go out with publish-lessons when done.
 
+**Part B progress:**
+- **Economics, all six courses, and *Spending choices* in `hass/before-year-7` (1 Nov 2026, Economics chat, with its fresh-eyes review fixes):** 33 questions fixed, 0 left; per-option feedback added to all 20 `smaller:` lead-ins that had none; short strawmen replaced. Baseline updated. Lesson text plus a few `teacher.yml` notes; goes out with the whole-site publish already waiting for Economics. The option-length chat can skip Economics.
+
+**Deck speaker notes still drop dollar signs (found 1 Nov 2026 by the Economics review; not fixed here):** `workedSlide`'s `plain` in `tools/teach.mjs` strips paired `$…$` as maths, so a deck's worked-example notes read "25 + 15 + 40 = 80" for "$25 + $15 + $40 = $80". Same rule as the ff29b49 fix in `lesson-view.mjs` would fix it. Shared tool, so left for whoever owns `teach.mjs`; decks change on a whole-site publish.
+
 **Not automated:** strawman distractors that are short ("Electrons are coloured"). The fixing pass catches those by eye; the check only catches length.
 
 **Size:** Part A is about half a day for one chat. Part B is about 1,100 questions; at a course a sitting, a few days across parallel chats.

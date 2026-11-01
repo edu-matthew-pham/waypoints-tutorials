@@ -14,14 +14,14 @@ before: |
 
   **Privacy.** No step asks about students' own families' work. The Make step asks for work they can see in the community. Some students' families are unemployed, on government payments, caring full-time or in insecure work, and none of that is a judgement.
 
-  Facts used: a full-time week in Australia is usually around 38 hours (the National Employment Standards' maximum ordinary hours for a full-time employee). Pay rates and casual loading are left out on purpose because they change.
+  Facts used: a full-time week in Australia is usually around 38 hours (the National Employment Standards' maximum ordinary hours for a full-time employee). Pay rates and casual loading are left out on purpose because they change. Casual is simplified to "no promise of ongoing hours": Fair Work defines a casual employee by no firm advance commitment to ongoing work, and a regular pattern of shifts on its own doesn't change that ("Casual employees", checked 1 Nov 2026). Many casuals work regular rosters, so don't accept "casuals have no regular hours". Ana's carer payment in Earning an income is income support from the government, not pay for the caring, so the hook's "only four get paid" still holds; say so if a student spots it. The Try sort asks for each person's main arrangement; accept a reasoned second answer where they overlap (Rosa owns her car yard and works full-time; Jo is self-employed at home).
 
   All Riverbend people are made up.
 running:
   - "Predict: take a vote on Ana. Let the 'only if paid' and 'yes, it's work' sides each give one reason."
   - "Try: after the sort, ask what all six people have in common."
   - "Worked example: let the class find Nib's line, then use the Build up to it question if anyone still says unpaid work isn't work."
-  - "Vary: ask who in the room has volunteered for something (a club, a fundraiser). No one has to answer."
+  - "Vary: ask students to think of a volunteer they or someone they know has seen at work (a club, a fundraiser). No one has to say who."
   - "Make: students list work they can see in the community, not their family's."
 stuck:
   - see: "A student says caring for family or housework isn't work."
@@ -29,7 +29,7 @@ stuck:
     fix: "It is unpaid work. Pay tells you the type of work, not whether it is work."
   - see: "A student mixes up casual and part-time."
     ask: "Does this person have set days every week?"
-    fix: "Part-time has regular set hours. Casual has no set or guaranteed hours."
+    fix: "Part-time has regular set hours. Casual has no promise of ongoing hours."
   - see: "A student says volunteers are people who couldn't get a job."
     ask: "Could the netball coach have a paid job as well?"
     fix: "People volunteer for many reasons, often alongside paid work."
@@ -45,4 +45,4 @@ exit:
 explain: |
   **Work** is effort that does something useful for someone, paid or not.
 
-  Paid work can be **full-time**, **part-time** (regular set hours), **casual** (no set hours) or **at home**. **Unpaid** work includes **volunteering** and caring or housework for family. Much unpaid work is **unrecognised**: no one pays for it or counts it.
+  Paid work can be **full-time**, **part-time** (regular set hours), **casual** (no promise of ongoing hours) or **at home**. **Unpaid** work includes **volunteering** and caring or housework for family. Much unpaid work is **unrecognised**: no one pays for it or counts it.

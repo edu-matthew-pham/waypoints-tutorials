@@ -297,10 +297,17 @@ The planned lesson in *Before Year 7: HASS* (`content/hass/before-year-7/index.m
 ## Next
 Year 7 plan complete (1 Nov 2026): every Year 7 Economics and Business standard (K01–K05, S03, S04) has a built course, plus the Year 6 catch-up *Spending choices* and the curriculum map.
 
-1. The fresh-eyes review (running 1 Nov), then fixes Matthew agrees to.
+1. ~~Fresh-eyes review~~ done 1 Nov 2026, fixes applied with Matthew's yes (section below).
 2. A whole-site publish (Matthew runs it), then a trial with a class: nothing has been tried yet, so `preview: true` stays.
 3. Keep `content/economics-teachers.md` in step with what is built.
 4. Years 8 to 10: not planned yet.
+
+## Fresh-eyes review fixes (1 Nov 2026, Matthew agreed)
+A read-only agent reviewed the oven step and the four new courses; a second agent sample-checked the fixes (22 questions in context, all 156 changed questions parsed).
+- **Facts:** recalls are usually started by the business and the government can order one (ACCC "Recalls"); casual work is "no promise of ongoing hours" (Fair Work "Casual employees"); cooling-off note cites ACCC "Telemarketing and door-to-door sales" with its under-$100 exclusion (teacher notes only); second-hand goods from a business keep the guarantees (ACCC goods page) and tax records cite the ATO; delivery riders are usually contractors, and the 17 Aug 2026 Fair Work minimum standards order is in Kai's teacher note.
+- **Self-contradictions fixed:** budgets model 2 ($40 spare a week, not $10); gluten-free loaf is now initiative before anyone asks; Sam's opportunity cost is one thing (netball) and Mai's is the bigger-shop job; "keeping the receipt" is now a good habit, not a responsibility (a responsibility is "your part of the deal").
+- **Calls (Matthew, 1 Nov: mostly accuracy and precision):** "yourself" stays an option in the phone-plan Make step (writing stays in the student's book, nothing is collected, a made-up person is offered beside it); the volunteer prompt asks about a volunteer students have seen, so no one is put on the spot; oven questions keep to the model's rules; consulting is no longer sorted as negotiating; saving "mostly" follows income.
+- **Options:** all 33 length-flagged questions fixed, strawmen replaced, feedback added to every `smaller:` lead-in (logged in `shared.md` › Right answers that give themselves away by length).
 
 ## Starter prompt for the Economics chat
 

@@ -62,7 +62,7 @@ tasks:
       misconception: choices-uninfluenced
       explain: "Line 3: half the class having the same shoes, and the ads everywhere, are influences. Nib still chose, but not from nowhere."
     smaller:
-      check: { type: question, q: "If half your class wore the same shoes, might that affect what you notice in a shop?", options: ["Yes, it might", "No, never"], answer: 0, explain: "What friends have is an influence, even when we don't notice it." }
+      check: { type: question, q: "If half your class wore the same shoes, might that affect what you notice in a shop?", options: ["Yes, it might", "No, never"], answer: 0, feedback: [null, "Most of us notice what friends have, even when we don't mean to."], explain: "What friends have is an influence, even when we don't notice it." }
   - check:
       type: question
       q: "Which of these is an influence from advertising?"

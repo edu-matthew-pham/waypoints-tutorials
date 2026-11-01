@@ -65,8 +65,9 @@ tasks:
       check:
         type: question
         q: "Which of these says what the business did?"
-        options: ["It changed its routes when the bike lanes opened", "It grew fast", "It made lots of money", "It became popular"]
+        options: ["It changed its routes when the lanes opened", "It grew fast in its first year", "It made lots of money from deliveries", "It became popular with the shops"]
         answer: 0
+        feedback: [null, "Growing fast is what happened, not what it did.", "Making money is a result. What did it do to earn it?", "Being popular is a result. What did it do to win the shops over?"]
         explain: "Changing its routes is an action. The others describe what happened afterwards."
   - check:
       type: sort
@@ -119,16 +120,16 @@ insight: "Telling initiative from innovation, and setting aside 'one idea guaran
 tasks:
   - check:
       type: question
-      q: "Riverbend Bakery's owner starts baking a gluten-free loaf after three customers ask for one. A month later she finds a way to bake it without a separate oven. Which part is innovation?"
+      q: "Riverbend Bakery's owner notices customers leaving with nothing because no bread is gluten-free, so she starts baking a gluten-free loaf before anyone asks. A month later she finds a way to bake it without a separate oven. Which part is innovation?"
       options:
         - "Finding a way to bake it without a separate oven"
-        - "Starting to bake it after customers asked"
+        - "Starting to bake it before anyone asked"
         - "Both are innovation, because both are new"
         - "Neither, because a loaf of bread isn't new"
       answer: 0
       feedback:
         - null
-        - "Acting on the customers' request is initiative. The new method is the innovation."
+        - "Acting before anyone asked is initiative. The new method is the innovation."
         - "Starting to bake it is acting (initiative). Finding a better method is innovation."
         - "The loaf is not new, but the way of baking it is. Innovation can be a better way, not only a new product."
       explain: "Initiative is acting without being told. Innovation is a new or better way of doing something."
@@ -163,22 +164,22 @@ tasks:
       type: question
       q: "Riverbend Pantry is a not-for-profit that keeps groceries affordable. Which is the best sign it is succeeding?"
       options:
-        - "More families can buy fresh food at low prices, and it covers its costs"
+        - "More families can afford fresh food, and it covers its costs"
         - "It made the biggest profit of any shop in town"
-        - "Its owners became rich"
-        - "It closed early so the staff could go home"
+        - "Its owners took home a big share of the money"
+        - "It has more customers than any other shop"
       answer: 0
       feedback:
         - null
         - "The pantry isn't trying to make a big profit. Success depends on what a business is for."
         - "A not-for-profit has no owners taking a profit."
-        - "Closing early doesn't help the families it exists to serve."
+        - "Being busy isn't the same as keeping food affordable. Measure it against what it is for."
       explain: "Success is measured against what the business is trying to do. For the pantry, that is affordable food for families."
   - check:
       type: question
       q: "Which explanation of a business's success uses evidence?"
       options:
-        - "The bakery got busier after it started opening at 6 am for tradespeople, so spotting that need helped"
+        - "It got busier after opening at 6 am for tradespeople, a need it spotted"
         - "The bakery is successful because it's a really successful bakery"
         - "The bakery succeeded because its owner is a natural entrepreneur"
         - "The bakery succeeded because bakeries in busy towns always do well"
@@ -208,7 +209,7 @@ check:
     - title: "A strong answer"
       text: "Riverbend Cargo Bikes saw an opportunity when the bike lanes opened and showed initiative by running a lunchtime trial before anyone asked. Its cool boxes were an innovation that let it carry medicine. It was also lucky that the lanes opened just as it started."
     - title: "A different answer that also works"
-      text: "The bakery kept its stakeholders on side by sticking to its promise of bread by 7 am, so cafes kept ordering. Its values (buying local flour) cost more, but brought a steady supplier. A new housing estate nearby also brought more customers, which it didn't control."
+      text: "The bakery owner and her staff shared a vision of every loaf out by 7 am, and kept to it, so the cafes could count on their bread and kept ordering. Its values (buying local flour) cost more, but brought a steady supplier. A new housing estate nearby also brought more customers, which it didn't control."
   criteria: ["I used at least two of the terms correctly.", "I backed each one with evidence from the story.", "I named something outside the business's control.", "I explained causes, not just the result."]
 ```
 

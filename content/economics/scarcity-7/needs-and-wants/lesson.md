@@ -66,7 +66,7 @@ tasks:
       misconception: enough-stuff-ends-wanting
       explain: "Line 4: Nib thinks that if factories made enough, wanting would stop. Mia shows the opposite. Each want she met led to a new one, so making more stuff does not end wanting. Line 3 is right: it is what happened to Mia."
     smaller:
-      check: { type: question, q: "Mia got her new bike. What did she want next?", options: ["A matching helmet, then a bell and a phone holder", "Nothing at all", "To sell the bike", "A second bike exactly the same"], answer: 0, explain: "Her wanting did not stop. It moved on to the next thing." }
+      check: { type: question, q: "Mia got her new bike. What did she want next?", options: ["A matching helmet, then a bell and a phone holder", "Nothing at all, she was happy", "To sell the bike and save the money", "Only things she really needed"], answer: 0, feedback: [null, "She was happy, but new wants still came along.", "She kept the bike and wanted more for it.", "A bell and a phone holder are wants, not needs."], explain: "Her wanting did not stop. It moved on to the next thing." }
   - check:
       type: question
       q: "Economists start from the idea that wants have no limit. Which best explains why they think so?"

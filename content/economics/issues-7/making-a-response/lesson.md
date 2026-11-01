@@ -47,7 +47,7 @@ check:
   type: board
   text: "Write a formula in B5 and in C5 for each plan's cost over 12 months."
   when: "f_B5 = 1 and c_B5 = 420 and f_C5 = 1 and c_C5 = 300"
-  explain: "=B2*12 gives 420 for Plan A and =C2*12 gives 300 for Plan B. Plan B costs 120 less over a year, but its contract runs for 24 months."
+  explain: "=B2*12 gives $420 for Plan A and =C2*12 gives $300 for Plan B. Plan B costs $120 less over a year, but its contract runs for 24 months."
 ```
 
 Plan B is cheaper over a year. But it has a third of the data, and Mia would be locked in for two years. That's why the numbers are only part of the answer.
@@ -70,32 +70,37 @@ tasks:
       check:
         type: question
         q: "Could one big benefit matter more than three small ones?"
-        options: ["Yes, it depends on how much each matters", "No, three always beats one", "Only if the big one is about money", "Only for businesses"]
+        options: ["Yes, it depends on how much each matters", "No, three always beats one", "Only if the big one is about money", "No, you just count the points"]
         answer: 0
+        feedback:
+          - null
+          - "Three small points don't always beat one big one. It depends how much each matters."
+          - "Non-financial benefits can matter most too."
+          - "Counting the points isn't weighing them. Ask which matters most."
         explain: "That's why a response weighs the points instead of counting them."
   - check:
       type: question
       q: "Which of these is a response, not just a list?"
       options:
-        - "I choose Plan B, because saving 120 a year matters more to me than extra data I wouldn't use"
-        - "Plan A has more data and Plan B is cheaper"
-        - "Plan A costs 420 and Plan B costs 300"
-        - "Both plans have good and bad points"
+        - "I choose Plan B: saving $120 matters more than data I won't use"
+        - "Plan A has more data each month, and Plan B is cheaper"
+        - "Plan A costs $420 a year and Plan B costs $300 a year"
+        - "Both plans have good and bad points, so either will do"
       answer: 0
       feedback:
         - null
         - "That lists differences but doesn't choose."
         - "Those are the totals, with no choice or reason."
-        - "True, but it doesn't choose or say why."
+        - "True, but it doesn't choose or say why. 'Either will do' isn't a weighing."
       explain: "A response makes a choice and says which costs and benefits matter most, and why."
   - check:
       type: question
       q: "Ari picks Plan A and Mia picks Plan B, using the same list. Can both be good responses?"
       options:
-        - "Yes, if each one weighs the points and explains why, for their own needs"
-        - "No, only one plan can be right"
+        - "Yes, if each weighs the points for their own needs"
+        - "No, only one of the two plans can be the right one"
         - "No, the cheaper plan is always the right answer"
-        - "Only if they choose the same plan"
+        - "Only if they both end up choosing the same plan"
       answer: 0
       feedback:
         - null
@@ -109,10 +114,10 @@ tasks:
 
 ```worked
 \text{The issue} :: Mia needs a phone plan.
-\text{The alternatives} :: Plan A (35 a month, 30 GB, 12 months) or Plan B (25 a month, 10 GB, 24 months).
-\text{Costs and benefits} :: A: more data, short contract, costs 120 more a year. B: cheaper, less data, locked in for two years.
+\text{The alternatives} :: Plan A ($35 a month, 30 GB, 12 months) or Plan B ($25 a month, 10 GB, 24 months).
+\text{Costs and benefits} :: A: more data, short contract, costs $120 more a year. B: cheaper, less data, locked in for two years.
 \text{The choice} :: Plan B, for Mia.
-\text{Because} :: She uses little data, and saving 120 a year matters more to her than being free to switch.
+\text{Because} :: She uses little data, and saving $120 a year matters more to her than being free to switch.
 ```
 
 Now: where does Nib go wrong?
@@ -132,15 +137,15 @@ tasks:
       type: board
       text: "Plan A has a special offer. Change its monthly cost in B2 to 28 and see the new 12-month cost."
       when: "c_B2 = 28 and c_B5 = 336"
-      explain: "Plan A now costs 336 over a year, only 36 more than Plan B, with three times the data."
+      explain: "Plan A now costs $336 over a year, only $36 more than Plan B, with three times the data."
   - check:
       type: question
-      q: "With Plan A at 28 a month, would it be reasonable for Mia to change her choice?"
+      q: "With Plan A at $28 a month, would it be reasonable for Mia to change her choice?"
       options:
-        - "Yes: the cost difference is much smaller, so the extra data and shorter contract might now be worth it"
+        - "Yes: the gap is smaller, so Plan A's extras may now be worth it"
         - "No: once you choose, you can never change your mind"
-        - "No: Plan B is always better because it's cheaper"
-        - "Yes: because Plan A now has more items on the list"
+        - "No: Plan B is always better, because it's still cheaper"
+        - "Yes: because Plan A now has more items on its list"
       answer: 0
       feedback:
         - null
@@ -164,25 +169,25 @@ tasks:
       type: question
       q: "Dev writes: 'I choose Plan A.' What is missing?"
       options:
-        - "The because: which costs and benefits mattered most, and why"
-        - "Nothing: he made a choice"
-        - "A longer list of benefits"
-        - "The phone's colour"
+        - "The because: which points mattered most, and why"
+        - "Nothing: he made a choice, and that's the response"
+        - "A longer list of Plan A's benefits"
+        - "What each plan costs over the whole year"
       answer: 0
       feedback:
         - null
         - "A choice without reasons isn't a full response."
         - "The list matters less than the reasons for the choice."
-        - "That's not part of the economic decision."
+        - "Totals help, but a response still needs the because: why that plan."
       explain: "A response needs the reason, linked to the costs and benefits."
   - check:
       type: question
       q: "Which reason uses a non-financial cost?"
       options:
-        - "Plan B would lock me in for two years, so I couldn't switch if a better deal came along"
-        - "Plan B costs 25 a month"
-        - "Plan A costs 420 a year"
-        - "Plan B saves 120 a year"
+        - "Plan B locks me in for two years, so I'm stuck if my needs change"
+        - "Plan B costs $25 a month, paid on the first of each month"
+        - "Plan A costs $420 a year, which is more than Plan B"
+        - "Plan B saves me $120 a year compared with Plan A"
       answer: 0
       feedback:
         - null
@@ -208,9 +213,9 @@ check:
   paper: true
   models:
     - title: "A response choosing Plan B"
-      text: "The issue is which plan Mia should get. The alternatives are Plan A and Plan B. Plan A has more data and a shorter contract but costs 420 a year; Plan B costs 300 a year but has less data and a two-year contract. I choose Plan B, because Mia mostly uses wi-fi at home, so 10 GB is enough, and saving 120 a year matters more to her than being able to switch."
+      text: "The issue is which plan Mia should get. The alternatives are Plan A and Plan B. Plan A has more data and a shorter contract but costs $420 a year; Plan B costs $300 a year but has less data and a two-year contract. I choose Plan B, because Mia mostly uses wi-fi at home, so 10 GB is enough, and saving $120 a year matters more to her than being able to switch."
     - title: "A response choosing Plan A"
-      text: "The issue is which plan suits Kai, who streams music on the bus every day. Plan B is cheaper, but 10 GB wouldn't last him the month, and he'd be stuck with it for two years. I choose Plan A, because running out of data and being locked in would cost him more than the extra 120 a year."
+      text: "The issue is which plan suits Kai, who streams music on the bus every day. Plan B is cheaper, but 10 GB wouldn't last him the month, and he'd be stuck with it for two years. I choose Plan A, because running out of data and being locked in would cost him more than the extra $120 a year."
   criteria: ["I named the issue and the alternatives.", "I listed costs and benefits, financial and non-financial.", "I made a choice.", "My because says which points mattered most, and why."]
 ```
 
@@ -226,7 +231,7 @@ check:
   type: question
   q: "Riverbend Bakery is thinking about switching to recyclable packaging. It costs a little more now, but less waste goes to landfill over the years and some customers prefer it. Which is the best way to frame the decision?"
   options:
-    - "Weigh the extra cost now against benefits that build up over time, for the bakery and the community"
+    - "Weigh the cost now against benefits that build up over time"
     - "Only count this month's costs, because the future can't be known"
     - "Only count the benefits, because recycling is always right"
     - "Pick whichever packaging has more items on its list"

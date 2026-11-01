@@ -72,8 +72,13 @@ tasks:
       check:
         type: question
         q: "What might fewer shoppers mean for the main-street shops?"
-        options: ["They may sell less", "Nothing at all", "They will all close next week", "They will sell more"]
+        options: ["They may sell less", "Nothing, it's just a number", "They will all close next week", "They will sell more"]
         answer: 0
+        feedback:
+          - null
+          - "Numbers can point to an issue. That's the step to make."
+          - "That goes much further than the data."
+          - "Fewer shoppers usually means fewer sales, not more."
         explain: "That is the step beyond the data. It points to the issue."
   - check:
       type: question
@@ -130,12 +135,12 @@ insight: "Two new pieces of information check the move works beyond the main str
 tasks:
   - check:
       type: question
-      q: "Riverbend Bakery's flour cost has gone up three times this year, but its bread price hasn't changed. What issue does this point to?"
+      q: "The price Riverbend Bakery pays for flour has risen three times this year, but its bread price hasn't changed. What issue does this point to?"
       options:
-        - "The bakery's profit on each loaf is shrinking, so it may need to raise prices or cut costs"
-        - "The flour cost went up three times this year"
-        - "The bakery will definitely go out of business"
-        - "Bread is too expensive in Riverbend"
+        - "Its profit on each loaf is shrinking, so it may need to change something"
+        - "The price of flour has gone up three times so far this year"
+        - "The bakery will definitely go out of business before long"
+        - "Bread is now too expensive for people in Riverbend to buy"
       answer: 0
       feedback:
         - null
@@ -147,10 +152,10 @@ tasks:
       type: question
       q: "Riverbend's only bus to the shopping centre now runs every two hours instead of every hour. What issue does this point to?"
       options:
-        - "People without cars may find it harder to get to the shops and jobs there"
-        - "The bus now runs every two hours"
-        - "Nobody will ever catch the bus again"
-        - "The shopping centre should be closed"
+        - "People without cars may find the shops and jobs harder to reach"
+        - "The bus to the centre now runs every two hours, not every hour"
+        - "Nobody in Riverbend will ever catch that bus again"
+        - "The council should close the shopping centre down"
       answer: 0
       feedback:
         - null
@@ -172,18 +177,18 @@ insight: "Quick cases sharpen the line between repeating, inferring and leaping.
 tasks:
   - check:
       type: question
-      q: "Rosa's Car Yard sold 40 cars last year and 25 this year. Which is an inference, not just the data?"
+      q: "Rosa's Car Yard sold 40 cars last year and 25 this year. Which is a reasonable inference, not just the data?"
       options:
-        - "Fewer people may be buying cars, or buying them elsewhere"
-        - "Rosa sold 15 fewer cars this year"
-        - "Rosa sold 25 cars this year"
-        - "Rosa sold 40 cars last year"
+        - "Fewer people may be buying cars, or buying elsewhere"
+        - "Rosa sold 15 fewer cars this year than last year"
+        - "Rosa's Car Yard will have to close down next year"
+        - "Nobody in Riverbend wants to buy a car any more"
       answer: 0
       feedback:
         - null
         - "That's worked out from the data, but it's still only what the data shows."
-        - "That's in the data."
-        - "That's in the data."
+        - "That goes much further than the data. A fall isn't a closure."
+        - "Rosa still sold 25 cars, so that leaps too far."
       explain: "An inference says what the data might mean, one step beyond it."
   - check:
       type: question
@@ -224,10 +229,10 @@ check:
   type: question
   q: "A main-street shop's records show its sales falling. A survey of Riverbend shoppers says most like buying online because it saves the trip. What does the survey add?"
   options:
-    - "A possible reason for the fall: people choosing online for convenience"
-    - "Nothing: it says the same as the sales records"
-    - "Proof that the shop will close"
-    - "The exact amount the shop has lost"
+    - "A possible reason: shoppers choosing online to save the trip"
+    - "Nothing: it says the same thing as the sales records"
+    - "Proof that the shop will have to close before long"
+    - "The exact amount of money the shop has lost so far"
   answer: 0
   feedback:
     - null

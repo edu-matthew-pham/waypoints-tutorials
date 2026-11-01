@@ -24,6 +24,6 @@ questions:
     title: "Response or list?"
     type: question
     q: "Which is a response?"
-    options: ["I choose Plan B, because saving 120 a year matters more to me than extra data", "Plan A has more data", "Plan B costs 300 a year", "Both plans have good points"]
+    options: ["I choose Plan B, because saving $120 a year matters more to me than extra data", "Plan A has more data", "Plan B costs $300 a year", "Both plans have good points"]
     answer: 0
     explain: "A response makes a choice and gives a reason that weighs the points."

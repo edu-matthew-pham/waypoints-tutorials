@@ -45,7 +45,7 @@ tasks:
   - check:
       type: question
       q: "The council can afford a water recycling plant, a skate park or longer library hours. It picks the plant. What makes this a choice at all?"
-      options: ["Scarcity: there is $2 million and not enough for all three", "The council is greedy", "Nobody wants the others", "The plant is the cheapest"]
+      options: ["Scarcity: $2 million isn't enough for all three", "The council wants too many things at once", "Nobody in town wants the other two", "The plant is the cheapest of the three"]
       answer: 0
       feedback: [null, "Wanting all three is normal. The limit on money is what forces the choice.", "People do want them, and that is why it is hard.", "Price is not the reason. The limit is."]
       explain: "There are three wants and one budget, so the council has to choose."
@@ -59,7 +59,7 @@ tasks:
   - check:
       type: question
       q: "Which is a sustainability reason to pick the plant?"
-      options: ["It reuses water, so there is more left for the future", "It costs the most", "More people like it", "It is built quickly"]
+      options: ["It reuses water, so more is left for later", "It is the most expensive of the three", "More people in town say they like it", "It can be built in just a few months"]
       answer: 0
       feedback: [null, "Cost is not sustainability.", "Popularity may matter, but it is not about the future.", "Speed is not about what is left."]
       explain: "Sustainability asks whether the resource will still be there later. Recycling water helps with that."

@@ -92,6 +92,11 @@ tasks:
           - "Six owners, because the six salespeople run the lot"
           - "Two owners, Rosa and the head salesperson"
         answer: 0
+        feedback:
+          - null
+          - "Working there doesn't make someone an owner. The salespeople are paid wages."
+          - "Running the lot day to day isn't owning it. Rosa is the owner."
+          - "A senior job is still a job. Only Rosa owns the yard."
         explain: "Employees are paid wages for their work, but Rosa is the single owner. Having one owner is not enough on its own: one person can also own a company. Rosa has set it up as a sole trader."
   - check:
       type: question

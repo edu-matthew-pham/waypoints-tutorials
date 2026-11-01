@@ -3,7 +3,7 @@ order: 3
 unit: rights
 title: What businesses must do
 node: AC9HE7K05 n3
-summary: "A business's responsibilities don't end at the sale. It must meet the safety standards the law sets (mandatory standards), and may choose to meet others (voluntary standards). It must give honest information and not mislead customers. If a product turns out to be unsafe, it must recall it: tell people about the danger and what to do, and stop selling it."
+summary: "A business's responsibilities don't end at the sale. It must meet the safety standards the law sets (mandatory standards), and may choose to meet others (voluntary standards). It must give honest information and not mislead customers. If a product turns out to be unsafe, the business is expected to act, usually with a recall: tell people about the danger and what to do, and stop selling it. The government can also order a recall, and once one starts, selling the product is against the law."
 language: maths
 hook: "Brightbasket Supermarkets sold hundreds of baby rattles last month. Now tests show a small part can come loose. Whose problem is that?"
 ---
@@ -14,7 +14,7 @@ Businesses have responsibilities to the people who buy from them:
 - **Mandatory standards:** safety rules set by law that some products must meet. For example, toys for children up to three years old must not have small parts that can come off, because young children can choke on them.
 - **Voluntary standards:** standards a business can choose to meet, even though the law doesn't require them.
 - **Honest information:** a business must not mislead customers about what a product is or does.
-- **Product safety recalls:** if a product turns out to be unsafe, the business must act. A **recall** tells people about the danger and what to do, and the product must not be sold any more. Recalls usually offer a repair, a replacement or a refund.
+- **Product safety recalls:** if a product turns out to be unsafe, the business is expected to act. Usually it starts a **recall** itself, and the government can also order one. A recall tells people about the danger and what to do. Once a recall starts, selling the product is against the law. Recalls usually offer a repair, a replacement or a refund.
 
 ## Predict: whose problem?
 
@@ -62,28 +62,33 @@ tasks:
       answer: 3
       fault: logic
       misconception: safety-ends-at-sale
-      explain: "Line 3: a business's responsibility for safety doesn't end at the sale. When a sold product turns out to be unsafe, the business must recall it. So the recall isn't just kindness (line 4)."
+      explain: "Line 3: a business's responsibility for safety doesn't end at the sale. The rattle still had to meet the safety rules, and when a sold product turns out to be unsafe, the business is expected to act, usually with a recall. So the recall isn't just kindness (line 4)."
     smaller:
       check:
         type: question
         q: "If a baby could choke on a sold rattle, should parents be warned?"
-        options: ["Yes, and the business must act", "No, it's already sold", "Only if a parent complains", "Only if the rattle was expensive"]
+        options: ["Yes, and the business should act", "No, it's already sold", "Only if a parent complains", "Only if the rattle was expensive"]
         answer: 0
+        feedback:
+          - null
+          - "Selling it doesn't end the danger. The baby still has the rattle."
+          - "Waiting for a complaint could mean waiting until a baby is hurt."
+          - "A cheap rattle can be just as dangerous."
         explain: "A danger in a sold product is still the business's responsibility. That's what a recall is for."
   - check:
       type: question
       q: "Which of these is part of what a recall asks a business to do?"
       options:
-        - "Warn people about the danger, tell them what to do, and stop selling it"
-        - "Keep selling the rattles until they run out"
+        - "Warn people, say what to do, and stop selling it"
+        - "Keep selling the rattles until the stock runs out"
         - "Wait to see whether anyone gets hurt first"
-        - "Change the price and keep selling it"
+        - "Lower the price so it sells faster, then stop"
       answer: 0
       feedback:
         - null
         - "Selling a recalled product is against the law."
         - "A recall is about stopping harm before it happens."
-        - "A cheaper unsafe product is still unsafe."
+        - "A cheaper unsafe product is still unsafe, and selling it once a recall starts is against the law."
       explain: "A recall warns people, tells them what to do, and takes the product off sale. Recalls usually offer a repair, a replacement or a refund."
   - check:
       type: question
@@ -153,7 +158,7 @@ tasks:
         - "Voluntary really means voluntary. The cafe could choose not to."
         - "Meeting a voluntary standard doesn't excuse a business from the mandatory ones."
         - "Voluntary standards often cost more. The cafe chooses them for other reasons."
-      explain: "Businesses choose voluntary standards to win customers' trust or because of their values, like the entrepreneurs' values in the last course."
+      explain: "Businesses choose voluntary standards to win customers' trust or because of their values, like the values business owners weigh up in Entrepreneurs and business success."
 ```
 
 ### Dev's view
@@ -239,16 +244,16 @@ check:
   type: question
   q: "Ana's bank offers a savings account. Which of these is the bank's responsibility?"
   options:
-    - "Telling Ana clearly and honestly what fees and interest the account has"
-    - "Choosing how Ana spends her money"
-    - "Making sure Ana never takes money out"
-    - "Telling Ana which shops to use"
+    - "Telling Ana clearly what fees it charges and what interest it pays"
+    - "Making sure Ana's savings always grow, whatever happens"
+    - "Deciding how much Ana is allowed to spend each week"
+    - "Telling Ana which things are worth buying"
   answer: 0
   feedback:
     - null
+    - "Interest rates change, and fees take money out. The bank must be honest about both, not promise growth."
     - "How Ana spends her money is her choice."
-    - "It's Ana's money. She can take it out under the account's terms."
-    - "That's not the bank's job."
+    - "What Ana buys is her choice. The bank's job is clear information about its own account."
   explain: "Like any business, a bank must give honest, clear information about what it sells, including fees and interest."
 ```
 
