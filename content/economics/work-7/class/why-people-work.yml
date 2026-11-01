@@ -1,0 +1,29 @@
+inquiry:
+  q: "The Riverbend netball coach isn't paid, but she turns up every Thursday and Saturday. Why?"
+  prompts:
+    - "What does she get that money couldn't buy?"
+    - "Would you do something like that? What would make it worth it?"
+  notes: "Collect reasons before naming identity, self-esteem, community and non-material living standards. Students talk about the coach, not their families."
+activities:
+  - at: run
+    kind: activity
+    title: "Money can buy it?"
+    minutes: 4
+    do: |
+      Read out things work can bring (a new phone, friends, pride, rent money, a sense of purpose). Students stand for "money can buy it" and sit for "money can't".
+    notes: "That is material and non-material. Name the terms after the class has sorted."
+  - at: modify
+    kind: discussion
+    title: "Not for everyone"
+    minutes: 3
+    do: |
+      Ask: is work always good for people? Take a few answers.
+    notes: "Agree that work brings different things to different people, and that people who can't work are not worth less."
+questions:
+  - at: investigate
+    title: "Material or non-material?"
+    type: question
+    q: "Which of these is a non-material living standard?"
+    options: ["Friends you made at work", "A new phone", "Money for rent", "A better car"]
+    answer: 0
+    explain: "Friendships can't be bought, so they are non-material."

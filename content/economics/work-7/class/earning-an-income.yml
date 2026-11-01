@@ -1,0 +1,29 @@
+inquiry:
+  q: "Mrs Ng doesn't go out to work, but money comes in every week. How many ways could that happen?"
+  prompts:
+    - "What could she own that someone would pay to use?"
+    - "Who else might pay her, and why?"
+  notes: "Collect ideas before naming the six sources. Keep it about Mrs Ng, not students' families."
+activities:
+  - at: run
+    kind: activity
+    title: "Work for it, or own it?"
+    minutes: 4
+    do: |
+      Read out the six Riverbend people. Students stand if the person works for their income and sit if they own something that brings it in. Ana is neither: talk about government support.
+    notes: "Leo is both an owner and a worker in his own business; let that come up."
+  - at: investigate
+    kind: activity
+    title: "Leo's month"
+    minutes: 4
+    do: |
+      Write "Customers paid $5000. Costs were $3000." on the board. Ask what Leo earned before anyone opens the step.
+    notes: "Many will say $5000. Let them argue before the answer."
+questions:
+  - at: modify
+    title: "Wage or salary?"
+    type: question
+    q: "Which of these is a salary?"
+    options: ["$78 000 a year, paid every fortnight", "$28 for every hour worked", "What a business keeps after costs", "A payment to shareholders"]
+    answer: 0
+    explain: "A salary is a set amount for the year, paid in regular instalments."

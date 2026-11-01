@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Rosa, Sam, Mai and Jo are all paid for the work they do.
+Ana cares for her father every day, and the netball coach runs training every week. Neither is paid.
+Nib says: "Only paid jobs count as work."
+Nib says: "So Ana and the coach aren't working."
+# endregion

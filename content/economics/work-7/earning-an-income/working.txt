@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Sam is paid a wage for each hour he works at the bakery.
+Mrs Ng's tenants pay her every week for her flat, and Theo is paid dividends on his shares.
+Nib says: "You only have an income if you go out to work."
+Nib says: "So Mrs Ng and Theo have no income."
+# endregion

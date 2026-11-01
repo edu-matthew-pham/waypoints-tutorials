@@ -98,7 +98,7 @@ Tagline: *Spotting opportunities, making decisions and building a business*. Thr
 - Tested: validate, `check-nodes`, build, `check-decks` (course), and a headless run at 1100 px and 375 px: pages load with no errors, 13 checks per lesson, each Nib bug check stays unticked on line 1 and ticks on its answer line, no horizontal scroll, the course and subject pages list the course. Not clicked through: every question, sort and match option by hand.
 - Publish: whole-site (new course on the subject page, teacher page). Shares a run with the trade-off board's full publish.
 
-## Plan (1 Nov 2026, awaiting Matthew's "go"): course `economics/work-7`, *Work, income and identity* (AC9HE7K04)
+## Plan (1 Nov 2026; built the same day, see Built below): course `economics/work-7`, *Work, income and identity* (AC9HE7K04)
 
 Tagline: *Why people work, and how they earn a living.* Three lessons in node order, in two units: `kinds` (n1) and `income` (n2, n3). After `scarcity-7` (the subject page already says so). No board, no clips (30 Oct decision for case lessons). Shape: the `scarcity-7` / `entrepreneurs-7` worked-example shape, with the changes noted per lesson.
 
@@ -137,6 +137,14 @@ Tagline: *Why people work, and how they earn a living.* Three lessons in node or
 **Self-check at build:** as for entrepreneurs-7 (checklist step 4), plus: no step asks about a student's family, and social security is described without judgement.
 
 **Publish:** a whole-site publish (the subject page moves the course from Coming later to built).
+
+## Built: `economics/work-7`, *Work, income and identity* (1 Nov 2026, Matthew said yes; Preview, not yet tried with a class)
+
+- Course `economics/work-7` (units `kinds`, `income`), after `scarcity-7`. Lessons: `types-of-work` (n1 hinge, six Riverbend people on a Saturday, bug answer line 3 with `smaller:`; Ana's caring role kept with a teacher note to check and swap), `earning-an-income` (n2, the Riverbend income map, bug answer line 3, Leo's profit-after-costs question), `why-people-work` (n3, Mai, the coach and Rosa, bug answer line 3, "for many people" and "not for everyone" in student text). Teacher notes and class plans for all three. Misconceptions `work-means-paid-job`, `income-only-from-a-job`, `work-only-for-money`. Subject page lists the course as built; `economics-teachers.md` updated.
+- Departures from the plan: the lesson 1 wider step uses the unmarked `reasoning` check with two views as planned; the lesson 3 wider step is a match of three made-up people at 18, 45 and 72 to their strongest reason "right now" (teacher note: accept a reasoned different answer). Social security is named as a government payment, never by a real program's name. One fact checked: a full-time week is usually around 38 hours (Fair Work, National Employment Standards maximum weekly hours). All dollar amounts are made up and labelled so in teacher notes.
+- Editorial pass on all three lessons: option lengths evened (lesson 2 wider, lesson 3 predict and Dev), "Clean Up Day" made generic.
+- Tested: validate, `check-nodes`, build, `check-decks` (course), effort lint, and a headless run at 1100 px and 375 px (each lesson loads with no errors and 13 checks, each bug check ticks only on its answer line, no horizontal scroll, the course and subject pages list the course).
+- Publish: whole-site (subject and teacher pages).
 
 ## Decided: interactive boards (30 Oct 2026, Matthew)
 

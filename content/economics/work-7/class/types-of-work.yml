@@ -1,0 +1,29 @@
+inquiry:
+  q: "Six people in Riverbend are busy all Saturday. Four are paid and two aren't. Are the two unpaid people working?"
+  prompts:
+    - "What would happen if they stopped?"
+    - "Would anyone have to be paid to do it instead?"
+  notes: "Let the class decide what 'work' means before giving the definition. Don't ask students about their own families."
+activities:
+  - at: run
+    kind: activity
+    title: "Paid or unpaid, and what kind?"
+    minutes: 4
+    do: |
+      Read out the six Riverbend people one at a time. Students hold up one hand for paid and two for unpaid, then call out the type.
+    notes: "Pause on Sam and Mai: set days or no set hours?"
+  - at: investigate
+    kind: discussion
+    title: "Is it work?"
+    minutes: 5
+    do: |
+      Put Nib's lines up. Pairs decide where Nib goes wrong, then say what would happen if Ana and the coach stopped.
+    notes: "This is the hinge. Check the Ana example suits your class first (see the lesson notes); swap in running a household if needed."
+questions:
+  - at: investigate
+    title: "Casual or part-time?"
+    type: question
+    q: "Mai works three set days every week. Which type of work is that?"
+    options: ["Part-time", "Casual", "Full-time", "Volunteer"]
+    answer: 0
+    explain: "Regular set hours, fewer than full-time, is part-time."

@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Mai works part-time at the pantry. She could earn more elsewhere, but she likes knowing the families.
+The netball coach isn't paid, but she runs training every week.
+Nib says: "People only ever work to get money."
+Nib says: "So the coach is wasting her time, and Mai made a mistake."
+# endregion
