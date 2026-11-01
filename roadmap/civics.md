@@ -468,3 +468,9 @@ Scope: law-7, diversity-7, perspectives-7, values-7, the HASS catch-up and the n
 
 ### Preview labels removed (1 Nov 2026, per `shared.md` › Decided: humanities)
 `preview: true` and "Preview (a pilot, not yet tried with a class)" dropped from the Civics subject page and all six course pages; the subject summary no longer calls it a preview; `civics-teachers.md` no longer says "This is a preview" and its planned section now names the built catch-up and says Years 8 to 10 are not planned yet. Tracked here instead: **nothing in Civics has been tried with a class yet**, and the First Nations educator and colleague review is still needed before use beyond CGGS. `content/hass/index.md` still carries `preview: true` (the Humanities skills chat's). Whole-site publish (subject page).
+
+### Rechecked against the 1 Nov rules changes (T1 hold-in-teacher-notes, T6a, T8 and T8a, T8b, T20)
+- T8b: `check-options` lists no Civics or catch-up question (after the option-length pass and the review fixes).
+- T8: classification schemes are labelled as one way to sort (the four reasons in `comparing-views`).
+- T20 include, don't avoid: Ines (wheelchair user) stays, and both perspectives teacher notes now say she can be swapped for another resident who needs to drive in, or a local case, keeping the access trade-off.
+- T1: no student line in Civics explains First Nations history or culture beyond the 1962 voting line Matthew kept; nothing needed moving to teacher notes.
