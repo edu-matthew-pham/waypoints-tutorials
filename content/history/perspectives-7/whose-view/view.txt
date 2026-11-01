@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Source: Sima Qian, a Han court historian, describing the Xiongnu.
+Who made it: an official at the Han emperor's court.
+Nib says: "His perspective is that the Xiongnu moved with their herds and did not farm."
+Nib says: "So his perspective is just what happened."
+# endregion

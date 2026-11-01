@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+The Xiongnu fought the Han for over a century.
+No writing of the Xiongnu's own has been found.
+Nib says: "So historians can know nothing about the Xiongnu."
+Nib says: "They should leave the Xiongnu out of the history."
+# endregion

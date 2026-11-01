@@ -1,0 +1,55 @@
+learning: "identify groups whose voices are thin in the historical record, explain why, and say what limited evidence can still show about them"
+summary: "Identify groups whose perspectives are absent or underrepresented in sources from the ancient world, explain why (who wrote, what survived), and describe what limited evidence can still reveal about those groups and about power."
+time: 40
+timing: "Predict and Try 7 min · Worked example 13 min · Vary 5 min · Practise 5 min · Make 10 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can name groups whose voices are missing from the record, and say why.
+  - I can say what records made about a group can and cannot show.
+  - I can explain how a gap in the evidence can itself tell us something.
+struggle: "Students swing between 'no writing, so we know nothing' and 'someone wrote about them, so we know their view'. Keep asking 'whose hand wrote this, and what does it still show?'"
+before: |-
+  AC9HH7S06 n3. Builds on n1 (perspective) and n2 (values). Women are named as one missing group and the lesson links to People and power › What did women do, and how do we know? rather than repeating it (that lesson already teaches thin evidence about women).
+
+  Facts (checked 1 Nov 2026): **Liye**: Qin wooden administrative records from Well No. 1 at Liye, Hunan, from Qianling, a newly conquered county; one multi-slip document shows officials sorting labourers into categories and using oversight and punishment (Early China, Cambridge, "Categorizing laborers"). The 2002 discovery date is from an encyclopedia. **Noin-Ula**: Xiongnu burials in northern Mongolia, excavated 1924–25, about the 1st century BCE to the 1st century CE, with Chinese silk, a bronze mirror fragment and lacquered cups, one inscribed with a date of 2 BCE (Silk Road Seattle, University of Washington, on the Hermitage collection). **Deir el-Medina**: British Museum limestone ostracon, a register of about forty workmen's absences over 280 days in year 40 of Ramesses II, with reasons such as illness, eye trouble, bereavement, building a house and festivals (Google Arts & Culture page for the British Museum object). The Qin campaigns in the far south ended around 214 BCE (the Lingqu Canal, in Shaped by the land).
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips.
+
+  Relevant ACARA AC9HH7S06 elaborations (examples, not a checklist): "identifying that, while evidence may be limited for a particular group of people such as women, slaves, peoples living in newly conquered areas and ethnic groups, such evidence can provide useful insights into the power structures of a society".
+
+  First Nations: Kit's wider width for this node includes how First Nations historians and communities recover and assert their own historical narratives. That is for First Nations-led resources and your school's local, community-approved material; this lesson gives no example (rules T1).
+running:
+  - "Predict: ask who held the brush in each source students have met so far."
+  - "Try: ask what the 'left much writing' groups have in common."
+  - "Worked example: give each pair one row of the table to explain to the class."
+  - "Vary: ask whose words we are reading when we read about the Xiongnu."
+  - "Make: students write in their own book; a partner checks for a reason and a piece of evidence."
+stuck:
+  - see: "A student says we can know nothing about a group with no writing."
+    ask: "What else do people leave behind?"
+    fix: "Objects, burials and records others made are evidence too."
+  - see: "A student treats an outside account as the group's own view."
+    ask: "Who wrote it, and were they on the same side?"
+    fix: "An outside account shows the writer's view; the group's own perspective is still missing."
+  - see: "A student thinks official records show what labourers thought."
+    ask: "Who wrote the record, and why?"
+    fix: "They show how power reached people, not their feelings."
+support: "Give three cards (Liye records, Noin-Ula grave, Sima Qian) and ask, for each: who made it, and what it can still show."
+stretch: "If you could ask an archaeologist to dig one more site to hear a missing voice in Han China, what would you dig, and what would you hope to find?"
+leads: "This is the last lesson in Past perspectives. Historical interpretations asks why historians tell the same past differently."
+exit:
+  q: "Name one group whose voice is missing from the record of the Qin or Han, say why, and give one piece of evidence that still tells us about them."
+  a: "For example: the Xiongnu left no writing of their own; their burials at Noin-Ula show what their leaders were buried with, including Han silk."
+explain: "Most surviving writing was made by officials and the educated, so farmers, labourers, conquered peoples and neighbours without writing are thin in the record. Records made about them, objects and burials, and outside accounts read carefully still show something, and the gap itself shows who held power."
+sources:
+  - title: "Categorizing laborers: Qin management of human resources from an administrative document from Liye (Early China, Cambridge)"
+    url: https://www.cambridge.org/core/journals/early-china/article/abs/categorizing-laborers-glimpses-of-qin-management-of-human-resources-from-an-administrative-document-from-liye-hunan-province/AE22A9F579DB0BB5732AD4464553CBB2
+    checked: 2026-11-01
+  - title: "State Hermitage Museum: Noin Ula (Silk Road Seattle, University of Washington)"
+    url: https://depts.washington.edu/silkroad/museums/shm/shmnoinula.html
+    checked: 2026-11-01
+  - title: "Limestone ostrakon with a register of workmen's absences (British Museum, on Google Arts & Culture)"
+    url: https://artsandculture.google.com/asset/limestone-ostrakon-with-a-register-of-workmen-s-absences/NQH9qIBqeBg6Pg
+    checked: 2026-11-01
+  - title: "Liye Qin Slips Museum (Wikipedia; an encyclopedia, for the 2002 discovery date)"
+    url: https://en.wikipedia.org/wiki/Liye_Qin_Slips_Museum
+    checked: 2026-11-01

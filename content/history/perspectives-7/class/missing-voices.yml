@@ -1,0 +1,29 @@
+inquiry:
+  q: "Who writes the history of a school: the principal's newsletter, or the students? What would each leave out?"
+  prompts:
+    - "Whose voices are easy to find later?"
+    - "What else could a future historian use?"
+  notes: "Keep it general; don't ask students to share personal stories."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "One row each"
+    minutes: 5
+    do: |
+      Give each group one row of the evidence table (Liye, Noin-Ula, Sima Qian). Each explains what it shows and its limit to the class.
+    notes: "Bring out that the gap itself is evidence of who held power."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "A group left no writing of its own. What follows?"
+    options:
+      - "Their own view is hard to reach, but objects and others' records still show something"
+      - "Historians can know nothing about them"
+      - "Their own view is the same as whoever wrote about them"
+    answer: 0
+    explain: "Thin evidence is a limit, not a dead end."
+    feedback:
+      - null
+      - "Graves, objects and others' records are evidence too."
+      - "An outside account is still an outside account."

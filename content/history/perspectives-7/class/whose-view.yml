@@ -1,0 +1,29 @@
+inquiry:
+  q: "Two people describe the same school sports carnival: a teacher running it, and a student who sat in the rain. How would their accounts differ?"
+  prompts:
+    - "What would each one notice?"
+    - "Is either of them lying?"
+  notes: "A made-up, public example; don't ask students to describe real people at school."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Four questions"
+    minutes: 5
+    do: |
+      Pairs work through the four questions for Sima Qian on the Xiongnu before the table is shown, then compare their row 4 with the class.
+    notes: "Push for a sentence about Sima Qian, not about the Xiongnu."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "'The Xiongnu do not know proper behaviour.' Is this the source's content or its perspective?"
+    options:
+      - "Its perspective: the writer's judgement"
+      - "Its content: a fact about the Xiongnu"
+      - "Neither"
+    answer: 0
+    explain: "Proper by Han rules: it shows how the writer saw them."
+    feedback:
+      - null
+      - "Whose idea of 'proper' is it?"
+      - "It is a judgement, which is part of the perspective."

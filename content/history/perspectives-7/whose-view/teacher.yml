@@ -1,0 +1,53 @@
+learning: "tell apart what a source describes and the perspective of the person who made it, and say how the maker's position shaped it"
+summary: "Explain what a perspective is in a historical source, distinguish the events a source describes from its maker's perspective, and identify the perspective in a given source."
+time: 40
+timing: "Predict and Try 7 min · Worked example 12 min · Vary 5 min · Practise 5 min · Make 11 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can say what a source describes and, separately, whose perspective it shows.
+  - I can use the four questions to work out a perspective.
+  - I can explain how a maker's position shaped what they noticed.
+struggle: "Students describe the content when asked for the perspective, or think 'perspective' means the source is lying. Keep asking 'from where is this seen?'"
+before: |-
+  AC9HH7S06 n1 (hinge). Kit's hinge reason: students who read sources only for content cannot later read the attitudes and values behind them (n2). The four questions follow Kit's reasoning scaffold for this node.
+
+  The Sima Qian passage is retold in our words from the themes of his chapter on the Xiongnu in the Shiji (the Records of the Grand Historian, completed around 100 BCE), not quoted from a translation. It keeps what the chapter reports (herding, following water and grass, no walled cities or farming, boys learning to ride and shoot, the young and strong given the best food) and its judgements (looking down on the old and weak; not knowing proper behaviour). No writing of the Xiongnu's own has been found; most of what we know comes from Han writers and archaeology (see Missing voices).
+
+  Perspective is not bias or lying: it is where a source sees from. The Vary step reuses the Qin stone inscription from Source origin and purpose; students who haven't met it get enough in the step.
+
+  Typical and wider facts: "barbaroi" as the Greek word for non-Greek speakers, thought to imitate unfamiliar speech (a widely given explanation, said here as "historians think"); Kadesh about 1274 BCE, Ramesses II's temple accounts as a victory, Hittite records differing, and a treaty about fifteen years later (standard dates; checked against an encyclopedia only).
+
+  Usually Year 7; Preview, not yet tried with a class. One cohesion board step (planted answers only); no clips.
+
+  Relevant ACARA AC9HH7S06 elaborations (examples, not a checklist): "identifying perspectives in a historical source, such as the saying of Confucius, 'Women and underlings are especially difficult to handle', and discussing the values and attitudes of the society that produced it". The Confucius saying is used in the next lesson.
+
+  First Nations: none in this lesson (rules T1).
+running:
+  - "Predict: take a vote, then ask 'proper by whose rules?'"
+  - "Try: ask which sentences the Xiongnu themselves might have written the same way."
+  - "Worked example: go through the four questions aloud; let students fill row 3 before you show it."
+  - "Vary: ask who chose the words on the stone."
+  - "Make: students write in their own book; a partner checks that the perspective sentence is not a summary of the content."
+stuck:
+  - see: "A student writes the content as the perspective."
+    ask: "Is your sentence about what happened, or about the person telling it?"
+    fix: "Perspective is the maker's point of view, shaped by their position."
+  - see: "A student says the source is useless because it has a perspective."
+    ask: "Does the description of herding still tell us anything?"
+    fix: "Every source has a perspective. Knowing it tells you how to read the content."
+  - see: "A student says the Qin inscription shows what everyone thought."
+    ask: "Who chose the words on the stone?"
+    fix: "It shows the ruler's view of his reign."
+support: "Give the four questions as a card with sentence starters (He was… / So he would notice… / So the perspective is…)."
+stretch: "What might a Xiongnu account of the Han have said about Han farmers and cities? Why don't we have one, and how would you check your guess?"
+leads: "Continue to The world behind the source."
+exit:
+  q: "For any source in this lesson, write one sentence on what it describes and one on the perspective it shows."
+  a: "For example: Sima Qian describes the Xiongnu herding and moving with the grass; his perspective is a Han court official's, judging a rival people by Han ideas of proper behaviour."
+explain: "Every source describes something and also shows its maker's perspective. Ask who made it, what their position was, what they would notice and value, and so what perspective it shows."
+sources:
+  - title: "Xiongnu archaeology and history (Silk Road Seattle, University of Washington)"
+    url: https://depts.washington.edu/silkroad/archaeology/mongolia/xiongnu/xiongnuarchhist/xiongnuarchhist.html
+    checked: 2026-11-01
+  - title: "The Battle of Kadesh and the Poem of Pentaur (World History Encyclopedia; an encyclopedia)"
+    url: https://www.worldhistory.org/article/147/the-battle-of-kadesh--the-poem-of-pentaur/
+    checked: 2026-11-01

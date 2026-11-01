@@ -1,0 +1,53 @@
+learning: "identify attitudes and values of the past in a source, and explain how its words, pictures or assumptions show them, before judging them"
+summary: "Identify the attitudes and values of the society that produced a source, explain how the source shows them (words, images and symbols, what it takes for granted), and try to understand them in their time rather than only by today's standards."
+time: 40
+timing: "Predict and Try 7 min · Worked example 13 min · Vary 5 min · Practise 5 min · Make 10 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can name an attitude or value a source shows.
+  - I can explain how the source shows it, using its words, a picture or what it takes for granted.
+  - I can describe a past value in its time before I judge it.
+struggle: "Students either refuse to engage ('it's sexist, so it's useless') or treat one source as everyone's view. Both are fair starting points; the lesson asks for the next step."
+before: |-
+  AC9HH7S06 n2. Builds on n1 (perspective is not content).
+
+  **The Confucius saying.** ACARA's elaboration quotes it, so the lesson uses ACARA's wording (Analects 17.25) and introduces it as a perspective to analyse, not as true (rules T8, T20: include, don't avoid). Translations differ: the word often translated "women" may mean women of the household or concubines, and "underlings" small or low people; scholars disagree about how widely it was meant. Students may react strongly. That is a fair response: the lesson keeps the judgement and adds the historian's question (what does it show about the society?). Don't ask students about their own families or beliefs. People and power (`people-7/womens-roles`) has the evidence about women's lives in Han China; this lesson doesn't repeat it.
+
+  **The Mawangdui painting** (checked 1 Nov 2026, Hunan Museum): T-shaped silk painting from Tomb 1, Mawangdui, Changsha, found in 1972, Western Han, about 205 cm long; heaven with the sun crow and the moon toad and hare; the lady with attendants and her family making offerings; creatures believed to guard the body. Students read it in words; the link goes to the museum's page. This lesson shows no human remains (the preserved body in the same tomb is not mentioned to students; see Beliefs and practices if your class uses it).
+
+  Typical: Roman coins with the emperor's head and titles (standard; not rechecked).
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips.
+
+  Relevant ACARA AC9HH7S06 elaborations (examples, not a checklist): "identifying perspectives in a historical source, such as the saying of Confucius, 'Women and underlings are especially difficult to handle', and discussing the values and attitudes of the society that produced it"; "identifying the possible meanings of, and attitudes and values shown by, images and symbols in primary sources, such as funerary texts or religious manuscripts".
+
+  First Nations: the node's typical width mentions sources from the Deep Time unit; this lesson uses none (rules T1). Teach that part with First Nations-led resources.
+running:
+  - "Predict: let students say what they think of the saying first; then ask what it shows about the past."
+  - "Try: ask who is doing the 'handling'."
+  - "Worked example: cover the 'So the value it shows' row and let pairs write it."
+  - "Vary: ask who studied the Analects (officials), and who we don't hear from."
+  - "Make: students write in their own book; a partner checks that the description comes before the judgement."
+stuck:
+  - see: "A student says the saying is wrong, so it's useless."
+    ask: "You're right that it's unfair. What does it tell us people believed then?"
+    fix: "Judging is allowed; describe what it shows first."
+  - see: "A student says everyone in Han China thought this."
+    ask: "Who studied this book? Whose views don't we have?"
+    fix: "It shows a view taught to officials; others need more evidence."
+  - see: "A student describes what the painting shows but not the value."
+    ask: "Why would someone put that in a tomb? What did they care about?"
+    fix: "Name the value: rank, family duty, belief in an afterlife."
+support: "Give the three places to look (words, pictures, what it takes for granted) as a card, with one example each."
+stretch: "Some readers today argue the saying meant only some women of the household. How would a historian decide between readings?"
+leads: "Continue to Missing voices."
+exit:
+  q: "Name one value shown by the Confucius saying or the Mawangdui painting, and say how the source shows it."
+  a: "For example: order by rank, with men of rank in charge (the saying says women and servants are to be 'handled'); duty to the dead (the painting shows the family making offerings)."
+explain: "Sources show the attitudes and values of their society in their words, pictures and what they take for granted. Describe the value in its own time first; then you can judge it."
+sources:
+  - title: "T-shaped painting on silk, Mawangdui Tomb 1 (Hunan Museum)"
+    url: https://web.hnmuseum.com/en/node/7370
+    checked: 2026-11-01
+  - title: "Confucius (Stanford Encyclopedia of Philosophy): dates and the Analects"
+    url: https://plato.stanford.edu/archives/win2005/entries/confucius/
+    checked: 2026-11-01

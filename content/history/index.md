@@ -32,10 +32,10 @@ pathways:
     title: Thinking historically
     summary: "The historian's tools for any topic: dates and timelines, causes and effects, continuity and change, perspectives in sources, and interpretations."
     fit: "Use beside your depth study, after How we know or any time the class needs one of these skills."
-    about: "**Preview.** Time, cause and change (AC9HH7S05) is built; Past perspectives (AC9HH7S06) and Historical interpretations (AC9HH7S07) are planned and shown as Coming later. Each uses ancient China in the Qin and Han period as its worked example, with extra steps from Egypt, Greece, Rome and India. Every student takes the same steps in the same order; typical and wider steps add more examples of the same idea and are never needed to finish."
+    about: "**Preview.** Time, cause and change (AC9HH7S05) and Past perspectives (AC9HH7S06) are built; Historical interpretations (AC9HH7S07) is planned and shown as Coming later. Each uses ancient China in the Qin and Han period as its worked example, with extra steps from Egypt, Greece, Rome and India. Every student takes the same steps in the same order; typical and wider steps add more examples of the same idea and are never needed to finish."
     courses:
       - { path: history/time-7, id: time-7, stage: foundations, tagline: "When did it happen, why, and what stayed the same?" }
-      - { title: "Past perspectives", summary: "Whose view a source gives, the values behind it, and whose voices are missing (AC9HH7S06).", stage: foundations, tagline: "Whose view is this, and whose is missing?" }
+      - { path: history/perspectives-7, id: perspectives-7, stage: foundations, tagline: "Whose view is this, and whose is missing?" }
       - { title: "Historical interpretations", summary: "Fact and interpretation, why historians tell the same past differently, and making your own argument (AC9HH7S07).", stage: foundations, tagline: "Why do historians tell it differently?" }
   - id: before-year-7
     title: Before Year 7

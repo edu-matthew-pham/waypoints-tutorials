@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Confucius said women and underlings are especially difficult to handle.
+Nib says: "That is unfair by today's standards."
+Nib says: "So the saying is just wrong, and it tells us nothing about the past."
+Nib says: "Historians should leave sources like this out."
+# endregion

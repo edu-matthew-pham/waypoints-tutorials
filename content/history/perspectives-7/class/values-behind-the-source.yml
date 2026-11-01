@@ -1,0 +1,29 @@
+inquiry:
+  q: "If historians in 2,000 years found only our school's rules, what would they decide we valued?"
+  prompts:
+    - "Which rules would they misread?"
+    - "What would the rules take for granted?"
+  notes: "Use the school's published rules, not anything about individual students."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Read the painting"
+    minutes: 5
+    do: |
+      Show the museum's picture of the Mawangdui painting. Pairs pick one part and say what it shows, then what value it suggests.
+    notes: "Keep description and value separate. Don't show images of the preserved body from the same tomb."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "A source shows a value you think is unfair today. What should a historian do?"
+    options:
+      - "Describe what it shows about its time, then judge it"
+      - "Leave the source out"
+      - "Change its words to sound fairer"
+    answer: 0
+    explain: "Describe first, then judge; the source stays as evidence."
+    feedback:
+      - null
+      - "Leaving it out hides evidence of the past."
+      - "Changing a source destroys the evidence."

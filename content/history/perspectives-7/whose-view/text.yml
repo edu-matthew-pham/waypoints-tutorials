@@ -1,0 +1,9 @@
+# Board for "What it says, and whose eyes it sees through": Sima Qian on the Xiongnu, retold in our words (not a translation).
+# Chain a = what the source reports; chain b = the writer's view.
+
+# region: run
+widget: cohesion
+mode: chain
+colours: 2
+p: The Xiongnu live in the north. [[They move with their herds#a]], [[following water and grass#a]]. [[They have no walled cities#a]] and [[do not farm#a]]. [[Their boys learn to ride and shoot#a]] when they are small. The strong eat the best food and the old get what is left: [[they look down on the old and weak#b]]. [[They do not know proper behaviour#b]].
+# endregion
