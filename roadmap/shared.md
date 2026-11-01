@@ -1462,3 +1462,9 @@ Idea only, for later. A board where students drag ideas into place and draw labe
 `lessonView`'s `plain()` (`tools/lesson-view.mjs`) strips `$…$` pairs from check `explain` and `feedback` text in `language: maths` lessons, so "$110 − $80 = $30" shows as "110 − 80 = $30". Lesson text, questions and options go through `textWithMath`, which doesn't treat a `$` followed by a digit as closing maths, so they are fine. Not changed (a shared tool); humanities and ICT lessons that use `language: maths` should keep explain and feedback lines to one dollar amount, or say "dollars". A fix would be to give `plain()` the same digit rule as `textWithMath`.
 - **Names aligned to the main site (1 Nov 2026, Matthew):** the 30 Oct onboarding plan's "three ways in" (Unpack, Prepare, Tutorials, with Prepare as "Planning and preparation") drifted from the main site's Curriculum, Plan and Lessons (21 Oct) and from Matthew's 29 Oct trial brief. The deck (slides 1, 3, 4, 6 and notes), the quick reference, the pilot page, Getting Started lesson 1 and the Teachers hub summary now use Curriculum (Unpack), Plan (Planner, Kit; mentioned, not the focus) and Lessons (Tutorials and Prepare together). Rule T20 in `roadmap/rules.md`.
 
+
+## Changed by the History chat (1 Nov 2026): `dig` board widget; History in `check-lesson-boards`
+- New `playground-board/widgets/dig.js` and one `<script>` line in `playground-board/index.html` (after `house.js`), so only clips on the `dig` widget record. AUTHORING entry under the board widgets. Test: `node experiments/dig-smoke.mjs` (28 checks at 1280 and 390 px, keyboard included).
+- `tools/check-lesson-boards.mjs` now walks `dist/history` too (one regex word and one `walk` line), so History board checks are checked like English and Geography ones.
+- History clip port: 8720 (board app for `reading-the-layers`); History keeps 8720–8729.
+- Needs a whole-site publish (new widget; History's first Explain clip records then).

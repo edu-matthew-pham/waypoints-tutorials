@@ -8,6 +8,35 @@ assumes:
   - AC9HH7K07
 summary: Read an excavation as a sequence of layers. Use the position of a find and the evidence beside it to explain what may have changed, while keeping relative age separate from an exact date.
 language: maths
+voice: { name: af_heart, speed: 1.1 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8720
+  url: http://127.0.0.1:8720/index.html
+  readySelector: "#gpanel"
+  layout: full
+explainClip:
+  query: { code: "@dig.yml#explain", fresh: 1, id: explain }
+  caption: "How layers build up"
+  say: "How layers build up at a site."
+  clip:
+    - caption: { text: "At a site, layers build up over time.", say: "At a site, layers of soil and rubbish build up over time." }
+    - wait: 600
+    - click: Lay down the next layer
+    - caption: { text: "Layer A goes down first.", say: "Layer A goes down first." }
+    - wait: 700
+    - click: Lay down the next layer
+    - caption: { text: "Then B on top of it.", say: "Then layer B goes on top of it." }
+    - wait: 700
+    - click: Lay down the next layer
+    - caption: { text: "Then C. The top layer is the youngest.", say: "Then layer C. The top layer is the youngest." }
+    - expect: { selector: "#gsum", contains: "bottom one formed first" }
+    - wait: 900
+    - click: Dig the pit
+    - caption: { text: "Later, someone digs a pit down into A.", say: "Later, someone digs a pit down through the layers into A." }
+    - expect: { selector: "#gsum", contains: "younger than the layers it cuts" }
+    - wait: 700
+    - caption: { text: "The coin in the pit is deep, but it is young.", say: "The coin in the pit is deep, but it is younger than those layers." }
+    - wait: 1500
 hook: Two pieces of pottery look alike. One is in the bottom layer and one is near the surface. What would you need to know before calling one older?
 ---
 When soil, rubbish and building rubble pile up at a place over time, they form layers. Studying those layers is called **stratigraphy**. If nothing has dug into the layers or mixed them up, the lower ones were laid down first. So the layers tell you an order (this one is older than that one), but not a date in years. That is why archaeologists write down exactly where each thing was found, not just what it is.
@@ -63,6 +92,18 @@ check:
 ```
 
 Was your guess right? Layers can tell you "before" and "after". They cannot tell you "how many years".
+
+## Practise: dig it yourself
+
+Now dig the same made-up site from the top down. You reach the newest layer first.
+
+```step
+stage: practise
+insight: "Digging from the top down, then numbering the layers from the oldest, turns 'lower is older' into something students do, not only read."
+try: { playground: board, starter: "dig.yml#dig", height: 520 }
+hint: ["Which layer did you reach last?", "Nothing has disturbed these layers, so the one at the bottom was laid down before the others."]
+check: { type: board, text: "Dig down to the bottom, then number the layers from the one that formed first.", when: "in_order = 1", explain: "A, at the bottom, formed first, then B, then C on top. You dug them in the opposite order: the newest comes off first." }
+```
 
 ## Worked example: what happened here?
 
@@ -130,20 +171,32 @@ Now change one thing. Later on, someone digs a pit down through layers C and B i
 ```step
 stage: modify
 insight: Students see that the deeper-is-older rule only works when the layers have not been disturbed.
-check:
-  type: question
-  q: Before you use the coin's depth to say how old it is, what should you record?
-  options:
-    - What colour the coin is
-    - That it was found inside the later pit
-    - How heavy the coin feels
-  answer: 1
-  explain: The pit has disturbed the layers. If you only looked at depth, you would think the coin was old.
-  feedback:
-    - Colour does not tell you whether the layers were disturbed.
-    - null
-    - Weight does not tell you where the coin sits in the sequence.
+try: { playground: board, starter: "dig.yml#pit", height: 520 }
+tasks:
+  - check:
+      type: board
+      text: "Find the thing that is out of place. Click it and say how its age compares with the layer around it."
+      when: "n_found = 1 and n_stray = 0"
+      explain: "The coin fell into the pit, and the pit was dug after every layer it cuts through. So the coin is younger than layer A, even though it is just as deep."
+    hint: ["Which find is not in a layer, but in the pit?", "The pit was dug after the layers. What does that make anything that fell into it?"]
+  - check:
+      type: question
+      q: Before you use the coin's depth to say how old it is, what should you record?
+      options:
+        - What colour the coin is
+        - That it was found inside the later pit
+        - How heavy the coin feels
+      answer: 1
+      explain: The pit has disturbed the layers. If you only looked at depth, you would think the coin was old.
+      feedback:
+        - Colour does not tell you whether the layers were disturbed.
+        - null
+        - Weight does not tell you where the coin sits in the sequence.
 ```
+
+### Find what is out of place
+
+### What to record
 
 ## Practise: a new site
 
@@ -196,6 +249,19 @@ check:
     - null
     - Weapons could have been stored there, or dropped long before the fire.
     - Weapons need their own dating evidence. Finding them does not give a year.
+```
+
+## Typical: a coin in the layers
+
+A coin can tell you something about when a layer formed, but only so much. Coins were used for years, so a coin can already be old when someone drops it.
+
+```step
+stage: make
+tier: typical
+insight: "A dated find gives the earliest its own layer could have formed, and the layers above it too, but says nothing certain about the layers below."
+try: { playground: board, starter: "dig.yml#date", height: 560 }
+hint: ["Could the coin have been dropped before it was made?", "Could the layers under the coin's layer have formed before 220 BCE, after it, or either?"]
+check: { type: board, text: "For each layer, choose: formed in 220 BCE or later, or can't tell from the coin.", when: "n_right = 3 and n_wrong = 0", explain: "Layer B can't be older than the coin in it, so it formed in 220 BCE or later, and so did C on top of it. Layer A formed before B, but the coin doesn't say when: it could be from long before 220 BCE." }
 ```
 
 ## Wider: draw the pit

@@ -374,7 +374,7 @@ Built from the 30 Oct plan with the 1 Nov re-check applied (items 1â€“7 and 15â€
 - Tested: `validate`, `check-nodes`, `effort`, build, all checks answered with stored answers in Chromium at 1280 and 390 px (66 answered, 36 wrong answers tried, feedback shown), course, recap, subject, pathway, teacher and guide pages load with no errors or sideways scroll, `check-decks` for the course.
 - **Publish:** whole-site (subject and teacher pages). Ask Matthew (W1).
 
-## Plan (1 Nov 2026; Matthew agreed to plan now and decide the build after the pilot): a dig board for `evidence-7/reading-the-layers`
+## Plan (1 Nov 2026; built the same day, see below): a dig board for `evidence-7/reading-the-layers`
 
 The one History board from "Boards in built lessons" that needs new code. The science `layers` widget is the Earth's interior, so it cannot be adapted. Light on purpose, in the pattern of the other humanities boards (`tradeoff`, `catchment`, `house`): buttons and clicks, no dragging; a "made-up site" label; `wpt-` class names; never colour alone; keyboard as well as mouse; values set only after the student acts, so no check holds at the start.
 
@@ -414,3 +414,17 @@ Three modes, one idea each:
 **Publish:** whole-site (new widget). Ask Matthew.
 
 **Decision waiting:** build now, or after the humanities pilot's board question (pilot page question 4: "where would your students learn more by doing something on screen?") has some answers. If pilot teachers point elsewhere, that board comes first and this one waits.
+
+## Built (1 Nov 2026, Matthew said go, with the Explain clip): the dig board in `evidence-7/reading-the-layers`
+
+Built from the plan above. Matthew decided not to wait for pilot data (easy to adapt later) and to include the Explain clip so pilot teachers can see a History clip.
+
+- **Widget `dig`** (`playground-board/widgets/dig.js`): modes `order`, `pit`, `date` and `build` as planned. One change: the pit value is `n_found`, not `found` (board checks read single letters or names with an underscore). Earth-tone layers with dark text in both colour schemes; every layer and find named in words; keyboard focus kept when the board redraws.
+- **Lesson** (`dig.yml`, regions `dig`, `pit`, `date`, `explain`):
+  - *Practise: dig it yourself* after the Try sort (order mode, `dig: on`, the same A/B/C site as the picture): `when: "in_order = 1"`.
+  - Vary is now a board task (pit mode: mark the coin in the pit younger, `when: "n_found = 1 and n_stray = 0"`) followed by the existing question.
+  - *Typical: a coin in the layers* after the weapons step (date mode, a second made-up dig, coin made in 220 BCE in layer B): `when: "n_right = 3 and n_wrong = 0"`. New misconception `find-dates-layers-below`.
+  - **Explain clip** (build mode): layers A, B, C laid down in turn, then a pit dug down into A; seven short captions, voice Heart (`voice:` in the frontmatter), clip port 8720. About 29 seconds with the local test voice; the real voice is usually a little quicker. History's first clip.
+- Teacher notes: what the board checks, that its model is undisturbed layers unless a pit is shown, two `running:` lines, one `stuck:` entry for the coin step.
+- Tested: `validate`, `check-lesson-boards history` (6 boards, all checks read reported values and do not hold at the start), `node experiments/dig-smoke.mjs` (28 checks), every check on the lesson page answered in Chromium at 1280 and 390 px (26 answered, 16 wrong answers tried; board checks do not tick on a wrong answer), the clip recorded locally with the test voice and checked frame by frame (then removed), dark mode, `check-decks` for How we know.
+- **Publish:** whole-site (new widget, History's first clip). Ask Matthew.

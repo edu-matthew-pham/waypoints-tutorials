@@ -1697,6 +1697,18 @@ Vary, Practise, Make).
     each side, its own seats included), `u` (undecided), `n`, `m` (the majority) and `g` (0 none, 1 Side A, 2 Side B),
     so checks read `when: "a = 8"` or `"b >= 8"`. Neutral on purpose: sides named by letter, colours not tied to any
     real party. The model leaves out the Speaker and the Senate: say so in teacher notes.
+  - `widget: dig` (History › How we know, `reading-the-layers`, 1 Nov 2026): a made-up dig seen from the side.
+    `layer C: new floor, cooking pots` lines, top first (2 to 6; the layer's name, then its finds), `site:` (heading),
+    `note:` (a line under it), `dig: on` (layers start covered; "Dig down one layer" uncovers the top one, then the
+    next), `pit: C-A, coin` (a pit from the top layer down into A, with a find in its fill) and `find: B, coin, 220 BCE`
+    (a find with a year). `mode: order` numbers the layers from the one that formed first (`n_dug`, `n_set`, `n_wrong`,
+    `in_order`, 1 when every layer is numbered with the bottom first); `pit` judges each find older, about the same or
+    younger than the layer around it (`n_found`, 1 when the pit's find is marked younger; `n_stray`, other finds marked
+    older or younger; `n_judged`); `date` chooses "That year or later" or "Can't tell from the coin" for each layer
+    (`n_right`, `n_wrong`: the find's layer and those above formed that year or later, layers below cannot be dated by
+    it); `build` is for Explain clips ("Lay down the next layer", then "Dig the pit"; `n_laid`, `pit_dug`). Buttons
+    only, every layer and find named in words. Undisturbed layers are the default model: say so where students meet it.
+    Test: `node experiments/dig-smoke.mjs`.
 - **Maths cards** (`snippets/maths-<course>.json`, one per course, for the course named by its `course:`; the format note is in `maths-algebra-7.json`): the words and methods of the course,
   one card each, with `label`, `code` (TeX, shown typeset), `hint` (may use `$...$`), `unit` (the unit whose cheat sheet
   lists it) and optionally `board` (a board setup, drawn as the card's picture by `npm run render`) with `shows` (its

@@ -17,10 +17,11 @@ const port = srv.address().port;
 const { MATH } = await import('./math-expr.mjs');
 const prefixes = process.argv.slice(2);
 const lessons = [];
-async function walk(d) { for (const f of await readdir(d, { withFileTypes: true })) { const p = join(d, f.name); if (f.isDirectory()) { if (!f.name.startsWith('_')) await walk(p); } else if (f.name === 'index.html' && /^dist\/(maths|english|geography)\//.test(p) && !(await readFile(p, 'utf8')).startsWith('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moved</title>')) lessons.push(p.slice(5, -11)); } }
+async function walk(d) { for (const f of await readdir(d, { withFileTypes: true })) { const p = join(d, f.name); if (f.isDirectory()) { if (!f.name.startsWith('_')) await walk(p); } else if (f.name === 'index.html' && /^dist\/(maths|english|geography|history)\//.test(p) && !(await readFile(p, 'utf8')).startsWith('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moved</title>')) lessons.push(p.slice(5, -11)); } }
 await walk('dist/maths');
 try { await walk('dist/english'); } catch { /* no English built */ }
 try { await walk('dist/geography'); } catch { /* no Geography built */ }
+try { await walk('dist/history'); } catch { /* no History built */ }
 const want = lessons.filter((l) => !prefixes.length || prefixes.some((p) => l.startsWith(p)));
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', args: ['--no-sandbox'] });
 const host = await browser.newPage();

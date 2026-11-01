@@ -1,0 +1,44 @@
+# The made-up dig for "Reading the layers" (the same site as the picture: C top, B middle, A bottom).
+
+# region: dig
+widget: dig
+mode: order
+site: A made-up dig
+note: Nothing has dug into these layers or mixed them up.
+layer C: new floor, cooking pots
+layer B: charcoal, burnt roof wood
+layer A: earlier floor, pottery
+dig: on
+# endregion
+
+# region: pit
+widget: dig
+mode: pit
+site: The same made-up dig, later
+note: Someone has dug a pit down through C and B into A.
+layer C: new floor, cooking pots
+layer B: charcoal, burnt roof wood
+layer A: earlier floor, pottery
+pit: C-A, coin
+# endregion
+
+# region: date
+widget: dig
+mode: date
+site: A second made-up dig
+note: Nothing has disturbed these layers. A coin made in 220 BCE lies in layer B.
+layer C: later floor, cups
+layer B: ash, roof tiles
+layer A: early floor, grinding stone
+find: B, coin, 220 BCE
+# endregion
+
+# region: explain
+widget: dig
+mode: build
+site: How layers build up (a made-up dig)
+layer C: new floor, cooking pots
+layer B: charcoal, burnt roof wood
+layer A: earlier floor, pottery
+pit: C-A, coin
+# endregion
