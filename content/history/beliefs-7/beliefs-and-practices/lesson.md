@@ -21,7 +21,7 @@ Many people in Han China held beliefs that fitted together:
 
 When Confucius was asked about duty to parents, the *Analects* (a collection of his sayings) record him answering that parents should be served properly while they are alive, buried properly when they die, and given offerings properly after that. In 136 BCE, under Emperor Wu, Confucian teaching became the official basis of Han government. Dong Zhongshu, a Confucian adviser to Emperor Wu, taught that floods and droughts were Heaven's way of warning the emperor.
 
-See how the beliefs link up. Duty to your parents does not stop when they die, so funerals and offerings matter. If the dead live on much as before, they need what the living need, so the tomb is stocked. Together the beliefs work like a system: each one helps explain the others, and together they explain what people did.
+See how the beliefs link up. If you believe duty to your parents does not stop when they die, then funerals and offerings matter. If the dead live on much as before, they need what the living need, so the tomb is stocked. Together the beliefs work like a system: each one helps explain the others, and together they explain what people did.
 
 This is a simplified picture. Beliefs varied between places and families and changed over the 400 years of the Han, and people also followed other teachings, such as Daoism.
 
