@@ -458,7 +458,7 @@ if(all)win();else bad(box.dataset.subj==='maths'?'Some cells are not right yet. 
 if(ty==='predict'&&btn){var PK='wp-predict';
 function pload(){try{return JSON.parse(localStorage.getItem(PK))||{}}catch(e){return {}}}
 function plock(v){var p=pload();p[key]=v;try{localStorage.setItem(PK,JSON.stringify(p))}catch(e){}}
-function freeze(v){[].forEach.call(box.querySelectorAll('input'),function(i){i.disabled=true;if(i.type==='radio')i.checked=(i.value===v);else i.value=v});btn.hidden=true;msg.className='msg ok';msg.textContent=kind==='science'?'Locked in. Now try it on the board and compare.':'Locked in. Now run it and compare.'}
+function freeze(v){[].forEach.call(box.querySelectorAll('input'),function(i){i.disabled=true;if(i.type==='radio')i.checked=(i.value===v);else i.value=v});btn.hidden=true;msg.className='msg ok';var nx=box.dataset.next;msg.textContent=nx==='read'?'Locked in. Now read on and compare with what you thought.':nx==='board'||(!nx&&kind==='science')?'Locked in. Now try it on the board and compare.':'Locked in. Now run it and compare.'}
 var saved=pload()[key];if(saved!==undefined&&saved!==null)freeze(saved);
 btn.addEventListener('click',function(){var r=box.querySelector('input[type=radio]:checked'),i=box.querySelector('input.pin'),v=r?r.value:(i?i.value.trim():'');
 if(!v)return bad('Make a prediction first. You cannot change it after you lock it in.');plock(v);freeze(v);pass();freeze(v);try{document.dispatchEvent(new CustomEvent('wp-predict',{detail:key}))}catch(e){}})}
@@ -598,7 +598,14 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null,
   // Explanations are shown with textContent, so maths in them is shown as plain text: "$2x$" becomes "2x".
   const plain = (t) => (lesson.language === 'maths' ? String(t).replace(/\$([^$]+)\$/g, '$1') : t);
   const explain = plain(k.explain || '');
-  const base = `data-key="${esc(key)}" data-play="${esc(lead?.play || `${lesson.slug}/${step.id}`)}" data-kind="${kind}" data-subj="${esc(lesson.language || '')}" data-type="${k.type}" data-unlocks="${esc(ids.join(','))}" data-names="${esc(ids.map(label).join('|'))}" data-explain="${esc(explain)}"`;
+  // Predict locks (1 Nov 2026): the message names what comes next in this lesson: a playground to run, a board to try,
+  // or nothing to try (text-only lessons, such as humanities), where the student reads on and compares.
+  let next = '';
+  if (k.type === 'predict') {
+    const at = lesson.steps.indexOf(step), later = (at < 0 ? [step] : lesson.steps.slice(at)).map((x) => x.config.try).filter(Boolean);
+    next = !later.length ? 'read' : ['board', 'science'].includes(later[0].playground) ? 'board' : 'run';
+  }
+  const base = `data-key="${esc(key)}" data-play="${esc(lead?.play || `${lesson.slug}/${step.id}`)}" data-kind="${kind}" data-subj="${esc(lesson.language || '')}" data-type="${k.type}" data-unlocks="${esc(ids.join(','))}" data-names="${esc(ids.map(label).join('|'))}" data-explain="${esc(explain)}"${next ? ` data-next="${next}"` : ''}`;
   const msg = '<p class="msg" aria-live="polite"></p>';
   if (k.type === 'reflect') {
     return `<div class="check" ${base}><label><input type="checkbox"><span>${tx(k.text)}</span></label>${msg}</div>`;

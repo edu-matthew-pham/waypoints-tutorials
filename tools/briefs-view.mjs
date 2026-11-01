@@ -8,6 +8,7 @@ export const BRIEF_CSS = PROJECT_CSS + `
 .bfbox li::before{content:'';flex:none;width:17px;height:17px;margin-top:3px;border:2px solid var(--muted);border-radius:4px}
 .bfbox.plain li::before{display:none}.bfbox.plain ul{padding-left:1.3em;list-style:disc}.bfbox.plain li{display:list-item}
 .bfnode{margin:10px 0 2px;font-weight:600;font-size:14.5px;color:var(--muted)}
+.bfbox li,.bfnode{overflow-wrap:anywhere}
 .wpt-skel-do{margin:6px 0 10px}
 .wpt-skel-good{margin:10px 0 4px;font-weight:700;font-size:15px}
 .wpt-skel-try{margin:12px 0 2px;padding-top:10px;border-top:1px solid var(--line);font-size:14.5px}
