@@ -8,7 +8,7 @@ summary: "Some values are often named as Australian: freedom, respect, fairness,
 language: maths
 hook: "If you had to name three values that hold Australia together, what would they be? Would people in other countries name the same ones?"
 ---
-A **value** is an idea about what matters and how people should treat each other. Some values are often named as Australian, by the Australian Curriculum and in government documents such as the citizenship pledge:
+A **value** is an idea about what matters and how people should treat each other. Some values are often named as Australian, by the Australian Curriculum and in the government's list of Australian values (from the Department of Home Affairs):
 
 - **freedom**: people can speak, meet, believe and live as they choose, within the law;
 - **respect**: treating others, and their views and beliefs, with consideration;
@@ -34,7 +34,7 @@ check:
     - "Yes, many democracies value fairness, even if they name it differently"
     - "No, fairness is a value only Australians hold"
     - "No, other countries only value freedom"
-    - "Only countries that speak English value fairness"
+    - "Yes, but only because they copied the idea from Australia"
   actual: "Yes. Many democracies name similar values: France's motto is liberty, equality, fraternity. The phrase 'fair go' is very Australian, but the idea of a fair chance isn't Australia's alone."
 ```
 
@@ -70,13 +70,13 @@ tasks:
       options:
         - "Democratic beliefs, rights and liberties, and the law"
         - "Loyalty to one religion and one political party"
-        - "Speaking English at home and supporting a sports team"
+        - "A fair go for everyone and compassion for people in need"
         - "Agreeing with the government on every decision"
       answer: 0
       feedback:
         - null
         - "There are two versions of the pledge, so no one has to name a religion, and it names no party."
-        - "The pledge doesn't mention languages at home or sport."
+        - "Those values are often named as Australian, but the pledge doesn't name them. Read it again."
         - "It asks people to share democratic beliefs, which includes the freedom to disagree."
       explain: "The pledge names democratic beliefs, respect for rights and liberties, and upholding and obeying the law."
   - check:
@@ -195,13 +195,13 @@ check:
   q: "'Advance Australia Fair' became the national anthem on 19 April 1984. On 1 January 2021, the line 'For we are young and free' became 'For we are one and free'. What was the change meant to express?"
   options:
     - "That Australians are one people, together"
-    - "That Australia had become an old country with no young people"
+    - "That the government had changed Australia's official values"
     - "That the anthem should no longer be sung at events"
     - "That Australians must all hold the same beliefs"
   answer: 0
   feedback:
     - null
-    - "The change wasn't about the age of people. It was about the word 'young'."
+    - "An anthem is a symbol. Changing a word doesn't change any law or official list of values."
     - "The anthem is still sung. Only one word changed."
     - "'One' is about unity, not everyone believing the same thing."
   explain: "'One' is about unity: Australians as one people. A national symbol can change when people want it to express their values more fully. Your teacher can say more about why this change was made."

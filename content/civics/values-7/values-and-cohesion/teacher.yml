@@ -33,7 +33,7 @@ stuck:
 support: "Draw two columns, LIVED and GAP, and place each survey row together before the Vary."
 stretch: "What other evidence, besides a survey, could show whether a value is lived?"
 exit:
-  q: "Give one piece of evidence that a value is lived and one of a gap, each with its year."
+  q: "Give one piece of evidence that a value is held or lived and one of a gap, each with its year."
   a: "For example, 83% agreed multiculturalism has been good for Australia (2025); 16% said they'd been discriminated against in the last year (2025)."
 explain: |
   **Social cohesion** is people from different backgrounds getting along, trusting each other and feeling they belong. Shared values can support it.

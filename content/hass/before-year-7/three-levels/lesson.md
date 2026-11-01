@@ -68,12 +68,21 @@ tasks:
       misconception: one-government-does-everything
       explain: "Line 3: the Prime Minister leads the federal government, which doesn't fix local streets. The local council does."
     smaller:
-      check: { type: question, q: "Who empties the bins in Wattle Creek?", options: ["The local council", "The federal government", "The state government"], answer: 0, explain: "Bins are a local council job." }
+      check: { type: question, q: "Who empties the bins in Wattle Creek?", options: ["The local council", "The federal government", "The state government"], answer: 0, explain: "Bins are a local council job.", feedback: [null, "The federal government looks after the whole country, like money and defence, not your street's bins.", "States run schools, hospitals and police. Bins are closer to home."] }
   - check:
       type: question
       q: "Why does Australia have three levels of government?"
-      options: ["So local, state and national matters each have someone looking after them", "So there are three Prime Ministers", "So people can vote only once every three years", "Because one level makes all the laws for the others"]
+      options:
+        - "So town, state and country matters each get looked after"
+        - "So the federal government can run every council's work"
+        - "So one level makes all the laws for the other two"
+        - "So a state can overrule the federal government"
       answer: 0
+      feedback:
+        - null
+        - "Councils make their own decisions about local jobs. The federal government doesn't run them."
+        - "Each level makes laws for its own jobs: councils, states and the federal Parliament."
+        - "When a state law and a federal law clash, the federal law wins. That comes up in Year 7."
       explain: "Some things matter mostly to a town, some to a state, and some to the whole country."
 ```
 
@@ -123,5 +132,5 @@ check: { type: reflect, text: "I can name the three levels of government and giv
 ```step
 stage: make
 insight: "Naming a service from each level in their own area makes the idea the student's own."
-check: { type: reflect, text: "In my own book I wrote one thing each level of government looks after where I live (or, in Canberra, which ones the ACT Government does). A partner read it." }
+check: { type: reflect, text: "In my own book I wrote one thing each level of government looks after where I live (or, in Canberra, which ones the ACT Government does). A partner read it and gave feedback." }
 ```

@@ -16,7 +16,7 @@ People come to live in Australia for many reasons. Some reasons **push** people 
 Two words matter here:
 
 - A **migrant** is someone who chooses to move to another country, and could usually go back.
-- A **refugee** is someone who is outside their own country and can't return because of a well-founded fear of persecution, for example because of their race, religion, nationality, political opinion or the social group they belong to. Refugees have to leave for their own safety.
+- A **refugee** is someone who is outside their own country and can't return because of a well-founded fear of persecution because of their race, religion, nationality, political opinion or the social group they belong to. Refugees have to leave for their own safety.
 
 Many migrants and refugees later become **Australian citizens**. At the ceremony they make the citizenship pledge you met in the first lesson.
 
@@ -87,17 +87,17 @@ tasks:
     smaller:
       check:
         type: question
-        q: "Did a person who fled a war choose to leave in the same way as someone who moved for a job?"
+        q: "Did a person who fled persecution choose to leave in the same way as someone who moved for a job?"
         options:
-          - "No, fleeing a war isn't a free choice"
+          - "No, fleeing persecution isn't a free choice"
           - "Yes, both of them just decided to move"
-          - "Yes, a job offer is the same as a war"
+          - "Yes, a job offer is the same as persecution"
         answer: 0
         explain: "One person had to leave for their safety; the other chose to move. That's the difference between a refugee and a migrant."
         feedback:
           - null
-          - "Someone fleeing a war has to leave to stay safe. That's different from choosing to move."
-          - "A job offer is a reason someone chooses; a war forces people out."
+          - "Someone fleeing persecution has to leave to stay safe. That's different from choosing to move."
+          - "A job offer is a reason someone chooses; persecution forces people out."
 ```
 
 ```worked
@@ -123,7 +123,7 @@ check:
     - ["Migrant", "Someone who chose to move to another country"]
     - ["Refugee", "Someone who had to flee and can't safely return"]
     - ["Permanent resident", "Allowed to live in Australia permanently, but not yet a citizen"]
-    - ["Citizen", "A full member of the country, who votes and makes the pledge"]
+    - ["Citizen", "A full member of the country, who can vote and hold an Australian passport"]
 ```
 
 ## Practise: reasons and values
@@ -139,13 +139,13 @@ tasks:
         - "People come for many reasons: work, family, study, safety"
         - "People only ever come to Australia to earn more money"
         - "Everyone who comes to Australia is a refugee"
-        - "People come only because of the weather and beaches"
+        - "Most people come to join family, so other reasons hardly matter"
       answer: 0
       feedback:
         - null
         - "Work is one reason, but family, study and safety matter too."
         - "Most people who move here are migrants who chose to come."
-        - "Lifestyle can matter, but it's far from the only reason."
+        - "Family is one big reason, but work, study and safety matter too."
       explain: "People move for many reasons at once. Safety and freedom matter as well as work and family."
   - check:
       type: question
@@ -154,13 +154,13 @@ tasks:
         - "No, people keep their own cultures"
         - "Yes, the pledge asks people to give up their culture"
         - "Yes, citizens must stop speaking other languages"
-        - "No, because citizens don't have to obey Australian laws"
+        - "Yes, citizens must speak only English in public"
       answer: 0
       feedback:
         - null
         - "The pledge names democratic beliefs, rights, liberties and the law. It doesn't mention giving up a culture."
         - "Many Australian citizens speak other languages at home."
-        - "Citizens pledge to uphold and obey the law."
+        - "English is the national language, but no law stops citizens speaking other languages, in public or at home."
       explain: "Citizens share democratic beliefs and obey the law, and keep their own cultures. That's part of being pluralist (A diverse democracy)."
 ```
 
@@ -199,7 +199,7 @@ check:
     - null
     - "Permanent residents can already live here permanently."
     - "Permanent residents can work and pay taxes too."
-    - "Permanent residents' children can go to school."
+    - "Permanent residents can go to school too."
   explain: "Voting in federal elections is for citizens. That's one reason many permanent residents choose to become citizens."
 ```
 

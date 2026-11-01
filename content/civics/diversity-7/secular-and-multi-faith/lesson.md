@@ -10,7 +10,7 @@ hook: "Australia is called secular. Does that mean religion has no place here?"
 ---
 Three words describe how Australia handles religion and culture:
 
-- **Secular**: the government is separate from religion. It doesn't favour one religion, and it doesn't make anyone follow one.
+- **Secular**: the government is separate from religion. It doesn't set up an official religion, and it doesn't make anyone follow one.
 - **Multi-faith**: many religions are practised here, and many people have no religion.
 - **Pluralist**: people with different beliefs and cultures live side by side, and that variety is accepted and respected.
 
@@ -47,7 +47,6 @@ check:
     - ["Multi-faith", "Many religions, and none, are part of the society"]
     - ["Pluralist", "Different beliefs and cultures are accepted side by side"]
     - ["Culturally diverse", "People come from many different cultures"]
-    - ["Diverse society", "A society made up of many different groups"]
 ```
 
 ## Worked example: what section 116 says
@@ -91,7 +90,7 @@ tasks:
         explain: "Section 116 is a limit on the Commonwealth. People are free to follow a religion or none."
         feedback:
           - null
-          - "The Constitution doesn't tell people what to believe. It stops the government favouring or forcing a religion."
+          - "The Constitution doesn't tell people what to believe. It stops the Commonwealth setting up a religion or forcing one on anyone."
           - "It only limits the government. People's beliefs are their own."
 ```
 
@@ -132,14 +131,14 @@ tasks:
       type: question
       q: "How can Australia be secular and multi-faith at the same time?"
       options:
-        - "The government favours no religion, while people follow many or none"
-        - "Everyone in Australia must belong to more than one religion"
+        - "The government sets up no religion, while people follow many or none"
+        - "Secular means most people have no religion, so both fit"
         - "The government chooses which religions people are allowed to follow"
         - "Secular and multi-faith mean the same thing, so there's no conflict"
       answer: 0
       feedback:
         - null
-        - "Multi-faith describes the whole society, not each person. Many people follow one religion or none."
+        - "Secular is about the government, not how many people are religious."
         - "A secular government can't choose people's religion. Section 116 stops it."
         - "They mean different things: one is about the government, the other about society."
       explain: "Secular describes the government. Multi-faith describes society. One doesn't cancel the other."
@@ -149,14 +148,14 @@ tasks:
       options:
         - "Pluralist"
         - "Secular"
-        - "Official religion"
-        - "Single culture"
+        - "Multi-faith"
+        - "Culturally diverse"
       answer: 0
       feedback:
         - null
         - "Secular is about government. This is a club describing how its members live together."
-        - "The club doesn't choose a religion for anyone."
-        - "The club has many beliefs side by side, not one."
+        - "Multi-faith says many religions are present. Pluralist also says they are respected side by side, which is the club's point."
+        - "Culturally diverse is about many cultures. The club is talking about faiths and respect."
       explain: "Pluralist means different beliefs and cultures are accepted and respected side by side."
 ```
 
@@ -202,11 +201,11 @@ tier: wider
 insight: "Separating a secular state from a secular society is a distinction to think with, not a verdict, so it is never marked."
 check:
   type: reasoning
-  q: "A secular state is one where the government favours no religion. A secular society is one where religion plays a small part in daily life. Is Australia one, both or neither? Give a reason for each part."
+  q: "A secular state is one where the government sets up no official religion. A secular society is one where religion plays a small part in daily life. Is Australia one, both or neither? Give a reason for each part."
   paper: true
   models:
     - title: "One answer"
-      text: "Australia is a secular state, because section 116 stops the Commonwealth setting up or favouring a religion. Whether it is a secular society is less clear: many people follow a religion and many don't, so it depends on what you count."
+      text: "Australia is a secular state, because section 116 stops the Commonwealth setting up a religion. Whether it is a secular society is less clear: many people follow a religion and many don't, so it depends on what you count."
     - title: "A different answer"
       text: "Australia is a secular state, but not fully a secular society, because religion still matters to many people and to many community groups. A country could have a state religion and still have a fairly secular society, like some countries with an official church."
   criteria:

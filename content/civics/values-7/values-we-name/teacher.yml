@@ -8,7 +8,7 @@ goals:
   - I can explain why these values aren't Australia's alone.
 struggle: "Students treat 'Australian values' as values only Australians hold, or as rules everyone already follows. Keep two questions going: do other countries share this? Does naming it mean everyone lives it?"
 before: |
-  The values are taught as values *often named* as Australian (by ACARA and in government documents such as the citizenship pledge), not as values only Australians hold, and not as a claim that every Australian lives up to them. That second question is the next lesson's hinge.
+  The values are taught as values *often named* as Australian (by ACARA and in the Department of Home Affairs' list of Australian values, which visa applicants agree to respect; the citizenship pledge names a smaller set: democratic beliefs, rights and liberties, and the law), not as values only Australians hold, and not as a claim that every Australian lives up to them. That second question is the next lesson's hinge.
 
   Nothing personal is asked. No step asks a student's background, beliefs or family, or how their family marks national days. Some students and families have different feelings about national symbols (the anthem, the flag, 26 January); the lesson states facts about the symbols and keeps views for discussion. Don't ask students to declare a stance on any symbol.
 
@@ -37,6 +37,9 @@ explain: |
 
   They show up in public life through customs and protocols (the anthem, flag and citizenship ceremonies) and through how institutions work. Many democracies share them.
 sources:
+  - title: Australian values (Department of Home Affairs)
+    url: https://www.homeaffairs.gov.au/about-us/our-portfolios/social-cohesion/australian-values
+    checked: 2026-11-01
   - title: What is the Australian citizenship pledge? (Department of Home Affairs)
     url: https://immi.homeaffairs.gov.au/citizenship/ceremony/what-is-the-pledge
     checked: 2026-11-01

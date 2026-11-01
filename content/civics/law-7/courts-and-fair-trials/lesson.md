@@ -109,13 +109,13 @@ insight: "Placing made-up cases on the ladder checks that students match a case 
 check:
   type: sort
   q: "Where would each made-up case most likely be heard?"
-  options: ["Lower court", "Higher court", "High Court"]
+  options: ["Lower court", "District, County or Supreme Court", "High Court"]
   items:
     - ["A first charge of damaging a letterbox", "Lower court", "Minor crimes start in a local or Magistrates Court."]
-    - ["A serious criminal trial in front of a jury", "Higher court", "Serious trials with juries are heard in a District, County or Supreme Court."]
-    - ["An appeal saying a Magistrates Court got the law wrong", "Higher court", "Appeals go to a higher court, one level up."]
+    - ["A serious criminal trial in front of a jury", "District, County or Supreme Court", "Serious trials with juries are heard in a District, County or Supreme Court."]
+    - ["An appeal saying a Magistrates Court got the law wrong", "District, County or Supreme Court", "Appeals go to a higher court, one level up."]
     - ["A case saying a federal law goes against the Constitution", "High Court", "The High Court decides cases about the Constitution."]
-    - ["A final appeal from a state's Supreme Court, which the High Court agrees to hear", "High Court", "The High Court is the last court of appeal for every case in Australia."]
+    - ["A last appeal after a state's Supreme Court has decided", "High Court", "The High Court is the last court of appeal for every case in Australia, if it agrees to hear the case."]
 ```
 
 ## Practise: appeals and juries

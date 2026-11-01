@@ -18,7 +18,7 @@ A fair legal system supports democracy in three ways:
 
 Equal laws only help if people can actually use them. That is called **access to justice**. Help includes:
 
-- **Legal aid**: free or cheaper legal help from the government. Whether you get a lawyer depends on your income and your case.
+- **Legal aid**: free or cheaper legal help from legal aid commissions, which governments fund. Whether you get a lawyer depends on your income and your case.
 - **Community legal centres**: free advice, often for people who can't afford a lawyer.
 - **Interpreters**, so people who don't speak English well can follow their case.
 

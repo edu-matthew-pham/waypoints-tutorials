@@ -117,7 +117,7 @@ check:
     - ["Keep an accessible parking zone at one end of the market", "Competing values", "It tries to keep both a lively street and access."]
     - ["Allow deliveries before 7 am, before the street closes", "Competing interests", "It reduces what the traders lose."]
     - ["Run a three-month trial and check traders' sales", "Missing evidence", "A trial finds out what actually happens."]
-    - ["Ask growers and traders to share the costs of signs and bins", "Competing interests", "It shares out the costs between the groups that gain and lose."]
+    - ["Let shops put stalls outside their own doors during the market", "Competing interests", "It gives traders a way to gain from the crowds, not just lose drive-in customers."]
 ```
 
 ## Practise: no perfect answer
@@ -205,13 +205,13 @@ tier: wider
 insight: "The decision itself is a values question, so it is a discussion with no marked answer."
 check:
   type: reasoning
-  q: "Should Wattle Creek go ahead with the Saturday market? Give your view, the strongest reason against it, and what you would change to answer that reason."
+  q: "Should Wattle Creek go ahead with the Saturday market? Give your view, the strongest reason on the other side, and what you would change to answer that reason."
   paper: true
   models:
     - title: "One answer"
-      text: "Yes, with changes. The strongest reason against is access for people like Ines. I'd keep an accessible parking zone near the chemist and let the bus stop stay nearby."
+      text: "Yes, with changes. The strongest reason on the other side is access for people like Ines. I'd keep an accessible parking zone near the chemist and let the bus stop stay nearby."
     - title: "A different answer"
-      text: "Not yet. The strongest reason for it is that most people in the survey support it. But I'd want the trial results on traders' sales first, and a plan for deliveries, before making it permanent."
+      text: "Not yet. The strongest reason on the other side is that most people in the survey support it. But I'd want the trial results on traders' sales first, and a plan for deliveries, before making it permanent."
   criteria:
     - "I gave my view and a reason."
     - "I stated the strongest reason on the other side fairly."

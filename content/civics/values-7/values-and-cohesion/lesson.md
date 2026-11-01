@@ -101,7 +101,7 @@ tasks:
 
 ```worked
 \text{The value} :: Inclusion: people from every background feel part of things.
-\text{Evidence it's lived} :: 83% agreed multiculturalism has been good for Australia (2025).
+\text{Evidence it's widely held} :: 83% agreed multiculturalism has been good for Australia (2025).
 \text{Evidence of a gap} :: 16% said they'd been discriminated against (2025); belonging fell from 63% (2020) to 46% (2025).
 \text{A careful judgement} :: Partly lived: widely supported, but not everyone experiences it.
 ```
@@ -117,10 +117,10 @@ stage: modify
 insight: "Sorting statements into evidence for, evidence against, and not evidence at all separates checking from claiming."
 check:
   type: sort
-  q: "Is each one evidence that a value is lived, evidence of a gap, or not really evidence either way?"
-  options: ["Evidence it's lived", "Evidence of a gap", "Not evidence either way"]
+  q: "Is each one evidence that a value is held or lived, evidence of a gap, or not really evidence either way?"
+  options: ["Evidence it's held or lived", "Evidence of a gap", "Not evidence either way"]
   items:
-    - ["83% agreed multiculturalism has been good for Australia (2025)", "Evidence it's lived", "It's a measured figure showing wide support."]
+    - ["83% agreed multiculturalism has been good for Australia (2025)", "Evidence it's held or lived", "It's a measured figure showing the value is widely held. Agreeing shows support, not that everyone is included."]
     - ["16% said they'd been discriminated against in the last year (2025)", "Evidence of a gap", "It shows some people aren't treated fairly."]
     - ["Belonging 'to a great extent' fell from 63% (2020) to 46% (2025)", "Evidence of a gap", "Fewer people felt they strongly belonged."]
     - ["A speech saying 'Australians are the fairest people in the world'", "Not evidence either way", "A speech is a claim, not something measured."]
@@ -176,7 +176,7 @@ stage: make
 insight: "Weighing evidence on both sides for one value shows the student can evaluate, not just name."
 check:
   type: reflect
-  text: "In my own book I chose one value, gave one piece of evidence that it is lived and one piece of evidence of a gap (each with its year), and wrote a careful judgement. A partner read it and gave feedback."
+  text: "In my own book I chose one value, gave one piece of evidence that it is held or lived and one piece of evidence of a gap (each with its year), and wrote a careful judgement. A partner read it and gave feedback."
 ```
 
 Write it in your own book or document, not on this page. Use the survey figures, not anyone's own experience. Your partner or teacher reads it.

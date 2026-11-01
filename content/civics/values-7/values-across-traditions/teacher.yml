@@ -10,7 +10,7 @@ struggle: "Students swing between 'religions have nothing in common' and 'they'r
 before: |
   Depth is deliberately light (Matthew, 1 Nov 2026). Religions hold many beliefs across many denominations and groups, and it isn't the site's job to unpack them. Student text gives one checked line per tradition on one shared value, in that tradition's own word, and says plainly that beliefs differ. For more, point to each community's own educational material (for example, the national peak bodies for Australia's Jewish, Muslim, Buddhist, Hindu and Christian communities; check their current websites) and, where possible, local faith communities your school has links with.
 
-  The one-line descriptions were checked against: My Jewish Learning (tzedakah as helping people in need, a duty linked to justice), BAPS (seva as selfless service, connected with devotion), and overviews of zakat (a required share of wealth for those in need, one of the Five Pillars) and dana (generosity, giving without expecting a return). Each is a simplification; within each tradition there are different understandings.
+  The one-line descriptions were checked against: My Jewish Learning (tzedakah as helping people in need, a duty linked to justice), BAPS (seva as selfless service, connected with devotion), Britannica and the Pluralism Project (zakat: a required share of wealth for those in need, one of the Five Pillars) and Heim's study of dāna in Hindu, Buddhist and Jain thought (generosity, giving without expecting a return). Dana is not only Buddhist and seva is also central in Sikhism; the lesson says so, and the match pairs words with meanings, not with traditions, so no student is marked wrong for knowing their own tradition's word. Each is a simplification; within each tradition there are different understandings.
 
   Christian heritage was taught in *A diverse democracy* (lesson 2), including the one transparency line about First Nations communities that the elaboration on Christianity's impacts calls for; this lesson recalls it rather than repeating it.
 
@@ -36,7 +36,7 @@ exit:
   q: "Name a value many traditions share and two traditions' words for it, and explain why sharing a value isn't sharing every belief."
   a: "For example, giving: zakat (Islam) and tzedakah (Judaism). Traditions can value giving for different reasons and still believe different things."
 explain: |
-  Many religions practised in Australia share values, such as **giving and helping others**, each in its own word: tzedakah (Judaism), zakat (Islam), dana (Buddhism), seva (Hinduism), charity (Christianity).
+  Many religions practised in Australia share values, such as **giving and helping others**, each in its own word: tzedakah (Judaism), zakat (Islam), dana (Buddhism, and Hindu and Jain traditions), seva (Hinduism, and Sikhism), charity (Christianity).
 
   Shared values don't mean shared beliefs. **Religious freedom** lets people follow any religion, or none, within the law.
 sources:
@@ -46,11 +46,14 @@ sources:
   - title: Service (Seva) (BAPS)
     url: https://baps.org/Spiritual-Living/Hindu-Beliefs/Service---Seva.aspx
     checked: 2026-11-01
-  - title: Zakat (Wikipedia overview)
-    url: https://en.wikipedia.org/wiki/Zakat
+  - title: Zakat (Encyclopaedia Britannica)
+    url: https://www.britannica.com/money/zakat-Islamic-tax
     checked: 2026-11-01
-  - title: Dāna (Wikipedia overview)
-    url: https://en.wikipedia.org/wiki/D%C4%81na
+  - title: Five Pillars of Islam (The Pluralism Project, Harvard University)
+    url: https://pluralism.org/five-pillars-islam
+    checked: 2026-11-01
+  - title: "Maria Heim, Theories of the Gift in South Asia: Hindu, Buddhist, and Jain Reflections on Dāna (Routledge, 2004)"
+    url: https://cir.nii.ac.jp/crid/1130000793701008256?lang=en
     checked: 2026-11-01
 leads: >-
   Next in this course: Why people come to Australia.
