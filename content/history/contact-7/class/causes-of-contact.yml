@@ -1,0 +1,29 @@
+inquiry:
+  q: "Think of a time two groups at school clashed over something, such as space at lunch or a game. Was there only one reason?"
+  prompts:
+    - "What different kinds of reason were there?"
+    - "Which reason would you have to fix first to stop it?"
+  notes: "Keep it general and invented; no named students or real incidents. Use it to show causes come in kinds, then switch to the Han and the Xiongnu."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Four corners of cause"
+    minutes: 5
+    do: |
+      Label four corners of the room Power, Land, Security, and Trade and resources. Read out a cause from the lesson; pairs walk to its corner and give one reason.
+    notes: "Some causes fit two corners (land is also power). Let pairs argue it: the point is naming the kind."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Which explanation of the Han–Xiongnu conflict is strongest?"
+    options:
+      - "Raids made the Han want security, and they also wanted horses and power"
+      - "The Han wanted land, and that is the whole reason"
+      - "There was no real reason; they just liked fighting"
+    answer: 0
+    explain: "Several causes, of different kinds."
+    feedback:
+      - null
+      - "Land is one cause. What about the raids and the horses?"
+      - "Both sides had reasons. Name them and their kinds."

@@ -1,0 +1,29 @@
+inquiry:
+  q: "Look at the label on something you are wearing or carrying. How far did it travel, and did you ever meet the people who made it?"
+  prompts:
+    - "Has it changed your life in any way?"
+    - "Who passed it on between the maker and you?"
+  notes: "A model of indirect contact. Keep it to objects, not prices or brands; then switch to Roman silk."
+activities:
+  - at: run
+    kind: activity
+    title: "Pass the silk"
+    minutes: 4
+    do: |
+      Five students stand in a line as a Chinese weaver, a Central Asian trader, a Parthian trader, a merchant in Syria and a rich Roman. Pass a scarf along; each adds a price note. Ask the 'Roman' where it came from.
+    notes: "The Roman should not know. That is the point: indirect contact, and prices rising at each step."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Rome and Han China never met face to face. Did contact change them?"
+    options:
+      - "Yes: silk passed through traders in between changed what Romans wore and spent"
+      - "No: without meeting there is no contact"
+      - "Only if their armies fought"
+    answer: 0
+    explain: "Indirect contact still drives change."
+    feedback:
+      - null
+      - "Contact can happen through others. The silk came from China."
+      - "Rome and the Han never fought, yet silk still linked them."
