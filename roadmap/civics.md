@@ -333,7 +333,12 @@ Misconception ids to add as single lines: `official-source-is-neutral`, `disagre
 
 **First Nations:** S03's elaborations have none; Kit's n1 wider item (First Nations perspectives on civic issues such as land rights and constitutional recognition) is not used in student text. Teacher notes say why (T1: we don't write those perspectives; they are live and need First Nations voices) and point to local, community-approved material.
 
-### Decisions for Matthew
+### Decided (1 Nov 2026, Matthew)
+1. **Saturday market on Main Street** (default). Reason: any low-stakes local issue works as well as another; teachers can swap their own with Make your own version.
+2. **Reuse the `cohesion` board in lesson 2** (default). Reason: share existing boards and extend them where a small, general option is needed, rather than add niche widgets. If parts mode doesn't fit civic sources, add a small general option to it (logged in `shared.md`) before considering anything new; drop to a `sort` only if that fails.
+3. **A resident who uses a wheelchair is the access voice** (default). Reason: the clearest practical need, and one the council can respond to. Written as an ordinary resident with a practical problem, in their own voice, one of several people with a view; not a symbol and not "sad".
+
+### Decisions for Matthew (as first asked)
 1. **The one made-up issue** (Saturday market on Main Street). OK, or another low-stakes local issue (a skate park site, a school-zone speed limit)?
 2. **Reuse the `cohesion` board in lesson 2** for marking claims and values words, or keep the course to checks only (no board)?
 3. **Wheelchair-user resident as the access voice.** It makes the values trade-off real; the character is written with care (a person with a practical need, not a symbol). OK, or a different access voice (an older resident, a delivery driver)?
