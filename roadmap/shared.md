@@ -2,6 +2,10 @@
 
 Things more than one subject depends on: the build, publishing, the home and plain pages, and shared tools (`tools/*.mjs`, `tools/lesson-view.mjs`, `playground-shared/`, `playground-board/core.js`). Before changing one of these, check this file and `git log` for work in progress, and note here what you are changing.
 
+## Proposed (1 Nov 2026, navigation chat; plan only, waiting for go): subject pages in one pass
+
+Plan in `roadmap/navigation.md`: shorter List for teachers rows (say a shared strand or year once), a contents line per course, years only where they tell courses apart, no "Then" or Foundations/Extensions for maths and science. Would change `tools/build-site.mjs` and `site/trail.js` (maybe `tools/trail.mjs`) and need a whole-site publish; no clips re-recorded. Check with that file before changing the List for teachers or stage words.
+
 ## Note (1 Nov 2026, maths chat): `tools/check-lesson-boards.mjs` pairs task checks with task starters
 
 Also `playground-board/widgets/trig.js`: the triangle view's angle range is 1° to 89° (was 5° to 85°, which ruled out a 4° ramp); the elevation and bearing views are unchanged. No lesson using the trig board has a clip.
