@@ -1,0 +1,8 @@
+# Nib's write-up of the made-up dig, for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Layer 4 has stone tools and a hearth.
+The charcoal from the hearth is radiocarbon dated to about 45,000 years ago.
+Nib says: "So now we know exactly who lit the fire and the route they took to get here."
+Nib says: "This one hearth proves the whole story of how people reached this region."
+# endregion

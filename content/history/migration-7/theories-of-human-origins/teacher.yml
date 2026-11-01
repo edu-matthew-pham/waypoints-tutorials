@@ -1,0 +1,51 @@
+learning: "describe what the Out of Africa theory proposes and use 'theory' to mean an evidence-based explanation"
+summary: "Identify the main theories about where Homo sapiens began, describe what the Out of Africa theory proposes, and use the word 'theory' the way historians and scientists do."
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 6 min · Practise 5 min · Make 9 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can describe what the Out of Africa theory says.
+  - I can explain what 'theory' means in history and science.
+  - I can say how a new find can refine a theory without throwing it out.
+struggle: "Students hear 'theory' as 'guess'. Keep asking: what evidence is behind it, and what would change it?"
+before: |-
+  AC9HH7K01 n1 (not a hinge). The node asks for "competing theories ... including the Out of Africa Theory and the Modern Theory of Evolution". ACARA's term "Modern Theory of Evolution" is kept in the descriptor wording; the lesson explains it plainly as the theory of evolution (living things change over many generations), the frame the others sit in. The multiregional idea is described as older and, in its strong form, held by few scientists now; interbreeding with Neanderthals is stated as established in small amounts (how much is still argued, per Smithsonian Human Origins).
+
+  Sensitivity: some families hold religious views about human origins. The lesson teaches what the evidence-based theories say and how scientists use the word "theory"; it never asks students to state a belief. If a student raises a religious view, acknowledge it respectfully and keep the class on what the evidence says and how theories are tested.
+
+  Real cases: Homo sapiens about 300,000 years old, in Africa (Smithsonian); Misliya Cave jawbone, about 177,000 to 194,000 years ago (Tel Aviv University, 2018); Homo erectus in Asia over a million years ago. The classroom discussion with Nib is made up.
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips.
+
+  Relevant ACARA AC9HH7K01 elaboration (an example, not a checklist): "identifying different theories regarding human evolution such as the Out of Africa Theory and the Modern Theory of Evolution".
+
+  First Nations: AC9HH7K01 says "including Australia", and its elaborations name oral history among the kinds of evidence. Arrival on the Australian continent is AC9HH7K02, which stays a pointer page to First Nations-led resources until someone has been consulted (teacher view: /teach/curriculum/history/AC9HH7K02/). Student lessons here write nothing about First Nations arrival, oral histories or deep time; lesson 2 ends with one line saying the class will use resources made with First Nations communities for it. Start from ACARA's elaborations and ask the school's First Nations contact for local, community-approved material. A First Nations educator should review before use beyond CGGS.
+running:
+  - "Predict: ask students to say a sentence using 'theory' the everyday way, then the scientific way."
+  - "Try: ask what would turn a hunch into a theory."
+  - "Worked example: let Nib's mistake sit. Ask: is any guess as good as an explanation with evidence behind it?"
+  - "Vary: make the point that changing a date made the theory more accurate, not weaker."
+  - "Make: students write in their own book; a partner gives feedback."
+stuck:
+  - see: "A student says Out of Africa is 'just a theory', so it might be anything."
+    ask: "What evidence is behind it? What evidence would count against it?"
+    fix: "A scientific theory is an explanation built on evidence and open to testing, not a hunch."
+  - see: "A student says Out of Africa means no humans lived outside Africa before our species."
+    ask: "Which kind of human is the theory about?"
+    fix: "It is about Homo sapiens. Earlier kinds of humans, such as Homo erectus, had spread out long before."
+  - see: "A student says a new find proves the theory was wrong."
+    ask: "Did the Misliya jawbone change where our species began, or when it started to leave?"
+    fix: "It changed a date. The main idea still stands; the theory was refined."
+support: "Give two cards, 'hunch' and 'theory', and read four statements aloud for students to hold up a card, saying the evidence (or lack of it) each time."
+stretch: "What kind of find would most challenge Out of Africa, and why has nothing like it been found so far?"
+leads: "Continue to Why did people move?"
+exit:
+  q: "What does the Out of Africa theory say, and why is it called a theory?"
+  a: "Our species first evolved in Africa and later spread across the world. It is a theory because it is an explanation built on evidence, such as fossils and DNA, and it can be refined by new finds."
+explain: "A theory in history and science is an explanation built on evidence. The Out of Africa theory says Homo sapiens first evolved in Africa and later spread around the world; new finds refine its details."
+sources:
+  - title: "Smithsonian Human Origins: Homo sapiens"
+    url: https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens
+    checked: 2026-11-01
+  - title: "Tel Aviv University: Remains of earliest modern human outside of Africa discovered (Misliya Cave)"
+    url: https://english.tau.ac.il/node/2269
+    checked: 2026-11-01

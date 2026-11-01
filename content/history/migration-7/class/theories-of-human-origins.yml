@@ -1,0 +1,29 @@
+inquiry:
+  q: "'It's only a theory.' When is that a fair thing to say, and when isn't it?"
+  prompts:
+    - "What would you want to know before trusting a theory?"
+    - "Is a theory that changes weaker or stronger?"
+  notes: "Steer to evidence and testing. Do not ask students to state beliefs about human origins."
+activities:
+  - at: run
+    kind: activity
+    title: "Hunch or theory?"
+    minutes: 4
+    do: |
+      Read four statements aloud. Students hold up one finger for a hunch and two for an evidence-based theory, and name the evidence for any 'theory' vote.
+    notes: "The test is whether evidence is named and could be checked."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "A new fossil pushes back the date our species first left Africa. What happens to the Out of Africa theory?"
+    options:
+      - "It is refined: the date changes, the main idea stands"
+      - "It is disproved"
+      - "Nothing, because theories never change"
+    answer: 0
+    explain: "New evidence refines a theory's details."
+    feedback:
+      - null
+      - "The new fossil still fits a journey out of Africa, just an earlier one."
+      - "Theories change with evidence. That is how they improve."

@@ -1,0 +1,53 @@
+learning: "describe how changes in rainfall, deserts and sea levels are thought to have moved early humans out of Africa over many generations"
+summary: "Describe how environmental changes, such as shifts in rainfall, spreading deserts and changing sea levels, are thought to have moved early humans out of Africa and into other parts of the world over many generations."
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 6 min · Practise 6 min · Make 8 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can describe one environmental change and how it could move people.
+  - I can explain why migration happened over many generations, not as a planned trip.
+  - I can tell a push from a pull.
+struggle: "Students picture a planned journey to a known place. Keep asking: what could they see from where they were, and what changed around them?"
+before: |-
+  AC9HH7K01 n2, a hinge: AC9HH7K02 builds on the idea that environmental change moved people, so a student who sees migration as a planned trip will treat later causes as disconnected facts.
+
+  ACARA's elaboration says environmental changes "triggered" the movement. The lesson keeps the descriptor's terms but frames climate as the leading explanation scientists give, not the only one: it names other factors that are argued (growing numbers of people, food along coasts). The hinge check is on the mechanism (rain shifts over generations, food and water move, people follow), not on climate being the sole cause.
+
+  Real cases: wetter phases in the Sahara and Arabia; the Al Wusta finger bone (Saudi Arabia, before 85,000 years ago, linked by its authors to a humid phase with a lake; Groucutt et al. 2018, Nature Ecology & Evolution); sea level about 125 metres lower at the Last Glacial Maximum, about 29,000 to 19,000 years ago (Britannica). The valley model is made up (labelled once).
+
+  Sahul and Sunda (the lower-sea coastlines of South-East Asia and Australia-New Guinea) belong here for teachers only: they are about arrival on the Australian continent, which is K02 and stays with First Nations-led resources. Do not add an arrival date in student work; dates are debated and are K02's to teach.
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips (a sea-level and coastline board is a parked idea in the roadmap).
+
+  Relevant ACARA AC9HH7K01 elaboration (an example, not a checklist): "describing how environmental changes, such as climate change and desertification, triggered the movement of peoples from Africa".
+
+  First Nations: AC9HH7K01 says "including Australia", and its elaborations name oral history among the kinds of evidence. Arrival on the Australian continent is AC9HH7K02, which stays a pointer page to First Nations-led resources until someone has been consulted (teacher view: /teach/curriculum/history/AC9HH7K02/). Student lessons here write nothing about First Nations arrival, oral histories or deep time; lesson 2 ends with one line saying the class will use resources made with First Nations communities for it. Start from ACARA's elaborations and ask the school's First Nations contact for local, community-approved material. A First Nations educator should review before use beyond CGGS.
+running:
+  - "Predict: ask students to draw how they pictured it, then compare with the generations idea."
+  - "Try: read each match as a cause and effect aloud."
+  - "Worked example: walk through the valley table row by row. Then let Nib's mistake sit."
+  - "Vary: show where Al Wusta is on a map today (desert) and ask what must have been different."
+  - "Make: students write in their own book; a partner checks for 'scientists think'."
+stuck:
+  - see: "A student says people decided to go to another continent."
+    ask: "Could they know another continent was there?"
+    fix: "They followed water and food a little at a time; over generations, that added up to a long journey."
+  - see: "A student says the whole planet was covered in ice in the ice age."
+    ask: "Where were the big ice sheets, and what happened to the sea?"
+    fix: "Ice sheets covered the far north; water locked in them made the sea lower, so coasts moved out."
+  - see: "A student mixes up push and pull."
+    ask: "Is this driving people away from where they are, or drawing them to somewhere new?"
+    fix: "Push: away from home (drying lake). Pull: towards a new place (new grassland)."
+support: "Use the valley table as three cards in order and ask the group to say one 'so...' sentence between each pair."
+stretch: "If climate opened and closed routes, why might people still move when the climate stayed the same? What evidence would help decide?"
+leads: "Continue to How do we know?"
+exit:
+  q: "Describe one environmental change and explain how it could have moved people over many generations."
+  a: "For example: when a region dried into desert, the lakes and animals people relied on moved, so groups shifted their range little by little to follow them."
+explain: "Scientists think changes in rainfall, deserts and sea levels opened and closed routes, and groups followed water and food a little at a time, so people spread out of Africa over many generations."
+sources:
+  - title: "Groucutt et al. (2018), Homo sapiens in Arabia by 85,000 years ago, Nature Ecology & Evolution"
+    url: https://link.springer.com/article/10.1038/s41559-018-0518-2
+    checked: 2026-11-01
+  - title: "Britannica: Last Glacial Maximum"
+    url: https://www.britannica.com/science/Last-Glacial-Maximum
+    checked: 2026-11-01

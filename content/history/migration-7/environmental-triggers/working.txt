@@ -1,0 +1,8 @@
+# Nib's explanation for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Our species began in Africa and later spread across the world.
+Nib says: "One day a group decided to leave Africa and walk to a new continent they had heard about."
+Nib says: "They packed up and made the trip in a few months."
+Nib says: "So migration was a planned journey to a place they knew."
+# endregion

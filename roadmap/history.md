@@ -358,3 +358,18 @@ Built from the 30 Oct plan with every change in the 1 Nov re-check (items 1–14
 - Tested: `validate` (no History warnings), `check-nodes`, `effort`, build, all 34 checks per page answered with their stored answers in Chromium at 1280 and 390 px (every task pill, smaller step, typical and wider step; 38 wrong answers tried, feedback shown), course, Reference, subject, pathway, teacher and guide pages load with no errors or sideways scroll, `check-decks` for the course.
 - Map redrawn 1 Nov for phones: a narrower sketch (420 × 470) with bigger labels, readable at 390 px.
 - **Publish:** needs a whole-site publish (subject page pathway, History teacher page). Not run: Matthew's call (W1).
+
+## Built (1 Nov 2026, Matthew said go): `history/migration-7`, *Early human migration* (AC9HH7K01; Preview, not yet tried with a class)
+
+Built from the 30 Oct plan with the 1 Nov re-check applied (items 1–7 and 15–19).
+
+- Course `content/history/migration-7/` (tagline *How do we know where the first people came from?*, Usually Year 7, `recap: true`, no `after:`: K01's prior is Year 6, and lessons only mention How we know), in The ancient world pathway. Three lessons in node order:
+  1. `theories-of-human-origins` (n1): theory as an evidence-based explanation; the theory of evolution (ACARA's "Modern Theory of Evolution", explained plainly), Out of Africa, the older multiregional idea, interbreeding with Neanderthals; Misliya jawbone (177,000–194,000 years) as a theory refined, not thrown out; Homo erectus as an earlier traveller. Nib's slip `theory-means-guess` with `smaller:`. Teacher note on religious views: teach what the theories say, never ask for beliefs.
+  2. `environmental-triggers` (n2, hinge): rainfall shifts, desertification, sea level about 125 m lower at the Last Glacial Maximum; movement over many generations; a made-up valley model (labelled once); Al Wusta (Arabia, before 85,000 years ago, humid phase). Climate framed as the leading explanation, other causes named (T8). Nib's slip `migration-as-planned-trip` with `smaller:`. Push, pull and barrier sort.
+  3. `evidence-and-interpretations` (n3, hinge): evidence table (layers, radiocarbon to about 50,000 years and only once-living material, luminescence, fossils and tools, DNA, oral history named generally); a made-up rock-shelter dig with two dated layers (two times of use, not continuous use). Nib's slip `single-find-proves-all` with `smaller:`. Mentions How we know without assuming it.
+- First Nations (T1, firm): no arrival story, date or oral history in student text. Sahul and Sunda are in teacher notes only; lesson 2 ends with one line that the class will use resources made with First Nations communities for arrival on the continent. Every `teacher.yml` points to the K02 pointer page and asks for a First Nations educator's review before use beyond CGGS.
+- No board, no clips. A sea-level and coastline board stays a parked idea.
+- `content/history/index.md` (migration-7 now built in The ancient world), `content/history-teachers.md`, three single-line entries in `misconceptions.json`.
+- Facts checked 1 Nov (sources in each `teacher.yml`): Smithsonian Human Origins (Homo sapiens about 300,000 years, Africa; dating methods); Tel Aviv University (Misliya, 2018); Groucutt et al. 2018 (Al Wusta); Britannica (Last Glacial Maximum, about 125 m).
+- Tested: `validate`, `check-nodes`, `effort`, build, all checks answered with stored answers in Chromium at 1280 and 390 px (66 answered, 36 wrong answers tried, feedback shown), course, recap, subject, pathway, teacher and guide pages load with no errors or sideways scroll, `check-decks` for the course.
+- **Publish:** whole-site (subject and teacher pages). Ask Matthew (W1).

@@ -1,0 +1,29 @@
+inquiry:
+  q: "Does finding one stone tool in a cave prove people lived there?"
+  prompts:
+    - "What else would you want to find?"
+    - "What would make you change your mind?"
+  notes: "A tool is evidence that someone was there once; living there, when and who need more. Return to this after Make."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Build the interpretation"
+    minutes: 5
+    do: |
+      Give groups the dig report as four cards (layers, charcoal date, sand date, tools). Each card states what it shows. Groups write one sentence that uses at least two cards and one 'we cannot yet say...'.
+    notes: "Check reasons, not speed. Two times of use is supported; continuous use is not."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Charcoal from a hearth is dated to about 45,000 years ago. Which claim stays within the evidence?"
+    options:
+      - "A fire burned there about 45,000 years ago"
+      - "We now know which kind of human lit it"
+      - "This proves the route people took"
+    answer: 0
+    explain: "A date tells you when. Who and from where need other evidence."
+    feedback:
+      - null
+      - "No bones or DNA were found."
+      - "One site cannot show a route."

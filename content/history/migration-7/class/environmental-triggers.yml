@@ -1,0 +1,29 @@
+inquiry:
+  q: "If rainfall in our region slowly halved over 300 years, what would people do, and would anyone at the time say they were 'migrating'?"
+  prompts:
+    - "What would each generation notice?"
+    - "What would change faster: the land or the people?"
+  notes: "Bring out the generations idea: slow change, small moves, a long journey only in hindsight."
+activities:
+  - at: investigate
+    kind: activity
+    title: "The valley that dried up"
+    minutes: 5
+    do: |
+      Pairs take the valley table and say one 'so...' sentence between each row (less rain, so the lake shrinks; so the herds move...). Then they add one push and one pull.
+    notes: "Accept other causes if raised (more people, new food). Climate is a leading explanation, not the only one."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Which description of early migration out of Africa fits the evidence best?"
+    options:
+      - "Groups shifted their range over many generations, following water and food as the climate changed"
+      - "A group planned a trip to a new continent"
+      - "Everyone left Africa in one season"
+    answer: 0
+    explain: "Movement was slow and followed the environment."
+    feedback:
+      - null
+      - "No one could know about other continents."
+      - "It happened over tens of thousands of years."

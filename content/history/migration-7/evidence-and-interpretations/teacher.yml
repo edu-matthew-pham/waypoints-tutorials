@@ -1,0 +1,48 @@
+learning: "identify kinds of evidence for early human migration and explain how several kinds together build an interpretation that can change"
+summary: "Identify the kinds of evidence historians and archaeologists use for early human migration, describe what each adds, and explain that interpretations rest on several kinds together and can change."
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 5 min · Practise 6 min · Make 9 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can name kinds of evidence and say what each can tell us.
+  - I can explain why one find is not proof of a whole story.
+  - I can write an interpretation that uses two kinds of evidence and names what is still uncertain.
+struggle: "Students treat one find as proof, or treat anything less than proof as a guess. Hold both: evidence supports an interpretation, and leaves room for change."
+before: |-
+  AC9HH7K01 n3, a hinge: S03–S04 and K08 all assume students do not treat a single source as settling a question. If students have done How we know (history/evidence-7), this lesson is quick on methods and slow on combining them; if not, the table carries the basics. The lesson mentions How we know but does not assume it.
+
+  The node names "excavation and stratigraphy, oral history, and radiocarbon dating". Oral history is named and explained as a kind of evidence in general terms only. No First Nations oral history is used as a student example (rule T1). In Australia, First Nations oral histories are central evidence for deep time; teach that with K02's First Nations-led resources.
+
+  Method facts (Smithsonian Human Origins, dating): radiocarbon works on once-living material up to about 50,000 years; luminescence dates when sediment was last exposed to light or heat. The rock-shelter dig is made up (labelled once); its two dates show two times of use, not continuous use.
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips.
+
+  Relevant ACARA AC9HH7K01 elaboration (an example, not a checklist): "identifying how different approaches, such as the use of excavation and stratigraphy, oral history and the data derived from radiocarbon dating, inform historical interpretations".
+
+  First Nations: AC9HH7K01 says "including Australia", and its elaborations name oral history among the kinds of evidence. Arrival on the Australian continent is AC9HH7K02, which stays a pointer page to First Nations-led resources until someone has been consulted (teacher view: /teach/curriculum/history/AC9HH7K02/). Student lessons here write nothing about First Nations arrival, oral histories or deep time; lesson 2 ends with one line saying the class will use resources made with First Nations communities for it. Start from ACARA's elaborations and ask the school's First Nations contact for local, community-approved material. A First Nations educator should review before use beyond CGGS.
+running:
+  - "Predict: hold up an object and ask what it could and could not tell a stranger about you."
+  - "Try: after the match, ask which question none of the four can answer alone."
+  - "Worked example: read the dig report aloud, then let Nib's mistake sit."
+  - "Vary: ask what the tooth adds and what it leaves unchanged."
+  - "Make: students write in their own book; a partner checks for two kinds of evidence and one uncertainty."
+stuck:
+  - see: "A student says the dated charcoal tells us who lit the fire."
+    ask: "What does a date answer: when, who, or where from?"
+    fix: "A date says when. Who needs fossils or DNA; where from needs more sites."
+  - see: "A student says radiocarbon can date stone tools."
+    ask: "What does radiocarbon need to measure?"
+    fix: "Carbon from something that was once alive, like charcoal or bone, found with the tools."
+  - see: "A student says that if interpretations change, they are just guesses."
+    ask: "Did the new tooth make the old evidence wrong, or add to it?"
+    fix: "New evidence refines an interpretation. Changing with evidence is a strength."
+support: "Give a three-column frame (evidence, what it tells us, what it cannot) and fill one row together before students do the dig report."
+stretch: "Why might an interpretation built on three weak kinds of evidence that agree be stronger than one built on a single strong find?"
+leads: "Next in this pathway: the ancient-world lenses (Shaped by the land is built)."
+exit:
+  q: "Why can one stone tool not tell us the whole story of how people reached a place?"
+  a: "It shows someone made a tool there. Without layers, dates, fossils or DNA, it cannot say when, who or where they came from; an interpretation needs several kinds of evidence."
+explain: "Historians and archaeologists build interpretations of early migration from several kinds of evidence (layers, dating, fossils and tools, DNA, oral history), each answering a different part. One find is not proof, and interpretations change with new evidence."
+sources:
+  - title: "Smithsonian Human Origins: dating"
+    url: https://humanorigins.si.edu/evidence/dating
+    checked: 2026-11-01

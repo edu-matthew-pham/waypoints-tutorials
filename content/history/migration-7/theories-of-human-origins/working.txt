@@ -1,0 +1,8 @@
+# Nib's answer in a made-up classroom discussion, for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Question: why do scientists think our species began in Africa?
+The oldest Homo sapiens fossils have been found in Africa.
+Nib says: "But Out of Africa is only a theory, so it's really just a guess."
+Nib says: "So my guess, that people came from somewhere else, is just as good."
+# endregion

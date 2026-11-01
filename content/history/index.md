@@ -20,14 +20,14 @@ pathways:
     title: The ancient world
     summary: "Lenses for studying any ancient society: the land, the people, beliefs, contact and conflict, and a significant individual."
     fit: "Use beside your depth study, after How we know or any time the class needs one of the lenses."
-    about: "**Preview.** One lens is built so far, Shaped by the land (AC9HH7K09); the others (AC9HH7K10 to K13) and Early human migration (AC9HH7K01) are planned and shown as Coming later. Each lens uses ancient China in the Qin and Han period as its worked example, with swap-in cards for Egypt, Greece, Rome and India on the course's Reference page. Every student takes the same steps in the same order; typical and wider steps add more examples of the same idea and are never needed to finish."
+    about: "**Preview.** Shaped by the land (AC9HH7K09) and Early human migration (AC9HH7K01) are built; the other lenses (AC9HH7K10 to K13) are planned and shown as Coming later. Each lens uses ancient China in the Qin and Han period as its worked example, with swap-in cards for Egypt, Greece, Rome and India on the course's Reference page. Every student takes the same steps in the same order; typical and wider steps add more examples of the same idea and are never needed to finish."
     courses:
       - { path: history/land-7, id: land-7, stage: foundations, after: [evidence-7], tagline: "Why there, and what did the land make possible?" }
       - { title: "People and power", summary: "Roles and groups in an ancient society, and how they related to each other (AC9HH7K10).", stage: foundations, tagline: "Who did what, and who was in charge?" }
       - { title: "Beliefs and practices", summary: "What people believed, valued and did in an ancient society (AC9HH7K11).", stage: foundations, tagline: "What mattered to them, and how can we tell?" }
       - { title: "Contact and conflict", summary: "How contact and conflict with others changed an ancient society (AC9HH7K12).", stage: foundations, tagline: "What changed when societies met?" }
       - { title: "A significant individual", summary: "The role and significance of one person in an ancient society (AC9HH7K13).", stage: foundations, tagline: "How much difference can one person make?" }
-      - { title: "Early human migration", summary: "Theories and evidence about how and why people moved out of Africa and around the world (AC9HH7K01).", stage: foundations, tagline: "How do we know where the first people came from?" }
+      - { path: history/migration-7, id: migration-7, stage: foundations, tagline: "How do we know where the first people came from?" }
   - id: before-year-7
     title: Before Year 7
     summary: "A short catch-up lesson on the Year 6 idea Year 7 History builds on."
