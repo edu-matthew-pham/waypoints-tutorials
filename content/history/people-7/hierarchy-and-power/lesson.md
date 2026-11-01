@@ -83,7 +83,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is explaining how the Qin emperor ruled. Click the first line where Nib's thinking goes wrong."
+      text: "Nib is explaining how the Qin emperor ruled (Nib's notes are made up for this lesson). Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: power-without-how
@@ -93,9 +93,9 @@ tasks:
         type: question
         q: "The emperor orders a new road in a far commandery. What has to happen before anyone starts digging?"
         options:
-          - "Officials use the registers to call up workers and organise food for them"
+          - "Officials use the registers to call up workers"
           - "Nothing: the order is enough on its own"
-          - "The emperor travels there to dig it"
+          - "The emperor travels there to lead the work"
           - "Farmers volunteer because they want a road"
         answer: 0
         feedback:
@@ -103,22 +103,22 @@ tasks:
           - "An order on its own builds nothing. Someone has to find the workers and feed them."
           - "One person cannot run a whole empire in person. That is what officials were for."
           - "Labour was owed to the state, and officials made sure men turned up."
-        explain: "Orders became action through officials, records and owed labour."
+        explain: "Officials used the registers to call up workers and organise food for them. Orders became action through officials, records and owed labour."
   - check:
       type: question
       q: "What was the main difference between a noble and an official in Qin China?"
       options:
-        - "A noble's power came from his family; an official was appointed by the emperor and could be dismissed"
-        - "Officials were always richer than nobles"
+        - "A noble's power came from family; an official's from the emperor"
+        - "Officials were richer, so they had more power than nobles"
         - "Nobles did all the paperwork and officials fought in the army"
         - "There was no difference: both inherited their jobs"
       answer: 0
       feedback:
         - null
-        - "Wealth was not the difference. Some nobles were very rich. The difference was how they got their power."
+        - "Wealth was not the difference, and some nobles were very rich. The difference was where their power came from."
         - "It was the other way round: officials kept the records."
         - "Qin officials were appointed, not born into the job. That was the point of them."
-      explain: "Appointed officials depended on the emperor, so he could control them. That is one reason the Qin used them instead of noble families."
+      explain: "An official was appointed by the emperor and could be dismissed, so he depended on the emperor. That is one reason the Qin used officials instead of noble families."
 ```
 
 ### Tools of power
@@ -136,16 +136,16 @@ check:
   type: question
   q: "Historians think one reason the First Emperor used appointed officials instead of noble families was to keep control. Why would officials help him do that?"
   options:
-    - "He chose them and could dismiss them, so they had reason to follow his orders"
+    - "He could dismiss them, so they had reason to obey him"
     - "Officials were his relatives, so they were always loyal"
-    - "Officials did not need to be paid"
-    - "Nobles were not allowed to live in the empire"
+    - "Officials cost less, because they were not paid"
+    - "Officials lived in the capital, close to him"
   answer: 0
   feedback:
     - null
     - "Relatives were the nobles. Officials were chosen for the job, often not family."
     - "Officials were paid by the state. That was part of why they depended on the emperor."
-    - "Nobles still existed. The change was who ran each area."
+    - "Most officials were sent out to commanderies and counties far from the capital."
   explain: "An official who owes his job to the ruler is easier to control than a noble family with its own land and followers."
 ```
 
@@ -158,17 +158,17 @@ tasks:
       type: question
       q: "Which statement describes the hierarchy best?"
       options:
-        - "A few people at the top held most of the power, and most people were farmers near the bottom who paid tax and owed labour"
-        - "Everyone had about the same amount of power"
+        - "A few at the top held most power; most people were farmers"
+        - "Power was shared out fairly evenly between the layers"
         - "Merchants were at the top because they had the most money"
-        - "Soldiers ruled the country and the emperor obeyed them"
+        - "The emperor held all the power, and officials had none"
       answer: 0
       feedback:
         - null
         - "A hierarchy means layers with very different amounts of power."
         - "Some merchants were rich, but the officials and the emperor held the power. Money and power were not the same thing."
-        - "The army served the emperor. Officials and the emperor gave the orders."
-      explain: "Layers, with power concentrated at the top, and most people farming near the bottom."
+        - "The emperor was at the top, but officials held real power over the areas they ran."
+      explain: "Layers, with power concentrated at the top, and most people farming near the bottom, paying tax and owing labour."
   - check:
       type: sort
       q: "Is each one about who had power, or how power worked?"
@@ -205,16 +205,16 @@ check:
   type: question
   q: "In ancient Egypt, the Pharaoh ruled through viziers, regional governors (nomarchs) and scribes. What did the scribes most likely do for the Pharaoh's power? (See the Egypt card on the Reference page.)"
   options:
-    - "Kept records of harvests, taxes and workers, so orders could be carried out"
-    - "Ruled their own kingdoms separate from the Pharaoh"
+    - "Kept records of harvests, taxes and workers"
+    - "Ruled their own regions apart from the Pharaoh"
     - "Grew most of the food for the country"
-    - "Had no part in running the country"
+    - "Advised the Pharaoh on which laws to make"
   answer: 0
   feedback:
     - null
-    - "Scribes worked for the state; they did not have kingdoms of their own."
+    - "Scribes worked for the state; they did not rule regions of their own."
     - "Farmers grew the food. Scribes counted and recorded it."
-    - "Without records, taxes and labour could not be organised."
+    - "That was closer to the viziers' job. Scribes did the counting and writing that let orders be carried out."
   explain: "As in Qin China, writing and record keeping carried the ruler's power to the villages."
 ```
 
@@ -228,17 +228,17 @@ check:
   type: question
   q: "In Athens, male citizens could vote in the assembly. Does that mean everyone in Athens shared power? (See the Athens card.)"
   options:
-    - "No: women, slaves and foreigners living there could not vote, so power was shared among some men only"
+    - "No: women, slaves and foreigners could not vote"
     - "Yes: everyone living in Athens could vote"
-    - "No: only the king could vote"
-    - "Yes: women ran the assembly"
+    - "No: only rich nobles could vote in the assembly"
+    - "Yes: all men living in Athens could vote"
   answer: 0
   feedback:
     - null
     - "Only adult male citizens could vote."
-    - "Athens in this period did not have a ruling king; male citizens voted."
-    - "Women could not vote or attend the assembly."
-  explain: "Power can be organised by votes as well as by officials, but who counts as a citizen decides who shares it."
+    - "Poorer male citizens could vote too. What counted was being an adult male citizen."
+    - "Only male citizens. Foreign men living there and enslaved men could not vote."
+  explain: "Power was shared among some men only. It can be organised by votes as well as by officials, but who counts as a citizen decides who shares it."
 ```
 
 Typical and wider steps are extras on the same idea. You do not need them to finish the lesson.

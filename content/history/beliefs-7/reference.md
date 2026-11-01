@@ -16,7 +16,7 @@ Each card is a short summary to start from, not a full account. Check it against
 
 - **Beliefs:** many gods; an afterlife in which the preserved body was needed (texts describe the *ba*, part of the spirit, as unable to survive without it); a judgement after death, shown in texts as the heart weighed against the feather of Maat.
 - **Practices:** mummification for those who could afford it; tombs with goods for the afterlife; funerary texts placed with the dead.
-- **Evidence:** mummies and coffins; tomb paintings; Book of the Dead papyri (from about 1450 BCE).
+- **Evidence:** mummies and coffins; tomb paintings; Book of the Dead papyri (from about 1550 BCE).
 - **Sources to look for:** museum pages on mummification and on the Book of the Dead, such as the Papyrus of Hunefer.
 
 ## Ancient Greece

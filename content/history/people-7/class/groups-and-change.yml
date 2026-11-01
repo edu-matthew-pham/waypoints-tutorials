@@ -10,20 +10,20 @@ activities:
     title: "A quick timeline"
     minutes: 4
     do: |
-      Put 221 BCE, 209 BCE, 119 BCE, 17 CE and 23 CE on the board. Pairs place the events and say which group each affected.
+      Put 221 BCE, 209 BCE, 119 BCE, 9 CE and 12 CE on the board. Pairs place the events and say which group each affected.
     notes: "BCE counts down, CE counts up: check students order them correctly."
 questions:
   - at: make
     title: "Check before moving on"
     type: question
-    q: "Slavery was abolished in 17 CE and returned after 23 CE. What does this show?"
+    q: "Selling slaves was banned in 9 CE and allowed again in 12 CE. What does this show?"
     options:
-      - "Changes in the relationships between groups could be reversed"
+      - "Changes between groups could be reversed"
       - "Nothing changed in Han China"
-      - "Slavery ended forever"
+      - "Slavery in China ended for good"
     answer: 0
     explain: "Change over time is not always one-way."
     feedback:
       - null
       - "The rules changed twice."
-      - "It came back after Wang Mang died."
+      - "The ban was on selling slaves, and it was cancelled in 12 CE."

@@ -12,6 +12,8 @@ before: |-
 
   Real cases (checked 1 Nov 2026): Ban Zhao (about 45 to about 117 CE) helped finish the Book of Han after her brother Ban Gu's death in 92 CE, taught Empress Deng and other women at court, and wrote Lessons for Women, which modern readers disagree about (some see an early argument for women's education, others an endorsement of submission). Empress Lü held power as empress dowager and regent from 195 to 180 BCE; the lesson leaves out the violence against rivals in Sima Qian's account, which you can raise if suitable. Tomb figures and paintings of women's work are described generally.
 
+  Book sources for Ban Zhao teaching the empress and for Empress Lü's regency (not checked online): Cambridge History of China vol. 1 (1986); Sima Qian's annals of Empress Lü (Watson's translation of the Shiji). The UCLA page below gives Ban Zhao's dates as about 45 to 116 CE, a year off the lesson's "about 117"; sources differ.
+
   The lesson does not claim a single "status of women in Han China"; it varied by class, family and period.
 
   Usually Year 7; Preview, not yet tried with a class. No board or clips.
@@ -40,9 +42,6 @@ exit:
   a: "For example: Ban Zhao helped finish the Book of Han; most surviving writing was by men at court about government."
 explain: "Evidence about women in Han China is thin because most writing was by men at court. Historians use the few women's writings, accounts of powerful women and tomb objects, and say what they cannot know."
 sources:
-  - title: "Ban Zhao"
-    url: https://en.wikipedia.org/wiki/Ban_Zhao
-    checked: 2026-11-01
-  - title: "Empress Lü"
-    url: https://en.wikipedia.org/wiki/Empress_L%C3%BC
+  - title: "Ban Zhao, Lessons for Women, tr. Nancy Lee Swann (1932), UCLA Center for Chinese Studies (her dates, finishing her brother's history)"
+    url: https://www.international.ucla.edu/ccs/article/18475
     checked: 2026-11-01

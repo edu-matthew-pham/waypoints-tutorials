@@ -10,7 +10,7 @@ Each card is a short summary to start from, not a full account. Check it against
 - **Layers:** the emperor; nobles (relatives and allies with titles, and in the early Han, kingdoms); officials appointed by the emperor; farmers (most people); craftworkers, merchants and soldiers; convicts and slaves.
 - **How power worked:** commanderies and counties run by officials; household registers; grain tax; written laws; called-up labour and army service.
 - **Women:** most evidence was written by men at court. Ban Zhao (scholar, about 45 to 117 CE) and Empress Lü (regent, 195 to 180 BCE) are exceptions; tomb figures show women's work.
-- **Change:** the conscripts' revolt of 209 BCE (according to Sima Qian); heavy taxes on merchants and the salt and iron monopolies under Emperor Wu; slavery abolished by Wang Mang in 17 CE and restored after 23 CE.
+- **Change:** the conscripts' revolt of 209 BCE (according to Sima Qian); heavy taxes on merchants and the salt and iron monopolies under Emperor Wu; Wang Mang's ban on buying and selling land and slaves (9 CE), cancelled in 12 CE after powerful families opposed it.
 - **Sources to look for:** Qin bamboo-slip laws; Sima Qian's history; Ban Zhao's *Lessons for Women*.
 
 ## Ancient Egypt
