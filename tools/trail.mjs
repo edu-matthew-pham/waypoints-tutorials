@@ -193,6 +193,8 @@ export function trailHtml(layout, up, esc, opts = {}) {
   // opts.back: { href, label } draws a "← All <subject> pathways" link at the map's top left (and first in the phone list).
   const projects = (n) => (n.path && !n.unit && opts.projects ? opts.projects(n.path) : 0);
   const { nodes, cols, rows, fcols } = layout;
+  // Stage words only when the pathway has extensions (maths and science have none: Year 9 is the next year, not an extension).
+  const staged = nodes.some((n) => !n.portal && n.stage === 'extensions');
   const zone = (cls, label, from, to) => (to > from ? `<p class="tzone ${cls}" style="grid-column:${from + 1} / ${to + 1};grid-row:${rows + 1}">${label}</p>` : '');
   const byId = new Map(nodes.map((n) => [n.id, n]));
   const short = (t) => t.replace(/^Python Foundations with Turtle$/, 'Turtle').replace(/:.*$/, '');
@@ -214,16 +216,16 @@ export function trailHtml(layout, up, esc, opts = {}) {
   const areaHtml = (n) => (n.units ? `<section class="tarea" data-area="${esc(n.id)}" hidden style="grid-column:${n.col + 1};grid-row:${n.row};--c:${n.col};--per:${n.per}" aria-label="${esc(n.title)}">` +
     `<h3 class="tatitle">${esc(n.title)}${projects(n) ? ` <a class="tproj" href="${esc(up + n.path)}/projects/">◆ ${projects(n)} ${projects(n) === 1 ? 'project' : 'projects'}</a>` : ''}</h3><div class="tastops">${n.units.map((u) => unitHtml(n, u)).join('')}</div></section>` : '');
   const stopHtml = (n) => nodeHtml(n) + areaHtml(n);
-  const data = nodes.map((n) => ({ units: n.units ? n.units.map((u) => ({ id: u.id, unit: u.unit, title: u.title, tagline: u.tagline, lessons: u.lessons })) : null, id: n.id, path: n.path, unit: n.unit || null, group: n.group || null, title: n.title, tagline: n.tagline, stage: n.stage, soon: !!n.soon, portal: n.portal, pathway: n.pathway || null, lessons: n.lessons || 0, parents: n.parents, projects: projects(n), projectsHref: projects(n) ? `${up + n.path}/projects/` : null }));
+  const data = nodes.map((n) => ({ units: n.units ? n.units.map((u) => ({ id: u.id, unit: u.unit, title: u.title, tagline: u.tagline, lessons: u.lessons })) : null, id: n.id, path: n.path, unit: n.unit || null, group: n.group || null, title: n.title, tagline: n.tagline, stage: staged ? n.stage : null, soon: !!n.soon, portal: n.portal, pathway: n.pathway || null, lessons: n.lessons || 0, parents: n.parents, projects: projects(n), projectsHref: projects(n) ? `${up + n.path}/projects/` : null }));
   const narrow = nodes.some((n) => n.unit);
   return `<section class="trail tbreak" aria-label="Trail map">` +
     `<div class="tcard" id="tcard" aria-live="polite"></div>` +
     `<div class="tscroll"><div class="tmap${narrow ? ' tunits' : ''}${layout.expand ? ' texp' : ''}" id="tmap" style="--cols:${cols};--rows:${rows};--per:${layout.per || 2};--fz:${(100 * fcols / cols).toFixed(2)}%">` +
     `<svg class="tlines" aria-hidden="true"></svg>` +
     (opts.back ? `<a class="wpt-tback" href="${esc(opts.back.href)}"><span aria-hidden="true">←</span> ${esc(opts.back.label)}</a>` : '') +
-    zone('tzf', 'Foundations', 0, fcols) +
+    (staged ? zone('tzf', 'Foundations', 0, fcols) : '') +
     nodes.filter((n) => n.col < fcols).map(stopHtml).join('') +
-    zone('tze', 'Extensions', fcols, cols) +
+    (staged ? zone('tze', 'Extensions', fcols, cols) : '') +
     nodes.filter((n) => n.col >= fcols).map(stopHtml).join('') +
     `</div></div></section>` +
     `<script type="application/json" id="trail-data">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`;

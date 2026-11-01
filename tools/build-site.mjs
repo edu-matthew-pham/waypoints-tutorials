@@ -894,7 +894,9 @@ for (const node of dirs.values()) {
       return `<div class="pcard soon"><b>${esc(c.title)}</b>${c.tagline ? `<span class="ptag">${esc(c.tagline)}</span>` : ''}${c.summary ? `<span>${esc(c.summary)}</span>` : ''}${after(c)}<em>Coming later</em></div>`;
     };
     const stage = (courses, name, label, up) => { const cs = courses.filter((c) => (c.stage || 'foundations') === name); return cs.length ? `<div class="pstage"><h3>${label}</h3><div class="pcards">${cs.map((c) => card(c, up)).join('')}</div></div>` : ''; };
-    const stages = (pw, up) => stage(pw.courses || [], 'foundations', 'Foundations', up) + stage(pw.courses || [], 'extensions', 'Extensions', up);
+    // Foundations / Extensions headings only when a pathway has both (maths and science run year to year, with no stages).
+    const stages = (pw, up) => { const cs = pw.courses || [], both = cs.some((c) => c.stage === 'extensions') && cs.some((c) => (c.stage || 'foundations') === 'foundations');
+      return both ? stage(cs, 'foundations', 'Foundations', up) + stage(cs, 'extensions', 'Extensions', up) : `<div class="pstage"><div class="pcards">${cs.map((c) => card(c, up)).join('')}</div></div>`; };
     const upHere = '../'.repeat(node.path ? node.path.split('/').length : 0);
     const body = pathways.map((pw) => `<section class="pathway" id="${esc(pw.id || '')}"><h2><a href="paths/${esc(pw.id)}/">${esc(pw.title)}</a></h2>${pw.summary ? `<p class="psum">${esc(pw.summary)}</p>` : ''}` +
       stages(pw, upHere) + `</section>`).join('');
@@ -932,16 +934,45 @@ for (const node of dirs.values()) {
     const heads = trailOn ? trailheadsHtml(pathways, pathways.map((pw) => layoutTrail(pw, pathways, dirs, lessonCount, { stops: 'courses' })), esc) : '';
     // List for teachers (25 Oct 2026): one screen per subject. Each pathway with its courses as plain links, years and
     // lesson counts; the full course cards are on each pathway's page.
-    const teacherStartLinks = (up) => `<p class="pmore wpt-teacher-start">New to Learning Waypoints? <a href="${up}teachers/getting-started/">Getting Started</a> · <a href="${up}teach/teachers/getting-started/">10-minute presentation</a> · <a href="${up}humanities-pilot/">Humanities pilot</a></p>`;
-    const pindex = teacherStartLinks(up) + `<style>.pindex{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:6px 28px;margin:6px 0 10px}.pindex h2{font-size:18px;margin:14px 0 4px}.pindex h2 a{color:var(--ink);text-decoration:none}.pindex h2 a:hover{color:var(--accent)}.pindex ul{list-style:none;margin:0;padding:0}.pindex li{display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px solid var(--line);font-size:15px}.pindex li a{color:var(--ink)}.pindex li span{color:var(--muted);font-size:13px;white-space:nowrap}.pindex li.pst{border:0;padding:8px 0 0;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}.pindex li.later{color:var(--muted)}.pmore{color:var(--muted);font-size:14px}</style>` +
-      `<div class="pindex">` + pathways.map((pw) => {
+    // List for teachers (25 Oct 2026; one pass over every subject 1 Nov 2026, roadmap/navigation.md): one screen per
+    // subject. A row says only what tells it apart from its neighbours: "Year 8" under the Algebra heading, no title when
+    // a pathway's one course shares its name. Under each row, the course's unit names (what it covers); its tagline is
+    // the row's tooltip. Years show per row only where they differ: one shared year is said once above the list, and
+    // Before Year 7 rows carry none. "After the foundations" divides a pathway only when it has both stages.
+    const humanities = node.meta?.group === 'Humanities';
+    const teacherStartLinks = (up) => `<p class="pmore wpt-teacher-start">New to Learning Waypoints? <a href="${up}teachers/getting-started/">Getting Started</a> · <a href="${up}teach/teachers/getting-started/">10-minute presentation</a>${humanities ? ` · <a href="${up}humanities-pilot/">Humanities pilot</a>` : ''}</p>`;
+    const isCatchUp = (path) => /(^|\/)before-year-7$/.test(path || '');
+    const yearsText = (path) => { const [lo, hi] = SEARCH.yearsOfCourse(path); return lo != null ? SEARCH.yearsLabel(lo, hi, SEARCH.typical(path)) : ''; };
+    const rowLabel = (pw, c) => {
+      const t = dirs.get(c.path)?.title || c.path, pt = String(pw.title || '').toLowerCase();
+      const y = /^Year (\d+A?)\s+(.+)$/.exec(t);
+      if (y && y[2].toLowerCase() === pt) return { label: `Year ${y[1]}`, year: true };
+      if (t.toLowerCase() === pt || ((pw.courses || []).length === 1 && t.toLowerCase().startsWith(pt))) return { label: '', year: false };
+      return { label: t, year: false };
+    };
+    const contentsOf = (c) => {
+      const m = dirs.get(c.path)?.meta || {}, us = Array.isArray(m.units) ? m.units : [];
+      const core = us.filter((u) => u.id !== m.challenge && !/^(warm-up|challenge)\b/i.test(String(u.title || '')));
+      const pick = core.length ? core : us;
+      return pick.length ? pick.map((u) => String(u.title || '').replace(/^(Warm-up|Challenge):\s*/i, '')).join(' · ') : (m.tagline || c.tagline || '');
+    };
+    const listed = pathways.flatMap((pw) => (pw.courses || []).filter((c) => c.path && !isCatchUp(c.path) && !rowLabel(pw, c).year));
+    const listedYears = [...new Set(listed.map((c) => yearsText(c.path)))];
+    const sharedYears = listed.length > 1 && listedYears.length === 1 && listedYears[0] ? listedYears[0] : '';
+    const sharedLine = sharedYears ? `<p class="pmore wpt-pyears">Every course here is ${esc(sharedYears.replace(/^Usually /, 'usually ').replace(/^Year/, 'for Year'))}.</p>` : '';
+    const pindex = `<style>.pindex{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:6px 28px;margin:6px 0 10px}.pindex h2{font-size:18px;margin:14px 0 4px}.pindex h2 a{color:var(--ink);text-decoration:none}.pindex h2 a:hover{color:var(--accent)}.pindex ul{list-style:none;margin:0;padding:0}.pindex li{padding:5px 0;border-bottom:1px solid var(--line);font-size:15px}.wpt-prow{display:flex;justify-content:space-between;gap:10px}.pindex li a{color:var(--ink)}.wpt-prow>span{color:var(--muted);font-size:13px;white-space:nowrap}.wpt-pcont{display:block;color:var(--muted);font-size:13px;line-height:1.35;margin-top:1px}.pindex li.pst{border:0;padding:8px 0 0;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}.pindex li.later{color:var(--muted)}.pmore{color:var(--muted);font-size:14px}</style>` +
+      sharedLine + `<div class="pindex">` + pathways.map((pw) => {
         const row = (c) => {
-          if (!c.path) return `<li class="later">${esc(c.title || '')}<span>coming later</span></li>`;
-          const [lo, hi] = SEARCH.yearsOfCourse(c.path), n = lessonCount(c.path);
-          return `<li><a href="${up}${esc(c.path)}/">${esc(dirs.get(c.path)?.title || c.path)}</a><span>${lo != null ? `${esc(SEARCH.yearsLabel(lo, hi, SEARCH.typical(c.path)))} · ` : ''}${n === 0 && PROJECTS.get(c.path) ? `${PROJECTS.get(c.path).projects.length} project${PROJECTS.get(c.path).projects.length === 1 ? '' : 's'}` : `${n} lesson${n === 1 ? '' : 's'}`}</span></li>`;
+          if (!c.path) return `<li class="later"><div class="wpt-prow">${esc(c.title || '')}<span>coming later</span></div></li>`;
+          const n = lessonCount(c.path), { label, year } = rowLabel(pw, c), cont = contentsOf(c);
+          const tip = dirs.get(c.path)?.meta?.tagline || c.tagline || '';
+          const yrs = year || isCatchUp(c.path) || sharedYears ? '' : yearsText(c.path);
+          const count = n === 0 && PROJECTS.get(c.path) ? `${PROJECTS.get(c.path).projects.length} project${PROJECTS.get(c.path).projects.length === 1 ? '' : 's'}` : `${n} lesson${n === 1 ? '' : 's'}`;
+          const link = (txt) => `<a href="${up}${esc(c.path)}/"${tip ? ` title="${esc(tip)}"` : ''}>${esc(txt)}</a>`;
+          return `<li><div class="wpt-prow">${link(label || cont || dirs.get(c.path)?.title || c.path)}<span>${yrs ? `${esc(yrs)} · ` : ''}${count}</span></div>${label && cont && cont.toLowerCase() !== label.toLowerCase() ? `<small class="wpt-pcont">${esc(cont)}</small>` : ''}</li>`;
         };
         const cs = pw.courses || [], f = cs.filter((c) => (c.stage || 'foundations') === 'foundations'), x = cs.filter((c) => c.stage === 'extensions');
-        return `<section><h2><a href="paths/${esc(pw.id)}/">${esc(pw.title)} <span aria-hidden="true">›</span></a></h2><ul>${f.map(row).join('')}${x.length ? `<li class="pst">Then</li>${x.map(row).join('')}` : ''}</ul></section>`;
+        return `<section><h2><a href="paths/${esc(pw.id)}/">${esc(pw.title)} <span aria-hidden="true">›</span></a></h2><ul>${f.map(row).join('')}${x.length ? `${f.length ? '<li class="pst">After the foundations</li>' : ''}${x.map(row).join('')}` : ''}</ul></section>`;
       }).join('') + `</div><p class="pmore">Each pathway's page has the full course descriptions, in order.</p>`;
     const viewToggle = `<script>(function(){var d=document.documentElement;d.classList.add('js-on');try{if(localStorage.getItem('wp-pathview')!=='list')d.classList.add('trail-on')}catch(e){d.classList.add('trail-on')}})()</script>` +
       `<div class="ptoggle" role="group" aria-label="View"><button type="button" data-view="map">Trails</button><button type="button" data-view="list">List for teachers</button></div>`;
@@ -953,9 +984,9 @@ for (const node of dirs.values()) {
       href: (p) => `${up}${p}/`, titleOf: (p) => { if (!dirs.has(p)) throw new Error(`${node.path}/index.md: purposes names no course "${p}"`); return dirs.get(p).title; } }) : '';
     writeFileSync(join(outDir, 'index.html'), page(node.title,
       (heads ? `<style>${TRAIL_CSS}${TRAILHEADS_CSS}</style>` : '') +
-      `<header class="top">${crumb}<h1>${esc(node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${subjSearch}${purposesBlock}${heads ? '' : mapLink}` +
+      `<header class="top">${crumb}<h1>${esc(node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${subjSearch}${heads ? '' : purposesBlock + mapLink}` +
       // With trails, students start on the trailheads; the curriculum map card follows them (both views).
-      (heads ? `${viewToggle}<div class="pview-map">${heads}</div><div class="pview-list">${pindex}</div>${mapLink}${lookbackLinks}` : body + lookbackLinks) + create,
+      (heads ? `${viewToggle}<div class="pview-map">${heads}</div><div class="pview-list">${teacherStartLinks(up)}${purposesBlock}${pindex}</div>${mapLink}${lookbackLinks}` : body + lookbackLinks) + create,
       `<script src="${up}progress.js" data-root="${up}" defer></script>` + (heads ? `<script src="${up}trailheads.js" data-root="${up}" defer></script>` : ''), navFor(node.path, 'home')));
     // One page per pathway: <subject>/paths/<id>/, with its courses in order and the planned ones as placeholders.
     for (const pw of pathways) {
@@ -976,7 +1007,7 @@ for (const node of dirs.values()) {
         (useTrail ? `<style>${TRAIL_CSS}</style>` : '') + `<style>.pswitch{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:2px 0 10px}.pswitch a{border:1px solid var(--line);border-radius:99px;padding:4px 12px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;background:var(--card)}.pswitch a:hover{border-color:var(--accent)}.pswitch a[aria-current]{background:var(--ink);color:var(--card);border-color:var(--ink)}.pswitch .pall{border-style:dashed}</style>` +
         `<header class="top"><nav class="pswitch" aria-label="Pathways in ${esc(node.title)}"><a class="pall" href="../../">← All ${esc(node.title)} pathways</a>${pathways.map((x) => `<a href="../${esc(x.id)}/"${x === pw ? ' aria-current="page"' : ''}>${esc(x.title)}</a>`).join('')}</nav><h1>${esc(pw.title)}</h1>${pw.summary ? `<p class="lede">${esc(pw.summary)}</p>` : ''}</header>` +
         (useTrail ? view + `<div class="pview-map">${trail}</div>` : '') + `<div class="pview-list">` +
-        teacherStartLinks(pup) + (pw.about ? `<div class="pabout">${new Marked().parse(String(pw.about))}</div>` : '') +
+        (pw.about ? `<div class="pabout">${new Marked().parse(String(pw.about))}</div>` : '') +
         // How coding ideas build › Part 2: this pathway's own ideas, linking to their section of the ideas page.
         (() => { const gs = node.path === 'code' ? PATHWAY_IDEAS.filter((g) => g.pathway === pw.id) : [];
           return gs.length ? `<div class="pabout wpt-pideas"><p><b>Ideas this pathway adds</b> to the ones every pathway shares: ${gs.map((g) => `${gs.length > 1 ? `${esc(g.title.replace(/^.*: /, ''))}: ` : ''}${g.ideas.map((x) => esc(x.label.toLowerCase())).join(', ')}`).join('; ')}. <a href="${pup}teach/code/ideas/#path-${esc(gs[0].id)}">See how they build on the shared ideas</a>.</p></div>` : ''; })() +

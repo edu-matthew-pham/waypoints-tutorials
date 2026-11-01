@@ -1,6 +1,6 @@
 # Subject pages: one consistent pass (plan, 1 Nov 2026)
 
-Raised by Matthew from the maths chat after the maths split (Project doc `claude/handoff-navigation-review.md`). **Plan only. Nothing built. Matthew answered the questions on 1 Nov (Decisions, below); building waits for his "go".**
+Raised by Matthew from the maths chat after the maths split (Project doc `claude/handoff-navigation-review.md`). **Built 1 Nov 2026 (Matthew said go); needs a whole-site publish.** See Built, at the end.
 
 Touches shared builders (`tools/build-site.mjs`, `site/trail.js`, a little of `tools/trail.mjs`), so this file is linked from ROADMAP.md and `roadmap/shared.md`. Checked `git log` on those files on 1 Nov: the last changes are History's unit label (185b317), HASS catch-up links (a907c7f) and Civics planned items (506cf89); none touch the List for teachers or the stage words, so no clash.
 
@@ -157,3 +157,14 @@ English's purpose cards and start suggestion; Code's "How coding ideas build", R
 3. **"Then" becomes "After the foundations"** where it stays (Code, How computers work, Engineering, Learning with AI). Maths and science lose it, as planned.
 4. **Preview labels stay with the subject chats.** Checked 1 Nov: Civics (3357762), Humanities skills (45a2858) and History (698ee38) have dropped them; Geography dropped them too (5feec6b), so no subject carries `preview: true` now. This pass changes no subject's Preview wording; the Geography chat picks it up from its own roadmap and shared.md.
 5. **Tidy the teacher start line:** once per subject page in the list view, not on pathway pages; the Humanities pilot link only on History, Geography, Civics, Economics and Humanities skills.
+
+## Built (1 Nov 2026, Matthew said go)
+
+- `tools/build-site.mjs`: List for teachers rows (labels, unit names, tagline tooltip, shared-years line, no years on Before Year 7 rows, "After the foundations" only when a pathway has both stages), English purpose cards and start suggestion moved into the list view, start line once per subject page (pilot link on humanities subjects only) and off pathway pages, Foundations/Extensions headings on pathway pages only when a pathway has both.
+- `tools/trail.mjs`, `site/trail.js`: no Foundations/Extensions zone labels or card words when a pathway has no extensions; the card then reads "After Year 8 Algebra".
+- `content/maths/index.md`, `content/science/index.md`: `stage:` removed (their `after:` lines already set the order).
+- A course whose unit name repeats its title (Geography's Water as a resource) shows no second line.
+- Correction to the plan: the English map card's "Years 7–10" is right. The maps show Years 7–10 and the earlier descriptors those name, so nothing changed there.
+- Tested: validate, build, `check-purposes`; headless Chromium on all 14 subject pages at 1280 and 390 px, light and dark, both views (no page errors, no sideways scroll, English cards only in the list view); maths, science and Code pathway pages (stage words gone for maths and science, kept for Code). Screenshots of Maths, English and History looked right.
+- Left to subject chats: Geography's Preview label; Engineering's "Capstone projects · 0 lessons" row and rows with no years; AI Foundations and Does AI Help Us Learn? have no years.
+- Publish: whole-site (or quick) publish, since subject and pathway pages change. No clips or pictures change.

@@ -118,8 +118,8 @@
     var text = el('div', 'tct');
     var ps = n.parents.map(function (p) { return short(byId[p].title); });
     var isHere = (here && here.id === n.id) || (hereUnit && hereUnit.id === n.id);
-    var kicker = isHere ? hereWord : n.portal ? 'Another pathway' : n.isUnit ? byId[n.course].title : n.stage === 'foundations' ? 'Foundations' : 'Extension';
-    if (!n.portal && ps.length) kicker += ' · after ' + ps.join(' and ');
+    var kicker = isHere ? hereWord : n.portal ? 'Another pathway' : n.isUnit ? byId[n.course].title : n.stage === 'foundations' ? 'Foundations' : n.stage === 'extensions' ? 'Extension' : '';
+    if (!n.portal && ps.length) kicker += (kicker ? ' · after ' : 'After ') + ps.join(' and ');
     text.append(el('span', 'tck', kicker), el('h2', null, n.title), el('p', null, n.tagline));
     if (!n.portal && !n.soon && s.total) {
       var bar = el('span', 'tbar'), track = el('i'), fill = el('i');
