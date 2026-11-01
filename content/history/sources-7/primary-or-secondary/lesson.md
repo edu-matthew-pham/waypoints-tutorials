@@ -22,8 +22,8 @@ insight: "Committing to an answer shows whether students sort by age or by time 
 check:
   type: predict
   q: "You are investigating how the First Emperor of Qin ruled, around 220 BCE. A history book written about 100 years later describes his rule. Is it primary or secondary?"
-  options: ["Secondary: it was written long after, by someone looking back", "Primary: it is over 2000 years old", "Primary: it is a book of facts", "It cannot be either"]
-  actual: "Secondary. It was written about a hundred years after the events. Being very old does not make a source primary."
+  options: ["Secondary: it was written 100 years later", "Primary: it is over 2000 years old", "Primary: it is a history of his rule", "Secondary: it is only one writer's view"]
+  actual: "Secondary. It was written about a hundred years after the events, by someone looking back. Being very old does not make a source primary, being about his rule does not either, and one writer's view is not the test."
 ```
 
 ## Try: sort these sources
@@ -83,6 +83,8 @@ The school fair diary was written on the day, so it is primary for the fair. Now
 
 ### Find Nib's mistake
 
+Nib is a made-up student for this lesson.
+
 ### The one question to ask
 
 ## Vary: more sources
@@ -141,6 +143,8 @@ tasks:
 
 ### Ravi's book
 
+Ravi is made up for this lesson.
+
 ## Make: your own examples
 
 ```step
@@ -160,10 +164,10 @@ insight: "A copy or translation of a primary source is an edge case: the content
 check:
   type: question
   q: "A museum prints a photograph of one of the Qin bamboo slips. Which is the best way to think about it?"
-  options: ["The slip is primary. The photo is a later copy of it, so use it carefully and check the slip if you can", "The photo is new, so now the slip counts as secondary too", "The photo is primary for the Qin, because photos show things exactly", "The photo is useless, because only the real slip can be a source"]
+  options: ["The slip is primary; the photo is a later copy of it", "The photo is new, so now the slip counts as secondary too", "The photo is primary for the Qin, because photos show things exactly", "The photo is useless, because only the real slip can be a source"]
   answer: 0
   feedback: [null, "The slip itself was made at the time. A later copy does not change that.", "A photo is not primary for the Qin just because it is a photo. It is a later copy of something that is.", "Photos can be useful. A copy of a source still carries what it shows."]
-  explain: "The slip is the primary source. The photo shows it, so it is useful, but it was made later. Historians say which one they used."
+  explain: "The slip is the primary source. The photo shows it, so it is useful, but it was made later: use it carefully and check the slip if you can. Historians say which one they used."
 ```
 
 ## Wider: the same object both ways

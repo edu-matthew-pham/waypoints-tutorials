@@ -1,4 +1,4 @@
-summary: "Students separate accuracy (is it factually reliable?) from usefulness (does it help answer our specific inquiry question?), and see why a biased, one-sided or limited source is still valuable evidence — including for revealing official propaganda or the power structures of an ancient society. This is the second hinge in AC9HH7S04."
+summary: "Students separate accuracy (can we trust its claims?) from usefulness (does it help answer our inquiry question?), and see why a biased, one-sided or limited source is still valuable evidence, for example of official propaganda or of the power structures of an ancient society. This is the second hinge in AC9HH7S04."
 learning: "separate accuracy from usefulness and explain why a biased or limited source can still be useful evidence"
 time: 40
 timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Typical and wider steps are extras and not counted in this."
@@ -8,7 +8,11 @@ goals:
   - I can explain how limited evidence about a group can still show how power worked in an ancient society.
 struggle: "Once students learn to spot bias, their first instinct is to write 'This source is biased, so it is not useful.' Keep asking: 'Not useful for what question? What question IS this bias useful evidence for?'"
 before: |
-  This is the second hinge lesson in AC9HH7S04. Lesson 3 asks students to combine accuracy and usefulness into a single reasoned assessment. If students still treat 'biased' as a synonym for 'useless', they will reject primary propaganda, court chronicles and elite records instead of using them as evidence of perspective and power structures.
+  This is the second hinge lesson in AC9HH7S04. Lesson 3 asks students to combine accuracy and usefulness into a single reasoned assessment. If students still treat 'biased' as meaning 'useless', they will reject propaganda, court histories and records made by the powerful instead of using them as evidence of perspective and power structures.
+
+  Terms named once in student text: inquiry question (the question your investigation is trying to answer), propaganda (reminder: a message made to persuade), power structures (who held power and how they used it). The Practise step says 'a historian's explanation' rather than 'interpretation', which is taught in Interpretations. Ravi and Nib are made up and labelled.
+
+  Wider step: the rivers of mercury and crossbows come from Sima Qian's account of the tomb. The tomb itself has not been opened.
 
   Typical step (names on weapons and figures): historians report that some bronze weapons from the pits carry inscriptions naming a supervising official (the chancellor Lü Buwei on some halberds), a workshop and a maker, and that many figures carry stamped or incised craftsmen's names (Xiuzhen Li, Andrew Bevan and others, archaeological studies of the Terracotta Army weapons and figures, published in Antiquity). Excavated labourers' graves near the mausoleum are reported with inscribed tiles or plaques naming some workers and saying they were convicts or conscripts (reports differ on the details, so this is in the teacher notes only, not in the student text). The lesson keeps to "historians report" and "historians think" for why names were recorded (checking and accountability is the usual reading). An earlier draft's claim about labourers named only on "pottery tallies" and treated as "replaceable" could not be checked and was removed.
 
@@ -16,7 +20,7 @@ before: |
 
   This lesson also directly addresses ACARA's elaboration: "recognising that, while evidence may be limited for a particular group of people, such evidence can provide useful insights into the power structures in an ancient society".
 running:
-  - "Predict: take a vote. Emphasise that the historian's question is about how the emperor *tried to convince* people — so his propaganda is the exact evidence needed."
+  - "Predict: take a vote. Emphasise that the historian's question is about how the emperor *tried to convince* people, so his propaganda is exactly the evidence needed."
   - "Try: pause on the palace ration list and the Roman farm handbook. Ask whose voices are missing, and what the source still reveals about who held power."
   - "Worked example: use Nib's slip ('biased means throw it away') to ban the phrase 'biased so useless' from class writing."
   - "Vary: show how the same bamboo slips change from 'highly useful' to 'not very useful' when only the inquiry question changes."
@@ -24,7 +28,7 @@ running:
 stuck:
   - see: "A student writes 'Source C is not useful because the First Emperor wanted to make himself look good.'"
     ask: "What if your inquiry question is 'How did the First Emperor try to make himself look good?'"
-    fix: "Then Source C is very useful! Say: 'It is not accurate about whether everyone was happy, but it is useful for showing how the emperor wanted to be seen.'"
+    fix: "Then Source C is very useful! Say: 'It is not accurate about whether everyone lived in peace, but it is useful for showing how the emperor wanted to be seen.'"
   - see: "A student says official laws tell us nothing about peasants because peasants didn't write them."
     ask: "Who had to pay the grain tax and do the labour listed in those laws?"
     fix: "The laws were written by officials, so they don't give peasants' personal feelings, but they are very useful evidence of how the state controlled peasants' work and grain."
@@ -34,13 +38,13 @@ stuck:
 stretch: "Pick a source from your class's depth study that is famous for being one-sided (such as a royal inscription or a speech by a rival). Write the exact inquiry question for which that source's bias is its greatest strength."
 support: "Sentence frame on the board: 'Even though Source [X] is limited/biased because [reason], it is still useful for the question [question] because it shows [what it reveals].'"
 leads: |
-  Next in Source usefulness: Weighing a source as evidence (AC9HH7S04 n3), where students put accuracy and usefulness together into a complete evidence assessment.
+  Next in Source usefulness: Weighing a source as evidence (AC9HH7S04 n3), where students put accuracy and usefulness together into one judgement.
 
   ACARA elaborations for AC9HH7S04 quoted here: "recognising that, while evidence may be limited for a particular group of people, such evidence can provide useful insights into the power structures in an ancient society" and "identifying information within a source that can be useful evidence to support an interpretation of an event, movement, individual, group or society".
 exit:
   q: "Can a biased source that exaggerates a ruler's achievements still be useful to a historian? Explain why in two sentences."
   a: "Yes. Even if its claims are not accurate about what really happened, it is still useful evidence for an inquiry into the ruler's propaganda, beliefs, and how they wanted to be seen by their subjects."
 explain: |
-  **Accuracy** asks whether a source's claims are factually reliable. **Usefulness** asks whether the source helps answer your specific inquiry question.
+  **Accuracy** asks how far you can trust a source's claims. **Usefulness** asks whether the source helps answer your inquiry question.
 
-  A biased or partial source can still be **useful** evidence — for example, showing how propaganda worked or how power was organised in an ancient society.
+  A biased or partial source can still be **useful** evidence: for example, of how propaganda worked or how power was organised in an ancient society.
