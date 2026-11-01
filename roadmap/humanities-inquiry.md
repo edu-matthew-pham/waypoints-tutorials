@@ -498,3 +498,9 @@ Not flagged: predicts and smaller checks where the right option is the same leng
 - **#10 content change:** right answer is now "Theme | What the council says | What the news says", matching the intro, the stuck note and the Check step; new distractor "All the council notes | All the news notes" plants the two-piles slip.
 - **Tested:** `npm run validate`, `WP_NO_MAKECODE=1 npm run build`, `npm run check-decks -- hass/inquiry-7` (all fit). Chromium at 1280 and 390 px: the board loads, low-to-high does not tick, high-to-low ticks, no page errors, no horizontal overflow. Not tried with a class.
 - **Publish:** lessons only (keep-what-answers, right-sized, organise-it with its class plan); no clips in this course.
+
+### Built (1 Nov 2026, Matthew: "milder pass looks good"): option lengths in three more lessons
+
+- Lengthened wrong options (meaning unchanged, feedback unchanged) in 8 checks where the right one was 1.3 to 1.5 times the longest wrong one: Build from a big idea (connection, the two-option Civics and History pair, the scarcity Make check), Can it be investigated (capital of France, "Will everyone have enough"), Where to look (Wattle Flat first place, Mill Road shops Make check). Now at most 1.18 across the course's nine lessons.
+- Left alone: Before Year 7 HASS (options a few characters apart).
+- Tested: validate, build; the three pages load in Chromium at 1280 and 390 px with no errors or overflow. Publish: lessons only.

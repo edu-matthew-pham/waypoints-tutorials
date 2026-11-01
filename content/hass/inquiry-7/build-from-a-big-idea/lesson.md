@@ -80,7 +80,7 @@ tasks:
   - check:
       type: question
       q: "Which question uses the Geography big idea of connection?"
-      options: ["What happens in Wattle Flat when the Kilby River runs low?", "Where is Wattle Flat on a map?", "Is the Kilby River the prettiest river?", "Connection between Wattle Flat and the river"]
+      options: ["What happens in Wattle Flat when the Kilby River runs low?", "Where is Wattle Flat on a map of the state?", "Is the Kilby River the prettiest river in the region?", "Connection between Wattle Flat and the Kilby River"]
       answer: 0
       feedback: [null, "That is a look-up. A map answers it in one go.", "That asks for taste and needs criteria before evidence could help.", "That names the idea and the places, but it doesn't ask anything."]
       explain: "It links the town and the river and asks what changes."
@@ -101,14 +101,14 @@ tasks:
   - check:
       type: question
       q: "Civics: which is the better question about who decides?"
-      options: ["Who decides whether Mill Road closes, and how?", "Who is in charge of the roads?"]
+      options: ["Who decides whether Mill Road closes, and how?", "Who is in charge of all the roads around here?"]
       answer: 0
       feedback: [null, "It names no case: which roads, and which decision? You could not tell what to look for."]
       explain: "The better one names the case and asks how."
   - check:
       type: question
       q: "History: which is the better question using change?"
-      options: ["How did Han bronze mirrors change over time?", "Did things change in the past?"]
+      options: ["How did Han bronze mirrors change over time?", "Did things change a lot for people in the past?"]
       answer: 0
       feedback: [null, "It has no case and no evidence to look for."]
       explain: "The better one names the thing, so you know what evidence to look for."
@@ -173,7 +173,7 @@ insight: "The same move in another subject's case."
 check:
   type: question
   q: "Which question uses scarcity for the Wattle Flat water supply?"
-  options: ["When water runs low, who in Wattle Flat gets how much?", "Water shortages in Wattle Flat in a dry year", "Where is the dam that supplies Wattle Flat?", "Is water important to people in Wattle Flat?"]
+  options: ["When water runs low, who in Wattle Flat gets how much?", "Water shortages in Wattle Flat during a dry year", "Where is the dam that supplies water to Wattle Flat?", "Is water important to the people who live in Wattle Flat?"]
   answer: 0
   feedback: [null, "That is a topic. It doesn't ask anything yet.", "That is a look-up. A map answers it.", "Almost everyone would say yes. It needs criteria and a focus before evidence helps."]
   explain: "It asks about the choice when there is not enough."

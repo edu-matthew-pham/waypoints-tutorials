@@ -100,7 +100,7 @@ tasks:
   - check:
       type: question
       q: "Which is a better first place to look for how people in Wattle Flat used water in the dry year?"
-      options: ["The town's water authority and local news from that year", "A web search for 'water use in dry years'", "A video about a town in another state", "One neighbour who remembers that year"]
+      options: ["The town's water authority and local news from that year", "A web search for 'water use in dry years' in general", "A video about a dry year in a town in another state", "One neighbour who remembers that year in the town"]
       answer: 0
       feedback: [null, "Too wide.", "A different town gives a different answer.", "One person's memory is worth hearing but is not enough."]
       explain: "Records and reports from the people who ran and reported on the water, in that year."
@@ -167,7 +167,7 @@ insight: "The same move in another subject's case."
 check:
   type: question
   q: "Which is the best first source for 'What might closing Mill Road change for shops?'"
-  options: ["A survey of Mill Road shop owners, and council traffic counts", "The Parkside tuckshop's sales records", "A history textbook about roads in Australia", "The first search result for 'shops'"]
+  options: ["A survey of Mill Road shop owners, and council traffic counts", "The Parkside tuckshop's daily sales records for a term", "A history textbook about how roads in Australia were built", "The first result from a web search for the word 'shops'"]
   answer: 0
   feedback: [null, "The tuckshop's sales tell you about one school canteen, not the shops along Mill Road.", "It won't cover a made-up road or these shops.", "That is the nearest, not the best."]
   explain: "A survey reaches the shop owners themselves, and the council's counts show how many people pass by."

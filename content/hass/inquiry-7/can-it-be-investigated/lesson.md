@@ -99,14 +99,14 @@ tasks:
   - check:
       type: question
       q: "A Geography class asks: 'What is the capital of France?' Why is it too limited as the main inquiry question?"
-      options: ["It finds a place but asks nothing about patterns or links", "It is too big to answer in a week", "It only asks for someone's opinion", "Geography classes never ask about capitals"]
+      options: ["It finds a place but asks nothing about patterns or links", "It is far too big for a class to answer in a week", "It only asks for someone's opinion about France", "Geography classes never ask about capital cities"]
       answer: 0
       feedback: [null, "It is small, not big.", "It is not opinion, and that is not the problem.", "Geography can use capitals. It does locate a place, but stops before investigating a pattern, process or relationship."]
       explain: "Locating places is geographical work. To build an inquiry, ask about a spatial pattern, process or relationship, such as how a capital is connected to other places."
   - check:
       type: question
       q: "An Economics class asks: 'Will everyone have enough in future?' What is the problem?"
-      options: ["Who is everyone, what is enough, and when is the future?", "It can be answered with one quick look-up", "It asks about the past, not the present", "It is too small to fill a whole inquiry"]
+      options: ["Who is everyone, what is enough, and when is the future?", "It can be answered with one quick look-up online", "It asks about the past, not about what happens now", "It is too small to fill a whole week's inquiry"]
       answer: 0
       feedback: [null, "It is nowhere near a look-up.", "It looks ahead, not back, and that is not the main problem.", "It is far too wide, not too small."]
       explain: "Forecasts can use evidence, but need a defined group, resource, period and stated assumptions. A manageable version asks how Parkside could meet lunch demand next term with its current budget."
