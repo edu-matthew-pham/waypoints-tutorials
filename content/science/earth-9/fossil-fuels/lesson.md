@@ -117,7 +117,7 @@ tasks:
       q: "What did you have to do to keep the air's CO₂ steady?"
       options: ["Cut burning to only what the oceans and plants can take up: much less than today", "Nothing", "Burn more", "Stop burning completely: any burning at all makes CO₂ rise"]
       answer: 0
-      feedback: [null, "At today's rate it kept rising.", "More burning made it rise faster.", "Some burning still held it steady: while the air is above 280 ppm, the oceans and plants take up part of the extra each year."]
+      feedback: [null, "At today's rate it kept rising.", "More burning made it rise faster.", "On the board, some burning still held it steady: while the air is above 280 ppm, the oceans and plants take up part of the extra each year (in reality the oceans' uptake shrinks over decades)."]
 ```
 
 ### Steady

@@ -160,5 +160,5 @@ Write one sentence: "At first I thought… Now I think… because…"
 - Elements in the same **group** have the same number of **outer-shell electrons**, so they react in similar ways.
 - **Group 1** (alkali metals): one outer electron, easily lost: very reactive metals.
 - **Group 17** (halogens): seven outer electrons, one short of full: very reactive non-metals.
-- **Group 18** (noble gases): full outer shells: hardly react.
+- **Group 18** (noble gases): full outer shells: hardly react. (Full outer shells being stable is a useful rule for the first 20 elements.)
 - The **period** (row) tells you how many shells an atom has.

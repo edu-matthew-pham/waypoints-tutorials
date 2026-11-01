@@ -4,7 +4,7 @@ node: AC9S10U06 n3
 woven: [AC9S9H01, AC9S9I05]
 unit: periodic
 title: Why does the periodic table repeat?
-summary: "Across a period the outer electrons go up from 1 to 8; then a new shell starts and the count goes back to 1, so a new period begins and the properties repeat. The period number is the number of shells. Across a period, elements change from metals to non-metals."
+summary: "For the first 20 elements, across a period the outer electrons go up from 1 to 8; then a new shell starts and the count goes back to 1, so a new period begins and the properties repeat. The period number is the number of shells. Across a period, elements change from metals to non-metals."
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:
@@ -77,7 +77,7 @@ tasks:
       options: ["Its electrons start filling a new shell", "Sodium is the first metal", "Each row holds exactly 10 elements"]
       answer: 0
       feedback: [null, "Lithium and beryllium are metals too; the reason is the shells.", "Period 1 has 2 elements and periods 2 and 3 have 8."]
-      explain: "Each period fills one shell. When a shell is full, the next electron starts a new one, and a new period begins."
+      explain: "For the first 20 elements, each period fills one shell. When a shell is full, the next electron starts a new one, and a new period begins."
     hint: ["How many electrons fit in the second shell, and where does sodium's eleventh electron have to go?", "Click neon and then sodium on the board, and compare how many shells the line under the board gives for each."]
   - check:
       type: number
@@ -183,7 +183,7 @@ Write one sentence: "At first I thought… Now I think… because…"
 
 **Revision summary**
 
-- Each **period** fills one electron shell. The period number is the number of shells an element uses.
+- For the first 20 elements, each **period** fills one electron shell. The period number is the number of shells an element uses.
 - Across a period, the outer electrons go up by 1 each time, from 1 to 8 (a full shell). Then a new shell starts and the count goes back to 1.
 - Because the outer electrons repeat, properties repeat: elements in the same **group** behave alike.
 - Across a period, elements change from metals (few outer electrons, easily lost) to non-metals (nearly full shells).

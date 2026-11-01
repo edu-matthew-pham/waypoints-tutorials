@@ -4,7 +4,7 @@ node: AC9S10U03 n3
 woven: [AC9S9I04, AC9S9I05, AC9S9I06]
 unit: universe
 title: How do we know the universe is expanding?
-summary: "Light from distant galaxies is redshifted: shifted to longer wavelengths, so they are moving away. Farther galaxies move away faster (Hubble's law), exactly what an expanding universe predicts, from any galaxy. Run backwards, everything was once together: evidence for the big bang."
+summary: "Light from distant galaxies is redshifted: shifted to longer wavelengths, so they are moving away. Farther galaxies move away faster (Hubble's law, now also called the Hubble–Lemaître law; Hubble used Vesto Slipher's redshift measurements), exactly what an expanding universe predicts, from any galaxy. Run backwards, everything was once together: evidence for the big bang."
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:
@@ -152,6 +152,6 @@ Write one sentence: "At first I thought… Now I think… because…"
 
 **Revision summary**
 
-- **Redshift:** light from distant galaxies is shifted to longer wavelengths: they are moving **away**.
-- **Hubble's law:** farther galaxies move away **faster**, in proportion to distance.
+- **Redshift:** light from distant galaxies is shifted to longer wavelengths: they are moving **away**. (Strictly, space stretches the light on its way to us; it isn't a Doppler shift from galaxies moving through space.)
+- **Hubble's law** (built on Vesto Slipher's redshift measurements): farther galaxies move away **faster**, in proportion to distance.
 - This is what an **expanding universe** looks like from any galaxy (no centre). Run backwards, everything was once together: evidence for the **big bang**.

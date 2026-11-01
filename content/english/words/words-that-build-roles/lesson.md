@@ -28,7 +28,7 @@ check:
   actual: "Confused or left out. 'The usual' is only clear to people who already know it, so a newcomer cannot follow."
 ```
 
-## Try: label the Reef Watch lines
+## Try: label the lines from a made-up reef crew
 
 ```step
 stage: run
@@ -37,7 +37,7 @@ try: { playground: board, starter: "text.yml#run", height: 560 }
 hint: ["Which word would a newcomer need explained?", "Which word names how to speak to a person?"]
 smaller:
   check: { type: question, q: "'Good morning, Professor Wu.' Which kind of word is 'Professor Wu'?", options: ["An acronym", "A form of address", "An inclusive pronoun"], answer: 1, feedback: ["An acronym is made from first letters.", null, "A pronoun stands in for a person or people, such as she or they."], explain: "Professor Wu is a title and name used to speak to a person, which is a form of address." }
-check: { type: board, text: "Label each line: acronym, specialist term, form of address or inclusive pronoun.", when: "n_right = 8", explain: "RWL and PPE are acronyms (short names made from first letters). Polyps and transect depth are specialist terms. Skipper and Dr Lee are forms of address. Both Let us lines use an inclusive us." }
+check: { type: board, text: "Label each line: acronym, specialist term, form of address or inclusive pronoun.", when: "n_right = 8", explain: "RCL and PPE are acronyms (short names made from first letters). Polyps and transect depth are specialist terms. Skipper and Dr Lee are forms of address. Both Let us lines use an inclusive us." }
 ```
 
 ## Worked example: welcome or leave out?
@@ -52,7 +52,7 @@ tasks:
       options: ["Welcomes a newcomer", "Leaves a newcomer out"]
       items:
         - ["Grab your PPE (that's your mask and gloves) and join us.", "Welcomes a newcomer", "It explains the acronym."]
-        - ["Log it in the RWL under the usual.", "Leaves a newcomer out", "It uses an acronym and a vague phrase without explaining them."]
+        - ["Log it in the RCL under the usual.", "Leaves a newcomer out", "It uses an acronym and a vague phrase without explaining them."]
         - ["We would love your help counting. Here is how it works.", "Welcomes a newcomer", "It invites and offers an explanation."]
         - ["Obviously you know to check the transect first.", "Leaves a newcomer out", "It assumes the newcomer knows."]
         - ["Ask any of us if a word is new to you.", "Welcomes a newcomer", "It invites questions."]
@@ -64,7 +64,7 @@ tasks:
       answer: 2
       fault: logic
       misconception: insider-language
-      explain: "Line 2 uses PPE and RWL without explaining them. A newcomer cannot follow, even though the line is friendly."
+      explain: "Line 2 uses PPE and RCL without explaining them. A newcomer cannot follow, even though the line is friendly."
   - check:
       type: question
       q: "Which line makes the speaker sound like the boss?"

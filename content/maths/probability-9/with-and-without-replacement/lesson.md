@@ -68,7 +68,7 @@ try: {"playground": "board", "starter": "b.yml#run", "height": 620}
 tasks:
   - {"starter": "b.yml#with", "check": {"type": "board", "text": "The names ARE put back. Choose every outcome where the same name is drawn twice.", "when": "r = 1", "explain": "AnaAna, BenBen, CaiCai, DeeDee: 4 of 16."}}
   - {"starter": "b.yml#run", "check": {"type": "board", "text": "Names NOT put back. Choose every outcome where Ben gets the second job.", "when": "r = 1", "explain": "Ana, Cai or Dee first, then Ben: 3 of 12."}}
-  - {"type": "question", "q": "For 4 names, which draw has more outcomes?", "options": ["Putting the first name back (16)", "Not putting it back (12)", "They have the same", "It depends on the names"], "answer": 0, "feedback": [null, "12 is the smaller count.", "Putting it back leaves 4 choices each time.", "The names don't matter, only how many there are."], "explain": "With put-back: 4 × 4 = 16. Without: 4 × 3 = 12."}
+  - {"check": {"type": "question", "q": "For 4 names, which draw has more outcomes?", "options": ["Putting the first name back (16)", "Not putting it back (12)", "They have the same", "It depends on the names"], "answer": 0, "feedback": [null, "12 is the smaller count.", "Putting it back leaves 4 choices each time.", "The names don't matter, only how many there are."], "explain": "With put-back: 4 × 4 = 16. Without: 4 × 3 = 12."}}
 ```
 
 ### Same name twice

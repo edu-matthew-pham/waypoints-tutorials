@@ -3,7 +3,7 @@ order: 2
 node: AC9S9U04 n2
 unit: models
 title: How does sound travel?
-summary: "Sound is a longitudinal wave: a vibrating source makes compressions (particles squashed together) and rarefactions (particles spread out) that travel through a medium, with each particle only vibrating to and fro in place. Frequency sets the pitch and amplitude sets the loudness. Without particles, as in a vacuum, there is nothing to carry the wave."
+summary: "Sound is a longitudinal wave: a vibrating source makes compressions (particles squashed together) and rarefactions (particles spread out) that travel through a medium. Each particle keeps its random motion and is just nudged to and fro on top of it. Frequency sets the pitch and amplitude sets the loudness. Without particles, as in a vacuum, there is nothing to carry the wave."
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:
@@ -42,7 +42,7 @@ check:
   type: predict
   q: "A speaker plays a note. As the sound passes through the air, what does one particle of air do?"
   options: ["It vibrates to and fro in about the same place", "It travels from the speaker all the way to your ear", "It speeds up, then stops", "It doesn't move: only the sound does"]
-  actual: "It vibrates to and fro in about the same place. Each particle bumps its neighbour and returns. What travels is the pattern of squashing, not the particles."
+  actual: "It vibrates to and fro in about the same place. It keeps its random motion and is nudged to and fro on top of it, bumping its neighbour and coming back. What travels is the pattern of squashing, not the particles."
 ```
 
 ## Explore: make some sounds
@@ -177,6 +177,6 @@ Write one sentence: "At first I thought… Now I think… because…"
 **Revision summary**
 
 - Sound is a **longitudinal wave**: particles vibrate to and fro along the direction the wave travels.
-- A wave is a line of **compressions** (squashed) and **rarefactions** (spread out). The pattern travels; the particles stay in place.
+- A wave is a line of **compressions** (squashed) and **rarefactions** (spread out). The pattern travels; each particle keeps its random motion and is just nudged to and fro on top of it.
 - **Frequency** (vibrations per second) sets the **pitch**; **amplitude** (size of the vibration) sets the **loudness**.
 - Sound needs a **medium**: it cannot travel through a vacuum. It is faster in solids than in gases because the particles are held together by stiff bonds, so each push passes on almost at once.

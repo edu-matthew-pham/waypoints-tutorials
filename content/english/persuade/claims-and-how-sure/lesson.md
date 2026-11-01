@@ -17,7 +17,7 @@ A writer can **back up** a claim with evidence, such as a count, or with a named
 - A **how-many word**: *some* and *most* are careful; *all* is firm.
 - A **distancing phrase**: *it seems that*, *research suggests*.
 
-Pick the word that fits the evidence. A claim that admits its limits is honest, so readers often trust the writer more.
+Pick the word that fits the evidence. A claim that admits its limits is honest, and that can make a careful reader trust the writer more.
 
 ## Predict: which claim would you trust?
 
@@ -66,14 +66,14 @@ tasks:
       type: bug
       code: "working.txt#nib"
       text: "Here are Nib's reasons for a school vegetable garden, one per line. One line is a bare assertion. Click it."
-      answer: 3
+      answer: 1
       fault: logic
       misconception: bare-assertion
-      explain: "Line 3 says 'Everybody knows' and gives nothing to check. The other lines give a count, a survey or a reason a canteen could act on."
+      explain: "Line 1 says 'Everybody knows' and gives nothing to check. The other lines give a count, a survey or a reason a canteen could act on."
   - check:
       type: question
       q: "A writer changes 'Homework ruins sleep' to 'Homework may cut into sleep for some students'. Why?"
-      options: ["The claim now sounds more certain, so readers will not question it", "The claim now admits its limits, which makes the writer easier to trust", "The writer has hidden their view so nobody can disagree"]
+      options: ["The claim now sounds more certain, so readers will not question it", "The claim now admits its limits, which can make a careful reader trust the writer more", "The writer has hidden their view so nobody can disagree"]
       answer: 1
       feedback: ["The new words make the claim less certain, not more.", null, "The view is still there. It now says how far it goes."]
       explain: "May and some show the claim has limits. A reader sees an honest writer and is more likely to trust the claim."

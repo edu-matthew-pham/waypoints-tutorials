@@ -190,7 +190,7 @@ Write one sentence: "At first I thought… Now I think… because…"
 
 **Revision summary**
 
-- Particles react only when they **collide** with at least the **activation energy**. Most collisions just bounce.
+- Particles react only when they **collide** with at least the **activation energy** (and the right way round). Most collisions just bounce.
 - **Temperature:** faster particles collide more often and, much more importantly, harder.
 - **Concentration** and **surface area:** more collisions each second.
 - **Catalyst:** a lower activation energy, so more collisions succeed. It is not used up.

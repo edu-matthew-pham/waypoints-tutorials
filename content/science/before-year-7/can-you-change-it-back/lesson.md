@@ -71,7 +71,7 @@ tasks:
         - ["Iron rusting", "Can't change back"]
 ```
 
-In a change you can undo, **no new stuff is made**. Dissolving, melting and freezing are like this. In a change you can't undo, **new stuff is made**: burning, cooking and rusting. A dissolved solid hasn't gone. It is still there, spread through the liquid.
+If a change can be undone, that usually means **no new stuff is made**, but not always; the real test is whether new stuff is made. Dissolving, melting and freezing are like this. In a change you can't undo, **new stuff is made**: burning, cooking and rusting. A dissolved solid hasn't gone. It is still there, spread through the liquid.
 
 ### Getting the salt back
 
@@ -88,10 +88,10 @@ tasks:
   - check:
       type: question
       q: "Which of these shows that a change made new stuff?"
-      options: ["A gas is given off and a crust is left that can't change back", "The stuff changes shape", "The stuff gets cold", "The stuff moves to another place"]
+      options: ["A gas is given off and a new crust is left", "The stuff changes shape", "The stuff gets cold", "The stuff moves to another place"]
       answer: 0
       feedback: [null, "Changing shape, like squashing clay, doesn't make anything new.", "Getting colder or hotter isn't enough on its own, because ice and water both can.", "Moving doesn't make anything new."]
-      explain: "Signs of new stuff are a gas given off, a new colour, a new smell or something that can't be changed back."
+      explain: "Signs of new stuff are a gas given off, a new colour or a new smell."
   - check:
       type: question
       q: "Tea with sugar stirred in is left in the sun and the water dries up. What is left?"

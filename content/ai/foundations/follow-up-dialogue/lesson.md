@@ -129,6 +129,6 @@ stage: info
 check: { type: reflect, text: "I said what was wrong with a reply before I chose what to ask next." }
 ```
 
-You don't have to take the first kind of help you're given. Ask for a question, an example, a hint or a different way in, whatever suits what you're trying to do. **But telling an AI to sound surer, or to check its own work, doesn't make it right.**
+You don't have to take the first kind of help you're given. Ask for a question, an example, a hint or a different way in, whatever suits what you're trying to do. **But telling an AI to sound surer, or to check its own work, doesn't guarantee it's right, and isn't an independent check.**
 
 Next you'll look at how to learn with AI while making sure the understanding ends up in your head, not just on the screen.

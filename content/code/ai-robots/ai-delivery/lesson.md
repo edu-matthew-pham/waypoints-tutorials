@@ -43,7 +43,7 @@ Press **A+B** twice on one micro:bit, then drag a box in front of the **other** 
 
 ```step
 stage: investigate
-insight: "The model knows only what the camera sees; the robot's sensor knows what is in front of it. The sensor must win, so its check comes first."
+insight: "The model has only what the camera sees; the robot's sensor measures what is in front of it. The sensor must win, so its check comes first."
 tasks:
   - check:
       type: sort

@@ -63,10 +63,10 @@ tasks:
       type: bug
       code: "working.txt#nib"
       text: "Here is Nib's book review, one point per line. One judgement has nothing to back it up. Click it."
-      answer: 3
+      answer: 4
       fault: logic
       misconception: claim-without-backing
-      explain: "Line 3 says 'The ending is just amazing' and gives no detail. The other lines each point to something in the book."
+      explain: "Line 4 says 'The ending is just amazing' and gives no detail. The other lines each point to something in the book."
   - check:
       type: question
       q: "Why does adding a quote from the story make a review stronger?"

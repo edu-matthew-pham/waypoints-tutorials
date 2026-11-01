@@ -1,13 +1,13 @@
 ---
 title: What kind of AI is it?
-summary: Sort everyday systems into four kinds (rules written by people, models that predict, models that make new content, and agents that act), then match each kind to the way it usually goes wrong.
+summary: Sort everyday systems into four kinds (rules written by people, models that predict, models that make new content, and agents that act; one useful way to sort them), then match each kind to the way it usually goes wrong.
 language: science
 shape: 5e
 unit: how-ai-learns
 order: 8
 voice: { name: af_heart, speed: 1.1 }
 ---
-People call many different things "AI". Some follow rules that people wrote. Some learned from examples, like your fruit sorter. Some make new text or pictures, like your dice generator. Some take actions for you. **Knowing which kind you are looking at tells you how it might go wrong.**
+People call many different things "AI". Some follow rules that people wrote. Some learned from examples, like your fruit sorter. Some make new text or pictures, like your dice generator. Some take actions for you. These four kinds are one useful way to sort them. **Knowing which kind you are looking at tells you how it might go wrong.**
 
 ## Engage: is it all the same thing?
 

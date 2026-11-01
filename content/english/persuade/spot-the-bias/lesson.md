@@ -61,10 +61,10 @@ tasks:
       type: bug
       code: "working.txt#nib"
       text: "Nib says this report is balanced because it names both sides. One sentence still takes a side. Click it."
-      answer: 3
+      answer: 4
       fault: logic
       misconception: both-sides-balanced
-      explain: "Line 3 names parents on both sides, but 'reasonable' praises one group and 'complained noisily' criticises the other. Naming both sides is not enough."
+      explain: "Line 4 names parents on both sides, but 'reasonable' praises one group and 'complained noisily' criticises the other. Naming both sides is not enough."
   - check:
       type: question
       q: "Two reports give the same number, 40 people. One says 'a mere 40' and one says 'a passionate 40'. What does this show?"

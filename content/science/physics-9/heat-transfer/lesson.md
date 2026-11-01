@@ -113,7 +113,7 @@ tasks:
       q: "Why does a foam (polystyrene) cup keep a drink hot so well?"
       options: ["It is mostly trapped air: gas particles are far apart, so there are far fewer of them to pass energy along, and air in the tiny bubbles can't flow to convect", "Its particles are packed very tightly, so energy can't squeeze through", "The foam reflects the heat back into the drink"]
       answer: 0
-      feedback: [null, "It's the other way round: tightly packed particles pass energy on well by collisions. Foam is mostly widely spaced gas particles.", "Reflecting is what shiny surfaces do to radiation. Foam works by trapping air."]
+      feedback: [null, "It's the other way round: solids pass energy on better than gases. Foam is mostly widely spaced gas particles.", "Reflecting is what shiny surfaces do to radiation. Foam works by trapping air."]
       explain: "Insulators pass energy on poorly. In a gas the particles are far apart, so there are far fewer of them to pass energy along (they still collide billions of times a second), and trapping the gas in small bubbles stops convection too."
   - check: { type: reflect, text: "I explained the difference between conduction and convection, describing what the particles do in each." }
 ```
@@ -163,7 +163,7 @@ tasks:
       options: ["Metal conducts heat well to cook the food; plastic and wood conduct poorly, so the handle stays cool", "Plastic handles are lighter", "Metal handles would melt"]
       answer: 0
       feedback: [null, "Weight is not why: a metal handle would burn your hand.", "Metal melts at a far higher temperature than a stove reaches."]
-      explain: "Metals are good conductors; plastic and wood are insulators."
+      explain: "Metals are good conductors because they have free electrons that carry energy along quickly; plastic and wood are insulators."
   - check:
       type: question
       q: "Wool, fur and feathers keep animals warm mostly because they trap air. Why does trapped air insulate so well?"

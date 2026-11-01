@@ -4,7 +4,7 @@ timing: "Engage and Explore 8 min · Explain 6 min · Elaborate and Practise 8 m
 goals:
   - I can explain why an AI answer is a source to check, not a check.
   - I can check an AI fact in a place that would know.
-  - I can explain why asking the same AI again is not checking.
+  - I can explain why asking the same AI again is not an independent check.
 struggle: "Students accept a fluent, confident reply, or think asking 'are you sure?' checks it. Ask: who would know this, apart from the AI?"
 before: |
   The one idea: an AI answer is a source with no author to ask; check its facts like any other. There is no real AI on this page: every reply is scripted and labelled. Do not use a live chatbot for this lesson. AI Foundations has scripted response labs and an optional, teacher-approved prompt step if you want students to try a real tool under your school's rules.
@@ -23,7 +23,7 @@ running:
 stuck:
   - see: "A student says the AI said it was sure."
     ask: "How does sounding sure help you check it?"
-    fix: "AI sounds sure whether it is right or wrong. Leave the reply and look elsewhere."
+    fix: "AI often sounds sure, whether it is right or wrong. Leave the reply and look elsewhere."
   - see: "A student asks another chatbot to check."
     ask: "Is that a place that would know, or another AI?"
     fix: "Find a page or a book that would know."
@@ -42,4 +42,4 @@ exit:
 explain: |
   An AI answer is a **source** with no author to ask. It can sound sure and be wrong.
 
-  Treat its facts as **leads**: leave the reply and check them in a place that would know. Asking the same AI again is not a check.
+  Treat its facts as **leads**: leave the reply and check them in a place that would know. Asking the same AI again is not an independent check.

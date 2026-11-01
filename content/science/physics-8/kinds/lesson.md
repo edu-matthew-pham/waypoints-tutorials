@@ -159,4 +159,4 @@ Write one sentence: "At first I thought… Now I think… because…"
 - **Kinetic energy** is energy of activity: movement, heat (thermal), sound, light, electrical.
 - **Potential energy** is stored: chemical (food, fuel, batteries), gravitational (height), elastic (stretched or squashed).
 - How much is stored depends on height and mass, how far something is stretched, or what a substance is made of.
-- Energy changes between kinetic and potential, as on a roller coaster. The total stays the same.
+- Energy changes between kinetic and potential, as on a roller coaster. The total stays the same (this coaster has no friction; the next lesson adds it).

@@ -82,7 +82,7 @@ tasks:
       options: ["Diffusion, gases being compressible, and tiny specks in water jiggling under a microscope", "We can see particles with our eyes", "It explains everything"]
       answer: 0
       feedback: [null, "Particles are far too small to see with our eyes, so that can't be the evidence.", "No model explains everything, and this one doesn't either."]
-      explain: "Tiny grains of pollen in water jiggle (Brownian motion) because moving water particles keep knocking them about, which Einstein explained in 1905 and which is strong evidence for particles."
+      explain: "Tiny particles from pollen grains in water jiggle (Brownian motion) because moving water particles keep knocking them about, which Einstein explained in 1905 and which is strong evidence for particles."
   - check:
       type: question
       q: "The particle model explains a smell spreading across a room. Which part of the model does the explaining?"

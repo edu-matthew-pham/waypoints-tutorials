@@ -51,7 +51,7 @@ check:
     - ["It has big, bright headings", "Not a reason", "Anyone can make a page look good."]
     - ["It says where its facts came from", "A good reason", "You can go and check the source."]
     - ["It uses lots of exclamation marks", "Not a reason", "Excitement is not evidence."]
-    - ["It has a recent date", "A good reason", "Advice is up to date."]
+    - ["It has a recent date, for advice that can change", "A good reason", "Advice is up to date."]
     - ["It says thousands of people agree", "Not a reason", "You cannot check who they are, and many people can be wrong."]
     - ["The makers have done this for years", "A good reason", "Experience with the thing is a reason they might know."]
 ```

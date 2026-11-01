@@ -2,7 +2,7 @@
 
 # region: ava
 Ava is writing a report on bike safety.
-She reads "Kestrel helmets: the safest choice for every rider!" and writes it down as a fact, because it sounds sure.
+She reads "Riverbend Helmets: the safest choice for every rider!" and writes it down as a fact, because it sounds sure.
 She does not say where it came from.
-Her report says Kestrel helmets are the safest helmets.
+Her report says Riverbend Helmets are the safest helmets.
 # endregion

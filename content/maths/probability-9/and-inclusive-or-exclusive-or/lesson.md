@@ -68,7 +68,7 @@ try: {"playground": "board", "starter": "b.yml#run", "height": 620}
 tasks:
   - {"starter": "b.yml#run", "check": {"type": "board", "text": "Choose the students who play sport or music but not both.", "when": "x = 1 and y = 0 and z = 1 and w = 0", "explain": "Sport only and music only: 12 + 5 = 17."}}
   - {"starter": "b.yml#run", "check": {"type": "board", "text": "Choose the students who play neither sport nor music.", "when": "x = 0 and y = 0 and z = 0 and w = 1", "explain": "The 5 outside both circles."}}
-  - {"type": "question", "q": "The sign-up form says \"Sport or music\". Most people will read it as...", "options": ["Either one, or both", "Exactly one", "Both", "Neither"], "answer": 0, "feedback": [null, "That needs \"but not both\".", "That is \"and\".", "That is \"not\"."], "explain": "In everyday use \"or\" usually includes both. If you mean one but not both, say so."}
+  - {"check": {"type": "question", "q": "The sign-up form says \"Sport or music\". Most people will read it as...", "options": ["Either one, or both", "Exactly one", "Both", "Neither"], "answer": 0, "feedback": [null, "That needs \"but not both\".", "That is \"and\".", "That is \"not\"."], "explain": "In everyday use \"or\" usually includes both. If you mean one but not both, say so."}}
 ```
 
 ### One but not both

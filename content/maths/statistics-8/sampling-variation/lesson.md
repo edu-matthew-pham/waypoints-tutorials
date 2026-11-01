@@ -148,9 +148,9 @@ tasks:
   - check:
       type: question
       q: "Two classes each take a random sample of 10 students from the same school. One finds 0.3 own a dog; the other finds 0.6. What is the best explanation?"
-      options: ["Sampling variation: samples of 10 vary a lot", "The first class made a mistake", "The second class made a mistake", "Dogs changed"]
+      options: ["Sampling variation: samples of 10 vary a lot", "The first class made a mistake", "The second class made a mistake", "Both are wrong: the true answer is in between"]
       answer: 0
-      feedback: [null, "Fair small samples can differ this much.", "Both could be fair.", "The population is the same."]
+      feedback: [null, "Fair small samples can differ this much.", "Both could be fair.", "Neither has to be wrong: each is a fair estimate, and small samples vary."]
       explain: "Small samples vary a lot. Larger samples would agree more closely."
   - check:
       type: question

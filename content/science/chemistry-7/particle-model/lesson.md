@@ -5,7 +5,7 @@ assumes: [AC9S5U04 n2]
 woven: [AC9S7H01, AC9S7I07]
 unit: particles
 title: What is everything made of?
-summary: All matter is made of tiny particles with empty space between them, always moving and attracting each other. Match particle diagrams to solids, liquids and gases.
+summary: All matter is made of tiny particles with empty space between them, always moving and attracting each other. Particle diagrams show how they sit in solids, liquids and gases.
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:

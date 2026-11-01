@@ -80,7 +80,7 @@ tasks:
       feedback: [null, "The books-and-notes group was the comparison. One AI group scored about 17% below it.", "The AI tutor group's later score was close to the books-and-notes group."]
 ```
 
-**Study A: high school maths.** In [Bastani and colleagues' 2025 study](https://doi.org/10.1073/pnas.2422633122), students practised maths in three groups:
+**Study A: high school maths.** In [Bastani and colleagues' 2025 study](https://doi.org/10.1073/pnas.2422633122), nearly 1,000 high school students in Turkey practised maths in three groups:
 
 - books and notes, with no AI;
 - a plain AI chatbot that answered whatever they asked;

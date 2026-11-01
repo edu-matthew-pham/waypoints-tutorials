@@ -10,7 +10,7 @@ hook: "You ask a chatbot when the Riverbend library opens on Saturday. It answer
 An AI chatbot writes an answer by predicting words that are likely to come next. Likely is not the same as true. So an AI answer is a **source**, and an unusual one:
 
 - It has **no author** you can look up, and often no link to where its facts came from.
-- It sounds **sure** whether it is right or wrong.
+- It often sounds **sure**, whether it is right or wrong.
 - It may be **out of date** or mix up places with similar names.
 
 Use the same checks as for any page: say the claim, **leave the reply**, and see whether places that would know agree.
@@ -72,7 +72,7 @@ tasks:
       answer: 3
       fault: logic
       misconception: ai-checks-itself
-      explain: "Line 3: Eli asked the same AI whether the quote was real and took its 'yes' as a check. The AI cannot check itself. He needed to find where the scientist actually said it."
+      explain: "Line 3: Eli asked the same AI whether the quote was real and took its 'yes' as a check. Asking the same AI is not an independent check. He needed to find where the scientist actually said it."
 ```
 
 ### Check the sprouting
@@ -129,7 +129,7 @@ check:
 
 ```step
 stage: info
-check: { type: reflect, text: "I can explain why an AI answer is a lead to check, and why asking the same AI again is not checking." }
+check: { type: reflect, text: "I can explain why an AI answer is a lead to check, and why asking the same AI again is not an independent check." }
 ```
 
 Go further with [AI Foundations › Check what AI tells you](../../../ai/foundations/checking-ai-claims/). Use AI only in the ways your teacher and school allow.

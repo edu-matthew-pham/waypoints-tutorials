@@ -4,7 +4,7 @@ node: AC9S7U05 n3
 woven: [AC9S7I01]
 unit: particles
 title: Why can you squash air but not water?
-summary: Use particle theory to explain physical properties (how easily a substance squashes, its density, how it flows) by naming the arrangement, motion or attraction behind each one.
+summary: Particle theory explains physical properties, such as how easily a substance squashes, its density and how it flows, through the arrangement, motion or attraction of its particles.
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:

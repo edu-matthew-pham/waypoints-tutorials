@@ -2,7 +2,7 @@
 
 # region: nib
 The experiment tested three kinds of soil.
-The sandy soil drained in 12 seconds.
 Clay soil is horrible because it is so sticky.
+The sandy soil drained in 12 seconds.
 The loam soil held the most water.
 # endregion

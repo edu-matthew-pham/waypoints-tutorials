@@ -1,8 +1,8 @@
-# Nib's welcome email to a new Reef Watch volunteer.
+# Nib's welcome email to a new volunteer with the Riverbend Reef Crew.
 
 # region: nib
-Hi Tama, welcome to Reef Watch!
-Please bring your PPE and your RWL to the first transect.
+Hi Tama, welcome to the Riverbend Reef Crew!
+Please bring your PPE and your RCL to the first transect.
 We meet at the wharf at 8 am.
-See you there, the Reef Watch crew.
+See you there, the Riverbend Reef Crew.
 # endregion

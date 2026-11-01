@@ -5,7 +5,7 @@ title: Train movements
 summary: A movement is a short recording of x, y and z acceleration. micro:bit CreateAI learns the shape of those recordings from your samples, so it tells movements apart by how they move, and the model then runs on the micro:bit itself.
 language: makecode
 explainPicture: motion.ts#log
-hook: "A smartwatch counts your steps and knows when you start running, without a camera and without sending anything to a computer. A small model on the watch reads its motion sensor."
+hook: "A smartwatch counts your steps and can tell when you start running, without a camera and without sending anything to a computer. A small model on the watch reads its motion sensor."
 ---
 In the Pattern Trainer the model learned from **photos** and ran on the **computer**. In **micro:bit CreateAI** it learns from **movements**, measured by the micro:bit's motion sensor (the **accelerometer**), and the finished model runs **on the micro:bit**.
 
@@ -70,10 +70,10 @@ tasks:
       explain: "A movement happens over time, so a sample is a short recording of all three directions, like the waves on the board."
   - check:
       type: question
-      q: "Your model knows your running. A friend runs with the micro:bit held differently, and it says walking. What is the fix?"
+      q: "Your model has learned from your running. A friend runs with the micro:bit held differently, and it says walking. What is the fix?"
       options: ["Add running samples from other people and other ways of holding it", "Train for longer", "Record more of your own running", "Rename the actions"]
       answer: 0
-      explain: "Same idea as the recycling sorter: the model only knows the examples it was given. Add the variety it is missing."
+      explain: "Same idea as the recycling sorter: the model has only the examples it was given. Add the variety it is missing."
   - check:
       type: question
       q: "The Pattern Trainer sorter ran on the computer. This model runs on the micro:bit. Which is true?"

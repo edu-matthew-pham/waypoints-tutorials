@@ -134,7 +134,7 @@ tasks:
       options: ["Almost certainly, many: long runs happen in long experiments", "No: the law of large numbers stops them", "Only if the coin is unfair"]
       answer: 0
       feedback: [null, "The law is about the relative frequency, not about each flip.", "Runs happen with fair coins."]
-      explain: "In 10 000 flips, a run of 5 tails is expected hundreds of times; the overall fraction still settles near 1/2."
+      explain: "In 10 000 flips, a run of 5 or more tails comes up about 150 times (more if you count overlapping runs); the overall fraction still settles near 1/2."
 ```
 
 ### A dice

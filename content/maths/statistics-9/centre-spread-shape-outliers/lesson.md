@@ -65,8 +65,8 @@ insight: "An outlier changes the mean and the range; removing it shows how much 
 try: {"playground": "board", "starter": "b.yml#out", "height": 620}
 tasks:
   - {"starter": "b.yml#out", "check": {"type": "board", "text": "This set has one very high result, at 30. Remove that dot and watch the mean.", "when": "n = 8 and m < 11", "explain": "The mean falls from about 12.7 to 10.5. The range falls from 21 to 3."}}
-  - {"type": "question", "q": "A battery that lasted 30 hours in a set of results around 10 is probably...", "options": ["An outlier: check if it was a mistake or a real result", "The most important result", "The mean", "Always an error"], "answer": 0, "feedback": [null, "It stands out, but it is not the main point.", "The mean is a calculated value.", "It might be real."], "explain": "Check it: a recording error or a special battery. Do not delete it without a reason."}
-  - {"type": "question", "q": "When comparing centres, which is safer when one set has an outlier?", "options": ["The median", "The mean", "The range", "The mode"], "answer": 0, "feedback": [null, "The mean is pulled by the outlier.", "The range is affected most.", "The mode ignores size."], "explain": "The median is not pulled by one extreme value."}
+  - {"check": {"type": "question", "q": "A battery that lasted 30 hours in a set of results around 10 is probably...", "options": ["An outlier: check if it was a mistake or a real result", "The most important result", "The mean", "Always an error"], "answer": 0, "feedback": [null, "It stands out, but it is not the main point.", "The mean is a calculated value.", "It might be real."], "explain": "Check it: a recording error or a special battery. Do not delete it without a reason."}}
+  - {"check": {"type": "question", "q": "When comparing centres, which is safer when one set has an outlier?", "options": ["The median", "The mean", "The range", "The mode"], "answer": 0, "feedback": [null, "The mean is pulled by the outlier.", "The range is affected most.", "The mode ignores size."], "explain": "The median is not pulled by one extreme value."}}
 ```
 
 ### Remove it

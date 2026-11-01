@@ -5,13 +5,13 @@ title: Fact, opinion or advert?
 summary: "A fact is a statement that can be checked, and it can turn out right or wrong. An opinion is a view, which people can disagree with; a good one gives reasons. An advert is a line that wants you to buy, often dressed up as a fact. Telling them apart tells you what to do next: check a fact, weigh an opinion's reasons, and know what an advert wants."
 language: science
 shape: 5e
-hook: "\"Kestrel helmets are the best helmets in the world.\" Is that a fact, an opinion or an advert? Does it matter which?"
+hook: "\"Riverbend Helmets are the best helmets in the world.\" Is that a fact, an opinion or an advert? Does it matter which?"
 ---
 Three kinds of statement can look alike:
 
 - A **fact** is a statement you can **check**. It might be right or wrong, but there is a way to find out. *The Riverbend pool is 25 metres long.*
 - An **opinion** is a **view**. People can disagree, and a good opinion gives reasons. *The Riverbend pool is the best place to spend a Saturday.*
-- An **advert** wants you to **buy** or sign up. It often sounds like a fact. *Kestrel helmets: the safest choice for every rider!*
+- An **advert** wants you to **buy** or sign up. It often sounds like a fact. *Riverbend Helmets: the safest choice for every rider!*
 
 A fact is not always true: *The pool is 100 metres long* is a fact-type statement, and it is wrong. You find out by checking.
 
@@ -22,9 +22,9 @@ stage: predict
 insight: "Committing to a kind tests the move: a fact is something you could check, not something that sounds sure."
 check:
   type: predict
-  q: "\"Kestrel helmets are the best helmets in the world.\" Which kind is it?"
+  q: "\"Riverbend Helmets are the best helmets in the world.\" Which kind is it?"
   options: ["An advert, or an opinion if a rider says it", "A fact", "It depends on who says it", "None of them"]
-  actual: "Best in the world can't be measured, so it isn't a fact you can check. On a Kestrel page it is an advert. If a friend says it, it is an opinion, and you can ask their reasons. 'It depends on who says it' is a good answer: who says it changes what it is for."
+  actual: "Best in the world can't be measured, so it isn't a fact you can check. On the Riverbend Helmets page it is an advert. If a friend says it, it is an opinion, and you can ask their reasons. 'It depends on who says it' is a good answer: who says it changes what it is for."
 ```
 
 ## Explore: sort the statements
@@ -46,7 +46,7 @@ check:
     - ["Bean plants need water to grow.", "Fact", "You could check it in a science book, or try it."]
 ```
 
-Was your guess right? Ask: **could I check this?** If yes, it is a fact, right or wrong. If people could reasonably disagree, it is an opinion. If it wants your money, it is an advert.
+Was your guess right? Ask: **could I check this?** If yes, it is a fact, right or wrong. If people could reasonably disagree, it is an opinion. If it wants your money, it is an advert. A price can be checked, so it is a fact, but inside an advert it is there to make a sale: sort a sentence by what it is for.
 
 ## Explain: what to do with each
 

@@ -61,10 +61,10 @@ tasks:
       type: bug
       code: "working.txt#nib"
       text: "Here is Nib's news report on a council meeting, one sentence per line. A news report should only report. One sentence pushes a feeling. Click it."
-      answer: 3
+      answer: 4
       fault: logic
       misconception: emotive-in-news
-      explain: "Line 3 says 'Furious residents stormed out'. Furious and stormed push a feeling. A report would say that residents left the hall."
+      explain: "Line 4 says 'Furious residents stormed out'. Furious and stormed push a feeling. A report would say that residents left the hall."
   - check:
       type: question
       q: "A review says the room was 'cramped and filthy'. How does that wording position the reader?"

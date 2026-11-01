@@ -4,7 +4,7 @@ node: AC9S7U03 n5
 woven: [AC9S7I05]
 unit: moon
 title: Why are there two high tides a day?
-summary: "The moon's gravity pulls the oceans into two bulges, one facing the moon and one on the far side; the Earth spins through both, so most coasts get two high tides a day. Spring tides (biggest range) come at new and full moon, when the sun and moon pull in line; neap tides at the quarters."
+summary: "The moon's gravity pulls the oceans into two bulges, one facing the moon and one on the far side; the Earth spins through both, so most coasts get two high tides a day. This is the bulge model, a simplified picture: real coasts vary, and a few get one high tide a day. Spring tides (biggest range) come at new and full moon, when the sun and moon pull in line; neap tides at the quarters."
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:
@@ -155,6 +155,6 @@ Write one sentence: "At first I thought… Now I think… because…"
 
 **Revision summary**
 
-- The moon's **gravity** pulls the oceans into **two bulges** (towards the moon and on the far side); the Earth spins through both: **two high tides a day** on most coasts.
+- The moon's **gravity** pulls the oceans into **two bulges** (towards the moon and on the far side); the Earth spins through both: **two high tides a day** on most coasts. This is the bulge model, a simplified picture: real coasts vary, and a few get one high tide a day.
 - **Spring tides** (biggest range): new and full moon, sun and moon **in line**. **Neap tides** (smallest range): quarter moons, sun at **right angles**.
 - Spring and neap tides each come about every two weeks, all year.

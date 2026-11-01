@@ -3,7 +3,7 @@ order: 8
 node: AC9S8U02 n4
 unit: systems
 title: Organ systems
-summary: "An organ system is a group of organs that work together to do a job the whole organism needs. In an animal, the circulatory system (heart, blood vessels, blood) delivers oxygen and nutrients; in a plant, the vascular system (xylem and phloem in roots, stems and leaves) carries water and sugars. If one organ fails, the system fails."
+summary: "An organ system is a group of organs that work together to do a job the whole organism needs. In an animal, the circulatory system (heart, blood vessels, blood) delivers oxygen and nutrients; in a plant, the vascular system (xylem and phloem in roots, stems and leaves) carries water and sugars. If one organ fails, the system can fail at its job."
 language: science
 voice: { name: af_heart, speed: 1.1 }
 hook: "Your heart can't keep you alive on its own, and neither can your lungs. Why do organs only make sense as a team?"
@@ -119,5 +119,5 @@ Write one sentence: "At first I thought… Now I think… because…"
 
 - An **organ system** is a group of organs working together to do a job the whole organism needs.
 - Animal example: **circulatory** (heart, vessels, blood). Plant example: **vascular** (roots, xylem, phloem, leaves).
-- If any organ in a system fails, the system can't do its job.
+- If any organ in a system fails, the system can fail at its job.
 - Both systems solve the same problem: **moving materials to every cell**.

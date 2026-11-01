@@ -2,12 +2,12 @@
 order: 1
 unit: search
 title: Search like you mean it
-summary: "A search box does best with a few strong words, not a whole sentence: the thing you want, the place, and the detail that matters. Then read the results page before you click. Some results are adverts, a snippet can be years old, and the address says who made the page. The top result is not a check that something is true."
+summary: "Many search engines now cope with a whole question, but a few strong words give you more control: the thing you want, the place, and the detail that matters. Then read the results page before you click. Some results are adverts, a snippet can be years old, and the address says who made the page. The top result is not a check that something is true."
 language: science
 shape: 5e
 hook: "You want to know when the Riverbend library opens on Saturday. You type the whole question and click the first result. What could go wrong?"
 ---
-A search box looks for pages that contain your words. A few **strong words** work better than a whole sentence: the thing you want, the place, and the detail that matters.
+A search box looks for pages that contain your words. Many search engines now cope with a whole question, but a few **strong words** give you more control: the thing you want, the place, and the detail that matters.
 
 Then read the **results page** before you click. Each result has a title, an address and a short **snippet** from the page. Some are marked **Ad**: someone paid to put them there.
 
@@ -88,7 +88,7 @@ tasks:
       answer: 3
       fault: logic
       misconception: top-result-is-best
-      explain: "Line 3: Leo clicked the first result without reading its date or address. Being first is not a check. The library's own page, further down, had this month's hours."
+      explain: "Line 3: Leo clicked the first result after the adverts without reading its date or address. Being first is not a check. The library's own page, further down, had this month's hours."
 ```
 
 ### What Ad means

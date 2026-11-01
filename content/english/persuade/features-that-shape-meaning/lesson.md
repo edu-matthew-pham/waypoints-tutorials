@@ -64,16 +64,16 @@ tasks:
       type: bug
       code: "working.txt#nib"
       text: "Here is Nib explaining a feature of a poster, one point per line. One line gets the feature wrong. Click it."
-      answer: 3
+      answer: 2
       fault: logic
       misconception: feature-misnamed
-      explain: "Line 3 calls 'Join us this Saturday' a question. It is an invitation that speaks to the reader, not a question."
+      explain: "Line 2 calls 'Join us this Saturday' a question. It is an invitation that speaks to the reader, not a question."
   - check:
       type: question
       q: "Why would a letter to the council use fewer 'Join us!' lines than a poster for students?"
-      options: ["Letters are never allowed to use any features at all", "Students are not able to follow any reasons at all", "A letter reasons with an official, while a poster rallies students"]
+      options: ["A letter is longer, so short calls to action get lost in it", "Only young readers respond to being invited to join in", "A letter reasons with an official, while a poster rallies students"]
       answer: 2
-      feedback: ["Letters can use features; they choose different ones.", "Students can follow reasons. The poster has a different job.", null]
+      feedback: ["Length is not the reason. A letter has a different job, so it chooses different features.", "Adults can be rallied too. The letter wants an official to agree, so it gives reasons.", null]
       explain: "The purpose and audience decide the features. A poster rallies. A letter reasons."
 ```
 

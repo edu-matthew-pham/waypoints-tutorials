@@ -169,7 +169,7 @@ tasks:
       explain: "Scientific responses to an issue affect many groups, so good decisions use evidence and weigh environmental, economic, social and ethical considerations together."
 ```
 
-The **Dingo Fence** runs about 5,600 km across inland Queensland, New South Wales and South Australia to keep dingoes away from sheep. Studies comparing the two sides found more foxes and kangaroos, and fewer small native mammals, where dingoes are kept out: the cascade you traced. So should the fence stay, move, or let dingoes back in some places?
+The **Dingo Fence** runs about 5,600 km across inland Queensland, New South Wales and South Australia to keep dingoes away from sheep. Studies comparing the two sides found more foxes and kangaroos, and fewer small native mammals, where dingoes are kept out: the cascade you traced, although scientists still argue about how strong the effect is. So should the fence stay, move, or let dingoes back in some places?
 
 ### Four kinds of consideration
 

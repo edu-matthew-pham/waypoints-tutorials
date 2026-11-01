@@ -2,13 +2,13 @@
 order: 1
 unit: warmup
 title: "Fact or feeling?"
-summary: "A fact can be checked. An opinion shows what a writer thinks or feels. Thinking words (I think, I believe) and feeling words (terrific, awful) give an opinion away. Reports use plain words, numbers and verbs such as found or shows. Any kind of text can be factual or opinionated, depending on its purpose."
+summary: "A fact can be checked (and can turn out wrong). An opinion shows what a writer thinks or feels. Thinking words (I think, I believe) and feeling words (terrific, awful) give an opinion away. Reports use plain words, numbers and verbs such as found or shows. Any kind of text can be factual or opinionated, depending on its purpose."
 language: maths
 node: [AC9E4LA02 n1, AC9E4LA02 n2, AC9E4LA02 n3]
 explainPicture: { ref: text.yml#explain-pic, caption: "One school fair, two sentences. One can be checked and one shows what the writer feels." }
 hook: "'The play ran for 40 minutes.' 'The play was tedious.' Which one could you check with a clock?"
 ---
-A **fact** can be checked. An **opinion** shows what someone thinks or feels, and people can disagree with it.
+A **fact** can be checked (and can turn out wrong). An **opinion** shows what someone thinks or feels, and people can disagree with it.
 
 Opinions leave clues:
 
@@ -64,10 +64,10 @@ tasks:
       type: bug
       code: "working.txt#nib"
       text: "Here is Nib's science report on soils, one sentence per line. One sentence slips an opinion into a report. Click it."
-      answer: 3
+      answer: 2
       fault: logic
       misconception: opinion-in-report
-      explain: "Line 3 says clay soil is 'horrible'. That is a feeling word, so it shows an opinion. A report would say how long the clay took to drain."
+      explain: "Line 2 says clay soil is 'horrible'. That is a feeling word, so it shows an opinion. A report would say how long the clay took to drain."
   - check:
       type: question
       q: "Which text could use plain, checkable language?"

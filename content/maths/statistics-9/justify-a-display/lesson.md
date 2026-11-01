@@ -57,7 +57,7 @@ tasks:
 stage: "modify"
 insight: "Choosing and justifying displays for other readers."
 tasks:
-  - {"check": {"type": "question", "q": "A council report compares population over 20 years. Which display?", "options": ["A line graph", "A pie chart", "A scatter of names", "A stem-and-leaf plot only"], "answer": 0, "feedback": [null, "Parts of a whole would not show change.", "Names do not matter here.", "A stem plot ignores time order."], "explain": "A line graph shows change over time."}}
+  - {"check": {"type": "question", "q": "A council report compares population over 20 years. Which display?", "options": ["A line graph", "A pie chart", "A histogram of the population numbers", "A stem-and-leaf plot only"], "answer": 0, "feedback": [null, "Parts of a whole would not show change.", "A histogram groups measurements by size and loses the order in time.", "A stem plot ignores time order."], "explain": "A line graph shows change over time."}}
   - {"check": {"type": "question", "q": "For a young children's display on fruit eaten, which is likely best?", "options": ["A big picture graph with fruit symbols", "A table of decimals", "A box plot", "A histogram with 20 bins"], "answer": 0, "feedback": [null, "Too abstract for the reader.", "Young children cannot read it.", "Too detailed."], "explain": "A picture graph, for the reader."}}
   - {"check": {"type": "question", "q": "Which sentence best justifies a choice?", "options": ["A bar chart, because the data are categories and the principal wants to compare sizes", "A bar chart, because it is nice", "A pie chart, because I like pies", "Any graph will do"], "answer": 0, "feedback": [null, "\"Nice\" is not a reason.", "Preference is not a reason.", "The choice matters."], "explain": "A justification gives the data type and the purpose."}}
 ```
@@ -76,7 +76,7 @@ insight: "Calculating shares for a report, and choosing a display, with a review
 tasks:
   - {"check": {"type": "number", "q": "Of 180 sales, 70 were hot food. What percentage is that (1 decimal place)?", "answer": 38.9, "tolerance": 0.1, "explain": "70 ÷ 180 × 100 = 38.9."}}
   - {"check": {"type": "number", "q": "Of 180 sales, 25 were fruit. What pie-chart angle is that (degrees, nearest whole)?", "answer": 50, "tolerance": 0.5, "explain": "25 ÷ 180 × 360 = 50."}}
-  - {"check": {"type": "question", "q": "Review: a continuous measurement such as height is best shown with a...", "options": ["Histogram", "Pie chart", "Line graph of names", "Table of names"], "answer": 0, "feedback": [null, "Not parts of a whole.", "Names are not heights.", "Names are not heights."], "explain": "Histogram."}}
+  - {"check": {"type": "question", "q": "Review: a continuous measurement such as height is best shown with a...", "options": ["Histogram", "Pie chart", "Bar chart with a bar for each height", "Line graph in the order measured"], "answer": 0, "feedback": [null, "Not parts of a whole.", "Every height its own bar gives too many thin bars; group heights into intervals.", "The order you measured in isn't a time that matters, so a line suggests a trend that isn't there."], "explain": "Histogram."}}
 ```
 
 ### Hot food share

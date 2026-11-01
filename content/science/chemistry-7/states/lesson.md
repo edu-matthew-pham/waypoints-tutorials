@@ -5,7 +5,7 @@ assumes: [AC9S5U04 n2]
 woven: [AC9S7H01, AC9S7I05]
 unit: particles
 title: Why does a gas fill its container?
-summary: Describe the arrangement, motion and attraction of particles in a solid, a liquid and a gas, and use them to explain why solids keep their shape and gases fill their containers.
+summary: The particles in a solid, a liquid and a gas differ in arrangement, motion and attraction, which explains why solids keep their shape and gases fill their containers.
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:

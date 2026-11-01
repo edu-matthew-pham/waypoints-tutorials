@@ -62,10 +62,10 @@ tasks:
       type: bug
       code: "working.txt#nib"
       text: "Here is Nib's paragraph about the reef, one sentence per line. One sentence uses a vague source. Click it."
-      answer: 3
+      answer: 1
       fault: logic
       misconception: any-source-counts
-      explain: "Line 3 says 'a friend of my cousin'. You cannot check who that is or what they saw. The other lines name a team, a person or a record."
+      explain: "Line 1 says 'a friend of my cousin'. You cannot check who that is or what they saw. The other lines name a team, a person or a record."
   - check:
       type: question
       q: "Why does 'Dr Ortiz, who has counted the reef for ten years, says…' persuade more than 'someone says'?"

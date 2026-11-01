@@ -65,7 +65,7 @@ try: {"playground": "board", "starter": "b.yml#run", "height": 620}
 tasks:
   - {"starter": "b.yml#blue", "check": {"type": "board", "text": "Choose every outcome that includes the blue counter.", "when": "r = 1", "explain": "Blue first (3) or blue second (3): 6 of 12."}}
   - {"starter": "b.yml#tworeds", "check": {"type": "board", "text": "Choose every outcome where both counters are red.", "when": "r = 1", "explain": "R1 R2 and R2 R1: 2 of 12 = 1/6."}}
-  - {"type": "question", "q": "Which could be the probabilities of every outcome of a chance event?", "options": ["0.2, 0.3, 0.5", "0.2, 0.3, 0.4", "0.5, 0.5, 0.5", "0.6, 0.5, −0.1"], "answer": 0, "feedback": [null, "They add to 0.9: an outcome is missing.", "They add to 1.5.", "A probability can't be negative."], "explain": "They must add to exactly 1, and none can be below 0."}
+  - {"check": {"type": "question", "q": "Which could be the probabilities of every outcome of a chance event?", "options": ["0.2, 0.3, 0.5", "0.2, 0.3, 0.4", "0.5, 0.5, 0.5", "0.6, 0.5, −0.1"], "answer": 0, "feedback": [null, "They add to 0.9: an outcome is missing.", "They add to 1.5.", "A probability can't be negative."], "explain": "They must add to exactly 1, and none can be below 0."}}
 ```
 
 ### Blue is in it

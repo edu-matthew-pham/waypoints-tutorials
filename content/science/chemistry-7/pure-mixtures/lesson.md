@@ -5,7 +5,7 @@ assumes: [AC9S4U04 n1]
 woven: [AC9S7I06]
 unit: mixtures
 title: Pure substance or mixture?
-summary: A pure substance contains only one kind of particle; a mixture contains two or more. Classify familiar materials by their particles, not by how they look.
+summary: A pure substance contains only one kind of particle; a mixture contains two or more. Materials are classified by their particles, not by how they look.
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:

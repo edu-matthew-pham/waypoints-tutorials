@@ -61,10 +61,10 @@ tasks:
       type: bug
       code: "working.txt#nib"
       text: "Here is Nib's judgement of the review, one point per line. One point judges the language but gives no reason. Click it."
-      answer: 3
+      answer: 1
       fault: logic
       misconception: effective-without-reason
-      explain: "Line 3 says the exaggeration is 'great' but gives no reason. A judgement says what a part does for its audience."
+      explain: "Line 1 says the exaggeration is 'great' but gives no reason. A judgement says what a part does for its audience."
   - check:
       type: question
       q: "The review quotes a school librarian who watched a group of children. How well does that support the claim that the film holds children's attention?"

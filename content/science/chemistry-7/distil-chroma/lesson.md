@@ -4,7 +4,7 @@ node: AC9S7U06 n4
 woven: [AC9S7H02, AC9S7I04, AC9S7I06]
 unit: mixtures
 title: Distillation and chromatography
-summary: Distillation collects a liquid by boiling and condensing it; chromatography separates dissolved substances such as dyes. Explain each principle and when distillation beats evaporation.
+summary: Distillation collects a liquid by boiling and condensing it; chromatography separates dissolved substances such as dyes. Distillation beats evaporation when you want to keep the liquid.
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:

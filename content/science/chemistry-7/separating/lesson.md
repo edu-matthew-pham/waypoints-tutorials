@@ -5,7 +5,7 @@ assumes: [AC9S6U04 n1]
 woven: [AC9S7H04, AC9S7I06]
 unit: mixtures
 title: How do you separate a mixture?
-summary: Every separation technique uses a difference in a physical property between the parts of a mixture. Match property differences to techniques, and choose the order.
+summary: Every separation technique uses a difference in a physical property between the parts of a mixture, and that difference decides which technique to use and in what order.
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:

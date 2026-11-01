@@ -36,12 +36,12 @@ tasks:
   - check:
       type: sort
       q: "Would this help a hiring model treat people fairly?"
-      options: ["Helps", "Does not help"]
+      options: ["Helps", "Not enough on its own"]
       items:
         - ["Test how it scores people from different groups before using it", "Helps", "Testing each group shows who it fails."]
-        - ["Train it on more of the same past hires", "Does not help", "More of the same examples teach the same pattern."]
+        - ["Train it on more of the same past hires", "Not enough on its own", "More of the same examples teach the same pattern."]
         - ["Have a person check its choices, and be able to overrule it", "Helps", "A person can catch a pattern the model shouldn't use."]
-        - ["Hide the word 'women's', but leave everything else the same", "Does not help", "Other clues can still point to the same group, like the name of a girls' school."]
+        - ["Hide the word 'women's', but leave everything else the same", "Not enough on its own", "Other clues can still point to the same group, like the name of a girls' school."]
         - ["Ask what the model is predicting: who was hired before, or who will do the job well?", "Helps", "A model that copies past hiring copies past choices."]
 ```
 

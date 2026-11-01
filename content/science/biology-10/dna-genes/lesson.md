@@ -3,7 +3,7 @@ order: 1
 node: AC9S10U01 n1
 unit: genetics
 title: Where are the instructions?
-summary: "DNA carries the instructions for an organism. It is coiled into chromosomes in the nucleus; a gene is a section of DNA that codes for a protein. Alleles are different versions of the same gene."
+summary: "DNA carries the instructions for an organism. It is coiled into chromosomes in the nucleus; a gene is a section of DNA, and most genes code for a protein. Alleles are different versions of the same gene."
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:
@@ -67,7 +67,7 @@ tasks:
       pairs:
         - ["DNA", "A long molecule carrying the coded instructions"]
         - ["Chromosome", "One long DNA molecule, tightly coiled"]
-        - ["Gene", "A section of DNA that codes for one protein"]
+        - ["Gene", "A section of DNA; most genes code for a protein"]
         - ["Allele", "One version of a gene"]
     hint: ["Start by working out which of these sits inside which, from the biggest down to the smallest, and then match the meanings.", "Go back through the zoom on the board and read the line under the chromosome, the DNA and the gene, because each one says what it's made of or what it does."]
   - check:
@@ -118,7 +118,7 @@ check:
     - ["A gene's sequence of bases (A, T, C, G) is read", "1st"]
     - ["The cell builds a protein from that code", "2nd"]
     - ["The protein does a job (a pigment, an enzyme, a structure)", "3rd"]
-    - ["A characteristic appears (such as eye colour)", "4th"]
+    - ["A characteristic appears (such as pea flower colour)", "4th"]
 ```
 
 ## Elaborate: the same code everywhere
@@ -148,5 +148,5 @@ Write one sentence: "At first I thought… Now I think… because…"
 
 - **DNA** carries coded instructions as a sequence of bases (A, T, C, G).
 - A **chromosome** is one long DNA molecule, coiled; humans have 46, in 23 pairs (one of each pair from each parent).
-- A **gene** is a section of DNA coding for a protein; **alleles** are different versions of one gene.
+- A **gene** is a section of DNA; most genes code for a protein; **alleles** are different versions of one gene.
 - **Genotype:** the alleles you have (such as A and O). **Phenotype:** the characteristic that shows (blood group A).

@@ -18,7 +18,7 @@ code: limits.py#predict
 check:
   type: predict
   q: "An emperor penguin (much bigger, and a species not in the data) is measured. What does the model say?"
-  options: ["One of the three species it knows", "I do not know", "Emperor", "An error"]
+  options: ["One of the three species it has learned", "I do not know", "Emperor", "An error"]
   actual: "Gentoo. The model can only choose between Adelie, Chinstrap and Gentoo, so it picks the closest, even for a penguin unlike any it has seen."
 ```
 
@@ -40,7 +40,7 @@ Run it. Two of the mystery penguins are ordinary; one is far too big and one far
 ```step
 stage: investigate
 code: limits.py#run
-insight: "A model always answers from what it knows, and its confidence can be high even when it is wrong; people building models must say where it should not be used."
+insight: "A model always answers from what it has learned, and its confidence can be high even when it is wrong; people building models must say where it should not be used."
 tasks:
   - check:
       type: question
@@ -53,7 +53,7 @@ tasks:
       q: "All the penguins come from three islands near one research station, from 2007 to 2009. What follows?"
       options: ["The model may do worse on penguins from other places or years, which it has never seen", "It works for every penguin in the world", "It only works on those three islands' rocks", "Nothing"]
       answer: 0
-      explain: "A model knows the world its data came from. Who collected the data, where and when, decides what it can be trusted for."
+      explain: "A model has learned only from the world its data came from. Who collected the data, where and when, decides what it can be trusted for."
 ```
 
 ### Sure but wrong
@@ -62,13 +62,13 @@ What the 100% means.
 
 ### Where the data came from
 
-What a model knows about the world.
+What a model has learned about the world.
 
 ## Modify
 
 ```step
 stage: modify
-insight: "A careful model says when a question is outside what it knows, and a fair test shows that some questions are harder than others."
+insight: "A careful model says when a question is outside what it has learned from, and a fair test shows that some questions are harder than others."
 try: { playground: python, starter: "limits.py#run", files: [../sets/penguins.csv], height: 480 }
 tasks:
   - hint:

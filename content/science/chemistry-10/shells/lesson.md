@@ -3,7 +3,7 @@ order: 10
 node: AC9S10U06 n1
 unit: periodic
 title: How are the electrons arranged?
-summary: "Electrons fill shells around the nucleus in order: 2 in the first, 8 in the second, 8 in the third (for the first 20 elements). The electrons in the outer shell decide how an element behaves."
+summary: "Electrons fill shells around the nucleus in order: 2 in the first, 8 in the second, 8 in the third (the Bohr model for elements 1 to 20; in heavier atoms the third shell holds more). The electrons in the outer shell decide how an element behaves."
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:
@@ -148,6 +148,6 @@ Write one sentence: "At first I thought… Now I think… because…"
 
 **Revision summary**
 
-- Electrons fill **shells** in order: **2**, then **8**, then **8** (then 2 more for potassium and calcium).
+- Electrons fill **shells** in order: **2**, then **8**, then **8** (then 2 more for potassium and calcium). This is the Bohr model for elements 1 to 20; in heavier atoms the third shell holds more.
 - The **outer shell** is the outermost occupied one; its electrons decide how the element reacts.
 - A full shell is followed by a new shell, which is why rows of the periodic table end and begin.

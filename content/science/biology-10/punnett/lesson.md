@@ -4,7 +4,7 @@ node: AC9S10U01 n4
 woven: [AC9S9I03]
 unit: genetics
 title: Can you predict the offspring?
-summary: "A Punnett square shows every way two parents' gametes can combine for one gene. It gives the probability of each genotype and phenotype (such as 3 in 4 showing the dominant trait for Pp × Pp), not a guaranteed count."
+summary: "A Punnett square shows every way two parents' gametes can combine for one gene. It gives the probability of each genotype and phenotype (such as 3 in 4 showing the dominant trait for Pp × Pp), not a guaranteed count. Here it is used for one-gene traits such as pea flower colour; most human traits involve many genes."
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:
@@ -182,3 +182,4 @@ Write one sentence: "At first I thought… Now I think… because…"
 - A **dominant** allele shows when present; a **recessive** one only in **homozygous** form (pp).
 - A **Punnett square** gives the **probability** of each offspring: Pp × Pp gives 1 PP : 2 Pp : 1 pp, so 3 : 1 purple to white; Bb × bb gives 1 : 1.
 - Real numbers vary around the prediction, especially when there are few offspring.
+- Punnett squares here are for one-gene traits such as pea flower colour; most human traits involve many genes.

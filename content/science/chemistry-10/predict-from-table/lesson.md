@@ -81,16 +81,16 @@ tasks:
       q: "Chlorine (group 17) forms compounds with sodium (group 1). Predict the ions."
       options: ["Na⁺ and Cl⁻: sodium gives up its one outer electron and chlorine gains one to fill its outer shell", "Na⁻ and Cl⁺", "Na²⁺ and Cl²⁻"]
       answer: 0
-      feedback: [null, "Metals lose electrons; non-metals gain them.", "Sodium has one outer electron to give and chlorine needs one to complete its shell."]
+      feedback: [null, "Metals lose electrons; non-metals gain them.", "Sodium has one outer electron to give and chlorine gains one to complete its shell."]
       explain: "Group 1 loses 1 electron, group 17 gains 1, so they combine one to one: NaCl."
     hint: ["How many outer electrons does sodium have, and what's the quickest way for it to end up with a full outer shell?", "Now do the same for chlorine with its seven, and remember an electron lost is a plus charge and an electron gained is a minus."]
   - check:
       type: question
       q: "Why are the noble gases (group 18) almost unreactive?"
-      options: ["Their outer shells are full, so they have no need to gain, lose or share electrons", "They are gases, and gases don't react", "They are too light to react"]
+      options: ["Their outer shells are full, so they don't tend to gain, lose or share electrons", "They are gases, and gases don't react", "They are too light to react"]
       answer: 0
       feedback: [null, "Oxygen, fluorine and chlorine are gases and react readily: it is the full shell that matters.", "Helium is light but neon and argon are heavier: it is the full shell."]
-      explain: "A full outer shell is stable. Atoms of other elements react to reach that arrangement."
+      explain: "A full outer shell is stable. That's a useful rule for the first 20 elements: other atoms often react in ways that end with full outer shells."
   - check: { type: reflect, text: "I can use an element's position in the table to predict its outer electrons, shells and reactivity." }
 ```
 
@@ -117,10 +117,10 @@ insight: "Flame tests are the classic evidence that atoms have electron shells w
 check:
   type: question
   q: "Sodium salts give a yellow flame and copper salts a green flame. What does this tell you about the atoms?"
-  options: ["Electrons jump between shells with fixed energies and give out light of a colour set by each element", "All metals burn the same", "The colour comes from the flame, not the metal"]
+  options: ["Electrons move between fixed energy levels and give out light of colours set by each element", "All metals burn the same", "The colour comes from the flame, not the metal"]
   answer: 0
   feedback: [null, "The colours differ, so they don't.", "The colour changes with the metal, not the flame."]
-  explain: "When an electron falls from a higher to a lower shell it gives out light of one fixed colour. Each element has its own pattern, a fingerprint you can use to identify it."
+  explain: "When an electron falls from a higher to a lower energy level it gives out light. Each element gives its own characteristic colours, a fingerprint you can use to identify it."
 ```
 
 ## Elaborate: gaps in the table

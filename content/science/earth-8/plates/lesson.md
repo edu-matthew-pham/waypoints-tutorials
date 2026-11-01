@@ -4,7 +4,7 @@ node: AC9S8U03 n2
 woven: [AC9S7I07]
 unit: plates
 title: What moves the plates?
-summary: "The lithosphere is broken into rigid plates that move a few centimetres a year. Slow convection currents in the hot mantle carry them, driven by Earth's inner heat: from the core below and from radioactive elements in the mantle rock itself."
+summary: "The lithosphere is broken into rigid plates that move a few centimetres a year. Slow convection currents in the hot mantle carry them, driven by Earth's inner heat: from the core below and from radioactive elements in the mantle rock itself. This is a simplified picture: the sinking edges of plates (slab pull) do much of the pulling."
 language: science
 voice: { name: af_heart, speed: 1.1 }
 app:
@@ -180,5 +180,5 @@ Write one sentence: "At first I thought… Now I think… because…"
 
 - The **lithosphere** (crust and top of the mantle) is broken into rigid **tectonic plates**, moving a few centimetres a year.
 - Earth's inner heat (from the **core** below, and from radioactive elements in the mantle rock) drives **convection currents** in the **mantle**: hot rock is less dense and rises, spreads, cools and sinks.
-- The currents carry the plates: apart above rising rock, together above sinking rock.
+- The currents carry the plates: apart above rising rock, together above sinking rock. This is a simplified picture: the sinking edges of plates (slab pull) do much of the pulling.
 - The mantle is solid rock that flows extremely slowly, not liquid magma.

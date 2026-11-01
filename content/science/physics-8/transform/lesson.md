@@ -20,7 +20,7 @@ explainClip:
   clip:
     - caption: { text: "A torch. The battery stores chemical energy.", say: "A torch. The battery stores chemical energy." }
     - wait: 2600
-    - caption: { text: "Chemical becomes electrical in the wires: the type changes, a transformation.", say: "Chemical becomes electrical: the type changes. That's a transformation." }
+    - caption: { text: "Chemical becomes electrical in the battery: the type changes, a transformation.", say: "Chemical becomes electrical: the type changes. That's a transformation." }
     - wait: 3800
     - caption: { text: "Electrical becomes light in the bulb, with heat as a by-product.", say: "Electrical becomes light in the bulb, with some heat as a by-product." }
     - wait: 3400

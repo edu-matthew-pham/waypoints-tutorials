@@ -3,7 +3,7 @@ order: 3
 node: AC9S8U01 n3
 woven: [AC9S7I07]
 unit: cells
-title: What does every cell have?
+title: What do plant and animal cells share?
 summary: "Plant and animal cells share three parts: the nucleus (the control centre, holding DNA), the cell membrane (controls what gets in and out) and the cytoplasm (where reactions happen)."
 language: science
 voice: { name: af_heart, speed: 1.1 }
@@ -18,7 +18,7 @@ explainClip:
   caption: "Parts of a cell"
   say: "Plant and animal cells share three parts; plant cells add more."
   clip:
-    - caption: { text: "Every cell has a nucleus, a cell membrane and cytoplasm.", say: "Every cell has a nucleus, a cell membrane and cytoplasm." }
+    - caption: { text: "Every plant and animal cell has a nucleus, a cell membrane and cytoplasm.", say: "Every plant and animal cell has a nucleus, a cell membrane and cytoplasm." }
     - wait: 2950
     - click: { selector: "#board [fill=\"#8e6bbf\"]" }
     - expect: { selector: "body", contains: "Nucleus." }
@@ -30,7 +30,7 @@ explainClip:
     - caption: { text: "They also have a cell wall and a large vacuole.", say: "Plant cells also have a cell wall and a large vacuole." }
 hook: "A cheek cell and a leaf cell look completely different. Look closer and they share three parts. Every job in a cell depends on them."
 ---
-Every cell, from your skin to a gum leaf, is built on the same three parts.
+Every plant and animal cell, from your skin to a gum leaf, is built on the same three parts.
 
 ## Engage: the cell's control centre
 
@@ -96,7 +96,7 @@ tasks:
 
 In your book: draw a simple cell and label the three shared parts with what each does.
 
-## Elaborate: what only plants have, and what every cell has
+## Elaborate: what only plants have, and what plant and animal cells share
 
 ```step
 stage: modify

@@ -159,8 +159,8 @@ Sort each idea.
 stage: info
 check:
   type: question
-  q: "A photo app labels a photo of a husky as 'wolf'. Every training label was checked by experts. What is the most likely cause?"
-  options: ["It had few examples like this one, so it compared it with wolves", "Some of its labels were wrong", "The app's program crashed"]
+  q: "A photo app labels a photo of a black swan as 'goose'. Every training label was checked by experts. What is the most likely cause?"
+  options: ["It had few examples like this one, so it compared it with geese", "Some of its labels were wrong", "The app's program crashed"]
   answer: 0
   feedback: [null, "The labels were checked. Think about which examples it may have been missing.", "A crash would give no answer, not a wrong one."]
 ```

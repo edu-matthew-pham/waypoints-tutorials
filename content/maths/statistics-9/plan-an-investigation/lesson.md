@@ -25,7 +25,7 @@ check: {"type": "predict", "q": "Which is the best statistical question for the 
 ```step
 stage: "run"
 insight: "A plan names the variable to measure and how: here the percentage of each bin's contents that is recyclable."
-check: {"type": "question", "q": "What should you measure in each bin?", "options": ["The percentage of its contents that is recyclable", "How heavy the bin is", "What colour the bin is", "How full the bin is"], "answer": 0, "feedback": [null, "Weight alone doesn't say how much is recyclable.", "Colour is irrelevant.", "How full tells you little about the contents."], "explain": "The percentage that is recyclable, found by sorting the bin's contents."}
+check: {"type": "question", "q": "What should you measure in each bin?", "options": ["The percentage of its contents that is recyclable", "How heavy the bin is", "How many items are in the bin", "How full the bin is"], "answer": 0, "feedback": [null, "Weight alone doesn't say how much is recyclable.", "A count doesn't say how much of it is recyclable.", "How full tells you little about the contents."], "explain": "The percentage that is recyclable, found by sorting the bin's contents."}
 ```
 
 ## Investigate: sample and skew
@@ -76,7 +76,7 @@ insight: "Counting bins and time, with a review of choosing displays."
 tasks:
   - {"check": {"type": "number", "q": "6 bins a day for 4 days. How many bins in all?", "answer": 24, "tolerance": 0, "explain": "6 × 4 = 24."}}
   - {"check": {"type": "number", "q": "Sorting each bin takes 5 minutes. How many minutes for 24 bins?", "answer": 120, "tolerance": 0, "explain": "24 × 5 = 120."}}
-  - {"check": {"type": "question", "q": "Review: for the percentage recyclable in each bin, which display suits the results?", "options": ["A dot plot or histogram", "A pie of days", "A line of bin colours", "A table of names"], "answer": 0, "feedback": [null, "Days are not parts of a whole.", "Colours are not data.", "Names are not data."], "explain": "A dot plot or histogram shows the spread of percentages."}}
+  - {"check": {"type": "question", "q": "Review: for the percentage recyclable in each bin, which display suits the results?", "options": ["A dot plot or histogram", "A pie chart of the percentages", "A line graph of the bins in the order checked", "A bar chart with a bar for each bin"], "answer": 0, "feedback": [null, "Each bin's percentage is a separate measurement, not a share of one whole.", "The order you checked in isn't a time that matters, so a line suggests a trend.", "Fine for a few bins, but a dot plot shows the centre and spread at a glance."], "explain": "A dot plot or histogram shows the spread of percentages."}}
 ```
 
 ### Bins in all

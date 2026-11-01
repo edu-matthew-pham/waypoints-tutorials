@@ -42,7 +42,7 @@ check:
     - ["save-the-creek.example: Sign our petition to stop cars parking by Riverbend creek.", "To persuade", "It wants you to agree and to sign."]
     - ["funnyfarm.example: Ten bean jokes that will make you groan.", "To entertain", "Jokes are for fun."]
     - ["riverbend-library.example: How to borrow an e-book, step by step.", "To inform", "Steps that help you do something, with nothing to buy."]
-    - ["kestrel-helmets.example: The Kestrel helmet, now $49. Add to cart.", "To sell", "A price and Add to cart: it wants you to buy."]
+    - ["riverbend-helmets.example: The Riverbend helmet, now $49. Add to cart.", "To sell", "A price and Add to cart: it wants you to buy."]
 ```
 
 Was your guess right? The address, the words used (order now, sign, we earn money) and the About page are the clues. Some pages do two things at once. A review site that earns money when you buy what it reviews both informs and sells: your class will argue about that one.
@@ -121,7 +121,7 @@ check:
 >
 > **Why every rider needs a helmet**
 >
-> A helmet should sit level on your head and fit snugly. Replace it after a crash. Our new Kestrel helmets are 20% off this month!
+> A helmet should sit level on your head and fit snugly. Replace it after a crash. Our new Riverbend helmets are 20% off this month!
 >
 > *About us: The Riverbend Bike Shop has sold bikes in Riverbend since 1998.*
 
