@@ -133,7 +133,7 @@ goals:
   - "I can say what happens to a solid that dissolves."
   - "I can say how to tell if a change made new stuff."
 before: |
-  The one idea: if no new stuff is made, the change can be undone. The common mistake is that when something dissolves it has gone. The sugar question and the board meet it. Burning and cooking are introduced as the contrast.
+  The one idea: if no new stuff is made, the change can be undone (usually; Year 8 shows the real test is whether new stuff is made, since a few changes that make new stuff can be undone too). The common mistake is that when something dissolves it has gone. The sugar question and the board meet it. Burning and cooking are introduced as the contrast.
 
   The board is the one used in the Year 7 lesson *Pure substance or mixture?*. The next lesson, *How do you separate a mixture?*, uses the same idea to get a dissolved salt back.
 
