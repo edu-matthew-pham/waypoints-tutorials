@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Han tombs often held model houses, granaries and farm animals.
+Many families also made offerings to their ancestors.
+Nib says: "They put model houses in tombs because they liked decorating."
+Nib says: "So the tombs don't tell us anything about what they believed."
+# endregion

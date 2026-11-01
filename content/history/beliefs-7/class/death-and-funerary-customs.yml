@@ -1,0 +1,29 @@
+inquiry:
+  q: "If historians in 2,000 years could study only the biggest, grandest buildings from today, what would they get wrong about how most people live?"
+  prompts:
+    - "Whose lives would they see?"
+    - "What evidence would they need for everyone else?"
+  notes: "Builds the 'whose evidence is it?' question before the tombs. Keep it to buildings, not students' homes or families."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Whose tomb is it?"
+    minutes: 4
+    do: |
+      For Lady Dai's tomb, a tomb model and the terracotta army, pairs say who it was made for, one belief it shows, and who it leaves out.
+    notes: "Bring out that all three come from wealthy or royal burials."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Lady Dai's tomb held thousands of objects. What is the safest conclusion?"
+    options:
+      - "Wealthy families stocked tombs richly for the afterlife"
+      - "Everyone in Han China was buried with thousands of objects"
+      - "The tomb tells us nothing because it is only one tomb"
+    answer: 0
+    explain: "Strong evidence for wealthy burials; other evidence is needed for everyone else."
+    feedback:
+      - null
+      - "One rich family's tomb does not show everyone's burial."
+      - "One tomb is still useful evidence; ask whose burial it shows."

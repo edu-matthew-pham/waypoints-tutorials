@@ -1,0 +1,29 @@
+inquiry:
+  q: "If an archaeologist in 2,000 years found a school's trophy cabinet, what might they work out about what the school valued?"
+  prompts:
+    - "What would they get right?"
+    - "What would they need to know to explain why the trophies were kept?"
+  notes: "Builds the move from an object or practice to the idea behind it. Keep it to the school, not to students' homes, families or religion."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Because..."
+    minutes: 5
+    do: |
+      Read out a practice (offerings at home, a careful funeral, a model granary in a tomb, an adviser reading a flood). Pairs answer with one sentence starting "Because many people believed...".
+    notes: "Listen for 'many people believed'. If a pair says 'because it was tradition', ask what the tradition was for."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Which answer explains a practice, not just describes it?"
+    options:
+      - "Tombs held food because many believed the dead would need it"
+      - "Tombs held food, dishes and clothes"
+      - "Tombs held food because it was a strange custom"
+    answer: 0
+    explain: "A belief explains why the practice was worth doing."
+    feedback:
+      - null
+      - "That describes what was in the tomb, not why."
+      - "Calling it strange gives no reason. What did people believe?"

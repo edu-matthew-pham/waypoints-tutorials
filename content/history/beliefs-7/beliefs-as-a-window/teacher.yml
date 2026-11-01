@@ -1,0 +1,65 @@
+learning: "explain what beliefs and practices reveal about what an ancient society valued and how it was organised, and identify what set it apart"
+summary: "Explain what the beliefs and practices of Han China reveal about its values (family duty, a ruler who rules well, provision for the dead) and organisation, and identify a distinctive feature by comparing with Egypt."
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 5 min · Practise 6 min · Make 9 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can explain what a belief or practice reveals about what a society valued.
+  - I can explain how a belief shaped the way a society was organised.
+  - I can name one thing that set a society's beliefs or practices apart.
+struggle: "Students describe again instead of explaining. Keep asking: so what does that show about them?"
+before: |-
+  AC9HH7K11 n3, the integration node: it pulls lessons 1 and 2 together into what beliefs and practices reveal, and links back to People and power (K10). The move is from description ("they made offerings") to explanation ("which shows family duty did not end at death").
+
+  Beliefs stay described as what people held. "Just superstitious" is Nib's slip because it stops the explanation, not because students must agree with any belief. No step asks students about their own beliefs or religion.
+
+  Real content (checked 1 Nov 2026): Confucianism as the basis of official conduct and the bureaucracy's reliance on an educated class grounded in Confucian writings (Met Han essay); 136 BCE and Dong Zhongshu (Britannica); Lady Dai's four nested coffins (Smarthistory). Egypt: the physical preservation of the body was central to afterlife belief, and the ba could not survive without the preserved body (Britannica, "death: Ancient Egypt"). India (wider step): Rigveda 10.16 asks Agni to carry the dead to the ancestors (pitrs) during cremation; Hindu funeral rites (antyeshti) generally involve cremation (Britannica).
+
+  Simplified: the comparison is of emphasis, and both halves are generalisations about wealthy burials. Egyptian practice changed across 3,000 years, and Han families also cared about the body (Lady Dai's coffins, efforts to slow decay). Say so if students push.
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips.
+
+  Relevant ACARA AC9HH7K11 elaborations (examples, not a checklist): "investigating beliefs associated with death, such as belief in an afterlife, and funerary customs and practices (for example, burial in tombs and techniques of mummification)"; "describing how the prominence of male and female gods changed based on locality and time"; "formulating questions to analyse how Vedism and later, Brahmanism shaped death and funerary customs"; "developing criteria to evaluate the significant beliefs, values and practices of Indian society associated with, for example, the role of the family and religious ceremonies, such as rites of passage for boys and men, and rites of passage for girls and women, and marriage rites".
+
+  First Nations: AC9HH7K11 has no First Nations elaborations; we write none.
+running:
+  - "Predict: ask what a stranger could work out about a family from what it keeps on its walls (keep it general, not students' own homes)."
+  - "Try: read each row and ask 'so what does that show?'"
+  - "Worked example: let Nib's mistake sit. Ask whether we have to share a belief to learn from it."
+  - "Vary: distinctive means a difference in what was stressed. Both societies cared about the dead."
+  - "Make: students write in their own book; a partner checks for 'which shows' or 'which reveals'."
+stuck:
+  - see: "A student says the beliefs were just superstition."
+    ask: "Whatever we think of it, what did the belief lead people to do?"
+    fix: "Beliefs shaped practices, so they are evidence of values and organisation."
+  - see: "A student describes practices again instead of explaining."
+    ask: "So what does that show about what they valued?"
+    fix: "Add 'which shows...' to each description."
+  - see: "A student says Egypt had beliefs and China did not, or the other way round."
+    ask: "Did both believe in an afterlife? What did each one stress?"
+    fix: "Distinctive is a difference in emphasis, not having beliefs or not."
+support: "Give a sentence frame: 'Many people believed... so they... which shows that the society valued...'."
+stretch: "How do the beliefs in this course connect to the hierarchy in People and power? Give one link."
+leads: "This is the last lesson in Beliefs and practices. Contact and conflict is the next lens."
+exit:
+  q: "Name one belief or practice from Han China and explain what it reveals about the society."
+  a: "For example: offerings to ancestors reveal that family duty mattered and did not end at death."
+explain: "Beliefs and practices are a window on a society. In Han China, offerings show how much family duty mattered, the Mandate of Heaven shows that rulers were believed to need Heaven's approval, and Confucian learning shaped government. Compared with Egypt's mummies, Han tombs stressed a home stocked for the dead."
+sources:
+  - title: "Han Dynasty (206 B.C.–220 A.D.), The Metropolitan Museum of Art essay"
+    url: https://www.metmuseum.org/essays/han-dynasty-206-b-c-220-a-d
+    checked: 2026-11-01
+  - title: "Dong Zhongshu, Encyclopaedia Britannica"
+    url: https://www.britannica.com/biography/Dong-Zhongshu
+    checked: 2026-11-01
+  - title: "The search for immortality: The Tomb of Lady Dai, Smarthistory"
+    url: https://smarthistory.org/tomb-of-lady-dai
+    checked: 2026-11-01
+  - title: "Death: Ancient Egypt, Encyclopaedia Britannica"
+    url: https://www.britannica.com/science/death/Ancient-Egypt
+    checked: 2026-11-01
+  - title: "Rig Veda 10.16 (summary), VedaPath"
+    url: https://vedapath.app/en/rig-veda/mandala-10/16
+    checked: 2026-11-01
+  - title: "Antyeshti, Encyclopaedia Britannica"
+    url: https://www.britannica.com/topic/antyeshti
+    checked: 2026-11-01

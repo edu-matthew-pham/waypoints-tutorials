@@ -1,0 +1,29 @@
+inquiry:
+  q: "If all you knew about a club was the promises its members made when they joined, what could you work out about the club?"
+  prompts:
+    - "What would it value?"
+    - "Who would owe what to whom?"
+  notes: "Builds the move from beliefs to values and organisation. Use a club, not students' families or religion."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Which shows..."
+    minutes: 5
+    do: |
+      Read out a description (offerings to ancestors, the Mandate of Heaven, Confucian officials, tomb models of granaries). Pairs finish the sentence "...which shows that the society valued..." and share one.
+    notes: "Push past repeating the description. Accept any reasoned value."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Which sentence explains what a practice reveals?"
+    options:
+      - "Offerings to ancestors show family duty did not end at death"
+      - "Families made offerings to their ancestors"
+      - "Offerings to ancestors were just superstition"
+    answer: 0
+    explain: "Explaining says what the practice reveals."
+    feedback:
+      - null
+      - "That describes the practice. What does it show?"
+      - "A label stops the explanation. What did the practice show they valued?"
