@@ -5,7 +5,7 @@ One course shared by Economics and Business, Civics and Citizenship, Geography a
 ## Rules
 
 - Shared rules (First Nations T1, made-up cases T2, writing T5, contestable ideas T8, pace-agnostic T9, lesson shape T11) are in `roadmap/rules.md`, with their reasons (1 Nov 2026). Subject rules:
-- Examples come from Year 7 content only, so skill lessons also build what the class needs to know. Mark the subject and its courses **Preview** (pilot, not finished) and show planned lessons as "Coming later" (Project doc humanities-y7-plan › Placeholders; log the shared code change in `roadmap/shared.md`).
+- Examples come from Year 7 content only, so skill lessons also build what the class needs to know. Show planned lessons as "Coming later" (no Preview label since 1 Nov 2026: `shared.md` › Decided: humanities; "not yet tried with a class" is tracked here) (Project doc humanities-y7-plan › Placeholders; log the shared code change in `roadmap/shared.md`).
 - Before Year 7 catch-up lessons (Year 6 HASS) go with the first course where a prerequisite link needs one (Project doc humanities-y7-plan › Before Year 7).
 - Framing: dip in, not done first. Lessons are short, linked from the subject lessons that use each skill ("Build up to this"); each has an "In each subject" note on what differs (History asks why and how we know, Geography where and why there, Economics choices and trade-offs, Civics who decides). Catch-ups: "Questions that guide an inquiry" (AC9HS6S01) and "Find it and sort it" (AC9HS6S02).
 - Each lesson names every node it covers as a list (`node: [AC9HE7S01 n1, AC9HC7S01 n1, ...]`), so all four curriculum maps and searches find it. Where one subject's node asks for more than the others, that extra goes in that subject's own lesson, not here.
