@@ -1,10 +1,10 @@
 ---
 title: For Civics teachers
-summary: "What is built so far in Year 7 Civics and Citizenship (how Australia is governed, freedoms and taking part, law and justice, a diverse democracy, whose view is it?, and values and living together), how it fits your unit, and what is planned."
+summary: "What is built so far in Year 7 Civics and Citizenship (how Australia is governed, freedoms and taking part, law and justice, a diverse democracy, whose view is it?, and values and living together), how it fits your unit, and the Year 6 catch-up."
 ---
 ## What is here
 
-**This is a preview.** Six courses are built (twenty-three lessons in total), and none of it has been tried with a class.
+Six courses are built (twenty-three lessons in total).
 
 - [**How Australia is governed**](../civics/government-7/): five lessons for AC9HC7K01, in the order the ideas depend on each other: *The Constitution* (hinge), *Representative and responsible government* (hinge), *Power shared, power checked*, *One country, several governments (federation)*, and *Borrowed from Britain and America*.
 - [**Freedoms and taking part**](../civics/democracy-7/): four lessons for AC9HC7K02, in waypoint order: *The five democratic freedoms* (speech, association, assembly, religion and movement, hinge), *Within the bounds of law* (why legal limits such as defamation and public safety exist), *Ways to take part in democracy* (comparing voting, petitions, committee inquiries, volunteering, community groups and peaceful protest), and *Formal and active citizenship* (legal status versus active participation, and historical exclusion and change in Australia).
@@ -25,9 +25,9 @@ Every lesson follows the same steps in the same order for every class: predict, 
 
 Where the standards reach religion, heritage, values, migrants and refugees (AC9HC7K04 and K05), the lessons are factual and neutral: terms and dated public data on the site, values questions as discussion with no marked answer, and nothing personal asked.
 
-## What is planned
+## Year 6 catch-up and what comes next
 
-These are plans, not promises. All five Year 7 knowledge standards now have a course. The other Civics skill, explaining ways to take part (AC9HC7S04), is taught in *Ways to take part* and *Formal and active citizenship*. A Year 6 catch-up, *Three levels of government*, is planned in [Before Year 7: HASS](../hass/before-year-7/).
+Every Year 7 Civics standard has a course. Both skills are covered too: *Whose view is it?* teaches AC9HC7S03, and AC9HC7S04 (explaining ways to take part) is taught in *Ways to take part* and *Formal and active citizenship*. For students who missed Year 6, *Three levels of government* in [Before Year 7: HASS](../hass/before-year-7/three-levels/) covers local, state and federal government, and *The Constitution* and *One country, several governments* link to it. Years 8 to 10 are not planned yet.
 
 ## For you
 

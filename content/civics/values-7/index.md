@@ -1,7 +1,6 @@
 ---
 title: Values and living together
-preview: true
-summary: "Preview (a pilot, not yet tried with a class). Four lessons for AC9HC7K05: values often named as Australian and how they show up in public life, whether those values are lived (with real, dated survey figures), values shared across religious traditions, and why people come to Australia. Values questions are discussion, never marked, and no step asks about a student's own background, beliefs or family."
+summary: "Four lessons for AC9HC7K05: values often named as Australian and how they show up in public life, whether those values are lived (with real, dated survey figures), values shared across religious traditions, and why people come to Australia. Values questions are discussion, never marked, and no step asks about a student's own background, beliefs or family."
 tagline: "What shared values hold a diverse society together?"
 years: "7"
 order: 6
