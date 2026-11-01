@@ -20,7 +20,7 @@ Saying someone *did* something is only half the answer. A historian also explain
 
 **Evidence from more than one kind of source.** Some Qin weights that survive have the emperor's order of 221 BCE, to make measures the same, written on them. Qin coins survive in large numbers. The bamboo slips from a Qin official's tomb show the laws he worked with. The emperor's own stone inscriptions boast of one set of laws and measures. Sima Qian, writing about a century later, describes the changes too.
 
-**A story told with care.** According to Sima Qian, in 213 BCE the chief minister Li Si advised the emperor to burn books of older histories and teachings that could be used to criticise him, keeping books on farming, medicine and fortune-telling. Sima Qian also says that the next year more than 460 scholars who criticised the emperor were killed. Historians agree the Qin did destroy some books it disapproved of. Many think the story of the scholars grew bigger in the telling, because Sima Qian wrote for the Han, the dynasty that replaced the Qin, and no earlier text mentions it.
+**A story told with care.** According to Sima Qian, in 213 BCE the chief minister Li Si advised the emperor to burn books of older histories and teachings that could be used to criticise him, keeping books on farming, medicine and fortune-telling. Sima Qian also says that the next year more than 460 scholars who criticised the emperor were killed. Historians agree the Qin did destroy some books it disapproved of. Many think the story of the scholars grew bigger in the telling: Sima Qian wrote for the Han, the dynasty that replaced the Qin, and some historians point out that no surviving earlier text mentions it.
 
 ## Predict: who made it happen?
 
