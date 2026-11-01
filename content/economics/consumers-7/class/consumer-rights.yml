@@ -1,0 +1,29 @@
+inquiry:
+  q: "A shop has a big NO REFUNDS sign. Your new kettle breaks after a week. Who wins: the sign or you?"
+  prompts:
+    - "Who decides what rights you have: the shop, or the law?"
+    - "Would it matter if you'd just changed your mind instead?"
+  notes: "Let students argue it out before the lesson names the consumer guarantees."
+activities:
+  - at: run
+    kind: activity
+    title: "Faulty, changed my mind, or didn't ask?"
+    minutes: 4
+    do: |
+      Read out situations (a cracked phone case, a jumper you don't like, a door-to-door sale). Students hold up one finger for a fault, two for change of mind, three for a sale they didn't ask for.
+    notes: "Then name the right for each: guarantee, none, cooling-off."
+  - at: make
+    kind: discussion
+    title: "Swap guides"
+    minutes: 4
+    do: |
+      Pairs swap their how-to-return guides and check each has the right, what to bring, and who to contact first.
+    notes: "Keep the products made up."
+questions:
+  - at: investigate
+    title: "After the warranty"
+    type: question
+    q: "Mia's 12-month warranty has ended and her kettle breaks. Does she still have rights?"
+    options: ["Yes, the consumer guarantees are still there", "No, the warranty is over", "Only if she has an extended warranty", "Only if the shop agrees"]
+    answer: 0
+    explain: "A warranty is extra. The consumer guarantees sit underneath and don't end with it."

@@ -1,0 +1,29 @@
+inquiry:
+  q: "Mia buys a kettle. What can she expect from the shop, and what can the shop expect from her?"
+  prompts:
+    - "Which of these could Mia insist on?"
+    - "Which are things Mia has to do?"
+  notes: "Write the class's ideas in two lists, 'can claim' and 'must do', before naming them rights and responsibilities."
+activities:
+  - at: run
+    kind: activity
+    title: "Claim it or do it?"
+    minutes: 4
+    do: |
+      Read out statements about the kettle sale. Students raise a hand for "can claim" (a right) and fold their arms for "must do" (a responsibility). Then ask whose it is: Mia's or the shop's.
+    notes: "The second question is the one that catches the hinge mistake."
+  - at: investigate
+    kind: discussion
+    title: "Pairs"
+    minutes: 4
+    do: |
+      Pairs take one of Mia's rights and find the shop's responsibility that matches it, then one of the shop's rights and Mia's matching responsibility.
+    notes: "This is the hinge. Check every pair can say what Mia must do."
+questions:
+  - at: investigate
+    title: "Right or responsibility?"
+    type: question
+    q: "Paying the price on the label is Mia's..."
+    options: ["Responsibility", "Right", "Shop's right only", "Choice"]
+    answer: 0
+    explain: "It's something Mia must do, so it's her responsibility (and the shop's right is to be paid)."

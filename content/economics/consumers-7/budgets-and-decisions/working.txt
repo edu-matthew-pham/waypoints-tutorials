@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Sam wants a $240 bike.
+A pay-later deal splits it into four payments of $60, one every two weeks.
+Nib says: "Buy it today. We can work out the budget later."
+Nib says: "Sam will find the $60 somehow."
+# endregion

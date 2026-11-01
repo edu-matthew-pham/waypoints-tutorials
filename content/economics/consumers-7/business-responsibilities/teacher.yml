@@ -1,0 +1,48 @@
+summary: "Students explain businesses' responsibilities for consumer and financial products and services: mandatory and voluntary standards, honest information, and product safety recalls. The planted mistake is that safety is the customer's problem once something is sold."
+learning: "explain businesses' responsibilities, including mandatory and voluntary standards and product safety recalls"
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 8 min · Practise 6 min · Make 6 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can explain the difference between a mandatory and a voluntary standard.
+  - I can explain what a product safety recall asks a business to do.
+  - I can give an example of a business's responsibility to give honest information.
+struggle: "Students think a business's job ends at the sale, and that 'standard' always means 'the law'. Ask: what if the problem is found after it's sold? And: does the law require it, or did the business choose it?"
+before: |
+  **This lesson states real Australian rules.** Checked on 1 Nov 2026:
+  - Toys for children up to and including 36 months must meet a mandatory standard that reduces the risk of small parts coming off; fines and penalties may apply for not complying, and suppliers may need to recall products that don't meet it (Product Safety Australia, "Toys for children up to and including 36 months of age" mandatory standard).
+  - In a voluntary recall, the supplier must notify the Commonwealth Minister in writing via the ACCC Product Safety website within 2 days; it is an offence to sell recalled products (ACCC, small business toolkit, "Recalls").
+  - Businesses must not mislead customers (the Australian Consumer Law's rule on misleading conduct); kept general in student text.
+  The student text says recalls "usually" offer a repair, replacement or refund, because the remedy depends on the recall. The voluntary standard for compostable cups is described in general terms; check any specific standard before naming it.
+
+  Brightbasket Supermarkets is a coined name (checked when it was first used in Types of businesses); the rattle has no brand. Riverbend is a made-up town.
+
+  The wider step on banks is kept general on purpose: honest, clear information about fees and interest. Financial services rules are detailed and change; if you go further, use ASIC's Moneysmart site.
+running:
+  - "Predict: take a vote. Ask the 'it's the parents' problem' side what they'd want if it were their baby."
+  - "Try: the sort has two recall examples; ask what the second adds to the first."
+  - "Worked example: let Nib's lines sit. Ask 'Does safety stop mattering once something is sold?'"
+  - "Vary: link the cafe's voluntary standard back to entrepreneurs' values."
+  - "Make: students pick a made-up Riverbend business."
+stuck:
+  - see: "A student says once something is sold, safety is the buyer's problem."
+    ask: "If the rattle could choke a baby, who should warn the parents?"
+    fix: "The business's responsibility for safety goes on after the sale. That's what a recall is for."
+  - see: "A student thinks every standard is the law."
+    ask: "Does the law require it, or did the business choose it?"
+    fix: "Mandatory standards are required by law. Voluntary standards are a business's choice."
+  - see: "A student thinks a recall just means taking things off the shelves."
+    ask: "What about the people who already bought one?"
+    fix: "A recall also warns people who bought the product and tells them what to do."
+stretch: "Why might it cost a business more to skip a recall than to run one? It does not go on to the next lesson."
+support: "A two-by-two card: Required by law (mandatory) / Chosen (voluntary) on one side, Before the sale / After the sale on the other, with one example in each."
+leads: |
+  Next in Consumer rights and responsibilities: Plan before you buy.
+
+  The government's product safety recall list (Product Safety Australia) has real, current recalls if you want students to read one; choose a low-stakes product and check it is still current.
+exit:
+  q: "What is the difference between a mandatory and a voluntary standard, and what does a product safety recall ask a business to do?"
+  a: "A mandatory standard is required by law; a voluntary one is a business's choice. A recall asks the business to warn people about the danger, tell them what to do, and stop selling the product."
+explain: |
+  Businesses must meet **mandatory standards** (safety rules set by law) and may choose **voluntary standards**. They must give **honest information** and not mislead customers.
+
+  If a product turns out to be unsafe, the business must **recall** it: warn people about the danger, tell them what to do, and stop selling it. Recalls usually offer a repair, replacement or refund.

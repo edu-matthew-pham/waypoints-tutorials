@@ -1,0 +1,29 @@
+inquiry:
+  q: "A shop sold hundreds of baby rattles last month. Now it turns out they can break. Whose problem is that?"
+  prompts:
+    - "What should happen to the rattles still on the shelves?"
+    - "What about the ones already in people's homes?"
+  notes: "Collect ideas, then name the steps of a recall. Keep it calm: the point is how businesses keep people safe."
+activities:
+  - at: run
+    kind: activity
+    title: "Law or choice?"
+    minutes: 4
+    do: |
+      Read out examples (a toddler toy tested for small parts, a cafe choosing compostable cups, a bike shop joining a quality scheme). Students stand for "the law requires it" and sit for "the business chose it".
+    notes: "That is mandatory and voluntary. Name the terms after the sort."
+  - at: investigate
+    kind: discussion
+    title: "What a recall needs"
+    minutes: 4
+    do: |
+      Pairs list everything Brightbasket should do about the rattle. Compare with the worked example.
+    notes: "Check every list includes warning the people who already bought one."
+questions:
+  - at: investigate
+    title: "Mandatory or voluntary?"
+    type: question
+    q: "A standard the law requires is..."
+    options: ["Mandatory", "Voluntary", "A warranty", "A recall"]
+    answer: 0
+    explain: "Mandatory means required by law. Voluntary means the business chooses it."

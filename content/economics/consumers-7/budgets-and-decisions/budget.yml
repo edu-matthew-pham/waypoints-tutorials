@@ -1,0 +1,92 @@
+# Sam's weekly budget (made up) for "Plan before you buy".
+
+# region: run
+widget: sheet
+cell A1: Sam's week
+cell B1: $
+cell A2: Bakery shifts
+cell B2: 90
+cell A3: Mowing a neighbour's lawn
+cell B3: 20
+cell A4: Total in
+cell B4: =SUM(B2:B3)
+cell A6: Phone plan
+cell B6: 25
+cell A7: Bus fares
+cell B7: 15
+cell A8: Food and going out
+cell B8: 40
+cell A9: Total out
+cell B9: =SUM(B6:B8)
+cell A11: Left over
+cell B11: =B4-B9
+edit: none
+# endregion
+
+# region: investigate
+widget: sheet
+cell A1: Sam's week
+cell B1: $
+cell A2: Bakery shifts
+cell B2: 90
+cell A3: Mowing a neighbour's lawn
+cell B3: 20
+cell A4: Total in
+cell B4: =SUM(B2:B3)
+cell A6: Phone plan
+cell B6: 25
+cell A7: Bus fares
+cell B7: 15
+cell A8: Food and going out
+cell B8: 40
+cell A9: Total out
+cell B9: =SUM(B6:B8)
+cell A11: Left over
+edit: B11
+# endregion
+
+# region: modify
+widget: sheet
+cell A1: Sam's week
+cell B1: $
+cell A2: Bakery shifts
+cell B2: 90
+cell A3: Mowing a neighbour's lawn
+cell B3: 20
+cell A4: Total in
+cell B4: =SUM(B2:B3)
+cell A6: Phone plan
+cell B6: 25
+cell A7: Bus fares
+cell B7: 15
+cell A8: Food and going out
+cell B8: 40
+cell A9: Total out
+cell B9: =SUM(B6:B8)
+cell A11: Left over
+cell B11: =B4-B9
+edit: B2:B3, B6:B8
+# endregion
+
+# region: make
+widget: sheet
+cell A1: Sam's week
+cell B1: $
+cell A2: Bakery shifts
+cell B2: 90
+cell A3: Mowing a neighbour's lawn
+cell B3: 20
+cell A4: Total in
+cell B4: =SUM(B2:B3)
+cell A6: Phone plan
+cell B6: 25
+cell A7: Bus fares
+cell B7: 15
+cell A8: Food and going out
+cell B8: 40
+cell A9: Total out
+cell B9: =SUM(B6:B8)
+cell A11: Left over
+cell B11: =B4-B9
+edit: A2:B3, A6:B8
+# endregion

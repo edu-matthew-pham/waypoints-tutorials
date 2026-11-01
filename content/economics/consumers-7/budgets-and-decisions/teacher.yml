@@ -1,0 +1,49 @@
+summary: "Students explain how a budget and savings plan support better decisions about consumer and financial products, using a made-up weekly budget on a small spreadsheet, and link the decision to a right or responsibility. The planted mistake is committing to a pay-later deal first and budgeting afterwards. Debt is touched, not taught: paying later still has an opportunity cost, and borrowing can be useful or costly depending on what it's for."
+learning: "explain how a budget or savings plan supports a decision about a purchase, and link it to a consumer right or responsibility"
+time: 45
+timing: "Predict and Try 8 min · Worked example 14 min · Vary 8 min · Practise 6 min · Make 9 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can read a budget and work out what is left over.
+  - I can write a formula for what is left over, and change the plan to see what happens.
+  - I can explain why checking a budget before committing helps, including with pay-later deals.
+  - I can link a purchase decision to one right or responsibility.
+struggle: "Students treat the budget as something you do after you've bought. Ask: what would the budget have told Sam before he signed?"
+before: |
+  **Debt is a touch, not a lesson (Matthew, 1 Nov 2026).** Buy-now-pay-later is real and students see it in ads, so it is named by type (never by brand). Year 7's job is checking that repayments fit the budget before committing (this node), and seeing that paying later still has an opportunity cost. Whether a particular debt is worth it, interest, and good and bad debt are later work: business borrowing in AC9HE8K05, good and bad debt in AC9HE9K01, short- and long-term costs of loans in AC9HE10K03. Student text says borrowing "can be useful or costly, depending on what it's for. You'll look at that later." If students ask, an example of useful borrowing: a business borrowing for a machine that lets it do more work than the repayments cost. That comparison is for the later standards.
+
+  **Facts about buy-now-pay-later (checked 1 Nov 2026):** from 10 June 2025, buy-now-pay-later contracts come under Australia's credit laws, and providers need a credit licence (ASIC media release 25-069MR). The lesson only says that missed payments "can add fees", which is true of many such deals; it doesn't state any provider's fees.
+
+  **Privacy and care.** Nothing asks about students' own money, pocket money or family spending. Families use credit, including pay-later, for many reasons; nothing in the lesson judges them. Budgeting is one useful habit, not a moral test, and not every household can save the same way.
+
+  Sam's budget and the bike are made up; the amounts are invented for easy arithmetic, not real prices.
+
+  The sheet is the ICT course's `sheet` board: students click a cell and type; a formula starts with `=`. If students haven't met spreadsheets, show B4 (=SUM(B2:B3)) first.
+running:
+  - "Predict: take a vote. Many will say 'take it today'."
+  - "Try: put the sheet up and read it together; click B11 to show the formula."
+  - "Worked example: ask 'How much does Sam have every two weeks?' before revealing Nib's mistake. Then students write the formula in B11."
+  - "Vary: students change B8 and watch B11. Ask what else Sam could change instead."
+  - "Make: students try their own plan on the sheet, then explain it in their book."
+stuck:
+  - see: "A student says paying later costs nothing now, so there's no cost."
+    ask: "Where does the $60 every two weeks come from?"
+    fix: "Each repayment is money you can't use for something else then. That's the opportunity cost of paying later."
+  - see: "A student types 30 in B11 instead of a formula."
+    ask: "If Sam's bakery pay changes, will 30 change too?"
+    fix: "A formula like =B4-B9 keeps the answer right when the numbers change."
+  - see: "A student says debt is always bad."
+    ask: "Could borrowing ever help someone do more than it costs them?"
+    fix: "Borrowing can be useful or costly, depending on what it's for. That's for later years; here, the habit is checking it fits first."
+stretch: "Sam's bakery shifts are casual, so some weeks he gets fewer. How would you change the budget to plan for a slow week? It does not go on to another lesson."
+support: "A three-line card: In − Out = Left over. Then: Left over × weeks ≥ price?"
+leads: |
+  This is the last lesson in Consumer rights and responsibilities. The spreadsheet skills come from ICT › Working with data, if students want more practice.
+
+  Wider (teacher choice, not part of the student steps): the node's wider items include how access to budgeting and financial tools differs across communities, including remote and First Nations communities. If you take this up, use local, community-approved material and First Nations-led sources. The lesson writes nothing about it.
+exit:
+  q: "How does a budget help before buying something on a pay-later deal? Name one right or responsibility that also matters."
+  a: "The budget shows what is left over, so you can check the repayments fit and see what else you'd give up. Rights: the product must be of acceptable quality. Responsibilities: read the terms, keep the receipt."
+explain: |
+  A **budget** shows money **in**, money **out**, and what is **left over**. A **savings plan** uses what is left over to save over time. Checking the budget **before** committing shows whether you can afford it and how long saving will take.
+
+  Paying later still has an opportunity cost: each repayment is money you can't use for something else then. Borrowing can be useful or costly, depending on what it's for.

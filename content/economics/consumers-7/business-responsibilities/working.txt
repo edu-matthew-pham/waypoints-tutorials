@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Brightbasket sold hundreds of a baby rattle last month.
+Tests now show a small part can come loose, and a baby could choke on it.
+Nib says: "Once it's sold, any problem with it is the customer's problem."
+Nib says: "So the recall is just Brightbasket being kind."
+# endregion

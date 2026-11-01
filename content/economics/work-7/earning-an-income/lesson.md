@@ -86,7 +86,7 @@ tasks:
         - "That's what came in, but $3000 had to go out to pay costs. Leo keeps what is left."
         - "Costs are taken away, not added."
         - "That's what the business spent, not what Leo earned."
-      explain: "A business owner's income is the profit: $5000 − $3000 = $2000. It goes up and down each month."
+      explain: "A business owner's income is the profit: 5000 − 3000 = 2000 dollars. It goes up and down each month."
   - check:
       type: question
       q: "Theo owns shares in a company. Why is he paid dividends?"

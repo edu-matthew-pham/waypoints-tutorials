@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Mia buys a kettle at Riverbend Appliances.
+Mia can expect the kettle to work and be safe.
+Nib says: "Customers only have rights. Businesses only have responsibilities."
+Nib says: "So Mia doesn't need to pay on time or read the instructions."
+# endregion

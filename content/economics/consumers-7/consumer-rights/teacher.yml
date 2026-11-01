@@ -1,0 +1,48 @@
+summary: "Students explain their rights when buying: the consumer guarantees (acceptable quality, matching the description, services with care and skill), what a warranty adds, why a change of mind isn't covered, cooling-off periods after unsolicited sales, and the first step in returning goods. The planted mistake is that rights end when the warranty ends."
+learning: "explain the consumer guarantees, warranties, cooling-off periods and how to return goods, and apply them to a situation"
+time: 45
+timing: "Predict and Try 8 min · Worked example 14 min · Vary 8 min · Practise 6 min · Make 9 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can explain what the consumer guarantees are and that a sign can't remove them.
+  - I can tell a warranty from a consumer guarantee.
+  - I can say when a cooling-off period applies, and that a change of mind usually isn't covered.
+  - I can explain the first step in returning a faulty product.
+struggle: "Students think shops' signs and warranties decide their rights. Keep asking: is something wrong with it, and did you buy it from a business?"
+before: |
+  **This lesson states real Australian law.** Every claim was checked on 1 Nov 2026:
+  - The consumer guarantees apply automatically to products and services bought from a business; they can't be taken away by anything a business says or does; a "no refunds" sign doesn't remove them; products must be of acceptable quality and match their description, and services must be provided with due care and skill; warranties are extra promises on top and can't replace the guarantees; the first step is to contact the business that sold it; most guarantees don't apply to one-off sales between two people where the seller isn't running a business (ACCC, "Consumer rights and guarantees").
+  - Businesses aren't obliged to refund or replace for a change of mind; if a business offers its own change-of-mind policy, it must honour it (WA Consumer Protection, "Are you covered for change of mind?").
+  - Unsolicited consumer agreements (for example, door-to-door sales and some phone sales) have a 10 business day cooling-off period (WA Consumer Protection, "Cooling-off and cancelling unsolicited contracts", on the Australian Consumer Law).
+
+  What the lesson leaves out on purpose: the difference between major and minor failures and which remedy applies (repair, replace or refund). It says "what Mia gets depends on the problem". The ACCC pages have the detail if a student asks. Rules can change, so check the ACCC site before teaching if this page is old.
+
+  **Privacy.** No step asks about students' own purchases or returns. Riverbend people and shops are made up.
+running:
+  - "Predict: take a vote on the NO REFUNDS sign. Many think the sign wins."
+  - "Try: after the match, ask which of the four you can't get from a shop sign or a warranty (the guarantees)."
+  - "Worked example: let Nib's lines sit. Ask 'What was the warranty: the only protection, or extra?'"
+  - "Vary: the garage sale question shows the guarantees are about buying from a business."
+  - "Make: students write a short return guide for a made-up faulty product in their book."
+stuck:
+  - see: "A student says a 'no refunds' sign means no refunds, even for faulty goods."
+    ask: "Can a sign take away a right the law gives you?"
+    fix: "No. The consumer guarantees come with every purchase from a business, whatever the sign says."
+  - see: "A student says you can always get a refund if you change your mind."
+    ask: "Is anything wrong with the product?"
+    fix: "If nothing is wrong, the shop doesn't have to refund you, though some choose to."
+  - see: "A student thinks the cooling-off period applies to everything."
+    ask: "Did the buyer ask for the visit or call?"
+    fix: "Cooling-off periods are for certain sales you didn't ask for, such as door-to-door sales."
+stretch: "Why might the law give a cooling-off period for door-to-door sales but not for something you chose in a shop? It does not go on to the next lesson."
+support: "A three-question card: 1. Is something wrong with it? (guarantees) 2. Did the seller make an extra promise? (warranty) 3. Did you ask for the sale? (cooling-off)."
+leads: |
+  Next in Consumer rights and responsibilities: What businesses must do.
+
+  The ACCC website has a consumer section with plain-language pages on guarantees, refunds and returns, useful if students want to check a real case. The node's wider items (digital purchases, a practical guide) are in the wider step and the Make step.
+exit:
+  q: "Mia's kettle breaks after a week. The shop has a NO REFUNDS sign. What are her rights, and what should she do first?"
+  a: "The consumer guarantees still apply: the kettle must be of acceptable quality, and a sign can't remove that. She should contact the shop that sold it, with her receipt."
+explain: |
+  The **consumer guarantees** come with every purchase from a business: products must be of **acceptable quality** and **match their description**, and services must be done with **care and skill**. A sign can't take them away.
+
+  A **warranty** is an extra promise on top. A **change of mind** usually isn't covered. A **cooling-off period** (10 business days) applies to some sales you didn't ask for, such as door-to-door sales. To return something, contact the business that sold it first.

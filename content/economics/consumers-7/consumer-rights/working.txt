@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Mia's kettle came with a 12-month warranty from the maker.
+Fourteen months later, it stops heating.
+Nib says: "The warranty is over, so Mia has no rights at all."
+Nib says: "There's no point asking the shop about it."
+# endregion

@@ -146,7 +146,7 @@ Tagline: *Why people work, and how they earn a living.* Three lessons in node or
 - Tested: validate, `check-nodes`, build, `check-decks` (course), effort lint, and a headless run at 1100 px and 375 px (each lesson loads with no errors and 13 checks, each bug check ticks only on its answer line, no horizontal scroll, the course and subject pages list the course).
 - Publish: whole-site (subject and teacher pages).
 
-## Plan (1 Nov 2026, awaiting Matthew's "go"): course `economics/consumers-7`, *Consumer rights and responsibilities* (AC9HE7K05)
+## Plan (1 Nov 2026; built the same day, see Built below): course `economics/consumers-7`, *Consumer rights and responsibilities* (AC9HE7K05)
 
 Tagline: *What can you expect when you buy something?* Four lessons in node order, two units: `rights` (n1–n3) and `planning` (n4). After `scarcity-7` (the subject page already says so). No clips. Lessons 1–3 have no board (30 Oct decision); lesson 4 uses the `sheet` board for a budget (30 Oct decision). Shape: the worked-example shape used by the other Economics courses.
 
@@ -197,6 +197,15 @@ Tagline: *What can you expect when you buy something?* Four lessons in node orde
 **Self-check at build:** as for the other Economics courses, plus every legal claim matched to a checked source in the teacher notes, no brand names, and no step about students' own money.
 
 **Publish:** whole-site (subject and teacher pages; lesson 4's board is an existing widget, so no new widget code).
+
+## Built: `economics/consumers-7`, *Consumer rights and responsibilities* (1 Nov 2026, Matthew said go; Preview, not yet tried with a class)
+
+- Course `economics/consumers-7` (units `rights`, `planning`), after `scarcity-7`. Lessons: `rights-and-responsibilities` (n1 hinge, Mia's kettle, four-way sort, bug answer line 3 with `smaller:`, a pairing match; `assumes: [AC9HE7K04]` because the node data names K04 as prior), `consumer-rights` (n2, guarantees, warranty, change of mind, cooling-off, the garage-sale exception; bug answer line 3), `business-responsibilities` (n3, the Brightbasket rattle recall, mandatory and voluntary standards; bug answer line 3), `budgets-and-decisions` (n4, Sam's weekly budget on the `sheet` board: read it, write `=B4-B9`, change B8 and watch the left-over amount; the pay-later bug answer line 3). Teacher notes (each lists its checked sources and dates) and class plans for all four. Misconceptions `consumers-only-have-rights`, `warranty-ends-rights`, `safety-ends-at-sale`, `buy-then-budget`. Subject page lists the course as built; `economics-teachers.md` updated (all Year 7 knowledge standards now built).
+- Facts checked 1 Nov 2026 and cited in teacher notes: consumer guarantees, "no refunds" signs, warranties as extras, private sales (ACCC, Consumer rights and guarantees); no obligation to refund a change of mind (WA Consumer Protection); 10 business day cooling-off for unsolicited agreements (WA Consumer Protection, on the ACL); the mandatory standard for toys for children up to 36 months (Product Safety Australia); 2-day recall notification and the offence of selling recalled goods (ACCC small business toolkit); buy-now-pay-later under credit law from 10 June 2025 (ASIC 25-069MR, teacher notes only). Left out on purpose: major vs minor failures and which remedy applies.
+- Departures from the plan: lesson 3's typical step is "half a recall" (what is missing when a shop only takes stock off the shelves), not an ordered list, because the order of recall steps isn't fixed; lesson 1's wider change-of-mind step went ahead because the fact checked out. Debt is a touch (decided above).
+- **Gotcha found (shared, noted in `shared.md`):** in `language: maths` lessons, check `explain` and `feedback` text has `$…$` pairs stripped as maths, so "$110 − $80 = $30" showed as "110 − 80 = $30". Explain and feedback lines with two or more dollar amounts were reworded to say "dollars" (here and in `work-7/earning-an-income`). Question text, options and lesson text are fine, because a `$` followed by a digit doesn't close maths there.
+- Tested: validate, `check-nodes`, build, `check-decks` (course), and a headless run at 1100 px and 375 px (each lesson loads with no errors, each bug check ticks only on its answer line, no horizontal scroll; on the budget board, typing 30 in B11 doesn't tick, writing `=B4-B9` does, and changing B8 to 25 ticks the vary check; dollar amounts show as text).
+- Publish: whole-site (subject and teacher pages).
 
 ## Decided: interactive boards (30 Oct 2026, Matthew)
 

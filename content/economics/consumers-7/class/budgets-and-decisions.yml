@@ -1,0 +1,29 @@
+inquiry:
+  q: "Sam can take a $240 bike home today and pay $60 every two weeks. What would you want to know before saying yes?"
+  prompts:
+    - "Where would the $60 come from?"
+    - "What would Sam not be able to do with that money?"
+  notes: "Collect questions; most of them are answered by a budget. Talk about Sam, not students' own money."
+activities:
+  - at: run
+    kind: activity
+    title: "Read the budget together"
+    minutes: 4
+    do: |
+      Put Sam's sheet up. Ask the class to find total in, total out and what is left over, then click B11 to show the formula.
+    notes: "If the class hasn't used spreadsheets, show B4's =SUM first."
+  - at: modify
+    kind: discussion
+    title: "Try a plan"
+    minutes: 4
+    do: |
+      Change one line on the board live (food and going out, or an extra lawn). Ask how many weeks the bike takes now.
+    notes: "Each change is a choice with its own opportunity cost: less going out, or more work."
+questions:
+  - at: investigate
+    title: "Every two weeks"
+    type: question
+    q: "Sam has $30 left over each week. A pay-later deal asks for $60 every two weeks. What does the budget show?"
+    options: ["It would use everything Sam has left, with nothing spare", "He would have $30 spare every two weeks", "He can't afford any of it", "The deal costs nothing"]
+    answer: 0
+    explain: "$30 × 2 = $60, exactly the payment. A cancelled shift could mean a missed payment."
