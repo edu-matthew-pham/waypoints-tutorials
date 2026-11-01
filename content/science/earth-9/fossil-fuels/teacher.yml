@@ -11,6 +11,7 @@ before: |
   The common reasoning error is comparing human emissions (about 10 GtC a year) with gross natural flows (about 120) and concluding they can't matter; the board shows the natural flows balance, so the extra accumulates.
 
   Board notes: the model starts balanced at 280 ppm (or at 420 ppm with `start: today`, burning at 10). Oceans and plants take up extra CO₂ in proportion to how far the air is above 280 ppm, so in the model about 60% of what is burned stays in the air over 50 years (about 45% in the real world). Numbers are rounded; the model leaves out land-use change and slow rock processes. The typical tier asks for a burning rate that holds today's CO₂ steady (about 4 GtC a year in the model: well under half of today's emissions, and the uptake would shrink over time in reality).
+  The wider step's "cool burn" is used as a general fire-management term. If the class wants to know about cultural burning, use First Nations-led sources, for example Firesticks Alliance Indigenous Corporation (https://www.oric.gov.au/spotlight/cool-burning-country-and-community), rather than explaining it ourselves (roadmap/rules.md T1).
 running:
   - "Engage: count how many chose 'nothing: 10 is tiny'."
   - "Explore: ask where the burned carbon went (the stores show it)."

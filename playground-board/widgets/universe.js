@@ -25,8 +25,8 @@
 
   // ---------- timeline ----------
   var STAGES = [
-    { t: 1e-43, when: 'The first instant', title: 'The big bang', temp: 1e32, look: 'glow', what: 'Space, time, matter and energy all begin, in an extremely hot, dense state. It isn’t an explosion into empty space: space itself begins to expand.' },
-    { t: 1e-32, when: 'A tiny fraction of a second', title: 'Inflation', temp: 1e27, look: 'glow', what: 'Space expands enormously, far faster than at any time since, in a tiny fraction of a second.' },
+    { t: 1e-43, when: 'The first instant', title: 'The big bang', temp: 1e32, look: 'glow', what: 'The universe is extremely hot and dense, and space has been expanding ever since. It isn’t an explosion into empty space. Whether time itself began here is still an open question.' },
+    { t: 1e-32, when: 'A tiny fraction of a second', title: 'Inflation (a leading idea)', temp: 1e27, look: 'glow', what: 'A leading idea: space expands enormously, far faster than at any time since, in a tiny fraction of a second.' },
     { t: 1e-6, when: 'A millionth of a second', title: 'Protons and neutrons', temp: 1e13, look: 'soup', what: 'Still too hot for atoms. Quarks combine into protons and neutrons as the universe expands and cools.' },
     { t: 180, when: '3 minutes', title: 'The first nuclei', temp: 1e9, look: 'nuclei', what: 'Protons and neutrons fuse into nuclei of hydrogen and helium: about three-quarters hydrogen, one-quarter helium by mass, the proportions we still measure today.' },
     { t: 380000 * 3.156e7, when: '380 000 years', title: 'The first atoms', temp: 3000, look: 'atoms', what: 'Cool enough for electrons to join nuclei and make atoms. Light can now travel freely: that light, stretched to microwaves, is the cosmic microwave background we detect today.' },
