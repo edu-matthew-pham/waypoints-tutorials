@@ -39,7 +39,7 @@ tasks:
   - check:
       type: question
       q: "Two ideas for the wait. A: wait with delay() for a random 2 to 5 seconds, then light the LED. B: keep checking the button while waiting, using millis(). Which can catch a false start?"
-      options: ["B: during a delay() the sketch isn't looking at the button", "A: delay() is more accurate", "Both, as long as the wait is random"]
+      options: ["B: delay() stops it watching the button", "A: delay() is more accurate", "Both, as long as the wait is random"]
       answer: 0
       feedback: [null, "delay() is accurate, but nothing else happens while it runs, so an early press goes unseen.", "The randomness isn't the problem. The sketch has to be watching the button during the wait."]
       explain: "While delay() runs, the sketch does nothing else, so it can't see an early press. A millis() loop keeps checking the button the whole time it waits."
@@ -139,10 +139,10 @@ tasks:
   - check:
       type: question
       q: "Which is the strongest evidence that the design meets a criterion?"
-      options: ["A test from the table that set the input and recorded the expected result", "It worked when I tried it", "My partner said it looks good", "The code has no errors"]
+      options: ["A planned test with its recorded result", "It worked every time I tried it", "My partner said it looks good", "The code compiles with no errors"]
       answer: 0
-      feedback: [null, "Which input did you try, and was it the one the criterion is about?", "Opinions aren't measurements.", "Code with no errors can still do the wrong thing."]
-      explain: "A planned test with a recorded result is evidence; everything else is a feeling."
+      feedback: [null, "Which inputs did you try, and were they the ones the criterion is about? Trying it is not the same as a planned test.", "Opinions aren't measurements.", "Code with no errors can still do the wrong thing."]
+      explain: "A planned test from your table sets the input the criterion is about and records what happened; that is evidence. Everything else is a feeling."
   - check: { type: reflect, text: "I wrote my evaluation: for each criterion, met or not, with the test that shows it; one improvement I would make and why; and who else could use it." }
 ```
 

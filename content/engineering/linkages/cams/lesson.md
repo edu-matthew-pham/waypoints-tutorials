@@ -88,7 +88,7 @@ tasks:
   - check:
       type: question
       q: "Why must a snail cam always turn the same way?"
-      options: ["Turned backwards, the follower would hit the step and jam", "It would rise too quickly", "The motor can only turn one way", "It would not matter"]
+      options: ["Backwards, the follower hits the step and jams", "It would rise too quickly", "The motor can only turn one way", "It would not matter"]
       answer: 0
       feedback: [null, "Backwards, it meets the cliff edge, not a slope.", "Motors can reverse; the cam is the problem.", "It matters: try it with your hand on a real one."]
       explain: "Forwards, the follower drops off the step. Backwards, it would have to climb a vertical step, so it jams."

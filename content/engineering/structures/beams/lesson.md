@@ -69,7 +69,7 @@ stage: investigate
 insight: "Two rules: the supports share the load like a lever (the nearer support holds more), and stiffness depends on depth cubed (the I value)."
 tasks:
   - smaller:
-      check: { type: question, q: "Picture the load sitting right on top of the left support. How much does the right support have to hold?", options: ["Nothing: the left one takes it all", "Half the load", "All of it"], answer: 0, shuffle: false, feedback: [null, "Half would mean the load is in the middle. This one is right over the left support.", "Then the left support would be doing nothing, but the load is sitting on it."], explain: "The nearer a support is to the load, the more it holds. Slide the load a little way along and the right support starts to take some." }
+      check: { type: question, q: "Picture the load sitting right on top of the left support. How much does the right support have to hold?", options: ["None of it", "Half of it", "All of it"], answer: 0, shuffle: false, feedback: [null, "Half would mean the load is in the middle. This one is right over the left support.", "Then the left support would be doing nothing, but the load is sitting on it."], explain: "The left support takes it all. The nearer a support is to the load, the more it holds. Slide the load a little way along and the right support starts to take some." }
     check:
       type: answer
       q: "A 10 N load sits 0.1 m from the left support of a 0.5 m beam. How much does the left support hold, in newtons?"
@@ -138,10 +138,10 @@ tasks:
   - check:
       type: question
       q: "Why are steel beams in buildings I-shaped?"
-      options: ["Most of the steel is at the top and bottom, far from the middle, where it adds most stiffness", "I-shapes are easier to paint", "They weigh more", "The middle of a beam does all the work"]
+      options: ["Most of the steel is far from the middle", "I-shapes are easier to paint", "They weigh more", "The middle of a beam does all the work"]
       answer: 0
-      feedback: [null, "Not the reason.", "They weigh less for their stiffness.", "The middle does least: that is why the web is thin."]
-      explain: "Stiffness comes from material far from the middle. An I-beam puts its flanges there and keeps a thin web between them."
+      feedback: [null, "Paint isn't the reason; think about stiffness.", "They weigh less for their stiffness.", "The middle does least: that is why the web is thin."]
+      explain: "Stiffness comes from material far from the middle. An I-beam puts its flanges at the top and bottom and keeps a thin web between them."
 ```
 
 ### Shares

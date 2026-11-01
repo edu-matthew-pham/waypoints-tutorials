@@ -76,10 +76,10 @@ tasks:
   - check:
       type: question
       q: "The line drifts left under the robot. To steer back, the robot should…"
-      options: ["Slow the left motor (or reverse it) and keep the right one going", "Speed up both motors", "Slow the right motor", "Stop both"]
+      options: ["Slow the left motor", "Speed up both motors", "Slow the right motor", "Stop both"]
       answer: 0
       feedback: [null, "That keeps the same heading.", "That turns it right, away from the line.", "Then it never gets back."]
-      explain: "Turning towards the line: the inside wheel slows."
+      explain: "Turning towards the line: the inside (left) wheel slows, or even reverses, and the right one keeps going."
   - check: { type: reflect, text: "My plan has: the driver wiring (IN1–IN4, two ENA pins, shared ground), the battery chosen above, the sensor and its position, the chassis sketch with sizes, and the course tests." }
 ```
 
@@ -144,10 +144,10 @@ tasks:
   - check:
       type: question
       q: "Which is the strongest evidence that the design meets a criterion?"
-      options: ["A test from the table that set the input and recorded the expected result", "It worked when I tried it", "My partner said it looks good", "The code has no errors"]
+      options: ["A planned test with its recorded result", "It worked every time I tried it", "My partner said it looks good", "The code compiles with no errors"]
       answer: 0
-      feedback: [null, "Which input did you try, and was it the one the criterion is about?", "Opinions aren't measurements.", "Code with no errors can still do the wrong thing."]
-      explain: "A planned test with a recorded result is evidence; everything else is a feeling."
+      feedback: [null, "Which inputs did you try, and were they the ones the criterion is about? Trying it is not the same as a planned test.", "Opinions aren't measurements.", "Code with no errors can still do the wrong thing."]
+      explain: "A planned test from your table sets the input the criterion is about and records what happened; that is evidence. Everything else is a feeling."
   - check: { type: reflect, text: "I wrote my evaluation: for each criterion, met or not, with the test that shows it; one improvement I would make and why; and who else could use it." }
 ```
 

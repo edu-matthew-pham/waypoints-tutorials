@@ -97,10 +97,10 @@ tasks:
   - check:
       type: question
       q: "Where does the 'lost' work go?"
-      options: ["It becomes heat and sound in the rubbing parts: the energy is still there, just not useful", "It is destroyed by friction", "It goes back into the motor", "It stays in the rope"]
+      options: ["It becomes heat and sound", "It is destroyed by friction", "It goes back into the motor", "It stays in the rope"]
       answer: 0
       feedback: [null, "Energy is never destroyed.", "Friction doesn't return energy.", "The rope doesn't store it."]
-      explain: "Energy is conserved. Friction transfers some of it to heat (and a little sound), which is no use for lifting."
+      explain: "Energy is conserved. Friction transfers some of it to heat (and a little sound), which is no use for lifting: the energy is still there in the rubbing parts, just not useful."
 ```
 
 ### Four pulleys, step by step
@@ -146,10 +146,10 @@ tasks:
   - check:
       type: question
       q: "Which change makes a gear train more efficient?"
-      options: ["Fewer meshes (for example one bigger stage instead of two small ones), or better lubrication", "More meshes", "A faster motor", "Heavier gears"]
+      options: ["Fewer meshes, or better lubrication", "More meshes, to share the load", "A faster motor to beat the friction", "Heavier, stronger gears"]
       answer: 0
-      feedback: [null, "Each mesh wastes a little more.", "Speed doesn't fix friction.", "Heavier gears usually waste more."]
-      explain: "Every mesh loses some energy, so fewer meshes and less rubbing (oil, bearings) mean less waste. That trades against gear size."
+      feedback: [null, "Each mesh wastes a little more, however the load is shared.", "Speed doesn't fix friction.", "Heavier gears usually waste more."]
+      explain: "Every mesh loses some energy, so fewer meshes (for example one bigger stage instead of two small ones) and less rubbing (oil, bearings) mean less waste. That trades against gear size."
 ```
 
 ### Two stages

@@ -144,10 +144,10 @@ tasks:
   - check:
       type: question
       q: "Your arm needs 350 N to hold 50 N. Why is it built that way?"
-      options: ["The hand moves 7 times as far and as fast as the muscle, so a small muscle movement swings the hand a long way", "It is a design fault", "The muscle is weak, so it needs a big force", "A class 3 lever needs less force than the load"]
+      options: ["A small muscle movement swings the hand a long way", "It is a design fault", "The muscle is weak, so it needs a big force", "A class 3 lever needs less force than the load"]
       answer: 0
       feedback: [null, "Bodies trade force for speed and reach on purpose: think of throwing.", "The muscle is strong: 350 N.", "It needs more: 350 N for 50 N."]
-      explain: "Every lever trades force for distance. A class 3 lever gives up force to gain distance and speed: arms, tweezers, fishing rods, a hockey stick."
+      explain: "The hand moves 7 times as far and as fast as the muscle. Every lever trades force for distance. A class 3 lever gives up force to gain distance and speed: arms, tweezers, fishing rods, a hockey stick."
 ```
 
 ### A wheelbarrow

@@ -115,10 +115,10 @@ tasks:
   - check:
       type: question
       q: "Finger joints come out loose. What do you change?"
-      options: ["Make the fingers wider and the gaps narrower by about the kerf", "Cut slower", "Use thicker sheet", "Glue them"]
+      options: ["Widen fingers, narrow gaps by the kerf", "Cut slower so less is burnt away", "Use thicker sheet so it grips", "Glue them to fill the gaps"]
       answer: 0
-      feedback: [null, "Speed changes the burn, not the plan.", "Then nothing fits at all.", "That hides the problem."]
-      explain: "Allow for the kerf in the drawing: wider fingers, narrower gaps."
+      feedback: [null, "Slower usually burns more away, and speed does not change the plan.", "Then nothing fits at all.", "That hides the problem."]
+      explain: "Allow for the kerf in the drawing: make the fingers wider and the gaps narrower by about the kerf."
 ```
 
 ### A square

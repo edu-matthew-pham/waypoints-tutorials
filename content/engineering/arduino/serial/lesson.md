@@ -136,7 +136,7 @@ tasks:
   - check:
       type: question
       q: "A night light comes on in daylight. What is the most useful first step?"
-      options: ["Print the reading and compare it with the threshold", "Rewrite the whole sketch", "Add a longer delay", "Swap the LED"]
+      options: ["Print the reading and the threshold", "Rewrite the whole sketch", "Add a longer delay", "Swap the LED"]
       answer: 0
       feedback: [null, "Find out what the board sees first.", "Timing isn't the question.", "The LED does what the code tells it."]
       explain: "Printing the value shows whether the reading or the threshold is the problem."
@@ -155,7 +155,7 @@ try: { playground: board, starter: "board.yml#make", height: 680 }
 tasks:
   - hint: ["map() rescales a number: you give it the number, the range it's in now, and the range you want.", "Keep the answer in a new int variable, then print that."]
     smaller:
-      check: { type: question, q: "In map(level, 0, 1023, 0, 100), which two numbers are the range you want?", options: ["0 and 100", "0 and 1023", "level and 0"], answer: 0, explain: "0 to 1023 is where the knob's numbers are now; 0 to 100 is where the coach wants them." }
+      check: { type: question, q: "In map(level, 0, 1023, 0, 100), which two numbers are the range you want?", options: ["0 and 100", "0 and 1023", "level and 0"], answer: 0, feedback: [null, "0 to 1023 is the range the knob gives now, not the one you want.", "level is the reading to change, not a range end."], explain: "0 to 1023 is where the knob's numbers are now; 0 to 100 is where the coach wants them." }
     check: { type: board, text: "Print the knob as a percentage, 0 to 100, one number per line, and check it with the knob somewhere in the middle.", when: "g = 1 and n >= 2 and k > 100 and k < 920 and p >= k / 10.23 - 1 and p <= k / 10.23 + 1", explain: "map(level, 0, 1023, 0, 100) turns 0–1023 into 0–100." }
   - hint: ["Drag the knob right to the end, then read the last line on the monitor."]
     check: { type: board, text: "Turn the knob all the way up. The monitor should say exactly 100.", when: "g = 1 and k >= 1020 and p = 100", explain: "map gives exactly 100 at 1023. A sum that rounds down on the way can stop at 99." }

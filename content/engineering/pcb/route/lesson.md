@@ -52,6 +52,7 @@ tasks:
       q: "What happened when GND's trace reached OUT's copper?"
       options: ["The board refused: it would be a short circuit", "The two traces joined", "GND jumped over OUT", "Nothing: copper can overlap"]
       answer: 0
+      feedback: [null, "Joining them is the short circuit the board stops.", "On one layer, a trace can't jump; it needs a via to the other side.", "Overlapping copper is joined copper."]
       explain: "Touching copper joins nets. Here that would short GND to OUT."
 ```
 
@@ -115,13 +116,15 @@ tasks:
       q: "Two traces of different nets touch. What is it called?"
       options: ["A short circuit", "A via", "A net", "A ratsnest"]
       answer: 0
+      feedback: [null, "A via joins layers on purpose, on one net.", "A net is a set of pads meant to be joined; these two are different nets.", "The ratsnest is the drawing of joins still to make."]
       explain: "Touching copper joins nets: a short circuit."
   - check:
       type: question
       q: "What is a via?"
-      options: ["A plated hole that takes a trace from one layer to the other", "A gap between two parts", "A thin ratsnest line", "A pad for a connector"]
+      options: ["A plated hole joining the two layers", "A gap between two parts", "A thin ratsnest line", "A pad for a connector"]
       answer: 0
-      explain: "A via joins copper on the top to copper on the bottom."
+      feedback: [null, "A gap is just space; a via is copper.", "Ratsnest lines are only a drawing of what to join.", "A pad is where a part's leg is soldered; a via only links the layers."]
+      explain: "A via is a plated hole that takes a trace from one layer to the other: it joins copper on the top to copper on the bottom."
   - check:
       type: answer
       q: "A board's traces are 52 cells long in all. How much copper is that, in mm, to the nearest mm?"

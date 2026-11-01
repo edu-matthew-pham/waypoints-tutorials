@@ -150,7 +150,7 @@ insight: "Writing pinMode and digitalWrite from scratch for a new pin puts the l
 try: { playground: board, starter: "board.yml#make", height: 640 }
 hint: ["setup() runs once, first: that's where pin 7 gets ready.", "You need two lines: one in setup() that makes pin 7 an output, and one in loop() that switches it on.", "Every line ends with ;"]
 smaller:
-  check: { type: question, q: "Which of these only has to happen once, so it belongs in setup()?", options: ["pinMode(7, OUTPUT);", "digitalWrite(7, HIGH);", "delay(1000);"], answer: 0, explain: "Telling the board pin 7 is an output only has to happen once. Switching it on goes in loop()." }
+  check: { type: question, q: "Which of these only has to happen once, so it belongs in setup()?", options: ["pinMode(7, OUTPUT);", "digitalWrite(7, HIGH);", "delay(1000);"], answer: 0, feedback: [null, "Switching the pin on is the job, so it goes in loop().", "A pause is part of what happens again and again, in loop()."], explain: "Telling the board pin 7 is an output only has to happen once. Switching it on goes in loop()." }
 check: { type: board, text: "The LED is wired to pin 7. Write the sketch to switch it on (and keep it on).", when: "l = 255 and m = 1", explain: "pinMode(7, OUTPUT) in setup(), digitalWrite(7, HIGH) in loop()." }
 ```
 

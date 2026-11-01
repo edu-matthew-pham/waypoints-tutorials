@@ -138,10 +138,10 @@ tasks:
   - check:
       type: question
       q: "If one fixed pulley does not make the pull smaller, why use one?"
-      options: ["It changes the direction: you can pull down, using your own weight, instead of lifting up", "It makes the load lighter", "It makes you pull less rope", "There is no reason to"]
+      options: ["You can pull down instead of lifting up", "It makes the load lighter", "It makes you pull less rope", "There is no reason to"]
       answer: 0
       feedback: [null, "The load weighs the same: 400 N needs 400 N.", "One rope, one metre: the same as lifting directly.", "A flagpole or a well bucket would be much harder to lift straight up."]
-      explain: "Like an idler gear, a fixed pulley changes the direction, not the size. Flagpoles, curtains, and the top pulley of every block and tackle do this."
+      explain: "Like an idler gear, a fixed pulley changes the direction, not the size, so you can pull down using your own weight. Flagpoles, curtains, and the top pulley of every block and tackle do this."
 ```
 
 ### Fewest ropes
@@ -169,10 +169,10 @@ tasks:
   - check:
       type: question
       q: "Which uses less rope to lift a 600 N load 2 m: 3 ropes or 6 ropes?"
-      options: ["3 ropes: 6 m of rope instead of 12 m, but a 200 N pull instead of 100 N", "6 ropes: more pulleys always means less work", "They use the same rope", "You cannot tell without the pulley sizes"]
+      options: ["3 ropes: 6 m instead of 12 m", "6 ropes: more pulleys always means less work", "They use the same rope", "You cannot tell without the pulley sizes"]
       answer: 0
       feedback: [null, "6 ropes halve the pull but double the rope: the work is the same.", "Rope = ropes × height: 6 m and 12 m.", "Pulley size does not change the rope count or the rope pulled."]
-      explain: "Rope = ropes × height. Fewer ropes: more pull, less rope."
+      explain: "Rope = ropes × height: 6 m for 3 ropes, 12 m for 6. Fewer ropes: more pull (200 N instead of 100 N), less rope."
   - check:
       type: match
       q: "Each mechanism trades one thing for another. Match each to what it gives up to make your force bigger."

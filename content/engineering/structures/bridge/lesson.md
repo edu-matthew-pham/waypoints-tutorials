@@ -55,10 +55,10 @@ tasks:
   - check:
       type: question
       q: "Why did A-G fail when no member pulls more than 2000 N?"
-      options: ["It is long and pushed: a long member buckles under a much smaller push", "It is pulled too hard", "Triangles are weak", "The pin at A broke"]
+      options: ["It is long and pushed, so it buckles", "It is pulled too hard", "Triangles are weak", "The pin at A broke"]
       answer: 0
       feedback: [null, "Look at its colour: red means it pushes.", "Triangles are rigid; this one's sides are too long for their push.", "Pins don't fail on this board."]
-      explain: "A 4.5 m member buckles at about 400 N. Long members should pull, or be cut into short ones."
+      explain: "A long member buckles under a much smaller push: a 4.5 m member buckles at about 400 N. Long members should pull, or be cut into short ones."
 ```
 
 ### The deck
@@ -86,6 +86,7 @@ tasks:
       q: "A pushed member is cut in half by bracing it at its middle. How much bigger a push can each half take?"
       options: ["4 times", "2 times", "The same", "Half as much"]
       answer: 0
+      feedback: [null, "Buckling goes with 1 ÷ length², not 1 ÷ length.", "Shorter members buckle less easily, so they take more.", "Shorter means stronger against buckling, not weaker."]
       shuffle: false
       explain: "Buckling goes with 1 ÷ length², so half the length takes 2² = 4 times the push."
 ```

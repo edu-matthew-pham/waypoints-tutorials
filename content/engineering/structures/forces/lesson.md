@@ -62,7 +62,7 @@ tasks:
     check:
       type: question
       q: "A-C pushes with 707 N, more than the 1000 N load shared between two sides (500 N each). Why more?"
-      options: ["It pushes at a slant: only part of its push holds the load up, so it must push harder", "The board is wrong", "The load gets bigger as it goes down", "Pushes are always bigger than pulls"]
+      options: ["It slants: only part of its push holds the load up", "The board is wrong", "The load gets bigger as it goes down", "Pushes are always bigger than pulls"]
       answer: 0
       feedback: [null, "It is right: slanted members need more force.", "The load stays 1000 N.", "Not always: it depends on the angle."]
       explain: "Only the upward part of a slanted push holds the load up. The flatter the slope, the smaller that part, so the bigger the push."

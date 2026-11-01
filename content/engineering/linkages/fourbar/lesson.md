@@ -113,7 +113,7 @@ tasks:
   - check:
       type: question
       q: "If the shortest bar is the frame (the ground), and the rule holds, what happens?"
-      options: ["Both the crank and the rocker can turn all the way round", "Nothing can turn", "Only the coupler turns", "It is the same as a crank and rocker"]
+      options: ["Both bars on fixed pivots turn fully", "Nothing can turn", "Only the coupler turns", "It is the same as a crank and rocker"]
       answer: 0
       feedback: [null, "The rule holds, so something turns all the way.", "The coupler isn't on a fixed pivot.", "Which bar is shortest changes which bars turn fully."]
       explain: "With the frame shortest, both bars on fixed pivots can turn fully: a double crank, used in some train wheels and drag-link mechanisms."
@@ -135,6 +135,7 @@ tasks:
       options: ["Yes", "No"]
       answer: 0
       shuffle: false
+      feedback: [null, "Add the shortest and longest (20 + 50) and compare with the other two (40 + 45)."]
       explain: "20 + 50 = 70, no more than 40 + 45 = 85."
   - check:
       type: question
@@ -142,6 +143,7 @@ tasks:
       options: ["Yes", "No"]
       answer: 1
       shuffle: false
+      feedback: ["Add the shortest and longest (35 + 100) and compare with the other two (50 + 70).", null]
       explain: "35 + 100 = 135, more than 50 + 70 = 120: it jams."
   - check:
       type: answer

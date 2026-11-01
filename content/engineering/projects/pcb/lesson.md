@@ -39,7 +39,7 @@ tasks:
   - check:
       type: question
       q: "Two layouts for a 5 × 5 cm board. A: motor connectors on one edge, sensor connectors on the opposite edge, the driver chip in the middle. B: every connector along the front edge. What does B make harder?"
-      options: ["Routing: every trace has to reach the same edge, so they crowd together and the wide motor traces may not fit", "Nothing: one edge is always neater", "The schematic: it would have to change"]
+      options: ["Routing: the traces crowd at one edge", "Nothing: one edge is always neater", "The schematic: it would have to change"]
       answer: 0
       feedback: [null, "One edge is neater for cables, but on the board itself everything has to squeeze into the same space.", "The schematic is the circuit. Moving connectors on the board doesn't change it."]
       explain: "Bringing every trace to one edge crowds them together, and the 1 mm motor traces are the hardest to fit, so the design rule check gets harder to pass."
@@ -73,10 +73,10 @@ tasks:
   - check:
       type: question
       q: "What does the design rule check (DRC) catch?"
-      options: ["Tracks or pads too close together, too thin, or not connected as the schematic says", "Mistakes in the code", "Whether the circuit does what the brief needs", "The cost of the board"]
+      options: ["Tracks too close or thin, or not matching the schematic", "Mistakes in the code", "Whether the circuit does what the brief needs", "The cost of the board"]
       answer: 0
       feedback: [null, "The board has no code.", "That is what testing the built board shows.", "That comes from the manufacturer's quote."]
-      explain: "It checks the layout can be made and matches the schematic, not that the design is a good one."
+      explain: "It finds tracks or pads too close together, too thin, or not connected as the schematic says. It checks the layout can be made and matches the schematic, not that the design is a good one."
   - check: { type: reflect, text: "My schematic is drawn in KiCad or EasyEDA from my working breadboard circuit, and a partner has checked it against the breadboard." }
 ```
 
@@ -141,10 +141,10 @@ tasks:
   - check:
       type: question
       q: "Which is the strongest evidence that the design meets a criterion?"
-      options: ["A test from the table that set the input and recorded the expected result", "It worked when I tried it", "My partner said it looks good", "The code has no errors"]
+      options: ["A planned test with its recorded result", "It worked every time I tried it", "My partner said it looks good", "The code compiles with no errors"]
       answer: 0
-      feedback: [null, "Which input did you try, and was it the one the criterion is about?", "Opinions aren't measurements.", "Code with no errors can still do the wrong thing."]
-      explain: "A planned test with a recorded result is evidence; everything else is a feeling."
+      feedback: [null, "Which inputs did you try, and were they the ones the criterion is about? Trying it is not the same as a planned test.", "Opinions aren't measurements.", "Code with no errors can still do the wrong thing."]
+      explain: "A planned test from your table sets the input the criterion is about and records what happened; that is evidence. Everything else is a feeling."
   - check: { type: reflect, text: "I wrote my evaluation: for each criterion, met or not, with the test that shows it; one improvement I would make and why; and who else could use it." }
 ```
 

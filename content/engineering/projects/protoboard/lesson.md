@@ -38,10 +38,10 @@ tasks:
   - check:
       type: question
       q: "Two ideas. A: stripboard, where copper strips join each row and you cut them where they shouldn't. B: perfboard, where every pad is separate and you join them with wire links. Which is more likely to pass the shake test first time, and what's the catch?"
-      options: ["A: fewer wire links to work loose, but one missed cut joins things that shouldn't be", "B: more wires make it stronger", "No difference: solder holds either way"]
+      options: ["A: fewer links to shake loose, but cuts must be right", "B: more wire links make it stronger", "No difference: solder holds either way"]
       answer: 0
       feedback: [null, "Every extra link is another two joints that can crack when the bag gets thrown about.", "Solder holds if every joint is good, but more joints means more chances for a bad one."]
-      explain: "Stripboard needs fewer joints, so there's less to shake loose, but every track cut has to be right. Check them with a meter before you power it."
+      explain: "Stripboard needs fewer joints, so there's less to shake loose, but every track cut has to be right: one missed cut joins things that shouldn't be. Check them with a meter before you power it."
   - check:
       type: reasoning
       q: "Now two ideas of your own. For each one, say which criterion in the brief it's strongest on and which it's weakest on. Then say which you'll build, and why."
@@ -146,10 +146,10 @@ tasks:
   - check:
       type: question
       q: "Which is the strongest evidence that the design meets a criterion?"
-      options: ["A test from the table that set the input and recorded the expected result", "It worked when I tried it", "My partner said it looks good", "The code has no errors"]
+      options: ["A planned test with its recorded result", "It worked every time I tried it", "My partner said it looks good", "The code compiles with no errors"]
       answer: 0
-      feedback: [null, "Which input did you try, and was it the one the criterion is about?", "Opinions aren't measurements.", "Code with no errors can still do the wrong thing."]
-      explain: "A planned test with a recorded result is evidence; everything else is a feeling."
+      feedback: [null, "Which inputs did you try, and were they the ones the criterion is about? Trying it is not the same as a planned test.", "Opinions aren't measurements.", "Code with no errors can still do the wrong thing."]
+      explain: "A planned test from your table sets the input the criterion is about and records what happened; that is evidence. Everything else is a feeling."
   - check: { type: reflect, text: "I wrote my evaluation: for each criterion, met or not, with the test that shows it; one improvement I would make and why; and who else could use it." }
 ```
 

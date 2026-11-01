@@ -127,10 +127,10 @@ tasks:
   - check:
       type: question
       q: "Which part of the alarm needed no change at all?"
-      options: ["The idea: read, compare with a threshold, blink or stay off", "The threshold number", "The timing numbers", "The pin numbers' names"]
+      options: ["The plan: read, compare, then act", "The threshold number", "The timing numbers", "The pin numbers' names"]
       answer: 0
       feedback: [null, "It changes scale.", "Seconds, not milliseconds.", "GP15, not 13."]
-      explain: "The design transfers; the language and its numbers change."
+      explain: "The idea (read, compare with a threshold, blink or stay off) transfers; the language and its numbers change."
 ```
 
 ### Timing

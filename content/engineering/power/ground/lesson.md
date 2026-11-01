@@ -71,10 +71,10 @@ tasks:
     check:
       type: question
       q: "Which wires join the two halves of the circuit?"
-      options: ["The signal wires (pin to driver) and one ground wire", "None: they must stay separate", "The Uno's 5V to the battery's +", "Only the signal wires"]
+      options: ["The signal wires and one ground wire", "None: they must stay separate", "The Uno's 5V to the battery's +", "Only the signal wires"]
       answer: 0
       feedback: [null, "Then the signals mean nothing.", "Never join two different supplies' + sides.", "The signals need a shared ground to be read."]
-      explain: "Signals plus a common ground; the + sides stay separate."
+      explain: "Signals (pin to driver) plus a common ground; the + sides stay separate."
   - check:
       type: bug
       code: "working.txt#sam"
@@ -138,10 +138,10 @@ tasks:
   - check:
       type: question
       q: "A robot resets every time it starts to move. What is the most likely cause?"
-      options: ["The motors draw from the board's supply and pull it down", "The code has a bug in setup()", "The grounds are joined", "The motors are wired backwards"]
+      options: ["The motors pull the board's supply down", "The code has a bug in setup()", "The grounds are joined", "The motors are wired backwards"]
       answer: 0
       feedback: [null, "Possible, but the timing points at power.", "Joined grounds are correct.", "Backwards motors just turn the wrong way."]
-      explain: "Resets that happen when motors start are almost always a supply sagging."
+      explain: "Resets that happen when motors start are almost always a supply sagging: the motors draw from the board's supply and pull it down."
 ```
 
 ### Which wires?

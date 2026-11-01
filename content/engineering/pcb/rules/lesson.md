@@ -51,10 +51,10 @@ tasks:
   - check:
       type: question
       q: "Why not just make every trace 2 mm wide?"
-      options: ["Wide traces take room: they can't pass between close pins, and the board grows", "2 mm traces carry less current", "Wide traces are not allowed", "There is no reason not to"]
+      options: ["Wide traces take room on the board", "2 mm traces carry less current", "Wide traces are not allowed", "There is no reason not to"]
       answer: 0
       feedback: [null, "Wider carries more, not less.", "They are allowed; they just take space.", "Space is the cost."]
-      explain: "Width costs space. Use what the current needs, with some margin, and keep signals thin."
+      explain: "Width costs space: wide traces can't pass between close pins, and the board grows. Use what the current needs, with some margin, and keep signals thin."
 ```
 
 ### Widths
@@ -118,6 +118,7 @@ tasks:
       q: "A trace carries 0.9 A. Which is the narrowest width that passes? (0.25 mm 0.8 A · 0.5 mm 1.4 A · 1 mm 2.4 A)"
       options: ["0.5 mm", "0.25 mm", "1 mm"]
       answer: 0
+      feedback: [null, "0.25 mm is safe only to 0.8 A, less than 0.9 A.", "1 mm passes, but it is not the narrowest that does."]
       shuffle: false
       explain: "0.25 mm is safe only to 0.8 A; 0.5 mm to 1.4 A."
   - check:

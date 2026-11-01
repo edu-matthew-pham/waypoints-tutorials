@@ -156,10 +156,10 @@ tasks:
   - check:
       type: question
       q: "No pair lifts 700 g within 15 s. What should the engineer do?"
-      options: ["Go back to the client with the trade-off: allow 25 s, lighten the load, or get a stronger motor", "Use 8 → 40 and say it meets the brief", "Put the 40-tooth gear on the motor to make it faster", "Nothing: the brief is impossible, so stop"]
+      options: ["Tell the client the trade-off and agree what can change", "Use 8 → 40 and say it meets the brief", "Put the 40-tooth gear on the motor to make it faster", "Nothing: the brief is impossible, so stop"]
       answer: 0
       feedback: [null, "It lifts it, but misses the time limit. Say so.", "Then it is 5 times weaker: it stalls.", "Engineers change a constraint or the design, and explain why."]
-      explain: "When constraints conflict, an engineer shows what each choice costs and agrees which constraint can move."
+      explain: "When constraints conflict, an engineer shows what each choice costs and agrees which constraint can move: allow 25 s, lighten the load, or get a stronger motor."
 ```
 
 ### A lighter bucket

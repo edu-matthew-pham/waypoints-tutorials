@@ -134,10 +134,10 @@ tasks:
   - check:
       type: question
       q: "A phone stand is a flat back plate with a ledge sticking out at the bottom. It will be printed lying on its back. What happens to the ledge?"
-      options: ["It points up from the bed: no supports, and the layers run along the plate", "It overhangs and needs supports", "It can't be printed", "It prints but is weak across the plate"]
+      options: ["It points up: no supports needed", "It overhangs and needs supports", "It can't be printed", "It prints but is weak across the plate"]
       answer: 0
       feedback: [null, "Lying on its back, the ledge points straight up.", "Nothing sticks out sideways.", "The plate's layers run along it."]
-      explain: "On its back, every feature grows straight up from the plate."
+      explain: "On its back, every feature grows straight up from the plate, so the ledge needs no supports and the layers run along the plate."
   - check: { type: reflect, text: "For my own part, I wrote down: which way up I'll print it, what overhangs (and whether it needs supports), and which way the load pulls compared with the layers." }
 ```
 

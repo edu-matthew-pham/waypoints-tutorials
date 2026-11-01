@@ -53,7 +53,7 @@ tasks:
   - check:
       type: question
       q: "Does it matter which diagonal you added?"
-      options: ["No: either makes triangles; one pulls, the other would push", "Yes: only A-C works", "Yes: only B-D works", "You need both"]
+      options: ["No: either one makes triangles", "Yes: only A-C works", "Yes: only B-D works", "You need both"]
       answer: 0
       feedback: [null, "Try B-D: it works too.", "Try A-C: it works too.", "One is enough; the second is spare."]
       explain: "Either diagonal makes two triangles. With the wind from the left, A-C is stretched (pulls) while B-D would be squashed (pushes)."
@@ -114,10 +114,10 @@ tasks:
   - check:
       type: question
       q: "What happens if you add both diagonals to one square?"
-      options: ["It still holds, with a spare member that shares the load and costs more", "It collapses", "The rule breaks and nothing can be worked out", "It gets weaker"]
+      options: ["It still holds, with a spare member", "It collapses", "The rule breaks and nothing can be worked out", "It gets weaker"]
       answer: 0
       feedback: [null, "A spare member can't make it collapse.", "Real structures often have spare members; the board still works them out.", "It can only help, at a cost."]
-      explain: "A spare (redundant) member isn't needed for the shape, but it shares the load and keeps the frame standing if another member fails."
+      explain: "A spare (redundant) member isn't needed for the shape and costs more, but it shares the load and keeps the frame standing if another member fails."
 ```
 
 ### Two storeys
@@ -140,6 +140,7 @@ tasks:
       q: "A frame has 7 joints and 10 members, on a pin and a roller. Is it rigid?"
       options: ["No: it needs 11", "Yes", "It has a spare member"]
       answer: 0
+      feedback: [null, "Work out 2 × joints − 3 and compare with 10.", "A spare member means more than 2 × joints − 3; 10 is fewer."]
       shuffle: false
       explain: "2 × 7 − 3 = 11, so with 10 it can change shape one way."
   - check:

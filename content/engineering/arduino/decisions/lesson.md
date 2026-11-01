@@ -168,7 +168,7 @@ insight: "Combining two comparisons with && to light the LED only in a band, and
 try: { playground: board, starter: "board.yml#make", height: 680 }
 hint: ["Two things must both be true: the level is above 300 and below 700. C++ joins them with &&.", "Look at the edges in the tests. What should happen at exactly 300, and at 301?"]
 smaller:
-  check: { type: question, q: "The tank reads exactly 700. Should the safe light be on?", options: ["No: 700 isn't below 700", "Yes: 700 is between 300 and 700"], answer: 0, explain: "Below 700 means 699 or less, so at 700 the light's off. That's why one of the tests is at exactly 700." }
+  check: { type: question, q: "The tank reads exactly 700. Should the safe light be on?", options: ["No: 700 isn't below 700", "Yes: 700 is between 300 and 700"], answer: 0, feedback: [null, "Between, here, means below 700, and 700 is not below 700."], explain: "Below 700 means 699 or less, so at 700 the light's off. That's why one of the tests is at exactly 700." }
 check: { type: board, text: "Write the decision so all 6 tests pass: the light is on only while the level is above 300 and below 700.", when: "u = 6 and q = 6", explain: "if (level > 300 && level < 700) lights it from 301 to 699 and leaves it off at both edges and beyond." }
 ```
 

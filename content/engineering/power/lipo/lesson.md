@@ -18,7 +18,7 @@ insight: "Committing to what to do with a slightly swollen pack surfaces the 'it
 check:
   type: predict
   q: "A LiPo pack is slightly puffy, but it still powers the robot. What should you do?"
-  options: ["Stop using it, tell your teacher, and have it disposed of safely", "Keep using it until it stops working", "Charge it slowly to fix it", "Squeeze it flat and tape it"]
+  options: ["Stop using it, tell your teacher, and have it disposed of safely", "Keep using it, but check it after every run", "Charge it slowly on the balance charger to fix it", "Squeeze it flat and tape it up"]
   actual: "Stop. Swelling means gas from damaged cells; it can fail and catch fire, especially when charged. It goes to safe disposal, never the bin."
 ```
 
@@ -45,10 +45,10 @@ tasks:
   - check:
       type: question
       q: "Why does a LiPo need a balance charger?"
-      options: ["It charges each cell to the same voltage, so no cell is overcharged", "It charges faster", "It makes the pack hold more", "It's only needed for big packs"]
+      options: ["So no single cell is overcharged", "It charges faster", "It makes the pack hold more", "It's only needed for big packs"]
       answer: 0
       feedback: [null, "Speed isn't the point.", "Capacity is fixed.", "Every multi-cell LiPo needs it."]
-      explain: "Cells drift apart; charging the pack as a whole could push one cell over 4.2 V."
+      explain: "Cells drift apart; charging the pack as a whole could push one cell over 4.2 V. A balance charger brings each cell to the same voltage, so no cell is overcharged."
 ```
 
 ### Sort them
@@ -71,10 +71,10 @@ tasks:
   - check:
       type: question
       q: "A 2S pack reads 6.2 V after a run. What should you do?"
-      options: ["Stop using it now: that is 3.1 V a cell, near empty", "Keep going: it still has charge", "Store it like that", "Charge it on a NiMH charger"]
+      options: ["Stop using it now: 3.1 V a cell", "Keep going: it still has charge", "Store it like that", "Charge it on a NiMH charger"]
       answer: 0
       feedback: [null, "Below about 3.0–3.3 V a cell causes damage.", "Store at about 3.8 V a cell.", "Always a LiPo balance charger."]
-      explain: "6.2 ÷ 2 = 3.1 V a cell: recharge it (on a balance charger) before storing."
+      explain: "6.2 ÷ 2 = 3.1 V a cell, near empty: stop using it now, and recharge it (on a balance charger) before storing."
 ```
 
 ### Full

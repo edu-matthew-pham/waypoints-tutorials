@@ -73,10 +73,10 @@ tasks:
     check:
       type: question
       q: "While the button is held, pin 0 is joined to 3V through the button and to GND through the 10 kΩ pull-down. Why does it read 1?"
-      options: ["The button joins it straight to 3V; the 10 kΩ only lets a tiny current leak to GND", "The pull-down switches off when the button is pressed", "Pin 0 adds the two voltages", "It doesn't: it reads 0"]
+      options: ["The button joins it straight to 3V", "The pull-down switches off when the button is pressed", "Pin 0 adds the two voltages", "It doesn't: it reads 0"]
       answer: 0
       feedback: [null, "Resistors don't switch: it is still there.", "A pin reads one voltage, not a sum.", "Try it on the board."]
-      explain: "The button is a direct join to 3.3 V. The big resistor to GND only lets about 0.3 mA through, so pin 0 stays at 3.3 V."
+      explain: "The button is a direct join to 3.3 V. The 10 kΩ to GND only lets a tiny current (about 0.3 mA) leak through, so pin 0 stays at 3.3 V."
   - check:
       type: bug
       code: "working.txt#sam"

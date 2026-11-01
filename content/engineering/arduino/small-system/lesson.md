@@ -65,7 +65,7 @@ tasks:
       feedback: [null, "Both are far from the threshold: a slip at 300 passes.", "None is at the threshold.", "One case can't show both behaviours."]
       explain: "Both sides of 300, 300 itself, and the two ends."
     smaller:
-      check: { type: question, q: "The brief says blink at 300 or below. One sketch says level < 300, another says level <= 300. A test reads 250. Do the two sketches behave differently?", options: ["No: both blink at 250, so that test can't tell them apart", "Yes: only <= blinks at 250", "Yes: only < blinks at 250", "Only one of them runs at all"], answer: 0, feedback: [null, "250 is below 300, so it passes either way. Only a reading of exactly 300 splits them.", "250 is below 300, so it passes either way. Only a reading of exactly 300 splits them.", "Both run. They just agree on 250."], explain: "A reading far from the threshold gets the same answer from both. Only a test at 300 shows which one is right." }
+      check: { type: question, q: "The brief says blink at 300 or below. One sketch says level < 300, another says level <= 300. A test reads 250. Do the two sketches behave differently?", options: ["No: both blink at 250", "Yes: only <= blinks at 250", "Yes: only < blinks at 250", "Only one of them runs at all"], answer: 0, feedback: [null, "250 is below 300, so it passes either way. Only a reading of exactly 300 splits them.", "250 is below 300, so it passes either way. Only a reading of exactly 300 splits them.", "Both run. They just agree on 250."], explain: "That test can't tell them apart. A reading far from the threshold gets the same answer from both. Only a test at 300 shows which one is right." }
   - check:
       type: bug
       code: "working.txt#sam"
@@ -134,10 +134,10 @@ tasks:
   - check:
       type: question
       q: "Every test passes. What can you say?"
-      options: ["The sketch does what those tests check: no more", "The sketch meets the brief", "The sketch has no mistakes", "The tests are right"]
+      options: ["Only that it passes those tests", "The sketch meets the brief", "The sketch has no mistakes", "The tests are right"]
       answer: 0
       feedback: [null, "Only if the tests cover the brief.", "Tests can only show the mistakes they look for.", "The tests themselves could be wrong."]
-      explain: "Tests show what they check. A good table covers the boundaries and the ends."
+      explain: "The sketch does what those tests check, and no more. Tests show what they check. A good table covers the boundaries and the ends."
 ```
 
 ### A fan

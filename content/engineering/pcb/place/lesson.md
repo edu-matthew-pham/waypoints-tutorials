@@ -122,12 +122,13 @@ tasks:
       q: "Three pads are on the same net. How many joins does the ratsnest need?"
       options: ["2", "3", "1", "6"]
       answer: 0
+      feedback: [null, "A third join would close a loop: two already reach all three pads.", "One join links only two of the pads.", "That counts every pair twice; a chain needs fewer."]
       shuffle: false
       explain: "Joining three things in a chain takes two links: the ratsnest uses the shortest two."
   - check:
       type: question
       q: "Why leave at least one empty cell between parts?"
-      options: ["So traces can pass between them and the parts can be soldered", "To make the board bigger", "Because pads repel each other", "The ratsnest needs space to draw"]
+      options: ["So traces and a soldering iron fit between them", "To make the board bigger", "Because pads repel each other", "The ratsnest needs space to draw"]
       answer: 0
       feedback: [null, "Bigger boards cost more; space is for copper and soldering.", "They don't.", "The ratsnest is only a drawing."]
       explain: "Copper runs between parts, and a soldering iron needs room."

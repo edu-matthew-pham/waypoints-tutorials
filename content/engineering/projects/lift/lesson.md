@@ -46,10 +46,10 @@ tasks:
   - check:
       type: question
       q: "Two gear pairs meet the brief on paper: 8 → 24 lifts up to 600 g in 15 s, and 16 → 40 lifts up to 500 g in 12.5 s. What's the catch with 8 → 24?"
-      options: ["It takes exactly 15 s, so any slowing at all fails the time", "It can't lift 450 g", "It turns the drum the wrong way"]
+      options: ["It takes exactly 15 s: no time to spare", "It can't lift 450 g", "It turns the drum the wrong way"]
       answer: 0
       feedback: [null, "600 g is more than 450 g, so it can lift it. The problem is the time.", "Direction comes from the motor driver, not the gear pair."]
-      explain: "15 s is the limit, and a real lift slows a little with a load and with losses, so 8 → 24 has no time to spare. 16 → 40 has 2.5 s spare, though less extra force."
+      explain: "Any slowing at all fails the time. 15 s is the limit, and a real lift slows a little with a load and with losses, so 8 → 24 has no time to spare. 16 → 40 has 2.5 s spare, though less extra force."
   - check:
       type: reasoning
       q: "Now two ideas of your own. For each one, say which criterion in the brief it's strongest on and which it's weakest on. Then say which you'll build, and why."
@@ -113,10 +113,10 @@ tasks:
   - check:
       type: question
       q: "Another team's lift took 13.1, 13.4, 13.0, 14.8 and 13.2 s, and stalled at the start of the fourth lift until someone helped it. What should they test next?"
-      options: ["Starting with the full load, to see if it stalls again", "Nothing: every time is under 15 s", "The stop at the top"]
+      options: ["Starting with the full load", "Nothing: every time is under 15 s", "The stop at the top"]
       answer: 0
       feedback: [null, "A lift that needs a helping hand hasn't met the brief, even if the times look fine.", "The stop wasn't the problem. Something happened at the start."]
-      explain: "A stall at the start means the gearing had barely enough force for that lift, and the slow 14.8 s was the same lift. Test starting under full load until they know why."
+      explain: "A stall at the start means the gearing had barely enough force for that lift, and the slow 14.8 s was the same lift. Test starting under full load, to see if it stalls again, until they know why."
   - check: { type: reflect, text: "I lifted the load five times, timed each lift, and recorded the predicted time beside the measured one, plus any stalls." }
   - check:
       type: reasoning
@@ -145,10 +145,10 @@ tasks:
   - check:
       type: question
       q: "Your lift takes 17 s; the model predicted 15 s. What is the best explanation to give in your evaluation?"
-      options: ["The model ignores friction and the motor slowing under load; measure and say how much", "The stopwatch was wrong", "The gears are broken", "The brief was unfair"]
+      options: ["The model leaves out friction and motor slowing", "The stopwatch was started late every time", "The gears are slipping on the shaft", "The motor needs a bigger battery"]
       answer: 0
-      feedback: [null, "Possible once; five lifts make it unlikely.", "Then it wouldn't lift at all.", "The brief is the brief: explain the gap."]
-      explain: "Real motors slow under load, and every mesh loses a little: the model's 15 s is a best case."
+      feedback: [null, "Possible once; five lifts make it unlikely every time.", "Slipping gears would show as jerks or a stall, not a steady 2 s more.", "A bigger battery might speed it up, but the gap is the model, not the supply."]
+      explain: "Real motors slow under load, and every mesh loses a little: the model's 15 s is a best case. Measure the gap and say how much."
   - check: { type: reflect, text: "I wrote my evaluation: for each criterion, met or not, with the test that shows it; one improvement I would make and why; and who else could use it." }
 ```
 

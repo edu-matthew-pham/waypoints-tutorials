@@ -75,9 +75,9 @@ tasks:
   - check:
       type: question
       q: "Which test table checks the threshold best?"
-      options: ["0 blink, 299 blink, 300 blink, 301 off, 1023 off", "0 blink, 1023 off", "150 blink, 800 off", "300 blink only"]
+      options: ["0 blink, 299 blink, 300 blink, 301 off, 1023 off", "0 blink, 100 blink, 900 off, 1023 off", "150 blink, 200 blink, 800 off", "290 blink, 299 blink, 300 blink"]
       answer: 0
-      feedback: [null, "Nothing near 300.", "Nothing near 300.", "One case can't show both behaviours."]
+      feedback: [null, "Nothing near 300.", "Nothing near 300.", "All on one side: nothing checks that it turns off above 300."]
       explain: "Both sides of the threshold, the threshold itself, and the ends."
   - check: { type: board, text: "Prototype the decision: write the sketch so all five tests pass.", when: "u = 5 and q = 5", explain: "if (level <= 300) blink, else off: the logic is ready before any wiring." }
   - check: { type: reflect, text: "My design plan has: a parts list, a circuit diagram (sensor on A0, LED and resistor on pin 13, display), and my test table." }
@@ -144,10 +144,10 @@ tasks:
   - check:
       type: question
       q: "Which is the strongest evidence that the design meets a criterion?"
-      options: ["A test from the table that set the input and recorded the expected result", "It worked when I tried it", "My partner said it looks good", "The code has no errors"]
+      options: ["A planned test with its recorded result", "It worked every time I tried it", "My partner said it looks good", "The code compiles with no errors"]
       answer: 0
-      feedback: [null, "Which input did you try, and was it the one the criterion is about?", "Opinions aren't measurements.", "Code with no errors can still do the wrong thing."]
-      explain: "A planned test with a recorded result is evidence; everything else is a feeling."
+      feedback: [null, "Which inputs did you try, and were they the ones the criterion is about? Trying it is not the same as a planned test.", "Opinions aren't measurements.", "Code with no errors can still do the wrong thing."]
+      explain: "A planned test from your table sets the input the criterion is about and records what happened; that is evidence. Everything else is a feeling."
   - check: { type: reflect, text: "I wrote my evaluation: for each criterion, met or not, with the test that shows it; one improvement I would make and why; and who else could use it." }
 ```
 
