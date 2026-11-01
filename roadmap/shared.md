@@ -1450,6 +1450,8 @@ Idea only, for later. A board where students drag ideas into place and draw labe
 - Add one reflection question to the same two places: "Where would your students learn more by doing something on screen (moving, sorting, counting, watching a change) than by reading about it?" Feeds the board proposals in each subject roadmap › "Boards in built lessons (1 Nov 2026)".
 - Run `npm run check-decks -- teachers/getting-started` after; a quick publish covers it.
 
+- Added (1 Nov 2026, Matthew, from the Geography chat): reflection question 5 on `content/humanities-pilot.md`, asking whether teachers could use the First Nations pointer pages' resources and knew what to do. It tests usability only; whether the approach is culturally right stays with the First Nations educator review (Decided: humanities). Not added to the shorter lists in the getting-started deck and reference.
+
 ## Changed by the Economics chat (1 Nov 2026): the first humanities board
 - New board widget `tradeoff` (`playground-board/widgets/tradeoff.js`, one `<script>` line in `playground-board/index.html`, AUTHORING › `widget: tradeoff`); re-records only clips that name it (one: `economics/scarcity-7/opportunity-cost`'s Explain clip). Geography's catchment board will add a second line; keep both.
 - One misconception line (`used-resource-is-free`).

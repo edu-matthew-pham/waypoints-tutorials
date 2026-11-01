@@ -49,6 +49,7 @@ Choose one part that helps with a unit you already teach and try it. Any thought
 2. Did a check show you a misunderstanding you wouldn't otherwise have noticed? What was it?
 3. What helped, what got in the way, and what would make you use it again?
 4. Where would your students learn more by doing something on screen (moving, sorting, counting, watching a change) than by reading about it?
+5. Where a lesson pointed you to First Nations resources instead of teaching that content itself, could you use those resources in class, and did you know what to do?
 
 Feedback on any part is useful. Share it whichever way suits you: talk to the pilot facilitator, add to the shared pilot notes, or use the feedback form (links to both are added before the pilot starts). No account, form or upload of student information is needed.
 
