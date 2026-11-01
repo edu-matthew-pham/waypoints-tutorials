@@ -1,6 +1,6 @@
 # Subject pages: one consistent pass (plan, 1 Nov 2026)
 
-Raised by Matthew from the maths chat after the maths split (Project doc `claude/handoff-navigation-review.md`). **Plan only. Nothing built. Waiting for Matthew's "go".**
+Raised by Matthew from the maths chat after the maths split (Project doc `claude/handoff-navigation-review.md`). **Plan only. Nothing built. Matthew answered the questions on 1 Nov (Decisions, below); building waits for his "go".**
 
 Touches shared builders (`tools/build-site.mjs`, `site/trail.js`, a little of `tools/trail.mjs`), so this file is linked from ROADMAP.md and `roadmap/shared.md`. Checked `git log` on those files on 1 Nov: the last changes are History's unit label (185b317), HASS catch-up links (a907c7f) and Civics planned items (506cf89); none touch the List for teachers or the stage words, so no clash.
 
@@ -25,7 +25,7 @@ Every subject has: title and summary, search box (with "Or browse:" where there 
 Found across all of them:
 - **"Extensions" is worse than "Then" for maths and science.** The same `stage:` makes each pathway page head Years 9–10 as **Extensions** (list view) and the trail card say "Extension · after Year 8 Algebra". That reads as optional or advanced, against "years are suggestions, width not acceleration" (rules T9, T10).
 - **The "New to Learning Waypoints?" line** sits on every subject's list and every pathway page, so Maths and Code show a "Humanities pilot" link.
-- **Preview still shows** on History, Geography and Humanities skills (the home page tag from `preview: true`, and "Preview (a pilot, not finished)" in summaries), though Matthew decided on 1 Nov that students shouldn't see it (Economics and Civics already dropped it, 1 Nov). Belongs to the subject chats; flagged here because it is page-level.
+- **Preview still shows** on Geography (History and Humanities skills dropped it later on 1 Nov) (the home page tag from `preview: true`, and "Preview (a pilot, not finished)" in summaries), though Matthew decided on 1 Nov that students shouldn't see it (Economics and Civics already dropped it, 1 Nov). Belongs to the subject chats; flagged here because it is page-level.
 - **Order of blocks drifts:** English puts purpose cards above the toggle; Code alone has a tools line at the foot; only maths and science have look-backs (fine, they are year-based).
 
 ## Proposed common rules (defaults, with reasons)
@@ -149,3 +149,11 @@ English's purpose cards and start suggestion; Code's "How coding ideas build", R
 3. Code and others: keep the word "Then", or "After the foundations"?
 4. Preview on History, Geography, Civics and Humanities skills: fix in this pass, or leave to their chats?
 5. The pilot line: Humanities pilot link only on humanities subjects, and the start line off pathway pages?
+
+## Decisions (1 Nov 2026, Matthew)
+
+1. **Contents line = unit names, always**, even for a one-unit course ("Chance" is descriptive enough). *Why:* unit names say what the course covers and match the course page; taglines were written for students. The course's tagline shows on hover (a tooltip on the row), not as the line. Touch screens don't hover, so the tagline is extra, never needed. No `contents:` override for now.
+2. **English works like every other subject:** students land on Trails; the "What are you teaching?" cards and the start suggestion move to the top of List for teachers. *Why:* English was the odd one out; the view choice is remembered per browser, so a teacher who picks List lands there next time.
+3. **"Then" becomes "After the foundations"** where it stays (Code, How computers work, Engineering, Learning with AI). Maths and science lose it, as planned.
+4. **Preview labels stay with the subject chats.** Checked 1 Nov: Civics (3357762), Humanities skills (45a2858) and History (698ee38) have dropped them; Geography still has `preview: true`. This pass changes no subject's Preview wording; the Geography chat picks it up from its own roadmap and shared.md.
+5. **Tidy the teacher start line:** once per subject page in the list view, not on pathway pages; the Humanities pilot link only on History, Geography, Civics, Economics and Humanities skills.
