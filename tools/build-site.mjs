@@ -819,8 +819,10 @@ for (const node of dirs.values()) {
         `<summary><span class="cnum">${l.order ?? ''}</span><span class="ctitle">${esc(l.title.replace(/^Optional:\s*/, ''))}${l.optional ? ' <em class="opt">Optional</em>' : ''}</span>${mini}<span class="cstat">${segs.length ? 'Not started' : ''}</span></summary>` +
         `<div class="cbody">${l.summary ? `<p class="csum">${esc(l.summary)}</p>` : ''}${steps}<a class="cgo" href="${esc(name)}/">Start lesson</a></div></details>`;
     };
-    const normPlanned = (u) => (Array.isArray(u?.planned) ? u.planned : []).map((p) => (typeof p === 'string' ? { title: p, summary: '' } : { title: String(p?.title || ''), summary: String(p?.summary || '') })).filter((p) => p.title);
-    const plannedRow = (p) => `<div class="crow wpt-crow-soon"><div class="wpt-crow-head"><span class="cnum">·</span><span class="ctitle">${esc(p.title)}</span><span class="cstat">Coming later</span></div>${p.summary ? `<p class="csum">${esc(p.summary)}</p>` : ''}</div>`;
+    // A planned item may carry `label:` (for example "Taught in class", 1 Nov 2026, Civics) in place of "Coming later";
+    // labelled items are not counted as coming later. `teach:` (a site path) is linked from the teacher guide only.
+    const normPlanned = (u) => (Array.isArray(u?.planned) ? u.planned : []).map((p) => (typeof p === 'string' ? { title: p, summary: '' } : { title: String(p?.title || ''), summary: String(p?.summary || ''), label: p?.label ? String(p.label) : '' })).filter((p) => p.title);
+    const plannedRow = (p) => `<div class="crow wpt-crow-soon"><div class="wpt-crow-head"><span class="cnum">·</span><span class="ctitle">${esc(p.title)}</span><span class="cstat">${esc(p.label || 'Coming later')}</span></div>${p.summary ? `<p class="csum">${esc(p.summary)}</p>` : ''}</div>`;
     // Units (from the course's index.md) group the lessons; lessons without a unit go last.
     const units = Array.isArray(node.meta?.units) ? node.meta.units : [];
     const groups = units.map((u) => ({ ...u, lessons: courseLessons.filter((l) => l.unit === u.id), planned: normPlanned(u) })).filter((g) => g.lessons.length || g.planned.length);
@@ -836,7 +838,7 @@ for (const node of dirs.values()) {
     // optional lessons; "Do first" is the pathway's `after:`. Copying gives the course address only (no QR code: no phones).
     const strip = (() => {
       const [ylo, yhi] = SEARCH.yearsOfCourse(node.path), core = courseLessons.filter((l) => !l.optional).length, opt = courseLessons.length - core, first = afterOf(node.path);
-      const plannedCount = groups.reduce((n, g) => n + (g.planned ? g.planned.length : 0), 0);
+      const plannedCount = groups.reduce((n, g) => n + (g.planned ? g.planned.filter((p) => !p.label).length : 0), 0);
       const facts = [ylo != null ? (SEARCH.typical(node.path) ? ['Usually', SEARCH.yearsLabel(ylo, yhi)] : ['For', SEARCH.yearsLabel(ylo, yhi)]) : null, ['Lessons', `${core}${opt ? ` (and ${opt} optional)` : ''}${plannedCount ? `, ${plannedCount} coming later` : ''}`],
         first ? ['Do first', first.length ? first.join(' and ') : 'No earlier course needed'] : null].filter(Boolean);
       const guide = courseLessons.some((l) => l.teacher) ? `<a href="${up}teach/${node.path}/">Teacher guide</a>` : '';
@@ -1161,7 +1163,7 @@ for (const coursePath of teachCourses) {
   // Course guide: how to use it, then each unit with its primer, cheat sheet and lessons. A maths course renders $...$ in primers.
   const unitBlocks = (units.length ? units : [{ id: '', title: 'Lessons' }]).map((u) => {
     const mine = ls.filter((l) => (u.id ? l.unit === u.id : true));
-    const planned = (Array.isArray(u?.planned) ? u.planned : []).map((p) => (typeof p === 'string' ? { title: p, summary: '' } : { title: String(p?.title || ''), summary: String(p?.summary || '') })).filter((p) => p.title);
+    const planned = (Array.isArray(u?.planned) ? u.planned : []).map((p) => (typeof p === 'string' ? { title: p, summary: '' } : { title: String(p?.title || ''), summary: String(p?.summary || ''), label: p?.label ? String(p.label) : '', teach: p?.teach ? String(p.teach).replace(/^\/+/, '') : '' })).filter((p) => p.title);
     if (!mine.length && !planned.length) return '';
     let primer = '';
     const pf = join(CONTENT_ROOT, coursePath, 'primers', `${u.id}.md`);
@@ -1182,7 +1184,7 @@ for (const coursePath of teachCourses) {
     const rows = mine.map((l) => l.teacher
       ? `<li><a href="${esc(l.slug.split('/').pop())}/">${esc(`${l.order != null ? `${l.order}. ` : ''}${l.title}`)}</a>${l.optional ? ' <span class="muted">(optional)</span>' : ''} <span class="muted">· <a href="${esc(prepareLink('prepare', `${SITE_URL}/${teachPath(l)}deck.md`))}" target="_blank" rel="noopener" title="Open the slides in Prepare">slides</a> · <a href="${esc(prepareLink('print', `${SITE_URL}/${teachPath(l)}worksheet.md`))}" target="_blank" rel="noopener" title="Open the worksheet in Print">worksheet</a></span></li>`
       : `<li>${esc(l.title)} <span class="muted">(teacher notes coming)</span></li>`).join('') +
-      planned.map((p) => `<li>${esc(p.title)} <span class="muted">(coming later${p.summary ? ` — ${esc(p.summary)}` : ''})</span></li>`).join('');
+      planned.map((p) => `<li>${p.teach ? `<a href="${'../'.repeat(coursePath.split('/').length + 1)}${esc(p.teach)}">${esc(p.title)}</a>` : esc(p.title)} <span class="muted">(${esc((p.label || 'coming later').toLowerCase())}${p.summary ? ` — ${esc(p.summary)}` : ''})</span></li>`).join('');
     return `<section class="tunit"><h2>${esc(u.title)}</h2>${u.summary ? `<p class="muted">${esc(u.summary)}</p>` : ''}${primer}${cheat}<ul>${rows}</ul></section>`;
   }).join('');
   // Open projects (tools/projects.mjs): each brief, its notes and one possible solution (its example), for the teacher.

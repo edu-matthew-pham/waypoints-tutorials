@@ -1,0 +1,8 @@
+# Display-only reasoning: nothing runs.
+
+# region: nib
+Nib looks at the Census table for 2011, 2016 and 2021.
+The table shows several religions, and people with no religion, in every year.
+Nib says: "Australia only became multi-faith in the last few years, and it all came from one group."
+Nib says: "So before 2021 there was only one religion here."
+# endregion

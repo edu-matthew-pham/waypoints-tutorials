@@ -1,0 +1,57 @@
+summary: "Students bring the course together: Australia's pluralist, multi-faith society has several origins (First Nations peoples, Christian and Western heritage, migrant communities), and real, dated ABS Census data shows religious affiliation changing from 2011 to 2021. They work out the changes in a small spreadsheet and learn what a share can and can't show."
+learning: "explain how migrant communities, with First Nations peoples and Christian and Western heritage, make up Australia's pluralist society, and describe a Census trend with its years"
+time: 42
+timing: "Predict 3 min · Census sheet 7 min · Worked example 10 min · Vary 6 min · Practise 6 min · Make and exit 8 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can name three origins of Australia's pluralist, multi-faith society.
+  - I can work out and describe a change in Census data, with its years.
+  - I can say what Census religion data can and can't tell us.
+struggle: "Students read a share as a number of people, and read the data as telling them how religious people are. Keep asking: a share of what, in which year, and what did the question actually ask?"
+before: |
+  Integration node (n4): it joins the secular and heritage lessons with migrant communities and data.
+
+  The data is real and dated: ABS Census shares of people giving each answer to the religion question, 2011, 2016 and 2021. 2021 figures and the 2011 and 2016 figures for Christianity and no religion are from the ABS's 2021 release; the 2016 figures for Islam, Buddhism and Hinduism are from the ABS's 2016 summary; the 2011 figures for Islam, Hinduism and Buddhism are as reported from ABS Census data (Wikipedia's table) and should be checked against ABS QuickStats before you rely on them. Other religions and "not stated" are left out, so columns don't add to 100. The question is voluntary; about 93% of people answered it in 2021 (91% in 2016). Update the table when the 2026 Census religion results are released (expected 2027).
+
+  Nothing personal is asked. No step asks a student's religion, background, languages or family. Students who choose to mention their own background are welcome, never required. The data describes answers, not people's worth or the truth of any belief; no religion is ranked or judged.
+
+  First Nations content: First Nations peoples are named as an origin of Australia's diverse society, with no explanation by us; the course's third idea (First Nations histories and cultures) is taught by you, starting from the curriculum pointer page for AC9HC7K04 and ACARA's elaborations, with First Nations-led, community-approved material. Kit's wider items on migrant communities' experiences and on how multiculturalism policy has changed are left to class: they touch live policy debates (immigration, multicultural policy), so take them up as discussion with views on more than one side, and no marked answer.
+
+  Wattle Creek, its library and Nib's ideas are made up.
+running:
+  - "Predict: take a vote before the sheet. Many will expect a religion to have grown most."
+  - "Census sheet: show =D2-B2 once, then let students fill down. Ask what a minus number means."
+  - "Worked example: ask 'a share of what?' before the Buddhism question."
+  - "Vary: the 'better than another' item is there on purpose. Say plainly that data counts answers and doesn't judge beliefs."
+  - "Make: the student writes in their own book or document; a partner or teacher reads it. The site only records a reflect tick."
+stuck:
+  - see: "A student says a falling share means fewer people."
+    ask: "What happened to the whole population over those ten years?"
+    fix: "A share is part of the whole. If the whole grows, a steady or slightly smaller share can still be more people."
+  - see: "A student says the data shows how religious people are."
+    ask: "What did the Census question actually ask?"
+    fix: "It asks which religion, if any, a person belongs to, not how often they practise it."
+support: "Do the first change together on the board: 38.9 minus 22.3. Then ask students to say each one aloud before they type it."
+stretch: "What other Census question could help describe Australia's diversity, and what couldn't it tell you?"
+exit:
+  q: "Name three origins of Australia's pluralist society and one Census trend from 2011 to 2021."
+  a: "First Nations peoples, Christian and Western heritage, and migrant communities. For example, the share answering no religion rose from about 22% in 2011 to about 39% in 2021."
+explain: |
+  Australia's pluralist, multi-faith society has several origins: **First Nations peoples**, **Christian and Western heritage**, and **migrant communities**.
+
+  Census data shows religion changing: from 2011 to 2021 the share answering **no religion** rose from about 22% to about 39%, and Christianity fell but stayed the largest group. A share is part of a whole, the year matters, and the question is optional.
+sources:
+  - title: 2021 Census shows changes in Australia's religious diversity (ABS)
+    url: https://www.abs.gov.au/media-centre/media-releases/2021-census-shows-changes-australias-religious-diversity
+    checked: 2026-11-01
+  - title: "Religion Data Summary, 2016 Census (ABS 2071.0)"
+    url: https://www.abs.gov.au/AUSSTATS/abs@.nsf/Lookup/by%20Subject/2071.0~2016~Main%20Features~Religion%20Data%20Summary~70
+    checked: 2026-11-01
+  - title: Religion in Australia (Wikipedia; 2011 figures for Islam, Hinduism and Buddhism, to check against ABS)
+    url: https://en.wikipedia.org/wiki/Religion_in_Australia
+    checked: 2026-11-01
+leads: >-
+  This is the last lesson in A diverse democracy. First Nations histories and cultures are taught in class.
+
+
+  ACARA elaboration for AC9HC7K04 (an example, not a checklist): "identifying trends regarding religious observance
+  and/or cultural heritage in Australian society, using the Australian Bureau of Statistics and other data sources"

@@ -1,0 +1,31 @@
+inquiry:
+  q: "If Australia's government is secular, why do so many Australians practise a religion?"
+  prompts:
+    - "Is 'secular' a rule about the government or about people?"
+    - "What does section 116 stop the Commonwealth doing?"
+  notes: "Keep to how the system works. Don't ask students about their own beliefs."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Government or society?"
+    minutes: 5
+    do: "Draw two columns: GOVERNMENT and SOCIETY. Read out the three words and the four parts of section 116; pairs say which column each goes in."
+    notes: "Listen for secular in the society column. That is Nib's mistake."
+  - at: make
+    kind: check
+    title: "Check a partner's three words"
+    minutes: 4
+    do: "Partners check each word has a made-up example and that secular is linked to the government."
+    notes: "Students write elsewhere; the site does not take or mark writing. Examples are made up, not about anyone's real beliefs."
+questions:
+  - at: investigate
+    title: "What does secular describe?"
+    type: question
+    q: "In Australia, what does secular describe?"
+    options:
+      - "The government, which favours no religion"
+      - "The people, who mostly have no religion"
+      - "The schools, which teach no religion"
+      - "The law, which bans religion in public"
+    answer: 0
+    explain: "Secular describes the government. People can follow any religion, or none."

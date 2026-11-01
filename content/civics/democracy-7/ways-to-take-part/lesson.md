@@ -2,7 +2,7 @@
 order: 3
 unit: participation
 title: Ways to take part in democracy
-node: AC9HC7K02 n3
+node: [AC9HC7K02 n3, AC9HC7S04 n1, AC9HC7S04 n3]
 assumes: [AC9HC7K02 n1]
 summary: "Citizens take part in Australia's democracy through elections and Parliament (voting, standing for election, petitions, inquiry submissions) and through community action (volunteering, community groups, social enterprise, campaigns and peaceful protest). Different methods suit different goals."
 language: maths

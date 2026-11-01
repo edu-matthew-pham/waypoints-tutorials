@@ -2,7 +2,7 @@
 order: 4
 unit: participation
 title: Formal and active citizenship
-node: AC9HC7K02 n4
+node: [AC9HC7K02 n4, AC9HC7S04 n2]
 assumes: [AC9HC7K02 n3]
 summary: "Formal citizenship is your legal membership of a country, with rights such as a passport and duties such as voting and jury service. Active citizenship is taking part in your community and democracy. Not everyone in Australia has always had the same rights of formal citizenship."
 language: maths

@@ -1,0 +1,44 @@
+# ABS Census of Population and Housing: share of people who gave each answer to the religion question (per cent).
+# 2021, and 2011 and 2016 for Christianity and no religion: ABS media release, checked 1 Nov 2026. Other 2011 and 2016
+# figures: as reported from ABS Census data (Wikipedia, Religion in Australia; 2016 also ABS 2071.0). The question is
+# optional, and other religions and "not stated" are left out, so a column does not add up to 100.
+
+# region: try
+widget: sheet
+cell A1: Answer given
+cell B1: 2011 (%)
+cell C1: 2016 (%)
+cell D1: 2021 (%)
+cell E1: Change 2011 to 2021
+cell A2: Christianity
+cell B2: 61.1
+cell C2: 52.1
+cell D2: 43.9
+cell A3: No religion
+cell B3: 22.3
+cell C3: 30.1
+cell D3: 38.9
+cell A4: Islam
+cell B4: 2.2
+cell C4: 2.6
+cell D4: 3.2
+cell A5: Hinduism
+cell B5: 1.3
+cell C5: 1.9
+cell D5: 2.7
+cell A6: Buddhism
+cell B6: 2.5
+cell C6: 2.4
+cell D6: 2.4
+edit: E2:E6
+table: A1:E6
+tools: fill
+# endregion
+
+# region: try-solution
+cell E2: =D2-B2
+cell E3: =D3-B3
+cell E4: =D4-B4
+cell E5: =D5-B5
+cell E6: =D6-B6
+# endregion

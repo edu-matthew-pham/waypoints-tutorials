@@ -217,7 +217,7 @@ Tested: validate clean; build; headless Chromium answered every question and bug
 
 Publish: whole-site (new board widget, subject page and teacher page changed). Ask Matthew first.
 
-## Plan (1 Nov 2026; awaiting Matthew's "go"): course `civics/diversity-7`, *A diverse democracy* (AC9HC7K04)
+## Plan (1 Nov 2026; Matthew said go, built 1 Nov): course `civics/diversity-7`, *A diverse democracy* (AC9HC7K04)
 
 Per `roadmap/checklist.md` › "Plan first, then build". Tagline *How does a secular, multi-faith democracy live together?* One unit (`diversity`), Usually Year 7, after `democracy-7`. Descriptor: "how Australia's secular democracy and pluralist, multi-faith society draws upon diverse cultural origins, including Christian and Western heritage, distinct First Nations Australian histories and cultures, and migrant communities". Prior: K01, K02, AC9HS6K03.
 
@@ -271,3 +271,20 @@ Misconception ids to add as single lines: `secular-means-no-religion`, `heritage
 2. **n2's one First Nations line** in student text (names that impacts differed, explains nothing). Keep it, or leave First Nations out of student text entirely and put it all in teacher notes?
 3. **Real Census figures** on the n4 board (dated, ABS). OK, or made-up data in the same shape?
 4. **Civics skills (S03, S04).** Suggest: S04's three nodes are already taught in `democracy-7` (*Ways to take part*, *Formal and active citizenship*), so tag those lessons with S04 nodes and add a teacher note, no new lessons. S03 (perspectives in civic sources, 3 nodes, hinge n1) becomes a short course `civics/perspectives-7` after K04, on made-up sources (a made-up council notice, editorial and community group post on one made-up issue), planned separately. Or fold S03 into K04 (more crowded) or the shared inquiry course (it is Civics-only).
+
+## Built (1 Nov 2026; Matthew said go; not yet tried with a class): `civics/diversity-7` and S04 tags
+
+**`civics/diversity-7` A diverse democracy** (Preview, AC9HC7K04, one unit `diversity`), to the plan and decisions above:
+- `secular-and-multi-faith` (n1, hinge), `christian-and-western-heritage` (n2), `many-origins` (n4, integration; the ICT `sheet` board with ABS Census religion shares 2011, 2016, 2021 in `census.yml`, students fill a change column with formulas). n3 is a planned item labelled *Taught in class*; the teacher guide links its curriculum pointer page (`teach/curriculum/civics/AC9HC7K04/`).
+- Departures from the plan: lesson 2 has no Vary step (its sort is the Try); lesson 4's sort became "what the Census can and can't show" (keeps First Nations out of the items, per T1); the s 116 wording says "none of the rules for standing for Parliament is about religion" rather than that s 116 covers MPs (whether MPs hold an office under the Commonwealth is a legal question: teacher note).
+- Facts checked 1 Nov: s 116 and s 42/Schedule (Constitution); Parliament's prayers, members not required, Acknowledgement of Country since 2010 (PEO); Census 2021 figures, 2011 and 2016 for Christianity and no religion, the voluntary question and 93% response (ABS 2021 release); 2016 Islam, Buddhism, Hinduism (ABS 2071.0). **Unverified against ABS directly:** 2011 Islam 2.2, Hinduism 1.3, Buddhism 2.5 (from Wikipedia's table of Census data; flagged in `census.yml` and teacher notes).
+- Nothing personal asked anywhere; made-up people have no religion as an identity; values questions are unmarked discussion (wider steps in lessons 1 and 2). First Nations: one transparency line in lesson 2, First Nations peoples named as an origin in lesson 3, nothing explained by us; no First Nations resources linked until an educator has looked.
+- `content/civics/index.md` links the course and adds *Whose view is it?* (S03) as Coming later; `content/civics-teachers.md` updated.
+
+**S04 tagged** (decision above): `ways-to-take-part` node `[AC9HC7K02 n3, AC9HC7S04 n1, AC9HC7S04 n3]`, `formal-and-active-citizenship` `[AC9HC7K02 n4, AC9HC7S04 n2]`, with a teacher note in each (real civic action is the teacher's option). Validate warns twice on `ways-to-take-part` (S04's prior is all of K02, and S04 n3 comes before n2): expected, because S04 is taught across two K02 lessons; left as warnings rather than mis-tagging.
+
+**Shared change:** a planned item can carry `label:` and `teach:` (`tools/build-site.mjs`, AUTHORING; logged in `shared.md`).
+
+Tested: validate clean (two expected warnings above); build; headless Chromium answered every question and bug check in the three new lessons and the two tagged lessons (26 checks, each rejecting a wrong answer first); typed the five change formulas into the Census sheet on the lesson page (the check holds back with four rows done and ticks at five; E3 = 16.6); the *Taught in class* row and the teacher-guide link render, and Before Year 7: HASS still shows its Coming later rows; 390 px phone width with no sideways scroll on the subject, course, lessons, guides and teacher page; deck fit check; law-7 and House smoke rerun. Match, sort and wider reasoning not clicked (validate only). Not tried with a class; worth a First Nations educator and a colleague's read before use beyond CGGS.
+
+Publish: whole-site (build tool, subject and teacher pages changed). Ask Matthew first.

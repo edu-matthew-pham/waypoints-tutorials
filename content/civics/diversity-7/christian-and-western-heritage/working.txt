@@ -1,0 +1,8 @@
+# Display-only reasoning: nothing runs.
+
+# region: nib
+A made-up Year 7 class lists things in Australian public life that came from Christian heritage.
+Their table includes Parliament's daily prayers and Christmas as a public holiday.
+Nib says: "Parliament opens with a prayer, so Australia must have an official religion."
+Nib says: "So everyone in Australia has to follow that religion."
+# endregion

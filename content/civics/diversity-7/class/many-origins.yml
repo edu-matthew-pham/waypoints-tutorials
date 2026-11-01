@@ -1,0 +1,31 @@
+inquiry:
+  q: "Where does Australia's diversity come from, and how do we know how it is changing?"
+  prompts:
+    - "What are the different origins of Australian society?"
+    - "What can Census data tell us, and what can't it?"
+  notes: "Use the data and made-up examples. Don't ask students about their own religion, languages or family."
+activities:
+  - at: run
+    kind: activity
+    title: "Read the Census together"
+    minutes: 5
+    do: "Put the Census sheet up. Work out the first change together, then ask students to predict the others before filling down."
+    notes: "Point out the years in every column, and that the question is optional."
+  - at: make
+    kind: check
+    title: "Check a partner's origins and trend"
+    minutes: 4
+    do: "Partners check there are three origins and one trend with its years."
+    notes: "Students write elsewhere; the site does not take or mark writing."
+questions:
+  - at: investigate
+    title: "Shares and people"
+    type: question
+    q: "If a group's share stays the same while the population grows, what happens to the number of people in that group?"
+    options:
+      - "It goes up"
+      - "It goes down"
+      - "It stays exactly the same"
+      - "You can't tell anything at all"
+    answer: 0
+    explain: "The same share of a bigger whole is more people."

@@ -1,0 +1,31 @@
+inquiry:
+  q: "Where do the traditions in Australia's Parliament and courts come from?"
+  prompts:
+    - "Which came from a religion, and which from British ways of governing?"
+    - "Does a tradition make anyone follow a religion?"
+  notes: "Keep to what the traditions are and where they came from. Views on keeping or changing them are for the wider discussion, with no side taken."
+activities:
+  - at: run
+    kind: activity
+    title: "Two columns"
+    minutes: 4
+    do: "Draw CHRISTIAN HERITAGE and WESTERN TRADITIONS on the board. Pairs place each example, then explain one placement."
+    notes: "If students ask about other origins, say the next lesson and your own lessons on First Nations histories and cultures take those up."
+  - at: make
+    kind: check
+    title: "Check a partner's table"
+    minutes: 4
+    do: "Partners check three examples, where each came from, and the line on why a tradition isn't an official religion."
+    notes: "Students write elsewhere; the site does not take or mark writing. No one is asked about their family's traditions."
+questions:
+  - at: investigate
+    title: "Oath or affirmation"
+    type: question
+    q: "Why can members of Parliament choose an oath or an affirmation?"
+    options:
+      - "So members of any belief can make the same promise"
+      - "So Christian members can make a stronger promise"
+      - "So senators and House members use different words"
+      - "So members can avoid making a promise at all"
+    answer: 0
+    explain: "Both are the same promise; the affirmation just doesn't name God."
