@@ -496,3 +496,37 @@ Matthew said continue after the state of play (Year 7 History: 5 of about 12 cou
 - Sources: fact checks this time leaned on encyclopedia pages (Wikipedia for Ban Zhao, Empress Lü, the Dazexiang uprising, Wang Mang, the salt and iron debate, Qin commanderies; a world-history textbook page for 119 BCE). Good enough for a preview; worth swapping for a scholarly or museum source before wider use.
 - Tested: `validate`, `effort`, build, every check on all three lessons answered in Chromium at 1280 and 390 px (70 answered, 36 wrong answers tried, feedback shown), course, Reference, Early human migration, pathway, teacher and guide pages load with no errors or sideways scroll, `check-decks` for both courses. `check-nodes` has 2 warnings, both in Civics (`democracy-7/ways-to-take-part`), not History.
 - **Publish:** whole-site (pathway, teacher page, shared build change). Can share the run with the dig board batch.
+
+## Plan (1 Nov 2026; awaiting Matthew's "go"): the last three lenses, built by agents, reviewed here
+
+Matthew agreed (1 Nov): this chat plans K11–K13 once; three agents build them in parallel (each in its own worktree, one course each); this chat reviews each against the rules and the checklist, merges and pushes. The History skills courses (S05–S07) go to a new chat (handoff: Project doc `claude/handoff-history-skills.md`).
+
+**Shared for all three (the `land-7` / `people-7` pattern):** Qin and Han China worked example; swap-in cards for Egypt, Greece, Rome and India in the course `reference.md`; one lesson per waypoint in node order; default worked-example shape (predict, try, worked example with Nib's slip as a bug task with `smaller:`, vary, practise, Make in the student's own book with a `reflect` tick, typical and wider steps); teacher notes quote the standard's elaborations, give sources with dates checked, and say what is simplified; class plans; made-up material labelled once per lesson; reasons and purposes as "historians think" where no source says so; contested ideas labelled where students meet them (T8); no First Nations content written (T1; these standards' elaborations have none); no pace labels; no boards or clips. Agents add their misconception ids and History index rows; this chat resolves the merges.
+
+### `history/beliefs-7`, *Beliefs and practices* (AC9HH7K11; prior K10)
+
+Tagline *What mattered to them, and how can we tell?* Beliefs are described as what people held ("many people in Han China believed…"), never as true or false; no step asks for a student's own beliefs. No images of human remains (the preserved body at Mawangdui is teacher-note only).
+
+1. **`beliefs-and-practices` (n1, hinge).** Insight: beliefs worked as a system that produced practices: duty to ancestors (offerings, family rites), Heaven and the Mandate of Heaven (rulers rule while Heaven approves; disasters and defeat could be read as losing it), an afterlife much like this life (tombs furnished with goods), Confucian teaching on family duty. Planted slip `beliefs-as-odd-customs`: Nib treats a practice as a random custom with no reason behind it ("they put model houses in tombs because they liked decorating"). Distractors: practices without beliefs; one belief for every person; modern labels read back.
+2. **`death-and-funerary-customs` (n2, focus area: death and funerary customs).** The node asks for one focus area; this one has the strongest evidence (Han tombs such as Mawangdui, 2nd century BCE; tomb models of houses, granaries and farms; the Terracotta Army). Using evidence: what a tomb's contents show people believed and valued. Typical and wider cover the other focus areas briefly: everyday life (farming calendar, Confucius on family) and warfare (the Mandate of Heaven used to justify war, ACARA's elaboration). Planted slip `tomb-shows-everyone`: a rich person's tomb taken as how everyone was buried.
+3. **`beliefs-as-a-window` (n3).** Insight: beliefs and practices show what a society valued and how it organised itself (family hierarchy, rulers' legitimacy), and what set it apart (compare Egypt's mummification card). Planted slip `beliefs-tell-nothing`: "they were just superstitious, so their beliefs tell us nothing about the society".
+
+### `history/contact-7`, *Contact and conflict* (AC9HH7K12; prior K11)
+
+Tagline *What changed when societies met?*
+
+1. **`causes-of-contact` (n1, hinge).** Insight: contacts and conflicts had several causes at once (power, land, security, trade, resources). Cases: the Qin wars of unification; the Han and the Xiongnu (security on the northern frontier, horses, trade); Han expansion west after Zhang Qian's mission (horses from Ferghana, allies against the Xiongnu). Planted slip `single-cause-conflict`. Overlap with S05's multi-causal waypoint is fine (the skills chat may link here).
+2. **`effects-of-contact` (n2).** Effects in the node's three kinds: conquest (Han commanderies along the Hexi Corridor), trade (silk west; horses, grapes and other goods east), peace agreements (marriage alliances and gifts to the Xiongnu, the *heqin* agreements, from about 198 BCE). Planted slip `effects-on-one-side-only`: only the winner changed.
+3. **`contact-and-change` (n3).** Insight: contact drove change across the ancient world: Roman demand for silk reached through middlemen (ACARA's "indirect contact" between Rome and the Han); Buddhism reaching China along trade routes in the later Han. Planted slip `societies-developed-alone`. Florus's story of envoys to Augustus is labelled as one Roman writer's claim that historians treat carefully (teacher note).
+
+### `history/individual-7`, *A significant individual* (AC9HH7K13; prior K12)
+
+Tagline *How much difference can one person make?* Worked individual: **Qin Shi Huang**, the First Emperor (named in ACARA's elaboration, and already met across the History courses). Swap-in cards: Hatshepsut or Ramesses II, Pericles or Socrates, Augustus or Julius Caesar, Ashoka or Chandragupta Maurya; Confucius as an alternative China card.
+
+1. **`who-and-why` (n1, hinge).** Context and criteria for significance (changed many people's lives, effects lasted, remembered and argued about). Planted slip `famous-means-significant`.
+2. **`achievements-and-how` (n2, hinge).** Achievements with the mechanism of change: one script, weights, measures and coins; roads and walls; laws applied through officials in every commandery (links `people-7`). Contested claims labelled: the burning of books and killing of scholars is "according to Sima Qian", whom later historians treat with care. Planted slip `did-it-alone`: Nib says he united China single-handed.
+3. **`legacy-and-significance` (n3).** Legacy within and beyond his lifetime: the dynasty fell about fifteen years after unification, but the Han kept his officials, script and measures; how contemporaries and later writers saw him (a hero to some, a tyrant to Han writers). Planted slip `significant-means-good`: significant is mistaken for admirable.
+
+**Review here before merging (each course):** every fact checked against a named source, preferably museum, UNESCO or scholarly over encyclopedia pages; checklist step 4 self-check; editorial pass; `validate`, `check-nodes`, build, every check answered in Chromium at 1280 and 390 px, `check-decks`.
+
+**Publish:** whole-site (pathway rows, teacher page). One run when all three are merged.
