@@ -105,8 +105,9 @@ tasks:
   - check:
       type: question
       q: "In Vue, a total worked out with a plain line went stale. Why is Preact's plain line, const count = stars.length, always right?"
-      options: ["Preact runs the whole App function again after every change, so the line runs again", "Preact is newer", "stars.length is special", "It is not: Preact's count goes stale too"]
+      options: ["Preact runs the App function again after each change", "Preact is newer", "stars.length is special", "It is not: Preact's count goes stale too"]
       answer: 0
+      feedback: [null, "Being newer does not decide it. The update rule does.", "length is an ordinary property. It is right because the line runs again.", "It stays right, because Preact runs the whole function, this line too, each time."]
       explain: "Vue runs setup once and watches refs; Preact (and React) run the component function again each time. Different update rules, the same result on the page."
   - check:
       type: bug
@@ -177,9 +178,10 @@ stage: info
 check:
   type: question
   q: "A school website team asks which framework to learn. What is the best advice?"
-  options: ["Learn the ideas (state, worked-out values, events, components) well in one; the others are new spelling", "Learn all three at once", "Only React matters", "Frameworks will all be gone soon"]
+  options: ["Learn the ideas well in one framework", "Learn all three at once to compare them", "Learn whichever one is most popular", "Skip them: frameworks will be gone soon"]
   answer: 0
-  explain: "The ideas outlast any one framework. Real projects add a build tool (npm create vue, Vite) and one file per component; your ideas carry straight over."
+  feedback: [null, "Three at once mixes up the spellings before the ideas are solid.", "Popularity changes. The ideas carry over to any of them.", "Frameworks change, but the ideas under them last."]
+  explain: "The ideas (state, worked-out values, events, components) are the same in each; another framework is new spelling for them. The ideas outlast any one framework. Real projects add a build tool (npm create vue, Vite) and one file per component; your ideas carry straight over."
 ```
 
 You have seen the same ideas in three frameworks. Real projects use a **build tool** and one file per component; the ideas stay the same.

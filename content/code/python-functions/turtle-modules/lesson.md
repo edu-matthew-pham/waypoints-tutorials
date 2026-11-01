@@ -78,9 +78,10 @@ tasks:
   - check:
       type: question
       q: "You fix the bug in program_a.py. What happens to program_b.py?"
-      options: ["It is fixed too", "It still has the bug, so you fix it separately", "It stops working", "Python warns you"]
+      options: ["It is fixed too", "It still has the bug", "It stops working", "Python warns you"]
       answer: 1
-      explain: "Each file has its own copy of wall, so each copy needs fixing. If both programs imported wall from one module, you would fix it once."
+      feedback: ["Each file has its own copy, so fixing one does not touch the other.", null, "It runs just as before, bug and all.", "Python does not know the two copies are related."]
+      explain: "It still has the bug, so you fix it separately. Each file has its own copy of wall, so each copy needs fixing. If both programs imported wall from one module, you would fix it once."
 ```
 
 Two separate programs both need `wall`, so each has its own copy. Nothing here crashes; the problem is the copying. Pasting from **My tools** works the same way: each paste is a copy, and editing the tool does not change copies already pasted. This is the problem a module solves.
@@ -106,6 +107,7 @@ tasks:
       q: "Where is square defined?"
       options: ["In this program", "In shapes.py, which this program imports", "Inside the turtle module", "Nowhere"]
       answer: 1
+      feedback: ["The def is not in this program. Look at the import line.", null, "turtle gives forward and left, but square comes from shapes.py.", "It is defined in shapes.py, and the import brings it in."]
       explain: "The def lives in shapes.py. The import line makes it available here."
     unlocks: [shapes.square, shapes.triangle, shapes.polygon]
   - check:
@@ -113,6 +115,7 @@ tasks:
       q: "main.py imports square, then defines its own square. What does square(80) draw?"
       options: ["A square, from shapes.py", "A circle, from main.py", "A square and a circle", "Nothing: Python stops with an error"]
       answer: 1
+      feedback: ["The later def replaces the imported square, so the name now means main.py's function.", null, "One name means one function at a time.", "Python allows the same name again. It just replaces the old one."]
       fault: logic
       misconception: name-rebinding
       explain: "The def in main.py comes after the import, so the name square now means the new function. Python gives no warning. Use a different name, or keep one definition."

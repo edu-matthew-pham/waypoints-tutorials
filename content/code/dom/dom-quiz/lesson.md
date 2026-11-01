@@ -92,6 +92,7 @@ tasks:
       q: "You want to add a fourth question. What is the smallest change?"
       options: ["Add one more object to the questions array", "Add a new function", "Add a new button in the HTML", "Change the score"]
       answer: 0
+      feedback: [null, "The functions already work for any question in the array.", "The choice buttons are made by code, one for each choice.", "The score counts right answers. It does not add questions."]
       explain: "The page is built from the array. One more object gives one more question, with its own choices and answer: nothing else needs to change."
   - check:
       type: bug
@@ -161,8 +162,9 @@ stage: info
 check:
   type: question
   q: "A bigger version of your quiz saves the best score for next time. What would it need that this page does not have?"
-  options: ["A way to store data between visits, such as a server or the browser's own storage", "A longer array", "More buttons", "A second script"]
+  options: ["A way to keep data between visits", "A variable called best", "A longer questions array", "A second script"]
   answer: 0
+  feedback: [null, "A variable forgets everything when the page closes.", "More questions do not help it remember anything.", "Every script forgets when the page closes, however many there are."]
   explain: "A page forgets everything when it is closed. Remembering between visits needs somewhere to keep data: in the browser, or on a server, as in the Python web apps course."
 ```
 

@@ -145,9 +145,10 @@ stage: info
 check:
   type: question
   q: "A website's search finds \"Python\" when you type \"  python \". What has it done first?"
-  options: ["Tidied the text: removed the spaces and ignored capitals", "Guessed", "Nothing: the text is the same", "Turned it into a number"]
+  options: ["Tidied it: no spaces, no capitals", "Guessed what you meant", "Nothing: the text is the same", "Turned it into a number"]
   answer: 0
-  explain: "Almost every program that reads typed text tidies it first, exactly like strip() and lower()."
+  feedback: [null, "It does not guess; it tidies the text the same way every time.", "\"  python \" and \"Python\" differ until tidied.", "Searching text needs text; there are no numbers here."]
+  explain: "It tidied the text: removed the spaces and ignored capitals. Almost every program that reads typed text tidies it first, exactly like strip() and lower()."
 ```
 
 Next lesson keeps things in a **list** that grows and shrinks: the adventurer's bag.

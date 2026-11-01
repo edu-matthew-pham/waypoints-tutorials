@@ -46,15 +46,17 @@ tasks:
   - check:
       type: question
       q: "Why is the score 100% on the training penguins?"
-      options: ["Each penguin's nearest match is itself, at distance 0, so it always copies its own species", "The training penguins are easier", "The model was trained twice", "It is a lucky shuffle"]
+      options: ["Each penguin's nearest match is itself", "The training penguins are easier", "The model was trained twice", "It is a lucky shuffle"]
       answer: 0
-      explain: "Tested on its own examples, nearest neighbour finds the very same penguin. That says nothing about penguins it has never met."
+      feedback: [null, "They are the same kind of penguins as the test set.", "Training once is enough to remember every example.", "Any shuffle gives 100% here, every time."]
+      explain: "Each penguin's nearest match is itself, at distance 0, so it always copies its own species. Tested on its own examples, nearest neighbour finds the very same penguin. That says nothing about penguins it has never met."
   - check:
       type: question
       q: "Why shuffle before splitting?"
-      options: ["The file is in order of species, so without a shuffle the test set would be nearly all one species", "Shuffling makes the model learn faster", "Python needs it", "To hide the answers"]
+      options: ["Without it, the test set is mostly one species", "Shuffling makes the model learn faster", "Python needs it before splitting", "To hide the species from the model"]
       answer: 0
-      explain: "A fair test has a mix like the real world. The Predict step showed what happens without a shuffle."
+      feedback: [null, "Shuffling does not change how the model learns.", "Python splits a list fine without shuffling.", "The model still sees the species of its training penguins."]
+      explain: "The file is in order of species. A fair test has a mix like the real world. The Predict step showed what happens without a shuffle."
   - check:
       type: bug
       code: testing.py#bug
@@ -118,9 +120,10 @@ stage: info
 check:
   type: question
   q: "A company says its model is 99% accurate. What should you ask first?"
-  options: ["Was it tested on data it had never seen, and data like the real world?", "How fast is it?", "Who wrote it?", "Nothing: 99% is good"]
+  options: ["Was it tested on data it had never seen?", "How fast does it give an answer?", "Which company or person wrote it?", "Nothing: 99% is good enough"]
   answer: 0
-  explain: "A score only means something if the test was fair. Always ask what it was tested on."
+  feedback: [null, "Speed says nothing about whether the 99% is real.", "Who made it matters less than how it was tested.", "99% on the examples it learned from could mean nothing."]
+  explain: "Ask whether it was tested on data it had never seen, and data like the real world. A score only means something if the test was fair. Always ask what it was tested on."
 ```
 
 Next: the same model, the same split and the same test in a few lines of scikit-learn, the library real data scientists use.

@@ -53,12 +53,14 @@ tasks:
       q: "A message HELLO changes to EHLLO (two letters swap). Does this checksum notice?"
       options: ["Yes, always", "No: the letters add to the same total", "Only for short messages", "Yes, because the order changed"]
       answer: 1
+      feedback: ["Adding ignores order, so swaps slip through.", null, "Length doesn't matter; the total is the same.", "The order changed, but adding ignores order."]
       explain: "Addition ignores order, so swapped letters give the same checksum. That is a weakness of this simple checksum. Real checksums are sensitive to order."
   - check:
       type: question
       q: "Someone changes the message in the air and also works out the new checksum with the same public method. What does the receiver think?"
-      options: ["It spots the change", "Nothing wrong: the checksum matches the changed message", "It shows an error", "It asks for the key"]
+      options: ["It spots the change", "Nothing wrong: the checksum matches", "It shows an error message", "It asks the sender for the key"]
       answer: 1
+      feedback: ["How would it? The checksum matches the new message.", null, "Everything matches, so there's no error.", "This checksum has no key."]
       explain: "A public checksum protects against accidents, not against a person who deliberately changes the message. If the checksum also needs a secret key, nobody without the key can produce a matching one."
 ```
 

@@ -144,9 +144,10 @@ stage: info
 check:
   type: question
   q: "A game needs 50 falling stars. What is the trouble with s1, s2, s3 … s50?"
-  options: ["Nothing: just keep copying", "About 550 near-identical lines, and a change to how stars move must be made 50 times", "Python only allows 10 turtles", "The stars would all be the same colour"]
+  options: ["Nothing: just keep copying", "Hundreds of copied lines to change", "Python only allows 10 turtles", "The stars would all be the same colour"]
   answer: 1
-  explain: "Separate variables cost the same block of lines for every star. Next lesson keeps the stars in a list, so a loop does the work for all of them."
+  feedback: ["It works, but every change has to be made 50 times.", null, "Python allows as many turtles as you like.", "Each turtle can have its own colour."]
+  explain: "About 550 near-identical lines, and a change to how stars move must be made 50 times. Separate variables cost the same block of lines for every star. Next lesson keeps the stars in a list, so a loop does the work for all of them."
 ```
 
 Separate names work for three stars and break down for fifty. The rest of this course tidies the game step by step: a list of stars, then one dictionary per star, then a `Star` class of your own.

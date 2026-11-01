@@ -50,12 +50,14 @@ tasks:
       q: "What does encrypt do with the key 0?"
       options: ["Nothing is changed", "Every letter becomes A", "It stops with an error", "Every letter moves one place"]
       answer: 0
+      feedback: [null, "No letter moves, so none can become A.", "0 is a valid key; it just changes nothing.", "That's key 1."]
       explain: "A shift of 0 leaves each letter where it is. Key 26 does the same, because 26 % 26 is 0. A key of 0 or 26 would be no secret at all."
   - check:
       type: question
       q: "Ana encrypted a message with key 5. To decrypt it, which key should she use with the same encrypt function?"
       options: ["5 again", "−5, or 21 (26 − 5)", "10", "26"]
       answer: 1
+      feedback: ["Using 5 again shifts 5 more, not back.", null, "10 moves further away.", "26 is a full circle: it changes nothing."]
       explain: "Shifting by 5 and then by 21 is 26 places in all: the full circle back to the start. So decrypt(message, key) is encrypt(message, 26 − key)."
 ```
 

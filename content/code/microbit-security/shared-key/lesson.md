@@ -57,12 +57,14 @@ tasks:
       q: "The sender encrypted 6 with key 3, so the radio carries 5. A receiver wrongly uses key 4. What does it show?"
       options: ["An error message", "1", "6", "Nothing"]
       answer: 1
+      feedback: ["XOR never gives an error; it just gives a number.", null, "6 needs the right key, 3.", "It always shows a number."]
       explain: "5 ^ 4 = 101 ^ 100 = 001 = 1. The receiver gets a wrong number and no warning. Nothing in XOR tells you the key was wrong."
   - check:
       type: question
       q: "Why does the receiver use the very same operation the sender used?"
       options: ["Because XOR undoes itself when you repeat it with the same key", "Because the radio flips the bits back", "Because the micro:bit remembers the number", "Because 5 is a special key"]
       answer: 0
+      feedback: [null, "Radio carries the bits unchanged.", "The micro:bit doesn't store the original number.", "The key is 3, and any key undoes itself."]
       explain: "(message ^ key) ^ key = message. The key cancels itself."
 ```
 
@@ -97,9 +99,10 @@ tasks:
   - check:
       type: question
       q: "Press A three times. The radio carries the same number each time. Why might that be a problem for a door keypad?"
-      options: ["It is not a problem", "Anyone who hears the number once has a number that works every time", "The micro:bit runs out of numbers", "The key changes each time"]
+      options: ["It isn't a problem: it's encrypted", "Anyone who hears it can repeat it", "The micro:bit runs out of numbers", "The key changes each time"]
       answer: 1
-      explain: "The locked PIN is the same every time. A listener doesn't need the key to repeat it. You will fix this in the Challenge–response lesson."
+      feedback: ["Encrypted or not, a recorded number still works when it is sent again.", null, "There are plenty of numbers; that isn't it.", "The key stays the same, so the number does too."]
+      explain: "Anyone who hears the number once has a number that works every time. The locked PIN is the same every time. A listener doesn't need the key to repeat it. You will fix this in the Challenge–response lesson."
 ```
 
 ### The PIN

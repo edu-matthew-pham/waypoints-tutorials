@@ -96,9 +96,10 @@ tasks:
   - check:
       type: question
       q: "Start again empties the list on the page. After you press Run, the books are back. Why?"
-      options: ["Start again never changed what was saved, so the next visit loads the old list", "localStorage can't be emptied", "Run undoes Start again", "The books were in the code"]
+      options: ["Start again never changed the saved copy", "localStorage can't be emptied", "Run undoes Start again", "The books were in the code"]
       answer: 0
-      explain: "The page and the saved copy are separate. Start again must also save the empty list, or remove the saved one."
+      feedback: [null, "It can: removeItem, or saving an empty list, empties it.", "Run starts the page again, and the page loads whatever is saved.", "The list starts empty in the code. The books come from what was saved."]
+      explain: "Start again emptied only the page, so the next visit loads the old saved list. The page and the saved copy are separate. Start again must also save the empty list, or remove the saved one."
   - check:
       type: bug
       code: page.html#bug
@@ -166,9 +167,10 @@ stage: info
 check:
   type: question
   q: "Your to-do app saves its list with localStorage. A friend opens the same page on their own computer. What do they see?"
-  options: ["Their own list (empty at first): each browser keeps its own data", "Your list", "Everyone's lists", "An error"]
+  options: ["Their own list, empty at first", "Your list, since it is the same page", "Everyone's lists", "An error"]
   answer: 0
-  explain: "localStorage stays in one browser on one computer. Sharing data between people needs a server, as in Web apps with Flask."
+  feedback: [null, "The page is the same, but the data stays in the browser that saved it.", "localStorage is not shared. Nothing is sent anywhere.", "There is nothing saved yet, so the code keeps the empty list. No error."]
+  explain: "Each browser keeps its own data. localStorage stays in one browser on one computer. Sharing data between people needs a server, as in Web apps with Flask."
 ```
 
 For Vue: save inside `watch(tasks, …, { deep: true })` and load in `setup`. Next on the pathway: **Your site, for real**, where your page goes online.

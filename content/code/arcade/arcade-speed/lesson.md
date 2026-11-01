@@ -88,8 +88,9 @@ tasks:
   - check:
       type: question
       q: "Leo wants A to make his rocket hop 30 pixels to the right. He sets vx to 30 when A is pressed. What happens?"
-      options: ["The rocket keeps sliding right, off the edge of the screen", "The rocket hops 30 pixels and stops", "Nothing: vx only works in on start", "The rocket moves 30 pixels up"]
+      options: ["The rocket keeps sliding right, off the screen", "The rocket hops 30 pixels and stops", "Nothing: vx only works in on start", "The rocket moves 30 pixels up"]
       answer: 0
+      feedback: [null, "vx is a speed, not a distance: the rocket keeps moving until vx is set back to 0.", "vx works in any event, such as on A pressed.", "vx moves across; vy moves up and down."]
       fault: logic
       misconception: position-vs-velocity
       explain: "vx is a speed, not a distance. Setting it to 30 starts the rocket moving 30 pixels every second, and nothing sets it back to 0. A hop changes the position: change x by 30."
@@ -143,6 +144,7 @@ check:
   q: "The star is placed at (150, 20). Where does it appear?"
   options: ["Near the top right corner", "Near the bottom right corner", "Near the top left corner", "In the middle"]
   answer: 0
+  feedback: [null, "y counts down from the top, so 20 is near the top.", "x 150 is near the right edge; the screen is 160 across.", "The middle is about (80, 60)."]
   explain: "x 150 is near the right edge (the screen is 160 across), and y 20 is near the top, because y counts down."
 ```
 

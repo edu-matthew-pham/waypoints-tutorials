@@ -48,13 +48,15 @@ tasks:
       q: "In English, the most common letter is E. In a long cipher text the most common letter is L. What is the likely key?"
       options: ["3", "7", "11", "25"]
       answer: 1
+      feedback: ["3 places after E is H.", null, "11 places after E is P.", "25 places after E is D."]
       explain: "L is 7 places after E (E→F→G→H→I→J→K→L). So the key is probably 7. Counting letters finds a Caesar key without trying them all."
   - check:
       type: question
       q: "Lee says: 'If I use a 100-letter message instead of a 5-letter one, it is harder to break.' Is that right for a Caesar cipher?"
-      options: ["Yes, longer is stronger", "No: a longer message gives more clues, and the key is still one of 25", "Yes, but only with spaces", "No, because the key changes each letter"]
+      options: ["Yes, longer is stronger", "No: there are still only 25 keys to try", "Yes, but only with spaces", "No, because the key changes each letter"]
       answer: 1
-      explain: "Strength comes from how many keys are possible, not how long the message is. A longer message actually makes letter counting work better."
+      feedback: ["Length doesn't add keys, and more letters make counting easier.", null, "Spaces don't change how many keys there are.", "In a Caesar cipher the key is the same for every letter."]
+      explain: "A longer message gives more clues, and the key is still one of 25. Strength comes from how many keys are possible, not how long the message is. A longer message actually makes letter counting work better."
 ```
 
 ### How many tries

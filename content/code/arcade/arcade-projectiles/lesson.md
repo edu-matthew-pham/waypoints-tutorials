@@ -82,15 +82,17 @@ tasks:
       q: "A shot misses every alien and flies off the top of the screen. What happens to it?"
       options: ["The engine removes it", "It keeps flying for ever, off the screen", "It comes back at the bottom", "It turns into an alien"]
       answer: 0
+      feedback: [null, "Projectiles are auto destroyed by the engine once they leave the screen.", "Sprites don't wrap round; the engine removes the shot.", "A sprite never changes kind on its own."]
       explain: "A projectile is removed by the engine as soon as it leaves the screen, so missed shots do not pile up."
   - check:
       type: question
       q: "Ben wrote his own hit event (below). He fires at the aliens, but every shot passes straight through. Why?"
-      options: ["The shot is too fast to hit anything", "A projectile is its own kind, Projectile, so a Player–Enemy overlap never notices a shot", "destroy only works on the player", "The overlap needs to be inside on A pressed"]
+      options: ["The shot is too fast to hit anything", "The shot is of kind Projectile, not Player", "destroy only works on the player", "The overlap needs to be inside on A pressed"]
       answer: 1
+      feedback: ["Speed is not the problem: the overlap is waiting for the wrong kind.", null, "destroy works on any sprite; the event just never runs for a shot.", "Overlap events sit on their own, outside other events."]
       fault: logic
       misconception: projectile-kind
-      explain: "The shot is made by the ship, but it is not the ship: it is a sprite of kind Projectile. Ben's event waits for a Player to touch an Enemy, which only happens if the ship itself crashes into an alien. The first kind should be Projectile."
+      explain: "The shot is made by the ship, but it is not the ship: it is a sprite of its own kind, Projectile, so a Player–Enemy overlap never notices it. Ben's event only runs if the ship itself crashes into an alien. The first kind should be Projectile."
 ```
 
 ### What does each part do?
@@ -143,6 +145,7 @@ check:
   q: "The cat is at x 100 and the mouse at x 40. Which way does the cat go?"
   options: ["Left (vx is set to -40)", "Right (vx is set to 40)", "It stops", "Both ways at once"]
   answer: 0
+  feedback: [null, "100 is not less than 40, so the else part runs, not the first.", "The cat stops only if something sets vx to 0.", "if … else runs exactly one part each frame."]
   explain: "Is cat x (100) less than mouse x (40)? No, so the else part runs: vx -40, to the left, towards the mouse."
 ```
 

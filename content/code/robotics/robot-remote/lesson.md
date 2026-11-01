@@ -52,8 +52,9 @@ tasks:
   - check:
       type: question
       q: "Ben has two programs: one for his remote, one for his robot. Pressing A does nothing. Why?"
-      options: ["Radio does not work with robots", "The remote is in radio group 1 and the robot in group 2, so the robot never hears the message", "The robot needs a forever block", "He should send a word, not a number"]
+      options: ["Radio does not work with robots", "The remote and robot are in different groups", "The robot needs a forever block", "He should send a word, not a number"]
       answer: 1
+      feedback: ["Robots use the same radio as any micro:bit.", null, "A radio handler waits for messages by itself; no forever is needed.", "Words and numbers both travel. Check who can hear them."]
       fault: logic
       misconception: radio-group-mismatch
       explain: "Radio messages only reach micro:bits in the same group. Ben's remote sends on group 1, but his robot listens on group 2."

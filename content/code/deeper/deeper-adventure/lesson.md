@@ -84,12 +84,14 @@ tasks:
       q: "What is things[\"kitchen\"]?"
       options: ["[\"key\"], the list of things lying in the kitchen", "\"A kitchen that smells of toast.\"", "{\"south\": \"hall\"}", "The bag"]
       answer: 0
+      feedback: [null, "That is rooms[\"kitchen\"], the description.", "That is exits[\"kitchen\"], the ways out.", "The bag is its own list, bag."]
       explain: "things maps each room to a list of what lies there. Taking something moves it from that list to the bag."
   - check:
       type: question
       q: "Where would a new command, such as help, go?"
       options: ["A new elif branch in the loop", "In the rooms dictionary", "In things", "Before the loop"]
       answer: 0
+      feedback: [null, "rooms holds descriptions, not commands.", "things holds what lies in each room.", "Before the loop it would run once; commands are read inside the loop."]
       explain: "Each command is one branch: elif command == \"help\": and what it prints. The else at the end catches anything not understood."
 ```
 
@@ -155,9 +157,10 @@ stage: info
 check:
   type: question
   q: "Your adventure forgets everything when the program stops. What would it need to save the game?"
-  options: ["To write here and bag to a file, and read them back next time", "A bigger dictionary", "More rooms", "Nothing: Python remembers"]
+  options: ["To write its state to a file", "A bigger dictionary to hold it", "A global variable for here and bag", "Nothing: Python remembers"]
   answer: 0
-  explain: "Saving means writing the game's state to a file and reading it back. That is the next step in this course: files."
+  feedback: [null, "Any dictionary is lost when the program stops.", "global shares a variable inside the program; it still disappears when it stops.", "Variables are gone when the program stops."]
+  explain: "It would write here and bag to a file, and read them back next time. Saving means writing the game's state to a file and reading it back. That is the next step in this course: files."
 ```
 
 Every game, from text adventures to open worlds, is this shape: a loop that reads input, rules that change the world, and the world stored as data. Next in this course: saving and loading the game with a file.

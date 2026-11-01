@@ -59,14 +59,15 @@ tasks:
       q: "Another model scores well everywhere except low light. Which fix is most likely to work?"
       options: ["Add training photos taken in low light", "Add more photos on the same bright desk", "Train for longer", "Rename the classes"]
       answer: 0
+      feedback: [null, "More of the same bright photos teaches it nothing about low light.", "Longer training on the same photos won't show it the dark.", "Names don't change what it learned."]
       explain: "Look for what the failures share (low light), then add training photos that have it. Change the data, not the settings."
   - check:
       type: question
       q: "Sam's model scores 50% on the messy bench. Sam adds 100 more photos of the same items on the same desk. The messy score doesn't change. What went wrong?"
-      options: ["The new photos were like the old ones, so they added no variety", "100 photos is too many", "Sam needed to delete the old photos first", "The board's test is unfair"]
+      options: ["The new photos added no variety", "100 photos is too many", "Sam needed to delete the old photos first", "The board's test is unfair"]
       answer: 0
       feedback: [null, "More photos can help, but only if they are different from the ones the model already has.", "The old photos are fine; they just don't show any other backgrounds.", "Every model is tested on the same photos."]
-      explain: "More of the same data teaches the model nothing new. Sam needs photos on different backgrounds."
+      explain: "The new photos were like the old ones. More of the same data teaches the model nothing new. Sam needs photos on different backgrounds."
 ```
 
 ### Accuracy
@@ -104,6 +105,7 @@ tasks:
       q: "You train Paper with 60 photos and Plastic with 10. Which way does the model lean when it is unsure?"
       options: ["Towards Paper", "Towards Plastic", "Neither: the number of photos doesn't matter"]
       answer: 0
+      feedback: [null, "Plastic has fewer examples, so it wins fewer close calls.", "With 60 against 10, the bigger class wins most close calls."]
       explain: "A class with many more examples wins most close calls. Give each class about the same number of photos."
   - check: { type: board, text: "The model labels a can or a bottle of glass as paper or plastic. Add a Neither class and get the 'not paper or plastic' group to 75% or more.", when: "has_neither = 1 and acc_neither >= 0.75" }
 ```
@@ -127,8 +129,10 @@ tasks:
   - check:
       type: question
       q: "A model was trained on photos taken at midday by a window. It scores 100% plain, 88% messy, 25% low light. What is the problem, and the fix?"
-      options: ["No dim photos in training: add photos taken in low light", "Too few classes: add a Neither class", "Too many photos: delete some", "The test is unfair: ignore low light"]
+      options: ["No dim photos: add low-light photos", "Too few classes: add a Neither class", "Too many photos: delete some", "The test is unfair: ignore low light"]
       answer: 0
+      feedback: [null, "A Neither class helps with other items; this model fails in low light.", "More photos is not the problem.", "Low light is a real condition the sorter will meet."]
+      explain: "Look at what the failures share: low light. Every training photo was taken in daylight, so add photos taken in low light."
   - check:
       type: question
       q: "A model scores 90% on paper and plastic but labels every can as Plastic with 95% confidence. What is the problem, and the fix?"
@@ -138,8 +142,10 @@ tasks:
   - check:
       type: question
       q: "Paper has 80 photos and Plastic has 15. The model calls most plastic items Paper. What is the problem, and the fix?"
-      options: ["The classes are unbalanced: give each class about the same number of photos", "Plastic is harder to see: add a filter", "It needs a Neither class", "Retrain with the same photos"]
+      options: ["Unbalanced classes: even out the photos", "Plastic is harder to see: add a filter", "It needs a Neither class", "Retrain with the same photos"]
       answer: 0
+      feedback: [null, "No filter needed: the model leans towards the class with more photos.", "A Neither class helps with other items, not this lean.", "The same lopsided photos give the same lean."]
+      explain: "Paper has over five times as many photos, so it wins most close calls. Give each class about the same number of photos."
 ```
 
 ### Midday photos

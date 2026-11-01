@@ -90,6 +90,7 @@ tasks:
       q: "Why does the circle turn round when speed = -speed runs?"
       options: ["3 becomes -3, so x goes down instead of up", "The circle is deleted and made again", "p5 flips the canvas", "speed becomes zero"]
       answer: 0
+      feedback: [null, "The same circle keeps moving; only the sign of speed changes.", "Nothing flips the canvas; x just goes down instead of up.", "-3 is not zero: it is the same size, the other way."]
       explain: "A negative speed is added to x, so x gets smaller and the circle moves left. Running speed = -speed again makes it positive and it moves right."
   - check:
       type: bug
@@ -156,9 +157,10 @@ stage: info
 check:
   type: question
   q: "A game has 20 balls. How would you write the bounce for each, without 20 copies of the same code?"
-  options: ["A list of balls and a loop that checks each one", "Copy the code 20 times", "Use a bigger canvas", "Only bounce one ball"]
+  options: ["A list of balls and a loop over it", "Write a function for each of the 20 balls", "Use a bigger canvas so they bounce less", "Give all 20 balls the same x and y"]
   answer: 0
-  explain: "Copying code 20 times is slow and every fix has to be made 20 times. A list holds all the balls and a loop does the same thing for each of them: the next lesson."
+  feedback: [null, "20 functions is still 20 copies; one loop handles them all.", "A bigger canvas delays the bounce, but each ball still needs it.", "Then the 20 balls would sit on top of each other, like one ball."]
+  explain: "Copying code 20 times is slow and every fix has to be made 20 times. A list holds all the balls and a loop checks each one in turn: the next lesson."
 ```
 
 Decisions are what turn drawing into a game. Next: lists and loops, so one piece of code can handle a whole row of things.

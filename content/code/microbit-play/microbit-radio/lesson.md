@@ -85,8 +85,9 @@ tasks:
   - check:
       type: question
       q: "Ella loads the program onto two real micro:bits. Pressing A on either does nothing. She changed one to radio set group 2. Why does nothing arrive?"
-      options: ["Radio only works in the simulator", "The two micro:bits are in different groups, so neither hears the other", "send number needs a pause", "Group 2 is broken"]
+      options: ["Radio only works in the simulator", "The two micro:bits are in different groups", "send number needs a pause", "Group 2 is broken"]
       answer: 1
+      feedback: ["Radio works on real micro:bits too.", null, "A pause doesn't stop a message arriving.", "Every group works; they just need the same one."]
       fault: logic
       misconception: radio-group-mismatch
       explain: "A micro:bit only receives messages sent to its own group. One is on channel 1 and one on channel 2, so every message goes unheard."

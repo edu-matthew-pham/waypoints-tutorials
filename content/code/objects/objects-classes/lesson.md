@@ -85,6 +85,7 @@ tasks:
       q: "Inside __init__, what is self?"
       options: ["The star being made right now", "Every star at once", "The class itself", "The player"]
       answer: 0
+      feedback: [null, "Each call makes one star, and self is that one.", "The class is the pattern; self is one object made from it.", "self belongs to whatever class __init__ is in: here Star."]
       explain: "Each time Star(...) runs, self is the new star, so self.speed = ... stores a speed in that star only. Four stars, four speeds."
   - check:
       type: bug
@@ -149,9 +150,10 @@ stage: info
 check:
   type: question
   q: "In MakeCode Arcade or microStudio, each sprite has an x, a y and a speed. In Python words, what is each sprite?"
-  options: ["An object, made from a class, with its own values", "A list", "A loop", "A dictionary key"]
+  options: ["An object, made from a class", "A list holding x, y and speed", "A function that moves it", "A variable called sprite"]
   answer: 0
-  explain: "Every game engine works like this: a pattern (a class) and many objects made from it, each keeping its own values."
+  feedback: [null, "A list could hold the values, but a sprite also has its own behaviour.", "Moving is something a sprite does: a method of its class.", "A variable can name a sprite; the sprite itself is the object."]
+  explain: "Each object keeps its own values. Every game engine works like this: a pattern (a class) and many objects made from it, each keeping its own values."
 ```
 
 The stars and rocks still need the game to move them and check them one line at a time. Next lesson gives the class its own **methods**, so a star can move itself: `star.move()`.

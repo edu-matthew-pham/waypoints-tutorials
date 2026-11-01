@@ -76,19 +76,21 @@ tasks:
   - check:
       type: question
       q: "Noah made the flashHeart function. He presses A and nothing happens. Why?"
-      options: ["The function is too long", "Nothing calls flashHeart: making a function does not run it", "Functions only work with B", "He needs a pause first"]
+      options: ["The function is too long", "Nothing calls flashHeart", "Functions only work with B", "He needs a pause first"]
       answer: 1
+      feedback: ["Length doesn't matter; it never runs.", null, "Any event can call a function.", "A pause wouldn't run it either."]
       fault: logic
       misconception: define-not-call
-      explain: "Making a function only names the job. It runs when a call block runs it. Noah's A event is empty, so nothing calls it."
+      explain: "Making a function does not run it. Making a function only names the job. It runs when a call block runs it. Noah's A event is empty, so nothing calls it."
   - check:
       type: question
       q: "Without a function, the flash blocks are copied into A and into shake. You change the heart to a diamond in A only. What goes wrong?"
-      options: ["A flashes a diamond and shake still flashes a heart", "Nothing", "Both flash a diamond", "The program stops"]
+      options: ["Shake still flashes a heart", "Nothing", "Both flash a diamond", "The program stops"]
       answer: 0
+      feedback: [null, "Only one copy changed, so the two jobs differ now.", "Shake has its own copy, still with the heart.", "Both copies still run; one just shows a different picture."]
       fault: design
       misconception: copied-blocks
-      explain: "Copied blocks have to be changed in every copy. With a function there is one copy, so one change reaches every call."
+      explain: "A flashes a diamond and shake still flashes a heart. Copied blocks have to be changed in every copy. With a function there is one copy, so one change reaches every call."
   - check:
       type: match
       q: "This is the same program in Python (press Python at the top of the editor). Match each Python line with what it does."
@@ -166,6 +168,7 @@ check:
   q: "Sol's team picker has five names, but picks from 0 to 3. Whose name never comes up?"
   options: ["Eve", "Ava", "Dev", "Nobody's: they all come up"]
   answer: 0
+  feedback: [null, "Ava is at place 0, which 0 to 3 reaches.", "Dev is at place 3, which 0 to 3 reaches.", "Five names need places 0 to 4."]
   explain: "Eve is the fifth name, at place 4. pick random 0 to 3 never reaches place 4. Picking from 0 to length − 1 would."
 ```
 

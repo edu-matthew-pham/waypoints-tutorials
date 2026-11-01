@@ -120,8 +120,9 @@ tasks:
     check:
       type: question
       q: "Bulma's button is class=\"button is-primary\". How is it like Bootstrap's btn btn-primary?"
-      options: ["A base class for the shape and a second class for the colour", "It needs a style block", "It uses one class per CSS property", "It has no classes"]
+      options: ["A base class for shape, a second for colour", "It needs a style block", "It uses one class per CSS property", "It has no classes"]
       answer: 0
+      feedback: [null, "No style block is needed. Bulma's rules are in its own file, like Bootstrap's.", "That is Tailwind's way. is-primary sets a whole look at once.", "It has two: button and is-primary."]
       explain: "Bulma works the same way as Bootstrap with different names: button for the shape, is-primary for the colour."
   - picture: page.html#fw-tailwind
     check:
@@ -240,6 +241,7 @@ check:
   q: "Bootstrap's class names make a page look a certain way. What makes a page do things when people click?"
   options: ["JavaScript, as in the DOM course", "More Bootstrap classes", "A second stylesheet", "The navbar"]
   answer: 0
+  feedback: [null, "Classes change the look. A click needs code that runs.", "A stylesheet only changes how things look.", "The navbar is styled HTML. Doing something on a click needs JavaScript."]
   explain: "Frameworks for the look are CSS. To make a page react, you need JavaScript: the DOM course, then Vue, a framework for that."
 ```
 

@@ -76,12 +76,14 @@ tasks:
       q: "The list has 3 answers. Which places can pick random 0 to length − 1 choose?"
       options: ["0, 1 or 2", "1, 2 or 3", "0, 1, 2 or 3", "Only 0"]
       answer: 0
+      feedback: [null, "Places start at 0.", "Place 3 would need 4 items; length − 1 is 2.", "pick random chooses from 0 to 2, not only 0."]
       explain: "The length is 3, so it picks from 0 to 2: exactly the three places."
   - check:
       type: question
       q: "Kai's magic 8-ball never says Yes, and sometimes shows nothing at all. Why?"
-      options: ["Yes is too short to show", "Places start at 0, but Kai picks from 1 to 3: he skips Yes and asks for a place that is not there", "pick random is broken", "The list needs four items"]
+      options: ["Yes is too short to scroll", "He picks 1 to 3, but places start at 0", "pick random can't pick its first number", "The list needs a fourth item"]
       answer: 1
+      feedback: ["Short words show fine.", null, "pick random can pick either end of its range.", "Three items is fine; the places he picks are the trouble."]
       fault: logic
       misconception: list-first-is-one
       explain: "Yes is at place 0, which Kai never picks, and place 3 does not exist. Picking from 0 to length − 1 covers every item."
@@ -90,6 +92,7 @@ tasks:
       q: "Ana added two answers, so the list has five. Her code still picks from 0 to 2. What happens?"
       options: ["The two new answers never come up", "All five come up", "It shows an error", "Only the new answers come up"]
       answer: 0
+      feedback: [null, "0 to 2 only reaches three places.", "Places 0 to 2 all exist, so there is no error.", "The new ones are at places 3 and 4, which 0 to 2 never reaches."]
       fault: logic
       misconception: pick-range-fixed
       explain: "0 to 2 only reaches the first three places. Picking from 0 to length − 1 grows with the list."
@@ -144,6 +147,7 @@ check:
   q: "This is last lesson's mood chooser. choice starts at 0. You press A four times. Which mood shows after the 4th press?"
   options: ["Tired", "Happy", "Hungry", "Nothing"]
   answer: 0
+  feedback: [null, "Happy shows after the 3rd press, when choice goes back to 0.", "Hungry shows after the 2nd press.", "Every press shows a mood."]
   explain: "The presses make choice 1, 2, then 3, which goes back to 0, then 1. Place 1 is Tired."
 ```
 

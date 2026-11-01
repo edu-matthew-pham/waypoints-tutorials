@@ -58,19 +58,22 @@ tasks:
       q: "What travels down the USB cable when the board sends a label?"
       options: ["A line of text, such as Paper", "The photo", "The whole model", "A number from 1 to 3"]
       answer: 0
+      feedback: [null, "The photo stays on the computer.", "The model stays on the computer too.", "The board sends the label's name, as text."]
       explain: "Only the label, as text, ending with a new line. The micro:bit never sees the photo or the model."
   - check:
       type: question
       q: "Ben's model has classes Paper and Plastic. His micro:bit never shows anything. Why?"
-      options: ["He checks for \"paper\" and \"plastic\", but the board sends \"Paper\" and \"Plastic\"", "His micro:bit is too slow", "Serial only works with numbers", "He needs a forever block"]
+      options: ["He checks for \"paper\", not \"Paper\"", "His micro:bit is too slow", "Serial only works with numbers", "He needs a forever block"]
       answer: 0
-      explain: "Text has to match exactly, capital letters included. Both sides must agree on every word."
+      feedback: [null, "It's fast enough; nothing matches.", "Serial sends lines of text fine.", "on serial data received runs by itself."]
+      explain: "He checks for \"paper\" and \"plastic\", but the board sends \"Paper\" and \"Plastic\". Text has to match exactly, capital letters included. Both sides must agree on every word."
   - check:
       type: question
       q: "Why does the webcam wait for a label to hold for a moment above 80% before sending it?"
-      options: ["So a model that flickers between two labels doesn't make the micro:bit jump back and forth", "The cable is slow", "The micro:bit can only read one label a minute", "So the model can retrain"]
+      options: ["So a flickering label doesn't make it jump about", "The cable is slow", "The micro:bit can only read one label a minute", "So the model can retrain"]
       answer: 0
-      explain: "When the model is unsure, its top label changes many times a second. Acting on every change would make a sorter jitter."
+      feedback: [null, "The cable sends a short label in no time.", "It can read many labels a second.", "The model doesn't retrain while it runs."]
+      explain: "So a model that flickers between two labels doesn't make the micro:bit jump back and forth. When the model is unsure, its top label changes many times a second. Acting on every change would make a sorter jitter."
 ```
 
 ### What is sent

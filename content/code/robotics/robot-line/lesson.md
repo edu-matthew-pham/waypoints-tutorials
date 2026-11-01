@@ -56,8 +56,9 @@ tasks:
   - check:
       type: question
       q: "Kai's robot runs off the loop at the first bend. Which part is wrong?"
-      options: ["His speeds are too slow", "His turns are swapped: when only the left sensor sees the line, he steers right, away from it", "He needs a forever block", "Line sensors only work on straight lines"]
+      options: ["His speeds are too slow for the bend", "His turns are swapped: he steers away from the line", "He needs a forever block", "Line sensors only work on straight lines"]
       answer: 1
+      feedback: ["Slow speeds make bends easier, not harder.", null, "Without forever it would not follow the line at all; this robot does, until the bend.", "The sensors see the line on bends too; the steering is what's wrong."]
       fault: logic
       misconception: line-steer-wrong-way
       explain: "When only the left sensor sees the line, the line is to the left, so the robot must steer left, towards it. Kai steers away, so the robot leaves the line."

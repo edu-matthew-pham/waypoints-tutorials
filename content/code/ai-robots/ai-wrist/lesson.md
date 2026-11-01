@@ -58,14 +58,16 @@ tasks:
   - check:
       type: question
       q: "The wrist model isn't sure of any action (unknown). What does this program send?"
-      options: ["Nothing, so the robot keeps doing whatever it was doing", "Stop", "Forward", "Unknown"]
+      options: ["Nothing", "Stop", "Forward", "Unknown"]
       answer: 0
-      explain: "There is no on ML unknown start, so nothing is sent and the robot keeps its last mode. Sending Stop for unknown is the safe choice."
+      feedback: [null, "Sending Stop for unknown would be safer, but this program has no block for unknown.", "Forward is only sent when the model estimates Forward.", "The program sends only the actions it has a block for, and unknown has none."]
+      explain: "There is no on ML unknown start, so nothing is sent and the robot keeps doing whatever it was doing. Sending Stop for unknown is the safe choice."
   - check:
       type: question
       q: "You hold your hand tipped forward for ten seconds. How many times does the wrist send Forward?"
       options: ["Once, when the action starts", "Ten times", "Several times a second", "Never"]
       answer: 0
+      feedback: [null, "on ML start runs when the action changes, not every second.", "It doesn't repeat while you hold the same action.", "The action starts, so start runs once."]
       explain: "on ML start runs when the estimated action changes, so one Forward. If the radio message is lost, the robot never hears it: the next lesson's watchdog and repeated labels deal with that."
   - check:
       type: sort

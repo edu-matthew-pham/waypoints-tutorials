@@ -59,7 +59,7 @@ tasks:
       type: question
       q: "A member joins but is gone after Run. The INSERT line is there. What is missing?"
       options:
-        - "conn.commit(), which saves the change into the file"
+        - "conn.commit() after the INSERT"
         - "A semicolon after the SQL"
         - "conn.open()"
         - "A second INSERT"
@@ -74,11 +74,15 @@ tasks:
       type: question
       q: "Why is the name passed as (name, team) after the query, not joined into it?"
       options:
-        - "So what a person types is always a value and can never change the SQL"
-        - "Because Python cannot join text"
-        - "To make the query shorter"
+        - "So typed text stays a value, never SQL"
+        - "Because ? makes the query run faster"
+        - "So the name is saved as text, not a number"
       answer: 0
-      explain: "A name like Robert'); DROP TABLE members;-- is just a name when it is passed separately."
+      feedback:
+        - null
+        - "Speed is not the reason. Think about what a person could type into the name box."
+        - "The column type decides that. The ? is about keeping typed text out of the SQL itself."
+      explain: "With ?, what a person types is always a value and can never change the SQL. A name like Robert'); DROP TABLE members;-- is just a name when it is passed separately."
 ```
 
 ### The missing line

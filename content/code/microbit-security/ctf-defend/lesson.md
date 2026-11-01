@@ -51,6 +51,7 @@ tasks:
       q: "Which fix needs the key to be agreed beforehand, or by a key exchange?"
       options: ["Only the checksum", "Only the challenge and response", "All three: each uses the secret key", "None of them"]
       answer: 2
+      feedback: ["The cipher and the answer function use the key too.", "The cipher and the keyed checksum use the key too.", null, "Each fix uses the shared secret key."]
       explain: "The cipher, the keyed checksum and the answer function all use the same secret key, so both ends need it before they start. That is what a key exchange is for."
 ```
 
@@ -109,9 +110,10 @@ stage: info
 check:
   type: question
   q: "Your final lock fixes three weaknesses. Which one weakness is still there, however well you build it?"
-  options: ["Nothing: it is perfectly secure", "If the secret key is lost or leaked, all three protections fail", "The radio group is too small", "Challenges are always too short"]
+  options: ["Nothing: it is perfectly secure", "A lost or leaked key breaks all three", "The radio group is too small", "Challenges are always too short"]
   answer: 1
-  explain: "Everything rests on the key. Real systems protect keys carefully, change them regularly, and use much stronger tools than these classroom versions. Security is an ongoing job, not a finish line."
+  feedback: ["No lock is perfectly secure. What does everything rest on?", null, "Anyone can find the group; the key is what protects the lock.", "Challenges are picked fresh each time; length isn't the weak point."]
+  explain: "If the secret key is lost or leaked, all three protections fail. Everything rests on the key. Real systems protect keys carefully, change them regularly, and use much stronger tools than these classroom versions. Security is an ongoing job, not a finish line."
 ```
 
 Every protection in your lock rests on one secret key. Security is the habit of asking "what could go wrong here?", then fixing each answer.

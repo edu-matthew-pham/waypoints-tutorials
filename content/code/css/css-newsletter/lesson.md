@@ -120,7 +120,7 @@ tasks:
       type: question
       q: "The three menu links sit side by side on one line, but the title above them and each section start on a new line. Why?"
       options:
-        - "Links are inline boxes, and the title and sections are block boxes"
+        - "Links are inline boxes; the others are block boxes"
         - "The nav tag puts its links in a row"
         - "Links have less text than headings"
         - "The header has display: flex"

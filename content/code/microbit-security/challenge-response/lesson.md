@@ -62,9 +62,10 @@ tasks:
   - check:
       type: question
       q: "Yesterday the lock's challenge was 50 and the answer 53. Today the lock picks a new challenge. Why is 53 unlikely to open it today?"
-      options: ["53 is used up", "The new challenge is almost certainly different, so its answer is different", "The lock changes its key", "Radio forgets old numbers"]
+      options: ["Each answer works only once", "Today's challenge needs a different answer", "The lock changes its key each day", "Radio forgets old numbers"]
       answer: 1
-      explain: "The answer depends on the challenge. A new challenge gives a new answer, so an old answer fits only the old challenge."
+      feedback: ["53 would work again if the challenge were 50 again.", null, "The key is the same; the challenge is what changed.", "Radio remembers nothing; the lock checks the answer against today's challenge."]
+      explain: "The new challenge is almost certainly different, so its answer is different. The answer depends on the challenge. A new challenge gives a new answer, so an old answer fits only the old challenge."
   - check:
       type: sort
       q: "For each item, does it cross the air in the challenge-and-response?"

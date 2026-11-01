@@ -92,8 +92,9 @@ tasks:
   - check:
       type: question
       q: "Why is the total a computed and not a ref of its own?"
-      options: ["It is worked out from adults and children, so it should follow them, never be set by hand", "Refs cannot hold numbers", "computed is faster to type", "A ref would show the wrong number at the start"]
+      options: ["It is worked out from adults and children, so it follows them", "Refs cannot hold numbers", "computed is faster to type", "A ref would show the wrong number at the start"]
       answer: 0
+      feedback: [null, "Refs can hold numbers, like adults and children.", "Typing is not the reason. A computed never goes out of step.", "A ref would start right, then go wrong when a button forgot to change it."]
       explain: "A ref of its own would need every button to remember to change it too. A computed cannot go out of step: Vue works it out from the data."
   - check:
       type: bug
@@ -162,8 +163,9 @@ stage: info
 check:
   type: question
   q: "A quiz page shows twenty question cards, each with a title, choices and a score. What would save repeating the card's code twenty times?"
-  options: ["A card you make once, used twenty times with different data", "A longer v-for", "Twenty computed values", "Copy and paste"]
+  options: ["A card made once and used twenty times", "A longer v-for", "Twenty computed values", "Copy and paste"]
   answer: 0
+  feedback: [null, "A longer v-for keeps all the card's code in this one page. A card of your own can be used anywhere.", "Computed values work out data. They do not save writing the card.", "Copying is the repetition you are trying to avoid."]
   explain: "Next lesson: components. You make a tag of your own once, then use it as often as you like, each copy with its own data."
 ```
 

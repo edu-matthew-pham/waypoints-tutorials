@@ -44,14 +44,16 @@ tasks:
   - check:
       type: question
       q: "A weather app shows the club's members. Why would it use /api/members, not the home page?"
-      options: ["JSON is data it can use straight away; a page is HTML made for people, which a program would have to pick apart", "The home page is secret", "Apps cannot open web pages", "JSON is faster to type"]
+      options: ["JSON is data a program can use straight away", "The home page is kept secret from apps", "Apps are not allowed to open web pages", "JSON is shorter to send than HTML"]
       answer: 0
-      explain: "A program wants the data itself. JSON gives it names and values; HTML mixes them up with headings, links and layout."
+      feedback: [null, "The home page is public: anyone can open it.", "Programs can fetch pages; they would have to pick the data out of the HTML.", "Size is not the point: JSON gives the data with names, ready to use."]
+      explain: "A page is HTML made for people, which a program would have to pick apart. A program wants the data itself. JSON gives it names and values; HTML mixes them up with headings, links and layout."
   - check:
       type: question
       q: "What does /api/members/Nobody send?"
-      options: ["{\"count\": 0, \"group\": \"Nobody\", \"members\": []}", "A 404 Not Found page", "An error", "Nothing"]
+      options: ["{\"count\": 0, \"group\": \"Nobody\", \"members\": []}", "A 404 Not Found page: no group is called Nobody", "An error, because the members list is empty", "An empty page with nothing in it"]
       answer: 0
+      feedback: [null, "The route matches /api/members/<group> whatever the group is, so it still runs.", "An empty list is fine: len([]) is 0 and nothing breaks.", "The route always returns a dictionary, so the program gets JSON back."]
       explain: "The route still runs; the loop finds nobody, so count is 0 and members is an empty list. An empty answer is still a good answer for a program."
   - check:
       type: bug
@@ -116,9 +118,10 @@ stage: info
 check:
   type: question
   q: "Anyone who knows the address can read /api/members. What should a real club API think about?"
-  options: ["Which data is safe to share, and whether some routes need a login", "Nothing: data on the web is public anyway", "Making the JSON shorter", "Using HTML instead"]
+  options: ["Which data is safe to share, and who may see it", "Nothing: data on the web is public anyway", "Making the JSON shorter so it loads faster", "Sending HTML instead, so programs can't read it"]
   answer: 0
-  explain: "An API shares data with any program that asks. Real APIs share only what they should, and protect the rest with logins and keys."
+  feedback: [null, "Only what you choose to share is public. Real APIs keep some data behind a login.", "Size does not protect anything: the same data is still shared.", "Programs can still read HTML; it makes the data harder to use, not safer."]
+  explain: "Think about which data is safe to share, and whether some routes need a login. An API shares data with any program that asks. Real APIs share only what they should, and protect the rest with logins and keys."
 ```
 
 The optional last lesson builds the same API in FastAPI, where the types of each input are checked for you.

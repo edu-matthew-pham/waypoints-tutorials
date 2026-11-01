@@ -72,13 +72,15 @@ tasks:
       q: "After the first two songs (Jolene, country, then Bohemian Rhapsody, rock), what is counts?"
       options: ["{\"country\": 1, \"rock\": 1}", "{\"Jolene\": 1, \"Bohemian Rhapsody\": 1}", "{\"country\": 2}", "{}"]
       answer: 0
+      feedback: [null, "The keys are genres, not titles.", "Each song adds to its own genre, and the two genres differ.", "Each song adds a key, so counts is no longer empty."]
       explain: "Each song's genre is a key. Both genres are new, so each starts at 1. The titles are never keys."
   - check:
       type: question
       q: "Why is there an if genre in counts: before adding 1?"
-      options: ["The first time a genre turns up it has no count yet, so it must start at 1", "To skip genres with no songs", "To sort the genres", "To stop counting twice"]
+      options: ["A new genre has no count yet", "To skip genres with no songs", "To sort the genres", "To stop counting twice"]
       answer: 0
-      explain: "counts[genre] + 1 needs counts[genre] to exist. The else starts a new genre at 1."
+      feedback: [null, "Every genre counted has at least one song.", "if only checks; the dictionary is not sorted.", "Each song is counted once by the loop anyway."]
+      explain: "The first time a genre turns up it has no count yet, so it must start at 1. counts[genre] + 1 needs counts[genre] to exist. The else starts a new genre at 1."
   - check:
       type: bug
       code: chart.py#bug
@@ -142,9 +144,10 @@ stage: info
 check:
   type: question
   q: "Pop has far more songs than folk in this data. What does that tell you about music in general?"
-  options: ["Nothing much: it tells you about the songs someone chose to put in this file", "Pop is the most popular genre in the world", "Folk is dying out", "The chart is wrong"]
+  options: ["Not much: only what is in this file", "Pop is the most popular genre in the world", "Folk is dying out", "The chart is wrong"]
   answer: 0
-  explain: "A chart shows the data, and data is a choice. Before claiming anything, ask who collected it, how, and what is missing."
+  feedback: [null, "This data cannot show that; it is one file's choice of songs.", "The file is someone's choice of songs, not all music.", "The chart is right about this file; it just can't speak for all music."]
+  explain: "It tells you about the songs someone chose to put in this file. A chart shows the data, and data is a choice. Before claiming anything, ask who collected it, how, and what is missing."
 ```
 
 Real charting tools (spreadsheets, pandas, Gradio's BarPlot in Lesson 6) draw the same bars from the same counts. Next: data that is messy, and how to check your code with test cases.

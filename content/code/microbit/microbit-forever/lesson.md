@@ -79,14 +79,16 @@ tasks:
   - check:
       type: question
       q: "How many times does forever run the blocks inside it?"
-      options: ["Once", "Twice", "Again and again, until the micro:bit is switched off"]
+      options: ["Once", "Twice", "Again and again"]
       answer: 2
-      explain: "forever starts again from its first block as soon as it reaches the last one. That is a loop."
+      feedback: ["on start runs once. forever starts again at the top.", "There is no count in forever.", null]
+      explain: "Again and again, until the micro:bit is switched off. forever starts again from its first block as soon as it reaches the last one. That is a loop."
   - check:
       type: question
       q: "Ada adds pause 1000 after the small heart, inside forever. What happens?"
-      options: ["The small heart stays for one second, then the big heart comes back", "The loop stops after one second", "Both hearts stay for one second, together", "Nothing changes"]
+      options: ["The small heart stays for a second", "The loop stops after one second", "Both hearts stay for one second, together", "The big heart stays for one second"]
       answer: 0
+      feedback: [null, "pause only waits; forever carries on afterwards.", "The micro:bit shows one picture at a time.", "The pause comes after the small heart, so the small heart stays."]
       fault: logic
       misconception: pause-ends-loop
       explain: "pause only waits. The small heart stays on for 1000 ms, then forever carries on from the top with the big heart."

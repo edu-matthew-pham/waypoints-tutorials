@@ -88,18 +88,21 @@ tasks:
       q: "The very first time it runs, why does the except part run?"
       options: ["There is no me.json yet, so open() causes a FileNotFoundError", "json.load() cannot read names", "The visits are 0", "input() always goes to except the first time"]
       answer: 0
+      feedback: [null, "json.load reads names fine once the file exists.", "visits is not checked; the missing file is what fails.", "input() runs inside except, after the error."]
       explain: "Opening a file that is not there causes a FileNotFoundError. except FileNotFoundError: is the first-time path: ask the name and start counting."
   - check:
       type: question
       q: "What does me.json hold after Ada's second run?"
       options: ["{\"name\": \"Ada\", \"visits\": 2}", "Ada 2", "Welcome back, Ada. This is visit 2.", "{\"name\": \"Ada\", \"visits\": 1}"]
       answer: 0
+      feedback: [null, "json.dump writes the whole dictionary, with its keys.", "That is printed on screen, not written to the file.", "The count goes up before it is saved again."]
       explain: "json.dump writes the dictionary as JSON text, which looks almost exactly like a Python dictionary. The last lines write it again after every run, with the new count."
   - check:
       type: question
       q: "After me = json.load(f), what is me?"
       options: ["A dictionary, so me[\"name\"] works", "The text of the file, one string", "A list of lines", "The file itself"]
       answer: 0
+      feedback: [null, "f.read() would give text; json.load turns it into a dictionary.", "readlines() gives lines; json.load gives the saved dictionary.", "f is the file; json.load reads from it."]
       explain: "json.load turns the JSON text back into the dictionary that was saved, so you use it exactly as before: me[\"name\"], me[\"visits\"]."
   - check:
       type: bug
@@ -185,9 +188,10 @@ stage: info
 check:
   type: question
   q: "A friend opens your game on their own computer. Will your saved game be there?"
-  options: ["No: the file is on the device that saved it (here, in your browser)", "Yes: files go with the program", "Yes: json.dump sends it online", "Only if they type load"]
+  options: ["No: it is on the device that saved it", "Yes: files go with the program", "Yes: json.dump sends it online", "Only if they type load"]
   answer: 0
-  explain: "A file lives where it was written. To share a save, the file itself has to be copied or uploaded, which is what cloud saves do."
+  feedback: [null, "Only the program is shared; its save file stays behind.", "json.dump writes to a file here, not to the internet.", "load reads the file on their device, and it is not there."]
+  explain: "Here, the device is your browser. A file lives where it was written. To share a save, the file itself has to be copied or uploaded, which is what cloud saves do."
 ```
 
 Files are how programs remember: games save progress, apps keep settings, and data is shared as files (JSON, and the CSV tables in Data detective). The same `open()`, `json.dump` and `json.load` work in Python on any computer; there the files go in the folder the program runs in.

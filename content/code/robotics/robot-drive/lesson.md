@@ -55,11 +55,12 @@ tasks:
   - check:
       type: question
       q: "Ava wants her robot to drive, turn, drive again, and then stop. Her robot never stops. Why?"
-      options: ["Her turn is the wrong way", "Her last move has a time, but a time does not stop the motors: she needs robot motor stop at the end", "1000 ms is too long", "She needs a forever block"]
+      options: ["Her turn is the wrong way", "She needs robot motor stop at the end", "Her last move's 1000 ms is too long", "She needs a forever block"]
       answer: 1
+      feedback: ["The turn's direction doesn't decide whether it stops.", null, "A shorter time still leaves the motors on after the last block.", "forever would repeat the moves, not stop them."]
       fault: logic
       misconception: timed-move-stops
-      explain: "The time on her last block only says when to move on. There is nothing after it, so the motors keep going. robot motor stop at the end fixes it."
+      explain: "A time does not stop the motors. The time on her last block only says when to move on. There is nothing after it, so the motors keep going. robot motor stop at the end fixes it."
 ```
 
 This version adds **robot motor stop** at the end, so the robot stops after its turn.

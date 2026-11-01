@@ -155,8 +155,9 @@ stage: info
 check:
   type: question
   q: "Your page passes the checklist and a classmate has tested it. What is the next step to let anyone use it?"
-  options: ["Put it online, at an address you can share", "Add more colours", "Turn off the keyboard", "Print it"]
+  options: ["Put it online, at an address you can share", "Email the index.html file to people", "Add more colours and pictures", "Print it and hand it out"]
   answer: 0
+  feedback: [null, "A file sent on its own loses its pictures and style sheet. An address works for anyone.", "More decoration does not let anyone else open it.", "A printout cannot be clicked, and a screen reader cannot read it."]
   explain: "Next lesson: download the page and its files, check the paths, and put it online."
 ```
 

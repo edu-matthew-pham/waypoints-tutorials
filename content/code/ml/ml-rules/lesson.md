@@ -46,13 +46,15 @@ tasks:
       q: "The rules get 95% right. What does that mean?"
       options: ["95 of every 100 penguins get the right species", "The rules are right about 95 penguins", "The rules are 95% finished", "95% of the rules are used"]
       answer: 0
+      feedback: [null, "It is a share, not a count: 324 of 342 penguins.", "The rules are complete; 95% is how often they are right.", "Every rule is used; 95% is about the penguins."]
       explain: "Accuracy is right answers divided by all answers. Here 324 of 342 penguins: 95%."
   - check:
       type: question
       q: "Where does the number 206 come from?"
-      options: ["Someone chose it by looking at the data: most Gentoos have longer flippers than that", "It is a scientific fact about penguins", "Python worked it out", "It is random"]
+      options: ["Someone chose it by looking at the data", "It is a scientific fact about penguins", "Python worked it out", "It is random"]
       answer: 0
-      explain: "A person picked it. Learning a number like this from data, instead of picking it, is what machine learning does."
+      feedback: [null, "It is a cut-off a person picked for this data, not a fact about all penguins.", "Python only uses the number; a person wrote it in.", "It was chosen on purpose, to split Gentoos from the rest."]
+      explain: "Most Gentoos have longer flippers than that. A person picked it. Learning a number like this from data, instead of picking it, is what machine learning does."
   - check:
       type: bug
       code: rules.py#bug
@@ -113,9 +115,10 @@ stage: info
 check:
   type: question
   q: "Writing rules by hand gets harder with more measurements and more species. What would help?"
-  options: ["A program that finds the rule or the answer from the examples itself: machine learning", "More if statements", "Bigger penguins", "A faster computer"]
+  options: ["A program that learns the rules from examples", "More if statements, one for each case", "Fewer measurements, so rules stay simple", "A faster computer to run the rules"]
   answer: 0
-  explain: "Machine learning finds patterns from examples instead of a person choosing every number. Next lesson: a model that learns by looking at the most similar penguin."
+  feedback: [null, "More ifs is exactly what gets harder to write and check.", "Throwing measurements away loses information that helps tell species apart.", "Speed is not the problem; choosing all the numbers is."]
+  explain: "That is machine learning. Machine learning finds patterns from examples instead of a person choosing every number. Next lesson: a model that learns by looking at the most similar penguin."
 ```
 
 Data: Palmer Penguins (Gorman, Williams and Fraser 2014; Palmer Station Antarctica LTER), CC0.

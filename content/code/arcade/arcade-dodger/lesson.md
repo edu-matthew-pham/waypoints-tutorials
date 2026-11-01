@@ -90,14 +90,16 @@ tasks:
   - check:
       type: question
       q: "Ava plays for a minute. A rock goes past the ship and off the left edge. What happens to it?"
-      options: ["It is removed when it leaves the screen", "It keeps flying left forever, off the screen, and the game keeps track of it", "It comes back on the right", "It turns around"]
+      options: ["It is removed when it leaves the screen", "It keeps flying left, off the screen, forever", "It comes back on the right", "It turns around"]
       answer: 1
-      explain: "Nothing destroys it, so it keeps moving off the screen. After a few minutes there are hundreds of rocks nobody can see. Milestone 1 fixes this."
+      feedback: ["Only with auto destroy, and nothing in Ava's game removes it yet.", null, "Sprites don't wrap round: it keeps going left.", "Nothing changes its vx, so it keeps the same direction."]
+      explain: "Nothing destroys it, so it keeps moving off the screen, and the game still keeps track of it. After a few minutes there are hundreds of rocks nobody can see. Milestone 1 fixes this."
   - check:
       type: question
       q: "Leo adds an overlap event for Player and Enemy that takes away a life, but forgets to destroy the rock. He starts with 3 lives. A rock touches his ship. What happens?"
       options: ["He loses 1 life and the rock flies on", "He loses all 3 lives almost at once and the game ends", "Nothing: the rock must be destroyed first", "He loses 1 life and the rock disappears"]
       answer: 1
+      feedback: ["The overlap runs again the next frame while the rock still touches, so it takes more lives.", null, "The overlap event runs as soon as they touch; nothing needs destroying first.", "Leo never destroys the rock, so it stays and keeps touching."]
       fault: logic
       misconception: overlap-repeats
       explain: "The overlap event runs every frame while the rock still touches the ship, about 30 times a second, so 3 lives go in a tenth of a second. Destroy the rock in the event."

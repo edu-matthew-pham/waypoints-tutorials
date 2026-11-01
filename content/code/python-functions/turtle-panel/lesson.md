@@ -81,8 +81,9 @@ tasks:
   - check:
       type: question
       q: "You add a fourth name to names but forget to add a position to bxs. What happens?"
-      options: ["The button appears at x = 0", "An error: the loop asks for bxs[3], which does not exist", "Nothing changes", "Python adds a position for you"]
+      options: ["The button appears at x = 0", "An error: bxs[3] does not exist", "Nothing changes", "Python adds a position for you"]
       answer: 1
+      feedback: ["Python does not fill in a missing position. It stops with an error.", null, "The loops go up to len(names), so they ask for a fourth position.", "Lists do not grow by themselves. You add every value."]
       explain: "The loops go up to len(names), so they ask for a fourth position. Parallel lists must stay the same length."
 ```
 

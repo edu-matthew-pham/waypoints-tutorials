@@ -47,12 +47,14 @@ tasks:
       q: "This version has a second move, spin. How many times does each block inside spin run when you press B once?"
       options: ["None", "Once", "Twice", "Forever"]
       answer: 1
+      feedback: ["B calls spin, so its blocks do run.", null, "B calls spin only once per press.", "There is no loop: spin runs to the end and stops."]
       explain: "B calls spin once, so its blocks run once: turn for 1.2 seconds, then stop."
   - check:
       type: question
       q: "Leo made a spin function. When he presses A, his robot only drives forward. Why?"
-      options: ["His spin function is broken", "Nothing calls spin: button A has drive blocks instead of a call to spin", "Functions only work with button B", "He needs a forever block"]
+      options: ["His spin function is broken", "Button A never calls spin", "Functions only work with button B", "He needs a forever block"]
       answer: 1
+      feedback: ["Making it is fine; it just never runs. What would run it?", null, "Any event can call a function.", "forever would not call spin either. A needs a call spin block."]
       fault: logic
       misconception: define-not-call
       explain: "Making a function only names the move. Its blocks run when something calls it, and nothing calls spin. Button A needs call spin."

@@ -56,6 +56,7 @@ tasks:
       q: "The director wants every wiggle in the show to be slower. Where is the one place to change?"
       options: ["Every place wiggle is called", "Inside the wiggle function", "In each phrase's notes", "In on radio received"]
       answer: 1
+      feedback: ["Every call runs the same function, so the calls don't need changing.", null, "The notes are the music; the wiggle moves are in the function.", "on radio received starts the wiggle; it doesn't say how slow it is."]
       explain: "Every call runs the same wiggle function, so changing its times once changes every wiggle in the show."
 ```
 

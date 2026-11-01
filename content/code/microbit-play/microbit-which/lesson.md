@@ -85,11 +85,12 @@ tasks:
   - check:
       type: question
       q: "Max wants 1 to show a heart and 2 a sad face. He drags in a second on radio received block for 2, and it greys out. What should he do?"
-      options: ["Use one on radio received, with if receivedNumber = 1 … else if receivedNumber = 2", "Use a different group for 2", "Send 2 twice", "Put the second block in forever"]
+      options: ["Use one handler with if … else if", "Use a different group for 2", "Send 2 twice", "Put the second block in forever"]
       answer: 0
+      feedback: [null, "Then the micro:bit wouldn't hear 2 at all.", "Sending 2 twice still lands in the same handler.", "forever doesn't receive messages; the handler does."]
       fault: logic
       misconception: one-handler-per-message
-      explain: "Every number arrives in the same on radio received block. receivedNumber says which one came, and if … else if picks what to do."
+      explain: "Use one on radio received, with if receivedNumber = 1 … else if receivedNumber = 2. Every number arrives in the same on radio received block. receivedNumber says which one came, and if … else if picks what to do."
   - check:
       type: match
       q: "The receiver in Python. Match each line with what it does."
@@ -148,6 +149,7 @@ check:
   q: "Three micro:bits run this program. The first and second are in group 1; the third is in group 2. You press A on the first. Which show the heart?"
   options: ["Only the second", "The second and the third", "All three", "Only the first"]
   answer: 0
+  feedback: [null, "The third is in group 2, so it hears nothing.", "The sender never hears itself, and group 2 hears nothing.", "A micro:bit never hears its own messages."]
   explain: "The first one sends and never hears itself. The second is in the same group, so it hears. The third is in group 2, so it hears nothing."
 ```
 

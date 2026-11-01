@@ -81,6 +81,7 @@ tasks:
       q: "You want stars to fall faster as the game goes on. Where would that change go?"
       options: ["Inside the Star class (in move, or a new method)", "In every place a star is used", "In a new list of speeds", "In go_left"]
       answer: 0
+      feedback: [null, "Change it once in the class, and every star follows.", "Lists side by side are what the class replaced.", "go_left moves the player, not stars."]
       explain: "How a star behaves belongs to the Star class. Change it there once and every star follows."
   - check:
       type: bug
@@ -147,9 +148,10 @@ stage: info
 check:
   type: question
   q: "Your game now has stars and rocks. Adding a third kind of falling thing (a heart that gives a life) means…"
-  options: ["One new class with move, restart and touches, and a list of them", "Rewriting tick from scratch", "Eleven lines per heart", "A new list for every value"]
+  options: ["One new class and a list of them", "Copying the star code for each heart", "Rewriting tick from scratch", "A new list for every value"]
   answer: 0
-  explain: "That is why programs are built from classes: each new kind of thing is one class, and the code that uses them stays the same shape."
+  feedback: [null, "Copying is what a class saves you from.", "tick stays the same shape; it just loops over one more list.", "Lists per value are what classes replaced."]
+  explain: "One new class with move, restart and touches, and a list of them. That is why programs are built from classes: each new kind of thing is one class, and the code that uses them stays the same shape."
 ```
 
 You started with 11 lines per star. Now a star is one line, `Star(x)`, and each kind of thing knows how to move itself. Game engines such as microStudio and MakeCode Arcade work this way: sprites are objects, and you write how they behave.

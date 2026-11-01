@@ -94,9 +94,10 @@ tasks:
   - check:
       type: question
       q: "What does the if in on game update do?"
-      options: ["It is a floor: when the ball's bottom goes past 100, it puts it back at 100 and stops it falling", "It makes the ball jump", "It turns gravity off", "It runs once, at the start"]
+      options: ["It is a floor: it stops the ball at 100", "It makes the ball bounce back up", "It turns gravity off below 100", "It runs once, at the start"]
       answer: 0
-      explain: "Every frame it asks whether the ball has sunk below y 100. If so, it puts the bottom back at 100 and sets vy to 0: the ball lands."
+      feedback: [null, "It sets vy to 0, which stops the ball. A bounce would need a negative vy.", "ay stays on; the if only puts the ball back and stops it.", "It is in on game update, so it is asked every frame."]
+      explain: "Every frame it asks whether the ball's bottom has gone past y 100. If so, it puts the bottom back at 100 and sets vy to 0: the ball lands."
 ```
 
 This ball has gravity and a floor. Press **A** (space) to throw it up.
@@ -143,6 +144,7 @@ check:
   q: "spawnEnemy(speed) sets bug vx to speed. The timer calls spawnEnemy(-40). Which way does the bug fly?"
   options: ["Left", "Right", "Up", "It stays still"]
   answer: 0
+  feedback: [null, "A negative vx moves left, not right.", "vx moves across; up would be vy.", "-40 is not 0, so the bug moves."]
   explain: "speed is -40, so vx is -40: a negative vx moves the bug left."
 ```
 

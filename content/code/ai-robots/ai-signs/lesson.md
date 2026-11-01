@@ -55,15 +55,17 @@ tasks:
   - check:
       type: question
       q: "What happens if Go also needed only 70%?"
-      options: ["The robot moves sooner, but a Stop sign mistaken for Go now and then makes it drive on", "Nothing changes", "The robot never moves", "The model gets more accurate"]
+      options: ["It moves sooner, but drives on more by mistake", "Nothing changes, because 70% is already high", "The robot never moves at all", "The model itself gets more accurate"]
       answer: 0
-      explain: "A lower threshold sends Go more often, including the times the model is wrong."
+      feedback: [null, "Go needed 95% before; lowering it changes when Go is sent.", "A lower threshold makes Go easier to reach, not harder.", "The threshold changes when the board acts, not how good the model is."]
+      explain: "The robot moves sooner, but a Stop sign mistaken for Go now and then makes it drive on. A lower threshold sends Go more often, including the times the model is wrong."
   - check:
       type: question
       q: "What happens if every label needed 95%?"
-      options: ["The robot is very safe but often stops (Unsure) when a sign is clear enough to a person", "It drives faster", "Nothing changes", "It ignores Stop"]
+      options: ["It is safe, but often stops on clear signs", "It drives faster, because it is sure", "Nothing changes, since signs are clear", "It ignores Stop signs more often"]
       answer: 0
-      explain: "Too much caution everywhere makes a robot that keeps stopping. Caution goes where mistakes are costly."
+      feedback: [null, "Being sure doesn't change the speed; more labels become Unsure.", "Many clear-enough signs score below 95%, so they become Unsure.", "Stop also needs 95%, so more Stops become Unsure, and Unsure stops the robot."]
+      explain: "A sign that is clear enough to a person may score below 95%, so it becomes Unsure and the robot stops. Too much caution everywhere makes a robot that keeps stopping. Caution goes where mistakes are costly."
   - check:
       type: sort
       q: "Sort each decision: should it need high confidence or is lower fine?"

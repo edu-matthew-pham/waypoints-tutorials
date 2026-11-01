@@ -91,22 +91,32 @@ tasks:
       q: "When does a person who can see the picture also see its alt words?"
       options:
         - "Under the picture, as its caption"
-        - "Only when the picture does not load, or when a screen reader reads the page aloud"
+        - "Only when the picture does not load"
         - "When they hold the mouse over the picture"
         - "At the top of the page, as a title"
       answer: 1
+      feedback:
+        - "A caption is a separate paragraph. alt is not shown beside a picture that loads."
+        - null
+        - "Hovering may show a title attribute, not the alt words."
+        - "The page title is set in the head. alt belongs to one picture."
       fault: logic
       misconception: alt-is-caption
-      explain: "alt is not shown beside a picture that loads. It stands in for the picture when it cannot be seen. A caption is a separate line of text, written as a paragraph."
+      explain: "alt is not shown beside a picture that loads. It stands in for the picture when it cannot be seen. A caption is a separate line of text, written as a paragraph. Screen readers also read alt aloud for people who cannot see the picture."
   - check:
       type: question
       q: "Which alt is best for a photo of the relay team holding the trophy?"
       options:
         - "alt=\"image\""
-        - "alt=\"relay-photo.jpg\""
-        - "alt=\"The Owls relay team holding the trophy\""
+        - "alt=\"relay-team-photo.jpg\""
+        - "alt=\"Relay team holding the trophy\""
         - "No alt at all"
       answer: 2
+      feedback:
+        - "image tells a listener nothing about what the picture shows."
+        - "A file name is not a description. Say what the picture shows."
+        - null
+        - "Without alt, a screen reader may read out the file name or skip the picture."
       fault: logic
       misconception: alt-is-caption
       explain: "alt should say what the picture shows, as you would describe it to someone on the phone. A word such as image, or the file name, tells them nothing."

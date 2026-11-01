@@ -76,7 +76,7 @@ tasks:
       type: question
       q: "A song's title is corrected in the songs table. What happens to its reviews?"
       options:
-        - "Nothing breaks: they point at the song's id, which did not change"
+        - "Nothing breaks: they use its id"
         - "They all have to be edited to match"
         - "They are deleted"
       answer: 0
@@ -84,7 +84,7 @@ tasks:
         - null
         - "That would be true if the reviews stored the title. They store the id."
         - "Changing a title does not remove anything."
-      explain: "The link is the id, and the id stays the same. That is why tables link by key."
+      explain: "They point at the song's id, which did not change. The link is the id, and the id stays the same. That is why tables link by key."
 ```
 
 ### Find an average

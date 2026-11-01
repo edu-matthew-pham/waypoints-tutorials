@@ -94,9 +94,10 @@ tasks:
   - check:
       type: question
       q: "Why put the if inside a function, and not straight in the loop?"
-      options: ["The decision gets a name and can be used anywhere: in this loop, in another loop, in a print", "Python only allows if inside functions", "It makes the dots bigger", "It runs faster"]
+      options: ["The decision gets a name and can be reused", "Python only allows if inside functions", "It makes the dots bigger", "It runs faster"]
       answer: 0
-      explain: "Named once, size_colour can be reused and changed in one place. Change the rule inside it, and every place that uses it follows."
+      feedback: [null, "if works anywhere, inside a function or not.", "The function only picks a colour. The size comes from the list.", "Speed is about the same. The gain is a name you can reuse."]
+      explain: "It can be used anywhere: in this loop, in another loop, in a print. Named once, size_colour can be reused and changed in one place. Change the rule inside it, and every place that uses it follows."
   - check:
       type: bug
       code: decide.py#bug
@@ -156,7 +157,7 @@ smaller:
     type: question
     q: "A function says: if score >= 70, return green; elif score >= 50, return orange. There's nothing after that. What does it give back for a score of 30?"
     options:
-      - "Nothing at all, so the bar gets no colour"
+      - "Nothing at all"
       - "Red"
       - "Orange"
     answer: 0
@@ -164,7 +165,7 @@ smaller:
       - null
       - "Red is what you want, but nothing in the function says red."
       - "30 isn't 50 or more, so the orange line doesn't run."
-    explain: "No check is true for 30, so the function ends without returning anything (Python calls that None). An else: return red covers everything left."
+    explain: "No check is true for 30, so the function ends without returning anything (Python calls that None), so the bar gets no colour. An else: return red covers everything left."
 ```
 
 Draw a bar for each score, as tall as the score, coloured by a function you write: **green** for 70 or more, **orange** for 50 or more, **red** below that. Most people need two goes at the bars: draw one bar first, then loop.

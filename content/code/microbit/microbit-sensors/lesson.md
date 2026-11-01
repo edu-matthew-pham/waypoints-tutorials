@@ -91,6 +91,7 @@ tasks:
       q: "Sam's program shows the temperature. He drags the temperature slider, but the number never changes. Why?"
       options: ["The temperature sensor is broken", "The block is in on start, so it reads the temperature once", "Temperature only works on a real micro:bit", "He needs a variable"]
       answer: 1
+      feedback: ["The sensor works; it is only read once.", null, "The simulator's slider changes the reading.", "A variable would still be read once, in on start."]
       fault: logic
       misconception: run-once-vs-forever
       explain: "on start runs once, so Sam's program reads the temperature at the very start and never again. In forever, it would read it again each time round."

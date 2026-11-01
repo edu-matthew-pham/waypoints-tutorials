@@ -74,9 +74,10 @@ tasks:
   - check:
       type: question
       q: "What makes the ring turn?"
-      options: ["frameCount grows every frame, so every angle grows", "i changes every frame", "map changes the colours", "background clears the canvas"]
+      options: ["frameCount grows every frame", "i changes every frame", "map changes the colours", "background clears the canvas"]
       answer: 0
-      explain: "angle = frameCount * 0.02 + i * 0.5. i never changes inside one frame, but frameCount goes up by 1 each frame."
+      feedback: [null, "i only counts the dots within one frame; it starts again each frame.", "map sets the colours; it doesn't move anything.", "background clears the old frame; it doesn't turn the ring."]
+      explain: "angle = frameCount * 0.02 + i * 0.5. i never changes inside one frame, but frameCount goes up by 1 each frame, so every angle grows."
   - check:
       type: match
       q: "Match each piece with what it does."
@@ -139,8 +140,9 @@ stage: info
 check:
   type: question
   q: "A friend's sketch uses sin(frameCount * 0.05). What does it do over time?"
-  options: ["Goes up and down smoothly between -1 and 1", "Counts up forever", "Jumps randomly", "Stays at 0"]
+  options: ["Goes up and down between -1 and 1", "Counts up by 0.05 every frame", "Jumps to a random number each frame", "Grows until it reaches 1, then stays"]
   answer: 0
+  feedback: [null, "frameCount * 0.05 counts up, but sin turns it into a wave.", "sin is smooth: the same input always gives the same output.", "sin goes back down after 1, and below 0 to -1."]
   explain: "sin repeats a smooth wave between -1 and 1. Multiply it by a number to make the wave bigger."
 ```
 

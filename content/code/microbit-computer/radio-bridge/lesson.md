@@ -68,12 +68,14 @@ tasks:
       q: "Ben's far micro:bit is in radio group 7 and his bridge is in group 8. What does the board show?"
       options: ["Nothing arrives", "The values arrive twice", "The values arrive slowly", "Only the first value arrives"]
       answer: 0
+      feedback: [null, "Messages to another group are never heard, not heard twice.", "Different groups don't slow messages; they block them.", "No value arrives at all across groups."]
       explain: "Radio messages reach only micro:bits in the same group. Ben's bridge never hears the readings."
   - check:
       type: question
       q: "Both micro:bits run the same program, so the bridge also sends its own temperature by radio. Why doesn't the bridge's own temperature appear on the board?"
       options: ["A micro:bit never hears its own radio messages", "The bridge has no temperature sensor", "The board ignores the bridge", "Two values can't share a name"]
       answer: 0
+      feedback: [null, "Every micro:bit has a temperature sensor.", "The board shows any line the bridge passes on.", "The names are the same, but the bridge's own reading never arrives."]
       explain: "Radio goes to every other micro:bit in the group, never back to the sender. So only the far micro:bit's readings arrive. (If you use three micro:bits, give them different names.)"
 ```
 

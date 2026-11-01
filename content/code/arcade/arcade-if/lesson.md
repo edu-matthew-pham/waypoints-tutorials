@@ -79,18 +79,20 @@ tasks:
   - check:
       type: question
       q: "About how often does the if inside on game update ask 'is car x more than 160?'"
-      options: ["Once, when the game starts", "Once a second", "About 30 times a second, for as long as the game runs", "Only when the car reaches the edge"]
+      options: ["Once, when the game starts", "Once a second", "About 30 times a second", "Only when the car reaches the edge"]
       answer: 2
-      explain: "on game update runs every frame, about 30 times a second. Most of the time the answer is no and nothing happens; the frame the car is past the edge, the answer is yes."
+      feedback: ["That is on start. on game update runs every frame.", "on game update is faster than that: about 30 frames a second.", null, "The if asks every frame; most of the time the answer is no."]
+      explain: "on game update runs every frame, about 30 times a second, for as long as the game runs. Most of the time the answer is no and nothing happens; the frame the car is past the edge, the answer is yes."
   - starter: lesson.ts#in-start
     check:
       type: question
       q: "Sam thought on game update was untidy, so he moved the if into on start (the playground has his version). The car drives off the screen and never comes back. Why?"
-      options: ["The car is too fast for the if to see it", "on start runs once, before the game begins: the if asks its question one time, when the car is at x 10, and never again", "An if only works with a button", "x can never be more than 160"]
+      options: ["The car is too fast for the if to see it", "on start runs once, so the if asks only one time", "An if only works with a button", "x can never be more than 160"]
       answer: 1
+      feedback: ["Speed doesn't matter: on start asks the question once, then never again.", null, "An if works with any question, such as car x > 160.", "x can go past 160: that is how the car drives off the edge."]
       fault: logic
       misconception: check-in-start
-      explain: "Blocks in on start run once, at the start. Then the car is at x 10, so the answer is no, and the question is never asked again. To keep checking, the if must be in on game update."
+      explain: "Blocks in on start run once, before the game begins. Then the car is at x 10, so the answer is no, and the question is never asked again. To keep checking, the if must be in on game update."
 ```
 
 ### How long until it wraps?

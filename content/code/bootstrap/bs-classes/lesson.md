@@ -98,6 +98,7 @@ tasks:
       q: "You delete the <link> line. What happens to class=\"btn btn-primary\"?"
       options: ["It stays in the code but does nothing, so the button looks plain", "The browser shows an error", "The button disappears", "The button stays blue, because the class is still there"]
       answer: 0
+      feedback: [null, "A class with no rule is allowed. The browser just ignores it.", "The button is still in the HTML. Only its look is gone.", "The class is only a label. The blue came from a rule in bootstrap.min.css."]
       explain: "A class name is only a label. It looks like something only when a stylesheet has a rule for it, and the rules are in bootstrap.min.css."
   - check:
       type: bug
@@ -168,9 +169,10 @@ stage: info
 check:
   type: question
   q: "Your club page had about 40 lines of CSS for the menu, cards and form. With Bootstrap, where does that CSS live?"
-  options: ["In bootstrap.min.css, which someone else wrote; the page only names its classes", "Nowhere: Bootstrap pages need no CSS", "In the class names themselves", "In the browser"]
+  options: ["In bootstrap.min.css, which someone else wrote", "Nowhere: Bootstrap pages need no CSS", "In the class names themselves", "In the browser"]
   answer: 0
-  explain: "The CSS still exists, thousands of lines of it. You borrow it by name. Next: the navbar, cards and grid, the club page's parts rebuilt."
+  feedback: [null, "The CSS still exists. You borrow it from Bootstrap's file.", "A class name is only a label. The rules are in the stylesheet.", "The browser has only plain default styles. Bootstrap's rules come from its file."]
+  explain: "The page only names its classes. The CSS still exists, thousands of lines of it. You borrow it by name. Next: the navbar, cards and grid, the club page's parts rebuilt."
 ```
 
 Next: the club page's **navbar, cards and grid**, rebuilt with Bootstrap.

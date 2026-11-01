@@ -98,9 +98,10 @@ tasks:
   - check:
       type: question
       q: "Why is there an await before fetch and before response.json()?"
-      options: ["Each one takes time, and await waits for it before the next line runs", "await makes fetch faster", "It tells the browser the file is JSON", "It is only needed for big files"]
+      options: ["Each one takes time, and await waits for it", "await makes fetch faster", "It tells the browser the file is JSON", "It is only needed for big files"]
       answer: 0
-      explain: "Without await, the next line runs at once, before the reply is there, and gets a promise (a value that arrives later) instead of the data."
+      feedback: [null, "await does not speed anything up. It waits.", ".json() reads the reply as JSON. await only waits for it to finish.", "Even a tiny file takes time to arrive over the network."]
+      explain: "await waits for each one to finish before the next line runs. Without await, the next line runs at once, before the reply is there, and gets a promise (a value that arrives later) instead of the data."
   - check:
       type: bug
       code: page.html#bug
@@ -180,9 +181,10 @@ stage: info
 check:
   type: question
   q: "A Vue app needs data from the web. Where would the fetch go?"
-  options: ["In a function in setup, which puts the data into a ref when it arrives", "In {{ }} on the page", "In the CSS", "Vue cannot load data"]
+  options: ["In a function in setup that sets a ref", "Inside {{ }} on the page", "In the HTML, like an img src", "Nowhere: Vue cannot load data"]
   answer: 0
-  explain: "Load it with fetch, then set a ref's .value; the page follows by itself. Apps with Vue shows refs and functions in setup."
+  feedback: [null, "{{ }} shows a value. It cannot wait for a reply from the web.", "src loads a picture or a script, not data your code can use.", "Vue can: it uses the same fetch you used here."]
+  explain: "The function puts the data into a ref when it arrives. Load it with fetch, then set a ref's .value; the page follows by itself. Apps with Vue shows refs and functions in setup."
 ```
 
 You can now load data while the page is open. **Apps with Vue** builds pages that follow their data; **Data detective** does the same in Python.

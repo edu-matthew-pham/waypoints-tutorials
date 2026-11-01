@@ -83,11 +83,12 @@ tasks:
   - check:
       type: question
       q: "Leo changes the line inside spawnEnemy to set bug vx to 60. His calls still say spawnEnemy(20) and spawnEnemy(100). What happens?"
-      options: ["Every bug flies at 60: the number inside ignores what the calls hand in", "The bugs fly at 20 and 100", "The bugs fly at 80 and 160", "No bugs appear"]
+      options: ["Every bug flies at 60", "The bugs fly at 20 and 100", "The bugs fly at 80 and 160", "No bugs appear"]
       answer: 0
+      feedback: [null, "The calls still hand in 20 and 100, but the line inside no longer uses speed.", "The numbers are not added: 60 takes the place of speed.", "The calls still run, so bugs appear, all at 60."]
       fault: logic
       misconception: param-fixed-inside
-      explain: "speed is no longer used, so the value each call hands in is ignored. Put speed back inside, and choose the number in the call."
+      explain: "The number inside ignores what the calls hand in: speed is no longer used, so the value each call hands in is lost. Put speed back inside, and choose the number in the call."
   - check:
       type: match
       q: "The function in Python. Match each line with what it does."

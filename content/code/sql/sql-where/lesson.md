@@ -74,12 +74,17 @@ tasks:
       type: question
       q: "Why does WHERE genre = pop (no quotes) give an error?"
       options:
-        - "Without quotes, pop looks like a column name, and there is no such column"
+        - "pop looks like a column name"
         - "pop is a reserved word"
         - "WHERE only works with numbers"
         - "genre must be in capital letters"
       answer: 0
-      explain: "Quotes make a value of text. Without them SQL thinks pop is the name of a column."
+      feedback:
+        - null
+        - "pop is not a SQL word; without quotes, SQL looks for a column called pop."
+        - "WHERE works with text too, in quotes."
+        - "SQL does not mind the case of column names."
+      explain: "Without quotes, pop looks like a column name, and there is no such column. Quotes make a value of text. Without them SQL thinks pop is the name of a column."
   - check:
       type: question
       q: "Which query finds songs released after 2021?"

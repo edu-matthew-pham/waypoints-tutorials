@@ -46,16 +46,18 @@ tasks:
   - check:
       type: question
       q: "Ivy's tripwire sends 'trick' whenever something is closer than 20 cm. Her patrol robot starts its trick again and again as it passes. Why?"
-      options: ["Her radio group is wrong", "The robot is in front of the tripwire for many times round forever, so 'trick' is sent many times", "The trick is too long", "Tripwires only work once"]
+      options: ["Her radio group is wrong", "'trick' is sent each time round forever", "The trick takes too long to finish", "Her robot repeats the trick by itself"]
       answer: 1
+      feedback: ["A wrong group would mean no trick at all.", null, "The length of the trick doesn't make it start again.", "The robot does the trick once per message. Count the messages."]
       fault: logic
       misconception: alert-repeats
-      explain: "forever runs many times while the robot is passing, so the cue is sent many times. Like alerted in lesson 9, an armed variable lets the tripwire fire once, then wait."
+      explain: "The robot is in front of the tripwire for many times round forever. forever runs many times while the robot is passing, so the cue is sent many times. Like alerted in lesson 9, an armed variable lets the tripwire fire once, then wait."
   - check:
       type: question
       q: "When the patrol robot hears 'trick', why should the handler only set mode to trick, instead of doing the moves itself?"
-      options: ["Handlers cannot use motor blocks", "forever is calling followLine again and again, which would undo the trick's moves straight away", "It saves battery", "The handler runs too late"]
+      options: ["Handlers cannot use motor blocks", "forever would undo the moves straight away", "Setting a mode saves the battery", "The handler runs too late"]
       answer: 1
+      feedback: ["Handlers can use motor blocks; the trouble is what forever does next.", null, "Battery use is the same; the question is who drives the motors.", "The handler runs as soon as the message arrives; then forever overwrites it."]
       explain: "Handlers and forever run side by side. forever keeps setting the motors for line following, so moves made in a handler are overwritten. Setting the mode lets forever do the trick itself, then go back to patrolling."
 ```
 

@@ -49,12 +49,14 @@ tasks:
       q: "In reverse(\"HELLO\"), what is result after the loop has run for i = 0 and then i = 1?"
       options: ["HE", "EH", "H", "OL"]
       answer: 1
+      feedback: ["Each new letter goes on the front, not the end.", null, "That is after i = 0 only.", "Those are the last letters; the loop starts at place 0."]
       explain: "At i = 0 the letter at place 0, H, is joined in front of the empty result: H. At i = 1, E is joined in front: EH. Each new letter goes on the front, so the order flips."
   - check:
       type: question
       q: "Sam knows the sender reverses every message. A message arrives: OLLEH. What does Sam do to read it?"
       options: ["Nothing: it is secret", "Reverse it again", "Try all 256 groups", "Ask the sender to send it twice"]
       answer: 1
+      feedback: ["The method is known, so it isn't secret.", null, "Groups don't matter: Sam already hears it.", "Sending twice doesn't hide anything."]
       explain: "Reversing twice gets back the original. Once the method is known, the scrambling is no protection."
   - check:
       type: match
@@ -67,9 +69,10 @@ tasks:
   - check:
       type: question
       q: "Which is the better rule for a code?"
-      options: ["Keep the method secret and hope", "Assume the method is known, and keep only the key secret", "Use a longer method", "Send the message twice"]
+      options: ["Keep the method secret and hope", "Keep only the key secret", "Use a longer, harder method", "Send each message twice"]
       answer: 1
-      explain: "Methods leak: they get copied, written down and guessed. A key can be changed in a moment, so the key is what to protect."
+      feedback: ["Methods leak. Then nothing is left secret.", null, "A known method is no help, however long.", "Sending twice gives listeners more, not less."]
+      explain: "Assume the method is known, and keep only the key secret. Methods leak: they get copied, written down and guessed. A key can be changed in a moment, so the key is what to protect."
 ```
 
 ### Inside reverse

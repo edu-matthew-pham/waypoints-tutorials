@@ -71,9 +71,10 @@ tasks:
   - check:
       type: question
       q: "With P = 23 anyone who hears the mixes could simply try every private number from 1 to 22. Why is the real thing safe?"
-      options: ["It uses a secret radio group", "The real P and private numbers have hundreds of digits, so there are far too many to try", "It sends the mixes twice", "Only the first mix is public"]
+      options: ["It uses a secret radio group", "Real numbers are far too big to try them all", "It sends each mix twice, to check", "Only the first mix is public"]
       answer: 1
-      explain: "This is the same lesson as the Caesar cipher: a small number of keys can be tried one by one. Real systems use numbers so large that trying them all would take longer than the age of the universe."
+      feedback: ["Radio groups are easy to find: there are only 256.", null, "Sending twice gives a listener more, not less.", "Both mixes travel by radio, so both are public."]
+      explain: "The real P and private numbers have hundreds of digits. This is the same lesson as the Caesar cipher: a small number of keys can be tried one by one. Real systems use numbers so large that trying them all would take longer than the age of the universe."
 ```
 
 ### Mixes and keys

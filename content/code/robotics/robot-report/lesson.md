@@ -48,17 +48,19 @@ tasks:
   - check:
       type: question
       q: "What is the variable alerted for?"
-      options: ["It counts the alerts", "It remembers that the robot has already sent 'blocked', so it only sends once until the way is clear", "It stops the robot", "It chooses the radio group"]
+      options: ["It counts how many alerts there have been", "It remembers that 'blocked' has been sent", "It tells the robot when to stop", "It stores the distance to the box"]
       answer: 1
-      explain: "alerted becomes true when the alert is sent. While the box stays, forever sees alerted is true and does not send again. When the way is clear, alerted goes back to false, ready for next time."
+      feedback: ["It is true or false, not a number. What does true mean here?", null, "The distance check stops the robot; alerted only decides about sending.", "The sensor gives the distance each time; alerted is only true or false."]
+      explain: "It remembers that the robot has already sent 'blocked', so it only sends once until the way is clear. alerted becomes true when the alert is sent. While the box stays, forever sees alerted is true and does not send again. When the way is clear, alerted goes back to false, ready for next time."
   - check:
       type: question
       q: "Noah's base beeps again and again, very fast, while the box is in front of his robot. Why?"
-      options: ["His base is broken", "His robot sends 'blocked' every time forever runs while the box is there, because nothing remembers it has already told", "The radio echoes", "He needs a bigger distance"]
+      options: ["His base plays the beep in a loop", "The robot sends 'blocked' each time round", "The radio echoes each message back", "His stop distance is too small"]
       answer: 1
+      feedback: ["The base beeps once per message. Count the messages.", null, "Radio messages arrive once each; nothing echoes.", "Any distance gives the same problem while the box stays."]
       fault: logic
       misconception: alert-repeats
-      explain: "forever runs many times a second. While the box is close, Noah's if is true every time, so it sends every time. A variable like alerted lets it send once."
+      explain: "Nothing remembers that the robot has already told the base. forever runs many times a second. While the box is close, Noah's if is true every time, so it sends every time. A variable like alerted lets it send once."
 ```
 
 ### Tell once

@@ -84,6 +84,7 @@ tasks:
       q: "You lead 2 to 1. What does your partner's scoreboard show?"
       options: ["2 - 1", "1 - 2", "3 - 0", "Nothing"]
       answer: 1
+      feedback: ["That's your side. On their micro:bit, place 0 is your partner.", null, "Only 3 games have been played: 2 and 1.", "Both run the same program, so both show the score."]
       explain: "Your partner's micro:bit runs the same program, but its place 0 is your partner. From their side it is 1 - 2."
 ```
 

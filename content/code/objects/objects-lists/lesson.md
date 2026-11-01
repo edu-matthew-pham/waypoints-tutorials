@@ -72,6 +72,7 @@ tasks:
       q: "What would you change to play with eight stars?"
       options: ["range(4) to range(8)", "Copy the loop eight times", "Add eight new variables", "speeds.append(8)"]
       answer: 0
+      feedback: [null, "One loop already makes every star; copying makes too many.", "That is the s1, s2 problem the list fixed.", "That adds one speed, not one star."]
       explain: "The loop makes the stars, so one number sets how many. Every list grows with it, because the loop appends to all three."
   - check:
       type: trace
@@ -143,9 +144,10 @@ stage: info
 check:
   type: question
   q: "Each star now has a turtle, a speed, points and bad in four lists. What happens if one list gets a star the others do not?"
-  options: ["Python fixes it", "The lists fall out of step: an IndexError, or a star using another star's values", "Nothing", "The star disappears"]
+  options: ["Python fixes the lists for you", "The lists fall out of step", "Nothing: each list is separate", "The extra star disappears"]
   answer: 1
-  explain: "Lists side by side only work while they stay in step. Next lesson keeps everything about one star together, in one dictionary."
+  feedback: ["Python never matches lists up; it uses whatever is in each place.", null, "Each list is separate, which is the problem: stars get mixed up.", "It stays, but with no speed or points of its own."]
+  explain: "An IndexError, or a star using another star's values. Lists side by side only work while they stay in step. Next lesson keeps everything about one star together, in one dictionary."
 ```
 
 Lists made the number of stars one number. But everything about one star is now spread over four lists. Next lesson keeps it together.

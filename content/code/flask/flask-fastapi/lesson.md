@@ -46,15 +46,17 @@ tasks:
   - check:
       type: question
       q: "Where does name come from in members(name: str = \"\")?"
-      options: ["The query string, such as /members?name=ad; it is \"\" if there is none", "The route's address", "A form", "members.csv"]
+      options: ["The query string, such as ?name=ad", "The route's address, /members", "A form box called name", "A column in members.csv"]
       answer: 0
-      explain: "Parameters that are not in the address pattern are read from the query string. The default makes it optional."
+      feedback: [null, "Only parameters written in the route's pattern, like {group}, come from the address itself.", "There is no form here. FastAPI reads name from the address's query string.", "The CSV holds the members; name is what the visitor asked for."]
+      explain: "If there is no query string, name is \"\", its default. Parameters that are not in the address pattern are read from the query string. The default makes it optional."
   - check:
       type: question
       q: "Compared with Flask's request.args.get(\"name\", \"\"), what did FastAPI save you?"
-      options: ["Reading the query string yourself: the parameter is filled in from it", "Writing the loop", "Opening the file", "Nothing"]
+      options: ["Reading the query string yourself", "Writing the loop over members", "Opening the members file", "Nothing: it is the same code"]
       answer: 0
-      explain: "FastAPI matches parameters with the address and query string by name, and converts them to their types. The rest of the code is the same Python."
+      feedback: [null, "The loop is still there, written by you.", "Your code still opens the file.", "Look at how name arrives: you no longer call request.args.get."]
+      explain: "The parameter is filled in from the query string. FastAPI matches parameters with the address and query string by name, and converts them to their types. The rest of the code is the same Python."
   - check:
       type: bug
       code: api.py#bug
@@ -116,9 +118,10 @@ stage: info
 check:
   type: question
   q: "Which would you choose for a website with pages and forms, and which for an API that apps use?"
-  options: ["Flask for pages and forms; FastAPI for an API (both can do either)", "Always FastAPI", "Always Flask", "Neither: use HTML"]
+  options: ["Flask for pages; FastAPI for an API", "Always FastAPI, for everything", "Always Flask, for everything", "Neither: use plain HTML"]
   answer: 0
-  explain: "Flask is simple and good at pages and templates. FastAPI shines at APIs: checked inputs and automatic documentation. Both are real tools used every day."
+  feedback: [null, "FastAPI can make pages, but Flask's templates make pages and forms simpler.", "Flask can make an API, but FastAPI checks inputs and writes the documentation for you.", "Plain HTML cannot read a form or answer an app: it needs a program behind it."]
+  explain: "Both can do either. Flask is simple and good at pages and templates. FastAPI shines at APIs: checked inputs and automatic documentation. Both are real tools used every day."
 ```
 
 On a computer, FastAPI also makes a documentation page at `/docs` from your types, where you can try every route (it needs a computer: the playground cannot show it). The checks come from a library called **Pydantic**, which can also check whole JSON bodies sent to an API.

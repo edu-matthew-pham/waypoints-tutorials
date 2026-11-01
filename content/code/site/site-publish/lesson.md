@@ -157,9 +157,10 @@ stage: info
 check:
   type: question
   q: "You change your page after it is online. What do you do?"
-  options: ["Change the files in the folder, and publish the folder again", "Nothing: it updates itself", "Make a new website", "Delete the old one first"]
+  options: ["Change the files, then publish them again", "Nothing: it updates itself", "Make a new site at a new address", "Delete the old one first"]
   answer: 0
-  explain: "The host shows whatever files you last gave it. Change, test on your computer, publish again."
+  feedback: [null, "The host shows the files you last gave it. It cannot see your computer.", "A new address means everyone needs the new link. Publish to the same one.", "No need: publishing again replaces the old files."]
+  explain: "Change the files in the folder and publish the folder again. The host shows whatever files you last gave it. Change, test on your computer, publish again."
 ```
 
 Your page is ready for real people, and online. A page that needs a server of its own (saving data for everyone, a login) is a web app: **Web apps with Flask**.

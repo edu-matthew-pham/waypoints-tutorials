@@ -82,14 +82,16 @@ tasks:
   - check:
       type: question
       q: "Why ammo > 0, and not ammo ≥ 0?"
-      options: ["With ≥ 0, a shot fires at 0 and ammo goes to -1: one shot too many", "≥ is not allowed in Arcade", "There is no difference", "> 0 makes it fire faster"]
+      options: ["≥ 0 gives one shot too many", "≥ is not allowed in Arcade", "There is no difference", "> 0 makes it fire faster"]
       answer: 0
-      explain: "≥ 0 is still true at 0, so the last press fires a fourth shot and the count goes below zero."
+      feedback: [null, "≥ works in Arcade; it just lets one more shot through.", "At 0, ≥ 0 is true and > 0 is false, so one more shot fires.", "Neither changes how fast it fires, only how many shots."]
+      explain: "With ≥ 0, the question is still true at 0, so the last press fires a fourth shot and ammo goes to -1."
   - check:
       type: question
       q: "Lily put the if around change ammo by -1 only, not around the shot. What happens after 3 shots?"
-      options: ["Shots keep firing, though ammo stays at 0", "A does nothing", "Ammo goes below zero", "The game ends"]
+      options: ["Shots keep firing; ammo stays at 0", "A stops firing after 3 shots", "Ammo goes below zero, to -1, -2…", "The game ends when ammo is 0"]
       answer: 0
+      feedback: [null, "The shot is outside the if, so it fires on every press.", "The if stops the count at 0; it is the shot that isn't checked.", "Running out of ammo doesn't end the game here."]
       fault: logic
       misconception: count-below-zero
       explain: "Only the count is checked. The shot is outside the if, so it fires on every press."
@@ -134,6 +136,7 @@ check:
   q: "hunting is true. The player touches a ghost, and the overlap scores 5 and sets hunting to false. A second ghost touches a moment later. What happens?"
   options: ["It costs a life: hunting is now false", "It scores 5 too", "Nothing happens", "hunting turns true again"]
   answer: 0
+  feedback: [null, "The first touch set hunting to false, so the else part runs.", "The overlap still runs; the if takes the else part.", "Nothing in the overlap sets hunting back to true."]
   explain: "The first touch set hunting to false, so the if takes the else for the second ghost."
 ```
 

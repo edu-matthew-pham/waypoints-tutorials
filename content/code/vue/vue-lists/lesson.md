@@ -168,8 +168,9 @@ stage: info
 check:
   type: question
   q: "Your team page should add whatever name someone types, not always Kai. What does it need?"
-  options: ["A box joined to some data, and a function that adds it", "A longer v-for", "A second list", "A v-if on the button"]
+  options: ["A box joined to data, and an add function", "A second v-for over the names", "A second list for typed names", "A v-if on the Add button"]
   answer: 0
+  feedback: [null, "v-for shows the list. It cannot read what someone typed.", "One list is enough. What is missing is reading the typed name.", "v-if shows or hides an element. It does not read the box."]
   explain: "Next lesson: v-model joins a box to data, and a function in setup does the adding."
 ```
 

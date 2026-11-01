@@ -55,9 +55,10 @@ tasks:
   - check:
       type: question
       q: "How would you make the paddle move faster?"
-      options: ["Change px -= 2 and px += 2 to a bigger number, such as 4", "Call update() twice", "Hold the key down harder", "Change -80 to a bigger number"]
+      options: ["Change the 2 in px -= 2 and px += 2", "Call update() twice", "Hold the key down harder", "Change -80 to a bigger number"]
       answer: 0
-      explain: "The paddle moves 2 steps a frame. 4 steps a frame is twice as fast. -80 is how high up the paddle is drawn."
+      feedback: [null, "update() is called for you, 60 times a second; you don't call it.", "pressed() is only true or false; how hard you press doesn't count.", "-80 is how high up the paddle is drawn, not its speed."]
+      explain: "The paddle moves 2 steps a frame. Change both 2s to a bigger number, such as 4: 4 steps a frame is twice as fast. -80 is how high up the paddle is drawn."
   - check:
       type: bug
       code: game.py#bug
@@ -125,9 +126,10 @@ stage: info
 check:
   type: question
   q: "A player should jump once when Space is pressed, not keep jumping while it is held. Why does pressed(\"SPACE\") alone not do this?"
-  options: ["It is true every frame the key is down, so the jump would start again and again", "It only works for arrow keys", "update() cannot change y", "It is only true for one frame"]
+  options: ["It stays true while the key is held", "It only works for arrow keys", "update() cannot change y", "It is only true for one frame"]
   answer: 0
-  explain: "pressed() says whether the key is down now, every frame. A jump needs to remember it has started (a variable such as jumping = True), so a held key does not start it again."
+  feedback: [null, "Key names include SPACE and letters, not only arrows.", "update() can change any variable, y included.", "That is what we want, but it is true every frame the key is down."]
+  explain: "pressed() says whether the key is down now, every frame, so the jump would start again and again. A jump needs to remember it has started (a variable such as jumping = True), so a held key does not start it again."
 ```
 
 Asking every frame is called **polling**; MakeCode and Godot can do both, polling and events. Next: lots of stars falling at once, each one an object.

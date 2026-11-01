@@ -77,11 +77,12 @@ tasks:
   - check:
       type: question
       q: "Ava made the spawnBug function and an empty timer (below). She runs the game and no bugs ever appear. Why?"
-      options: ["The timer is too slow", "Nothing calls spawnBug: making a function does not run it", "Functions only work in on start", "The bugs are invisible"]
+      options: ["The timer is too slow", "Nothing calls spawnBug", "Functions only work in on start", "The bugs are invisible"]
       answer: 1
+      feedback: ["Even a slow timer would make a bug sometime; Ava's timer is empty.", null, "A function can be called from any event, a timer included.", "Bugs that were made would show. None were made."]
       fault: logic
       misconception: arcade-define-not-call
-      explain: "Making a function only names the job. Its blocks run when a call block runs them. Ava's timer is empty, so the job is never done."
+      explain: "Making a function only names the job: it does not run it. Its blocks run when a call block runs them. Ava's timer is empty, so the job is never done."
   - check:
       type: number
       q: "The game runs for 10 seconds. The timer calls spawnBug every 1000 ms. How many times do the blocks inside spawnBug run?"

@@ -45,15 +45,17 @@ tasks:
   - check:
       type: question
       q: "Why does home() call load_members() every time, instead of reading the file once at the start?"
-      options: ["So the page always shows what is in the file now, including members who just joined", "Reading files is free", "Flask needs it", "To check the file is still there"]
+      options: ["So the page shows the file as it is now", "Reading a file costs nothing at all", "Flask needs it", "To check the file is still there"]
       answer: 0
-      explain: "The file changes whenever someone joins. Reading it for every page means the page is never out of date."
+      feedback: [null, "Reading a file does take time; it is worth it to stay up to date.", "Flask does not mind where the data comes from.", "If the file were missing, open() would fail; checking is not the reason."]
+      explain: "So the page always shows what is in the file now, including members who just joined. The file changes whenever someone joins. Reading it for every page means the page is never out of date."
   - check:
       type: question
       q: "Why is newline=\"\" there when the file is opened to add a row?"
-      options: ["It stops csv writing blank lines between rows on some computers", "It adds a new line", "It empties the file", "It makes the file a CSV"]
+      options: ["It stops blank lines appearing between rows", "It adds a new line at the end of each row", "It empties the file before writing", "It tells Python the file is a CSV"]
       answer: 0
-      explain: "csv.writer writes its own line endings; newline=\"\" stops the file adding extra ones (a known quirk on Windows). Use it whenever csv writes a file."
+      feedback: [null, "csv.writer already ends each row; newline=\"\" stops a second line ending.", "The \"a\" mode adds to the end; only \"w\" empties a file.", "The csv module makes it CSV; newline=\"\" only handles line endings."]
+      explain: "It stops csv writing blank lines between rows on some computers. csv.writer writes its own line endings; newline=\"\" stops the file adding extra ones (a known quirk on Windows). Use it whenever csv writes a file."
   - check:
       type: bug
       code: club.py#bug
@@ -117,9 +119,10 @@ stage: info
 check:
   type: question
   q: "Two people press Join at the same moment on a busy real site. What could go wrong with a CSV file?"
-  options: ["Both could write at once and spoil the file: real sites use a database, which handles this", "Nothing", "One person joins twice", "The CSV turns into JSON"]
+  options: ["Both write at once and spoil the file", "Nothing: each row is added in turn", "One person ends up joined twice", "The second person gets a 404 page"]
   answer: 0
-  explain: "Files are fine for a small app. Busy sites use a database (SQLite, PostgreSQL), which keeps the data safe when many people change it at once."
+  feedback: [null, "On a busy site two writes can land at the same moment and mix together.", "Each press adds one row; the risk is the two writes mixing.", "Both pages exist; the problem is in the file, not the routes."]
+  explain: "Both could write at once and spoil the file: real sites use a database, which handles this. Files are fine for a small app. Busy sites use a database (SQLite, PostgreSQL), which keeps the data safe when many people change it at once."
 ```
 
 On a computer, `members.csv` would sit next to `app.py`. Next: share the members with other programs as JSON.

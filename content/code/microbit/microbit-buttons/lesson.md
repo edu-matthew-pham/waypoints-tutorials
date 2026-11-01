@@ -91,11 +91,12 @@ tasks:
   - check:
       type: question
       q: "Ben wants A to show a heart. He put this in on start. He presses A and nothing happens. Why?"
-      options: ["A is broken in the simulator", "on start checks the button once, when the micro:bit switches on, before he presses it", "He needs a pause first", "Hearts only work in forever"]
+      options: ["A is broken in the simulator", "on start runs once, before he presses A", "He needs a pause before the heart", "Hearts only show inside forever"]
       answer: 1
+      feedback: ["The simulator's A works; the check is over before the press.", null, "A pause still runs before the press.", "show icon works anywhere; the check is in the wrong place."]
       fault: logic
       misconception: button-check-once
-      explain: "on start runs once, at the very start. By the time Ben presses A, the check is long over. 'on button A pressed' waits for the press instead."
+      explain: "on start checks the button once, when the micro:bit switches on, before he presses it. on start runs once, at the very start. By the time Ben presses A, the check is long over. 'on button A pressed' waits for the press instead."
 ```
 
 This program has four groups of blocks. Try it in your head first.
@@ -150,6 +151,7 @@ check:
   q: "This animation runs in forever. Which picture stays on the longest each time round?"
   options: ["The heart", "The small heart", "The tick", "They all stay the same time"]
   answer: 2
+  feedback: ["The heart has pause 200 after it.", "The small heart has pause 200 after it.", null, "The pauses are different: 200, 200, then 1000."]
   explain: "Each pause holds the picture just before it. The tick is followed by pause 1000, the longest pause, so it stays longest."
 ```
 

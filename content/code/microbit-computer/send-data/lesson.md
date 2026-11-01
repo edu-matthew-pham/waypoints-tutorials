@@ -55,21 +55,24 @@ tasks:
   - check:
       type: question
       q: "Why does each line start with a name (light:)?"
-      options: ["So the computer can tell different values apart when there are several", "The cable needs a name to work", "To make the number bigger", "So the micro:bit remembers it"]
+      options: ["So the computer can tell the values apart", "The cable needs a name to work", "To make the number bigger", "So the micro:bit remembers it"]
       answer: 0
+      feedback: [null, "The cable works without names.", "The name doesn't change the number.", "Names are for the computer, not the micro:bit."]
       explain: "With light:128 and temperature:21 arriving on the same cable, the name says which is which. The graph draws one line per name."
   - check:
       type: question
       q: "You delete the pause. What happens?"
-      options: ["Readings pour out as fast as the micro:bit can send them, far more than you need", "Nothing is sent", "One reading is sent, then it stops", "The readings get more accurate"]
+      options: ["Readings pour out far faster than needed", "Nothing is sent", "One reading is sent, then it stops", "The readings get more accurate"]
       answer: 0
-      explain: "Forever repeats as fast as it can. The pause sets how many readings a second you get: 500 ms is two a second."
+      feedback: [null, "forever still runs, so readings are still sent.", "forever keeps going; a pause never stopped it.", "Faster readings are no more accurate."]
+      explain: "Readings pour out as fast as the micro:bit can send them. Forever repeats as fast as it can. The pause sets how many readings a second you get: 500 ms is two a second."
   - check:
       type: question
       q: "Ben's program sends one reading when the micro:bit starts, then nothing. Why?"
-      options: ["The block is in on start, not in forever, so it runs only once", "The cable is broken", "Light level only works once", "The board can only read one line"]
+      options: ["The block is in on start, not forever", "The cable is broken", "Light level only works once", "The board can only read one line"]
       answer: 0
-      explain: "A logger has to read and send again and again: the send goes in forever, with a pause."
+      feedback: [null, "One reading arrives, so the cable works.", "Light level can be read any number of times.", "The board reads every line that arrives."]
+      explain: "on start runs only once. A logger has to read and send again and again: the send goes in forever, with a pause."
 ```
 
 ### Names

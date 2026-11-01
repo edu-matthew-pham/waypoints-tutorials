@@ -88,6 +88,7 @@ tasks:
       q: "Kim thinks that in the dark her night light turns the lights on and then the else part clears them straight away, so it flickers. Is she right?"
       options: ["No: each time round, only one part runs", "Yes: the else part always runs after the if part", "Yes, but only on a real micro:bit", "No: the else part never runs"]
       answer: 0
+      feedback: [null, "if … else runs one part or the other, never both.", "The blocks work the same in the simulator and on a real micro:bit.", "else runs when it's bright: that's what clears the lights."]
       fault: logic
       misconception: else-runs-too
       explain: "if … else runs exactly one of its two parts. In the dark the question is true, so only the first part runs, every time round."
@@ -96,6 +97,7 @@ tasks:
       q: "When does the else part run?"
       options: ["Always, after the first part", "Only when the question is false", "Only when the question is true", "Never: it is for notes"]
       answer: 1
+      feedback: ["Only one part runs each time; else isn't 'after'.", null, "That's the first part's job.", "else holds blocks that run, not notes."]
       explain: "else means otherwise: it runs when the question is false, and only then."
 ```
 
@@ -139,6 +141,7 @@ check:
   q: "Each press of A adds 1 to count, shows it, and shows a diamond (the prize) if count is 5. What shows straight after the 6th press?"
   options: ["6", "The diamond", "5", "Nothing"]
   answer: 0
+  feedback: [null, "The diamond shows only when count is 5. It's 6 now.", "count went up to 6 with this press.", "show number runs on every press."]
   explain: "After the 6th press count is 6, which is shown. 6 is not 5, so the if does nothing: no diamond."
 ```
 

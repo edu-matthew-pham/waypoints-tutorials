@@ -67,9 +67,10 @@ tasks:
   - check:
       type: question
       q: "This is the turtle version of Star. What has the microStudio version got instead of self.turtle?"
-      options: ["self.x and self.y, and a draw() method that paints the star there", "Nothing: a game engine has turtles too", "A list of positions", "A global x and y shared by every star"]
+      options: ["self.x, self.y and a draw() method", "Nothing: a game engine has turtles too", "A list of positions", "A global x and y shared by every star"]
       answer: 0
-      explain: "A turtle remembered where it was and drew itself. With no turtle, the star keeps self.x and self.y, and draw() paints a dot at that place every frame."
+      feedback: [null, "microStudio has no turtles; each star keeps its own position.", "Each star keeps its own position in self, not in a list.", "A shared x and y would put every star in the same place."]
+      explain: "A turtle remembered where it was and drew itself. With no turtle, the star keeps self.x and self.y, and draw() paints the star at that place every frame."
   - check:
       type: match
       q: "Match each line with what it does."
@@ -158,6 +159,7 @@ check:
   q: "A game has 3 kinds of thing, each with move() and draw(). What does update() need?"
   options: ["A loop for each list that calls move()", "The code for every kind of movement written out", "Only one global variable", "Nothing: objects update by themselves"]
   answer: 0
+  feedback: [null, "Each class already has its own move(); update() just asks each one.", "Each object keeps its own state; one global can't hold them all.", "Objects move only when update() calls move()."]
   explain: "Each object knows how to move; update() only asks each one to. New kinds of thing add a class and a short loop, not more code in update()."
 ```
 

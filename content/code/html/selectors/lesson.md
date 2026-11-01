@@ -106,11 +106,16 @@ tasks:
       code: page.html#small
       q: "The rule h1 { font-size: 14px; } makes the heading smaller than the paragraphs. Is it still a heading?"
       options:
-        - "Yes: the <h1> tag still says it is the main heading; the rule changed only how it looks"
+        - "Yes: the tag says what it is; the rule changes its look"
         - "No: it is just small text now"
         - "No: a heading has to be the biggest text on the page"
         - "Yes, but only until the page is saved"
       answer: 0
+      feedback:
+        - null
+        - "Text size does not decide. The h1 tag still marks it as the main heading."
+        - "Headings can be any size. The tag says what it is."
+        - "Saving changes nothing. The tag is the same before and after."
       fault: logic
       misconception: looks-is-structure
       explain: "The tag says what a part is, and the rule says how it looks. Making an <h1> small does not turn it into a paragraph, and screen readers and search engines still treat it as the main heading."

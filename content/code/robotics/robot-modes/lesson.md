@@ -48,12 +48,14 @@ tasks:
       q: "You pressed B a while ago and let go. Why does the robot keep following the line?"
       options: ["The button is still pressed inside the micro:bit", "mode still says follow, and forever checks it again every time round", "followLine runs forever by itself", "The robot remembers the line"]
       answer: 1
+      feedback: ["Letting go means letting go. Something else remembers the press.", null, "followLine runs once each time it is called. What keeps calling it?", "The robot keeps no memory of the line; the variable mode does the remembering."]
       explain: "Pressing B ran one block: set mode to follow. The variable keeps that value, so every time forever checks, it finds follow and calls followLine."
   - check:
       type: question
       q: "Ruby's robot never moves, even when she presses A. Which part is wrong?"
-      options: ["Her A button sets the wrong mode", "forever sets mode to stop every time round, wiping out the A press straight away", "She needs else if", "robot motor tank needs a time"]
+      options: ["Her A button sets the wrong mode", "forever sets mode to stop every time round", "She needs else if instead of if", "robot motor tank needs a time"]
       answer: 1
+      feedback: ["Check where else mode is set. Even the right mode would be wiped out.", null, "else if changes which branch runs, not what wipes mode out.", "motor tank keeps going until it is changed; the motors are never told to go."]
       fault: logic
       misconception: reset-in-loop
       explain: "Setting mode to stop belongs in on start, once. Inside forever, it runs again every time round, so mode is stop again before the robot can move."

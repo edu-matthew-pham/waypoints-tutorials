@@ -53,9 +53,10 @@ tasks:
   - check:
       type: question
       q: "Why is the mystery penguin made with columns=X.columns?"
-      options: ["The model needs the same measurements, in the same order and with the same names, as it was trained on", "pandas needs a name for every table", "To make it print nicely", "It is not needed"]
+      options: ["So it has the same columns, in the same order", "pandas needs a name for every table", "To make it print nicely", "It is not needed: numbers are numbers"]
       answer: 0
-      explain: "The model learned from bill length then flipper length. A new example must be given the same way, or its numbers mean something else."
+      feedback: [null, "pandas tables can exist without that; the model is what needs it.", "Printing is not the point; the model reads the columns.", "The model needs to know which number is which measurement."]
+      explain: "The model needs the same measurements, in the same order and with the same names, as it was trained on. The model learned from bill length then flipper length. A new example must be given the same way, or its numbers mean something else."
   - check:
       type: bug
       code: models.py#bug
@@ -119,9 +120,10 @@ stage: info
 check:
   type: question
   q: "Adding body mass (in grams, around 4000) made the nearest-neighbour model worse, but not the tree. Why?"
-  options: ["Grams are big numbers, so body mass swamps the distance; a tree looks at one measurement at a time, so it does not mind", "Body mass is wrong in the data", "Trees are always better", "Four measurements are too many"]
+  options: ["Big gram numbers swamp the distance", "Body mass is wrong in the data", "Trees are always better", "Four measurements are too many"]
   answer: 0
-  explain: "Distance-based models need measurements on similar scales; scikit-learn's StandardScaler rescales them. Choosing and preparing the data is half of machine learning."
+  feedback: [null, "The data is fine; the size of its numbers is the problem for distance.", "Trees are not always better; here the tree just ignores scale.", "Models can use many measurements if they are on similar scales."]
+  explain: "Grams are big numbers, so body mass swamps the distance; a tree looks at one measurement at a time, so it does not mind. Distance-based models need measurements on similar scales; scikit-learn's StandardScaler rescales them. Choosing and preparing the data is half of machine learning."
 ```
 
 Next: put the model behind a Gradio app, so anyone can use it.

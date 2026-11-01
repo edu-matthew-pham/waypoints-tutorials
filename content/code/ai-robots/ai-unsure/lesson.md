@@ -67,15 +67,17 @@ tasks:
   - check:
       type: question
       q: "The board stopped repeating the label every second, and only sent it when it changed. What would happen when you hold Forward steadily?"
-      options: ["The robot stops after 2 seconds, even though you're still showing Forward", "Nothing different", "The robot speeds up", "The watchdog never runs"]
+      options: ["It stops after 2 seconds of silence", "Nothing changes, because Forward is still shown", "It keeps driving until you show Stop", "The watchdog never runs at all"]
       answer: 0
-      explain: "The watchdog can't tell silence because nothing changed from silence because something broke. Repeating the label every second says: still here, still Forward."
+      feedback: [null, "Forward is shown, but nothing is sent while it doesn't change. What does the robot hear?", "The robot can't see your sign; it only hears messages, and none arrive.", "The watchdog runs all the time, and two seconds of silence trips it."]
+      explain: "Nothing is sent while Forward holds, so after 2 seconds the watchdog stops the robot, even though you're still showing Forward. The watchdog can't tell silence because nothing changed from silence because something broke. Repeating the label every second says: still here, still Forward."
   - check:
       type: question
       q: "Why stop, rather than keep doing the last thing, when unsure?"
-      options: ["For a moving robot, stopping is the action least likely to hurt someone or break something", "Stopping saves battery", "The model needs the robot still to retrain", "It is the only action robots can do"]
+      options: ["Stopping is least likely to hurt anyone", "Stopping saves the robot's battery", "The model needs the robot still to retrain", "Stopping is the easiest action to code"]
       answer: 0
-      explain: "A safe default depends on the machine: for a robot on wheels it is stop. (For a plane it would not be!)"
+      feedback: [null, "Battery isn't the reason; think about what could go wrong.", "The model doesn't retrain while you drive.", "Any action is just as easy to code; stop is chosen because it is safe."]
+      explain: "For a moving robot, stopping is the action least likely to hurt someone or break something. A safe default depends on the machine: for a robot on wheels it is stop. (For a plane it would not be!)"
 ```
 
 ### Unsure or silent

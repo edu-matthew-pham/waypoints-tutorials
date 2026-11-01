@@ -88,9 +88,10 @@ tasks:
   - check:
       type: question
       q: "The Console says \"ReferenceError: cout is not defined\" on line 6. What should you do first?"
-      options: ["Look at line 6 for a name that is not spelled the same as one you made", "Delete the script", "Reload the page", "Add more console.log lines to every line"]
+      options: ["Check line 6 for a misspelt name", "Delete the script", "Reload the page", "Add more console.log lines to every line"]
       answer: 0
-      explain: "The message names the word it does not know (cout) and the line. Compare it with the names you made: count is not cout."
+      feedback: [null, "Deleting throws away code that mostly works. The message already says where to look.", "Reloading runs the same code and gives the same error.", "The message already names the line. Logs on every line only add noise."]
+      explain: "Look at line 6 for a name that is not spelled the same as one you made. The message names the word it does not know (cout) and the line. Compare it with the names you made: count is not cout."
   - check:
       type: bug
       code: page.html#bug
@@ -157,8 +158,9 @@ stage: info
 check:
   type: question
   q: "You have finished the course. What is the best way to get better at making pages that react?"
-  options: ["Make something you want, and use the Console to find out why it does not work yet", "Memorise every method", "Copy a whole page and never read it", "Avoid errors"]
+  options: ["Make things you want, using the Console to fix them", "Memorise every method first", "Copy finished pages without reading them", "Only write code that has no errors"]
   answer: 0
+  feedback: [null, "Nobody memorises them all. Developers look methods up when they need them.", "Copying without reading teaches very little. Change it and see what breaks.", "Everyone's code has errors at first. They tell you what to fix."]
   explain: "Making pages you care about, with the Console open, is how developers learn. Errors are information, not failure."
 ```
 

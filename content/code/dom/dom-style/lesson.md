@@ -94,9 +94,10 @@ tasks:
   - check:
       type: question
       q: "Why is hidden good for a tip that starts out of sight?"
-      options: ["The CSS rule .hidden { display: none; } hides it, and removing the class shows it", "JavaScript deletes the tip", "The tip is made when clicked", "hidden is a special word in JavaScript"]
+      options: ["Its CSS rule hides it until the class is removed", "JavaScript deletes the tip", "The tip is made when clicked", "hidden is a special word in JavaScript"]
       answer: 0
-      explain: "The class hidden has a CSS rule that hides the element. The tip is always in the page; toggling the class shows or hides it."
+      feedback: [null, "The tip stays in the page the whole time. Only its class changes.", "The tip is already in the HTML. The click only changes its class.", "hidden is just a class name. Its CSS rule is what hides the tip."]
+      explain: "The rule .hidden { display: none; } hides the tip, and removing the class shows it. The class hidden has a CSS rule that hides the element. The tip is always in the page; toggling the class shows or hides it."
   - check:
       type: bug
       code: page.html#bug
@@ -167,6 +168,7 @@ check:
   q: "A page needs to show a different message depending on what someone typed. What does the script need to read?"
   options: ["The value of the input", "The class of the input", "The tag name of the input", "The id of the button"]
   answer: 0
+  feedback: [null, "The class sets how the box looks, not what was typed.", "The tag name is always input. It does not change with typing.", "The button's id finds the button, not the words typed."]
   explain: "An input holds what the person typed in its value. Next lesson."
 ```
 

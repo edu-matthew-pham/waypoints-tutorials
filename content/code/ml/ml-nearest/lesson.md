@@ -44,14 +44,16 @@ tasks:
   - check:
       type: question
       q: "Where is the \"learning\" in this model?"
-      options: ["The examples are the knowledge: it answers from the penguins it has seen, not from rules someone wrote", "nearest() changes its own code", "The distance function learns", "There is none"]
+      options: ["In the examples it has seen", "nearest() changes its own code", "The distance function learns", "There is none"]
       answer: 0
-      explain: "Nearest neighbour learns by remembering. Give it different examples and it gives different answers, with no rules changed."
+      feedback: [null, "The code never changes; only the examples do.", "The distance is a fixed formula; it works the same for any data.", "There is: change the examples and the answers change."]
+      explain: "The examples are the knowledge: it answers from the penguins it has seen, not from rules someone wrote. Nearest neighbour learns by remembering. Give it different examples and it gives different answers, with no rules changed."
   - check:
       type: question
       q: "A mystery penguin's nearest match is 0.2 away; another's is 10 away. Which guess would you trust more, and why?"
       options: ["The 0.2 one: a penguin in the data is almost exactly like it", "The 10 one: it is further from mistakes", "Both the same: the model always gives an answer", "Neither: distance does not matter"]
       answer: 0
+      feedback: [null, "Far away means nothing in the data is like it, so the guess is weaker.", "It always answers, but a far match is a weaker guess.", "Distance is how this model decides, so it tells you how close the match is."]
       explain: "A small distance means a very similar penguin is known. A big one means nothing in the data is like it, so the guess is weak, even though the model still answers."
   - check:
       type: bug
@@ -114,9 +116,10 @@ stage: info
 check:
   type: question
   q: "Flipper lengths are around 200 and bill lengths around 45. What does that do to the distance?"
-  options: ["Differences in flippers count for more, because the numbers are bigger", "Nothing: a millimetre is a millimetre", "Bills count for more", "The distance stops working"]
+  options: ["Flipper differences count for more", "Nothing: a millimetre is a millimetre", "Bills count for more", "The distance stops working"]
   answer: 0
-  explain: "Measurements with bigger spreads dominate the distance. Real machine learning often rescales each measurement first so each counts fairly."
+  feedback: [null, "A millimetre is, but flippers differ by many more of them, so they swamp the sum.", "Bill differences are small numbers, so they count for less.", "It still works; it just leans on flippers."]
+  explain: "Differences in flippers count for more, because the numbers are bigger. Measurements with bigger spreads dominate the distance. Real machine learning often rescales each measurement first so each counts fairly."
 ```
 
 How good is this model really? Testing it on penguins it already knows would be cheating: that is the next lesson.

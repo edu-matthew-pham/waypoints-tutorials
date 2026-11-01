@@ -47,18 +47,21 @@ tasks:
       q: "To count every jump in a long stretch of jumping, what would you need?"
       options: ["A model trained on single jumps, with something else (such as still) between them", "A faster micro:bit", "is ML jumping detected in forever, adding 1 each time round", "Nothing: on ML start already counts every jump"]
       answer: 0
+      feedback: [null, "Speed doesn't help: a long stretch of jumping looks like one action.", "forever would add 1 many times per jump.", "on ML start runs only when the action changes, so a long stretch counts once."]
       explain: "The model estimates an action several times a second; the start event fires only when it changes. Counting each jump means each jump must be its own change. is detected in forever would count many times per jump."
   - check:
       type: question
       q: "What does the unknown action mean?"
       options: ["No action is certain enough (above its recognition point)", "The micro:bit is broken", "The model is still training", "A new action the model has learned by itself"]
       answer: 0
+      feedback: [null, "Nothing is broken; no action is certain enough.", "unknown appears in a trained model too.", "Models only learn the actions you train."]
       explain: "Like Unsure in the AI robots lessons: when nothing is certain enough, the estimate is unknown. Your program can show it, or do nothing."
   - check:
       type: question
       q: "on ML running stop gives a duration. What is it?"
-      options: ["How many milliseconds running lasted, just now", "How far you ran", "How many times you ran", "The certainty of running"]
+      options: ["How long running lasted, in ms", "How far you ran, in metres", "How many times you ran", "How sure it was of running"]
       answer: 0
+      feedback: [null, "The micro:bit measures movement, not distance.", "Counting starts is a different job; this is a time.", "Certainty is a percentage, not a duration."]
       explain: "When the estimate changes away from running, the stop event runs and tells you how long running was the estimate. Add the durations up for total running time."
 ```
 

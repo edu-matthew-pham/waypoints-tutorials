@@ -45,15 +45,17 @@ tasks:
   - check:
       type: question
       q: "Why is the model 100% sure about a penguin 20 mm long?"
-      options: ["Its 5 nearest penguins are all Adelie, though they are far away: the vote says nothing about distance", "Small penguins are always Adelie", "The data has penguins that small", "It checked very carefully"]
+      options: ["Its 5 nearest penguins are all Adelie, far away", "Small penguins are always Adelie", "The data has penguins that small", "It checked very carefully"]
       answer: 0
-      explain: "The vote share only compares the neighbours with each other. Confidence is not the same as being right."
+      feedback: [null, "Adelies are smallish, but no penguin is 20 mm long; the model just finds the closest.", "No penguin in the data is anywhere near 20 mm.", "The model does not check: it counts the votes of the 5 nearest."]
+      explain: "Its 5 nearest penguins are all Adelie, though they are far away: the vote says nothing about distance. The vote share only compares the neighbours with each other. Confidence is not the same as being right."
   - check:
       type: question
       q: "All the penguins come from three islands near one research station, from 2007 to 2009. What follows?"
-      options: ["The model may do worse on penguins from other places or years, which it has never seen", "It works for every penguin in the world", "It only works on those three islands' rocks", "Nothing"]
+      options: ["It may do worse on penguins from other places", "It works for every penguin in the world", "It is wrong about every penguin elsewhere", "Nothing: penguins are the same everywhere"]
       answer: 0
-      explain: "A model has learned only from the world its data came from. Who collected the data, where and when, decides what it can be trusted for."
+      feedback: [null, "We don't know how well it works elsewhere until it is tested there.", "It may still work elsewhere; it has just never been tested there.", "Penguins can differ by place and year, and this model has never seen others."]
+      explain: "It may do worse on penguins from other places or years, which it has never seen. A model has learned only from the world its data came from. Who collected the data, where and when, decides what it can be trusted for."
 ```
 
 ### Sure but wrong
@@ -104,9 +106,10 @@ stage: info
 check:
   type: question
   q: "A school wants a model that guesses which students need extra help, trained on past years' records. What should they check first?"
-  options: ["Whether the past data treats every group fairly, how it was tested, and who checks its mistakes", "Only its accuracy", "How fast it runs", "Nothing: models are objective"]
+  options: ["Whether its past data is fair to every group", "Only its accuracy on past years' records", "How fast it gives each answer", "Nothing: models are objective"]
   answer: 0
-  explain: "Models copy the patterns in their data, including unfair ones. Real uses need fair testing, human review and a clear statement of limits."
+  feedback: [null, "Accuracy hides who the mistakes fall on. Check fairness, and who reviews it.", "Speed does not matter if its guesses are unfair.", "Models copy the patterns in their data, unfair ones included."]
+  explain: "Check whether the past data treats every group fairly, how it was tested, and who checks its mistakes. Models copy the patterns in their data, including unfair ones. Real uses need fair testing, human review and a clear statement of limits."
 ```
 
 You have built models by hand, used a real library and put a model in an app. The same ideas (examples, fair tests, honest limits) are behind every machine-learning system, from the Pattern Trainer to large language models.

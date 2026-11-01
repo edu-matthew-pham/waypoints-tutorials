@@ -136,9 +136,10 @@ stage: info
 check:
   type: question
   q: "React and Svelte are other frameworks for building apps. What do you expect they share with Vue?"
-  options: ["Data the page follows, worked-out values, events and components, written differently", "Nothing: each is completely different", "Only the HTML", "The same code, word for word"]
+  options: ["The same ideas, written differently", "Nothing: each is completely different", "Only the HTML", "The same code, word for word"]
   answer: 0
-  explain: "The ideas carry over; the syntax and the update rules differ. The optional next lesson builds this same kind of app in Vue, Preact (React's small cousin) and Svelte."
+  feedback: [null, "The spelling differs, but the ideas are in each one.", "They share much more than HTML: the ideas behind the app.", "The code differs. The ideas carry over."]
+  explain: "Data the page follows, worked-out values, events and components are in all of them. The ideas carry over; the syntax and the update rules differ. The optional next lesson builds this same kind of app in Vue, Preact (React's small cousin) and Svelte."
 ```
 
 You built an app with Vue. The optional last lesson shows the **same app in three frameworks**.

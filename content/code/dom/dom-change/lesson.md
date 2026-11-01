@@ -87,8 +87,9 @@ tasks:
   - check:
       type: question
       q: "Why is the script below the heading and not above it?"
-      options: ["A script runs as soon as the browser reaches it, so the heading must already exist", "Scripts only work at the bottom of a file", "The heading would disappear otherwise", "It makes the page load faster"]
+      options: ["The heading must already exist when the script runs", "Scripts only work at the bottom of a file", "The heading would disappear otherwise", "It makes the page load faster"]
       answer: 0
+      feedback: [null, "Scripts work anywhere in a page. What matters is what exists when they run.", "It would not disappear: a script above it finds nothing (null) and stops, so the heading stays.", "Speed is not the reason. A script above would run before the heading exists."]
       explain: "The browser reads the page from the top. A script above the heading would run before the heading exists, so querySelector would find null."
   - check:
       type: bug
@@ -159,6 +160,7 @@ check:
   q: "You want the heading to change only when someone clicks a button. What is missing?"
   options: ["Code that waits for the click and then runs the change", "A longer script", "A second heading", "Nothing: scripts already wait for clicks"]
   answer: 0
+  feedback: [null, "A script of any length runs once, as the page loads.", "A second heading gives the click nothing to do.", "A script runs once, as the page loads, unless you tell it to wait for something."]
   explain: "A script runs once, as the page loads. To wait for a click you give the button a function to run when the click happens: an event listener. Next lesson."
 ```
 

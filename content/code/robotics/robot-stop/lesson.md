@@ -49,18 +49,21 @@ tasks:
       q: "With nothing in front of the robot, what does obstacle distance give?"
       options: ["0", "40, the farthest the sensor can measure", "A random number", "Nothing: the block stops working"]
       answer: 1
+      feedback: ["0 would mean something is right up against the sensor.", null, "The sensor reports a steady number when nothing is in range.", "The block keeps working; it reports its farthest reading."]
       explain: "The sensor can measure up to 40 cm. With nothing in range, the robot reports 40, so 'distance < 15' is false and it keeps driving."
   - check:
       type: question
       q: "Why stop at 15 cm instead of 1 cm?"
-      options: ["The sensor cannot measure 1 cm", "The robot keeps rolling a little after it is told to stop, so it needs room", "15 is the robot's top speed", "1 cm would make the robot reverse"]
+      options: ["The sensor cannot measure 1 cm", "It keeps rolling a little after stopping", "15 is the robot's top speed", "1 cm would make the robot reverse"]
       answer: 1
+      feedback: ["Measuring isn't the trouble; it's what happens after the stop.", null, "15 here is a distance in cm, not a speed.", "Nothing in the program reverses; the robot just stops."]
       explain: "Like a car, the robot slows down over a short distance after it is told to stop. Stopping early leaves room. Faster robots need more room."
   - check:
       type: question
       q: "Mia's robot crashes into every box. Which part is wrong?"
-      options: ["The speed is too high", "The if is not inside forever, so the distance is checked once, at the very start", "15 should be 50", "motor stop is the wrong block"]
+      options: ["The speed is too high to stop in time", "The if is not inside forever", "15 should be a bigger number", "motor stop is the wrong block"]
       answer: 1
+      feedback: ["Even slowly it would crash, because the distance is never checked again.", null, "A bigger number checked once, at the start, still misses the box.", "motor stop is right; it is just never reached."]
       fault: logic
       misconception: run-once-vs-forever
       explain: "Without forever, the if runs once, before the robot has moved. The box is far away then, so the robot never checks again and drives straight into it."

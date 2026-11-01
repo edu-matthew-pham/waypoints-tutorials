@@ -62,9 +62,10 @@ try: { playground: arcade, starter: "lesson.ts#prototype" }
 check:
   type: question
   q: "Which part of Kai's pitch card is still missing from the prototype?"
-  options: ["The bee", "The flowers", "The danger (a chasing wasp) and an ending (winter)", "The score"]
+  options: ["The bee", "The flowers", "The wasp and winter", "The score"]
   answer: 2
-  explain: "A prototype only tests the core idea. Kai's next milestones are a danger and a way to win and lose: the same milestones you will build."
+  feedback: ["The bee is the player, and it is already there.", "The flowers are already there to collect.", null, "The score already goes up for each flower."]
+  explain: "The danger (a chasing wasp) and an ending (winter) are missing. A prototype only tests the core idea. Kai's next milestones are a danger and a way to win and lose: the same milestones you will build."
 ```
 
 Play Kai's prototype. A prototype is meant to be rough: it only tests whether the core idea is fun.

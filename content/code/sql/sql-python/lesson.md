@@ -70,11 +70,15 @@ tasks:
       type: question
       q: "A program asks the user for a genre and joins it into the query text with +. What can go wrong?"
       options:
-        - "A genre containing a quote can break the query, or change what it does"
+        - "A quote in it can break or change the query"
         - "Nothing, because + always works"
         - "The database refuses text from input()"
       answer: 0
-      explain: "The typed text becomes part of the SQL. A ? placeholder passes the value separately, so it is always treated as a value and never as SQL."
+      feedback:
+        - null
+        - "+ joins the text fine; the danger is what the text says."
+        - "The database can't tell where the text came from."
+      explain: "A genre containing a quote can break the query, or change what it does. The typed text becomes part of the SQL. A ? placeholder passes the value separately, so it is always treated as a value and never as SQL."
 ```
 
 ### Take a row apart

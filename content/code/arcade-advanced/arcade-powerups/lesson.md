@@ -83,11 +83,12 @@ tasks:
   - check:
       type: question
       q: "Sam wants the shield to switch off when shieldTime reaches 0. He puts the blocks below in on start. He catches a star, and shieldTime counts down to 0. What happens to the shield?"
-      options: ["It switches off at 0", "It never switches off: the if was asked once, at the start, before the star was caught", "It switches off straight away", "The game ends"]
+      options: ["It switches off at 0", "It never switches off", "It switches off straight away", "The game ends"]
       answer: 1
+      feedback: ["The if was asked once, at the start, before the star was caught.", null, "At the start the shield was already off; after the star, nothing asks again.", "Nothing here ends the game; the if only switches the shield."]
       fault: logic
       misconception: check-in-start
-      explain: "Blocks in on start run once, before the game begins. The if is never asked again. A check that must keep happening goes in a timer or in on game update."
+      explain: "Blocks in on start run once, before the game begins, so the if was asked before the star was caught and is never asked again. A check that must keep happening goes in a timer or in on game update."
 ```
 
 ### Game rule or engine?

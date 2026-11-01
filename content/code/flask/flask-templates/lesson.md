@@ -47,13 +47,15 @@ tasks:
       q: "Someone visits /player/Leo. What is name inside player()?"
       options: ["\"Leo\"", "\"/player/Leo\"", "\"<name>\"", "players[3]"]
       answer: 0
+      feedback: [null, "Only the part where <name> sits is passed, not the whole address.", "<name> is the pattern; the function gets what the visitor typed there.", "Flask passes the text from the address; finding the player is your loop's job."]
       explain: "<name> in the route matches whatever is in that place of the address, and Flask passes it to the function as the parameter name."
   - check:
       type: question
       q: "What does return \"...\", 404 do when no player matches?"
-      options: ["Sends the page with the status 404 Not Found, so browsers and search engines know the page is missing", "Sends the number 404 as the page", "Stops the app", "Sends two pages"]
+      options: ["Sends the page with the status 404 Not Found", "Sends the number 404 as the page", "Stops the app", "Sends two pages"]
       answer: 0
-      explain: "A route can return the page and a status code. 404 means not found; the normal 200 means OK."
+      feedback: [null, "The text is the page; 404 is the status code sent with it.", "The app keeps running and answers the next visitor.", "A route sends one reply: a page plus its status."]
+      explain: "Browsers and search engines then know the page is missing. A route can return the page and a status code. 404 means not found; the normal 200 means OK."
   - check:
       type: bug
       code: club.py#bug
@@ -118,9 +120,10 @@ stage: info
 check:
   type: question
   q: "The club gets 200 players. What changes in your app?"
-  options: ["Only the data: the same template and routes make every page", "200 new routes", "200 templates", "A new app"]
+  options: ["Only the data: the same code makes every page", "A new route for each of the 200 players", "A template for each of the 200 players", "A new app that can handle more players"]
   answer: 0
-  explain: "This is why sites use templates: the code stays the same size however much data there is."
+  feedback: [null, "One route with <name> already answers for every player.", "One template is filled in with each player's data.", "The same app works; only the list of players grows."]
+  explain: "The same template and routes make every page. This is why sites use templates: the code stays the same size however much data there is."
 ```
 
 On a computer, templates usually live in their own files in a `templates` folder, loaded with `render_template("club.html", ...)`; the `{{ }}` and `{% %}` work exactly the same. Next: a form that adds players.

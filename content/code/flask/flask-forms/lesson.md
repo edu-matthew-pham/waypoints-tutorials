@@ -46,14 +46,16 @@ tasks:
   - check:
       type: question
       q: "Why does join() end with redirect(\"/\") instead of returning a page?"
-      options: ["So the browser goes back to the home page, which shows the list with the new member", "To stop the form being sent", "Because POST routes cannot return HTML", "To save the member"]
+      options: ["To show the home page, with the new member", "To stop the form being sent", "Because POST routes cannot return HTML", "To save the member"]
       answer: 0
-      explain: "The home route already shows the members. Redirecting there after a change is the usual pattern, and reloading the page then does not send the form twice."
+      feedback: [null, "The form has already been sent by the time join() runs.", "A POST route can return a page; redirecting is a choice.", "The member is saved by the lines before it, not by redirect."]
+      explain: "redirect sends the browser back to the home page, which shows the list with the new member. The home route already shows the members. Redirecting there after a change is the usual pattern, and reloading the page then does not send the form twice."
   - check:
       type: question
       q: "What does request.form[\"group\"] give when someone chooses Champions?"
       options: ["\"Champions\"", "\"group\"", "The whole form", "3, because it is the third option"]
       answer: 0
+      feedback: [null, "\"group\" is the name the choice is sent under, not the choice itself.", "request.form[...] picks one value from the form by its name.", "A select sends the option's text, not its position."]
       explain: "A select sends the chosen option's text under its name, group."
   - check:
       type: bug
@@ -118,9 +120,10 @@ stage: info
 check:
   type: question
   q: "Why should the server check the name, when the form could just say the box is required?"
-  options: ["Anyone can send anything to /join without using your form, so the server must check what it gets", "Forms cannot check anything", "It is faster", "Browsers ignore required"]
+  options: ["Anyone can send anything to /join, form or not", "Forms cannot check anything at all", "It is faster than checking in the browser", "Browsers ignore the required setting"]
   answer: 0
-  explain: "A form's checks help honest users; the server's checks protect the data. Every real web app checks again on the server."
+  feedback: [null, "required does make the browser check that the box is filled in.", "Speed is not the reason: the browser check is quicker. The server check is about trust.", "Browsers do honour required, for people using your form."]
+  explain: "Anyone can send anything to /join without using your form, so the server must check what it gets. A form's checks help honest users; the server's checks protect the data. Every real web app checks again on the server."
 ```
 
 The members disappear on every Run, because they live in a variable. Next: save them to a file so they last.

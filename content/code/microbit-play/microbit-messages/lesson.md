@@ -83,16 +83,18 @@ tasks:
   - check:
       type: question
       q: "Ella and Tom built the messenger, but Tom's list is in a different order. Ella sends Yes, and Tom's micro:bit shows No. Why?"
-      options: ["The radio changed the number", "Only the place number is sent, and the same place holds a different word in Tom's list", "Tom's group is wrong", "Lists cannot be sent by radio"]
+      options: ["The radio changed the number", "The same place holds a different word", "Tom's group is wrong", "Lists cannot be sent by radio"]
       answer: 1
+      feedback: ["Radio sends the number unchanged.", null, "If the group were wrong, nothing would arrive at all.", "Only a number travels; the list stays on each micro:bit."]
       fault: logic
       misconception: shared-code-mismatch
       explain: "Ella sends place 1. In her list place 1 is Yes; in Tom's it is No. Both micro:bits must use the same list in the same order."
   - check:
       type: question
       q: "Why send the place number instead of the whole word?"
-      options: ["Numbers are prettier", "Both micro:bits already have the list, so a small number is all that needs to travel", "Radio cannot send words", "It is the only block that works"]
+      options: ["Numbers show faster on the LEDs", "Both sides already have the list", "Radio cannot send words", "Words get lost on the radio"]
       answer: 1
+      feedback: ["How it shows isn't the reason; what travels is.", null, "Radio can send words: send string does it.", "Words arrive just as safely; a number is just shorter."]
       explain: "Radio can send words, but a number is shorter and both sides already know what it stands for. That shared list is a code."
 ```
 

@@ -91,6 +91,7 @@ tasks:
       q: "The game has run for 2 seconds. About how far has the dot moved?"
       options: ["120 steps", "2 steps", "60 steps", "200 steps"]
       answer: 0
+      feedback: [null, "2 is the seconds; update() runs 60 times each second.", "60 steps is one second's worth.", "200 is where it wraps round, not how far it moved."]
       explain: "update() runs 60 times a second and adds 1 to x each time: 2 × 60 = 120 steps (it wraps back to -100 after 200)."
   - check:
       type: bug
@@ -159,9 +160,10 @@ stage: info
 check:
   type: question
   q: "In the turtle course, events waited for a click or a key. What does a game loop do instead?"
-  options: ["It runs update and draw again and again, whether or not anything happens", "It waits for a click before every frame", "It runs once, then stops", "It runs draw only when you press a key"]
+  options: ["It runs update and draw again and again", "It waits for a click before every frame", "It runs once, then stops", "It runs draw only when you press a key"]
   answer: 0
-  explain: "A game loop never waits: 60 times a second it updates and redraws, which is why things can move on their own. Clicks and keys are checked inside update()."
+  feedback: [null, "A game loop never waits; it checks clicks inside update().", "It keeps running, 60 times a second, until the game stops.", "draw() runs every frame, key or no key."]
+  explain: "A game loop never waits: 60 times a second it updates and redraws, whether or not anything happens, which is why things can move on their own. Clicks and keys are checked inside update()."
 ```
 
 Every game engine works this way: Unity, Godot, Pico-8 and MakeCode Arcade all call an update and a draw function every frame. Next: move something with the arrow keys.

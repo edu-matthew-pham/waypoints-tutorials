@@ -42,8 +42,9 @@ tasks:
   - check:
       type: question
       q: "You add a fourth card to the row. How much new CSS do you write?"
-      options: ["None: copy a card, and the .card rule styles it too", "A new .card4 rule", "A new row with display: flex", "A new width for all four cards"]
+      options: ["None: the .card rule styles it too", "A new .card4 rule", "A new row with display: flex", "A new width for all four cards"]
       answer: 0
+      feedback: [null, "Every card shares the class, so a .card4 rule repeats what .card already does.", "The row already has display: flex. The new card joins it.", "flex: 1 shares out the row by itself, so the widths adjust."]
       fault: logic
       misconception: class-per-copy
       explain: "A class is shared by every copy. Adding a card is copying HTML, not writing CSS."

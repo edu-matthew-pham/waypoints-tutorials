@@ -47,12 +47,14 @@ tasks:
       q: "Where do the three Radio inputs come from?"
       options: ["The loop over questions appends one Radio for each question", "gr.Interface makes one for each question by itself", "There are three Radio lines written by hand", "The mark function"]
       answer: 0
+      feedback: [null, "gr.Interface only shows the inputs it is given.", "Look again: there is one gr.Radio line, inside the loop.", "mark checks the answers; it makes no inputs."]
       explain: "inputs starts empty, and the loop appends a gr.Radio with that question's choices and text. Four questions would make four inputs."
   - check:
       type: question
       q: "What does mark get as a1 when the first question is answered Mercury?"
       options: ["\"Mercury\"", "True", "0", "The whole question"]
       answer: 0
+      feedback: [null, "mark decides right or wrong; the Radio only gives the choice.", "A Radio gives the chosen text, not its position.", "Each input gives only what the player chose."]
       explain: "A Radio gives the chosen text. mark compares it with q[\"answer\"]."
   - check:
       type: bug
@@ -129,9 +131,10 @@ stage: info
 check:
   type: question
   q: "Your teacher wants a quiz with 30 questions. What is the main problem with mark(a1, a2, ..., a30)?"
-  options: ["A parameter per question is a lot to write; Python's *answers takes any number of them as a list", "Gradio allows only 10 inputs", "Radio cannot show 30 questions", "Nothing: it is fine"]
+  options: ["Thirty parameters is a lot to write", "Gradio allows only 10 inputs", "Radio cannot show 30 questions", "Nothing: it is fine"]
   answer: 0
-  explain: "def mark(*answers): collects every input into one list, so the function works for any number of questions. It is the stretch for this lesson."
+  feedback: [null, "Gradio has no such limit.", "Each Radio shows one question, and you can have 30 of them.", "It works, but writing and changing 30 names is slow."]
+  explain: "Python's *answers takes any number of them as a list. def mark(*answers): collects every input into one list, so the function works for any number of questions. It is the stretch for this lesson."
 ```
 
 On a computer this same file is a real quiz app, and a teacher can host it as a Hugging Face Space for the class. The optional next lesson stores each question as an object with its own `check` method.

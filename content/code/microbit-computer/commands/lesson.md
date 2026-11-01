@@ -59,18 +59,21 @@ tasks:
       q: "When does on serial data received run?"
       options: ["Each time a whole line arrives (it ends with a new line)", "Every half second", "Only when the micro:bit starts", "When a button on the micro:bit is pressed"]
       answer: 0
+      feedback: [null, "It isn't timed; it waits for a whole line.", "It runs every time a line arrives, not only at the start.", "Buttons have their own events."]
       explain: "It waits for the end of a line, then runs once. read line gives you that line, without its new line."
   - check:
       type: question
       q: "Ben's micro:bit never reacts, whatever the board sends. His program starts with on serial data received with delimiters comma. Why?"
-      options: ["It waits for a comma, but the board ends each line with a new line, so it never runs", "Commas are not allowed in serial", "He needs a forever block", "The cable is too slow"]
+      options: ["It waits for a comma that never comes", "Commas are not allowed in serial", "He needs a forever block", "The cable is too slow"]
       answer: 0
+      feedback: [null, "Commas can be sent; the board just doesn't end its lines with one.", "The event runs by itself when its delimiter arrives.", "The data arrives; the event is waiting for the wrong ending."]
       explain: "The delimiter is the character that ends a message. The board ends each line with a new line, so the micro:bit must wait for a new line."
   - check:
       type: question
       q: "Why is it useful for the micro:bit to send a reply, such as ok?"
       options: ["The computer then knows the command arrived and was understood", "Replies make the cable faster", "The micro:bit forgets the command otherwise", "Replies are needed for the LEDs to work"]
       answer: 0
+      feedback: [null, "Replies don't change the cable's speed.", "The command runs either way; the reply tells the sender.", "The LEDs work without any reply."]
       explain: "Without a reply the sender can't tell whether a command arrived, or whether it was a word the micro:bit doesn't know."
 ```
 

@@ -87,8 +87,9 @@ tasks:
   - check:
       type: question
       q: "Sam's player touches one rock and the game is over straight away, though he started with 3 lives. Why?"
-      options: ["setLife(3) only gives one life", "The rock is not destroyed, so the overlap event runs again every frame while they touch", "changeLifeBy(-1) takes away all the lives", "Rocks always end the game"]
+      options: ["setLife(3) only gives one life", "The rock stays, so the overlap runs again every frame", "changeLifeBy(-1) takes away all the lives", "Rocks always end the game"]
       answer: 1
+      feedback: ["setLife(3) gives 3 lives; Sam really does start with 3.", null, "changeLifeBy(-1) takes one life, but it runs again every frame.", "Rocks end the game only by taking all the lives."]
       fault: logic
       misconception: overlap-repeats
       explain: "An overlap event runs every frame (about 30 times a second) while the two sprites still touch. The rock is still touching after the first life is gone, so the next frame takes another. Destroy the rock (or move it away) in the event."
@@ -97,6 +98,7 @@ tasks:
       q: "Kai wants his game to end when the lives run out. What does he need to add?"
       options: ["Nothing: the engine ends the game at 0 lives", "A game over block in on start", "A game over block in the overlap event", "A countdown"]
       answer: 0
+      feedback: [null, "on start runs once, before any lives are lost.", "Not needed: Arcade ends the game by itself at 0 lives.", "A countdown ends a game on time, not on lives."]
       fault: logic
       misconception: game-over-needs-block
       explain: "Arcade ends the game by itself when the lives reach 0."
@@ -150,6 +152,7 @@ check:
   q: "A coin of kind Food moves left towards the player at vx -30. When it reaches the player, which event runs?"
   options: ["The Player–Food overlap", "The Player–Enemy overlap", "Both", "Neither: moving sprites cannot overlap"]
   answer: 0
+  feedback: [null, "The coin is kind Food, so the Player–Enemy event doesn't run.", "Only the event for the coin's kind runs: Player–Food.", "Moving sprites can overlap; that is how rocks hit the ship."]
   explain: "The engine carries the coin to the player. It is Food, so the Player–Food event runs."
 ```
 

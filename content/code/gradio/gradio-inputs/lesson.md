@@ -52,9 +52,10 @@ tasks:
   - check:
       type: question
       q: "Why does the summary use str(int(adults))?"
-      options: ["A slider can give 2.0; int makes it 2, and str makes it text to join", "Gradio needs int and str", "adults is a list", "To round the price"]
+      options: ["To turn 2.0 into the text 2", "Gradio needs int and str", "adults is a list of numbers", "To round the price to dollars"]
       answer: 0
-      explain: "Gradio sliders can give decimal numbers, such as 2.0. int() drops the .0, and str() turns the number into text so + can join it."
+      feedback: [null, "Gradio gives a number; the code converts it for joining.", "A slider gives one number, not a list.", "The price is worked out elsewhere; this line only shows how many adults."]
+      explain: "A slider can give 2.0; int makes it 2, and str makes it text to join. Gradio sliders can give decimal numbers, such as 2.0. int() drops the .0, and str() turns the number into text so + can join it."
   - check:
       type: bug
       code: app.py#bug
@@ -118,9 +119,10 @@ stage: info
 check:
   type: question
   q: "A friend's ticket app gives the wrong price when they choose Weekend. Where do you look first?"
-  options: ["The function: call it with print, such as price(2, 3, \"Weekend\"), and check the answer", "The Dropdown's colours", "Gradio's settings", "The Submit button"]
+  options: ["The function: test it with print", "How the Dropdown looks on the page", "Gradio's settings for the app", "The Submit button's code"]
   answer: 0
-  explain: "The app only shows what the function returns. Test the function on its own with the same inputs, and the bug is usually there."
+  feedback: [null, "Looks do not change the price; the function works it out.", "Gradio only passes the inputs on; the price comes from your function.", "Submit only calls the function; the answer comes from it."]
+  explain: "Call it with print, such as price(2, 3, \"Weekend\"), and check the answer. The app only shows what the function returns. Test the function on its own with the same inputs, and the bug is usually there."
 ```
 
 Next: a quiz app, where the inputs are made from a list of questions.

@@ -81,6 +81,7 @@ tasks:
       q: "Every star should also remember its colour. What changes?"
       options: ["One more key in the dictionary where each star is made", "A new list beside stars", "A new variable for every star", "Nothing: dictionaries cannot hold colours"]
       answer: 0
+      feedback: [null, "Lists side by side can fall out of step; a key keeps it with the star.", "That is the s1, s2 problem again.", "A dictionary can hold any value, colours included."]
       explain: "Add \"colour\": ... where the dictionary is made, then read star[\"colour\"] where it is needed. Nothing else can fall out of step."
   - check:
       type: bug
@@ -145,9 +146,10 @@ stage: info
 check:
   type: question
   q: "A school stores each student as a dictionary: {\"name\": \"Ada\", \"year\": 9}. What is a list of them?"
-  options: ["A table: one row per student, one column per key", "A list of names only", "A single number", "A turtle"]
+  options: ["A table: a row per student", "A list of names only", "A single number", "A dictionary of dictionaries"]
   answer: 0
-  explain: "A list of dictionaries is a table, which is how most data is stored: spreadsheets, databases and the data sets in Data detective."
+  feedback: [null, "Each dictionary keeps the year too, not only the name.", "It holds many students, not one number.", "It is a list, so the students sit in order, one after another."]
+  explain: "One row per student, one column per key. A list of dictionaries is a table, which is how most data is stored: spreadsheets, databases and the data sets in Data detective."
 ```
 
 A list of dictionaries is how most programs store data: one record per thing. There is still one awkward part: `star["turtle"].forward(star["speed"])`. Next lesson makes a `Star` of your own, so it reads `star.turtle.forward(star.speed)`.

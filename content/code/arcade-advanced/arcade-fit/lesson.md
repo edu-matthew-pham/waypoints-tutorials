@@ -93,11 +93,12 @@ tasks:
   - check:
       type: question
       q: "Ben is testing a toppling-tower game. He stacks two crates and drops a ball on them with gravity. The ball falls straight through the crates and off the screen. Why?"
-      options: ["The ball is too fast to hit anything", "An overlap is only an event: nothing pushes or stops a sprite unless your blocks do it, and Ben has no overlap event at all", "Crates must be of kind Enemy to be solid", "Gravity only works on the player"]
+      options: ["The ball is too fast to hit anything", "Nothing stops it: sprites pass through each other", "Crates must be of kind Enemy to be solid", "Gravity only works on the player"]
       answer: 1
+      feedback: ["Even a slow ball passes through: nothing stops sprites that touch.", null, "Kinds only name sprites for events; no kind is solid.", "Gravity is ay, which any sprite can have."]
       fault: design
       misconception: overlap-not-collision
-      explain: "Sprites pass through each other. An overlap tells your blocks that two sprites touch; then your blocks decide what happens. Stopping a ball is a few blocks (like the floor you built in Gravity and jumping), but stacking and toppling like real objects needs a physics engine, which Arcade does not have."
+      explain: "Sprites pass through each other, and Ben has no overlap event at all. An overlap tells your blocks that two sprites touch; then your blocks decide what happens. Stopping a ball is a few blocks (like the floor you built in Gravity and jumping), but stacking and toppling like real objects needs a physics engine, which Arcade does not have."
 ```
 
 This program is Ben's test. Run it and watch the ball.

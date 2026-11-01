@@ -88,6 +88,7 @@ tasks:
       q: "best starts at 99999. Your first reaction is 400. What is best after it?"
       options: ["400", "99999", "0", "99599"]
       answer: 0
+      feedback: [null, "400 is smaller, so it replaces 99999.", "Nothing sets best to 0.", "best takes the new time, not the difference."]
       explain: "400 is less than 99999, so best becomes 400. Starting best very high means any first time beats it."
 ```
 
@@ -151,8 +152,9 @@ try: { playground: microbit, starter: "lesson.ts#fixed" }
 check:
   type: question
   q: "In this version the wait is always 2 seconds. Why does that spoil the game?"
-  options: ["2 seconds is too long", "Players learn the timing and press without reacting to the heart", "The heart is smaller", "Running time stops working"]
+  options: ["2 seconds is too long to wait", "Players learn the timing instead of reacting", "The heart shows too briefly to see", "running time can't measure 2 seconds"]
   answer: 1
+  feedback: ["A shorter fixed wait has the same problem.", null, "The heart is the same; the trouble is knowing when it comes.", "running time measures any wait."]
   explain: "A fixed wait can be counted. A random wait can only be reacted to, so it measures reactions."
 ```
 

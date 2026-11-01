@@ -104,8 +104,9 @@ tasks:
   - check:
       type: question
       q: "Clicking the word Email puts the cursor in the email box. What makes that work?"
-      options: ["for=\"email\" on the label matches id=\"email\" on the box", "The label sits next to the box", "type=\"email\" on the box", "Both are inside the same <p>"]
+      options: ["for=\"email\" matches id=\"email\"", "The label sits next to the box", "type=\"email\" on the box", "Both are inside the same <p>"]
       answer: 0
+      feedback: [null, "Sitting next to it looks linked, but clicking does nothing.", "type=\"email\" checks what is typed. It does not link the label.", "Sharing a paragraph links nothing. Only for and id do."]
       fault: logic
       misconception: label-not-linked
       explain: "for on the label and id on the box must match exactly. Sitting next to each other, or in the same <p>, links nothing. The link also tells screen readers which words belong to which box."

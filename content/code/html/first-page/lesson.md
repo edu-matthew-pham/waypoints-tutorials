@@ -95,6 +95,7 @@ tasks:
       q: "A page has <p>Bring a hat.</p><p>Bring water.</p> all on one line of code. How many paragraphs does the page show?"
       options: ["1, because it is one line of code", "2, because there are two <p> tags", "1, because there is no gap in the code", "It shows an error"]
       answer: 1
+      feedback: ["Lines in the code do not decide. Tags do.", null, "Gaps in the code are ignored. Each p tag starts a new paragraph.", "Several tags on one line are fine. The browser reads them in order."]
       fault: logic
       misconception: code-lines-show
       explain: "Tags decide, not lines. Two <p> tags make two paragraphs, even when they are on one line of code."
@@ -171,10 +172,10 @@ smaller:
     type: question
     q: "A page about a park needs a title and two sections. Which set of tags is right?"
     options:
-      - "One h1 for the title, then an h2 for each section"
+      - "One h1, then an h2 for each section"
       - "Three h1 headings"
       - "Three h2 headings"
-      - "One h1 and two p tags"
+      - "One h1, then a p for each section"
     answer: 0
     feedback:
       - null

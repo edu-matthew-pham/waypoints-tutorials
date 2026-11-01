@@ -75,16 +75,18 @@ tasks:
   - check:
       type: question
       q: "Lily's sign has three blocks in on start: show string HI, show icon happy face, show icon tick. What do you see?"
-      options: ["HI scrolls, then the happy face, then the tick, which stays", "HI, the face and the tick all at once", "Only the tick", "Only HI"]
+      options: ["HI, then the face, then the tick", "HI, the face and the tick all at once", "Only the tick", "Only HI, because it comes first"]
       answer: 0
+      feedback: [null, "The micro:bit does one block at a time; each picture replaces the last.", "The tick is last, but HI and the face show first.", "The other blocks run after HI too."]
       fault: logic
       misconception: blocks-show-together
-      explain: "The micro:bit does one block at a time, from the top. Each picture replaces the one before, and the tick is last, so it stays."
+      explain: "The micro:bit does one block at a time, from the top: HI scrolls, then the happy face, then the tick. Each picture replaces the one before, and the tick is last, so it stays."
   - check:
       type: question
       q: "Ten seconds after the program starts, which picture is on the screen?"
       options: ["The tick: the last block", "HI: the first block", "Nothing: the program has finished", "All three, taking turns"]
       answer: 0
+      feedback: [null, "HI scrolled away long ago.", "The program has finished, but the last picture stays on.", "There is no loop, so they don't repeat."]
       explain: "When the last block has run, the program is finished, and the last picture is still on the LEDs."
   - check:
       type: code

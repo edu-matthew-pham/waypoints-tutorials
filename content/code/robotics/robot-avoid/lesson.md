@@ -43,17 +43,19 @@ tasks:
   - check:
       type: question
       q: "After turning away, how does the robot know to drive forward again?"
-      options: ["The turn block tells it to", "forever runs the if again: the box is no longer close, so else drives forward", "It remembers that it has turned", "It waits for a button press"]
+      options: ["The turn block tells it to drive on afterwards", "forever checks again and finds the way clear", "It remembers that it has already turned", "It waits for a button press to go again"]
       answer: 1
+      feedback: ["A turn block only turns, for its time. Nothing in it says drive.", null, "Nothing stores the turn. Each time round, forever asks the question fresh.", "No button is used here. forever keeps going by itself."]
       explain: "forever checks again straight after the turn. The way is clear now, so the question is false and else runs: drive forward."
   - check:
       type: question
       q: "Zara's robot spins on the spot in open space, and drives straight into boxes. Which part is wrong?"
-      options: ["The turn is too short", "The > should be <: her robot turns when things are far away and drives when they are close", "She needs robot motor stop", "The speeds should be 100"]
+      options: ["Her turn is too short to clear the box", "Her > should be a <", "She needs robot motor stop after the turn", "Her 15 cm should be a bigger number"]
       answer: 1
+      feedback: ["A longer turn would still happen in open space. Look at when the if is true.", null, "Stopping won't change when it turns. Check which way the comparison points.", "A bigger number still turns in open space. Which way does the comparison point?"]
       fault: logic
       misconception: comparison-direction
-      explain: "'distance > 15' is true when nothing is near, so Zara's robot turns in open space. When a box is close, the question is false and else drives straight at it."
+      explain: "The > should be <: her robot turns when things are far away and drives when they are close. 'distance > 15' is true when nothing is near, so Zara's robot turns in open space. When a box is close, the question is false and else drives straight at it."
 ```
 
 ### Back to forward

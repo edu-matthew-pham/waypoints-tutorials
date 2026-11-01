@@ -92,6 +92,7 @@ tasks:
       q: "You want the turtle to visit a seventh spot. What do you change?"
       options: ["Add a number to xs only", "Add one number to xs and one to ys", "Change % len(xs) to % 7", "Add another hop() call"]
       answer: 1
+      feedback: ["ys needs a matching number too, or hop asks for a y that is not there.", null, "% len(xs) already counts the new spot, and % 7 breaks if you add an eighth.", "hop() already visits every spot in the lists."]
       explain: "Each spot is one x and one y at the same place in the two lists. len(xs) already counts the new spot."
   - check:
       type: bug
@@ -176,9 +177,10 @@ code: catch.py#random
 check:
   type: question
   q: "Why can a good player beat the turtle on a path, but not at random?"
-  options: ["The path is slower", "On a path you can predict the next spot and move there first", "Random spots are smaller", "The timer is shorter at random"]
+  options: ["The path is slower", "On a path you can predict the next spot", "Random spots are smaller", "The timer is shorter at random"]
   answer: 1
-  explain: "A path is a pattern, and patterns can be predicted. Random spots can only be reacted to."
+  feedback: ["The speed is the same. The pattern is what helps you.", null, "The spots are the same size either way.", "The timer is the same. Only where the turtle lands changes."]
+  explain: "You can move there before the turtle arrives. A path is a pattern, and patterns can be predicted. Random spots can only be reacted to."
 ```
 
 Play a few games. Do you start moving to the next spot before the turtle arrives? Then try random spots instead. `random` is a module someone else wrote, just like your `ui.py`. `random.randint(-150, 150)` picks a whole number from -150 up to 150, a new one each time it runs, so the turtle lands somewhere new on every hop. The first number is the lowest it can pick and the second is the highest. Swap the first two lines of `hop()` for the two lines above. Copy `import random` to the top and `random.` before `randint` as they are for now; a later lesson explains how they work. Then change the numbers so the turtle only appears in the top half of the screen.

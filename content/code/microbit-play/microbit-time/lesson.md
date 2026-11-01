@@ -85,11 +85,12 @@ tasks:
   - check:
       type: question
       q: "Zara's B shows only running time, with no start taken away. She presses A, waits 2 seconds, presses B, and sees 14231. Why?"
-      options: ["running time counts from when the micro:bit started, not from A", "The micro:bit is slow", "A changed the running time", "14231 is 2 seconds"]
+      options: ["running time counts from switch-on", "The micro:bit is slow", "A changed the running time", "14231 is 2 seconds"]
       answer: 0
+      feedback: [null, "Speed isn't it: 14231 ms is about 14 seconds since switch-on.", "Pressing A doesn't change running time.", "2 seconds is 2000 ms."]
       fault: logic
       misconception: running-time-from-press
-      explain: "running time never restarts at a press. It counts from switch-on, so the time between two moments is one reading minus the other."
+      explain: "running time counts from when the micro:bit started, not from A. running time never restarts at a press. It counts from switch-on, so the time between two moments is one reading minus the other."
   - check:
       type: number
       q: "B shows 2500. How many seconds is that?"

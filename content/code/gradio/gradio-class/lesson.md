@@ -47,13 +47,15 @@ tasks:
       q: "Inside check, what is self.answer for the second question in the list?"
       options: ["\"8\": self is the question check was called on", "\"Mercury\": the first question's answer", "Every question's answer", "Nothing until mark sets it"]
       answer: 0
+      feedback: [null, "self is questions[1] here, not the first question.", "self is one question, so self.answer is one answer.", "__init__ sets self.answer when each question is made."]
       explain: "questions[1].check(...) runs check with self being questions[1], so self.answer is that question's own answer."
   - check:
       type: question
       q: "Compared with last lesson, what got simpler in mark?"
-      options: ["It asks each question to check and give feedback, instead of knowing how itself", "It no longer needs a loop", "It has no parameters", "Nothing"]
+      options: ["Each question checks itself", "It no longer needs a loop", "It has no parameters", "Nothing: it is the same code"]
       answer: 0
-      explain: "The marking rules live in the class. Changing how feedback looks means changing one method, for every question at once."
+      feedback: [null, "mark still loops over the questions.", "mark still takes the answers.", "Look at how feedback is made: mark hands it to each question."]
+      explain: "mark asks each question to check and give feedback, instead of knowing how itself. The marking rules live in the class. Changing how feedback looks means changing one method, for every question at once."
   - check:
       type: bug
       code: quiz.py#bug
@@ -117,9 +119,10 @@ stage: info
 check:
   type: question
   q: "You want a second kind of question where the player types the answer. Where does the checking code go?"
-  options: ["In its own class with its own check method, so mark can still just call check on every question", "In mark, with an if for each kind", "In gr.Interface", "Nowhere: it cannot be done"]
+  options: ["In its own class with its own check method", "In mark, with an if for each kind", "In gr.Interface", "Nowhere: it cannot be done"]
   answer: 0
-  explain: "When every kind of question has a check method, mark does not need to know the difference. Designing with objects is about this."
+  feedback: [null, "That works, but mark grows an if for every new kind; a class keeps mark simple.", "gr.Interface only shows inputs and outputs; the checking belongs in your code.", "It can: a new class with a check method."]
+  explain: "Then mark can still just call check on every question. When every kind of question has a check method, mark does not need to know the difference. Designing with objects is about this."
 ```
 
 Real apps (and Gradio itself) are built from classes: `gr.Radio` and `gr.Textbox` are classes, and each component you made is an object.

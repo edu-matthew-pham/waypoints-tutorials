@@ -57,8 +57,9 @@ tasks:
   - check:
       type: question
       q: "Jo checks the distance in the last else if, after Go, Left and Right. Her robot still drives into boxes on Go. Why?"
-      options: ["When the mode is Go, the Go branch runs first and the distance check is never reached", "The sensor is broken", "Boxes are invisible to the sensor", "The watchdog stops the check"]
+      options: ["The Go branch runs first, so the check is never reached", "The distance sensor can't see while moving", "Boxes are too low for the sensor to see", "The watchdog stops the distance check"]
       answer: 0
+      feedback: [null, "It works in other lessons. Look at the order of the branches.", "The sensor sees boxes; the program never asks it.", "The watchdog only stops the robot after silence."]
       explain: "An if, else if chain runs only the first branch that matches. A check that must always win goes first."
 ```
 

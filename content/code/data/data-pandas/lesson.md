@@ -65,9 +65,9 @@ tasks:
       q: "What does `songs[songs[\"genre\"] == \"rock\"]` give?"
       options:
         - "A smaller table with only the rock rows"
-        - "True or False"
-        - "The word rock"
-        - "The first rock song"
+        - "True or False for every row"
+        - "The text rock, from the genre column"
+        - "Only the first rock song in the table"
       answer: 0
       feedback:
         - null

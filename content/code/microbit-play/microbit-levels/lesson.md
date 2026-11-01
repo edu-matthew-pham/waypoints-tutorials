@@ -84,9 +84,10 @@ tasks:
   - check:
       type: question
       q: "There are 5 targets. You beat level 4. What must the game do next?"
-      options: ["Use place 5", "Stop: there is no place 5, so you have won (level equals the length of the list)", "Start again at place 1", "Show 300 again"]
+      options: ["Use place 5", "Stop: the player has won", "Start again at place 1", "Show 300 again"]
       answer: 1
-      explain: "Places run from 0 to 4. When level reaches 5, the length of the list, there are no targets left: the player has won."
+      feedback: ["There is no place 5: places run from 0 to 4.", null, "Places start at 0, and beating the last level means winning.", "300 is level 4's target; beating it means there are no targets left, so the player has won."]
+      explain: "There is no place 5, so the player has won: level equals the length of the list. Places run from 0 to 4. When level reaches 5, the length of the list, there are no targets left: the player has won."
 ```
 
 The game keeps one target per level in a list. **A+B** shows the target for the current level.

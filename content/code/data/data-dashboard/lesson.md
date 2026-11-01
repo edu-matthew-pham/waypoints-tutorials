@@ -70,20 +70,23 @@ tasks:
   - check:
       type: question
       q: "What does songs[songs[\"genre\"] == genre] give?"
-      options: ["A smaller table: only the rows whose genre matches", "True or False", "A list of genres", "The first matching song"]
+      options: ["Only the rows whose genre matches", "True or False for every row", "A list of genres", "The first matching song"]
       answer: 0
-      explain: "songs[\"genre\"] == genre is True or False for every row, and songs[...] keeps the True rows. It is the loop and if from Lesson 1, in one line."
+      feedback: [null, "That is the test inside; the outer brackets keep the True rows.", "It keeps whole rows of songs, not genre names.", "It keeps every matching row, not just the first."]
+      explain: "A smaller table. songs[\"genre\"] == genre is True or False for every row, and songs[...] keeps the True rows. It is the loop and if from Lesson 1, in one line."
   - check:
       type: question
       q: "Why does by_genre return rows twice?"
-      options: ["There are two outputs, a table and a bar chart, and each needs a value", "To make the app faster", "The first one is a backup", "Gradio needs every value twice"]
+      options: ["One for the table, one for the chart", "To make the app faster", "The first one is a backup", "Gradio needs every value twice"]
       answer: 0
-      explain: "outputs lists two components, so the function returns two values, in the same order: the first goes to the table, the second to the chart."
+      feedback: [null, "Returning twice adds work; it is about the outputs.", "Both values are shown, one in each output.", "Gradio needs one value per output, and there are two outputs."]
+      explain: "There are two outputs, a table and a bar chart, and each needs a value. outputs lists two components, so the function returns two values, in the same order: the first goes to the table, the second to the chart."
   - check:
       type: question
       q: "With csv.DictReader you needed float(song[\"minutes\"]). Why does BarPlot work here without float()?"
       options: ["pd.read_csv turns columns of numbers into numbers", "BarPlot changes text into numbers", "minutes was never text", "Gradio does it on the server"]
       answer: 0
+      feedback: [null, "BarPlot gets numbers already, from pandas.", "csv.DictReader gave text; pandas converts it.", "Gradio only shows what the function returns."]
       explain: "pandas looks at each column and keeps numbers as numbers. The minutes column is a column of decimal numbers in the table."
 ```
 
@@ -151,9 +154,10 @@ stage: info
 check:
   type: question
   q: "Your dashboard reads music.csv. What would it take to use it for your class's own survey?"
-  options: ["A CSV with the same idea, and new column names in the code", "A whole new program", "A database", "Nothing: it works on any file"]
+  options: ["A CSV like it, and new column names", "A whole new program", "A database", "Nothing: it works on any file"]
   answer: 0
-  explain: "The shape is the same: read the table, filter by an input, show a table and a chart. Add the file in the Files tab and change the names."
+  feedback: [null, "The shape stays: read, filter, show. Only names change.", "A CSV is enough for a class survey.", "The code names columns such as genre, so it needs the new names."]
+  explain: "A CSV with the same idea, and new column names in the code. The shape is the same: read the table, filter by an input, show a table and a chart. Add the file in the Files tab and change the names."
 ```
 
 On a computer, `pip install gradio pandas` runs this same file as a real web app, and your teacher can host it as a Hugging Face Space for the class. The same table and the same pandas lead to machine learning: training a model to predict a column from the others.

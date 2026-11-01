@@ -165,7 +165,7 @@ smaller:
     type: question
     q: "Ama's program asks for the password once, before the loop. Inside the loop it only prints Wrong, try again. She types the wrong word. What happens?"
     options:
-      - "Wrong, try again prints over and over, and it never asks again"
+      - "It prints Wrong, try again forever"
       - "It asks for the password again"
       - "It stops after one Wrong, try again"
     answer: 0
@@ -173,7 +173,7 @@ smaller:
       - null
       - "Only an input inside the loop can ask again, and there isn't one."
       - "The loop stops only when its condition is false, and nothing inside it changes the guess."
-    explain: "Nothing inside the loop changes the guess, so the condition stays true forever. Ask again inside the loop, so each pass gets a new guess."
+    explain: "It never asks again. Nothing inside the loop changes the guess, so the condition stays true forever. Ask again inside the loop, so each pass gets a new guess."
 unlocks: [while-loop]
 ```
 

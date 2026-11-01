@@ -87,11 +87,12 @@ tasks:
   - check:
       type: question
       q: "Leo wants a small tilt right to show a diamond and a big tilt right to show an arrow. The arrow never appears. Why?"
-      options: ["500 is too big to reach", "A big tilt is also more than 0, so the first question is true and the rest are skipped", "else if only works with <", "The arrow block is broken"]
+      options: ["500 is too big to reach", "A big tilt is also more than 0", "else if only works with <", "The arrow needs its own if"]
       answer: 1
+      feedback: ["A big tilt goes past 500 easily.", null, "else if works with < or >.", "A separate if would show both pictures. The order is the slip."]
       fault: logic
       misconception: else-if-order
-      explain: "The questions are asked from the top, and the first true one wins. Any tilt over 500 is also over 0, so the diamond shows. Ask the bigger question first: > 500, then > 0."
+      explain: "The first question is true, so the rest are skipped. The questions are asked from the top, and the first true one wins. Any tilt over 500 is also over 0, so the diamond shows. Ask the bigger question first: > 500, then > 0."
 ```
 
 ### Trace the tilt

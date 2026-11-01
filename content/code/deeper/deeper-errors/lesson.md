@@ -74,12 +74,14 @@ tasks:
       q: "Which answer does int() accept, so the loop stops?"
       options: ["-2", "3.5", "three", "3 tickets"]
       answer: 0
+      feedback: [null, "int(\"3.5\") fails: a decimal point is not a whole number.", "int() only reads digits, not words.", "The word tickets makes int() fail."]
       explain: "int(\"-2\") is the number -2, so nothing goes wrong and the loop stops, charging $-24. A caught error is not the same as a sensible answer: the program still has to check the number."
   - check:
       type: question
       q: "Compared with isdigit() in the console bridge, what does try let you do?"
-      options: ["Just try it, and handle the error if it happens", "Never get errors at all", "Turn letters into numbers", "Skip the input"]
+      options: ["Try it, and catch the error if it fails", "Never get any errors at all", "Turn letters like three into numbers", "Skip asking when the answer is wrong"]
       answer: 0
+      feedback: [null, "Errors still happen; try lets you catch them.", "int(\"three\") still fails; try only catches the failure.", "The question is still asked; except decides what to do next."]
       explain: "isdigit() checks first; try does it and catches the error. Python programmers often say it is easier to ask forgiveness than permission."
   - check:
       type: bug
@@ -146,9 +148,10 @@ stage: info
 check:
   type: question
   q: "A game loads a saved file that has been deleted. What should a well-made program do?"
-  options: ["Catch the error, say the save is missing, and start a new game", "Crash", "Delete the game", "Nothing"]
+  options: ["Catch the error, say so, and start a new game", "Stop and show Python's error message", "Keep going as if the save loaded", "Ask the player to find the file"]
   answer: 0
-  explain: "Files, networks and people all go wrong. Catching the error and carrying on sensibly is what makes a program feel solid."
+  feedback: [null, "A crash message helps no player; catch it and carry on.", "Then the game uses data it never loaded, and fails later.", "A deleted file can't be found; offer a new game instead."]
+  explain: "Catch the error, say the save is missing, and start a new game. Files, networks and people all go wrong. Catching the error and carrying on sensibly is what makes a program feel solid."
 ```
 
 Next: the text adventure, built from the parser, the bag, the map and safe input.

@@ -74,9 +74,10 @@ insight: "A state variable names which screen the game is on; each event checks 
 check:
   type: question
   q: "Why does this game use state with three values instead of playing = True or False?"
-  options: ["Strings are faster than True and False", "The game has three screens, and True or False can only tell two apart", "Python needs a string to draw text", "So the timer works"]
+  options: ["Strings are faster than True and False", "The game has three screens, not two", "Python needs a string to draw text", "So the timer works"]
   answer: 1
-  explain: "Title, play and over are three different situations. Two values cannot tell the title screen from game over."
+  feedback: ["True and False are just as quick. The reason is how many screens there are.", null, "write can draw numbers or strings. That is not why.", "The timer only needs to know if the game is being played."]
+  explain: "True or False can only tell two apart. Title, play and over are three different situations. Two values cannot tell the title screen from game over."
 ```
 
 Find every line that changes `state`. Which event causes each change?

@@ -87,8 +87,9 @@ tasks:
   - check:
       type: question
       q: "What does the word return do in metres?"
-      options: ["It draws the shape again", "It gives the answer back to the code that called the function", "It stops the program", "It prints the answer"]
+      options: ["It draws the shape again", "It gives the answer back to the code", "It stops the program", "It prints the answer"]
       answer: 1
+      feedback: ["return does not draw. It hands back a number.", null, "It ends the function, not the whole program.", "print only shows a value. return hands it back so other code can use it."]
       explain: "return hands the value back, so forward(metres(5)) can use it. print only shows a value; it does not give it back."
 ```
 
@@ -142,6 +143,7 @@ check:
   q: "What does label(50) give back?"
   options: ["small", "big", "50", "nothing"]
   answer: 0
+  feedback: [null, "50 > 50 is False, because 50 is not more than 50.", "The function returns a label, not the number it was given.", "Both paths return something, so it always gives a label back."]
   explain: "50 > 50 is False, because 50 is not more than 50. So the else path runs and the function returns \"small\"."
 ```
 

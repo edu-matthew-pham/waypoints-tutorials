@@ -123,7 +123,7 @@ smaller:
     type: question
     q: "Your program asks two questions and uses both answers in one line. What does the first answer need?"
     options:
-      - "A name of its own, so it is still there after the second question"
+      - "Its own name, so it is still there later"
       - "To be printed straight away"
       - "Nothing: input() remembers every answer"
       - "To be asked again at the end"

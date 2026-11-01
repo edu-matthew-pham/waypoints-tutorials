@@ -86,6 +86,7 @@ tasks:
       q: "What would happen if background(20, 30, 60) was removed from draw()?"
       options: ["Every old circle would stay, leaving a thick smear", "The circle would stop moving", "The sketch would stop with an error", "The circle would move twice as fast"]
       answer: 0
+      feedback: [null, "background only paints the canvas; x still changes.", "Leaving out background is not an error; it just leaves trails.", "The speed comes from x = x + 2, which is still there."]
       explain: "Without background, nothing paints over the previous frame, so each frame's circle is added to the picture. That is how trails are made on purpose."
   - check:
       type: bug
@@ -152,9 +153,10 @@ stage: info
 check:
   type: question
   q: "A circle slides off the right edge and is never seen again. What does the sketch need to do?"
-  options: ["Notice when x is too big and put it back: a decision", "Make the canvas bigger", "Use a smaller circle", "Nothing: p5 brings it back"]
+  options: ["Notice x is too big and put it back", "Make the canvas bigger", "Use a smaller circle", "Nothing: p5 brings it back"]
   answer: 0
-  explain: "The sketch has to decide something each frame: is x past the edge? That is an if, and it is the next lesson."
+  feedback: [null, "A bigger canvas only delays it; the circle still slides off.", "A smaller circle slides off just the same.", "p5 never moves things back; your code has to."]
+  explain: "The sketch has to decide something each frame: is x past the edge? If so, put it back. That is a decision, an if, and it is the next lesson."
 ```
 
 You have a loop that runs 60 times a second and numbers that change. Next: make the sketch **decide**, so a circle can bounce.

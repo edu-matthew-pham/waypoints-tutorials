@@ -73,11 +73,12 @@ tasks:
   - check:
       type: question
       q: "Leo's player flies off the top when he presses A again and again. Why?"
-      options: ["-150 is too big a number", "Nothing checks the player is on the ground, so every press jumps again, even in mid-air", "ay should be negative", "The floor pushes him up"]
+      options: ["-150 is too big a number", "Nothing checks he is on the ground", "ay should be negative", "The floor pushes him up"]
       answer: 1
+      feedback: ["A smaller number makes lower jumps, but he could still jump in mid-air.", null, "A positive ay pulls down. A negative one would pull him up for ever.", "The floor only puts him back at 100; it never pushes up."]
       fault: logic
       misconception: jump-midair
-      explain: "A jump only sets vy to -150. Leo's A event does that on every press, wherever the player is, so each press in the air starts a new jump higher up."
+      explain: "Nothing checks the player is on the ground. A jump only sets vy to -150, and Leo's A event does that on every press, wherever the player is, so each press in the air starts a new jump higher up."
   - check:
       type: trace
       text: "This version jumps only if player bottom ≥ 100. Fill in what a press of A does."
@@ -90,9 +91,10 @@ tasks:
   - check:
       type: question
       q: "Why is the floor's bottom exactly 100 when the player is standing?"
-      options: ["The floor if sets it back to 100 every frame the player sinks below it", "Gravity stops at 100", "100 is the bottom of the screen", "The jump sets it"]
+      options: ["The floor if puts it back at 100", "Gravity stops at 100", "100 is the bottom of the screen", "The jump sets it"]
       answer: 0
-      explain: "Every frame, if the bottom has gone past 100, the floor if puts it back at 100: so standing means bottom is 100."
+      feedback: [null, "Gravity never stops; the floor if catches the player each frame.", "The screen is 120 high; 100 is the floor the if sets.", "The jump sets vy, the speed, not the bottom."]
+      explain: "Every frame the player sinks below 100, the floor if puts the bottom back at 100: so standing means bottom is 100."
 ```
 
 This version has the fix. Try to fly with it.

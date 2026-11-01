@@ -55,7 +55,7 @@ tasks:
       type: question
       q: "Two players both score 3. Why does `, id` come after `score DESC`?"
       options:
-        - "It puts the player who finished first above the other"
+        - "The earlier score goes first"
         - "It makes the scores bigger"
         - "It removes one of the two players"
         - "It is needed for LIMIT to work"
@@ -65,7 +65,7 @@ tasks:
         - "It only decides the order of rows that tie."
         - "Both rows stay."
         - "LIMIT works without it."
-      explain: "id goes up as each score is saved, so for equal scores the smaller id (the earlier attempt) comes first."
+      explain: "It puts the player who finished first above the other. id goes up as each score is saved, so for equal scores the smaller id (the earlier attempt) comes first."
   - check:
       type: question
       q: "What would happen to the scoreboard if the scores were kept in a list inside the program instead?"
@@ -74,6 +74,10 @@ tasks:
         - "Nothing, lists are saved automatically"
         - "It would show more scores"
       answer: 0
+      feedback:
+        - null
+        - "A list lives only while the program runs."
+        - "Where scores live does not change how many there are."
       explain: "A list lives in memory while the program runs. A database file lives on until you delete it."
 ```
 

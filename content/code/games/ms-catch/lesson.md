@@ -67,14 +67,16 @@ tasks:
   - check:
       type: question
       q: "Why does touches() use and, not or?"
-      options: ["A star must be close across and close up and down at the same time to touch", "and is faster than or", "or would never be true", "It makes no difference"]
+      options: ["Both distances must be small at once", "and is faster than or", "or only checks the first distance", "It makes no difference"]
       answer: 0
-      explain: "With or, a star anywhere in the same column (close across, far above) would count as a catch. Touching needs both distances small."
+      feedback: [null, "Both are as fast as each other; they ask different questions.", "or checks both too; it is true when either one is small.", "With or, a star far above in the same column would count as a catch."]
+      explain: "A star must be close across and close up and down at the same time to touch. With or, a star anywhere in the same column (close across, far above) would count as a catch."
   - check:
       type: question
       q: "What would happen without star.restart() after score += 1?"
-      options: ["The star stays on the paddle and scores a point every frame", "The star scores once and disappears", "The game stops with an error", "Nothing would change"]
+      options: ["It stays on the paddle, scoring every frame", "The star scores once and disappears", "The game stops with an error", "Nothing would change"]
       answer: 0
+      feedback: [null, "Nothing removes it, so it keeps touching the paddle.", "Nothing in the code is wrong, so there is no error; it just keeps scoring.", "restart() is what moves it away; without it the star keeps touching."]
       explain: "The star would still be touching the paddle next frame, so the score would jump by 60 a second. restart() moves it back to the top."
   - check:
       type: bug
@@ -143,9 +145,10 @@ stage: info
 check:
   type: question
   q: "Your game is finished. What makes it better to play, not just bigger?"
-  options: ["Testing it with someone else and changing what is too hard, too easy or confusing", "Adding as many kinds of star as possible", "Making the stars faster every second", "Writing all the code in one function"]
+  options: ["Watching someone play it, then changing it", "Adding as many kinds of star as possible", "Making the stars faster every second", "Writing all the code in one function"]
   answer: 0
-  explain: "Game designers call this playtesting: watching someone play shows what to change. Next lesson: pictures, sound and sharing your game."
+  feedback: [null, "More kinds makes it bigger, not better to play.", "Faster every second soon makes it too hard to play.", "Where the code lives doesn't change how it plays."]
+  explain: "Game designers call this playtesting: watching someone else play shows what is too hard, too easy or confusing, so you know what to change. Next lesson: pictures, sound and sharing your game."
 ```
 
 You have now built a whole game in a real engine: a loop, input, objects, collisions and a score. Next: draw your own sprites, add sound, and share it.

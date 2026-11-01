@@ -55,8 +55,9 @@ tasks:
   - check:
       type: question
       q: "Jack's robot only twitches when the base sends 'go': it moves for a moment, then stops. Why?"
-      options: ["The radio is too weak", "He follows the line inside the radio handler, which runs once per message; nothing keeps the robot patrolling", "He needs a bigger speed", "'go' is the wrong word"]
+      options: ["The radio signal is too weak to reach", "His handler follows the line only once", "His motor speed is too low to get going", "His base sends the wrong word, not 'go'"]
       answer: 1
+      feedback: ["A weak signal would mean no twitch at all; the message does arrive.", null, "A higher speed still stops, because nothing runs followLine again.", "If the word were wrong, the robot would not move at all."]
       fault: design
       misconception: run-once-vs-forever
       explain: "A radio handler runs once, when the message arrives, so followLine runs once. The handler should only set mode to patrol; forever then calls followLine again and again."

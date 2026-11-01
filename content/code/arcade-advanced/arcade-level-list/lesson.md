@@ -85,11 +85,12 @@ tasks:
   - check:
       type: question
       q: "Kai starts his level at 1, not 0. What goes wrong?"
-      options: ["The first level is already fast (70), and there is no place 3 for the last level", "Nothing: lists start at 1", "The splash says Level 0", "The enemy never appears"]
+      options: ["The slow level is skipped, and place 3 is missing", "Nothing: lists start at 1", "The splash shows Level 0 for the first level", "The levels come in the wrong order"]
       answer: 0
+      feedback: [null, "Lists start at 0, so speeds[1] is 70, the second item.", "The splash adds 1, so level 1 shows Level 2.", "The order stays 40, 70, 100; only the start is wrong."]
       fault: logic
       misconception: arcade-list-first-is-one
-      explain: "speeds[1] is the second item, 70, so the slow level is skipped. After two level-ups he asks for speeds[3], and a list of 3 items only has places 0, 1 and 2."
+      explain: "speeds[1] is the second item, 70, so the first level is already fast and the slow level is skipped. After two level-ups he asks for speeds[3], and a list of 3 items only has places 0, 1 and 2."
   - check:
       type: match
       q: "Match each block in this game with its job."

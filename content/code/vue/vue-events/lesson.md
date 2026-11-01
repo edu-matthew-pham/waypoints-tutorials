@@ -98,8 +98,9 @@ tasks:
   - check:
       type: question
       q: "Why does the function write newName.value, but the page writes newName?"
-      options: ["The page opens refs for you; in the script you open them yourself with .value", "They are two different variables", ".value is only for inputs", "It is a mistake: both should be the same"]
+      options: ["The page opens refs for you; the script uses .value", "They are two different variables", ".value is only for inputs", "It is a mistake: both should be the same"]
       answer: 0
+      feedback: [null, "It is one ref. The page and the script just reach its value differently.", ".value is how the script reads any ref, not only ones joined to inputs.", "Both are right: the page unwraps refs for you."]
       explain: "newName is a ref, a box Vue watches. The page unwraps it for you; the script reaches the value inside with .value."
   - check:
       type: bug
@@ -170,6 +171,7 @@ check:
   q: "Your page should show how many players there are, and say Team full at 5. Where should the count come from?"
   options: ["Worked out from the list, so it is always right", "A second ref you change by hand in every function", "Counted by the page", "Typed in a box"]
   answer: 0
+  feedback: [null, "A second ref must be changed in every function, and one missed spot makes it wrong.", "The page shows values. The count still has to be worked out somewhere.", "A typed count is only as right as the person typing it."]
   explain: "A value worked out from other data should be worked out again whenever that data changes. Next: computed."
 ```
 

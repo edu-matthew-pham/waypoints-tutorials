@@ -87,6 +87,7 @@ tasks:
       q: "Raj sets waiting to true when the heart appears, but never sets it back to false. He presses A once and gets a time. What does a second press of A show?"
       options: ["Another time, a bigger one", "A cross", "Nothing", "The same time again"]
       answer: 0
+      feedback: [null, "A cross is for too early, while waiting is false. waiting is still true here.", "waiting is still true, so the if runs again.", "running time has grown since the first press."]
       fault: logic
       misconception: flag-never-reset
       explain: "waiting is still true, so the if says yes again and shows running time − start, which has grown. Set waiting to false after the first press."

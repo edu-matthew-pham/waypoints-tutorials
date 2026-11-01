@@ -90,6 +90,7 @@ tasks:
       q: "Mia built this counter. However fast she presses A, it always shows 0. Why?"
       options: ["A is not connected to count", "forever sets count back to 0 again and again", "show number cannot show numbers above 0", "count needs to start at 1"]
       answer: 1
+      feedback: ["The press does add 1. What happens straight after?", null, "show number shows any number.", "Where count starts isn't the trouble: forever keeps setting it back to 0."]
       fault: logic
       misconception: reset-in-loop
       explain: "The press does add 1, but forever runs set count to 0 straight after, many times a second. Setting the start value belongs in on start, which runs once."
@@ -159,6 +160,7 @@ check:
   q: "Ravi's signal board shows the surprised face once, when it starts, and never when he shakes it. Why?"
   options: ["The surprised face is in on start, not inside on shake", "Shake only works on a real micro:bit", "A and B are taking the shake", "He needs a pause after the face"]
   answer: 0
+  feedback: [null, "Shake works in the simulator too: it has a shake button.", "Buttons don't block shake. Where is the face?", "A pause wouldn't make the face show on shake."]
   explain: "on start runs once, at the start. To react to every shake, the face goes inside an on shake block."
 ```
 

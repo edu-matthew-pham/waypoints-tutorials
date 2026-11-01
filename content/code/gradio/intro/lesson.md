@@ -69,14 +69,16 @@ tasks:
   - check:
       type: question
       q: "fn=greet has no brackets after greet. Why?"
-      options: ["It hands Gradio the function itself, to call later when Submit is pressed", "It is a mistake, but Gradio fixes it", "Brackets are not allowed inside gr.Interface", "greet has no parameters"]
+      options: ["It gives Gradio the function, to call later", "It is a mistake, but Gradio fixes it", "Brackets are not allowed inside gr.Interface", "greet has no parameters"]
       answer: 0
-      explain: "greet() would call it straight away. fn=greet gives Gradio the function, and Gradio calls it each time someone presses Submit."
+      feedback: [null, "It is not a mistake: Gradio wants the function itself.", "Brackets are allowed, but greet() would call it straight away.", "greet does have parameters; Gradio fills them in."]
+      explain: "It hands Gradio the function itself, to call later when Submit is pressed. greet() would call it straight away. fn=greet gives Gradio the function, and Gradio calls it each time someone presses Submit."
   - check:
       type: question
       q: "What does the Checkbox give greet when it is ticked?"
       options: ["True", "\"Excited?\"", "\"ticked\"", "1"]
       answer: 0
+      feedback: [null, "That is the Checkbox's label, not its value.", "A Checkbox gives True or False, not a word.", "Python uses True, not 1, for a ticked box."]
       explain: "A Checkbox gives True or False, which is what if excited: needs."
   - check:
       type: bug
@@ -143,9 +145,10 @@ stage: info
 check:
   type: question
   q: "Why test the function with print before making the app?"
-  options: ["If it is wrong, you find out from one line, before buttons and boxes are in the way", "Gradio needs print first", "The app runs faster", "print saves the function"]
+  options: ["Bugs are easier to find before the app", "Gradio needs print before it starts", "The app runs faster after a print", "print saves the function for the app"]
   answer: 0
-  explain: "The app only calls your function. A tested function makes a working app; an untested one makes an app that is hard to debug."
+  feedback: [null, "Gradio never needs print.", "print does not speed anything up.", "print only shows text; it saves nothing."]
+  explain: "If it is wrong, you find out from one line, before buttons and boxes are in the way. The app only calls your function. A tested function makes a working app; an untested one makes an app that is hard to debug."
 ```
 
 On a computer, `pip install gradio` and `python app.py` run this same file as a real web app at `http://127.0.0.1:7860`. Next: apps with several inputs and outputs.

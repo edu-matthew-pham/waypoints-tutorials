@@ -74,6 +74,7 @@ tasks:
       q: "A feeds the pet: if hunger > 0, change hunger by -1. Why is the if there?"
       options: ["So hunger never goes below 0", "So A only works once", "So hunger goes up instead", "To make the pet sleep"]
       answer: 0
+      feedback: [null, "A works every time; the if only stops hunger going below 0.", "change by -1 takes away; nothing here makes it go up.", "Nothing here makes the pet sleep."]
       explain: "Without the if, feeding a full pet makes hunger -1, -2, -3. The if only takes 1 away while there is some hunger to take."
   - check:
       type: trace
@@ -87,9 +88,10 @@ tasks:
   - check:
       type: question
       q: "A shake picks a trick with get value at (pick random 0 to length of tricks − 1). You add a fourth trick. What else must change?"
-      options: ["Nothing: length of tricks grows with the list", "The 3 in pick random", "The shake block", "You need a second list"]
+      options: ["Nothing else needs to change", "The 3 in pick random", "The shake block", "You need a second list"]
       answer: 0
-      explain: "length of tricks is now 4, so pick random already reaches the new trick."
+      feedback: [null, "There is no 3: length of tricks − 1 is worked out each time.", "Shake still picks one trick; the list does the rest.", "One list holds any number of tricks."]
+      explain: "length of tricks grows with the list. length of tricks is now 4, so pick random already reaches the new trick."
 ```
 
 This is the finished pet. Read it before you build your own.

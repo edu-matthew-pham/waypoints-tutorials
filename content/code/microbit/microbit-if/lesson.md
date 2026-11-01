@@ -76,18 +76,20 @@ tasks:
   - check:
       type: question
       q: "Why do the lights stay on when it gets bright again?"
-      options: ["The light sensor stops working", "When the question is false, the if does nothing, so nothing turns the lights off", "The lights need a pause to go off", "forever only runs once"]
+      options: ["The light sensor stops working", "When it's bright, the if does nothing", "The lights need a pause to go off", "forever only runs once"]
       answer: 1
+      feedback: ["The sensor keeps reading; the program just doesn't act on it.", null, "Lights stay on until something clears them.", "forever runs again and again; that's not it."]
       fault: logic
       misconception: if-false-undoes
-      explain: "When it is bright, 'light level < 50' is false, so the if skips its blocks. Nothing in the program turns the lights off."
+      explain: "When the question is false, the if does nothing, so nothing turns the lights off. When it is bright, 'light level < 50' is false, so the if skips its blocks. Nothing in the program turns the lights off."
   - hint: ["clear screen is in Basic (click more...).", "The second question is the opposite one: light level ≥ 50."]
     check: { type: code, text: "Add a second if that clears the screen when it is bright.", rules: { count: { "if(": 2 }, inside: { "basic.forever": ["basic.clearScreen()"] } } }
   - check:
       type: question
       q: "Zoe's night light is on in the daytime and off at night. Which part is wrong?"
-      options: ["clear screen and show leds are swapped", "The < and > are the wrong way round", "It needs to be in on start", "50 is too small"]
+      options: ["The second if should come first", "The < and > are the wrong way round", "It needs to be in on start", "50 is too small"]
       answer: 1
+      feedback: ["The two questions are never true together, so their order doesn't matter.", null, "on start would check the light only once.", "Changing 50 moves the switch point, but daylight would still turn the lights on."]
       fault: logic
       misconception: comparison-direction
       explain: "'light level > 50' is true when it is bright, so Zoe's lights come on in daylight. For a night light, the lights go on when the level is less than (<) 50."
@@ -154,6 +156,7 @@ check:
   q: "Thermometer 1 (above) reads the temperature in on start. Thermometer 2 (below) reads it in forever. You drag the temperature slider. Which one follows it?"
   options: ["Thermometer 2, in forever", "Thermometer 1, in on start", "Both", "Neither: sensors only change on a real micro:bit"]
   answer: 0
+  feedback: [null, "on start reads the temperature once.", "Only one of them reads it again.", "The simulator's slider changes the temperature reading."]
   explain: "on start reads the temperature once, at the start. forever reads it again each time round, so its number follows the slider."
 ```
 

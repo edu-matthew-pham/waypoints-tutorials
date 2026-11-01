@@ -94,6 +94,7 @@ tasks:
       q: "Jo wants A to show the first word, Yes. She uses get value at 1. What does A show?"
       options: ["No", "Yes", "Nothing", "An error"]
       answer: 0
+      feedback: [null, "Yes is at place 0, not 1.", "Place 1 exists: it's the second item.", "Place 1 is in the list, so there is no error."]
       fault: logic
       misconception: list-first-is-one
       explain: "Place 1 is the second item, No. The first item is at place 0."

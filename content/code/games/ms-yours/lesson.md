@@ -45,19 +45,22 @@ tasks:
       q: "Where is the best place for a sound when a life is lost?"
       options: ["In update(), in the if that takes the life", "In draw(), every frame", "In init()", "In the Star class's draw()"]
       answer: 0
+      feedback: [null, "draw() runs 60 times a second, so the sound would play over and over.", "init() runs once at the start, before any life is lost.", "The star's draw() runs every frame too, so the sound would repeat."]
       explain: "A sound belongs where the thing happens, once. draw() runs 60 times a second, so a beep there would play over and over."
   - check:
       type: question
       q: "You drew a sprite called star in the Sprites tab. Which line draws it where the star is?"
       options: ["screen.drawSprite(\"star\", self.x, self.y, 12, 12)", "screen.fillRound(\"star\", self.x, self.y)", "star.draw(\"sprite\")", "sprites.star(self.x, self.y)"]
       answer: 0
+      feedback: [null, "fillRound draws a filled shape, not a sprite.", "Sprites are drawn with screen.drawSprite, not a method on a name.", "There is no sprites.star(); the sprite's name goes in drawSprite."]
       explain: "screen.drawSprite takes the sprite's name, where to draw it, and how big. It replaces the fillRound line in the star's draw()."
   - check:
       type: question
       q: "You publish your game on microStudio so anyone can play it. What should you leave out?"
-      options: ["Your full name, school, photo and anything else that says who or where you are", "Your nickname", "Instructions for how to play", "The sprites you drew"]
+      options: ["Anything that says who or where you are", "Your nickname", "Instructions for how to play", "The sprites you drew"]
       answer: 0
-      explain: "A public game can be played and copied by anyone. A nickname is fine; anything that identifies you or where you are is not."
+      feedback: [null, "A nickname is fine: it doesn't say who you are.", "Instructions help players and say nothing about you.", "Your own sprites are fine to share."]
+      explain: "A public game can be played and copied by anyone. A nickname is fine; your full name, school, photo or anything else that identifies you or where you are is not."
 ```
 
 ### Where does the sound go?
@@ -124,8 +127,9 @@ stage: info
 check:
   type: question
   q: "Your game needs a level 2 where the stars fall faster. What is the smallest change?"
-  options: ["A level variable, and a speed in each star that is multiplied by it", "A second copy of the whole game", "A new class for every star", "Changing every number in the code by hand"]
+  options: ["A level variable that multiplies each star's speed", "A second copy of the whole game", "A new class for every star", "Changing every number in the code by hand"]
   answer: 0
+  feedback: [null, "A copy works, but every later fix has to be made twice.", "The stars are the same kind; only their speed changes.", "Changing numbers by hand makes one faster game, not levels."]
   explain: "One variable for the level, used where the speed is set, gives level 2, 3 and 10 for free. Copying the game would double every later fix."
 ```
 

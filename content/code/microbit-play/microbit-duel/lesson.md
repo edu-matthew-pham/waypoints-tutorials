@@ -79,11 +79,12 @@ tasks:
   - check:
       type: question
       q: "The blocks 'show heart, set racing to true' appear in two places. You change the heart to a diamond in one place only. What goes wrong?"
-      options: ["Nothing", "The player who pressed B sees a different signal from the other player", "The radio stops working", "Both see the diamond"]
+      options: ["Nothing: one change is enough", "The two players see different signals", "The radio stops working", "Both players see the diamond"]
       answer: 1
+      feedback: ["The blocks are copied, so one copy still has the heart.", null, "Pictures don't affect the radio.", "Only one copy changed; the other still shows the heart."]
       fault: design
       misconception: copied-blocks
-      explain: "Copied blocks have to be changed in every copy. Forget one and the two players see different signals: an unfair race. A function keeps one copy."
+      explain: "The player who pressed B sees a different signal from the other player. Copied blocks have to be changed in every copy. Forget one and the two players see different signals: an unfair race. A function keeps one copy."
   - check:
       type: match
       q: "The receiving part in Python. Match each line with what it does."
@@ -172,9 +173,10 @@ code: duel.ts#start
 check:
   type: question
   q: "Two real micro:bits play the duel in a classroom where another pair also uses group 7. What could go wrong?"
-  options: ["Nothing", "The other pair's messages arrive too, so their go or win messages mix into your race", "The hearts get smaller", "Group 7 is too high"]
+  options: ["Nothing: each pair hears only its own", "The other pair's messages mix into your race", "Messages slow down with four micro:bits", "Group 7 is too high a number"]
   answer: 1
-  explain: "Every micro:bit in group 7 hears every message. Each pair needs its own group number, as in the Send and receive lesson."
+  feedback: ["Every micro:bit in group 7 hears every message, whichever pair sent it.", null, "Radio is quick; the trouble is who hears what.", "Groups go from 0 to 255; 7 is fine."]
+  explain: "Their go or win messages arrive too. Every micro:bit in group 7 hears every message. Each pair needs its own group number, as in the Send and receive lesson."
 ```
 
 Play a match against a partner. Agree a group number of your own before you start.

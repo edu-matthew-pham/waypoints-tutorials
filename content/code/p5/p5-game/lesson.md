@@ -85,9 +85,10 @@ tasks:
   - check:
       type: question
       q: "Where does the score go up?"
-      options: ["Inside mousePressed, in the if that checks the click is close", "Inside setup()", "Every frame in draw()", "Inside restart()"]
+      options: ["In mousePressed, inside the if", "Inside setup()", "Every frame in draw()", "Inside restart()"]
       answer: 0
-      explain: "The score should change when a catch happens, once. mousePressed runs once per click, so the if inside it decides whether the click was a catch."
+      feedback: [null, "setup() runs once at the start, before any catch.", "draw() runs every frame, so the score would race up.", "restart() moves a ball back; the catch is decided in mousePressed."]
+      explain: "The score should change when a catch happens, once. mousePressed runs once per click, and the if inside it checks the click is close enough to be a catch."
   - check:
       type: bug
       code: sketch.js#bug
@@ -155,6 +156,7 @@ check:
   q: "You have 4 balls and want to add 10 more. What is the smallest change?"
   options: ["Change the number in the setup loop", "Copy the ball code 10 times", "Write a new function for each ball", "Change the canvas size"]
   answer: 0
+  feedback: [null, "The balls are in a list, so one loop already makes each one.", "One function, called in the loop, works for every ball.", "The canvas size doesn't change how many balls there are."]
   explain: "The balls live in a list and a loop visits each one. More balls is one number in the loop that fills the list."
 ```
 

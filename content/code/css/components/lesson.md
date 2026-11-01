@@ -97,11 +97,16 @@ tasks:
       code: page.html#percopy
       q: "Mia gave each card its own class and its own rule, and they look right. What goes wrong as the club grows?"
       options:
-        - "Each new card needs a new rule, and changing the border means changing every rule"
+        - "Each new card needs a new rule, and a change means editing every rule"
         - "Nothing: this is the usual way to build cards"
         - "The browser shows an error for classes with numbers"
         - "Only the first card is styled"
       answer: 0
+      feedback:
+        - null
+        - "It looks right now, but the same rule is written once per card and keeps growing."
+        - "Class names can contain numbers. The browser shows no error."
+        - "Each card has its own rule, so every card is styled."
       fault: logic
       misconception: class-per-copy
       explain: "The three rules are identical, so the page repeats itself. With one class, card, and one rule, a new card is only HTML, and a new border colour is one change."
@@ -114,6 +119,11 @@ tasks:
         - "Give each card on each page a new class"
         - "Rewrite all 40 pages"
       answer: 0
+      feedback:
+        - null
+        - "That works, but it is 40 pages of edits, and one missed card looks wrong."
+        - "New classes need new rules too. The look lives in the rule."
+        - "No rewrite is needed. The look lives in one shared rule."
       fault: logic
       misconception: class-per-copy
       explain: "The looks live in the rule, not in the cards. Change the rule once and every copy of the component, on every page that loads the file, follows."

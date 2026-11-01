@@ -73,19 +73,22 @@ tasks:
       q: "Where is it decided that Left means turn left slowly?"
       options: ["In the robot's program", "In the Pattern Trainer", "In the bridge micro:bit", "In the board"]
       answer: 0
+      feedback: [null, "The trainer only sends the word Left; it knows nothing about wheels.", "The bridge passes the word on unchanged.", "The board shows and sends the label; the robot decides what Left means."]
       explain: "The model sends the word Left. The robot's if turns that word into wheel speeds."
   - check:
       type: question
       q: "Mia named her class forward (small f). She shows the Forward sign. What does her robot do?"
-      options: ["Stops: forward matches no branch, so else runs", "Drives forward", "Turns left", "Shows an error"]
+      options: ["It stops, because else runs", "It drives forward", "It turns left", "It shows an error message"]
       answer: 0
-      explain: "Words must match exactly. Here the else is a safe default: a word the robot doesn't know makes it stop."
+      feedback: [null, "Capitals matter: forward and Forward are different words.", "Only Left turns left. Which branch matches forward?", "Nothing checks for errors; an unknown word goes to else."]
+      explain: "forward matches no branch, so else runs. Words must match exactly. Here the else is a safe default: a word the robot doesn't know makes it stop."
   - check:
       type: question
       q: "Why does on radio received string only set the mode, while forever drives the motors?"
-      options: ["Messages arrive at any time; forever keeps driving between them and checks the mode every time round", "Radio blocks can't use motors", "It makes the radio faster", "Forever runs only when a message arrives"]
+      options: ["forever keeps driving between messages", "Radio handlers can't use motor blocks", "It makes the radio messages faster", "forever runs only when a message arrives"]
       answer: 0
-      explain: "As in Robotics challenges: the handler remembers the latest command, and forever acts on it continuously."
+      feedback: [null, "Handlers can use motors, but they run once per message.", "The radio is just as fast either way.", "forever runs all the time; the handler is what runs per message."]
+      explain: "Messages arrive at any time; forever keeps driving between them and checks the mode every time round. As in Robotics challenges: the handler remembers the latest command, and forever acts on it continuously."
 ```
 
 ### Who decides

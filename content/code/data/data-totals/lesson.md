@@ -52,9 +52,10 @@ tasks:
   - check:
       type: question
       q: "Why does longest start as songs[0], not 0?"
-      options: ["It holds a whole song (a dictionary), so it starts as a real song: the first one", "0 would make the program slower", "songs[0] is always the longest", "Python does not allow 0 there"]
+      options: ["So it holds a whole song from the start", "0 would make the program slower", "songs[0] is always the longest", "Python does not allow 0 there"]
       answer: 0
-      explain: "longest is a song, so the program can print its title at the end. Starting with the first song means there is always something to compare with."
+      feedback: [null, "Speed is not the issue; longest must be a song so its title can print.", "It is just a starting point; the loop replaces it if a longer song comes.", "Python allows 0, but then longest[\"minutes\"] would fail."]
+      explain: "longest holds a whole song (a dictionary), so it starts as a real song: the first one. longest is a song, so the program can print its title at the end. Starting with the first song means there is always something to compare with."
   - check:
       type: bug
       code: totals.py#bug
@@ -118,9 +119,10 @@ stage: info
 check:
   type: question
   q: "A spreadsheet's AVERAGE() and MAX() give the same answers. Why learn the loop?"
-  options: ["The loop works for any question, such as the longest pop song after 2010, not only the ones a button exists for", "Spreadsheets are often wrong", "Loops are faster than spreadsheets", "You cannot open a CSV in a spreadsheet"]
+  options: ["The loop answers any question you can ask", "Spreadsheets are often wrong", "Loops are faster than spreadsheets", "You cannot open a CSV in a spreadsheet"]
   answer: 0
-  explain: "Built-in tools answer common questions. A loop with your own if answers any question, and it is how those built-in tools work inside."
+  feedback: [null, "Spreadsheet functions are reliable; they just answer fixed questions.", "Speed is not the point; the loop can answer new questions.", "Spreadsheets open CSV files fine."]
+  explain: "A loop with your own if can answer questions no button exists for, such as the longest pop song after 2010. Built-in tools answer common questions. A loop with your own if answers any question, and it is how those built-in tools work inside."
 ```
 
 Next: count every genre at once, and draw the counts as a bar chart.

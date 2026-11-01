@@ -105,9 +105,10 @@ tasks:
   - check:
       type: question
       q: "When is Grid a better choice than Flexbox?"
-      options: ["When items must line up in columns and rows, such as a page layout or a gallery", "For a single row, such as a menu", "Only for tables", "Never: they do the same thing"]
+      options: ["When items line up in rows and columns", "For a single row, such as a menu", "Only for tables", "Never: they do the same thing"]
       answer: 0
-      explain: "Flexbox is for one direction (a menu, a toolbar). Grid is for two (rows and columns that line up). Many pages use both: Grid for the page, Flexbox inside each part."
+      feedback: [null, "A single row is Flexbox's job: one direction.", "Grid is for any two-way layout, not only tables.", "Flexbox lines things up in one direction, Grid in two."]
+      explain: "Flexbox is for one direction (a menu, a toolbar). Grid is for two (rows and columns that line up). A page layout or a gallery suits Grid. Many pages use both: Grid for the page, Flexbox inside each part."
 ```
 
 ### Match the parts

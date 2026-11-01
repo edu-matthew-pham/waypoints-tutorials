@@ -65,21 +65,24 @@ tasks:
   - check:
       type: question
       q: "What does CreateAI record in one sample?"
-      options: ["About a second of x, y and z acceleration readings", "A video of you moving", "One reading of x, y and z", "Your heart rate"]
+      options: ["About a second of x, y and z readings", "A video of you moving", "One reading of x, y and z", "Your heart rate"]
       answer: 0
-      explain: "A movement happens over time, so a sample is a short recording of all three directions, like the waves on the board."
+      feedback: [null, "There is no camera: it records movement.", "One reading is a moment; a movement takes time.", "The micro:bit has no heart rate sensor."]
+      explain: "It records acceleration. A movement happens over time, so a sample is a short recording of all three directions, like the waves on the board."
   - check:
       type: question
       q: "Your model has learned from your running. A friend runs with the micro:bit held differently, and it says walking. What is the fix?"
-      options: ["Add running samples from other people and other ways of holding it", "Train for longer", "Record more of your own running", "Rename the actions"]
+      options: ["Add running samples from other people", "Train for longer", "Record more of your own running", "Rename the actions"]
       answer: 0
-      explain: "Same idea as the recycling sorter: the model has only the examples it was given. Add the variety it is missing."
+      feedback: [null, "Training longer on the same samples adds no variety.", "More of your own running adds no new ways of holding it.", "Names don't change what it learned."]
+      explain: "Add running samples from other people and other ways of holding it. Same idea as the recycling sorter: the model has only the examples it was given. Add the variety it is missing."
   - check:
       type: question
       q: "The Pattern Trainer sorter ran on the computer. This model runs on the micro:bit. Which is true?"
-      options: ["Once downloaded, it works on battery power with no computer, camera or connection", "It still needs the computer to think", "It sends your movements to the internet", "It only works while CreateAI is open"]
+      options: ["It runs on battery, with no computer needed", "It still needs the computer to think", "It sends your movements to the internet", "It only works while CreateAI is open"]
       answer: 0
-      explain: "The model is copied into the micro:bit's program. A V2 runs it by itself, like the model in a smartwatch."
+      feedback: [null, "Once downloaded, the model is inside the micro:bit's program.", "Nothing is sent; the micro:bit has no internet.", "CreateAI can be closed once the program is downloaded."]
+      explain: "Once downloaded, it works on battery power with no computer, camera or connection. The model is copied into the micro:bit's program. A V2 runs it by itself, like the model in a smartwatch."
 ```
 
 ### A sample

@@ -94,8 +94,9 @@ tasks:
   - check:
       type: question
       q: "Why does the code change clicks first and then set the text?"
-      options: ["The page only shows what the variable says, so the variable must change first", "JavaScript needs variables to be first", "The text would not change otherwise", "It is quicker"]
+      options: ["The page shows the variable, so change it first", "JavaScript needs variables to be first", "The text would not change otherwise", "It is quicker"]
       answer: 0
+      feedback: [null, "JavaScript lets you write lines in any order. The order decides what shows.", "It would change, but to the old number, one click behind.", "Speed is not the reason. The order decides which number shows."]
       explain: "The page does not know about clicks. It shows whatever you put in it. Change the variable, then put the new value on the page."
   - check:
       type: bug
@@ -164,8 +165,9 @@ stage: info
 check:
   type: question
   q: "Your quiz needs a list of questions, a score and a click handler. What does the quiz keep in variables?"
-  options: ["The current question number and the score", "The text of the page", "The buttons", "The CSS"]
+  options: ["The question number and the score", "The text shown on the page", "The buttons for each choice", "The CSS"]
   answer: 0
+  feedback: [null, "The page shows what the variables say. It does not remember by itself.", "The buttons are made from the data each time. They are not the memory.", "CSS sets the look, not what the quiz remembers."]
   explain: "The quiz is a list of data plus a little memory: which question it is on, and how many were right. Next: the final challenge."
 ```
 

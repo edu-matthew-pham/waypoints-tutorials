@@ -82,9 +82,10 @@ tasks:
   - check:
       type: question
       q: "Why does the drop part check if words[1] in bag first?"
-      options: ["remove() stops with an error if the item is not in the list", "To make the program faster", "in sorts the list", "It is not needed"]
+      options: ["remove() fails if the item is not there", "To make the program faster", "in sorts the list", "It is not needed: remove() skips it"]
       answer: 0
-      explain: "remove() only works for items that are there. Checking with in first lets the program reply politely instead of stopping."
+      feedback: [null, "Checking adds a step; it is about avoiding an error.", "in only asks whether the item is there.", "remove() stops with a ValueError when the item is missing."]
+      explain: "remove() stops with an error if the item is not in the list. remove() only works for items that are there. Checking with in first lets the program reply politely instead of stopping."
   - check:
       type: bug
       code: bag.py#bug
@@ -148,6 +149,7 @@ check:
   q: "A music app's queue lets you add songs, skip one, and see what is next. What is the queue?"
   options: ["A list that grows and shrinks", "A single variable", "A dictionary", "Text"]
   answer: 0
+  feedback: [null, "One variable holds one song; a queue holds many.", "A queue has an order, first to last, which a list keeps.", "Text can't add or skip songs easily; a list can."]
   explain: "Queues, baskets, playlists and to-do lists are all lists that change while the program runs."
 ```
 

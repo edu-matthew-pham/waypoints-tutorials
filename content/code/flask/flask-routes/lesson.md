@@ -73,15 +73,17 @@ tasks:
   - check:
       type: question
       q: "What does a visitor see at /missing?"
-      options: ["A Not Found page (error 404): no route matches that address", "The home page", "An empty page", "Python stops with an error"]
+      options: ["A Not Found page (error 404)", "The home page", "An empty page", "Python stops with an error"]
       answer: 0
+      feedback: [null, "Only / leads to home(). Flask does not fall back to it.", "Flask sends its standard Not Found page, not a blank one.", "The app keeps running; it answers with a 404 instead."]
       explain: "Flask looks for a route that matches the address. With none, it sends back the standard 404 Not Found page, as every website does."
   - check:
       type: question
       q: "home() builds page with page = page + ... three times. What is the page?"
-      options: ["One piece of HTML text, joined from three parts", "Three separate pages", "A list of three lines", "Only the last part"]
+      options: ["One piece of HTML text", "Three separate pages", "A list of three lines", "Only the last part"]
       answer: 0
-      explain: "page is text; each line adds more HTML to the end. The browser shows the whole thing as one page."
+      feedback: [null, "page = page + ... adds to the same text, so it is one page.", "+ joins text into longer text; it does not make a list.", "Each line keeps what page held and adds to it."]
+      explain: "It is joined from three parts. page is text; each line adds more HTML to the end. The browser shows the whole thing as one page."
   - check:
       type: bug
       code: club.py#bug
@@ -152,9 +154,10 @@ diagram:
 check:
   type: question
   q: "The visit counter went back to 0 when you pressed Run. Why?"
-  options: ["visits lives in the running program; a new run starts it again from 0", "Flask deletes old pages", "The browser forgot it", "Counters only work on a real server"]
+  options: ["visits lives only while the program runs", "Flask deletes old pages", "The browser forgot it", "Counters only work on a real server"]
   answer: 0
-  explain: "Variables last only while the program runs. To keep sign-ups or counts, a web app saves them to a file or a database: that comes in Lesson 4."
+  feedback: [null, "The pages are made fresh each time; nothing is deleted.", "The count is kept by the program, not the browser.", "A real server would lose it too when the program restarts."]
+  explain: "visits lives in the running program; a new run starts it again from 0. Variables last only while the program runs. To keep sign-ups or counts, a web app saves them to a file or a database: that comes in Lesson 4."
 ```
 
 Every web app has this shape: addresses, and code that answers them. Next: build pages from data instead of writing every one by hand.

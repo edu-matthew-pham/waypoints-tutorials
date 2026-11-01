@@ -46,15 +46,17 @@ tasks:
   - check:
       type: question
       q: "What does params=canberra do?"
-      options: ["Adds ?latitude=-35.28&longitude=149.13&... to the address, the query string the API reads", "Sends Canberra's name to the API", "Saves the forecast to a file", "Chooses the units"]
+      options: ["Adds its values to the address as a query string", "Sends Canberra's name to the API", "Saves the forecast to a file", "Chooses the units"]
       answer: 0
-      explain: "requests builds the query string from the dictionary. It is the other side of Flask's request.args: here your program is the one asking."
+      feedback: [null, "It sends the numbers in the dictionary: latitude, longitude and the rest.", "It only asks; nothing is saved by this line.", "It sends every key in the dictionary, not one setting."]
+      explain: "requests adds ?latitude=-35.28&longitude=149.13&... to the address, the query string the API reads. requests builds the query string from the dictionary. It is the other side of Flask's request.args: here your program is the one asking."
   - check:
       type: question
       q: "Why does the program keep a saved weather.json?"
-      options: ["So it still works when the network, the school filter or the API fails", "Live data is not allowed in Python", "The API needs it", "To make the program faster"]
+      options: ["So it still works when the network fails", "Live data is not allowed in Python", "The API needs it", "To make the program faster"]
       answer: 0
-      explain: "Programs that use the internet must expect it to fail. Catching requests.RequestException and using saved data keeps the program useful."
+      feedback: [null, "Python can fetch live data; this is a fallback.", "The API never sees the saved file.", "It reads the saved file only when the live request fails."]
+      explain: "So it still works when the network, the school filter or the API fails. Programs that use the internet must expect it to fail. Catching requests.RequestException and using saved data keeps the program useful."
   - check:
       type: bug
       code: weather.py#bug
@@ -116,9 +118,10 @@ stage: info
 check:
   type: question
   q: "Open-Meteo is free for non-commercial use if you credit it. Why does the program print a credit line?"
-  options: ["Using someone's data comes with terms: here, saying where it came from", "Python needs it", "To prove the forecast is right", "It makes the request faster"]
+  options: ["The data's terms ask for credit", "Python needs it", "To prove the forecast is right", "It makes the request faster"]
   answer: 0
-  explain: "Data has owners and licences. Open-Meteo's data is CC BY 4.0: free to use with credit. Always check an API's terms before you build on it."
+  feedback: [null, "Python runs fine without it.", "A credit says where data came from, not whether it is right.", "It is printed after the request; it changes nothing about it."]
+  explain: "Using someone's data comes with terms: here, saying where it came from. Data has owners and licences. Open-Meteo's data is CC BY 4.0: free to use with credit. Always check an API's terms before you build on it."
 ```
 
 The same `requests` code works in Python on any computer. Most big APIs (maps, music, sport) need a key and an account; Open-Meteo is one of the few that do not.

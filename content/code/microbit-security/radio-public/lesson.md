@@ -43,8 +43,9 @@ tasks:
   - check:
       type: question
       q: "Mia says: 'Group 99 keeps our messages private, because nobody knows the number.' Is she right?"
-      options: ["Yes, nobody can guess 99", "No: any micro:bit set to group 99 hears everything, and there are only 256 groups to try", "Yes, as long as the message is short", "No, but only because the sender hears it too"]
+      options: ["Yes, nobody can guess 99", "No: anyone in group 99 hears everything", "Yes, as long as the message is short", "No, but only because the sender hears it too"]
       answer: 1
+      feedback: ["There are only 256 groups: trying them all is quick.", null, "Length doesn't matter; anyone in the group hears it.", "The sender never hears its own messages; the trouble is everyone else in group 99."]
       explain: "A group is like a radio station number. Anyone who tunes to it hears everything on it, and with only 256 groups, finding the busy one is quick."
   - check:
       type: match

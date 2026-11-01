@@ -85,17 +85,19 @@ tasks:
   - check:
       type: question
       q: "Ben deleted change goal by 5. What happens after his 5th coin?"
-      options: ["Every coin after that is a new level, because score ≥ 5 stays true", "Nothing: the game works the same", "The level never goes up", "The game ends"]
+      options: ["Every coin after that is a new level", "Nothing: the game works the same", "The level never goes up", "The game ends"]
       answer: 0
-      explain: "Without the moving goal, the question score ≥ 5 is true for coin 6, 7, 8 and every coin after, so each one levels up."
+      feedback: [null, "change goal by 5 moves the target on; without it the game changes.", "score ≥ 5 is true at coin 5 and stays true, so the level goes up more, not less.", "Nothing ends the game; the level just keeps going up."]
+      explain: "Without the moving goal, the question score ≥ 5 stays true for coin 6, 7, 8 and every coin after, so each one levels up."
   - check:
       type: question
       q: "Zoe moved the level-up into on game update (below). The moment she reaches 5 points the splashes never stop, though she collects no more coins. Why?"
-      options: ["on game update runs every frame, and the score stays 5 or more, so the if is true every frame", "The goal is too small", "The splash adds points", "score ≥ 5 should be score > 5"]
+      options: ["The if stays true every frame once score is 5", "The goal is too small", "The splash adds points", "score ≥ 5 should be score > 5"]
       answer: 0
+      feedback: [null, "A bigger goal only delays it; once reached, the if is true every frame.", "game.splash only shows a message; it never changes the score.", "score > 5 would be true from 6 on, and stay true every frame too."]
       fault: logic
       misconception: update-fires-every-frame
-      explain: "An if in on game update is asked every frame. Once the score is 5, the question stays true, so the level goes up again and again. Level up where the score changes: in the overlap."
+      explain: "on game update runs every frame, and an if there is asked every frame. Once the score is 5, the question stays true, so the level goes up again and again. Level up where the score changes: in the overlap."
 ```
 
 ### Level and goal

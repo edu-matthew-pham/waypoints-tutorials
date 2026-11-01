@@ -168,7 +168,7 @@ smaller:
     type: question
     q: "Someone types hello when you asked for a number. Where does the isdigit check go?"
     options:
-      - "Before int(), to decide whether turning it into a number is safe"
+      - "Before int(), to see if it is safe"
       - "After int(), to check the number"
       - "Instead of asking the question"
       - "Inside print()"

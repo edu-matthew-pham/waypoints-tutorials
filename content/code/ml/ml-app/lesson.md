@@ -44,15 +44,17 @@ tasks:
   - check:
       type: question
       q: "Why is this model trained on all 342 penguins, with no test set?"
-      options: ["Testing was done before; for real use, the model should learn from every example there is", "Gradio does not allow test sets", "It is a mistake", "Testing is not needed for apps"]
+      options: ["It was tested before; now it uses every example", "Gradio does not allow test sets", "It is a mistake: it should keep a test set", "Testing is not needed for apps"]
       answer: 0
-      explain: "Test fairly first to know how good the method is, then train the model you use on all the data, so it has the most to learn from."
+      feedback: [null, "Gradio does not care how the model was trained.", "Testing happened in the last lesson; the app's model should learn from everything.", "Testing matters; it was done before, to measure the method."]
+      explain: "Testing was done before; for real use, the model should learn from every example there is. Test fairly first to know how good the method is, then train the model you use on all the data, so it has the most to learn from."
   - check:
       type: question
       q: "The app says 60% for some measurements. What does that mean?"
-      options: ["3 of the 5 nearest penguins are that species: the measurements are between two species", "The guess is 60% finished", "It is right 60% of the time overall", "The bill is 60% long"]
+      options: ["3 of the 5 nearest penguins are that species", "The guess is 60% finished", "It is right 60% of the time overall", "60% of penguins are that species"]
       answer: 0
-      explain: "It is the share of the vote. Measurements between two species get split votes, which is useful information for the user."
+      feedback: [null, "The guess is complete; 60% is how the vote split.", "That is accuracy on a test set; this number is about these measurements only.", "It is the share of the 5 nearest neighbours, not of all penguins."]
+      explain: "3 of the 5 nearest penguins are that species: the measurements are between two species. It is the share of the vote. Measurements between two species get split votes, which is useful information for the user."
   - check:
       type: bug
       code: app.py#bug
@@ -116,9 +118,10 @@ stage: info
 check:
   type: question
   q: "Your app is 94% accurate. A user tries a penguin species that is not in the data. What happens?"
-  options: ["It still names one of the three species it knows, possibly 100% sure", "It says it does not know", "It crashes", "It learns the new species"]
+  options: ["It names one of the three species it knows", "It says it does not know that species", "It crashes with an error", "It learns the new species from the user"]
   answer: 0
-  explain: "A model can only choose between the answers it was trained on. The optional last lesson looks at this and other limits."
+  feedback: [null, "It has no \"don't know\" answer: it always picks one of its species.", "Any measurements get a vote, so nothing goes wrong in the code.", "It only learns when it is trained again on new data."]
+  explain: "It may even be 100% sure. A model can only choose between the answers it was trained on. The optional last lesson looks at this and other limits."
 ```
 
 On a computer, this file runs in real Gradio (`pip install gradio scikit-learn pandas`), and a teacher can host it as a Hugging Face Space for the class to try.

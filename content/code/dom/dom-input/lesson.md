@@ -86,8 +86,9 @@ tasks:
   - check:
       type: question
       q: "Someone types 4 and 5 in two boxes, and you write a.value + b.value. What do you get?"
-      options: ["\"45\", because the values are text", "9", "An error", "0"]
+      options: ["\"45\"", "9", "An error", "0"]
       answer: 0
+      feedback: [null, "+ adds only numbers. An input's value is text, so + joins the two.", "Joining two pieces of text is allowed, so there is no error.", "The boxes are not empty: they hold 4 and 5, as text."]
       explain: "The value of an input is always text, so + joins the two pieces of text: \"4\" + \"5\" is \"45\". Number(a.value) + Number(b.value) is 9."
   - check:
       type: bug
@@ -223,6 +224,7 @@ check:
   q: "You want to add a new line to a list every time someone clicks Add. What must your code make?"
   options: ["A new element, then put it into the page", "A new variable called list", "A new input", "A new class"]
   answer: 0
+  feedback: [null, "A variable holds data, but the page shows only elements.", "An input is where someone types. It does not add a line to the list.", "A class changes how an element looks, not how many there are."]
   explain: "The page only changes when your code changes it. To add a line, make a new element and add it to the list. Next lesson."
 ```
 

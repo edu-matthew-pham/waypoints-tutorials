@@ -45,14 +45,16 @@ tasks:
   - check:
       type: question
       q: "Why does the first robot (the conductor's) not dance?"
-      options: ["Its motors are switched off", "A micro:bit never hears its own radio messages, so it never receives the cues", "It is too busy playing music", "Only one robot can dance at a time"]
+      options: ["Its motors are switched off", "A micro:bit never hears its own radio messages", "It is too busy playing the music", "Only one robot can dance at a time"]
       answer: 1
+      feedback: ["The motors work; the dance blocks never run. What starts them?", null, "The dance comes from radio cues, not from the music.", "Every other robot in the group dances at the same time."]
       explain: "The cues come from the first micro:bit, and a micro:bit never receives its own messages. Any other micro:bit in the group, and its robot, would dance."
   - check:
       type: question
       q: "Lily changed the music to play in the background. Now her robot does all its moves at once, before the tune reaches phrase 2. Why?"
-      options: ["Background music is faster", "In the background, the program does not wait for the music, so cue 2 is sent straight after cue 1", "The radio is too slow", "She needs a pause in on radio received"]
+      options: ["Background music plays faster", "The program no longer waits for the music", "The radio is too slow to keep up", "She needs a pause in on radio received"]
       answer: 1
+      feedback: ["The tune plays at the same speed. What changed is whether the program waits.", null, "A slow radio would make cues late, not early.", "The moves come early because both cues are sent at once. Fix the sender."]
       fault: logic
       misconception: music-background-no-wait
       explain: "'in background' starts the music and moves on at once. phraseB runs straight away and sends cue 2, so the robot gets both cues together. 'until done' waits for each phrase to finish."

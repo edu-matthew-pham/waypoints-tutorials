@@ -86,18 +86,20 @@ tasks:
   - check:
       type: question
       q: "Each frame, how many of the two set vx blocks run?"
-      options: ["Both, one after the other", "Exactly one: the first when the answer is yes, the else part when it is no", "None, unless a button is pressed", "Only the first one"]
+      options: ["Both, one after the other", "Exactly one: the if part or the else part", "None, unless a button is pressed", "Only the first one"]
       answer: 1
-      explain: "if … else always runs exactly one part. So the cat always has a direction: there is no frame where it forgets."
+      feedback: ["if … else picks one part, the yes part or the else part, never both.", null, "on game update runs every frame by itself; no button is needed.", "The first one runs only when the answer is yes. When it is no, the else part runs instead."]
+      explain: "if … else always runs exactly one part: the first when the answer is yes, the else part when it is no. So the cat always has a direction: there is no frame where it forgets."
   - starter: lesson.ts#sign
     check:
       type: question
       q: "Zoe built her own cat (the playground has her version). The cat runs away from the mouse, then stops at the edge of the screen. Which part is wrong?"
-      options: ["The < should be >, and the speeds are fine", "The speeds are the wrong way round: when the mouse is to the right, the cat's vx is set to a negative number", "It needs to be in on start", "30 is too slow to catch the mouse"]
+      options: ["Both the < and the two speeds need swapping", "The two speeds are the wrong way round", "It needs to be in on start", "30 is too slow to catch the mouse"]
       answer: 1
+      feedback: ["Swapping both cancels out, and the cat still runs away. Change one or the other.", null, "In on start the question is asked only once. Zoe's cat does move, just the wrong way.", "Speed decides how fast, not which way. Her cat runs away at full speed."]
       fault: logic
       misconception: chase-sign
-      explain: "When the cat's x is less than the mouse's x, the mouse is to the right, so the cat needs a positive vx (go right). Zoe's cat gets -30 and goes left. Swap the two speeds (or the < and >, but not both)."
+      explain: "When the cat's x is less than the mouse's x, the mouse is to the right, so the cat needs a positive vx (go right). Zoe's cat gets -30 and goes left: the speeds are the wrong way round. Swap the two speeds (or the < and >, but not both)."
 ```
 
 ### Which way?
@@ -135,8 +137,9 @@ tasks:
     check:
       type: question
       q: "This cat has no if blocks at all, just one block: set cat follow mouse with speed 30. What does follow do?"
-      options: ["Moves the cat to the mouse's position at once", "Steers the cat towards the mouse every frame, like your if … else blocks, in every direction", "Makes the mouse follow the cat", "Copies the mouse's speed"]
+      options: ["Moves the cat to the mouse's position at once", "Steers the cat towards the mouse every frame", "Makes the mouse follow the cat", "Copies the mouse's speed"]
       answer: 1
+      feedback: ["That would be a jump. follow moves the cat a little each frame, at speed 30.", null, "The block names the cat first, so the cat does the following.", "It gives the cat its own speed, 30, and steers it. It does not copy the mouse."]
       explain: "follow does the steering for you: every frame the engine turns the cat towards the mouse. It even goes diagonally. You built the same idea yourself, so now you know what the block does inside."
 ```
 
@@ -163,6 +166,7 @@ check:
   q: "This safe zone asks 'hero y < 30' inside on game update. You fly the hero up to y 20. When does the background change?"
   options: ["Straight away: the question is asked every frame", "Only when the game starts", "After one second", "Never: if only works in on start"]
   answer: 0
+  feedback: [null, "That would be on start. on game update asks again every frame.", "on game update runs about 30 times a second, not once a second.", "An if works anywhere. In on game update it is asked every frame."]
   explain: "on game update runs about 30 times a second, so the if notices within a frame that y is less than 30."
 ```
 
