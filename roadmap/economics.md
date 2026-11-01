@@ -295,11 +295,12 @@ The planned lesson in *Before Year 7: HASS* (`content/hass/before-year-7/index.m
 4. ~~Subject curriculum map~~ turned on 1 Nov 2026 (Done section).
 
 ## Next
+Year 7 plan complete (1 Nov 2026): every Year 7 Economics and Business standard (K01–K05, S03, S04) has a built course, plus the Year 6 catch-up *Spending choices* and the curriculum map.
 
-1. A fresh-eyes review and a trial with a class (nothing here has been tried yet).
-2. `economics/entrepreneurs-7` (AC9HE7K03: Entrepreneurial characteristics, 3 nodes, n2 hinge), `economics/work-7` (AC9HE7K04: Work, income and identity, 3 nodes, n1 hinge), and `economics/consumers-7` (AC9HE7K05: Consumer and financial rights and responsibilities, 4 nodes, n1 hinge).
-3. Economics' own skills: AC9HE7S03 (interpret information and data, 3 nodes) and AC9HE7S04 (develop a response to an economic issue, 2 nodes), plus the Year 6 catch-up *Spending choices* (AC9HS6K08) in `hass/before-year-7`.
-4. Keep `content/economics-teachers.md` in step with what is built.
+1. The fresh-eyes review (running 1 Nov), then fixes Matthew agrees to.
+2. A whole-site publish (Matthew runs it), then a trial with a class: nothing has been tried yet, so `preview: true` stays.
+3. Keep `content/economics-teachers.md` in step with what is built.
+4. Years 8 to 10: not planned yet.
 
 ## Starter prompt for the Economics chat
 
