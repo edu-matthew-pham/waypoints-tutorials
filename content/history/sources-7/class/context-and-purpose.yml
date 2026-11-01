@@ -24,6 +24,6 @@ questions:
     title: "Which is purpose?"
     type: question
     q: "Which of these is the likely purpose of the stone inscription?"
-    options: ["Probably to show the emperor's power and win support", "To show the emperor", "To say there is peace", "To be made of stone"]
+    options: ["Probably to show the emperor's power and win support", "To show the emperor and the laws he made", "To record that there was peace everywhere", "To mark the place he stopped on his tour"]
     answer: 0
-    explain: "Purpose is why it was made. The others say what it shows, what it says or how it was made."
+    explain: "Purpose is why it was made. The second and third say what it shows or says (content). The fourth is about where it was set up (origin)."

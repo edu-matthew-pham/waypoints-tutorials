@@ -2,7 +2,7 @@ inquiry:
   q: "If a classmate writes 'Source B: Accurate = Yes. Useful = Yes' in their history book, why isn't that a complete evidence assessment yet?"
   prompts:
     - "Accurate about which claim? Useful for which inquiry question?"
-    - "Even a very accurate source leaves something out — what can Source B not tell us?"
+    - "Even a very accurate source leaves something out. What can Source B not tell us?"
   notes: "Move students from two separate labels to a joined explanation that names accuracy, usefulness for the question, and limits."
 activities:
   - at: run
@@ -25,9 +25,9 @@ questions:
     type: question
     q: "What must a complete evidence assessment of a source include?"
     options:
-      - "How accurate its claims are, what it usefully contributes to the specific inquiry question, and what it cannot tell us on its own"
-      - "Only the date the source was found and the name of the museum it sits in"
-      - "A single word saying either 'true' or 'false'"
-      - "A list of every word in the source without mentioning the inquiry question"
+      - "How far to trust it, what it adds to the question, and what it cannot tell us"
+      - "Whether it is primary or secondary, and when and where it was made"
+      - "How accurate it is, with reasons, since accuracy decides usefulness"
+      - "Whether it is useful, and which inquiry question it helps answer"
     answer: 0
-    explain: "Integrating accuracy and usefulness means explaining reliability, value for the inquiry question, and the source's limits."
+    explain: "A complete assessment joins all three: how far to trust it, what it adds to the inquiry question, and its limits. The other options each give only one part, and origin alone is not an assessment."

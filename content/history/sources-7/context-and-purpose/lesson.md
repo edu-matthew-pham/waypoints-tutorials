@@ -17,7 +17,7 @@ For ancient sources, the maker rarely tells us the purpose. No Qin text says why
 
 Here is a source from the last lesson, with its context filled in.
 
-> **Source C: an inscription.** Words cut into stone, set up on a mountain by order of the First Emperor on one of his tours, around 219 BCE. It says the emperor brought peace and order, and that everyone now lives under one set of laws, weights and measures. *Context:* a few years earlier the Qin had defeated six rival kingdoms and joined them into one empire. Many people in the new empire had been enemies of the Qin.
+> **Source C: an inscription.** Words cut into stone, set up on a mountain by order of the First Emperor on one of his tours, around 219 BCE. It praises the emperor as a ruler without equal. It says he brought peace and order, that everyone now lives in peace, and that everyone lives under one set of laws, weights and measures. *Context:* a few years earlier the Qin had defeated six rival kingdoms and joined them into one empire. Many people in the new empire had been enemies of the Qin.
 
 ## Predict: a better context
 
@@ -27,8 +27,8 @@ insight: "Committing first shows whether students reach for a setting ('ancient 
 check:
   type: predict
   q: "Which is the best description of the context of the inscription in Source C?"
-  options: ["The Qin had just joined six rival kingdoms into one empire", "It was made in ancient China", "It is made of stone", "It praises the emperor"]
-  actual: "The Qin had just joined six rival kingdoms into one empire. That is what was going on. 'Ancient China' is only the setting, stone is how it was made, and praise is what it says."
+  options: ["The Qin had just joined six rival kingdoms into one", "It was made in ancient China, in Qin times", "It was carved into stone on a mountain", "It praises the emperor as a ruler without equal"]
+  actual: "The Qin had just joined six rival kingdoms into one empire. That is what was going on. 'Ancient China, in Qin times' is only the setting, stone on a mountain is how and where it was made, and the praise is what it says."
 ```
 
 ## Try: match the purpose
@@ -57,10 +57,10 @@ tasks:
   - check:
       type: question
       q: "Which context explains why the First Emperor might want an inscription like Source C?"
-      options: ["He had just joined rival kingdoms into one empire, so he probably wanted people to accept his rule", "It was set up in ancient China, during the time of the Qin emperors", "He was travelling on a tour of the mountains when it was carved", "The inscription says he had brought peace and order to everyone"]
+      options: ["He had just joined six rival kingdoms, many of them old enemies, into one empire", "It was set up in ancient China, during the time of the Qin emperors", "He was travelling on a tour of the mountains when it was carved", "The inscription says he had brought peace and order to everyone"]
       answer: 0
       feedback: [null, "That is a setting: a place and a period. It does not say what was happening.", "That is part of its origin (where and when). It does not explain why it was worth making.", "That is what the inscription says, which is content. Context is what was going on around it."]
-      explain: "He had just united rival kingdoms. Many people in them had been Qin's enemies, so historians think he had good reason to tell them the new empire was good and here to stay."
+      explain: "That is what was going on: a new empire full of people who had been Qin's enemies. Why he made the stone (its purpose) comes next, and this context helps explain it."
   - check:
       type: bug
       code: "working.txt#nib"
@@ -70,11 +70,11 @@ tasks:
       misconception: context-is-setting
       explain: "Line 2: Nib has written 'ancient China'. That is the setting, not the context. The context is what was going on: the Qin had just defeated rival kingdoms and joined them into one empire."
     smaller:
-      check: { type: question, q: "Which tells you more about what was going on around the inscription?", options: ["The Qin had just defeated rival kingdoms", "It was ancient China", "It was a long time ago", "It was in Asia"], answer: 0, explain: "The first one names an event. The others only name a place or a time." }
+      check: { type: question, q: "Which tells you more about what was going on around the inscription?", options: ["The Qin had just defeated rival kingdoms", "It was ancient China", "It was a long time ago", "It was in Asia"], answer: 0, feedback: [null, "That names a place and a period. It does not say what was happening.", "That only says when. What had just happened?", "That only says where. What had just happened?"], explain: "The first one names an event. The others only name a place or a time." }
   - check:
       type: question
       q: "Which is the best statement of the likely purpose of Source C?"
-      options: ["Probably to show the emperor's power and win people's support for his rule", "To show the emperor and the laws he made for everyone", "To say that the emperor brought peace and order", "To record the date of the emperor's tour of the mountains"]
+      options: ["Probably to show the emperor's power and win people's support for his rule", "Probably to show the emperor and the laws he made for everyone", "To say that the emperor brought peace and order", "To record the date of the emperor's tour of the mountains"]
       answer: 0
       feedback: [null, "That is what it shows, which is content. Purpose is why it was made.", "That is what it says, which is content. Purpose is what the maker wanted it to do.", "It may give a date, but a stone that praises him was not made just to log a trip. Ask what he wanted readers to think."]
       explain: "Purpose is what the maker wanted it to do. No one wrote down the purpose, but historians think showing power and winning support is the likely reason. 'It shows the emperor' only says what is in it."
@@ -84,7 +84,7 @@ tasks:
 
 ### Find Nib's mistake
 
-Look at Source C, the stone inscription.
+Nib is a made-up student for this lesson. Look at Source C, the stone inscription.
 
 ### Say the purpose
 
@@ -97,7 +97,7 @@ stage: practise
 insight: "Labelling the card shows that it states its origin, content and context, but not its purpose: purpose is worked out from the others."
 try: { playground: board, starter: "text.yml#run", height: 420 }
 hint: ["Context is what was going on around the source, not what the source says.", "Does any sentence say why the stone was made? Or only what it says?"]
-check: { type: board, text: "Label each sentence: origin, content, context or purpose.", when: "n_right = 5 and n_wrong = 0", explain: "No sentence says why the stone was made. The card tells you what it says (content) and what was going on (context). Purpose is something historians work out from those, which is why it is said with 'probably'." }
+check: { type: board, text: "Label each sentence: origin, content, context or purpose.", when: "n_right = 6 and n_wrong = 0", explain: "No sentence says why the stone was made. The card tells you what it says (content) and what was going on (context). Purpose is something historians work out from those, which is why it is said with 'probably'." }
 ```
 
 ## Vary: another source
@@ -135,7 +135,7 @@ tasks:
   - check:
       type: question
       q: "The clay warriors were made for the First Emperor's tomb. No Qin text says why. Which is the best statement of their purpose?"
-      options: ["Historians think they were probably made to guard and serve the emperor after his death", "They were made to show soldiers in armour with bronze weapons", "They were made to show the Qin army to visitors to the tomb", "They were made as practice by craftsmen learning to work clay"]
+      options: ["Probably to guard and serve the emperor after his death", "To show soldiers in armour with bronze weapons", "Probably to show the Qin army to visitors to the tomb", "As practice pieces for craftsmen learning to work clay"]
       answer: 0
       feedback: [null, "That is what they show, which is content.", "They were buried in pits and covered over, so they were not made to be seen by visitors.", "Thousands of life-size, finished figures placed in a royal tomb were not practice pieces."]
       explain: "The tomb was built for the emperor. Most historians think the army was made to guard or serve him after death, reasoning from where it was placed and what it shows. That is an inference, not something a Qin source tells us."
@@ -151,6 +151,8 @@ tasks:
 ### The tomb warriors
 
 ### Ravi's answer
+
+Ravi is made up for this lesson.
 
 ## Make: your own source
 
@@ -171,7 +173,7 @@ insight: "A source made to persuade shows what its maker wants shown, so its pur
 check:
   type: question
   q: "Suppose a stone inscription was made to show the emperor's power and win support. Which is it least likely to include?"
-  options: ["Anything that made him look bad, such as people who disliked his rule", "Praise for how he brought peace and order", "The new laws, weights and measures he set up", "The kingdoms he defeated to make his empire"]
+  options: ["Signs that some people disliked his rule", "Praise for how he brought peace and order", "The new laws, weights and measures he set up", "The kingdoms he defeated to make his empire"]
   answer: 0
   feedback: [null, "That is just what it was made to include.", "It says he brought one set of laws, so this is included.", "Victories make a ruler look strong, so a source like this would happily name them."]
   explain: "A source made to win support is unlikely to show people who disagreed. Its purpose shapes what it leaves out."

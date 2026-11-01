@@ -10,7 +10,7 @@ activities:
     title: "Flip the question"
     minutes: 4
     do: |
-      Put Source C (the First Emperor's mountain inscription) on the board. Give half the room Question A ('Were ordinary people happy under Qin rule?') and the other half Question B ('What message did the Qin court want carved across the empire?'). Ask each side to rate Source C's usefulness out of 5 and explain why the numbers differ.
+      Put Source C (the First Emperor's mountain inscription) on the board. Give half the room Question A ('Did ordinary people welcome Qin rule?') and the other half Question B ('What message did the Qin court want carved across the empire?'). Ask each side to rate Source C's usefulness out of 5 and explain why the numbers differ.
     notes: "The source didn't change; the question did. Usefulness always belongs to a question."
   - at: make
     kind: discussion
@@ -25,9 +25,9 @@ questions:
     type: question
     q: "Why can a biased royal inscription still be useful evidence for a historian?"
     options:
-      - "It shows how the ruler wanted to be seen and how power was justified, even if its boasts are not factually accurate"
-      - "Because historians must believe everything carved in stone"
-      - "Because bias only happens in modern newspapers, never in ancient sources"
-      - "It is only useful for weighing how heavy the stone is"
+      - "It shows how the ruler wanted to be seen, even if its boasts are untrue"
+      - "Its boasts must be true, because it was carved at the time"
+      - "It is useful only for the parts that other sources agree with"
+      - "It is not useful: a biased source cannot be used for anything"
     answer: 0
-    explain: "A biased source is poor evidence if taken at face value, but strong evidence of the maker's purpose, beliefs and propaganda."
+    explain: "A biased source is poor evidence if taken at face value, but strong evidence of the maker's purpose, beliefs and propaganda. Being carved at the time makes it primary, not true; and parts no other source backs up can still show how the ruler wanted to be seen."
