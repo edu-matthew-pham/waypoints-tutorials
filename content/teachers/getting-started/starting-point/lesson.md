@@ -31,14 +31,14 @@ check:
 
 ```step
 stage: investigate
-insight: "The three tools serve different needs and can be used independently."
+insight: "Curriculum, Plan and Lessons serve different needs and can be used independently."
 ```
 
-- [**Curriculum: Unpack**](https://acara.learningwaypoints.com/): see how ideas build on each other and what students need to understand first.
-- [**Planning and preparation: Prepare**](https://prepare.learningwaypoints.com/): work with slide decks and printable teaching resources.
-- [**Tutorials**](https://tutorials.learningwaypoints.com/geography/water-7/resource-types/): use activities, checks and feedback to explore what students understand, on their own or as a class.
+- **Curriculum:** [Unpack](https://acara.learningwaypoints.com/) shows how ideas build on each other and what students need to understand first.
+- **Plan:** Planner and Kit on [learningwaypoints.com](https://learningwaypoints.com/) help you shape a unit from the standards.
+- **Lessons:** [Tutorials](https://tutorials.learningwaypoints.com/geography/water-7/resource-types/) use activities, checks and feedback to explore what students understand, on their own or as a class; [Prepare](https://prepare.learningwaypoints.com/) turns a lesson into slides and printouts.
 
-Open each tool and have a look. Use whichever part helps with your planning; you do not have to use all three or follow a set order. The Geography example is a preview, not yet tried with classes.
+These are the same three menus as learningwaypoints.com. Open each tool and have a look. Use whichever part helps with your planning; there is no set order. The Geography example is a preview, not yet tried with classes.
 
 ## Check: match the need
 

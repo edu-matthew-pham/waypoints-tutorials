@@ -35,6 +35,7 @@ Decided = where the decision is recorded. "None found" = no record of Matthew de
 | T17 | **Effort:** new lessons get `struggle:`, goals a student would recognise, escalating hints (up to three, none giving the answer). | Students expect coding to be easy; name the hard part. | Every subject (written for Code, 11 Oct). | None found beyond AUTHORING › Effort | Default (kept 1 Nov) |
 | T18 | **Class plans:** at most about three checks per site step. | Deck pacing. | Every class plan. | 12 Oct (CLAUDE.md); Matthew's decision not found | Default (kept 1 Nov) |
 | T19 | **No rigid pedagogy rules;** clips only where useful (hook, expected result, why). | Meta-rule: Matthew's stance. | Every subject. | Matthew (CLAUDE.md › How we work) | Default (and the frame for all of these) |
+| T20 | **Teacher-facing names follow the main site:** onboarding, pilot and teacher pages present Learning Waypoints as the three menus on learningwaypoints.com, **Curriculum** (Unpack), **Plan** (Planner, Kit) and **Lessons** (Tutorials, Prepare, Audio, Signal, Insight). Name the tool when it's the thing a teacher clicks. | One model wherever teachers meet it; a 30 Oct onboarding plan drifted to Unpack, Prepare and Tutorials (Prepare relabelled "Planning and preparation"), splitting Lessons and dropping Plan without a decision. | Teacher pages, onboarding deck, pilot materials, reference sheets. | Matthew 21 Oct (main-site nav), 1 Nov (align onboarding) | Default |
 
 ### Working rules (the repo)
 

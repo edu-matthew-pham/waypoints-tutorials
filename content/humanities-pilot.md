@@ -1,6 +1,6 @@
 ---
 title: Humanities pilot
-summary: "Try whichever part of Learning Waypoints helps your teaching: curriculum progression, planning and preparation, or an interactive tutorial."
+summary: "Try whichever part of Learning Waypoints helps your teaching: the curriculum view, unit planning, or lessons (tutorials and slides)."
 ---
 Learning Waypoints helps you work out what students need to understand, what to teach first and how to check their thinking. The waypoints draw on ACARA descriptors; their sequence and teaching suggestions reflect professional judgement.
 
@@ -10,15 +10,16 @@ Learning Waypoints helps you work out what students need to understand, what to 
 
 ## Choose your starting point
 
-| Part | A small thing to try |
+The three ways in match the menus on [learningwaypoints.com](https://learningwaypoints.com/): Curriculum, Plan and Lessons. This pilot is mostly about Curriculum and Lessons.
+
+| Way in | A small thing to try |
 |---|---|
-| [Curriculum: Unpack](https://acara.learningwaypoints.com/hass/year/7) | Look at how ideas build in a topic you teach and what students need to understand first. |
-| [Planning and preparation: Prepare](https://prepare.learningwaypoints.com/) | Open one slide deck or printable resource, then choose a teaching strategy for that idea. |
-| [Tutorials](https://tutorials.learningwaypoints.com/geography/water-7/resource-types/) | Try a prediction or check, read the feedback and explore a smaller step with your class. |
+| **Curriculum:** [Unpack](https://acara.learningwaypoints.com/hass/year/7) | Look at how ideas build in a topic you teach and what students need to understand first. |
+| **Plan:** Planner and Kit, on [learningwaypoints.com](https://learningwaypoints.com/) | Optional: shape a unit from the standards. |
+| **Lessons:** [Tutorials](https://tutorials.learningwaypoints.com/geography/water-7/resource-types/) | Try a prediction or check, read the feedback and explore a smaller step with your class. |
+| **Lessons:** [Prepare](https://prepare.learningwaypoints.com/) | Open one slide deck or printable resource for the same lesson. |
 
-On [learningwaypoints.com](https://learningwaypoints.com/), Unpack is the ACARA curriculum view (**ACARA Progressions** under **Curriculum**); Prepare and Tutorials are under **Lessons**.
-
-You can use whichever part helps with your teaching, without using all three. The talk spends three minutes on Tutorials so you can try an activity that uses the curriculum analysis and teaching suggestions. This extra demo time does not mean Tutorials matters more than the other parts.
+You can use whichever part helps with your teaching; there is no set order. The talk spends three minutes on Tutorials so you can try an activity that uses the curriculum analysis and teaching suggestions. This extra demo time does not mean Tutorials matters more than the other parts.
 
 ## Humanities starting points
 
@@ -42,7 +43,7 @@ First Nations perspectives are teacher-led, starting from ACARA's elaborations a
 
 ## Try one thing and reflect
 
-Choose one part that helps with a unit you already teach. Try it, then reflect:
+Choose one part that helps with a unit you already teach and try it. Any thoughts are welcome, however short. If a prompt helps, here are a few (answer any, none, or something else entirely):
 
 1. Did it save you planning or prep time compared with what you'd normally use? Roughly how much?
 2. Did a check show you a misunderstanding you wouldn't otherwise have noticed? What was it?

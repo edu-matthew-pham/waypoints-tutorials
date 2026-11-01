@@ -5,13 +5,14 @@ Tools to **unpack curriculum, plan, teach and check understanding**. Use whichev
 
 ## Three ways in
 
-| Part | Helps you… | Open |
-|---|---|---|
-| **Curriculum · Unpack** | See what students need to understand first. | [acara.learningwaypoints.com](https://acara.learningwaypoints.com/) |
-| **Planning and preparation · Prepare** | Turn those ideas into teaching resources and strategies. | [prepare.learningwaypoints.com](https://prepare.learningwaypoints.com/) |
-| **Tutorials** | Try checks, feedback and smaller steps with your class. | [tutorials.learningwaypoints.com](https://tutorials.learningwaypoints.com/) |
+The same three menus as [learningwaypoints.com](https://learningwaypoints.com/).
 
-On [learningwaypoints.com](https://learningwaypoints.com/), Unpack is the ACARA curriculum view (**ACARA Progressions** under **Curriculum**); Prepare and Tutorials are under **Lessons**.
+| Way in | Tool | Helps you… | Open |
+|---|---|---|---|
+| **Curriculum** | Unpack (ACARA Progressions) | See what students need to understand first. | [acara.learningwaypoints.com](https://acara.learningwaypoints.com/) |
+| **Plan** | Planner and Kit | Shape a unit from the standards. | [learningwaypoints.com](https://learningwaypoints.com/) |
+| **Lessons** | Tutorials | Try checks, feedback and smaller steps with your class. | [tutorials.learningwaypoints.com](https://tutorials.learningwaypoints.com/) |
+| | Prepare | Make slides and printouts from a lesson. | [prepare.learningwaypoints.com](https://prepare.learningwaypoints.com/) |
 
 A **waypoint** is an idea students need to understand to meet a curriculum expectation. The waypoints draw on ACARA descriptors; their sequence and teaching suggestions reflect professional judgement.
 
@@ -31,9 +32,9 @@ From the **Teachers hub**, open **Getting Started**, **Learning Waypoints in 10 
 
 You still guide discussion and inquiry, select sources and assess extended reasoning. A tutorial check is one piece of evidence.
 
-## Try one useful part, then reflect
+## Try one useful part, then tell us how it went
 
-Choose one part that helps with a unit you already teach.
+Choose one part that helps with a unit you already teach. Any thoughts are welcome; if a prompt helps:
 
 1. Did it save you planning or prep time? Roughly how much?
 2. Did a check show you a misunderstanding you wouldn't otherwise have noticed?

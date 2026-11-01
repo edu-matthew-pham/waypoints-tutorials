@@ -15,13 +15,13 @@ style: |
 
 Work out what students need to understand and what to teach first. Use that to **plan, teach and check their thinking**.
 
-- **Curriculum · Unpack:** conceptual progressions and prerequisites.
-- **Planning and preparation · Prepare:** resources and strategies.
-- **Tutorials:** checks, feedback and scaffolding in practice.
+- **Curriculum:** what students need to understand, and how ideas build (Unpack).
+- **Plan:** shape a unit (Planner and Kit).
+- **Lessons:** Tutorials to check students' thinking, and Prepare for slides and printouts.
 
-Use whichever part helps you. You do not have to use all three.
+Use whichever part helps you. Today we look at Curriculum and Lessons.
 
-<!-- 0:00–1:00 (1 minute, including transition). Say: The waypoints draw on ACARA descriptors. Their sequence and teaching suggestions reflect professional judgement; ACARA does not prescribe them. Use them alongside the unit you already teach. You can benefit from any part without using all three. We will spend three minutes trying Tutorials so you can see how the curriculum analysis and planning work in an activity. That extra demo time does not mean it matters more than the other parts. The three-lesson self-paced guide is linked at the end. Names on learningwaypoints.com: Unpack is the ACARA curriculum view, listed as ACARA Progressions under Curriculum; Prepare and Tutorials are under Lessons. Before the meeting: pre-open the three tabs, test the Unpack link on the school network, export this deck to PDF from Prepare as an offline fallback, and click through all six slides after publishing. -->
+<!-- 0:00–1:00 (1 minute, including transition). Say: The waypoints draw on ACARA descriptors. Their sequence and teaching suggestions reflect professional judgement; ACARA does not prescribe them. Use them alongside the unit you already teach. You can benefit from any part without using all three. We will spend three minutes trying Tutorials so you can see how the curriculum analysis and planning work in an activity. That extra demo time does not mean it matters more than the other parts. The three-lesson self-paced guide is linked at the end. These are the same three menus as learningwaypoints.com: Curriculum (Unpack is listed there as ACARA Progressions), Plan (Planner and Kit) and Lessons (Tutorials and Prepare). Mention Plan in one line; today shows Curriculum and Lessons. Before the meeting: pre-open the three tabs, test the Unpack link on the school network, export this deck to PDF from Prepare as an offline fallback, and click through all six slides after publishing. -->
 
 ---
 
@@ -41,7 +41,7 @@ Use whichever part helps you. You do not have to use all three.
 
 ## Experience a waypoint
 
-**Tutorials:** try a check, read the feedback and explore a smaller step.
+**Lessons › Tutorials:** try a check, read the feedback and explore a smaller step.
 
 ![The actual resource-types task and smaller check](https://tutorials.learningwaypoints.com/teach/teachers/getting-started/presentation-assets/tutorial.png)
 
@@ -53,7 +53,7 @@ Use whichever part helps you. You do not have to use all three.
 
 ## From waypoint to teaching resources
 
-**Planning and preparation:** find the same idea again.
+**Lessons › Prepare:** the same lesson as slides and printouts.
 
 ![A slide opened in the actual Prepare tool](https://tutorials.learningwaypoints.com/teach/teachers/getting-started/presentation-assets/prepare.png)
 
@@ -83,8 +83,8 @@ Optional links: [Geography: List for teachers](https://tutorials.learningwaypoin
 
 ## Try one thing
 
-Choose **Curriculum**, **Planning and preparation**, or **Tutorials**.
-Fit one useful part into an existing unit, try it, then reflect:
+Choose **Curriculum**, **Plan** or **Lessons**.
+Try one useful part in a unit you already teach. Any thoughts are welcome; some prompts if they help:
 
 1. Did it save you planning or prep time? Roughly how much?
 2. Did a check show you a misunderstanding you wouldn't otherwise have noticed?
