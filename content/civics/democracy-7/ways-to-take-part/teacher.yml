@@ -10,7 +10,7 @@ struggle: "Students often think voting is the only 'real' way to participate, or
 before: |
   This lesson builds on the five democratic freedoms (Lesson 1) and their legal bounds (Lesson 2). It shows how citizens put those freedoms to work in practice.
 
-  The facts about House of Representatives petitions in the Typical step come from the Parliamentary Education Office and APH: a petition that meets the rules is considered by the Petitions Committee and presented to the House. If the Committee refers it to a minister, the minister is expected to respond within 90 days (House Standing Orders). Not every petition is referred, so the student text says "may be sent to a minister". Senate petitions follow different rules.
+  The facts about House of Representatives petitions in the Typical step come from the Parliamentary Education Office and APH: a petition that meets the rules is considered by the Petitions Committee and presented to the House. If the Committee refers it to a minister, the minister is expected to respond within 90 days of presentation (House Standing Order 209; checked against the House's Guide to Procedures, 1 Nov 2026). Not every petition is referred, so the student text says "may be sent to a minister". Senate petitions follow different rules.
 
   The committee inquiry in the worked example (pool safety) is made up and labelled so; it avoids echoing any real recent inquiry.
 
@@ -48,5 +48,8 @@ explain: |
 
   Different methods fit different goals.
 sources:
+  - title: "Petitions (House of Representatives Guide to Procedures, chapter 17)"
+    url: https://www.aph.gov.au/-/media/05_About_Parliament/53_HoR/532_PPP/GuidetoProcedures/17_petitions.pdf
+    checked: 2026-11-01
   - { title: "Getting involved in Parliament (Parliamentary Education Office)", url: "https://peo.gov.au/understand-our-parliament/your-say/getting-involved-in-parliament", checked: 2026-10-30 }
   - { title: "Petitions (Parliament of Australia)", url: "https://www.aph.gov.au/Parliamentary_Business/Petitions", checked: 2026-10-30 }

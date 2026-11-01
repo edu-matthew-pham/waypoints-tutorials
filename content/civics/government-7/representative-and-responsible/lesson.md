@@ -220,6 +220,44 @@ check:
 
 Start with a voter. Use the diagram to check your finished drawing, then add an arrow showing who ministers answer to. Your drawing should explain why a House vote is not a direct vote for Prime Minister. Write in your own book or document.
 
+## Typical: how one seat is won
+
+Each seat in the House is won by **preferential voting**. Voters number every candidate in order of choice. If no one has more than half the first choices, the candidate with the fewest votes is out, and their ballots go to each of those voters' next choice. This repeats until someone has more than half.
+
+This is a made-up seat with 20 voters and three made-up candidates.
+
+```step
+stage: make
+tier: typical
+insight: "Counting a made-up seat round by round shows why the candidate with the most first choices doesn't always win."
+try: { playground: board, starter: "house.yml#count", height: 520 }
+tasks:
+  - check:
+      type: board
+      text: "Press Count the next round until one candidate has more than half the votes."
+      when: "d = 1"
+      explain: "In round 1 no one has 11 of 20. C has the fewest, so C is out, and C's 5 ballots go to those voters' next choice, B. B then has 12, more than half."
+  - check:
+      type: question
+      q: "Candidate A had the most first choices. Why did Candidate B win the seat?"
+      options:
+        - "C's voters preferred B to A, so B passed half"
+        - "B had more first choices than A in round 1"
+        - "The candidate with fewest votes always wins"
+        - "A was out of the count after round 1"
+      answer: 0
+      feedback:
+        - null
+        - "Look at round 1 again: A had 8 and B had 7."
+        - "The candidate with the fewest votes is the one who goes out."
+        - "C went out after round 1, not A."
+      explain: "No one had more than half at first. When C went out, C's voters' next choice was B, which took B to 12 of 20."
+```
+
+### Count the seat
+
+### Why B won
+
 ## Typical: a rule that is not written there
 
 ```step

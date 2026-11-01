@@ -1699,6 +1699,12 @@ Vary, Practise, Make).
     each side, its own seats included), `u` (undecided), `n`, `m` (the majority) and `g` (0 none, 1 Side A, 2 Side B),
     so checks read `when: "a = 8"` or `"b >= 8"`. Neutral on purpose: sides named by letter, colours not tied to any
     real party. The model leaves out the Speaker and the Senate: say so in teacher notes.
+    `mode: count` (1 Nov 2026, the same lesson's Typical step): how one made-up seat is won by preferential voting.
+    `candidates: A, B, C` (2 to 6 letters, A to F) and `votes: 8 A>C>B; 7 B>C>A; 5 C>B>A` (groups of identical ballots:
+    how many, then the order of preference). Each press of "Count the next round" drops the candidate with the fewest
+    votes and moves their ballots to each voter's next choice, until someone has more than half. Values: `r` (round),
+    `d` (1 once decided), `w` (the winner's place in `candidates:`), `e` (candidates out), `n`, `m`, and `v_A`, `v_B`
+    ... (votes this round). Avoid ties for last place in a setup (the board drops the later letter).
   - `widget: dig` (History › How we know, `reading-the-layers`, 1 Nov 2026): a made-up dig seen from the side.
     `layer C: new floor, cooking pots` lines, top first (2 to 6; the layer's name, then its finds), `site:` (heading),
     `note:` (a line under it), `dig: on` (layers start covered; "Dig down one layer" uncovers the top one, then the

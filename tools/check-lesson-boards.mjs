@@ -17,11 +17,13 @@ const port = srv.address().port;
 const { MATH } = await import('./math-expr.mjs');
 const prefixes = process.argv.slice(2);
 const lessons = [];
-async function walk(d) { for (const f of await readdir(d, { withFileTypes: true })) { const p = join(d, f.name); if (f.isDirectory()) { if (!f.name.startsWith('_')) await walk(p); } else if (f.name === 'index.html' && /^dist\/(maths|english|geography|history)\//.test(p) && !(await readFile(p, 'utf8')).startsWith('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moved</title>')) lessons.push(p.slice(5, -11)); } }
+async function walk(d) { for (const f of await readdir(d, { withFileTypes: true })) { const p = join(d, f.name); if (f.isDirectory()) { if (!f.name.startsWith('_')) await walk(p); } else if (f.name === 'index.html' && /^dist\/(maths|english|geography|history|civics|economics)\//.test(p) && !(await readFile(p, 'utf8')).startsWith('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moved</title>')) lessons.push(p.slice(5, -11)); } }
 await walk('dist/maths');
 try { await walk('dist/english'); } catch { /* no English built */ }
 try { await walk('dist/geography'); } catch { /* no Geography built */ }
 try { await walk('dist/history'); } catch { /* no History built */ }
+try { await walk('dist/civics'); } catch { /* no Civics built */ }
+try { await walk('dist/economics'); } catch { /* no Economics built */ }
 const want = lessons.filter((l) => !prefixes.length || prefixes.some((p) => l.startsWith(p)));
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', args: ['--no-sandbox'] });
 const host = await browser.newPage();
@@ -55,7 +57,10 @@ for (const l of want) {
       else for (const w of s.whens) {
         checks++;
         try {
-          const used = MATH.checkCondition(w).vars.filter((v) => !(v in (scope.vars || {})));
+          // A spreadsheet cell's number (c_B5) is reported only once the cell holds a number; an empty cell reports f_B5
+          // only, so c_ for a cell the board knows about is not a missing value (sheet widget, 1 Nov 2026).
+          const known = (v) => v in (scope.vars || {}) || (/^c_[A-L]\d+$/.test(v) && ('f_' + v.slice(2)) in (scope.vars || {}));
+          const used = MATH.checkCondition(w).vars.filter((v) => !known(v));
           if (used.length) problems.push(`when "${w}" uses ${used.join(', ')}, which the board does not report (it reports ${Object.keys(scope.vars || {}).join(' ')})`);
           else if (MATH.holds(w, scope)) problems.push(`when "${w}" already holds at the start`);
         } catch (e) { problems.push(`when "${w}": ${e.message}`); }

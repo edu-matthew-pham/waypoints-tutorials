@@ -12,7 +12,7 @@ before: |
 
   Magna Carta is taught as how it came to be read, not as a democratic charter. In 1215 it was a settlement between King John and his barons, and clause 39 protected "free men" from being punished except by lawful judgement or the law of the land. Later generations read it as meaning no one, not even the ruler, is above the law. Students who say it "gave everyone rights" are repeating the later reading; a short "at the time, who did it protect?" is enough.
 
-  Judicial independence in the English tradition owes more to the Act of Settlement 1701 (judges could not simply be removed for decisions the Crown disliked) than to Magna Carta. In Australia, section 72 of the Constitution protects federal judges: they can be removed only by the Governor-General after both houses ask, for proved misbehaviour or incapacity. The student text says only that no one can tell a judge how to decide.
+  Judicial independence in the English tradition owes more to the Act of Settlement 1701 than to Magna Carta: it provided that judges hold office during good behaviour and can be removed only on an address of both Houses of Parliament. Historians note it was an early step rather than full independence (salaries and reappointment stayed in the Crown's hands for decades), and in Australia independence rests on the Constitution and the courts' own development (Justice Dowsett, Federal Court, 2011, below). In Australia, section 72 of the Constitution protects federal judges: they can be removed only by the Governor-General after both houses ask, for proved misbehaviour or incapacity. The student text says only that no one can tell a judge how to decide.
 
   What is simplified: "two sources" leaves out delegated legislation (regulations) and the Constitution as a source in its own right; a statute that clashes with common law usually wins, unless the statute itself is invalid. The courts' order in the Typical step is the general shape: Tasmania, the ACT and the Northern Territory have no middle court, and the Federal Court and Federal Circuit and Family Court sit beside the state courts (lesson 3).
 
@@ -48,6 +48,9 @@ sources:
     checked: 2026-11-01
   - title: Australian courts (overview of state and territory courts)
     url: https://en.wikipedia.org/wiki/Australian_courts
+    checked: 2026-11-01
+  - title: "The Australian judges: who do they think they are? (Justice Dowsett, Federal Court, 2011; Act of Settlement)"
+    url: https://fedcourt.gov.au/digital-law-library/judges-speeches/speeches-former-judges/justice-dowsett/dowsett-j-20110214
     checked: 2026-11-01
   - title: Australian Constitution, section 72 (Federal Register of Legislation)
     url: https://www.legislation.gov.au/C2004Q00685/latest/text

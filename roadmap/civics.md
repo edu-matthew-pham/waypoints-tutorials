@@ -424,3 +424,23 @@ Misconception ids to add as single lines: `values-are-uniquely-australian`, `sta
 Tested: validate clean; build; headless Chromium answered all 24 question and bug checks (each rejecting a wrong answer first); 390 px phone width with no sideways scroll on the subject, course, lessons, guides and teacher page; deck fit check. Match, sort and reasoning steps checked by validate only. Not tried with a class; worth a First Nations educator's and a colleague's read before use beyond CGGS (religion, migration, belonging).
 
 Publish: whole-site (subject and teacher pages changed). Ask Matthew first.
+
+## Decided and done (1 Nov 2026, Matthew): open items after the Year 7 build
+
+- **The 1962 line stays** in `democracy-7/formal-and-active-citizenship` student text (default). Reason: the descriptor asks who was included in and excluded from citizenship; it is one sourced, plain legal fact (AEC), not an explanation of First Nations history or culture, and without it the "rules changed over time" idea has no real example.
+- **Preferential-vote counter built** as `mode: count` on the existing `house` board (shared, not a new widget), as an optional Typical step *How one seat is won* in `representative-and-responsible` (a made-up seat of 20 ballots: A leads on first choices, C goes out, B wins with 12). Reason (Matthew): use boards where they're useful, especially when later standards will draw on them (AC9HC8K01 electoral systems in Year 8). Checked against the AEC's description of the House count; teacher note on informal votes and ties. Tested in Chromium on its own (dark theme, 390 px) and on the lesson page (the check ticks after counting, not at the start).
+- **Petition rule checked:** House Standing Order 209 (a minister is expected to respond within 90 days of presentation when the Petitions Committee refers a petition), from the House's Guide to Procedures; source added to `ways-to-take-part` teacher notes. Student wording unchanged.
+- **Act of Settlement note sourced and tightened** in `law-7/origins-and-common-law` teacher notes (judges during good behaviour, removal on an address of both Houses; an early step, not full independence), citing Justice Dowsett (Federal Court, 2011).
+- **Board checker** now covers Civics and Economics (`shared.md`); all 18 boards pass.
+
+## Plan (1 Nov 2026; awaiting Matthew's "go"): Before Year 7 catch-up *Three levels of government* (`hass/before-year-7/three-levels`)
+
+Goes in the existing Before Year 7: HASS course (its `civics` unit already lists it as planned; replace the planned item with the lesson). Same primer shape as the other HASS catch-ups (`questions-that-guide`): one idea, one common mistake, about 15 to 20 minutes, `language: science`, `shape: primer`. Nodes: `AC9HS6K07 n1` (hinge: the three levels and their main responsibilities) and `n4` (the system in daily life), with `AC9HS6K06 n1` (key institutions) as one step. `government-7/the-constitution` and `government-7/federation` list it in `assumes:` so they show "What you should already know" (the catch-up link already matches `hass/before-year-7/`).
+
+- **Idea:** Australia has three levels of government, each looking after different things: **local councils** (bins, local roads, parks, libraries), **state and territory governments** (schools, hospitals, police, public transport) and the **federal (Australian) government** (defence, passports, the national currency, Medicare). Each has its own elected representatives.
+- **ACT note (CGGS is in Canberra):** the ACT has no separate local councils; the ACT Government does the jobs councils do elsewhere. One student line and a teacher note, so Canberra students aren't confused.
+- **Common mistake (`one-government-does-everything`):** Nib says "The Prime Minister fixes the potholes on my street." Smaller: "Who empties your bins: the council, the state or the federal government?"
+- **Made-up case:** a day in made-up Wattle Creek: a library visit, a trip to the hospital, a passport for a holiday.
+- **Steps:** think first (predict), sort everyday services into the three levels, one worked example with Nib's slip, one quick check, and a "now you can" line. No Make step beyond a one-line reflect (primer shape).
+- **Facts to check at build:** responsibilities against the Parliamentary Education Office's three levels of government page; the ACT arrangement.
+- **Distractors:** the federal government "runs everything"; councils are "part of the federal government"; schools are "run by local councils" (they're state or territory).

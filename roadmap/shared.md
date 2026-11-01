@@ -249,6 +249,10 @@ Five misconceptions added to `misconceptions.json` (single lines, after `dam-cre
 
 Lessons 2–5 add four single-line entries to `misconceptions.json`: `directly-elect-pm`, `complete-separation-australia`, `federal-is-state-boss`, `australia-only-westminster`. No shared tools changed.
 
+## Changed by the Civics chat (1 Nov 2026): `check-lesson-boards` covers Civics and Economics; `house` count mode
+- `tools/check-lesson-boards.mjs` now also walks `dist/civics` and `dist/economics`, and treats a spreadsheet cell's `c_B5` as known when the board reports `f_B5` (an empty cell reports only `f_`; the checker had flagged three correct sheet checks, one Civics and two Economics, as reading missing values). Run: `node tools/check-lesson-boards.mjs civics economics` (18 boards, 0 problems after the change). ICT is not walked yet; its sheets would benefit from the same run.
+- `playground-board/widgets/house.js` gains `mode: count` (preferential count of one made-up seat; AUTHORING › `widget: house`). The House mode is unchanged.
+
 ## Changed by the Civics chat (1 Nov 2026): planned items can say "Taught in class"
 `tools/build-site.mjs`: a unit's `planned:` item may carry `label:` (shown in place of "Coming later"; labelled items are not counted in the teacher strip's "coming later") and `teach:` (a site path linked from the teacher guide only, never from the student page). First use: `civics/diversity-7`, where AC9HC7K04 n3 (First Nations histories and cultures) is taught by the teacher and linked to its curriculum pointer page. Items without `label:` are unchanged (checked on Before Year 7: HASS). AUTHORING › units updated. Needs a whole-site publish.
 

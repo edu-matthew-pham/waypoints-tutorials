@@ -22,3 +22,11 @@ side A: 7
 side B: 6
 backs A: 1
 # endregion
+
+# region: count
+# A made-up seat with 20 voters. A leads on first choices but B wins once C's ballots move on.
+widget: house
+mode: count
+candidates: A, B, C
+votes: 8 A>C>B; 7 B>C>A; 5 C>B>A
+# endregion

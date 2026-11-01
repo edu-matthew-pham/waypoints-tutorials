@@ -31,7 +31,16 @@ before: "Hinge n2: without the accountability link between executive and legisla
   hung parliament since 1940. No party or coalition won a majority of House seats (Labor 72, the Coalition 73,
   with 76 needed). Labor formed a minority government on 7 September 2010 after 4 of the 5 crossbench members
   agreed to support it. Keep it to what happened, as the board does: who backed whom, not whether they were
-  right."
+  right.
+
+
+  The counting step (Typical: how one seat is won) uses the same board in its count mode on a made-up seat of 20
+  ballots and three made-up candidates. It follows the AEC's description: a candidate needs an absolute majority
+  (more than half the formal votes); if no one has one, the candidate with the fewest votes is excluded and their
+  ballots go to the voters' next preferences, until someone has more than half. The board leaves out informal votes
+  and the rules for breaking a tie for last place (avoid ties in your own setups). House ballots ask voters to number
+  every box. Preferential voting is taught in more depth in Year 8 Civics (electoral systems); this step is optional
+  width."
 stuck:
   - see: A student says they vote for Prime Minister.
     ask: What electorate is on the House ballot?
@@ -56,6 +65,9 @@ explain: We elect representatives. Government needs majority support in the Hous
   formally appoints the Prime Minister and ministers. Ministers come from Parliament and remain answerable to
   it.
 sources:
+  - title: How the House of Representatives result is determined (Australian Electoral Commission)
+    url: https://aec.gov.au/Voting/counting/hor_count.htm
+    checked: 2026-11-01
   - title: Minority government (Parliamentary Education Office)
     url: https://peo.gov.au/understand-our-parliament/history-of-parliament/history-milestones/australian-parliament-history-timeline/events/minority-government/
     checked: 2026-11-01
