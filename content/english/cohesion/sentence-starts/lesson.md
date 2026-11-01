@@ -61,10 +61,10 @@ tasks:
   - check:
       type: question
       q: "Why does starting with something the reader knows make writing easier to follow?"
-      options: ["The reader connects the new information to what they already have", "It makes sentences shorter", "Teachers prefer it", "It means you never repeat a word"]
+      options: ["It links the new part to what they know", "It makes sentences shorter", "Teachers prefer it", "It means you never repeat a word"]
       answer: 0
       feedback: [null, "Length doesn't change: the same words move around.", "It helps every reader, not just teachers.", "You often repeat or point back to a word to do it."]
-      explain: "Known first gives the reader a hook to hang the new information on."
+      explain: "Known first gives the reader a hook to hang the new information on: they connect the new part to what they already have."
 ```
 
 ### Reading the starts

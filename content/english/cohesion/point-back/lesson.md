@@ -48,7 +48,7 @@ tasks:
   - check:
       type: question
       q: "'Our team lost the final. This made the coach very quiet on the bus.' What does This point back to?"
-      options: ["The whole idea: our team losing the final", "The final", "Our team", "The bus"]
+      options: ["Our team losing the final", "The word final in the first sentence", "Our team, the people who played", "The bus the coach was riding on"]
       answer: 0
       feedback: [null, "A final cannot make someone quiet on its own. Read the whole first sentence.", "Try swapping in 'Our team made the coach very quiet'. It changes the meaning.", "The bus comes after This, so This cannot point back to it."]
       explain: "This can point back to a whole idea, not just one word. Losing the final is what made the coach quiet."
@@ -63,7 +63,7 @@ tasks:
   - check:
       type: question
       q: "Why do writers use words like she, it and they at all?"
-      options: ["So they don't have to repeat the same name in every sentence", "Because names are not allowed twice", "To make the reader guess", "Because they are shorter to spell"]
+      options: ["To avoid repeating the same name every time", "Because using a name twice is a grammar mistake", "To make the reader guess", "Because they are shorter to spell"]
       answer: 0
       feedback: [null, "You can repeat a name, and sometimes you should. It just gets heavy if you do it every time.", "A good pointing word never makes the reader guess.", "Shorter is a bonus, not the reason."]
       explain: "Pointing words keep the text moving without repeating the same name over and over. They only work when the reader can tell what they point to."

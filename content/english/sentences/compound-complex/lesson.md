@@ -69,7 +69,7 @@ tasks:
   - check:
       type: question
       q: "'The dog barked, and the cat ran.' Why is this compound and not complex?"
-      options: ["Both parts could stand alone as sentences", "It has a comma", "It has the word and", "It is a long sentence"]
+      options: ["Both parts could stand alone", "It has a comma", "It has the word and", "It is a long sentence"]
       answer: 0
       feedback: [null, "Commas appear in all four shapes.", "And is a clue, but the test is whether both parts could stand alone.", "Length does not decide the shape."]
       explain: "Both 'the dog barked' and 'the cat ran' could stand alone, so they are both main clauses. Two main clauses make a compound sentence."

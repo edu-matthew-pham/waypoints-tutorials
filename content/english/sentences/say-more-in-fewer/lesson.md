@@ -67,7 +67,7 @@ tasks:
   - check:
       type: question
       q: "'My neighbour, who lives next door, plays cricket.' What do we lose if we take out 'who lives next door'?"
-      options: ["A fact about where the neighbour lives", "The verb", "The word neighbour", "Nothing at all"]
+      options: ["Where the neighbour lives", "The verb", "The word neighbour", "Nothing at all"]
       answer: 0
       feedback: [null, "The verb 'plays' is in the main clause.", "Neighbour is in the main clause.", "The clause adds a fact, so it matters."]
       explain: "The embedded clause carries a fact. Take it out and the reader no longer knows where the neighbour lives."

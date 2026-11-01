@@ -62,7 +62,7 @@ tasks:
   - check:
       type: question
       q: "Why do writers swap a specific word for a general one?"
-      options: ["To keep talking about the same thing without repeating the same word", "To make the reader guess what it is", "Because specific words are less correct", "To start a new topic"]
+      options: ["To stay on the same thing without repeating", "To make the reader guess what it is", "Because specific words are less correct", "To start a new topic"]
       answer: 0
       feedback: [null, "A good word chain never makes the reader guess.", "Specific words are often better. The general one gives variety later.", "The general word stays on the same topic."]
       explain: "A word chain keeps the reader on the same thing with a little variety, as long as the specific word came first."

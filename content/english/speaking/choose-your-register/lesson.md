@@ -57,7 +57,7 @@ tasks:
   - check:
       type: question
       q: "A speaker says, 'I love the new oval, and it's the best thing the school has ever done.' What kind of language is this?"
-      options: ["Objective, because it names the oval", "Subjective, because it gives the speaker's feelings and opinion", "Formal, because it has a full stop", "Casual, because it is short"]
+      options: ["Objective, because it names the oval", "Subjective, because it gives opinions", "Formal, because it has a full stop", "Casual, because it is short"]
       answer: 1
       feedback: ["It names the oval, but the rest is opinion: 'love' and 'the best thing'.", null, "A full stop does not decide that. The words and what they say do.", "It is not short, and being short does not decide register."]
       explain: "Subjective language says what the speaker feels or thinks. Objective language states facts, such as 'The oval is 120 metres long.'"
@@ -72,10 +72,10 @@ tasks:
   - check:
       type: question
       q: "Why not use the most formal register for every talk?"
-      options: ["Formal talks are always too long", "It is against the rules", "It would sound stiff and distant to listeners such as a Year 3 class", "Nobody can speak formally"]
+      options: ["Formal talks are always too long", "It is against the rules", "It would sound stiff to some listeners", "Nobody can speak formally"]
       answer: 2
       feedback: ["Length and formality are separate. A formal talk can be short.", "There is no rule. The point is to suit the listeners.", null, "People can, and sometimes they should. It just does not suit every audience."]
-      explain: "The most formal voice is for a formal occasion. With young listeners it would sound cold and keep them from following."
+      explain: "The most formal voice is for a formal occasion. With young listeners, such as a Year 3 class, it would sound stiff, distant and cold and keep them from following."
 ```
 
 ### Fit the listeners

@@ -35,7 +35,7 @@ insight: "Placing six claims by how they name a source shows that vague sources 
 try: { playground: board, starter: "text.yml#run", height: 460 }
 hint: ["Could you find this person or record?", "Is it 'someone' or a particular source?"]
 smaller:
-  check: { type: question, q: "Which gives you something you could look up?", options: ["Word is the exam is hard", "The lost-property book lists 14 jumpers this week", "Lots of students think so"], answer: 1, feedback: ["'Word' could be anyone.", null, "'Lots of students' could be anyone."], explain: "A record in a book is something you could look up and check." }
+  check: { type: question, q: "Which gives you something you could look up?", options: ["Word around school is the exam is hard", "The lost-property book lists 14 jumpers", "Lots of students say it is true"], answer: 1, feedback: ["'Word' could be anyone.", null, "'Lots of students' could be anyone."], explain: "A record in a book is something you could look up and check." }
 check: { type: board, text: "Place each claim: vague source or named source.", when: "n_right = 6 and n_wrong = 0", explain: "Some experts say, People say and They say do not point to anyone. The groundskeeper, the temperature log and the Year 8 count are specific." }
 ```
 

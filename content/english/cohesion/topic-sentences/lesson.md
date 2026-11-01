@@ -47,7 +47,7 @@ tasks:
   - check:
       type: question
       q: "What makes a sentence a topic sentence?"
-      options: ["It says what the whole paragraph is about, and the other sentences belong to it", "It is always the first sentence", "It is the longest sentence", "It has the most interesting fact"]
+      options: ["It says what the whole paragraph is about", "It is always the first sentence", "It is the longest sentence", "It has the most interesting fact"]
       answer: 0
       feedback: [null, "Often first, but a topic sentence can come last or in the middle.", "Length doesn't decide it. Details can be long.", "An interesting fact is usually a detail."]
       explain: "A topic sentence is the one the other sentences belong to. Its place in the paragraph can vary."
@@ -62,7 +62,7 @@ tasks:
   - check:
       type: question
       q: "A paragraph ends with 'All of this shows that our school wastes a lot of water.' Could that be its topic sentence?"
-      options: ["Yes: it says what the paragraph is about, even though it comes last", "No: topic sentences must come first", "No: it starts with All", "Only if the paragraph is short"]
+      options: ["Yes: it says what the paragraph is about", "No: topic sentences must come first", "No: it starts with All", "Only if the paragraph is short"]
       answer: 0
       feedback: [null, "First is common, not required. Some writers build up to the point.", "How it starts doesn't decide it. What it does decides it.", "Length doesn't decide it either."]
       explain: "A topic sentence at the end sums up what the details have been building to. It still tells the reader what the paragraph is about."

@@ -48,7 +48,7 @@ insight: "Labelling feedback comments as specific or vague gives students a test
 try: { playground: board, starter: "text.yml#run", height: 560 }
 hint: ["Does the comment say what the listener heard or saw, and where?", "Could the speaker do something different because of it?"]
 smaller:
-  check: { type: question, q: "Which comment is specific?", options: ["It was fine.", "You looked at the cards for the whole second point.", "Do it better."], answer: 1, feedback: ["It says nothing about what was fine.", null, "It does not say what to change or where."], explain: "The second comment names where and what the listener saw. The speaker can look up more in that point." }
+  check: { type: question, q: "Which comment is specific?", options: ["It was fine and a nice job overall.", "You read the cards for all of point two.", "Do it better next time you practise."], answer: 1, feedback: ["It says nothing about what was fine.", null, "It does not say what to change or where."], explain: "The second comment names where and what the listener saw. The speaker can look up more in that point." }
 check: { type: board, text: "Label each comment: is the feedback specific or vague?", when: "n_right = 8 and n_wrong = 0", explain: "Comments that say what the listener heard or saw, and where, are specific: the last sentence was too quiet, the speaker sped up on the numbers, the voice rose at the end of the facts, the cards were read for the whole second point. 'That was good', 'Speak up', 'It was boring' and 'Be more confident' leave the speaker with nothing to act on." }
 ```
 

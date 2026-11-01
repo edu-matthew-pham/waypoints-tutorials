@@ -60,7 +60,7 @@ tasks:
   - check:
       type: question
       q: "When is repeating a key word better than using it or they?"
-      options: ["When it or they could point to more than one thing", "Never: always use it or they", "Always: never use it or they", "Only in the first sentence"]
+      options: ["When it or they could mean two things", "Never: always use it or they", "Always: never use it or they", "Only in the first sentence of a paragraph"]
       answer: 0
       feedback: [null, "It and they are great when only one thing fits. When two fit, repeat the word.", "Repeating in every sentence gets heavy. Use it where the reader can't go wrong.", "Repeats can go anywhere the reader needs them."]
       explain: "Use a pointing word when only one thing fits. Repeat the key word when two things could fit."

@@ -101,7 +101,7 @@ tasks:
   - check:
       type: question
       q: "Why can't you swap however for therefore?"
-      options: ["However turns against the first idea, and therefore says the next one follows from it", "Therefore is only for maths", "They mean the same, so you can", "However must start a paragraph"]
+      options: ["However turns against the idea; therefore builds on it", "Therefore only belongs in maths writing", "They mean the same, so you can swap them", "However must always start a paragraph"]
       answer: 0
       feedback: [null, "Therefore is used in all kinds of writing, not just maths.", "They do different jobs: one turns, one shows a result.", "However can go almost anywhere a joining word fits."]
       explain: "However and therefore do opposite jobs: one turns against the first idea, the other says the next idea follows from it."

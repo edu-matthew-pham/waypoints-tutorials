@@ -70,10 +70,10 @@ tasks:
   - check:
       type: question
       q: "Which is the best judgement of a feature?"
-      options: ["The repeat of the word loud is good.", "The speech has a repeat in it.", "The repeat of the word loud makes the noise feel as if it is everywhere, which helps listeners picture it.", "I liked it because it was short."]
+      options: ["The repeat of the word loud is good.", "The speech has a repeat of the word loud in it.", "Repeating loud helps listeners feel the noise is everywhere.", "I liked it because it was short and fun."]
       answer: 2
       feedback: ["It says the repeat is good but not why or for whom.", "It names the feature but does not judge it.", null, "Liking a speech is not a judgement of how it works."]
-      explain: "A good judgement names the feature, says what it does for the listeners and says how well it works."
+      explain: "A good judgement names the feature, says what it does for the listeners and says how well it works. Repeating loud makes the noise feel as if it is everywhere, which helps listeners picture it."
 ```
 
 ### Name, effect, reason

@@ -68,7 +68,7 @@ tasks:
   - check:
       type: question
       q: "Two reports give the same number, 40 people. One says 'a mere 40' and one says 'a passionate 40'. What does this show?"
-      options: ["Numbers cannot be biased", "The same fact can be worded to favour different sides", "One report has the wrong number"]
+      options: ["Numbers cannot be biased", "The same fact can be worded to favour either side", "One of the reports has got the number wrong"]
       answer: 1
       feedback: ["The words around the number carry the lean.", null, "Both give 40."]
       explain: "Mere makes 40 sound small. Passionate makes 40 sound strong. The fact is the same."

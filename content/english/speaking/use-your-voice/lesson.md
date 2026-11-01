@@ -54,7 +54,7 @@ tasks:
   - check:
       type: question
       q: "A speaker slows down and gets a little louder just before the most important sentence. What does this do for listeners?"
-      options: ["Nothing, because only the words matter", "It makes the talk longer", "It signals that this part matters and gives them time to take it in", "It shows the speaker has forgotten the words"]
+      options: ["Nothing, because only the words matter", "It makes the talk longer", "It tells them this part matters", "It shows the speaker has forgotten the words"]
       answer: 2
       feedback: ["The voice carries meaning of its own, and that is why speakers change it.", "A few seconds does not make the difference. What matters is what the change signals.", null, "A planned slowing sounds steady. Forgetting sounds hesitant and uneven."]
       explain: "Slowing down and a little extra volume tell listeners to pay attention, and they give the ear time to catch the words."
@@ -69,10 +69,10 @@ tasks:
   - check:
       type: question
       q: "A speaker says, 'We lost the final,' in a bright, bouncy tone. What might listeners think?"
-      options: ["The speaker is sad", "The words and the tone do not agree, so they may think the speaker is joking or does not mean it", "The speaker is being formal", "Nothing, because the words are the same as a sad version"]
+      options: ["The speaker is sad", "Tone and words clash, so it may sound like a joke or a lie", "The speaker is being formal", "Nothing, because the words are the same as a sad version"]
       answer: 1
       feedback: ["A bright tone sounds happy, not sad.", null, "Formality is about word choice and manner, not this mismatch.", "The tone changes how the words come across, even if the words stay the same."]
-      explain: "Listeners read the tone as well as the words. If they disagree, listeners often believe the tone, so the speaker should match them."
+      explain: "Listeners read the tone as well as the words. When they do not agree, listeners may think the speaker is joking or does not mean it, because they often believe the tone. Match the tone to the words."
 ```
 
 ### Four settings

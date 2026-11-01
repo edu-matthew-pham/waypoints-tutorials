@@ -59,7 +59,7 @@ tasks:
   - check:
       type: question
       q: "Nib wrote the aim 'Tell Year 5 about the library.' Why is that not enough to plan from?"
-      options: ["It is too short to be a sentence", "It says nothing about what listeners should know, think or do afterwards", "Year 5 already know all about the library", "Aims should always name three points"]
+      options: ["It is too short to be a sentence", "It doesn't say what listeners should take away", "Year 5 already know all about the library", "Aims should always name three points"]
       answer: 1
       feedback: ["Length is not the problem. A short aim can be a good one.", null, "That could be true, but the aim does not say so. The problem is in the aim itself.", "An aim comes before the points. It does not count them."]
       explain: "A topic says what the talk is about. An aim says what the listeners will do or think because of it. Without an aim, Nib cannot tell which facts belong."
@@ -74,14 +74,14 @@ tasks:
   - check:
       type: question
       q: "A two-minute talk has eight main points, each with a detail. What is the likely problem?"
-      options: ["Eight is an unlucky number of points", "The talk needs more details for each point", "Listeners will not hold that many, and each point gets only a few seconds", "The opening should come last"]
+      options: ["Eight points is fine if each one is short", "The talk needs more details for each point", "Listeners can't hold eight points in two minutes", "The opening should come last"]
       answer: 2
-      feedback: ["There is nothing special about eight. The trouble is time and memory.", "More details would make a long list even harder to follow.", null, "The opening comes first so listeners know where they are going."]
-      explain: "People hold only a few ideas from a talk they hear once. Two or three points, each with a detail, is what two minutes can carry."
+      feedback: ["Even short points pile up. Listeners can only hold a few ideas from one hearing.", "More details would make a long list even harder to follow.", null, "The opening comes first so listeners know where they are going."]
+      explain: "Each point gets only a few seconds, and people hold only a few ideas from a talk they hear once. Two or three points, each with a detail, is what two minutes can carry."
   - check:
       type: question
       q: "Nib wants Year 5 to learn how to fold a paper plane. Which way of presenting suits the listeners and the purpose?"
-      options: ["A talk alone, because talks are quicker", "A talk with Nib folding a plane in front of them as each step is said", "A poster only, because Year 5 can read", "A list of steps read out without stopping"]
+      options: ["A talk alone, because talks are quicker", "A talk with Nib folding a plane as each step is said", "A poster only, because Year 5 can read", "A list of steps read out without stopping"]
       answer: 1
       feedback: ["Folding is hard to follow from words alone, and speed is not the goal.", null, "A poster could work for reading, but the purpose here is to show how, and a speaker can do that live.", "Listeners cannot hold a list of steps, and they cannot see what is being folded."]
       explain: "The purpose is to show how, so the best choice shows it. A talk with a live demonstration lets listeners see each step as they hear it. Choosing how to present is part of planning."

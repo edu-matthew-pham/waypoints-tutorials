@@ -71,10 +71,10 @@ tasks:
   - check:
       type: question
       q: "Which text could use objective (plain, checkable) language?"
-      options: ["Only a news article", "Only a science report", "Any text, such as a review that lists measurements"]
+      options: ["Only a news article", "Only a science report", "Any text, including a review"]
       answer: 2
       feedback: ["News articles also include opinions, such as quotes.", "Many other texts can list facts too.", null]
-      explain: "Any text can mix facts and opinions. The writer's purpose decides which words to use."
+      explain: "Any text can mix facts and opinions. A review that lists measurements is using objective language. The writer's purpose decides which words to use."
 ```
 
 ### Fact, thought or feeling?
