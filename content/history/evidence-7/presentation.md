@@ -6,7 +6,7 @@ title: How we know
 
 What can the evidence tell us?
 
-AC9HH7K08 · Preview
+AC9HH7K08
 
 Use alongside your ancient-world depth study.
 

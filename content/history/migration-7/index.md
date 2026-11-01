@@ -1,7 +1,6 @@
 ---
 title: Early human migration
-preview: true
-summary: "Preview (a pilot, not yet tried with a class). Three lessons for AC9HH7K01, in the order the ideas depend on each other: what the main theories of human origins say and what 'theory' means, how changes in climate and landscape are thought to have moved people out of Africa over many generations, and how several kinds of evidence together build an interpretation that can change. Arrival on the Australian continent and the rest of deep time Australia (AC9HH7K02 to K07) are listed as taught in class, with First Nations-led resources; this site does not explain them."
+summary: "Three lessons for AC9HH7K01, in the order the ideas depend on each other: what the main theories of human origins say and what 'theory' means, how changes in climate and landscape are thought to have moved people out of Africa over many generations, and how several kinds of evidence together build an interpretation that can change. Arrival on the Australian continent and the rest of deep time Australia (AC9HH7K02 to K07) are listed as taught in class, with First Nations-led resources; this site does not explain them."
 tagline: "How do we know where the first people came from?"
 years: "7"
 order: 5

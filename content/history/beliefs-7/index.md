@@ -1,7 +1,6 @@
 ---
 title: Beliefs and practices
-preview: true
-summary: "Preview (a pilot, not yet tried with a class). Three lessons for AC9HH7K11, in the order the ideas depend on each other: how a society's beliefs fitted together and led to its practices, what one focus area (death and funerary customs) shows when you read the evidence, and what beliefs and practices reveal about what a society valued and how it organised itself. Ancient China in the Qin and Han period is the worked example; the Reference page has swap-in cards for Egypt, Greece, Rome and India."
+summary: "Three lessons for AC9HH7K11, in the order the ideas depend on each other: how a society's beliefs fitted together and led to its practices, what one focus area (death and funerary customs) shows when you read the evidence, and what beliefs and practices reveal about what a society valued and how it organised itself. Ancient China in the Qin and Han period is the worked example; the Reference page has swap-in cards for Egypt, Greece, Rome and India."
 tagline: "What mattered to them, and how can we tell?"
 years: "7"
 order: 6

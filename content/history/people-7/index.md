@@ -1,7 +1,6 @@
 ---
 title: People and power
-preview: true
-summary: "Preview (a pilot, not yet tried with a class). Three lessons for AC9HH7K10, in the order the ideas depend on each other: how a society's hierarchy worked and how its rulers and officials used power, what women did and how historians know, and the groups at the bottom whose work the society rested on, and how the order changed over time. Ancient China in the Qin and Han period is the worked example; the Reference page has swap-in cards for Egypt, Athens and Sparta, Rome and India."
+summary: "Three lessons for AC9HH7K10, in the order the ideas depend on each other: how a society's hierarchy worked and how its rulers and officials used power, what women did and how historians know, and the groups at the bottom whose work the society rested on, and how the order changed over time. Ancient China in the Qin and Han period is the worked example; the Reference page has swap-in cards for Egypt, Athens and Sparta, Rome and India."
 tagline: "Who did what, and who was in charge?"
 years: "7"
 order: 5

@@ -1,7 +1,6 @@
 ---
 title: How we know
-preview: true
-summary: "Preview (a pilot, not finished). Four lessons for AC9HH7K08: layers and physical evidence, DNA and dating, ancient writing, and conserving irreplaceable evidence. Use beside a depth study. The untiered path is the minimum; optional steps add breadth on each idea."
+summary: "Four lessons for AC9HH7K08: layers and physical evidence, DNA and dating, ancient writing, and conserving irreplaceable evidence. Use beside a depth study. The untiered path is the minimum; optional steps add breadth on each idea."
 tagline: What can the evidence tell us?
 years: "7"
 order: 3
