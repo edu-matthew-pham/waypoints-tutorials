@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+The Qin unified China in 221 BCE.
+Confucius died in 479 BCE.
+Nib says: "479 is bigger than 221, so Confucius died after the Qin unified China."
+Nib says: "So Confucius could have taught the First Emperor."
+# endregion

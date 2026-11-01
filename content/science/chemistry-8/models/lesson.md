@@ -95,10 +95,10 @@ tasks:
   - check:
       type: question
       q: "You want to show a friend that air is a mixture of nitrogen and oxygen. Which is best?"
-      options: ["A particle diagram of a box with separate N₂ and O₂ particles", "The formulas N₂ and O₂", "A 3D model of one oxygen particle"]
+      options: ["A box of separate N₂ and O₂ particles", "The formulas N₂ and O₂", "A 3D model of one oxygen particle"]
       answer: 0
       feedback: [null, "Formulas name the substances but don't show that they are mixed, not joined.", "One particle can't show a mixture."]
-      explain: "Pick the representation that shows what matters for the job: here, separate particles side by side."
+      explain: "Pick the representation that shows what matters for the job: here, a particle diagram with separate particles side by side."
   - check:
       type: match
       q: "Every representation leaves something out. Match each to one of its limits."
@@ -137,10 +137,10 @@ tasks:
   - check:
       type: question
       q: "Hydrogen peroxide is H₂O₂ and water is H₂O. What is the difference?"
-      options: ["H₂O₂ has one more oxygen atom in each particle, so it is a different compound", "None: both are water", "H₂O₂ is a mixture of water and oxygen"]
+      options: ["Each particle has one more oxygen atom", "None: both are water", "H₂O₂ is a mixture of water and oxygen"]
       answer: 0
       feedback: [null, "The formulas are different, so the substances are different (hydrogen peroxide is a bleach).", "The atoms are all joined in one particle: a compound."]
-      explain: "Change one small number and you have a new substance with new properties."
+      explain: "H₂O₂ has one more oxygen atom in each particle, so it is a different compound. Change one small number and you have a new substance with new properties."
 ```
 
 ### Three substances
@@ -159,10 +159,10 @@ tasks:
   - check:
       type: question
       q: "Which of these does this flat ball model NOT show truthfully?"
-      options: ["The real 3D shape, the real sizes and the huge empty space between particles", "Which atoms are in each particle", "How many atoms are in each particle"]
+      options: ["The real shape, sizes and spacing", "Which atoms are in each particle", "How many atoms are in each particle"]
       answer: 0
       feedback: [null, "It shows the atoms correctly.", "The atom counts are right."]
-      explain: "It is flat, the atoms aren't to scale, and real gas particles are much further apart. Every model simplifies; a good scientist knows how."
+      explain: "It doesn't show the real 3D shape, the real sizes or the huge empty space between particles. It is flat, the atoms aren't to scale, and real gas particles are much further apart. Every model simplifies; a good scientist knows how."
     hint: "Picture what real gas particles are like, then ask what a flat picture on a screen can't get right about them."
 ```
 

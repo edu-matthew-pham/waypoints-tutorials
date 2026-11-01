@@ -17,7 +17,7 @@ To compare two sources:
 2. Find a point where they **disagree**.
 3. Explain **why** they see it differently.
 
-Views usually differ for one of four reasons:
+One way to sort why views differ is into four kinds of reason. Real disagreements often mix more than one:
 
 - **Values**: they care about different things, such as a lively town or getting around easily.
 - **Interests**: they stand to gain or lose different things, such as sales or a parking spot.

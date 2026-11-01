@@ -7,6 +7,10 @@
 //   fractions: 4             write values between whole numbers as fractions (−1 1/4, with the decimal in readouts);
 //                            dragged points land on quarters unless snap says otherwise
 //   context: Temperature (°C)   a name and unit for readouts ("−7 °C"), written under the line
+//   years: on                a timeline (History): negative values are BCE years and positive ones CE ("500 BCE",
+//                            "100 CE"), there is no year 0 (a point cannot sit there; a dragged point skips it), labels
+//                            are spaced for the longer text, and compare says earlier or later. Checks still use the
+//                            signed numbers: x(A) = -480 is 480 BCE.
 //   point A: -7              a fixed point; `point A: -7, Canberra` gives it a caption
 //   point P: 0, drag         a point students drag along the line; checks see it once it is let go
 //   point A: a               a point that follows slider a (keyboard-friendly, and what clips can move)
@@ -29,13 +33,16 @@
   var dec = function (n) { return B.fmt(n).replace(/^-/, '−'); };
   // With `fractions: 4`, values between whole numbers are written as fractions or mixed numerals (−1 1/4), simplified.
   var show = function (n) {
+    if (spec && spec.years) return yr(n);
     var d = spec && spec.den;
     if (!d || Math.abs(n - Math.round(n)) < 1e-9) return dec(n);
     var t = Math.round(Math.abs(n) * d); if (Math.abs(Math.abs(n) * d - t) > 1e-6) return dec(n);
     var w = Math.floor(t / d), r = t % d, g = (function gcd(a, b) { return b ? gcd(b, a % b) : a; })(r, d);
     return (n < 0 ? '−' : '') + (w ? w + ' ' : '') + r / g + '/' + d / g;
   };
-  var both = function (n) { var f = show(n), x = dec(n); return f === x ? f : f + ' (' + x + ')'; };
+  // years: on writes a signed year as BCE or CE (0 is not a year; it only marks where BCE meets CE).
+  var yr = function (n) { var v = Math.round(n); return v < 0 ? (-v) + ' BCE' : v > 0 ? v + ' CE' : ''; };
+  var both = function (n) { if (spec && spec.years) return show(n); var f = show(n), x = dec(n); return f === x ? f : f + ' (' + x + ')'; };
   var paren = function (n) { return n < 0 ? '(' + show(n) + ')' : show(n); };
 
   function num(t, where) {
@@ -57,6 +64,8 @@
     s.labelStep = s.labels !== undefined ? num(s.labels, 'labels') : steps <= 20 ? 1 : 5;
     var m = /^(.*?)\s*\(([^)]*)\)\s*$/.exec(s.context || '');
     s.ctx = s.context ? (m ? { name: m[1], unit: m[2] } : { name: s.context.trim(), unit: '' }) : null;
+    s.years = /^(on|yes|true)$/i.test(String(s.years || '').trim());
+    if (s.years && (s.den || s.sum !== undefined || s.product !== undefined || s.ray !== undefined)) throw new Error('years: on is a timeline; it does not go with fractions, sum, product or ray.');
     s.points = []; s.sliders = [];
     var ordered = s.items.filter(function (it) { return it.kind === 'slider'; }).concat(s.items.filter(function (it) { return it.kind !== 'slider'; }));
     ordered.forEach(function (it) {
@@ -76,6 +85,7 @@
         } else {
           x = num(p[0], where);
           if (x < s.lo || x > s.hi) throw new Error(where + ': ' + x + ' is off the line (' + s.lo + ' to ' + s.hi + ').');
+          if (s.years && x === 0) throw new Error(where + ': there is no year 0 (1 BCE is followed by 1 CE), so a point cannot start at 0.');
         }
         s.points.push({ name: it.name, x: x, fx: fx, drag: drag, caption: cap });
       } else if (it.kind === 'slider') {
@@ -146,11 +156,20 @@
     // Without labels:, number every 1, 2, 5 or 10 so the numbers do not run together on a narrow screen.
     var labelStep = spec.labels !== undefined ? spec.labelStep : [1, 2, 5, 10, 20, 50].filter(function (k) { return k >= spec.labelStep && k * board.unitX >= 26; })[0] || spec.labelStep;
     var minorStep = labelStep >= 1 && spec.snapStep < 1 ? spec.snapStep : Math.min(1, labelStep);
+    if (spec.years) {
+      // "500 BCE" is wider than a number: pick a step that leaves room, and keep minor ticks to the snap step.
+      var room = 84, fits = [10, 20, 25, 50, 100, 200, 250, 500, 1000, 2000, 5000].filter(function (k) { return k * board.unitX >= room; });
+      if (spec.labels !== undefined) { if (labelStep * board.unitX < room) labelStep = fits.filter(function (k) { return k % labelStep === 0; })[0] || labelStep; }
+      else labelStep = fits.filter(function (k) { return k >= spec.labelStep; })[0] || fits[fits.length - 1] || spec.labelStep;
+      // minor ticks at the snap step if they sit at least 6 px apart, else at a coarser division of the label step
+      minorStep = [spec.snapStep, labelStep / 10, labelStep / 5, labelStep / 2, labelStep].filter(function (k) { return k >= spec.snapStep && k <= labelStep && k * board.unitX >= 6; })[0] || labelStep;
+    }
     for (var v = Math.ceil(spec.lo / minorStep) * minorStep; v <= spec.hi + 1e-9; v = round(v + minorStep)) {
       var major = Math.abs(v / labelStep - Math.round(v / labelStep)) < 1e-9;
       board.create('segment', [[v, (major ? -9 : -5) * u], [v, (major ? 9 : 5) * u]], { strokeColor: major ? ink : muted, strokeWidth: major ? 2 : 1, fixed: true, highlight: false });
-      if (major) board.create('text', [v, -24 * u, show(v)], { anchorX: 'middle', anchorY: 'middle', cssClass: 'ticklabel nlnum' + (v === 0 ? ' nlzero' : ''), highlightCssClass: 'ticklabel nlnum', fixed: true, highlight: false });
+      if (major && !(spec.years && v === 0)) board.create('text', [v, -24 * u, show(v)], { anchorX: 'middle', anchorY: 'middle', cssClass: 'ticklabel nlnum' + (v === 0 ? ' nlzero' : ''), highlightCssClass: 'ticklabel nlnum', fixed: true, highlight: false });
     }
+    if (spec.years && spec.lo < 0 && spec.hi > 0) board.create('text', [0, -24 * u, 'no year 0'], { anchorX: 'middle', anchorY: 'middle', cssClass: 'nlnote', highlightCssClass: 'nlnote', fixed: true, highlight: false });
     if (spec.ctx) board.create('text', [(spec.lo + spec.hi) / 2, -52 * u, spec.ctx.name + (spec.ctx.unit ? ' (' + spec.ctx.unit + ')' : '')], { anchorX: 'middle', anchorY: 'middle', cssClass: 'axisname', highlightCssClass: 'axisname', fixed: true, highlight: false });
 
     objs = {};
@@ -210,7 +229,12 @@
   function rayDir() { return spec.ray.fixed ? spec.ray.dir : rayState.dir; }
   function rayAt() { return spec.ray.fixed ? spec.ray.at : objs[spec.ray.point] ? round(objs[spec.ray.point].X()) : 0; }
   function rayText() { var o = rayDir() > 0 ? (rayClosed() ? ' ≥ ' : ' > ') : (rayClosed() ? ' ≤ ' : ' < '); return spec.ray.letter + o + show(rayAt()); }
-  function landing(x) { var v = round(Math.round(x / spec.snapStep) * spec.snapStep); return Math.max(spec.lo, Math.min(spec.hi, v)); }
+  function landing(x, from) {
+    var v = round(Math.round(x / spec.snapStep) * spec.snapStep);
+    // no year 0: land on the nearest year either side (the side it was heading to, for a keyboard step)
+    if (spec.years && v === 0) v = (from !== undefined ? x < from : x < 0) ? -spec.snapStep : spec.snapStep;
+    return Math.max(spec.lo, Math.min(spec.hi, v));
+  }
 
   // Keyboard moves: a row to pick a point and step it with buttons or the arrow keys (dragging needs a pointer).
   function moveRow(panel, names, axes, step) {
@@ -265,7 +289,7 @@
     });
     if (spec.cmp) { ui.cmp = document.createElement('p'); ui.cmp.className = 'rulework'; ui.cmp.id = 'nlcompare'; ui.cmp.setAttribute('aria-live', 'polite'); panel.appendChild(ui.cmp); }
     moveRow(panel, spec.points.filter(function (p) { return p.drag; }).map(function (p) { return p.name; }), 1, function (n, dx) {
-      var P = objs[n]; P.moveTo([landing(P.X() + dx * spec.snapStep), 0]); B.moved = true; report();
+      var P = objs[n]; P.moveTo([landing(P.X() + dx * spec.snapStep, P.X()), 0]); B.moved = true; report();
     });
     if (spec.ray) {
       ui.ray = document.createElement('p'); ui.ray.className = 'rulework'; ui.ray.id = 'nlineq'; ui.ray.setAttribute('aria-live', 'polite'); panel.insertBefore(ui.ray, panel.firstChild);
@@ -290,6 +314,11 @@
   function compareText(sc) {
     var n1 = spec.cmp[0], n2 = spec.cmp[1], x1 = sc.points[n1][0], x2 = sc.points[n2][0];
     var lab = function (n) { var p = spec.points.filter(function (q) { return q.name === n; })[0]; return p && p.caption ? p.caption : n; };
+    if (spec.years) {
+      if (x1 === x2) return lab(n1) + ' and ' + lab(n2) + ' are in the same year, ' + show(x1) + '.';
+      var e = x1 < x2 ? n1 : n2, l = x1 < x2 ? n2 : n1;
+      return lab(e) + ' (' + show(Math.min(x1, x2)) + ') is further left, so it came before ' + lab(l) + ' (' + show(Math.max(x1, x2)) + ').';
+    }
     if (x1 === x2) return show(x1) + ' = ' + show(x2) + ': ' + lab(n1) + ' and ' + lab(n2) + ' are at the same place.';
     var less = x1 < x2 ? n1 : n2, more = x1 < x2 ? n2 : n1;
     return show(x1) + (x1 < x2 ? ' < ' : ' > ') + show(x2) + ': ' + lab(less) + ' is further left, so it is less than ' + lab(more) + '.';
@@ -331,7 +360,7 @@
 
   B.widget('numberline', {
     sections: ['board', 'gpanel'],
-    label: function (s) { return 'A number line from ' + show(Number(String(s.range).split(',')[0]) || 0) + ' to ' + show(Number(String(s.range).split(',')[1]) || 0); },
+    label: function (s) { var r = String(s.range).split(','), a = Number(r[0]) || 0, b = Number(r[1]) || 0, y = /^(on|yes|true)$/i.test(String(s.years || '').trim()); return y ? 'A timeline from ' + yr(a) + ' to ' + yr(b) : 'A number line from ' + dec(a) + ' to ' + dec(b); },
     parse: parse,
     start: function (fresh) {
       spec = B.spec;

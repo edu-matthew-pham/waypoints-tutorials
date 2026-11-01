@@ -76,22 +76,25 @@ tasks:
   - check:
       type: question
       q: "Why are the offspring from sexual reproduction different from each other?"
-      options: ["Each gets a random one of each parent's two copies of every gene, so each gets a different combination", "Some offspring get more genes", "The environment changes their genes", "One parent's genes are stronger"]
+      options: ["Each gets a random mix of its parents' gene copies", "Some offspring get more genes than others", "The environment changes their genes", "One parent's genes are stronger"]
       answer: 0
       feedback: [null, "Every offspring gets the same number: one copy from each parent.", "On the board, nothing in the environment changed.", "Which copy each gets is random, not a contest."]
+      explain: "Each offspring gets a random one of each parent's two copies of every gene, so each gets a different combination."
     hint: ["Each parent on the board has two different copies of every gene, so ask which of those two copies one offspring could have got from each of them.", "Compare the letters under two offspring that look different, and see whether they got the same copies or different ones."]
   - check:
       type: question
       q: "A new disease kills plants with one particular set of genes. Which population is more likely to survive?"
-      options: ["A population from sexual reproduction: some individuals are likely to have genes that resist it", "A population of clones: they are all strong", "Both the same"]
+      options: ["The sexual population: some may have resistant genes", "The clones: they all come from one strong parent", "Both the same: a disease kills either kind"]
       answer: 0
       feedback: [null, "If the clone's genes are vulnerable, every clone is.", "Variation is what makes the difference."]
+      explain: "Sexual reproduction makes varied offspring, so some individuals are likely to have genes that resist the disease. Clones share one set of genes."
   - check:
       type: question
       q: "A cod releases millions of eggs into the sea and leaves them. A kangaroo raises one joey at a time in her pouch for months. Why do both strategies work?"
-      options: ["A parent has limited energy: the cod spreads it over millions of eggs that mostly die, the kangaroo puts it into one joey likely to survive", "More offspring is always better, so the cod's way is best", "The kangaroo has one joey because there isn't enough food in Australia", "The cod's eggs are clones, so they don't need care"]
+      options: ["A parent's energy goes into many eggs or into care for one", "More offspring is always better, so the cod's way is best", "The kangaroo has one joey because there isn't enough food in Australia", "The cod's eggs are clones, so they don't need care"]
       answer: 0
       feedback: [null, "Almost every cod egg dies; the joey's care makes up for having just one.", "Food matters, but the trade-off is energy: what a parent spends on care it can't spend on more offspring.", "Cod reproduce sexually, and each fertilised egg is different from the others."]
+      explain: "A parent has limited energy: the cod spreads it over millions of eggs that mostly die, and the kangaroo puts it into one joey that is likely to survive."
   - check: { type: reflect, text: "I can explain why sexual reproduction makes varied offspring and asexual reproduction makes clones, with an advantage of each." }
 ```
 
@@ -116,9 +119,10 @@ insight: "Weighing speed against variation in contexts shows each strategy has a
 check:
   type: question
   q: "Aphids reproduce asexually all summer, then sexually in autumn before winter. Why might that be useful?"
-  options: ["Fast cloning while conditions are good; variation before the harsh, changing winter", "They run out of partners in summer", "Cloning only works in warm weather", "It makes no difference"]
+  options: ["Fast cloning in good times; variation before winter", "They run out of partners in summer", "Cloning only works in warm weather", "It makes no difference which way they breed"]
   answer: 0
   feedback: [null, "Aphids are everywhere in summer.", "The reason is speed now, variation for later.", "The switch is useful."]
+  explain: "Cloning is fast while conditions are good. Before the harsh, changing winter, sexual reproduction makes varied offspring, some of which may cope better."
 ```
 
 ## Elaborate: bananas
@@ -130,7 +134,7 @@ insight: "A real case where a lack of variation threatens a crop applies the sur
 check:
   type: question
   q: "Nearly all supermarket bananas (Cavendish) are clones grown from cuttings. Panama disease is spreading through banana farms. Why are growers worried?"
-  options: ["The clones all have the same genes, so if one is vulnerable, every plant is", "Clones grow too slowly", "Clones can't make bananas", "Disease only affects clones"]
+  options: ["The clones share genes, so if one is vulnerable, all are", "Clones grow too slowly to replace sick plants", "Clones can't make bananas", "Disease only affects clones"]
   answer: 0
   feedback: [null, "Banana clones grow perfectly well, so speed isn't the worry.", "They fruit normally, which is why farms grow them.", "Varied bananas can catch it too, but some of them resist it, while a field of clones all share the same weakness."]
   explain: "This happened before: the Gros Michel banana was wiped out of commercial farming in the 1950s by an earlier strain of Panama disease."
@@ -146,17 +150,17 @@ tasks:
   - check:
       type: question
       q: "Why did a Cavendish banana that resists Tropical Race 4 become a research focus in Australia?"
-      options: ["Society needed it: a fruit most Australians eat, and many growers' farms and jobs, were at risk from a disease with no cure", "Scientists research only what interests them, whatever anyone needs", "It was the quickest, easiest banana research to do", "A law says every crop must be gene-modified"]
+      options: ["Society needed it: a popular fruit and many jobs were at risk", "Scientists research only what interests them, whatever anyone needs", "It was the quickest, easiest banana research to do", "A law says every crop must be gene-modified"]
       answer: 0
       feedback: [null, "Curiosity matters, but funders, industry and governments steer research towards urgent needs.", "It took many years of lab work and field trials.", "There is no such law: most crops are not gene-modified."]
-      explain: "Research costs money and time. Needs that matter to many people, such as food and jobs, attract the funding and the effort."
+      explain: "A fruit most Australians eat, and many growers' farms and jobs, were at risk from a disease with no cure. Research costs money and time. Needs that matter to many people, such as food and jobs, attract the funding and the effort."
   - check:
       type: question
       q: "Some people don't want to eat gene-modified food. How can a value like that influence the research?"
-      options: ["It can steer researchers towards other methods as well, such as breeding resistant bananas, and affect whether a GM banana is ever grown", "It can't: people's values never affect research", "It changes how fast the fungus spreads", "It makes the resistant banana unsafe to eat"]
+      options: ["It can steer research towards other methods, such as breeding", "It can't: people's values never affect research", "It changes how fast the fungus spreads", "It makes the resistant banana unsafe to eat"]
       answer: 0
       feedback: [null, "Researchers and funders watch what people will accept: a banana nobody buys solves nothing.", "Values change people's choices, not the fungus.", "Safety is judged by regulators from evidence, not by opinion."]
-      explain: "Society's values shape which questions get asked, which methods are used and whether a result is taken up."
+      explain: "Values can steer researchers towards other methods as well, such as breeding resistant bananas, and affect whether a GM banana is ever grown. Society's values shape which questions get asked, which methods are used and whether a result is taken up."
 ```
 
 ### The need

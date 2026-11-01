@@ -97,7 +97,7 @@ tasks:
   - check:
       type: question
       q: "What is a spark, in terms of electrons?"
-      options: ["Extra electrons rushing across to neutralise a charge imbalance", "Protons jumping across a gap", "Heat from friction"]
+      options: ["Electrons rushing across to even out a charge imbalance", "Protons jumping across the gap to the other object", "Heat from the friction that charged the objects"]
       answer: 0
       feedback: [null, "Protons don't move in this way.", "Friction charged the objects; the spark is the discharge."]
       explain: "When the charge imbalance is big enough, electrons jump the gap all at once to even things out: a spark, or on a huge scale, lightning."
@@ -152,10 +152,10 @@ insight: "Lightning applies electron transfer and discharge at a scale the stude
 check:
   type: question
   q: "In a thunderstorm, ice and water particles rub past each other and charge builds up in the cloud. What is lightning?"
-  options: ["A huge discharge: electrons rushing between the cloud and the ground (or another cloud) to neutralise the charge imbalance", "Positive charge falling from the cloud", "Heat energy escaping from the cloud"]
+  options: ["A huge discharge: electrons rushing to even out the charge", "Positive charge (protons) falling from the cloud to the ground", "Heat energy escaping from the cloud"]
   answer: 0
   feedback: [null, "Protons aren't the charges that move; electrons are.", "The heat and light come from the discharge, not the other way round."]
-  explain: "It is the same idea as the spark from the balloon, with far more charge and a much longer path."
+  explain: "Electrons rush between the cloud and the ground (or another cloud) to neutralise the charge imbalance. It is the same idea as the spark from the balloon, with far more charge and a much longer path."
 ```
 
 ## Evaluate: look back

@@ -133,9 +133,10 @@ insight: "Removing the nucleus tests the 'control centre' idea by its consequenc
 check:
   type: question
   q: "Scientists removed the nucleus from a single-celled organism (an amoeba). It kept moving for a few days, then died and could not divide. What does this show?"
-  options: ["The nucleus holds the instructions the cell needs to keep making what it needs and to reproduce", "The nucleus is needed to move", "The membrane is the control centre"]
+  options: ["The nucleus holds the cell's instructions", "The nucleus is needed to move", "The membrane is the control centre"]
   answer: 0
   feedback: [null, "It kept moving for a while without one.", "The membrane was still there, and the cell still died."]
+  explain: "Without the nucleus's instructions the cell can't keep making what it needs, so it dies, and it can't reproduce."
 ```
 
 ## Evaluate: look back

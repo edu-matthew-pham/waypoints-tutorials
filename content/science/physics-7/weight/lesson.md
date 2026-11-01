@@ -90,7 +90,7 @@ tasks:
   - check:
       type: question
       q: "Why is the astronaut's weight smaller on the Moon?"
-      options: ["The Moon has much less mass than Earth, so its gravity pulls less (smaller g)", "There is no air on the Moon", "She has less mass there", "The Moon is further from the Sun"]
+      options: ["The Moon's gravity is weaker (smaller g)", "There is no air on the Moon", "She has less mass there", "The Moon is further from the Sun"]
       answer: 0
       feedback: [null, "Air doesn't cause weight, since things weigh the same in a vacuum chamber on Earth.", "Her mass hasn't changed, because she's still made of the same matter.", "The distance from the Sun isn't the reason, because what matters here is the Moon's own gravity."]
       explain: "Gravity depends on mass, and the Moon has only about 1/80 of Earth's mass and is also much smaller, which together make its g just 1.6 N/kg."
@@ -136,10 +136,10 @@ tasks:
   - check:
       type: question
       q: "A rover's wheels are designed for its weight on Mars. It is sent to Jupiter instead (if it could land). What is the problem?"
-      options: ["Its weight would be over six times bigger, so its wheels and legs might collapse", "Its mass would be bigger, so it would need more fuel", "Nothing: weight is the same everywhere"]
+      options: ["Its weight would be over six times bigger", "Its mass would be bigger, so it would need more fuel", "Nothing: weight is the same everywhere"]
       answer: 0
       feedback: [null, "Its mass stays the same, and it's the weight that changes.", "Weight depends on g, which is 24.8 N/kg on Jupiter and 3.7 N/kg on Mars."]
-      explain: "Dividing 24.8 by 3.7 gives about 6.7, so its weight would be nearly seven times bigger."
+      explain: "Dividing 24.8 by 3.7 gives about 6.7, so its weight would be nearly seven times bigger, and its wheels and legs might collapse."
     hint: ["Compare g for Mars and for Jupiter on the board and ask how many times bigger one is than the other.", "The rover itself isn't changing, so ask which of its properties does change."]
 ```
 

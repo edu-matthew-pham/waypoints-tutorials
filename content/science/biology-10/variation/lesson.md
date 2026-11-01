@@ -126,9 +126,10 @@ insight: "Questioning a sample's size and fairness uses the board's measurements
 check:
   type: question
   q: "Someone measures only the 5 easiest-to-spot beetles and says the population is mostly dark. What's wrong?"
-  options: ["The sample is small and biased: the easiest beetles to spot aren't typical", "Nothing: 5 is enough", "Beetles can't be measured", "They should have measured only pale beetles"]
+  options: ["The sample is too small and not typical", "Nothing: 5 is enough", "Beetles can't be measured", "They should have measured only pale beetles"]
   answer: 0
   feedback: [null, "A small, biased sample can mislead.", "They can; the problem is which ones and how many.", "That's biased the other way."]
+  explain: "The sample is small and biased: the easiest beetles to spot aren't typical of the population."
 ```
 
 ## Evaluate: look back

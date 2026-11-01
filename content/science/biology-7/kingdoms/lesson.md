@@ -81,9 +81,10 @@ tasks:
   - check:
       type: question
       q: "Which feature best separates plants from fungi?"
-      options: ["Plants make their own food using sunlight; fungi absorb food from other material", "Plants grow in soil; fungi don't", "Fungi are smaller than plants"]
+      options: ["Plants make food from sunlight; fungi don't", "Plants grow in soil; fungi don't", "Fungi are smaller than plants"]
       answer: 0
       feedback: [null, "Many fungi grow in soil too, and some plants don't, so where they grow can't be what separates them.", "Some fungi are huge underground and some plants are tiny, so size doesn't separate them either."]
+      explain: "Plants make their own food using sunlight; fungi absorb food from other material, such as dead wood."
   - check:
       type: question
       q: "Why do scientists use observable features to classify?"
@@ -130,7 +131,7 @@ insight: "The reasons for classifying are what the kingdoms are built for, and t
 check:
   type: question
   q: "Looking back at why scientists classify: which is a reason to group living things?"
-  options: ["To use names every scientist understands, and to show how organisms are related", "To decide which organisms are better than others", "To put them in alphabetical order", "To make the living world look tidy"]
+  options: ["To share names and show how organisms are related", "To decide which organisms are better than others", "To put them in alphabetical order", "To make the living world look tidy"]
   answer: 0
   feedback: [null, "Groups describe features and relationships, not how good an organism is, so that can't be the reason.", "Alphabetical order would only tell you about the names, and nothing about the organisms themselves.", "Tidiness isn't the point, because a classification has to be useful for something real."]
   explain: "Scientists classify to identify organisms, to communicate clearly with one name, and to show how organisms are related."
@@ -144,10 +145,10 @@ insight: "A boundary case shows that the kingdom model is a human tool with limi
 check:
   type: question
   q: "Euglena is a single cell that swims with a tail, and it is green: it makes food from sunlight, but also eats when it is dark. Why is it hard to classify?"
-  options: ["It has features of both plants (makes food) and animals (moves and eats)", "It is too small to see", "It doesn't have any features"]
+  options: ["It has features of both plants and animals", "It is too small to see", "It doesn't have any features"]
   answer: 0
   feedback: [null, "A microscope lets us see it clearly, so size isn't what makes it hard.", "It has plenty of features, so the difficulty must lie in how they fit the groups we have."]
-  explain: "It's placed with the protists, but it shows why classification systems keep changing as we learn more."
+  explain: "It makes food like a plant, but moves and eats like an animal. It's placed with the protists, but it shows why classification systems keep changing as we learn more."
 ```
 
 ## Elaborate: the full address of a kangaroo

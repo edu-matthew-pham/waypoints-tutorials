@@ -105,22 +105,22 @@ tasks:
   - check:
       type: question
       q: "Why is the symbol for cobalt written Co, not CO?"
-      options: ["A symbol is one capital letter, or a capital and a small letter; CO means a carbon atom joined to an oxygen atom", "It doesn't matter how you write it", "CO is the symbol for cobalt gas"]
+      options: ["Co is one element; CO is two symbols, C and O", "It doesn't matter how you write it", "CO is the symbol for cobalt gas"]
       answer: 0
       feedback: [null, "It matters: CO and Co are different substances.", "There is no such gas; CO is carbon monoxide, a compound."]
-      explain: "Each symbol starts with a capital. Co is one element (cobalt); CO is two symbols, C and O: carbon monoxide."
+      explain: "A symbol is one capital letter, or a capital and a small letter. Co is one element (cobalt); CO is two symbols, C and O: carbon monoxide."
     hint: "How many capital letters can you see in CO, and what does each capital letter start?"
   - check:
       type: question
       q: "What does the periodic table show?"
-      options: ["Every element, one box each, in order of atomic number, with similar elements in columns", "Every substance, including compounds", "Only the elements found in living things"]
+      options: ["Every element, in order of atomic number", "Every substance, including compounds", "Only the elements found in living things"]
       answer: 0
       feedback: [null, "Compounds aren't on it: only elements.", "It lists all 118 known elements."]
-      explain: "About 118 elements are known; around 90 occur naturally. Everything else is made from them."
+      explain: "It shows every element, one box each, in order of atomic number, with similar elements in columns. About 118 elements are known; around 90 occur naturally. Everything else is made from them."
   - check:
       type: question
       q: "A box on the periodic table shows 26, Fe and Iron. What does each part tell you?"
-      options: ["26 is the atomic number (its place in the table), Fe is the symbol and Iron is the name", "26 is the number of atoms in one particle of iron", "Fe is the formula of a compound of iron", "26 is the temperature iron melts at"]
+      options: ["26 is the atomic number, Fe the symbol, Iron the name", "26 is the number of atoms in one particle of iron", "Fe is the formula of a compound of iron", "26 is the temperature iron melts at"]
       answer: 0
       feedback: [null, "The 26 isn't an atom count: it is iron's place in the table, its atomic number.", "Fe is one capital and one small letter: the symbol of one element. A compound's formula has two or more symbols.", "Iron melts at about 1500 °C. The whole number in the box is its atomic number: its place in order."]
       explain: "Each box gives an element's atomic number, symbol and name (often its atomic mass too). Find the name and you have the symbol, or the other way round."
@@ -155,10 +155,10 @@ tasks:
   - check:
       type: question
       q: "CO is a poisonous gas from faulty heaters. Cobalt (Co) is a hard, shiny metal. How does the board show CO is not an element?"
-      options: ["Each particle has a carbon atom and an oxygen atom: two types", "The particles are moving", "It has two letters"]
+      options: ["Each particle has two types of atom", "The particles are moving", "It has two letters"]
       answer: 0
       feedback: [null, "All gas particles move.", "Co has two letters too, and it is an element."]
-      explain: "Two types of atom joined: a compound. Two capital letters in a formula mean two elements."
+      explain: "Each particle has a carbon atom and an oxygen atom: two types of atom joined, so a compound. Two capital letters in a formula mean two elements."
     hint: "Click one CO particle and look at its two balls and the key under the board. Are they the same type of atom?"
 ```
 
@@ -178,10 +178,10 @@ tasks:
   - check:
       type: question
       q: "Ozone (O₃) and oxygen (O₂) are both made of only oxygen atoms, but ozone protects us from ultraviolet light high in the atmosphere and is harmful to breathe. What does this show?"
-      options: ["One element can form different substances when its atoms join in different ways", "Ozone must be a compound", "O₃ contains a different type of oxygen atom"]
+      options: ["One element can form different substances", "Ozone must be a compound", "O₃ contains a different type of oxygen atom"]
       answer: 0
       feedback: [null, "Only one type of atom: it is an element.", "All the atoms are ordinary oxygen atoms."]
-      explain: "Carbon does the same: diamond and graphite are both pure carbon. How the atoms are joined changes the properties."
+      explain: "Oxygen atoms joined in pairs (O₂) or threes (O₃) make two different substances. Carbon does the same: diamond and graphite are both pure carbon. How the atoms are joined changes the properties."
 ```
 
 ### Oxygen and ozone

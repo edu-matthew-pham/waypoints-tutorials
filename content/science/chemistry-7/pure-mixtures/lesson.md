@@ -83,10 +83,10 @@ tasks:
   - check:
       type: question
       q: "So is \"100% pure\" orange juice a pure substance?"
-      options: ["Yes, nothing has been added", "No: it contains water, sugars, acids and many other kinds of particles"]
+      options: ["Yes, nothing has been added", "No: it has many kinds of particle"]
       answer: 1
       feedback: ["That is what pure means when you're shopping, but it isn't the scientific meaning.", null]
-      explain: "The word \"pure\" on a label only means that nothing was added, which is not the same as having one kind of particle."
+      explain: "It contains water, sugars, acids and many other kinds of particles. The word \"pure\" on a label only means that nothing was added, which is not the same as having one kind of particle."
     hint: ["Is the label using the word the way a shopper does or the way a scientist does?", "Think about what's in a glass of juice besides water, and whether it's all one kind of particle."]
   - check: { type: reflect, text: "I wrote the difference between a pure substance and a mixture using particles, with salt water as an example." }
 ```
@@ -174,9 +174,9 @@ tasks:
   - check:
       type: question
       q: "In a soft drink, what are the solutes?"
-      options: ["Water", "Sugar and carbon dioxide gas"]
+      options: ["Water", "Sugar and carbon dioxide gas", "Water and sugar", "Carbon dioxide only"]
       answer: 1
-      feedback: ["Water does the dissolving, so it is the solvent, and the solutes are what dissolves in it.", null]
+      feedback: ["Water does the dissolving, so it is the solvent, and the solutes are what dissolves in it.", null, "Sugar is a solute, but water does the dissolving, so it is the solvent.", "Carbon dioxide is one solute, but the sugar is dissolved in the water too."]
       explain: "A gas can be a solute too, and the dissolved carbon dioxide is what makes the drink fizz."
 ```
 
@@ -212,10 +212,10 @@ tasks:
   - check:
       type: question
       q: "Which statement is true of every pure substance?"
-      options: ["It always has the same make-up, with one kind of particle", "It looks shiny and even", "It occurs naturally"]
+      options: ["It has only one kind of particle", "It looks shiny and even", "It occurs naturally"]
       answer: 0
       feedback: [null, "Salt water looks even all the way through and is still a mixture, so looks can't tell you.", "Distilled water is made by people and is pure, while seawater is natural and is a mixture, so that isn't the rule."]
-      explain: "That is what makes the definition useful: a pure substance's make-up can't vary."
+      explain: "A pure substance has one kind of particle, so its make-up is always the same. That is what makes the definition useful: a pure substance's make-up can't vary."
 ```
 
 ### Stainless steel

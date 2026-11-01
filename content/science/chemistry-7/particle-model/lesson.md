@@ -202,10 +202,10 @@ tasks:
   - check:
       type: question
       q: "In 1827 the botanist Robert Brown saw tiny grains from pollen jiggling in water under a microscope, in random directions, with nothing stirring the water. In 1905 Albert Einstein explained it with particles. What causes the jiggling?"
-      options: ["The grains are alive and swimming", "Water particles are always moving and keep bumping into the grains", "The water is flowing slowly"]
+      options: ["The grains are alive and swimming", "Water particles keep bumping into the grains", "The water is flowing slowly"]
       answer: 1
       feedback: ["Brown checked this: grains from long-dead plants, and even specks of dust, jiggled the same way.", null, "The jiggling goes in random directions, not along with a flow."]
-      explain: "This is Brownian motion, caused by millions of tiny bumps from moving water particles, and it was early strong evidence that particles are real and always moving."
+      explain: "This is Brownian motion, caused by millions of tiny bumps from water particles that are always moving, and it was early strong evidence that particles are real and always moving."
 ```
 
 ### What it explains

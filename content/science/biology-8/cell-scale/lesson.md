@@ -72,10 +72,10 @@ tasks:
   - check:
       type: question
       q: "Why can't you see your own skin cells?"
-      options: ["Each is about 0.02 mm across, smaller than the 0.1 mm or so the eye can see", "They are see-through", "They are hidden under a layer of dead skin"]
+      options: ["They are too small for the eye to see", "They are see-through", "They are hidden under a layer of dead skin"]
       answer: 0
       feedback: [null, "Many cells are pale, but the real reason is size.", "The outer skin is itself made of cells, and you can't see those either."]
-      explain: "Your eye can just make out things about 0.1 mm across (the width of a hair). Most cells are about 2 to 10 times smaller, and bacteria about 50 times smaller."
+      explain: "A skin cell is about 0.02 mm across. Your eye can just make out things about 0.1 mm across (the width of a hair). Most cells are about 2 to 10 times smaller, and bacteria about 50 times smaller."
   - check:
       type: number
       q: "A cell is 0.02 mm wide. How many cells, side by side, would stretch across 1 mm?"
@@ -159,10 +159,10 @@ tasks:
   - check:
       type: question
       q: "Hooke called the boxes in cork 'cells' after small rooms. Leeuwenhoek's better lenses showed living things moving in pond water. What did the two discoveries together suggest?"
-      options: ["Living things are made of tiny units, and some living things are just one of them", "Only plants are made of cells", "Cells are only found in dead things"]
+      options: ["Living things are made of tiny units", "Only plants are made of cells", "Cells are only found in dead things"]
       answer: 0
       feedback: [null, "Leeuwenhoek also saw animal cells, such as blood cells.", "Leeuwenhoek's 'animalcules' were alive and moving."]
-      explain: "Later scientists (Schleiden, Schwann and others, in the 1800s) brought this evidence together as cell theory."
+      explain: "Cork showed living things are built of tiny units; pond water showed some living things are just one of them. Later scientists (Schleiden, Schwann and others, in the 1800s) brought this evidence together as cell theory."
 ```
 
 ### Cork cells

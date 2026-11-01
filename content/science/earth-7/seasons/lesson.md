@@ -122,9 +122,10 @@ tasks:
   - check:
       type: question
       q: "On 22 June, London has about 16½ hours of daylight and Canberra about 9½. Why?"
-      options: ["The Northern Hemisphere leans towards the sun in June, and the Southern Hemisphere leans away", "London is closer to the sun", "London is nearer the equator", "The sun is bigger in London"]
+      options: ["The north leans towards the sun in June", "London is closer to the sun", "London is nearer the equator", "London is further north, so its days are always longer"]
       answer: 0
-      feedback: [null, "Both cities are the same distance from the sun, so that can't explain it.", "London is actually farther from the equator than Canberra is.", "It's the same sun shining on both cities."]
+      feedback: [null, "Both cities are the same distance from the sun, so that can't explain it.", "London is actually farther from the equator than Canberra is.", "It is further north, but that only matters because of the tilt: in December, London's days are the short ones."]
+      explain: "In June the Northern Hemisphere leans towards the sun and the Southern Hemisphere leans away, so London gets long days and Canberra short ones."
     hint: ["Both cities are the same distance from the sun on 22 June, so what could be different about how each one is facing it?", "Look at the side view on the board for each hemisphere, and at the hours of daylight for each city."]
 ```
 
@@ -144,9 +145,10 @@ tasks:
   - check:
       type: question
       q: "With no tilt, what happens to Canberra's seasons?"
-      options: ["They disappear: about 12 hours of daylight and the same noon sun all year", "They get stronger", "They swap", "Nothing changes"]
+      options: ["They disappear", "They get stronger", "They swap", "Nothing changes"]
       answer: 0
-      feedback: [null, "Check the daylight at three different dates.", "Try a bigger tilt, because that's what makes the seasons stronger.", "Look again, because the daylight stops changing through the year."]
+      feedback: [null, "A bigger tilt makes seasons stronger, so try 0° and watch what the daylight does.", "Nothing flips the hemispheres here, so check the daylight at three different dates.", "Look again, because the daylight stops changing through the year."]
+      explain: "With no tilt, Canberra gets about 12 hours of daylight and the same noon sun all year, so the seasons disappear."
     hint: ["With the tilt gone, what would make one month different from another?", "Set the tilt to 0° and slide the date through the year, watching the daylight hours and the noon sun in the line under the board."]
 ```
 

@@ -92,10 +92,10 @@ tasks:
   - check:
       type: question
       q: "Why does a straw in water look bent at the surface?"
-      options: ["Light from the part under water bends as it leaves the water, so it seems to come from a different place", "The water bends the straw", "Water makes light go faster"]
+      options: ["Light bends as it leaves the water, so the straw looks shifted", "The water really bends the straw at the surface", "Light speeds up in water, so the straw looks bent"]
       answer: 0
       feedback: [null, "The straw is straight; it is the light that bends.", "Light is slower in water than in air."]
-      explain: "Light leaving the water speeds up and bends away from the normal. Your brain assumes it travelled in a straight line, so the underwater part seems shifted."
+      explain: "Light from the part under water bends as it leaves the water: it speeds up and bends away from the normal. Your brain assumes it travelled in a straight line, so the underwater part seems shifted."
   - check: { type: reflect, text: "I can use the wave model to explain reflection and refraction." }
 ```
 
@@ -146,9 +146,9 @@ insight: "Total internal reflection is the limit of refraction; fibre optics sho
 check:
   type: question
   q: "If light inside glass hits the surface at a very shallow angle, it can't get out: it reflects back in. This is why light can run along a glass fibre for kilometres. What makes fibre optic cables useful?"
-  options: ["They carry signals as light, which has a high frequency and so can carry a lot of information", "They are cheaper than copper wire", "Light moves faster in glass than in air"]
+  options: ["Light's high frequency lets it carry a lot of information", "Glass carries electric current better than copper", "Light moves faster in glass than in air"]
   answer: 0
-  feedback: [null, "Cost isn't the reason.", "Light is slower in glass."]
+  feedback: [null, "Glass is an insulator: the signal travels as light, not current.", "Light is slower in glass."]
   explain: "Light waves vibrate hundreds of trillions of times a second, so they can carry far more information than radio waves or electric currents in wires."
 ```
 

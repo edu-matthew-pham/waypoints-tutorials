@@ -4,7 +4,7 @@ summary: "What is built so far in Year 7 History (a preview on working with sour
 ---
 ## What is here
 
-**This is a preview.** Nine Year 7 courses and a catch-up are built, and none has been tried with a class.
+**This is a preview.** Ten Year 7 courses and a catch-up are built, and none has been tried with a class.
 
 - [**Source origin and purpose**](../history/sources-7/): four lessons for AC9HH7S03, with an optional warm-up on primary and secondary sources (AC9HH7S02). Who made a source and what it shows, why it was made and what was going on, then all the questions together on one source and what it can and cannot tell us.
 - [**Source usefulness**](../history/usefulness-7/): three lessons for AC9HH7S04, in waypoint order: separating factual claims from opinions and applying the four accuracy questions (hinge), distinguishing accuracy from usefulness for a specific inquiry question (hinge), and combining both into an integrated evidence assessment.
@@ -15,6 +15,7 @@ summary: "What is built so far in Year 7 History (a preview on working with sour
 - [**Contact and conflict**](../history/contact-7/): three lessons for AC9HH7K12: why the Qin, the Han and the Xiongnu met and fought, usually for several reasons at once; what conquest, trade and the heqin peace agreements changed, for both sides; and how contact, even indirect contact between Rome and the Han, drove change. Swap-in cards for Egypt, Greece, Rome and India.
 - [**A significant individual**](../history/individual-7/): three lessons for AC9HH7K13: who Qin Shi Huang, the First Emperor, was and three tests of significance; his achievements and how each one changed the empire through officials and labourers (with the burning of books told according to Sima Qian); and his legacy, how his inscriptions and Han writers saw him, and why significant does not mean good. Swap-in cards for people from China, Egypt, Greece, Rome and India.
 - [**Early human migration**](../history/migration-7/): three lessons for AC9HH7K01: what the Out of Africa theory says and what 'theory' means; how changes in rainfall, deserts and sea levels are thought to have moved people over many generations; and how several kinds of evidence build an interpretation. Arrival on the Australian continent (AC9HH7K02) is not taught here; it stays with First Nations-led resources.
+- [**Time, cause and change**](../history/time-7/): three lessons for AC9HH7S05, in the Thinking historically pathway: BCE, CE and BP dates and timelines, with a timeline board (hinge); several causes of one event, long-term, short-term and the trigger, and its effects (hinge); and what changed and what stayed from the Qin to the Han, shown with dated sources.
 - [**Before Year 7 History**](../history/before-year-7/): one short Year 6 catch-up, *Can you trust this source?*, for a class that needs it before the Year 7 lessons.
 
 **Source origin and purpose** and **Source usefulness** use ancient China in the Qin and Han period as their model. **How we know** uses labelled, made-up excavations and reports, with a sourced Qin conservation example and an optional Rosetta Stone example. The questions carry into the society your class studies.
@@ -33,7 +34,7 @@ We do not write explanations of First Nations history or culture ourselves. Teac
 
 ## What is planned
 
-These are plans, not promises. Every ancient-world lens is now built. Next are History's other skills: cause and continuity (AC9HH7S05), perspectives (AC9HH7S06) and interpretations (AC9HH7S07).
+These are plans, not promises. Every ancient-world lens is now built. Cause and continuity (AC9HH7S05) is built; next are perspectives (AC9HH7S06) and interpretations (AC9HH7S07).
 
 ## For you
 

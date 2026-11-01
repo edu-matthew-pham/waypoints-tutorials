@@ -50,7 +50,7 @@ tasks:
   - check:
       type: question
       q: "First, a recap. A pot of soup is heated from below. What does the soup at the bottom do, and why?"
-      options: ["It rises, because warm soup has spread out and is less dense than the cooler soup above", "It rises, because heat always rises", "It stays put: only the heat moves up", "It sinks, because hot soup is heavier"]
+      options: ["It rises, because warm soup is less dense", "It rises, because heat always rises", "It stays put: only the heat moves up", "It sinks, because hot soup is heavier"]
       answer: 0
       feedback: [null, "Heat on its own does not rise; something has to carry it. What is moving up?", "In a liquid the warm part itself moves. Watch the particles on the board.", "Heating makes the particles spread out, so the same mass takes more space: it gets less dense, not heavier."]
       explain: "Warm fluid expands, so it is less dense and rises; cooler, denser fluid sinks to take its place. This loop is a convection current. The mantle does the same, only in solid rock and very slowly."

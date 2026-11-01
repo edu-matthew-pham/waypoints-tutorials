@@ -82,18 +82,18 @@ tasks:
   - check:
       type: question
       q: "Why does filter paper catch the sand but not the salt?"
-      options: ["Salt is lighter than sand", "Sand grains are too big for the tiny holes; dissolved salt is spread out as single particles small enough to pass through", "The salt has disappeared", "Sand sticks to the paper"]
+      options: ["Salt is lighter than sand", "Sand grains are too big for the holes", "The salt has disappeared", "Sand sticks to the paper"]
       answer: 1
       feedback: ["Weight isn't what a filter tests, because the holes in the paper test something else about the particles.", null, "The salt is still in the water, and if you evaporate the water it comes back.", "Sand doesn't get caught by sticking to the paper, so think about what the holes do."]
-      explain: "Filter paper sorts the particles by size, so the big sand grains stay behind and the tiny dissolved salt particles pass through."
+      explain: "Filter paper sorts the particles by size. Dissolved salt is spread out as single particles small enough to pass through, so the big sand grains stay behind and the tiny salt particles go through."
     hint: ["What is the filter paper actually testing, how heavy something is or something else about it?", "Try Filter paper on the bench and read the line under the board about the holes and what gets through."]
   - check:
       type: question
       q: "Why did the magnet have to come before the filter paper?"
-      options: ["Iron and sand are both too big for the filter, so filtering first would trap them together", "Magnets don't work underwater", "It's the rule for separating"]
+      options: ["Filtering would trap iron and sand together", "Magnets don't work underwater", "It's the rule for separating"]
       answer: 0
       feedback: [null, "Magnets work fine through water, so that isn't why the order matters.", "There is no fixed rule, because the order depends on the mixture and its properties."]
-      explain: "The magnet picks out just the iron first, so the filter then only has to catch the sand."
+      explain: "Iron and sand are both too big for the filter paper, so filtering first would catch them together. The magnet picks out just the iron first, so the filter then only has to catch the sand."
     hint: ["Try the filter paper on the bench before the magnet and see where the iron ends up.", "Then ask yourself whether you could still pull the iron away from the sand afterwards."]
   - check:
       type: question

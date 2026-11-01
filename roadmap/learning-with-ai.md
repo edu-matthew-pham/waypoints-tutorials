@@ -1,5 +1,7 @@
 # Roadmap: Learning with AI
 
+*Width in these courses (1 Nov 2026, Matthew): wider steps may add depth (studies, policy, law), worded by what they add and never by age, and never preview later lessons (`roadmap/rules.md` T10a). Earlier notes below that fold "Years 9–10" material into wider steps are fine under this; the "older students" wording is not.*
+
 Roadmap for the Learning with AI subject (`content/ai/`): two built courses, AI Foundations and Does AI Help Us Learn?, plus a teacher guide to choosing AI tools. Neither course has been tried with classes yet. The planning notes from before the courses were built (course architecture, the dice simulation plan, the original build order) are in `roadmap/archive/learning-with-ai-planning-to-2026-10-17.md`.
 
 Related files: `roadmap/ai-review-fixes.md` (course fixes still to do), `roadmap/ai-tools-handoff.md` (tools work), `roadmap/ai-foundations-evidence-audit.md` (evidence check of Foundations).

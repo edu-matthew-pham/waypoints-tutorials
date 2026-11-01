@@ -68,10 +68,10 @@ tasks:
   - check:
       type: question
       q: "Why does the plunger stop in the water syringe?"
-      options: ["The water particles are already close together, so there is almost no space to push them into", "The water particles are too hard to squash", "Water is heavier than air", "The water particles stop moving when pushed"]
+      options: ["There is almost no space between the particles", "The water particles are too hard to squash", "Water is heavier than air", "The water particles stop moving when pushed"]
       answer: 0
       feedback: [null, "Particles never squash in any state, and air particles don't squash either, so that can't explain the difference.", "Weight doesn't stop a plunger, so look at the particles on the board instead.", "Particles never stop moving, even when something pushes on them, so that isn't what stops the plunger."]
-      explain: "The particles stay the same size, and the plunger stops because there is no empty space left to push them into."
+      explain: "The water particles are already close together. They stay the same size, and the plunger stops because there is no empty space left to push them into."
     hint: ["When you pushed the water plunger, did any particle on the board look squashed, or was it something about the room they had?", "Push the water as far as it goes and watch the \"Space inside\" percentage under the board, then do the same with air to compare."]
   - check:
       type: question
@@ -100,10 +100,10 @@ insight: "Particles never change size: the same particles in a different arrange
 check:
   type: question
   q: "Looking back at the particle model: a drop of water is heated until it becomes steam. What happens to the water particles?"
-  options: ["They stay the same size, but move faster and spread far apart", "They get bigger", "They break into smaller pieces", "They disappear"]
+  options: ["They move faster and spread far apart", "They get bigger", "They break into smaller pieces", "They disappear"]
   answer: 0
   feedback: [null, "Particles never change size, so look for what else changes when water becomes steam.", "Steam is still water, so the particles haven't broken into anything smaller.", "Nothing is lost when water turns to steam, so the particles haven't disappeared."]
-  explain: "Ice, water and steam are made of the same particles, and only their arrangement and motion change, so any squashing comes from the space between them."
+  explain: "The particles stay the same size. Ice, water and steam are made of the same particles, and only their arrangement and motion change, so any squashing comes from the space between them."
 ```
 
 ## Elaborate: three substances
@@ -168,7 +168,7 @@ tasks:
   - check:
       type: question
       q: "Why did the gas mix faster?"
-      options: ["Gas particles move fast and have lots of space to move into", "Gas particles are smaller", "The liquid particles stop moving"]
+      options: ["Gas particles move fast with lots of space", "Gas particles are smaller", "The liquid particles stop moving"]
       answer: 0
       feedback: [null, "Particles of a substance are the same size in every state, so size isn't what makes the difference.", "Liquid particles never stop moving, so that can't be it."]
       explain: "Gas particles move fast and have plenty of space, but in the liquid the particles keep bumping into close neighbours, so they spread more slowly."

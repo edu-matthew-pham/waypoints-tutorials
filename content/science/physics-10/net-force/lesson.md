@@ -168,10 +168,10 @@ tasks:
   - check:
       type: question
       q: "The car's engine is still pushing with 1500 N, but it isn't speeding up. Why?"
-      options: ["Air and rolling resistance add up to 1500 N backward, so the net force is zero", "The engine's force is used up", "Moving things always slow down unless pushed harder"]
+      options: ["Resistance forces add up to 1500 N backward", "The engine's force is used up", "Moving things always slow down unless pushed harder"]
       answer: 0
       feedback: [null, "Forces aren't used up; they are balanced.", "With a net force of zero, the speed stays the same (next lesson)."]
-      explain: "Net force zero: no change in motion. The engine only needs to cancel the resistance to keep a steady speed."
+      explain: "Air and rolling resistance balance the engine, so the net force is zero: no change in motion. The engine only needs to cancel the resistance to keep a steady speed."
 ```
 
 ### Steady speed

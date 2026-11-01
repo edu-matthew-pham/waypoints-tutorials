@@ -78,16 +78,18 @@ tasks:
   - check:
       type: question
       q: "Why do the noble gases (group 18) hardly react?"
-      options: ["Their outer shells are full, so they don't tend to lose, gain or share electrons", "They are gases", "They have no electrons"]
+      options: ["Their outer shells are full", "They are gases, and gases don't react", "They have no electrons to share"]
       answer: 0
       feedback: [null, "Chlorine and fluorine are gases too, and very reactive.", "They have electrons: their shells are full."]
+      explain: "With full outer shells, they don't tend to lose, gain or share electrons."
     hint: ["Chlorine is a gas too and it's very reactive, so can being a gas be the reason?", "Click neon or argon on the table board and look at its outer shell."]
   - check:
       type: question
       q: "Element X is in group 17. What do you predict about it?"
-      options: ["Seven outer electrons; it gains one easily, so it is a reactive non-metal", "One outer electron; a reactive metal", "A full outer shell; unreactive"]
+      options: ["Seven outer electrons; a reactive non-metal", "One outer electron; a reactive metal", "A full outer shell; unreactive", "Seven outer electrons; it loses them easily"]
       answer: 0
-      feedback: [null, "That's group 1.", "That's group 18."]
+      feedback: [null, "That's group 1.", "That's group 18.", "Losing seven is hard: it gains one to fill its shell."]
+      explain: "With seven outer electrons it gains one easily, so it is a reactive non-metal, like chlorine."
   - check:
       type: question
       q: "Why do sodium (group 1) and chlorine (group 17) react together so readily?"
@@ -122,7 +124,7 @@ tasks:
   - check:
       type: question
       q: "Helium has only 2 electrons, not 8. Why is it in group 18?"
-      options: ["Its only shell holds 2, so its outer shell is full, like the other noble gases", "It's a mistake in the table", "Because it is a gas, like the other noble gases"]
+      options: ["Its only shell holds 2, so that shell is full", "It's a mistake in the table that was never fixed", "Because it is a gas, like the other noble gases"]
       answer: 0
       feedback: [null, "Its place is chosen by its behaviour and its full shell.", "Hydrogen, nitrogen and chlorine are gases too, but not in group 18: what helium shares with neon and argon is a full outer shell."]
 ```
@@ -140,10 +142,10 @@ insight: "A trend within a group (reactivity rising down group 1) extends the mo
 check:
   type: question
   q: "Potassium reacts with water much more violently than lithium. Why, when both have one outer electron?"
-  options: ["Potassium's outer electron is further from the nucleus, so it is held less tightly and lost more easily", "Potassium has more outer electrons", "Potassium is heavier"]
+  options: ["Its outer electron is further out, so it is easier to lose", "Potassium has more outer electrons", "Potassium is heavier, so it hits the water harder"]
   answer: 0
   feedback: [null, "Both have one; count them on the board.", "Mass isn't what decides how easily an electron is lost."]
-  explain: "More shells means the outer electron is further out and more shielded by the inner electrons: easier to lose, so more reactive."
+  explain: "Potassium's outer electron is held less tightly. More shells means the outer electron is further out and more shielded by the inner electrons: easier to lose, so more reactive."
 ```
 
 ## Evaluate: look back

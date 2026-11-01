@@ -1,0 +1,14 @@
+# Timeline for "BCE, CE and putting events in order" (numberline widget, years: on).
+# Negative values are BCE. Targets: A -480, B -220, C -120, D 10.
+
+# region: events
+widget: numberline
+years: on
+range: -600, 100
+snap: 10
+context: Years
+point A: 60, drag
+point B: -560, drag
+point C: -360, drag
+point D: -280, drag
+# endregion

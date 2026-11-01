@@ -89,18 +89,18 @@ tasks:
   - check:
       type: question
       q: "Why does carbon-14 burn in oxygen just like carbon-12?"
-      options: ["Reactions depend on the electrons, and both have 6 arranged the same way", "The neutrons do the reacting", "It doesn't: carbon-14 does not burn"]
+      options: ["Reactions depend on electrons, and both have 6", "The neutrons do the reacting, and both have 6", "It doesn't: carbon-14 does not burn"]
       answer: 0
-      feedback: [null, "Neutrons sit in the nucleus and take no part in reactions.", "It burns the same way: only its nucleus is different."]
-      explain: "Isotopes of an element have the same number of electrons, so they react in the same way. Only the nucleus differs."
+      feedback: [null, "Neutrons sit in the nucleus and take no part in reactions, and the isotopes have different numbers of them (6 and 8).", "It burns the same way: only its nucleus is different."]
+      explain: "Isotopes of an element have the same number of electrons, arranged the same way, so they react in the same way. Only the nucleus differs."
     hint: "When atoms join up in a reaction, which of their particles take part, and has carbon-14 got any more or fewer of those than carbon-12?"
   - check:
       type: question
       q: "Some isotopes are unstable. What does that mean?"
-      options: ["The nucleus will decay, giving out radiation and often becoming a different element", "The atom will react violently with water", "The electrons keep leaving the atom"]
+      options: ["The nucleus will decay, giving out radiation", "The atom will react violently with water", "The electrons keep leaving the atom"]
       answer: 0
       feedback: [null, "That is about reactions, which depend on electrons, not on the nucleus.", "Instability is about the nucleus, not the electrons."]
-      explain: "An unstable (radioactive) nucleus has a mix of protons and neutrons that does not last. It decays, giving out radiation. Most elements have both stable and unstable isotopes."
+      explain: "An unstable (radioactive) nucleus has a mix of protons and neutrons that does not last. It decays, giving out radiation and often becoming a different element. Most elements have both stable and unstable isotopes."
     hint: "Build carbon-14 again and read the line under the board, and notice which part of the atom it says is going to change."
   - check: { type: reflect, text: "I can say what isotopes are, what is the same and what is different about them, and use names like carbon-14." }
 ```
@@ -132,10 +132,10 @@ tasks:
   - check:
       type: question
       q: "Plants take in carbon dioxide, including a little made with carbon-14. Animals eat the plants. Why does that matter for dating old bones?"
-      options: ["Every living thing has the same small share of carbon-14; after death no new carbon-14 comes in, and what is there slowly decays", "Bones make carbon-14 after death", "Carbon-14 turns into carbon-12 as bones age"]
+      options: ["After death no new carbon-14 comes in, and it decays", "Bones keep making carbon-14 after death", "Carbon-14 turns into carbon-12 as bones age"]
       answer: 0
       feedback: [null, "Nothing makes new carbon-14 inside a dead body.", "Carbon-14 decays into nitrogen-14 (beta decay), not carbon-12."]
-      explain: "While alive, an animal or plant keeps topping up its carbon-14. After death the share falls steadily. Measuring how much is left tells how long ago it died (you will see how in the half-life lesson)."
+      explain: "Every living thing has the same small share of carbon-14. While alive, an animal or plant keeps topping up its carbon-14. After death the share falls steadily. Measuring how much is left tells how long ago it died (you will see how in the half-life lesson)."
 ```
 
 ### Making carbon-14

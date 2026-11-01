@@ -80,23 +80,25 @@ tasks:
   - check:
       type: question
       q: "Did any single beetle on the board change its colour?"
-      options: ["No: each beetle kept its colour; the population changed because of who survived and bred", "Yes, the survivors got paler", "Yes, the eaten ones got darker", "Only the babies changed"]
+      options: ["No: each beetle kept its colour", "Yes, the survivors got paler", "Yes, the eaten ones got darker", "Only the babies changed colour"]
       answer: 0
       feedback: [null, "The survivors kept the colour they started with.", "The eaten beetles were removed from the population, not changed.", "Offspring were like their parents, plus a small random change."]
+      explain: "The population changed because of which beetles survived and bred, not because any beetle changed."
     hint: ["Pick one beetle that survived a hunt: was it a different colour after the hunt than it was before?", "Think about what Survivors breed did, and read the line under the board again about where the new beetles' colours came from."]
   - check:
       type: question
       q: "What would happen if every beetle started exactly the same colour?"
-      options: ["Selection couldn't change the population: there would be no variation to select from", "They would still evolve the same way", "They would all be eaten", "They would turn the ground's colour"]
+      options: ["Selection couldn't change the population's colour", "They would still evolve the same way", "They would all be eaten by the birds", "They would slowly turn the ground's colour"]
       answer: 0
       feedback: [null, "Selection needs variation to act on.", "If they're identical, any beetle is equally likely to be eaten.", "Individuals don't change colour."]
+      explain: "With no variation, there is nothing for selection to choose between."
   - check:
       type: question
       q: "Over millions of years, populations split apart and natural selection changes each part differently. What does that mean for living things today?"
-      options: ["They are all related, in a branching family tree: close relatives share a recent common ancestor", "Each species began separately, so they aren't related", "They form a ladder, with humans at the top as the most evolved"]
+      options: ["They are all related, in a branching family tree", "Each species began separately, so they aren't related", "They form a ladder, with humans at the top as the most evolved"]
       answer: 0
       feedback: [null, "Shared DNA and anatomy say otherwise: they point to common ancestors.", "Evolution branches; it doesn't climb. Every species alive today has been evolving for the same length of time."]
-      explain: "Splitting and selection, repeated over millions of years, give a branching tree of life. Every living thing is related; the question is how closely."
+      explain: "Splitting and selection, repeated over millions of years, give a branching tree of life. Every living thing is related; close relatives share a recent common ancestor."
     hint: ["If you trace our family line back, and a chimp's, and a mushroom's, has any of them been evolving for less time than the others?", "Splitting means one population becomes two that both keep changing, so picture what you get when that happens again and again."]
   - check:
       type: question
@@ -108,10 +110,10 @@ tasks:
   - check:
       type: question
       q: "In Year 7, kingdoms put mushrooms in their own group, and many people think of them as plant-like. DNA shows fungi share a more recent ancestor with animals than with plants. Why don't features alone show this?"
-      options: ["Similar features can evolve in unrelated groups, and close relatives can come to look very different", "DNA tests are unreliable", "Fungi evolved from plants"]
+      options: ["Unrelated groups can evolve similar features", "DNA tests are too unreliable to trust", "Fungi evolved from plants, then changed"]
       answer: 0
       feedback: [null, "DNA evidence from many genes and many labs agrees.", "Fungi and plants are separate branches; neither came from the other."]
-      explain: "Natural selection shapes features to suit each environment, so features can mislead about family. That is why classification moved from kingdoms by features to groups by shared ancestry, and changes as evidence improves."
+      explain: "And close relatives can come to look very different. Natural selection shapes features to suit each environment, so features can mislead about family. That is why classification moved from kingdoms by features to groups by shared ancestry, and changes as evidence improves."
   - check: { type: reflect, text: "I can explain natural selection in steps without saying individuals change because they need to, and explain why all living things are related." }
 ```
 
@@ -143,9 +145,10 @@ tasks:
   - check:
       type: question
       q: "Before the fire, paler beetles survived best. After it, darker ones did. What does that tell you about 'survival of the fittest'?"
-      options: ["Fittest means best suited to the current environment, which can change", "Fittest means strongest", "The darker beetles were always fitter", "Fitness doesn't depend on the environment"]
+      options: ["Fittest means best suited to the current environment", "Fittest means strongest and fastest", "The darker beetles were always fitter", "Fitness doesn't depend on the environment"]
       answer: 0
       feedback: [null, "Strength wasn't involved: colour was.", "On pale ground they were eaten more.", "The board shows it depends on the ground."]
+      explain: "The environment can change, and then which beetles are fittest changes too."
 ```
 
 ### Bushfire
@@ -161,9 +164,10 @@ insight: "Applying natural selection to bacteria and antibiotics transfers the s
 check:
   type: question
   q: "Why does using antibiotics more often make resistant bacteria more common?"
-  options: ["Each use kills the bacteria that aren't resistant; any that happen to be resistant survive and multiply", "Antibiotics make bacteria resistant", "Bacteria learn to resist", "It doesn't make a difference"]
+  options: ["Each use kills the others, so resistant ones multiply", "Each use makes the bacteria resistant", "Bacteria learn to resist it over time", "It doesn't make a difference"]
   answer: 0
   feedback: [null, "Antibiotics select for resistance that already exists; they don't create it.", "Bacteria don't learn; resistant ones survive.", "It matters: each use leaves the resistant survivors with less competition."]
+  explain: "Each use kills the bacteria that aren't resistant. Any that happen to be resistant survive and multiply."
 ```
 
 ## Evaluate: look back

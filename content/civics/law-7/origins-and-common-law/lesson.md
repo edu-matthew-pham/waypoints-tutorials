@@ -137,13 +137,13 @@ tasks:
         - "Our courts use common law and precedent, which began in England"
         - "Britain still passes the laws that Australians have to obey"
         - "Australian courts must check every decision with a British court"
-        - "The Constitution is a copy of a law written in Britain in 1215"
+        - "Australia has the same written constitution as Britain"
       answer: 0
       feedback:
         - null
         - "Australia's own parliaments make its laws. What came from Britain was the way the system works."
         - "Australian courts don't send their decisions to Britain. The High Court has the final say."
-        - "Magna Carta is from 1215 and the Constitution from 1901. Australia took ideas from Britain, not a copy."
+        - "Australia's Constitution was written here and began in 1901. Britain has no single written constitution."
       explain: "The common law, precedent and the idea of independent judges all came to Australia from England with the British colonies."
   - check:
       type: question

@@ -76,9 +76,10 @@ tasks:
   - check:
       type: question
       q: "Growth over years is controlled by growth hormone, not nerves. Why is a hormone better for this job?"
-      options: ["The effect needs to last a long time and reach cells all over the body", "Hormones are faster", "Nerves can't reach bones", "Growth is a reflex"]
+      options: ["The effect must last and reach cells everywhere", "Hormones are faster than nerve impulses", "Nerves can't reach the bones", "Growth is a reflex, so it needs no brain"]
       answer: 0
       feedback: [null, "Hormones are actually slower than nerves, and that's fine for growth.", "Nerves do reach bones, but what growth needs is an effect that lasts for years and reaches cells everywhere.", "A reflex is a quick nervous response."]
+      explain: "Growth needs an effect that lasts for years and reaches cells all over the body. A hormone in the blood does both; a nerve impulse is fast but short and goes to one place."
   - check:
       type: question
       q: "A sprinter reacts to the starting gun. Which system carries the message to the leg muscles, and why?"
@@ -135,7 +136,7 @@ insight: "A hormone only works where there is a receptor to take its message in,
 check:
   type: question
   q: "A person's liver cells have faulty insulin receptors, but their pancreas still releases normal insulin. What happens to their blood glucose after a meal?"
-  options: ["It stays high, because the insulin reaches the liver but the liver cells can't respond to it", "It falls normally, because the insulin is still in the blood", "It falls faster, because there's insulin left over", "Nothing changes, because glucose is controlled by nerves"]
+  options: ["It stays high: the liver cells can't respond to insulin", "It falls normally, because the insulin is still in the blood", "It falls faster, because there's insulin left over", "Nothing changes, because glucose is controlled by nerves"]
   answer: 0
   feedback: [null, "Insulin only works on cells whose receptors can take the message in, so having it in the blood isn't enough.", "Insulin that can't be used doesn't bring glucose down any faster.", "Blood glucose after a meal is a job for a hormone, not for nerves."]
   explain: "A hormone only works where there is a receptor to take its message in. With faulty receptors, a normal amount of insulin reaches the liver but the liver can't act on it, so the effect is much like having no insulin."

@@ -94,7 +94,7 @@ tasks:
   - check:
       type: question
       q: "A lift's cable pulls up with exactly its weight. The lift is moving up. What is happening?"
-      options: ["It moves up at a steady speed: balanced forces, no change in motion", "It must be stopped", "It is speeding up, because it is moving up"]
+      options: ["It moves up at a steady speed", "It must be stopped", "It is speeding up, because it is moving up"]
       answer: 0
       feedback: [null, "Balanced forces mean no change; it can still be moving.", "Speeding up needs a net force up."]
       explain: "First law: balanced forces keep the motion the same, here steady upward motion."
@@ -146,10 +146,10 @@ insight: "A changing force (air resistance growing with speed) shows why free bo
 check:
   type: question
   q: "As a skydiver falls faster, air resistance grows. What happens to her free body diagram over time?"
-  options: ["The upward arrow grows until it equals her weight; then she falls at a steady speed (terminal velocity)", "Her weight arrow shrinks", "The arrows stay the same throughout"]
+  options: ["The upward arrow grows until it equals her weight", "Her weight arrow shrinks as she speeds up", "The arrows stay the same throughout"]
   answer: 0
   feedback: [null, "Her weight stays the same.", "Air resistance depends on speed."]
-  explain: "Net force downward shrinks to zero, so the acceleration does too. Opening the parachute makes air resistance jump, and she slows to a new, lower steady speed."
+  explain: "Net force downward shrinks to zero, so the acceleration does too, and she falls at a steady speed (terminal velocity). Opening the parachute makes air resistance jump, and she slows to a new, lower steady speed."
 ```
 
 ## Evaluate: look back

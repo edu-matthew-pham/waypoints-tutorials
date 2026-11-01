@@ -56,7 +56,7 @@ smaller:
   check:
     type: question
     q: "This board only gets hotter. Turn the air right up and wait until your temperature is back near 37 °C. With the air still hot, is the sweating on, off, or somewhere in between?"
-    options: ["Still on, but not as hard as at first, just enough to hold you near 37 °C", "Off, because you're back at 37 °C", "On full, as strong as at the start", "It has turned into shivering"]
+    options: ["Still on, but gently, just enough to hold you there", "Off, because you're back at 37 °C", "On full, as strong as at the start", "It has turned into shivering"]
     answer: 0
     feedback: [null, "Read the line under the loop while the air is still high: the sweating hasn't stopped.", "If it were still full strength, you'd keep cooling below 37 °C, but the graph levels off instead.", "Shivering only starts when you get too cold."]
     explain: "The response matches how far you are from 37 °C, so it eases off as you come back, and it only stops once the heat has gone. That's what lets the body recover from either direction on the main board."
@@ -89,9 +89,10 @@ tasks:
   - check:
       type: question
       q: "Why is it called negative feedback?"
-      options: ["The response reverses the change: a rise causes a fall, a fall causes a rise", "It is bad for the body", "It makes the temperature go down only", "The receptors stop working"]
+      options: ["The response reverses the change", "It is bad for the body", "It only ever makes the temperature go down", "The receptors stop working"]
       answer: 0
       feedback: [null, "Negative means 'opposing the change', not harmful.", "It also brings a low temperature up.", "Receptors keep detecting all the time."]
+      explain: "Negative feedback opposes the change: a rise causes a fall, and a fall causes a rise."
     hint: ["Think about what happened on the board when you made the air very cold, and compare it with what happened when you made it very hot.", "In each case, look at which way the temperature was pushed and which way the body's response took it."]
   - diagram:
       ref: diagrams.mmd#oneway
@@ -101,7 +102,7 @@ tasks:
     check:
       type: question
       q: "On the board, what happens to sweating as body temperature comes back towards 37 °C?"
-      options: ["It eases off as the temperature comes back, and stops once the heat has gone", "It keeps going at full strength all day", "It gets stronger", "It turns into shivering"]
+      options: ["It eases off, and stops once the heat has gone", "It keeps going at full strength all day", "It gets stronger", "It turns into shivering"]
       answer: 0
       feedback: [null, "Full-strength sweating would cool you below 37 °C.", "Stronger sweating would overshoot.", "Shivering only starts if you get too cold."]
       explain: "The response matches how far you are from 37 °C. While the air stays hot, a little sweating keeps going to hold you near 37 °C (watch the board with the air still high), and it stops once you're out of the heat."
@@ -159,9 +160,10 @@ tasks:
   - check:
       type: question
       q: "If the sweat glands couldn't work (as in some burns patients), what would happen on a hot day?"
-      options: ["The body couldn't cool down enough and could overheat, even though the brain detects the rise", "Nothing: the brain would fix it", "The body would get cold"]
+      options: ["The body couldn't cool down enough and could overheat", "Nothing: the brain would notice and fix it", "The body would get cold"]
       answer: 0
       feedback: [null, "The brain can detect but needs effectors to respond.", "Losing a cooling effector makes overheating more likely, not cooling."]
+      explain: "The brain still detects the rise in temperature, but without sweat glands, its main cooling effector can't respond."
 ```
 
 ### Break it

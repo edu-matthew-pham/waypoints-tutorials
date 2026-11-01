@@ -243,13 +243,13 @@ tasks:
       options:
         - "C's voters preferred B to A, so B passed half"
         - "B had more first choices than A in round 1"
-        - "The candidate with fewest votes always wins"
+        - "Most first choices never decides the seat"
         - "A was out of the count after round 1"
       answer: 0
       feedback:
         - null
         - "Look at round 1 again: A had 8 and B had 7."
-        - "The candidate with the fewest votes is the one who goes out."
+        - "Sometimes it does: if one candidate has more than half the first choices, they win in round 1."
         - "C went out after round 1, not A."
       explain: "No one had more than half at first. When C went out, C's voters' next choice was B, which took B to 12 of 20."
 ```

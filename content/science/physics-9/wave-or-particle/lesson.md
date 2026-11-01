@@ -44,21 +44,21 @@ tasks:
   - check:
       type: question
       q: "The particle model explains conduction well. Why can't it explain how the Sun's energy reaches Earth?"
-      options: ["Space is a vacuum, with no particles to pass the energy on; the wave model of light needs no medium", "The Sun is too hot", "Energy can't cross space"]
+      options: ["Space is a vacuum, with no particles to pass the energy on", "The Sun is too hot for particles to carry the energy", "Energy can't cross empty space at all"]
       answer: 0
       feedback: [null, "Temperature isn't the problem.", "It does cross space: as electromagnetic waves."]
-      explain: "Conduction and convection need matter. Electromagnetic waves carry energy across empty space, so the wave model is the useful one here."
+      explain: "Conduction and convection need matter. Electromagnetic waves carry energy across empty space with no medium, so the wave model is the useful one here."
   - check:
       type: question
       q: "Light shining on some metals knocks electrons out, but only if the light's frequency is high enough, however bright it is. A wave model has trouble with this. What does it suggest?"
-      options: ["Light also behaves as packets of energy (photons), each with an energy set by its frequency", "Light isn't really a wave at all", "The metals are faulty"]
+      options: ["Light also acts as packets of energy (photons), set by frequency", "Light isn't really a wave at all, only a stream of particles", "Brighter light should work, so the experiment is wrong"]
       answer: 0
       feedback: [null, "Light still shows wave behaviour in other experiments.", "The effect is real and reliable."]
       explain: "Light behaves like a wave when it bends and spreads, and like a stream of photons when it hands energy to single electrons. Neither model alone covers everything."
   - check:
       type: question
       q: "Which statement about scientific models is best?"
-      options: ["A model doesn't tell the whole story: each one shows some things well and leaves others out", "A good model is true in every situation", "A model that fails once should be thrown away completely"]
+      options: ["Each model shows some things well and leaves others out", "A good model is true in every situation", "A model that fails once should be thrown away completely"]
       answer: 0
       feedback: [null, "No model covers everything; that is why scientists keep several.", "A model that shows some things well stays useful, even if it needs another model beside it."]
       explain: "We keep a model for as long as it helps us explain and predict, and we know where it stops working."
@@ -87,10 +87,10 @@ insight: "Evaluating both models against one phenomenon makes students weigh str
 check:
   type: question
   q: "Sound travels through air as a wave, but air is also made of particles. How can both models be right?"
-  options: ["They describe the same thing at different levels: the particle model says what air is made of, the wave model describes the pattern that travels through it", "One of them is wrong", "Sound is a wave in space and particles in air"]
+  options: ["They describe the same thing at different levels", "One of them is wrong", "Sound is a wave in space and particles in air"]
   answer: 0
   feedback: [null, "Both are useful, for different questions.", "Sound can't travel in space at all."]
-  explain: "The wave model of sound is built on the particle model of air: the wave is the pattern of squashing and stretching in the particles. Which one you use depends on the question."
+  explain: "The particle model says what air is made of; the wave model describes the pattern that travels through it. The wave model of sound is built on the particle model of air: the wave is the pattern of squashing and stretching in the particles. Which one you use depends on the question."
 ```
 
 ## Elaborate: photons
@@ -102,9 +102,9 @@ insight: "The photoelectric effect is the standard case where the wave model of 
 check:
   type: question
   q: "Bright red light cannot knock electrons out of a metal, but a dim ultraviolet lamp can. Using photons, why?"
-  options: ["Each ultraviolet photon carries enough energy to free an electron; a red photon doesn't, however many arrive", "Ultraviolet is brighter than red light", "Red light travels more slowly"]
+  options: ["Each UV photon has enough energy to free an electron; red ones don't", "The UV lamp delivers more energy in total than the red light", "Red light travels more slowly, so it arrives too weak"]
   answer: 0
-  feedback: [null, "Brightness is the number of photons, not the energy of each.", "All light travels at the same speed in a vacuum."]
+  feedback: [null, "The bright red light delivers more in total; what matters is the energy of each photon.", "All light travels at the same speed in a vacuum."]
   explain: "An electron absorbs one photon at a time. Only a photon with enough energy (high enough frequency) can free it, so many low-energy photons together can't do what one high-energy photon can."
 ```
 

@@ -82,9 +82,10 @@ tasks:
   - check:
       type: question
       q: "Do spring tides happen only in spring?"
-      options: ["No: they happen about every two weeks all year, at new and full moon ('spring' as in springing up)", "Yes, only in September to November", "Only in the Northern Hemisphere's spring", "Only once a year"]
+      options: ["No: about every two weeks, all year", "Yes, only in September to November", "Only in the Northern Hemisphere's spring", "Only once a year"]
       answer: 0
       feedback: [null, "Check the chart, which shows two biggest tides a month.", "They come twice a month, every month, whatever the season.", "They come twice a month, every month, whatever the season."]
+      explain: "Spring tides happen about every two weeks all year, at new and full moon. 'Spring' here means springing up, not the season."
     hint: ["Count how many times the chart shows the biggest tides in one month.", "Then ask yourself whether anything on the chart depends on the time of year."]
   - check: { type: reflect, text: "I can explain tides with the moon's gravity, and when spring and neap tides happen." }
 ```
@@ -107,7 +108,7 @@ insight: "Spring and neap tides depend on where the moon is in its orbit, which 
 check:
   type: question
   q: "Looking back at the moon's phases: at new moon, where is the moon?"
-  options: ["Between the Earth and the sun, so the sun, moon and Earth are in a line", "On the far side of the Earth from the sun", "At a right angle to the sun", "Behind the sun"]
+  options: ["Between the Earth and the sun", "On the far side of the Earth from the sun", "At a right angle to the sun", "Behind the sun"]
   answer: 0
   feedback: [null, "That's where the moon is at full moon.", "That's where the moon is at a quarter moon.", "The moon always goes round the Earth and never round the sun."]
   explain: "At new moon the moon is between the Earth and the sun, so they pull in line and that gives a spring tide."
@@ -137,9 +138,10 @@ insight: "Using the moon's phase to predict extreme low tides applies the model,
 check:
   type: question
   q: "Reef walking and gathering shellfish is best at the lowest low tides. When should you plan to go?"
-  options: ["Near a new or full moon, at low tide: spring tides give the lowest lows", "At a quarter moon", "Any day: low tides are always the same", "When the moon is high overhead"]
+  options: ["Near a new or full moon, at low tide", "At a quarter moon", "Any day: low tides are always the same", "When the moon is high overhead"]
   answer: 0
   feedback: [null, "Quarter moons give neap tides, which have the smallest range, so the lows are not very low.", "The chart shows that the range changes through the month.", "In the bulge model, having the moon overhead puts your coast under a bulge, and that means high tide, not low."]
+  explain: "Spring tides, near new and full moon, have the biggest range, so their low tides are the lowest."
 hint: ["Which tides have the biggest range, and what does that mean for how low the water gets?", "Check the chart for which moon phases go with the lowest lows."]
 ```
 

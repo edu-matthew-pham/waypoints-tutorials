@@ -52,9 +52,9 @@ tasks:
     check:
       type: question
       q: "A key asks 'Does it have feathers?' instead of 'Does it fly?' Why is that the better question?"
-      options: ["You can see feathers by looking, but flying isn't always seen", "Feathers matter more to a bird than flying", "Flying is a harder word to spell", "Every bird has both of them"]
+      options: ["You can see feathers by looking, but flying isn't always seen", "Feathers matter more to a bird than flying", "Flying is a behaviour only birds have", "Every bird has both of them"]
       answer: 0
-      feedback: [null, "Both matter to the animal. The point is which one you can check by looking.", "The spelling isn't the reason. Think about what you can check by looking at the animal.", "Not all birds fly: penguins and emus don't, so the flying question would send them the wrong way."]
+      feedback: [null, "Both matter to the animal. The point is which one you can check by looking.", "Bats and insects fly too, and some birds don't. The point is which one you can check by looking.", "Not all birds fly: penguins and emus don't, so the flying question would send them the wrong way."]
       explain: "Features can be seen on any animal at any time. Behaviour has to be watched, and it can be misleading."
 ```
 
@@ -75,10 +75,10 @@ tasks:
   - check:
       type: question
       q: "A fish has gills and a smooth, narrow body. Which sentence names a feature and its job?"
-      options: ["Its smooth, narrow body helps it slip through the water", "It swims away from sharks", "It lives in the sea", "It lays eggs"]
+      options: ["Its narrow body helps it slip through water", "It swims away from sharks", "It lives in the sea", "It lays eggs", "It has gills and a narrow body"]
       answer: 0
-      feedback: [null, "Swimming away is something it does, so that is behaviour.", "That's where it lives, which doesn't say what part of its body helps.", "Laying eggs is something it does."]
-      explain: "A feature is a part of the body, and the answer says what job it does."
+      feedback: [null, "Swimming away is something it does, so that is behaviour.", "That's where it lives, which doesn't say what part of its body helps.", "Laying eggs is something it does.", "That names two features, but not the job either one does."]
+      explain: "A feature is a part of the body. The smooth, narrow body slips through the water easily, so that sentence names a feature and its job."
   - check:
       type: question
       q: "A koala has thick fur and strong claws. Which is a behaviour?"

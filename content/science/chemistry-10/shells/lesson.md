@@ -131,10 +131,10 @@ insight: "Flame colours are evidence for fixed energy levels: the observation th
 check:
   type: question
   q: "Heated in a flame, sodium glows yellow and potassium lilac. Each element always gives the same colours. What does that suggest about electrons?"
-  options: ["They sit at fixed energy levels, different in each element; jumping between them gives out light of particular colours", "Electrons are coloured", "The flame changes colour with temperature, not the element"]
+  options: ["They sit at fixed energy levels, different in each element", "Each element's electrons are a different colour", "The flame changes colour with temperature, not the element"]
   answer: 0
   feedback: [null, "Electrons have no colour; the light comes from energy changes.", "The same flame gives different colours with different elements."]
-  explain: "Each element's emission spectrum is a fingerprint of its electron energy levels: evidence for Bohr's shells."
+  explain: "Jumping between the levels gives out light of particular colours. Each element's emission spectrum is a fingerprint of its electron energy levels: evidence for Bohr's shells."
 ```
 
 ## Evaluate: look back

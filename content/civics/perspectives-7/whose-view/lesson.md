@@ -19,7 +19,7 @@ The answers tell you the source's **perspective**: the view it comes from.
 
 Here are the sources for this lesson.
 
-> **Council notice (Wattle Creek Council).** From March, Main Street will close to cars from 7 am to 1 pm on Saturdays for a three-month trial market. The council believes the market will bring the town together and support local growers. Have your say by 28 February.
+> **Council notice (Wattle Creek Council).** From March, Main Street will close to cars from 7 am to 1 pm on Saturdays for a three-month trial market. The market will bring the town together and support local growers. Have your say by 28 February.
 
 > **Editorial (*Wattle Creek Gazette*).** A Saturday market is exactly what Main Street needs. Markets in other towns draw crowds, and our street is half empty by ten o'clock. A lively street on a Saturday is what holds a town together. The council should make the trial permanent.
 
@@ -144,13 +144,13 @@ tasks:
         - "People who need to drive in or park nearby"
         - "People who think the street is too quiet"
         - "People who like going to markets in other towns"
-        - "The newspaper's own editors and writers"
+        - "Shops that would gain from more people walking past"
       answer: 0
       feedback:
         - null
         - "That view is in the editorial. It's the editorial's main point."
         - "The editorial mentions other towns' markets, so that view is in it."
-        - "The editorial is the editors' view, so it's not missing."
+        - "The editorial already speaks for them: its whole point is more people on the street."
       explain: "The editorial argues for the market and leaves out people who might lose out, such as those who drive in or need to park nearby."
   - check:
       type: question

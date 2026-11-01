@@ -83,10 +83,10 @@ tasks:
   - check:
       type: question
       q: "On the board, the insects could go either way. Why?"
-      options: ["Two effects pull opposite ways: less grass (their food) but fewer bandicoots (which eat them)", "Insects aren't in the food web", "The board can't tell"]
+      options: ["Less food for them, but fewer predators too", "Insects aren't in the food web", "The board can't tell"]
       answer: 0
       feedback: [null, "They are in the web, since they eat grass and bandicoots eat them, so look at how they're connected.", "The board can tell you something here, because it lists its reasons for the insects and you can see whether they agree."]
-      explain: "Real outcomes depend on which effect is stronger, so scientists would need to measure it to know."
+      explain: "Two effects pull opposite ways: less grass (their food) but fewer bandicoots (which eat them). Real outcomes depend on which effect is stronger, so scientists would need to measure it to know."
     hint: ["Look at what the insects eat and what eats them, and see which way each of those changed.", "Read the board's reasons for the insects, because it lists more than one, and ask whether they push the same way."]
   - check: { type: reflect, text: "I traced one cascade, link by link, from the dingo to a species it never ate." }
 ```
@@ -124,10 +124,10 @@ insight: "A famous real cascade, with evidence, connects the model to observed e
 check:
   type: question
   q: "Wolves were returned to Yellowstone National Park (USA) in 1995. Elk numbers fell and elk stopped grazing near rivers. Willow and aspen trees then grew back along the rivers, and beavers returned. Which explains the beavers?"
-  options: ["Fewer elk eating young trees meant more trees, which beavers use for food and dams", "Wolves protect the beavers from their predators", "Beavers followed the wolves"]
+  options: ["Fewer elk meant more young trees for beavers", "Wolves protect the beavers from their predators", "Beavers followed the wolves"]
   answer: 0
   feedback: [null, "Wolves don't protect beavers, and the link scientists describe is about what the beavers need for food and dams.", "Beavers don't follow wolves around, so look at what changed along the river that they depend on."]
-  explain: "Wolves led to fewer elk, which meant more trees, which meant more beavers: a three-link cascade seen in the field, although scientists still debate how strong each link was."
+  explain: "Wolves led to fewer elk eating young trees, which meant more trees, which beavers use for food and dams: a three-link cascade seen in the field, although scientists still debate how strong each link was."
 ```
 
 ## Elaborate: your own removal
@@ -162,10 +162,10 @@ tasks:
   - check:
       type: question
       q: "A report recommends one plan for the fence. What is the best way to judge it?"
-      options: ["Weigh its likely effects on native animals, farmers' incomes, communities and fairness, using evidence from places where it has been tried", "Pick whatever helps native animals most; the other points don't matter", "Pick whatever costs the least", "Pick the plan the biggest farm wants"]
+      options: ["Weigh effects on animals, farmers and communities, with evidence", "Pick whatever helps native animals most; the other points don't matter", "Pick whatever costs the least", "Pick the plan the biggest farm wants"]
       answer: 0
       feedback: [null, "The environment matters, but a plan that ignores farmers' livelihoods and other views is unlikely to work or be fair.", "Cost matters, but it isn't the only thing to weigh, since the cheapest plan might harm native animals or communities.", "Going with one group's wishes would leave out the evidence and everybody else affected."]
-      explain: "Scientific responses to an issue affect many groups, so good decisions use evidence and weigh environmental, economic, social and ethical considerations together."
+      explain: "Weigh its likely effects on native animals, farmers' incomes, communities and fairness, using evidence from places where it has been tried. Scientific responses to an issue affect many groups, so good decisions use evidence and weigh environmental, economic, social and ethical considerations together."
 ```
 
 The **Dingo Fence** runs about 5,600 km across inland Queensland, New South Wales and South Australia to keep dingoes away from sheep. Studies comparing the two sides found more foxes and kangaroos, and fewer small native mammals, where dingoes are kept out: the cascade you traced, although scientists still argue about how strong the effect is. So should the fence stay, move, or let dingoes back in some places?

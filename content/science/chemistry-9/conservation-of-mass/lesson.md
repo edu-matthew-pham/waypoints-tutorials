@@ -50,10 +50,10 @@ tasks:
   - check:
       type: question
       q: "A log burns in an open fire and the ash is much lighter than the log. Is mass conserved?"
-      options: ["Yes: most of the mass left as carbon dioxide and water vapour, which spread into the air", "No: burning destroys mass", "Yes: because the ash is the same thing as the log"]
+      options: ["Yes: most of the mass left as gases into the air", "No: burning destroys some of the log's mass", "Yes: because the ash is the same thing as the log"]
       answer: 0
       feedback: [null, "Mass isn't destroyed: it left as gases.", "Ash is a different substance from wood."]
-      explain: "Count the gases, and the total mass of reactants (wood and oxygen) equals the total mass of products (ash, carbon dioxide and water vapour)."
+      explain: "Most of the mass left as carbon dioxide and water vapour. Count the gases, and the total mass of reactants (wood and oxygen) equals the total mass of products (ash, carbon dioxide and water vapour)."
     hint: "What are the products when wood burns, and which of them are still sitting in the fireplace?"
   - check:
       type: question
@@ -101,10 +101,10 @@ insight: "Mass is always conserved, but not all of it is the product you want; t
 check:
   type: question
   q: "If mass is always conserved, why do chemists worry about waste?"
-  options: ["The atoms that end up in unwanted by-products are wasted for the purpose, even though they still exist", "Mass can be destroyed in a factory", "Waste is only a problem for the environment"]
+  options: ["Atoms in unwanted by-products are wasted for the job", "Mass can be destroyed in a factory", "Waste is only a problem for the environment"]
   answer: 0
   feedback: [null, "It can't be: that is the point of the law.", "It is also a cost and resource problem."]
-  explain: "Conservation says nothing is lost, but atoms in by-products aren't in the product you wanted. Good reactions put more of the atoms into the product."
+  explain: "The atoms still exist, so nothing is lost, but atoms in by-products aren't in the product you wanted. Good reactions put more of the atoms into the product."
 ```
 
 ## Evaluate: look back

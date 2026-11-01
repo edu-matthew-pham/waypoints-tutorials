@@ -80,9 +80,10 @@ tasks:
   - check:
       type: question
       q: "Your body cells have 46 chromosomes. Why are they described as 23 pairs?"
-      options: ["One of each pair came from each parent, and the two carry the same genes in the same order (perhaps different alleles)", "Each chromosome copies itself", "Boys and girls have different chromosomes", "Pairs are easier to count"]
+      options: ["One of each pair came from each parent, with the same genes", "Each chromosome copies itself to make a pair", "Boys and girls have different chromosomes", "Pairs are easier for scientists to count"]
       answer: 0
       feedback: [null, "Copying happens before division, but the pairs come from the two parents.", "Only one pair (the sex chromosomes) differs.", "Pairs aren't just a convenient way to count: they come from having two parents."]
+      explain: "The two chromosomes in a pair carry the same genes in the same order, but perhaps different alleles, one version from each parent."
   - check:
       type: question
       q: "Someone has the blood group alleles A and O, and their blood group is A. Which is their genotype and which their phenotype?"

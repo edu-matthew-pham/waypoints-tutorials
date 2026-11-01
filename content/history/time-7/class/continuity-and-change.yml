@@ -1,0 +1,29 @@
+inquiry:
+  q: "When a new head coach takes over a team, what changes, and what stays the same?"
+  prompts:
+    - "What would they change straight away?"
+    - "What would carry on whoever was in charge?"
+  notes: "Keep it to a public example (a sports team), not students' families or school staff."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Line up the sources"
+    minutes: 4
+    do: |
+      Pairs put the three dated sources in order on a strip, then label each 'starting point', 'continuity' or 'change'.
+    notes: "Bring out that the label depends on what you compare with."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "The Han kept the Qin system of officials running commanderies. Is that continuity or change?"
+    options:
+      - "Continuity"
+      - "Change"
+      - "Neither"
+    answer: 0
+    explain: "Something that carried on across the turning point is continuity."
+    feedback:
+      - null
+      - "It stayed the same, so it isn't a change."
+      - "It is one of the clearest continuities from Qin to Han."

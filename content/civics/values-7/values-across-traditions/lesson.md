@@ -15,8 +15,8 @@ Many other religions are practised in Australia too, including **Judaism**, **Bu
 - **Christianity**: *charity*, from the teaching to love your neighbour.
 - **Judaism**: *tzedakah*, helping people in need, seen as a duty and linked to justice.
 - **Islam**: *zakat*, a required share of wealth given to those in need; one of the Five Pillars of Islam.
-- **Buddhism**: *dana*, generosity: giving without expecting anything back.
-- **Hinduism**: *seva*, selfless service to others.
+- **Buddhism**: *dana*, generosity: giving without expecting anything back. Hindu and Jain traditions use this word too.
+- **Hinduism**: *seva*, selfless service to others. Sikhs use this word too.
 
 Shared values don't mean shared beliefs. Two traditions can both value giving and still believe very different things about God, life and what giving means.
 
@@ -40,16 +40,16 @@ check:
 
 ```step
 stage: run
-insight: "Matching each tradition's own word for giving shows a shared value in each tradition's terms."
+insight: "Matching each word for giving to what it means shows a shared value in each tradition's own terms."
 check:
   type: match
-  q: "Match each word to the tradition it comes from."
+  q: "Match each word to what it means."
   pairs:
-    - ["Tzedakah", "Judaism"]
-    - ["Zakat", "Islam"]
-    - ["Dana", "Buddhism"]
-    - ["Seva", "Hinduism"]
-    - ["Charity, from 'love your neighbour'", "Christianity"]
+    - ["Tzedakah", "Helping people in need, as a duty linked to justice"]
+    - ["Zakat", "A required share of wealth given to those in need"]
+    - ["Dana", "Generosity: giving without expecting anything back"]
+    - ["Seva", "Selfless service to others"]
+    - ["Charity", "Giving that comes from the teaching to love your neighbour"]
 ```
 
 ## Worked example: a shared value, different beliefs
@@ -121,8 +121,8 @@ check:
     - ["Giving to help people in need", "Shared by many traditions", "Many traditions value giving, each in its own words."]
     - ["Zakat is one of the Five Pillars", "Particular to one tradition", "The Five Pillars belong to Islam."]
     - ["People can follow any religion, or none", "Australian civic value", "Religious freedom is a value of Australian civic life."]
-    - ["Seva as a form of devotion", "Particular to one tradition", "Seeing service as devotion is part of Hinduism."]
-    - ["Every adult citizen's vote counting the same", "Australian civic value", "Equal votes are part of Australian democracy."]
+    - ["Tzedakah as a duty in Jewish teaching", "Particular to one tradition", "Tzedakah is a Jewish idea, in Jewish teaching."]
+    - ["Freedom to speak and meet, within the law", "Australian civic value", "Freedom is a value often named in Australian civic life."]
 ```
 
 ## Practise: religious freedom
@@ -142,7 +142,7 @@ tasks:
       answer: 0
       feedback:
         - null
-        - "Like other freedoms, it has limits set by law to protect others (Within the bounds of law)."
+        - "Like other freedoms, it has limits set by law to protect others."
         - "No one has to follow a religion. Section 116 protects that."
         - "People can practise their religion in public too, such as at places of worship and festivals."
       explain: "Religious freedom lets people follow any religion, or none, within the law that protects everyone."
@@ -196,7 +196,7 @@ check:
   answer: 0
   feedback:
     - null
-    - "Section 116 stops the Commonwealth favouring a religion."
+    - "Section 116 stops the Commonwealth setting up a religion or making anyone follow one."
     - "Religious freedom is a real freedom; all freedoms have some limits."
     - "The limits protect others; they don't aim to stop religion."
   explain: "Like other freedoms, religious freedom is protected within laws that protect everyone's rights and safety."

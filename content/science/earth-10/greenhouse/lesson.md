@@ -64,7 +64,7 @@ tasks:
       check:
         type: question
         q: "This board has no CO₂ slider, just the sunlight. Turn the sunlight up a little and run the years. While more energy is coming in than going out, what does the temperature do?"
-        options: ["It rises, and the warmer surface gives off more infrared, until out matches in and it levels off", "It keeps rising for as long as you run it", "It stays the same, because the sun only changed a little", "It falls, because more of the light is reflected"]
+        options: ["It rises, then levels off as out catches up with in", "It keeps rising for as long as you run it", "It stays the same, because the sun only changed a little", "It falls, because more of the light is reflected"]
         answer: 0
         feedback: [null, "Watch energy out under the picture as the surface warms: it climbs until it catches up.", "Run it and read the temperature under the picture: it does change.", "Reflected light only changes if you move the Reflected slider."]
         explain: "A warmer surface gives off more infrared, so the gap between in and out closes and the temperature settles at a new, higher level. Adding CO₂ does the same thing from the other side: it holds back some of the energy going out."
@@ -105,9 +105,10 @@ tasks:
   - check:
       type: question
       q: "When you raised CO₂, why did the temperature rise and then level off?"
-      options: ["Less infrared escaped, so energy in exceeded energy out; the warmer surface then gave off more until out equalled in again", "The sun got hotter", "CO₂ is hot", "The ozone layer got thinner"]
+      options: ["Less infrared escaped, so it warmed until out matched in again", "More sunlight got through to the surface", "CO₂ is hot, so it heated the air", "The ozone layer got thinner and let in heat"]
       answer: 0
-      feedback: [null, "Sunlight stayed the same.", "CO₂ isn't a heat source; it slows the escape of heat.", "Ozone isn't in this model and isn't the cause."]
+      feedback: [null, "Sunlight stayed the same; CO₂ acts on the infrared going out.", "CO₂ isn't a heat source; it slows the escape of heat.", "Ozone isn't in this model and isn't the cause."]
+      explain: "With less infrared escaping, energy in was more than energy out, so the surface warmed. The warmer surface then gave off more infrared until out equalled in again."
   - check: { type: reflect, text: "I can explain how greenhouse gases slow outgoing infrared, the difference between the natural and enhanced greenhouse effect, and where this fits in the energy balance." }
 ```
 
@@ -151,9 +152,10 @@ insight: "Comparing gases by their warming power applies the mechanism quantitat
 check:
   type: question
   q: "There is about 200 times less methane than CO₂ in the air, yet it causes about a quarter as much extra warming. Why?"
-  options: ["Kilogram for kilogram, methane absorbs far more infrared than CO₂ (it traps about 80 times as much heat over 20 years)", "Methane is hotter", "Methane lets more sunlight in", "Methane lasts forever"]
+  options: ["Kilogram for kilogram, methane absorbs far more infrared than CO₂", "Methane molecules are hotter than CO₂ molecules", "Methane lets more sunlight into the atmosphere", "Methane stays in the air far longer than CO₂"]
   answer: 0
   feedback: [null, "Gases warm the Earth by absorbing infrared, not by being hot.", "Greenhouse gases don't change the sunlight coming in.", "Methane breaks down in about 10 years; CO₂ lasts much longer."]
+  explain: "Over 20 years, a kilogram of methane traps about 80 times as much heat as a kilogram of CO₂, so a little methane goes a long way."
 ```
 
 ## Evaluate: look back

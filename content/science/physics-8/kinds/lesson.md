@@ -75,21 +75,21 @@ tasks:
   - check:
       type: question
       q: "On the coaster, where is the kinetic energy greatest?"
-      options: ["At the bottom of the deepest dip, where the car is fastest", "At the top of the first hill", "It stays the same everywhere"]
+      options: ["At the bottom of the deepest dip", "At the top of the first hill", "It stays the same everywhere"]
       answer: 0
       feedback: [null, "At the top the car is slow: most of its energy is potential.", "The bars change all the time; only the total stays the same."]
       explain: "Lowest point, least potential energy, so the most kinetic energy: the car is fastest there."
   - check:
       type: question
       q: "What decides how much gravitational potential energy something has?"
-      options: ["How heavy it is and how high it is", "How fast it is moving", "What colour it is"]
+      options: ["How heavy it is and how high it is", "How fast it is moving", "How big it is, whatever its mass"]
       answer: 0
-      feedback: [null, "Speed decides kinetic energy.", "Colour has nothing to do with it."]
+      feedback: [null, "Speed decides kinetic energy.", "Size alone doesn't count: a big balloon at the same height stores far less than a small rock. Mass and height do."]
       explain: "Heavier and higher means more stored. Likewise, stretching a spring further stores more elastic energy, and different foods store different amounts of chemical energy."
   - check:
       type: question
       q: "What do all kinds of kinetic energy have in common, and how is potential energy different?"
-      options: ["Kinetic energy is active now (something moving, vibrating or flowing); potential energy is stored, ready to be released", "Kinetic energy is energy that's about to be used", "Potential energy is energy that might exist one day but doesn't yet", "Kinetic energy is useful; potential energy is wasted"]
+      options: ["Kinetic is active now; potential is stored", "Kinetic energy is energy that's about to be used", "Potential energy is energy that might exist one day but doesn't yet", "Kinetic energy is useful; potential energy is wasted"]
       answer: 0
       feedback: [null, "Energy waiting to be used is stored: that's potential. Kinetic energy is being used right now: something moving, vibrating or flowing.", "Potential energy is really there now, just stored: a stretched rubber band has it before you let go.", "Both can be useful. The difference is whether the energy is active now or stored."]
       explain: "Ask 'is it active now, or stored?' Active (moving, vibrating, flowing) is kinetic; stored and ready to be released is potential."
@@ -120,7 +120,7 @@ tasks:
   - check:
       type: question
       q: "Compared with the 30 m start, what is different?"
-      options: ["More total energy, so the car goes faster at the bottom", "The same total energy", "Less kinetic energy at the bottom"]
+      options: ["More total energy, so it's faster at the bottom", "The same total energy", "Less kinetic energy at the bottom"]
       answer: 0
       feedback: [null, "Higher means more stored energy to start with.", "More stored at the start means more to turn into movement."]
       explain: "More height, more gravitational potential energy, more kinetic energy when it comes down."

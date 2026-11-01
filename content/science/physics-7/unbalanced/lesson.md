@@ -63,10 +63,10 @@ tasks:
   - check:
       type: question
       q: "On the board, why did the puck turn round?"
-      options: ["The push kept acting: the net force pointed left, so the puck slowed, stopped and then sped up to the left", "The puck ran out of the force that was carrying it right", "The push only started working once the puck had stopped"]
+      options: ["The push kept acting to the left the whole time", "The puck ran out of the force that was carrying it right", "The push only started working once the puck had stopped"]
       answer: 0
       feedback: [null, "Nothing was carrying it to the right, because on frictionless ice it would slide on forever, so what did the push do?", "Look at the graph, because the speed started falling the moment the push acted."]
-      explain: "An unbalanced force changes the motion in the direction of the net force for as long as it acts, so slowing down, stopping and reversing were all the same change, towards the left."
+      explain: "The net force pointed left, so the puck slowed, stopped and then sped up to the left. An unbalanced force changes the motion in the direction of the net force for as long as it acts, so slowing down, stopping and reversing were all the same change, towards the left."
     hint: ["Imagine the same puck on the ice with nothing pushing it at all. What would it do?", "Watch the speed-time graph from the moment the push starts, and ask whether anything waits until the puck has stopped."]
   - check:
       type: sort
@@ -84,7 +84,7 @@ tasks:
   - check:
       type: question
       q: "A car drives round a bend at a steady 40 km/h. Are the forces on it balanced?"
-      options: ["No: its direction is changing, so there is a net force towards the inside of the bend", "Yes: its speed isn't changing", "There are no forces on it"]
+      options: ["No: its direction is changing", "Yes: its speed isn't changing", "There are no forces on it"]
       answer: 0
       feedback: [null, "A steady speed in a straight line means balanced forces, but is the car going in a straight line?", "The road grips the tyres, or the car would just slide straight on."]
       explain: "A change of direction is a change in motion, so it needs an unbalanced force, and here that's the tyres' grip on the road pulling the car towards the inside of the bend."
@@ -158,7 +158,7 @@ tasks:
   - check:
       type: question
       q: "You want to test whether a bigger push changes a trolley's speed more quickly. Which plan is a fair test?"
-      options: ["Use the same trolley on the same surface, and change only the size of the push", "Use a heavier trolley for the bigger push", "Push one trolley on carpet and the other on tiles"]
+      options: ["Same trolley and surface; change only the push", "Use a heavier trolley for the bigger push", "Push one trolley on carpet and the other on tiles"]
       answer: 0
       feedback: [null, "If you change the mass as well, you can't tell which change made the difference.", "Different surfaces give different friction, so that would mean two things changed."]
       explain: "You change one variable (the push), measure one (how quickly the speed changes) and keep the rest the same (trolley and surface)."
@@ -166,10 +166,10 @@ tasks:
   - check:
       type: question
       q: "A spearthrower lets the thrower keep pushing on the spear over a longer arc. Why does the spear leave faster?"
-      options: ["The unbalanced force acts on the spear for longer, so its speed keeps increasing for longer", "The spearthrower makes the spear lighter", "The spearthrower stores the spear's speed and releases it"]
+      options: ["The push acts on the spear for longer", "The spearthrower makes the spear lighter", "The spearthrower stores the spear's speed and releases it"]
       answer: 0
       feedback: [null, "The spear's mass doesn't change, so that can't be the reason.", "Nothing is stored up, because the speed builds up while the push acts."]
-      explain: "The longer an unbalanced force acts, the more the motion changes."
+      explain: "The unbalanced force acts on the spear for longer, so its speed keeps increasing for longer. The longer an unbalanced force acts, the more the motion changes."
     hint: "Think about what happens to the spear's speed for as long as the thrower is still pushing on it."
 ```
 

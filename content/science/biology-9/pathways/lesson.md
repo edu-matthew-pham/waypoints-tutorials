@@ -81,15 +81,17 @@ tasks:
   - check:
       type: question
       q: "Why is a reflex faster than catching a ball?"
-      options: ["The impulse goes through the spinal cord only, with no time spent deciding in the brain", "Pain impulses travel faster than light impulses", "Leg muscles are faster than arm muscles", "Reflexes use hormones"]
+      options: ["The impulse goes through the spinal cord, not the brain", "Pain impulses travel faster than light impulses", "Leg muscles are faster than arm muscles", "Reflexes use hormones, which act at once"]
       answer: 0
-      feedback: [null, "The kind of stimulus isn't the reason: the reflex is faster because its route is shorter and skips the brain.", "The muscles aren't the difference.", "Reflexes use nerves only."]
+      feedback: [null, "The kind of stimulus isn't the reason: the reflex is faster because its route is shorter and skips the brain.", "The muscles aren't the difference.", "Reflexes use nerves only; hormones are slower."]
+      explain: "A reflex arc goes through the spinal cord only, so no time is spent deciding in the brain. Catching a ball needs the brain to judge where the ball is going."
   - check:
       type: question
       q: "In the chips pathway, the effector is a gland, not a muscle. What does an effector have to be?"
-      options: ["A muscle or a gland: something that carries out the response", "Always a muscle", "A receptor", "A nerve"]
+      options: ["Something that carries out the response", "Always a muscle that moves", "A receptor that notices the change", "A nerve that carries the message"]
       answer: 0
       feedback: [null, "Glands are effectors too: they release saliva, sweat or hormones.", "Receptors notice the change, and effectors are the ones that do something about it.", "Nerves carry the message; effectors act on it."]
+      explain: "An effector is a muscle or a gland: whatever carries out the response. The salivary glands make your mouth water, so they are the effector for the chips."
     hint: ["Think about what an effector's job is in the pathway, and then ask whether the salivary glands are doing that job when your mouth waters.", "On the board, compare what the leg muscles do for the drawing pin with what the salivary glands do for the chips."]
   - check: { type: reflect, text: "I can describe a reflex arc and explain why it's faster than a response that needs the brain." }
 ```
@@ -133,10 +135,10 @@ insight: "Predicting the effect of a break at one point shows the pathway is a c
 check:
   type: question
   q: "A person's spinal cord is damaged in their upper back. A doctor taps below their knee. What would you expect?"
-  options: ["The knee-jerk may still work if the reflex arc below the damage is intact, but the person may not feel the tap", "The knee can't jerk, but they feel the tap", "Nothing changes", "Both work normally"]
+  options: ["The knee may jerk, but they may not feel the tap", "The knee can't jerk, but they feel the tap", "Neither: no jerk and no feeling", "Both work normally"]
   answer: 0
-  feedback: [null, "Feeling needs impulses to reach the brain, past the damage.", "Damage to the spinal cord changes something.", "The route to the brain is broken."]
-  explain: "Doctors use reflex tests to find where along the spinal cord damage is."
+  feedback: [null, "Feeling needs impulses to reach the brain, past the damage.", "The knee-jerk reflex arc runs through the spinal cord below the damage, so it can still work.", "The route to the brain is broken."]
+  explain: "The knee-jerk may still work if the reflex arc below the damage is intact, but the impulses can't get past the damage to the brain, so the person may not feel the tap. Doctors use reflex tests to find where along the spinal cord damage is."
 ```
 
 ## Evaluate: look back

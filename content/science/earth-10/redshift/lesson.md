@@ -76,19 +76,21 @@ tasks:
   - check:
       type: question
       q: "What does a redshift in a galaxy's light tell us?"
-      options: ["The galaxy is moving away from us: its light is stretched to longer, redder wavelengths", "The galaxy is red", "The galaxy is moving towards us", "The galaxy is hot"]
+      options: ["The galaxy is moving away from us", "The galaxy's stars are red", "The galaxy is moving towards us", "The galaxy is very hot"]
       answer: 0
       feedback: [null, "It's the dark lines' positions that shift, not the galaxy's colour.", "That would be a blueshift.", "Temperature changes the overall colour, not where the lines sit."]
+      explain: "As the galaxy moves away, its light is stretched to longer, redder wavelengths."
   - check:
       type: question
       q: "On your graph, how does speed depend on distance?"
-      options: ["Farther galaxies move away faster, in proportion: double the distance, double the speed", "All galaxies move at the same speed", "Nearer galaxies move faster", "There's no pattern"]
+      options: ["Farther galaxies move away faster, in proportion", "All galaxies move at the same speed", "Nearer galaxies move away faster", "There's no pattern"]
       answer: 0
       feedback: [null, "Look at the points: they climb.", "The points go the other way.", "The points lie close to a straight line through the origin."]
+      explain: "Double the distance, double the speed: the points lie close to a straight line through the origin."
   - check:
       type: question
       q: "How does an expanding universe support the big bang theory?"
-      options: ["Run the expansion backwards and all galaxies were once together, in a hot, dense state", "It proves the universe is shrinking", "It shows the universe has a centre", "It doesn't"]
+      options: ["Run backwards, all galaxies were once together, hot and dense", "It proves the universe is shrinking", "It shows we are at the centre of the universe", "It doesn't: expansion and the big bang are unrelated"]
       answer: 0
       feedback: [null, "The redshifts say the opposite.", "Expansion looks the same from everywhere.", "It's one of the main lines of evidence."]
   - check: { type: reflect, text: "I can explain redshift as evidence that galaxies are moving away, and connect Hubble's observations to an expanding universe and the big bang." }
@@ -117,9 +119,10 @@ tasks:
   - check:
       type: question
       q: "From the second home galaxy, what did the other galaxies do?"
-      options: ["They all moved away, farther ones faster: the same pattern as before", "They moved towards it", "Only some moved", "Nothing"]
+      options: ["They all moved away, farther ones faster", "They moved towards the new home", "Only the nearest ones moved away", "They stayed where they were"]
       answer: 0
-      feedback: [null, "Watch the orange lines from the new home.", "In an expanding universe they don't, from any home.", "Watch again: every galaxy moved away."]
+      feedback: [null, "In an expanding universe they don't, from any home.", "Watch again: every galaxy moved away, the far ones most.", "Watch the orange lines from the new home."]
+      explain: "The same pattern as from your first home: expansion looks the same from every galaxy, so it has no centre."
     hint: ["Look at the orange lines from your new home and compare how long they are for the galaxies close by and the ones far away.", "Then think back to what the lines looked like from your first home, and ask whether anything about the pattern was different."]
 ```
 
@@ -136,9 +139,10 @@ insight: "A local exception shows the difference between a galaxy's own motion a
 check:
   type: question
   q: "The Andromeda galaxy, our nearest big neighbour, is blueshifted. Does this disprove the expanding universe?"
-  options: ["No: nearby galaxies' own motions under gravity can beat the expansion; over large distances, the redshift pattern is clear", "Yes: the universe is shrinking", "Yes: Hubble was wrong", "It means Andromeda is red"]
+  options: ["No: a nearby galaxy's own motion under gravity can beat the expansion", "Yes: one blueshift shows the universe is shrinking", "Yes: it shows Hubble's pattern was wrong", "No: a blueshift also means moving away"]
   answer: 0
   feedback: [null, "One nearby galaxy doesn't change the pattern of millions.", "The pattern holds for distant galaxies.", "Blueshift means moving towards us."]
+  explain: "Andromeda and the Milky Way are pulled together by gravity. Over large distances, the redshift pattern is clear."
 ```
 
 ## Evaluate: look back

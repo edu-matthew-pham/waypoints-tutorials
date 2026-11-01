@@ -89,7 +89,7 @@ tasks:
   - check:
       type: question
       q: "An instant ice pack goes cold when you snap it: it takes in heat. Is it a chemical reaction?"
-      options: ["No: a salt (usually ammonium nitrate or urea) dissolves in water, which is a physical change", "Yes: anything that takes in heat is a chemical reaction", "Yes: a change in temperature proves a new substance was made"]
+      options: ["No: a salt dissolves in water, which is a physical change", "Yes: anything that takes in heat is a chemical reaction", "Yes: a change in temperature proves a new substance was made"]
       answer: 0
       feedback: [null, "Taking in heat isn't enough: dissolving can take heat in too, and no new substance is made.", "A temperature change is a sign to check, not proof. Ask whether the particles are still the same."]
       explain: "Inside the pack, a salt (usually ammonium nitrate or urea) dissolves in water. The particles spread out but stay the same, so it is a physical change, as in Physical change. Dissolving can still take in energy from the surroundings, which is why the pack gets cold."
@@ -97,14 +97,14 @@ tasks:
   - check:
       type: question
       q: "On the board, the nitrogen and oxygen only reacted at 1800 K, and the temperature fell. Why might an endothermic reaction stop on its own?"
-      options: ["It takes in energy and cools its surroundings, so fewer collisions have enough energy to react", "It runs out of atoms", "Endothermic reactions are always slow"]
+      options: ["It cools down, so fewer collisions have enough energy", "It runs out of atoms", "Endothermic reactions are always slow"]
       answer: 0
       feedback: [null, "The atoms are all still there.", "Some endothermic reactions are fast; it's the cooling that slows them."]
-      explain: "Unless energy keeps coming in (a hot engine, sunlight for photosynthesis), an endothermic reaction cools itself down."
+      explain: "It takes in energy and cools its surroundings, so fewer collisions have enough energy to react. Unless energy keeps coming in (a hot engine, sunlight for photosynthesis), an endothermic reaction cools itself down."
   - check:
       type: question
       q: "Burning gas in a stove gives out a lot of energy. Where was that energy before?"
-      options: ["Stored in the gas and oxygen (chemical energy), released as their atoms rearrange into new particles", "In the match or spark that lit it", "In the air around the flame", "Nowhere: burning makes new energy"]
+      options: ["Stored in the gas and oxygen as chemical energy", "In the match or spark that lit it", "In the air around the flame", "Nowhere: burning makes new energy"]
       answer: 0
       feedback: [null, "The spark only starts it. The flame goes on giving out far more energy than the spark ever had.", "The air gets hotter: it receives the energy, it isn't where the energy came from.", "Energy is never made or destroyed. It was stored in the chemicals all along."]
       explain: "A fuel and oxygen together store chemical energy. In an exothermic reaction their atoms rearrange into new particles that store less, and the difference is given out to the surroundings."
@@ -137,10 +137,10 @@ tasks:
   - check:
       type: question
       q: "A sports trainer needs something to reduce swelling on a sprained ankle, at a game far from a freezer. Which product, and why?"
-      options: ["An instant ice pack: as its salt dissolves, it takes in energy from the ankle", "A hand warmer: its reaction is exothermic", "Either: both change temperature"]
+      options: ["An instant ice pack: it takes in energy", "A hand warmer: its reaction is exothermic", "Either: both change temperature"]
       answer: 0
       feedback: [null, "Warming would increase swelling.", "Their energy goes opposite ways."]
-      explain: "Taking energy in for cooling, giving it out for warming: the direction of energy transfer is the design choice. (The ice pack does this by dissolving, a physical change; the hand warmer by a reaction.)"
+      explain: "As the ice pack's salt dissolves, it takes in energy from the ankle. Taking energy in for cooling, giving it out for warming: the direction of energy transfer is the design choice. (The ice pack does this by dissolving, a physical change; the hand warmer by a reaction.)"
     hint: "Does a swollen ankle need energy taken away from it or added to it? Then think about which way each pack's energy goes."
 ```
 
@@ -157,10 +157,10 @@ insight: "Activation energy explains why exothermic reactions need a start (a ma
 check:
   type: question
   q: "Wood is exothermic when it burns, yet a log doesn't catch fire on its own. You need a match. Why, and why does it keep burning once lit?"
-  options: ["Reactions need enough energy to start; once lit, the energy given out heats the next bit enough to react", "The match adds fuel", "Wood is endothermic until it is hot"]
+  options: ["It needs energy to start; its own heat then keeps it going", "The match adds enough fuel to keep it going", "Wood only turns exothermic once it is hot"]
   answer: 0
   feedback: [null, "A match flame is tiny compared with the log.", "Burning wood gives out energy throughout."]
-  explain: "Collisions need enough energy to react (activation energy, Year 10). An exothermic reaction supplies that energy to its own next steps, so it keeps going."
+  explain: "Reactions need enough energy to start; once lit, the energy given out heats the next bit enough to react. Collisions need enough energy to react (activation energy, Year 10). An exothermic reaction supplies that energy to its own next steps, so it keeps going."
 ```
 
 ## Evaluate: look back

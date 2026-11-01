@@ -53,16 +53,16 @@ tasks:
   - check:
       type: question
       q: "A student calculates the braking force of a car as 3 000 000 N. What should they do?"
-      options: ["Check the working: a force that large is not reasonable for a family car", "Report it: the calculation was careful", "Divide by 10 to make it look sensible"]
+      options: ["Check the working: that is far too large for a car", "Report it: the calculation was careful", "Divide by 10 to make it look sensible"]
       answer: 0
       feedback: [null, "A careful method can still contain a slip, such as mixing grams and kilograms.", "Don't change a number without finding the slip."]
       explain: "Compare the answer with what you know: a family car's braking force is a few thousand newtons. A huge number suggests a unit slip (grams for kilograms, for example)."
   - check:
       type: question
       q: "A speed–time graph for a trolley is a straight line rising from 0 m/s at 0 s to 6 m/s at 3 s. What is the acceleration, and what does the gradient show?"
-      options: ["2 m/s²: the gradient of a speed–time graph is the acceleration", "6 m/s²", "3 m/s²: the gradient is the time"]
+      options: ["2 m/s²: the gradient is the acceleration", "6 m/s²: the gradient is the top speed", "3 m/s²: the gradient is the time"]
       answer: 0
-      feedback: [null, "Divide the change in speed by the time taken.", "The gradient is rise over run: 6 ÷ 3."]
+      feedback: [null, "Divide the change in speed by the time taken: 6 is the final speed, not the gradient.", "The gradient is rise over run: 6 ÷ 3."]
       explain: "Gradient = change in speed ÷ change in time = acceleration. Steeper means a bigger acceleration."
   - check: { type: reflect, text: "I can solve a multi-step force and motion problem with units, and check the answer is reasonable." }
 ```

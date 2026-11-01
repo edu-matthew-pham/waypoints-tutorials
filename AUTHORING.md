@@ -20,6 +20,8 @@ Order steps so students **Predict** before they run, then **Run**, **Investigate
 Guidelines: one concept per step; one short clip per concept (10–25 s); write
 Investigate prompts as questions; put a prediction question *before* any output is shown.
 
+The stages are step jobs, not a required order or count (Project doc lesson-shape, 12 Oct 2026; `roadmap/rules.md` T11): a student reads or traces before they write, and starts from given code; otherwise use the stages the lesson's move needs.
+
 ## 2. `lesson.md` layout
 
 Frontmatter keys: `title`, `summary`, `author` (optional, shown as "By …"), `language`, `app`, `pacing`.
@@ -764,6 +766,11 @@ Vary, Practise, Make).
     (default 1), `fractions: 4` (values between whole numbers written as fractions and mixed numerals, −1 1/4, with the
     decimal beside them in readouts; points land on quarters unless `snap:` says otherwise), `context: Temperature (°C)`
     (a name and unit under the line and in readouts).
+    - `years: on` (History, added 1 Nov 2026): the line is a timeline. Negative values are BCE and positive ones CE in
+      labels, readouts and `compare:` ("500 BCE", "100 CE"; compare says which came before); there is no year 0, so a
+      point cannot start at 0 and a dragged point that lands there moves to the nearest year either side; labels are
+      spaced for the longer text and minor ticks follow `snap:`. Checks use the signed numbers (`x(A) = -480` is 480 BCE).
+      Not with `fractions`, `sum`, `product` or `ray`. First used by `history/time-7/dates-and-timelines`.
     - `point A: -7` (fixed; `point A: -7, Canberra` adds a caption), `point P: 0, drag` (students drag it along the line;
       checks see it once let go; a **Move** row under the line steps it with buttons or the arrow keys, for keyboards and
       clips: `click: Move P left`), `point A: a` (follows slider a);
@@ -1754,7 +1761,7 @@ revising one idea, beside practical work, never instead of it. One tutorial per 
   the minimum path. The page shows a Minimum / Typical / Wider control; `?width=` in the link sets the floor (a
   teacher's choice), students can widen but not narrow, and the default is typical. Tiered steps' checks are not
   needed to finish the lesson and are left out of course progress. Worksheets wrap them in `:::typical` / `:::wider`.
-  Wider means more contexts, never harder content.
+  Wider means more contexts, never harder content (`roadmap/rules.md` T10; the Learning with AI courses may add depth, worded by what a step adds, never by age: T10a).
 - **`sort` check, sort into groups** (any lesson; not ordering, which is `parsons`): `options:` are groups, `items:` are `[text, group]` or `[text, group, why]`; a group can
   be used many times (unlike `match`), and extra groups act as distractors. The why shows once an item is right.
 - **`question` feedback** (any lesson): `feedback:` is one entry per option (text, or `null`), shown when that wrong

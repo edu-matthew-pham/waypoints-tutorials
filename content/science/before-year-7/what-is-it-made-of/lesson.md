@@ -71,10 +71,10 @@ tasks:
   - check:
       type: question
       q: "You need to know if a cloth is waterproof. What should you do?"
-      options: ["Drop some water on it and see if it soaks in", "Feel how soft it is", "Look at its colour", "Smell it"]
+      options: ["Drop water on it and watch", "Feel how soft it is", "Look at its colour", "Feel how thick it is"]
       answer: 0
-      feedback: [null, "Soft or not doesn't tell you whether water gets through.", "Colour doesn't tell you whether water gets through.", "Smell doesn't tell you whether water gets through."]
-      explain: "To test if a cloth is waterproof, check whether water soaks through it."
+      feedback: [null, "Soft or not doesn't tell you whether water gets through.", "Colour doesn't tell you whether water gets through.", "Thick cloth can still soak up water, like a towel, so you have to test it."]
+      explain: "To test if a cloth is waterproof, drop some water on it and check whether the water soaks in or through."
   - check:
       type: question
       q: "Two clear cups look the same. One is glass and one is plastic. Which test is a good place to start?"

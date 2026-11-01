@@ -70,17 +70,17 @@ tasks:
   - check:
       type: question
       q: "What is the difference between a carbon store and a carbon flow?"
-      options: ["A store is where carbon is kept; a flow is carbon moving from one store to another each year", "They mean the same thing", "Stores are in the air; flows are in the ocean"]
+      options: ["A store is where carbon is kept; a flow moves it", "They mean the same thing", "Stores are in the air; flows are in the ocean"]
       answer: 0
       feedback: [null, "A store is an amount of carbon sitting somewhere, and a flow is carbon moving between stores.", "Every sphere has stores, and flows join them."]
-      explain: "Stores are measured in tonnes of carbon; flows in tonnes a year. Photosynthesis is a flow from air to living things."
+      explain: "A flow is carbon moving from one store to another each year. Stores are measured in tonnes of carbon; flows in tonnes a year. Photosynthesis is a flow from air to living things."
   - check:
       type: question
       q: "When a log burns, what happens to its carbon?"
-      options: ["It moves into the air as carbon dioxide: the same atoms, in a different store", "It is destroyed by the fire", "It turns into energy"]
+      options: ["It moves into the air as carbon dioxide", "It is destroyed by the fire", "It turns into heat and light energy"]
       answer: 0
       feedback: [null, "Atoms aren't destroyed in reactions.", "Energy is released, but the carbon atoms stay as carbon atoms."]
-      explain: "Carbon is never made or destroyed. Burning moves it from the biosphere to the atmosphere."
+      explain: "Carbon is never made or destroyed: the same atoms end up in a different store. Burning moves it from the biosphere to the atmosphere."
     hint: ["When you see smoke coming out of a chimney, what gas is in it, and what's that gas made of?", "Think back to burning in Year 8 and what happened to the atoms, then ask which store the log's carbon is in once the smoke has drifted away."]
   - check:
       type: question
@@ -130,9 +130,9 @@ tasks:
   - check:
       type: question
       q: "Which of these things in a landscape store carbon?"
-      options: ["Trees, soil, the sea, the air and limestone cliffs: every sphere", "Only the trees", "Only the air"]
+      options: ["Every one: trees, soil, sea, air and rock", "Only the trees and soil", "Only the trees and the air"]
       answer: 0
-      feedback: [null, "The sea, soil, air and rocks store carbon too.", "Carbon is in all four spheres."]
+      feedback: [null, "The sea, air and rocks store carbon too.", "Soil, the sea and rocks store carbon too: it is in all four spheres."]
       explain: "Carbon is everywhere: it is part of every living thing, dissolved in water, in the air, and locked in rocks."
 ```
 

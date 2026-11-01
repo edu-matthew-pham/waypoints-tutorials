@@ -106,10 +106,10 @@ tasks:
   - check:
       type: question
       q: "Why do properties repeat from one period to the next?"
-      options: ["The number of outer electrons repeats, and outer electrons decide how an element reacts", "The atoms get heavier in a repeating way", "Elements were placed to make the pattern look neat"]
+      options: ["The number of outer electrons repeats each period", "The atoms get heavier in a repeating way", "Elements were placed to make the pattern look neat"]
       answer: 0
       feedback: [null, "Mass rises steadily; it doesn't repeat.", "The pattern was found in the elements' behaviour before anyone arranged it."]
-      explain: "Every period runs from 1 outer electron to a full shell. Elements with the same number of outer electrons, in the same column, react in similar ways."
+      explain: "Outer electrons decide how an element reacts. Every period runs from 1 outer electron to a full shell. Elements with the same number of outer electrons, in the same column, react in similar ways."
   - check: { type: reflect, text: "I can explain why a new period starts and why properties repeat, and read an element's shells from its period and group." }
 ```
 
@@ -139,10 +139,10 @@ tasks:
   - check:
       type: question
       q: "Across period 3, the elements change from metals to non-metals. How do outer electrons explain this?"
-      options: ["On the left, atoms have 1 to 3 outer electrons that are easily lost (metals); on the right, nearly full shells gain or share electrons (non-metals)", "Atoms on the right are bigger", "Metals have no outer electrons"]
+      options: ["Few outer electrons are easily lost; nearly full shells gain", "Atoms on the right are bigger, so they gain more", "Metals have no outer electrons at all"]
       answer: 0
       feedback: [null, "Across a period atoms actually get a little smaller: more protons pull the same shells in tighter.", "Every atom has outer electrons."]
-      explain: "Metals lose outer electrons easily. With more outer electrons, losing them all gets harder, and gaining or sharing to fill the shell takes over."
+      explain: "On the left, atoms have 1 to 3 outer electrons that are easily lost (metals); on the right, nearly full shells gain or share electrons (non-metals). Metals lose outer electrons easily. With more outer electrons, losing them all gets harder, and gaining or sharing to fill the shell takes over."
 ```
 
 ### Period 3
@@ -162,7 +162,7 @@ tasks:
   - check:
       type: question
       q: "Mendeleev ordered elements by mass and grouped them by how they reacted, leaving gaps. He predicted the properties of a missing element below silicon; germanium was found 17 years later (1886) and matched. What does this show?"
-      options: ["A pattern can predict new things before anyone can explain it; electrons later explained why it works", "Mendeleev knew about electron shells", "The table is just a convenient list with no meaning"]
+      options: ["A pattern can predict before anyone can explain it", "Mendeleev already knew about electron shells", "The table is just a convenient list with no meaning"]
       answer: 0
       feedback: [null, "Electrons were discovered in 1897, almost 30 years later.", "If it were just a list, it could not have predicted germanium."]
       explain: "Good scientific patterns predict. The explanation (outer electrons) came decades later and showed why the pattern works, and why the table is ordered by atomic number, not mass."

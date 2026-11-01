@@ -64,14 +64,14 @@ tasks:
   - check:
       type: question
       q: "What does energy balance mean?"
-      options: ["Energy absorbed from the sun equals energy given off to space, over time", "No energy is moving", "The sun and Earth are the same temperature", "Earth stores all the energy it receives"]
+      options: ["Energy in from the sun equals energy out to space, over time", "No energy is moving", "The sun and Earth are the same temperature", "Earth stores all the energy it receives"]
       answer: 0
       feedback: [null, "Huge amounts of energy are still flowing in and out, just equally.", "The sun is far hotter.", "If it stored all of it, it would keep warming."]
     hint: ["When the board said it was in balance, were the in and out numbers zero, or something else?", "Open the board at the start, before you change anything, and read the in and out numbers in the bold line near the bottom of the picture."]
   - check:
       type: question
       q: "After you increased the sunlight, why did the temperature stop rising?"
-      options: ["A warmer surface gives off more infrared, until energy out matched energy in again", "The sunlight ran out", "The ocean got full", "The warmer Earth reflected more of the sunlight"]
+      options: ["The warmer surface gave off more infrared until out matched in", "The sunlight ran out", "The ocean got full", "The warmer Earth reflected more of the sunlight"]
       answer: 0
       feedback: [null, "The sunlight stayed at the new level.", "The ocean took heat while warming; it is a store, not a limit.", "The reflected share stayed where you set it; what grew was the infrared given off by the warmer surface."]
     hint: ["While the temperature was rising, which numbers on the board were changing, and which stayed where you'd set them?", "Make a fresh change and run the years again, and keep your eye on the Reflected label and the infrared labels on the picture as the surface warms."]
@@ -104,7 +104,7 @@ insight: "The ocean's heat capacity explains why climate responds slowly."
 check:
   type: question
   q: "Why does the real Earth take decades, not days, to reach a new balance after a change? (The board's simple model gets there in a few years.)"
-  options: ["The oceans can store a huge amount of heat, so they warm slowly", "Sunlight takes years to arrive", "Infrared is slow", "Nothing changes for 50 years"]
+  options: ["The oceans store a lot of heat, so they warm slowly", "Sunlight takes years to reach Earth", "Infrared travels slowly through the air", "Nothing changes for about 50 years"]
   answer: 0
   feedback: [null, "Sunlight takes about 8 minutes to arrive.", "Infrared travels at the speed of light.", "The temperature starts changing straight away, just slowly."]
 ```
@@ -118,10 +118,10 @@ insight: "Ocean currents redistribute heat, explaining regional climates within 
 check:
   type: question
   q: "Western Europe is much milder than parts of Canada at the same latitude. What helps explain it?"
-  options: ["Warm ocean currents carry heat from the tropics across the Atlantic", "Europe is closer to the sun", "Canada has no sunlight in winter", "Europe has more greenhouse gases"]
+  options: ["Warm ocean currents carry heat from the tropics", "Europe is closer to the sun", "Canada has no sunlight in winter", "Europe has more greenhouse gases"]
   answer: 0
   feedback: [null, "Distance to the sun is the same.", "Both get winter sun.", "The air's gases mix around the whole world."]
-  explain: "The warm Atlantic current helps, and so do the westerly winds, which carry mild air off the ocean onto Europe. Scientists still debate how much each one matters."
+  explain: "The warm Atlantic current carries heat from the tropics, and so do the westerly winds, which carry mild air off the ocean onto Europe. Scientists still debate how much each one matters."
 ```
 
 ## Evaluate: look back

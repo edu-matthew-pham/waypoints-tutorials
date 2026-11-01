@@ -71,25 +71,25 @@ tasks:
   - check:
       type: question
       q: "Why can't the particle model explain why some substances react?"
-      options: ["It treats particles as plain balls with no parts, so it says nothing about how they could join or swap", "Because reactions are too fast to see", "Because the model only works for gases"]
+      options: ["It treats particles as plain balls with no parts", "Because reactions are too fast to see", "Because the model only works for gases"]
       answer: 0
       feedback: [null, "Speed isn't what limits the model, so think about what it says a particle is.", "The model works for solids and liquids as well as gases, so that can't be the limit."]
-      explain: "To explain a phenomenon, a model needs the right parts. Reactions need atoms that can join and rearrange (Year 8), and electricity needs electrons (Year 9)."
+      explain: "A plain ball has no parts, so the model says nothing about how particles could join or swap. To explain a phenomenon, a model needs the right parts. Reactions need atoms that can join and rearrange (Year 8), and electricity needs electrons (Year 9)."
     hint: ["What does the particle model say a particle actually is?", "Now think about what particles would have to be able to do for one substance to turn into a different one, and whether a plain ball can do that."]
   - check:
       type: question
       q: "What evidence supports the particle model?"
-      options: ["Diffusion, gases being compressible, and tiny specks in water jiggling under a microscope", "We can see particles with our eyes", "It explains everything"]
+      options: ["Diffusion, squashing gases and Brownian motion", "We can see particles with our eyes", "It explains everything"]
       answer: 0
       feedback: [null, "Particles are far too small to see with our eyes, so that can't be the evidence.", "No model explains everything, and this one doesn't either."]
-      explain: "Tiny particles from pollen grains in water jiggle (Brownian motion) because moving water particles keep knocking them about, which Einstein explained in 1905 and which is strong evidence for particles."
+      explain: "Smells spread (diffusion), gases can be squashed, and tiny particles from pollen grains in water jiggle under a microscope (Brownian motion) because moving water particles keep knocking them about. Einstein explained that in 1905, and it is strong evidence for particles."
   - check:
       type: question
       q: "The particle model explains a smell spreading across a room. Which part of the model does the explaining?"
-      options: ["Particles are always moving, with space between them, so the smell's particles spread out between the air particles", "Smell particles are lighter than air, so they float up and spread", "Smell particles get bigger until they fill the room", "The smell spreads only because a breeze carries it"]
+      options: ["Particles are always moving, with space between them", "Smell particles are lighter than air, so they float up and spread", "Smell particles get bigger until they fill the room", "The smell spreads only because a breeze carries it"]
       answer: 0
       feedback: [null, "Smells spread downwards and sideways as well as up, because the particles move in every direction.", "Particles never change size, so they spread out rather than grow.", "A draught helps, but a smell still spreads in still air, because its particles move by themselves."]
-      explain: "The model assumes moving particles with space between them, which is exactly what diffusion needs, so it explains it well."
+      explain: "The smell's particles keep moving and spread out into the spaces between the air particles. The model assumes moving particles with space between them, which is exactly what diffusion needs, so it explains it well."
   - check: { type: reflect, text: "I can name something the particle model explains well and something it can't, with a reason for each." }
 ```
 
@@ -113,7 +113,7 @@ insight: "The model is judged by what it explains well. Squashing is a clear cas
 check:
   type: question
   q: "Looking back at squashing: a syringe of air can be squashed, but a syringe of water cannot. What does the particle model say is different?"
-  options: ["Air particles are far apart, with space to move into; water particles are already close together", "Air particles are smaller than water particles", "Water particles are harder than air particles", "Air has no mass, so nothing pushes back"]
+  options: ["Air particles are far apart; water particles are close", "Air particles are smaller than water particles", "Water particles are harder than air particles", "Air has no mass, so nothing pushes back"]
   answer: 0
   feedback: [null, "Particles of a substance are the same size in every state, so the difference must be something else.", "Particles never squash in any state, so that isn't what makes the difference.", "Air does have mass, about 1.2 g in every litre, so that isn't the reason."]
   explain: "The spacing explains it, and this is the kind of job the particle model does well: explaining how substances behave from the arrangement and motion of their particles."
@@ -143,10 +143,10 @@ insight: "The long road from an idea to an accepted model shows that evidence, n
 check:
   type: question
   q: "Ancient Greek thinkers suggested matter is made of tiny particles, but most people didn't accept it for over 2000 years. What changed?"
-  options: ["Evidence: experiments on gases, chemical reactions and Brownian motion that the idea explained and predicted", "Someone saw a particle", "It was voted on"]
+  options: ["Experiments the idea explained and predicted", "Someone saw a particle", "A famous scientist said it was true"]
   answer: 0
-  feedback: [null, "Atoms were first imaged in the 1950s, which was long after the model was accepted, so nobody could have relied on that.", "Science doesn't settle ideas by vote, so that can't be what changed people's minds."]
-  explain: "Models are accepted when they explain and predict evidence better than the alternatives, and changed when new evidence doesn't fit."
+  feedback: [null, "Atoms were first imaged in the 1950s, which was long after the model was accepted, so nobody could have relied on that.", "Scientists are convinced by evidence, not by who says something, however famous they are."]
+  explain: "Evidence changed minds: experiments on gases, chemical reactions and Brownian motion that the particle idea explained and predicted. Models are accepted when they explain and predict evidence better than the alternatives, and changed when new evidence doesn't fit."
 ```
 
 ## Evaluate: look back

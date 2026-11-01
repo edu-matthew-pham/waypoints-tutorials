@@ -88,7 +88,7 @@ tasks:
   - check:
       type: question
       q: "In a hormonal pathway, what is the command centre?"
-      options: ["A gland, such as the pancreas, which releases the hormone", "The blood", "The target organ"]
+      options: ["A gland that releases the hormone", "The blood that carries the hormone", "The target organ"]
       answer: 0
       feedback: [null, "The blood carries the message; it doesn't decide anything.", "The target organ is the effector."]
       explain: "Glands (pancreas, adrenal glands, pituitary) act as command centres: they detect or are told of a change and release a hormone."
@@ -96,17 +96,17 @@ tasks:
   - check:
       type: question
       q: "Why do electrical signals reach their effector faster than hormones?"
-      options: ["They travel along nerves directly to one place; hormones drift around the body in the blood", "Electricity is stronger than chemicals", "Hormones have further to go because glands are far away"]
+      options: ["They go along nerves straight to one place", "Electricity is stronger than chemicals", "Hormones have further to go because glands are far away"]
       answer: 0
       feedback: [null, "Strength isn't the point; the route is.", "Distance matters less than how the message travels."]
-      explain: "Nerve signals travel at up to about 100 m/s along a wired route. Hormones go wherever the blood goes, which takes about a minute for one lap of the body, and then must build up."
+      explain: "Nerve signals travel at up to about 100 m/s along a wired route, straight to one place. Hormones go wherever the blood goes, which takes about a minute for one lap of the body, and then must build up."
   - check:
       type: question
       q: "A fright makes you jump (nerves) and your heart keep pounding for minutes (adrenaline). Why use both?"
-      options: ["Nerves give the instant reaction; the hormone keeps the whole body ready for longer", "The nerves stop working after a fright", "Adrenaline is a nerve signal"]
+      options: ["Nerves act instantly; the hormone's effect lasts", "The nerves stop working after a fright", "Adrenaline is a nerve signal"]
       answer: 0
       feedback: [null, "Both systems work together.", "Adrenaline is a hormone, released by the adrenal glands into the blood."]
-      explain: "Fast and short, plus slow and lasting: many responses use both systems."
+      explain: "Nerves give the instant reaction; adrenaline keeps the whole body ready for longer. Fast and short, plus slow and lasting: many responses use both systems."
   - check: { type: reflect, text: "I can describe how the nervous and endocrine systems each carry a message, and compare their speed and how long they last." }
 ```
 

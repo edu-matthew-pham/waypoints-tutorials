@@ -76,15 +76,17 @@ tasks:
   - check:
       type: question
       q: "With every process on, why did the CO₂ in the air stay steady?"
-      options: ["Carbon leaving the air (photosynthesis, oceans) equalled carbon entering it (respiration, decomposition, oceans)", "Nothing was happening", "Plants stopped photosynthesising", "The ocean stopped working"]
+      options: ["Carbon leaving the air equalled carbon entering it", "Nothing was moving between the stores", "Plants stopped photosynthesising", "The ocean stopped working"]
       answer: 0
       feedback: [null, "Look at the arrows: about 120 a year go each way between the air and living things, and about 80 each way between the air and the oceans.", "They were still photosynthesising, and the other flows balanced it.", "The ocean was still taking in and giving out carbon, just as much each way."]
+      explain: "Photosynthesis and the oceans take carbon out of the air; respiration, decomposition and the oceans put it back. When the flows in and out are equal, the store stays steady."
   - check:
       type: question
       q: "If a large forest is cleared and burned, what happens to the carbon flows?"
-      options: ["Less photosynthesis takes carbon out of the air, and burning and rotting put more in: CO₂ in the air rises", "Nothing changes", "CO₂ in the air falls", "The carbon disappears"]
+      options: ["Less carbon is taken out and more put in, so CO₂ rises", "Nothing changes in the flows", "CO₂ in the air falls, as fewer trees respire", "The carbon in the trees disappears in the fire"]
       answer: 0
-      feedback: [null, "With far fewer trees, much less photosynthesis is taking carbon out of the air.", "Think about which flow got smaller when the trees went, and which got bigger.", "Carbon is never destroyed: it moves to another store."]
+      feedback: [null, "With far fewer trees, much less photosynthesis is taking carbon out of the air.", "Trees respire less, but they also stop taking in carbon, and burning and rotting add more.", "Carbon is never destroyed: it moves to another store."]
+      explain: "Less photosynthesis takes carbon out of the air, and burning and rotting put more in, so CO₂ in the air rises."
     hint: ["With far fewer trees, what happens to the arrow taking carbon out of the air and into living things?", "The carbon in the wood isn't used up or destroyed, so follow it and ask which store it ends up in after the burning and rotting."]
   - check: { type: reflect, text: "I can explain how photosynthesis and respiration move carbon between the atmosphere and biosphere, and what balance means." }
 ```
@@ -126,9 +128,10 @@ insight: "Reading a real pattern as evidence of the photosynthesis–respiration
 check:
   type: question
   q: "Measurements of CO₂ in the air in the Northern Hemisphere dip every northern summer and rise every winter. Why?"
-  options: ["In summer the huge northern forests photosynthesise more than they respire; in winter respiration and decomposition win", "The sun burns CO₂ in summer", "People burn less fuel in summer", "Trees only respire in winter, when they have lost their leaves"]
+  options: ["Northern forests photosynthesise most in summer", "The sun burns CO₂ in summer", "People burn less fuel in summer", "Trees only respire in winter, when they have lost their leaves"]
   answer: 0
   feedback: [null, "The sun doesn't destroy CO₂.", "The pattern is far bigger than any change in fuel use.", "Plants respire all year, day and night; in summer, photosynthesis outweighs it."]
+  explain: "In summer the huge northern forests photosynthesise more than they respire; in winter respiration and decomposition win."
 ```
 
 ## Evaluate: look back

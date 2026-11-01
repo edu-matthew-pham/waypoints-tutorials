@@ -120,7 +120,7 @@ insight: "Adding random fertilisation (and crossing over) shows why siblings are
 check:
   type: question
   q: "Each parent can make over 8 million different gametes. Ignoring crossing over, roughly how many different children could two parents have?"
-  options: ["About 8 million × 8 million: around 70 trillion", "About 16 million", "About 8 million", "46"]
+  options: ["About 70 trillion (8 million × 8 million)", "About 16 million (8 million + 8 million)", "About 8 million", "46, one for each chromosome"]
   answer: 0
   feedback: [null, "Any sperm can meet any egg: multiply.", "It's one from each, so multiply.", "Both parents' gametes vary."]
   explain: "Crossing over (pairs swapping pieces during meiosis) adds far more variety still."

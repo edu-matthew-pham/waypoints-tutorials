@@ -88,10 +88,10 @@ tasks:
   - check:
       type: question
       q: "You raise the pitch. What has increased?"
-      options: ["The frequency: more vibrations each second, so shorter waves", "The amplitude: bigger vibrations", "The speed of every particle"]
+      options: ["The frequency: more vibrations each second", "The amplitude: bigger vibrations", "The speed of every particle"]
       answer: 0
       feedback: [null, "Amplitude sets the loudness, not the pitch.", "Pitch is about how often, not how fast."]
-      explain: "Higher pitch means higher frequency (more compressions pass each second). Loudness depends on amplitude, the size of the vibration."
+      explain: "Higher pitch means higher frequency (more compressions pass each second), so the waves are shorter. Loudness depends on amplitude, the size of the vibration."
     hint: "Think back to the two sounds you made: which slider changed how many waves fit in the tube, and which changed how tall the pressure graph got?"
   - check:
       type: match
@@ -103,7 +103,7 @@ tasks:
   - check:
       type: question
       q: "Why can't sound travel through a vacuum?"
-      options: ["There are no particles to vibrate and pass the energy on", "A vacuum absorbs the sound", "Sound is too slow in a vacuum"]
+      options: ["There are no particles to pass the energy on", "A vacuum absorbs the sound", "Sound is too slow in a vacuum"]
       answer: 0
       feedback: [null, "Nothing absorbs it: there is simply nothing there to carry it.", "It isn't slow: it doesn't travel at all."]
       explain: "Sound is energy passed from particle to particle. With no particles, there is nothing to pass it along."
@@ -137,9 +137,9 @@ tasks:
   - check:
       type: question
       q: "Sound travels at about 340 m/s in air, 1500 m/s in water and 5000 m/s in steel. Why is it fastest in steel?"
-      options: ["Its particles are held very stiffly by strong bonds, so each one pushes on the next almost at once", "Steel particles are heavier", "Steel is warmer"]
+      options: ["Its particles are held stiffly, so each push passes on at once", "Its particles are heavier, so they push harder", "Its particles are packed more closely than water's"]
       answer: 0
-      feedback: [null, "Heavier particles actually slow sound down, and steel is fast in spite of that because its bonds are so stiff.", "Temperature isn't what makes the difference between materials."]
+      feedback: [null, "Heavier particles actually slow sound down, and steel is fast in spite of that because its bonds are so stiff.", "Closeness helps a little, but stiffness matters more: water is 800 times denser than air, yet sound is only about four times faster in it."]
       explain: "In a solid each particle is held stiffly by its neighbours, so a push is passed on almost at once. In a gas the particles aren't held together at all and only pass the push on when they bump into each other, which is slower. Stiffness matters more than closeness: water is about 800 times denser than air, but sound is only about four times faster in it."
     hint: "Think about how the particles in a solid are held compared with the ones in a gas, and how quickly each one can pass a push on to the next."
 ```

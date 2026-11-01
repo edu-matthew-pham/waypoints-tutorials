@@ -637,7 +637,24 @@ Descriptor: "explain historical interpretations about significant events, indivi
 - Tests as in the handoff: `npm ci`, `validate`, `check-nodes`, `WP_NO_MAKECODE=1` build, every check answered in Chromium at 1280 and 390 px (task pills and `smaller:` folds opened), `check-decks -- history/<course>`, `check-lesson-boards -- history` if a board is added.
 - **Publish:** whole-site (pathway and teacher page; also the widget if `years:` is added). Ask Matthew first.
 
-### Questions for Matthew
-1. **Timeline board:** add the small `years: on` option to the `numberline` widget for S05 n1 (default), or no board for now?
-2. **Pathway:** new **Thinking historically** pathway (default), or add the three courses to How we know?
-3. **Order:** build S05, S06, S07 in that order, one push each after a self-check (default), or all three in one push?
+### Questions for Matthew (answered 1 Nov 2026: "go", so the defaults)
+1. **Timeline board:** the small `years: on` option on the `numberline` widget for S05 n1. *Decided:* yes (reuse and extend an existing board over a new widget, as Matthew prefers; scope: History timelines, any course may use it).
+2. **Pathway:** a new **Thinking historically** pathway. *Decided:* yes (How we know stays a short source-and-evidence gateway; these skills sit beside every lens).
+3. **Order:** S05, S06, S07, one push each after a self-check. *Decided:* yes.
+
+## Built (1 Nov 2026, Matthew said go): `history/time-7`, *Time, cause and change* (AC9HH7S05; Preview, not yet tried with a class)
+
+Course `content/history/time-7/` (tagline *When did it happen, why, and what stayed the same?*, Usually Year 7, `recap: true`, no `after:`), first course of the new **Thinking historically** pathway (Past perspectives and Historical interpretations shown as Coming later). Three lessons in node order:
+1. `dates-and-timelines` (n1, hinge): BCE counts down, CE up, no year 0; BC/AD same numbers; BP as years before 1950 (no First Nations example; teacher note points to Deep time Australia). Nib's slip `bce-bigger-is-later` with a countdown `smaller:`. Spans 221 → 206 BCE (15) and 50 BCE → 50 CE (99). **Timeline board** (Practise): four events dragged to their years on `numberline` with `years: on`. Typical: gaps in timelines (sort) and ACARA's "history" definition labelled as a convention; wider: reign-year dating.
+2. `causes-and-effects` (n2, hinge): Qin unification "as historians usually explain it": reforms in the 300s BCE, Dujiangyan, the 230–221 BCE campaigns; effects short- and long-term; trigger vs underlying on the 209 BCE revolt "according to Sima Qian" (penalty detail in teacher notes only). Nib's slip `single-cause-event`. Typical: Augustus (27 BCE, Actium 31 BCE); wider: weighing causes.
+3. `continuity-and-change` (n3): Qin to Han, sorted continued/changed; three dated sources in order (Shuihudi before 217 BCE, Zhangjiashan about 186 BCE, Emperor Wu's academy 124 BCE). Nib's slip `new-dynasty-new-everything`. Typical: Rome after 27 BCE (Senate and consuls continue); wider: timescale decides continuity or change (Confucian ideas).
+
+**Departures from the plan:** the five-event ordering task became the timeline board (ordering by placement, so no parsons and no sideways scroll); the Zhengguo Canal was dropped (its date could not be checked against a museum or UNESCO source); the contact-7 link is a teacher-note mention only, since that lesson is not built yet.
+
+**Shared:** `numberline` `years: on` (`roadmap/shared.md` › Changed by the History skills chat), AUTHORING note, three misconception lines, History index pathway, one bullet in `content/history-teachers.md`.
+
+**Facts checked 1 Nov** (sources in each `teacher.yml`): Confucius 551–479 BCE (Stanford Encyclopedia of Philosophy); Qin 221–206 BCE, standardisation, commanderies, harsh reputation (The Met); Han 206 BCE–220 CE, Chang'an, Emperor Wu and Confucianism, borders kept (The Met); BP = years before AD 1950 (*Radiocarbon*); Shang Yang's ranks of merit (SEP, Chinese Legalism); Zhangjiashan texts buried about 186 BCE, Han "adopted and adapted" Qin precedents (Barbieri-Low, UCSB); Emperor Wu's academy 124 BCE (Strayer, a textbook); Liu Bang and Wang Mang (Britannica, an encyclopedia; marked as such). Augustus and Actium dates are standard and not rechecked.
+
+**Tested:** `validate` (no History errors; the only length warning in these lessons fixed), `check-nodes` (only the 2 known Civics warnings), build, `check-lesson-boards -- history/time-7` and `-- maths` (the widget change), `check-decks -- history/time-7` (all slides fit), and every check answered in Chromium at 1280 and 390 px with `?width=wider` and every `smaller:` fold open: 62 answered, 48 wrong answers tried with feedback shown, all required checks ticked, the timeline board solved with the keyboard Move row; course, recap and teacher guide pages load with no errors or sideways scroll. Editorial pass on all three lessons. Not tried with a class.
+
+**Publish:** whole-site (new pathway, teacher page, and the widget). Ask Matthew (W1).

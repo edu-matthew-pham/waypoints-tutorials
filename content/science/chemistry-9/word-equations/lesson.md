@@ -76,10 +76,10 @@ tasks:
   - check:
       type: question
       q: "Why are carbon dioxide and water counted as new substances, and not just methane and oxygen in a new shape?"
-      options: ["They have different properties: methane burns and water puts fires out", "They are heavier", "They are gases"]
+      options: ["They have different properties from methane", "They are heavier than methane and oxygen", "They are made of different atoms"]
       answer: 0
-      feedback: [null, "Mass is conserved overall; that is not what makes them new.", "Methane and oxygen are gases too."]
-      explain: "A product is a new substance with its own properties. The atoms are the same; how they are joined is different (next lesson)."
+      feedback: [null, "Mass is conserved overall; that is not what makes them new.", "The atoms are the same (carbon, hydrogen, oxygen); they are joined differently."]
+      explain: "Methane burns, but water puts fires out. A product is a new substance with its own properties. The atoms are the same; how they are joined is different (next lesson)."
   - check:
       type: sort
       q: "Is it a sign that a chemical reaction has made a new product?"
@@ -93,7 +93,7 @@ tasks:
   - check:
       type: question
       q: "What does a word equation NOT tell you?"
-      options: ["How many particles of each substance react, or which atoms they contain", "Which substances react", "Which substances are made"]
+      options: ["How many particles react, or which atoms they hold", "Which substances react together", "Which new substances are made"]
       answer: 0
       feedback: [null, "It names the reactants.", "It names the products."]
       explain: "Word equations name the substances only. Formulas and balanced equations (two lessons on) show the atoms and amounts."
@@ -172,7 +172,7 @@ tasks:
   - check:
       type: question
       q: "The white ash after burning magnesium is heavier than the magnesium ribbon was. Why?"
-      options: ["Oxygen from the air joined the magnesium to make magnesium oxide", "Burning makes new atoms", "The ash soaks up water"]
+      options: ["Oxygen from the air joined the magnesium", "Burning makes new atoms of magnesium", "The ash soaks up water from the air"]
       answer: 0
       feedback: [null, "Atoms are never made in a reaction.", "The extra mass is oxygen, a reactant."]
       explain: "The word equation shows it: magnesium + oxygen → magnesium oxide. The product contains the oxygen as well."
@@ -195,10 +195,10 @@ tasks:
   - check:
       type: question
       q: "Sodium is never found as a pure metal in nature, but there is plenty of sodium chloride in seawater. Why?"
-      options: ["Sodium reacts so readily that any sodium has long since reacted, leaving it in compounds", "Sodium dissolves in seawater as a metal", "Sodium is a rare element"]
+      options: ["Sodium reacts so readily that it has all reacted", "Sodium dissolves in seawater as a metal", "Sodium is a rare element on Earth"]
       answer: 0
       feedback: [null, "Sodium metal reacts with water; it doesn't stay as a metal.", "Sodium is one of the commonest elements on Earth, but always in compounds."]
-      explain: "Reactive elements end up as products. Getting sodium (or iron, or aluminium) back as the element takes another reaction, and usually a lot of energy."
+      explain: "Any sodium has long since reacted, leaving it in compounds. Reactive elements end up as products. Getting sodium (or iron, or aluminium) back as the element takes another reaction, and usually a lot of energy."
 ```
 
 ### Sodium chloride

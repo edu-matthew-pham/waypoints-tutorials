@@ -75,9 +75,10 @@ tasks:
   - check:
       type: question
       q: "What is the lithosphere?"
-      options: ["The crust plus the rigid top of the mantle: Earth's rigid outer shell", "Another name for the crust", "The liquid layer the plates float on", "The core"]
+      options: ["The crust plus the top of the mantle", "Another name for the crust", "The liquid layer the plates float on", "The core"]
       answer: 0
       feedback: [null, "It includes the top of the mantle as well as the crust.", "The asthenosphere below it is solid but soft, not liquid.", "It's the outermost layer."]
+      explain: "The lithosphere is Earth's rigid outer shell: the crust plus the rigid top of the mantle. It is broken into the plates."
   - check:
       type: question
       q: "What happens to temperature and pressure as you go deeper?"
@@ -106,9 +107,10 @@ insight: "The to-scale view makes the thinness of the crust concrete."
 check:
   type: question
   q: "If the Earth were an apple, the crust would be about as thick as the apple's skin. What does that tell you?"
-  options: ["The crust is extremely thin compared with the whole Earth", "The crust is the thickest layer", "The Earth is hollow", "The crust is soft"]
+  options: ["The crust is extremely thin", "The crust is the thickest layer", "Most of the Earth is the crust", "The crust is soft, like apple skin"]
   answer: 0
-  feedback: [null, "Compare: 35 km of crust against 6371 km to the centre.", "The mantle is thickest.", "It's solid all the way, except the liquid outer core."]
+  feedback: [null, "Compare: 35 km of crust against 6371 km to the centre.", "The mantle is far thicker: about 2900 km.", "The comparison is about thickness, not hardness: the crust is solid rock."]
+  explain: "Compared with the whole Earth, the crust is extremely thin: about 35 km against 6371 km to the centre."
 ```
 
 ## Elaborate: how do we know?

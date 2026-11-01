@@ -1,0 +1,57 @@
+learning: "read BCE, CE and BP dates correctly and put events from the ancient world in order on a timeline"
+summary: "Use BC/AD, BCE/CE and BP correctly, work out spans of time (including across the BCE/CE line, where there is no year 0), and sequence events on a timeline."
+time: 40
+timing: "Predict and Try 6 min · Worked example 10 min · Vary 8 min · Practise 6 min · Make 10 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can say which of two BCE dates came first.
+  - I can work out how many years lie between two dates, even across BCE and CE.
+  - I can explain what BP means and when it is used.
+  - I can put events in order on a timeline.
+struggle: "Reading BCE numbers like ordinary counting numbers, so 500 BCE looks later than 100 BCE. Every later History skill (causes, change, comparing sources) rests on getting the order right, so this is worth slowing down for."
+before: |-
+  AC9HH7S05 n1 (hinge). The checkpoint: use BC/AD, BCE/CE and BP correctly, sequence events and sources, and explain why order matters for cause and change. Kit's hinge reason is the slip in this lesson's bug task: treating 500 BCE as more recent than 100 BCE.
+
+  Dates used (checked 1 Nov 2026): Confucius 551 to 479 BCE (Stanford Encyclopedia of Philosophy); Qin dynasty 221 to 206 BCE (The Met); the salt and iron monopolies 119 BCE and Wang Mang's reign from 9 CE are standard dates already used in People and power. BP: "years before AD 1950" is the definition the journal Radiocarbon uses. The millet date (about 7,800 years ago) is from Shaped by the land.
+
+  The timeline board snaps to the nearest 10 years, so the targets are 480 BCE, 220 BCE, 120 BCE and 10 CE. The board shows a "no year 0" gap marker; its spacing treats the line as continuous, so it is for order, not for counting years exactly across BCE and CE (the Vary step does that by hand).
+
+  ACARA's own definition of "history" (the period beginning with named individuals and written records) is in the typical step, labelled as a convention. If First Nations oral histories come up, say they carry the past in their own ways and that the class learns about them from First Nations-led resources; the lesson gives no example.
+
+  Usually Year 7; Preview, not yet tried with a class. A timeline board in the Practise step; no clips.
+
+  Relevant ACARA AC9HH7S05 elaborations (examples, not a checklist): "sequencing events from early Australia and the ancient society in order, using timelines to identify and describe causes and effects"; "defining terms such as 'BC' (Before Christ), 'AD' (Anno Domini), 'BCE' (Before Common Era), 'CE' (Common Era), 'BP' (Before Present) and 'history' (the period beginning with named individuals and textual recording)"; "identifying gaps in timelines or narratives and explaining possible reasons for why these gaps occur".
+
+  First Nations: BP is the convention used for deep time on the Australian continent, but this lesson uses no First Nations example (rules T1). Deep time Australia (AC9HH7K02 to K07) is taught in class with First Nations-led resources; see the last unit of Early human migration.
+running:
+  - "Predict: take a show of hands for 500 BCE or 100 BCE before anyone explains."
+  - "Try: ask a student to say the subtraction aloud, and why it is the bigger number minus the smaller."
+  - "Worked example: draw a countdown on the board: 500, 400, 300 … 1, then 1 CE, 2 CE. Ask where 0 would go, and why it isn't there."
+  - "Vary: let pairs argue 99 or 100 before checking."
+  - "Make: students draw their timelines in their own book; a partner checks one span."
+stuck:
+  - see: "A student says 500 BCE came after 100 BCE."
+    ask: "Count down from 500 BCE: which do you reach first, 100 BCE or 1 BCE?"
+    fix: "BCE years count down towards year 1, so a bigger BCE number is earlier."
+  - see: "A student adds two BCE dates to find a span."
+    ask: "Are both dates on the same side of the starting point?"
+    fix: "Same side (both BCE or both CE): take the smaller from the bigger. Across the line: add them, then take one away for the missing year 0."
+  - see: "A student thinks BC and BCE give different numbers."
+    ask: "Is 221 BC the same year as 221 BCE?"
+    fix: "Same number, different letters."
+support: "Give a printed countdown strip from 500 BCE to 100 CE, marked every 50 years, and let students place cards on it before the board."
+stretch: "Why might a museum switch its labels from BC and AD to BCE and CE? What stays the same?"
+leads: "Continue to Why did Qin win?, where the order of events helps sort causes."
+exit:
+  q: "Put these in order, earliest first: 9 CE, 221 BCE, 479 BCE. Then say how many years there are from 221 BCE to 206 BCE."
+  a: "479 BCE, 221 BCE, 9 CE. 15 years."
+explain: "BCE years count down towards year 1 and CE years count up from it, with no year 0, so a bigger BCE number is earlier. BC and AD use the same numbers. BP counts back from 1950 and is used for very old dates."
+sources:
+  - title: "Confucius (Stanford Encyclopedia of Philosophy)"
+    url: https://plato.stanford.edu/archives/win2005/entries/confucius/
+    checked: 2026-11-01
+  - title: "Qin Dynasty (221–206 B.C.), The Met, Heilbrunn Timeline of Art History"
+    url: https://www.metmuseum.org/essays/qin-dynasty-221-206-b-c
+    checked: 2026-11-01
+  - title: "BP: Time for a Change (Radiocarbon, Cambridge): BP defined as years before AD 1950"
+    url: https://cambridge.org/core/journals/radiocarbon/article/bp-time-for-a-change/10B594C7EC1ADD1C028C13F6D9D24ECC
+    checked: 2026-11-01

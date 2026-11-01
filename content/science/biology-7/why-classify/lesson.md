@@ -74,18 +74,18 @@ tasks:
   - check:
       type: question
       q: "Which is classification, not just a list?"
-      options: ["Grouping animals by shared features, such as backbone or no backbone, then smaller groups inside", "Writing animals in alphabetical order", "Numbering animals in the order you saw them"]
+      options: ["Grouping animals by shared features", "Writing animals in alphabetical order", "Numbering animals in the order you saw them"]
       answer: 0
       feedback: [null, "Alphabetical order only tells you about the names, and nothing about the animals themselves.", "That records when you saw them, but it doesn't tell you anything about what they're like."]
-      explain: "Classification groups things by what they share, so the group tells you something about each member."
+      explain: "Classification groups things by what they share (such as backbone or no backbone, then smaller groups inside), so the group tells you something about each member."
     hint: ["If you looked at where one animal sits in each of these, which would tell you something about the animal itself?", "Think back to the key you just used, where the backbone question put animals into groups, and what knowing the group told you."]
   - check:
       type: question
       q: "A supermarket groups food by aisle: dairy, bakery, fruit. How is that like scientific classification?"
-      options: ["Groups by shared features help people find things and talk about them", "It isn't: only scientists classify", "Both put things in alphabetical order"]
+      options: ["Both group things to help people find them", "It isn't: only scientists classify", "Both put things in alphabetical order"]
       answer: 0
       feedback: [null, "Plenty of everyday things are classified, so it isn't only scientists who do it.", "Supermarket aisles aren't alphabetical, and scientific groups aren't either, so look for what they really have in common."]
-      explain: "Libraries, supermarkets and phone contacts all classify for a purpose, and scientific classification's purposes are identifying, communicating and showing relationships."
+      explain: "Groups by shared features help people find things and talk about them. Libraries, supermarkets and phone contacts all classify for a purpose, and scientific classification's purposes are identifying, communicating and showing relationships."
   - check: { type: reflect, text: "I can give two reasons why living things are classified, and an everyday example of classification." }
 ```
 

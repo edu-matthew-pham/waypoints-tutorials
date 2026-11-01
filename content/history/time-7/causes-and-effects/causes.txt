@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Qin conquered the other six states between 230 and 221 BCE.
+King Zheng led the campaigns and became the First Emperor.
+Nib says: "So Qin won only because King Zheng was a brilliant leader."
+Nib says: "Nothing that happened before he was king mattered."
+# endregion

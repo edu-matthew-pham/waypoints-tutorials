@@ -49,14 +49,14 @@ tasks:
   - check:
       type: question
       q: "What survival problem do the circulatory system and a plant's vascular system both solve?"
-      options: ["Moving materials (nutrients, water, gases) to every cell that needs them", "Making sound", "Getting rid of heat"]
+      options: ["Moving materials to every cell", "Keeping the organism upright", "Getting rid of waste heat"]
       answer: 0
-      feedback: [null, "Neither is about sound.", "Heat is a side issue: both systems are about delivery."]
-      explain: "Cells deep inside a body can't get what they need by themselves, so both kinds of organism use a transport system."
+      feedback: [null, "Support is the skeleton's job, or the cell walls in a plant.", "Heat is a side issue: both systems are about delivery."]
+      explain: "Both move nutrients, water and gases to every cell that needs them. Cells deep inside a body can't get what they need by themselves, so both kinds of organism use a transport system."
   - check:
       type: question
       q: "How is the plant's system different from the animal's?"
-      options: ["A plant has no pump: water is pulled up by evaporation from the leaves, and the tubes are fixed in place", "A plant has a heart in its roots", "A plant's system moves only water; an animal's moves food as well"]
+      options: ["A plant has no pump: evaporation pulls water up", "A plant has a heart in its roots", "A plant's system moves only water; an animal's moves food as well"]
       answer: 0
       feedback: [null, "Plants have no heart.", "The phloem carries sugars, so plants move food too. Look at how the water moves, not what is carried."]
       explain: "Animals actively pump a liquid round a loop; plants move water upward in tubes as it evaporates from the leaves. Different bodies, same problem."
@@ -85,10 +85,10 @@ insight: "A second animal system shows that the same analysis (organs, jobs, coo
 check:
   type: question
   q: "In digestion, food goes mouth, then stomach, then small intestine. If the small intestine fails to absorb nutrients, what is the effect on the system?"
-  options: ["The system fails at its job: food is broken down but the nutrients never get into the blood", "No effect because the stomach still works", "The mouth does the absorbing instead"]
+  options: ["Nutrients never get into the blood", "No effect because the stomach still works", "The mouth does the absorbing instead"]
   answer: 0
   feedback: [null, "The job isn't finished until nutrients reach the blood.", "The small intestine is where absorption happens."]
-  explain: "Each organ does a step in the job. If any step fails, the system fails to do its whole job."
+  explain: "Food is still broken down, but the nutrients never get into the blood, so the system fails at its job. Each organ does a step in the job. If any step fails, the system fails to do its whole job."
 ```
 
 ## Elaborate: a machine for an organ
@@ -100,10 +100,10 @@ insight: "Artificial organs show the function an organ must perform, because eng
 check:
   type: question
   q: "A dialysis machine cleans the blood of someone whose kidneys no longer work. What does it do that the kidney does?"
-  options: ["Filters waste out of the blood, while keeping useful things in", "Pumps the blood round the body", "Makes new blood cells"]
+  options: ["Filters waste out of the blood", "Pumps the blood round the body", "Makes new blood cells"]
   answer: 0
   feedback: [null, "That is the heart's job.", "That happens in the bone marrow."]
-  explain: "To replace an organ you must copy what it does. Here the machine filters waste out of the blood, as the kidney does."
+  explain: "To replace an organ you must copy what it does. Here the machine filters waste out of the blood while keeping useful things in, as the kidney does."
 ```
 
 ## Evaluate: look back

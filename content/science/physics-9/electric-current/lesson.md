@@ -82,9 +82,9 @@ tasks:
   - check:
       type: question
       q: "Why does copper conduct while plastic doesn't?"
-      options: ["Copper has free electrons that can move; in plastic they are tied to their atoms", "Copper has more protons", "Plastic has no electrons"]
+      options: ["Copper has free electrons; plastic's are held by their atoms", "Copper atoms have more protons to carry the current", "Plastic has no electrons to carry the current"]
       answer: 0
-      feedback: [null, "Number of protons isn't the difference.", "Plastic has electrons: they just can't move around."]
+      feedback: [null, "Protons stay in the nucleus; it's electrons that move.", "Plastic has electrons: they just can't move around."]
       explain: "Conductors have many free electrons; in insulators almost all the electrons are held tightly by their atoms."
     hint: ["Plastic is made of atoms too, so does it have electrons?", "Choose the plastic strip on the board and compare what its blue electrons do with the ones in copper."]
   - check:
@@ -98,17 +98,17 @@ tasks:
   - check:
       type: question
       q: "Are the electrons used up in the bulb?"
-      options: ["No: the same number go in as come out; the bulb transfers the energy they carry as light and heat", "Yes: that is where the light comes from", "Only some of them"]
+      options: ["No: the same number come out; the bulb takes their energy", "Yes: that is where the light comes from", "Only some: the rest return to the battery"]
       answer: 0
       feedback: [null, "The light comes from the energy they carry, not from using up electrons.", "They all go round again."]
-      explain: "Current is the same at every point in the loop; the energy, not the electrons, is what the bulb gets."
+      explain: "Current is the same at every point in the loop; the energy, not the electrons, is what the bulb gets, and it gives it out as light and heat."
     hint: ["If fewer electrons came out of the bulb than went in, what would happen to the wire after a while?", "On the board, follow the blue electrons as they pass the bulb and see whether they come out the other side."]
   - check:
       type: question
       q: "On the board, electrons drift round one way. By convention the current is drawn the other way. Why?"
-      options: ["The convention was chosen before electrons were discovered, and has stuck", "Current is the flow of protons", "The board has a mistake"]
+      options: ["It was chosen before electrons were discovered, and stuck", "Current is really positive charge flowing the other way", "The board shows it wrong; current follows electrons"]
       answer: 0
-      feedback: [null, "Protons don't flow in a wire.", "Both are correct: they are two ways of describing the same flow."]
+      feedback: [null, "In a wire only electrons move; no positive charge flows.", "Both are correct: they are two ways of describing the same flow."]
       explain: "Conventional current is drawn from + to −, a choice made before electrons were known. Electrons actually flow the other way."
   - check: { type: reflect, text: "I can explain current as the flow of free electrons and say why conductors and insulators differ." }
 ```
@@ -139,9 +139,9 @@ tasks:
   - check:
       type: question
       q: "What happens to the electrons and the bulb when the voltage doubles?"
-      options: ["The electrons drift faster, the current is bigger and the bulb is brighter", "The electrons get bigger", "Nothing changes: the bulb has a fixed brightness"]
+      options: ["Electrons drift faster, the current grows and the bulb brightens", "More electrons are made, so the bulb is brighter", "Nothing changes: the bulb has a fixed brightness"]
       answer: 0
-      feedback: [null, "Electrons don't change size.", "A bigger push means more energy is delivered each second."]
+      feedback: [null, "Voltage doesn't make electrons; the ones already in the wire move faster.", "A bigger push means more energy is delivered each second."]
       explain: "More volts means a stronger push. The electrons drift faster, so more charge passes each second and more energy reaches the bulb."
 ```
 
@@ -158,10 +158,10 @@ insight: "Semiconductors blur the conductor and insulator line, and show that th
 check:
   type: question
   q: "Silicon has only a few free electrons, far fewer than copper and far more than plastic. It is used in computer chips. Why is that useful?"
-  options: ["Its conduction can be controlled (by adding other atoms, or a voltage), so it can act as a switch", "It is cheap", "It is a perfect insulator"]
+  options: ["Its conduction can be controlled, so it can act as a switch", "It is cheap and there is plenty of it in sand", "It is a perfect insulator, so chips don't overheat"]
   answer: 0
   feedback: [null, "Cost isn't the point of the physics.", "It isn't a perfect insulator: that's the point."]
-  explain: "A material that sits between conductors and insulators can be switched on and off, which is how transistors in chips work."
+  explain: "A material that sits between conductors and insulators can be switched on and off (by adding other atoms, or a voltage), which is how transistors in chips work."
 ```
 
 ## Evaluate: look back

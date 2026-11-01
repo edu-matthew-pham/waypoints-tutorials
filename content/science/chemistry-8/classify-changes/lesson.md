@@ -44,18 +44,18 @@ tasks:
   - check:
       type: question
       q: "Ice melts and the water around it gets colder. Does a temperature change show a chemical change here?"
-      options: ["No: melting is a physical change that takes in energy, so a temperature change alone does not prove a new substance", "Yes: any temperature change means a chemical change", "Yes, because ice is a different substance from water"]
+      options: ["No: melting is a physical change that takes in energy", "Yes: any temperature change means a chemical change", "Yes, because ice is a different substance from water"]
       answer: 0
       feedback: [null, "Changes of state also take in or give out energy.", "Ice and water are the same substance in two states."]
-      explain: "Temperature changes happen in both kinds of change, so you need the new-substance test too."
+      explain: "Temperature changes happen in both kinds of change, so a temperature change alone does not prove a new substance. You need the new-substance test too."
     hint: "What happens to a drink when you drop ice in it, and is the ice turning into a new substance as it melts?"
   - check:
       type: question
       q: "A liquid in a test tube changes colour, fizzes, gets hot and leaves a solid at the bottom. Why is this more convincing than a colour change alone?"
-      options: ["Several different clues point the same way, so a new substance is very likely", "Fizzing is always a chemical change", "More clues make it physical"]
+      options: ["Several different clues point the same way", "Fizzing is always a chemical change", "More clues make it physical"]
       answer: 0
       feedback: [null, "Boiling also fizzes. The point is the clues agree.", "The more clues that agree, the surer you can be that it's a chemical change."]
-      explain: "No single clue is certain. Several agreeing clues make a classification much more reliable."
+      explain: "No single clue is certain. When several different clues point the same way, a new substance is very likely: several agreeing clues make a classification much more reliable."
   - check:
       type: question
       q: "Pouring vinegar on baking soda fizzes and gets cold, the mixture is left as a different liquid, and the gas puts out a flame. How should you classify it?"
@@ -87,7 +87,7 @@ insight: "A multi-step process makes students classify each stage separately and
 check:
   type: question
   q: "Bread making: flour and water are mixed, the yeast makes gas, the dough rises, and the loaf is baked brown. Which stages are chemical?"
-  options: ["Yeast making gas, and baking to a brown crust; mixing is physical", "Only the baking", "All of it, because it ends up as bread", "None of it"]
+  options: ["Yeast making gas, and the baking", "Only the baking", "All of it, because it ends up as bread", "None of it"]
   answer: 0
   feedback: [null, "The yeast makes a new gas too.", "Mixing flour and water doesn't make a new substance by itself.", "Gas from yeast and browning are new substances."]
   explain: "Mixing is physical, while the yeast making carbon dioxide and the baking and browning are chemical changes. Most real processes have both."
@@ -102,10 +102,10 @@ insight: "Indicators are used in the real world for detection, and false positiv
 check:
   type: question
   q: "A water test kit changes colour to show chlorine. Why might a good kit use a clue that is hard to fake, such as a very specific colour change?"
-  options: ["Other substances might cause a weaker or different clue, so a specific one reduces false positives", "A colour change is always chemical, so one is enough", "Colour doesn't matter"]
+  options: ["Other substances can't easily fake a specific clue", "A colour change is always chemical, so one is enough", "Any colour change will do, as long as it is clear"]
   answer: 0
-  feedback: [null, "A change of colour can come from other things too, such as dilution.", "It does: the clue must match the substance."]
-  explain: "A test is reliable when its clue points to one substance and nothing else. That is the same idea as using several clues together."
+  feedback: [null, "A change of colour can come from other things too, such as dilution.", "A clear change still misleads if other substances cause it too: the clue must match the substance."]
+  explain: "Other substances might cause a weaker or different clue, so a specific one reduces false positives. A test is reliable when its clue points to one substance and nothing else. That is the same idea as using several clues together."
 ```
 
 ## Evaluate: look back

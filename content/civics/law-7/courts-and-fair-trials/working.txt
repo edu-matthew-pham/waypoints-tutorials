@@ -10,7 +10,7 @@ Nib says: "The judge's only job was to keep everyone quiet."
 # region: appeal
 A magistrate hears the case.
 One side appeals the decision.
-A higher state court checks it.
+A District or County Court checks it.
 The Supreme Court hears an appeal.
 The High Court has the last word.
 # endregion

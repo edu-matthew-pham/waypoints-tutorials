@@ -173,10 +173,10 @@ tasks:
   - check:
       type: question
       q: "Humid air has water vapour in it. Water is a compound. Is humid air a compound?"
-      options: ["No: it is a mixture of elements and a compound, none joined to each other", "Yes: it contains a compound", "It is an element"]
+      options: ["No: it is a mixture, nothing is joined", "Yes: it contains a compound", "It is an element"]
       answer: 0
       feedback: [null, "A mixture can contain compounds; the water particles are not joined to the nitrogen or oxygen.", "It has several kinds of particle."]
-      explain: "A mixture can hold elements, compounds or both, as long as the different substances aren't joined."
+      explain: "Humid air is a mixture of elements and a compound, none joined to each other. A mixture can hold elements, compounds or both, as long as the different substances aren't joined."
     hint: ["On the board, is any water particle joined to a nitrogen or oxygen particle, or are they just moving around side by side?", "Read the line under the board once you've found every kind, because it talks about the whole box and not just one particle."]
 ```
 

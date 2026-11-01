@@ -169,13 +169,13 @@ tasks:
         - "Different groups are accepted and respected side by side"
         - "There are lots of groups, whether or not they get along"
         - "One culture is official and the others join it"
-        - "The government decides which groups can live here"
+        - "Every group lives separately and keeps to itself"
       answer: 0
       feedback:
         - null
         - "That describes diverse. Pluralist adds that the variety is accepted and respected."
         - "That is the opposite of pluralist: no one culture is made official."
-        - "Pluralist describes how people live together, not a government choice of groups."
+        - "Pluralist means groups live side by side and respect each other, not apart."
       explain: "Diverse means many groups. Pluralist means that variety is accepted and respected side by side."
 ```
 

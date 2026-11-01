@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+The Qin dynasty fell in 206 BCE.
+Liu Bang became the first Han emperor.
+Nib says: "A new dynasty, so the Han must have started everything again."
+Nib says: "New laws, new officials, new writing: nothing from the Qin was left."
+# endregion
