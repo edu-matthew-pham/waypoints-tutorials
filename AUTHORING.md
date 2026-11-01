@@ -766,6 +766,11 @@ Vary, Practise, Make).
     (default 1), `fractions: 4` (values between whole numbers written as fractions and mixed numerals, −1 1/4, with the
     decimal beside them in readouts; points land on quarters unless `snap:` says otherwise), `context: Temperature (°C)`
     (a name and unit under the line and in readouts).
+    - `years: on` (History, added 1 Nov 2026): the line is a timeline. Negative values are BCE and positive ones CE in
+      labels, readouts and `compare:` ("500 BCE", "100 CE"; compare says which came before); there is no year 0, so a
+      point cannot start at 0 and a dragged point that lands there moves to the nearest year either side; labels are
+      spaced for the longer text and minor ticks follow `snap:`. Checks use the signed numbers (`x(A) = -480` is 480 BCE).
+      Not with `fractions`, `sum`, `product` or `ray`. First used by `history/time-7/dates-and-timelines`.
     - `point A: -7` (fixed; `point A: -7, Canberra` adds a caption), `point P: 0, drag` (students drag it along the line;
       checks see it once let go; a **Move** row under the line steps it with buttons or the arrow keys, for keyboards and
       clips: `click: Move P left`), `point A: a` (follows slider a);

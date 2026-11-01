@@ -1,0 +1,29 @@
+inquiry:
+  q: "Think of a time a team, a band or a group you know of did really well. Was there only one reason?"
+  prompts:
+    - "Which reasons built up over a long time?"
+    - "What happened right at the end?"
+  notes: "Keep examples public (sport, a film, a famous team), not students' own lives."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Take one away"
+    minutes: 4
+    do: |
+      Show the three causes of Qin's success. Pairs take turns covering one and saying whether Qin still wins, and why.
+    notes: "Bring out that the causes depend on each other: grain feeds the army the reforms built."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "In Sima Qian's account, rain held up the men who began the 209 BCE revolt. What kind of cause was the rain?"
+    options:
+      - "The trigger"
+      - "A long-term cause"
+      - "An effect of the revolt"
+    answer: 0
+    explain: "It set the revolt off that day; years of hard demands explain why it spread."
+    feedback:
+      - null
+      - "Rain on one day is not a slow build-up."
+      - "The rain came before the revolt, so it cannot be its effect."

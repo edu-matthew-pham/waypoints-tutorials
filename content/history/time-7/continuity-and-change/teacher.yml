@@ -1,0 +1,57 @@
+learning: "explain what changed and what stayed the same across a turning point, using dated evidence for each"
+summary: "Explain continuities and changes across the Qin to Han turning point, using sources put in date order, and recognise that continuity and change coexist."
+time: 40
+timing: "Predict and Try 7 min · Worked example 12 min · Vary 5 min · Practise 4 min · Make 12 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can name something that changed and something that stayed the same across a turning point.
+  - I can back each one up with a dated source or event.
+  - I can explain why both can be true of the same period.
+struggle: "Students treat a turning point as all change ('a new dynasty, so everything was new') or treat continuity as 'nothing happened'. Keep asking 'what exactly stayed, and what exactly changed?'"
+before: |-
+  AC9HH7S05 n3. Not a hinge, but it relies on n2: holding several things true at once.
+
+  Facts (checked 1 Nov 2026): Han dynasty 206 BCE to 220 CE, Western Han capital Chang'an, Emperor Wu made Confucianism the basis for official conduct and education, the Han kept the Qin's borders (The Met); Liu Bang founded the Han in 206 BCE and the Han kept the Qin's centralised system of appointed officials; Wang Mang's Xin dynasty 9 to 25 CE (Britannica, an encyclopedia); Emperor Wu's imperial academy founded 124 BCE (Strayer, Ways of the World, a world history textbook); the Zhangjiashan legal texts were buried in about 186 BCE and show how the Han "adopted and adapted" Qin legal and administrative precedents (Anthony Barbieri-Low, UCSB, who translated them with Robin Yates). Shuihudi dates as in Source origin and purpose.
+
+  The sources are described in our words, not quoted. The Zhangjiashan texts are a digest, not a complete law code; "historians report that many follow Qin rules" keeps that limit.
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips.
+
+  Relevant ACARA AC9HH7S05 elaborations (examples, not a checklist): "sequencing a range of primary sources in chronological order to support the development of an explanation of continuities or changes".
+
+  First Nations: none in this lesson (rules T1).
+running:
+  - "Predict: ask for one thing a new ruler would change straight away, and one they would leave alone."
+  - "Try: tally the two columns on the board as students sort."
+  - "Worked example: cover the date column and ask whether you can still say what continued."
+  - "Vary: ask what else farmers lived through between 221 BCE and 100 BCE."
+  - "Make: students write in their own book; a partner checks that each claim has a date."
+stuck:
+  - see: "A student says everything changed in 206 BCE."
+    ask: "What did a Han official do each day? Was it different from a Qin official?"
+    fix: "The Han kept the commanderies, officials, script and many laws."
+  - see: "A student says continuity means nothing happened."
+    ask: "Did farmers still live through wars and floods?"
+    fix: "Continuity is one thing staying the same; other things can change at the same time."
+  - see: "A student gives a continuity with no evidence."
+    ask: "Which source, with which date, shows it?"
+    fix: "Add a dated source or event for each claim."
+support: "Give two columns, Continued and Changed, and five statement cards to place before the sort."
+stretch: "Wang Mang took the throne in 9 CE and the Han came back in 25 CE. Was that a change, a continuity, or both? Over what timescale?"
+leads: "This is the last lesson in Time, cause and change. Past perspectives looks at whose view a source gives."
+exit:
+  q: "Name one thing that continued and one thing that changed from the Qin to the Han, with a date for the change."
+  a: "For example: officials running commanderies continued; Emperor Wu's academy trained officials in Confucian learning from about 124 BCE."
+explain: "Continuity is what stays the same; change is what is different. Across a turning point both happen at once, and dated sources, put in order, show which is which."
+sources:
+  - title: "Han Dynasty (206 B.C.–220 A.D.), The Met, Heilbrunn Timeline of Art History"
+    url: https://www.metmuseum.org/essays/han-dynasty-206-b-c-220-a-d
+    checked: 2026-11-01
+  - title: "Han dynasty (Britannica; an encyclopedia)"
+    url: https://www.britannica.com/topic/Han-dynasty
+    checked: 2026-11-01
+  - title: "Anthony Barbieri-Low, research: the Zhangjiashan Han legal texts (UCSB)"
+    url: https://barbierilow.faculty.history.ucsb.edu/Research/research.html
+    checked: 2026-11-01
+  - title: "Strayer, Ways of the World, ch. 5: Emperor Wu's imperial academy, 124 BCE (textbook)"
+    url: https://digfir-published.macmillanusa.com/strayer3e/strayer3e_ch5_5.html
+    checked: 2026-11-01

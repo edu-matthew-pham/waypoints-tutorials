@@ -1,0 +1,29 @@
+inquiry:
+  q: "If you only had the numbers 500 and 100, which would you say came first? What changes when we add 'BCE'?"
+  prompts:
+    - "Where would you put the starting point on a line?"
+    - "Why might there be no year 0?"
+  notes: "Let the wrong answer come out first; the lesson's bug task is built on it."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Countdown on the board"
+    minutes: 4
+    do: |
+      Draw a line from 500 BCE to 100 CE. Pairs place Confucius (479 BCE), the Qin unification (221 BCE) and Wang Mang (9 CE), then explain their order out loud.
+    notes: "Ask each pair to say 'before' or 'after' with a number of years."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Which came first: 300 BCE or 200 BCE?"
+    options:
+      - "300 BCE"
+      - "200 BCE"
+      - "They are the same year"
+    answer: 0
+    explain: "BCE years count down, so the bigger number is earlier."
+    feedback:
+      - null
+      - "200 is smaller, but in BCE smaller numbers are later."
+      - "They are 100 years apart."

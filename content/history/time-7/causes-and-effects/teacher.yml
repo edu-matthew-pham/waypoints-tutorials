@@ -1,0 +1,56 @@
+learning: "explain an event with several causes, sorted into long-term and short-term, and describe its short-term and long-term effects"
+summary: "Identify and describe several causes of a historical event, distinguish long-term (underlying) from short-term causes and the trigger, and describe the event's effects."
+time: 40
+timing: "Predict and Try 7 min · Worked example 12 min · Vary 5 min · Practise 5 min · Make 11 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can give at least two causes of a historical event.
+  - I can say which causes are long-term, which are short-term and which is the trigger.
+  - I can describe a short-term and a long-term effect.
+struggle: "Students settle on one cause, usually a person (the king) or the last thing that happened. Keep asking 'and what made that possible?'"
+before: |-
+  AC9HH7S05 n2 (hinge). Kit's hinge reason: students who give single-cause accounts cannot later see continuity and change existing together.
+
+  The explanation of Qin's success is labelled in the lesson as "one way of putting it together; historians still argue about which cause mattered most" (rules T8). The causes used are well supported: Shang Yang's reforms in the 4th century BCE, which replaced hereditary rank with ranks of merit won mainly in war (Stanford Encyclopedia of Philosophy, Chinese Legalism; Shang Yang died in 338 BCE), Dujiangyan (about 256 BCE, UNESCO; also in Shaped by the land), and the final campaigns of 230 to 221 BCE. Effects: unified script, measures and coins, and commanderies run by officials (The Met), with the administrative model kept by later dynasties.
+
+  The 209 BCE revolt is told "according to Sima Qian". He says the penalty for lateness was death; Qin legal texts found since suggest lighter penalties, so the lesson says only that the men "feared being punished". If a student knows the story, this is a good early example of why historians check a source (the Historical interpretations course comes back to it).
+
+  The contact and conflict lens (AC9HH7K12) also teaches several causes at once for wars and contact; mention it if your class has met it, without repeating it here.
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips.
+
+  Relevant ACARA AC9HH7S05 elaborations (examples, not a checklist): "sequencing events from early Australia and the ancient society in order, using timelines to identify and describe causes and effects".
+
+  First Nations: the elaboration names early Australia for sequencing; this lesson uses no First Nations example (rules T1). Deep time Australia is taught in class with First Nations-led resources.
+running:
+  - "Predict: list every answer students give on the board, then ask which could stand alone."
+  - "Try: ask what decides long-term or short-term (the date compared with 221 BCE)."
+  - "Worked example: cover one row of the cause table and ask whether Qin still wins."
+  - "Vary: ask whether the rain could have started a revolt in a happy, well-fed empire."
+  - "Make: students write in their own book; a partner checks for one long-term and one short-term cause."
+stuck:
+  - see: "A student gives only King Zheng (or only the last battle) as the cause."
+    ask: "What did he need before he could win? Where did his soldiers and their food come from?"
+    fix: "Add the long-term causes that made the campaigns possible."
+  - see: "A student calls the trigger the main cause."
+    ask: "Would rain have started a revolt that spread across the empire if people were content?"
+    fix: "The trigger explains when; the underlying causes explain why it grew."
+  - see: "A student lists effects as causes."
+    ask: "Did this happen before 221 BCE or after?"
+    fix: "Causes come before the event, effects after."
+support: "Give a two-column card (Before 221 BCE / After 221 BCE) and have students place each statement before naming it a cause or an effect."
+stretch: "Rank the three causes in the table from most to least important and give a reason for the top one. What evidence would change your mind?"
+leads: "Continue to Qin to Han, where several things are happening at once: some change, some stay the same."
+exit:
+  q: "Give one long-term cause and one short-term cause of Qin unifying China, and one long-term effect."
+  a: "For example: reforms in the 300s BCE (long-term); King Zheng's campaigns 230 to 221 BCE (short-term); one written script kept by later dynasties (long-term effect)."
+explain: "Big events usually have several causes: long-term causes build up over years, short-term causes come just before, and a trigger sets the event off. Effects can be short-term or long-term."
+sources:
+  - title: "Legalism in Chinese Philosophy (Stanford Encyclopedia of Philosophy): Shang Yang's ranks of merit"
+    url: https://plato.stanford.edu/entries/chinese-legalism/
+    checked: 2026-11-01
+  - title: "Qin Dynasty (221–206 B.C.), The Met, Heilbrunn Timeline of Art History"
+    url: https://www.metmuseum.org/essays/qin-dynasty-221-206-b-c
+    checked: 2026-11-01
+  - title: "Mount Qingcheng and the Dujiangyan Irrigation System (UNESCO World Heritage List 1001)"
+    url: https://whc.unesco.org/en/list/1001
+    checked: 2026-11-01
