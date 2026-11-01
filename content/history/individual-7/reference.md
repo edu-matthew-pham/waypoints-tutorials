@@ -11,8 +11,8 @@ Each card is a short summary to start from, not a full account. Check it against
 
 - **When and position:** born about 259 BCE; King of Qin from 246 BCE, at about 13; emperor from 221 BCE, after Qin defeated the last rival kingdoms; died 210 BCE.
 - **Achievements:** one standard script; standard weights, measures, cart axles and coins; roads, canals and joined northern walls; one system of laws run by appointed officials in commanderies and counties.
-- **How he was seen:** his own stone inscriptions praise him for peace and order; Han writers, including Sima Qian, describe him as harsh and cruel. The story of the burning of books (213 BCE) and killing of scholars comes from Sima Qian, writing about a century later, and historians treat its details with care.
-- **Legacy:** the Qin fell in 206 BCE, but the Han kept his officials, script and measures.
+- **How he was seen:** his own stone inscriptions praise him for peace and order; Han writers, including Sima Qian, describe him as harsh and cruel. Sima Qian, writing about a century later, reports the burning of books (213 BCE) and the killing of scholars; many historians accept there was an order against some books, but they argue about how much was lost and test the details.
+- **Legacy:** the Qin had fallen by 206 BCE, but the Han kept his officials, script and measures.
 - **Sources to look for:** his tomb and the clay army; inscribed Qin weights; Qin bamboo-slip laws; Sima Qian's history.
 
 ### Confucius (an alternative China card)
@@ -74,7 +74,7 @@ Each card is a short summary to start from, not a full account. Check it against
 
 ### Chandragupta Maurya
 
-- **When and position:** ruled about 321 to 297 BCE; founded the Mauryan Empire, the first empire to cover most of the Indian subcontinent.
+- **When and position:** ruled about 321 to 297 BCE; founded the Mauryan Empire, which at its largest (under his grandson Ashoka) covered most of the subcontinent.
 - **Achievements:** built a large, centrally run empire with his adviser Kautilya (also called Chanakya); made a treaty with Seleucus, one of Alexander the Great's successors, gaining land in return for 500 elephants.
 - **How he was seen:** no account from his own time survives. A Greek ambassador at his court, Megasthenes, wrote about the empire; his book is lost, but later writers quote it.
 - **Sources to look for:** the *Arthashastra* (a book on running a state linked to Kautilya); Greek and Roman writers quoting Megasthenes.

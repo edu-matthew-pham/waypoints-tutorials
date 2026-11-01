@@ -19,8 +19,8 @@ questions:
     q: "Who changed because of the Han conquest of the Hexi Corridor?"
     options:
       - "Both the Han and the Xiongnu"
-      - "Only the Han, because they won"
-      - "Only the Xiongnu, because they lost"
+      - "The Han, because they won"
+      - "The Xiongnu, because they lost"
     answer: 0
     explain: "Contact changes every society involved."
     feedback:

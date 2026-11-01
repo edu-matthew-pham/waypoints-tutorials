@@ -8,7 +8,7 @@ Each card is a short summary to start from, not a full account. Check it against
 ## Ancient China (Qin and Han)
 
 - **Contacts and conflicts:** the Qin wars of unification (230 to 221 BCE); the Han and the Xiongnu, northern herders on horseback (defeat at Baideng, 200 BCE; Emperor Wu's wars from 133 BCE); Zhang Qian's mission west (from 138 BCE); campaigns to Ferghana for horses (104 and 101 BCE).
-- **Effects:** the heqin peace agreements (from about 198 BCE: a royal bride, gifts, rulers as equals); the Hexi Corridor taken in 121 BCE, with four commanderies and walls to Dunhuang; silk west, and horses, grapes and alfalfa east; costly wars and new taxes.
+- **Effects:** the heqin peace agreements (from about 198 BCE: a royal bride, gifts, rulers as equals); the Hexi Corridor, taken from 121 BCE; four commanderies set up over the following years (from about 111 BCE), and walls to Dunhuang; silk west, and horses, grapes and alfalfa east; costly wars and new taxes.
 - **Contact and change:** silk reached Rome through traders in between (indirect contact); Buddhism reached China along the trade routes (first mentioned in 65 CE).
 - **Sources to look for:** Sima Qian's history (on Zhang Qian and the Xiongnu); Han wooden slips from the frontier near Dunhuang. The Xiongnu left no writing of their own.
 

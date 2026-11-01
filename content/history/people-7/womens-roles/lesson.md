@@ -28,11 +28,11 @@ check:
   type: predict
   q: "Why do historians know less about the lives of most women in Han China than about officials?"
   options:
-    - "Most surviving writing was by men at court, who wrote mostly about government and men"
+    - "Most surviving writing was by men at court"
     - "Women did nothing important, so there was nothing to write"
     - "All the sources about women were deliberately destroyed"
-    - "Women in Han China did not exist in large numbers"
-  actual: "Who did the writing. Educated men at court wrote most of what survives, and they wrote mostly about government. That is a limit of the evidence, not a sign that women did nothing."
+    - "Women in Han China were not allowed to write"
+  actual: "Who did the writing. Educated men at court wrote most of what survives, and they wrote mostly about government. Some women did write (Ban Zhao, below). The gap is a limit of the evidence, not a sign that women did nothing."
 ```
 
 ## Try: what kind of evidence?
@@ -77,7 +77,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is writing about women in Han China. Click the first line where Nib's thinking goes wrong."
+      text: "Nib is writing about women in Han China (Nib's notes are made up for this lesson). Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: little-evidence-no-influence
@@ -102,24 +102,24 @@ tasks:
       type: question
       q: "How did Empress Lü influence Han society?"
       options:
-        - "She held power at court for about fifteen years and put her relatives in high positions"
+        - "She held power at court as regent for about fifteen years"
         - "She wrote the official history of the Han"
         - "She had no influence because women could not hold power"
-        - "She led the farmers in a rebellion"
+        - "She ruled with the title of emperor"
       answer: 0
       feedback:
         - null
         - "That was Ban Zhao, who helped finish the Book of Han."
         - "Rules and customs limited women, but Empress Lü held real power as empress dowager and regent."
-        - "She ruled from the court, not as a rebel."
-      explain: "Some women held great power, usually through family: as mothers, wives and widows of rulers."
+        - "She ruled as empress dowager and regent for young emperors, not with the title of emperor."
+      explain: "She ruled as regent and put her relatives in high positions. Some women held great power, usually through family: as mothers, wives and widows of rulers."
 ```
 
 ### What can the book tell us?
 
 ### Find Nib's mistake
 
-Read Nib's notes. Which line turns a gap in the evidence into a claim about women?
+Read Nib's notes (made up for this lesson). Which line turns a gap in the evidence into a claim about women?
 
 ### Empress Lü
 
@@ -130,19 +130,19 @@ stage: modify
 insight: "Seeing the opposite slip, one elite source standing for everyone, practises judging whose life a source shows."
 check:
   type: question
-  q: "Mei says: 'Ban Zhao was a scholar at court, so women in Han China were all educated.' What is the best reply?"
+  q: "Mei, a made-up student, says: 'Ban Zhao was a scholar at court, so women in Han China were all educated.' What is the best reply?"
   options:
-    - "Ban Zhao was from a powerful, educated family; her life does not show what most women's lives were like"
-    - "That is right: one example proves it for everyone"
-    - "No: Ban Zhao was not really a scholar"
-    - "No: no woman in Han China could read"
+    - "Ban Zhao came from a powerful, educated family, so she was not typical"
+    - "That is right, because she taught other women at court"
+    - "No: Ban Zhao only finished a book her brother wrote"
+    - "No: women in Han China were not allowed to learn to read"
   answer: 0
   feedback:
     - null
-    - "One example shows what was possible for some, not what was usual."
-    - "She helped finish the official history. She was a scholar."
+    - "Teaching women at court shows what was possible for a few at the top, not what was usual."
+    - "She finished the Book of Han after her brother died and wrote her own books. She was a scholar."
     - "Ban Zhao could read and write, and taught others. Some women could; most people of any kind probably could not."
-  explain: "An elite person's life shows what was possible at the top, not what was typical."
+  explain: "Her life does not show what most women's lives were like. An elite person's life shows what was possible at the top, not what was typical."
 ```
 
 ## Practise: what each kind can show
@@ -180,10 +180,10 @@ check:
   type: question
   q: "Egyptian tomb paintings and funerary texts often show women of wealthy families. What should a historian keep in mind? (See the Egypt card.)"
   options:
-    - "They mostly show women from families rich enough for decorated tombs, so they may not show poorer women's lives"
+    - "They show families rich enough for decorated tombs, not poorer women"
     - "They show every Egyptian woman exactly as she lived"
-    - "Paintings cannot be evidence at all"
-    - "They prove Egyptian women had no rights"
+    - "Paintings are art, so they cannot be used as evidence"
+    - "They prove that Egyptian women had no legal rights"
   answer: 0
   feedback:
     - null

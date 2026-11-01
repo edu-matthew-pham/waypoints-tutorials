@@ -10,7 +10,9 @@ struggle: "Students treat the bottom groups as passive and the order as fixed. A
 before: |-
   AC9HH7K10 n3. Slavery is described factually and without graphic detail; Han slaves were a small part of the population, unlike Rome, which the Typical step compares.
 
-  Real cases (checked 1 Nov 2026): the Dazexiang uprising of 209 BCE (Chen Sheng and Wu Guang, about 900 conscripts), told "according to Sima Qian"; some historians question his claim that lateness meant death, pointing to Qin legal texts with lighter penalties for lateness in labour service, so the lesson says only that they feared punishment. Emperor Wu's heavy taxes on merchants and the state salt and iron monopolies (119 BCE); Wang Mang's abolition of slavery (17 CE), reversed after his death in 23 CE.
+  Real cases (checked 1 Nov 2026): the Dazexiang uprising of 209 BCE (Chen Sheng and Wu Guang, about 900 conscripts), told "according to Sima Qian"; some historians question his claim that lateness meant death, pointing to Qin legal texts with lighter penalties for lateness in labour service, so the lesson says only that they feared punishment. Emperor Wu's heavy taxes on merchants and the state salt and iron monopolies (119 BCE; McKay, A History of World Societies, ch. 7); Wang Mang's ban on buying and selling land and slaves in 9 CE, cancelled in 12 CE after powerful families opposed it (Ban Gu's Book of Han: the edict's words are in the de Bary extract below, opened 1 Nov 2026; that extract does not give the two dates, which follow standard accounts such as the Cambridge History of China vol. 1, 1986, not checked online). An earlier draft said Wang Mang "abolished slavery in 17 CE"; that was wrong: the ban was on selling, not owning, slaves.
+
+  Book sources for the groups (not checked online): C. M. Wilbur, Slavery in China during the Former Han Dynasty (1943), for Han slavery as a small part of the population; Cambridge History of China vol. 1 (1986), for Wang Mang and the four occupations. Sima Qian's account of the 209 BCE rising is Shiji ch. 48 (Burton Watson's translation, Records of the Grand Historian: Qin Dynasty, 1993).
 
   The Confucian ranking of the four occupations is presented as an ideal order (T8), not a description of wealth.
 
@@ -30,7 +32,7 @@ stuck:
     ask: "What would stop if they all stopped working?"
     fix: "The society rested on their work, and the 209 BCE revolt helped end the Qin."
   - see: "A student says the order never changed."
-    ask: "What happened to slavery between 17 and 23 CE?"
+    ask: "What happened to the sale of slaves between 9 and 12 CE?"
     fix: "Rules changed and changed back; groups' positions shifted over time."
   - see: "A student says merchants were poor because they ranked last."
     ask: "Is the ranking about money, or about what officials respected?"
@@ -40,15 +42,12 @@ stretch: "Compare Han China and Rome: why might slavery matter more to one socie
 leads: "Next in this pathway: Beliefs and practices (planned)."
 exit:
   q: "Describe one group near the bottom of Qin or Han society and one change in its position over time."
-  a: "For example: slaves worked in households and workshops; Wang Mang abolished slavery in 17 CE, but it returned after his death."
+  a: "For example: slaves worked in households and workshops; Wang Mang banned buying and selling slaves in 9 CE, but powerful families opposed it and he cancelled the ban in 12 CE."
 explain: "Qin and Han China rested on the work of farmers, conscripted labourers, convicts and slaves, who had little power but real influence, and the order between groups changed over time."
 sources:
-  - title: "Dazexiang uprising"
-    url: https://en.wikipedia.org/wiki/Dazexiang_uprising
+  - title: "Wang Mang's edict on land and slaves, from Ban Gu's Book of Han (de Bary, Sources of Chinese Tradition; Columbia teaching extract)"
+    url: https://columbia.edu/itc/ealac/moerman/fall2000/edit/pdfs/wk4/wangma.pdf
     checked: 2026-11-01
-  - title: "Wang Mang"
-    url: https://en.wikipedia.org/wiki/Wang_Mang
-    checked: 2026-11-01
-  - title: "Discourses on Salt and Iron"
-    url: https://en.wikipedia.org/wiki/Yantie_lun
+  - title: "McKay et al., A History of World Societies, ch. 7.5 (salt and iron monopolies, 119 BCE)"
+    url: https://digfir-published.macmillanusa.com/mckayworld10e/mckayworld10e_ch7_5.html
     checked: 2026-11-01

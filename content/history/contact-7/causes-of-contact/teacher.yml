@@ -1,5 +1,5 @@
-learning: "describe several causes of contacts and conflicts involving Qin and Han China, sort them into kinds, and explain how one cause shaped what happened"
-summary: "Describe the causes of the Qin wars of unification, the Han–Xiongnu conflict and Zhang Qian's mission, sort them into power, land, security, and trade and resources, and explain how a cause shaped the contact that followed."
+learning: "describe several causes of contact and conflict between Han China and other societies, sort them into kinds, and explain how one cause shaped what happened"
+summary: "Describe the causes of the Han–Xiongnu conflict, Zhang Qian's mission and the war for Ferghana's horses, sort them into power, land, security, and trade and resources, and explain how a cause shaped the contact that followed."
 time: 40
 timing: "Predict and Try 8 min · Worked example 12 min · Vary 5 min · Practise 6 min · Make 9 min. Typical and wider steps are extras and not counted in this."
 goals:
@@ -10,7 +10,9 @@ struggle: "Students give one cause ('they wanted land') and stop. Keep asking: w
 before: |-
   AC9HH7K12 n1, a hinge. The Kit's reason: students who reduce contacts and conflicts to single causes cannot do the effects lesson, because conquest, trade and peace agreements each come from a different mix of causes. Check the Make step and the class plan question before moving on.
 
-  Real cases (checked 1 Nov 2026): the Qin wars of unification, 230 to 221 BCE (Han state first, Qi last); the Han–Xiongnu conflict, with Emperor Wu attacking from 133 BCE after decades of peace-buying; Zhang Qian's mission from 138 BCE (held by the Xiongnu about ten years, home after about thirteen); the Ferghana campaigns, the first failing in 104 BCE and the second returning with horses in 101 BCE. The purpose of Zhang Qian's mission (an alliance with the Yuezhi) comes from Sima Qian's history, so the lesson says "according to Sima Qian"; some sources stress horses instead. The causes of the Qin wars are "historians think". Britannica adds Qin strategy, bribery and reforms; those explain how Qin won, not why it fought, so they are left out.
+  Overlap (1 Nov 2026 review): Time, cause and change (`history/time-7/causes-and-effects`) teaches several causes on Qin unification. This lesson keeps to causes of contact and conflict between societies (the Han and their neighbours) and mentions Time, cause and change in one optional line; neither course needs the other. The Qin wars are on the reference card as a swap-in only (230 to 221 BCE, Han state first in 230, Qi last in 221: Barbieri-Low's slides below).
+
+  Real cases (checked 1 Nov 2026): the Han–Xiongnu conflict, with Emperor Wu attacking from 133 BCE after decades of peace-buying; Zhang Qian's mission from 138 BCE (held by the Xiongnu about ten years, home after about thirteen); the Ferghana campaigns, the first failing in 104 BCE and the second returning with horses in 101 BCE. The purpose of Zhang Qian's mission (an alliance with the Yuezhi) comes from Sima Qian's history, so the lesson says "according to Sima Qian"; some sources stress horses instead. Ferghana's refusal to hand over the horses is Sima Qian's account (Shiji ch. 123, in Burton Watson's translation; not checked online), so the lesson says "according to Sima Qian". The news about Ferghana's horses came with Zhang Qian's return, not before he left: an earlier draft's answer said Emperor Wu sent him west for horses, which contradicted the lesson. Xiongnu raids and wants are introduced once as "Han writers say"; the sort and later tasks then state them plainly.
 
   Simplified: the four kinds of cause are a teaching frame, not fixed categories (the Kit also names religion; no case here has a religious cause, so it is left out). Real causes overlap: land is also power. Accept a reasoned case for a second kind. Britannica notes Emperor Wu's wish for Ferghana's "blood-sweating" horses was partly about their meaning as a sign of Heaven's favour, not only cavalry; a good stretch point.
 
@@ -22,7 +24,7 @@ before: |-
 
   First Nations: AC9HH7K12 has no First Nations elaborations; we write none.
 running:
-  - "Predict: take a show of hands for each option, then ask the 'only one reason' voters what else could matter."
+  - "Predict: take a show of hands for each option, then ask those who picked a single reason what else could matter."
   - "Try: put the four kinds on the board and ask which kinds the Han and Xiongnu case touches."
   - "Worked example: read Nib's lines aloud and let the slip sit. Ask: does land explain the horses?"
   - "Vary: ask students to take away a different cause and see what is left."
@@ -51,14 +53,11 @@ sources:
   - title: "Wudi, emperor of Han dynasty (Britannica)"
     url: https://www.britannica.com/biography/Wudi-emperor-of-Han-dynasty
     checked: 2026-11-01
-  - title: "China: The Qin empire, 221–207 BCE (Britannica)"
-    url: https://www.britannica.com/place/China/The-Qin-empire-221-207-bce
-    checked: 2026-11-01
   - title: "China: Relations with other peoples, Han dynasty (Britannica)"
     url: https://www.britannica.com/place/China/Relations-with-other-peoples
     checked: 2026-11-01
-  - title: "Qin's wars of unification (order and dates of the conquests)"
-    url: https://en.wikipedia.org/wiki/Qin%27s_wars_of_unification
+  - title: "Anthony Barbieri-Low (UC Santa Barbara), The Qin Empire, lecture slides (order and dates of the Qin conquests, for the reference card)"
+    url: https://wuecampus.uni-wuerzburg.de/moodle/pluginfile.php/5209434/mod_resource/content/1/9.%20Qin%20Empire_Barbieri.pdf
     checked: 2026-11-01
   - title: "The opening of the Silk Route (UNESCO Silk Roads knowledge bank)"
     url: https://en.unesco.org/silkroad/sites/default/files/knowledge-bank-article/the%20opening%20of%20the%20silk%20route.pdf

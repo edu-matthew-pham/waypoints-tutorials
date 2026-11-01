@@ -19,7 +19,7 @@ Many people in Han China held beliefs that fitted together:
 | Heaven gave a ruler the right to rule only while he ruled well: the **Mandate of Heaven** | Advisers read floods and droughts as Heaven's warnings, and told the emperor to change how he ruled |
 | Life after death was much like life before it | Tombs were filled with food, clothes, dishes and models of houses and granaries |
 
-When Confucius was asked about duty to parents, the *Analects* (a collection of his sayings) record him answering that parents should be served properly while they are alive, buried properly when they die, and given offerings properly after that. In 136 BCE, under Emperor Wu, Confucian teaching became the official basis of Han government. Dong Zhongshu, a Confucian adviser to Emperor Wu, taught that floods and droughts were Heaven's way of warning the emperor.
+When Confucius was asked about duty to parents, the *Analects* (a collection of his sayings) record him answering that parents should be served properly while they are alive, buried properly when they die, and given offerings properly after that. In 136 BCE Emperor Wu gave official posts to scholars of the Confucian classics, and in 124 BCE he founded an academy to train officials in them. Later Han writers described this as Confucian teaching winning out; many historians think the change was slower. Dong Zhongshu, a Confucian adviser to Emperor Wu, taught that floods and droughts were Heaven's way of warning the emperor.
 
 See how the beliefs link up. If you believe duty to your parents does not stop when they die, then funerals and offerings matter. If the dead live on much as before, they need what the living need, so the tomb is stocked. Together the beliefs work like a system: each one helps explain the others, and together they explain what people did.
 
@@ -153,15 +153,15 @@ tasks:
       type: question
       q: "Which statement about beliefs in Han China is best?"
       options:
-        - "Many people held linked beliefs, though they varied by place and family"
+        - "Beliefs linked up, and they varied by place and family"
         - "Everyone in Han China believed exactly the same things in the same way"
-        - "Their beliefs were separate odd customs that had nothing to do with each other"
-        - "People had no beliefs of their own, only rules the emperor gave them"
+        - "Many people held beliefs, but each one stood on its own"
+        - "People had no beliefs of their own, just rules from the emperor"
       answer: 0
       feedback:
         - null
         - "Beliefs varied between places, families and over time. 'Many people' is safer than 'everyone'."
-        - "The beliefs linked up: duty to parents and the afterlife both explain funerals and tombs."
+        - "Many people did hold these beliefs, but they linked up: duty to parents and the afterlife both explain funerals and tombs."
         - "Families made offerings at home for their own ancestors. Beliefs were not only the emperor's rules."
       explain: "Linked beliefs, held by many but not identically by all."
   - check:
@@ -202,8 +202,8 @@ check:
   q: "Many Roman homes had a small shrine for the household gods (the Lares), where the family prayed and made offerings at family festivals. Which belief best explains this? (See the Rome card on the Reference page.)"
   options:
     - "The household gods were believed to watch over the home and family"
-    - "Romans built the shrines only as decoration for the house"
-    - "Only priests in big temples were allowed to worship at all"
+    - "Romans built the shrines as decoration for the house"
+    - "Worship was allowed in big temples, not at home"
     - "Romans did not believe in gods, so the shrines meant nothing"
   answer: 0
   feedback:
@@ -224,9 +224,9 @@ check:
   type: question
   q: "Greek lawmakers, colonists and cities asked the oracle of the god Apollo at Delphi for advice, including about wars they were planning. What does this show? (See the Greece card.)"
   options:
-    - "Many Greeks believed the god's advice mattered, so belief shaped their choices"
-    - "The oracle had its own army that forced the cities to obey it"
-    - "The Greeks only asked the oracle about small personal worries"
+    - "Belief in the god's advice shaped big choices"
+    - "The oracle had its own army that forced cities to obey"
+    - "Most Greeks probably asked it about small personal worries"
     - "It shows the Greeks did not really believe in their gods"
   answer: 0
   feedback:
@@ -234,7 +234,7 @@ check:
     - "The oracle gave advice; it did not command armies. Its power came from what people believed."
     - "Lawmakers and colonists asked it too, and it was asked about planned wars."
     - "Travelling to Delphi to ask is a sign of belief, not of doubt."
-  explain: "A belief about the gods could shape decisions about laws, new colonies and war."
+  explain: "Many Greeks believed the god's advice mattered. A belief about the gods could shape decisions about laws, new colonies and war."
 ```
 
 Typical and wider steps are extras on the same idea. You do not need them to finish the lesson.

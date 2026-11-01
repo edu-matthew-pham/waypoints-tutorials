@@ -18,9 +18,9 @@ Saying someone *did* something is only half the answer. A historian also explain
 | **Roads, canals and walls.** New roads and canals; older walls in the north joined into a long line of defences. | Huge numbers of men were called up to build them, organised by officials using the registers. | Armies, officials and messages moved faster; the northern frontier was guarded. |
 | **One system of laws.** The Qin's written laws applied in every commandery and county. | Appointed officials, who could be dismissed, ran each area and applied the laws (you met them in *People and power*). | The old kingdoms' rulers lost power; people across the empire answered to the same rules. |
 
-**Evidence from more than one kind of source.** Some Qin weights that survive have the emperor's order of 221 BCE, to make measures the same, written on them. Qin coins survive in large numbers. The bamboo slips from a Qin official's tomb show the laws he worked with. The emperor's own stone inscriptions boast of one set of laws and measures. Sima Qian, writing about a century later, describes the changes too.
+**Evidence from more than one kind of source.** Some Qin weights that survive have the emperor's order of 221 BCE, to make measures the same, written on them. Qin coins survive in large numbers. The bamboo slips from a Qin official's tomb show the laws he worked with. The emperor's own stone inscriptions praise him for one set of laws, weights and measures. Sima Qian, writing about a century later, describes the changes too.
 
-**A story told with care.** According to Sima Qian, in 213 BCE the chief minister Li Si advised the emperor to burn books of older histories and teachings that could be used to criticise him, keeping books on farming, medicine and fortune-telling. Sima Qian also says that the next year more than 460 scholars who criticised the emperor were killed. Historians agree the Qin did destroy some books it disapproved of. Many think the story of the scholars grew bigger in the telling: Sima Qian wrote for the Han, the dynasty that replaced the Qin, and some historians point out that no surviving earlier text mentions it.
+**A story told with care.** According to Sima Qian, in 213 BCE the chief minister Li Si advised the emperor to burn books of older histories and teachings that could be used to criticise him, keeping books on farming, medicine and fortune-telling. Sima Qian also reports that the next year more than 460 scholars who criticised the emperor were killed. Historians test these details. Many historians accept there was an order against some books in 213 BCE, but they argue about how much was lost. Many think the story of the scholars grew bigger in the telling: Sima Qian wrote for the Han, the dynasty that replaced the Qin, and some historians point out that no surviving earlier text mentions it.
 
 ## Predict: who made it happen?
 
@@ -31,10 +31,10 @@ check:
   type: predict
   q: "The emperor orders new roads across the empire. Who most likely did the work of planning and building them?"
   options:
-    - "Officials who organised the work, and huge numbers of called-up labourers"
+    - "Officials and huge numbers of called-up labourers"
     - "The emperor himself, with a small team of friends"
     - "Merchants who paid for the roads so they could trade"
-    - "Nobody: the roads already existed"
+    - "Soldiers, since the army had nothing else to do"
   actual: "Officials and called-up labourers. The emperor gave the order; many other people turned it into roads."
 ```
 
@@ -79,7 +79,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is explaining how the First Emperor united China. Click the first line where Nib's thinking goes wrong."
+      text: "Nib is explaining how the First Emperor united China (Nib's notes are made up for this lesson). Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: did-it-alone
@@ -104,17 +104,17 @@ tasks:
       type: question
       q: "Why does the lesson say 'according to Sima Qian' about the burning of books and the killing of scholars?"
       options:
-        - "He wrote about a century later for the Han, who replaced the Qin, and some details may have grown in the telling"
-        - "Because historians are sure that no books were ever burned by the Qin at all"
+        - "He wrote a century later for the Han, so details may have grown"
+        - "Because historians are sure the Qin never burned any books"
         - "Because Sima Qian was there and saw it happen with his own eyes"
         - "Because the First Emperor wrote the story himself on a stone inscription"
       answer: 0
       feedback:
         - null
-        - "Historians agree the Qin destroyed some books. The scale and the story of the scholars are what they doubt."
+        - "Many historians accept there was an order against some books. How much was lost, and the story of the scholars, are what they argue about."
         - "He was born decades after the First Emperor died."
         - "The emperor's inscriptions praise him. This story comes from Sima Qian."
-      explain: "Naming the source shows whose account it is. It helps you judge how far to trust it."
+      explain: "Sima Qian wrote about a century later for the Han, who replaced the Qin. Naming the source shows whose account it is, and helps you judge how far to trust it."
 ```
 
 ### Explain how
@@ -132,16 +132,16 @@ check:
   type: question
   q: "Historians point out that Qin had built a strong army and a system of officials and laws over about a hundred years before Ying Zheng was born. What does that tell us?"
   options:
-    - "His achievements built on what earlier Qin rulers and advisers had already set up"
-    - "He did not achieve anything, because it was all done before him"
-    - "The earlier rulers were the only significant ones"
-    - "It tells us nothing about his achievements"
+    - "He built on what earlier Qin rulers had set up"
+    - "He achieved little, since it was mostly done before him"
+    - "The earlier rulers matter, so he is not significant"
+    - "Qin was strong, so unification was sure to happen"
   answer: 0
   feedback:
     - null
     - "He still finished the conquest and made the reforms across a whole empire. Both are true."
     - "Several people can be significant. The question is what each one changed."
-    - "Context shapes what is possible. A strong state made unification possible."
+    - "A strong state made unification possible, not certain. The wars still had to be fought and won."
   explain: "An individual acts inside a context. Earlier changes made his achievements possible, and he took them much further."
 ```
 
@@ -194,9 +194,9 @@ check:
   type: question
   q: "Ramesses II (ruled about 1279 to 1213 BCE) built huge temples such as Abu Simbel and covered walls with scenes of his victory at the Battle of Kadesh. Historians think the battle was closer to a draw. What did the temple scenes most likely do for him? (See the Egypt card.)"
   options:
-    - "They showed his power to everyone who saw them, so people saw him as a great king, whatever happened at Kadesh"
+    - "They showed his power, so people saw him as a great king"
     - "They prove that he won the Battle of Kadesh easily, because they were carved in stone"
-    - "They were only decoration and had no effect on how people saw him"
+    - "They were decoration and had little effect on how people saw him"
     - "He carved them all himself, which shows how hard he worked"
   answer: 0
   feedback:
@@ -217,7 +217,7 @@ check:
   type: question
   q: "Augustus, the first Roman emperor, wrote his own list of achievements, the Res Gestae, to be set up in bronze outside his tomb. How should a historian use it? (See the Rome card.)"
   options:
-    - "As evidence of what he did and how he wanted to be remembered, checked against other sources"
+    - "As evidence of how he wanted to be remembered, checked against others"
     - "As a complete and fair list, because he knew best what he did"
     - "Not at all, because a person boasting about themselves is useless"
     - "As proof that Rome had no problems while he ruled"

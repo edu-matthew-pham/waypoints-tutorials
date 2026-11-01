@@ -13,7 +13,7 @@ Two chains from the Han period:
 
 > **Silk to Rome.** Silk came from China, and people in the Roman Empire wanted it. It was light, soft and very expensive, a sign of wealth. But Rome and Han China never traded face to face. Silk was passed from trader to trader across Central Asia, Persia and India, and each one added to the price. Roman writers had only a hazy idea of where it came from: they called the silk-makers the *Seres*, "the silk people". One Roman writer, Pliny the Elder, complained that Rome was sending huge sums east to pay for luxuries such as silk. Historians call this **indirect contact**: two societies affected each other without meeting.
 
-> **Buddhism to China.** Buddhism began in India, centuries before the Han. Merchants and monks travelled the same routes as silk and horses, and they brought their beliefs with them. By 65 CE a Chinese record mentions a Han prince who followed Buddhism. In 148 CE a monk from Parthia (in what is now Iran), called An Shigao, arrived at the Han capital, Luoyang, and began putting Buddhist texts into Chinese. Over the next centuries Buddhism became one of the main religions of China.
+> **Buddhism to China.** Buddhism began in India, centuries before the Han. Merchants and monks travelled the same routes as silk and horses, and they brought their beliefs with them. By 65 CE a Chinese record mentions a Han prince who followed Buddhism. From about 148 CE a Buddhist teacher from Parthia (in what is now Iran), called An Shigao, was working at the Han capital, Luoyang, putting Buddhist texts into Chinese. Over the next centuries Buddhism became one of the main religions of China.
 
 Look at how each chain runs: a want (silk, or spreading a belief) leads to contact along the trade routes, and the contact changes what people wear, spend and believe.
 
@@ -69,7 +69,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is comparing Rome and Han China. Click the first line where Nib's thinking goes wrong."
+      text: "Nib is comparing Rome and Han China (Nib's notes are made up for this lesson). Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: societies-developed-alone
@@ -82,7 +82,7 @@ tasks:
           - "Yes: Chinese silk changed what rich Romans wore and spent, even without meeting"
           - "No: the Roman never met anyone from China, so there was no contact"
           - "No: the traders in between cancel out any link to China"
-          - "Yes, but only because a Chinese army brought the silk to Rome"
+          - "Yes, because a Chinese army carried the silk to Rome"
         answer: 0
         feedback:
           - null
@@ -95,7 +95,7 @@ tasks:
       q: "Why do historians call the link between Rome and Han China 'indirect contact'?"
       options:
         - "They affected each other through traders in between, without meeting face to face"
-        - "Because Roman and Han armies fought each other, but only far from home"
+        - "Because Roman and Han armies fought each other far from home"
         - "Because they sent letters to each other instead of meeting"
         - "Because they had no effect on each other at all"
       answer: 0
@@ -146,7 +146,7 @@ tasks:
       options:
         - "Contact through trade, war and travel brought new goods, beliefs and rulers that changed societies"
         - "Each ancient society changed only because of things that happened inside it"
-        - "Contact only mattered when one society conquered another"
+        - "Contact mattered most when one society conquered another"
         - "Contact changed rulers, but ordinary people's lives stayed the same"
       answer: 0
       feedback:
@@ -193,7 +193,7 @@ check:
   options:
     - "A conquest led a ruler to change, and he used contact with other lands to spread Buddhism"
     - "A conquest, and nothing more: Kalinga was taken and the story ends there"
-    - "Buddhism spread only by war, because Ashoka's armies forced people to follow it"
+    - "Buddhism spread by war, because Ashoka's armies forced people to follow it"
     - "Sri Lanka conquered India and brought Buddhism back with it"
   answer: 0
   feedback:
@@ -214,7 +214,7 @@ check:
   type: question
   q: "As Rome's empire grew, many Romans began to worship gods from other lands, such as Isis from Egypt and Mithras, linked with Persia. What does this show? (See the Rome card.)"
   options:
-    - "Contact changed the conqueror too: Roman beliefs took in gods from the lands Rome met"
+    - "Contact changed the conqueror too: Rome took in other gods"
     - "Rome forced Egypt and Persia to worship Roman gods, and nothing came back"
     - "Roman religion stayed the same, because conquerors do not borrow ideas"
     - "Isis and Mithras were Roman gods that Egypt and Persia copied"

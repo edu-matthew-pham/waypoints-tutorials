@@ -15,7 +15,7 @@ Here is what Han China's beliefs and practices reveal:
 |---|---|
 | Duty to parents, offerings to ancestors | Family mattered greatly, and families had a clear order: children owed parents, and the living owed the dead |
 | The Mandate of Heaven | A ruler's right to rule was believed to depend on ruling well, so rulers needed to look as though Heaven approved of them |
-| Confucian teaching as the basis of government from 136 BCE | Officials were expected to be educated in Confucian writings, so those values shaped how the country was run |
+| Official posts for Confucian scholars from 136 BCE, and an academy to train officials from 124 BCE | More and more officials were educated in Confucian writings, so those values shaped how the country was run. Later Han writers described this as Confucian teaching winning out; many historians think the change was slower. |
 | Tombs stocked like homes, with models of granaries and farms | Providing for the dead mattered, and so did food, stored grain and a household that ran well |
 
 Comparing helps you see what was **distinctive**, meaning what set a society apart. In ancient Egypt, many people believed that a person's spirit could not survive without the body, so wealthy families had bodies preserved by **mummification**. In Han China, wealthy families also cared for the body (Lady Dai was buried in four nested coffins), but put simply, the evidence puts more weight on stocking the tomb like a home and on what the living kept doing for the dead.
@@ -84,9 +84,9 @@ tasks:
         q: "A historian does not share a belief held in an ancient society. Can she still learn from it?"
         options:
           - "Yes: it shows what people there valued and did"
-          - "No: you can only learn from beliefs you share"
+          - "No: you can learn just from beliefs you share"
           - "No: beliefs from long ago were just superstition"
-          - "Yes: but only by proving whether it was true"
+          - "Yes, once she has proved whether it was true"
         answer: 0
         feedback:
           - null
@@ -197,12 +197,12 @@ check:
   options:
     - "Keeping the body whole was believed necessary for life after death"
     - "Egyptians did not believe in any kind of life after death at all"
-    - "Mummies were made only to scare away people who robbed tombs"
+    - "Mummies were probably made to scare away people who robbed tombs"
     - "Every Egyptian, rich or poor, was mummified in exactly the same way"
   answer: 0
   feedback:
     - null
-    - "Mummification only makes sense with a belief in an afterlife."
+    - "Mummification makes sense with a belief in an afterlife."
     - "That gives a reason with no belief behind it, like Nib's slip in lesson 1."
     - "Careful mummification cost a lot. That is the 'one tomb for everyone' slip from lesson 2."
   explain: "The practice reveals a belief: the body was needed for the spirit's life after death."
@@ -220,7 +220,7 @@ check:
   options:
     - "Cremation was understood as sending the dead on to the ancestors"
     - "People in ancient India did not believe in any life after death"
-    - "Burning the body was only a way to save space for the living"
+    - "Burning the body was mainly a way to save space for the living"
     - "Every ancient society cared for its dead in exactly the same way"
   answer: 0
   feedback:

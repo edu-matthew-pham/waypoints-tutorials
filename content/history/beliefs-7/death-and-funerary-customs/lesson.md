@@ -13,7 +13,7 @@ An ancient society's **death and funerary customs** are what people did when som
 
 > **Tomb models.** Many Han tombs, especially in the later Han, held pottery models of houses, granaries, wells, mills, watchtowers, pig pens and farm animals. Museums explain them as things to provide for the dead person in the afterlife.
 
-> **The terracotta army.** The First Emperor of Qin (died 210 BCE) was buried in a huge tomb complex. In pits nearby stood thousands of life-size clay soldiers and horses, with bronze chariots and weapons, facing outward from the tomb. No written source from the time says why they were made; historians think they were probably meant to guard the emperor after death.
+> **The terracotta army.** The First Emperor of Qin (died 210 BCE) was buried in a huge tomb complex. In pits nearby stood thousands of life-size clay soldiers and horses, with wooden war chariots and bronze weapons, facing outward from the tomb. No written source from the time says why they were made; historians think they were probably meant to guard the emperor after death.
 
 Each piece of evidence tells you something about beliefs and values. A tomb stocked like a home suggests a belief that the dead live on and need what the living need. Bamboo lists of the buried objects show the family kept a careful record of what they gave the dead, which fits the duty to family from the last lesson. A clay army suggests the emperor expected to rule and need protecting after death.
 
@@ -82,7 +82,7 @@ tasks:
         options:
           - "It shows how the richest people there were buried"
           - "It shows how everyone in the region was buried"
-          - "It shows nothing, because only one tomb is shown"
+          - "It shows nothing, because one tomb proves nothing"
           - "It shows that poor people were never buried there"
         answer: 0
         feedback:

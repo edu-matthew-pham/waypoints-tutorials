@@ -17,9 +17,9 @@ Contacts and conflicts had **effects**: things that changed because of them. His
 
 And they ask the same question every time: **who changed, and how?** The answer is usually *both sides*.
 
-> **A peace agreement: the heqin (from about 198 BCE).** In 200 BCE the first Han emperor led an army north and was trapped by the Xiongnu at a place called Baideng. He got away, but he could not beat them. About two years later the Han agreed the first **heqin** ("peace through kinship") agreement: a woman of the royal family married the Xiongnu ruler, and the Han sent gifts of silk, food and other goods. The agreement treated the two rulers as equals. Raids did not stop completely, but the Han kept to this kind of agreement until Emperor Wu changed course in the 130s BCE.
+> **A peace agreement: the heqin (from about 198 BCE).** In 200 BCE the first Han emperor led an army north and was trapped by the Xiongnu at a place called Baideng. He got away, but he could not beat them. About two years later the Han agreed the first **heqin** ("peace through kinship") agreement: a woman of the royal family married the Xiongnu ruler, and the Han sent gifts of silk, food and other goods. The agreement treated the two rulers as equals. Han writers say raids did not stop completely, but the Han kept to this kind of agreement until Emperor Wu changed course in the 130s BCE.
 
-> **Conquest: the Hexi Corridor (from 121 BCE).** West of the Han heartland is the Hexi Corridor, a long, narrow strip of land between mountains and desert. In 121 BCE a Han army drove the Xiongnu out of it. The Han then set up four commanderies there, including Dunhuang at the far western end, built farming garrison towns for soldiers and settlers, and by about 100 BCE had extended their walls as far as Dunhuang. The Xiongnu lost grazing land and a route they had controlled.
+> **Conquest: the Hexi Corridor (from 121 BCE).** West of the Han heartland is the Hexi Corridor, a long, narrow strip of land between mountains and desert. In 121 BCE a Han army drove the Xiongnu out of it. Over the following years (from about 111 BCE) the Han set up four commanderies there, including Dunhuang at the far western end, built farming garrison towns for soldiers and settlers, and by about 100 BCE had extended their walls as far as Dunhuang. The Xiongnu lost grazing land and a route they had controlled.
 
 > **Trade: goods both ways.** With the corridor held, Han envoys and merchants could travel west more safely. Chinese silk went west, passed from trader to trader across Central Asia. Horses, grapes, alfalfa (a crop for feeding horses), wool and other goods came east. Today these routes are often called the **Silk Roads**, but that is a modern name, made up by European writers in the 1800s. People at the time did not use it.
 
@@ -32,9 +32,9 @@ check:
   type: predict
   q: "After the Han conquered the Hexi Corridor and drove the Xiongnu out, which society do you think changed?"
   options:
-    - "Both: the Han gained land and trade routes, and the Xiongnu lost grazing land"
-    - "Only the Han, because they won and gained new land"
-    - "Only the Xiongnu, because losing is the only thing that changes you"
+    - "Both: the Han gained land, the Xiongnu lost grazing land"
+    - "The Han, because they won and gained new land"
+    - "The Xiongnu, because the losing side is the one that changes"
     - "Neither: a conquest moves a border, but nothing else changes"
   actual: "Both. The Han gained land, towns and a safer route west; the Xiongnu lost grazing land and a route they had controlled."
 ```
@@ -75,7 +75,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is writing about the effects of the Han conquest of the Hexi Corridor. Click the first line where Nib's thinking goes wrong."
+      text: "Nib is writing about the effects of the Han conquest of the Hexi Corridor (Nib's notes are made up for this lesson). Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: effects-on-one-side-only
@@ -100,7 +100,7 @@ tasks:
       type: question
       q: "Emperor Wu's wars against the Xiongnu were very expensive. What did that change inside Han China?"
       options:
-        - "The government ran short of money and brought in new taxes and state control of salt and iron"
+        - "The government ran short of money and brought in new taxes"
         - "Nothing, because the Han won, and winners do not pay for wars"
         - "The Xiongnu paid for the wars, so Han people paid less tax"
         - "The emperor stopped collecting taxes so farmers would join the army"
@@ -110,7 +110,7 @@ tasks:
         - "Winning does not make a war free. The Han treasury was drained."
         - "The money came from inside Han China. That is why taxes went up."
         - "Taxes went up, not down. Wars need grain and money."
-      explain: "Even the winner changed: costly wars led to new taxes and the salt and iron monopolies you may have met in People and power."
+      explain: "Even the winner changed: costly wars led to new taxes and state control of salt and iron (the monopolies you may have met in People and power)."
 ```
 
 ### For the Xiongnu
@@ -152,7 +152,7 @@ tasks:
       options:
         - "Conquest, trade and peace agreements each changed the Han and their neighbours"
         - "The Han won, so the effects were all good for the Han and bad for everyone else"
-        - "Trade was the only effect, because war does not change anything"
+        - "Trade mattered most; the wars left things much as they were"
         - "There were no real effects, because the lands were so far away"
       answer: 0
       feedback:
@@ -197,10 +197,10 @@ check:
   type: question
   q: "Egypt and the Hittites fought at Kadesh in about 1274 BCE, and both kings claimed victory. About fifteen years later they agreed a peace treaty: no more attacks, help if the other was attacked, and sending back people who fled from one king to the other. Who did the treaty change? (See the Egypt card on the Reference page.)"
   options:
-    - "Both: each side gained a safe border and an ally, and gave up attacking the other"
-    - "Only Egypt, because Ramesses II said he won at Kadesh"
-    - "Only the Hittites, because they had to send people back"
-    - "Neither, because a treaty is only words on a tablet"
+    - "Both: each side gained a safe border and an ally"
+    - "Egypt, because Ramesses II said he won at Kadesh"
+    - "The Hittites, because they had to send people back"
+    - "Neither, because a treaty is just words on a tablet"
   answer: 0
   feedback:
     - null
@@ -221,8 +221,8 @@ check:
   q: "Rome and Carthage fought three wars between 264 and 146 BCE. Rome won the first and took Sicily; at the end of the third, Carthage was destroyed. What is the best description of the effects? (See the Rome card.)"
   options:
     - "Carthage lost everything, and Rome became the top power in the western Mediterranean"
-    - "Only Carthage changed, because Rome stayed exactly the same as it was before"
-    - "Only Rome changed, because the people of Carthage simply moved somewhere else"
+    - "Carthage changed, but Rome stayed much the same as it was before"
+    - "Rome changed, because the people of Carthage simply moved somewhere else"
     - "Nothing much changed, because the wars were spread out over more than a century"
   answer: 0
   feedback:
