@@ -23,8 +23,8 @@ insight: "Start with the part that helps with the lesson you are planning."
 check:
   type: predict
   q: "You already know the concept and need slides for tomorrow. Where would you look first?"
-  options: ["Unpack", "Prepare", "Tutorials"]
-  actual: "Start in Prepare for slides. You can also use Unpack to revisit the idea or Tutorials to find a check, whenever those would help."
+  options: ["Curriculum › Unpack", "Plan › Planner and Kit", "Lessons › Prepare", "Lessons › Tutorials"]
+  actual: "Start in Lessons › Prepare for slides. You can also use Unpack to revisit the idea, Planner or Kit to see where it sits in the unit, or Tutorials to find a check, whenever those would help."
 ```
 
 ## The idea: three ways in
@@ -49,12 +49,13 @@ check:
   type: match
   q: "Where would you start in each of these situations?"
   pairs:
-    - ["Find out what students need to understand before a Year 7 Geography topic", "Unpack"]
-    - ["Prepare slides for tomorrow's lesson", "Prepare"]
-    - ["Find a check to explore why students confuse renewable and continuous resources", "Tutorials"]
-  explain: "Unpack helps you understand how the ideas build. Prepare helps you make teaching resources. Tutorials offers activities, checks and feedback. Choose the part that helps you now."
+    - ["Find out what students need to understand before a Year 7 Geography topic", "Curriculum › Unpack"]
+    - ["Shape a term's unit on water from the Year 7 standards", "Plan › Planner and Kit"]
+    - ["Prepare slides for tomorrow's lesson", "Lessons › Prepare"]
+    - ["Find a check to explore why students confuse renewable and continuous resources", "Lessons › Tutorials"]
+  explain: "Curriculum (Unpack) shows how the ideas build. Plan (Planner and Kit) shapes a unit. Lessons holds Prepare, for teaching resources, and Tutorials, for activities, checks and feedback. Choose the part that helps you now."
 hint:
-  - "Does the teacher need help with the ideas, a teaching resource or a check to try?"
+  - "Does the teacher need help with the ideas, the shape of a unit, a teaching resource or a check to try?"
 ```
 
 ## Check: is there a required order?
@@ -99,7 +100,7 @@ goals:
   - "I can choose a Waypoints tool for a teaching need."
 before: "For a facilitator: invite one current planning need. The course is optional; teachers can use it independently. All teacher scenarios are invented."
 running:
-  - "Ask for a prediction before naming the three tool roles."
+  - "Ask for a prediction before naming the three menus and their tools."
   - "Open each real tool. Discuss a case where two tools would both help."
   - "Let teachers choose their own starting point without collecting their notes."
 struggle: "If teachers expect to work through all three in order, ask what they need for tomorrow and start there."
@@ -107,7 +108,7 @@ stuck:
   - { see: "Everyone must do all three in order.", ask: "What do you need for tomorrow?", fix: "Start with the tool that serves that need." }
 support: "Read the three needs aloud and compare one pair at a time."
 stretch: "Describe two different starting points for the same topic."
-exit: { q: "Must you start in Unpack?", a: "No. You can start with whichever part helps you." }
+exit: { q: "Must you start in Curriculum?", a: "No. You can start with whichever part helps you." }
 class:
   activities:
     - { at: end, kind: discussion, title: Your starting point, minutes: 1, do: "Name a lesson you are planning and the tool you would open first.", notes: "Accept different choices when the teaching need supports them." }
