@@ -4,7 +4,7 @@ summary: "What is built so far in Year 7 Economics and Business (scarcity and op
 ---
 ## What is here
 
-Six courses are built (a preview), covering every Year 7 Economics and Business standard, and none has been tried with a class yet.
+Six courses are built, covering every Year 7 Economics and Business standard.
 
 - [**Scarcity and opportunity cost**](../economics/scarcity-7/): four lessons for AC9HE7K01. *Needs and wants* (and why wants never run out), *Scarcity* (and how it differs from a shop running out), *Opportunity cost* (what is given up when we choose), then *Putting it together*: the whole chain, with a sustainability question. Lessons 1 and 2 are hinges, so each carries an easier check you can set before moving on.
 - [**Types of businesses**](../economics/businesses-7/): three lessons for AC9HE7K02. *Goods, services and why businesses exist* (reasons beyond profit, hinge), *Ways a business can be set up* (sole proprietorship, partnership, cooperative, corporation, franchise and not-for-profit), and *Matching the structure to the job* (how purpose and structure shape what is provided and how it reaches consumers across markets, shopping centres, online and remote stores).

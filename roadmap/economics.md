@@ -298,7 +298,7 @@ The planned lesson in *Before Year 7: HASS* (`content/hass/before-year-7/index.m
 Year 7 plan complete (1 Nov 2026): every Year 7 Economics and Business standard (K01–K05, S03, S04) has a built course, plus the Year 6 catch-up *Spending choices* and the curriculum map.
 
 1. ~~Fresh-eyes review~~ done 1 Nov 2026, fixes applied with Matthew's yes (section below).
-2. A whole-site publish (Matthew runs it), then a trial with a class: nothing has been tried yet, so `preview: true` stays.
+2. A whole-site publish (Matthew runs it), then a trial with a class. Nothing has been tried with a class yet; that is tracked here, not on the site (Preview labels removed 1 Nov 2026, see `shared.md` › Decided: humanities).
 3. Keep `content/economics-teachers.md` in step with what is built.
 4. Years 8 to 10: not planned yet.
 

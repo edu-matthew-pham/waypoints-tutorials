@@ -216,6 +216,7 @@ Why: rules get shortened each time they are copied, and the reason and scope are
 
 ## Decided (30 Oct 2026, Matthew): humanities (Economics, Civics, Geography, History)
 
+- **No Preview labels on the site (Matthew, 1 Nov 2026):** the whole site is essentially in preview, so no subject or course is marked Preview. Drop `preview: true` and "Preview (a pilot, not yet tried with a class)" from summaries; record "not yet tried with a class" in the subject's roadmap file instead. Done for Economics (1 Nov); History, Civics, Geography and HASS still carry it, for their chats to remove. The `preview:` flag code in `build-site.mjs` can go once nothing uses it.
 - **One course per standard**, one lesson per waypoint, in the node file's order (pattern: `content/economics/scarcity-7/`).
 - **Inquiry skills: a shared core plus subject skills.** One shared course for the skills that are near-identical in all four (develop questions, locate and organise information, create explanations and arguments), each lesson tagged with every subject's node; each subject builds only its own skills (History's source work, Geography's data and action, Civics' participation, Economics' response to an issue). The full investigation is class work, with a printable inquiry skeleton per subject. Plan: `roadmap/humanities-inquiry.md`.
 - **First Nations wider items** are teacher notes: start from ACARA's own elaboration for that content, then local, community-approved material on top; we write no student text for them (Matthew, 30 Oct: the elaborations are the starting point; imported, see Done above).
@@ -269,7 +270,7 @@ New widget `playground-board/widgets/house.js` (a made-up, smaller House: crossb
 - `history` added to `CHECKED` in `tools/progressions.mjs`, so History lessons must name their node (roadmap/history.md).
 - `isCatchUp` in `tools/build-site.mjs` and `tools/prior-links.mjs` now matches `history/before-year-7/` as well as maths and science (one word in each regex), so a History lesson that lists a catch-up node in `assumes:` gets "What you should already know" and the catch-up lesson gets "Leads into". Nothing changes for maths and science.
 - Four misconceptions added to `misconceptions.json` (`old-means-primary`, `origin-from-content`, `context-is-setting`, `purpose-is-content`).
-- Not built (no shared code): the **Preview** label and the planned-units display from the humanities plan. History says "Preview (a pilot, not finished)" in the subject, pathway and course summaries, and shows planned courses as "Coming later" cards. A shared Preview label and greyed planned units inside a course are still open.
+- Not built (no shared code): the **Preview** label and the planned-units display from the humanities plan. History says "Preview (a pilot, not finished)" in the subject, pathway and course summaries, and shows planned courses as "Coming later" cards. Greyed planned units inside a course are still open; the Preview label is dropped (Decided: humanities, 1 Nov 2026).
 
 ## Changed by the History chat (30 Oct 2026): completed courses without playgrounds
 

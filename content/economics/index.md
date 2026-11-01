@@ -2,11 +2,10 @@
 title: Economics and Business
 group: Humanities
 blurb: "Needs, scarcity, businesses, work"
-preview: true
 order: 9
 map: true
 trail: units
-summary: "The ideas behind how people, businesses and communities decide what to do with what they have: needs and wants, scarcity, opportunity cost, why businesses exist and how they are set up, what entrepreneurs do, why people work, and your rights when you buy. Short lessons on made-up places such as a school tuckshop, a town bakery and a growers' cooperative, so nothing dates and nobody's real money is involved. Every lesson follows the same steps in the same order for every class; how long to spend and how much extra to use is the teacher's call. This subject is a preview: every Year 7 standard has a course, none has been tried with a class yet, and Years 8 to 10 come later."
+summary: "The ideas behind how people, businesses and communities decide what to do with what they have: needs and wants, scarcity, opportunity cost, why businesses exist and how they are set up, what entrepreneurs do, why people work, and your rights when you buy. Short lessons on made-up places such as a school tuckshop, a town bakery and a growers' cooperative, so nothing dates and nobody's real money is involved. Every lesson follows the same steps in the same order for every class; how long to spend and how much extra to use is the teacher's call. Every Year 7 standard has a course; Years 8 to 10 come later."
 pathways:
   - id: choices
     title: Scarcity, businesses and work
