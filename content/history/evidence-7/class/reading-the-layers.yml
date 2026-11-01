@@ -16,9 +16,9 @@ questions:
     type: question
     q: At a second made-up, undisturbed site, a floor lies below flood mud and a rebuilt wall lies above it. Which account is supported?
     options:
-      - Flooding came before any floor existed
-      - The wall proves why the flood happened
-      - A period of use was followed by flooding and rebuilding
+      - A flood came first, then people laid a floor on the mud
+      - The rebuilt wall shows what caused the flood
+      - People used the floor, then a flood, then they rebuilt
     answer: 2
     explain: The positions give a sequence. They do not give the cause or an exact year.
     feedback:

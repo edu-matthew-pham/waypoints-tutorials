@@ -26,10 +26,10 @@ check:
   type: predict
   q: "When scientists call Out of Africa a theory, what do they mean?"
   options:
-    - "An explanation built on evidence, which can be changed if new evidence turns up"
-    - "A guess that is as good as any other guess"
-    - "Something that has been proved and can never change"
-    - "An idea nobody has any evidence for yet"
+    - "An explanation built on evidence that can change with new finds"
+    - "A guess that is as good as any other person's guess"
+    - "Something that has been proved for sure and can never change"
+    - "An idea that nobody has found any evidence for yet"
   actual: "An explanation built on evidence that can be refined. It is not a hunch, and it is not frozen: new finds can change the details."
 ```
 
@@ -85,10 +85,10 @@ tasks:
         type: question
         q: "Which of these is a theory in the scientific sense?"
         options:
-          - "An explanation that fossils and DNA both support, and that new finds keep testing"
-          - "A hunch about who ate your lunch"
-          - "Any idea at all, as long as someone believes it"
-          - "A fact that no one is allowed to question"
+          - "An explanation that fossils and DNA support, still being tested"
+          - "A hunch about who ate your lunch, based on who looks guilty"
+          - "Any idea at all, as long as plenty of people believe it"
+          - "A fact that has been proved, so no one may question it"
         answer: 0
         feedback:
           - null
@@ -100,10 +100,10 @@ tasks:
       type: question
       q: "Why do most scientists accept the Out of Africa theory today?"
       options:
-        - "Different kinds of evidence, such as fossils and DNA, point to the same answer"
-        - "A famous scientist said it, so everyone agreed"
-        - "It is the oldest theory, so it must be right"
-        - "Nobody has ever found any fossils outside Africa"
+        - "Separate kinds of evidence, like fossils and DNA, agree"
+        - "A famous scientist suggested it, so everyone agreed"
+        - "It is the oldest theory, so it is most likely right"
+        - "Nobody has ever found any human fossils outside Africa"
       answer: 0
       feedback:
         - null
@@ -130,10 +130,10 @@ check:
   type: question
   q: "What does the Misliya jawbone do to the Out of Africa theory?"
   options:
-    - "It refines it: our species may have started leaving Africa earlier than people thought"
+    - "It refines it: our species may have left Africa earlier than thought"
     - "It proves the whole theory was wrong and should be thrown out"
-    - "Nothing, because a theory can never change"
-    - "It proves our species first evolved in Israel"
+    - "Nothing, because a theory can never change once it is accepted"
+    - "It shows our species probably first evolved in Israel instead"
   answer: 0
   feedback:
     - null
@@ -178,9 +178,9 @@ check:
   type: question
   q: "Fossils of Homo erectus, an earlier kind of human, have been found in Asia from more than a million years ago. Does that disprove Out of Africa?"
   options:
-    - "No: Out of Africa is about where our own species began, not about every kind of human"
-    - "Yes: it shows humans began in Asia"
-    - "Yes: any fossil outside Africa disproves it"
+    - "No: it is about where our species began, not every kind of human"
+    - "Yes: it shows that humans really began in Asia, not Africa"
+    - "Yes: any human fossil found outside Africa counts against it"
     - "No: Homo erectus fossils are too old to count as evidence"
   answer: 0
   feedback:
@@ -201,10 +201,10 @@ check:
   type: question
   q: "Which find would most challenge the idea that our species began in Africa?"
   options:
-    - "Homo sapiens fossils outside Africa that are clearly older than the oldest ones in Africa"
-    - "A stone tool found in Europe"
-    - "A newer Homo sapiens fossil found in Africa"
-    - "A Neanderthal fossil found in Europe"
+    - "Homo sapiens fossils outside Africa older than any found in Africa"
+    - "An old stone tool found in Europe, far away from Africa"
+    - "A new Homo sapiens fossil found in Africa, younger than others"
+    - "A Neanderthal fossil found in Europe, older than Homo sapiens"
   answer: 0
   feedback:
     - null

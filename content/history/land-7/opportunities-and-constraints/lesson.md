@@ -62,10 +62,10 @@ tasks:
       type: question
       q: "Is the Lingqu Canal a natural feature of the land?"
       options:
-        - "No: people built it to join two rivers, turning a barrier of hills into a water route"
-        - "Yes: it is a river, so it is part of the natural landscape"
-        - "Yes: it was there before the Qin, and they just used it"
-        - "No: it is a road, not a waterway"
+        - "No: people dug it to join two rivers through a barrier of hills"
+        - "Yes: it carries water like a river, so it is part of the landscape"
+        - "Yes: it was there before the Qin, and they just made use of it"
+        - "No: it is a road over the hills, not a waterway"
       answer: 0
       feedback:
         - null
@@ -101,17 +101,17 @@ tasks:
       type: question
       q: "Did the mountains and deserts of the west cut ancient China off from other societies?"
       options:
-        - "No: they made contact harder, but people still travelled and traded through narrow routes such as the Hexi Corridor"
+        - "No: they made contact harder, but people still crossed by narrow routes"
         - "Yes: no one ever crossed them, so China had no contact with the west"
-        - "No: they were easy to cross, so they made no difference"
-        - "Yes: deserts and mountains always stop all trade"
+        - "No: they were easy to cross, so they made no real difference"
+        - "Yes: deserts and mountains always stop trade, wherever they are"
       answer: 0
       feedback:
         - null
         - "Goods and travellers did cross, along a few routes. A barrier slows contact; it rarely stops it."
         - "They were hard to cross, which is why travel used a few narrow routes."
         - "Traders crossed deserts with camels and water stops. It was hard, not impossible."
-      explain: "Barriers shape where and how contact happens. They rarely stop it altogether."
+      explain: "Barriers shape where and how contact happens, through narrow routes such as the Hexi Corridor. They rarely stop it altogether."
 ```
 
 ### Natural or human-made?
@@ -133,16 +133,16 @@ check:
   type: question
   q: "How did geography shape the route west through the Hexi Corridor?"
   options:
-    - "Mountains on one side and desert on the other squeezed travellers into a narrow strip with water and grazing"
-    - "The corridor was a wide, empty plain, so travellers could go any way they liked"
-    - "The Han built the corridor by digging through the mountains"
-    - "Travellers went this way because the sea route was faster"
+    - "Mountains and desert squeezed travellers into a narrow strip with water"
+    - "The corridor was a wide, empty plain, so travellers went any way they liked"
+    - "The Han built the corridor by digging a way through the mountains"
+    - "Travellers went this way because it was shorter than going by sea"
   answer: 0
   feedback:
     - null
     - "Look at the map: it is a narrow strip between the high land and the desert."
     - "The corridor is a natural strip of land. People built forts and posts along it, but they did not dig it."
-    - "The route ran overland, far from the sea."
+    - "The route ran overland, far from the sea. The land itself, not a comparison with the sea, shaped the path."
   explain: "The land made a narrow path possible and blocked the rest. People made the most of that path."
 ```
 
@@ -181,10 +181,10 @@ check:
   type: question
   q: "For the ancient Greeks, which pair is an opportunity and a constraint from the same geography? (See the Greece card on the Reference page.)"
   options:
-    - "The sea made trade and travel by boat easy, but mountains left little flat land for farming"
+    - "The sea made boat travel easy, but mountains left little flat farmland"
     - "The mountains gave lots of flat farmland, and the sea stopped all trade"
-    - "The sea and the mountains were both only opportunities"
-    - "Greece had no constraints because it had a warm climate"
+    - "The sea and the mountains were both just opportunities for Greeks"
+    - "Greece had no constraints at all because it had a warm climate"
   answer: 0
   feedback:
     - null
@@ -204,10 +204,10 @@ check:
   type: question
   q: "The Himalayas run along the north of the Indian subcontinent. How did they shape contact with other societies? (See the India card.)"
   options:
-    - "They blocked most travel from the north, so traders and armies tended to come through passes in the north-west"
-    - "They had no effect, because people could walk over them easily"
+    - "They blocked most northern travel, so people used north-west passes"
+    - "They had no effect, because people could walk over them quite easily"
     - "They cut India off completely, so there was no trade with anyone"
-    - "They made the north the busiest trade route into India"
+    - "They made the north the busiest and easiest trade route into India"
   answer: 0
   feedback:
     - null

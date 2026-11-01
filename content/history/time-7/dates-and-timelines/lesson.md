@@ -38,7 +38,7 @@ stage: run
 insight: "Working out a span inside BCE makes students count in the right direction before they meet the year-0 trap."
 check:
   type: number
-  q: "The Qin dynasty unified China in 221 BCE and fell in 206 BCE. How many years did it rule all of China?"
+  q: "The Qin dynasty unified China in 221 BCE and had fallen by 206 BCE. How many years did it rule all of China?"
   answer: 15
   feedback:
     - [427, "You added the two years. Both are BCE, so take the smaller number from the bigger one."]
@@ -56,8 +56,6 @@ Nib is putting two dates in order.
 |---|---|
 | Confucius dies | 479 BCE |
 | The Qin unify China | 221 BCE |
-
-479 BCE is **before** 221 BCE: 479 − 221 = 258 years before. Confucius died more than 250 years before the Qin unified China, so he could never have met the First Emperor. His ideas, though, were still being taught and argued about.
 
 Nib's notes below are made up for this lesson.
 
@@ -79,7 +77,7 @@ tasks:
         type: question
         q: "A rocket countdown goes 10, 9, 8 … 3, 2, 1. Which number is called out first?"
         options:
-          - "10, because a countdown starts with the biggest number"
+          - "10, because a countdown starts at the top"
           - "3, because it is the smaller number"
           - "1, because it is the smallest number"
           - "They are called out at the same moment"
@@ -109,6 +107,8 @@ Many history books and museums now use BCE and CE, and many still use BC and AD.
 
 ## Vary: across the line
 
+Back to the hook: 479 BCE is **before** 221 BCE, by 479 − 221 = 258 years. Confucius died more than 250 years before the Qin unified China, so he could never have met the First Emperor. His ideas, though, were still being taught and argued about.
+
 The trap gets harder when a span crosses from BCE into CE.
 
 ```step
@@ -136,7 +136,7 @@ check:
   type: question
   q: "Why do archaeologists write 'about 7,800 BP' for early millet farming instead of a BCE date?"
   options:
-    - "BP counts back from 1950, and it suits very old dates found by scientific dating"
+    - "BP counts back from 1950, and suits dates from scientific tests"
     - "BP means 'before people', so it is used before humans lived"
     - "BP is the same as BC, written a newer way"
     - "BP dates count forward from the first farmers"
@@ -217,7 +217,7 @@ check:
     - "They counted years carefully, just from a different starting point: the ruler."
     - "BCE and CE are a recent choice. Many calendars have been used, and some still are."
     - "Historians convert reign years into BCE or CE; the old dates are still evidence."
-  explain: "BC and AD count from a date linked to Christianity; BCE and CE keep the numbers with neutral names. Other calendars, such as the Islamic, Jewish and Chinese ones, start from other points."
+  explain: "Counting by reign years starts again with each ruler, because the ruler was what mattered most to the officials keeping the records. Our own system is a choice too: BC and AD count from a date linked to Christianity, and BCE and CE keep those numbers with neutral names."
 ```
 
 Typical and wider steps are extras on the same idea. You do not need them to finish the lesson.

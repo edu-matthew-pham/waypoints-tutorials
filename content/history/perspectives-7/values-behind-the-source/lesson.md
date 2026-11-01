@@ -32,8 +32,8 @@ check:
   options:
     - "What some people at the time thought about who should be in charge"
     - "Nothing, because it is unfair by today's standards"
-    - "How every woman and servant really behaved"
-    - "Only what Confucius thought, and nothing about anyone else"
+    - "Probably how most women and servants really behaved at home"
+    - "What Confucius thought, and nothing about anyone else then"
   actual: "It shows attitudes of the time about rank and who should manage whom. It was collected, taught and studied for centuries, so it tells us about more than one man. Today we can also say it is unfair; both can be true."
 ```
 
@@ -78,7 +78,7 @@ Pictures work the same way. In 1972, archaeologists opened a Han tomb at **Mawan
 
 You can see the painting on the [Hunan Museum's page](https://web.hnmuseum.com/en/node/7370).
 
-Nib's notes below are made up for this lesson.
+Nib's notes below, and Mei later in the lesson, are made up for this lesson.
 
 ```step
 stage: investigate
@@ -92,7 +92,7 @@ tasks:
       fault: logic
       misconception: judge-only-by-today
       explain: "Line 3: Nib's judgement in line 2 is fine, but it is not the end of the job. The saying is good evidence of attitudes to rank and gender at the time, which is what a historian is asking about."
-    hint: ["Line 2 is a fair thing to say. What comes after it?", "Can a source you disagree with still tell you something?"]
+    hint: ["Judging a source as unfair is fine. Is that where a historian's job ends?", "Can a source you disagree with still tell you something about its time?"]
     smaller:
       check:
         type: question
@@ -139,7 +139,7 @@ check:
   type: question
   q: "Mei says: 'Confucius said it, so every person in Han China believed women and servants were hard to handle.' What is the best reply?"
   options:
-    - "It shows a view taught to officials; we would need other sources to know what others thought"
+    - "It shows a view taught to officials, not what everyone believed"
     - "That is right, because Confucius was the most famous teacher"
     - "No, because Confucius lived before the Han, so it tells us nothing"
     - "No, because sayings never show what a society valued"
@@ -213,8 +213,8 @@ check:
   type: question
   q: "A historian studies the Confucius saying. Which approach is best?"
   options:
-    - "First describe the attitude in its time, then judge it, keeping the two apart"
-    - "Judge it by today's standards and stop there"
+    - "Describe the attitude in its own time first, then judge it"
+    - "Judge it by today's standards, since that is what matters now"
     - "Never judge the past, because people then knew no better"
     - "Change the words so the saying sounds fair today"
   answer: 0

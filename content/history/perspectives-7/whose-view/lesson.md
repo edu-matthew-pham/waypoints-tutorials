@@ -8,7 +8,7 @@ summary: "Every source does two things at once: it describes something (its cont
 language: maths
 hook: "A Han court historian wrote about the Xiongnu, the herding people to the north. He tells us how they lived. What else does he tell us without meaning to?"
 ---
-A source tells you about **what it describes**. It also tells you about **the person who made it**: what they noticed, what they thought was normal, what they liked and disliked. That second thing is the source's **perspective**, its point of view.
+A source tells you about **what it describes**: that is its **content**. It also tells you about **the person who made it**: what they noticed, what they thought was normal, what they liked and disliked. That second thing is the source's **perspective**, its point of view.
 
 A perspective is not the same as a lie. Everyone sees from somewhere. A historian's job is to notice where.
 
@@ -19,7 +19,7 @@ These four questions get you there:
 3. **What would someone in that position notice, and care about?**
 4. **So what perspective does the source show?**
 
-Here is a source retold in our own words (not a translation). **Sima Qian** was a historian at the Han emperor's court, writing around 100 BCE. In his history he described the **Xiongnu**, a herding people to the north whose horsemen often raided the Han border. No writing of the Xiongnu's own has been found.
+Here is a source retold in our own words (not a translation). **Sima Qian** was a historian at the Han emperor's court, writing around 100 BCE. In his history he described the **Xiongnu**, a herding people to the north. Han writers say Xiongnu horsemen often raided the Han border. No writing of the Xiongnu's own has been found.
 
 > The Xiongnu live in the north. They move with their herds, following water and grass. They have no walled cities and do not farm. Their boys learn to ride and shoot when they are small. The strong eat the best food and the old get what is left: they look down on the old and weak. They do not know proper behaviour.
 
@@ -82,7 +82,7 @@ tasks:
       fault: logic
       misconception: perspective-is-content
       explain: "Line 3: that is the content: what the source describes. The perspective is whose eyes it sees through: a Han court official judging a rival people by Han rules."
-    hint: ["Is line 3 about the Xiongnu or about Sima Qian?", "A perspective answers 'from where is this seen?', not 'what happened?'."]
+    hint: ["A perspective answers 'from where is this seen?', not 'what happened?'.", "For each of Nib's lines, ask: does it tell you about the people described, or about the person describing them?"]
     smaller:
       check:
         type: question
@@ -104,9 +104,9 @@ tasks:
       q: "Which fact about Sima Qian best explains his perspective on the Xiongnu?"
       options:
         - "He worked for the Han court, whose border the Xiongnu raided"
-        - "He wrote his history on bamboo strips in ink"
-        - "He wrote about many other peoples as well"
-        - "He lived more than two thousand years ago"
+        - "He wrote his history on bamboo strips in ink, by hand"
+        - "He wrote about many other peoples as well as the Xiongnu"
+        - "He lived more than two thousand years before us"
       answer: 0
       feedback:
         - null
@@ -122,7 +122,7 @@ tasks:
 
 ## Vary: the emperor's own words
 
-You may have met this source before. In the Qin, stone inscriptions were set up on mountains, saying (in our words) that the First Emperor had brought peace to everyone and that his rule was glorious.
+You may have met this source before, as Source C. It is words cut into stone, set up on a mountain by order of the First Emperor on one of his tours, around 219 BCE. In our words: it praises the emperor as a ruler without equal. It says he brought peace and order, that everyone now lives in peace, and that everyone lives under one set of laws, weights and measures.
 
 ```step
 stage: modify

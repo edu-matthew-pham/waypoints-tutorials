@@ -12,7 +12,7 @@ before: |-
 
   Borderline cases: many "facts" (such as the 209 BCE revolt) also come from Sima Qian. The lesson calls a statement a fact when the evidence directly and consistently shows it, and an interpretation when it argues why or how much something mattered. If a sharp student asks "how do we know 210 BCE?", that is a good question: several sources agree, and it is not an argument about why.
 
-  Facts (checked 1 Nov 2026): Qin 221 to 206 BCE (The Met); the First Emperor died in 210 BCE on a tour; the succession crisis, the last Qin ruler's surrender and the Liu Bang–Xiang Yu war (University of Oregon course notes, Early China); Jia Yi's *The Faults of Qin*, a Han essay arguing Qin fell because ruling by force without care for the people undid it (encyclopedia summary; Jia Yi about 200 to 169 BCE). The 207 BCE surrender is the standard date. Hatshepsut: statues found broken in excavations of 1922 to 1928 at Deir el-Bahri; long explained as Thutmose III's revenge; Jun Yi Wong (University of Toronto) re-read the excavation records in 2025 and argued much of the damage was ritual "deactivation" given to many pharaohs' statues, plus later reuse, without ruling out some targeting (Antiquity news, 2025).
+  Facts (checked 1 Nov 2026): Qin 221 to 206 BCE (The Met); the First Emperor died in 210 BCE on a tour; the succession crisis, the last Qin ruler's surrender and the Liu Bang–Xiang Yu war (University of Oregon course notes, Early China); Jia Yi's *The Faults of Qin*, a Han essay arguing Qin fell because ruling by force without care for the people undid it (Jia Yi about 200 to 169 BCE; the essay is translated in Burton Watson, Records of the Grand Historian: Qin Dynasty, Columbia University Press 1993, and excerpted in de Bary and Bloom, Sources of Chinese Tradition vol. 1, 1999; not checked online). The last Qin ruler surrendered in late 207 BCE; many books date the end to 206 BCE, so the table keeps both and the checks say "by 206 BCE". The Han count their rule from 206 BCE; Liu Bang won the war in 202 BCE. Hatshepsut: statues found broken in excavations of 1922 to 1928 at Deir el-Bahri; long explained as Thutmose III's revenge; Jun Yi Wong (University of Toronto) re-read the excavation records in 2025 and argued much of the damage was ritual "deactivation" given to many pharaohs' statues, plus later reuse, without ruling out some targeting (Antiquity news, 2025).
 
   Usually Year 7; Preview, not yet tried with a class. No board or clips.
 
@@ -49,8 +49,8 @@ sources:
   - title: "The end of the Qin and the beginning of the Han dynasty (University of Oregon, Early China course notes)"
     url: https://darkwing.uoregon.edu/~inaasim/Early%20China/Hist%20387_7.htm
     checked: 2026-11-01
-  - title: "The Faults of Qin (encyclopedia summary of Jia Yi's essay)"
-    url: https://en.wikipedia.org/wiki/The_Faults_of_Qin
+  - title: "Burton Watson (trans.), Records of the Grand Historian: Qin Dynasty, Columbia University Press 1993, with Jia Yi's The Faults of Qin (library record; the text itself not checked online)"
+    url: https://search.worldcat.org/oclc/28322132
     checked: 2026-11-01
   - title: "Reconstructing the shattered visage of Queen Hatshepsut (Antiquity news, 2025)"
     url: https://antiquity.ac.uk/news/2025/reconstructing-shattered-visage-queen-hatshepsut

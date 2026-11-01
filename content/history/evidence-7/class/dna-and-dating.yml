@@ -16,9 +16,9 @@ questions:
     type: question
     q: You want to investigate whether two ancient individuals were biological relatives. Which is the best starting evidence?
     options:
-      - Similar pots alone
-      - The depth of their finds alone
-      - A comparison of surviving DNA, alongside the context records
+      - Similar pots buried with each of them
+      - How deep each was buried, compared with the other
+      - A comparison of their DNA, plus the dig records
     answer: 2
     explain: DNA comparison can test biological relationship; the archaeological records help interpret the result.
     feedback:

@@ -22,7 +22,7 @@ insight: "Students often trust a source because it looks official. The question 
 check:
   type: predict
   q: "A page about the school pond says 'The pond is the best place to see frogs.' It has no name and no date. What would you want to know first?"
-  options: ["Who wrote it, and when", "How many words it has", "What colour the page is", "If it has a picture"]
+  options: ["Who wrote it, and when", "Whether it sounds sure of itself", "How many people have read it", "Whether it has a photo of frogs"]
   actual: "Who wrote it, and when. Without that, you cannot tell if they know the pond, or if it is out of date."
 ```
 
@@ -55,16 +55,16 @@ tasks:
   - check:
       type: question
       q: "Two pages say how many frogs live in the pond. One is by the science teacher, with the date she counted them. The other has no name or date. Which do you trust more?"
-      options: ["The teacher's page: you know who made it and when", "The other one, because it is shorter", "They are the same", "Neither, because pages can be wrong"]
+      options: ["The teacher's page: you know who made it and when", "The other one, because short pages get to the point", "They are the same, since both give a number", "Neither of them, because any page could be wrong"]
       answer: 0
       feedback: [null, "Short or long does not tell you whether it is reliable.", "One tells you where it comes from and the other does not.", "Any source can be wrong, but one that tells you where it comes from is easier to check."]
       explain: "A source that tells you who made it and when is easier to check."
   - check:
       type: question
       q: "A page says 'This is the best pond in the world.' What is it?"
-      options: ["An opinion: someone's view, not a fact you can check", "A fact, because it is on a page", "A fact, because it says 'world'", "Nothing: it has no meaning"]
+      options: ["An opinion: it is what someone thinks", "A fact, because it is written on a page", "A fact, because it is about the whole world", "Nothing useful: it tells you nothing at all"]
       answer: 0
-      feedback: [null, "Being on a page does not make something a fact.", "Saying 'world' only makes it a bigger opinion.", "It means something. It is someone's view."]
+      feedback: [null, "Being on a page does not make something a fact.", "Saying 'world' only makes it a bigger opinion.", "It tells you something: what the writer thinks. That is an opinion."]
       explain: "'Best' is a view. You cannot check it like a measurement."
 ```
 
@@ -83,7 +83,7 @@ tasks:
   - check:
       type: question
       q: "A page about school lunches is written by the canteen manager, who makes the lunches. It says 'Our lunches are the tastiest in town.' What should you think?"
-      options: ["It is an opinion from someone who made them, so check it against other views", "It is a fact because the manager knows", "It is false because the manager made it", "It is the best source because it is by an expert"]
+      options: ["It is an opinion from someone involved, so check other views", "It is a fact, because the manager knows the lunches best", "It is false, because the manager made the lunches", "It is the best source, because it is by an expert"]
       answer: 0
       feedback: [null, "The manager knows the lunches, but 'tastiest' is still a view.", "Opinions from someone involved are not always false. They need other views beside them.", "Being involved does not make it the best source."]
       explain: "It is useful for what the canteen thinks, but 'tastiest' is an opinion, so look for other views too."

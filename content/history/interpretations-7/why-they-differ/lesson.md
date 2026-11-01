@@ -27,7 +27,7 @@ check:
   type: predict
   q: "Why might careful historians explain the Qin's fall in different ways?"
   options:
-    - "They have different evidence, ask different questions or hold different values"
+    - "They had different evidence, questions or values"
     - "One of them must be lying about what happened"
     - "They just have different opinions, and none can be checked"
     - "The older historians knew less, so they are simply wrong"
@@ -75,7 +75,7 @@ tasks:
       fault: logic
       misconception: differ-means-one-lying
       explain: "Line 3: different interpretations don't mean someone is lying. Han writers and historians today had different evidence, asked different questions and held different values. Both built their arguments from evidence."
-    hint: ["Look at the worked example table: what is different in each row?", "Can two honest people read the same facts differently?"]
+    hint: ["Can two honest people read the same facts differently?", "Look at the worked example table: what is different in each row?"]
     smaller:
       check:
         type: question
@@ -115,14 +115,14 @@ check:
   type: question
   q: "Han writers lived much closer to the Qin than historians today. Does that make their interpretation the right one?"
   options:
-    - "Not on its own: they were close, but had their own values and less evidence"
-    - "Yes: being closer in time always makes an account right"
+    - "Not on its own: they had their own values and less evidence"
+    - "Yes, mostly: people closer in time usually knew best"
     - "No: newer interpretations are always the right ones"
     - "No: nobody can ever say anything true about the Qin"
   answer: 0
   feedback:
     - null
-    - "Being close helps, but they wrote for the dynasty that replaced the Qin."
+    - "That treats closeness as the deciding thing. Being close helps, but they wrote for the dynasty that replaced the Qin, and they had less evidence than we do."
     - "Newer isn't always better; it depends on the evidence and reasoning."
     - "Some things are well established, such as the dates. Interpretations are argued about."
   explain: "Neither closeness nor newness decides it. Historians weigh the evidence and the reasoning."
@@ -137,7 +137,7 @@ check:
   type: question
   q: "Which sentence best sums up the interpretations of the Qin's fall?"
   options:
-    - "Several interpretations use evidence; they differ in evidence, questions and values"
+    - "Several can stand; they differ in evidence, questions and values"
     - "The Han writers were right and historians today are wrong"
     - "Historians today are right and the Han writers were wrong"
     - "Nobody knows anything about the Qin, so all views are equal"
@@ -172,8 +172,8 @@ check:
   type: question
   q: "Historians stress different causes for the end of the Western Roman Empire. What does that show?"
   options:
-    - "They build different interpretations from the evidence, stressing different causes"
-    - "Only one cause can be true, so most of them are wrong"
+    - "They stress different causes from the evidence, and many combine them"
+    - "One cause must be the true one, so most of them are wrong"
     - "Nobody knows that the Western Roman Empire ended"
     - "The economy, politics and invasions had nothing to do with each other"
   answer: 0
@@ -195,7 +195,7 @@ check:
   type: question
   q: "How do historians usually respond to competing interpretations?"
   options:
-    - "Test them against new evidence and arguments; some debates settle, others stay open"
+    - "Test them against new evidence; some debates settle, others stay open"
     - "Vote, and the interpretation with the most votes becomes a fact"
     - "Always keep the first interpretation anyone wrote"
     - "Stop studying the event until everyone agrees"

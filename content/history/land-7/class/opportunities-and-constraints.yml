@@ -18,9 +18,9 @@ questions:
     type: question
     q: "Which sentence gives the most balanced explanation?"
     options:
-      - "The mountains protected the heartland but made trade west slow, so traffic went through the Hexi Corridor"
+      - "The mountains protected the heartland but slowed trade, so it used the Hexi Corridor"
       - "The mountains protected the heartland, so they were only good for China"
-      - "The mountains decided China's whole history"
+      - "The mountains decided China's whole history, whatever people did"
     answer: 0
     explain: "It names an opportunity, a constraint and what people did."
     feedback:

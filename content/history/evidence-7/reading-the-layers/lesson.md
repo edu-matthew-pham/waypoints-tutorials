@@ -117,13 +117,13 @@ tasks:
       options:
         - The new floor was laid before the earlier floor
         - A fire may have happened between two periods of use
-        - An invading army burned the place down
+        - An invading army probably burned the place down
       answer: 1
       explain: An earlier floor, then burnt material, then a new floor. That fits people using the place, a fire, then people using it again. What caused the fire is still an open question.
       feedback:
-        - The earlier floor is in layer A, at the bottom, so it came first.
+        - That reads the layers upside down. The earlier floor is in layer A, at the bottom, so it came first.
         - null
-        - Charcoal shows something burned. It does not show who or what started the fire.
+        - That guesses a cause. Charcoal shows something burned. It does not show who or what started the fire.
   - check:
       type: question
       q: "Nib writes: “B is deeper than C, so B is exactly 500 years older.” What needs changing?"
@@ -183,15 +183,15 @@ tasks:
       type: question
       q: Before you use the coin's depth to say how old it is, what should you record?
       options:
-        - What colour the coin is
+        - That it lay as deep as layer A, so it is as old as A
         - That it was found inside the later pit
-        - How heavy the coin feels
+        - The year on the coin, which gives the age of layer A
       answer: 1
       explain: The pit has disturbed the layers. If you only looked at depth, you would think the coin was old.
       feedback:
-        - Colour does not tell you whether the layers were disturbed.
+        - That treats the coin as the same age as the layer around it. It fell into a pit dug later, so depth tells you nothing about its age here.
         - null
-        - Weight does not tell you where the coin sits in the sequence.
+        - That treats the coin's year as the layer's year. The coin is in the pit, not in layer A, and the pit was dug long after A formed.
 ```
 
 ### Find what is out of place
@@ -207,14 +207,14 @@ check:
   type: question
   q: At a second made-up site, nothing has been disturbed. A floor lies under a layer of flood mud, and a rebuilt wall sits on top of the mud. Which story do the layers support?
   options:
-    - Flooding came before any floor existed
-    - The wall shows why the flood happened
+    - A flood came first, and then people laid the floor on the mud
+    - The rebuilt wall shows what caused the flood in the first place
     - People used the floor, then a flood came, then they rebuilt
   answer: 2
   explain: The positions give you an order. They do not tell you the cause or the year.
   feedback:
-    - The floor is under the flood mud, so it came first.
-    - A wall built afterwards cannot tell you what caused the flood.
+    - That reads the layers upside down. The floor is under the flood mud, so it came first.
+    - That asks the layers for a cause. A wall built afterwards cannot tell you what caused the flood.
     - null
 ```
 
@@ -240,14 +240,14 @@ check:
   type: question
   q: The charcoal layer also has broken weapons in it. Which sentence stays within the evidence?
   options:
-    - An attack is possible, but you need more evidence to say so
-    - Weapons in a burnt layer always mean the place was attacked
-    - The weapons tell you the exact year of the fire
+    - Weapons and burning raise an attack as a question, not an answer
+    - An attack probably happened, since weapons and fire go together
+    - The weapons tell you the exact year the fire happened
   answer: 0
   explain: Weapons and burning together make an attack worth looking into. They do not settle the cause.
   feedback:
     - null
-    - Weapons could have been stored there, or dropped long before the fire.
+    - "That still treats the weapons as proof, just more softly. Weapons could have been stored there, or dropped long before the fire."
     - Weapons need their own dating evidence. Finding them does not give a year.
 ```
 

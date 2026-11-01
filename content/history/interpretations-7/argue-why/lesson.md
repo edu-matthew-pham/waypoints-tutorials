@@ -28,9 +28,9 @@ check:
   type: predict
   q: "Which is the best answer to 'Why is the fall of the Qin interpreted in different ways?'"
   options:
-    - "One that explains what each side could see and cared about, with evidence"
-    - "One that says which side is right"
-    - "One that lists the two interpretations and stops"
+    - "One that explains what each side could see and cared about"
+    - "One that says which side is right, with evidence"
+    - "One that lists the two interpretations and then stops"
     - "One that says people just have different opinions"
   actual: "The best answer explains why they differ (evidence, questions, values), with evidence for each side. It doesn't have to say which is right, and 'different opinions' explains nothing."
 ```
@@ -81,7 +81,7 @@ tasks:
       fault: logic
       misconception: different-opinions-explains
       explain: "Line 3: 'different opinions' doesn't explain anything. Why are their views different? Nib needs a reason: what each side could see (evidence), what it was asking (questions) or what it cared about (values)."
-    hint: ["Lines 1 and 2 describe the interpretations. What should line 3 do?", "Does line 3 say why the opinions are different?"]
+    hint: ["An argument has to explain why the views differ, not just say that they do.", "For each of Nib's lines, ask: does it give a reason (evidence, questions or values), or does it only say that they disagree?"]
     smaller:
       check:
         type: question
@@ -128,7 +128,7 @@ check:
   type: question
   q: "Which plan for an argument meets the brief best?"
   options:
-    - "Claim; what each side argues and its evidence; reasons they differ; conclusion"
+    - "Claim; each side and its evidence; reasons they differ; conclusion"
     - "What happened, in order, from 221 BCE to 206 BCE"
     - "Which side is right, with three reasons why"
     - "Both interpretations, then 'they have different opinions'"
@@ -205,7 +205,7 @@ check:
     - "Show it explains more of the evidence, and say what the other gets right"
     - "Ignore the evidence that supports the other interpretation"
     - "Say the other historians are biased, and stop there"
-    - "Choose the one you heard about first"
+    - "Choose the one you heard about first, and defend it"
   answer: 0
   feedback:
     - null

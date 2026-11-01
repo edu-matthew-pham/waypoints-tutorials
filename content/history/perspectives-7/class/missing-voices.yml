@@ -18,8 +18,8 @@ questions:
     type: question
     q: "A group left no writing of its own. What follows?"
     options:
-      - "Their own view is hard to reach, but objects and others' records still show something"
-      - "Historians can know nothing about them"
+      - "Their view is hard to reach, but objects and records still help"
+      - "Historians can know nothing about them, since nothing is written"
       - "Their own view is the same as whoever wrote about them"
     answer: 0
     explain: "Thin evidence is a limit, not a dead end."

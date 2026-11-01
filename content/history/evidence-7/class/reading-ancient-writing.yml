@@ -16,12 +16,12 @@ questions:
     type: question
     q: A second made-up edict orders a road to be repaired. What can it establish most directly?
     options:
-      - Every section was repaired at once
-      - No one used the road before the order
-      - Someone issued a repair order; completion needs other evidence
+      - That the road was repaired, since the order was carved
+      - That the road was broken by a war or a flood
+      - That a repair was ordered, not that it was done
     answer: 2
     explain: An instruction is not proof that it was carried out. Road remains or later records could help.
     feedback:
-      - An order does not establish completion.
-      - The order gives no such history of use.
+      - That treats the order as the work. An order does not show the work was finished.
+      - That guesses a cause. The order says nothing about why the road needed repair.
       - null

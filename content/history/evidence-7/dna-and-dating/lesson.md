@@ -68,22 +68,22 @@ tasks:
       type: question
       q: Which conclusion uses both reports carefully?
       options:
-        - The two people were members of a royal family
-        - The DNA gives an exact date for the charcoal
-        - Two people were probably related, and a charcoal sample has an estimated date
+        - The two were probably royals, since they were related
+        - The DNA gives an exact date for the charcoal and the people
+        - Two people were probably related; the charcoal has a date range
       answer: 2
       explain: Each report adds a different piece of evidence. How they connect to the settlement still depends on where the bones and charcoal were found.
       feedback:
-        - DNA can suggest two people were related. It cannot tell you they were royal.
-        - DNA comparison and radiocarbon dating answer different questions.
+        - That says more than the DNA can. DNA can suggest two people were related. It cannot tell you they were royal.
+        - That mixes up the two methods. DNA comparison and radiocarbon dating answer different questions.
         - null
   - check:
       type: question
       q: Nib writes down Report B as “the settlement was built in exactly 250 BCE”. What is the problem?
       options:
-        - The range should be read the other way round
-        - The range is an estimate for the charcoal, not the year the settlement was built
-        - Charcoal cannot be dated at all
+        - The range should be read the other way round, 200 to 300 BCE
+        - It is an estimate for the charcoal, not the year of building
+        - Charcoal cannot be dated at all, so the report is wrong
       answer: 1
       explain: 250 BCE is inside the range, but the report does not pick that year. And it dates the charcoal, not the building.
       feedback:
@@ -119,7 +119,7 @@ Which part of Nib's claim says more than Report B can show?
 
 ## Vary: old charcoal in a new pit
 
-Now change one thing. A later pit has two things in its filling: a stone tool, and old charcoal that was washed or thrown in from somewhere else. The lab tests the charcoal. The archaeologist notes that the pit filling is mixed.
+Now change one thing. A later pit has two things in its filling: a stone tool, and old charcoal that was washed or thrown in from somewhere else. A sample goes to the radiocarbon lab. The archaeologist notes that the pit filling is mixed.
 
 ```step
 stage: modify
@@ -148,9 +148,9 @@ check:
   type: question
   q: You want to find out whether two ancient people were biological relatives. Which is the best evidence to start with?
   options:
-    - Similar pots buried with each of them
-    - How deep each of them was buried
-    - A comparison of their DNA, along with records of where they were found
+    - Similar pots buried with each of them in their graves
+    - How deep each was buried, compared with the other
+    - A comparison of their DNA, plus the dig records
   answer: 2
   explain: Comparing DNA can test whether they were related. The dig records help you make sense of the result.
   feedback:
@@ -194,13 +194,15 @@ check:
 
 ## Wider: a right answer that misleads
 
+A made-up house was built with a wooden beam taken from a much older building. The lab dates a sample of the beam.
+
 ```step
 stage: make
 tier: wider
-insight: Students explain how a correct lab result can give a misleading date for an event.
+insight: Students explain how a correct lab result can give a misleading date for an event, in a new case.
 check:
   type: reflect
-  text: I explained how an old charcoal sample moved into a newer pit could give a correct lab result but a misleading date for the pit. I named the dig record that would help.
+  text: I explained to a partner why the beam's date could be correct but still misleading for when the house was built (the date is for when the tree died, not when the beam was reused), and named one other piece of evidence that could date the house.
 ```
 
 Typical and wider steps are extras on the same idea. You do not need them to finish the lesson.

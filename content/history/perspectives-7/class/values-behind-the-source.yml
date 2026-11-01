@@ -19,8 +19,8 @@ questions:
     q: "A source shows a value you think is unfair today. What should a historian do?"
     options:
       - "Describe what it shows about its time, then judge it"
-      - "Leave the source out"
-      - "Change its words to sound fairer"
+      - "Leave the source out, so the unfair view isn't spread"
+      - "Change its words a little so it sounds fairer today"
     answer: 0
     explain: "Describe first, then judge; the source stays as evidence."
     feedback:

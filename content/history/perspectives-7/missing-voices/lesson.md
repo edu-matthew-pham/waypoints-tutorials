@@ -68,7 +68,7 @@ Was your guess right? The groups with power over others are the ones whose writi
 
 Put together, these still tell us a lot. And the gap tells us something too: the people who could write were the people in charge.
 
-Nib's notes below are made up for this lesson.
+Nib's notes below, and Mei later in the lesson, are made up for this lesson.
 
 ```step
 stage: investigate
@@ -82,7 +82,7 @@ tasks:
       fault: logic
       misconception: no-writing-no-history
       explain: "Line 3: no writing of their own doesn't mean nothing can be known. Their graves and objects survive, and Han writers described how they lived. Read carefully, these tell historians a lot."
-    hint: ["Look at the table: which rows are about the Xiongnu?", "Is writing the only kind of evidence?"]
+    hint: ["Is writing the only kind of evidence?", "Look at the table: which rows are about the Xiongnu?"]
     smaller:
       check:
         type: question
@@ -90,14 +90,14 @@ tasks:
         options:
           - "Yes: from their house, their things, and records others kept"
           - "No: without their own writing there is nothing to learn"
-          - "Only if a neighbour wrote a whole book about them"
-          - "Only if they were famous enough to be in the news"
+          - "Yes, if a neighbour wrote a whole book about their lives"
+          - "Probably not, unless they were famous enough to be in the news"
         answer: 0
         feedback:
           - null
-          - "Writing is one kind of evidence among many."
-          - "A whole book helps, but houses, objects and records count too."
-          - "Ordinary people leave evidence too: things, buildings, records."
+          - "That treats writing as the only evidence. Writing is one kind of evidence among many."
+          - "A book helps, but it is still writing. Houses, objects and records others kept count too."
+          - "That treats fame as the only way into the record. Ordinary people leave things, buildings and records too."
         explain: "Objects, places and records kept by others are evidence too."
   - check:
       type: question
@@ -131,14 +131,14 @@ check:
   options:
     - "We know how Han writers saw them; their own view is still missing"
     - "That is right, because the descriptions are very detailed"
-    - "No, because Han writers made up the Xiongnu"
-    - "No, because the Xiongnu never really existed"
+    - "Yes, if several Han writers agree, that must be how they saw it"
+    - "No, because a hostile writer's description is useless as evidence"
   answer: 0
   feedback:
     - null
     - "Detail is not the same as their own voice. Who did the describing?"
-    - "The Xiongnu were real: their graves have been dug up. The writers described them from one side."
-    - "Archaeology and Han records both show they existed."
+    - "Several Han writers agreeing still gives a Han view. Outsiders agreeing is not the group's own voice."
+    - "That throws away useful evidence. A hostile account can still report how people lived; it just can't give their own view."
   explain: "A detailed outside account is still an outside account."
 ```
 
@@ -180,10 +180,10 @@ check:
   type: question
   q: "What can the register of absences show a historian about the workmen?"
   options:
-    - "Parts of their everyday lives, recorded by someone keeping track of their work"
+    - "Parts of their everyday lives, recorded by someone tracking their work"
     - "What the workmen thought about their jobs, in their own words"
-    - "Nothing, because it is only a list"
-    - "How all Egyptian farmers lived at the time"
+    - "Nothing much, because a list of names and days is not a story"
+    - "How all Egyptian farmers lived at the time, across the country"
   answer: 0
   feedback:
     - null
@@ -204,8 +204,8 @@ check:
   q: "Almost no writing by Han farmers survives, but a lot by officials does. What does that gap itself tell historians?"
   options:
     - "Who could write and whose records were kept: a sign of who held power"
-    - "That farmers' lives didn't change for 400 years"
-    - "That officials were more interesting than farmers"
+    - "That farmers' lives didn't change at all during those 400 years"
+    - "That officials were more interesting to write about than farmers"
     - "Nothing, because a gap can't be evidence of anything"
   answer: 0
   feedback:
