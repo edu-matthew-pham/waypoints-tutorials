@@ -4,7 +4,7 @@ unit: causes
 title: Why did societies meet and fight?
 node: AC9HH7K12 n1
 assumes: [AC9HH7K11]
-summary: "Describe the causes of contacts and conflicts involving Qin and Han China (the Qin wars of unification, the long conflict between the Han and the Xiongnu, and Zhang Qian's mission west) and sort them into kinds: power, land, security, trade and resources. Most contacts and conflicts had several causes at once, and the causes shaped what happened next."
+summary: "Describe the causes of contact and conflict between Han China and other societies (the long conflict between the Han and the Xiongnu, Zhang Qian's mission west, and the war for Ferghana's horses) and sort them into kinds: power, land, security, trade and resources. Most contacts and conflicts had several causes at once, and the causes shaped what happened next."
 language: maths
 hook: "In 138 BCE an emperor sent about a hundred men walking west into lands no one at his court had mapped. Why would he do that?"
 ---
@@ -17,13 +17,15 @@ A **contact** is any time two societies meet: through trade, travel, talks betwe
 | **Security** | Protecting your people from attack |
 | **Trade and resources** | Wanting goods, animals or materials you cannot get at home |
 
-Here are three cases from ancient China.
+If you have done *Time, cause and change*, you may have met several causes behind Qin's unification of China. This lesson asks the same kind of question about contact between societies: why did Han China meet, trade with and fight the peoples around it?
 
-> **The Qin wars of unification (230 to 221 BCE).** China was split into seven rival states. The state of Qin conquered the other six, one after another, and in 221 BCE its king became the First Emperor. Historians think several causes drove this: the king of Qin's wish to rule all the states (power), more farmland and people to tax and call up (land), and getting rid of dangerous neighbours (security).
+Here are three cases from Han China.
 
-> **The Han and the Xiongnu.** North of China lived the **Xiongnu**, herders who moved with their animals across the grasslands and fought on horseback. Their horsemen raided Han farms, and they wanted Han goods such as silk. The Han needed protection from the raids, and they wanted horses, because their own were smaller. From 133 BCE, Emperor Wu stopped trying to keep the peace and sent armies against the Xiongnu.
+> **The Han and the Xiongnu.** North of China lived the **Xiongnu**, herders who moved with their animals across the grasslands and fought on horseback. Han writers say Xiongnu horsemen raided Han farms and wanted Han goods such as silk. (The Xiongnu left no writing of their own, so we have only the Han side.) The Han wanted protection from the raids, and they wanted horses, because their own were smaller. For about sixty years Han emperors tried to keep the peace with gifts. From 133 BCE, Emperor Wu stopped and sent armies against the Xiongnu.
 
-> **Zhang Qian's mission west (138 BCE).** According to Sima Qian, Emperor Wu sent Zhang Qian west to find the Yuezhi, a people the Xiongnu had driven out, and ask them to join the Han against the Xiongnu. The Xiongnu caught him and held him for about ten years. He escaped and reached the Yuezhi, but they did not want a war. He came home about thirteen years after he left, with news of rich lands to the west, including Ferghana (in Central Asia), where people bred big, strong horses. Emperor Wu later sent armies to Ferghana. The first failed in 104 BCE; the second came back in 101 BCE with the horses.
+> **Zhang Qian's mission west (138 BCE).** According to Sima Qian, Emperor Wu sent Zhang Qian west to find the Yuezhi, a people the Xiongnu had driven out, and ask them to join the Han against the Xiongnu. The Xiongnu caught him and held him for about ten years. He escaped and reached the Yuezhi, but they did not want a war. He came home about thirteen years after he left, with news of rich lands to the west, including Ferghana (in Central Asia), where people bred big, strong horses.
+
+> **The war for Ferghana's horses (104 to 101 BCE).** Zhang Qian's news led to a new contact. Emperor Wu wanted Ferghana's horses for his army, and Han writers say he also prized them as a sign of his power. According to Sima Qian, Ferghana's ruler refused to hand them over, so Emperor Wu sent armies west. The first failed in 104 BCE; the second came back in 101 BCE with the horses.
 
 ## Predict: why so long?
 
@@ -34,11 +36,11 @@ check:
   type: predict
   q: "The Han and the Xiongnu clashed, made peace and clashed again for well over a hundred years. What do you think kept them in contact for so long?"
   options:
-    - "Several reasons at once: raids, horses, goods they each wanted, and rulers' power"
-    - "Only one reason: the Han wanted to take the Xiongnu's grassland"
-    - "Only one reason: the Xiongnu wanted to rule China themselves"
-    - "No reason at all: fighting was just normal in ancient times"
-  actual: "Several reasons at once. Raids made security a cause, the Han wanted horses and the Xiongnu wanted Han goods, and each ruler wanted to be the stronger one."
+    - "Several reasons at once: raids, horses, goods and power"
+    - "The Han wanted to take the Xiongnu's grassland for farms"
+    - "The Xiongnu wanted to rule all of China themselves"
+    - "Fighting was just what people did in ancient times"
+  actual: "Several reasons at once. Raids (as Han writers tell it) made security a cause, the Han wanted horses and the Xiongnu wanted Han goods, and each ruler wanted to be the stronger one."
 ```
 
 ## Try: what kind of cause?
@@ -51,15 +53,15 @@ check:
   q: "Sort each cause into its kind."
   options: ["Power", "Land", "Security", "Trade and resources"]
   items:
-    - ["The king of Qin wanted to rule all seven states", "Power", "Being in charge of more people."]
-    - ["Qin wanted more farmland and more farmers to tax", "Land", "Territory and the people on it."]
+    - ["Emperor Wu wanted the Han to be the stronger ruler", "Power", "Being stronger and more respected."]
+    - ["The Han wanted to hold more land in the north-west", "Land", "Territory, and room for Han farmers."]
     - ["Xiongnu horsemen raided Han farms", "Security", "The Han wanted to protect their people."]
     - ["The Han wanted strong horses from Ferghana", "Trade and resources", "Animals they could not breed at home."]
     - ["The Xiongnu wanted Han silk", "Trade and resources", "Goods they did not make themselves."]
     - ["Emperor Wu wanted allies against the Xiongnu", "Security", "Allies to help protect the Han."]
 ```
 
-Was your guess right? The Han and the Xiongnu had reasons of more than one kind, and so did the Qin.
+Was your guess right? The Han and the Xiongnu had reasons of more than one kind.
 
 ## Worked example: causes shape what happens
 
@@ -71,13 +73,13 @@ tasks:
       type: match
       q: "Match each contact or conflict to the mix of causes behind it."
       pairs:
-        - ["The Qin wars of unification", "Ruling all the states, more farmland, and safer borders"]
         - ["The Han–Xiongnu conflict", "Stopping raids, getting horses, and each side's power"]
-        - ["Zhang Qian's mission", "Finding allies against the Xiongnu, then news of lands and horses"]
+        - ["Zhang Qian's mission", "Finding allies against the Xiongnu"]
+        - ["The war for Ferghana's horses", "Horses for the army, and the emperor's power"]
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is explaining why the Han fought the Xiongnu. Click the first line where Nib's thinking goes wrong."
+      text: "Nib is explaining why the Han fought the Xiongnu (Nib's notes are made up for this lesson). Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: single-cause-conflict
@@ -102,17 +104,17 @@ tasks:
       type: question
       q: "The Han wanted protection from Xiongnu horsemen. How did that cause shape what Emperor Wu did next?"
       options:
-        - "He looked for allies and for strong horses, which is why he sent Zhang Qian west"
-        - "It changed nothing, because the Han already had all the horses they needed"
+        - "He looked for allies against the Xiongnu, which is why he sent Zhang Qian west"
+        - "It changed nothing, because the Han already had enough horses"
         - "He gave up on the north and moved the capital far to the south"
         - "He asked the Xiongnu to protect the Han from other raiders"
       answer: 0
       feedback:
         - null
-        - "The Han horses were smaller. That is why horses from Ferghana mattered."
+        - "The Han horses were smaller, and the raids went on. The emperor did act: he looked for allies."
         - "The capital stayed in the north. The emperor tried to get stronger instead."
         - "The Xiongnu were the raiders the Han feared, so they were not likely protectors."
-      explain: "A security cause led to a search for allies and horses. Causes do not just sit in a list: they shape the contact that follows."
+      explain: "A security cause led to a search for allies. The news about Ferghana's horses came only when Zhang Qian returned, and it led to a new contact. Causes do not just sit in a list: they shape the contact that follows."
 ```
 
 ### Mix of causes
@@ -150,18 +152,18 @@ stage: practise
 tasks:
   - check:
       type: question
-      q: "Which explanation of the Qin wars of unification is strongest?"
+      q: "Which explanation of the war for Ferghana's horses is strongest?"
       options:
-        - "Qin's king wanted power, Qin wanted more land, and its neighbours were a danger"
-        - "Qin's king wanted power, so that is the whole reason for the wars"
-        - "Qin wanted land, and land is the reason for every ancient war"
-        - "The six states asked Qin to rule them, so there was no war"
+        - "The Han wanted horses, and Emperor Wu wanted to show his power"
+        - "The Han wanted horses, so that is the whole reason for the war"
+        - "The Han wanted Ferghana's farmland, as in every ancient war"
+        - "Ferghana attacked the Han first, so the Han had to fight back"
       answer: 0
       feedback:
         - null
-        - "Power was one cause. A strong explanation adds land and security too."
-        - "Land mattered, but one cause for every war is too simple. Look for other kinds."
-        - "The six states fought back. Qin conquered them one by one."
+        - "Horses were one cause. A strong explanation adds a cause of another kind, such as the emperor's power."
+        - "Ferghana was far away. The Han wanted its horses, not its land, and one cause for every war is too simple."
+        - "Ferghana was far to the west, and it was the Han who sent armies there."
       explain: "The strongest explanation names more than one cause, of different kinds."
   - check:
       type: sort
@@ -223,7 +225,7 @@ check:
   q: "Around 499 BCE, Athens sent ships to help Greek cities that had rebelled against Persia. Persia later invaded Greece, in 490 and 480 BCE. Which is the best way to describe Athens' help? (See the Greece card.)"
   options:
     - "A short-term trigger: the deeper cause was Persia's long growth into a huge empire"
-    - "The only cause: without it, Persia and Greece would always have been at peace"
+    - "The whole cause: without it, Persia and Greece would always have been at peace"
     - "Not a cause at all, because it happened years before the invasions"
     - "A result of the invasions, because it came after the Persian Wars"
   answer: 0

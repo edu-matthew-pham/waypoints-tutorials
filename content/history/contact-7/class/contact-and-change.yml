@@ -18,9 +18,9 @@ questions:
     type: question
     q: "Rome and Han China never met face to face. Did contact change them?"
     options:
-      - "Yes: silk passed through traders in between changed what Romans wore and spent"
+      - "Yes: silk passed on by traders changed Roman spending"
       - "No: without meeting there is no contact"
-      - "Only if their armies fought"
+      - "Not unless their armies fought each other"
     answer: 0
     explain: "Indirect contact still drives change."
     feedback:

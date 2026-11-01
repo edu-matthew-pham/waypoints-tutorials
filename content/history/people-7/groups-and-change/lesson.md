@@ -21,7 +21,7 @@ The order between these groups was not fixed. Some changes:
 
 > **Under Emperor Wu (141 to 87 BCE).** The Han government taxed merchants heavily, and in 119 BCE took over making and selling salt and iron, which had made private traders rich.
 
-> **17 CE.** Wang Mang, who had seized the throne, abolished slavery. After he was killed in 23 CE, slavery returned.
+> **9 CE.** Wang Mang, who had seized the throne, banned buying and selling land and slaves. Powerful families opposed it, and he cancelled the ban in 12 CE.
 
 ## Predict: who built the walls?
 
@@ -66,21 +66,21 @@ tasks:
       type: question
       q: "How did the rebellion of Chen Sheng and Wu Guang in 209 BCE influence Qin society?"
       options:
-        - "Conscripts who had little power started a revolt that spread and helped bring down the Qin dynasty"
-        - "It made no difference because conscripts had no power"
-        - "It made the Qin stronger than ever"
-        - "It was led by the emperor's officials"
+        - "Their revolt spread and helped bring down the Qin dynasty"
+        - "It changed nothing, because conscripts had no power"
+        - "It made the Qin rulers go easier on conscripts"
+        - "It was a revolt of officials against the emperor"
       answer: 0
       feedback:
         - null
         - "Having little power did not stop their revolt from spreading. The dynasty fell within a few years."
-        - "The Qin fell within a few years of it."
+        - "Sima Qian tells of no such change. The revolt spread, and the Qin fell within a few years."
         - "Chen Sheng and Wu Guang were leading conscripts, not officials of the court."
       explain: "People with little power could still change history, especially when many acted together."
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is writing about slaves and labourers in Qin and Han China. Click the first line where Nib's thinking goes wrong."
+      text: "Nib is writing about slaves and labourers in Qin and Han China (Nib's notes are made up for this lesson). Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: bottom-groups-passive
@@ -93,27 +93,27 @@ tasks:
           - "They would not get built"
           - "Nothing: the emperor would build them himself"
           - "Officials would finish them in a day"
-          - "They would build themselves"
+          - "Hired workers would quickly take their place"
         answer: 0
         feedback:
           - null
           - "The emperor did not dig walls. That was the conscripts' work."
           - "There were far too few officials, and that was not their job."
-          - "Someone has to do the work."
+          - "The state relied on owed labour because it could not pay that many workers."
         explain: "The powerful depended on the work of people with little power."
   - check:
       type: question
       q: "Why does the lesson say 'according to Sima Qian' about the rebellion?"
       options:
-        - "He wrote about a century later, for the dynasty that replaced the Qin, so his account has a point of view"
-        - "Because the rebellion probably never happened"
-        - "Because Sima Qian was one of the rebels"
-        - "Because he was the only person who could write"
+        - "He wrote a century later, for the Han, so he had a view"
+        - "Because historians think the revolt never happened"
+        - "Because Sima Qian saw the revolt with his own eyes"
+        - "Because he was the only person in China who could write"
       answer: 0
       feedback:
         - null
         - "Historians accept that there was a revolt. The details, such as the reasons, come from Sima Qian's account."
-        - "He lived about a hundred years later and was a court historian."
+        - "He lived about a hundred years later and was a court historian. He was not there."
         - "Many officials could write. Sima Qian's history is the main account that survives."
       explain: "Naming the source keeps the account honest: this is what Sima Qian tells us, from where he stood."
 ```
@@ -135,7 +135,7 @@ check:
   pairs:
     - ["Heavy taxes on traders under Emperor Wu", "Merchants"]
     - ["The state taking over salt and iron in 119 BCE", "Private traders in salt and iron"]
-    - ["Wang Mang abolishing slavery in 17 CE", "Slaves and their owners"]
+    - ["Wang Mang banning the sale of slaves in 9 CE", "Slaves and their owners"]
     - ["The revolt of 209 BCE", "The Qin rulers"]
 ```
 
@@ -146,18 +146,18 @@ stage: practise
 tasks:
   - check:
       type: question
-      q: "Wang Mang abolished slavery in 17 CE, and slavery came back after he died. What does that show about change over time?"
+      q: "In 9 CE Wang Mang banned buying and selling slaves. Powerful families opposed it, and he cancelled the ban in 12 CE. What does that show about change over time?"
       options:
-        - "Changes in the rules could be undone, so change was not always lasting"
+        - "A change in the rules could be undone"
         - "Nothing ever changed in Han China"
-        - "Once a law is made, it lasts forever"
-        - "Slavery ended for good in 17 CE"
+        - "Once a law is made, it lasts for good"
+        - "Slavery in China ended for good in 9 CE"
       answer: 0
       feedback:
         - null
-        - "The rules about slavery changed twice in a few years."
-        - "This law lasted only a few years."
-        - "It returned after Wang Mang's death in 23 CE."
+        - "The rules about selling slaves changed twice in three years."
+        - "This law lasted only about three years."
+        - "The ban was on buying and selling slaves, not on owning them, and it was cancelled in 12 CE."
       explain: "Change over time is not always in one direction; reforms can be reversed."
   - check:
       type: sort
@@ -167,7 +167,7 @@ tasks:
         - ["Farmers paid grain tax", "Role of a group", "What farmers did."]
         - ["The Han taxed merchants more heavily under Emperor Wu", "Change over time", "A new rule that changed things."]
         - ["Convicts did hard labour", "Role of a group", "What convicts did."]
-        - ["Slavery was abolished in 17 CE and later returned", "Change over time", "Two changes, one after another."]
+        - ["Selling slaves was banned in 9 CE and allowed again in 12 CE", "Change over time", "Two changes, one after another."]
 insight: "Separating roles from changes practises the two halves of this waypoint."
 ```
 
@@ -195,17 +195,17 @@ check:
   type: question
   q: "In the Roman Empire, many slaves were captured in wars, and some were later freed. What does the rise of freed slaves (freedmen) show? (See the Rome card.)"
   options:
-    - "Relationships between groups could change: some people moved out of slavery, and some freedmen became wealthy"
-    - "Slavery in Rome never changed"
+    - "Groups were not fixed: some people moved out of slavery"
+    - "Slavery in Rome was ending, since so many were freed"
     - "Slaves in Rome had the same rights as citizens"
-    - "Freedmen were always poorer than slaves"
+    - "Once freed, a person joined the patrician families"
   answer: 0
   feedback:
     - null
-    - "Freeing slaves was common enough that freedmen became a known group."
+    - "Many slaves were freed, but wars kept bringing in new slaves. Slavery went on."
     - "Slaves had very few rights. Freeing was a change in status."
-    - "Some freedmen became rich. Their position changed."
-  explain: "Movement between groups is one kind of change over time."
+    - "Patricians were old noble families by birth. Freedmen were a separate group, though some became rich."
+  explain: "Movement between groups is one kind of change over time: some people left slavery, and some freedmen became wealthy."
 ```
 
 ## Wider: an ideal order or real life?
@@ -218,17 +218,17 @@ check:
   type: question
   q: "Confucian writers ranked scholars first, then farmers, then craftworkers, then merchants. Yet some Han merchants were richer than many officials. What is the best conclusion?"
   options:
-    - "The ranking was an ideal of how society should be ordered, not a measure of who had the most money"
-    - "The ranking proves merchants were poor"
+    - "It shows what officials valued, not who was richest"
+    - "The ranking proves most merchants were poor"
     - "The ranking was wrong, so it tells us nothing"
-    - "Merchants were secretly the rulers of Han China"
+    - "Rich merchants had more power than officials"
   answer: 0
   feedback:
     - null
     - "Some merchants were very rich. The ranking was about respect and values, not wealth."
     - "It tells us what educated officials valued, which is useful evidence."
-    - "Merchants could be rich, but the emperor and officials held the power."
-  explain: "A text's ideal order is evidence of values. Compare it with other evidence before treating it as a description."
+    - "Merchants could be rich, but the emperor and officials held the power, and could tax merchants heavily."
+  explain: "The ranking was an ideal of how society should be ordered. A text's ideal order is evidence of values. Compare it with other evidence before treating it as a description."
 ```
 
 Typical and wider steps are extras on the same idea. You do not need them to finish the lesson.

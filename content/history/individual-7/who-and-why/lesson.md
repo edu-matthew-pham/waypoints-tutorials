@@ -36,7 +36,7 @@ check:
   type: predict
   q: "Which is the best reason a historian would call the First Emperor significant?"
   options:
-    - "He joined the rival kingdoms into one empire, and that changed the lives of millions of people for a long time"
+    - "He joined the rival kingdoms, changing millions of lives for a long time"
     - "His clay army is one of the most famous sights in the world today"
     - "He was the richest and most powerful person of his time"
     - "He appears in films, games and books"
@@ -79,7 +79,7 @@ tasks:
   - check:
       type: bug
       code: "working.txt#nib"
-      text: "Nib is explaining why the First Emperor is significant. Click the first line where Nib's thinking goes wrong."
+      text: "Nib is explaining why the First Emperor is significant (Nib's notes are made up for this lesson). Click the first line where Nib's thinking goes wrong."
       answer: 3
       fault: logic
       misconception: famous-means-significant
@@ -104,17 +104,17 @@ tasks:
       type: question
       q: "Why does the lesson describe the Warring States before the First Emperor's achievements?"
       options:
-        - "His actions make sense only against his world: rival kingdoms that had fought for centuries"
+        - "His achievements make sense against a world of rival kingdoms"
         - "Because he was born long before the Warring States period began"
-        - "Because the Warring States were the names of his own family members"
-        - "There is no real reason; it is just extra information to read"
+        - "Because he started the wars of the Warring States himself"
+        - "To show that Qin had always been the strongest kingdom"
       answer: 0
       feedback:
         - null
         - "He was born near the end of that period, about 259 BCE, and ended it in 221 BCE."
-        - "The Warring States were the rival kingdoms, not a family."
-        - "Context is what makes his achievements make sense. Joining kingdoms only matters if they were split."
-      explain: "Context is the world a person lived in. It shows what was possible and what they changed."
+        - "The Warring States period began about 250 years before him. He ended it; he did not start it."
+        - "Qin was one of several rivals and grew strong over many years. The context explains why joining the kingdoms mattered."
+      explain: "Context is the world a person lived in: here, rival kingdoms that had fought for centuries. It shows what was possible and what they changed."
 ```
 
 ### Three tests
@@ -132,7 +132,7 @@ check:
   type: question
   q: "Li Si was the First Emperor's chief minister. Far fewer people know his name. Historians think he helped plan the single script and the system of commanderies. Could he be significant?"
   options:
-    - "Yes: if his plans changed many lives and lasted, he is significant even though few know his name"
+    - "Yes: if his plans changed many lives and lasted, fame does not matter"
     - "No: if most people have not heard of him, he cannot be significant"
     - "No: only the emperor can be significant, because he had the title"
     - "Yes: everyone who worked at court was equally significant"
@@ -203,7 +203,7 @@ check:
   options:
     - "A woman who ruled Egypt for about 20 years, she sent a trading expedition to Punt and built a great temple"
     - "She is significant because her statues are famous in museums around the world today"
-    - "She is significant only because she was rich and lived in a palace"
+    - "She is significant because she was rich and lived in a palace"
     - "She is not significant, because later kings removed her name from monuments"
   answer: 0
   feedback:
@@ -224,8 +224,8 @@ check:
   type: question
   q: "Socrates, a thinker in Athens (about 469 to 399 BCE), wrote nothing himself. We know him from his student Plato, from Xenophon, and from a comic play by Aristophanes that mocked him. What should a historian keep in mind? (See the Greece card.)"
   options:
-    - "Each writer had their own view of him, so we compare them, and we cannot be sure exactly what he thought"
-    - "Plato was his student, so everything Plato wrote is exactly what Socrates said"
+    - "Each writer had their own view of him, so we compare them"
+    - "Plato was his student, so Plato's account is probably exact"
     - "A comic play is a joke, so it tells us nothing at all"
     - "If he wrote nothing, he cannot be significant"
   answer: 0
@@ -234,7 +234,7 @@ check:
     - "Plato admired him and may have put his own ideas into Socrates' mouth. Scholars argue about this."
     - "A comedy shows how some Athenians saw him at the time. That is evidence too."
     - "His ideas changed how people thought, through his students. Writing is not the test."
-  explain: "A person's reputation comes to us through other people's writing, each with its own view."
+  explain: "A person's reputation comes to us through other people's writing, each with its own view, so we cannot be sure exactly what he thought."
 ```
 
 Typical and wider steps are extras on the same idea. You do not need them to finish the lesson.
