@@ -1,6 +1,6 @@
 # Roadmap: Geography
 
-`content/geography/`. First course `geography/water-7` decided and all five AC9HG7K01 lessons built 30 Oct 2026 (below); still a preview, not yet tried with a class. Node content: waypoints-kit `data/geography/`, copied in `data/curriculum/geography.json`.
+`content/geography/`. First course `geography/water-7` decided and all five AC9HG7K01 lessons built 30 Oct 2026 (below); not yet tried with a class (tracked here, not on the site: Preview labels dropped 1 Nov 2026, `shared.md` › Decided: humanities). Node content: waypoints-kit `data/geography/`, copied in `data/curriculum/geography.json`.
 
 ## Rules (decided 30 Oct 2026, Matthew; `roadmap/shared.md` › Decided: humanities)
 
@@ -10,7 +10,7 @@ Shared rules (First Nations T1, made-up cases T2, writing T5, contestable or sim
 - Contestable or simplified ideas (rules T8), in this subject: Causes, forecasts and "best" uses of resources carry their source and the other view.
 - First Nations content: rules T1 (firm). Quote the relevant ACARA elaboration in the lesson's teacher notes (see `content/economics/scarcity-7/needs-and-wants/teacher.yml`); items about First Nations values or connection to Country are pointer pages.
 - Inquiry skills: questions, locating and organising, and creating explanations belong to the shared course (`roadmap/humanities-inquiry.md`); this subject builds only its own skills (below). The full investigation is class work.
-- Examples come from Year 7 content only, so skill lessons also build what the class needs to know. Mark the subject and its courses **Preview** (pilot, not finished) and show planned lessons as "Coming later" (Project doc humanities-y7-plan › Placeholders; log the shared code change in `roadmap/shared.md`).
+- Examples come from Year 7 content only, so skill lessons also build what the class needs to know. Show planned lessons as "Coming later" (Project doc humanities-y7-plan › Placeholders; log the shared code change in `roadmap/shared.md`).
 - Before Year 7 catch-up lessons (Year 6 HASS) go with the first course where a prerequisite link needs one (Project doc humanities-y7-plan › Before Year 7).
 - Kit gap: Geography's Year 7 knowledge standards (K01, K03–K08) have no prior-knowledge links in Kit; fix that in waypoints-kit (likely Years 5–6 HASS on environments, the Asia region and maps) before deciding on a catch-up lesson. K03 node 2 and K07 node 3 (First Nations values and connection to Country) are pointer pages.
 - Add `geography` to `CHECKED` in `tools/progressions.mjs` with the first lesson (say so in `shared.md`).

@@ -15,7 +15,7 @@ links:
   - { title: Learning skills, href: learning-teachers/, group: Core, summary: "Self-regulation in any subject: the cycle, think-alouds, teaching a strategy, and when to prompt it." }
   - { title: Humanities skills, href: humanities-teachers/, group: Humanities, summary: "The shared Year 7 inquiry lessons (a preview): asking and finding, and how they fit beside your unit." }
   - { title: History, href: history-teachers/, group: Humanities, summary: "A preview on working with sources, with ancient China as the worked example, and what is planned." }
-  - { title: Geography, href: geography-teachers/, group: Humanities, summary: "A preview on water as a resource, how real places are used, and what is planned." }
+  - { title: Geography, href: geography-teachers/, group: Humanities, summary: "Water as a resource and water in Australia, how real places are used, and what is planned." }
   - { title: Civics, href: civics-teachers/, group: Humanities, summary: "A preview on how Australia is governed: what is real, what is made up, and what is planned." }
   - { title: Economics, href: economics-teachers/, group: Humanities, summary: "The four-lesson course on scarcity and opportunity cost, and what is planned." }
   - { title: How computers work, href: systems-teachers/, group: Technologies, summary: "Which course to start with and what each needs." }
