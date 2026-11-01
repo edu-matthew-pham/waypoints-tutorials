@@ -350,13 +350,13 @@ A report-only review agent (different model, no shared context) read water-austr
 Reason, in Matthew's words: like History's choice of China as its one worked context ("can't cover all ancient cultures, so we picked China contextually"), the course picks one context and does it properly rather than covering every option.
 
 1. **Lesson 2 (`water-and-country`, n2 hinge) is a strengthened pointer page**, so teachers are supported, not left with "find community material":
-   - a short list of First Nations-led resources, chosen with the school's Indigenous education contact, plus national First Nations-led fallbacks (each checked at build);
+   - a short list of First Nations-led resources (national ones, such as Narragunnawali and AIATSIS, each checked at build), plus local ones only if the school has someone to choose them;
    - a student thinking scaffold with no cultural content of ours: questions for whatever resource the teacher uses, framed on the node's three dimensions (material, cultural, spiritual). It asks; it explains nothing (T1);
    - a teacher-run hinge check: the criterion and two or three exit questions in the teacher notes;
    - protocol notes (knowledge that is not public; images of people who have died), linked to their source rather than written by us;
    - stated expectations: about one lesson of class time, teacher-led, not self-paced.
-   Ask the Indigenous education contact before building this lesson.
+   Ask the Head of Humanities before building this lesson; they can pass it to whoever leads First Nations education or reconciliation at school, if anyone does (Matthew, 1 Nov: no such role is known at CGGS). If no one locally, build from national First Nations-led resources and add no local content.
 2. **Asian spiritual significance** (elaboration 4): one card quoting UNESCO's own listing text for a sacred water site, so UNESCO is the author, not us. Prefer a Vietnamese site if one fits; otherwise another Asian country, said plainly in the teacher notes.
 3. **Vietnam is the course's one Asian context** (Mekong Delta in lesson 3, Ha Long Bay in lesson 4), as China is History's.
 4. **Australian listed water feature:** chosen at build from what UNESCO's criteria actually say (Shark Bay first; the Great Barrier Reef or a national park waterfall if Shark Bay is listed for other reasons). Teacher notes acknowledge the site's Traditional Owners without writing about them.
-5. **Timing:** hold the full course until the water courses' class trial and the consultation for lesson 2. Lessons 1, 3 and 4 can be built sooner if Matthew asks, since none depends on the consultation.
+5. **Timing:** hold the full course until the water courses' class trial and the Head of Humanities has been asked about lesson 2. Lessons 1, 3 and 4 can be built sooner if Matthew asks, since none depends on the consultation.
