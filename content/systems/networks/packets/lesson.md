@@ -130,10 +130,10 @@ tasks:
   - check:
       type: question
       q: "Your second fix, cutting off router C, also worked, with no numbers at all. Why does the internet use numbers and resending instead?"
-      options: ["Nobody knows ahead of time which router will be busy or which link will break, so every message needs a way to recover", "Cutting links is against the rules of the internet", "Numbered packets travel faster", "Routers can only pass on numbered packets"]
+      options: ["Nobody knows in advance which link will be busy or break", "Cutting links is against the rules of the internet", "Numbered packets travel faster", "Routers can only pass on numbered packets"]
       answer: 0
       feedback: [null, "It worked here because you knew C was the problem. Would you know that for every message?", "Numbers don't change the speed; they let the receiver fix the order.", "Your unnumbered pieces were passed on fine."]
-      explain: "You could avoid C because you could see it was busy. Real networks change all the time, so the receiver needs a way to fix whatever happens: numbers and acknowledgements."
+      explain: "You could avoid C because you could see it was busy. Real networks change all the time, so every message needs a way to recover: numbers and acknowledgements let the receiver fix whatever happens."
   - check:
       type: bug
       code: "working.txt#sam"
@@ -198,7 +198,7 @@ tasks:
   - check:
       type: question
       q: "A download sits at 99% for a few seconds, then finishes. What was probably happening?"
-      options: ["A few packets were lost, and the computer was waiting for them to be sent again", "The whole file was being downloaded a second time", "The routers were putting the packets in order", "The last packet is always the biggest"]
+      options: ["A few packets were lost and were being sent again", "The whole file was being downloaded a second time", "The routers were putting the packets in order", "The last packet is always the biggest"]
       answer: 0
       feedback: [null, "Only missing packets are sent again, not the whole file.", "The receiver puts packets in order, not the routers.", "Packets are about the same size."]
       explain: "TCP waits until every packet has been acknowledged. A few lost near the end means a short wait while they are sent again."

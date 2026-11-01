@@ -63,10 +63,10 @@ tasks:
   - check:
       type: question
       q: "Why can a site check your password without storing it?"
-      options: ["The same password always gives the same hash, so it compares hashes", "It asks your email provider", "It stores the password in a secret place", "It can't: every site stores passwords"]
+      options: ["The same password always gives the same hash", "It asks your email provider", "It stores the password in a secret place", "It can't: every site stores passwords"]
       answer: 0
       feedback: [null, "Your email isn't involved in signing in.", "Good sites don't store it anywhere.", "Good sites store only hashes."]
-      explain: "Hash what is typed; if it equals the stored hash, the password was right."
+      explain: "It compares hashes: hash what is typed; if it equals the stored hash, the password was right."
   - check:
       type: bug
       code: "working.txt#sam"
@@ -78,7 +78,7 @@ tasks:
   - check:
       type: question
       q: "Ana and Ben both use maple. With no salt, a stolen list shows the same hash twice. What does that tell a thief?"
-      options: ["Ana and Ben have the same password, so cracking one cracks both", "Nothing: hashes can't be read", "The site was hacked twice", "Their hashes must be wrong"]
+      options: ["They share a password: crack one, crack both", "Nothing: hashes can't be read", "The site was hacked twice", "Their hashes must be wrong"]
       answer: 0
       feedback: [null, "They can't be turned back, but two matching hashes still give something away.", "One stolen list, two matching rows.", "Same password in, same hash out: they're exactly right."]
       explain: "Same password, same hash. A salt (a few random characters per person, added before hashing) gives Ana and Ben different hashes."
@@ -134,10 +134,10 @@ tasks:
   - check:
       type: question
       q: "Why are long passphrases safer even when sites store hashes?"
-      options: ["Attackers hash lists of common passwords and compare; a long unusual passphrase isn't on those lists", "Long passwords make the hash longer", "Hashes only work on long passwords", "They aren't safer"]
+      options: ["A long unusual one isn't on guess lists", "Long passwords make the hash longer", "Hashes only work on long passwords", "They aren't safer"]
       answer: 0
       feedback: [null, "Every hash is the same length.", "Any text can be hashed.", "They are, for that reason."]
-      explain: "Guessing still works on common passwords: hash the guess, compare. Length and unusual words defeat the guess lists."
+      explain: "Attackers hash lists of common passwords and compare, so guessing still works on common passwords. Length and unusual words defeat the guess lists."
   - check:
       type: sort
       q: "Which tool fits? Sort each one."

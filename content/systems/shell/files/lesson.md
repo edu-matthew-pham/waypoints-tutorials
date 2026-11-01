@@ -147,10 +147,10 @@ tasks:
   - check:
       type: question
       q: "Review: the same ls command works on an SSD, a USB stick or a network drive. Why?"
-      options: ["The operating system hides the difference; ls just asks it for the folder", "All storage is the same inside", "ls checks each type itself", "It doesn't"]
+      options: ["The operating system hides the difference", "All storage is the same inside", "ls checks each type itself", "It doesn't"]
       answer: 0
       feedback: [null, "They are very different inside.", "ls doesn't need to know.", "It does work on all of them."]
-      explain: "Commands ask the operating system, which uses the right driver for each kind of storage."
+      explain: "ls just asks the operating system for the folder. Commands ask the operating system, which uses the right driver for each kind of storage."
 ```
 
 ### Full paths

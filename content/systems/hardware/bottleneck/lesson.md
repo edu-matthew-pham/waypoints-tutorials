@@ -144,10 +144,10 @@ tasks:
   - check:
       type: question
       q: "Why do companies train AI models on graphics cards rather than processors?"
-      options: ["AI is millions of small, simple sums, and a graphics card does thousands at once", "Graphics cards have more storage", "AI needs a screen", "Processors can't do maths"]
+      options: ["Graphics cards do thousands of sums at once", "Graphics cards have more storage", "Graphics cards have faster clock speeds", "Processors can't do maths"]
       answer: 0
-      feedback: [null, "Storage isn't what speeds training.", "Training doesn't draw anything.", "They can, a few at a time."]
-      explain: "Many simple sums at once is exactly what a graphics card is built for."
+      feedback: [null, "Storage isn't what speeds training.", "Each of their cores is slower; there are just thousands of them.", "They can, a few at a time."]
+      explain: "AI training is millions of small, simple sums. Many simple sums at once is exactly what a graphics card is built for."
   - check:
       type: question
       q: "Review: which spec empties when the power goes off?"

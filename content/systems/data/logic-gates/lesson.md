@@ -76,7 +76,7 @@ tasks:
   - check:
       type: question
       q: "Why are computers built on binary, not on ten levels for the digits 0 to 9?"
-      options: ["Switches have two states that are easy to tell apart, and gates can combine them to do any calculation", "Binary numbers are shorter", "People invented binary because it is easy to read", "Computers can only count to 1"]
+      options: ["Two states are easy to tell apart, and gates combine them", "Binary numbers are shorter", "People invented binary because it is easy to read", "Computers can only count to 1"]
       answer: 0
       feedback: [null, "Binary numbers are longer than decimal ones.", "People find binary harder to read.", "They count to huge numbers, with many bits."]
       explain: "Two states are reliable even with a noisy signal, and switches wired as gates (AND, OR, NOT) can be combined to add, compare and store anything."

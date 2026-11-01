@@ -146,10 +146,10 @@ tasks:
   - check:
       type: question
       q: "Which instruction lets a program repeat steps?"
-      options: ["JUMP: it changes the PC to an earlier cell", "ADD", "OUT", "HALT"]
+      options: ["JUMP: it sets the PC to an earlier cell", "ADD: it adds 1 to a counter each time", "OUT: it repeats the last output", "HALT: it restarts the program"]
       answer: 0
-      feedback: [null, "ADD changes the accumulator, not where to go.", "OUT shows the accumulator.", "HALT stops."]
-      explain: "A jump back makes a loop; a JZ (jump if zero) can leave it."
+      feedback: [null, "ADD changes the accumulator, not where to go.", "OUT shows the accumulator once.", "HALT stops the program."]
+      explain: "JUMP changes the PC to an earlier cell. A jump back makes a loop; a JZ (jump if zero) can leave it."
   - check:
       type: question
       q: "Review: ADD 7 adds two 8-bit numbers. What inside the processor does the adding?"

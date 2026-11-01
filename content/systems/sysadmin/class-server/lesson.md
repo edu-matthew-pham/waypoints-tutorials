@@ -109,10 +109,10 @@ tasks:
   - check:
       type: question
       q: "Which two layers together mean 'only class members may save files, and only from the school network'?"
-      options: ["Group permissions on the folder and a firewall rule", "A backup and a schedule", "ssh and sudo", "Jellyfin and Samba"]
+      options: ["Group permissions and a firewall rule", "A backup and a schedule", "ssh and sudo", "Jellyfin and Samba"]
       answer: 0
       feedback: [null, "They protect against loss, not access.", "They control admin access, not the share.", "They are the services, not protection."]
-      explain: "Permissions decide who may write; the firewall decides who can reach the door."
+      explain: "Group permissions on the folder decide who may write; the firewall decides who can reach the door."
   - check:
       type: question
       q: "Which is the weakest protection for a share?"
@@ -123,10 +123,10 @@ tasks:
   - check:
       type: question
       q: "A student asks to open a router port so they can reach the Pi from home. What is the best first answer?"
-      options: ["Use a VPN instead: it keeps the Pi off the open internet", "Yes, open it", "Open all ports", "Turn the firewall off"]
+      options: ["Use a VPN instead of opening a port", "Yes, open it", "Open it, with a strong password", "Turn the firewall off"]
       answer: 0
-      feedback: [null, "An exposed server is scanned and attacked constantly.", "That removes every door's lock.", "That removes protection."]
-      explain: "Exposing a server raises the stakes. A VPN gives the same convenience."
+      feedback: [null, "An exposed server is scanned and attacked constantly.", "Still exposed: it gets scanned and guessed at all day.", "That removes protection."]
+      explain: "Exposing a server raises the stakes. A VPN gives the same convenience and keeps the Pi off the open internet."
 ```
 
 ### Two layers

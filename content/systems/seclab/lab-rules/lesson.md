@@ -108,10 +108,10 @@ tasks:
   - check:
       type: question
       q: "Why is the lab kept on its own switch, with no router?"
-      options: ["So nothing you do can reach any other computer or network", "To make it faster", "Because Kali needs it", "To save power"]
+      options: ["So nothing in the lab can reach other networks", "To make the scans run faster", "Because Kali only works on a switch", "To save power in the lab"]
       answer: 0
       feedback: [null, "Speed isn't the reason.", "Kali works anywhere.", "Not about power."]
-      explain: "Containment: whatever happens in the lab stays in the lab."
+      explain: "Containment: nothing you do can reach any other computer or network, so whatever happens in the lab stays in the lab."
   - check:
       type: question
       q: "Which is a good lab habit?"

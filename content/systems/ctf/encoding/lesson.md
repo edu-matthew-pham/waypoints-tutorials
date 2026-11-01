@@ -125,10 +125,10 @@ tasks:
   - check:
       type: question
       q: "A website says your password is \"encrypted\" and shows it in base64 on your account page. What's wrong?"
-      options: ["Base64 isn't encryption: anyone can decode it, and a password shouldn't be shown at all", "Nothing: base64 is a kind of encryption", "It should use hex instead", "It should show it in binary"]
+      options: ["Base64 isn't encryption: anyone can decode it", "Nothing: base64 is a kind of encryption", "It should use hex instead", "It should show it in binary"]
       answer: 0
       feedback: [null, "No key, no secret.", "Hex is public too.", "Binary is public too."]
-      explain: "Passwords should be stored as salted hashes and never shown back."
+      explain: "And a password shouldn't be shown at all: passwords should be stored as salted hashes and never shown back."
   - check: { type: reflect, text: "I can tell encoding from encryption, and say which one keeps data secret." }
 ```
 

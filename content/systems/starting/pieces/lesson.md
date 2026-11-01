@@ -107,10 +107,10 @@ tasks:
   - check:
       type: question
       q: "Why does a network cut a big photo into small pieces?"
-      options: ["Small pieces can share the paths with everyone else's, and go round a broken link", "Small pieces are smaller files on your computer", "To make the photo blurry", "So nobody can see it"]
+      options: ["Small pieces share the paths and can go round a broken link", "Small pieces are smaller files on your computer", "So it uses less data", "So nobody can see it"]
       answer: 0
-      feedback: [null, "The photo on your computer stays whole.", "The photo comes out exactly the same.", "Cutting it up doesn't hide it."]
-      explain: "Lots of small pieces share the network fairly, and each can find its own way."
+      feedback: [null, "The photo on your computer stays whole.", "The pieces add up to the same amount, plus a label on each.", "Cutting it up doesn't hide it."]
+      explain: "Lots of small pieces share the paths with everyone else's, fairly, and each can find its own way."
   - check:
       type: question
       q: "What does a router do with a piece?"

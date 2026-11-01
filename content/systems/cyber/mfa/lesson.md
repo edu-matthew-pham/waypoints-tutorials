@@ -121,7 +121,7 @@ tasks:
   - check:
       type: question
       q: "Ava gets a text with a sign-in code she didn't ask for. A minute later someone calls, says they're from the school and asks her to read out the code. What should she do?"
-      options: ["Refuse, hang up, and change her password: someone has it", "Read it out: they're from the school", "Ignore the text and carry on", "Reply to the text with the code"]
+      options: ["Refuse, hang up and change her password", "Read it out: they're from the school", "Ignore the text and carry on", "Reply to the text with the code"]
       answer: 0
       feedback: [null, "No real helper ever needs your code.", "The text means someone typed her password.", "The code must never be shared."]
       explain: "An unexpected code means someone has her password. The call is the trick for the second half."

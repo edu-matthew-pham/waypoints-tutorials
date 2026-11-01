@@ -58,7 +58,7 @@ tasks:
   - check:
       type: question
       q: "You have made a backup every night for a year, and never opened one. What do you really know?"
-      options: ["Nothing about whether it can be restored", "It works", "It is safe from fire", "It is encrypted"]
+      options: ["Nothing about whether it restores", "It works", "It is safe from fire", "It is encrypted"]
       answer: 0
       feedback: [null, "A file existing is not the same as it working.", "A copy on the same shelf burns too.", "Compressed is not encrypted."]
       explain: "A backup is only proved by restoring from it. Test it, and keep one copy somewhere else."
@@ -116,7 +116,7 @@ tasks:
   - check:
       type: question
       q: "Where should the backup of the Pi's files be kept?"
-      options: ["On a different disk, ideally in a different place", "In the same folder", "On the SD card", "Nowhere"]
+      options: ["On a different disk, ideally in another place", "In the same folder as the files", "On the Pi's own SD card", "Nowhere"]
       answer: 0
       feedback: [null, "If that folder goes, so does the copy.", "If the card fails, both go.", "That is not a backup."]
       explain: "A copy on the failing disk is not a backup."

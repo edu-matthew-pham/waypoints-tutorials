@@ -18,7 +18,7 @@ insight: "Committing to who can open a new home folder tests the new move: accou
 check:
   type: predict
   q: "You create an account for Alex with sudo adduser alex. Can Alex open your home folder, /home/pi?"
-  options: ["No: home folders are private to their owner", "Yes: everyone on the Pi can open every home folder", "Only if Alex is in the sudo group", "Only on Mondays"]
+  options: ["No: home folders are private to their owner", "Yes: everyone on the Pi can open every home folder", "Only if Alex is in the sudo group", "Yes, once Alex has logged in"]
   actual: "No. Each home folder is drwx------: only its owner (and root) can open it. That is why a media server can't read films in a private home folder, a thing lesson 6 meets."
 ```
 
@@ -57,7 +57,7 @@ tasks:
   - check:
       type: question
       q: "Where does the Pi record who used sudo?"
-      options: ["/var/log/auth.log, which only an administrator can read", "In your home folder", "On the router", "Nowhere"]
+      options: ["/var/log/auth.log, which only admins can read", "In a hidden file in your home folder", "On the router", "Nowhere"]
       answer: 0
       feedback: [null, "Your own files can be changed by you; a log must not be.", "The router doesn't see inside the Pi.", "Every sudo is logged."]
       explain: "auth.log lists logins and sudo use, with the user and the time. Administrators read it to find out who did what."
@@ -115,10 +115,10 @@ tasks:
   - check:
       type: question
       q: "Why is it better to give people sudo through a group than to share the pi password?"
-      options: ["The log shows each person, and you can remove one without changing the password for everyone", "Groups are faster", "Passwords stop working", "It isn't better"]
+      options: ["The log shows each person, and one can be removed", "Groups make sudo run faster", "Shared passwords stop working", "It isn't better: one password is simpler"]
       answer: 0
       feedback: [null, "Speed isn't the point.", "Passwords still work.", "Shared passwords can't tell people apart."]
-      explain: "Separate accounts mean the log says who did what, and removing one person doesn't affect the others."
+      explain: "Separate accounts mean the log says who did what, and removing one person doesn't mean changing the password for everyone."
   - check:
       type: question
       q: "Review: you ssh to the Pi, then type exit. Which account are you now?"

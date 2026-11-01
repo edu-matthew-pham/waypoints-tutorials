@@ -79,7 +79,7 @@ tasks:
   - check:
       type: question
       q: "What does using **more levels** change?"
-      options: ["Each sample can be rounded less, so it is closer to the real height", "There are more samples each second", "The sound gets louder", "Nothing: only samples matter"]
+      options: ["Each sample is rounded less", "There are more samples each second", "The sound gets louder", "Nothing: only samples matter"]
       answer: 0
       feedback: [null, "That is the sample rate. Levels are about how finely each sample is measured.", "Loudness is how high the wave goes, not how many levels there are.", "Try Levels at 2 on the board: the steps can only be top or bottom."]
       explain: "More levels means finer rounding, so each number is closer to the real height. Each number then needs more space to store."

@@ -75,10 +75,10 @@ tasks:
   - check:
       type: question
       q: "The byte **01000001** is in memory. What does it mean?"
-      options: ["It depends on how a program reads it: A as text, 65 as a number, a dark shade as a colour amount", "Always the letter A", "Always the number 65", "Nothing until it is decoded"]
+      options: ["It depends on how a program reads it", "Always the letter A", "Always the number 65", "Nothing until it is decoded"]
       answer: 0
       feedback: [null, "Only a text program reads it as A.", "Only as a number. A paint program reads it as a shade.", "It is data; the encoding gives it a meaning."]
-      explain: "Bits are just bits. The encoding (text, number, colour, sound) decides what they mean, as in Everything is numbers."
+      explain: "As text it is A, as a number 65, as a colour amount a dark shade. Bits are just bits. The encoding (text, number, colour, sound) decides what they mean, as in Everything is numbers."
 ```
 
 ### Text and a pixel

@@ -125,10 +125,10 @@ tasks:
   - check:
       type: question
       q: "Why are a computer's switches only on or off, not ten different settings?"
-      options: ["On and off are easy to tell apart, even when the signal is weak", "Ten settings would be too slow to type", "Computers can't count past 2", "Switches are cheaper than numbers"]
+      options: ["On and off are easy to tell apart", "Ten settings would be too slow to type", "Computers can't count past 2", "Switches are cheaper than numbers"]
       answer: 0
       feedback: [null, "Speed of typing isn't it.", "They count far higher, using many switches.", "Every number is stored with switches."]
-      explain: "On or off is hard to get wrong. Lots of switches together make any number."
+      explain: "On or off is hard to get wrong, even when the signal is weak. Lots of switches together make any number."
 ```
 
 ### Read the pattern

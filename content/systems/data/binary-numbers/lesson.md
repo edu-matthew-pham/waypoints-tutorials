@@ -83,7 +83,7 @@ tasks:
   - check:
       type: question
       q: "Why do computers store numbers in binary, not with the digits 0 to 9?"
-      options: ["Each bit only needs two states (off and on, low or high voltage), which are easy to tell apart reliably", "Binary numbers are shorter", "Binary is easier for people to read", "Computers cannot add numbers bigger than 1"]
+      options: ["Two states (off or on) are easy to tell apart reliably", "Binary numbers are shorter", "Binary is easier for people to read", "Computers cannot add numbers bigger than 1"]
       answer: 0
       feedback: [null, "Binary numbers are longer: 22 needs five bits (10110).", "People find binary harder to read: that is why we turn it back into ordinary numbers.", "Computers add big numbers, but they store them as many bits side by side."]
       explain: "A switch or a voltage only has to be off or on, low or high. Telling two states apart is fast and reliable even when the signal is a little weak or noisy; telling ten levels apart would not be."

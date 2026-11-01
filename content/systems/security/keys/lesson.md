@@ -99,10 +99,10 @@ tasks:
   - check:
       type: question
       q: "Eve copies Alice's private key from her laptop. What can Eve do now?"
-      options: ["Open every box locked with Alice's padlock, including old ones she copied", "Nothing: she still needs a padlock", "Only lock new boxes", "Open boxes Bob locked with his own padlock"]
+      options: ["Open every box locked with Alice's padlock", "Nothing: she still needs a padlock", "Only lock new boxes", "Open boxes Bob locked with his own padlock"]
       answer: 0
       feedback: [null, "She already had a padlock. The key is the part that opens.", "Anyone could already do that.", "That needs Bob's key, not Alice's."]
-      explain: "Everything rests on the private key staying private. That's why it never leaves the device, and why a leaked one is replaced at once."
+      explain: "That includes old boxes Eve copied earlier. Everything rests on the private key staying private. That's why it never leaves the device, and why a leaked one is replaced at once."
 ```
 
 ### Bob's own padlock

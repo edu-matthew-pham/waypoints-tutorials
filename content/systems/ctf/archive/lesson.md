@@ -103,10 +103,10 @@ insight: "Naming the weakness behind each flag turns the hunt into a list of fix
 check:
   type: question
   q: "Which flag shows that a key stored beside the data it protects is no protection?"
-  options: ["Flag 5: the key word was the hidden folder's name", "Flag 1: the encoded note", "Flag 2: the hidden field", "Flag 4: the old program"]
+  options: ["Flag 5: the key word was the folder name", "Flag 1: the encoded note", "Flag 2: the hidden field", "Flag 4: the old program"]
   answer: 0
   feedback: [null, "That one had no key at all.", "That was a page giving away its data.", "That was numbers read as text."]
-  explain: "Keys belong somewhere else (a password manager, the server), never next to what they lock."
+  explain: "The key word was the hidden folder's name. Keys belong somewhere else (a password manager, the server), never next to what they lock."
 ```
 
 ```worked
@@ -137,10 +137,10 @@ tasks:
   - check:
       type: question
       q: "You found five secrets in the archive. What should happen next?"
-      options: ["Report them so each one is changed, and fix where they leaked", "Keep them in case they're useful", "Post them so everyone knows", "Nothing: the archive is being wiped"]
+      options: ["Report them so each is changed and fixed", "Keep them in case they're useful", "Post them so everyone knows", "Nothing: the archive is being wiped"]
       answer: 0
       feedback: [null, "Keeping found secrets is how leaks spread.", "That leaks them further.", "They may still work elsewhere."]
-      explain: "Find, report, change, fix: that's what a CTF is practice for."
+      explain: "Report each one so it is changed, and fix where they leaked. Find, report, change, fix: that's what a CTF is practice for."
   - check: { type: reflect, text: "I can use what I know about data, pages, files and keys to find what a system gives away, and say how to fix it." }
 ```
 

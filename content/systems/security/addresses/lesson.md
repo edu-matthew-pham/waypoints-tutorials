@@ -63,10 +63,10 @@ tasks:
   - check:
       type: question
       q: "What does DNS do?"
-      options: ["Turns a name like school.edu.au into an IP address", "Encrypts the web page", "Checks the website is safe", "Speeds up the internet"]
+      options: ["Turns a website name into an IP address", "Encrypts the web page", "Checks the website is safe", "Speeds up the internet"]
       answer: 0
       feedback: [null, "That is HTTPS.", "DNS answers for any name, safe or not.", "Its job is the lookup."]
-      explain: "DNS is the internet's address book: name in, IP address out."
+      explain: "DNS is the internet's address book: a name like school.edu.au in, IP address out."
   - check:
       type: bug
       code: "working.txt#sam"
@@ -78,10 +78,10 @@ tasks:
   - check:
       type: question
       q: "Your laptop at home is 192.168.1.23, but websites see 198.51.100.7. Why?"
-      options: ["192.168… is a private address used only inside your home; your router uses one public address for the internet", "The laptop changes its address for each website", "Websites can't read addresses", "The laptop has two network cards"]
+      options: ["Your router shares one public address for the home", "The laptop changes its address for each website", "Websites can't read addresses", "The laptop has two network cards"]
       answer: 0
       feedback: [null, "Its private address stays the same at home.", "They see the router's public address.", "One card is enough; the router does the swapping."]
-      explain: "Private addresses (like 192.168.x.x) are reused in millions of homes; the router shares one public address for all of them."
+      explain: "192.168… is a private address used only inside your home. Private addresses are reused in millions of homes; your router uses one public address for the internet, for every device in the home."
 ```
 
 ### school.edu.au
@@ -113,7 +113,7 @@ tasks:
   - check:
       type: question
       q: "Why does the router only look at the start of the address?"
-      options: ["Addresses are grouped by network, so the start says which way to send it", "The rest is secret", "The rest is the same for every website", "Routers can only read three numbers"]
+      options: ["The start says which network, so which way to send it", "The rest is secret", "The rest is the same for every website", "Routers can only read three numbers"]
       answer: 0
       feedback: [null, "Addresses aren't secret.", "The last part identifies the device.", "Routers read whole addresses; the start is enough to choose a way."]
       explain: "Like a postcode: the start of the address says which network, so a router only needs a row for each group."
@@ -143,10 +143,10 @@ tasks:
   - check:
       type: question
       q: "What does an IP address identify?"
-      options: ["A device (or a network's router) on the internet", "A person", "A website's owner", "A password"]
+      options: ["A device (or a router) on the internet", "A person and where they live", "The owner of a website", "The user's account name"]
       answer: 0
-      feedback: [null, "Many people can share one address.", "Owners are recorded elsewhere.", "Nothing to do with passwords."]
-      explain: "It is the address packets are delivered to."
+      feedback: [null, "Many people can share one address.", "Owners are recorded elsewhere.", "Accounts are separate from addresses."]
+      explain: "It is the address packets are delivered to: a device, or a network's router."
   - check:
       type: question
       q: "Review: where does HTTPS encrypt your data?"

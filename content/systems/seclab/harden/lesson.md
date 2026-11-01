@@ -108,23 +108,23 @@ tasks:
   - check:
       type: question
       q: "Why must you restart ssh after editing sshd_config?"
-      options: ["It reads its settings only when it starts", "To log out", "To clear the log", "To update it"]
+      options: ["It reads its settings only when it starts", "To log out other users", "To clear the old log", "To update ssh to the new version"]
       answer: 0
-      feedback: [null, "That is not the reason.", "The log is separate.", "Update is apt's job."]
+      feedback: [null, "Restarting is not about who is logged in.", "The log is separate.", "Update is apt's job."]
       explain: "Services read their config at start (the same as Samba)."
   - check:
       type: question
       q: "The firewall allows port 80. Apache behind it is old. Is the finding fixed?"
-      options: ["No: the old program is still reachable on 80", "Yes", "Only for ssh", "Only for ftp"]
+      options: ["No: the old Apache still answers on 80", "Yes: the firewall now protects it", "Yes, once ssh is locked down too", "Only if the firewall logs port 80"]
       answer: 0
-      feedback: [null, "It filters other ports, not this one.", "Not about ssh.", "Not about ftp."]
-      explain: "A firewall does not fix what is behind an allowed door."
+      feedback: [null, "It filters other ports, not this one.", "ssh is a different door; Apache is still old.", "Logging records visits; it does not fix Apache."]
+      explain: "A firewall does not fix what is behind an allowed door: the old program is still reachable on 80, so update it."
   - check:
       type: question
       q: "Review: 14 failures in two minutes for root. Which fix helps most?"
-      options: ["No root login over ssh, and key login only", "A bigger log", "A new name for ssh", "Reboot daily"]
+      options: ["No root login over ssh, and key login only", "Keep a bigger log for evidence", "Move ssh to an unusual port", "Reboot the server every day"]
       answer: 0
-      feedback: [null, "A log records only.", "Hiding is not a lock.", "Does not help."]
+      feedback: [null, "A log records only.", "Hiding is not a lock: scanners find it.", "The guessing starts again after each reboot."]
       explain: "Take away the prize, or make the lock pointless to guess."
 ```
 

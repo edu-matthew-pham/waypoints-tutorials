@@ -79,7 +79,7 @@ tasks:
   - check:
       type: question
       q: "A half adder adds two bits. Why does a full adder need three inputs?"
-      options: ["It also adds the carry coming in from the place to its right", "It adds three numbers at once", "The third input switches it on", "It needs a spare in case one breaks"]
+      options: ["It also adds the carry from the right", "It adds three numbers at once", "The third input switches it on", "It needs a spare in case one breaks"]
       answer: 0
       feedback: [null, "Two numbers; the third bit is the carry.", "Gates don't need switching on.", "Every input does a job."]
       explain: "Every place except the first may get a carry from the right: A + B + carry in."
@@ -146,7 +146,7 @@ tasks:
   - check:
       type: question
       q: "Review: an 8-bit register holds 255. You add 1. What does it hold?"
-      options: ["0, and a carry falls off the end", "256", "255", "1"]
+      options: ["0, and a carry falls off the end", "256, because 255 + 1 = 256", "255: it is full, so nothing changes", "1: only the last bit changes"]
       answer: 0
       feedback: [null, "256 needs nine bits.", "Adding does change it.", "Every place carries."]
       explain: "11111111 + 1 = 100000000: the ninth bit has nowhere to go, so the register holds 0. That is overflow."

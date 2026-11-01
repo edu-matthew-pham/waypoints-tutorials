@@ -57,10 +57,10 @@ tasks:
   - check:
       type: question
       q: "ssh pi@raspberrypi.local says: Connection refused. What does it most likely mean?"
-      options: ["The Pi is on the network but nothing is listening for ssh (the service is stopped)", "Your password is wrong", "Your laptop is offline", "The Pi has no name"]
+      options: ["Nothing on the Pi is listening for ssh", "Your password is wrong", "Your laptop is offline", "The Pi has no name"]
       answer: 0
       feedback: [null, "A wrong password gives Permission denied, a different message.", "An offline laptop cannot find the name at all.", "A name that is not found says so."]
-      explain: "Refused means the Pi answered but no program is waiting on port 22. Services come in lesson 4."
+      explain: "Refused means the Pi is on the network and answered, but no program is waiting on port 22 (the ssh service is stopped). Services come in lesson 4."
 ```
 
 ### Logging in, step by step

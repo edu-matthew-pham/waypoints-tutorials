@@ -78,7 +78,7 @@ tasks:
   - check:
       type: question
       q: "Which of these must be stored **lossless**?"
-      options: ["A medical X-ray a doctor will use to find a fracture", "A holiday photo shared online", "A song streamed on a phone", "A video call"]
+      options: ["An X-ray a doctor uses to find a fracture", "A holiday photo shared online", "A song streamed on a phone", "A video call"]
       answer: 0
       feedback: [null, "Small changes don't matter for a holiday photo.", "Streaming music is lossy so it plays without waiting.", "Video calls are lossy so they keep up in real time."]
       explain: "A change in a few pixels could hide or invent a detail a doctor relies on. Medical images, legal evidence, text and spreadsheets need every value exact."
@@ -119,10 +119,10 @@ tasks:
   - check:
       type: question
       q: "A streaming service sends music in a lossy format. Why is that a good choice?"
-      options: ["It is much smaller, so it plays without waiting, and most listeners can't hear what is lost", "Lossy music sounds better", "Lossless music can't be streamed", "It stops people copying the music"]
+      options: ["Much smaller files, and the loss is hard to hear", "Lossy music sounds better", "Lossless music can't be streamed", "It stops people copying the music"]
       answer: 0
       feedback: [null, "At best it sounds the same; it never sounds better than the original.", "It can, it just takes more data.", "That is copy protection, a different thing."]
-      explain: "Lossy formats like MP3 throw away sounds people hear least, making files about a tenth of the size."
+      explain: "Lossy formats like MP3 throw away sounds people hear least, making files about a tenth of the size, so music plays without waiting."
 ```
 
 ### Back to lossless
@@ -149,7 +149,7 @@ tasks:
   - check:
       type: question
       q: "A police photo of a number plate is saved as a heavily compressed lossy file. What could go wrong?"
-      options: ["Letters could blur into each other, so the evidence is unclear or misread", "The file could be too big", "Nothing: lossy files look the same", "The photo would turn black and white"]
+      options: ["Letters could blur, so the plate is misread", "The file could be too big", "Nothing: lossy files look the same", "The photo would turn black and white"]
       answer: 0
       feedback: [null, "Lossy makes files smaller.", "Heavy compression changes fine details like edges of letters.", "Colour is kept; detail is lost."]
       explain: "Evidence needs every detail; lossy compression can change exactly the details that matter."

@@ -42,10 +42,10 @@ tasks:
   - check:
       type: question
       q: "Why does sudo echo \"[x]\" >> /etc/samba/smb.conf fail?"
-      options: ["The >> is done by your shell, not by sudo, so it has no permission", "echo is not a command", "sudo cannot run echo", "smb.conf does not exist"]
+      options: ["The >> runs in your shell, not under sudo", "echo cannot write to a file", "sudo only works on apt commands", "smb.conf does not exist"]
       answer: 0
-      feedback: [null, "echo works fine.", "sudo ran echo successfully.", "It exists, but you cannot write it."]
-      explain: "Your shell sets up the redirect before sudo runs. Use echo ... | sudo tee -a file, so tee (running as root) does the writing."
+      feedback: [null, "echo can write to a file through >>; the problem is who does the writing.", "sudo can run any command, and it ran echo fine.", "It exists, but you cannot write it."]
+      explain: "Your shell sets up the redirect before sudo runs, so it has no permission to write the file. Use echo ... | sudo tee -a file, so tee (running as root) does the writing."
   - check:
       type: bug
       code: "working.txt#sam"
@@ -122,7 +122,7 @@ tasks:
   - check:
       type: question
       q: "Review: you ran sudo systemctl enable smbd. Is smbd running now?"
-      options: ["Not necessarily: enable only affects the next boot", "Yes", "Yes, but not shared", "No, it was removed"]
+      options: ["Maybe not: enable only acts at the next boot", "Yes: enable starts it", "Yes, but it is not shared yet", "No: enable removed it"]
       answer: 0
       feedback: [null, "enable only sets the boot behaviour.", "Nothing about sharing.", "Nothing is removed."]
       explain: "Check with systemctl status."

@@ -58,10 +58,10 @@ tasks:
   - check:
       type: question
       q: "Your after-scan shows nothing wrong. What should the report still say?"
-      options: ["What the scan could not see, such as weak passwords and file permissions", "That the computer is perfectly secure", "Nothing more", "That scans are useless"]
+      options: ["What the scan could not check, like passwords", "That the computer is perfectly secure", "Nothing more", "That scans are useless"]
       answer: 0
       feedback: [null, "A scan cannot prove that.", "The honest limits belong in a report.", "Scans are useful, within their limits."]
-      explain: "An honest report names its limits. Absence of findings is not proof of safety."
+      explain: "An honest report names its limits: a scan cannot see weak passwords or file permissions. Absence of findings is not proof of safety."
 ```
 
 ### The audit cycle
@@ -116,14 +116,14 @@ tasks:
   - check:
       type: question
       q: "What does a clean after-scan prove?"
-      options: ["Only that no open doors or old versions are showing", "That the computer is secure", "That passwords are strong", "That the files are private"]
+      options: ["Only that no open doors or old versions show", "That the computer is secure", "That passwords are strong", "That the files are private"]
       answer: 0
       feedback: [null, "A scan cannot show everything.", "Scans do not see passwords.", "Scans do not see permissions."]
       explain: "Clean on its own list; silent on everything else."
   - check:
       type: question
       q: "Review: the log shows 14 failed root logins. Which fix goes in the report?"
-      options: ["No root login and no password login over ssh", "Delete the log", "Rename the account", "Ignore it"]
+      options: ["No root login and no password login over ssh", "Delete the log to start fresh", "Rename the root account", "Ignore it: none of them got in"]
       answer: 0
       feedback: [null, "Destroys the evidence.", "Hiding does not protect.", "Failures are the warning."]
       explain: "Make guessing pointless."

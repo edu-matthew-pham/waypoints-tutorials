@@ -76,10 +76,10 @@ tasks:
   - check:
       type: question
       q: "Why can the same page appear in one column on a phone and two on a laptop?"
-      options: ["The presentation changes with the screen size; the content and structure stay the same", "The website keeps a separate copy for phones", "The phone rewrites the HTML", "It can't; phones show the laptop layout"]
+      options: ["The style changes with screen size; the content stays the same", "The website keeps a separate copy for phones", "The phone rewrites the HTML", "It can't; phones show the laptop layout"]
       answer: 0
       feedback: [null, "One page, different style rules for different widths.", "The structure isn't touched.", "Most sites do change layout."]
-      explain: "CSS can say \"on narrow screens, one column\": a presentation choice."
+      explain: "The presentation changes; the content and structure stay the same. CSS can say \"on narrow screens, one column\": a presentation choice."
 ```
 
 ### Separation pays off

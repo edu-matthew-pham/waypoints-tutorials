@@ -42,7 +42,7 @@ tasks:
   - check:
       type: question
       q: "The lab has no internet. Where do you check whether OpenSSH 7.2p2 is old?"
-      options: ["The lab's advisory sheet (cat advisories.txt)", "A search engine", "Ask the target", "Guess"]
+      options: ["The lab's advisory sheet (cat advisories.txt)", "A search engine on the laptop", "Ask the target what it is missing", "Guess from the version number"]
       answer: 0
       feedback: [null, "There is no internet in the lab.", "The target does not know what it is missing.", "Guessing is not an audit."]
       explain: "The advisory sheet is an offline list your teacher made. Real testers look versions up, with the internet, in a database of known problems."
@@ -57,10 +57,10 @@ tasks:
   - check:
       type: question
       q: "Telnet's version is new. Why is it still a finding?"
-      options: ["It sends everything, including passwords, as readable text", "It is too fast", "It uses too much memory", "It is not on the sheet"]
+      options: ["It sends passwords as readable text", "It uses an old port number", "It uses too much memory", "It is not on the sheet"]
       answer: 0
-      feedback: [null, "Speed is not the issue.", "Memory is not the issue.", "It is on the sheet."]
-      explain: "Anyone watching the network can read a telnet session. ssh does the same job, encrypted."
+      feedback: [null, "Port 23 is fine; the problem is plain text.", "Memory is not the issue.", "It is on the sheet."]
+      explain: "It sends everything, passwords included, as readable text. Anyone watching the network can read a telnet session. ssh does the same job, encrypted."
 ```
 
 ### Reading versions against the sheet
@@ -115,9 +115,9 @@ tasks:
   - check:
       type: question
       q: "Why can't you fix an insecure protocol like telnet just by updating it?"
-      options: ["The problem is how it works: everything is readable text", "Updates are not available", "It is too small", "It is not installed"]
+      options: ["Its design sends everything as readable text", "Updates are not available", "Updates only change the version number", "It is not installed"]
       answer: 0
-      feedback: [null, "It is about design, not availability.", "Size has nothing to do with it.", "It is installed."]
+      feedback: [null, "It is about design, not availability.", "Updates do fix bugs; they cannot change the design.", "It is installed."]
       explain: "Replace it with ssh. No version of telnet encrypts."
   - check:
       type: question

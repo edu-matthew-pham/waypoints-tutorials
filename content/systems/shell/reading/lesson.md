@@ -78,9 +78,9 @@ tasks:
   - check:
       type: question
       q: "grep Friday notes.txt prints \"Robot club on Friday\". What does grep friday notes.txt print?"
-      options: ["Nothing: grep cares about capital letters (grep -i ignores them)", "The same line", "Every line", "An error"]
+      options: ["Nothing: grep cares about capitals", "The same line: grep ignores capitals", "Every line of notes.txt", "An error: no such word"]
       answer: 0
-      feedback: [null, "f and F are different letters to grep.", "Only lines with the exact letters.", "No match isn't an error."]
+      feedback: [null, "f and F are different letters to grep (grep -i ignores capitals).", "Only lines with the exact letters.", "No match isn't an error."]
       explain: "grep -i friday notes.txt ignores capitals and finds it."
 ```
 

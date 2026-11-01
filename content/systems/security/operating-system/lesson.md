@@ -61,7 +61,7 @@ tasks:
   - check:
       type: question
       q: "What is a **driver**?"
-      options: ["A small program that lets the OS use one particular device", "The person using the computer", "An app that plays videos", "The cable that connects a device"]
+      options: ["A program that lets the OS use one device", "The person using the computer", "An app that plays videos", "The cable that connects a device"]
       answer: 0
       feedback: [null, "Not a person: a piece of software.", "Apps ask the OS; drivers sit underneath it.", "The cable carries signals; the driver is software."]
       explain: "Each device comes with a driver that turns the OS's general requests (\"take a picture\") into that device's own commands."
@@ -76,10 +76,10 @@ tasks:
   - check:
       type: question
       q: "Because every app has to ask the OS, what else can the OS do?"
-      options: ["Decide which apps may use the camera, microphone, files and network", "Make every app faster", "Fix bugs in the apps", "Stop the hardware wearing out"]
+      options: ["Decide which apps may use the camera or files", "Make every app faster", "Fix bugs in the apps", "Stop the hardware wearing out"]
       answer: 0
       feedback: [null, "Speed depends on the app and the hardware.", "Apps are fixed by their makers.", "Hardware wears out anyway."]
-      explain: "The OS is the gatekeeper: that is why your phone asks \"Allow this app to use the camera?\""
+      explain: "The OS is the gatekeeper for the camera, microphone, files and network: that is why your phone asks \"Allow this app to use the camera?\""
 ```
 
 ### Through the layers
@@ -128,10 +128,10 @@ tasks:
   - check:
       type: question
       q: "Your school laptop saves files to the internal drive or a USB stick, and the Save button looks the same either way. Why?"
-      options: ["The app asks the OS to save; the OS uses the right driver for each", "Both drives are the same inside", "The app checks which drive it is", "USB sticks pretend to be internal drives"]
+      options: ["The OS uses the right driver for each drive", "Both drives are the same inside", "The app checks which drive it is", "USB sticks pretend to be internal drives"]
       answer: 0
       feedback: [null, "They are very different inside.", "The app doesn't need to know.", "The OS and its drivers handle the difference."]
-      explain: "The OS hides the difference, so every app saves the same way."
+      explain: "The app asks the OS to save, and the OS uses the right driver. It hides the difference, so every app saves the same way."
   - check:
       type: question
       q: "A torch app asks for permission to read your contacts. What should you do?"

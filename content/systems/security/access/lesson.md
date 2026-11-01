@@ -80,7 +80,7 @@ tasks:
   - check:
       type: question
       q: "Why add a code from a phone (multi-factor sign-in)?"
-      options: ["A stolen password alone is no longer enough to get in", "It makes the password shorter", "It replaces permissions", "It speeds up signing in"]
+      options: ["A stolen password alone is no longer enough", "It makes the password shorter", "It replaces permissions", "It speeds up signing in"]
       answer: 0
       feedback: [null, "The password is still needed.", "It only strengthens authentication.", "It adds a step."]
       explain: "An attacker would need your password and your phone."
@@ -115,10 +115,10 @@ tasks:
   - check:
       type: question
       q: "Admins can change Settings but only read Marks. Why not let admins change everything?"
-      options: ["Their job doesn't need it, and a stolen admin account could do less damage", "Admins aren't trusted", "It's a mistake in the table", "Admins can't read"]
+      options: ["Their job doesn't need it, so a theft does less harm", "Admins aren't trusted with marks", "It's a mistake in the table", "Teachers would lose their own access"]
       answer: 0
-      feedback: [null, "It's about limiting harm, not distrust.", "It's deliberate: least privilege.", "They can read Marks."]
-      explain: "Least privilege: if an account is misused or stolen, it can only do what that role needs."
+      feedback: [null, "It's about limiting harm, not distrust.", "It's deliberate: least privilege.", "Each role has its own permissions; teachers keep theirs."]
+      explain: "Least privilege: if an admin account is misused or stolen, it can only do what that role needs, so it does less damage."
 ```
 
 ### A teacher

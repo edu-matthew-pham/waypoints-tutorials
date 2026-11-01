@@ -159,10 +159,10 @@ tasks:
   - check:
       type: question
       q: "A site you use emails you: it has been breached. What should you do first?"
-      options: ["Change that password, and any other account where you used the same one", "Nothing: it's the site's problem", "Delete your email account", "Change only the breached site's password"]
+      options: ["Change it there and anywhere you reused it", "Nothing: it's the site's problem", "Delete your email account", "Change only the breached site's password"]
       answer: 0
       feedback: [null, "Your reused password is now on a list.", "That doesn't stop anyone using the leaked password.", "Any account using the same password is open too."]
-      explain: "Then turn on a second factor where you can: next lesson."
+      explain: "Change that password, and any other account where you used the same one. Then turn on a second factor where you can: next lesson."
   - check: { type: reflect, text: "Reread your guess from Engage. What would you add or change now?" }
   - check: { type: reflect, text: "I can explain how one leak can open many accounts, and why a different long passphrase for each site stops it." }
 ```

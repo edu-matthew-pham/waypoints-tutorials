@@ -125,14 +125,14 @@ tasks:
   - check:
       type: question
       q: "Switch to the server. Why does it have 128 GB of RAM and a 10 Gb/s network?"
-      options: ["Thousands of people use it at once, each with their own work", "Servers play games", "It needs to start faster", "Big numbers look good in adverts"]
+      options: ["Thousands of people use it at once", "Servers play games", "It needs to start faster", "Big numbers look good in adverts"]
       answer: 0
       feedback: [null, "Servers mostly run websites and apps for other people.", "Starting is rare for a server.", "It needs them for its job."]
-      explain: "A server answers many people at once: lots of working space and a fast connection."
+      explain: "A server answers many people at once, each with their own work: lots of working space and a fast connection."
   - check:
       type: question
       q: "Which device has a graphics card, and what is it for?"
-      options: ["The server: thousands of small sums at once, as in AI", "The phone: for the camera", "The laptop: for the screen", "None of them"]
+      options: ["The server: many small sums at once", "The phone: for the camera", "The laptop: for the screen", "None of them"]
       answer: 0
       feedback: [null, "The phone uses built-in graphics.", "The laptop uses built-in graphics.", "Look at the server's last row."]
       explain: "Servers that train AI models use graphics cards, which do many simple sums at the same time."

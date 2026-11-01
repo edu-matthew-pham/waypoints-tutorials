@@ -108,10 +108,10 @@ tasks:
   - check:
       type: question
       q: "A scan shows 22/tcp filtered instead of open. What does that mean?"
-      options: ["Something is blocking the answer, usually a firewall", "The port is open", "ssh is not installed", "The scan failed"]
+      options: ["A firewall is blocking the answer", "The port is open but slow", "ssh is not installed on the target", "The scan failed and must be rerun"]
       answer: 0
       feedback: [null, "Open is a different word.", "Filtered says nothing about whether it is installed.", "The scan worked: it just got no answer."]
-      explain: "Filtered: a firewall is dropping the knock."
+      explain: "Filtered: something, usually a firewall, is dropping the knock."
   - check:
       type: question
       q: "Which port would you expect a web server on?"

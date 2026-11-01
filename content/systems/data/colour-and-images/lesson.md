@@ -81,7 +81,7 @@ tasks:
   - check:
       type: question
       q: "A logo is stored as **circle: centre 50, 50, radius 40, colour 255, 0, 0** instead of as pixels. What happens when you zoom in a long way?"
-      options: ["It stays sharp: the computer draws the circle again at the new size", "It goes blocky, like any picture", "It disappears", "It turns into numbers"]
+      options: ["It stays sharp: the computer redraws the circle", "It goes blocky, like any picture", "It disappears", "It turns into numbers"]
       answer: 0
       feedback: [null, "A bitmap goes blocky, because each pixel just gets bigger. This picture is a shape to draw.", "The shape is still there at any size.", "It is already numbers: a centre, a radius and a colour."]
       explain: "This is a vector picture: numbers describe shapes, and the computer draws them at whatever size you need, so edges stay sharp. A bitmap stores every pixel, so zooming makes the pixels bigger."
@@ -166,7 +166,7 @@ tasks:
   - check:
       type: question
       q: "Which picture is best stored as a vector (shapes to draw)?"
-      options: ["A school logo that must print sharp on a poster and a pen", "A photo of your class", "A screenshot of a game", "A scanned drawing"]
+      options: ["A school logo for a poster and a pen", "A photo of your class", "A screenshot of a game", "A scanned drawing"]
       answer: 0
       feedback: [null, "A photo has no simple shapes: every pixel is different, so it is a bitmap.", "A screenshot is pixels from the screen: a bitmap.", "A scan makes pixels, so it is a bitmap."]
       explain: "Logos are made of simple shapes and need to be sharp at any size, so they suit vector."

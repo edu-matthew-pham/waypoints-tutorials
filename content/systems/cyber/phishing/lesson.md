@@ -107,7 +107,7 @@ insight: "The same signs, a new channel: a cloned voice on a phone call."
 check:
   type: question
   q: "Ava gets a call that sounds exactly like her mum: 'I'm stuck, send money to this new account now, and don't tell Dad.' Which phishing signs are there, and what should she do?"
-  options: ["Pressure, secrecy and a request for money: hang up and call Mum back on the number she already has", "None: it's Mum's voice", "Only the new account: send a little to check", "Ask the caller to prove who they are"]
+  options: ["Pressure, secrecy, money: hang up and call Mum's real number", "None: it's Mum's voice", "Only the new account: send a little to check", "Ask the caller to prove who they are"]
   answer: 0
   feedback: [null, "A voice can be copied. The signs are in the request.", "Any money sent to a scammer is lost.", "A scammer will just say yes. Check another way."]
   explain: "Scamwatch says a few seconds of a voice recording can be enough to make an AI clone, and to call friends or family back on their real number to check."

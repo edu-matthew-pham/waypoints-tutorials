@@ -42,7 +42,7 @@ tasks:
   - check:
       type: question
       q: "Which pair of facts makes a log pattern look like guessing?"
-      options: ["Many failures, one account, one address, a short time", "One failure, then a success", "A success after a long gap", "A reboot"]
+      options: ["Many fails, one account, one address, fast", "One failure, then a success", "A success after a long gap", "A reboot in the middle of the night"]
       answer: 0
       feedback: [null, "That is an ordinary mistyped password.", "Nothing unusual.", "A reboot is not a login."]
       explain: "Volume, repetition and speed. Real users do not fail 14 times in two minutes."
@@ -57,10 +57,10 @@ tasks:
   - check:
       type: question
       q: "Which change makes guessing a password hardest?"
-      options: ["Turn off password login and use keys, and block root login", "Ask people to try less", "Hide the ssh port", "Rename the log"]
+      options: ["Use keys instead of passwords, and block root", "Ask users to type more carefully", "Hide ssh on an unusual port", "Rename the log file"]
       answer: 0
-      feedback: [null, "Not a control.", "Hiding does not protect (permissions do).", "The log is a record, not a lock."]
-      explain: "No password to guess means nothing to guess. That is the next lesson's fix."
+      feedback: [null, "The failures are not from your users.", "Hiding does not protect: scanners find it.", "The log is a record, not a lock."]
+      explain: "Turn off password login, use keys, and block root login. No password to guess means nothing to guess. That is the next lesson's fix."
 ```
 
 ### Counting and comparing
@@ -108,23 +108,23 @@ tasks:
   - check:
       type: question
       q: "Why do guessers try 'root' first?"
-      options: ["Every Linux computer has it, and it can do everything", "It is the shortest name", "It has no password", "It is on the sheet"]
+      options: ["Every Linux has it, and it can do everything", "It is the shortest name to type", "It has no password by default", "It is the only account ssh allows"]
       answer: 0
-      feedback: [null, "Length is not the point.", "It has a password, but it is the biggest prize.", "Not related."]
+      feedback: [null, "Length is not the point.", "It has a password, but it is the biggest prize.", "ssh allows any account unless it is told not to."]
       explain: "Everyone knows the name, and the account has every right."
   - check:
       type: question
       q: "Which of these slows a guesser down the most?"
-      options: ["Limiting attempts and using long passwords or keys", "A shorter password", "A louder log", "Rebooting every hour"]
+      options: ["Limit attempts and use keys or long passwords", "A shorter password", "Logging every attempt in more detail", "Rebooting the server every hour"]
       answer: 0
       feedback: [null, "Shorter is easier to guess.", "A log records; it does not stop.", "Rebooting does not help."]
       explain: "Make each guess expensive, or make guessing pointless with keys."
   - check:
       type: question
       q: "Review: telnet shows version 2.0 (new). Is it a finding?"
-      options: ["Yes: it sends text in the clear", "No: it is new", "Only if old", "Only on Mondays"]
+      options: ["Yes: it sends text in the clear", "No: it is new", "Only if it is old", "Only if someone logs in with it"]
       answer: 0
-      feedback: [null, "New does not fix the design.", "Age is not the issue.", "Not related."]
+      feedback: [null, "New does not fix the design.", "Age is not the issue.", "It is a finding while it is open, used or not."]
       explain: "Plain text at any version."
 ```
 

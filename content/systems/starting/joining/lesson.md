@@ -48,10 +48,10 @@ tasks:
   - check:
       type: question
       q: "The school's computer lab uses cables for its 30 computers. Why?"
-      options: ["Cables are faster and more reliable, and the computers never move", "Wi-Fi isn't a network", "Cables are cheaper than air", "Computers can't use Wi-Fi"]
+      options: ["Cables are faster and steadier", "Wi-Fi isn't a network", "Cables stop viruses getting in", "Computers can't use Wi-Fi"]
       answer: 0
-      feedback: [null, "Wi-Fi is a network too.", "Wi-Fi needs no cable at all.", "Most laptops use Wi-Fi."]
-      explain: "When a computer stays on a desk, a cable is the fastest, steadiest way to join it."
+      feedback: [null, "Wi-Fi is a network too.", "Viruses can travel through cables too.", "Most laptops use Wi-Fi."]
+      explain: "These computers never move. When a computer stays on a desk, a cable is the fastest, steadiest way to join it."
   - check:
       type: bug
       code: "working.txt#sam"
@@ -111,10 +111,10 @@ tasks:
   - check:
       type: question
       q: "Your Wi-Fi is slow in your bedroom at the far end of the house. What would most likely help?"
-      options: ["Move closer to the router, with fewer walls in the way", "Turn the screen brighter", "Delete some photos", "Type faster"]
+      options: ["Move closer to the router", "Restart the computer", "Delete some photos", "Plug in the charger"]
       answer: 0
-      feedback: [null, "The screen doesn't change the network.", "Storage space doesn't change the network.", "Typing speed isn't the network."]
-      explain: "Distance and walls weaken Wi-Fi."
+      feedback: [null, "A restart won't fix a weak signal from far away.", "Storage space doesn't change the network.", "Battery power doesn't change the signal."]
+      explain: "Distance and walls weaken Wi-Fi, so moving closer, with fewer walls in the way, helps."
   - check:
       type: question
       q: "What is the internet?"

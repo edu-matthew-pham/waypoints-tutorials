@@ -100,7 +100,7 @@ tasks:
   - check:
       type: question
       q: "Why must encryption be **reversible**?"
-      options: ["The receiver has to turn it back into the real message with the key", "So that Eve can read it too", "So it takes less space", "It doesn't have to be"]
+      options: ["The receiver must turn it back with the key", "So that Eve can read it too", "So it takes less space", "It doesn't have to be"]
       answer: 0
       feedback: [null, "Eve doesn't have the key, so she can't reverse it.", "Encryption doesn't make data smaller.", "A scramble nobody can undo would be useless to the bank too."]
       explain: "Encrypt with the key, decrypt with the key. If it couldn't be reversed, nobody could read the message, including the bank."
@@ -158,7 +158,7 @@ tasks:
   - check:
       type: question
       q: "Your class marks are saved on the school's server, and the server's room is locked. A teacher opens them from home. When could someone else read them?"
-      options: ["On the way from the server to the teacher's home, unless they're encrypted", "Never: the room is locked", "Only if someone breaks into the server room", "Only after the teacher prints them"]
+      options: ["On the way to the teacher's home, unless encrypted", "Never: the room is locked", "Only if someone breaks into the server room", "Only after the teacher prints them"]
       answer: 0
       feedback: [null, "The lock protects where they're stored, not the trip across the internet.", "Copying packets on the way needs no break-in.", "They could be read long before that, on the network."]
       explain: "Stored safely is not the same as sent safely: anything crossing shared networks needs encrypting on the way too."
@@ -179,10 +179,10 @@ tasks:
   - check:
       type: question
       q: "Review: a packet is lost on the way. With TCP, what happens?"
-      options: ["The receiver never confirms it, so it is sent again", "The whole message starts again", "The message arrives with a gap", "The router rebuilds it"]
+      options: ["It isn't confirmed, so it is sent again", "The whole message starts again", "The message arrives with a gap", "The router rebuilds it"]
       answer: 0
       feedback: [null, "Only the missing packet.", "That's without TCP.", "Routers don't rebuild packets."]
-      explain: "TCP resends only the packet that was never acknowledged."
+      explain: "The receiver never confirms the lost packet, so TCP resends only the packet that was never acknowledged."
 ```
 
 ### Stored or sent?

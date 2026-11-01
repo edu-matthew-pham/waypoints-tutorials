@@ -122,7 +122,7 @@ tasks:
   - check:
       type: question
       q: "Review: Sam adds alex to a group with usermod -G. What went wrong?"
-      options: ["-G without -a replaces all Alex's groups", "Nothing", "Alex is deleted", "sudo was missing"]
+      options: ["-G without -a replaces all Alex's groups", "Nothing: that is the right command", "Alex's account is deleted", "It needed sudo in front"]
       answer: 0
       feedback: [null, "It replaced them.", "The account stays.", "The command ran."]
       explain: "-aG adds and keeps the rest."

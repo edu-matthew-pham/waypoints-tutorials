@@ -18,7 +18,7 @@ insight: "Committing to what a service can read tests the new move: a service is
 check:
   type: predict
   q: "Jellyfin runs as its own user, jellyfin. Your film is in /home/pi/Videos, and your home folder is private (drwx------). Can Jellyfin see it?"
-  options: ["No: jellyfin is not the owner and has no rights in that home folder", "Yes: services can read everything", "Yes, if the film is not hidden", "Only on Mondays"]
+  options: ["No: jellyfin is not the owner and has no rights in that home folder", "Yes: services can read everything", "Yes, if the film is not hidden", "Yes, while pi is logged in"]
   actual: "No. A service has no special powers. Put the films where its user may read them, for example /srv/media."
 ```
 
@@ -108,7 +108,7 @@ tasks:
   - check:
       type: question
       q: "A device opens http://raspberrypi.local:8096. What does the 8096 mean?"
-      options: ["The port: which service on the Pi to talk to", "The password", "The number of films", "The version"]
+      options: ["The port: which service to talk to", "The password", "The number of films", "The version"]
       answer: 0
       feedback: [null, "Ports are doors, not passwords.", "It counts nothing.", "It names a door."]
       explain: "One Pi can run many services; the port picks which."

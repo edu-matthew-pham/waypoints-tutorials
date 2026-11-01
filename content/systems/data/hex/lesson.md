@@ -152,10 +152,10 @@ tasks:
   - check:
       type: question
       q: "A message in a file reads 6869. It's hex. Is it hidden from someone who copies the file?"
-      options: ["No: hex is a public rule, so anyone can turn it back (68 is h, 69 is i)", "Yes: without a key nobody can read it", "Only from people who don't know binary", "Yes, unless it's longer"]
+      options: ["No: anyone can turn hex back", "Yes: without a key nobody can read it", "Only from people who don't know binary", "Yes, unless it's longer"]
       answer: 0
       feedback: [null, "Hex has no key: it's a way of writing, like binary.", "Anyone can look the rule up.", "Length makes no difference to a public rule."]
-      explain: "Hex is an encoding, not encryption. The Capture the flag course starts here."
+      explain: "Hex is a public rule, so anyone can turn it back: 68 is h, 69 is i. Hex is an encoding, not encryption. The Capture the flag course starts here."
   - check:
       type: answer
       q: "Review: what number is the binary 1011?"

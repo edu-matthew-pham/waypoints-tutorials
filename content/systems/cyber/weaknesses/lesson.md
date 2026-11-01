@@ -107,10 +107,10 @@ insight: "The same supply chain idea, one new kind of part: an AI model file som
 check:
   type: question
   q: "The club downloads a free AI model from a model-sharing website to sort members' photos. Opening the file quietly runs code that sends the photos somewhere else. What kind of weakness is it, and what's the fix?"
-  options: ["Supply chain: only load models from makers you trust, and check them like any program", "Software: rewrite the club's own code", "User: tell members to stop uploading photos", "None: AI models are just data"]
+  options: ["Supply chain: load models only from trusted makers", "Software: rewrite the club's own code", "User: tell members to stop uploading photos", "None: AI models are just data"]
   answer: 0
   feedback: [null, "The club's own code was fine. The problem came in with something it relied on.", "Members did nothing wrong.", "Some model files can run code when they are opened, so treat them like programs."]
-  explain: "A model file the app relies on is part of the supply chain. Security researchers found about 100 malicious models on one popular model-sharing site in 2024."
+  explain: "A model file the app relies on is part of the supply chain, so check it like any program. Security researchers found about 100 malicious models on one popular model-sharing site in 2024."
 ```
 
 AI apps rely on **models** other people trained, often downloaded from model-sharing websites. Some model files can **run code when they're opened**. In 2024, researchers found about **100 malicious models** on one popular site: opening one could let an attacker run their own code on the computer.

@@ -110,7 +110,7 @@ tasks:
   - check:
       type: question
       q: "After launch, which habit keeps the club app safe longest?"
-      options: ["Review it again whenever it changes, and install updates", "Never change it again", "Hide its address", "Turn off its error messages"]
+      options: ["Review it after every change, and update", "Never change it again", "Hide its address", "Turn off its error messages"]
       answer: 0
       feedback: [null, "New flaws are found in old code too.", "Addresses get found.", "That hides problems; it doesn't fix them."]
       explain: "Security isn't done once: every new feature adds points to the threat model, and updates fix flaws found later."

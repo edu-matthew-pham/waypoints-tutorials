@@ -78,10 +78,10 @@ tasks:
   - check:
       type: question
       q: "Why does RAM lose everything when the power goes off?"
-      options: ["Its bits are held by circuits like latches, which need power to keep feeding each other", "The processor deletes it", "It copies everything to storage first", "Power cuts damage it"]
+      options: ["Its bits are latches, which need power to keep looping", "The processor deletes it", "It copies everything to storage first", "Power cuts damage it"]
       answer: 0
       feedback: [null, "Nothing deletes it; it just fades.", "That is what saving does, not RAM.", "RAM works fine afterwards, just empty."]
-      explain: "No power, no loop, no bit. Storage keeps data a different way (magnetism or trapped charge)."
+      explain: "RAM's bits are held by circuits like latches. No power, no loop, no bit. Storage keeps data a different way (magnetism or trapped charge)."
 ```
 
 ### Four settings

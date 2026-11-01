@@ -81,7 +81,7 @@ tasks:
   - check:
       type: question
       q: "Why does Wi-Fi lose more packets than a cable?"
-      options: ["The signal travels through the air, where walls, distance and other devices weaken or interfere with it", "Wi-Fi packets are bigger", "Wi-Fi is newer, so it has more bugs", "Cables send each packet twice"]
+      options: ["Walls and distance weaken a signal in the air", "Wi-Fi packets are bigger", "Wi-Fi is newer, so it has more bugs", "Cables send each packet twice"]
       answer: 0
       feedback: [null, "Packets are the same size either way.", "It is about the signal, not the age of the technology.", "Cables are reliable because the signal is protected inside the wire."]
       explain: "A radio signal spreads out, is blocked by walls and shares the air with other devices, so some packets are damaged or lost."

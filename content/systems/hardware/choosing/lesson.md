@@ -82,10 +82,10 @@ tasks:
   - check:
       type: question
       q: "Same two options, but the job is keeping 30 browser tabs open. Which is better?"
-      options: ["Option B: tabs need RAM, and A has to swap", "Option A: more cores", "The same", "Neither"]
+      options: ["Option B: tabs need RAM", "Option A: more cores", "The same", "Neither"]
       answer: 0
       feedback: [null, "Tabs only use 2 cores at a time.", "A swaps to storage; B doesn't.", "Both can; one is faster."]
-      explain: "B: 2 s against A's 6 s. A different job, a different best choice."
+      explain: "Tabs need RAM, and A runs out and has to swap to storage. B: 2 s against A's 6 s. A different job, a different best choice."
 ```
 
 ### Video editing, step by step
@@ -120,7 +120,7 @@ tasks:
   - check:
       type: question
       q: "Run the game load on both. Which option wins?"
-      options: ["They tie: both have the same SSD, which is the bottleneck", "Option A", "Option B"]
+      options: ["They tie: the shared SSD is the bottleneck", "Option A: its extra cores load faster", "Option B: its extra RAM loads faster"]
       answer: 0
       feedback: [null, "More cores don't help here.", "More RAM doesn't help here."]
       explain: "Both 7.3 s. When the bottleneck is a part they share, their differences don't matter."
@@ -148,10 +148,10 @@ tasks:
   - check:
       type: question
       q: "A Year 8 student's laptop: web browsing, documents and video calls. Where should the money go?"
-      options: ["Enough RAM (about 8–16 GB), an SSD and good Wi-Fi", "A 32-core processor", "A graphics card", "4 TB of storage"]
+      options: ["Enough RAM, an SSD and good Wi-Fi", "A 32-core processor", "A graphics card", "4 TB of storage"]
       answer: 0
       feedback: [null, "Browsing and calls use only a few cores.", "Only games and AI need one.", "School files fit easily on far less."]
-      explain: "Tabs need RAM, starting and opening need an SSD, calls need the network."
+      explain: "Enough RAM is about 8–16 GB. Tabs need RAM, starting and opening need an SSD, calls need the network."
   - check:
       type: question
       q: "A computer for training AI models. Which one part matters most?"

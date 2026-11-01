@@ -57,9 +57,9 @@ tasks:
   - check:
       type: question
       q: "You want to install a program but the Pi has no internet. What are your options?"
-      options: ["Use a local software source or a USB stick with the packages", "Type apt harder", "Install from the next room", "Nothing is possible"]
+      options: ["A local software source, or packages on a USB", "Run apt again until it works", "Use sudo so apt can skip the download", "Nothing: wait for the internet"]
       answer: 0
-      feedback: [null, "apt needs a source to read from.", "Distance doesn't help.", "Servers are often offline; admins plan for it."]
+      feedback: [null, "apt needs a source to read from.", "sudo gives permission, not packages.", "Servers are often offline; admins plan for it."]
       explain: "apt reads from a software source. Your school can host one, or you can carry packages in on a USB stick. Without a source, apt can't update."
 ```
 
@@ -115,10 +115,10 @@ tasks:
   - check:
       type: question
       q: "Why does apt need sudo?"
-      options: ["Installing changes the whole system, so only administrators may", "It is slow", "It checks your spelling", "It needs the internet"]
+      options: ["Installing changes the whole system", "It is slow", "It checks your spelling", "It needs the internet"]
       answer: 0
       feedback: [null, "Speed has nothing to do with it.", "Not a spell checker.", "Internet is why it is slow; sudo is about who may."]
-      explain: "A normal user can't change the system. That is why permission matters."
+      explain: "Only administrators may change the whole system; a normal user can't. That is why permission matters."
   - check:
       type: question
       q: "Review: you ssh to the Pi and run sudo apt update. Where is the list downloaded to?"

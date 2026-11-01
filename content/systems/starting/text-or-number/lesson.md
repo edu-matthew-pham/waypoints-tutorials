@@ -63,7 +63,7 @@ tasks:
   - check:
       type: question
       q: "Why is a phone number like 0412 345 678 stored as text?"
-      options: ["You never add phone numbers, and the 0 at the front must stay", "Phone numbers are too big to be numbers", "Text is faster", "It isn't: it's a number"]
+      options: ["You never add them, and the 0 at the front must stay", "Phone numbers are too big to be numbers", "Text is faster", "It isn't: it's a number"]
       answer: 0
       feedback: [null, "Size isn't the reason.", "Speed isn't the reason.", "Try adding two phone numbers: the answer means nothing."]
       explain: "As a number, 0412 would lose its 0 and become 412. As text, every character stays."

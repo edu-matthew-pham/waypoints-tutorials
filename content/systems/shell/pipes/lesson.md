@@ -149,7 +149,7 @@ tasks:
   - check:
       type: question
       q: "Review: what does rm -r projects do?"
-      options: ["Deletes the projects folder and everything in it, for good", "Moves it to the recycle bin", "Renames it", "Lists it"]
+      options: ["Deletes the folder and all inside, for good", "Moves it to the recycle bin", "Renames it", "Lists it"]
       answer: 0
       feedback: [null, "There's no bin in a shell.", "That's mv.", "That's ls."]
       explain: "-r means the folder and everything inside it."
