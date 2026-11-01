@@ -40,17 +40,17 @@ check:
   q: "Each fact is about Source A, the clay warrior. Is it about its origin or its content?"
   options: ["Origin", "Content"]
   items:
-    - ["It was made by craftsmen in workshops", "Origin", "That says who made it."]
+    - ["It was made by craftsmen", "Origin", "That says who made it."]
     - ["It shows a soldier in armour", "Content", "That is what the figure looks like."]
     - ["It was made during the First Emperor's reign, before 210 BCE", "Origin", "That says when it was made."]
     - ["Each figure has a different face", "Content", "That is what you can see in it."]
-    - ["It was made in the Qin heartland, in what is now Shaanxi province", "Origin", "That says where it was made."]
+    - ["It was made in Qin workshops", "Origin", "That says where it was made."]
     - ["Some figures carried real bronze weapons", "Content", "That is something it contains."]
 ```
 
 Was your guess right? Origin is about the maker, and when and where it was made. Content is about what is in the source.
 
-One thing to watch: where a source was **found** is not always where it was **made**. The warriors were found in pits near the emperor's tomb. Historians record that too, but it is the findspot, not the origin.
+One thing to watch: where a source was **found** is not always where it was **made**. The warriors were found in pits near the emperor's tomb, in what is now Shaanxi province. Historians record that too, but it is the findspot, not the origin.
 
 ## Practise: label the card
 
@@ -106,7 +106,7 @@ Look at Source B. **Who** made it? Officials of the Qin government. **When**? Be
 
 ### Find Nib's mistake
 
-Look at Source A, the clay warrior.
+Nib is a made-up student for this lesson. Look at Source A, the clay warrior.
 
 ### Why keep them apart
 
@@ -126,9 +126,9 @@ tasks:
   - check:
       type: question
       q: "Which of these is about Source C's content?"
-      options: ["It says the emperor brought peace and one set of laws and measures", "It was made around 219 BCE", "It was set up on a mountain", "It was made for the First Emperor"]
+      options: ["It says the emperor brought peace and one set of laws", "It was set up around 219 BCE, on a tour", "It was set up on a mountain in Qin lands", "It was made by order of the First Emperor"]
       answer: 0
-      feedback: [null, "That says when it was made, which is origin.", "That says where, which is origin.", "That says who it was made for, which is origin."]
+      feedback: [null, "That says when it was made, which is origin.", "That says where it was set up, which is origin.", "That says who had it made, which is origin."]
       explain: "What the inscription says is its content. The others are about its origin."
   - check:
       type: sort
@@ -141,7 +141,7 @@ tasks:
         - ["It says the warriors were found by farmers in 1974", "Content", "That is something it reports."]
 ```
 
-> **Source C: an inscription.** Words cut into stone, set up on a mountain by order of the First Emperor on one of his tours, around 219 BCE. It says the emperor brought peace and order, and that everyone now lives under one set of laws, weights and measures.
+> **Source C: an inscription.** Words cut into stone, set up on a mountain by order of the First Emperor on one of his tours, around 219 BCE. It praises the emperor as a ruler without equal. It says he brought peace and order, that everyone now lives in peace, and that everyone lives under one set of laws, weights and measures.
 
 > **Source D: a museum label (made up for this lesson).** A short text on a card next to a clay warrior in a museum, written in 2019 by museum staff. It says each warrior was shaped in parts and fitted together, and that farmers digging a well found the first figures in 1974.
 
@@ -178,6 +178,8 @@ tasks:
 ### Sort the questions
 
 ### Dev's reply
+
+Dev is made up for this lesson.
 
 ## Make: your own source
 

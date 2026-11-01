@@ -145,7 +145,7 @@ insight: "A secondary source gets the same four questions, but its origin and pu
 check:
   type: question
   q: "Apply the four questions to Source D, the museum label. Which is the best sentence about what it can tell us?"
-  options: ["It tells us how museum staff in 2019 explain the warriors. It cannot tell us what people in the Qin thought", "It tells us what Qin people thought, because museum staff are experts", "It cannot tell us anything, because it was written in 2019", "It tells us the truth about the warriors, because it is in a museum"]
+  options: ["It shows how museum staff in 2019 explain the warriors, not what Qin people thought", "It tells us what Qin people thought, because museum staff are experts", "It cannot tell us anything, because it was written in 2019", "It tells us the truth about the warriors, because it is in a museum"]
   answer: 0
   feedback: [null, "Experts can explain the warriors, but they were not there. It cannot tell us Qin people's thoughts.", "Modern is not useless. It is useful for different questions.", "Being in a museum does not make a source true. Labels can be out of date."]
   explain: "The label's origin and purpose are modern, so it can tell us about modern knowledge, not about the Qin directly."
