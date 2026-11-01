@@ -1,6 +1,6 @@
 # ABS Census of Population and Housing: share of people who gave each answer to the religion question (per cent).
-# 2021, and 2011 and 2016 for Christianity and no religion: ABS media release, checked 1 Nov 2026. Other 2011 and 2016
-# figures: as reported from ABS Census data (Wikipedia, Religion in Australia; 2016 also ABS 2071.0). The question is
+# 2021, and 2011 and 2016 for Christianity and no religion: ABS 2021 media release. Islam, Buddhism and Hinduism:
+# 2016 from ABS 2071.0, 2011 from the ABS 2011 Census religion page. All checked 1 Nov 2026. The question is
 # optional, and other religions and "not stated" are left out, so a column does not add up to 100.
 
 # region: try

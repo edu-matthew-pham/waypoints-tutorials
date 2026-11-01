@@ -10,7 +10,7 @@ struggle: "Students read a share as a number of people, and read the data as tel
 before: |
   Integration node (n4): it joins the secular and heritage lessons with migrant communities and data.
 
-  The data is real and dated: ABS Census shares of people giving each answer to the religion question, 2011, 2016 and 2021. 2021 figures and the 2011 and 2016 figures for Christianity and no religion are from the ABS's 2021 release; the 2016 figures for Islam, Buddhism and Hinduism are from the ABS's 2016 summary; the 2011 figures for Islam, Hinduism and Buddhism are as reported from ABS Census data (Wikipedia's table) and should be checked against ABS QuickStats before you rely on them. Other religions and "not stated" are left out, so columns don't add to 100. The question is voluntary; about 93% of people answered it in 2021 (91% in 2016). Update the table when the 2026 Census religion results are released (expected 2027).
+  The data is real and dated: ABS Census shares of people giving each answer to the religion question, 2011, 2016 and 2021. 2021 figures and the 2011 and 2016 figures for Christianity and no religion are from the ABS's 2021 release; the 2016 figures for Islam, Buddhism and Hinduism are from the ABS's 2016 summary; the 2011 figures for Islam, Hinduism and Buddhism are from the ABS's 2011 Census religion page. All were checked against ABS pages on 1 Nov 2026. Other religions and "not stated" are left out, so columns don't add to 100. The question is voluntary; about 93% of people answered it in 2021 (91% in 2016). Update the table when the 2026 Census religion results are released (expected 2027).
 
   Nothing personal is asked. No step asks a student's religion, background, languages or family. Students who choose to mention their own background are welcome, never required. The data describes answers, not people's worth or the truth of any belief; no religion is ranked or judged.
 
@@ -46,8 +46,8 @@ sources:
   - title: "Religion Data Summary, 2016 Census (ABS 2071.0)"
     url: https://www.abs.gov.au/AUSSTATS/abs@.nsf/Lookup/by%20Subject/2071.0~2016~Main%20Features~Religion%20Data%20Summary~70
     checked: 2026-11-01
-  - title: Religion in Australia (Wikipedia; 2011 figures for Islam, Hinduism and Buddhism, to check against ABS)
-    url: https://en.wikipedia.org/wiki/Religion_in_Australia
+  - title: Religion in Australia, 2011 Census (ABS)
+    url: https://www.abs.gov.au/websitedbs/censushome.nsf/4a256353001af3ed4b2562bb00121564/e4d7576f30fe7e2aca257a22003fcf69!OpenDocument
     checked: 2026-11-01
 leads: >-
   This is the last lesson in A diverse democracy. First Nations histories and cultures are taught in class.
