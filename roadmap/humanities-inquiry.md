@@ -504,3 +504,7 @@ Not flagged: predicts and smaller checks where the right option is the same leng
 - Lengthened wrong options (meaning unchanged, feedback unchanged) in 8 checks where the right one was 1.3 to 1.5 times the longest wrong one: Build from a big idea (connection, the two-option Civics and History pair, the scarcity Make check), Can it be investigated (capital of France, "Will everyone have enough"), Where to look (Wattle Flat first place, Mill Road shops Make check). Now at most 1.18 across the course's nine lessons.
 - Left alone: Before Year 7 HASS (options a few characters apart).
 - Tested: validate, build; the three pages load in Chromium at 1280 and 390 px with no errors or overflow. Publish: lessons only.
+
+### Fresh-eyes review fixes (1 Nov 2026, Matthew said yes)
+
+A separate agent reviewed the six changed lessons (read-only). Overall sound; eight fixes applied: organise-it's first headings check now has themes in rows ("Theme | Council | Shop owners | Parents"), matching the intro, stuck note and compare check; the two-piles option lengthened; the sort step's hints now escalate (which column first, then the clicks); right-sized's size test keeps "where to find it"; three clunky options tidied; a repeated wrong option changed; an authoring note removed from the class plan. Validate, `check-options` (no HASS cases), build and the board check in Chromium pass.

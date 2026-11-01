@@ -55,7 +55,7 @@ tasks:
   - check:
       type: question
       q: "How can you tell a question is the right size?"
-      options: ["You can name the case and the evidence that would answer it", "It is about something important to lots of people", "It can be answered in one word from one source", "Everyone in the class agrees it's a good question"]
+      options: ["You can name the case, the evidence and where to find it", "It is about something important to lots of people", "It can be answered in one word from one source", "Everyone in the class agrees it's a good question"]
       answer: 0
       feedback: [null, "Important questions can still be too big.", "A one-word answer usually means a look-up.", "People can agree on a question that is too big."]
       explain: "If you can name the case and the evidence, you can plan the investigation."
@@ -104,7 +104,7 @@ tasks:
   - check:
       type: question
       q: "A made-up story says: 'Parkside tuckshop replaces pies with wraps because it has limited oven space.' Which question investigates opportunity cost?"
-      options: ["What was the next best option the tuckshop gave up for wraps?", "Why do so many Parkside students like pies more?", "On what date did the tuckshop stop selling pies?", "What colour is the sign on the Parkside tuckshop?"]
+      options: ["What was the next best option the tuckshop gave up for wraps?", "Why do so many Parkside students like pies?", "On what date did the tuckshop stop selling pies?", "What colour is the sign on the Parkside tuckshop?"]
       answer: 0
       feedback: [null, "That is a different topic.", "That is a look-up.", "That is a detail about the shop, not about an economic choice."]
       explain: "It asks for the next best alternative given up, rather than treating every cost or benefit as opportunity cost."

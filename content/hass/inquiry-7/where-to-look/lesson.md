@@ -100,7 +100,7 @@ tasks:
   - check:
       type: question
       q: "Which is a better first place to look for how people in Wattle Flat used water in the dry year?"
-      options: ["The town's water authority and local news from that year", "A web search for 'water use in dry years' in general", "A video about a dry year in a town in another state", "One neighbour who remembers that year in the town"]
+      options: ["The town's water authority and local news from that year", "A web search for 'water use in dry years' in general", "A video about a dry year in a town in another state", "One neighbour in town who remembers that year"]
       answer: 0
       feedback: [null, "Too wide.", "A different town gives a different answer.", "One person's memory is worth hearing but is not enough."]
       explain: "Records and reports from the people who ran and reported on the water, in that year."
