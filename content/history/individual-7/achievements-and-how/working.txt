@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Qin defeated the last six rival kingdoms by 221 BCE.
+After that the empire had one script, one set of measures and one set of laws.
+Nib says: "The First Emperor did all of this by himself."
+Nib says: "So the officials and workers don't matter to the story."
+# endregion

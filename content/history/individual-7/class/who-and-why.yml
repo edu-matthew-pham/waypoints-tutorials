@@ -1,0 +1,29 @@
+inquiry:
+  q: "Think of something very famous today: a song, a game, a building. In 500 years, will historians think it was significant? How would they decide?"
+  prompts:
+    - "What would have to change because of it?"
+    - "Who would remember it, and why?"
+  notes: "Keep it to things, not living people. The point is that fame and significance are different questions."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Famous or significant?"
+    minutes: 5
+    do: |
+      Pairs get four cards: the clay army's fame, one empire from seven kingdoms, officials kept by later dynasties, and films about him. They put each under "famous" or a test of significance.
+    notes: "Bring out that the clay army's fame is today's fame; the tests ask what changed then and after."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Which reason uses a test of significance?"
+    options:
+      - "Later dynasties kept his officials and script"
+      - "His clay army is very famous today"
+      - "He was emperor"
+    answer: 0
+    explain: "That is a lasting effect."
+    feedback:
+      - null
+      - "That is fame today, not a change he made."
+      - "That is his position, not why he matters."

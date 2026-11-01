@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Han writers said the First Emperor was harsh and cruel.
+Many labourers suffered building his walls, roads and tomb.
+Nib says: "A cruel ruler like that can't be significant."
+Nib says: "So his system lasting for centuries doesn't count."
+# endregion
