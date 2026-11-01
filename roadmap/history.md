@@ -428,3 +428,57 @@ Built from the plan above. Matthew decided not to wait for pilot data (easy to a
 - Teacher notes: what the board checks, that its model is undisturbed layers unless a pit is shown, two `running:` lines, one `stuck:` entry for the coin step.
 - Tested: `validate`, `check-lesson-boards history` (6 boards, all checks read reported values and do not hold at the start), `node experiments/dig-smoke.mjs` (28 checks), every check on the lesson page answered in Chromium at 1280 and 390 px (26 answered, 16 wrong answers tried; board checks do not tick on a wrong answer), the clip recorded locally with the test voice and checked frame by frame (then removed), dark mode, `check-decks` for How we know.
 - **Publish:** whole-site (new widget, History's first clip). Ask Matthew.
+
+## Plan (1 Nov 2026; awaiting Matthew's "go"): the deep-time pointer and `history/people-7` (AC9HH7K10)
+
+Matthew said continue after the state of play (Year 7 History: 5 of about 12 courses built). Next two items, as suggested: the deep-time pointer the teacher page already promises, then the next lens.
+
+### 1. Deep time Australia (AC9HH7K02 to K07): a pointer, not a course
+
+**Rule:** T1 (firm). We write no student explanation of First Nations history or culture; deep time stays with First Nations-led resources until someone has been consulted. So this is a signpost, not lessons.
+
+**How (reuses an existing mechanism, no code):** Civics already shows a teacher-led idea as a "Taught in class" row (`civics/diversity-7`: a `planned:` item with `label:` and a `teach:` link that appears in the teacher guide only). Here:
+
+- A small course `content/history/deep-time-7/index.md`, *Deep time Australia* (tagline *Taught in class, with First Nations-led resources*), Usually Year 7, no lessons, one unit with six `planned:` rows, one per standard (K02 Arrival on the Australian continent, K03 Continuity over deep time, K04 Environmental response over time, K05 Early technological achievements, K06 Social organisation and cultural practice, K07 Cultural preservation and heritage), each `label: "Taught in class"` and `teach:` its curriculum pointer page (`teach/curriculum/history/AC9HH7K0n/`, which already shows ACARA's elaborations).
+- The course summary says, in plain words: these standards are taught by your teacher with local, community-approved material and First Nations-led resources; this site does not explain them itself. No resource is described in student text.
+- A short `teacher.md` (or the course's teacher guide intro): start from ACARA's elaborations on each pointer page; ask the school's First Nations contact or RAP group first; national starting points to check with them (named only after checking each at build time, for example AIATSIS and Reconciliation Australia's Narragunnawali for schools); follow local protocols (deceased persons, sacred sites, ancestral remains); a First Nations educator reviews before use beyond CGGS.
+- Placed in **The ancient world** pathway between Early human migration and Shaped by the land (K01 → K02–K07 → K08), and the History teacher page's "will be a single page" line becomes a link.
+- **Check at build:** that a course with no lessons and only labelled rows builds and shows on the pathway (Civics has only done it inside a course with lessons). If not, the fallback is a plain teacher page plus a pathway card, with no shared code changed.
+
+### 2. Course `history/people-7`, *People and power* (AC9HH7K10)
+
+**Descriptor:** "the organisation and roles of key groups in ancient society such as the nobility, bureaucracy, women and slaves, and how they influenced and changed society". Prior: AC9HH7K09 (`land-7`'s surplus lesson is the bridge). Three waypoints: n1 hinge, n2, n3. Worked example Qin and Han China; swap-in cards in the course `reference.md` (Egypt, Athens and Sparta, Rome, India), extending the `land-7` card format.
+
+**Sensitive ground, decided in the plan:** slavery (state and private slaves, convict labour) is described factually, without graphic detail. India's card describes the four varnas as ancient texts set them out, labelled as a text's ideal order that historians compare with evidence of how people actually lived, with a teacher note that caste is a live issue today and the card makes no present-day claims (T8). The "four occupations" ranking in China gets the same treatment: a Confucian ideal order, not a description of who was richest.
+
+**n1 `hierarchy-and-power` (hinge): Who ran the society, and how?**
+- **Checkpoint (node):** describe the social hierarchy, the roles of the nobility and bureaucracy, and explain how these groups exercised power and shaped the society's organisation.
+- **One insight:** power ran through jobs: officials counted people and land, collected grain tax, ran courts and organised labour and armies. Knowing who was at the top is not enough; how they used that power is the point. (The Qin replaced most hereditary lords with appointed officials running commanderies and counties; the Han kept the officials and, for a time, brought back kings in some regions.)
+- **Planted slip (`power-without-how`):** Nib explains the hierarchy only as a ladder of who was richest or most important, with no mechanism ("the emperor was at the top, so he just made everything happen"). `smaller:` lead-in: "The emperor wants grain from a village 1,000 km away. Who actually collects it?"
+- **Cases:** real: commanderies and counties, the Qin bamboo-slip rules for officials (links `sources-7`), Han officials chosen partly for Confucian learning. Made-up: one county official's day (labelled once).
+- **Distractors (real slips):** hierarchy means wealth only; the emperor did everything himself; nobles and officials are the same thing (Qin officials were appointed and could be dismissed).
+- **Shape:** default worked-example shape. Sort roles by group; match mechanism → what it controlled; bug + `smaller:`; Make in the book. No board.
+
+**n2 `womens-roles` : What did women do, and how do we know?**
+- **Checkpoint:** describe women's roles, identify sources of evidence about women's lives, and explain how women influenced the society despite constraints.
+- **One insight:** most surviving writing was by elite men, so evidence about women is thin and tilted; historians piece it together from the few women's own writings, laws, tomb objects and records of powerful women, and say what they cannot know.
+- **Planted slip (`little-evidence-no-influence`):** Nib says few sources mention women, so women had no influence. A second, smaller slip in Vary: one elite woman's book shows how all women lived.
+- **Cases (to verify at build):** Ban Zhao (Han scholar who helped complete the *Book of Han* and wrote *Lessons for Women*; an elite source that argued women should be modest and obedient, which is itself evidence about expectations, not about every woman's life); Empress Lü (ruled as regent in the early Han); farm and textile work shown in tomb finds. No made-up case needed.
+- **Distractors:** no sources means no influence; one rich woman's life stands for all women; a source that tells women how to behave describes how they actually behaved.
+- **Shape:** default; links back to `usefulness-7` (who made it and why).
+
+**n3 `groups-and-change` : Slaves, labourers and change over time**
+- **Checkpoint:** describe the role of slaves and other marginalised groups, explain how they contributed to and influenced the society, and describe how relationships between groups changed over time.
+- **One insight:** the groups at the bottom did much of the work the society rested on (farming, building, mining, the emperor's tomb), so the society depended on them; and the order was not fixed: it changed when rulers changed the rules or when groups pushed back.
+- **Planted slip (`bottom-groups-passive`):** Nib says slaves and labourers did not matter to history because they had no power and nothing changed.
+- **Cases (to verify):** convict and conscript labour on Qin building works; state and private slaves in the Han; the rebellion of conscripted labourers that began the fall of the Qin (Chen Sheng and Wu Guang, 209 BCE, as Sima Qian tells it: a source with a viewpoint, so "Sima Qian reports"); Han limits on merchants (later merchants grew rich anyway: change over time).
+- **Distractors:** the bottom groups were passive; the hierarchy never changed; slavery in China was the same as in Rome (compare via cards, carefully).
+- **Shape:** default; the "change over time" part is a short match (before → after). Integration-flavoured but not marked as one (n3 is not an integration node in Kit).
+
+**Cards (`reference.md`):** Egypt (Pharaoh, viziers, nomarchs, scribes, priests, farmers, slaves; scribes' view of their role), Athens and Sparta (citizens, women, slaves; Spartiates, perioikoi, helots), Rome (patricians, plebeians, women of different classes, slaves and freedmen), India (varnas as ancient texts describe them, labelled as above). Each: groups, how power worked, what evidence survives, one source to look for.
+
+**Goes with it:** pathway row in The ancient world becomes built; History teacher page; three misconception ids; teacher notes quoting the relevant K10 elaborations; class plans. No board, no clips (a "who controls what" board could come later).
+
+**Publish:** whole-site (pathway and teacher page). Both items can share one run with the dig board batch if built before it runs.
+
+**Questions for Matthew:** none blocking. Defaults if no answer: build both, pointer first; India card wording as above.
