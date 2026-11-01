@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Lady Dai's tomb at Mawangdui held thousands of objects.
+They included food, silk clothes, lacquer dishes and wooden servants.
+Nib says: "So everyone in Han China was buried with thousands of things."
+Nib says: "Farmers must have had rooms full of grave goods too."
+# endregion

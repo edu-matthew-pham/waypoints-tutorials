@@ -1,0 +1,68 @@
+learning: "describe key beliefs held in Han China and explain how each belief led to particular practices"
+summary: "Describe key beliefs held by many people in Han China (duty to ancestors and parents, the Mandate of Heaven, an afterlife much like this life) and explain how each led to practices such as offerings, funerals and furnished tombs."
+time: 40
+timing: "Predict and Try 8 min · Worked example 12 min · Vary 5 min · Practise 6 min · Make 9 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can describe two beliefs held by many people in an ancient society.
+  - I can explain how a belief led to a practice.
+  - I can explain why a practice that looks odd makes sense once you know the belief behind it.
+struggle: "Students list beliefs and practices side by side without the 'because'. Keep asking: what did they believe that made this worth doing?"
+before: |-
+  AC9HH7K11 n1, a hinge. The Kit's reason: students who treat beliefs as exotic details rather than coherent systems that produce practices cannot connect lesson 2's funerary practices to the beliefs and values behind them, and end up describing without understanding. So the check before moving on is the practise sort (each practice back to its belief) and the class plan question.
+
+  Beliefs are always described as what people held ("many people believed"), never as true or false, and no step asks students about their own beliefs or religion. Keep it that way in discussion.
+
+  Real content (checked 1 Nov 2026): ancestor offerings and the belief that ancestral spirits looked after descendants; Confucius on serving, burying and making offerings to parents (Analects 2.5, Legge's translation, paraphrased); Confucianism made the basis of state ideology in 136 BCE under Emperor Wu, with Dong Zhongshu's teaching that floods and droughts were Heaven's warnings to the emperor (Britannica); the Mandate of Heaven from the early Zhou, conditional on the ruler's conduct (Britannica); Han tomb models as provision for an afterlife pictured as an extension of this world (Met). Nib's notes are made up (labelled once).
+
+  Simplified: the table presents four beliefs as one neat system. Real belief varied by region, class and period across four centuries; Daoist ideas, local gods and ideas about two souls (hun and po) are left out. The lesson says so briefly.
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips.
+
+  Relevant ACARA AC9HH7K11 elaborations (examples, not a checklist): "investigating beliefs associated with death, such as belief in an afterlife, and funerary customs and practices (for example, burial in tombs and techniques of mummification)"; "identifying how the Mandate of Heaven assisted people in understanding and justifying periods of warfare"; "investigating the significant beliefs, values and practices of Chinese society associated with daily life; for example, irrigation and the practice of agriculture, the teachings of Confucius, the evidence of daily life from the Han tombs"; "describing the role of the Delphic Oracle in informing decision-making regarding future warfare".
+
+  First Nations: AC9HH7K11 has no First Nations elaborations; we write none.
+running:
+  - "Predict: take the hook literally. Who would need a granary in a grave?"
+  - "Try: read each belief aloud and ask 'so what would you do?' before students match."
+  - "Worked example: let Nib's mistake sit. Ask what the family thought the model was for."
+  - "Vary: the same move with a different belief. Accept 'Heaven's warning' in students' own words."
+  - "Make: students write in their own book; a partner checks for a 'because' in each link."
+stuck:
+  - see: "A student says the practices were 'just weird' or 'just tradition'."
+    ask: "If you believed the dead needed food, what would you put in the grave?"
+    fix: "The practice follows from the belief; describe the belief first."
+  - see: "A student says 'everyone in China believed...'."
+    ask: "Would every family, in every place, over 400 years, believe exactly the same?"
+    fix: "Say 'many people believed'; beliefs varied."
+  - see: "A student argues about whether a belief was true."
+    ask: "What did people at the time believe, and what did it lead them to do?"
+    fix: "Historians describe what people held and what followed from it; they do not rule on whether it was true."
+support: "Give a two-column frame headed 'They believed...' and 'So they...' and fill one row together before pairs do the rest."
+stretch: "Which belief in the table do you think shaped the most practices? Give two practices it explains."
+leads: "Continue to What do the tombs tell us?"
+exit:
+  q: "Name one belief held by many people in Han China and one practice it led to."
+  a: "For example: many people believed life after death was much like this life, so tombs were stocked with food, clothes and models of houses."
+explain: "Many people in Han China held beliefs that fitted together: duty to ancestors and parents, the Mandate of Heaven, and an afterlife much like this life. Each belief led to practices such as offerings, careful funerals and furnished tombs."
+sources:
+  - title: "Confucius, Analects, Book II chapter 5 (James Legge translation), Project Gutenberg"
+    url: https://www.gutenberg.org/cache/epub/3330/pg3330-images.html
+    checked: 2026-11-01
+  - title: "Mandate of Heaven, Encyclopaedia Britannica"
+    url: https://www.britannica.com/print/article/595275
+    checked: 2026-11-01
+  - title: "Dong Zhongshu, Encyclopaedia Britannica"
+    url: https://www.britannica.com/biography/Dong-Zhongshu
+    checked: 2026-11-01
+  - title: "In search of immortality: provisions for the afterlife, National Gallery of Victoria"
+    url: https://www.ngv.vic.gov.au/essay/in-search-of-immortality-provisions-for-the-afterlife/
+    checked: 2026-11-01
+  - title: "Mill (tomb model), Eastern Han, The Metropolitan Museum of Art"
+    url: https://www.metmuseum.org/art/collection/search/44320
+    checked: 2026-11-01
+  - title: "Lar, Encyclopaedia Britannica (typical step)"
+    url: https://britannica.com/topic/Lar-Roman-deities
+    checked: 2026-11-01
+  - title: "Delphic oracle, Encyclopaedia Britannica (wider step)"
+    url: https://www.britannica.com/topic/Delphic-oracle
+    checked: 2026-11-01

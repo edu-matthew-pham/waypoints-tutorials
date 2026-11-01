@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Many people in Han China made offerings to their ancestors.
+Advisers read floods as warnings from Heaven to the emperor.
+Nib says: "They were just superstitious, so their beliefs tell us nothing."
+Nib says: "Historians should stick to wars and emperors instead."
+# endregion
