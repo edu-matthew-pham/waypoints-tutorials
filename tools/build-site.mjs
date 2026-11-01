@@ -821,6 +821,7 @@ for (const node of dirs.values()) {
     };
     // A planned item may carry `label:` (for example "Taught in class", 1 Nov 2026, Civics) in place of "Coming later";
     // labelled items are not counted as coming later. `teach:` (a site path) is linked from the teacher guide only.
+    // A unit whose only items are planned and all carry the same label shows that label, not "Coming later" (History chat, 1 Nov 2026: Deep time Australia).
     const normPlanned = (u) => (Array.isArray(u?.planned) ? u.planned : []).map((p) => (typeof p === 'string' ? { title: p, summary: '' } : { title: String(p?.title || ''), summary: String(p?.summary || ''), label: p?.label ? String(p.label) : '' })).filter((p) => p.title);
     const plannedRow = (p) => `<div class="crow wpt-crow-soon"><div class="wpt-crow-head"><span class="cnum">·</span><span class="ctitle">${esc(p.title)}</span><span class="cstat">${esc(p.label || 'Coming later')}</span></div>${p.summary ? `<p class="csum">${esc(p.summary)}</p>` : ''}</div>`;
     // Units (from the course's index.md) group the lessons; lessons without a unit go last.
@@ -829,7 +830,7 @@ for (const node of dirs.values()) {
     const loose = courseLessons.filter((l) => !units.some((u) => u.id === l.unit));
     if (loose.length) groups.push({ id: '', title: units.length ? 'More lessons' : '', lessons: loose, planned: [] });
     const rows = groups.map((g) => `<section class="unit"${g.id ? ` id="unit-${esc(g.id)}" data-unit="${esc(g.id)}"` : ''}>` +
-      (g.title ? `<div class="uhead"><h2>${esc(g.title)}</h2><span class="ustat">${!g.lessons.length && g.planned.length ? 'Coming later' : ''}</span>${g.summary ? `<p>${esc(g.summary)}</p>` : ''}</div>` : '') +
+      (g.title ? `<div class="uhead"><h2>${esc(g.title)}</h2><span class="ustat">${!g.lessons.length && g.planned.length ? (g.planned.every((p) => p.label && p.label === g.planned[0].label) ? esc(g.planned[0].label) : 'Coming later') : ''}</span>${g.summary ? `<p>${esc(g.summary)}</p>` : ''}</div>` : '') +
       `<div class="urows">${g.lessons.map(row).join('')}${(g.planned || []).map(plannedRow).join('')}</div></section>`).join('');
     const challenge = node.meta?.challenge ? `<span class="badge" id="badge" data-unit="${esc(node.meta.challenge)}" hidden>★ Challenge complete</span>` : '';
     const hasChecks = courseLessons.some((l) => segmentsOf(l).length);

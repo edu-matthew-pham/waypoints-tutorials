@@ -1500,3 +1500,7 @@ Idea only, for later. A board where students drag ideas into place and draw labe
 ## Changed by the Economics chat (1 Nov 2026): HASS catch-ups link like the others
 `isCatchUp` in `tools/build-site.mjs` and `tools/prior-links.mjs` now matches `hass/before-year-7/` as well (one word, as History did), so a lesson that lists a HASS catch-up node in `assumes:` gets "What you should already know" and the catch-up gets "Leads into". First use: *Spending choices* (AC9HS6K08 n1), assumed by `economics/scarcity-7/needs-and-wants` and `economics/work-7/types-of-work`. Side effect for the shared-inquiry chat: the two inquiry catch-ups in that course now link too, wherever a Year 7 lesson lists their nodes in `assumes:`. Whole-site publish.
 
+
+## Changed by the History chat (1 Nov 2026): a unit of labelled planned items shows its label
+- `tools/build-site.mjs` (course page unit header, one expression): a unit with no lessons whose planned items all share one `label:` now shows that label (for example "Taught in class") instead of "Coming later". Units with lessons, or with unlabelled or mixed items, are unchanged. First use: Deep time Australia in `history/migration-7`. Whole-site publish.
+- Also found: a course with no lessons cannot be a pathway card (`is not a folder of lessons`), so History's deep-time pointer is a unit inside Early human migration instead of its own course. Not changed.

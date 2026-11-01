@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Most writing that survives from Han China was by men at court.
+Very few written sources describe the lives of ordinary women.
+Nib says: "So women in Han China had no influence on their society."
+Nib says: "That's why historians don't need to study them."
+# endregion

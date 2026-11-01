@@ -1,0 +1,8 @@
+# Nib's explanation for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+The First Emperor ruled all of China from his capital.
+Below him were nobles, officials and the farmers who were most of the people.
+Nib says: "The emperor was at the top, so he just made everything happen."
+Nib says: "So we don't need to know what the officials did."
+# endregion

@@ -4,12 +4,13 @@ summary: "What is built so far in Year 7 History (a preview on working with sour
 ---
 ## What is here
 
-**This is a preview.** Five Year 7 courses and a catch-up are built, and none has been tried with a class.
+**This is a preview.** Six Year 7 courses and a catch-up are built, and none has been tried with a class.
 
 - [**Source origin and purpose**](../history/sources-7/): four lessons for AC9HH7S03, with an optional warm-up on primary and secondary sources (AC9HH7S02). Who made a source and what it shows, why it was made and what was going on, then all the questions together on one source and what it can and cannot tell us.
 - [**Source usefulness**](../history/usefulness-7/): three lessons for AC9HH7S04, in waypoint order: separating factual claims from opinions and applying the four accuracy questions (hinge), distinguishing accuracy from usefulness for a specific inquiry question (hinge), and combining both into an integrated evidence assessment.
 - [**How we know**](../history/evidence-7/): four lessons for AC9HH7K08, in waypoint order: layers and physical evidence, DNA and dating, written sources, and conservation. DNA is on the required path. Layers and written sources have hinge checks with smaller-step support. The course includes a reference and recap.
 - [**Shaped by the land**](../history/land-7/): three lessons for AC9HH7K09, the first ancient-world lens: the land, water and climate where ancient China grew; how farming produced a surplus that fed people who did not farm; and how the same features gave opportunities and set limits. The Reference page has swap-in cards for Egypt, Greece, Rome and India.
+- [**People and power**](../history/people-7/): three lessons for AC9HH7K10: the layers of Qin and Han society and how officials carried the emperor's power; what women did and why the evidence about them is thin; and the groups whose work the society rested on, and how the order changed. Swap-in cards for Egypt, Athens and Sparta, Rome and India.
 - [**Early human migration**](../history/migration-7/): three lessons for AC9HH7K01: what the Out of Africa theory says and what 'theory' means; how changes in rainfall, deserts and sea levels are thought to have moved people over many generations; and how several kinds of evidence build an interpretation. Arrival on the Australian continent (AC9HH7K02) is not taught here; it stays with First Nations-led resources.
 - [**Before Year 7 History**](../history/before-year-7/): one short Year 6 catch-up, *Can you trust this source?*, for a class that needs it before the Year 7 lessons.
 
@@ -25,11 +26,11 @@ Use the lessons when your class first meets sources, then return to them with th
 
 ## First Nations history
 
-We do not write explanations of First Nations history or culture ourselves. Teacher notes start from ACARA's own elaborations and ask you to build on them with local, community-approved material. The deep-time Australian standards (AC9HH7K02 to K07) will be a single page pointing to First Nations-led resources, and follow your school's protocols and local community guidance.
+We do not write explanations of First Nations history or culture ourselves. Teacher notes start from ACARA's own elaborations and ask you to build on them with local, community-approved material. The deep-time Australian standards (AC9HH7K02 to K07) are listed in the last unit of [Early human migration](../history/migration-7/): each is taught in class with local, community-approved material and First Nations-led resources, following your school's protocols. That course's teacher guide has starting points.
 
 ## What is planned
 
-These are plans, not promises. Next are the other ancient-world lenses (AC9HH7K10 to K13), each with the Qin and Han worked example and swap-in cards for Egypt, Greece, Rome and India, plus History's other skills (cause and continuity AC9HH7S05, perspectives AC9HH7S06, interpretations AC9HH7S07).
+These are plans, not promises. Next are the other ancient-world lenses (AC9HH7K11 to K13), each with the Qin and Han worked example and swap-in cards for Egypt, Greece, Rome and India, plus History's other skills (cause and continuity AC9HH7S05, perspectives AC9HH7S06, interpretations AC9HH7S07).
 
 ## For you
 

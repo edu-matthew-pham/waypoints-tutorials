@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Conscripted labourers, convicts and slaves did much of the heavy work in Qin and Han China.
+They had very little power over their own lives.
+Nib says: "So they didn't matter to the history of the Qin and Han."
+Nib says: "Only the emperor and his officials changed anything."
+# endregion

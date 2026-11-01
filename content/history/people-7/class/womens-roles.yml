@@ -1,0 +1,29 @@
+inquiry:
+  q: "If historians in 2,000 years could read only official government documents from today, what would they get wrong about people's lives?"
+  prompts:
+    - "Who would be left out?"
+    - "What other evidence would help them?"
+  notes: "Builds the idea that thin evidence comes from who writes. Do not ask about students' own families."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Whose life does it show?"
+    minutes: 4
+    do: |
+      For each of Ban Zhao's book, Sima Qian on Empress Lü and a tomb figure, pairs say who made it and whose life it shows.
+    notes: "Bring out that each shows a slice: elite, court, or households rich enough for tombs."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Few written sources describe ordinary women in Han China. What follows?"
+    options:
+      - "The evidence is limited, so historians use other kinds and say what they cannot know"
+      - "Ordinary women did nothing important"
+      - "Historians should make up what is missing"
+    answer: 0
+    explain: "Gaps are limits of the evidence."
+    feedback:
+      - null
+      - "Missing evidence is not proof of no influence."
+      - "Historians look for other evidence; they do not invent it."

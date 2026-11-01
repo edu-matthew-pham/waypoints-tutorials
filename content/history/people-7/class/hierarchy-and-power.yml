@@ -1,0 +1,29 @@
+inquiry:
+  q: "Our school has a principal at the top. How does a decision made in the principal's office actually reach your classroom?"
+  prompts:
+    - "Who passes it on, and how?"
+    - "What would happen if nobody did?"
+  notes: "Use the school as a model of a hierarchy with a bureaucracy, then switch to the Qin. Keep it to roles, not named staff."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Follow the grain"
+    minutes: 5
+    do: |
+      Pairs trace the grain tax from one farmer to a soldier on the frontier, naming each person and record on the way (farmer, clerk, register, county store, commandery, army).
+    notes: "The point is the chain of officials and records. Accept any sensible route."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Which answer explains how the emperor's power worked, not just who had it?"
+    options:
+      - "Officials kept registers and collected grain tax"
+      - "The emperor was at the top"
+      - "Nobles had titles"
+    answer: 0
+    explain: "Registers and tax are the mechanism."
+    feedback:
+      - null
+      - "That says who had power, not how it worked."
+      - "That names a group, not a mechanism."
