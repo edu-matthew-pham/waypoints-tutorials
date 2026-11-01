@@ -1,0 +1,29 @@
+inquiry:
+  q: "After a big match, the score is the same in every newspaper. Why are the match reports so different?"
+  prompts:
+    - "Which parts would every report agree on?"
+    - "Which parts would reporters argue about?"
+  notes: "Use a public match; the point is score (fact) vs explanation (interpretation)."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Two colours"
+    minutes: 4
+    do: |
+      Pairs underline the Han interpretation: facts in one colour, the argument in another. Compare with another pair.
+    notes: "Bring out that the argument links the facts with 'because'."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "'The Qin fell mainly because of fighting at court after the emperor died.' What kind of statement is it?"
+    options:
+      - "An interpretation"
+      - "A fact"
+      - "An opinion with no evidence"
+    answer: 0
+    explain: "It argues what mattered most, using facts about the court."
+    feedback:
+      - null
+      - "'Mainly because' argues why; it isn't simply what happened."
+      - "It can be backed with evidence about the court, so it's more than an opinion."

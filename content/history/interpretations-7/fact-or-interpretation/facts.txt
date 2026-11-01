@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Fact: the First Emperor died in 210 BCE.
+Fact: a revolt began in 209 BCE.
+Fact: the Qin fell because it was too harsh to its people.
+Nib says: "Every history book says it, so it must be a fact."
+# endregion

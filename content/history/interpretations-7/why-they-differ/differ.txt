@@ -1,0 +1,8 @@
+# Nib's notes for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Han writers said the Qin fell because it was cruel.
+Some historians today think the Qin was less cruel than that.
+Nib says: "They can't both be honest, so one side must be lying."
+Nib says: "I'll just pick the side I like best."
+# endregion

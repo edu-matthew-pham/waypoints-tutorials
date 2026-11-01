@@ -1,0 +1,53 @@
+learning: "build an argument that explains why an event is interpreted in different ways, using the evidence, questions and values behind each interpretation"
+summary: "Develop a historical argument about why an event, individual or group is interpreted in different ways: identify the interpretations, explain the evidence and reasoning behind each, and account for why they differ."
+time: 45
+timing: "Predict and Try 7 min · Worked example 12 min · Vary 4 min · Practise 4 min · Make 18 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can plan an argument with a claim, the interpretations, reasons and a conclusion.
+  - I can explain why interpretations differ, not just say that they do.
+  - I can write the argument in my own book for a partner or my teacher to read.
+struggle: "Students describe the two interpretations and stop, end with 'different opinions', or turn the task into 'which side is right'. The brief is why they differ."
+before: |-
+  AC9HH7S07 n3. Kit's typical width: explain the different interpretations, the evidence and reasoning behind each, and why interpretive diversity exists, connected to the n2 factors (evidence, questions, values).
+
+  **Nothing here marks the argument.** The checks ask about the structure (which part does which job, which plan meets the brief, which sentence names a reason), each with one defensible answer. The argument is written in the student's own book and read by a partner or you (rules T3, T5). The worked example is one model of the shape, labelled as such; accept other well-reasoned arguments, including ones that give more weight to the Han writers.
+
+  Interpretations and sources are as in Why historians tell it differently (B is a composite of "some historians today"; check it against your own reading). Hatshepsut: Antiquity news, 2025, on Jun Yi Wong's re-reading of the 1922 to 1928 excavation records; the study does not rule out some deliberate targeting.
+
+  If your class has used A significant individual (AC9HH7K13), its last lesson covers how the First Emperor himself was judged; that is about a person's reputation, while this course looks at why the dynasty fell. Either works as the case for the Make step.
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips.
+
+  Relevant ACARA AC9HH7S07 elaborations (examples, not a checklist): "developing a historical argument about why an event, individual or group is interpreted in different ways".
+
+  First Nations: none in this lesson (rules T1).
+running:
+  - "Predict: ask what is wrong with 'they have different opinions'."
+  - "Try: read each sentence aloud and ask its job."
+  - "Worked example: highlight the claim, the two interpretations and the reasons in three colours."
+  - "Vary: ask which plan would answer a different question ('what happened?')."
+  - "Make: give most of the time here. Partners read for a claim and at least two named reasons."
+stuck:
+  - see: "A student describes the interpretations and stops."
+    ask: "Why do they differ? What could each side see, ask or care about?"
+    fix: "Add the reasons: evidence, questions, values."
+  - see: "A student argues which side is right."
+    ask: "Does the question ask who is right, or why they differ?"
+    fix: "Explain the difference first; judging which is better supported is a wider step."
+  - see: "A student ends with 'different opinions'."
+    ask: "Why are their opinions different?"
+    fix: "Name the reason behind the opinions."
+support: "Give a four-box writing frame (Claim / Interpretation A and its evidence / Interpretation B and its evidence / Reasons and conclusion) with one sentence starter in each."
+stretch: "Write a second paragraph arguing which interpretation is better supported, while saying what the other gets right."
+leads: "This is the last lesson in Historical interpretations. Students can use the same shape in the class's depth study."
+exit:
+  q: "Write one sentence that explains why two interpretations of the Qin's fall differ, naming the kind of reason."
+  a: "For example: Historians today can read Qin law texts that Han writers never saw, so they have different evidence."
+explain: "An argument about interpretations makes a claim, says what each interpretation argues and its evidence, explains why they differ (evidence, questions, values), and sums up. It explains the difference rather than picking a winner."
+sources:
+  - title: "The end of the Qin and the beginning of the Han dynasty (University of Oregon, Early China course notes)"
+    url: https://darkwing.uoregon.edu/~inaasim/Early%20China/Hist%20387_7.htm
+    checked: 2026-11-01
+  - title: "Reconstructing the shattered visage of Queen Hatshepsut (Antiquity news, 2025)"
+    url: https://antiquity.ac.uk/news/2025/reconstructing-shattered-visage-queen-hatshepsut
+    checked: 2026-11-01

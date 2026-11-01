@@ -32,11 +32,11 @@ pathways:
     title: Thinking historically
     summary: "The historian's tools for any topic: dates and timelines, causes and effects, continuity and change, perspectives in sources, and interpretations."
     fit: "Use beside your depth study, after How we know or any time the class needs one of these skills."
-    about: "**Preview.** Time, cause and change (AC9HH7S05) and Past perspectives (AC9HH7S06) are built; Historical interpretations (AC9HH7S07) is planned and shown as Coming later. Each uses ancient China in the Qin and Han period as its worked example, with extra steps from Egypt, Greece, Rome and India. Every student takes the same steps in the same order; typical and wider steps add more examples of the same idea and are never needed to finish."
+    about: "**Preview.** All three courses are built: Time, cause and change (AC9HH7S05), Past perspectives (AC9HH7S06) and Historical interpretations (AC9HH7S07). Each uses ancient China in the Qin and Han period as its worked example, with extra steps from Egypt, Greece, Rome and India. Every student takes the same steps in the same order; typical and wider steps add more examples of the same idea and are never needed to finish."
     courses:
       - { path: history/time-7, id: time-7, stage: foundations, tagline: "When did it happen, why, and what stayed the same?" }
       - { path: history/perspectives-7, id: perspectives-7, stage: foundations, tagline: "Whose view is this, and whose is missing?" }
-      - { title: "Historical interpretations", summary: "Fact and interpretation, why historians tell the same past differently, and making your own argument (AC9HH7S07).", stage: foundations, tagline: "Why do historians tell it differently?" }
+      - { path: history/interpretations-7, id: interpretations-7, stage: foundations, after: [perspectives-7], tagline: "Why do historians tell it differently?" }
   - id: before-year-7
     title: Before Year 7
     summary: "A short catch-up lesson on the Year 6 idea Year 7 History builds on."

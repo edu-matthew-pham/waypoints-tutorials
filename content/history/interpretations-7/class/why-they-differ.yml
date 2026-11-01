@@ -1,0 +1,29 @@
+inquiry:
+  q: "Two honest people describe the same argument between friends very differently. How can both be honest?"
+  prompts:
+    - "What did each one see?"
+    - "What did each one care about?"
+  notes: "Keep it to a made-up example; don't invite real disputes from the class."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Fill the table"
+    minutes: 5
+    do: |
+      Pairs fill the Evidence, Question and Values rows for A and B before seeing the worked example, then compare.
+    notes: "Accept reasoned answers; the point is naming the kind of reason."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Historians today can read Qin law texts that Han writers never saw. What kind of reason is that for a difference?"
+    options:
+      - "Different evidence"
+      - "Different values"
+      - "One side is lying"
+    answer: 0
+    explain: "They can see evidence the Han writers couldn't."
+    feedback:
+      - null
+      - "Values are what they care about; this is about what they can see."
+      - "Neither side has to be lying."

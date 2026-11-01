@@ -1,0 +1,59 @@
+learning: "describe two interpretations of the same event and explain why they differ: different evidence, different questions, different values"
+summary: "Describe how the same event can be interpreted in different ways, and explain what causes the differences (different evidence, questions and values), without treating one interpretation as simply right."
+time: 40
+timing: "Predict and Try 7 min · Worked example 13 min · Vary 5 min · Practise 4 min · Make 11 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can describe two interpretations of the same event.
+  - I can give at least two reasons they differ (evidence, questions, values).
+  - I can explain why both can stand, without calling one simply right.
+struggle: "Students explain disagreement as lying or 'just different opinions', or pick a side. Keep asking: what could each one see, what were they asking, what did they care about?"
+before: |-
+  AC9HH7S07 n2. Kit's criteria: describe at least two interpretations; at least two reasons they differ, not just "different opinions"; don't treat one as simply right.
+
+  **No interpretation is the answer.** Checks ask which interpretation says what, and which kind of reason a difference comes from; never which interpretation is correct. If students want to argue which is better supported, that is the wider step in the next lesson.
+
+  How the three interpretations are sourced (checked 1 Nov 2026): **A** is Jia Yi's *The Faults of Qin* (a Han essay arguing that ruling by force without care for the people undid the Qin; encyclopedia summary) and Sima Qian's history. **B** is a composite, not one named historian: University of Oregon course notes (Early China) say excavated Qin legal texts show a systematic law code applied with some care, challenging the Han picture, and that Han historians may have exaggerated Qin cruelty to justify the Han takeover; the succession crisis (Zhao Gao, Li Si, the second emperor) and the rebellions in the old states are from the same notes, which follow Sima Qian. The 2013/2014 volume *Birth of an Empire: The State of Qin Revisited* (Pines, Shelach, von Falkenhausen, Yates) re-examines Qin using archaeological and excavated texts. Check B against your own reading before teaching it as more than "some historians". **C** is the title question of Gideon Shelach's 2014 chapter "Collapse or Transformation? Anthropological and Archaeological Perspectives on the Fall of Qin" in that volume; the lesson reports the question, not a conclusion. Shuihudi 1975 and Liye 2002 as in earlier courses.
+
+  Typical: 476 CE and ACARA's three causes (failing economy, political upheaval, invasion), named as ACARA's elaboration does.
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips.
+
+  Relevant ACARA AC9HH7S07 elaborations (examples, not a checklist): "examining different interpretations to explain short-term triggers and/or turning points of the decline of an empire or society, such as failing economy, political upheaval, foreign invasion or conflict".
+
+  First Nations: Kit's wider width mentions how a First Nations historical figure has been interpreted differently. That is for First Nations-led resources; this lesson gives no example (rules T1).
+running:
+  - "Predict: list students' reasons on the board, then group them into evidence, questions, values."
+  - "Try: ask which interpretation surprised them."
+  - "Worked example: cover one row of the table and ask pairs to fill it."
+  - "Vary: ask what Han writers had to gain, and what historians today can see that they couldn't."
+  - "Make: students write in their own book; a partner checks for a named reason, not 'different opinions'."
+stuck:
+  - see: "A student says one side must be lying."
+    ask: "What could each side see? What were they trying to find out?"
+    fix: "Different evidence, questions and values explain most disagreements."
+  - see: "A student explains the difference as 'different opinions'."
+    ask: "Why do they have different views? Name the evidence, question or value."
+    fix: "Name the reason, using the three kinds."
+  - see: "A student says the newer view is right because it is newer."
+    ask: "What makes an interpretation stronger: its date, or its evidence?"
+    fix: "Evidence and reasoning, not age."
+support: "Give a three-row card (Evidence / Question / Values) and have students fill it for A and B before the match."
+stretch: "Which kind of reason (evidence, question or values) do you think explains most of the difference between A and B? Give your reason."
+leads: "Continue to Make your own argument."
+exit:
+  q: "Give two reasons historians interpret the fall of the Qin differently."
+  a: "For example: historians today can read Qin law texts dug up since 1975 (different evidence); Han writers believed a good ruler must care for the people and wrote for the Han (different values)."
+explain: "Historians can interpret the same event differently because they have different evidence, ask different questions and hold different values. Several interpretations can stand at once; explaining why they differ is part of the job."
+sources:
+  - title: "The end of the Qin and the beginning of the Han dynasty (University of Oregon, Early China course notes)"
+    url: https://darkwing.uoregon.edu/~inaasim/Early%20China/Hist%20387_7.htm
+    checked: 2026-11-01
+  - title: "Birth of an Empire: The State of Qin Revisited (Pines, Shelach, von Falkenhausen, Yates; eScholarship, University of California)"
+    url: https://escholarship.org/uc/item/4h74v49p
+    checked: 2026-11-01
+  - title: "Shelach, Collapse or Transformation? Anthropological and Archaeological Perspectives on the Fall of Qin (2014, record at the Hebrew University)"
+    url: https://cris.huji.ac.il/en/publications/collapse-or-transformation-anthropological-and-archaeological-per/
+    checked: 2026-11-01
+  - title: "The Faults of Qin (encyclopedia summary of Jia Yi's essay)"
+    url: https://en.wikipedia.org/wiki/The_Faults_of_Qin
+    checked: 2026-11-01

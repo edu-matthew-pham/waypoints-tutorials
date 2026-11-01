@@ -1,0 +1,8 @@
+# Nib's argument for the "find the mistake" task. Plain text: students click the wrong line.
+
+# region: nib
+Han writers said the Qin fell because it ruled by force.
+Some historians today look harder at a crisis at court.
+Nib says: "They disagree because people just have different opinions."
+Nib says: "So it doesn't matter which one you choose."
+# endregion

@@ -1,0 +1,57 @@
+learning: "tell a historical fact from a historical interpretation, and explain that an interpretation is an argument built from evidence"
+summary: "Explain what a historical interpretation is (an argument about the past built from evidence, not a simple statement of fact or an opinion) and distinguish facts from interpretations, with an example of each."
+time: 40
+timing: "Predict and Try 7 min · Worked example 12 min · Vary 5 min · Practise 5 min · Make 11 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can say whether a statement is a fact or an interpretation, and why.
+  - I can explain why an interpretation is more than an opinion.
+  - I can give an example of each about the same event.
+struggle: "Students take any confident or often-repeated statement as a fact, or swing the other way and call every interpretation 'just an opinion'. Keep asking: does it say what happened, or argue why?"
+before: |-
+  AC9HH7S07 n1 (hinge). Kit's hinge reason: students who mix up facts and interpretations will treat competing interpretations as rival facts in n2. This course is the most contested ground on the site, so **checks only ask things with one defensible answer**: which statements are facts and which are interpretations, what makes an interpretation more than an opinion. No interpretation of the Qin's fall is given as the right one.
+
+  Borderline cases: many "facts" (such as the 209 BCE revolt) also come from Sima Qian. The lesson calls a statement a fact when the evidence directly and consistently shows it, and an interpretation when it argues why or how much something mattered. If a sharp student asks "how do we know 210 BCE?", that is a good question: several sources agree, and it is not an argument about why.
+
+  Facts (checked 1 Nov 2026): Qin 221 to 206 BCE (The Met); the First Emperor died in 210 BCE on a tour; the succession crisis, the last Qin ruler's surrender and the Liu Bang–Xiang Yu war (University of Oregon course notes, Early China); Jia Yi's *The Faults of Qin*, a Han essay arguing Qin fell because ruling by force without care for the people undid it (encyclopedia summary; Jia Yi about 200 to 169 BCE). The 207 BCE surrender is the standard date. Hatshepsut: statues found broken in excavations of 1922 to 1928 at Deir el-Bahri; long explained as Thutmose III's revenge; Jun Yi Wong (University of Toronto) re-read the excavation records in 2025 and argued much of the damage was ritual "deactivation" given to many pharaohs' statues, plus later reuse, without ruling out some targeting (Antiquity news, 2025).
+
+  Usually Year 7; Preview, not yet tried with a class. No board or clips.
+
+  Relevant ACARA AC9HH7S07 elaborations (examples, not a checklist): "examining different interpretations to explain short-term triggers and/or turning points of the decline of an empire or society, such as failing economy, political upheaval, foreign invasion or conflict".
+
+  First Nations: Kit's wider width for n1 mentions how interpretations of a First Nations leader changed over time. That is for First Nations-led resources; this lesson gives no example (rules T1).
+running:
+  - "Predict: ask what word in the statement made students choose."
+  - "Try: build a list on the board of 'interpretation words' (because, mainly, turning point, the real reason)."
+  - "Worked example: underline the facts in the Han interpretation in one colour and the argument in another."
+  - "Vary: ask whether 'won because' could be argued the other way."
+  - "Make: students write in their own book; a partner checks the interpretation uses at least one of the facts."
+stuck:
+  - see: "A student calls 'the Qin fell because it was harsh' a fact because it's in books."
+    ask: "Does it say what happened, or why?"
+    fix: "Explanations of why are interpretations, however often repeated."
+  - see: "A student says interpretations are just opinions."
+    ask: "What would you need to back it up?"
+    fix: "An interpretation is an argument from evidence that others can check."
+  - see: "A student calls a date an interpretation."
+    ask: "Is anyone arguing about it, or do the sources agree?"
+    fix: "A date the evidence agrees on is a fact."
+support: "Give a two-column card (What happened / Why or how much it mattered) and have students place each statement before naming it."
+stretch: "Find one statement in your class textbook that is written like a fact but is really an interpretation. How could you tell?"
+leads: "Continue to Why historians tell it differently."
+exit:
+  q: "Write one fact and one interpretation about the end of the Qin."
+  a: "For example: Fact: the First Emperor died in 210 BCE. Interpretation: the Qin fell because it ruled by force."
+explain: "A fact is what the evidence directly shows; an interpretation is an argument about what the facts mean, such as why something happened. Interpretations are built from evidence, so they are not just opinions, but historians can build different ones."
+sources:
+  - title: "Qin Dynasty (221–206 B.C.), The Met, Heilbrunn Timeline of Art History"
+    url: https://www.metmuseum.org/essays/qin-dynasty-221-206-b-c
+    checked: 2026-11-01
+  - title: "The end of the Qin and the beginning of the Han dynasty (University of Oregon, Early China course notes)"
+    url: https://darkwing.uoregon.edu/~inaasim/Early%20China/Hist%20387_7.htm
+    checked: 2026-11-01
+  - title: "The Faults of Qin (encyclopedia summary of Jia Yi's essay)"
+    url: https://en.wikipedia.org/wiki/The_Faults_of_Qin
+    checked: 2026-11-01
+  - title: "Reconstructing the shattered visage of Queen Hatshepsut (Antiquity news, 2025)"
+    url: https://antiquity.ac.uk/news/2025/reconstructing-shattered-visage-queen-hatshepsut
+    checked: 2026-11-01

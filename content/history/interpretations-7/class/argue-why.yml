@@ -1,0 +1,29 @@
+inquiry:
+  q: "Why is 'they have different opinions' not a good answer to 'why do they disagree?'"
+  prompts:
+    - "What would you need to add?"
+    - "What makes an explanation better than a description?"
+  notes: "Draw out evidence, questions and values from the previous lesson."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Three colours"
+    minutes: 5
+    do: |
+      Pairs highlight the worked argument: the claim, the two interpretations, and the reasons. Then they say which reason they found most convincing.
+    notes: "Accept any reasoned choice; there is no single right reason."
+questions:
+  - at: make
+    title: "Check before moving on"
+    type: question
+    q: "Which ending makes an argument about interpretations strongest?"
+    options:
+      - "So they differ mainly because each side could see different evidence"
+      - "So they just have different opinions"
+      - "So the Han writers were right"
+    answer: 0
+    explain: "It names the reason behind the difference."
+    feedback:
+      - null
+      - "Why are their opinions different?"
+      - "The question is why they differ, not who wins."
