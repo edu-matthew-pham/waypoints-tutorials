@@ -262,7 +262,9 @@ Misconception ids to add as single lines: `secular-means-no-religion`, `heritage
 1. **n3 is a pointer, not a lesson** (default). Reason: it is about culture and Country (T1), and teachers are generally expected to teach First Nations content with local, community-approved material already; the pointer page gives them ACARA's elaborations to start from.
 2. **Keep the one line in n2's student text** (default). Reason: transparency for students and a prompt for the teacher; it names that impacts differed and explains nothing (T1).
 3. **Real ABS Census figures** on the n4 board (default). Reason: public, official data is what the descriptor asks for; label the year everywhere and update when newer Census data comes out.
-4. Skills (S03, S04): still being discussed.
+4. **Skills (Matthew, 1 Nov 2026):**
+   - **S04 is tagged on built lessons, no new lessons** (default). Reason: the descriptor asks students to *explain* methods and strategies, which `ways-to-take-part` and `formal-and-active-citizenship` already teach; actually taking part is real-world action, like cyber safety (good to know and practise for yourself, not practised the same way in class). A class project (for example a petition to the student council) stays the teacher's option, named in teacher notes.
+   - **S03 gets its own short course, `civics/perspectives-7`** (three lessons, one per node; n1 a hinge), on made-up sources about one made-up local issue. Reason: three nodes and a hinge, nothing built covers it, and folding it into K04 would put perspective work on religion, where views stay discussion only. Plan it first (checklist), then build on go.
 
 ### Decisions for Matthew (as first asked)
 1. **n3 as a pointer, not a lesson** (as planned 30 Oct). OK?
