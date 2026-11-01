@@ -373,3 +373,44 @@ Built from the 30 Oct plan with the 1 Nov re-check applied (items 1–7 and 15�
 - Facts checked 1 Nov (sources in each `teacher.yml`): Smithsonian Human Origins (Homo sapiens about 300,000 years, Africa; dating methods); Tel Aviv University (Misliya, 2018); Groucutt et al. 2018 (Al Wusta); Britannica (Last Glacial Maximum, about 125 m).
 - Tested: `validate`, `check-nodes`, `effort`, build, all checks answered with stored answers in Chromium at 1280 and 390 px (66 answered, 36 wrong answers tried, feedback shown), course, recap, subject, pathway, teacher and guide pages load with no errors or sideways scroll, `check-decks` for the course.
 - **Publish:** whole-site (subject and teacher pages). Ask Matthew (W1).
+
+## Plan (1 Nov 2026; Matthew agreed to plan now and decide the build after the pilot): a dig board for `evidence-7/reading-the-layers`
+
+The one History board from "Boards in built lessons" that needs new code. The science `layers` widget is the Earth's interior, so it cannot be adapted. Light on purpose, in the pattern of the other humanities boards (`tradeoff`, `catchment`, `house`): buttons and clicks, no dragging; a "made-up site" label; `wpt-` class names; never colour alone; keyboard as well as mouse; values set only after the student acts, so no check holds at the start.
+
+**Why a board here:** reading layers is spatial, and the lesson's turning point (a later pit cuts down through older layers, so a deep find is not old) is easier to see by doing it than from the still picture. The still (`layers.svg`) and every existing check stay.
+
+**Widget `dig`** (new `playground-board/widgets/dig.js`, about 200 lines; one `<script>` line in `playground-board/index.html`; an AUTHORING entry; a line in `roadmap/shared.md`). A cross-section of a made-up site, layers listed top first, each with its finds as small labelled cards (word plus a simple icon).
+
+```
+widget: dig
+mode: order            # order | pit | date
+site: A made-up dig    # label shown on the board
+layer C: new floor, cooking pots       # top first
+layer B: charcoal, burnt roof wood
+layer A: earlier floor, pottery
+dig: on                # layers start covered; "Dig down one layer" uncovers the top one, then the next
+pit: C-A, coin         # pit mode: a pit from the top of C down into A, with a find in its fill
+find: B, coin, 220 BCE # date mode: a find with a year, in layer B
+```
+
+Three modes, one idea each:
+
+1. **`order`: which formed first?** The student digs down (each click uncovers the next layer, so the youngest is reached first), then numbers the layers from the one that formed first. Values: `n_dug`, `n_set`, `in_order` (1 when the order is right), `n_wrong`. Check: `when: "in_order = 1"`.
+2. **`pit`: what is out of place?** The pit is drawn as a cut through the layers, its fill a different texture. The student clicks a find and chooses "older than the layer around it", "about the same" or "younger than the layer around it". The planted answer: the coin in the pit fill is younger than the deep layer it sits in. Values: `found` (1 when the pit find is marked younger), `n_stray` (other finds marked out of place). Check: `when: "found = 1 and n_stray = 0"`.
+3. **`date`: what does a dated find tell you?** One find has a year (a coin made in 220 BCE in layer B). For each layer the student chooses "formed in that year or later" or "can't tell from the coin". Right answers: the coin's layer and every layer above it formed that year or later; layers below cannot be dated by the coin (a coin can be old when it is dropped, so it gives the earliest possible date for its layer, not the date of layers under it). Values: `n_right`, `n_wrong`. Check: `when: "n_right = 3 and n_wrong = 0"`. This is the easy-to-get-wrong part, so the explain says it plainly.
+
+**Where (one step or task each; existing checks kept):**
+- `order`: a new step right after *Try: order or date?*, titled *Practise: dig it yourself*, `stage: practise` (a second Run step after a Predict shows the compare box as soon as a board loads, as found with the source boards). Same made-up site as the still (A, B, C), so the board and the picture agree.
+- `pit`: the Vary step (*a pit cuts through*) gets the board as its first task; the existing question stays as the second task. Same site with the pit added.
+- `date`: a new `tier: typical` step, *Typical: a coin in the layers*, after the existing Typical (weapons). Typical, not minimum: the node's minimum is order and depth, while using a dated find to fix a date is the typical width ("establish chronology"). A new misconception id, `find-dates-layers-below` (a dated find is taken to date the layers under it too), planted as the obvious wrong choice and named in the explain.
+
+**Clip (Explain it to me): optional, decide with the build.** Matthew's 1 Nov note suggested one: layers building up one at a time, then a pit cut through them. It would be History's first clip (needs a port range and a `say:` script in the default Heart voice, captions first). The lesson works without it.
+
+**Teacher layer:** a `running:` line for each new step, one `stuck:` entry for the date step ("A student says the layer under the coin is from 220 BCE too" → "Could the coin have been old when it was dropped?"), `timing:` adds about 5 minutes, class plan unchanged (decks get the live board slide automatically).
+
+**Tests when built:** a `check-dig` script (each mode builds, its check fails at the start and passes when solved, as `check-cohesion` does), `validate`, the board answered in Chromium at 1280 and 390 px (keyboard too), `check-decks` for the course.
+
+**Publish:** whole-site (new widget). Ask Matthew.
+
+**Decision waiting:** build now, or after the humanities pilot's board question (pilot page question 4: "where would your students learn more by doing something on screen?") has some answers. If pilot teachers point elsewhere, that board comes first and this one waits.
