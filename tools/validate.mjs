@@ -284,4 +284,18 @@ else console.log('✓ error tasks: every planted error names its fault and an on
   for (const s of sets) n += s.briefs.length;
   if (sets.length && !e) console.log(`✓ briefs: ${n} project briefs/skeletons in ${sets.length} courses; every node and lesson they name exists`);
 }
+// Right answers that give themselves away by length (1 Nov 2026, roadmap/rules.md T8b): warn for any flagged
+// question not in data/option-length-baseline.json (the known list, which only shrinks), so new and edited
+// lessons are caught without the existing ones burying other warnings. Whole runs only (no path argument).
+{
+  const { flaggedQuestions } = await import('./option-length.mjs');
+  const { existsSync: exO, readFileSync: rfO } = await import('node:fs');
+  const BASE = 'data/option-length-baseline.json';
+  const known = new Set(exO(BASE) ? JSON.parse(rfO(BASE, 'utf8')).keys || [] : []);
+  const flagged = flaggedQuestions(lessons);
+  let fresh = 0;
+  for (const f of flagged) if (!known.has(f.key)) { fresh++; console.warn(`⚠ ${f.key}: the right answer gives itself away by length (${f.right} vs ${f.longestWrong} characters). Trim it (move the explanation into explain: or feedback) or make the wrong options real slips of similar length (roadmap/rules.md T8b)`); }
+  const still = flagged.length - fresh;
+  if (still) console.log(`… ${still} known questions still give the answer away by length: npm run check-options`);
+}
 process.exit(bad ? 1 : 0);

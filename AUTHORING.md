@@ -540,6 +540,8 @@ All except `code` are static and need no running code. Write the check under `ch
 
 **Option order.** Write the right option wherever it reads best (usually first). Students see `question` and `predict` options in a shuffle seeded by the lesson and the question, so it is the same on every build and on the page, guide, deck and worksheet; `answer` and per-option `feedback` are remapped (`arrangeOptions` in `lesson-core.mjs`). Options that are all numbers (or fractions) are sorted instead; catch-all options (None of them, Neither, You cannot tell, It depends) stay last. `shuffle: false` on a check keeps the order as written (for options that refer to each other). Test harnesses should read the parsed lesson's `answer`, not the authored one.
 
+**Option length (1 Nov 2026, `roadmap/rules.md` T8b).** Shuffling hides where the right answer is, not how long it is. Keep the right option about as long as the wrong ones: put the explanation in `explain:` or the option's feedback, not in the option. Wrong options are real slips of similar length, not strawmen. `npm run validate` warns when a question's right answer is more than 1.5 times the longest wrong option and 20 or more characters longer (`tools/option-length.mjs`); `npm run check-options` lists every such question by course. Questions flagged before 1 Nov are in `data/option-length-baseline.json`, which validate skips; fix them course by course and run `npm run check-options -- --update`, which only ever shrinks the list.
+
 A **trace table** is a pipe table; the first row is the header and cells in `[brackets]` are the blanks, with the answer inside:
 
 ```yaml

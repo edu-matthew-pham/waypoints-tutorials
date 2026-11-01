@@ -31,7 +31,8 @@
     "check-makecode": "node tools/check-makecode.mjs",
     "check-practice": "node tools/check-practice.mjs",
     "check-lesson-boards": "node tools/check-lesson-boards.mjs",
-    "check-blockers": "node tools/check-blockers.mjs"
+    "check-blockers": "node tools/check-blockers.mjs",
+    "check-options": "node tools/check-options.mjs"
   },
   "engines": {
     "node": ">=20"
