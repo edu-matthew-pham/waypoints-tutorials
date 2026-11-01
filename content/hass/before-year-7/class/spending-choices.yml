@@ -1,0 +1,21 @@
+inquiry:
+  q: "Do you choose what you buy, or does something choose for you?"
+  prompts:
+    - "Where do you first hear about things you want?"
+  notes: "Aim for: lots of influences, and we still choose."
+activities:
+  - at: run
+    kind: activity
+    title: "Four corners of a choice"
+    minutes: 4
+    do: |
+      Read out Mia's four reasons. Students point to the corner for money, people, advertising or what she cares about.
+    notes: "Ask which ones pushed her towards the bottle and which pulled away."
+questions:
+  - at: investigate
+    title: "What she gives up"
+    type: question
+    q: "Mia spends 20 dollars on a bottle. What does she give up?"
+    options: ["The next best thing that money could buy", "Nothing", "Everything in the shop", "Her friend"]
+    answer: 0
+    explain: "Every choice gives something up."

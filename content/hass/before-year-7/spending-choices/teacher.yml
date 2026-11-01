@@ -1,0 +1,28 @@
+summary: "Students name the influences on a spending choice (money, people, advertising, and what they care about) and see that every choice gives something up. The common mistake is thinking nothing influences what we buy."
+learning: "name influences on a spending choice and say what the choice gives up"
+time: 20
+timing: "Think first and Try 6 min · The idea 7 min · Check 3 min · Make 4 min."
+goals:
+  - I can name four kinds of influence on what people buy.
+  - I can spot the influences behind a choice.
+  - I can say what a choice gives up.
+struggle: "Students say 'I just like it'. Ask: why do you think you noticed that one in the first place?"
+before: |
+  Year 6 catch-up for AC9HS6K08 n1 (influences on consumer choices). The other Year 6 nodes (selling strategies, kinds of payment, strategies for informed choices) are left to Year 6 classes. Year 7 Scarcity and opportunity cost and Work, income and identity list it under what students should already know.
+
+  "Influences" doesn't mean people can't choose freely; the point is choosing on purpose. Nothing asks about students' own spending; Mia, Dev and the shop are made up, and amounts are written as words-and-numbers ("20 dollars") on purpose.
+running:
+  - "Think first: ask the 'only because she liked it' group what made her notice that bottle."
+stuck:
+  - see: "A student says nothing influences them."
+    ask: "Where did you first see the thing you last wanted?"
+    fix: "We still choose, but the choice doesn't come from nowhere."
+stretch: "Which kind of influence is hardest to notice, and why?"
+support: "A four-box card: Money, People, Advertising, What I care about."
+leads: |
+  Next: Year 7 Scarcity and opportunity cost, or Work, income and identity.
+exit:
+  q: "Name two influences on a spending choice and what the choice gives up."
+  a: "For example: a friend has one, and an ad; it gives up the next best thing the money could buy."
+explain: |
+  **Influences** on a spending choice include **money**, **people**, **advertising** and **what you care about**. Noticing them helps you choose on purpose, and every choice gives something up.

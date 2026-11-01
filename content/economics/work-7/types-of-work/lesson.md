@@ -3,6 +3,7 @@ order: 1
 unit: kinds
 title: Types of work
 node: AC9HE7K04 n1
+assumes: [AC9HS6K08 n1]
 summary: "Work is effort that does something useful for someone, whether or not it is paid. Paid work can be full-time, part-time or casual, and some people work from home. Unpaid work, such as volunteering, caring for someone and running a household, is still work. Much of it is unrecognised: it isn't paid or counted, but families and communities rely on it."
 language: maths
 hook: "On a Saturday in Riverbend, six people are busy all day. Only four of them get paid. Are the other two working?"

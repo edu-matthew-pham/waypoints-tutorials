@@ -1470,3 +1470,7 @@ Idea only, for later. A board where students drag ideas into place and draw labe
 - `tools/check-lesson-boards.mjs` now walks `dist/history` too (one regex word and one `walk` line), so History board checks are checked like English and Geography ones.
 - History clip port: 8720 (board app for `reading-the-layers`); History keeps 8720–8729.
 - Needs a whole-site publish (new widget; History's first Explain clip records then).
+
+## Changed by the Economics chat (1 Nov 2026): HASS catch-ups link like the others
+`isCatchUp` in `tools/build-site.mjs` and `tools/prior-links.mjs` now matches `hass/before-year-7/` as well (one word, as History did), so a lesson that lists a HASS catch-up node in `assumes:` gets "What you should already know" and the catch-up gets "Leads into". First use: *Spending choices* (AC9HS6K08 n1), assumed by `economics/scarcity-7/needs-and-wants` and `economics/work-7/types-of-work`. Side effect for the shared-inquiry chat: the two inquiry catch-ups in that course now link too, wherever a Year 7 lesson lists their nodes in `assumes:`. Whole-site publish.
+

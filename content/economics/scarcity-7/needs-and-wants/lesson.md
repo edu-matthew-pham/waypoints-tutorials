@@ -3,6 +3,7 @@ order: 1
 unit: wants
 title: Needs, wants and why wanting keeps going
 node: AC9HE7K01 n1
+assumes: [AC9HS6K08 n1]
 summary: "A need is something you must have to be safe and well, such as water, food, shelter and clothing. A want is something you would like but could live without. People can meet their needs, but their wants keep growing: when one want is met, another often takes its place. Economists start from the idea that wants have no limit. This is the first step towards scarcity."
 language: maths
 hook: "Mia saves up for a new bike and buys it. A month later she wants a helmet to match. What is going on, and will it ever stop?"

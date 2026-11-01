@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Half of Nib's class wears the same brand of shoes.
+Nib has seen ads for them at the bus stop all month, and buys a pair.
+Nib says: "Nobody influenced me. I just picked what I liked."
+Nib says: "So ads and friends don't affect what I buy."
+# endregion
