@@ -595,8 +595,13 @@ export function checkHtml(lesson, step, names = {}, snippet = null, task = null,
   const ids = lead ? [] : (task ? task.config.unlocks : step.config.unlocks) || [];
   const label = (id) => names[kind]?.[id] || id.replace(/-/g, ' ');
   const key = lead ? lead.key : `${lesson.slug}/${task ? task.id : step.id}`;
-  // Explanations are shown with textContent, so maths in them is shown as plain text: "$2x$" becomes "2x".
-  const plain = (t) => (lesson.language === 'maths' ? String(t).replace(/\$([^$]+)\$/g, '$1') : t);
+  // Explanations are shown with textContent, so maths in them is shown as plain text: "$2x$" becomes "2x". Same rule as
+  // textWithMath (tools/maths.mjs): a $ followed by a digit never closes maths, so "$110 − $80 = $30" keeps its dollars
+  // (1 Nov 2026), and a $ straight after a letter, digit, * or = is a spreadsheet's fixed reference ($B$7), not maths; an
+  // escaped \$ shows as $. Common TeX commands inside the maths become plain symbols (\times as ×, \frac{a}{b} as a/b).
+  const TEX_PLAIN = [[/\\[td]?frac\{([^{}]*)\}\{([^{}]*)\}/g, '$1/$2'], [/\\sqrt\{([^{}]*)\}/g, '√$1'], [/\\times/g, '×'], [/\\div/g, '÷'], [/\\le(?![a-z])/g, '≤'], [/\\ge(?![a-z])/g, '≥'], [/\\ne(?![a-z])/g, '≠'], [/\\approx/g, '≈'], [/\\pi(?![a-z])/g, 'π'], [/\\text\{([^{}]*)\}/g, '$1'], [/\\[,;! ]/g, ' ']];
+  const texPlain = (m) => TEX_PLAIN.reduce((x, [re, to]) => x.replace(re, to), m);
+  const plain = (t) => (lesson.language === 'maths' ? String(t).replace(/(?<![\\$\w*=])\$(?=[^\s$])([^$\n]*?\S)\$(?![\d$])/g, (all, m) => texPlain(m)).replace(/\\\$/g, '$') : t);
   const explain = plain(k.explain || '');
   // Predict locks (1 Nov 2026): the message names what comes next in this lesson: a playground to run, a board to try,
   // or nothing to try (text-only lessons, such as humanities), where the student reads on and compares.

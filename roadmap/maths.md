@@ -9,7 +9,7 @@ Not started; Matthew is following up the Humanities pilot first. When it comes, 
 - **Which lessons to demo.** Candidates from the `when, where and why` pilot (Finding a side, Changing the subject, Algorithms for classifying shapes) already carry pilot notes for teachers.
 - **Questions to ask.** The open ones in the Project doc `maths-connections-pilot-status` (does the opening question help; is a "step on the way" use honest), plus the split: do one course per strand per year and the ACARA placements (angles in Measurement, trig across Space and Measurement) match how the department teaches?
 - **Who.** Maths teachers try the whole site when it suits them (Matthew doesn't teach maths), so the ask is "try one lesson with a class", as in Humanities.
-- **Before it:** a whole-site publish of the split, and the `$` in maths feedback found by the Economics chat (`roadmap/shared.md`: `plain()` strips `$…$` pairs from `explain` and `feedback` in `language: maths` lessons, so some prices lose their dollar signs).
+- **Before it:** a whole-site publish of the split. (The `$` in maths feedback found by the Economics chat is fixed: `roadmap/shared.md`.)
 
 ## Done (1 Nov 2026): board checks after the split (handoff `claude/handoff-maths-board-checks.md`)
 
