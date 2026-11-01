@@ -53,7 +53,7 @@ tasks:
   - check:
       type: question
       q: "Australia's Constitution came into effect on 1 January 1901. What is its main job?"
-      options: ["It sets up the main parts of the national government and says what they can do", "It lists every law Australians must follow", "It says which team of politicians runs the country", "It sets how much tax each person pays"]
+      options: ["It sets up the national government and its powers", "It lists every law Australians must follow", "It says which team of politicians runs the country", "It sets how much tax each person pays"]
       answer: 0
       feedback: [null, "Laws are made by Parliament, inside the rules the Constitution sets. The Constitution does not list them all.", "Who wins elections is up to the voters. The Constitution sets up the system, not the winners.", "Tax rates are set by ordinary laws that Parliament passes."]
       explain: "Like the club's rulebook, it sets up the decision-makers and says what they can and cannot do."
@@ -146,7 +146,7 @@ tasks:
   - check:
       type: question
       q: "Sam says: 'The Constitution is just an old law, and Parliament can update it like any other law.' What is the best reply?"
-      options: ["No. It sits above ordinary laws, and only the voters can approve a change to it", "That is right, Parliament can change it by voting", "No. Only the Governor-General can change it", "No. Only the High Court can change it"]
+      options: ["No. It sits above other laws; only voters can change it", "That is right, Parliament can change it by voting", "No. Only the Governor-General can change it", "No. Only the High Court can change it"]
       answer: 0
       feedback: [null, "Think about the chess club. Could the committee change its own spending limit alone?", "The Governor-General has a formal role in making laws, but cannot change the Constitution.", "The High Court says what the Constitution means. It does not change it."]
       explain: "A change needs the voters at a referendum. That is what makes the Constitution different from an ordinary law."

@@ -203,7 +203,7 @@ check:
   type: question
   q: "What does a referendum need to pass and change the Australian Constitution?"
   options:
-    - "A majority of voters across Australia, and a majority of voters in at least four of the six states"
+    - "A national majority, plus a majority in four of six states"
     - "A majority of voters across Australia, and nothing else"
     - "A vote of the Prime Minister and Cabinet"
     - "A decision of the High Court"

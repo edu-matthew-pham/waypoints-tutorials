@@ -1,9 +1,6 @@
 {
  "about": "Known questions whose right answer is much longer than the wrong ones (tools/option-length.mjs). validate skips these; the list only shrinks. Regenerate with npm run check-options -- --update.",
  "keys": [
-  "civics/democracy-7/formal-and-active-citizenship#step-8",
-  "civics/government-7/the-constitution#step-3#t1",
-  "civics/government-7/the-constitution#step-5#t2",
   "code/ai-robots/ai-delivery#step-3#t2",
   "code/ai-robots/ai-drive#step-4#t2",
   "code/ai-robots/ai-drive#step-4#t3",
