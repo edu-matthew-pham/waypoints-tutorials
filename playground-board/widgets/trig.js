@@ -2,7 +2,8 @@
 // (opposite, adjacent, hypotenuse) and the three ratios are worked out live. Change the size (h) and the ratios do not
 // move: similar triangles. Change the angle (t) and they do.
 //   widget: trig
-//   slider t: 10, 80, 35, 5   the marked angle, in degrees (or fixed "t: 35")
+//   slider t: 10, 80, 35, 5   the marked angle, in degrees, 1 to 89 (or fixed "t: 35"; 1 Nov 2026: was 5 to 85, which
+//                             left out gentle slopes such as a 1 in 14 ramp, about 4 degrees)
 //   slider h: 2, 10, 5, 1     the hypotenuse length (or fixed "h: 5")
 //   units: cm
 //   show: sin, cos, tan       which ratio rows to show (default all three; "none" hides them)
@@ -44,8 +45,8 @@
     var hi = function (n) { return s.sl[n] ? s.sl[n].max : s.fixed[n]; }, lo = function (n) { return s.sl[n] ? s.sl[n].min : s.fixed[n]; };
     s.view = String(s.view || 'triangle').trim().toLowerCase();
     if (['triangle', 'elevation', 'bearing'].indexOf(s.view) < 0) throw new Error('view: triangle, elevation or bearing.');
-    var tlo = s.view === 'bearing' ? 0 : 5, thi = s.view === 'bearing' ? 360 : 85, hlim = s.view === 'bearing' ? 5000 : s.view === 'elevation' ? 200 : 20;
-    if (lo('t') < tlo || hi('t') > thi) throw new Error('t: ' + (s.view === 'bearing' ? 'a bearing from 0 to 360 degrees.' : 'an angle from 5 to 85 degrees.'));
+    var tlo = s.view === 'bearing' ? 0 : s.view === 'elevation' ? 5 : 1, thi = s.view === 'bearing' ? 360 : s.view === 'elevation' ? 85 : 89, hlim = s.view === 'bearing' ? 5000 : s.view === 'elevation' ? 200 : 20;
+    if (lo('t') < tlo || hi('t') > thi) throw new Error('t: ' + (s.view === 'bearing' ? 'a bearing from 0 to 360 degrees.' : 'an angle from ' + tlo + ' to ' + thi + ' degrees.'));
     if (lo('h') <= 0 || hi('h') > hlim) throw new Error('h: more than 0, up to ' + hlim + '.');
     s.look = /^up$/i.test(String(s.look || '').trim()) ? 'up' : 'down';
     s.u = s.units ? String(s.units).trim() : '';

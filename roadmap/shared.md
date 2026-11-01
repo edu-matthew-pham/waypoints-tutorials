@@ -4,6 +4,8 @@ Things more than one subject depends on: the build, publishing, the home and pla
 
 ## Note (1 Nov 2026, maths chat): `tools/check-lesson-boards.mjs` pairs task checks with task starters
 
+Also `playground-board/widgets/trig.js`: the triangle view's angle range is 1° to 89° (was 5° to 85°, which ruled out a 4° ramp); the elevation and bearing views are unchanged. No lesson using the trig board has a clip.
+
 A task with its own `starter:` is now checked against that board (found by its task key, `#tN`), not the step's board; the rest of the step's checks still use the step's board. Forwarding pages at moved addresses are skipped. This cleared 8 of the sweep's 13 maths problems with no lesson change (details: `roadmap/maths.md` › board checks after the split). Maths, English and Geography all pass.
 
 **For the Engineering chat:** the build's three KaTeX "Unrecognized Unicode character −" warnings are `\text{battery −}` / `\text{c8 (−)}` in `content/engineering/power/ground/lesson.md` and `pin-limit/lesson.md`. They render, but `-` or `\text{battery }-` would silence them.
