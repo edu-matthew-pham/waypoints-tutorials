@@ -78,10 +78,10 @@ tasks:
   - check:
       type: question
       q: "On the heating curve, the line is flat from 1 to 9 minutes. What is happening?"
-      options: ["The ice is melting: energy goes into freeing the particles from their fixed places, so the temperature doesn't rise", "Nothing: the stove was turned off", "The water is boiling"]
+      options: ["The ice is melting, so the temperature holds", "Nothing: the stove was turned off", "The water is boiling"]
       answer: 0
       feedback: [null, "The heat was on the whole time, so that can't be the reason the line is flat.", "Boiling is at the second flat part, which sits at 100 °C, and this part is earlier on the curve."]
-      explain: "During a change of state, the energy goes into overcoming the attraction between particles, not into making them move faster, so the temperature stays constant."
+      explain: "The ice is melting. During a change of state, the energy goes into freeing the particles from their fixed places (overcoming the attraction between them), not into making them move faster, so the temperature stays constant."
     hint: ["Was the stove on or off during those minutes, and if it was on, where could that energy be going if the particles aren't speeding up?", "Think about what else energy could do to particles besides making them move faster, and what the particles in ice are being held in."]
   - check:
       type: number
@@ -91,7 +91,7 @@ tasks:
   - check:
       type: question
       q: "The curve is drawn to scale: the stove gives the same energy every minute. Why is the flat part at 100 °C about seven times longer than the one at 0 °C?"
-      options: ["Boiling pulls the particles completely apart, which takes far more energy than loosening them from their fixed places", "The stove gives less energy once the water is hot", "Steam is lighter than ice, so it takes longer to make"]
+      options: ["Boiling pulls particles fully apart, which takes more energy", "The stove gives less energy once the water is hot", "Steam is lighter than ice, so it takes longer to make"]
       answer: 0
       feedback: [null, "The stove is steady the whole time, so the same energy goes in every minute.", "Weight isn't the reason here, so think about what the energy is actually doing to the particles."]
       explain: "Melting only frees the particles to slide past each other. Boiling has to pull them far apart against their attraction, so it needs about seven times as much energy (2260 kJ for each kilogram, against 334 kJ to melt it)."
@@ -162,10 +162,10 @@ tasks:
   - check:
       type: question
       q: "Why does the stearic acid's temperature stay at 69 °C for 8 minutes while it freezes?"
-      options: ["As particles settle into fixed places they give out energy, which keeps the temperature steady", "The room warms the wax", "The thermometer stopped working"]
+      options: ["Settling particles give out energy", "The room warms the wax", "The thermometer stopped working"]
       answer: 0
       feedback: [null, "The room is cooler than the stearic acid, so it can't be what keeps it warm.", "The flat part is a real result, so something must be happening to explain it."]
-      explain: "Freezing gives energy out, so until every particle has settled, that energy balances what the wax loses to the room."
+      explain: "As particles settle into fixed places they give out energy. Until every particle has settled, that energy balances what the wax loses to the room, so the temperature stays steady."
     hint: ["Is the room warmer or cooler than the stearic acid, and so what must be holding the temperature up?", "Think about what happens to energy when particles settle into fixed places: does it go in or come out?"]
 ```
 
@@ -182,7 +182,7 @@ insight: "Evaporation taking energy from the skin connects 'energy in for a chan
 check:
   type: question
   q: "Why does sweating cool you down, even on a hot day?"
-  options: ["Evaporating sweat takes energy in, and it takes it from your skin", "Sweat is colder than your body", "The wind blows the heat away"]
+  options: ["Evaporating sweat takes energy from your skin", "Sweat is colder than your body", "The wind blows the heat away"]
   answer: 0
   feedback: [null, "Sweat comes out at body temperature, so it isn't colder than you to begin with.", "A breeze can help, but sweat cools you even on a still day."]
   explain: "Changing a liquid to a gas needs energy, so the fastest particles escape from the sweat and carry energy away from your skin."

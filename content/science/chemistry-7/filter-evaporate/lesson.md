@@ -93,7 +93,7 @@ tasks:
   - check:
       type: question
       q: "Filtration can't get the salt out of salt water, but evaporation can. Why?"
-      options: ["Dissolved salt particles are small enough to pass through the paper, but when heated only the water particles escape, because water turns to vapour far more easily than salt does", "Salt is heavier than water, so it sinks while the lighter water rises away", "Heating destroys the water and leaves the salt", "Dissolved salt has disappeared, and heating makes it come back"]
+      options: ["Dissolved salt passes through the paper, but only the water turns to vapour when heated", "Salt is heavier than water, so it sinks while the lighter water rises away", "Heating destroys the water and leaves the salt", "Dissolved salt has disappeared, and heating makes it come back"]
       answer: 0
       feedback: [null, "Weight isn't what decides this, and the heating step depends on how easily each kind of particle escapes as a gas.", "The water isn't destroyed: it escapes into the air as water vapour, and could be collected again.", "The salt never disappeared: it was spread out as single particles among the water particles all along."]
       explain: "Filtration sorts by particle size, and dissolved particles are tiny. Evaporation uses the fact that water turns to vapour far more easily than salt does: the water leaves, the salt stays."
@@ -114,7 +114,7 @@ insight: "Counting kinds of particle is what tells a mixture from a pure substan
 check:
   type: question
   q: "Looking back at pure substances and mixtures: before it is filtered, is sandy salt water a pure substance?"
-  options: ["No: it has three kinds of particle (water, salt and sand), so it is a mixture", "Yes, because it is all water", "Yes, because the salt has dissolved", "No, because it looks cloudy"]
+  options: ["No: it has three kinds of particle", "Yes, because it is all water", "Yes, because the salt has dissolved", "No, because it looks cloudy"]
   answer: 0
   feedback: [null, "Salt and sand are in it as well as the water, so it's worth counting the kinds of particle before you decide.", "Dissolved salt is still there as a separate kind of particle, because you can taste it and it comes back when the water evaporates.", "How it looks can't tell you whether it's pure, so count the kinds of particle instead."]
   explain: "What matters is the number of kinds of particle rather than how it looks, and water, salt and sand make three, so it's a mixture."

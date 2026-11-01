@@ -155,9 +155,9 @@ tasks:
   - check:
       type: question
       q: "How did you give sodium a charge of +1?"
-      options: ["Took away one electron, so there is one more proton than electrons", "Added a proton", "Added a neutron"]
+      options: ["Took away one electron", "Added a proton", "Added a neutron", "Added an electron"]
       answer: 0
-      feedback: [null, "That makes a different element.", "Neutrons have no charge."]
+      feedback: [null, "That makes a different element.", "Neutrons have no charge.", "Electrons are negative, so adding one gives a charge of −1."]
       explain: "Losing an electron leaves 11 protons (+11) and 10 electrons (−10): a charge of +1. It is still sodium."
 ```
 

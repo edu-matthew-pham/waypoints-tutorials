@@ -70,7 +70,7 @@ tasks:
   - check:
       type: question
       q: "In the bar, how did the energy reach the far end?"
-      options: ["Particles vibrated harder and bumped their neighbours, passing the energy along", "Hot particles moved to the far end", "The heater's flame travelled along the bar"]
+      options: ["Particles vibrated harder and bumped their neighbours", "Hot particles moved to the far end", "The heater's flame travelled along the bar"]
       answer: 0
       feedback: [null, "Watch a single particle: it stays in its place, just vibrating.", "Nothing but energy moved along."]
       explain: "Conduction: energy passes from particle to particle through collisions. The particles stay where they are."
@@ -85,7 +85,7 @@ tasks:
   - check:
       type: question
       q: "Why does the heated water rise?"
-      options: ["Its particles spread out, so it is less dense than the cooler water around it", "Heat always rises", "Hot particles are lighter than cold ones", "The heater pushes it up"]
+      options: ["Its particles spread out, so it is less dense", "Heat always rises", "Hot particles are lighter than cold ones", "The heater pushes it up"]
       answer: 0
       feedback: [null, "Heat on its own does not go anywhere; something carries it. What moved up on the board?", "Each particle has the same mass hot or cold. What changes is how far apart they are.", "That is what the model does, to keep it simple. In real water nothing pushes: the warm water floats up, like a cork."]
       explain: "Heated water expands: the same particles take up more space, so it is less dense (density, from Year 7) and floats up through the cooler, denser water. The board pushes hot particles up directly; that part is a simplification."
@@ -111,7 +111,7 @@ tasks:
   - check:
       type: question
       q: "Why does a foam (polystyrene) cup keep a drink hot so well?"
-      options: ["It is mostly trapped air: gas particles are far apart, so there are far fewer of them to pass energy along, and air in the tiny bubbles can't flow to convect", "Its particles are packed very tightly, so energy can't squeeze through", "The foam reflects the heat back into the drink"]
+      options: ["It is mostly trapped air, which passes energy on poorly", "Its particles are packed very tightly, so energy can't squeeze through", "The foam reflects the heat back into the drink"]
       answer: 0
       feedback: [null, "It's the other way round: solids pass energy on better than gases. Foam is mostly widely spaced gas particles.", "Reflecting is what shiny surfaces do to radiation. Foam works by trapping air."]
       explain: "Insulators pass energy on poorly. In a gas the particles are far apart, so there are far fewer of them to pass energy along (they still collide billions of times a second), and trapping the gas in small bubbles stops convection too."
@@ -144,7 +144,7 @@ try: { playground: science, starter: "boards.yml#noheat", height: 560 }
 check:
   type: question
   q: "Turn the heat off once the current is going and watch for a while. What happens to the current?"
-  options: ["It slows down and stops as the water ends up the same temperature all through", "It keeps going forever", "It reverses direction"]
+  options: ["It slows and stops as the temperature evens out", "It keeps going, because the water is still moving", "It reverses, as the top water cools and sinks"]
   answer: 0
   feedback: [null, "Watch the colours: once they even out, nothing is hotter or less dense than its surroundings.", "Nothing pushes it the other way: with no heat, the top still cools, and differences fade."]
   explain: "A convection current needs one part of the fluid to be hotter (less dense) than another. With no heater, the difference fades and the current stops."
@@ -160,14 +160,14 @@ tasks:
   - check:
       type: question
       q: "Saucepans are metal with plastic or wooden handles. Why?"
-      options: ["Metal conducts heat well to cook the food; plastic and wood conduct poorly, so the handle stays cool", "Plastic handles are lighter", "Metal handles would melt"]
+      options: ["Metal conducts heat to the food; plastic and wood conduct poorly", "Plastic handles are lighter and easier to hold", "A metal handle would melt on a hot stove"]
       answer: 0
       feedback: [null, "Weight is not why: a metal handle would burn your hand.", "Metal melts at a far higher temperature than a stove reaches."]
-      explain: "Metals are good conductors because they have free electrons that carry energy along quickly; plastic and wood are insulators."
+      explain: "Metals are good conductors because they have free electrons that carry energy along quickly; plastic and wood are insulators, so the handle stays cool."
   - check:
       type: question
       q: "Wool, fur and feathers keep animals warm mostly because they trap air. Why does trapped air insulate so well?"
-      options: ["Air conducts poorly, and trapped in small pockets it can't form convection currents", "Air is warm", "Air reflects heat back"]
+      options: ["Air conducts poorly, and trapped air can't convect", "Air is warm, so it heats the animal's skin", "Air reflects heat back towards the body"]
       answer: 0
       feedback: [null, "Air is not warm in itself: it is good at not passing energy on.", "Reflecting is radiation, which shiny surfaces do. Fibres work by trapping air."]
       explain: "Gas particles are far apart, so conduction is poor; in tiny pockets the air can't circulate, so convection is blocked too."
@@ -194,10 +194,10 @@ tasks:
   - check:
       type: question
       q: "Which is the best hypothesis for that question?"
-      options: ["If the wrap is thicker, the water will cool more slowly, because more trapped air slows conduction and blocks convection", "The wrap will make a difference", "Thicker wraps are better", "The water will cool down"]
+      options: ["If the wrap is thicker, the water cools more slowly, because it traps more air", "The wrap will make a difference to how fast the water cools", "Thicker wraps are better", "The water will cool down"]
       answer: 0
       feedback: [null, "Too vague: what difference, and why?", "Better at what? A hypothesis names the relationship and gives a reason.", "That's true of every cup: it doesn't link the wrap to the cooling."]
-      explain: "A good hypothesis states a relationship (thicker wrap, slower cooling), could be shown wrong by your data, and gives a reason from the model."
+      explain: "A good hypothesis states a relationship (thicker wrap, slower cooling), could be shown wrong by your data, and gives a reason from the model (more trapped air slows conduction and blocks convection)."
 ```
 
 ### The question

@@ -72,15 +72,17 @@ tasks:
   - check:
       type: question
       q: "Why could atoms only form after about 380 000 years?"
-      options: ["Before then the universe was too hot: light and other radiation had enough energy to knock electrons off any atom as soon as it formed", "There were no electrons", "Stars hadn't made them yet", "Gravity was too weak"]
+      options: ["It was too hot: radiation knocked electrons off any atom as it formed", "There were no electrons yet, only protons and neutrons", "Stars hadn't formed yet to build the atoms", "Gravity was too weak to pull particles into atoms"]
       answer: 0
       feedback: [null, "Electrons were there, but too energetic.", "Hydrogen and helium atoms came first, before any stars.", "It's about temperature, not gravity."]
+      explain: "Before then, light and other radiation had enough energy to knock electrons off any atom as soon as it formed. Once the universe cooled enough, atoms could last."
   - check:
       type: question
       q: "Where did the carbon and oxygen in your body come from?"
-      options: ["Made inside stars and spread by supernovae, long after the big bang", "Made in the first three minutes", "Made on Earth", "They have always existed"]
+      options: ["Made inside stars, long after the big bang", "Made in the first three minutes of the big bang", "Made on Earth", "They have always existed"]
       answer: 0
       feedback: [null, "Only hydrogen and helium (and a trace of lithium) were made then.", "Earth formed from material already containing them.", "They were made in stars."]
+      explain: "Stars fuse light elements into heavier ones, and supernovae spread them out into the gas that later formed the sun, Earth and you."
   - check:
       type: question
       q: "About how long ago did the big bang happen, and what has the universe been doing since?"
@@ -125,9 +127,10 @@ insight: "Recognising what the model doesn't yet explain shows how scientific th
 check:
   type: question
   q: "Measurements show the universe's expansion is speeding up, and galaxies hold far more mass than we can see. How do scientists treat these findings?"
-  options: ["They add new ideas (dark energy, dark matter) to the model and test them with new observations, from telescopes such as ASKAP in Western Australia", "They throw out the big bang theory", "They ignore them", "They prove the universe is shrinking"]
+  options: ["They add dark energy and dark matter to the model and test them", "They throw out the big bang theory and start again", "They ignore them, because the theory already works", "They decide the universe must be shrinking after all"]
   answer: 0
   feedback: [null, "The core evidence (redshift, the microwave background, the hydrogen and helium proportions) still fits.", "Scientists can't ignore a measurement, so they have to explain it.", "It's still expanding, and faster over time, not shrinking."]
+  explain: "New observations test these ideas, from telescopes such as ASKAP in Western Australia. This is how a theory grows."
 ```
 
 ## Evaluate: look back

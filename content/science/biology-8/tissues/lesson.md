@@ -75,7 +75,7 @@ tasks:
   - check:
       type: question
       q: "What is a tissue?"
-      options: ["A group of similar specialised cells working together to do one job", "Any group of cells in the same place", "One very large specialised cell"]
+      options: ["Similar cells working together on one job", "Any group of cells in the same place", "One very large specialised cell"]
       answer: 0
       feedback: [null, "A tissue's cells are similar and share a job; a mix of different cells doing different jobs is an organ.", "Tissues are made of many cells."]
       explain: "Similar cells, one job. Cells → tissues → organs → systems."
@@ -105,10 +105,10 @@ tasks:
   - check:
       type: question
       q: "Why does the body use muscle tissue, not just single muscle cells?"
-      options: ["Millions of cells pulling together can make a force no single cell could", "Single muscle cells can't contract", "Tissues don't need energy"]
+      options: ["Together they make a bigger force", "Single muscle cells can't contract", "Tissues don't need energy"]
       answer: 0
       feedback: [null, "Each cell does contract, but only a tiny amount.", "Tissues are made of living cells, which all need energy."]
-      explain: "A tissue does a job at a scale no one cell can. That is why tissue function comes from the cells working together."
+      explain: "Millions of cells pulling together make a force no single cell could. A tissue does a job at a scale no one cell can. That is why tissue function comes from the cells working together."
   - check: { type: reflect, text: "I can define a tissue and give an animal and a plant example with the job of each." }
 ```
 
@@ -160,7 +160,7 @@ tasks:
   - check:
       type: question
       q: "After a heart attack, part of the cardiac muscle can be replaced by tough scar tissue (connective tissue). Why does the heart pump less well?"
-      options: ["Scar tissue's cells can't contract, so that part no longer helps squeeze", "Scar tissue is heavier than muscle", "The nervous tissue stops working everywhere"]
+      options: ["Scar tissue's cells can't contract", "Scar tissue is heavier than muscle", "The nervous tissue stops working everywhere"]
       answer: 0
       feedback: [null, "Weight is not the problem; the job is.", "The signal still spreads, but the scarred part can't respond by contracting."]
       explain: "A tissue's job comes from its cells. Replace muscle cells with connective tissue cells and that part of the wall can no longer contract."

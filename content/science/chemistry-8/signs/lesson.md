@@ -89,10 +89,10 @@ tasks:
   - check:
       type: question
       q: "When magnesium burns there is a bright light, and a white powder is left. Which is the strongest evidence of a chemical change?"
-      options: ["The white powder: a new substance with different properties from the shiny metal", "The bright light", "The magnesium getting hot"]
+      options: ["The white powder, a new substance", "The bright light", "The magnesium getting hot"]
       answer: 0
       feedback: [null, "Light is a sign, but a light bulb glows without any new substance.", "Heating alone doesn't make a new substance."]
-      explain: "A new substance with new properties is the test; the light and heat are signs that go with it."
+      explain: "The white powder has different properties from the shiny metal. A new substance with new properties is the test; the light and heat are signs that go with it."
   - check:
       type: match
       q: "Why does each sign suggest a new substance has formed?"
@@ -130,10 +130,10 @@ tasks:
   - check:
       type: question
       q: "As the water boils, it bubbles. Why isn't this a chemical change?"
-      options: ["The particles are still water: no new substance forms", "Because it can be reversed", "Because no light is given out"]
+      options: ["The particles are still water", "Because it can be reversed", "Because no light is given out"]
       answer: 0
       feedback: [null, "Reversibility is not the test (dissolving salt can be reversed, and it's physical; so can some reactions).", "Lots of reactions give out no light."]
-      explain: "The same particles, more spread out. Bubbles are a clue that misleads here."
+      explain: "No new substance forms: the same particles, more spread out. Bubbles are a clue that misleads here."
     hint: ["What's actually inside the bubbles when water boils?", "Watch the particles on the heat board as the water boils, and see whether any new kind of particle turns up."]
 ```
 

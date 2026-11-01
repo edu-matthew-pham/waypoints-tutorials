@@ -70,10 +70,10 @@ tasks:
   - check:
       type: question
       q: "A student identified the crocodile as a green tree frog. Where did they most likely go wrong?"
-      options: ["At \"Does it have dry, scaly skin?\": they answered no", "At \"Does it have a backbone?\"", "The key is wrong"]
+      options: ["At \"Does it have dry, scaly skin?\"", "At \"Does it have a backbone?\"", "The key is wrong"]
       answer: 0
       feedback: [null, "A crocodile has a backbone just like a frog, so both of them take the same branch there and the slip must come later.", "The key does lead to the crocodile when every answer matches its description, so the fault is more likely in how someone used it."]
-      explain: "One wrong answer sends you down the wrong branch, and no later answer can bring you back."
+      explain: "A crocodile has dry, scaly skin, so answering no there sends it towards the frog. One wrong answer sends you down the wrong branch, and no later answer can bring you back."
     hint: ["Follow the key for the crocodile and then for the frog, and see which question is the first one where their answers differ.", "Open 'The whole key' under the board and trace each path with your finger, because the wrong turn is on the stretch where the two paths part."]
   - check:
       type: question
@@ -123,10 +123,10 @@ tasks:
   - check:
       type: question
       q: "The two keys ask different questions in a different order, but give the same names. Why?"
-      options: ["Each animal has the same features whichever order you check them in", "One of the keys must be wrong", "Keys always ask the same questions"]
+      options: ["An animal's features stay the same in any order", "One of the keys must be wrong", "Keys always ask the same questions"]
       answer: 0
       feedback: [null, "Both keys lead every specimen to its correct name, so neither one is wrong.", "They don't, actually, because this one starts with legs and not a backbone."]
-      explain: "A key is one way of checking features, and different keys can sort the same organisms in a different order."
+      explain: "Each animal has the same features whichever order you check them in. A key is one way of checking features, and different keys can sort the same organisms in a different order."
 ```
 
 ### Second key
@@ -142,10 +142,10 @@ insight: "Spotting a flaw in a key (a question that doesn't split cleanly) prepa
 check:
   type: question
   q: "A key's first question is \"Is it brown?\" The specimens include a brown kangaroo, a grey kangaroo and a brown spider. What is wrong with this question?"
-  options: ["Colour varies within a species and isn't reliable: the two kangaroos go different ways", "Nothing: colour is observable", "It should ask about size instead"]
+  options: ["Colour varies within a species", "Nothing: colour is observable", "It should ask about size instead"]
   answer: 0
   feedback: [null, "You can certainly see colour, but think about whether every animal of the same kind looks the same.", "Size wouldn't help, because it's even harder to give a clear yes or no."]
-  explain: "Good keys use features that don't vary within a kind of organism, such as legs, body covering and backbone."
+  explain: "Colour isn't reliable: the two kangaroos go different ways. Good keys use features that don't vary within a kind of organism, such as legs, body covering and backbone."
 hint: ["Picture a brown kangaroo and a grey kangaroo, and think about which way each would go on that first question.", "Ask whether the two kangaroos would end up in the same place, and what that would mean for the key."]
 ```
 

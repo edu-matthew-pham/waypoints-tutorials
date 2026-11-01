@@ -63,20 +63,22 @@ tasks:
   - check:
       type: question
       q: "Where is the carbon in coal, oil and gas stored before it is burned?"
-      options: ["In the geosphere: plants and tiny sea creatures buried millions of years ago", "In the atmosphere", "In the oceans", "Nowhere: burning creates carbon"]
+      options: ["In the geosphere, in long-buried living things", "In the atmosphere", "In the oceans", "Nowhere: burning creates carbon"]
       answer: 0
       feedback: [null, "It was taken out of the air long ago, then buried.", "It is dissolved there only after being released.", "Burning moves carbon; it never creates it."]
+      explain: "Coal, oil and gas formed from plants and tiny sea creatures buried millions of years ago, so their carbon sits in the geosphere."
   - check:
       type: question
       q: "Why does burning fossil fuels raise CO₂ in the air, when natural flows are so much bigger?"
-      options: ["It releases in years carbon that took millions of years to store, and the natural flows were already balanced", "Fossil fuel carbon is a different kind of carbon", "It stops photosynthesis", "It doesn't: the rise is natural"]
+      options: ["It adds extra carbon to flows that were balanced", "Fossil fuel carbon is a different kind of carbon", "It stops photosynthesis", "It doesn't: the rise is natural"]
       answer: 0
       feedback: [null, "It's the same kind of carbon as any other, and the trouble is how much extra goes into the air.", "Plants keep photosynthesising, even a little more.", "The board's rise started only when burning started."]
+      explain: "Burning releases in years carbon that took millions of years to store. The natural flows were already balanced, so the extra builds up in the air."
     hint: ["Before you turned burning on, the air stayed steady, so think about where the extra carbon from burning has to go each year.", "Watch the arrows between the air and the plants and oceans while you burn, and compare them with what they showed before you turned Burning up."]
   - check:
       type: question
       q: "On the board, how much of the carbon you burned stayed in the air?"
-      options: ["Most of it at first, but the longer you ran it, the more the oceans and living things took up", "All of it", "None of it: the oceans took it all", "Exactly half, every time"]
+      options: ["Most at first, then less as oceans and plants took more", "All of it: nothing else took any up", "None of it: the oceans and plants took it all", "Exactly half, every time"]
       answer: 0
       feedback: [null, "Check the oceans and living things boxes: they gained carbon while you burned.", "The air's CO₂ went up, so not all of it was taken up.", "On the board the share changes the longer it runs, so it isn't fixed at half."]
       explain: "In the model, about nine tenths stays in the air in the first ten years and about three quarters after fifty, because the oceans and plants take up more as the CO₂ in the air rises. In the real world, about 45% of each year's emissions stays in the air."
@@ -84,9 +86,10 @@ tasks:
   - check:
       type: question
       q: "Why does more CO₂ in the air matter for Earth's temperature?"
-      options: ["CO₂ is a greenhouse gas: it absorbs some of the heat Earth gives off, so more CO₂ slows heat escaping to space and Earth warms", "CO₂ thins the ozone layer, letting in more sunlight", "CO₂ comes out of chimneys hot, and that heat warms the air", "More CO₂ blocks sunlight, so Earth cools"]
+      options: ["It absorbs heat Earth gives off, slowing its escape", "CO₂ thins the ozone layer, letting in more sunlight", "CO₂ comes out of chimneys hot, and that heat warms the air", "More CO₂ blocks sunlight, so Earth cools"]
       answer: 0
       feedback: [null, "The ozone hole is a different problem; CO₂ acts on the heat going out, not the sunlight coming in.", "The heat from burning is tiny; CO₂ keeps trapping heat for centuries after it has cooled.", "Sunlight passes through CO₂ easily; it is the heat going out that CO₂ absorbs."]
+      explain: "CO₂ is a greenhouse gas: it absorbs some of the heat Earth gives off, so more CO₂ slows heat escaping to space and Earth warms."
   - check: { type: reflect, text: "I can explain how burning fossil fuels moves carbon from the geosphere to the air, and why it adds to the air's store." }
 ```
 
@@ -133,9 +136,10 @@ insight: "Comparing a fire whose carbon regrows with one whose carbon was locked
 check:
   type: question
   q: "A cool burn of grassland and burning coal both release CO₂. Why do they affect the carbon cycle differently over decades?"
-  options: ["Grass regrows within a year or two, taking the carbon back; coal's carbon was locked away for millions of years and won't return soon", "Grass smoke has no carbon", "Coal releases oxygen", "There's no difference"]
+  options: ["Grass regrows and takes its carbon back; coal's doesn't", "Grass smoke has no carbon in it", "Coal smoke is thicker, so it stays in the air longer", "There's no difference: CO₂ is CO₂"]
   answer: 0
-  feedback: [null, "Grass smoke contains CO₂ too.", "Burning uses oxygen and releases CO₂.", "The timescales are very different."]
+  feedback: [null, "Grass smoke contains CO₂ too.", "How thick the smoke is doesn't matter; where the carbon goes next does.", "The CO₂ is the same, but the timescales are very different."]
+  explain: "Grass regrows within a year or two, taking the carbon back out of the air. Coal's carbon was locked away for millions of years and won't return to the rock soon, so it is a net addition."
 ```
 
 ## Evaluate: look back

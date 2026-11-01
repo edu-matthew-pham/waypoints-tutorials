@@ -120,10 +120,10 @@ tasks:
   - check:
       type: question
       q: "Why is alpha stopped so much sooner than gamma?"
-      options: ["Alpha particles are big, slow and charged, so they hit and knock electrons off atoms almost at once; gamma has no mass or charge", "Alpha particles have less energy than gamma rays", "Paper absorbs helium"]
+      options: ["Alpha is big and charged, so it hits atoms at once", "Alpha particles have less energy than gamma rays", "Paper reacts with alpha particles but not gamma"]
       answer: 0
       feedback: [null, "Alpha particles carry a lot of energy; they lose it fast by colliding with atoms.", "It is the particle's size and charge, not the paper's chemistry."]
-      explain: "The bigger and more charged the radiation, the more it collides with atoms in its path and the sooner it gives up its energy. That also makes alpha the most damaging if its source gets inside the body."
+      explain: "Alpha particles are big, slow and charged, so they knock electrons off atoms almost at once; gamma has no mass or charge. The bigger and more charged the radiation, the more it collides with atoms in its path and the sooner it gives up its energy. That also makes alpha the most damaging if its source gets inside the body."
   - check: { type: reflect, text: "I can say what alpha, beta and gamma are, how alpha and beta decay change the nucleus, and how far each gets." }
 ```
 
@@ -156,17 +156,17 @@ tasks:
   - check:
       type: question
       q: "Iodine-131 collects in the thyroid gland and gives out beta particles. Why does that suit treating thyroid cancer?"
-      options: ["Beta travels only a few millimetres in the body, so it damages cells near the iodine and few others", "Beta goes straight through the body, so it does no harm", "Beta turns cancer cells into xenon"]
+      options: ["Beta travels only millimetres, so it damages nearby cells", "Beta goes straight through the body, so it does no harm", "Beta turns the cancer cells into xenon"]
       answer: 0
       feedback: [null, "Beta is absorbed within millimetres of tissue: that is the point.", "Only the iodine atoms change into xenon; the cells are damaged by the radiation."]
-      explain: "Inside the body, beta travels only millimetres, so its energy is delivered to the thyroid itself."
+      explain: "Inside the body, beta travels only millimetres, so its energy is delivered to the thyroid itself: cells near the iodine are damaged and few others."
   - check:
       type: question
       q: "To make a picture of an organ, doctors inject a substance that gives out gamma rays and use a camera outside the body. Why gamma?"
-      options: ["It gets out of the body to the camera, and it is less damaging on the way than alpha or beta", "It is stopped inside the organ", "It changes the organ into another element"]
+      options: ["It gets out of the body, and does less harm on the way", "It is stopped inside the organ, so it lights it up", "Its charge lets the camera steer it to the organ"]
       answer: 0
-      feedback: [null, "Then the camera would see nothing.", "Gamma changes neither the atomic number nor the mass number."]
-      explain: "Gamma passes out of the body, so a camera can detect where it came from. Isotopes for imaging also have short half-lives, so they don't stay active for long (half-life is next)."
+      feedback: [null, "Then the camera would see nothing.", "Gamma has no charge; the camera just detects where it comes from."]
+      explain: "Gamma passes out of the body, so a camera can detect where it came from, and it is less damaging on the way than alpha or beta. Isotopes for imaging also have short half-lives, so they don't stay active for long (half-life is next)."
 ```
 
 ### Treating with beta
@@ -188,17 +188,17 @@ tasks:
   - check:
       type: question
       q: "Why is the americium in a smoke alarm safe to have on the ceiling?"
-      options: ["Its alpha particles are stopped by a few centimetres of air and the alarm's case", "Americium does not decay", "Alpha particles can't harm living cells"]
+      options: ["Its alpha is stopped by air and the alarm's case", "Americium does not decay", "Alpha particles can't harm living cells"]
       answer: 0
       feedback: [null, "It decays all the time; that is how the alarm works.", "Alpha does the most damage of all close up (see radon next); here it never gets out to reach you."]
-      explain: "Alpha cannot get out of the alarm. Inside, it knocks electrons off air molecules so a small current flows; smoke reduces the current, and the alarm sounds."
+      explain: "Alpha is stopped by a few centimetres of air and the case, so it cannot get out of the alarm. Inside, it knocks electrons off air molecules so a small current flows; smoke reduces the current, and the alarm sounds."
   - check:
       type: question
       q: "Radon gas gives out alpha particles too. Why is breathing it in a health risk, when the alarm is not?"
-      options: ["Inside the lungs there is nothing between the alpha particles and living cells, and alpha does the most damage close up", "Radon's alpha particles are a different kind that go through walls", "Breathing makes radon decay faster"]
+      options: ["In the lungs, nothing shields cells from the alpha", "Radon's alpha particles go through walls and skin", "Breathing makes radon decay faster"]
       answer: 0
       feedback: [null, "Alpha is alpha: it is where the source is that changes.", "Breathing has no effect on how fast a nucleus decays."]
-      explain: "Outside the body, skin and air stop alpha. Inside, alpha delivers all its energy to the cells next to it. That is why homes over some rocks are tested for radon and ventilated."
+      explain: "Outside the body, skin and air stop alpha. Inside the lungs there is nothing between the alpha particles and living cells, and alpha does the most damage close up: alpha delivers all its energy to the cells next to it. That is why homes over some rocks are tested for radon and ventilated."
     hint: "What stops alpha outside your body, and is any of that left between the radon and your lung cells once you've breathed it in?"
 ```
 

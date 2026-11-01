@@ -110,7 +110,7 @@ insight: "Balanced forces are equal and opposite, which only makes sense once ar
 check:
   type: question
   q: "Looking back at force arrows: a diagram shows a 30 N push to the right and 10 N of friction to the left. How do the arrows look?"
-  options: ["The push arrow is three times as long as the friction arrow, and they point opposite ways", "The two arrows are the same length", "Both arrows point to the right", "The friction arrow is longer, because friction is stronger"]
+  options: ["The push arrow is three times as long, the opposite way", "The two arrows are the same length", "Both arrows point to the right", "The friction arrow is longer, because friction is stronger"]
   answer: 0
   feedback: [null, "The forces are different sizes, so their arrows have to be different lengths.", "Friction acts against the push, so its arrow points the other way.", "The push is the bigger force at 30 N against 10 N, so its arrow is the longer one."]
   explain: "The length of an arrow shows the size of the force and it points the way the force acts, so a 30 N push gets an arrow three times as long as a 10 N friction force."
@@ -153,7 +153,7 @@ tasks:
   - check:
       type: question
       q: "Once the box has stopped, with a push of 2 N, the friction is shown as 2 N, not 6 N. Why?"
-      options: ["Friction only resists as much as it needs to, up to its limit", "Friction disappears when things stop", "The board is wrong"]
+      options: ["Friction only matches the push, up to a limit", "Friction disappears when things stop", "The board is wrong"]
       answer: 0
       feedback: [null, "There is still friction, and it matches the push so the box stays put.", "If you push gently on a heavy box that doesn't move, friction is matching your push."]
       explain: "The friction on a stationary object matches the push up to a limit, which is 6 N here, and beyond that the object starts sliding."

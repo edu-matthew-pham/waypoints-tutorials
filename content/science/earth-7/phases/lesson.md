@@ -67,23 +67,26 @@ tasks:
   - check:
       type: question
       q: "At first quarter, where is Earth's shadow?"
-      options: ["Pointing away from the sun, nowhere near the moon: the lit half of the moon is always there, and what changes is how much of it we can see", "Covering half the moon", "Covering the whole moon", "In front of the sun"]
+      options: ["Nowhere near the moon", "Covering half the moon", "Covering the whole moon", "In front of the sun"]
       answer: 0
       feedback: [null, "Turn the shadow on with the moon at first quarter and you'll see it's far away.", "That's the shadow explanation, but the board shows something different.", "The shadow always points away from the sun, so it can't be there."]
+      explain: "Earth's shadow points away from the sun, nowhere near the moon at first quarter. The lit half of the moon is always there, and what changes is how much of it we can see."
     hint: ["Which way does Earth's shadow point, and where is the moon when it's at first quarter?", "Turn Show Earth's shadow on, take the moon to first quarter, and see how close the shadow gets."]
   - check:
       type: question
       q: "At full moon, where is the moon?"
-      options: ["On the far side of the Earth from the sun, so we see its whole lit half", "Between the Earth and the sun", "At a right angle to the sun", "Closest to the sun"]
+      options: ["On the far side of the Earth from the sun", "Between the Earth and the sun", "At a right angle to the sun", "Closest to the sun"]
       answer: 0
       feedback: [null, "That's new moon, when we see only the dark half.", "That's a quarter moon.", "At full moon the moon is actually as far from the sun as it ever gets, not the closest."]
+      explain: "With the Earth between the sun and the moon, the moon's lit half faces us, so we see all of it."
     hint: ["At full moon we see the whole lit half, so where does the moon have to be for the side facing the sun to be the side facing us?", "Drag the moon to full moon on the board and see where it ends up compared with the Earth and the sun."]
   - check:
       type: question
       q: "In a lunar eclipse, a full moon goes dark and reddish for an hour or two. How is that different from the moon's phases?"
-      options: ["An eclipse is Earth's shadow falling on the moon, only at some full moons; the phases come from how much of the lit half we see, every month", "There is no difference: a lunar eclipse is just a very dark phase", "A lunar eclipse happens at new moon, when the moon is dark", "An eclipse is the moon going through all its phases in an hour"]
+      options: ["An eclipse is Earth's shadow; phases are how much lit half we see", "There is no difference: a lunar eclipse is just a very dark phase", "A lunar eclipse happens at new moon, when the moon is dark", "An eclipse is the moon going through all its phases in an hour"]
       answer: 0
       feedback: [null, "Phases happen every month with no shadow involved; an eclipse needs Earth's shadow to fall on the moon, which is rare.", "New moon is a phase: we see the unlit half. A lunar eclipse needs a full moon, with the Earth between the sun and the moon.", "The phases take about 29.5 days; in an eclipse, Earth's shadow moves across a full moon."]
+      explain: "An eclipse is Earth's shadow falling on the moon, and it happens only at some full moons. The phases come every month from how much of the moon's lit half we can see."
     hint: ["Which of the two needs Earth's shadow to land on the moon, and how often does that happen?", "Think about the Show Earth's shadow button, and how close the shadow got to the moon in most of the phases."]
   - check: { type: reflect, text: "I can sequence the eight phases and explain them by the moon's position, not Earth's shadow." }
 ```
@@ -151,9 +154,10 @@ try: { playground: board, starter: "boards.yml#north", height: 600 }
 check:
   type: question
   q: "From Australia a waxing crescent is lit on the left. From Japan it is lit on the right. Why?"
-  options: ["People in the Northern Hemisphere see the moon 'upside down' compared with us, so left and right swap", "Japan sees a different moon", "The moon's phase is different in Japan", "It's lit on the left everywhere"]
+  options: ["Northern viewers see the moon upside down", "Japan sees a different moon", "The moon's phase is different in Japan", "It's lit on the left everywhere"]
   answer: 0
   feedback: [null, "Everyone sees the same moon, so that can't be it.", "The phase is the same everywhere on the same night, and only the way up changes.", "Try comparing this board with the first one."]
+  explain: "People in the Northern Hemisphere see the moon 'upside down' compared with us, so left and right swap. It is the same moon in the same phase."
 hint: ["You and someone in Japan are looking at the same moon on the same night, so what's different about where you're each standing?", "Compare this board with the one from Explore and see what has changed in the picture of the moon from Earth."]
 ```
 

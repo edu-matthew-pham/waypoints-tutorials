@@ -83,7 +83,7 @@ tasks:
   - check:
       type: question
       q: "Someone says: 'We have night because the Earth goes round the sun.' What would you say?"
-      options: ["It's the spin that gives night. Going round the sun takes a year", "That's right", "The sun goes round the Earth", "Night happens because clouds block the sun"]
+      options: ["No: night comes from the Earth spinning", "That's right", "The sun goes round the Earth", "Night happens because clouds block the sun"]
       answer: 0
       feedback: [null, "The Earth does go round the sun, but that takes a year. Night happens every day.", "The Earth goes round the sun. The sun doesn't go round the Earth.", "Night happens even on a clear day. It's the spin that does it."]
       explain: "The spin gives day and night. Going round the sun takes a year."

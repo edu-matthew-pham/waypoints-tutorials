@@ -46,9 +46,9 @@ tasks:
     check:
       type: question
       q: "A pond fish can survive when the water is between 5 °C and 30 °C. In a heatwave the pond water warms to 34 °C. What is likely to happen?"
-      options: ["The fish is in danger, because the water is above its range", "Nothing, because fish like warm water", "The fish gets stronger", "It only matters if the pond freezes"]
+      options: ["The fish is in danger: 34 °C is too hot", "Nothing, because fish like warm water", "It is fine, because 34 is close to 30", "It only matters if the pond freezes"]
       answer: 0
-      feedback: [null, "Fish can only cope with a range. Past 30 °C is too hot for this one.", "Heat past a living thing's range doesn't make it stronger. It makes it struggle to survive.", "Too hot is as much of a problem for this fish as too cold."]
+      feedback: [null, "Fish can only cope with a range. Past 30 °C is too hot for this one.", "Close isn't inside. 34 °C is past the top of this fish's range, so it will struggle to survive.", "Too hot is as much of a problem for this fish as too cold."]
       explain: "34 °C is above the fish's range of 5 to 30 °C. A condition that is too high can harm a living thing, just like one that is too low."
   - insight: "A change in one condition can affect many living things in the habitat."
     check:
@@ -77,9 +77,9 @@ tasks:
   - check:
       type: question
       q: "A fern grows best in shade. What happens if you move it into hot, full sun all day?"
-      options: ["It dries out and may die, because there is too much light and heat", "It grows twice as fast", "Nothing changes", "It turns into a different plant"]
+      options: ["It dries out and may die", "It grows twice as fast", "Nothing changes", "It grows taller to reach the sun"]
       answer: 0
-      feedback: [null, "This fern grows best in shade, so more sun is a problem, not a help.", "A fern in the wrong conditions usually does change, because the conditions are outside its range.", "A plant stays the same kind of plant. It struggles when conditions are wrong."]
+      feedback: [null, "This fern grows best in shade, so more sun is a problem, not a help.", "A fern in the wrong conditions usually does change, because the conditions are outside its range.", "It already has plenty of light. Too much sun and heat is outside its range, so it struggles."]
       explain: "More of a condition isn't always better. Too much sun and heat is outside this fern's range."
   - check:
       type: question

@@ -86,9 +86,10 @@ tasks:
   - check:
       type: question
       q: "Why isn't there a solar eclipse at every new moon?"
-      options: ["The moon's orbit is tilted about 5° to Earth's, so the moon usually passes above or below the line from the sun to the Earth", "The moon is too small", "The sun is sometimes too bright", "The moon moves too fast"]
+      options: ["The moon's orbit is tilted", "The moon is too small", "The sun is sometimes too bright", "The moon moves too fast"]
       answer: 0
       feedback: [null, "The moon is just big enough to cover the sun when it's exactly in line, so its size isn't the problem.", "The sun's brightness doesn't stop the moon's shadow from forming.", "The moon's speed doesn't matter here, because what counts is the line-up."]
+      explain: "The moon's orbit is tilted about 5° to Earth's, so at most new moons the moon passes above or below the line from the sun to the Earth, and its shadow misses us."
     hint: ["If the moon is between the sun and the Earth at every new moon, what else would have to be true for its shadow to land on Earth?", "Watch the side view as you step through the new moons, and see where the moon is compared with the plane of Earth's orbit."]
   - check: { type: reflect, text: "I can state the conditions for solar and lunar eclipses, describe the umbra and penumbra, and explain why eclipses don't happen every month." }
 ```
@@ -148,10 +149,10 @@ insight: "Seeing why eclipses seemed unpredictable without a 3D model connects t
 check:
   type: question
   q: "Many ancient peoples recorded eclipses carefully but found them hard to predict. Babylonian astronomers eventually noticed eclipses repeat in a cycle of about 18 years. Which missing idea makes eclipses predictable from first principles?"
-  options: ["The moon's tilted orbit, and where it crosses Earth's orbit plane: eclipses happen only when that crossing line points at the sun", "The size of the moon", "The speed of light", "The exact date of every new and full moon"]
+  options: ["The moon's tilted orbit", "The size of the moon", "The speed of light", "The exact date of every new and full moon"]
   answer: 0
   feedback: [null, "The moon's size matters for whether an eclipse is total or annular, but not for when one happens.", "You don't need that to predict eclipses.", "Those dates tell you when a line-up is possible, but not whether the moon passes above, below or through the line."]
-  explain: "Long records let people find patterns, like the 18-year saros cycle, even without the model, and the 3D model explains why the pattern exists."
+  explain: "Eclipses happen only when the line where the moon's tilted orbit crosses Earth's orbit plane points at the sun. Long records let people find patterns, like the 18-year saros cycle, even without the model, and the 3D model explains why the pattern exists."
 hint: ["Think about what the dates of new and full moons tell you, and what they leave out.", "Look at the side view and ask what has to be true about where the moon is, besides the date, for its shadow to reach Earth."]
 ```
 

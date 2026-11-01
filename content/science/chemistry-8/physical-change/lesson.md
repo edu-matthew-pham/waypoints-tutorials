@@ -73,10 +73,10 @@ tasks:
   - check:
       type: question
       q: "In melting, boiling and dissolving, what happens to the particles?"
-      options: ["They change how they are arranged and how they move, but stay the same particles", "They turn into new particles", "They get bigger as they warm up"]
+      options: ["They stay the same particles, just rearranged", "They turn into new particles", "They get bigger as they warm up"]
       answer: 0
       feedback: [null, "No new kinds of particle appeared on the board.", "Particles don't grow; the gaps between them do."]
-      explain: "A physical change rearranges the same particles. Nothing new is made."
+      explain: "The particles change how they are arranged and how they move, but stay the same particles. A physical change rearranges the same particles. Nothing new is made."
     hint: ["Think back to the dots on the heat board as you dragged the temperature up. Did the dots themselves change, or did something else change?", "The line under the heat board says what the particles are doing at each temperature, so read it as you move the slider."]
   - check:
       type: sort
@@ -111,7 +111,7 @@ tasks:
   - check:
       type: question
       q: "Melting, boiling and dissolving can usually be reversed. Why?"
-      options: ["The same particles are still there, so they can be brought back to how they were", "Being reversible is what makes a change physical", "Any change can be reversed if you try hard enough", "No energy goes in or out, so nothing is lost"]
+      options: ["The same particles are still there", "Being reversible is what makes a change physical", "Any change can be reversed if you try hard enough", "No energy goes in or out, so nothing is lost"]
       answer: 0
       feedback: [null, "That's the wrong way round. A change is physical because no new substance is made; being reversible follows from that. Some physical changes, like shattering a glass, are hard to undo.", "Burnt toast can't be turned back into bread: its particles have changed. Undoing a change only works when the original particles are still there.", "Melting and boiling take in energy, and freezing gives it out. Reversing is possible because the particles haven't changed."]
       explain: "No new substance is made, so the original particles are all still there to rearrange back. Being reversible is a result of a physical change, not what defines it."
@@ -144,10 +144,10 @@ tasks:
   - check:
       type: question
       q: "What is in each steam particle?"
-      options: ["Two hydrogen atoms joined to one oxygen atom: H₂O, the same as liquid water", "Separate hydrogen and oxygen atoms", "Air"]
+      options: ["H₂O, the same as liquid water", "Separate hydrogen and oxygen atoms", "Air"]
       answer: 0
       feedback: [null, "Boiling doesn't split the particles; that would be a chemical change.", "The particles came out of the water, so they are water."]
-      explain: "Steam is water as a gas: the same H₂O particles, moving fast and far apart."
+      explain: "Each steam particle is two hydrogen atoms joined to one oxygen atom. Steam is water as a gas: the same H₂O particles, moving fast and far apart."
     hint: "Click a steam particle and look at its formula in the table under the board. Is that the same as liquid water, or something new?"
 ```
 

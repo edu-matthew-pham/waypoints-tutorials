@@ -81,9 +81,10 @@ tasks:
   - check:
       type: question
       q: "What are the units of acceleration?"
-      options: ["m/s² (metres per second, per second)", "m/s", "N", "km/h"]
+      options: ["m/s²", "m/s", "N", "km/h"]
       answer: 0
       feedback: [null, "m/s is velocity. Acceleration is how many m/s are added each second.", "N is force.", "km/h is a speed."]
+      explain: "m/s² means metres per second, per second: how many m/s of speed are added each second."
     hint: "Acceleration counts how much speed gets added and how long that takes, so its unit has to carry both of those."
   - check:
       type: number
@@ -166,7 +167,7 @@ insight: "A constant-speed turn is acceleration with no change of speed, the har
 check:
   type: question
   q: "A car drives around a roundabout at a steady 30 km/h. Is it accelerating?"
-  options: ["Yes: its direction is changing, so its velocity is changing", "No: its speed is constant", "Only if it speeds up"]
+  options: ["Yes: its direction, so its velocity, is changing", "No: its speed is constant, so it isn't", "Only if it speeds up or slows down"]
   answer: 0
   feedback: [null, "Velocity includes direction. A change of direction is a change of velocity.", "Speeding up is one kind; turning is another."]
   explain: "There must be a net force towards the centre of the roundabout: the friction of the tyres on the road."

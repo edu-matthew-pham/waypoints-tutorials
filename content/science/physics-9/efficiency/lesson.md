@@ -89,18 +89,18 @@ tasks:
   - check:
       type: question
       q: "Why can no real device be 100% efficient?"
-      options: ["Some energy always becomes by-products, usually heat from friction and resistance", "Energy is destroyed in every device", "Devices wear out"]
+      options: ["Some energy always becomes waste heat", "Some energy is destroyed in every device", "Devices wear out as they are used"]
       answer: 0
       feedback: [null, "Energy is never destroyed: it is transferred somewhere not useful.", "Wearing out is a different problem."]
-      explain: "Every moving part and every wire turns a little energy into heat. Better design reduces it, but never to zero."
+      explain: "The by-product is usually heat from friction and resistance. Every moving part and every wire turns a little energy into heat. Better design reduces it, but never to zero."
     hint: ["Think back to the filament bulb you built: where did the joules that didn't become light end up?", "Picture touching a motor or a phone charger after it's been running for a while, and what you'd feel."]
   - check:
       type: question
       q: "Motor A takes in 500 J and does 150 J of useful work (30%). Motor B takes in 200 J and does 100 J (50%). What does the difference mean?"
-      options: ["B turns a bigger share of its input into useful work, so for the same job it needs less energy in and wastes less", "A is more efficient, because it does more useful work", "They are equally good, because both obey conservation of energy"]
+      options: ["B turns a bigger share of its input into useful work", "A is more efficient, because it does more useful work", "They are equally good, because both obey conservation of energy"]
       answer: 0
       feedback: [null, "That's the amount, not the share. Efficiency compares useful out with total in.", "Both conserve energy, but A wastes 70% of its input and B only 50%."]
-      explain: "For every 100 J in, B gives 50 J of useful work and A only 30 J. To do the same job, B needs less energy in."
+      explain: "For every 100 J in, B gives 50 J of useful work and A only 30 J. To do the same job, B needs less energy in and wastes less."
   - check: { type: reflect, text: "I can calculate efficiency and explain why it is always less than 100%." }
 ```
 
@@ -148,10 +148,10 @@ insight: "Energy ratings turn efficiency into a buying decision and connect it t
 check:
   type: question
   q: "Two fridges keep food equally cold. One has a 6-star energy rating and the other 3 stars. What does the extra efficiency mean?"
-  options: ["The 6-star fridge needs less electrical energy for the same cooling, so it costs less to run and needs less electricity generated", "The 6-star fridge makes food colder", "Nothing: stars are about size"]
+  options: ["It needs less electricity for the same cooling", "The 6-star fridge makes food colder", "Nothing: the stars are about the fridge's size"]
   answer: 0
   feedback: [null, "The cooling is the same; the energy needed is not.", "Energy ratings are about how much energy a model uses."]
-  explain: "More efficient devices waste less energy as heat, so less energy has to be generated in the first place."
+  explain: "The 6-star fridge costs less to run. More efficient devices waste less energy as heat, so less energy has to be generated in the first place."
 ```
 
 ## Evaluate: look back

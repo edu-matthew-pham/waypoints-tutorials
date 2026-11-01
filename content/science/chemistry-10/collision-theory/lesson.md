@@ -89,7 +89,7 @@ tasks:
   - check:
       type: question
       q: "You want to test how temperature changes the rate of marble chips reacting with acid. Which plan is a fair test?"
-      options: ["Change only the temperature, keep the acid and the chips the same, time the fizzing, and repeat each temperature", "Heat the acid and use stronger acid too, so the difference is bigger", "Do one run at each temperature: one result is enough"]
+      options: ["Change only the temperature, keep the rest the same, and repeat each run", "Heat the acid and use stronger acid too, so the difference is bigger", "Do one run at each temperature: one result is enough"]
       answer: 0
       feedback: [null, "Then you can't tell which change made it faster: change only one thing.", "Runs vary, as they did on the board: repeat each temperature and compare averages."]
       explain: "Change one factor, measure the rate (time until the fizzing stops, or gas made each minute) and keep everything else the same. Repeats show how much the results vary."
@@ -134,14 +134,14 @@ tasks:
   - check:
       type: question
       q: "The concentrated reaction reached the target faster. Why?"
-      options: ["More particles in the same space collide more often", "Each collision had more energy", "The activation energy was lower"]
+      options: ["More particles in the same space collide more often", "Each collision had more energy than before", "The activation energy was lower in stronger acid"]
       answer: 0
       feedback: [null, "Same temperature, so the same energies: compare the percentage of collisions that react on the two boards.", "Same reaction, same activation energy."]
       explain: "Concentration changes how often particles collide, not how hard."
   - check:
       type: question
       q: "A lump of chalk reacts slowly with acid; chalk powder fizzes fast. Which explanation fits collision theory?"
-      options: ["Powder exposes far more particles to the acid, so there are more collisions each second", "Powder particles have more energy", "Powder is a different substance"]
+      options: ["More particles are exposed, so there are more collisions", "Powder particles have more energy than a lump", "Powder is a different substance from the lump"]
       answer: 0
       feedback: [null, "Same temperature, same energy. The difference is how many particles can be hit.", "It is the same chalk, in smaller pieces."]
       explain: "Surface area, like concentration, changes collision frequency."
@@ -168,7 +168,7 @@ tasks:
   - check:
       type: question
       q: "With the catalyst, the reaction sped up but the temperature didn't change. How?"
-      options: ["The catalyst lowered the activation energy, so more collisions had enough energy", "The catalyst gave the particles extra energy", "The catalyst reacted and was used up"]
+      options: ["It lowered the activation energy, so more collisions reacted", "The catalyst gave the particles extra energy", "The catalyst reacted and was used up"]
       answer: 0
       feedback: [null, "The temperature in the panel didn't change, so the particles' energies didn't either.", "A catalyst is not a reactant: it may join in along the way, but it is given back unchanged, so the same amount is there at the end."]
       explain: "A catalyst provides a route with a lower activation energy. (In the model it simply halves the threshold; real catalysts often work on their surface.)"

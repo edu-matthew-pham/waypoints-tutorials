@@ -70,16 +70,18 @@ tasks:
   - check:
       type: question
       q: "Why must a gamete have half the number of chromosomes?"
-      options: ["So that when two gametes join, the new cell has the full number again", "Because gametes are small", "So the offspring has half as many genes", "To save energy"]
+      options: ["So two gametes join to make the full number", "Because gametes are too small for more", "So the offspring has half as many genes", "To save the energy of copying them all"]
       answer: 0
       feedback: [null, "An egg is huge but still has 23.", "The offspring has the full number: half from each parent.", "It's about keeping the number the same each generation."]
+      explain: "23 from the sperm and 23 from the egg make 46 in the fertilised egg, the same as the parents. If gametes had 46, the number would double every generation."
     hint: ["Work out how many chromosomes the fertilised egg would have if the sperm and the egg each carried 46.", "Then think about what would happen to that number in the next generation, and the one after that."]
   - check:
       type: question
       q: "Why are millions of sperm released, but only one egg?"
-      options: ["Most sperm never reach the egg; the egg is large and costly to make because it holds food", "Many sperm join the egg, each adding some chromosomes", "Eggs are smaller", "Sperm have no nucleus"]
+      options: ["Most sperm never reach it; an egg is costly to make", "Many sperm join the egg, each adding some chromosomes", "Eggs are smaller and quicker to make than sperm", "Sperm have no nucleus, so it takes many of them"]
       answer: 0
       feedback: [null, "Only one sperm's nucleus joins the egg: its 23 chromosomes and the egg's 23 make 46.", "The egg is far larger.", "Each sperm carries a nucleus with 23 chromosomes."]
+      explain: "Most sperm never reach the egg, so many are needed. The egg is large and costly to make because it holds a food store."
   - check: { type: reflect, text: "I can explain why gametes have half the chromosomes and how a sperm and an egg are specialised." }
 ```
 
@@ -105,16 +107,18 @@ tasks:
   - check:
       type: question
       q: "A pollen grain can't swim. How does its male nucleus reach the egg?"
-      options: ["Wind or animals carry the pollen to a flower; a pollen tube then grows down to the ovule", "It swims through the air", "The egg moves to the pollen", "It doesn't: plants don't use gametes"]
+      options: ["It is carried to a flower, then a pollen tube grows", "It swims through the air to the flower", "The egg moves out of the ovule to the pollen", "It doesn't: plants don't use gametes"]
       answer: 0
       feedback: [null, "Pollen has no tail to swim with, so something has to carry it.", "The egg stays inside the ovule.", "Flowering plants reproduce sexually with gametes."]
+      explain: "Wind or animals carry the pollen to another flower. A pollen tube then grows down to the ovule and carries the male nucleus to the egg."
     hint: ["The pollen grain can't move itself, so think about what could carry it from one flower to another.", "Click the pollen wall on the board and read what its spikes are for."]
   - check:
       type: question
       q: "A flowering plant's egg sits inside an ovule, deep in the flower's ovary. How does that suit its job?"
-      options: ["It keeps the egg protected, and after fertilisation the ovule grows into a seed with a food store", "It lets the egg swim out to meet the pollen", "It stops pollen ever reaching it", "It is where the pollen is made"]
+      options: ["It protects the egg, and the ovule becomes a seed", "It lets the egg swim out to meet the pollen", "It stops pollen ever reaching the egg", "It is where the pollen is made"]
       answer: 0
       feedback: [null, "Plant eggs don't move: a pollen tube grows down to the ovule.", "A pollen tube grows through the flower to reach it.", "Pollen is made in the anthers; ovules hold the eggs."]
+      explain: "Deep in the ovary the egg is protected. After fertilisation the ovule grows into a seed with a food store for the new plant."
 ```
 
 ### Pollen

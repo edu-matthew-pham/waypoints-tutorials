@@ -92,17 +92,17 @@ tasks:
   - check:
       type: question
       q: "You watch one carbon-14 nucleus. When will it decay?"
-      options: ["No one can say: it could be in a second or in 50 000 years", "In exactly 5730 years", "Within 5730 years for certain"]
+      options: ["No one can say: it is random for each nucleus", "In exactly 5730 years, its half-life", "Within 5730 years for certain"]
       answer: 0
       feedback: [null, "5730 years is when about half of a large sample has gone, not when any one nucleus goes.", "About half the nuclei last longer than one half-life."]
-      explain: "Decay is random for each nucleus. Only for a large sample can we say how many will go in a given time."
+      explain: "Decay is random for each nucleus: it could go in a second or in 50 000 years. Only for a large sample can we say how many will go in a given time."
     hint: ["On the board, did the orange squares all go at the same moment, or one at a time?", "Press Start again and run it once more, and watch whether the same squares go first."]
   - check:
       type: question
       q: "A sample is heated, crushed and dissolved in acid. What happens to its half-life?"
-      options: ["Nothing: half-life is the same whatever you do to the sample", "It gets shorter", "It gets longer"]
+      options: ["Nothing: the half-life stays the same", "It gets shorter, as the atoms move faster", "It gets longer, as the sample is spread out"]
       answer: 0
-      feedback: [null, "Heat and chemicals act on the electrons, not on the nucleus.", "Nothing everyday reaches the nucleus."]
+      feedback: [null, "Heat and chemicals act on the electrons, not on the nucleus.", "Nothing everyday reaches the nucleus, and spreading the sample out doesn't change any nucleus."]
       explain: "Half-life is a property of the nucleus. Temperature, pressure and chemical reactions change the electrons around it, not the nucleus."
   - check: { type: reflect, text: "I can say what half-life means and work out how much of a sample is left after a number of half-lives." }
 ```
@@ -170,7 +170,7 @@ tasks:
   - check:
       type: question
       q: "Radiocarbon dating works back to about 50 000 years. Why not further?"
-      options: ["After about 9 half-lives less than a five-hundredth of the carbon-14 is left, too little to measure reliably", "Carbon-14 stops decaying after 50 000 years", "Nothing older than 50 000 years contains carbon"]
+      options: ["So little carbon-14 is left that it can't be measured", "Carbon-14 stops decaying after 50 000 years", "Nothing older than 50 000 years contains carbon"]
       answer: 0
       feedback: [null, "It keeps decaying at the same rate; there is just very little left.", "Old charcoal and bone still contain carbon, but almost none of it is carbon-14."]
       explain: "Each half-life halves what is left: after 9 half-lives (about 52 000 years) less than 0.2% remains, and tiny traces of modern carbon would swamp it."

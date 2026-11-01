@@ -72,13 +72,14 @@ tasks:
   - check:
       type: question
       q: "Which statement is Newton's first law?"
-      options: ["An object stays at rest or keeps moving at a constant velocity unless a net force acts on it", "A moving object needs a force to keep it moving", "Every object eventually comes to rest", "Heavier objects are harder to keep moving"]
+      options: ["Without a net force, motion doesn't change", "A moving object needs a force to keep it moving", "Every object eventually comes to rest", "Heavier objects are harder to keep moving"]
       answer: 0
       feedback: [null, "That is Aristotle's idea, which the puck contradicts.", "It stops only when a force, often friction, acts against it.", "Mass makes it harder to change motion, not to keep it going."]
+      explain: "In full: an object stays at rest or keeps moving at a constant velocity unless a net force acts on it."
   - check:
       type: question
       q: "So why does a ball rolling on grass slow down and stop?"
-      options: ["Friction and air resistance act against it: a net force backwards", "Its force runs out", "Gravity pulls it backwards", "Balls naturally stop"]
+      options: ["Friction and air resistance act against it", "Its force runs out as it rolls", "Gravity pulls it backwards", "Balls naturally stop by themselves"]
       answer: 0
       feedback: [null, "There is no store of force inside the ball.", "Gravity pulls down, not backwards, on flat ground.", "Only because a force acts: on smooth ice it goes much further."]
       explain: "The 'hidden' forces, friction and air resistance, are the net force that slows it."
@@ -86,9 +87,10 @@ tasks:
   - check:
       type: question
       q: "What is inertia?"
-      options: ["An object's tendency to resist changes in its motion (more mass, more inertia)", "A force that keeps objects moving", "The friction on a moving object"]
+      options: ["An object's tendency to resist changes in motion", "A force that keeps objects moving", "The friction on a moving object"]
       answer: 0
       feedback: [null, "Inertia isn't a force: it is resistance to a change in motion.", "Friction is a force; inertia is a property of the object."]
+      explain: "The more mass an object has, the more inertia: it is harder to start, stop or turn."
     hint: "Think about the puck coasting on the board with the push at 0 and friction off, and ask whether anything was pushing it along."
   - check: { type: reflect, text: "I explained why a moving object doesn't need a force to keep moving, and what really slows things down." }
 ```
@@ -117,7 +119,7 @@ tasks:
   - check:
       type: question
       q: "Friction is 2 N and the puck's mass is 1 kg. While it slides, what is happening?"
-      options: ["A net force of 2 N backwards makes it slow down steadily", "Its push slowly runs out", "Friction is balanced by its motion"]
+      options: ["A net force of 2 N backwards slows it steadily", "Its push slowly runs out as it slides", "Friction is balanced by its motion"]
       answer: 0
       feedback: [null, "There is no push at all, so the push is 0 N.", "Motion isn't a force; nothing balances friction here."]
       explain: "The only horizontal force is friction, so it is the net force. The graph slopes down in a straight line: steady slowing."
@@ -136,10 +138,10 @@ insight: "The unrestrained passenger is the first law in a high-stakes setting: 
 check:
   type: question
   q: "A car hits a barrier and stops suddenly. A passenger isn't wearing a seatbelt. Using the first law, what happens to them?"
-  options: ["They keep moving forward at the car's old speed until something (the dashboard, windscreen) exerts a force on them", "They are thrown forward by a force from the crash", "They stop with the car"]
+  options: ["They keep moving forward until something stops them", "They are thrown forward by a force from the crash", "They stop with the car"]
   answer: 0
   feedback: [null, "No force throws them forward: they simply keep going while the car stops.", "Only if a force acts on them: the seatbelt provides it, gently, over a longer time."]
-  explain: "A seatbelt applies the force that stops the passenger along with the car, spread over a little more time and a wide area."
+  explain: "They keep the car's old speed until something (the dashboard, the windscreen) exerts a force on them. A seatbelt applies the force that stops the passenger along with the car, spread over a little more time and a wide area."
 ```
 
 ## Evaluate: look back

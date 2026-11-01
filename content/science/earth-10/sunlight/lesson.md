@@ -75,15 +75,17 @@ tasks:
   - check:
       type: question
       q: "Arctic sea ice melts and is replaced by open ocean. What happens to the energy absorbed there?"
-      options: ["It increases, which warms the area and melts more ice", "It decreases", "It stays the same", "The ocean reflects more"]
+      options: ["It increases", "It decreases", "It stays the same", "The ocean reflects more"]
       answer: 0
       feedback: [null, "Ocean reflects far less than ice.", "Ice reflects about 80%, ocean about 6%.", "Dark ocean water reflects much less than white ice."]
+      explain: "More energy is absorbed, which warms the area and melts more ice."
   - check:
       type: question
       q: "Why does fresh snow reflect most of the sunlight that hits it, while the open ocean absorbs most?"
-      options: ["Light-coloured surfaces reflect most of the light that hits them; dark surfaces absorb most of it and warm up", "Snow is cold, so it can't take in any energy", "The ocean gets more sunlight, so it absorbs more", "Water is wet, so it soaks up the light"]
+      options: ["Light surfaces reflect most light; dark surfaces absorb most", "Snow is cold, so it can't take in any energy", "The ocean gets more sunlight, so it absorbs more", "Water is wet, so it soaks up the light"]
       answer: 0
       feedback: [null, "Snow does absorb some sunlight (that's why it melts in the sun); how much depends on how light or dark a surface is, not its temperature.", "Albedo is a percentage: with the same sunlight on each, snow reflects about 80% and the ocean about 6%.", "Being wet isn't the reason: it's how dark the surface is."]
+      explain: "The light or dark colour decides it. The dark ocean absorbs most of the sunlight and warms up."
   - check: { type: reflect, text: "I can explain that the sun is Earth's energy source, and why different surfaces reflect or absorb different amounts of sunlight." }
 ```
 
@@ -106,9 +108,10 @@ insight: "Angle of incidence explains why the poles get less energy, linking to 
 check:
   type: question
   q: "The same sunlight hits the equator nearly straight on, but the poles at a low angle. Why do the poles get less energy per square metre?"
-  options: ["The same beam is spread over a bigger area, and more is reflected at low angles", "The poles are farther from the sun", "The sun is dimmer there", "There is no sunlight at the poles"]
+  options: ["The same beam is spread over a bigger area", "The poles are farther from the sun", "The sun is dimmer there", "There is no sunlight at the poles"]
   answer: 0
   feedback: [null, "The difference in distance is tiny.", "It's the same sun.", "They get sunlight, at a low angle (and none in polar winter)."]
+  explain: "A low beam covers more ground, so each square metre gets less. More is also reflected at low angles."
 ```
 
 ## Elaborate: land use
@@ -120,10 +123,10 @@ insight: "Predicting the local energy effect of land-use change applies albedo t
 check:
   type: question
   q: "A city replaces grassland with dark roads and roofs. What happens to the local energy budget?"
-  options: ["More sunlight is absorbed, so the city warms: an urban heat island", "Less is absorbed", "No change", "The city reflects more"]
+  options: ["More sunlight is absorbed, so the city warms", "Less sunlight is absorbed, so the city cools", "No change, since the sunlight is the same", "The city reflects more of the sunlight"]
   answer: 0
   feedback: [null, "Dark surfaces absorb more.", "Dark roads have a lower albedo than grass.", "Asphalt is darker than grass."]
-  explain: "Light-coloured roofs and more trees are used to cool cities."
+  explain: "This is an urban heat island. Light-coloured roofs and more trees are used to cool cities."
 ```
 
 ## Evaluate: look back

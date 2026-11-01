@@ -105,10 +105,10 @@ tasks:
   - check:
       type: question
       q: "Copper is put into zinc sulfate solution. What happens?"
-      options: ["Nothing: copper is less reactive, so it can't displace zinc", "Copper sulfate and zinc form", "The copper dissolves"]
+      options: ["Nothing: copper is less reactive than zinc", "Copper sulfate and zinc form", "The copper dissolves into the solution"]
       answer: 0
       feedback: [null, "Displacement only goes one way: more reactive replaces less reactive.", "Copper doesn't react with zinc sulfate."]
-      explain: "Reactivity decides whether a displacement happens."
+      explain: "Copper can't displace zinc. Reactivity decides whether a displacement happens."
     hint: "Which of the two metals is more reactive, and which one would have to do the pushing out here?"
   - check:
       type: question
@@ -120,7 +120,7 @@ tasks:
   - check:
       type: question
       q: "Green copper carbonate powder is heated strongly. It turns black (copper oxide) and gives off carbon dioxide. Which kind of reaction is it, and what drives it?"
-      options: ["Decomposition, driven by heat: one compound breaks into two simpler substances", "Synthesis: the copper carbonate joins with the heat", "Displacement: carbon dioxide takes copper's place"]
+      options: ["Decomposition, driven by heat: one compound breaks up", "Synthesis: the copper carbonate joins with the heat", "Displacement: carbon dioxide takes copper's place"]
       answer: 0
       feedback: [null, "Heat is energy, not a substance, so it can't join anything. One substance in, two out.", "Nothing swaps places: one substance breaks into two."]
       explain: "copper carbonate → copper oxide + carbon dioxide. Many decompositions need energy put in: heat, as here and for limestone, or electricity, as for splitting water."
@@ -162,10 +162,10 @@ try: { playground: science, starter: "boards.yml#backwards", height: 520 }
 check:
   type: question
   q: "On this board, copper is mixed with zinc oxide. Watch it for a while. Why does no reaction happen?"
-  options: ["Copper is less reactive than zinc, so it can't take the oxygen from zinc", "The temperature is too low", "There isn't enough copper"]
+  options: ["Copper is less reactive than zinc", "The temperature is too low to start it", "There isn't enough copper on the board"]
   answer: 0
   feedback: [null, "Even heated strongly, copper won't take oxygen from zinc oxide.", "More copper wouldn't help."]
-  explain: "A displacement goes only from more reactive to less reactive. The reactivity series (potassium, sodium, calcium, magnesium, aluminium, zinc, iron, copper, silver, gold) predicts which way."
+  explain: "So copper can't take the oxygen from zinc. A displacement goes only from more reactive to less reactive. The reactivity series (potassium, sodium, calcium, magnesium, aluminium, zinc, iron, copper, silver, gold) predicts which way."
 hint: "Which metal is more reactive, copper or zinc, and which one is already holding the oxygen?"
 ```
 

@@ -79,10 +79,10 @@ tasks:
   - check:
       type: question
       q: "Which statement is true?"
-      options: ["Energy flows one way through a web and is lost as heat; matter (the atoms) is recycled by decomposers", "Energy and matter are both recycled", "Energy is recycled by decomposers; matter is lost"]
+      options: ["Energy flows one way; matter is recycled", "Energy and matter are both recycled", "Energy is recycled by decomposers; matter is lost"]
       answer: 0
       feedback: [null, "Part of that is right, since decomposers return atoms to the soil, but check what happens to energy once it's given off as heat.", "That's the wrong way round, so ask yourself what decomposers actually give back to the soil: nutrients or energy from sunlight?"]
-      explain: "That's why every food web needs a constant supply of sunlight, but doesn't need any new atoms."
+      explain: "Energy flows one way through a web and is lost as heat; matter (the atoms) is recycled by decomposers. That's why every food web needs a constant supply of sunlight, but doesn't need any new atoms."
     hint: ["Think about what a plant needs from the soil to grow, and whether that's the same thing as the sunlight it uses.", "Remember the board: the energy got smaller at each step, so ask where the missing part went and whether anything could pick it up again."]
   - check: { type: reflect, text: "I explained why only a small part of the energy reaches the top of a food chain, and how energy differs from matter." }
 ```
@@ -120,10 +120,10 @@ insight: "Connecting energy loss to population size explains why top predators a
 check:
   type: question
   q: "Why are there far fewer wedge-tailed eagles than grasshoppers in an ecosystem?"
-  options: ["So little energy reaches the top of the food chain that it can only support a few large predators", "Eagles have fewer babies", "Grasshoppers are easier to see"]
+  options: ["Little energy reaches the top of the chain", "Eagles have fewer babies", "Grasshoppers are easier to see"]
   answer: 0
   feedback: [null, "Breeding rates do vary, but that doesn't explain such a steep drop in numbers, so think about what limits a predator at the top.", "How easy they are to spot doesn't change how many there actually are, so it can't be the reason."]
-  explain: "Each level up gets about a tenth of the energy, so it can support far fewer organisms."
+  explain: "Each level up gets about a tenth of the energy, so little reaches the top that it can only support a few large predators."
 ```
 
 ## Elaborate: a desert and a rainforest
@@ -135,7 +135,7 @@ insight: "Comparing two ecosystems' energy input applies the flow principle to e
 check:
   type: question
   q: "A rainforest's plants capture far more energy each year than a desert's. What would you predict about their food webs?"
-  options: ["The rainforest receives and captures more energy, so it can support more organisms", "They would be the same size", "The desert would have more top predators"]
+  options: ["The rainforest can support more organisms", "They would be the same size", "The desert would have more top predators"]
   answer: 0
   feedback: [null, "If the rainforest captures far more energy to begin with, there's no reason to expect the two webs to come out the same size.", "The desert's plants capture much less energy, so check what that means for the animals at the top."]
   explain: "The energy producers capture sets the size of everything above them, so more at the bottom means more at the top."

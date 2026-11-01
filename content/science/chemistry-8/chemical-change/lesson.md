@@ -70,10 +70,10 @@ tasks:
   - check:
       type: question
       q: "On the reaction board, what happened to the atoms?"
-      options: ["They rearranged into new particles: hydrogen chloride", "Some atoms were destroyed", "New atoms were made", "They melted together"]
+      options: ["They rearranged into new particles", "Some atoms were destroyed", "New atoms were made", "They melted together"]
       answer: 0
       feedback: [null, "Check the panel: the number of H and Cl atoms is the same at the start and now.", "Check the panel: the atom counts never change.", "Nothing melted. The atoms separated and joined in new pairs."]
-      explain: "The atoms are the same; they are arranged into different particles. A new particle means a new substance."
+      explain: "The atoms are the same; they are arranged into different particles, here hydrogen chloride. A new particle means a new substance."
   - check:
       type: question
       q: "When the ice melted and boiled, what happened to the water particles?"
@@ -99,10 +99,10 @@ tasks:
   - check:
       type: question
       q: "Dissolving salt can be reversed, and it is physical. Which of these breaks the old \"can it be reversed?\" rule the other way?"
-      options: ["Recharging a battery: a chemical change that can be reversed", "Freezing water", "Cutting paper"]
+      options: ["Recharging a battery", "Freezing water", "Cutting paper"]
       answer: 0
       feedback: [null, "Freezing is physical and can be reversed, so it fits the old rule.", "Cutting is physical and can't easily be reversed, but no new substance is made."]
-      explain: "Charging and using a battery runs chemical reactions forwards and backwards. Reversibility is a clue, not the test."
+      explain: "Recharging a battery is a chemical change that can be reversed. Charging and using a battery runs chemical reactions forwards and backwards. Reversibility is a clue, not the test."
   - check: { type: reflect, text: "I explained why \"can it be reversed?\" is not a reliable test, using a counterexample, and stated the new substance test." }
 ```
 
@@ -130,7 +130,7 @@ tasks:
   - check:
       type: question
       q: "The salt disappeared. Is dissolving a chemical change?"
-      options: ["No: the salt particles are still there, spread between the water particles", "Yes: the salt turned into water", "Yes: the salt was destroyed"]
+      options: ["No: the salt particles are still there", "Yes: the salt turned into water", "Yes: the salt was destroyed"]
       answer: 0
       feedback: [null, "Taste salty water: the salt is still there.", "Evaporate the water and you get the salt back, the same substance."]
       explain: "No new substance: physical. The salt particles spread out between the water particles."

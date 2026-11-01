@@ -68,10 +68,10 @@ tasks:
   - check:
       type: question
       q: "On the coaster, what did the red bar show?"
-      options: ["Energy that became heat and sound because of friction and air resistance", "Energy that was destroyed", "The car's speed"]
+      options: ["Energy that became heat and sound", "Energy that was destroyed", "The car's speed"]
       answer: 0
       feedback: [null, "The total line didn't move: nothing was destroyed.", "Speed shows in the orange (kinetic) bar."]
-      explain: "By-product energy builds up as the car moves. It is still there, in the track, wheels and air."
+      explain: "Friction and air resistance turn some energy into heat and sound. This by-product energy builds up as the car moves. It is still there, in the track, wheels and air."
   - check:
       type: sort
       q: "In a torch (battery, wires, bulb), useful output or by-product?"
@@ -114,10 +114,10 @@ tasks:
   - check:
       type: question
       q: "Where in this system does energy end up as by-product heat?"
-      options: ["Spread across every stage: the generator, the wires and the lights all give some off", "Only in the falling water", "Nowhere: hydro power is perfect"]
+      options: ["At every stage, a little at each", "Only in the falling water", "Nowhere: hydro power is perfect"]
       answer: 0
       feedback: [null, "Falling water mostly makes the turbine spin.", "No real system is perfect: every stage gives off some heat."]
-      explain: "Every stage gives off some, and the lights often give off the most. Year 9 measures how much with efficiency and Sankey diagrams."
+      explain: "The generator, the wires and the lights all give some off, and the lights often give off the most. Year 9 measures how much with efficiency and Sankey diagrams."
 ```
 
 ### Dam to lights
@@ -133,10 +133,10 @@ insight: "Following a system to the end shows where all the energy finally goes:
 check:
   type: question
   q: "If a coaster had no brakes and no engine and just kept rolling back and forth, where would all its energy end up?"
-  options: ["As heat (and sound) in the track, the wheels and the air: the car stops in a dip", "Back as potential energy at the top", "Destroyed by friction"]
+  options: ["As heat and sound: the car stops in a dip", "Back as potential energy at the top", "Destroyed by friction"]
   answer: 0
   feedback: [null, "It can never climb back to the start: some energy leaves at every pass.", "Friction transforms energy; it doesn't destroy it."]
-  explain: "Each pass turns more into heat and sound until the car rests in the lowest dip. The energy is all still there, spread out."
+  explain: "Each pass turns more into heat and sound in the track, the wheels and the air, until the car rests in the lowest dip. The energy is all still there, spread out."
 ```
 
 ## Evaluate: look back

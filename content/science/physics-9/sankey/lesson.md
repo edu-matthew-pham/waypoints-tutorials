@@ -90,7 +90,7 @@ tasks:
   - check:
       type: question
       q: "What does a Sankey diagram NOT show?"
-      options: ["How much the system costs, or the pollution it makes", "Where energy is wasted", "The efficiency"]
+      options: ["How much it costs, or the pollution it makes", "Where energy is wasted, and how much", "The efficiency"]
       answer: 0
       feedback: [null, "That's exactly what it shows.", "You can read it off the useful band."]
       explain: "It shows energy only. Comparing real systems also needs cost, emissions and whether the energy source runs out."
@@ -131,10 +131,10 @@ tasks:
   - check:
       type: question
       q: "In a kettle, heat is the useful output. In a light bulb, heat is waste. Why?"
-      options: ["'Useful' means what the device is for: a kettle's job is heating water", "Kettles make a different kind of heat", "Light bulbs don't really make heat"]
+      options: ["'Useful' means what the device is for", "Kettles make a different kind of heat", "Light bulbs don't really make heat"]
       answer: 0
       feedback: [null, "Heat is heat; the job decides.", "They do: that's their main waste."]
-      explain: "The same type of energy can be useful in one device and wasted in another."
+      explain: "A kettle's job is heating water; a bulb's job is light. The same type of energy can be useful in one device and wasted in another."
 ```
 
 ### The kettle
@@ -150,10 +150,10 @@ insight: "Efficiency is one factor among several in real energy decisions; Sanke
 check:
   type: question
   q: "A hydro station is about 90% efficient and a coal station about 35%. Why doesn't every country just build hydro stations?"
-  options: ["Hydro needs the right rivers and valleys, and dams flood land; efficiency is only one factor", "Hydro stations make no electricity in winter", "Coal is more efficient really"]
+  options: ["Hydro needs the right rivers and valleys, and dams flood land", "Hydro stations make no electricity in winter", "Coal is more efficient really"]
   answer: 0
   feedback: [null, "Rain and snow melt feed rivers all year in many places.", "The figures say otherwise."]
-  explain: "Real choices weigh efficiency with cost, location, pollution and whether the source is renewable."
+  explain: "Efficiency is only one factor. Real choices weigh efficiency with cost, location, pollution and whether the source is renewable."
 ```
 
 ## Evaluate: look back

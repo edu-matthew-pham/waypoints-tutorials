@@ -80,10 +80,10 @@ tasks:
   - check:
       type: question
       q: "A pile of books rests on a table. Its weight is 49 N down; the table pushes it up with 49 N. Are these a third-law pair?"
-      options: ["No: both act on the book. The partner of the book's weight is the book pulling the Earth up", "Yes: they are equal and opposite", "Yes: they cancel out"]
+      options: ["No: both forces act on the book", "Yes: they are equal and opposite", "Yes: they cancel out"]
       answer: 0
       feedback: [null, "Equal and opposite on the same object means balanced, not a third-law pair.", "Third-law pairs act on different objects, so they can't cancel."]
-      explain: "Balanced forces act on one object. A third-law pair always acts on two objects: Earth pulls book, book pulls Earth; table pushes book, book pushes table."
+      explain: "The partner of the book's weight is the book pulling the Earth up. Balanced forces act on one object. A third-law pair always acts on two objects: Earth pulls book, book pulls Earth; table pushes book, book pushes table."
     hint: ["What is each of those two forces acting on?", "For both forces, name who's doing the pushing or pulling and what it's being done to."]
   - check:
       type: question
@@ -96,10 +96,10 @@ tasks:
   - check:
       type: question
       q: "A horse pulls a cart forward with 500 N. By the third law, the cart pulls back on the horse with 500 N. So how can the cart start moving?"
-      options: ["The two forces act on different objects, so they don't cancel: the cart speeds up if the horse's pull is bigger than the friction on the cart", "The horse pulls a little harder than the cart pulls back", "It can't: equal and opposite forces cancel, so nothing moves"]
+      options: ["The two forces act on different objects, so they don't cancel", "The horse pulls a little harder than the cart pulls back", "It can't: equal and opposite forces cancel, so nothing moves"]
       answer: 0
       feedback: [null, "Third-law pairs are always exactly the same size. Look only at the forces on the cart.", "Only forces on the same object can cancel. These two act on different objects."]
-      explain: "To see what the cart does, add only the forces on the cart: the horse's pull forward and friction back. The cart's pull acts on the horse, not the cart."
+      explain: "To see what the cart does, add only the forces on the cart: the horse's pull forward and friction back. It speeds up if the pull is bigger than the friction. The cart's pull acts on the horse, not the cart."
     hint: ["To work out what the cart does, which forces should you be adding up?", "Look at each force and ask what it's acting on: the horse, the cart or the road."]
   - check: { type: reflect, text: "I can state Newton's third law, name both forces in a pair, and tell a pair from two balanced forces." }
 ```

@@ -71,9 +71,10 @@ tasks:
   - check:
       type: question
       q: "Why does a leaf need more than one tissue?"
-      options: ["Photosynthesis needs light, water, gas exchange, protection and transport: no single tissue can do all of them", "More tissues make it greener", "It doesn't; the extra tissues are spare"]
+      options: ["No single tissue can do every job it needs", "More tissues make it greener", "It doesn't; the extra tissues are spare"]
       answer: 0
       feedback: [null, "Colour isn't the reason.", "Each tissue has a job the others can't do."]
+      explain: "Photosynthesis needs light, water, gas exchange, protection and transport, and no single tissue can do all of them."
   - check:
       type: parsons
       code: "levels.txt#order"
@@ -114,9 +115,10 @@ tasks:
   - check:
       type: question
       q: "If the heart were made only of cardiac muscle, what would go wrong?"
-      options: ["No smooth lining (blood would clot), no valves (blood would flow backwards), no nerves to adjust how fast it beats", "Nothing: muscle does it all", "It would beat too slowly"]
+      options: ["Blood would clot and flow backwards", "Nothing: muscle does it all", "It would beat too slowly"]
       answer: 0
       feedback: [null, "Muscle pumps, but other tissues line it, hold it together and control it.", "Each beat starts in special muscle cells, so it would keep beating; nerves only speed it up or slow it down. Think about clotting and backflow."]
+      explain: "With no smooth lining, blood would clot; with no valves, it would flow backwards; with no nerves, nothing would adjust how fast it beats."
     hint: ["Think about the other layers you found in the heart wall, and what each one is there for.", "Click the lining and the outer layer on the board again and read what they do."]
 ```
 
@@ -133,9 +135,10 @@ insight: "Tracing a tissue disorder to organ failure shows why organ function de
 check:
   type: question
   q: "In atherosclerosis, fatty deposits and thickened tissue build up in artery walls. How does this affect the circulatory system?"
-  options: ["Arteries narrow, so less blood reaches organs like the heart muscle, which can cause a heart attack", "Arteries get wider and blood flows faster", "It only affects the blood, not the organs"]
+  options: ["Arteries narrow, so less blood reaches organs", "Arteries get wider and blood flows faster", "It only affects the blood, not the organs"]
   answer: 0
   feedback: [null, "The deposits narrow them.", "Organs fed by narrowed arteries get less oxygen."]
+  explain: "Narrowed arteries carry less blood. When the heart muscle itself gets too little, that can cause a heart attack."
 ```
 
 ## Evaluate: look back

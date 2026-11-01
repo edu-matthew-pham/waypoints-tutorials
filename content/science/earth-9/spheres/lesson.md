@@ -75,9 +75,10 @@ tasks:
   - check:
       type: question
       q: "A tree takes in carbon dioxide and water to grow. Which spheres does this connect?"
-      options: ["Atmosphere (CO₂), hydrosphere (water) and biosphere (the tree)", "Only the biosphere", "Only the atmosphere", "Geosphere and atmosphere"]
+      options: ["Atmosphere, hydrosphere and biosphere", "Only the biosphere", "Only the atmosphere", "Geosphere and atmosphere"]
       answer: 0
       feedback: [null, "Where do the CO₂ and water come from?", "The tree is part of it too.", "The tree itself is alive, so it belongs to the biosphere, not the geosphere."]
+      explain: "CO₂ comes from the atmosphere, water from the hydrosphere, and the tree is part of the biosphere."
     hint: ["Ask where the carbon dioxide was before the tree took it in, where the water was, and which sphere the tree itself belongs to.", "Check each of those against the line of sphere meanings under the buttons on the board."]
   - check:
       type: match

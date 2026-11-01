@@ -72,7 +72,7 @@ tasks:
   - check:
       type: question
       q: "Which statement is cell theory?"
-      options: ["All living things are made of one or more cells, and the cell is the smallest unit of life", "Only animals are made of cells", "Cells are found in living and non-living things", "Big organisms have big cells"]
+      options: ["All living things are made of cells, the smallest unit of life", "Only animals are made of cells", "Cells are found in living and non-living things", "Big organisms have big cells"]
       answer: 0
       feedback: [null, "Plants, fungi and bacteria are cells too: you found membranes in all of them.", "Rocks and air are not made of cells.", "An elephant's cells are about the same size as a mouse's; it just has more of them."]
     hint: ["Think back to the board: what did you find inside the bacterium, the yeast and the plant cell?", "Cell theory has to be true for every living thing, so try each statement on a mushroom and on the bacteria in yoghurt."]
@@ -90,9 +90,10 @@ tasks:
   - check:
       type: question
       q: "A single-celled yeast cell and one of your skin cells are both cells. What's the big difference?"
-      options: ["The yeast cell does everything to stay alive on its own; your skin cell is one of trillions, each doing a job", "The yeast cell isn't really alive", "Your skin cell has no membrane"]
+      options: ["The yeast cell lives on its own; a skin cell doesn't", "The yeast cell isn't really alive", "Your skin cell has no membrane"]
       answer: 0
       feedback: [null, "Yeast feeds, grows and reproduces: it's alive.", "Every cell has a membrane."]
+      explain: "The yeast cell does everything to stay alive on its own; your skin cell is one of trillions, each doing a job."
   - check: { type: reflect, text: "I can state cell theory and give an example of a single-celled and a multicellular organism, including a plant or a microbe." }
 ```
 
@@ -133,10 +134,10 @@ insight: "Asking what the minimum for life is uses cell theory to reason about a
 check:
   type: question
   q: "A virus is far smaller than a bacterium. It has DNA (or RNA) in a protein coat, but no membrane or cytoplasm of its own, and it can only reproduce inside a living cell. Using cell theory, is a virus a living thing?"
-  options: ["By cell theory, no: it isn't a cell, so scientists usually call it non-living", "Yes: it has DNA", "Yes: it is very small"]
+  options: ["No: it isn't a cell", "Yes: it has DNA, like every living thing", "Yes: it can make more of itself"]
   answer: 0
-  feedback: [null, "Having DNA isn't enough: it can't carry out life processes on its own.", "Size doesn't decide it; being a cell does."]
-  explain: "Viruses sit on the boundary. Most biologists say they are not alive, because they are not cells."
+  feedback: [null, "Having DNA isn't enough: it can't carry out life processes on its own.", "Only inside a living cell, using that cell's parts. It can't reproduce on its own."]
+  explain: "By cell theory, a virus isn't a cell, so scientists usually call it non-living. Viruses sit on the boundary. Most biologists say they are not alive, because they are not cells."
 ```
 
 ## Evaluate: look back

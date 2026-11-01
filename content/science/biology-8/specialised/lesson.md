@@ -110,10 +110,10 @@ insight: "Predicting the features a job needs reverses the reasoning: function t
 check:
   type: question
   q: "Cells lining your small intestine absorb digested food. Which feature would you expect them to have?"
-  options: ["Tiny folds (microvilli) on the surface, for a much larger area", "No membrane, so food gets in easily", "A long tail to swim"]
+  options: ["Tiny folds on the surface (microvilli)", "No membrane, so food gets in easily", "A long tail to swim"]
   answer: 0
   feedback: [null, "Without a membrane, everything would leak out.", "They stay put; the food comes to them."]
-  explain: "Like root hairs, intestine cells increase their surface area to absorb more."
+  explain: "Microvilli give a much larger surface area. Like root hairs, intestine cells increase their surface area to absorb more."
 ```
 
 ## Elaborate: energy-hungry cells

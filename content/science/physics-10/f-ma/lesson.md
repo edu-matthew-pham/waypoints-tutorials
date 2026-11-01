@@ -202,9 +202,9 @@ insight: "Predicting the shape of an F–a graph before seeing data prepares stu
 check:
   type: question
   q: "You measure a trolley's acceleration for several pulling forces, keeping the mass the same. What graph of acceleration against force does F = ma predict?"
-  options: ["A straight line through the origin (gradient 1 ÷ mass)", "A curve that levels off", "A horizontal line"]
+  options: ["A straight line through the origin", "A curve that levels off", "A horizontal line", "A line sloping down"]
   answer: 0
-  feedback: [null, "In a real practical friction can shift the line so it misses the origin, but F = ma still predicts a straight line.", "That would mean force has no effect."]
+  feedback: [null, "In a real practical friction can shift the line so it misses the origin, but F = ma still predicts a straight line.", "That would mean force has no effect.", "That would mean more force gives less acceleration."]
   explain: "a = F ÷ m, so a is proportional to F: a straight line through the origin with gradient 1/m. Real data that misses the origin usually points to friction."
 ```
 

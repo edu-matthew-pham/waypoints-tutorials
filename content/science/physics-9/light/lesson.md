@@ -112,7 +112,7 @@ tasks:
   - check:
       type: question
       q: "Why are UV, X-rays and gamma rays more dangerous to living cells than radio waves?"
-      options: ["Each packet carries a lot more energy, enough to damage cells", "They are brighter", "They travel faster"]
+      options: ["Each packet carries enough energy to damage cells", "They are brighter, so more energy reaches us", "They travel faster, so they hit cells harder"]
       answer: 0
       feedback: [null, "Brightness is how much energy arrives in total; the danger comes from the energy in each packet.", "They all travel at the same speed."]
       explain: "High-frequency waves hand over much more energy in each packet, enough to damage the molecules in cells. Low-frequency waves such as radio don't."
@@ -148,10 +148,10 @@ tasks:
   - check:
       type: question
       q: "Why does a mobile phone use microwaves and not X-rays?"
-      options: ["Microwaves carry information well and are safe at low power, but X-rays would damage cells", "X-rays travel too slowly", "Microwaves are visible"]
+      options: ["Microwaves carry signals safely; X-rays would damage cells", "X-rays travel too slowly to carry calls", "X-rays can't carry information at all"]
       answer: 0
-      feedback: [null, "They travel at the same speed.", "Microwaves can't be seen."]
-      explain: "A communication technology needs waves that carry signals and are safe to use all around us. High-energy X-rays would be dangerous."
+      feedback: [null, "They travel at the same speed.", "X-rays could carry signals; the problem is that they damage cells."]
+      explain: "A communication technology needs waves that carry signals and are safe to use all around us. Microwaves are safe at low power; high-energy X-rays would be dangerous."
 ```
 
 ### Wavelength 12 cm
@@ -167,7 +167,7 @@ insight: "Linking the wave model to UV damage explains protective behaviour thro
 check:
   type: question
   q: "Why does Australian sun safety advice focus on UV, even on cool, cloudy days?"
-  options: ["UV has enough energy per packet to damage skin cells, and you can't feel it as heat", "UV is the hottest part of sunlight", "Clouds make UV stronger"]
+  options: ["UV can damage skin cells, and you can't feel it as heat", "UV is the hottest part of sunlight, so it burns", "Clouds make UV stronger"]
   answer: 0
   feedback: [null, "Infrared carries most of the heat you feel.", "Clouds don't block all UV."]
   explain: "UV is invisible and not felt as heat, but each packet carries enough energy to damage skin cells. That's why shade, clothing, a hat and sunscreen matter on any bright day."
@@ -193,10 +193,10 @@ tasks:
   - check:
       type: question
       q: "Scientists knew UV causes skin cancer well before 1981, but sun-safe habits spread only after the campaigns began. What does that show?"
-      options: ["Evidence alone isn't enough: science is taken up when the message is clear, the actions are easy and people keep hearing it from sources they trust", "Sunscreen wasn't on sale in Australia before 1981", "The science changed in 1981", "Campaigns only work when the science is brand new"]
+      options: ["Evidence alone isn't enough: people must hear it clearly and often", "Sunscreen wasn't on sale in Australia before 1981", "The science changed in 1981", "Campaigns only work when the science is brand new"]
       answer: 0
       feedback: [null, "Sunscreen was sold for decades before; what changed was how many people used it.", "The link between UV and skin cancer was already established.", "The science was decades old: what changed was how it reached people."]
-      explain: "Adoption depends on more than evidence: cost, convenience, trust, repetition and rules all matter. Australia still has one of the highest skin cancer rates in the world, so the campaigns continue."
+      explain: "Science is taken up when the message is clear, the actions are easy and people keep hearing it from sources they trust. Adoption depends on more than evidence: cost, convenience, trust, repetition and rules all matter. Australia still has one of the highest skin cancer rates in the world, so the campaigns continue."
 ```
 
 ### What helped

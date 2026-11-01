@@ -82,14 +82,15 @@ tasks:
   - check:
       type: question
       q: "From Pp × Pp, a gardener grows 4 seeds. Are exactly 3 purple and 1 white?"
-      options: ["Not necessarily: each seed has a 3 in 4 chance of purple, so small numbers vary; large numbers get close to 75%", "Yes, always exactly 3 and 1", "No, it's always half and half", "No: the square only works for animals"]
+      options: ["Not necessarily: each seed is a 3 in 4 chance", "Yes, always exactly 3 and 1", "No, it's always half and half", "No: the square only works for animals"]
       answer: 0
       feedback: [null, "Each seed is a separate chance, and your batches of 100 varied too.", "The square predicts 3 : 1, not half and half.", "The square works for any gene, in plants as well as animals."]
+      explain: "Each seed has a 3 in 4 chance of purple, so small numbers vary. Large numbers get close to 75%."
     hint: ["If the first three seeds all come up purple, does the fourth seed know it's meant to be white?", "Look at your batches of 100 on the board: did you get exactly the same number of purple every time you bred?"]
   - check:
       type: question
       q: "Why can two purple parents have a white offspring?"
-      options: ["Both carry a hidden recessive p allele, and the offspring got p from each", "White came from a mutation every time", "The environment made it white", "One parent was really white"]
+      options: ["Both carry a hidden p; the offspring got p from each", "White came from a mutation every time", "The environment made it white", "One parent was really white"]
       answer: 0
       feedback: [null, "No mutation is needed: both parents carry p.", "The square explains it with the alleles alone.", "Both parents were Pp: purple."]
   - check:
@@ -144,9 +145,10 @@ try: { playground: board, starter: "boards.yml#choose", height: 620 }
 check:
   type: question
   q: "A black guinea pig could be BB or Bb. You cross it with a white (bb) one and get several white babies. What was its genotype?"
-  options: ["Bb: a white baby needs a b from each parent", "BB", "bb", "You can't tell"]
+  options: ["Bb", "BB", "bb", "You can't tell"]
   answer: 0
   feedback: [null, "BB × bb gives only Bb: all black.", "A bb guinea pig would be white.", "One white baby is enough."]
+  explain: "A white baby needs a b from each parent, so the black parent must carry b: Bb."
 ```
 
 Use the board to try BB × bb and Bb × bb before you answer.

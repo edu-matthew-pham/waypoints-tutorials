@@ -93,24 +93,24 @@ tasks:
   - check:
       type: question
       q: "Why don't animal cells need chloroplasts?"
-      options: ["Animals get their food by eating, so they don't make it from light", "Animals live where there is no light", "Animal cells are too small for chloroplasts"]
+      options: ["Animals get their food by eating", "Animals live where there is no light", "Animal cells are too small for chloroplasts"]
       answer: 0
       feedback: [null, "Most animals live in light; it is how they get food that differs.", "Size is not the reason."]
       explain: "Plants make their own food by photosynthesis; animals eat. Each cell's parts match how the organism lives."
   - check:
       type: question
       q: "A lettuce leaf goes limp when it loses water. Which part explains this?"
-      options: ["The vacuoles shrink, so the cells push less against their walls", "The chloroplasts stop working", "The cell walls dissolve"]
+      options: ["The vacuoles shrink", "The chloroplasts stop working", "The cell walls dissolve"]
       answer: 0
       feedback: [null, "Chloroplasts make food; they don't hold the leaf up.", "Walls stay; it's the pressure inside that drops."]
       explain: "A full vacuole presses the cell against its wall and keeps it firm. Lose water and the cell goes soft: the leaf wilts. Put it in water and it firms up again."
   - check:
       type: question
       q: "A muscle cell has far more mitochondria than a skin cell. Why?"
-      options: ["Contracting needs a lot of energy, and mitochondria release it", "Muscle cells are bigger", "Mitochondria make muscles strong"]
+      options: ["Contracting needs a lot of energy", "Muscle cells are bigger", "Mitochondria make muscles strong"]
       answer: 0
       feedback: [null, "Size alone doesn't explain it; the job does.", "They supply energy; the protein fibres do the pulling."]
-      explain: "Cells have the parts their job needs, in the numbers it needs: same DNA, different organelles."
+      explain: "Mitochondria release energy, and contracting needs a lot of it. Cells have the parts their job needs, in the numbers it needs: same DNA, different organelles."
   - check: { type: reflect, text: "I can name the parts only plant cells have and explain what each is for, and say which parts all these cells share." }
 ```
 
@@ -141,10 +141,10 @@ tasks:
   - check:
       type: question
       q: "Root hair cells have no chloroplasts. Why not?"
-      options: ["They are underground, with no light to photosynthesise; their job is taking in water", "They are not plant cells", "Chloroplasts would make them too heavy"]
+      options: ["There is no light underground", "They are not plant cells", "Chloroplasts would make them too heavy"]
       answer: 0
       feedback: [null, "They are plant cells: they have walls and vacuoles.", "Weight is not the reason."]
-      explain: "A cell has the parts its job needs. Chloroplasts in the dark would be useless."
+      explain: "Their job is taking in water, underground with no light to photosynthesise. A cell has the parts its job needs. Chloroplasts in the dark would be useless."
     hint: "Do roots get any light down in the soil? And what do chloroplasts need light for?"
 ```
 

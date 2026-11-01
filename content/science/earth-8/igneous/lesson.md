@@ -66,7 +66,7 @@ tasks:
   - check:
       type: question
       q: "Why did slow cooling give bigger crystals?"
-      options: ["Only a few crystals started, and the particles had time to join them", "Slow cooling makes each particle bigger", "There was more magma", "Slow cooling melts the small crystals"]
+      options: ["Few crystals started, with time to grow", "Slow cooling makes each particle bigger", "There was more magma", "Slow cooling melts the small crystals"]
       answer: 0
       feedback: [null, "The particles were the same size every time. Look at how many crystals there were.", "Every run started with the same amount of melt.", "Nothing melted again: the temperature only went down."]
       explain: "With little time below the melting point, few crystals start. Each one has time to collect particles from the melt and grow large."
@@ -74,7 +74,7 @@ tasks:
   - check:
       type: question
       q: "Why did fast cooling give small crystals?"
-      options: ["Many crystals started at once, and the melt set before any could grow large", "The particles shrank as they cooled", "Fast cooling breaks crystals apart"]
+      options: ["Many crystals started at once", "The particles shrank as they cooled", "Fast cooling breaks crystals apart"]
       answer: 0
       feedback: [null, "The particles were the same size every time.", "The crystals were never broken: many small ones grew side by side."]
       explain: "Cooling fast, the melt is soon far below its melting point and crystals start everywhere. They share out the particles and the rock sets before any gets big."
@@ -137,14 +137,14 @@ tasks:
   - check:
       type: question
       q: "A rock has large crystals surrounded by tiny ones (geologists call it porphyry). What is the most likely history?"
-      options: ["It cooled slowly underground for a while, then erupted and cooled quickly", "It cooled quickly and then slowly", "Two different rocks were glued together"]
+      options: ["It cooled slowly, then erupted and cooled fast", "It cooled quickly and then slowly", "Two different rocks were glued together"]
       answer: 0
       feedback: [null, "Big crystals need slow cooling first: they had to grow before the rest set quickly.", "The large crystals grew inside the melt, so they belong to the same rock."]
       explain: "Two stages: slow cooling grew the big crystals, then fast cooling set the rest as tiny crystals around them."
   - check:
       type: question
       q: "Pumice is a glassy rock full of holes, so light it can float. What can you infer about how it formed?"
-      options: ["It cooled very fast, while gas bubbles were still escaping", "It cooled slowly deep underground", "It was worn into shape by water"]
+      options: ["It cooled fast, trapping gas bubbles", "It cooled slowly deep underground", "It was worn into shape by water"]
       answer: 0
       feedback: [null, "Slow cooling gives crystals, and pumice is glassy.", "Pumice's holes are gas bubbles, frozen in place."]
       explain: "Frothy lava blasted out of a volcano: cooled almost instantly, trapping gas bubbles in glass."

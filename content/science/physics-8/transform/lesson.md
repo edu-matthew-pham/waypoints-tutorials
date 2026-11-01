@@ -88,14 +88,14 @@ tasks:
   - check:
       type: question
       q: "A bulb makes light and heat. Which is the by-product?"
-      options: ["The heat: it isn't the job the bulb is for", "The light", "Neither"]
+      options: ["The heat", "The light", "Neither"]
       answer: 0
       feedback: [null, "Light is the useful output of a bulb.", "Most energy changes make some by-product heat."]
-      explain: "The useful output is what the device is for; by-products are the rest, usually heat and sometimes sound."
+      explain: "The heat isn't the job the bulb is for. The useful output is what the device is for; by-products are the rest, usually heat and sometimes sound."
   - check:
       type: question
       q: "Is the by-product heat from a bulb destroyed?"
-      options: ["No: it spreads into the room, where it is hard to use", "Yes: by-products are destroyed", "It turns back into electricity"]
+      options: ["No: it spreads into the room", "Yes: by-products are destroyed", "It turns back into electricity"]
       answer: 0
       feedback: [null, "Energy is never destroyed (Year 9 makes this a law).", "It doesn't flow back by itself."]
       explain: "The heat warms the air a little. It isn't lost, just spread out and not useful."
@@ -139,10 +139,10 @@ tasks:
   - check:
       type: question
       q: "The speaker cone gets slightly warm. Where in the flow does that heat come from?"
-      options: ["A by-product when electrical energy becomes movement of the cone", "From the sound", "From the battery directly"]
+      options: ["Electrical energy becoming movement", "From the sound it makes", "From the battery directly"]
       answer: 0
       feedback: [null, "Sound is the useful output, at the end.", "The battery's energy goes through the circuit first."]
-      explain: "Each transformation tends to give off a little heat: here, in the speaker's coil and cone."
+      explain: "It is a by-product when electrical energy becomes movement of the cone. Each transformation tends to give off a little heat: here, in the speaker's coil and cone."
 ```
 
 ### The speaker
@@ -162,9 +162,9 @@ tasks:
   - check:
       type: question
       q: "Why does a bow need to be drawn back before the arrow can fly?"
-      options: ["Drawing it stores elastic potential energy, which becomes the arrow's kinetic energy", "To aim it", "To warm it up"]
+      options: ["It stores elastic potential energy", "So the archer can aim it", "To make the string tight enough"]
       answer: 0
-      feedback: [null, "Aiming matters, but the energy comes from bending the bow.", "Warming has nothing to do with it."]
+      feedback: [null, "Aiming matters, but the energy comes from bending the bow.", "The string is already tight on a strung bow. Drawing it back bends the bow, and that stores the energy."]
       explain: "The archer's chemical energy is stored as elastic potential in the bow, then released as the arrow's kinetic energy."
 ```
 

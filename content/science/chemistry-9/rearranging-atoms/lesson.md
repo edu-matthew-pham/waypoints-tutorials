@@ -118,10 +118,10 @@ tasks:
   - check:
       type: question
       q: "To balance H₂ + O₂ → H₂O, a student changes it to H₂ + O₂ → H₂O₂. What is wrong?"
-      options: ["H₂O₂ is a different substance (hydrogen peroxide), not water", "Nothing: it balances now", "You can't put a 2 after O"]
+      options: ["H₂O₂ is a different substance, not water", "Nothing: it balances now", "You can't put a 2 after O"]
       answer: 0
       feedback: [null, "It balances, but it describes a different reaction.", "You can, but it changes the substance."]
-      explain: "Balance by changing how many particles (the big numbers in front), never the formulas: 2H₂ + O₂ → 2H₂O."
+      explain: "H₂O₂ is hydrogen peroxide. Balance by changing how many particles (the big numbers in front), never the formulas: 2H₂ + O₂ → 2H₂O."
     hint: "What would you actually have in the bottle if you wrote H₂O₂ instead of H₂O?"
 ```
 
@@ -159,10 +159,10 @@ tasks:
   - check:
       type: question
       q: "Wood burned on an open fire leaves ash that weighs much less than the wood. Does that break conservation of mass?"
-      options: ["No: carbon dioxide and water vapour went into the air, carrying atoms away", "Yes: the burnt atoms were destroyed", "Yes: the energy given out had mass"]
+      options: ["No: gases went into the air, carrying atoms away", "Yes: the burnt atoms were destroyed", "Yes: the energy given out had mass"]
       answer: 0
       feedback: [null, "Weigh it in a sealed container and the mass stays the same.", "The energy given out does not account for the missing mass; the gases do."]
-      explain: "In an open container, gaseous products escape. In a sealed one, the mass doesn't change."
+      explain: "Carbon dioxide and water vapour went into the air. In an open container, gaseous products escape. In a sealed one, the mass doesn't change."
     hint: ["Does a balloon get heavier or lighter when you blow it up, and what does that tell you about gases?", "Think about what the atoms in the wood end up as when it burns, and where those go on an open fire."]
   - check:
       type: question

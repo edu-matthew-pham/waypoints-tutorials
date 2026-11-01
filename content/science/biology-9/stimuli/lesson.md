@@ -89,9 +89,10 @@ tasks:
   - check:
       type: question
       q: "The smell of toast is the stimulus. Which is the receptor, and what does it do?"
-      options: ["Smell receptors in the nose: they detect chemicals from the toast and send impulses to the brain", "The brain: it smells the toast", "The toast: it gives off the smell", "The salivary glands: they make your mouth water"]
+      options: ["Smell receptors in the nose: they detect chemicals", "The brain: it smells the toast", "The toast: it gives off the smell", "The salivary glands: they make your mouth water"]
       answer: 0
       feedback: [null, "The brain is the command centre: it makes sense of the impulses but can't detect chemicals in the air itself.", "The toast is where the stimulus comes from; receptors are part of your body.", "Glands that respond are effectors: they carry out the response."]
+      explain: "Smell receptors in the nose detect chemicals from the toast and send impulses to the brain."
   - check: { type: reflect, text: "I can trace a stimulus through receptor, command centre and effector to a response, for one external and one internal change." }
 ```
 
@@ -135,7 +136,7 @@ insight: "Plants detect and respond to stimuli without nerves, which separates t
 check:
   type: question
   q: "A seedling on a windowsill bends towards the light. Which part of the pathway is missing compared with your body?"
-  options: ["There are no nerves: the command is a plant hormone (auxin) carried in the plant, not an impulse", "There is no stimulus", "There is no response", "Nothing is different"]
+  options: ["There are no nerves: a hormone carries the command", "There is no stimulus, only sunlight", "There is no response, only growth", "Nothing is different"]
   answer: 0
   feedback: [null, "Light from one side is the stimulus.", "Bending is the response.", "Plants have no nervous system."]
   explain: "Plants still detect a stimulus and respond. They have no nerves, so bending towards light is coordinated by a hormone, auxin. (A few plants, like the Venus flytrap, also send fast electrical signals.)"

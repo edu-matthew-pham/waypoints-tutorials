@@ -71,10 +71,10 @@ tasks:
   - check:
       type: question
       q: "Both boards had hydrogen and oxygen atoms. What made water a compound and not a mixture?"
-      options: ["Its hydrogen and oxygen atoms are chemically joined in each particle", "It has more atoms", "It is a liquid", "Its atoms are closer together"]
+      options: ["Its atoms are joined in each particle", "It has more atoms", "It is a liquid", "Its atoms are closer together"]
       answer: 0
       feedback: [null, "The number of atoms does not decide it. How they are arranged does.", "Being a liquid is a state, not what makes a compound. Steam is still water.", "The board's water particles were spread out like a gas. Joining is what matters, not spacing."]
-      explain: "In a compound, different types of atom are chemically joined. In a mixture they are just together, not joined."
+      explain: "In water, the hydrogen and oxygen atoms are chemically joined in each particle. In a compound, different types of atom are chemically joined. In a mixture they are just together, not joined."
     hint: ["Think back to the two boards. In which one did hydrogen and oxygen atoms end up inside the same particle?", "Look back at the table under each board, at the formula of each kind of particle and what the last column says about it."]
   - check:
       type: sort
@@ -171,9 +171,10 @@ tasks:
   - check:
       type: question
       q: "Hydrogen and oxygen are gases that let things burn. Water puts fires out. What does that show?"
-      options: ["A compound has different properties from the elements it is made from", "Water is a mixture of hydrogen and oxygen", "The atoms changed type"]
+      options: ["Compounds have different properties from their elements", "Water is a mixture of hydrogen and oxygen", "The atoms changed type"]
       answer: 0
       feedback: [null, "If water were a mixture, it would still let things burn, like the gases do.", "Count the atoms in the panel: the same hydrogen and oxygen atoms, joined in a new way."]
+      explain: "A compound has different properties from the elements it is made from: joining the atoms makes a new substance."
     hint: ["Imagine water really were hydrogen and oxygen just mixed together. What would happen if you held a lit match to it?", "Compare the atom counts in the panel at the start and now, and check whether any new types of atom turned up."]
 ```
 

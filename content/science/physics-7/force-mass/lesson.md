@@ -64,10 +64,10 @@ tasks:
   - check:
       type: question
       q: "Which statement is right?"
-      options: ["A bigger unbalanced force gives a bigger acceleration, and a bigger mass gives a smaller one", "A bigger mass gives a bigger acceleration", "Force and mass don't affect acceleration"]
+      options: ["More force, more acceleration; more mass, less", "A bigger mass gives a bigger acceleration", "Force and mass don't affect acceleration"]
       answer: 0
       feedback: [null, "It works the other way round for mass.", "On the board, changing the mass changed the acceleration, and changing the push does too, so both matter."]
-      explain: "A bigger force gives more acceleration, but a bigger mass gives less."
+      explain: "A bigger unbalanced force gives a bigger acceleration, but a bigger mass gives a smaller one."
   - check:
       type: number
       q: "Same trolley, 2 kg. Pushing with 2 N gives 1 m/s², 4 N gives 2 m/s², 6 N gives 3 m/s². What acceleration would 10 N give (m/s²)?"

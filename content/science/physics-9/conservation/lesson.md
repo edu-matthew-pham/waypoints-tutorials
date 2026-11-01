@@ -67,10 +67,10 @@ tasks:
   - check:
       type: question
       q: "What does the law of conservation of energy say?"
-      options: ["Energy can't be made or destroyed, only transferred or transformed; the total stays the same", "You should save energy by switching things off", "Energy is used up when things move"]
+      options: ["Energy is only transferred or transformed; the total stays the same", "You should save energy by switching things off", "Energy gets used up as things move and slow down"]
       answer: 0
       feedback: [null, "That's 'conserving' energy in everyday speech, a different idea.", "Moving transforms energy; it doesn't use it up."]
-      explain: "In any system, total energy in = total energy out."
+      explain: "Energy can't be made or destroyed, only transferred or transformed. In any system, total energy in = total energy out."
     hint: "If you leave a light on all night, is any of the energy destroyed, or has it all gone somewhere?"
   - check:
       type: number
@@ -81,7 +81,7 @@ tasks:
   - check:
       type: question
       q: "People say a car 'loses' energy when it brakes. What really happens?"
-      options: ["Its kinetic energy becomes heat in the brakes, which spreads into the air", "The energy is destroyed by the brakes", "The energy goes back into the fuel"]
+      options: ["Its kinetic energy becomes heat in the brakes and the air", "The brakes destroy the car's kinetic energy", "The energy goes back into the fuel"]
       answer: 0
       feedback: [null, "Energy can't be destroyed.", "It never flows back into fuel. (Hybrid and electric cars turn some of it into electrical energy stored in a battery.)"]
       explain: "'Lost' means 'transferred somewhere we can't use it'. Feel a bike's brakes after a long downhill: they're hot."
@@ -89,10 +89,10 @@ tasks:
   - check:
       type: question
       q: "Why can a pendulum never swing higher than where it started?"
-      options: ["It would need more energy than it had: energy can't be made", "Gravity gets stronger", "Pendulums only swing lower"]
+      options: ["It would need more energy than it had", "Gravity gets stronger as it swings", "Pendulums only swing lower"]
       answer: 0
       feedback: [null, "Gravity doesn't change.", "That's what happens, but why?"]
-      explain: "With no extra energy put in, the most it can do is reach its starting height, and friction makes it a little lower each swing."
+      explain: "Energy can't be made. With no extra energy put in, the most it can do is reach its starting height, and friction makes it a little lower each swing."
   - check: { type: reflect, text: "I can state the law of conservation of energy and use it to account for all the energy in a system." }
 ```
 
@@ -120,7 +120,7 @@ tasks:
   - check:
       type: question
       q: "The car ended up stopped in a dip. Where is its starting energy now?"
-      options: ["Most is heat and sound in the surroundings; the rest is potential energy where it rests", "It has all gone", "It is kinetic energy, waiting to be used"]
+      options: ["Mostly heat and sound around it; some is still potential energy", "It has all gone, because the car has stopped", "It is kinetic energy, waiting to be used"]
       answer: 0
       feedback: [null, "The total line didn't change.", "A stopped car has no kinetic energy."]
       explain: "The bars still add up to the total: heat and sound, plus the potential energy of its resting height."
@@ -140,10 +140,10 @@ insight: "Perpetual motion machines are a classic test of the law: any that clai
 check:
   type: question
   q: "An inventor claims a wheel that keeps spinning forever and also powers a light. Why is this impossible?"
-  options: ["The light's energy and the friction heat must come from somewhere; with no energy in, the wheel must slow down", "Wheels can't power lights", "It would spin too fast"]
+  options: ["The light's energy must come from somewhere, so the wheel slows", "A wheel can't power a light and spin at the same time", "It would keep speeding up until it broke"]
   answer: 0
   feedback: [null, "Generators do exactly that, when something keeps turning them.", "Speed isn't the problem; energy is."]
-  explain: "Energy out (light, heat) with nothing in would mean making energy. Every machine needs an input."
+  explain: "The light's energy and the friction heat must come from somewhere; with no energy in, the wheel must slow down. Energy out (light, heat) with nothing in would mean making energy. Every machine needs an input."
 ```
 
 ## Evaluate: look back

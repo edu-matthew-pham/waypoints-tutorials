@@ -55,9 +55,9 @@ tasks:
     check:
       type: question
       q: "In the chain grass → grasshopper → lizard → kookaburra, what does the arrow from lizard to kookaburra mean?"
-      options: ["The kookaburra eats the lizard, and energy goes to the kookaburra", "The lizard eats the kookaburra", "The kookaburra and lizard are friends", "The lizard is bigger than the kookaburra"]
+      options: ["The kookaburra eats the lizard", "The lizard eats the kookaburra", "The kookaburra lives near the lizard", "The lizard is bigger than the kookaburra"]
       answer: 0
-      feedback: [null, "The arrow shows where the energy goes. It goes to the one that eats.", "An arrow shows eating and energy, nothing else.", "The arrow doesn't say anything about size."]
+      feedback: [null, "The arrow shows where the energy goes. It goes to the one that eats.", "Living near each other isn't what the arrow shows. It shows who eats whom.", "The arrow doesn't say anything about size."]
       explain: "An arrow goes from the food to the eater: the kookaburra eats the lizard, so the energy moves from the lizard to the kookaburra."
 ```
 

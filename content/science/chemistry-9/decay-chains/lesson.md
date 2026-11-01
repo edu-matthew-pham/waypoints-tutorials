@@ -92,7 +92,7 @@ tasks:
   - check:
       type: question
       q: "Why does the chain stop at lead-206?"
-      options: ["Its nucleus has a stable balance of protons and neutrons, so it doesn't decay", "It has run out of energy", "It has become too small"]
+      options: ["Its mix of protons and neutrons is stable", "It has run out of energy to give out", "It has become too small to decay"]
       answer: 0
       feedback: [null, "Decay doesn't stop because energy runs out: lead-206's nucleus is stable, so it has no reason to decay.", "Getting smaller is part of the chain, but decay stops only when the mix of protons and neutrons is stable."]
       explain: "Uranium-238's nucleus is too big, with too many neutrons, to last. Alpha decays make it smaller; beta decays turn spare neutrons into protons. When it reaches a mix of protons and neutrons that lasts, nothing more happens."
@@ -124,10 +124,10 @@ insight: "Radon is the best-known step in the chain, because it is a gas and sho
 check:
   type: question
   q: "Radon-222 is a gas made in the uranium chain, and it seeps up from rock into some buildings. Why is it of more concern than the solid isotopes before it?"
-  options: ["As a gas it can be breathed in, and it decays to more radioactive solids inside the lungs", "It is hotter", "It has a longer half-life than uranium"]
+  options: ["As a gas it can be breathed in, and decays in the lungs", "Its alpha particles go further than uranium's", "It has a longer half-life than uranium"]
   answer: 0
-  feedback: [null, "Temperature isn't the issue.", "Its half-life is under four days, far shorter than uranium's."]
-  explain: "The earlier solids stay in the rock. A gas gets out and can be breathed in, so its later decay products are released next to lung tissue. Good ventilation helps."
+  feedback: [null, "Alpha is alpha: the danger is that the gas gets close to living cells.", "Its half-life is under four days, far shorter than uranium's."]
+  explain: "The earlier solids stay in the rock. A gas gets out and can be breathed in, and it decays to more radioactive solids inside the lungs, right next to lung tissue. Good ventilation helps."
 ```
 
 ## Elaborate: missing mass
@@ -139,10 +139,10 @@ insight: "The energy released in decay links to mass, which is the idea behind n
 check:
   type: question
   q: "The total mass of the products of a decay is slightly less than the mass of the original nucleus. What does physics say happened to the 'missing' mass?"
-  options: ["It became the energy carried away by the radiation (E = mc²)", "It was destroyed", "It left as a gas"]
+  options: ["It became the energy carried by the radiation", "It was destroyed in the decay", "It left as a gas we didn't weigh"]
   answer: 0
   feedback: [null, "Neither mass nor energy is destroyed: one turns into the other.", "A gas would have mass we could weigh."]
-  explain: "A tiny amount of mass becomes a large amount of energy, which is why a small amount of radioactive material releases so much energy."
+  explain: "E = mc²: a tiny amount of mass becomes a large amount of energy, which is why a small amount of radioactive material releases so much energy."
 ```
 
 ## Evaluate: look back

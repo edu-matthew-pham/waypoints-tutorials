@@ -65,10 +65,10 @@ tasks:
   - check:
       type: question
       q: "Why can't you balance it by changing H₂O to H₂O₂?"
-      options: ["H₂O₂ is a different substance (hydrogen peroxide), not water", "You can: it balances the oxygen", "H₂O₂ has too many atoms to draw"]
+      options: ["H₂O₂ is a different substance, not water", "You can: it balances the oxygen", "You can't put a small 2 after the O"]
       answer: 0
-      feedback: [null, "It balances the count but describes the wrong product.", "The size isn't the problem: the substance is."]
-      explain: "The small numbers (subscripts) say what the substance is. Coefficients say how many molecules there are, which is the only thing you can choose."
+      feedback: [null, "It balances the count but describes the wrong product.", "You can write H₂O₂, but it is hydrogen peroxide, not water."]
+      explain: "H₂O₂ is hydrogen peroxide. The small numbers (subscripts) say what the substance is. Coefficients say how many molecules there are, which is the only thing you can choose."
     hint: "What substance would H₂O₂ be, and is it the one you get when hydrogen burns?"
   - check:
       type: number
@@ -84,7 +84,7 @@ tasks:
   - check:
       type: question
       q: "Why does a balanced equation show that mass is conserved?"
-      options: ["The same atoms are on both sides, and each atom keeps its mass", "The same molecules are on both sides", "Products always weigh more than reactants"]
+      options: ["The same atoms are on both sides, and keep their mass", "The same molecules are on both sides", "Products always weigh more than reactants"]
       answer: 0
       feedback: [null, "The molecules change; the atoms don't.", "Mass doesn't change in a reaction; it can seem to in an open container if a gas escapes or enters."]
       explain: "Same atoms in, same atoms out, so the same total mass."
@@ -138,10 +138,10 @@ insight: "An open-system result that seems to break conservation of mass is expl
 check:
   type: question
   q: "Magnesium ribbon burns in an open crucible, and the white ash weighs more than the ribbon did. Has mass been created?"
-  options: ["No: oxygen atoms from the air joined the magnesium (2 Mg + O₂ → 2 MgO), so the product includes their mass", "Yes: burning makes extra mass", "No: the scale must be wrong"]
+  options: ["No: oxygen atoms from the air joined the magnesium", "Yes: the heat of burning adds extra mass", "No: the scale must have been wrong"]
   answer: 0
-  feedback: [null, "Count the atoms in the balanced equation: where did the oxygen come from?", "The result is real and repeatable; something entered the container."]
-  explain: "In an open system, gases can enter or leave. Weigh everything, including the oxygen used, and the mass is the same before and after."
+  feedback: [null, "Heat has no mass to add. Count the atoms in the balanced equation: where did the oxygen come from?", "The result is real and repeatable; something entered the container."]
+  explain: "2 Mg + O₂ → 2 MgO, so the product includes the mass of the oxygen. In an open system, gases can enter or leave. Weigh everything, including the oxygen used, and the mass is the same before and after."
 ```
 
 ## Evaluate: look back

@@ -1,14 +1,14 @@
-summary: "Students apply Newton's laws to design features and techniques, explain how a First Nations spearthrower extends the force on a spear, and evaluate a vehicle safety feature using F = ma (AC9S10U05, node 8, an integration node)."
+summary: "Students apply Newton's laws to design features and techniques, explain how a ball-thrower extends the force on a ball, and evaluate a vehicle safety feature using F = ma (AC9S10U05, node 8, an integration node)."
 time: 20
 timing: "Engage 3 min · Explain 12 min · Evaluate 3 min · Typical adds 1 min, Wider about 1 min"
 goals:
   - I can use two of Newton's laws to explain a real design or technique.
-  - I can explain how a spearthrower works in terms of force, time and acceleration.
+  - I can explain how a ball-thrower works in terms of force, time and acceleration.
   - I can compare two safety designs with F = ma.
 before: |
   An integration tutorial with no simulation that closes the unit on Newton's laws. Set the width with `?width=minimum`, `typical` (default) or `wider`. Its main output is the in-your-book task, and it works best with a class discussion of a real object.
 
-  The woomera (spearthrower) is used by many First Nations peoples across Australia. Give it the respect due to a technology that is still used and still made: invite a speaker, or use resources produced with First Nations communities, and let students explain the physics without claiming to explain the culture. The lesson uses it as a lever that lengthens the push on the spear. Other design details, including how it is made, are matters for the people who hold that knowledge.
+  ACARA's elaboration for this descriptor: "investigating how First Nations Australians achieve increased speed and impact force through spearthrowers and bows". The student text uses a dog ball-thrower, which works the same way, so the physics doesn't depend on us explaining a First Nations technology (roadmap/rules.md T1, T20: include, don't avoid). Bring the woomera (spearthrower) in beside it the safe way: invite a speaker, or use resources produced with First Nations communities, and let students explain the physics without claiming to explain the culture. Other design details, including how it is made, are matters for the people who hold that knowledge. When a short custodian-voiced line and link are found, the woomera can return to the student text beside the ball-thrower (changed 1 Nov 2026; the woomera was the main example before).
 
   Numbers are chosen to be clean. Real crashes involve complicated forces; the lesson uses average forces.
 running:
@@ -20,10 +20,10 @@ stuck:
   - see: "A student says the airbag makes the force disappear."
     ask: "What is the change in speed, and how long does it take with and without the bag?"
     fix: "The speed change is the same. A longer time means a smaller acceleration and a smaller force."
-  - see: "A student says a woomera makes the spear lighter."
-    ask: "Does the spear's mass change?"
+  - see: "A student says a ball-thrower makes the ball lighter."
+    ask: "Does the ball's mass change?"
     fix: "No. The thrower's push acts over a longer distance and time, so the speed at release is higher."
-stretch: "A 0.8 kg spear is accelerated by an average net force of 40 N for 0.6 s (by hand) or 0.9 s (with a woomera). Find the speed at release in each case. (30 m/s and 45 m/s: a = F ÷ m = 50 m/s², v = at.)"
+stretch: "A 0.06 kg ball is accelerated by an average net force of 3 N for 0.6 s (by hand) or 0.9 s (with a ball-thrower). Find the speed at release in each case. (30 m/s and 45 m/s: a = F ÷ m = 50 m/s², v = at.)"
 support: "Give each feature on a card and the three laws on three more, with a sentence frame: 'It uses the ___ law because ___ changes.'"
 leads: |
   Next: the Year 10 energy and climate lessons.
@@ -33,4 +33,4 @@ exit:
   q: "A car stops from 20 m/s in 0.5 s with one crumple zone, and in 1.0 s with a better one. By what factor does the force on the occupants change?"
   a: "It halves. Twice the time means half the acceleration, so half the force."
 explain: |
-  Newton's laws explain design: seat belts (**first law**), airbags and crumple zones (**second law**: a longer stopping time means a smaller force), rockets (**third law**), and a spearthrower, which lengthens the push on the spear so it leaves faster.
+  Newton's laws explain design: seat belts (**first law**), airbags and crumple zones (**second law**: a longer stopping time means a smaller force), rockets (**third law**), and a ball-thrower, which lengthens the push on the ball so it leaves faster.

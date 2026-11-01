@@ -87,18 +87,18 @@ tasks:
   - check:
       type: question
       q: "Why does a gas spread to fill its whole container?"
-      options: ["Gas particles are light and float", "Its particles move fast in all directions and barely attract each other", "Its particles expand to fill the space", "Air pushes it around"]
+      options: ["Gas particles are light and float", "Its particles move fast in all directions", "Its particles expand to fill the space", "Air pushes it around"]
       answer: 1
       feedback: ["The gas spread downwards and sideways as well as up, so being light and floating isn't the explanation.", null, "Particles never change size, so they can't expand to fill the space.", "There was no air in the box and the gas still spread, so air can't be doing the pushing."]
-      explain: "Nothing holds gas particles together, so they spread in every direction until they fill the space."
+      explain: "Gas particles move fast in all directions and barely attract each other. Nothing holds them together, so they spread in every direction until they fill the space."
     hint: ["When you removed the jar from the gas, which way did the particles go, and what do you think that says about what's holding them?", "Take the jar off the gas again and watch where the particles end up, up, down or sideways."]
   - check:
       type: question
       q: "Why does a solid keep its shape?"
-      options: ["Its particles don't move", "Strong attraction holds its particles in fixed positions, where they vibrate", "Its particles are bigger", "It is heavier than a liquid"]
+      options: ["Its particles don't move", "Its particles are held in fixed positions", "Its particles are bigger", "It is heavier than a liquid"]
       answer: 1
       feedback: ["Solid particles do move, because they vibrate, but they don't leave their positions.", null, "Particles of a substance are the same size in every state, so size can't explain the shape.", "Mass doesn't decide shape, because ice keeps its shape and is lighter than the same volume of water."]
-      explain: "Each particle vibrates but stays in its place, so the whole solid keeps its shape."
+      explain: "Strong attraction holds each particle in a fixed position. It vibrates but stays in its place, so the whole solid keeps its shape."
     hint: ["Watch the solid's particles for a few seconds: are they still, or doing something, and what keeps them from wandering off?", "Choose Solid and remove the jar, and look at whether any particle leaves its spot."]
   - check: { type: reflect, text: "I wrote why juice spreads across a table but a sugar cube keeps its shape, using arrangement, motion and attraction, and I could point to a particle diagram for each sentence." }
 ```
@@ -184,9 +184,10 @@ tasks:
   - check:
       type: question
       q: "What lets particles move further apart as water is heated?"
-      options: ["They gain energy, so they can overcome the attraction", "The attraction disappears", "The particles shrink"]
+      options: ["They gain energy", "The attraction disappears", "The particles shrink"]
       answer: 0
       feedback: [null, "The attraction doesn't disappear, but faster-moving particles can overcome it.", "Particles never change size when they're heated, so that isn't it."]
+      explain: "Heated particles gain energy and move faster, so they can overcome the attraction that holds them close together."
 ```
 
 ### From ice to steam
@@ -224,12 +225,12 @@ check:
   q: "Most solids sink in their own liquid (solid wax sinks in melted wax), but ice floats on water. What does this mean for the particle model?"
   options:
     - "The model is wrong and should be thrown out"
-    - "Water is a special case: frozen water particles lock into an open pattern with more space than in the liquid, so the model needs this extra detail"
+    - "The model holds, with one extra detail for ice"
     - "Ice floats because of air bubbles trapped inside it"
     - "Solid particles are always further apart than liquid particles"
   answer: 1
   feedback: ["A model that explains most cases is still useful, and scientists refine a model when they meet an exception.", null, "Clear ice with no bubbles in it still floats, so bubbles can't be the reason.", "For almost every substance the solid is packed slightly more closely than the liquid, so that statement isn't true in general."]
-  explain: "The model keeps its core ideas and gains one extra detail for water. (The diagram exaggerates the gap: ice takes up about 9% more space than the same mass of water.)"
+  explain: "Water is a special case: frozen water particles lock into an open pattern with more space than in the liquid. The model keeps its core ideas and gains this one extra detail for water. (The diagram exaggerates the gap: ice takes up about 9% more space than the same mass of water.)"
 ```
 
 ## Evaluate: look back

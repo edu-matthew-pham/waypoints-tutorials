@@ -96,10 +96,10 @@ tasks:
   - check:
       type: question
       q: "Why do the dyes in the ink end up at different heights?"
-      options: ["Heavier dyes sink lower", "Each dye dissolves in the water and sticks to the paper differently, so the water carries each one a different distance", "The water makes new colours as it rises", "The dyes evaporate at different speeds"]
+      options: ["Heavier dyes sink lower", "Each dye dissolves and sticks to the paper differently", "The water makes new colours as it rises", "The dyes evaporate at different speeds"]
       answer: 1
       feedback: ["It isn't weight, because the water pulls every dye up the paper against gravity.", null, "The colours were in the ink all along, and the water only separates them.", "Nothing evaporates here, because the water carries the dyes up the paper."]
-      explain: "Dyes that dissolve well in the water and stick only weakly to the paper get carried the furthest."
+      explain: "The water carries each dye a different distance. Dyes that dissolve well in the water and stick only weakly to the paper get carried the furthest."
     hint: ["Which way did the water carry the dyes on the board, and what does that tell you about whether weight is the reason?", "Every dye gets the same water, so think about what could be different from one dye to the next that makes some go further."]
   - check:
       type: match
@@ -191,10 +191,10 @@ tasks:
   - check:
       type: question
       q: "A green ink gives just one spot. What can you conclude?"
-      options: ["It is probably one dye, but two dyes with the same Rf value would also give one spot", "It is definitely a pure substance", "The test failed"]
+      options: ["It is probably one dye, but not certainly", "It is definitely a pure substance", "The test failed"]
       answer: 0
       feedback: [null, "One spot is evidence, not proof: two dyes that travel the same distance would sit on top of each other.", "The test worked, because the ink did move up the paper and stayed together as one spot."]
-      explain: "To check, you could run the test again with a different solvent, because two dyes that sit together in one solvent often separate in another."
+      explain: "Two dyes with the same Rf value would also give one spot. To check, you could run the test again with a different solvent, because two dyes that sit together in one solvent often separate in another."
 ```
 
 Chemists compare spots with the **Rf value**: the distance the spot moved divided by the distance the water moved, both measured from the pencil line. In the Pen A lane, the water moved **10.0 cm**.
