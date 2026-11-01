@@ -39,9 +39,10 @@ tasks:
   - check:
       type: question
       q: "In Australia, copyright needs a human author. If someone types a prompt and the app makes a picture with no other human work, who owns the copyright?"
-      options: ["Probably nobody: there may be no human author", "The app", "Lena, automatically"]
+      options: ["Probably nobody: there may be no human author", "The company that made the app", "The person who typed the prompt"]
       answer: 0
-      feedback: [null, "An app can't be an author under Australian law.", "Lena didn't make this picture. Her work may have been used to train the app, which is a different question."]
+      feedback: [null, "Copyright needs a human author. The company didn't make this picture by hand.", "A prompt alone may not be enough human work to make someone the author."]
+      explain: "In Australia, copyright needs a human author. A picture made from a prompt with no other human work may have no human author. (Lena's work may have been used to train the app, which is a different question.)"
 ```
 
 What is settled enough to say in Australia (2026):
@@ -65,9 +66,10 @@ tasks:
   - check:
       type: question
       q: "Why is 'Is AI training fair?' still an open question?"
-      options: ["Courts and governments in different countries are deciding it now, and they don't all agree", "It's been settled everywhere", "Nobody cares about it"]
+      options: ["Courts in different countries are still deciding", "Courts have already settled it everywhere", "Only artists think it matters"]
       answer: 0
-      feedback: [null, "Some parts are settled in some places, but not everywhere.", "Artists, companies and governments care a lot."]
+      feedback: [null, "Some parts are settled in some places, but not everywhere.", "Artists, companies and governments all care a lot."]
+      explain: "Courts and governments in different countries are deciding it now, and they don't all agree."
   - check: { type: reflect, text: "I can explain why the law on AI training is being decided now, and say two things that are settled in Australia." }
 ```
 
@@ -93,9 +95,10 @@ tier: typical
 check:
   type: question
   q: "A US court approved a US$1.5 billion settlement to authors whose books were taken from pirate websites to train an AI. The judge had said training itself could be fair use, but the pirated copies were not. What does that tell you?"
-  options: ["How the work was obtained mattered, not only how it was used", "Training AI is always illegal", "Authors lost the case"]
+  options: ["How the work was obtained mattered", "Training AI is always illegal", "Authors lost the case"]
   answer: 0
   feedback: [null, "The judge said training could be fair use. The pirated copies were the problem.", "The authors were paid about US$3,000 per book."]
+  explain: "The judge said training itself could be fair use, but taking books from pirate websites was not. How the work was obtained mattered, not only how it was used."
 ```
 
 - **Music:** in a 2024 survey by APRA AMCOS, **82%** of Australian and New Zealand music creators were worried about **no longer being able to make a living** because of AI.
@@ -122,9 +125,10 @@ stage: info
 check:
   type: question
   q: "Your school's art club wants to use an AI image app for posters. What's the best question to ask first?"
-  options: ["What was it trained on, and do the creators get a choice or payment?", "How fast does it make pictures?", "Does it have lots of colours?"]
+  options: ["Whose work trained it, and did they get a say?", "How fast does it make pictures?", "Will the posters look professional?"]
   answer: 0
-  feedback: [null, "Speed says nothing about whose work it used.", "That says nothing about whose work it learned from."]
+  feedback: [null, "Speed says nothing about whose work it used.", "Looks say nothing about whose work it learned from."]
+  explain: "Ask what it was trained on, and whether the creators got a choice or payment."
 ```
 
 On paper: **"AI that makes content learned from \_\_\_\_. In Australia, it's settled that \_\_\_\_. Still being decided: \_\_\_\_."**

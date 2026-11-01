@@ -65,9 +65,10 @@ tasks:
   - check:
       type: question
       q: "Why should a charter say who wrote it, the date, and when it will be reviewed?"
-      options: ["AI changes fast, so readers need to know how current it is and when it will be checked", "So the committee gets credit", "Charters must have dates by law"]
+      options: ["So readers know how current it is", "So the committee gets credit", "Charters must have dates by law"]
       answer: 0
       feedback: [null, "Credit isn't the point: readers need to know if it's still current.", "Not by law: because things change."]
+      explain: "AI changes fast, so readers need to know how current a charter is and when it will be checked again."
   - check: { type: reflect, text: "I can explain what makes a charter usable: short, checkable, dated and reviewed." }
 ```
 
@@ -95,9 +96,10 @@ tier: typical
 check:
   type: question
   q: "Westbrook's committee shares its charter for comment. Whose comments would it most miss if it only asked teachers?"
-  options: ["Students and families, who live with the decisions", "Nobody: teachers know best", "The AI companies"]
+  options: ["Students and families", "Nobody: teachers know best", "The AI companies"]
   answer: 0
   feedback: [null, "Teachers know a lot, but students and families see things they don't.", "Companies may have a view, but the charter is about the school's values."]
+  explain: "Students and families live with the decisions, and see things teachers don't."
 ```
 
 Before a charter is final, show it to the people it affects. Ask each group one question: **"Which principle would you change, and why?"**

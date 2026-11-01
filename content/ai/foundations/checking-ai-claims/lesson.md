@@ -54,14 +54,17 @@ tasks:
   - check:
       type: question
       q: "Claim 1 says every eight-hour seedling grew more than every four-hour seedling. Which measurement shows it is wrong?"
-      options: ["A four-hour seedling grew 5 cm, more than two of the eight-hour seedlings", "The eight-hour average was higher", "One eight-hour seedling grew 6 cm"]
+      options: ["A four-hour seedling that beat two eight-hour ones", "The eight-hour group's average was higher", "An eight-hour seedling that grew 6 cm"]
       answer: 0
       feedback: [null, "A higher average fits the claim. Look for a seedling that breaks the word 'every'.", "That seedling fits the claim. Look for one that breaks it."]
+      explain: "One four-hour seedling grew 5 cm, more than two of the eight-hour seedlings. One case that breaks 'every' is enough to show the claim is wrong."
   - check:
       type: question
       q: "A dataset records plant height but not plant health. Can it confirm that one group is healthier?"
-      options: ["Yes, height always equals health", "No, health needs relevant evidence beyond these heights", "Yes, if AI says so"]
+      options: ["Yes, taller plants are healthier plants", "No, height alone doesn't show health", "Yes, if the AI is confident about it"]
       answer: 1
+      feedback: ["Taller isn't always healthier: a plant can grow tall and weak.", null, "Confidence is not evidence. The data still says nothing about health."]
+      explain: "Health needs its own evidence, such as leaf colour or signs of disease. These heights can't confirm it."
   - check: { type: reflect, text: "I can distinguish claims supported by evidence from claims that need more checking." }
 ```
 

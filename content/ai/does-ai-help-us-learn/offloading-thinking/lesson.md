@@ -67,9 +67,10 @@ tasks:
   - check:
       type: question
       q: "Lina is new to adding fractions. She studies a full worked example, then explains each step and tries a new one. Was getting the full solution bad for her?"
-      options: ["Not necessarily: beginners often learn well from a worked example if they then explain it and try one", "Yes: a full solution always skips the learning", "No: worked examples are the best help for everyone"]
+      options: ["Not necessarily: she explained it and tried a new one", "Yes: a full solution always skips the learning", "No: worked examples are the best help for everyone"]
       answer: 0
-      feedback: [null, "Lina still explained it and tried a new one herself.", "Experts often gain less from worked examples than beginners do."]
+      feedback: [null, "A full solution can help, if the learner then explains it and tries one, as Lina did.", "Experts often gain less from worked examples than beginners do."]
+      explain: "Beginners often learn well from a worked example if they then explain it and try one themselves."
   - check:
       type: question
       q: "Omar is a strong writer. He asks AI for objections to his argument and pastes one in. It mentions a study that doesn't exist. What went wrong?"
@@ -79,9 +80,10 @@ tasks:
   - check:
       type: question
       q: "In a lesson on reading graphs, Priya uses a calculator for the averages. Has she handed over the skill?"
-      options: ["No: reading what the graph means is the skill; the sums are on the edge", "Yes: any tool use skips the skill", "Yes, unless she checks every sum by hand"]
+      options: ["No: reading the graph is the skill, not the sums", "Yes: any tool use skips the skill", "Yes, unless she checks every sum by hand"]
       answer: 0
       feedback: [null, "The lesson's skill is reading graphs, not arithmetic.", "Checking the answers make sense is good, but redoing every sum isn't the skill here."]
+      explain: "The skill in this lesson is reading what the graph means; the sums are on the edge."
 ```
 
 Using a tool to do part of your thinking is called **cognitive offloading**. Notes, calculators, friends and AI can all take some thinking off you.
@@ -131,9 +133,10 @@ tasks:
   - check:
       type: question
       q: "A student handed some jobs to AI while learning to write arguments. What best shows whether that helped them learn?"
-      options: ["Whether they can now write a strong argument on a new topic themselves", "How fast they finished", "How many messages they sent to the AI"]
+      options: ["Writing a strong argument on a new topic alone", "How fast they finished", "How many messages they sent to the AI"]
       answer: 0
       feedback: [null, "Fast work can mean the AI did the thinking.", "Lots of messages could mean anything."]
+      explain: "What shows learning is whether they can now write a strong argument on a new topic themselves, without the AI."
   - check:
       type: reasoning
       q: "You are learning to write persuasive arguments. Your paragraph is due tomorrow and you are tired. An AI offers to write a first draft for you to 'improve'. What do you do, and why?"

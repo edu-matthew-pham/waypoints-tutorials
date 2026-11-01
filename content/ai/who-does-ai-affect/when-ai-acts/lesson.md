@@ -30,9 +30,10 @@ tasks:
   - check:
       type: question
       q: "The airline argued it wasn't responsible for what its chatbot said. Why did the tribunal disagree?"
-      options: ["The chatbot was part of the airline's website, and the airline is responsible for its website", "Chatbots are people", "The customer should have asked a different chatbot"]
+      options: ["The airline is responsible for its own website", "The chatbot is responsible for itself", "The customer should have asked a different chatbot"]
       answer: 0
       feedback: [null, "A chatbot isn't a person. Someone has to be responsible for it.", "The customer used the airline's own chatbot, on the airline's own site."]
+      explain: "The chatbot was part of the airline's website, and a company is responsible for what its website tells customers."
   - check:
       type: sort
       q: "A made-up AI assistant books a bus trip for you. Should it just do each step, or ask you first?"
@@ -66,9 +67,10 @@ tasks:
   - check:
       type: question
       q: "Which steps should an AI agent ask about first?"
-      options: ["Ones that are hard or impossible to undo, like paying, sharing details or deleting", "Every step, even searching", "None: it should just finish the job"]
+      options: ["Ones that are hard to undo, like paying", "Every step, even searching", "None: it should just finish the job"]
       answer: 0
       feedback: [null, "Asking about every search would make it useless. Ask where a mistake can't be undone.", "A wrong payment or a deleted file may not come back."]
+      explain: "Ask first where a mistake can't easily be undone: paying, sharing details or deleting."
   - check: { type: reflect, text: "I can say who is responsible when an AI answers or acts, and which actions a person should confirm first." }
 ```
 
@@ -93,9 +95,10 @@ tier: typical
 check:
   type: question
   q: "Australian government guidance for businesses using AI says to keep meaningful human oversight and control. What would that look like for the bus-booking agent?"
-  options: ["A person can see its plan, approve payments, and stop it", "The agent works faster", "Nobody checks it, so it saves time"]
+  options: ["A person can see, approve and stop it", "The agent checks its own work", "Nobody checks it, so it saves time"]
   answer: 0
-  feedback: [null, "Speed isn't control.", "That's the opposite of keeping control."]
+  feedback: [null, "Oversight means a person, not the agent itself.", "That's the opposite of keeping control."]
+  explain: "Meaningful human oversight means a person can see its plan, approve payments, and stop it."
 ```
 
 In 2025 the Australian Government's **Guidance for AI Adoption** told businesses to **decide who is accountable** and to **integrate meaningful human oversight and control** of AI.
@@ -121,9 +124,10 @@ stage: info
 check:
   type: question
   q: "Your school wants an AI agent to answer parents' emails and book meetings with teachers. Which rule matters most?"
-  options: ["The school stays responsible, and a person checks anything it can't undo, like cancelling a meeting", "The agent can do anything, to save time", "The agent is responsible for its own mistakes"]
+  options: ["The school stays responsible and checks big steps", "The agent can do anything, to save time", "The agent is responsible for its own mistakes"]
   answer: 0
   feedback: [null, "Then nobody can fix a serious mistake in time.", "An AI can't be held responsible: the school can."]
+  explain: "The school stays responsible for what its agent does, and a person checks anything it can't undo, like cancelling a meeting."
 ```
 
 On paper: **"An AI agent should ask me before it \_\_\_\_, because \_\_\_\_."**

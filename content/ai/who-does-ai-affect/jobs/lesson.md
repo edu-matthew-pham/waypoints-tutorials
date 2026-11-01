@@ -53,15 +53,17 @@ tasks:
   - check:
       type: question
       q: "Jobs and Skills Australia (2025) found 'no current evidence of widespread displacement in Australia'. What does that mean?"
-      options: ["So far, AI hasn't replaced large numbers of workers here", "AI will never change jobs", "Everyone has lost their job to AI"]
+      options: ["So far, AI hasn't replaced many workers here", "AI will never change jobs", "Everyone has lost their job to AI"]
       answer: 0
       feedback: [null, "It's about now, not forever. Jobs are changing.", "That's the opposite of what it found."]
+      explain: "'No current evidence' is about now: so far, AI hasn't replaced large numbers of workers in Australia. Jobs are still changing."
   - check:
       type: question
       q: "The International Labour Organization says generative AI is more likely to augment jobs than automate them. What does 'augment' mean?"
-      options: ["Help people do their job, changing some tasks", "Replace the whole job", "Make the job harder"]
+      options: ["Help people do their job", "Replace the whole job", "Make the job harder"]
       answer: 0
       feedback: [null, "That's automate.", "Augment means add to: helping, not replacing."]
+      explain: "Augment means add to: AI helps people do their job and changes some of their tasks, rather than replacing the job."
   - check: { type: reflect, text: "I can explain the difference between a job being exposed to AI and a job being lost to AI." }
 ```
 
@@ -90,9 +92,10 @@ tier: typical
 check:
   type: question
   q: "In a call centre, an AI helper raised workers' productivity by 14% on average, and by much more for new workers. Who gained most, and why might that be?"
-  options: ["New workers: the AI shared tips that experienced workers already knew", "Experienced workers: they knew how to use it", "Nobody: productivity didn't change"]
+  options: ["New workers: it shared what experienced workers knew", "Experienced workers: they knew how to use it", "Nobody: productivity didn't change"]
   answer: 0
   feedback: [null, "Experienced workers gained least: they already knew most of what it suggested.", "It rose by 14% on average."]
+  explain: "New workers gained most. The AI's suggestions passed on tips experienced workers already knew, so experienced workers gained least."
 ```
 
 A study of a real call centre (published 2025) found that an AI helper raised productivity **by 14% on average**, and **most for new workers**. Use the lens: who gains? Who might lose if a company then hired fewer people? Who decides?
@@ -117,9 +120,10 @@ stage: info
 check:
   type: question
   q: "A friend says: 'There's no point learning to write, AI will do it.' What's the best reply?"
-  options: ["AI changes tasks, but people still need to check, decide and do what AI can't, and you need the skill to judge its work", "True: stop learning to write", "AI can't write anything"]
+  options: ["You need the skill to check and judge its writing", "True: AI writes better than most people already", "AI writing is always full of mistakes"]
   answer: 0
-  feedback: [null, "To check AI's writing, you need to be able to write.", "AI can write drafts. The question is who checks and decides."]
+  feedback: [null, "Even if AI writes well, someone has to check it and decide, and that takes the skill.", "AI can write good drafts. The question is who checks and decides."]
+  explain: "AI changes tasks, but people still need to check, decide and do what AI can't. To judge AI's writing, you need to be able to write."
 ```
 
 On paper, pick a job you might want. Split it into **five tasks**. Mark each: **AI could do**, **AI could help**, or **needs a person**. Which skills will you still need?

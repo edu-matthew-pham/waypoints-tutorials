@@ -130,9 +130,10 @@ stage: info
 check:
   type: question
   q: "Which is the fairest way to judge what the four learners learned?"
-  options: ["Look at what each was trying to learn, what they did, and more than one kind of evidence", "Give all four the same test, done alone, with no notes", "Judge their finished work, because that's what they made"]
+  options: ["Look at each one's goal, what they did, and more than one kind of evidence", "Give all four the same test, done alone, with no notes", "Judge their finished work, because that's what they made"]
   answer: 0
   feedback: [null, "One test alone would suit Maya, but miss much of what Jules and Aria learned.", "Finished work can hide who did the thinking, as Sam's report does."]
+  explain: "Look at what each was trying to learn and what they did, and use more than one kind of evidence."
 ```
 
 Choose **two** of the four learners. Write what each one may have learned, what evidence shows it, and what you still don't know. If you think one learned something more valuable, say why.

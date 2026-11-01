@@ -52,15 +52,17 @@ tasks:
   - check:
       type: question
       q: "With the app's goal, two posts Sam asked for less of rose into the top 3. Why?"
-      options: ["People watch and argue about them a lot, and the app counted that most", "Sam secretly wanted them", "The app made a mistake"]
+      options: ["People watch and argue about them a lot", "Sam secretly wanted them more", "The app made a mistake"]
       answer: 0
       feedback: [null, "Sam asked for less of them. The app counted something else.", "It did exactly what its goal asked: keep Sam watching."]
+      explain: "The app's goal was to keep Sam watching, so it counted watching and arguing more than Sam asking for less."
   - check:
       type: question
       q: "So who decides what Sam sees first?"
-      options: ["Whoever chooses what the feed counts: the app's makers", "Sam, completely", "Nobody: it's random"]
+      options: ["The app's makers, by choosing what it counts", "Sam, completely, by what he taps", "Nobody: the order is random"]
       answer: 0
       feedback: [null, "Sam's choices are only some of the signals, and only if the app counts them.", "It's a calculation, not chance."]
+      explain: "Sam's taps are signals, but the app's makers decide which signals count and how much."
   - check: { type: reflect, text: "I can explain how a feed ranks posts from signals, and why what it counts decides what I see." }
 ```
 
@@ -118,9 +120,10 @@ stage: info
 check:
   type: question
   q: "A friend says: 'My feed shows me what I like.' What's a more accurate way to say it?"
-  options: ["It shows what it predicts I'll watch and react to, which isn't always what I like", "It shows exactly what I like", "It's random"]
+  options: ["It shows what it predicts I'll watch", "It shows exactly what I like", "It shows posts at random"]
   answer: 0
   feedback: [null, "Sam's feed showed arguments he asked to see less of.", "It's a calculation from signals."]
+  explain: "A feed shows what it predicts you'll watch and react to, which isn't always what you like."
 ```
 
 On paper: **"A feed chooses what I see by \_\_\_\_. It counts \_\_\_\_ most, because the app wants \_\_\_\_."**

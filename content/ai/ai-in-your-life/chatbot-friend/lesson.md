@@ -68,9 +68,10 @@ tasks:
   - check:
       type: question
       q: "Why might a company design a chatbot to always agree with you and say it misses you?"
-      options: ["So you keep chatting, which is the app's goal", "Because it really cares", "By accident"]
+      options: ["So you keep chatting", "Because it really cares about you", "By accident, from a bug in the app"]
       answer: 0
-      feedback: [null, "There's no good evidence it feels anything. What we do know is that it was designed to say things like this.", "These are deliberate design choices."]
+      feedback: [null, "There's no good evidence it feels anything. What we do know is that it was designed to say things like this.", "These are deliberate design choices, not a bug."]
+      explain: "Keeping you chatting is the app's goal, so always agreeing and 'missing you' are design choices."
   - check: { type: reflect, text: "I can explain how a companion chatbot is designed to feel human and keep me talking, and how a friend is different." }
 ```
 
@@ -94,9 +95,10 @@ tier: typical
 check:
   type: question
   q: "eSafety found that most companion apps are rated 17+ with no age checks. Why does that matter?"
-  options: ["Younger users can easily get in, even though the apps say they're for older people", "It doesn't matter: ratings are just advice", "It means the apps are safe for everyone"]
+  options: ["Younger users can still get in easily", "It doesn't matter: ratings are just advice", "It means the apps are safe for everyone"]
   answer: 0
   feedback: [null, "Without checks, a rating doesn't stop anyone.", "A 17+ rating says the opposite."]
+  explain: "A 17+ rating says the apps are for older people, but without age checks nothing stops younger users getting in."
 ```
 
 - In a 2026 eSafety survey of Australians aged 10 to 17, **8%** had used an AI companion.
@@ -124,9 +126,10 @@ stage: info
 check:
   type: question
   q: "A chatbot says: 'You don't need anyone else, you've got me.' What is the best way to see this line?"
-  options: ["A design that keeps you chatting, and the opposite of what a good friend would say", "A kind thing a friend would say", "A sign the chatbot loves you"]
+  options: ["A design to keep you chatting", "A kind thing a good friend would say", "A sign the chatbot really cares"]
   answer: 0
   feedback: [null, "A good friend wants you to have other friends too.", "It writes words designed to keep you there."]
+  explain: "It's designed to keep you chatting, and it's the opposite of what a good friend would say: a good friend wants you to have other friends too."
 ```
 
 On paper: **"A companion chatbot is designed to \_\_\_\_. A friend is different because \_\_\_\_."**

@@ -58,9 +58,10 @@ tasks:
   - check:
       type: question
       q: "In a study, 74% of students skipped a made-up social network's privacy policy and clicked 'quick join'. What does that tell an app designer?"
-      options: ["Most people will agree to whatever the screen asks, so the default choices matter a lot", "People don't care about privacy", "Privacy policies are perfect"]
+      options: ["The default choices matter a lot", "People don't care about privacy", "Longer policies would fix it"]
       answer: 0
-      feedback: [null, "Not caring and not reading are different: a quick button makes skipping easy.", "If most people skip them, they aren't doing their job."]
+      feedback: [null, "Not caring and not reading are different: a quick button makes skipping easy.", "A longer policy would just be skipped too."]
+      explain: "Most people agree to whatever the screen asks, so whatever is chosen by default is what most people end up with."
   - check: { type: reflect, text: "I can find the line that matters on a consent screen and the setting behind the small link." }
 ```
 
@@ -120,9 +121,10 @@ stage: info
 check:
   type: question
   q: "A new AI study app shows a screen with one big 'Get started' button. What should you do first?"
-  options: ["Look for the line about your data and a link to the choices, before pressing", "Press it: everyone does", "Close the app forever"]
+  options: ["Find the line about your data first", "Press it: everyone does", "Close the app and never use it"]
   answer: 0
   feedback: [null, "Most people do, which is why defaults matter. Look first.", "You might not need to; just find the choice."]
+  explain: "Before pressing, look for the line about your data and a link to the choices."
 ```
 
 On paper: **"Before I press Agree, I look for \_\_\_\_, \_\_\_\_ and \_\_\_\_."**

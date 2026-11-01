@@ -71,9 +71,10 @@ tasks:
   - check:
       type: question
       q: "Westbrook's maths teachers say their real problem is students who give up when stuck at home. Does StudyPal's instant step-by-step answer solve that problem?"
-      options: ["Partly: students won't give up, but they may copy instead of learning; a hint would fit the problem better", "Yes, completely", "No: the problem isn't real"]
+      options: ["Partly: they won't give up, but a hint would fit better", "Yes: students get unstuck, so it's solved", "No: the problem isn't real"]
       answer: 0
       feedback: [null, "It stops the giving up, but does it keep the thinking? Check against 'learning first'.", "The teachers named it: it's the problem you're deciding about."]
+      explain: "Students won't give up, but they may copy the answer instead of learning. A hint would fit the teachers' problem better."
   - check: { type: reflect, text: "I can ask what problem a tool solves, what kind of AI it is, and whether its evidence shows learning." }
 ```
 
@@ -102,9 +103,10 @@ tier: typical
 check:
   type: question
   q: "StudyPal has a setting, off by default: 'Hint mode: give a hint, not the answer.' How does that change the decision?"
-  options: ["It may fit 'learning first' better, if the school can switch it on for every student and check it stays on", "No difference: it's the same app", "It makes the app perfect"]
+  options: ["A better fit, if the school controls it", "No difference: it's the same app", "It's now safe to approve for everyone"]
   answer: 0
   feedback: [null, "A setting can change a lot. But who controls it?", "One setting doesn't settle data, cost or fairness. Lesson 5 checks those."]
+  explain: "Hint mode may fit 'learning first' better, but only if the school can switch it on for every student and check it stays on."
 ```
 
 A tool can be a poor fit as it comes, and a better fit with a different setting. Ask:
@@ -134,9 +136,10 @@ stage: info
 check:
   type: question
   q: "A tool's company says 'Students love it: 95% would use it again.' Which charter principle does that claim NOT answer?"
-  options: ["Learning first: liking a tool isn't evidence it helps learning", "Fair for everyone", "None: it answers them all"]
+  options: ["Learning first", "Fair for everyone", "None: it answers them all"]
   answer: 0
   feedback: [null, "Fairness isn't answered either, but the bigger gap is learning.", "Liking a tool is useful to know, but it isn't evidence of learning."]
+  explain: "Liking a tool isn't evidence that it helps learning."
 ```
 
 On paper, start the **recommendation** for StudyPal (or your own tool).

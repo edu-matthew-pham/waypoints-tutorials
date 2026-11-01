@@ -70,9 +70,10 @@ tasks:
   - check:
       type: question
       q: "Westbrook recommends a trial but doesn't say who decides afterwards, or when. What's the problem?"
-      options: ["The trial could drift on forever, or end without anyone deciding", "None: trials decide themselves", "It makes the trial unfair"]
+      options: ["Nobody may ever decide if it worked", "None: trials decide themselves", "It makes the trial unfair"]
       answer: 0
       feedback: [null, "Someone has to look at the results and decide, by a date.", "Fairness is a separate question. The gap is who decides, and when."]
+      explain: "Without a who and a when, the trial could drift on forever, or end without anyone deciding."
   - check: { type: reflect, text: "I can write a recommendation with a decision, conditions, a check against each principle, and what would change our mind." }
 ```
 
@@ -132,9 +133,10 @@ stage: info
 check:
   type: question
   q: "Six months after a trial, the tool's company changes its terms to train on all student chats. What should happen to the recommendation?"
-  options: ["Review it now: the conditions it depended on have changed", "Nothing: it was already decided", "Wait for the yearly review"]
+  options: ["Review it now: its conditions changed", "Nothing: it was already decided", "Wait for the yearly review"]
   answer: 0
   feedback: [null, "A decision depends on its conditions. When they change, look again.", "A big change to a condition shouldn't wait."]
+  explain: "The recommendation depended on conditions, such as not training on student chats. When they change, look again."
 ```
 
 On paper, finish the **recommendation**.

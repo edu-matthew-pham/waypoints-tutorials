@@ -71,15 +71,17 @@ tasks:
   - check:
       type: question
       q: "Westbrook's AI statement grows to twelve pages, with its own rules on cheating, bullying and privacy. What's the problem?"
-      options: ["It repeats rules other policies own, so the two will soon disagree and nobody will know which wins", "Nothing: longer is safer", "It's too short"]
+      options: ["It repeats rules other policies own", "Nothing: longer is safer", "It should cover even more topics"]
       answer: 0
       feedback: [null, "Two documents saying different things about the same case is less safe, not more.", "It's the opposite problem."]
+      explain: "When two documents hold the same rule, they soon disagree, and nobody knows which wins. Each rule belongs in the policy that owns it."
   - check:
       type: question
       q: "What should 'check' mean for these rules?"
-      options: ["Check the rules are working for the school, for example learning holds up on tasks done without AI", "Check up on each student to catch AI use", "Check that everyone has read them"]
+      options: ["Check the rules work: learning holds up without AI", "Check up on each student to catch AI use", "Check that everyone has read them"]
       answer: 0
       feedback: [null, "A school mostly can't catch individual AI use: home use is invisible and AI detectors are often wrong. Check whether the rules work.", "Reading them is a start, but doesn't show they're working."]
+      explain: "A school mostly can't catch individual AI use. Check whether the rules are working, for example whether learning holds up on tasks done without AI."
   - check: { type: reflect, text: "I can explain why AI rules belong in existing policies, held together by a short statement and a map." }
 ```
 
@@ -110,9 +112,10 @@ tier: typical
 check:
   type: question
   q: "Westbrook's Year 10s complete a task marked by an outside exam body, which has its own rules on AI. Westbrook's statement allows more AI than those rules. Which applies?"
-  options: ["The exam body's rules: the school can't loosen them, so its map should point to them", "Westbrook's, because it's their school", "Whichever the student prefers"]
+  options: ["The exam body's: the school can't loosen them", "Westbrook's, because it's their school", "Whichever the student prefers"]
   answer: 0
   feedback: [null, "Not for work the outside body marks. Its rules sit above the school's.", "Students follow the stricter rules that apply to the task."]
+  explain: "Work an outside body marks follows its rules. The school can't loosen them, so its map should point to them."
 ```
 
 Exam boards and programmes (for example, senior secondary boards and international programmes) publish their own rules on AI in assessed work. A school's map shows them as **rules it can't change**, and its own integrity policy lines up with them.
@@ -139,9 +142,10 @@ stage: info
 check:
   type: question
   q: "Westbrook's statement says: 'Harm to others using AI: see Wellbeing and behaviour.' Why point rather than write the rule out?"
-  options: ["The behaviour policy's owner keeps one version up to date, so the two can't disagree", "Pointing is lazier", "So nobody has to read it"]
+  options: ["One owner keeps one version up to date", "Pointing is quicker to write", "So nobody has to read the rule"]
   answer: 0
   feedback: [null, "It's about keeping one version, not saving effort.", "People still read the rule: in the place it belongs."]
+  explain: "The behaviour policy's owner keeps one version up to date, so the statement and the policy can't disagree."
 ```
 
 On paper, write your **AI statement** and start the **map**. You'll refine both in lesson 11.

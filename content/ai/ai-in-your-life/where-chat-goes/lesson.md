@@ -58,9 +58,10 @@ tasks:
   - check:
       type: question
       q: "Why does 'used for training' matter more than 'stored'?"
-      options: ["A stored chat can be deleted, but once an AI has learned from it, it can't easily be taken back out", "Training makes the chat public on the internet", "It doesn't matter more"]
+      options: ["A stored chat can be deleted; what's learned can't easily be", "Training makes the chat public on the internet", "It doesn't matter more"]
       answer: 0
       feedback: [null, "Training doesn't publish the chat, but what's learned stays in the model.", "Deleting a chat is easy; un-learning it isn't."]
+      explain: "Once an AI has learned from a chat, it can't easily be taken back out, even if the chat itself is deleted."
   - check: { type: reflect, text: "I can explain where a chat with an AI app can go, and what I can change before I type." }
 ```
 
@@ -92,9 +93,10 @@ tier: typical
 check:
   type: question
   q: "A company wants to start training its AI on chats people already typed. It quietly updates its privacy policy. Is that enough, according to Australia's privacy regulator?"
-  options: ["Generally not: a quiet policy update or notice isn't enough by itself", "Yes: updating the policy is enough", "Companies can't train AI at all"]
+  options: ["Generally not: a quiet update isn't enough", "Yes: updating the policy is enough", "Companies can't train AI at all"]
   answer: 0
   feedback: [null, "The regulator said a policy update by itself will generally not be enough.", "They can, if they follow the privacy rules."]
+  explain: "The regulator said a quiet policy update or notice will generally not be enough by itself."
 ```
 
 The **Office of the Australian Information Commissioner** (OAIC), which looks after privacy law, says that **updating a privacy policy or giving notice by itself will generally not be enough** for a company to start training AI on information it already holds.
@@ -120,9 +122,10 @@ stage: info
 check:
   type: question
   q: "You want an AI app's help with a story about your friend's birthday party. What's the best first step?"
-  options: ["Leave out your friend's real name and details, and check the training setting", "Type everything so the AI gets it right", "Ask the AI whether it's safe"]
+  options: ["Leave out real names and check the settings", "Type everything so the AI gets it right", "Ask the AI whether it's safe"]
   answer: 0
   feedback: [null, "The AI doesn't need real names to help with a story.", "Asking the AI isn't a check of its settings."]
+  explain: "The AI doesn't need your friend's real name or details to help with a story, and the training setting decides whether it learns from your chat."
 ```
 
 On paper, write your **three-step checklist** for before you type into any AI app.

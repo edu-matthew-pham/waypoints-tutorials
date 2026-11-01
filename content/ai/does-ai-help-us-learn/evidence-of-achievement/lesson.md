@@ -40,9 +40,10 @@ tasks:
   - check:
       type: question
       q: "Learner C let AI write most of the report and didn't check it. Under Goal 2, what is missing?"
-      options: ["Evidence that C checked the AI's work and made the decisions", "Nothing: Goal 2 allows tools", "A longer report"]
+      options: ["Proof C checked the AI and made the choices", "Nothing: Goal 2 allows using tools", "A longer, more detailed report"]
       answer: 0
       feedback: [null, "Goal 2 allows tools, but it's about using them well. That includes checking.", "Length isn't the problem."]
+      explain: "Goal 2 allows tools, but it's about using them well: there needs to be evidence that C checked the AI's work and made the decisions."
 ```
 
 Three students investigate how to cut waste at school.

@@ -68,15 +68,17 @@ tasks:
   - check:
       type: question
       q: "Why did one formula feel so unfair to so many people at once?"
-      options: ["It applied the same rule to everyone at once, and some groups did worse under it", "Computers can't do maths", "It learned from the wrong examples"]
+      options: ["One rule hit everyone, and some groups did worse", "The computer got its sums wrong", "It learned from the wrong examples"]
       answer: 0
       feedback: [null, "The maths worked as designed. The rule was the problem.", "It didn't learn: people designed it. The rule itself was the problem."]
+      explain: "The formula worked as designed. It applied the same rule to every student at once, so where the rule was unfair to some groups, it was unfair to all of them together."
   - check:
       type: question
       q: "What would have helped a student who thought their grade was wrong?"
-      options: ["A quick, fair way to appeal to a person who looks at their own work", "A faster computer", "A longer formula"]
+      options: ["A way to appeal to a person who looks at their work", "Running the formula again to check", "Trusting the formula: it treats everyone equally"]
       answer: 0
-      feedback: [null, "Speed doesn't fix an unfair rule.", "A longer rule is still a rule for everyone. A person can look at one student."]
+      feedback: [null, "Running the same rule again gives the same answer. A person can look at one student's work.", "The same rule for everyone can still be unfair to some groups."]
+      explain: "A quick, fair appeal to a person who looks at the student's own work can catch what a rule for everyone misses."
   - check: { type: reflect, text: "I can explain how one rule applied to everyone can be unfair to some groups, and why people need a way to appeal." }
 ```
 
@@ -108,9 +110,10 @@ tier: typical
 check:
   type: question
   q: "In 2021–22, Services Australia ran a promotion round using AI-assisted and automated tests, with no interview panel. Eleven promotions were overturned on review. What does the review show?"
-  options: ["Someone could check the decisions, and found some were wrong", "The AI was always right", "Reviews are a waste of time"]
+  options: ["Decisions could be checked, and some were wrong", "The automated tests were always right", "Reviews only slow things down for no reason"]
   answer: 0
-  feedback: [null, "Eleven promotions were overturned, so it wasn't always right.", "The review is what caught the problem."]
+  feedback: [null, "Eleven promotions were overturned, so they weren't always right.", "The review is what caught the problem."]
+  explain: "Because people could ask for a review, someone checked the decisions and 11 promotions were overturned."
 ```
 
 Services Australia, a government agency, used **AI-assisted and automated** tests to decide who got promoted, with **no interview panel**. People could ask for a review. The Merit Protection Commissioner **overturned 11 promotions**.
@@ -136,9 +139,10 @@ stage: info
 check:
   type: question
   q: "Your school plans to use a computer formula to choose students for a special program. What is the most important thing to add?"
-  options: ["A person who checks surprising results, and a fair way to appeal", "A faster computer", "Keep the formula secret so nobody argues"]
+  options: ["A person who checks results, and a way to appeal", "Run the formula twice to be sure", "Keep the formula secret so nobody argues"]
   answer: 0
-  feedback: [null, "Speed doesn't make it fair.", "Secrecy makes it harder to spot an unfair rule."]
+  feedback: [null, "Running the same rule twice gives the same answer, fair or not.", "Secrecy makes it harder to spot an unfair rule."]
+  explain: "A person who checks surprising results, and a fair way to appeal, can catch where the formula is unfair to someone."
 ```
 
 On paper: **"If a formula decided something about me, I would want \_\_\_\_ because \_\_\_\_."**

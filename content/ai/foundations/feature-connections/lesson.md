@@ -54,6 +54,7 @@ tasks:
       q: "What happens when you increase the colour weight?"
       options: ["Colour influences the decision more", "The unit automatically learns from new photos", "The fruit changes colour"]
       answer: 0
+      feedback: [null, "Changing a weight by hand isn't learning, and there are no photos here.", "The fruit stays the same. Only how much colour counts changes."]
   - check:
       type: question
       q: "Set the colour weight to 0 and the shape weight to 2. What does the unit predict for a yellow, round fruit?"
@@ -97,9 +98,10 @@ stage: info
 check:
   type: question
   q: "With colour weight 3 and shape weight 1, the unit calls a yellow, round fruit a banana. What does this show?"
-  options: ["The weights trust colour much more than shape, so colour decides", "Yellow, round fruits are bananas", "The unit learned this from examples"]
+  options: ["Colour has the bigger weight, so it decides", "Yellow, round fruits are bananas", "The unit learned this from examples"]
   answer: 0
   feedback: [null, "The label comes from the weights you set, not from what the fruit really is.", "You set these weights by hand. Nothing was learned from examples."]
+  explain: "With colour weight 3 and shape weight 1, the unit trusts colour much more than shape. The label comes from the weights you set."
 ```
 
 Without the board, explain how changing the importance of a clue can affect a prediction.

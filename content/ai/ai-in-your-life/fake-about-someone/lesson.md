@@ -41,9 +41,10 @@ tasks:
   - check:
       type: question
       q: "Why does 'everyone knows it's fake' not make it OK?"
-      options: ["Kai didn't agree to it, and being shown and laughed at hurts anyway", "Fake videos are always illegal", "It would be OK if it looked real"]
+      options: ["Kai didn't agree, and being laughed at hurts", "Fake videos are always illegal", "It would be OK if it looked real"]
       answer: 0
       feedback: [null, "Not every fake is a crime, but it can still be bullying.", "Looking real or fake isn't what makes it hurt."]
+      explain: "The harm comes from being shown and laughed at without agreeing to it, not from people believing it."
 ```
 
 Kai didn't agree to the video. Even if nobody believes it, it can still be **bullying**: it uses his face to make people laugh at him.
@@ -126,9 +127,10 @@ stage: info
 check:
   type: question
   q: "You see a fake picture of a classmate. Your friend says 'Don't be boring, just share it.' What do you do?"
-  options: ["Don't share it, check the classmate is OK, and tell an adult", "Share it once, quietly", "Ignore it completely"]
+  options: ["Don't share it, check they're OK, tell an adult", "Share it once, quietly, with one friend", "Don't share it, but stay out of it"]
   answer: 0
   feedback: [null, "Once is still spreading it.", "Not sharing is good; supporting and telling help even more."]
+  explain: "Not sharing stops it spreading. Checking the classmate is OK and telling an adult help even more."
 ```
 
 On paper: **"If I see a fake about someone I know, I will \_\_\_\_, \_\_\_\_, \_\_\_\_ and \_\_\_\_."**

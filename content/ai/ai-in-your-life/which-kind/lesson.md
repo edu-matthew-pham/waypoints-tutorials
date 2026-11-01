@@ -52,15 +52,17 @@ tasks:
   - check:
       type: question
       q: "A chatbot tells you a fact that turns out to be made up. Which kind of mistake is that?"
-      options: ["Makes new content: it made something convincing that isn't true", "Rules: someone wrote a wrong rule", "Takes actions: it acted before checking"]
+      options: ["Makes new content: it made something up", "Rules: someone wrote a wrong rule", "Takes actions: it acted before checking"]
       answer: 0
       feedback: [null, "Nobody wrote that fact in as a rule.", "It only wrote something; it didn't act."]
+      explain: "It made something convincing that isn't true: a mistake of AI that makes new content."
   - check:
       type: question
       q: "A feed keeps showing you things you said you didn't want. Where would you look?"
-      options: ["At what it's predicting: what keeps people watching, not what you asked for", "At a rule about bedtimes", "At a picture it made"]
+      options: ["At what it's predicting you'll watch", "At the rule you set for bedtimes", "At a picture it made"]
       answer: 0
       feedback: [null, "Bedtime rules don't choose posts.", "A feed ranks posts; it doesn't make pictures."]
+      explain: "A feed predicts what keeps people watching, not what you asked for."
 ```
 
 - **Rules:** the rule is wrong, for everyone at once.

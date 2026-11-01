@@ -30,9 +30,10 @@ tasks:
   - check:
       type: question
       q: "Amazon's experimental tool learned from résumés of past applicants, mostly men. It marked down résumés with the word 'women's', as in 'women's chess club captain'. Why?"
-      options: ["The word was rare in the past hires it learned from, so it learned to score it lower", "Someone typed in a rule against it", "The word was spelled wrongly"]
+      options: ["It was rare in the past hires it learned from", "Someone typed in a rule against it", "Women's clubs were less useful for the job"]
       answer: 0
-      feedback: [null, "Nobody typed in that rule. The model learned it from the examples.", "Spelling had nothing to do with it."]
+      feedback: [null, "Nobody typed in that rule. The model learned it from the examples.", "Nobody showed that. The tool copied a pattern in past hires."]
+      explain: "The word 'women's' was rare in the résumés of past hires, who were mostly men, so the model learned to score it lower. Nobody typed in that rule."
   - check:
       type: sort
       q: "Would this help a hiring model treat people fairly?"
@@ -65,9 +66,9 @@ tasks:
   - check:
       type: question
       q: "The hiring tool's program had no bug. Where did the unfair pattern come from?"
-      options: ["From the past hiring decisions it learned from", "From a rule a programmer wrote", "From the computer's speed"]
+      options: ["From the past hiring decisions it learned from", "From a rule a programmer wrote", "From the people who applied this year"]
       answer: 0
-      feedback: [null, "No programmer wrote it. The model found it in the examples.", "Speed doesn't change what it learned."]
+      feedback: [null, "No programmer wrote it. The model found it in the examples.", "This year's applicants were scored by it. The pattern came from the past examples."]
   - check: { type: reflect, text: "I can explain how a model that learns from past decisions can copy unfair patterns, and name one check that helps." }
 ```
 
@@ -91,9 +92,9 @@ tier: typical
 check:
   type: question
   q: "Researchers gave AI language models identical résumés with different names. In 85% of tests, the models favoured White-associated names. What does 'identical résumés' show?"
-  options: ["Only the name changed, so the name caused the difference", "The résumés were different", "The models were picking the best skills"]
+  options: ["Only the name changed, so the name caused the difference", "The models disliked some names at random", "The models were picking the best skills"]
   answer: 0
-  feedback: [null, "The researchers kept everything the same except the name.", "Every résumé had the same skills, so skills can't explain it."]
+  feedback: [null, "85% of tests is far too many to be chance.", "Every résumé had the same skills, so skills can't explain it."]
 ```
 
 In a 2024 study, researchers asked AI language models to rank **identical résumés** that had different names. The models favoured **White-associated names in 85% of cases**.
@@ -119,9 +120,10 @@ stage: info
 check:
   type: question
   q: "A school wants an AI that predicts which students will do well in a program, trained on past students who were chosen. What should the school check first?"
-  options: ["Whether past choices were fair to every group, and how the AI scores each group", "Whether the AI is fast", "Whether the AI has a friendly name"]
+  options: ["Whether past choices were fair to every group", "Whether the AI is accurate on average", "Whether it was trained on lots of students"]
   answer: 0
-  feedback: [null, "Speed says nothing about fairness.", "A name says nothing about what it learned."]
+  feedback: [null, "It can be accurate on average and still unfair to one group.", "More examples of unfair choices still teach unfair patterns."]
+  explain: "It learns from who was chosen before. Check whether those past choices were fair to every group, and how the AI scores each group."
 ```
 
 On paper: **"A model that learns from past decisions can be unfair because \_\_\_\_. Before using one, I'd check \_\_\_\_."**

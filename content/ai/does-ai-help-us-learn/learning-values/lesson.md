@@ -65,9 +65,10 @@ tasks:
   - check:
       type: question
       q: "Which student has the most say over their own learning?"
-      options: ["Leo tries a problem alone first, picks a hint when stuck, and can say why", "Max does whatever the app tells him next", "Ella lets AI choose all her topics and answers"]
+      options: ["Leo tries first, picks a hint when stuck, says why", "Max does whatever the app tells him next", "Ella lets AI choose all her topics and answers"]
       answer: 0
       feedback: [null, "Max follows the app, but isn't making his own choices.", "Ella has handed over the choosing as well as the work."]
+      explain: "Leo makes his own choices: he tries a problem alone first, picks a hint when he's stuck, and can say why."
   - check:
       type: question
       q: "Which of these is a prediction about the future, not a fact?"
@@ -124,9 +125,10 @@ stage: info
 check:
   type: question
   q: "Three students answer 'Does AI help us learn?' Which answer is strongest?"
-  options: ["'It depends on the goal. When I'm learning a skill, help that gives hints first can work, but I should check I can do it alone later.'", "'AI helps, because it is a helpful tool.'", "'AI is cheating, so it never helps anyone learn.'"]
+  options: ["'It depends on the goal: hints can help, if I check I can do it alone later.'", "'AI helps, because it is a helpful and clever tool.'", "'AI is cheating, so it never helps anyone learn.'"]
   answer: 0
   feedback: [null, "This gives no reason, and doesn't say for which goal.", "'Never' goes too far. In this course you met help that can support learning."]
+  explain: "The strongest answer names a goal, gives a reason, and says how to check: when you're learning a skill, help that gives hints first can work, but check you can do it alone later."
 ```
 
 The question may stay open. But your reasons can be more precise: what matters, what evidence supports a claim, and what is still unknown.
@@ -141,9 +143,10 @@ tier: typical
 check:
   type: question
   q: "Which answer to 'Does AI help us learn?' is strongest?"
-  options: ["'In the maths study, a plain chatbot during practice hurt later results. A tutor that gives hints may be different, but we need more evidence.'", "'AI helps when students use it carefully, because it is a helpful tool.'", "'The physics study proved AI tutors beat teachers, so schools should switch to them.'"]
+  options: ["'In the maths study, practising with a plain chatbot hurt later results. A hint tutor may differ; we need more evidence.'", "'AI helps when students use it carefully, because it is a helpful tool.'", "'The physics study proved AI tutors beat teachers, so schools should switch to them.'"]
   answer: 0
   feedback: [null, "This sounds careful, but it gives no evidence and doesn't say who, or for what goal.", "The physics study compared one kind of class, tested straight after. 'Proved' and 'switch' go too far."]
+  explain: "The strongest answer names a study and what it found, and says what is still unknown: a tutor that gives hints may be different, but we need more evidence."
 ```
 
 If you read the two studies in Unit 2: which answer uses them best, and which goes further than they show?

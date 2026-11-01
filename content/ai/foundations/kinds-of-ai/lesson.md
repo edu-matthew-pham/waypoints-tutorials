@@ -65,9 +65,10 @@ tasks:
   - check:
       type: question
       q: "A rule-following system and a system that learned from examples both give the wrong answer. Where would you look first to fix each?"
-      options: ["Rules: the rule people wrote. Learned: its examples and labels", "Both: the computer's speed", "Both: nothing can be fixed"]
+      options: ["Rule system: its rule. Learned: its examples", "Both: how fast the computer runs", "Both: the examples it learned from"]
       answer: 0
-      feedback: [null, "A faster computer gives the same wrong answer, faster.", "Both can be fixed, but in different places."]
+      feedback: [null, "A faster computer gives the same wrong answer, faster.", "Only the learned system has examples. The rule system follows a rule people wrote."]
+      explain: "For the rule-following system, look at the rule people wrote. For the learned system, look at its examples and labels."
   - check: { type: reflect, text: "I can name the four kinds of AI and one way each kind goes wrong." }
 ```
 
@@ -131,9 +132,10 @@ stage: info
 check:
   type: question
   q: "A news story says: 'An algorithm lowered students' marks.' What should you find out first?"
-  options: ["What kind of system it was: a rule people wrote, or a model that learned from examples", "How fast the computer was", "Whether the algorithm had a name"]
+  options: ["What kind of system it was", "How fast the computer was", "Whether the algorithm had a name"]
   answer: 0
   feedback: [null, "Speed doesn't tell you why the marks changed.", "A name doesn't tell you how it works or where it went wrong."]
+  explain: "Was it a rule people wrote, or a model that learned from examples? That tells you where to look for what went wrong."
 ```
 
 On paper, write: **"\_\_\_\_ is the kind of AI that \_\_\_\_. It can go wrong when \_\_\_\_."** Do it for one kind you used in this course.

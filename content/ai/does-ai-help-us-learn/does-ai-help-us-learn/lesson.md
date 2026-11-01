@@ -126,9 +126,10 @@ stage: info
 check:
   type: question
   q: "Sam says: 'AI helped me finish my science explanation, so now I understand the science.' What should you ask first?"
-  options: ["What was Sam trying to learn, and can Sam explain it without the AI's words?", "Which AI did Sam use?", "How long was the explanation?"]
+  options: ["What was Sam learning, and can Sam explain it alone?", "Which AI did Sam use, and is it a good one?", "How long and detailed was the explanation?"]
   answer: 0
   feedback: [null, "Knowing the tool doesn't tell us what Sam can do.", "A long explanation can still be someone else's thinking."]
+  explain: "Finishing with AI isn't the same as understanding. Ask what Sam was trying to learn, and whether Sam can explain it without the AI's words."
 ```
 
 Before you judge any use of AI, name the goal. Then ask what the result shows about that goal.

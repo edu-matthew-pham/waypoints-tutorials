@@ -30,9 +30,10 @@ tasks:
   - check:
       type: question
       q: "TIME reported that the workers took home about $1.32 to $2 (US) an hour. The company that hired them, Sama, says it was $1.46 to $3.74 after tax. Why might the two figures differ?"
-      options: ["They measured pay differently, and they disagree about the facts", "One of them can't add", "They are describing different countries"]
+      options: ["They measured pay differently, and disagree", "One of them can't add", "They are describing different countries"]
       answer: 0
       feedback: [null, "Both can do maths. They counted pay differently, and they disagree.", "Both describe the same workers in Nairobi."]
+      explain: "Both can do maths. They counted pay in different ways, and they also disagree about the facts."
   - check:
       type: sort
       q: "Is $1.32 to $2 an hour low? It depends what you compare it with. Which comparison does each fact give?"
@@ -64,9 +65,10 @@ tasks:
   - check:
       type: question
       q: "Why is labelling work often called 'hidden'?"
-      options: ["People using the AI don't see the workers who labelled its examples", "The workers are invisible", "Labelling happens by itself"]
+      options: ["Users don't see the people who labelled it", "The workers are invisible", "Labelling is done by machines, not people"]
       answer: 0
       feedback: [null, "The workers are real people; their work isn't seen by users.", "People do it, by hand, example by example."]
+      explain: "People using the AI don't see the workers who labelled its examples."
   - check: { type: reflect, text: "I can explain who labels AI data, and why 'low pay' needs a comparison before I judge it." }
 ```
 
@@ -90,9 +92,10 @@ tier: typical
 check:
   type: question
   q: "Fairwork scored 16 online work platforms against fair-work standards. Only 4 met both of its fair-pay standards. What is the best way to use that finding?"
-  options: ["As one careful check, knowing platforms chose to take part and the scores are the group's own standards", "As proof every platform is unfair", "Ignore it: it's only one report"]
+  options: ["As one careful check, knowing how it was made", "As proof every platform is unfair", "Ignore it: it's only one report"]
   answer: 0
   feedback: [null, "Some platforms met the standards.", "One careful report is evidence; just know how it was made."]
+  explain: "It's one careful check. Platforms chose to take part, and the scores use the group's own standards."
 ```
 
 Much labelling is done through **online platforms**, where people pick up small tasks from home. In 2025, a research group called **Fairwork** (University of Oxford) scored 16 platforms. Only **4 met both of its fair-pay standards**. It said platforms remain far from safeguarding basic standards of fair work.
@@ -119,9 +122,10 @@ stage: info
 check:
   type: question
   q: "A company says: 'Our AI is ethical.' Which question about its data would you ask?"
-  options: ["Who labelled the data, how were they paid and treated, and compared with what?", "How many labels were there?", "What colour is the app?"]
+  options: ["Who labelled it, and how were they paid?", "How many labels were there?", "Is the data from the internet?"]
   answer: 0
-  feedback: [null, "How many doesn't say how the labellers were treated.", "That says nothing about the people behind the data."]
+  feedback: [null, "How many doesn't say how the labellers were treated.", "Where it came from doesn't say how the labellers were treated."]
+  explain: "Ask who labelled the data, how they were paid and treated, and compared with what."
 ```
 
 On paper: **"Behind an AI are people who \_\_\_\_. To judge whether their pay is fair, I'd compare it with \_\_\_\_."**

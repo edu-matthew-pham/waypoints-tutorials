@@ -66,9 +66,10 @@ tasks:
   - check:
       type: question
       q: "Why should students be able to report a problem with an AI tool without having to say whether they used it?"
-      options: ["So they report problems without worrying about getting into trouble, and the committee hears about them", "Because names don't matter", "So the committee can't fix anything"]
+      options: ["So fear of trouble doesn't stop them reporting", "Because names don't matter", "So the school can count how many use AI"]
       answer: 0
-      feedback: [null, "Names can matter for follow-up; the point is that fear stops reports.", "Hearing about problems is how the committee fixes them."]
+      feedback: [null, "Names can matter for follow-up; the point is that fear stops reports.", "Counting users isn't the point: the committee needs to hear about problems."]
+      explain: "If reporting might get them into trouble, students stay quiet, and the committee never hears about problems it could fix."
   - check:
       type: sort
       q: "A rule problem means the rule itself is wrong, missing or contradicts another. A know-how problem means the rule is fine, but people don't yet know how to apply it. Which is each?"
@@ -114,9 +115,10 @@ tier: typical
 check:
   type: question
   q: "At the yearly review, Westbrook finds its response to the AI search answer (teach a checking habit) isn't working: Year 7 work still copies it. What should the committee do?"
-  options: ["Choose a different or extra response, such as changing the research tasks, and review again", "Keep the same response: it's in the plan", "Scrap the charter"]
+  options: ["Try a different or extra response, then review again", "Keep the same response: it's in the plan", "Scrap the charter"]
   answer: 0
   feedback: [null, "A plan that isn't working should change. That's what the review is for.", "The principle may be fine; the response is what's failing."]
+  explain: "For example, change the research tasks so copying the AI answer doesn't work. A review is for changing what isn't working."
 ```
 
 A review asks three questions about each decision:

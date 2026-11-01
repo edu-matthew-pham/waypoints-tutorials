@@ -73,9 +73,10 @@ tasks:
   - check:
       type: question
       q: "You asked for a simpler explanation and got one. How do you know it actually helped?"
-      options: ["Explain it back in your own words, or try a question on it", "It's shorter, so it must be better", "The AI says it's clearer now"]
+      options: ["Explain it back, or try a question on it", "It's shorter, so it must be better", "The AI says it's clearer now"]
       answer: 0
       feedback: [null, "Shorter can still be wrong, or still lose you. Test yourself on it.", "The AI can't tell whether you've understood. Only you can, by trying."]
+      explain: "Explain it back in your own words, or try a question on it. Only you can tell whether you've understood."
 ```
 
 ### What's wrong with the reply?

@@ -69,9 +69,10 @@ tasks:
   - check:
       type: question
       q: "Why does checking the source work better than checking the picture?"
-      options: ["A fake can look perfect, but it's harder to fake where it came from and what other sources say", "Sources are always honest", "Pictures can't be faked"]
+      options: ["Where it came from is harder to fake", "Sources are always honest", "Zooming in always shows a fake"]
       answer: 0
-      feedback: [null, "Sources can lie too, so you check more than one.", "AI can make convincing pictures."]
+      feedback: [null, "Sources can lie too, so you check more than one.", "A good fake can look perfect, with no glitches to find."]
+      explain: "A fake can look perfect, but it's harder to fake where it came from and what other sources say."
   - check: { type: reflect, text: "I can check where a picture or video came from, instead of hunting for glitches." }
 ```
 
@@ -95,9 +96,10 @@ tier: typical
 check:
   type: question
   q: "Content Credentials can be attached to a picture to record which camera or app made it and how it was edited. What's their biggest weakness?"
-  options: ["They're optional and can be removed, so a picture without them isn't proof of anything", "They make pictures blurry", "Only AI can read them"]
+  options: ["They're optional and can be removed", "They change how the picture looks", "Only AI can read them"]
   answer: 0
   feedback: [null, "They don't change the picture.", "People and apps can show them."]
+  explain: "Because they're optional and can be removed, a picture without them isn't proof of anything."
 ```
 
 **Content Credentials** (from a group called C2PA) are a record attached to a picture or video: what made it, and how it was changed. Some cameras and AI apps add them. But they're **optional**, and they can be **stripped off**, for example when a picture is screenshotted or re-uploaded.
@@ -123,9 +125,10 @@ stage: info
 check:
   type: question
   q: "A video shows your favourite singer saying something shocking. It looks real, and it has no Content Credentials. What can you conclude so far?"
-  options: ["Nothing yet: check where it came from and whether trusted sources report it", "It's fake: it has no credentials", "It's real: it looks real"]
+  options: ["Nothing yet: check where it came from", "It's fake: it has no credentials", "It's real: it looks real"]
   answer: 0
   feedback: [null, "Credentials are optional, so a missing one proves nothing.", "Looking real isn't evidence."]
+  explain: "A missing credential proves nothing. Check where it came from and whether trusted sources report it."
 ```
 
 On paper, write your **four-step routine** for checking a picture or video before you share it.

@@ -83,9 +83,10 @@ tier: typical
 check:
   type: question
   q: "People say apps are 'addictive'. What does the evidence say so far?"
-  options: ["Studies find links between heavy use and young people's health, but they're small, and they don't prove apps cause the harm", "It's proved that apps cause harm to everyone", "There's no link at all"]
+  options: ["Small links to health, but not proof apps cause harm", "It's proved that apps cause harm to everyone", "Studies show no link between apps and health"]
   answer: 0
   feedback: [null, "A big US review didn't find that social media causes changes in health across the whole population.", "Studies do find consistent small links, stronger in early teens."]
+  explain: "Studies find links between heavy use and young people's health, but the links are small, and they don't prove apps cause the harm."
 ```
 
 - A big US review (National Academies, 2024) **did not find** that social media **causes** health changes across the whole population.
@@ -114,9 +115,10 @@ stage: info
 check:
   type: question
   q: "A new homework app has a streak: 'Practise every day or lose your streak!' Who does that help most?"
-  options: ["It depends: it could help a student practise, or keep them using the app when they'd rather stop", "Always the student", "Always the app"]
+  options: ["It depends: it could help the student or the app", "Always the student: practice is good", "Always the app: streaks are a trick"]
   answer: 0
   feedback: [null, "A streak can push you to keep going when you don't need to.", "Streaks can help people build habits too."]
+  explain: "A streak could help a student practise, or keep them using the app when they'd rather stop."
 ```
 
 On paper: design one feature for an app that **helps people stop**. Who gains from it, and what might the app lose?

@@ -42,9 +42,10 @@ tasks:
   - check:
       type: question
       q: "An older estimate (2023) said about 2.9 Wh per chatbot request. Newer ones (2025) say about 0.24–0.34 Wh. Why might they differ?"
-      options: ["Newer chips, shorter answers, and different ways of measuring", "One of them must be a lie", "Electricity got cheaper"]
+      options: ["Newer chips and different ways of measuring", "One of them must have made it up", "Cheaper electricity means less energy used"]
       answer: 0
       feedback: [null, "Estimates can differ honestly: they measure different things at different times.", "Price doesn't change how much energy is used."]
+      explain: "Estimates can differ honestly: newer chips, shorter answers and different ways of measuring all change the figure. Ask who measured, when, and what they counted."
 ```
 
 What people have estimated for **one short text prompt** to a chatbot:
@@ -78,9 +79,10 @@ tasks:
   - check:
       type: question
       q: "One prompt uses little energy. Why do people still worry?"
-      options: ["Billions of prompts add up, and data centres' total use is rising fast", "Each prompt uses as much as a house", "They don't: it's a myth"]
+      options: ["Billions of prompts add up to a lot", "Each prompt uses as much as a house", "It's a myth: small per prompt means small total"]
       answer: 0
-      feedback: [null, "One prompt uses little. The worry is the total.", "The total is real and rising, even if each prompt is small."]
+      feedback: [null, "A prompt uses far less than a house. The worry is the total.", "Small each time can still be large in total when it happens billions of times a day."]
+      explain: "One prompt uses little, but billions of prompts every day add up, and data centres' total energy use is rising fast."
   - check: { type: reflect, text: "I can explain why one prompt can be small while the total is large, and why AI energy figures come as dated ranges." }
 ```
 
@@ -113,9 +115,10 @@ tasks:
   - check:
       type: question
       q: "Google says 0.26 mL per prompt. The study says 10 to 50 mL. Why so different?"
-      options: ["They counted different water: cooling in the building only, or also water used to make the electricity", "One of them can't do maths", "Google's prompts are smaller"]
+      options: ["They counted different kinds of water", "One of them made a maths mistake", "Google's prompts are much shorter"]
       answer: 0
       feedback: [null, "Both did the maths. They counted different things.", "The big difference is what each one counted."]
+      explain: "Google counted only cooling water inside its data centres. The study also counted water used at power stations to make the electricity."
 ```
 
 Data centres use water to keep their computers cool, and power stations use water too.
@@ -153,9 +156,10 @@ stage: info
 check:
   type: question
   q: "A post says: 'Every ChatGPT question uses a whole bottle of water!' What is the best response?"
-  options: ["Estimates range from under 1 mL to about 50 mL per answer, depending on what's counted and when", "True: every question uses 500 mL", "False: AI uses no water"]
+  options: ["Too high: estimates are under 1 mL to about 50 mL", "True: every question uses 500 mL", "False: AI only uses electricity, not water"]
   answer: 0
-  feedback: [null, "The bottle was for about 10 to 50 answers, not one.", "Data centres and power stations do use water."]
+  feedback: [null, "The bottle was for about 10 to 50 answers, not one.", "Data centres use water for cooling, and power stations use water too."]
+  explain: "Estimates range from under 1 mL to about 50 mL per answer, depending on what's counted and when. The 500 mL bottle was for about 10 to 50 medium-length answers."
 ```
 
 On paper: **"One prompt uses \_\_\_\_, but the total matters because \_\_\_\_. When I see an AI energy number, I ask \_\_\_\_."**

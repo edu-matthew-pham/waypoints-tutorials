@@ -54,9 +54,10 @@ tasks:
   - check:
       type: question
       q: "The exam-grade formula gave unfair grades. Where would you look first?"
-      options: ["At the formula people designed, and the rule it applied to everyone", "At the examples it learned from", "At the pictures it made"]
+      options: ["At the rule people designed for everyone", "At the examples it learned from", "At the actions it took on its own"]
       answer: 0
-      feedback: [null, "It didn't learn from examples. People designed it.", "It didn't make pictures. It changed grades."]
+      feedback: [null, "It didn't learn from examples. People designed it.", "It didn't act on its own. It changed grades by a rule."]
+      explain: "It was rules written by people: a formula applied to everyone. Look at the rule first."
   - check:
       type: question
       q: "The hiring tool keeps choosing people like those hired before. Where would you look first?"

@@ -71,9 +71,10 @@ tasks:
   - check:
       type: question
       q: "Which principle would help Westbrook decide about a tool nobody has invented yet?"
-      options: ["'Students do the thinking a task is for; AI may help with the rest.'", "'Only use StudyPal for homework.'", "'Don't use AI on Tuesdays.'"]
+      options: ["'Students do the thinking a task is for; AI may help with the rest.'", "'Only use StudyPal for homework, in hint mode.'", "'Year 8 may use the AI search tool for research.'"]
       answer: 0
-      feedback: [null, "That's a rule about one tool. A principle still works when the tool changes.", "That's a rule, and it doesn't say why."]
+      feedback: [null, "That's a rule about one tool. A principle still works when the tool changes.", "That's a rule about one tool too, and it doesn't say why."]
+      explain: "A principle says why, so it still decides cases when the tools change. A rule about one tool doesn't."
   - check: { type: reflect, text: "I can tell a principle that decides cases from a value that doesn't." }
 ```
 
@@ -110,9 +111,10 @@ tier: typical
 check:
   type: question
   q: "An AI tool reads students' messages on the school's learning platform and flags anyone who might be upset, so staff can check in. Which principle does it test most?"
-  options: ["A person decides: who reads the flag, and who decides what happens next?", "Learning first", "Not using AI is a real option"]
+  options: ["A person decides", "Learning first", "Not using AI is a real option"]
   answer: 0
   feedback: [null, "Learning matters, but this tool makes a judgement about a student. Who decides?", "It's always an option. But first ask who decides about a flagged student."]
+  explain: "The tool makes a judgement about a student. Ask who reads the flag, and who decides what happens next."
 ```
 
 Some tools test more than one principle. This one also tests **our data stays ours** (students' messages are read) and **honest about evidence** (how often are the flags wrong?).

@@ -75,9 +75,10 @@ tasks:
   - check:
       type: question
       q: "StudyPal's page says 'We may share data with our partners' but doesn't say who they are. What should the committee write?"
-      options: ["Unknown: we don't know who gets student data. Ask the company before any use", "Fine: 'may' means they probably won't", "Partners are always safe"]
+      options: ["Unknown: ask the company who the partners are", "Fine: 'may' means they probably won't", "Fine: partners follow the same rules"]
       answer: 0
-      feedback: [null, "'May' means they're allowed to. An unknown is a question, not permission.", "We can't tell: we don't know who they are."]
+      feedback: [null, "'May' means they're allowed to. An unknown is a question, not permission.", "Nothing on the page says so: we don't know who they are, or what rules they follow."]
+      explain: "We don't know who gets student data. An unknown is a question to ask the company before any use, not permission."
   - check: { type: reflect, text: "I can check a tool's data, defaults, age terms and who it affects, and write unknowns as questions." }
 ```
 
@@ -107,9 +108,10 @@ tier: typical
 check:
   type: question
   q: "StudyPal's streaks start on. A student keeps opening StudyPal every night to keep a 40-day streak. Which charter principle should the committee check?"
-  options: ["Learning first: is the app helping them learn, or just keeping them using it?", "Our data stays ours", "None: using it more is always better"]
+  options: ["Learning first: is it helping them learn?", "Our data stays ours", "None: using it more is always better"]
   answer: 0
   feedback: [null, "More use also means more data, but first ask whether it's helping learning.", "More use is what the app wants. Is it what the learning needs?"]
+  explain: "A streak can keep you opening an app without learning anything. Ask whether it's helping them learn, or just keeping them using it."
 ```
 
 Streaks and reminders are features **designed to keep you** (*AI in your life* looks at them in [Designed to keep you](../../ai-in-your-life/designed-to-keep-you/)). For a school tool, ask: could the school switch them off? Should it?
@@ -133,9 +135,10 @@ stage: info
 check:
   type: question
   q: "StudyPal would be fine if the school switched off 'Use my chats to improve StudyPal' for every student, and the company agreed. What kind of condition is that?"
-  options: ["A condition: 'only if the school controls this setting'", "A reason to reject it", "Nothing to do with the charter"]
+  options: ["A condition: only if the school controls it", "A reason to reject StudyPal", "Nothing to do with the charter"]
   answer: 0
   feedback: [null, "Not necessarily: a condition can fix a problem.", "It's 'our data stays ours'."]
+  explain: "A condition turns a 'no' into 'yes, only if': here, only if the school controls this setting for every student."
 ```
 
 On paper, add to the **recommendation**.

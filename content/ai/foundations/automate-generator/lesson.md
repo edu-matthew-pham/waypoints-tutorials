@@ -46,6 +46,7 @@ check:
   q: "The program picks a random integer from 1 to 6 and uses the same table as your die. What changed?"
   options: ["The assigned probabilities", "Who performs the repeated sampling", "The meaning of the words"]
   answer: 1
+  feedback: ["The table is the same as your die, so the chances didn't change.", null, "The words mean the same. Only who does the rolling changed."]
 ```
 
 ## Explore: run it many times
@@ -73,12 +74,14 @@ tasks:
       q: "Which task has the computer taken over?"
       options: ["Generating random outcomes and applying the lookup repeatedly", "Deciding whether the model represents real language well", "Judging whether an output is appropriate"]
       answer: 0
+      feedback: [null, "That's still your judgement: the program only follows the table.", "The program can't judge that. It stays with you."]
   - check:
       type: question
       q: "You press Run 1000 and see mat 51%, chair 33%, roof 16%. Which job did the computer NOT do?"
-      options: ["Decide whether six made-up endings are a good model of real sentences", "Roll the die 1000 times", "Count each word"]
+      options: ["Judge if the table is a good model", "Roll the die 1000 times", "Count how often each word came up"]
       answer: 0
       feedback: [null, "It did roll 1000 times: that is the job you handed over.", "It did count: that is part of the job you handed over."]
+      explain: "The computer rolled and counted. Deciding whether six made-up endings are a good model of real sentences is still your judgement."
   - check: { type: reflect, text: "I can name what was automated and what judgement remains with me." }
 ```
 
@@ -105,8 +108,10 @@ stage: modify
 check:
   type: question
   q: "A student has never seen the lookup table but copies 1,000 generated words into an assignment. Which learning check is most useful?"
-  options: ["Ask them to explain and perform a few selections without the computer", "Assume the large output proves understanding", "Ask them to generate 10,000 more words"]
+  options: ["Ask them to do a few selections without the computer", "Assume the large output proves understanding", "Ask them to generate 10,000 more words"]
   answer: 0
+  feedback: [null, "A big output shows the computer worked, not that they understand.", "More output still shows only what the computer can do."]
+  explain: "If they can explain and perform a few selections by hand, they understand the table, not just the output."
 ```
 
 Discuss two goals: **learning mode** (build a capability you can demonstrate yourself) and **performance mode** (complete a task efficiently). The same tool may be appropriate in both, but what you need to do independently can differ.
@@ -120,6 +125,7 @@ check:
   q: "A new die table has four faces for 'yes' and two for 'no'. Without running a program, what is the probability of 'no'?"
   options: ["1/6", "2/6", "4/6", "6/6"]
   answer: 1
+  feedback: ["Two faces say 'no', not one.", null, "That's the chance of 'yes': four faces.", "That's every face, 'yes' too."]
 ```
 
 In your own words, answer both questions:

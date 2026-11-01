@@ -63,6 +63,7 @@ tasks:
       q: "Which ending appears most often in the original six examples?"
       options: ["mat", "chair", "roof", "All appear equally often"]
       answer: 0
+      feedback: [null, "Chair appears twice; mat appears three times.", "Roof appears only once.", "Count them: mat 3, chair 2, roof 1."]
   - check:
       type: question
       q: "On the board, roof is 1 of the 6 examples. If a generator picks endings in proportion to the counts, how often would you expect roof?"
@@ -111,8 +112,10 @@ stage: info
 check:
   type: question
   q: "A model sees 'I drink' followed by water four times and juice once. Which statement is justified?"
-  options: ["Water is guaranteed to come next", "Water is more frequent in these examples, but juice remains possible", "Juice is impossible", "The model knows what the writer wants"]
+  options: ["Water is guaranteed to come next", "Water is more likely, but juice is possible", "Juice is impossible", "The model knows what the writer wants"]
   answer: 1
+  feedback: ["Four out of five isn't always: juice came once.", null, "Juice appeared once, so it can come up again.", "It only knows the counts, not what the writer wants."]
+  explain: "Water is more frequent in these examples (4 of 5), but juice remains possible (1 of 5)."
 ```
 
 **Without looking at the table**, explain why a text generator might produce different endings for the same beginning. Then return to your first prediction: would you change it? Why?

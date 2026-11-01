@@ -45,9 +45,10 @@ tasks:
   - check:
       type: question
       q: "A news story says: 'AI beats doctors at finding cancer.' Is that what this study showed?"
-      options: ["No: it showed AI could cut doctors' reading work without more false alarms, in one study", "Yes: the AI found every cancer", "Yes: the AI replaced the doctors"]
+      options: ["No: it cut doctors' reading work in one study", "Yes: the AI found every cancer", "Yes: the AI replaced the doctors"]
       answer: 0
       feedback: [null, "The study didn't say the AI found every cancer.", "Doctors still read the scans. The AI changed how much reading they did."]
+      explain: "In one Swedish study, the AI helped doctors read about 44% fewer scans themselves, with no more false alarms. It didn't beat or replace the doctors."
 ```
 
 In Sweden, a large study tested AI as a helper in breast screening. Normally two doctors read each scan. With the AI's help, doctors had to read **about 44% fewer scans themselves**, and there were **no more false alarms** than usual. The study was published in 2023.
@@ -68,9 +69,10 @@ tasks:
   - check:
       type: question
       q: "Why does 'one study, one country, one AI system' matter?"
-      options: ["Another hospital, with other patients or another system, might not get the same result", "It means the study was wrong", "It doesn't matter: AI works the same everywhere"]
+      options: ["It might not work the same elsewhere", "It means the study was wrong", "It doesn't matter: AI works the same everywhere"]
       answer: 0
       feedback: [null, "A study can be careful and right, and still not show what happens elsewhere.", "AI learns from examples, so it can work differently for patients unlike its examples."]
+      explain: "Another hospital, with other patients or another AI system, might not get the same result."
   - check: { type: reflect, text: "I can use the four lens questions on a real system, including one that helps people." }
 ```
 
@@ -92,9 +94,9 @@ tier: typical
 check:
   type: question
   q: "In a 2026 study of skin-cancer checks, specialist doctors did better than the AI. The researchers said AI should complement, not replace, specialists. What does 'complement' mean here?"
-  options: ["Help the specialist, who still makes the decision", "Replace the specialist when they are busy", "Do nothing at all"]
+  options: ["Help the specialist, who still makes the decision", "Replace the specialist when they are busy", "Compete with the specialist to be faster"]
   answer: 0
-  feedback: [null, "The study found the specialists were more accurate, so the AI shouldn't make the call alone.", "The study found AI can help, but not on its own."]
+  feedback: [null, "The study found the specialists were more accurate, so the AI shouldn't make the call alone.", "It's not a race: the AI supports the specialist's decision."]
 ```
 
 Apps and tools that check moles for skin cancer have been tested many times. In one 2026 Australian study, **specialist doctors were more accurate than the AI**. The researchers said AI should **help** specialists, not replace them.
@@ -120,9 +122,10 @@ stage: info
 check:
   type: question
   q: "A school tests an AI that suggests which students need extra help with reading. Which question is the catch?"
-  options: ["Was it tested on students like ours, and does a teacher check its suggestions?", "Does it have a nice name?", "Is it made by a big company?"]
+  options: ["Was it tested on students like ours?", "Is it accurate for most students?", "Is it made by a big company?"]
   answer: 0
-  feedback: [null, "A name says nothing about who it works for.", "Big companies can still build tools that don't fit a particular school."]
+  feedback: [null, "Most students isn't every student: who does it miss?", "Big companies can still build tools that don't fit a particular school."]
+  explain: "The catch: it may work less well for students unlike those it was tested on. Ask whether it was tested on students like ours, and whether a teacher checks its suggestions."
 ```
 
 On paper, draw the lens as four boxes. Fill them in for the reading AI: **gains, loses, decides, catch.**

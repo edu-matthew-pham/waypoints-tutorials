@@ -75,9 +75,10 @@ tasks:
   - check:
       type: question
       q: "Westbrook blocks the search page for Year 7 to stop the AI answer. What is a cost of that response?"
-      options: ["Students lose a real research tool, and still meet AI answers at home, without having learned what to do", "There's no cost: blocking is always safest", "It costs the school money"]
+      options: ["Students lose a research tool, and still meet AI at home", "There's no cost: blocking is always safest", "It costs the school money"]
       answer: 0
       feedback: [null, "Blocking has costs too: name them before choosing it.", "Maybe a little, but the bigger cost is to learning."]
+      explain: "Blocking takes away a real research tool, and students still meet AI answers at home, without having learned what to do with them."
   - check: { type: reflect, text: "I can choose a response from the menu, name the principle it serves, and name its cost." }
 ```
 
@@ -112,9 +113,10 @@ tier: typical
 check:
   type: question
   q: "The document editor's 'Rewrite with AI' button has an admin switch. For Year 7 English, where drafting is the learning, what fits the charter best?"
-  options: ["Switch it off for Year 7, review it for older years, and tell students why", "Leave it on for everyone: it's helpful", "Block the whole editor"]
+  options: ["Switch it off for Year 7 and tell them why", "Leave it on for everyone: it's helpful", "Block the whole editor"]
   answer: 0
   feedback: [null, "Helpful to finish the task, but it can do the drafting that is the learning.", "Students need the editor; the switch only affects one button."]
+  explain: "Drafting is the learning in Year 7 English, so switch the button off there, review it for older years, and tell students why."
 ```
 
 A setting can be the smallest response that works. But a setting only covers school accounts: the same button may be on at home. So committees often combine responses: **a setting, a habit, and a changed task.**

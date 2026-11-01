@@ -73,9 +73,10 @@ tasks:
   - check:
       type: question
       q: "Why does it matter how an AI tool arrived?"
-      options: ["Each route needs a different kind of response: a tool we chose can be dropped; a feature that arrived may only have a setting; a home app can't be switched off at all", "It doesn't: AI is AI", "Only tools the school chose are real AI"]
+      options: ["Each route needs a different response", "It doesn't: AI is AI", "Only tools the school chose are real AI"]
       answer: 0
       feedback: [null, "The kind of AI matters too, but so does what the school can actually do about it.", "Features and home apps are often the same kind of AI."]
+      explain: "A tool we chose can be dropped; a feature that arrived in an update may only have a setting; a home app can't be switched off at all."
   - check: { type: reflect, text: "I can sort AI by how it arrived and explain why that changes what a school can do." }
 ```
 
@@ -103,9 +104,10 @@ tier: typical
 check:
   type: question
   q: "The maths site added its 'AI hint' button in a July update. Westbrook's teachers noticed in September. How could the committee notice sooner next time?"
-  options: ["Someone reads the update notes of the school's main tools each term", "Ban all updates", "Wait for students to complain"]
+  options: ["Read the main tools' update notes each term", "Ban all updates", "Wait for students to complain"]
   answer: 0
   feedback: [null, "Updates also fix security problems: blocking them causes other harm.", "Some students won't notice, and some will just use it."]
+  explain: "New AI features arrive in updates. If someone reads the update notes of the school's main tools each term, the committee hears first."
 ```
 
 New features often arrive in updates, switched on, with a note on the company's website. A committee can share the job: each member watches **one** tool's update notes, and brings anything new to the next meeting.
@@ -129,9 +131,10 @@ stage: info
 check:
   type: question
   q: "A committee member wants to survey every student about which AI apps they use at home, with names. What's the better approach?"
-  options: ["Map tools and tasks, not people: ask about tools in general, with no names", "Survey everyone: more data is better", "Ignore home apps completely"]
+  options: ["Ask about tools in general, with no names", "Survey everyone: more data is better", "Ignore home apps completely"]
   answer: 0
   feedback: [null, "More data about named students is a privacy cost, and the committee doesn't need it to respond.", "Home apps still affect homework; map them without names."]
+  explain: "Map tools and tasks, not people. The committee doesn't need to know who uses what to decide how to respond."
 ```
 
 On paper, start the **response plan** with the map.

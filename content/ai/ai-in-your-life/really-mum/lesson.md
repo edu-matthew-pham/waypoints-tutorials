@@ -65,9 +65,9 @@ tasks:
   - check:
       type: question
       q: "Why does calling back on a number you already know work, even if the voice was perfect?"
-      options: ["The scammer can't answer Mum's real phone", "It makes the clone sound different", "It slows the internet down"]
+      options: ["The scammer can't answer Mum's real phone", "It makes the clone sound different", "The fake voice only works once"]
       answer: 0
-      feedback: [null, "The voice doesn't change; the phone number does.", "It's about who answers, not the internet."]
+      feedback: [null, "The voice doesn't change; the phone number does.", "A clone can be used again and again. What changes is who answers."]
   - check: { type: reflect, text: "I can spot the warning signs of a voice-clone scam and check by calling back on a number I already have." }
 ```
 
@@ -91,9 +91,10 @@ tier: typical
 check:
   type: question
   q: "In 2024, a worker at the company Arup joined a video call with what looked and sounded like senior colleagues. They were fakes, and about US$25 million was sent to scammers. Which check would have helped?"
-  options: ["Confirming the request another way, with a person they could reach directly", "Looking harder at the faces on the video", "Making the call longer"]
+  options: ["Checking the request another way", "Looking harder at the faces on the video", "Making the call longer"]
   answer: 0
   feedback: [null, "The fakes were convincing enough to fool someone watching.", "A longer call is still the scammers' call."]
+  explain: "Confirming the request with a person they could reach directly, outside the call, would have shown it was fake."
 ```
 
 In 2024, CNN reported that a worker at the engineering company **Arup** in Hong Kong sent **about US$25 million** after a video call where **fake voices and images** were used to pretend to be senior staff.
@@ -119,9 +120,10 @@ stage: info
 check:
   type: question
   q: "You get a text from a new number: 'Hi, it's me, I've got a new phone. Can you send $50 for a bus fare?' What's the best response?"
-  options: ["Don't reply to that number; call the person on the number you already have", "Reply 'Is that really you?'", "Send it: $50 isn't much"]
+  options: ["Call them on the number you already have", "Reply 'Is that really you?'", "Send it: $50 isn't much"]
   answer: 0
   feedback: [null, "A scammer will simply say yes.", "It's still money to a stranger."]
+  explain: "Don't reply to the new number. Calling the number you already have reaches the real person."
 ```
 
 On paper, write a **family rule** for calls or messages that ask for money or urgent help.

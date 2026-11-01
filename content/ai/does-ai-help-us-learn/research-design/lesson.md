@@ -143,9 +143,10 @@ stage: info
 check:
   type: question
   q: "AI and non-AI tutorial groups score about the same on a test a month later. But the AI group finished more projects. What follows?"
-  options: ["The AI group got more done, but this test showed no difference in what they learned", "AI has been proved to improve all learning", "Both groups learned nothing"]
+  options: ["The AI group did more, but this test showed no difference", "AI has been proved to improve all learning", "Both groups learned nothing"]
   answer: 0
   feedback: [null, "Getting more done is not the same as learning more, and one test can't prove 'all learning'.", "Scoring the same doesn't mean scoring zero."]
+  explain: "The AI group got more done, but this test showed no difference in what they learned."
 ```
 
 Explain why this result still wouldn't fully settle whether AI helps people learn.

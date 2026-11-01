@@ -64,9 +64,10 @@ tasks:
   - check:
       type: question
       q: "Why should a rule about AI include a way to check it's working?"
-      options: ["A rule can exist and still not work, so someone has to check and change it", "Rules always work once they're written", "Checking is the AI's job"]
+      options: ["A rule can exist and still not work", "Rules always work once they're written", "Checking is the AI's job"]
       answer: 0
       feedback: [null, "Rules often fail in ways nobody expected.", "People made the rule; people check it."]
+      explain: "A rule can exist and still not work, so someone has to check it and change it if it doesn't."
   - check: { type: reflect, text: "I can explain a rule as a trade-off between people, and why a rule needs checking." }
 ```
 
@@ -95,9 +96,10 @@ tier: typical
 check:
   type: question
   q: "Australia's framework for generative AI in schools was kept after a review, and is now reviewed every year. Why review a rule every year?"
-  options: ["AI and how people use it change fast, so a rule can go out of date", "Rules must be rewritten every year by law", "So nobody has to follow it"]
+  options: ["AI and how people use it change fast", "Rules must be rewritten every year by law", "Because the first version was a mistake"]
   answer: 0
-  feedback: [null, "Not by law: because things change.", "Reviewing a rule keeps it useful, not optional."]
+  feedback: [null, "Not by law: because things change.", "The 2024 review kept it. Reviews keep a rule up to date."]
+  explain: "AI and how people use it change fast, so a rule can go out of date. A yearly review keeps it useful."
 ```
 
 - **Schools:** Education Ministers approved the **Australian Framework for Generative AI in Schools** in 2023. A **2024 review** kept it and set up **reviews every year**.

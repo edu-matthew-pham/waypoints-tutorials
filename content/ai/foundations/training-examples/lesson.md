@@ -109,9 +109,10 @@ stage: info
 check:
   type: question
   q: "Your friend's sorter was taught only yellow fruit. It calls a green, round fruit a banana. What is the most likely reason?"
-  options: ["It had no green examples, so it copied the nearest yellow ones","Sorters can't handle green fruit","Your friend tested it the wrong way"]
+  options: ["It had no green examples to compare with", "Sorters can't handle green fruit", "Your friend tested it the wrong way"]
   answer: 0
   feedback: [null, "Give it green examples and it can sort green fruit.", "The test was fine. Look at what the sorter was taught."]
+  explain: "With no green examples, it copied its nearest yellow ones."
 ```
 
 Without using the model, write: **One thing I understand about how this model works is … One thing I would check before trusting its output is …**

@@ -74,9 +74,10 @@ tasks:
   - check:
       type: question
       q: "Westbrook's integrity policy says 'No AI in assessed work.' Its AI statement says 'Every task says how much AI is allowed.' A teacher sets an assessed task that allows AI for planning. What should the committee do?"
-      options: ["Fix one so they agree, and check the map for other places the same rule appears", "Nothing: teachers can pick whichever they like", "Delete the integrity policy"]
+      options: ["Fix one so they agree, and check the map", "Nothing: teachers can pick whichever they like", "Delete the integrity policy"]
       answer: 0
       feedback: [null, "Students and teachers need one answer. Holding the map means catching this.", "The integrity policy owns assessed work; its AI line needs updating, not deleting."]
+      explain: "Students and teachers need one answer. Check the map for other places the same rule appears, too."
   - check:
       type: sort
       q: "Does each line rely on catching people, or work without it?"
@@ -123,9 +124,10 @@ tier: typical
 check:
   type: question
   q: "Teachers at Westbrook now use AI to draft feedback on student work. What should the staff code of conduct and the privacy policy add?"
-  options: ["Teachers own all feedback, use only school-checked tools, and say when AI helped", "Ban staff from using AI", "Nothing: staff can decide for themselves"]
+  options: ["Own the feedback, use checked tools, say when AI helped", "Ban staff from using AI", "Nothing: staff can decide for themselves"]
   answer: 0
   feedback: [null, "A ban can't be policed for staff either, and loses real time savings. Use the charter.", "Feedback is a decision about a student, and their work is their data: the charter applies."]
+  explain: "Feedback is a decision about a student, and their work is their data, so the charter applies to staff too: teachers own all feedback, use only school-checked tools, and say when AI helped."
 ```
 
 Staff use needs the same balance: specific enough to protect students (a person decides, our data stays ours), broad enough to cover tools that will change. Being honest goes both ways: if students say when they used AI, should teachers too?
@@ -154,9 +156,10 @@ stage: info
 check:
   type: question
   q: "A year from now, a new kind of AI tool arrives. Which AI line will still work?"
-  options: ["'Every task says how much AI is allowed, and students say what they used AI for.'", "'Year 8 may use StudyPal version 4.2 in hint mode.'", "'The approved tools are these 14 apps.'"]
+  options: ["'Each task says how much AI is allowed; students say what they used.'", "'Year 8 may use StudyPal version 4.2 in hint mode.'", "'The approved tools are these 14 apps.'"]
   answer: 0
   feedback: [null, "That detail will already be out of date: it belongs in a guideline.", "The list will change; the policy shouldn't have to."]
+  explain: "A line about tasks and honesty works for any tool. Names, versions and app lists will be out of date within a year."
 ```
 
 On paper, write **the AI statement (principles, who holds the map, review date) and the map, version 2**: the course's fourth product.

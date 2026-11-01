@@ -81,9 +81,10 @@ tasks:
   - check:
       type: question
       q: "What can AI chat add that the others can't?"
-      options: ["An answer to a question nobody prepared for, though that answer can be wrong", "Explanations that are always correct", "Proof that you'll remember it later"]
+      options: ["Answers to new questions, which can be wrong", "Explanations that are always correct", "Proof that you'll remember it later"]
       answer: 0
       feedback: [null, "AI explanations can be wrong or confusing.", "No kind of help proves that on its own."]
+      explain: "AI chat can answer a question nobody prepared for, but that answer can be wrong."
 ```
 
 Four different things are going on.

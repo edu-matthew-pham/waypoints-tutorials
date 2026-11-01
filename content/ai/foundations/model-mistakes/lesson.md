@@ -78,9 +78,10 @@ tasks:
   - check:
       type: question
       q: "You removed the only yellow, round example. Every label is still correct. Now a yellow, round fruit is called a banana. What caused it?"
-      options: ["Missing examples: its closest examples were now yellow bananas", "Wrong labels: some answers were wrong", "Yellow, round fruit can't be sorted"]
+      options: ["Missing examples: nothing like it to compare", "Wrong labels: some answers were wrong", "Yellow, round fruit can't be sorted"]
       answer: 0
       feedback: [null, "Every label was correct. Something else was missing.", "With the yellow, round apple back, it sorts these fine."]
+      explain: "With the yellow, round apple gone, its closest examples were yellow bananas, so it copied them."
   - check: { type: reflect, text: "I can explain one mistake caused by a wrong label and one caused by missing examples." }
 ```
 
@@ -160,9 +161,10 @@ stage: info
 check:
   type: question
   q: "A photo app labels a photo of a black swan as 'goose'. Every training label was checked by experts. What is the most likely cause?"
-  options: ["It had few examples like this one, so it compared it with geese", "Some of its labels were wrong", "The app's program crashed"]
+  options: ["It had few examples like a black swan", "Some of its labels were wrong", "The app's program crashed"]
   answer: 0
   feedback: [null, "The labels were checked. Think about which examples it may have been missing.", "A crash would give no answer, not a wrong one."]
+  explain: "With few black swans in its examples, its closest matches were geese, so it copied their label."
 ```
 
 Without the board, write: **The sorter got it wrong when … because … . To fix it, I would … .**

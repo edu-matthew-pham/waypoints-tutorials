@@ -30,9 +30,10 @@ tasks:
   - check:
       type: question
       q: "Why is it winter in Australia when it is summer in Europe?"
-      options: ["Earth is tilted, so each half leans towards the Sun at different times of the year", "Australia is further from the Sun at that time of year", "Europe is nearer the equator, so it gets more sun"]
+      options: ["Earth is tilted, so each half leans towards the Sun at different times", "Australia is further from the Sun at that time of year", "Europe is nearer the equator, so it gets more sun"]
       answer: 0
       feedback: [null, "Australia and Europe are about the same distance from the Sun at any time. If distance caused seasons, they would have summer together.", "Australia is nearer the equator than Europe is."]
+      explain: "Earth is tilted, so each half leans towards the Sun at different times of the year. When the southern half leans towards the Sun, it is summer in Australia."
   - check:
       type: sort
       q: "A student wrote: 'Summer happens because Earth is closer to the Sun.' Does this feedback give them a next step?"
@@ -63,21 +64,24 @@ tasks:
   - check:
       type: question
       q: "Nina gets the feedback 'Try thinking about Earth's tilt.' What makes this feedback useful to her?"
-      options: ["She writes a new explanation using the tilt, without copying", "She reads it and moves on", "She asks for the full answer instead"]
+      options: ["She writes a new explanation using the tilt", "She reads it and moves on", "She asks for the full answer instead"]
       answer: 0
       feedback: [null, "Reading it isn't enough. Using it is what helps.", "That skips the thinking the hint was leaving for her."]
+      explain: "Feedback helps when she uses it to write her own new explanation, without copying."
   - check:
       type: question
       q: "An AI tells Nina her new explanation is wrong, but she thinks it's right. What should she do?"
-      options: ["Check with a diagram, a textbook or her teacher before changing it", "Change it: the AI knows best", "Ignore it: feedback isn't useful"]
+      options: ["Check with a diagram, book or teacher first", "Change it: the AI knows best", "Ignore it: feedback isn't useful"]
       answer: 0
       feedback: [null, "AI feedback can be wrong, even when it sounds sure.", "Feedback is worth checking, not ignoring."]
+      explain: "AI feedback can be wrong, so she should check with a diagram, a textbook or her teacher before changing it."
   - check:
       type: question
       q: "Nina's new explanation is right. What can she say now?"
-      options: ["She can explain it today; a check in a week would show if it sticks", "She'll never get seasons wrong again", "She didn't need the feedback after all"]
+      options: ["She can explain it now; a later check shows if it sticks", "She'll never get seasons wrong again", "She didn't need the feedback after all"]
       answer: 0
       feedback: [null, "One good try is a good sign, not a guarantee.", "The feedback helped her get there."]
+      explain: "She can explain it today. A check in a week would show whether it sticks."
 ```
 
 Feedback is most useful in a loop:
@@ -143,9 +147,10 @@ stage: info
 check:
   type: question
   q: "When is feedback most clearly helping someone learn?"
-  options: ["When the learner uses it for a next step, and can check whether that step worked", "When it gives the right answer to copy", "When it comes with a high mark"]
+  options: ["When the learner uses it for a next step and checks it", "When it gives the right answer to copy", "When it comes with a high mark"]
   answer: 0
   feedback: [null, "Copying the answer doesn't show what the learner can do.", "A mark alone doesn't say what to do next."]
+  explain: "Feedback helps most clearly when the learner uses it for a next step and can check whether that step worked."
 ```
 
 **Next lesson:** feedback helps you improve. What changes when work is used to judge what you've achieved?

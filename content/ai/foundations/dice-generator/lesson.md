@@ -49,6 +49,7 @@ check:
   q: "Which assignment matches the counts mat = 3, chair = 2, roof = 1?"
   options: ["1–3 mat; 4–5 chair; 6 roof", "1 mat; 2 chair; 3–6 roof", "1–2 mat; 3–4 chair; 5–6 roof"]
   answer: 0
+  feedback: [null, "That gives roof four faces, but roof was counted only once.", "That shares the faces evenly, but mat came up three times and roof only once."]
 ```
 
 ## Explore: roll the die
@@ -83,6 +84,7 @@ tasks:
       q: "What is the chance of getting 'chair' on one roll?"
       options: ["1/6", "2/6", "3/6", "5/6"]
       answer: 1
+      feedback: ["That would be one face, but chair has two.", null, "Three faces belong to mat, not chair.", "That counts every face except roof."]
   - check:
       type: question
       q: "You and a friend each roll the board's die 10 times. Your friend gets roof 3 times. You get roof 0 times. What is true?"
@@ -119,6 +121,7 @@ check:
   q: "A new collection has 2 mat, 3 chair and 1 roof. Which assignment matches it?"
   options: ["1–2 mat; 3–5 chair; 6 roof", "1–3 mat; 4–5 chair; 6 roof", "1 mat; 2–3 chair; 4–6 roof"]
   answer: 0
+  feedback: [null, "That matches the old counts. In this collection mat has 2 and chair has 3.", "That gives roof three faces, but roof came up only once."]
 ```
 
 Make a new lookup table and roll five times. Explain what changed: the die, the sampling procedure or the model's examples?

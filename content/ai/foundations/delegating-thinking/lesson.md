@@ -54,9 +54,10 @@ tasks:
   - check:
       type: question
       q: "On the board, the timetable dates were already checked. Why is formatting them a reasonable job to hand over?"
-      options: ["Formatting isn't the skill you're learning, and you can check the dates didn't change", "Formatting is too boring to do yourself", "AI never makes mistakes with dates"]
+      options: ["It isn't the skill you're learning, and you can check it", "Formatting is too boring to do yourself", "AI never makes mistakes with dates"]
       answer: 0
       feedback: [null, "Boring isn't the reason. What matters is whether it is the skill you're learning.", "AI can change or invent dates. That's why you check."]
+      explain: "Formatting isn't the skill you're learning, and you can check afterwards that the dates didn't change."
   - check:
       type: question
       q: "On the board, your goal is to understand controlled variables. Which choice keeps the thinking you need?"

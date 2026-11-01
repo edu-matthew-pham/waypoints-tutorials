@@ -111,6 +111,7 @@ check:
   q: "What matters most when improving a prompt?"
   options: ["Making it as long as possible", "Communicating the task and what help would be useful", "Using a special phrase that forces correct answers"]
   answer: 1
+  feedback: ["Length on its own doesn't help; extra words can bury what you need.", null, "No phrase forces a correct answer. A clear task and the help you want matter more."]
 ```
 
 Independently revise this request: **“Help me study.”** Include the subject or skill, the learner's starting point and an appropriate kind of assistance. Explain your choices.

@@ -36,9 +36,10 @@ tasks:
   - check:
       type: question
       q: "A review of 56 studies found people's overall detection was not clearly better than chance. Training and feedback raised it to about 65%. What does that mean?"
-      options: ["Training helps a bit, but people still get about 1 in 3 wrong", "Training makes people perfect", "Training makes no difference at all"]
+      options: ["Training helps, but people still get 1 in 3 wrong", "Training makes people perfect", "Training makes no difference at all"]
       answer: 0
       feedback: [null, "65% is better than chance, but far from reliable.", "It helped, a little."]
+      explain: "About 65% is better than chance (about 50%), but people still get about 1 in 3 wrong."
 ```
 
 Two big findings:
@@ -62,9 +63,10 @@ tasks:
   - check:
       type: question
       q: "Early deepfake videos didn't blink properly, so people said 'check the blinking'. What happened next?"
-      options: ["The next deepfakes learned to blink, so the tip stopped working", "Deepfakes still can't blink", "Blinking became the best test"]
+      options: ["Newer deepfakes learned to blink", "Deepfakes still can't blink", "Blinking became the best test"]
       answer: 0
       feedback: [null, "A researcher reported that newer deepfakes had already adapted.", "The tip went out of date."]
+      explain: "A researcher reported that newer deepfakes had already adapted, so the tip stopped working."
   - check: { type: reflect, text: "I can explain why looking for glitches isn't a reliable way to spot AI-made media." }
 ```
 
@@ -88,9 +90,10 @@ tier: typical
 check:
   type: question
   q: "A study found that people overrate their ability to spot deepfakes, and that being warned or being paid didn't help them. What's the lesson?"
-  options: ["Feeling sure isn't evidence: check the source instead of trusting your eyes", "Only experts can spot fakes", "Deepfakes are harmless"]
+  options: ["Feeling sure isn't evidence: check the source", "Only trained experts can spot fakes", "Look more carefully and you'll spot them"]
   answer: 0
-  feedback: [null, "The study didn't find experts were reliable either.", "The study was about spotting, not harm."]
+  feedback: [null, "The study didn't find experts were reliable either.", "People overrate how well they spot fakes, even when warned."]
+  explain: "Feeling sure isn't evidence. Instead of trusting your eyes, check where it came from."
 ```
 
 In a 2021 study, people **overrated** how well they could spot deepfakes. **Neither raising awareness nor paying them** improved how well they did. What does that say about the advice "just look carefully"?

@@ -64,12 +64,14 @@ tasks:
       q: "Which action changes the neural network's learned connections?"
       options: ["Selecting a new fruit to test", "Training with labelled examples", "Reading its output"]
       answer: 1
+      feedback: ["Testing uses the connections but doesn't change them.", null, "Reading the output changes nothing inside the network."]
   - check:
       type: question
       q: "Suppose you train the network only on yellow bananas, then test a green, round fruit. Why might it get it wrong?"
-      options: ["It never trained on a green or round fruit, so it had nothing to learn them from", "Testing a new fruit changes its weights", "Neural networks can't learn colours"]
+      options: ["It had no green or round examples to learn from", "Testing a new fruit changes its weights", "Neural networks can't learn colours"]
       answer: 0
       feedback: [null, "Testing never changes the weights. Only training does.", "With all the examples, it learns colour and shape fine."]
+      explain: "It only trained on yellow bananas, so it never learned anything about green or round fruit."
   - check: { type: reflect, text: "I can explain the difference between training and testing without using the mathematics." }
 ```
 
@@ -111,6 +113,7 @@ check:
   q: "What is the strongest evidence that this network has learned from training?"
   options: ["Its internal connections and later predictions can change", "It has a diagram with circles and lines", "It always gives the correct answer"]
   answer: 0
+  feedback: [null, "A diagram shows how it's built, not that it learned.", "Networks that learned still make mistakes."]
 ```
 
 Without using the board, complete these statements:

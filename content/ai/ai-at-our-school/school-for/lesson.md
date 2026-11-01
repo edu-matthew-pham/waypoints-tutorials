@@ -74,9 +74,10 @@ tasks:
   - check:
       type: question
       q: "Westbrook lets Year 10s use AI to summarise long articles, but not Year 7s. Why might that be fair?"
-      options: ["Year 10s have practised summarising themselves, so the AI saves time instead of skipping the learning", "Year 10s are better at using apps", "Year 7s would break the AI"]
+      options: ["Year 10s already practised summarising themselves", "Year 10s are better at using apps", "Year 10s are older, so they can be trusted more"]
       answer: 0
-      feedback: [null, "It's not about app skills: it's about whether the summarising skill is already learned.", "AI can't be broken this way. Think about what each year still needs to learn."]
+      feedback: [null, "It's not about app skills: it's about whether the summarising skill is already learned.", "Trust isn't the point. Think about what each year still needs to learn."]
+      explain: "Year 10s have practised summarising themselves, so the AI saves time instead of skipping the learning. Year 7s are still learning that skill."
   - check: { type: reflect, text: "I can explain why the same task can be 'keep the thinking' for one year and 'AI can help' for another." }
 ```
 
@@ -103,9 +104,10 @@ tier: typical
 check:
   type: question
   q: "Read Westbrook's AI policy again (top of the page). What's missing if you want to know when AI should be used?"
-  options: ["It never says what the AI should help with, or what thinking students must keep", "It's too long", "It names too many tools"]
+  options: ["What AI should help with, and what thinking students keep", "It needs a stricter ban on AI use", "It doesn't say which AI apps are banned"]
   answer: 0
-  feedback: [null, "It's very short. The problem is what it leaves out.", "It names no tools at all."]
+  feedback: [null, "A stricter ban still doesn't say when AI should be used.", "Naming banned apps doesn't say when AI should be used either."]
+  explain: "The policy says who may use AI, but never what it should help with, or what thinking students must keep. Without that, nobody can tell when AI should be used."
 ```
 
 Westbrook's policy says *who* decides (the teacher), but not *how* they decide. Two teachers could make opposite choices for the same task, and both would follow the policy.
@@ -131,9 +133,10 @@ stage: info
 check:
   type: question
   q: "A committee member says: 'Let's decide which AI apps to allow first, then work out our values.' What's the problem?"
-  options: ["Without knowing what school is for, there's nothing to judge the apps against", "There's no problem: apps come first", "Values are only for teachers"]
+  options: ["There's nothing to judge the apps against", "There's no problem: apps come first", "Values are only for teachers"]
   answer: 0
   feedback: [null, "Then every decision is a guess, and the next app starts the argument again.", "Students' values matter too: it's their learning."]
+  explain: "Without knowing what school is for, every app decision is a guess, and the next app starts the argument again."
 ```
 
 On paper, start your committee's **charter**. You'll finish it in lesson 3, and work out where AI rules belong in lesson 4.

@@ -36,9 +36,10 @@ tasks:
   - check:
       type: question
       q: "Mia's friend Ben practised from a paper list and got 7/10 on the test. Mia got 9/10. Before you say the AI helper made the difference, what should you ask?"
-      options: ["Was anything else different, like how long each of them practised?", "Which app Mia used", "Nothing: 9 is more than 7"]
+      options: ["Was anything else different, like practice time?", "Which AI app Mia used to practise", "Nothing: 9 out of 10 beats 7 out of 10"]
       answer: 0
       feedback: [null, "Knowing the app doesn't tell you whether it caused the difference.", "Other differences, like time spent or which words they had, could explain it."]
+      explain: "Before saying the AI helper made the difference, check whether anything else was different, like how long each of them practised."
 ```
 
 When anyone says help **works**, ask three questions:
@@ -115,9 +116,10 @@ tasks:
   - check:
       type: question
       q: "A newspaper says: 'AI tutors beat teachers for good, study finds.' It is about Study B. Which part goes furthest beyond what the study found?"
-      options: ["'for good': the study only tested straight after each topic", "'AI tutors': the study used an AI tutor", "'study finds': it was a real study"]
+      options: ["'for good': it only tested straight after each topic", "'AI tutors': the study used an AI tutor", "'study finds': it was a real study"]
       answer: 0
       feedback: [null, "That part is true. Look for the part the study never tested.", "That part is true. Look for the part the study never tested."]
+      explain: "Study B tested students straight after each topic, so it can't say anything about 'for good'."
   - check: { type: reflect, text: "I can tell apart what a study found, what the researchers think it means, and a claim that goes further." }
 ```
 
@@ -163,9 +165,10 @@ stage: info
 check:
   type: question
   q: "An advert says: 'Students who use our AI homework helper get higher marks!' Which question matters most before you believe it?"
-  options: ["Higher than whom, and on what test: with the helper, or later without it?", "How many people have downloaded it?", "Does the advert look professional?"]
+  options: ["Higher than whom, on a test with or without it?", "How many people have downloaded it?", "Does the advert look professional?"]
   answer: 0
   feedback: [null, "Lots of downloads shows it is popular, not that it helps anyone learn.", "A good-looking advert is not evidence."]
+  explain: "Ask who they were compared with, and whether the marks came with the helper or later without it."
 ```
 
 Write the question you would ask Mia, or the advert, before you believe "it works".
@@ -180,9 +183,10 @@ tier: typical
 check:
   type: question
   q: "Which claim do these two studies support?"
-  options: ["Practising with a plain AI chatbot can help in the moment but leave students worse off later, at least in some conditions", "AI has been proved to improve learning in every subject", "Study B proves that AI, and not the other changes, caused the better scores"]
+  options: ["Practising with a plain chatbot can help now but hurt later, in some conditions", "AI has been proved to improve learning in every subject", "Study B proves that AI, and not the other changes, caused the better scores"]
   answer: 0
   feedback: [null, "Two studies in two subjects can't prove that.", "Many things changed at once in Study B, so we can't tell which one made the difference."]
+  explain: "Practising with a plain AI chatbot can help in the moment but leave students worse off later, at least in some conditions."
 ```
 
 A principal says: "Research proves we should replace our computer practice tasks with AI tutors." What comparison would you need to test that fairly?

@@ -58,15 +58,17 @@ tasks:
   - check:
       type: question
       q: "Zoe read an AI explanation twice and felt sure. She decided not to practise. Why might that be a mistake?"
-      options: ["Reading it can feel like knowing it; only a try without help shows if she can do it", "Reading an explanation twice never helps", "AI explanations are always wrong"]
+      options: ["Feeling sure isn't the same as doing it alone", "Reading an explanation twice never helps", "AI explanations are always wrong"]
       answer: 0
       feedback: [null, "Reading twice can help. The problem is skipping the check.", "Some AI explanations are right. The problem is the feeling, not the explanation."]
+      explain: "Reading something can feel like knowing it. Only a try without help shows whether she can do it."
   - check:
       type: question
       q: "Ravi felt sure on one board question and was right. What can he safely say?"
-      options: ["His confidence matched this time; more questions would tell him more", "He will always know when he is right", "He has learned the whole topic"]
+      options: ["His confidence matched this time", "He will always know when he is right", "He has learned the whole topic"]
       answer: 0
       feedback: [null, "One question is a small sample.", "One question can't show the whole topic."]
+      explain: "One question is a small sample. More questions would show whether his confidence usually matches."
 ```
 
 Knowing what you know, and what you don't, is a skill. Teachers sometimes call it **metacognition**: thinking about your own thinking.
@@ -96,9 +98,10 @@ tasks:
   - check:
       type: question
       q: "What does the Fernandes study support most directly?"
-      options: ["Adults solving logic puzzles with AI did better, but thought they had done even better than they had", "Using AI makes everyone worse at learning", "Students should never use AI tutors"]
+      options: ["Adults scored higher with AI but overrated their own score", "Using AI makes everyone worse at learning", "Students should never use AI tutors"]
       answer: 0
       feedback: [null, "The study was about adults solving puzzles. It didn't test learning over time.", "The study didn't test students or AI tutors."]
+      explain: "Adults solving logic puzzles with AI did better, but thought they had done even better than they had. The study didn't test students or learning over time."
   - check: { type: reflect, text: "I used the study to argue a point, and named one limit of the study for students like me." }
 ```
 
