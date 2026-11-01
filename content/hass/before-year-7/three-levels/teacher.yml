@@ -1,0 +1,42 @@
+summary: "Students name Australia's three levels of government (local, state or territory, federal) and sort everyday services by which level looks after them. In the ACT, the ACT Government does both state and local jobs."
+learning: "name the three levels of government and give an example of what each looks after"
+time: 20
+timing: "Think first and Try 6 min · The idea 6 min · Vary and Check 5 min · Make 5 min."
+goals:
+  - I can say what a parliament, a court and the Governor-General do.
+  - I can name the three levels of government.
+  - I can give an example of what each level looks after.
+struggle: "Students think one government, often 'the Prime Minister', runs everything. Ask 'Is this a matter for a town, a state or the whole country?'"
+before: |
+  This is a Year 6 catch-up for AC9HS6K07 (with AC9HS6K06 n1). Year 7 *The Constitution - rules for the rule-makers* and *One country, several governments* build on it.
+
+  Responsibilities follow the Parliamentary Education Office's summary. Some are shared or blurred (health and education are shared between federal and state; main roads are state, local roads are council), so the sorts use clear examples only. Councils are set up by state laws, not by the Constitution; that comes up in Year 7 federation.
+
+  ACT: the ACT has no local councils; the ACT Government and Legislative Assembly do both territory and local jobs (ACT Legislative Assembly). Canberra students should know their bins, parks and libraries are run by the ACT Government. The Make step lets them say so.
+
+  K06 n1 (parliaments, courts, the monarch and the Governor-General) is one match step only; Year 7 *The Constitution* and *Power shared and checked* go further. K07 n3 (where new laws come from) and Federation (K01) are left to Year 6 class.
+
+  Wattle Creek is made up.
+running:
+  - "Think first: take a show of hands. Many will pick the Prime Minister or the state."
+  - "Try: if you're in Canberra, ask who empties the bins here."
+stuck:
+  - see: "A student says the Prime Minister runs everything."
+    ask: "Is a pothole a matter for the whole country?"
+    fix: "Local matters go to the council; state matters to the state; national matters to the federal government."
+stretch: "Find one thing two levels of government share, such as health."
+support: "Three columns on the board: TOWN, STATE, COUNTRY."
+leads: |
+  Next in Year 7: The Constitution - rules for the rule-makers, and One country, several governments.
+exit:
+  q: "Name the three levels of government and one thing each looks after."
+  a: "Local council (bins), state or territory (schools), federal (money)."
+explain: |
+  Australia has **three levels of government**: **local councils** (bins, parks, local roads), **state and territory governments** (schools, hospitals, police) and the **federal government** (money, defence, immigration). In the ACT, the ACT Government does both state and local jobs.
+sources:
+  - title: The responsibilities of the three levels of government (Parliamentary Education Office)
+    url: https://peo.gov.au/understand-our-parliament/how-parliament-works/three-levels-of-government/the-responsibilities-of-the-three-levels-of-government
+    checked: 2026-11-01
+  - title: Levels of government in the ACT (ACT Legislative Assembly)
+    url: https://www.parliament.act.gov.au/visit-and-learn/learn/resources/fs/levels-of-gov
+    checked: 2026-11-01

@@ -1,0 +1,7 @@
+activities:
+  - at: run
+    kind: activity
+    title: "Town, state or country?"
+    minutes: 3
+    do: "Call out services (bins, hospitals, money). The class points to TOWN, STATE or COUNTRY on the board."
+    notes: "In Canberra, ask which ones the ACT Government does."

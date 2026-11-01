@@ -3,6 +3,7 @@ order: 1
 unit: government
 title: The Constitution - rules for the rule-makers
 node: AC9HC7K01 n1
+assumes: [AC9HS6K07 n1]
 summary: "Australia's Constitution is the written rulebook for the national government. It came into effect on 1 January 1901 and sets up Parliament, the Governor-General and the High Court, and it limits what Parliament can make laws about. Parliament cannot change it alone: any change has to be approved by the voters in a referendum. Students meet the idea first in a made-up club, then in the real thing."
 language: maths
 hook: "Parliament makes the laws for the whole country. But who makes the rules for Parliament?"

@@ -12,7 +12,4 @@ units:
   - id: civics
     title: Civics and Citizenship
     summary: "Year 6 foundations for Year 7 Civics and Citizenship (`AC9HS6K06`, `AC9HS6K07`)."
-    planned:
-      - title: Three levels of government
-        summary: "Key institutions of Australia's system of government and how Federal, State and local roles differ."
 ---

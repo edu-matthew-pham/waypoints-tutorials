@@ -1,0 +1,8 @@
+# Display-only reasoning: nothing runs.
+
+# region: nib
+There's a pothole on Nib's street in Wattle Creek.
+Nib wants it fixed before someone trips.
+Nib says: "The Prime Minister fixes the potholes on my street, so I'll write to the Prime Minister."
+Nib says: "The council has nothing to do with roads."
+# endregion

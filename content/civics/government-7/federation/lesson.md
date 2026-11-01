@@ -3,6 +3,7 @@ order: 4
 unit: government
 title: One country, several governments
 node: AC9HC7K01 n4
+assumes: [AC9HS6K07 n1, AC9HS6K07 n4]
 summary: Federation shares constitutional power between the Commonwealth and the states. State and territory
   governments run many everyday services, while responsibilities can overlap.
 language: maths
