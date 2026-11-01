@@ -399,7 +399,13 @@ Per `roadmap/checklist.md` › "Plan first, then build". Tagline *What shared va
 
 Misconception ids to add as single lines: `values-are-uniquely-australian`, `stated-value-means-lived`, `traditions-share-nothing`, `migrant-same-as-refugee`. Facts to check at build: anthem dates and 2021 wording (PM&C), the citizenship pledge text (Australian Citizenship Act 2007, Schedule 1, or Home Affairs), refugee definition (UNHCR / Refugee Convention), each tradition's term for giving (community educational sources), and, if chosen, the Scanlon figures.
 
-### Decisions for Matthew
+### Decided (1 Nov 2026, Matthew)
+1. **Real, dated survey figures for the hinge** (default). Reason: made-up is a default, not firm (rules T2); real public data is worth it when the question is about the real country, as with the ABS Census. Figures carry their year and source and are updated when newer results come out.
+2. **One checked line per tradition on one shared value, plus pointers** (default). Reason: religions hold many beliefs across many denominations, and it isn't the site's job to unpack them; like the First Nations approach, teacher notes point to each community's own educational material for anyone who wants more.
+3. **Refugees: general reasons and definitions in student text; real first-person accounts linked for teachers** (default). Reason: real voices give a worthwhile benefit over an invented hardship story, and the teacher chooses one that suits the class.
+4. **One transparency line on reconciliation in lesson 2** (default), as in `diversity-7`.
+
+### Decisions for Matthew (as first asked)
 1. **Evidence for the hinge (lesson 2):** real, dated figures from the Scanlon Institute's public social cohesion survey on the spreadsheet board (my pick: consistent with the ABS decision, real evidence for "to what extent"), or a made-up Wattle Creek survey (never dates, but the evaluation is of a pretend town)?
 2. **How far into religions (lesson 3):** one checked line per tradition on one shared value (giving), in its own term (my pick), or names only, leaving beliefs to the teacher?
 3. **Refugees (lesson 4):** general reasons and definitions, no made-up personal hardship stories, with real first-person accounts linked for teachers (my pick); or a made-up composite story labelled as such?
