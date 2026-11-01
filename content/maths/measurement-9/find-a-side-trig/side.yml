@@ -2,7 +2,7 @@
 
 # region: run
 widget: trig
-slider t: 10, 80, 40, 5
+slider t: 10, 80, 30, 5
 slider h: 2, 10, 5, 1
 show: tan
 # endregion

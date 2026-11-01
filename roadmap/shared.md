@@ -2,6 +2,12 @@
 
 Things more than one subject depends on: the build, publishing, the home and plain pages, and shared tools (`tools/*.mjs`, `tools/lesson-view.mjs`, `playground-shared/`, `playground-board/core.js`). Before changing one of these, check this file and `git log` for work in progress, and note here what you are changing.
 
+## Note (1 Nov 2026, maths chat): `tools/check-lesson-boards.mjs` pairs task checks with task starters
+
+A task with its own `starter:` is now checked against that board (found by its task key, `#tN`), not the step's board; the rest of the step's checks still use the step's board. Forwarding pages at moved addresses are skipped. This cleared 8 of the sweep's 13 maths problems with no lesson change (details: `roadmap/maths.md` › board checks after the split). Maths, English and Geography all pass.
+
+**For the Engineering chat:** the build's three KaTeX "Unrecognized Unicode character −" warnings are `\text{battery −}` / `\text{c8 (−)}` in `content/engineering/power/ground/lesson.md` and `pin-limit/lesson.md`. They render, but `-` or `\text{battery }-` would silence them.
+
 ## Note (1 Nov 2026, maths chat): maths split into one course per strand per year
 
 Shared files touched: `tools/moved.mjs` (maths forwarding read from `data/maths-split.json`, the record of the move), `tools/maths-cards.mjs` and `build-site.mjs` (comments, and the default card file is now `snippets/maths-algebra-7.json`), `tools/check-blockers.mjs` (sample page `maths/algebra-7/`), `misconceptions.json` and `data/link-blurbs.json` (lesson addresses), AUTHORING (examples). Maths card files are now one per course (`snippets/maths-<course>.json`). `tools/maths-split.mjs`, which made the mapping, was removed once it had run. Details: `roadmap/maths.md` › Course split.

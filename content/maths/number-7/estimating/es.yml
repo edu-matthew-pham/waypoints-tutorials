@@ -27,8 +27,8 @@ op: ×
 # region: plus
 widget: rounding
 mode: estimate
-slider a: 100, 999, 300, 1
-slider b: 100, 999, 600, 1
+slider a: 100, 999, 200, 1
+slider b: 100, 999, 300, 1
 op: +
 # endregion
 

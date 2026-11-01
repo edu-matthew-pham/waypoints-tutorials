@@ -23,7 +23,7 @@ units: m
 
 # region: free
 widget: circlearea
-slider r: 0.5, 6, 3, 0.5
+slider r: 0.5, 6, 1, 0.5
 n: 16
 units: m
 # endregion

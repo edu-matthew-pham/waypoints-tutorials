@@ -17,7 +17,7 @@ const port = srv.address().port;
 const { MATH } = await import('./math-expr.mjs');
 const prefixes = process.argv.slice(2);
 const lessons = [];
-async function walk(d) { for (const f of await readdir(d, { withFileTypes: true })) { const p = join(d, f.name); if (f.isDirectory()) { if (!f.name.startsWith('_')) await walk(p); } else if (f.name === 'index.html' && /^dist\/(maths|english|geography)\//.test(p)) lessons.push(p.slice(5, -11)); } }
+async function walk(d) { for (const f of await readdir(d, { withFileTypes: true })) { const p = join(d, f.name); if (f.isDirectory()) { if (!f.name.startsWith('_')) await walk(p); } else if (f.name === 'index.html' && /^dist\/(maths|english|geography)\//.test(p) && !(await readFile(p, 'utf8')).startsWith('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moved</title>')) lessons.push(p.slice(5, -11)); } }
 await walk('dist/maths');
 try { await walk('dist/english'); } catch { /* no English built */ }
 try { await walk('dist/geography'); } catch { /* no Geography built */ }
@@ -31,12 +31,19 @@ const pg = await browser.newPage();
 let boards = 0, checks = 0, bad = 0;
 for (const l of want) {
   await pg.goto(`http://localhost:${port}/${l}/`, { waitUntil: 'domcontentloaded' });
-  const steps = await pg.evaluate(() => [...document.querySelectorAll('section.step')].map((s, i) => ({
-    i, frames: [...s.querySelectorAll('iframe[src*="_playground-board"]')].map((f) => new URL(f.getAttribute('src'), location.href).searchParams.get('code')),
-    whens: [...s.querySelectorAll('[data-when]')].map((c) => c.getAttribute('data-when')),
-  })).filter((s) => s.frames.length));
+  // A task with its own starter (a Reset-to-start button carrying data-code) is checked against that board; every
+  // other check in the step against the step's board (1 Nov 2026: task starters were ignored, so checks were paired
+  // with the wrong board).
+  const steps = await pg.evaluate(() => [...document.querySelectorAll('section.step')].map((s, i) => {
+    const own = [...s.querySelectorAll('.tpanel')].map((p) => ({ b: p.querySelector('.resetstart[data-code]'), w: [...s.querySelectorAll(`[data-when][data-key$="#t${+p.dataset.i + 1}"]`)].map((c) => c.getAttribute('data-when')) })).filter((x) => x.b);
+    const taken = new Set(own.flatMap((x) => x.w));
+    const frames = [...s.querySelectorAll('iframe[src*="_playground-board"]')].map((f) => new URL(f.getAttribute('src'), location.href).searchParams.get('code'));
+    const rest = [...s.querySelectorAll('[data-when]')].map((c) => c.getAttribute('data-when')).filter((w) => !taken.has(w));
+    return { i, groups: [...frames.map((code) => ({ code, whens: rest })), ...own.map((x) => ({ code: x.b.getAttribute('data-code'), whens: x.w }))] };
+  }).filter((s) => s.groups.length));
   for (const s of steps) {
-    for (const code of s.frames) {
+    for (const { code, whens } of s.groups) {
+      s.whens = whens;
       if (!code) continue;
       boards++;
       const res = await host.evaluate((c) => { window.last = null; const fr = document.getElementById('b'); fr.contentWindow.postMessage({ wp: 'set-code', code: c }, location.origin); return new Promise((ok) => setTimeout(() => { const e = fr.contentDocument.getElementById('error'); ok({ err: e && !e.hidden ? e.textContent : '', last: window.last }); }, 400)); }, code);

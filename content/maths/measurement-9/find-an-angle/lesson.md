@@ -40,9 +40,9 @@ check:
 
 ```step
 stage: run
-insight: "Tangent of the angle is rise ÷ run, so the angle is the number whose tangent is 1 ÷ 14."
+insight: "Tangent of the angle is rise ÷ run, so the angle is the number whose tangent is 1 ÷ 14: just under 5°."
 try: { playground: board, starter: "angle.yml#run", height: 560 }
-check: { type: board, text: "Set $t$ to $4$. Read $\\tan 4°$. Is it close to $1 \\div 14 = 0.071$?", when: "t = 4" }
+check: { type: board, text: "Slide $t$ down to $5°$, the smallest the board shows. Read $\\tan 5°$. It is more than $1 \\div 14 = 0.071$, so is the ramp's angle more or less than $5°$?", when: "t = 5", explain: "tan 5° ≈ 0.087, more than 0.071, so the ramp is a little under 5°: about 4°." }
 ```
 
 ## Investigate: the inverse ratio

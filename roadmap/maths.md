@@ -2,6 +2,19 @@
 
 The maths chat's file. Lessons live in `content/maths/`. Design notes and status so far are in the project docs (`maths-structure`, `maths-boards-plan`, `maths-expressions-status`, `maths-graphs-7a04-status`, `board-embed-contract`); record new decisions here.
 
+## Done (1 Nov 2026): board checks after the split (handoff `claude/handoff-maths-board-checks.md`)
+
+`npm run check-lesson-boards maths`: 924 boards, 664 checks, 0 problems (English and Geography also clean). Of the 13 problems the site-health sweep listed:
+
+- **8 were the checker's fault, not the lessons'.** It paired every check in a step with the step's board, but a task with its own `starter:` loads a different board. Fixed in `tools/check-lesson-boards.mjs`: a task's check is read against its own starter (found by its task key). It also skips the forwarding pages left at old maths addresses, which redirected to the new lessons and were checked twice. This cleared finding-unknowns, vary-formulas, intercept, money-models, percentage-change, and-or-not, nets (both problems) and investigations.
+- **4 starters started on the answer**, now moved away: `algebra-9/gradient-two-points` Modify (B from (6, 6) to (6, 8), so the line starts at gradient 1), `measurement-8/circle-problems` Make (radius starts at 1, not 3; Modify's last task uses the same board and still works), `measurement-9/find-a-side-trig` Run (t starts at 30, not 40), `number-7/estimating` Modify (200 + 300, not 300 + 600).
+- **1 board could not start:** `measurement-9/find-an-angle` Run asked for 4°, but the `trig` board's triangle view only goes from 5° to 85°. Rather than change the shared widget (which would re-record every trig clip), the slider now runs 5 to 20 and the check asks students to slide down to 5°, see that tan 5° (0.087) is more than 1 ÷ 14 (0.071), and so the ramp is a little under 5°. The insight now says "just under 5°"; Investigate still finds 4.1° with tan⁻¹.
+- Each fixed board was loaded at its start and at the student's target: the check fails at the start and passes at the target.
+
+**Dollar signs:** no maths text is read as maths between price dollars any more. The three KaTeX "Unrecognized Unicode character −" warnings left in the build come from Engineering (`power/ground` and `power/pin-limit`: `\text{battery −}` in maths), noted in `roadmap/shared.md` for that chat. The handoff's lines in `choosing-a-strategy` and `comparing-integers` were already escaped and render as prices; `modelling` and `percentages` show their prices in plain-text feedback (`explain`, `actual`), where `$` is just a dollar sign, so they are left as written (escaping them would show a backslash).
+
+**Publish:** five lessons' board files changed, so their clips re-record. The whole-site publish the split needs covers them; don't publish them alone first (their new addresses only exist after that publish).
+
 ## Course split: one course per strand per year (done 1 Nov 2026; needs a whole-site publish)
 
 **Done (1 Nov 2026, after Matthew's "go", with the ACARA defaults on all four mixed sequences below).** All 250 Years 7–10 lessons moved into 24 courses (`content/maths/<strand>-<year>/`), each with its own course page, units, primers, practice page, project briefs and maths cards. Details:

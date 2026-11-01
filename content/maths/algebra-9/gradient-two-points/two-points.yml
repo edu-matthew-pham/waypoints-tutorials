@@ -17,7 +17,7 @@ x: -1, 11
 y: -1, 11
 snap: 1
 point A: 2, 4, drag
-point B: 6, 6, drag
+point B: 6, 8, drag
 segment: A, B
 rise: A, B
 # endregion
