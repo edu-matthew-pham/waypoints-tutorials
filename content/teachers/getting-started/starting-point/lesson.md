@@ -1,6 +1,6 @@
 ---
 title: Find your starting point
-summary: "Choose Unpack, Prepare or Tutorials to help with a lesson you are planning."
+summary: "Choose where to start (Curriculum, Plan or Lessons) to help with a lesson you are planning."
 order: 1
 unit: start
 language: science
@@ -94,7 +94,7 @@ Choose one tool for a lesson you are planning. Explain in your own notes or to a
 ```teacher
 summary: "Teachers compare three invented planning needs and choose a starting point for their own work."
 time: 5
-timing: "Think first 1 min · Three tools 1 min · Checks 2 min · Apply 1 min"
+timing: "Think first 1 min · Three ways in 1 min · Checks 2 min · Apply 1 min"
 goals:
   - "I can choose a Waypoints tool for a teaching need."
 before: "For a facilitator: invite one current planning need. The course is optional; teachers can use it independently. All teacher scenarios are invented."
@@ -102,7 +102,7 @@ running:
   - "Ask for a prediction before naming the three tool roles."
   - "Open each real tool. Discuss a case where two tools would both help."
   - "Let teachers choose their own starting point without collecting their notes."
-struggle: "If teachers expect to complete all three tools in order, ask what they need for tomorrow and start there."
+struggle: "If teachers expect to work through all three in order, ask what they need for tomorrow and start there."
 stuck:
   - { see: "Everyone must do all three in order.", ask: "What do you need for tomorrow?", fix: "Start with the tool that serves that need." }
 support: "Read the three needs aloud and compare one pair at a time."
