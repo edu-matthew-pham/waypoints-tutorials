@@ -71,10 +71,10 @@ tasks:
       type: bug
       code: working.txt#nib
       text: Nib explains the case. Click the first line where the reasoning goes wrong.
-      answer: 3
+      answer: 4
       fault: logic
       misconception: renewable-explains-everything
-      explain: Line 3 treats renewable as a guarantee that flow can never be low. A resource label cannot replace an
+      explain: Line 4 treats renewable as a guarantee that flow can never be low. A resource label cannot replace an
         explanation of movement and change.
     smaller:
       check:

@@ -83,10 +83,10 @@ tasks:
       type: bug
       code: working.txt#nib
       text: Nib explains the case. Click the first line where the reasoning goes wrong.
-      answer: 3
+      answer: 2
       fault: logic
       misconception: water-benefits-everyone
-      explain: Line 3 turns one benefit into a benefit for every place. The same diversion can help one place and
+      explain: Line 2 turns one benefit into a benefit for every place. The same diversion can help one place and
         harm another.
     smaller:
       check:

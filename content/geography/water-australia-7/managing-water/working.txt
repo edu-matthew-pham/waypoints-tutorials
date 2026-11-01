@@ -1,8 +1,7 @@
 # Nib's notes for the "find the slip" task. Plain text: students click the wrong line, nothing runs.
 
 # region: nib
-Perth is a real city on the coast.
-Perth gets part of its water from desalination plants.
+Perth is a real city on the coast, and gets part of its water from desalination plants.
 So the farms around Drybank should build a desalination plant too.
 It will give them all the water they want, with no costs to worry about.
 # endregion

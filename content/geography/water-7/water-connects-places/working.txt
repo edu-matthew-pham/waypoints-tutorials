@@ -3,6 +3,7 @@
 # region: nib
 Rain washed loose soil off the farm into the river.
 The town is downstream along that river.
+The town takes its drinking water from that river.
 Nib says: "The river carries only water, so the farm cannot affect the town’s water quality."
 Nib concludes that only rain over the town matters.
 # endregion

@@ -134,10 +134,10 @@ tasks:
       type: bug
       code: working.txt#nib
       text: Nib explains the case. Click the first line where the reasoning goes wrong.
-      answer: 3
+      answer: 4
       fault: logic
       misconception: water-is-only-transport
-      explain: Line 3 ignores the loose soil moving water can carry. Explain what travels and why another place
+      explain: Line 4 ignores the loose soil moving water can carry. Explain what travels and why another place
         could care.
 ```
 

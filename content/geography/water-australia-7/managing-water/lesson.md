@@ -84,10 +84,10 @@ tasks:
       type: bug
       code: "working.txt#nib"
       text: "Nib is planning for the farms around Drybank. Click the first line where Nib's thinking goes wrong."
-      answer: 3
+      answer: 2
       fault: logic
       misconception: one-water-solution-fits-all
-      explain: "Line 3: Perth is on the coast, with seawater close by. The farms around Drybank are far inland: they would need salty groundwater, a plant and energy, and other strategies may fit better. Copying a strategy without checking the place and the cause can give a poor fit, and line 4 forgets the cost too."
+      explain: "Line 2: Perth is on the coast, with seawater close by. The farms around Drybank are far inland: they would need salty groundwater, a plant and energy, and other strategies may fit better. Copying a strategy without checking the place and the cause can give a poor fit, and line 3 forgets the cost too."
     smaller:
       check:
         type: question
@@ -97,7 +97,7 @@ tasks:
         feedback: [null, "The dam is not the problem. The amount being used is."]
         explain: "When the cause is how much is used, a strategy that lowers use targets it directly."
     hint:
-      - "Lines 1 and 2 are about Perth."
+      - "Line 1 is about Perth."
       - "Find the line that copies Perth's strategy without checking the new place."
       - "What does a desalination plant need nearby?"
 ```

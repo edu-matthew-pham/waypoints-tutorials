@@ -76,10 +76,10 @@ tasks:
       type: bug
       code: "working.txt#nib"
       text: "Nib is explaining Corrowin. Click the first line where Nib's thinking goes wrong."
-      answer: 3
+      answer: 4
       fault: logic
       misconception: scarcity-always-means-no-rain
-      explain: "Line 3: the river is there all year, so the water is physically there. The taps run dry because the town cannot get the water to its houses. Nib's fix in line 4, a dam to catch rain, would not help."
+      explain: "Line 4: the river is there all year, so the water is physically there. The taps run dry because the town cannot get the water to its houses. Nib's fix in line 5, a dam to catch rain, would not help."
     smaller:
       check:
         type: question
@@ -89,7 +89,7 @@ tasks:
         feedback: [null, "That assumes the shortage is in the river, but the river is full. The break is between the river and the houses."]
         explain: "The water is there. What is missing is the way to deliver it."
     hint:
-      - "Line 1 says where the water is."
+      - "Line 2 says where the water is."
       - "Find the line that guesses a cause the case does not support."
       - "Is the river short of water, or are the houses?"
 ```

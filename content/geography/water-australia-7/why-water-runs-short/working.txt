@@ -1,7 +1,8 @@
 # Nib's notes for the "find the slip" task. Plain text: students click the wrong line, nothing runs.
 
 # region: nib
-Corrowin's river flows past the town all year.
+Corrowin is a small made-up town.
+Its river flows past the town all year.
 But the taps in Corrowin often run dry.
 So it must not be raining enough at Corrowin.
 So Corrowin needs a new dam to catch more rain.
