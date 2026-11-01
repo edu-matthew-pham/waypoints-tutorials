@@ -207,6 +207,57 @@ Tagline: *What can you expect when you buy something?* Four lessons in node orde
 - Tested: validate, `check-nodes`, build, `check-decks` (course), and a headless run at 1100 px and 375 px (each lesson loads with no errors, each bug check ticks only on its answer line, no horizontal scroll; on the budget board, typing 30 in B11 doesn't tick, writing `=B4-B9` does, and changing B8 to 25 ticks the vary check; dollar amounts show as text).
 - Publish: whole-site (subject and teacher pages).
 
+## Plan (1 Nov 2026, awaiting Matthew's "go"): course `economics/issues-7`, *Responding to an economic issue* (AC9HE7S03, AC9HE7S04)
+
+Tagline: *Read the data, weigh the trade-offs, and choose.* Economics' own Year 7 skills; the shared ones (questions S01, finding and organising S02, communicating S05) are in `hass/inquiry-7`. Five lessons in node order, two units: `data` (S03 n1–n3) and `response` (S04 n1–n2). After `scarcity-7` (the subject page already says so). No clips.
+
+- **Standards:** AC9HE7S03, "interpret information and data to identify economic and business issues, trends and economic cause-and-effect relationships"; AC9HE7S04, "develop a response to an economic and business issue, identifying potential costs and benefits". Prior knowledge is Year 6 (AC9HS6S03, S05, S06), taught in class. Student text keeps ACARA's terms: issue, trend, cause and effect, costs and benefits, financial and non-financial, alternative, response.
+- **Boards (decided 30 Oct):** the `graph` board for reading trends and relationships (S03 n2, n3), and the `sheet` board for comparing two options' costs (S04 n2). S03 n1 and S04 n1 have no board.
+- **Data:** all data is made up, about Riverbend, and labelled once per lesson ("made-up data"). Numbers are chosen to show one clear pattern, so students practise the reading, not the hunting. Teacher notes say where real Australian data lives (ABS) for a class that wants it, without stating any real figure. No step asks about students' own money.
+- **Models, not settled truth (T8):** a trend in made-up data is a pattern, not a law; lesson 3 says plainly that a pattern between two things doesn't prove one causes the other, and the "because" is economic reasoning that could be wrong. In S04, the response is the student's own judgement: Make steps are unmarked, with two model answers that reach different choices.
+- **First Nations (T1):** neither standard's elaborations name First Nations content. The node data's wider items (community economic data, a development proposal weighed against cultural and environmental impacts) stay teacher notes: First Nations-led sources and the community's own published words. No student text.
+- **Misconceptions:** five single lines: `data-is-the-issue`, `one-point-is-a-trend`, `pattern-proves-cause`, `costs-are-only-money`, `list-not-reason`.
+
+1. **`data-to-issue`: From information to an issue (AC9HE7S03 n1, hinge)**
+   - **Checkpoint:** students can interpret information to identify an economic or business issue, making an inference beyond what is directly stated.
+   - **One insight:** information shows something happened; an issue is the problem or question it points to. The move is: the data shows X, this suggests Y, so the issue is Z. A good inference goes one step beyond the data, not ten.
+   - **Case:** Riverbend's main street (the elaboration's example): made-up counts of shoppers walking past each Saturday fall over three years, while parcels delivered in town rise.
+   - **Hinge check (`data-is-the-issue`):** Nib restates the data and calls it the issue ("the issue is that shopper numbers fell from 900 to 600"), with no inference about what it means for the shops. Bug check, with a `smaller:` lead-in ("What might fewer shoppers mean for the shops?"). Going too far ("so every shop will close next year") is a distractor in the sort and the questions. Class plan spends its whole-class time here.
+   - **Steps:** predict, sort (statements into "what the data shows", "a reasonable inference", "goes too far"), worked example (the three-part move on the main street), vary (two new snippets of information, pick the issue each points to), practise, Make: write the three-part sentence for one new snippet in the student's book (reflect tick). Typical: two sources on the same issue (a shop's sales and a shopper survey) show different sides of it. Wider: one news-style paragraph raising two separate issues; name both.
+
+2. **`trends-over-time`: Reading a trend (AC9HE7S03 n2)**
+   - **Checkpoint:** students can interpret multi-variable data using an interactive digital tool to identify trends and answer questions about change over time.
+   - **One insight:** a trend is the overall direction over time, not one year's jump. Describe it with its direction, how much, and over what period.
+   - **Board:** `graph` with two made-up series over 10 years: casual workers and full-time workers in Riverbend (the elaboration's question). A cursor reads values; checks read `x(R)` and `y(R)`.
+   - **Planted slip (`one-point-is-a-trend`):** Nib sees one year where casual work dropped and says casual work is falling, though it rose over the 10 years. Bug check.
+   - **Steps:** predict, run (move the cursor to two years and read both values; board checks), worked example (bug; describe the trend in one sentence: direction, how much, period), vary (the other series), practise (questions comparing the two series), Make: a trend sentence in the student's book (reflect tick). Typical: compare the first five years with the last five. Wider: what the trend might mean for people's job security (links to Work, income and identity), unmarked, two views.
+
+3. **`cause-and-effect`: Cause and effect in data (AC9HE7S03 n3)**
+   - **Checkpoint:** students can interpret visual displays of multi-variable data to identify a cause-and-effect relationship, such as income and saving or spending.
+   - **One insight:** when two things move together, one may cause the other, but the pattern alone doesn't prove it. Say which is the cause and which the effect, and give the economic "because" (more income leaves more left over after needs, so saving can rise).
+   - **Board:** `graph` with made-up points for twelve Riverbend households: weekly income across, weekly saving up. Students drag a point to where a new household would likely sit, or read two points (checks on the dragged point's region or the read values).
+   - **Planted slip (`pattern-proves-cause`):** Nib says the data proves saving causes higher income, because they go up together (direction reversed, and "proves"). Bug check.
+   - **Distractors:** effect named as cause; "they go together, so it's proven"; a third thing ignored (households with more people earning both earn and save more).
+   - **Steps:** predict, run (read the display), worked example (bug; build the chain "income rises, which leaves more after spending, so saving can rise"), vary (spending instead of saving), practise, Make: the cause-effect-because sentence in the student's book (reflect tick). Typical: a third variable (household size). Wider: a made-up pattern that looks causal but isn't (umbrella sales and cafe takings both rise on rainy Saturdays).
+
+4. **`costs-and-benefits`: Costs and benefits (AC9HE7S04 n1, hinge)**
+   - **Checkpoint:** students can identify the potential costs and benefits of an economic decision, including financial and non-financial ones.
+   - **One insight:** costs are what you give up (money, time, other options); benefits are what you gain (money, time, satisfaction, community good). Both come in financial and non-financial kinds, and the opportunity cost is always one of the costs.
+   - **Case:** Sam (from Work, income and identity) decides whether to take Saturday shifts at the bakery (the elaboration's example: earning money vs weekend time and travel).
+   - **Hinge check (`costs-are-only-money`):** Nib lists the bus fare as Sam's only cost. Bug check with `smaller:` ("What will Sam not be able to do on Saturday mornings?"). Class plan spends its whole-class time here.
+   - **Steps:** predict, sort (Sam's costs and benefits into financial and non-financial), worked example (bug; opportunity cost as a cost), vary (a council choice: a new playground, community costs and benefits), practise, Make: costs and benefits table for a made-up decision in the student's book (reflect tick). Typical: direct and indirect costs and benefits (the playground brings more customers to the cafe nearby). Wider: costs and benefits that fall on different people (who gains and who pays).
+
+5. **`making-a-response`: Developing a response (AC9HE7S04 n2)**
+   - **Checkpoint:** students can combine what they know with new information to develop a response to an economic issue, using costs and benefits to justify it.
+   - **One insight:** a response chooses one alternative over another and says why, using the costs and benefits, not just listing them. Two people can weigh the same list and choose differently; the reasoning is what makes it a response.
+   - **Board:** `sheet` comparing two made-up phone plans over 12 months (the elaboration's phone-and-budget example): monthly cost, data, contract length; students write the 12-month totals with formulas, then weigh non-financial points. Checks read the totals only.
+   - **Planted slip (`list-not-reason`):** Nib lists every cost and benefit, then picks the plan "because it has more benefits on the list", without weighing them. Bug check.
+   - **Steps:** predict, run (read the two plans on the sheet; board check on one total), worked example (bug; the reasoning chain "the issue is…, the alternatives are…, the costs and benefits are…, so I choose…, because…"), vary (change one plan's price and see whether the choice changes), practise, Make: an unmarked `reasoning` check (`paper: true`, two model answers choosing different plans for good reasons). Typical: the recyclable packaging elaboration (Riverbend Bakery's switch, costs now vs benefits later). Wider: a community response (the council's parkland choice), unmarked, two views.
+
+**Self-check at build:** as for the other Economics courses, plus every data point labelled made up, graph checks never ticking at the start, and the S04 Make steps unmarked.
+
+**Publish:** whole-site (subject page; existing widgets only, no new widget code).
+
 ## Decided: interactive boards (30 Oct 2026, Matthew)
 
 - **Concept and case lessons (`scarcity-7`, `businesses-7`, `entrepreneurs-7`, `work-7`, and `consumers-7` lessons 1–3):** keep the no-board layout (`sort`, `match`, `parsons`, `question`, `reasoning` and `bug` checks). Scenarios and case cards need reading room.
