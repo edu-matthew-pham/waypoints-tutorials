@@ -25,7 +25,7 @@ Every subject has: title and summary, search box (with "Or browse:" where there 
 Found across all of them:
 - **"Extensions" is worse than "Then" for maths and science.** The same `stage:` makes each pathway page head Years 9–10 as **Extensions** (list view) and the trail card say "Extension · after Year 8 Algebra". That reads as optional or advanced, against "years are suggestions, width not acceleration" (rules T9, T10).
 - **The "New to Learning Waypoints?" line** sits on every subject's list and every pathway page, so Maths and Code show a "Humanities pilot" link.
-- **Preview still shows** on History, Geography, Civics and Humanities skills (the home page tag from `preview: true`, and "Preview (a pilot, not finished)" in summaries), though Matthew decided on 1 Nov that students shouldn't see it (Economics already dropped it). Belongs to the subject chats; flagged here because it is page-level.
+- **Preview still shows** on History, Geography and Humanities skills (the home page tag from `preview: true`, and "Preview (a pilot, not finished)" in summaries), though Matthew decided on 1 Nov that students shouldn't see it (Economics and Civics already dropped it, 1 Nov). Belongs to the subject chats; flagged here because it is page-level.
 - **Order of blocks drifts:** English puts purpose cards above the toggle; Code alone has a tools line at the foot; only maths and science have look-backs (fine, they are year-based).
 
 ## Proposed common rules (defaults, with reasons)
