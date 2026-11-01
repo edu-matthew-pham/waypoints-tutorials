@@ -267,6 +267,21 @@ Tagline: *Read the data, weigh the trade-offs, and choose.* Economics' own Year 
 - Tested: validate, build, `check-decks` (course), and headless runs at 1100 px and 375 px: each lesson loads with no errors, each bug check ticks only on its answer line, no horizontal scroll; the trend cursor check ticks at year 10 and not at the start; the scatter check doesn't tick with P at 100 and does at 210; the plans sheet ticks only when both total formulas are written, and the vary sheet ticks when B2 is 28. `check-nodes` fails on two Civics warnings (`civics/democracy-7/ways-to-take-part`), not Economics.
 - Publish: whole-site (subject and teacher pages).
 
+## Plan (1 Nov 2026, awaiting Matthew's "go"): Year 6 catch-up *Spending choices* (AC9HS6K08) in `hass/before-year-7`
+
+The planned lesson in *Before Year 7: HASS* (`content/hass/before-year-7/index.md`, unit `economics`; the course is owned by the shared-inquiry chat, and that chat's plan says Spending choices is built "with Economics"). One lesson, about 15 to 20 minutes, one idea and one common mistake, in that course's `shape: primer` and `language: science` like *Find it and sort it*.
+
+- **Node:** AC9HS6K08 n1 (influences on consumer choices), the node's hinge. The other three nodes (selling strategies, kinds of payment, strategies for informed choices) stay with Year 6 classes; n4's "compare prices, keep a record" is touched in one line because Consumer rights lesson 4 builds on it.
+- **One idea:** every spending choice is shaped by more than "what I like": what you can afford, what friends have, advertising, what matters to you (the environment, fairness), and what your family or culture values. Spotting the influences helps you choose on purpose, and every choice still gives something up.
+- **Common mistake (`choices-uninfluenced`):** "Nobody influences what I buy; I just pick what I like." Nib says it about a pair of shoes his whole class happens to be wearing. Check before moving on, with a smaller question.
+- **Case:** made-up: Mia choosing a drink bottle at a Riverbend shop (price, a friend's recommendation, an ad, reusable for the environment). Privacy: no step asks about students' own spending.
+- **Steps (primer):** think first (why did Mia pick that one?), try (sort influences into money, people, advertising, values), the idea, a check with Nib's slip and `smaller:`, evaluate, Make: name three influences on a made-up purchase in the student's book (reflect tick).
+- **Links:** "Leads into" Scarcity and opportunity cost and Consumer rights (Economics lessons that list it in `assumes:` get "What you should already know"; `isCatchUp` in `tools/build-site.mjs` and `tools/prior-links.mjs` matches maths, science and history catch-ups only, so `hass` needs adding: a one-word shared change, as History made).
+- **Models, not truth:** "influences" is a description, not a claim that people can't choose freely; one phrase says choosing on purpose is the point.
+
+## Done (1 Nov 2026): Economics curriculum map on
+`map: true` in `content/economics/index.md`, so `/economics/map/` shows Years 7–10 Economics and Business (Knowledge and understanding, Skills) with waypoint dots from lessons' `node:`. Years 8–10 show as "no lesson yet". The Year 6 prior (AC9HS6K08) lives in `hass.json`, so the map's "Before Year 7" column doesn't show it. Whole-site publish.
+
 ## Decided: interactive boards (30 Oct 2026, Matthew)
 
 - **Concept and case lessons (`scarcity-7`, `businesses-7`, `entrepreneurs-7`, `work-7`, and `consumers-7` lessons 1–3):** keep the no-board layout (`sort`, `match`, `parsons`, `question`, `reasoning` and `bug` checks). Scenarios and case cards need reading room.
@@ -275,7 +290,7 @@ Tagline: *Read the data, weigh the trade-offs, and choose.* Economics' own Year 
 
 ## Needs deciding
 
-4. Subject curriculum map (`map: true`) once more of Year 7 is built.
+4. ~~Subject curriculum map~~ turned on 1 Nov 2026 (Done section).
 
 ## Next
 
