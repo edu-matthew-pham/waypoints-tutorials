@@ -1,0 +1,8 @@
+# Display-only reasoning: nothing runs.
+
+# region: nib
+Nib looks at the survey table from 2020 and 2025.
+83% agreed multiculturalism has been good for Australia in 2025.
+Nib says: "Australia says everyone gets a fair go, so everyone does."
+Nib says: "So the discrimination row doesn't matter."
+# endregion

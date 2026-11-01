@@ -356,7 +356,7 @@ Tested: validate clean; build; headless Chromium answered all 18 question and bu
 
 Publish: whole-site (subject and teacher pages changed). Ask Matthew first.
 
-## Plan (1 Nov 2026; awaiting Matthew's "go"): course `civics/values-7`, *Values and living together* (AC9HC7K05)
+## Plan (1 Nov 2026; Matthew said go, built 1 Nov): course `civics/values-7`, *Values and living together* (AC9HC7K05)
 
 Per `roadmap/checklist.md` › "Plan first, then build". Tagline *What shared values hold a diverse society together?* One unit (`values`), Usually Year 7, after `diversity-7`. Descriptor: "how values based on freedom, respect, fairness and equality of opportunity can support social cohesion and democracy within Australian society". Prior: K02, K04.
 
@@ -410,3 +410,17 @@ Misconception ids to add as single lines: `values-are-uniquely-australian`, `sta
 2. **How far into religions (lesson 3):** one checked line per tradition on one shared value (giving), in its own term (my pick), or names only, leaving beliefs to the teacher?
 3. **Refugees (lesson 4):** general reasons and definitions, no made-up personal hardship stories, with real first-person accounts linked for teachers (my pick); or a made-up composite story labelled as such?
 4. **Reconciliation:** one transparency line in lesson 2's student text, as in `diversity-7` (my pick), or teacher notes only?
+
+## Built (1 Nov 2026; Matthew said go; not yet tried with a class): `civics/values-7` *Values and living together*
+
+- Four lessons for AC9HC7K05: `values-we-name` (n1), `values-and-cohesion` (n2, hinge), `values-across-traditions` (n3), `why-people-come` (n4, integration), each with teacher notes, a class plan and one Nib slip with a `smaller:` check. Four misconception lines added. With this course every Year 7 Civics knowledge standard (K01 to K05) and S03 has a course; S04 is tagged inside `democracy-7`.
+- **Departure: no board in lesson 2.** The Scanlon report gives only a few comparable figures (belonging "to a great extent" 2020 and 2025; multiculturalism good 2025; discrimination 2025), so a plain dated table in the text with reading checks does the job; a spreadsheet would add nothing for students to act on. Figures from the report itself (Mapping Social Cohesion 2025, survey July 2025, 8,029 panel adults plus a boost sample): 63% → 46% belonging to a great extent; 83% multiculturalism good (news reports say 84%; the report wins); 16% discrimination in the last 12 months.
+- Lesson 1: the pledge quoted (both versions noted; Home Affairs); anthem dates from PEO (19 April 1984; 1 January 2021). The reason for the 2021 change is left to the teacher (it touches First Nations history), with a teacher note.
+- Lesson 3: one line per tradition (tzedakah, zakat, dana, seva, charity), checked against My Jewish Learning, BAPS and overviews of zakat and dana (Wikipedia, flagged as overviews in teacher notes); pointers to each community's peak bodies and local faith communities, named without links (check current websites).
+- Lesson 4: refugee and migrant definitions from the Australian Human Rights Commission; asylum seekers left to the teacher; one distractor ("refugees broke laws to come here") was replaced at build because it carries a live political claim. No made-up hardship stories; real first-person accounts pointed to for teachers.
+- Reconciliation: one transparency line in lesson 2's student text. First Nations content otherwise teacher notes only.
+- `content/civics/index.md` and `content/civics-teachers.md` updated.
+
+Tested: validate clean; build; headless Chromium answered all 24 question and bug checks (each rejecting a wrong answer first); 390 px phone width with no sideways scroll on the subject, course, lessons, guides and teacher page; deck fit check. Match, sort and reasoning steps checked by validate only. Not tried with a class; worth a First Nations educator's and a colleague's read before use beyond CGGS (religion, migration, belonging).
+
+Publish: whole-site (subject and teacher pages changed). Ask Matthew first.

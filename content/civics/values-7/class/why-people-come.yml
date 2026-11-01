@@ -1,0 +1,31 @@
+inquiry:
+  q: "Why do people leave one country to start again in another?"
+  prompts:
+    - "What might push someone to leave?"
+    - "What might draw them to Australia?"
+  notes: "Keep to general reasons. Never ask students about their own or their family's migration story."
+activities:
+  - at: run
+    kind: activity
+    title: "Push and pull"
+    minutes: 4
+    do: "Draw PUSH and PULL columns. Pairs add one reason to each, then compare with the Try sort."
+    notes: "Listen for 'money' only. Ask what someone fleeing danger would look for."
+  - at: make
+    kind: check
+    title: "Check a partner's reasons and pledge"
+    minutes: 4
+    do: "Partners check the migrant and refugee difference, two reasons and a link to the pledge."
+    notes: "Students write elsewhere; the site does not take or mark writing."
+questions:
+  - at: investigate
+    title: "Migrant or refugee?"
+    type: question
+    q: "Someone moves to Australia for a job and could go back if they wanted. Are they a migrant or a refugee?"
+    options:
+      - "A migrant"
+      - "A refugee"
+      - "Neither"
+      - "Both"
+    answer: 0
+    explain: "They chose to move and could return, so they are a migrant."

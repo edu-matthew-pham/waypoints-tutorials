@@ -1,0 +1,54 @@
+summary: "Students learn what social cohesion means and how shared values can support it, then evaluate whether values are lived using real, dated figures from the Scanlon Institute's Mapping Social Cohesion 2025 survey: evidence of wide support and evidence of gaps."
+learning: "explain how shared values support social cohesion and judge, with dated evidence, the extent to which they are reflected in Australian society"
+time: 42
+timing: "Read the table 4 min · Predict and Try 6 min · Worked example 10 min · Vary 6 min · Practise 8 min · Make and exit 8 min. Typical and wider steps are extras and not counted in this."
+goals:
+  - I can explain what social cohesion means.
+  - I can tell evidence from a claim.
+  - I can make a careful judgement using evidence on both sides, with its year.
+struggle: "Students either accept a named value as proof it's lived, or swing to 'none of it is true'. Keep asking for evidence on both sides, and for the year."
+before: |
+  Hinge n2. Kit's reason: evaluating whether values are actually reflected in society, not just stated, is the conceptual core of the descriptor; students who only identify values can't meet its "can support" claim. Use the smaller check before moving on. The site marks only the evidence-reading (what a figure shows, what counts as evidence); a student's overall judgement is never marked.
+
+  The figures are real and dated, from the Scanlon Institute's *Mapping Social Cohesion 2025* report (survey run in July 2025 by the Social Research Centre; 8,029 adults on the Life in Australia panel plus a boost sample, weighted to the population; 99% online). Belonging "to a great extent": 63% (2020), 46% (2025). "Multiculturalism has been good for Australia": 83% agree or strongly agree (2025; the report says this has declined since peaking in 2023). Discrimination in the last 12 months on the basis of skin colour, ethnic origin or religion: 16% of adults (2025). Some news reports give 84% for multiculturalism; the report itself says 83%. Update the table when a new report comes out, and keep the year beside every figure.
+
+  Reconciliation is named in the elaborations and in Kit's typical width. Student text has one transparency line only, naming it and saying you may take it up; nothing is explained by us. If you take it up, use First Nations-led, community-approved material and ask your school's Indigenous education contact first.
+
+  Nothing personal is asked. Students are not asked whether they feel they belong or have experienced discrimination; the evidence is the survey's. Some students in your class may have experienced discrimination: keep discussion to the figures, and be ready to follow your school's wellbeing process if something is disclosed.
+
+  The Wattle Creek club is made up.
+running:
+  - "Table: read each row aloud with its year. Ask what each one measures."
+  - "Predict: take a vote. Many will say 'yes, everyone gets a fair go'. Leave it open."
+  - "Worked example: ask 'Does 83% agreeing mean everyone feels included?'"
+  - "Practise: the 63 to 46 question is the subtle one. Ask exactly what the survey asked."
+  - "Make: the student writes in their own book or document; a partner or teacher reads it. The site only records a reflect tick."
+stuck:
+  - see: "A student says the value is lived because Australia says so."
+    ask: "What would you check to find out?"
+    fix: "A claim needs evidence. Look for figures that show where the value is and isn't lived."
+  - see: "A student says the gaps prove the values are fake."
+    ask: "Does 83% support for multiculturalism count for nothing?"
+    fix: "Evidence on both sides leads to a careful judgement: widely supported, not fully lived."
+support: "Draw two columns, LIVED and GAP, and place each survey row together before the Vary."
+stretch: "What other evidence, besides a survey, could show whether a value is lived?"
+exit:
+  q: "Give one piece of evidence that a value is lived and one of a gap, each with its year."
+  a: "For example, 83% agreed multiculturalism has been good for Australia (2025); 16% said they'd been discriminated against in the last year (2025)."
+explain: |
+  **Social cohesion** is people from different backgrounds getting along, trusting each other and feeling they belong. Shared values can support it.
+
+  Naming a value isn't proof it's lived. Look for **evidence** on both sides, with its year: in 2025, 83% agreed multiculturalism has been good for Australia, but 16% said they'd been discriminated against, and belonging "to a great extent" had fallen from 63% in 2020 to 46%.
+sources:
+  - title: "Mapping Social Cohesion 2025 report (Scanlon Institute)"
+    url: https://scanloninstitute.org.au/wp-content/uploads/SI0001_MappingSocialCohesion_2025_v5.pdf
+    checked: 2026-11-01
+  - title: Mapping Social Cohesion 2025 (Scanlon Institute)
+    url: https://scanloninstitute.org.au/mapping-social-cohesion-2025/
+    checked: 2026-11-01
+leads: >-
+  Next in this course: Values across traditions.
+
+
+  ACARA elaboration for AC9HC7K05 (an example, not a checklist): "evaluating the extent to which these values can
+  promote cohesion and reconciliation in Australia's society"

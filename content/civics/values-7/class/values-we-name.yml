@@ -1,0 +1,31 @@
+inquiry:
+  q: "Are 'Australian values' only Australian?"
+  prompts:
+    - "Which of these values would people in other countries also name?"
+    - "Where do these values show up in public life?"
+  notes: "Keep to public life. Don't ask students how their own family marks national days or symbols."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Read the pledge"
+    minutes: 4
+    do: "Read the citizenship pledge aloud. Pairs underline each word or phrase that names a value."
+    notes: "Point out the two versions: one with 'under God', one without."
+  - at: make
+    kind: check
+    title: "Check a partner's three values"
+    minutes: 4
+    do: "Partners check there are three values, each with a place it shows up, and a note that others share them."
+    notes: "Students write elsewhere; the site does not take or mark writing."
+questions:
+  - at: investigate
+    title: "What the pledge names"
+    type: question
+    q: "Which of these does the citizenship pledge name?"
+    options:
+      - "Respect for rights and liberties"
+      - "Loyalty to a political party"
+      - "Belief in one religion"
+      - "Support for a sports team"
+    answer: 0
+    explain: "The pledge names democratic beliefs, rights and liberties, and the law."

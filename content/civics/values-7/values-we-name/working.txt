@@ -1,0 +1,8 @@
+# Display-only reasoning: nothing runs.
+
+# region: nib
+New citizens at the made-up Wattle Creek ceremony say the pledge.
+The pledge names democratic beliefs, rights and liberties, and the law.
+Nib says: "A fair go is an Australian value, so people in other countries don't care about fairness."
+Nib says: "So these values only belong to Australia."
+# endregion

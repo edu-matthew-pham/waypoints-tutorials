@@ -1,0 +1,31 @@
+inquiry:
+  q: "How could we find out whether Australia lives its values?"
+  prompts:
+    - "What's the difference between a claim and evidence?"
+    - "What does each figure show, and what doesn't it show?"
+  notes: "Keep to the survey figures. Don't ask students about their own sense of belonging or experiences of discrimination."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Claim or evidence?"
+    minutes: 4
+    do: "Write 'Australians get a fair go' on the board. Ask: is that a claim or evidence? What would count as evidence?"
+    notes: "Aim for 'something you can check'."
+  - at: make
+    kind: check
+    title: "Check a partner's judgement"
+    minutes: 4
+    do: "Partners check there's evidence on both sides, each with its year, and a careful judgement."
+    notes: "Students write elsewhere; the site does not take or mark writing."
+questions:
+  - at: investigate
+    title: "Reading a figure"
+    type: question
+    q: "In 2025, 16% of adults said they'd been discriminated against in the last year. What does that show?"
+    options:
+      - "Some people aren't experiencing fairness"
+      - "Australia has no discrimination"
+      - "Most people experience discrimination"
+      - "The survey is wrong"
+    answer: 0
+    explain: "It's evidence of a gap: a value isn't lived by everyone."

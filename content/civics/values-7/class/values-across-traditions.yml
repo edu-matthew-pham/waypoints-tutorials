@@ -1,0 +1,31 @@
+inquiry:
+  q: "Can people with different beliefs share values?"
+  prompts:
+    - "What do tzedakah, zakat, dana, seva and charity have in common?"
+    - "Does sharing a value mean sharing every belief?"
+  notes: "Keep to what the lesson says about each tradition. Don't ask students about their own religion."
+activities:
+  - at: run
+    kind: activity
+    title: "Five words, one value"
+    minutes: 4
+    do: "Write the five words on the board. Pairs say what they share, then one way they might differ."
+    notes: "Accept 'giving' or 'helping'. Differences can be about reasons or how giving is done."
+  - at: make
+    kind: check
+    title: "Check a partner's common ground"
+    minutes: 4
+    do: "Partners check there's a shared value, two traditions' words and a link to civic life."
+    notes: "Students write elsewhere; the site does not take or mark writing."
+questions:
+  - at: investigate
+    title: "Shared value, different beliefs"
+    type: question
+    q: "Volunteers from four traditions run a food bank together. What do they share?"
+    options:
+      - "The value of giving and helping"
+      - "Every one of their beliefs"
+      - "The same place of worship"
+      - "Nothing at all"
+    answer: 0
+    explain: "They share a value while keeping their own beliefs."
