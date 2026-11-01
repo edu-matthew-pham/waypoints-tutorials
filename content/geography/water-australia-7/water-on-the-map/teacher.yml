@@ -11,7 +11,7 @@ struggle: "Students often read a symbol list as a description ('there are blue l
 before: |
   This is the first hinge (K02 n1): node 2 and 3 work on the implications of distribution, and they need students who can read and produce a distribution map. The node's first criterion is that students *represent* water on a map, so the Make step (their own map, drawn in the book or on the printed worksheet) is the required evidence, not the on-page checks. Give it the time.
 
-  The map is drawn from Natural Earth (public domain) and simplified: coastline, state borders, some major rivers and capital cities. The two basins are named but not outlined, on purpose. Natural Earth's regions for them are label areas rather than their real extents (its Murray–Darling region reaches Brisbane and Adelaide, which are outside the real basin), so students shade them from the official maps instead: Geoscience Australia for the Great Artesian Basin and the Murray–Darling Basin map on the Inspector-General of Water Compliance site. Only some major rivers are drawn; the Murrumbidgee, for example, is not in Natural Earth's river set at this scale.
+  The map is drawn from Natural Earth (public domain) and simplified: coastline, state borders, some major rivers and capital cities. The basins come from the official boundaries, simplified for the screen: the Murray–Darling Basin as defined in the Water Act 2007 (Murray–Darling Basin Authority, CC BY 4.0), and Geoscience Australia's revised Great Artesian Basin boundary from the Great Artesian Basin Water Resource Assessment (CC BY 3.0 AU). Other published Great Artesian Basin boundaries differ a little at the edges (the 1997 hydrogeology map is the one the department's own maps use), so accept small differences on students' maps. Only some major rivers are drawn; the Murrumbidgee, for example, is not in Natural Earth's river set at this scale.
 
   Real facts used, each from a named source: the Great Artesian Basin lies under parts of Queensland, New South Wales, South Australia and the Northern Territory and is the largest groundwater basin in Australia (Geoscience Australia); the Murray–Darling Basin covers parts of Queensland, New South Wales, Victoria and South Australia and all of the ACT (Bureau of Meteorology, National Water Account); in the north almost all rain falls in a wet season from about November to April (Bureau of Meteorology chapter, ABS Year Book Australia 2005). No figures that date are used. The town in Predict and Nib are made up.
 
@@ -21,14 +21,14 @@ running:
   - "Try: ask why a map needs a legend at all. Cover the legend and ask what a blue line means."
   - "Worked example: let students say the pattern in their own words before the question. Push for direction words."
   - "Vary: ask how to show a line, an area and a point on a map. A basin is an area."
-  - "Make: check the legend matches the symbols used, and that the basins were shaded from the official maps."
+  - "Make: check the legend matches the symbols used, and that the basins were copied from the map, not guessed."
 stuck:
   - see: "The description lists the symbols ('there are rivers and cities')."
     ask: "Where is there a lot of water, and where is there little?"
     fix: "Use direction words: north, south-east, centre, west."
   - see: "Groundwater is left off the student's map because 'you can't see it'."
     ask: "Do maps show other things you can't see, like state borders?"
-    fix: "Shade the area from the official map and add it to the legend."
+    fix: "Shade the area from the map and add it to the legend."
   - see: "A student says people above the Great Artesian Basin all have plenty of water."
     ask: "What would you need to reach water deep in rock? Is all of it fit to use?"
     fix: "Map where water is first; ask who can use it as a separate question."
@@ -55,3 +55,5 @@ sources:
   - { title: "Australia's climate (Bureau of Meteorology chapter, ABS Year Book Australia 2005)", url: "https://www.abs.gov.au/ausstats/abs@.nsf/0/35F9CDF3307C036ECA256F7200832F12", checked: 2026-11-01 }
   - { title: "Natural Earth (public domain map data)", url: "https://www.naturalearthdata.com/", checked: 2026-11-01 }
   - { title: "Murray–Darling Basin map (Inspector-General of Water Compliance)", url: "https://www.igwc.gov.au/who-we-are/mdb-map", checked: 2026-11-01 }
+  - { title: "Murray–Darling Basin boundary, Water Act 2007 s 4(1) (Murray–Darling Basin Authority data library)", url: "https://library-mdba.opendata.arcgis.com/datasets/ba731d77d80947fbbcbf7524364372ff_0", checked: 2026-11-01 }
+  - { title: "Great Artesian Basin Boundary, Subregions and Cartographic Mask (GABWRA; Geoscience Australia)", url: "https://data.gov.au/data/dataset/241d11ac-649d-46a5-8cae-3dddb53a8010", checked: 2026-11-01 }
