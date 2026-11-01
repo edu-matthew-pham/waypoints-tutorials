@@ -8,7 +8,7 @@ goals:
   - I can explain why two people can choose differently and both be well reasoned.
 struggle: "Students list costs and benefits and then pick by counting, or by price alone. Ask: which point matters most here, and why?"
 before: |
-  The phone plans are made up, priced for easy arithmetic, and are not real offers. Amounts in the lesson are written without dollar signs in places on purpose (the site's maths text treats paired dollar signs as maths in some fields).
+  The phone plans are made up, priced for easy arithmetic, and are not real offers.
 
   **The response is the student's judgement.** The Make step is unmarked: the student compares their own response with two models that choose different plans, and ticks the criteria. Judge the reasoning, not the choice.
 
@@ -39,7 +39,7 @@ leads: |
   Wider (teacher choice, not part of the student steps): the node's wider items include a response to an economic issue facing a First Nations community, from within that community's context. If you take this up, use the community's own published words and local, community-approved material. The lesson writes nothing about it.
 exit:
   q: "Write a one-sentence response for Mia: her choice and the because."
-  a: "For example: I choose Plan B, because Mia uses little data and saving 120 a year matters more to her than switching freely. (Plan A with a good reason is also a good answer.)"
+  a: "For example: I choose Plan B, because Mia uses little data and saving $120 a year matters more to her than switching freely. (Plan A with a good reason is also a good answer.)"
 explain: |
   A **response** chooses one **alternative** over another and says why. It has five parts: the issue, the alternatives, the costs and benefits, the choice, and the because.
 

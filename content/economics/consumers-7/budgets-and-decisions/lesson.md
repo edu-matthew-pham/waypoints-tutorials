@@ -42,12 +42,12 @@ tasks:
       type: number
       q: "How much does Sam spend each week (Total out)?"
       answer: 80
-      explain: "25 + 15 + 40 = 80 dollars, the formula in B9."
+      explain: "$25 + $15 + $40 = $80, the formula in B9."
   - check:
       type: number
       q: "How much does Sam have left over each week?"
       answer: 30
-      explain: "110 dollars in, 80 out, so 30 dollars left over."
+      explain: "$110 in, $80 out, so $30 left over."
 ```
 
 ### Total out
@@ -70,18 +70,18 @@ tasks:
       answer: 3
       fault: logic
       misconception: buy-then-budget
-      explain: "Line 3: Sam should check his budget before he commits. He has 30 dollars left over a week, which is 60 every two weeks: exactly the payment, with nothing spare. If a shift is cancelled, he could miss a payment, and missed payments can add fees. Line 4 hopes the money appears."
+      explain: "Line 3: Sam should check his budget before he commits. He has $30 left over a week, which is $60 every two weeks: exactly the payment, with nothing spare. If a shift is cancelled, he could miss a payment, and missed payments can add fees. Line 4 hopes the money appears."
     smaller:
       check:
         type: number
         q: "Sam has $30 left over each week. How much is that every two weeks?"
         answer: 60
-        explain: "30 + 30 = 60 dollars, exactly one payment, with nothing spare."
+        explain: "$30 + $30 = $60, exactly one payment, with nothing spare."
   - check:
       type: board
       text: "B11 is empty. Write a formula in B11 that works out what Sam has left over."
       when: "f_B11 = 1 and c_B11 = 30"
-      explain: "=B4-B9 takes the total out from the total in: 110 − 80 = 30 dollars."
+      explain: "=B4-B9 takes the total out from the total in: $110 − $80 = $30."
   - check:
       type: question
       q: "If Sam buys the bike on the pay-later deal, what is the opportunity cost?"
@@ -126,12 +126,12 @@ tasks:
       type: board
       text: "Sam decides to spend less on food and going out. Change B8 to 25 and watch what is left over."
       when: "c_B8 = 25 and c_B11 = 45"
-      explain: "Total out drops to 65 dollars, so Sam has 45 dollars left over each week."
+      explain: "Total out drops to $65, so Sam has $45 left over each week."
   - check:
       type: number
       q: "Saving $45 a week, how many weeks will it take Sam to save $240 for the bike? (Count a part week as a whole week.)"
       answer: 6
-      explain: "45 × 5 = 225 dollars, which isn't quite enough. After 6 weeks Sam has 270 dollars, enough for the bike."
+      explain: "$45 × 5 = $225, which isn't quite enough. After 6 weeks Sam has $270, enough for the bike."
 ```
 
 ### Spend less

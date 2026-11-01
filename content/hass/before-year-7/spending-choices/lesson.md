@@ -26,7 +26,7 @@ stage: predict
 insight: "Committing shows whether students think a choice is 'just liking it'."
 check:
   type: predict
-  q: "Mia chose a 20-dollar metal drink bottle over a 6-dollar plastic one. Her best friend has the same metal one, she saw an ad for it last week, and she wants to stop buying plastic. Why did she choose it?"
+  q: "Mia chose a $20 metal drink bottle over a $6 plastic one. Her best friend has the same metal one, she saw an ad for it last week, and she wants to stop buying plastic. Why did she choose it?"
   options: ["Several influences together: a friend, an ad and what she cares about", "Only because she liked it", "Only because it was the cheapest", "Nothing influenced her"]
   actual: "Several things pushed the same way: her friend has one, she'd seen an ad, and she cares about using less plastic. It wasn't the cheapest, so money pulled the other way."
 ```
@@ -41,7 +41,7 @@ check:
   q: "Sort each thing that influenced Mia's choice."
   options: ["Money", "People", "Advertising", "What she cares about"]
   items:
-    - ["The metal bottle cost 14 dollars more", "Money", "The price pulled her towards the cheaper one."]
+    - ["The metal bottle cost $14 more", "Money", "The price pulled her towards the cheaper one."]
     - ["Her best friend has the same one", "People", "Friends' choices influence ours."]
     - ["She saw an ad for it last week", "Advertising", "The ad was made to catch her eye."]
     - ["She wants to stop buying plastic", "What she cares about", "Her values about the environment."]
@@ -66,13 +66,13 @@ tasks:
   - check:
       type: question
       q: "Which of these is an influence from advertising?"
-      options: ["A bright display at the shop door", "Having 30 dollars to spend", "A friend's new shoes", "Wanting things that last"]
+      options: ["A bright display at the shop door", "Having $30 to spend", "A friend's new shoes", "Wanting things that last"]
       answer: 0
       explain: "Displays are made to catch your eye. The others are money, people and what you care about."
   - check:
       type: question
-      q: "Mia spends her 20 dollars on the bottle. What does she give up?"
-      options: ["The next best thing she could have bought with that 20 dollars", "Nothing, because she wanted it", "The plastic bottle she didn't buy, and everything else in the shop", "Her friend"]
+      q: "Mia spends her $20 on the bottle. What does she give up?"
+      options: ["The next best thing she could have bought with that $20", "Nothing, because she wanted it", "The plastic bottle she didn't buy, and everything else in the shop", "Her friend"]
       answer: 0
       explain: "Every choice gives something up: the next best thing that money could have bought."
 ```
@@ -93,7 +93,7 @@ check:
   q: "Dev is choosing a phone case. Sort each influence."
   options: ["Money", "People", "Advertising", "What he cares about"]
   items:
-    - ["He has 15 dollars saved", "Money", "What he can afford."]
+    - ["He has $15 saved", "Money", "What he can afford."]
     - ["His brother says one brand breaks easily", "People", "Advice from family."]
     - ["An ad showed one case surviving a drop from a roof", "Advertising", "Made to make that case look tough."]
     - ["He wants one made from recycled plastic", "What he cares about", "His values about the environment."]

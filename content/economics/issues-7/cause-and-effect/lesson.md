@@ -48,7 +48,7 @@ tasks:
       type: board
       text: "A new Riverbend household earns $1400 a week. Drag P up to where its saving would most likely be, if it follows the pattern."
       when: "y(P) >= 190 and y(P) <= 240"
-      explain: "Households earning 1300 dollars a week save about 180, and those earning 1500 save about 240, so somewhere around 200 to 220 fits the pattern."
+      explain: "Households earning $1300 a week save about $180, and those earning $1500 save about $240, so somewhere around $200 to $220 fits the pattern."
   - check:
       type: question
       q: "What pattern does the graph show?"

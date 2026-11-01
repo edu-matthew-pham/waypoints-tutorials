@@ -15,7 +15,7 @@ questions:
   - at: investigate
     title: "What she gives up"
     type: question
-    q: "Mia spends 20 dollars on a bottle. What does she give up?"
+    q: "Mia spends $20 on a bottle. What does she give up?"
     options: ["The next best thing that money could buy", "Nothing", "Everything in the shop", "Her friend"]
     answer: 0
     explain: "Every choice gives something up."

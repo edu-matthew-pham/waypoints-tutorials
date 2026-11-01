@@ -28,12 +28,12 @@ stage: predict
 insight: "Committing first shows whether students count only money as a cost."
 check:
   type: predict
-  q: "Sam would earn 90 dollars each Saturday, and the bus costs 8. What are the costs of taking the shifts?"
+  q: "Sam would earn $90 each Saturday, and the bus costs $8. What are the costs of taking the shifts?"
   options:
     - "The bus fare, and his Saturday mornings he can't spend on anything else"
-    - "Only the 8-dollar bus fare"
+    - "Only the $8 bus fare"
     - "Nothing: he earns more than the fare, so there's no cost"
-    - "Only the 90 dollars he earns"
+    - "Only the $90 he earns"
   actual: "The bus fare is a financial cost. Giving up his Saturday mornings (time with friends, a netball game) is a non-financial cost, and it is his opportunity cost."
 ```
 
@@ -47,8 +47,8 @@ check:
   q: "Sort each thing about Sam's Saturday shifts."
   options: ["Financial cost", "Non-financial cost", "Financial benefit", "Non-financial benefit"]
   items:
-    - ["Pay of 90 dollars each Saturday", "Financial benefit", "Money gained."]
-    - ["An 8-dollar bus fare there and back", "Financial cost", "Money given up."]
+    - ["Pay of $90 each Saturday", "Financial benefit", "Money gained."]
+    - ["An $8 bus fare there and back", "Financial cost", "Money given up."]
     - ["Saturday mornings he can't spend with friends", "Non-financial cost", "Time given up: his opportunity cost."]
     - ["Missing his Saturday netball game", "Non-financial cost", "Something he gives up that isn't money."]
     - ["Learning to serve customers and run the till", "Non-financial benefit", "A skill gained, not money."]
@@ -81,8 +81,8 @@ tasks:
       q: "What is Sam's opportunity cost of taking the shifts?"
       options:
         - "The next best thing he'd have done with Saturday mornings, like playing netball"
-        - "The 8-dollar bus fare"
-        - "The 90 dollars he earns"
+        - "The $8 bus fare"
+        - "The $90 he earns"
         - "Nothing, because he is earning money"
       answer: 0
       feedback:
@@ -96,7 +96,7 @@ tasks:
       q: "Which of these is a non-financial benefit?"
       options:
         - "Making new friends among the bakery staff"
-        - "The 90-dollar pay"
+        - "The $90 pay"
         - "The bus fare"
         - "Missing netball"
       answer: 0
@@ -111,8 +111,8 @@ tasks:
 ### Find Nib's mistake
 
 ```worked
-\text{Financial benefit} :: 90 dollars pay each Saturday.
-\text{Financial cost} :: 8 dollars bus fare.
+\text{Financial benefit} :: $90 pay each Saturday.
+\text{Financial cost} :: $8 bus fare.
 \text{Non-financial costs} :: Saturday mornings, netball, time with friends (his opportunity cost).
 \text{Non-financial benefits} :: Skills, a reference, new friends.
 \text{So} :: Money is part of the picture, not all of it.
