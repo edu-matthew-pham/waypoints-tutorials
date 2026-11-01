@@ -20,15 +20,13 @@ pathways:
     title: The ancient world
     summary: "Lenses for studying any ancient society: the land, the people, beliefs, contact and conflict, and a significant individual."
     fit: "Use beside your depth study, after How we know or any time the class needs one of the lenses."
-    about: "**Preview.** Early human migration (AC9HH7K01), Shaped by the land (AC9HH7K09) and People and power (AC9HH7K10) are built, with Deep time Australia (AC9HH7K02 to K07) listed in Early human migration as taught in class with First Nations-led resources; the other lenses (AC9HH7K11 to K13) are planned and shown as Coming later. Each lens uses ancient China in the Qin and Han period as its worked example, with swap-in cards for Egypt, Greece, Rome and India on the course's Reference page. Every student takes the same steps in the same order; typical and wider steps add more examples of the same idea and are never needed to finish."
+    about: "**Preview.** Every lens is built: Early human migration (AC9HH7K01), Shaped by the land (AC9HH7K09), People and power (AC9HH7K10), Beliefs and practices (AC9HH7K11), Contact and conflict (AC9HH7K12) and A significant individual (AC9HH7K13), with Deep time Australia (AC9HH7K02 to K07) listed in Early human migration as taught in class with First Nations-led resources. Each lens uses ancient China in the Qin and Han period as its worked example, with swap-in cards for Egypt, Greece, Rome and India on the course's Reference page. Every student takes the same steps in the same order; typical and wider steps add more examples of the same idea and are never needed to finish."
     courses:
       - { path: history/migration-7, id: migration-7, stage: foundations, tagline: "How do we know where the first people came from?" }
       - { path: history/land-7, id: land-7, stage: foundations, after: [evidence-7], tagline: "Why there, and what did the land make possible?" }
       - { path: history/people-7, id: people-7, stage: foundations, after: [land-7], tagline: "Who did what, and who was in charge?" }
-      - { title: "Beliefs and practices", summary: "What people believed, valued and did in an ancient society (AC9HH7K11).", stage: foundations, tagline: "What mattered to them, and how can we tell?" }
-      - { path: history/contact-7, id: contact-7, stage: foundations, after: [people-7], tagline: "What changed when societies met?" }
       - { path: history/beliefs-7, id: beliefs-7, stage: foundations, after: [people-7], tagline: "What mattered to them, and how can we tell?" }
-      - { title: "Contact and conflict", summary: "How contact and conflict with others changed an ancient society (AC9HH7K12).", stage: foundations, tagline: "What changed when societies met?" }
+      - { path: history/contact-7, id: contact-7, stage: foundations, after: [people-7], tagline: "What changed when societies met?" }
       - { path: history/individual-7, id: individual-7, stage: foundations, after: [people-7], tagline: "How much difference can one person make?" }
   - id: before-year-7
     title: Before Year 7

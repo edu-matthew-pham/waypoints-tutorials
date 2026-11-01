@@ -203,10 +203,10 @@ check:
   type: question
   q: "Writers in Athens and Sparta described women's lives differently: Spartan women were said to exercise and manage property, while many Athenian women of wealthy families were expected to stay mostly at home. What is the best conclusion? (See the Athens and Sparta card.)"
   options:
-    - "Women's roles depended on the society, and our sources are mostly men's descriptions, so we should compare them carefully"
-    - "Spartan women were completely equal to men"
-    - "All Greek women lived the same way"
-    - "The sources must be wrong because they disagree"
+    - "Roles depended on the society, and the writers were mostly men"
+    - "Spartan women were completely equal to Spartan men"
+    - "All Greek women lived much the same way as each other"
+    - "The sources disagree, so we cannot trust either one"
   answer: 0
   feedback:
     - null

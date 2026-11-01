@@ -497,7 +497,7 @@ Matthew said continue after the state of play (Year 7 History: 5 of about 12 cou
 - Tested: `validate`, `effort`, build, every check on all three lessons answered in Chromium at 1280 and 390 px (70 answered, 36 wrong answers tried, feedback shown), course, Reference, Early human migration, pathway, teacher and guide pages load with no errors or sideways scroll, `check-decks` for both courses. `check-nodes` has 2 warnings, both in Civics (`democracy-7/ways-to-take-part`), not History.
 - **Publish:** whole-site (pathway, teacher page, shared build change). Can share the run with the dig board batch.
 
-## Plan (1 Nov 2026; awaiting Matthew's "go"): the last three lenses, built by agents, reviewed here
+## Plan (1 Nov 2026; built the same day, see below): the last three lenses, built by agents, reviewed here
 
 Matthew agreed (1 Nov): this chat plans K11–K13 once; three agents build them in parallel (each in its own worktree, one course each); this chat reviews each against the rules and the checklist, merges and pushes. The History skills courses (S05–S07) go to a new chat (handoff: Project doc `claude/handoff-history-skills.md`).
 
@@ -530,6 +530,15 @@ Tagline *How much difference can one person make?* Worked individual: **Qin Shi 
 **Review here before merging (each course):** every fact checked against a named source, preferably museum, UNESCO or scholarly over encyclopedia pages; checklist step 4 self-check; editorial pass; `validate`, `check-nodes`, build, every check answered in Chromium at 1280 and 390 px, `check-decks`.
 
 **Publish:** whole-site (pathway rows, teacher page). One run when all three are merged.
+
+## Built (1 Nov 2026, Matthew said go): `history/beliefs-7`, `history/contact-7`, `history/individual-7` (AC9HH7K11 to K13; Preview, not yet tried with a class)
+
+Three agents built one course each in their own worktree, as planned; this chat reviewed, merged and fixed the shared files. Each course has three lessons in node order, the Qin and Han worked example, swap-in cards for Egypt, Greece, Rome and India in `reference.md`, class plans, teacher notes with sources and what is simplified, and its own misconception ids. All three sit after `people-7` on The ancient world pathway and do not need each other.
+
+- Merge fixes: two stale "Coming later" rows removed from the pathway; the pathway `about:` and the History teacher page now say every lens is built (nine Year 7 courses), and "What is planned" names only the skills courses. One option-length warning in `people-7/womens-roles` step 8 was fixed on the way.
+- Tests: `validate` clean for History; `check-nodes` only the two known Civics warnings; build; `check-lesson-boards`; every check in the nine lessons answered in Chromium at 1280 and 390 px with a wrong answer tried first (216 answered, 106 wrong tried, 0 problems); course, reference, pathway, teacher and guide pages at 390 px with no sideways scroll; `check-decks` for all three.
+- **Facts resting only on encyclopedia pages (replace with museum, UNESCO or scholarly sources before a class uses them):** Contact: the *heqin* start date (about 198 BCE), the Hexi commanderies (121 BCE onward), the order of the Qin conquests, the treaty terms, An Shigao. Beliefs: the Zhou origin of the Mandate of Heaven, the Rigveda summary. Individual: Jia Yi, and the scholarly doubts about the scholars story (Nylan, Kern). Also People and power (K10), mostly encyclopedia pages.
+- Publish: whole-site (pathway rows, teacher page), waiting for Matthew's ok. The same run also carries the map fix, `migration-7` with the deep-time unit, the dig board and its clip, and `people-7`.
 
 ## Plan (1 Nov 2026; awaiting Matthew's "go"): the History skills courses (AC9HH7S05, S06, S07)
 
