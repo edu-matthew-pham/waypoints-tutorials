@@ -530,3 +530,105 @@ Tagline *How much difference can one person make?* Worked individual: **Qin Shi 
 **Review here before merging (each course):** every fact checked against a named source, preferably museum, UNESCO or scholarly over encyclopedia pages; checklist step 4 self-check; editorial pass; `validate`, `check-nodes`, build, every check answered in Chromium at 1280 and 390 px, `check-decks`.
 
 **Publish:** whole-site (pathway rows, teacher page). One run when all three are merged.
+
+## Plan (1 Nov 2026; awaiting Matthew's "go"): the History skills courses (AC9HH7S05, S06, S07)
+
+From Project doc `claude/handoff-history-skills.md`. Three courses, one per standard, one lesson per waypoint in node order (nine lessons). Built in a separate chat from the K11–K13 lenses; shared files touched by single lines only.
+
+**Shared for all three.** Default worked-example shape (Predict, Try, Worked example with Nib's slip as a bug task plus `smaller:`, Vary, Practise, Make in the student's own book or a small browser-only box, `reflect` tick "a partner read it and gave feedback", then typical and wider steps). Qin and Han China as the worked example; swap-ins from Egypt, Greece, Rome and India in typical and wider steps only (no new reference cards: these are skill courses). Sources are paraphrased in our words ("a retelling, not a translation"), never quoted from a published translation; ACARA's own wording may be quoted. Made-up material labelled once per lesson; no coined English-sounding ancient place names. Purposes and reasons as "historians think" where no source says so. No ordering task where the order is a choice (chronology has one answer, so S05 n1 may use one; see below). Teacher layer as usual (`learning:`, `struggle:`, stuck list, exit ticket, sources with the date checked, ACARA elaborations quoted). Facts checked against museum, UNESCO or scholarly sources where reachable; encyclopedia pages only as a last resort and marked so.
+
+**First Nations (T1, firm).** No student example in any of the three. BP is defined with non-Australian deep-time examples already in our courses (millet in the Yellow River valley, the Misliya jawbone); a teacher note says BP is the convention used for deep time in Australia and points to the K02–K07 rows in Early human migration. S06 n3's wider elaboration (First Nations historians recovering narratives) and S07's ("a First Nations leader") go in teacher notes only, pointing to community-approved material.
+
+### Course `history/time-7`, *Time, cause and change* (AC9HH7S05)
+
+Descriptor: "describe causes and effects, and explain continuities and changes". Tagline *When did it happen, why, and what stayed the same?* Prior AC9HS6S03 and S05 (no catch-up lesson exists; teacher note only).
+
+**n1 `dates-and-timelines` (hinge): How do BCE and CE work?**
+- Checkpoint: use BC/AD, BCE/CE and BP correctly, sequence events and sources, explain why order matters for cause and change.
+- Insight: BCE years count *down* towards year 1, so a bigger BCE number is *earlier*; CE counts up; there is no year 0 (1 BCE is followed by 1 CE). BC/AD and BCE/CE use the same numbers, so "converting" is renaming, not arithmetic. BP counts back from 1950 and is used for times long before writing. "History" in ACARA's sense starts with named people and written records; that split is a convention, labelled (T8), with a teacher note that oral histories also carry the past.
+- Planted slip `bce-bigger-is-later`: Nib puts 500 BCE after 100 BCE (the hinge reason's own example). `smaller:` "You are counting down to a rocket launch: is 10 or 3 closer to lift-off?"
+- Checks: sort events BCE/CE; one ordering task of five dated events (allowed: chronology has a single right order; lines kept short for phones); number checks for spans (221 → 206 BCE = 15 years; Vary: 50 BCE to 50 CE = 99 years, the no-year-0 trap); match BC↔BCE, AD↔CE.
+- Distractors (real slips): BCE subtracted like CE (span 500 BCE to 100 BCE as 600); BC and BCE as different numbering; BP as "before Christ in years".
+- Typical: gaps in timelines and why they occur (materials that rot, records destroyed, nobody digging there yet, nobody wrote it down); history vs prehistory. Wider: why BCE/CE was adopted; Chinese dynastic and reign-year dating (the Shuihudi slips date by the Qin king's year; mention only, checked at build).
+- Events (dates checked at build): Confucius dies 479 BCE, Qin unifies 221 BCE, Lingqu Canal 214 BCE, Qin falls 206 BCE, salt and iron monopolies 119 BCE, Wang Mang 9 CE; swap-ins Great Pyramid (about 2560 BCE), Augustus (27 BCE), Ashoka (3rd century BCE).
+- **Board (question below):** the maths `numberline` widget already draws fixed and dragged points with captions, but labels show −500, not 500 BCE, and it has a 0. Proposed: one small modular option, `years: on` (labels "500 BCE" and "100 CE", no year 0, readouts in years), and one Practise step dragging events onto a timeline. Re-records up to 8 maths lessons whose clips use `numberline` (counted at build). Fallback: no board, checks above only.
+
+**n2 `causes-and-effects` (hinge): Why did Qin win?**
+- Checkpoint: identify several causes, distinguish long-term/underlying from short-term/triggering, describe effects.
+- Insight: big events have several causes working together over different timescales; a trigger sets off an event but does not explain it alone.
+- Worked event: the Qin unification (221 BCE), "as historians usually explain it": long-term (reforms that tied rank to service in war, from the 4th century BCE; grain from Sichuan after Dujiangyan; the Zhengguo Canal), short-term (King Zheng's campaigns 230–221 BCE, rival states weakened). Effects short-term (one ruler, commanderies) and long-term (one script, weights and measures that lasted). Trigger vs underlying shown on the 209 BCE revolt "according to Sima Qian" (a delay by rain as the trigger; heavy labour demands underneath), without the death penalty detail (people-7's decision). Contact causes: a mention link to `contact-7/causes-of-contact`, not repeated.
+- Planted slip `single-cause-event`: "Qin won because King Zheng was a brilliant leader." `smaller:` "A team wins the final. Name two reasons besides the captain."
+- Checks: sort causes long-term/short-term (dates given, so one answer); match cause → effect; question on trigger vs underlying.
+- Distractors: earlier means cause ("it happened before, so it caused it"); the most recent event is the whole cause; effects stop when the event ends.
+- Typical: causes of one swap-in event (the building of the Great Pyramid's workforce, or Augustus becoming emperor). Wider: weighing which cause mattered most (leads naturally to interpretations; no S07 content previewed).
+
+**n3 `continuity-and-change`: Qin to Han, what changed and what stayed?**
+- Checkpoint: explain continuities and changes, using chronological evidence; continuity and change coexist.
+- Insight: when the dynasty changed, much stayed: officials, commanderies, the script and measures, farming life; what changed: the ruling family, some harsh laws eased, kings briefly restored in some regions.
+- Sources sequenced (elaboration): Qin legal slips from Shuihudi (before 217 BCE) and Han legal slips from Zhangjiashan (about 186 BCE), retold in our words, showing many Han statutes followed Qin ones. Check against a scholarly source at build; if unreachable, drop to "historians report".
+- Planted slip `new-dynasty-new-everything`: Nib says the Han replaced everything the Qin built.
+- Checks: sort features into continued/changed; match dated source → what it shows; question on "both at once".
+- Distractors: continuity means nothing happened; change is always progress; one change means the whole period changed.
+- Typical: Egypt's Old to Middle Kingdom, or Rome Republic to Empire (Augustus kept the Senate). Wider: same development as continuity or change depending on timescale.
+
+### Course `history/perspectives-7`, *Past perspectives* (AC9HH7S06)
+
+Descriptor: "identify perspectives, attitudes and values of the past in sources". Tagline *Whose view is this, and whose is missing?* Prior AC9HS6S04: `assumes:` the existing Before Year 7 lesson `can-you-trust-this-source`.
+
+**n1 `whose-view` (hinge): What a source says, and whose eyes it sees through.**
+- Insight: every source shows events through its maker's position; the scaffold "who made it → their position → what they would notice and value → the perspective" separates perspective from content.
+- Worked source: Sima Qian's description of the Xiongnu (a Han court historian describing northern herding neighbours who left no writing of their own), retold in our words. Second source: the Qin stone inscription (met in sources-7), now read for whose voice it is.
+- Planted slip `perspective-is-content`: Nib writes the perspective as a summary of what happened ("the perspective is that the Xiongnu moved with their herds").
+- Distractors: perspective means lying; a source from the time has no perspective; the perspective is ours today.
+- **Board (optional, reuse):** cohesion chain mode on the retold Xiongnu text, colouring phrases "what it reports" vs "the writer's view" (planted answers, as in `usefulness-7`). As a Practise step.
+- Typical: Greek writers on "barbarians", or an Egyptian victory relief. Wider: the same battle from two sides; positionality.
+
+**n2 `values-behind-the-source`: Reading the world behind the source.**
+- Insight: a source shows the attitudes and values of its society through what it says, what images it uses and what it takes for granted.
+- Worked source: ACARA's Confucius line (Analects 17.25), quoted in ACARA's wording and introduced as a perspective to analyse; teacher note that translations and readings differ, that judging it is fine *after* describing what it shows, and how to handle a class reaction. Second: the Mawangdui silk banner (2nd century BCE, Hunan Museum), described in words with a link: attitudes to death, rank and the afterlife. No picture of remains (beliefs-7's rule). Mention link to `people-7/womens-roles`; Ban Zhao is not re-taught.
+- Planted slip `judge-only-by-today`: Nib says "that's sexist" and stops, so learns nothing about the society. Feedback keeps the judgement and adds the question historians ask.
+- Distractors: one source's value was held by everyone; a value only counts if stated outright; past values are the same as ours.
+- Typical: a coin or seal as a symbol of power (Roman or Han). Wider: presentism, empathy and critique.
+
+**n3 `missing-voices`: Who is missing, and what can still be found?**
+- Insight: most surviving writing came from officials and the elite, so farmers, slaves and convicts, conquered peoples and neighbours without writing are thin in the record; the gap is itself evidence of who held power, and objects, admin records and reading against the grain still reveal something.
+- Cases (checked at build): Qin local records from Liye (registers and labour lists, found 2002) showing how the state counted and used people; peoples of the south conquered by Qin (link `land-7`'s Lingqu Canal); Xiongnu burials with Han silk. Women are named as one missing group with a link to `womens-roles`, not repeated.
+- Planted slip `no-writing-no-history`: Nib says the Xiongnu left no writing, so nothing can be known about them.
+- Distractors: what Han writers said is how the Xiongnu saw themselves; archaeology fills every gap; missing means unimportant.
+- Typical: Egyptian workers' villages (Deir el-Medina) or Athenian slaves. Wider: techniques for recovering absent views; teacher note on First Nations historians (T1).
+
+### Course `history/interpretations-7`, *Historical interpretations* (AC9HH7S07)
+
+Descriptor: "explain historical interpretations about significant events, individuals and groups". Tagline *Why do historians tell it differently?* `after: [perspectives-7]` (its prior). Worked case for all three lessons: the fall of the Qin, about 15 years after unification. **Never one interpretation as the answer; marked checks only where there is one defensible answer** (which is a fact, which is an interpretation, what evidence each uses, which reason a difference comes from).
+
+**n1 `fact-or-interpretation` (hinge).**
+- Insight: a fact is something the evidence directly shows (the First Emperor died in 210 BCE; the dynasty ended in 206 BCE); an interpretation is an argument built from evidence about why or what it means (Qin fell because its rule was too harsh). Interpretations are reasoned, not just opinions.
+- Planted slip `interpretation-as-fact`: Nib copies Han writers' explanation into the "facts" column.
+- Checks: sort statements fact/interpretation (chosen so each has one defensible answer; teacher note on borderline cases); question on evidence vs opinion.
+- Distractors: an interpretation is just an opinion with no evidence; anything in an old book is a fact; dates are interpretations.
+
+**n2 `why-they-differ`.**
+- Interpretations (each "historians argue…", checked at build, named sources in teacher notes): (a) Han writers (Jia Yi's essay on the faults of Qin, Sima Qian): harsh laws and no benevolence; written for the dynasty that replaced Qin; (b) some modern historians, using excavated Qin legal and administrative texts: the laws were detailed and often less brutal than Han writers say, and they point to the strain of huge labour projects, the succession crisis after 210 BCE, and old states' elites rising again. If a named modern historian can't be checked, say "some historians today" with the source.
+- Insight: interpretations differ because of different evidence, different questions and different values; several can stand at once.
+- Planted slip `differ-means-one-lying`: Nib says one side must be lying.
+- Checks: match interpretation → evidence it uses; match each difference → evidence, question or values.
+- Distractors: they just had different opinions; the older account must be right because it is closer in time; the newer one must be right because it is newer.
+- Typical: interpretations of Rome's fall in the West (economy, politics, invasion: ACARA's elaboration). Wider: how a debate is resolved, or not.
+
+**n3 `argue-why`: Make your own argument.**
+- Insight: an argument about interpretations names them, gives the evidence and reasoning behind each, and explains *why* they differ (the factors from n2), not just that they do.
+- Planted slip `different-opinions-explains`: Nib's argument ends "because people have different opinions" (the node's own failing criterion).
+- Checks: question on which plan meets the brief; match evidence to the factor it supports; bug on Nib's argument. The argument itself is written in the student's book, read by a partner or the teacher; nothing marked.
+- Typical: argue about Qin Shi Huang's reputation (mention link `individual-7` once built). Wider: argue which interpretation is better supported while giving the other its due.
+
+### Goes with it
+- **Pathway (question below):** a new pathway **Thinking historically** on the History page, listing `time-7`, `perspectives-7`, `interpretations-7` (the last `after: [perspectives-7]`), fit line "Use beside your depth study, after How we know." Reason: How we know stays a short source-and-evidence gateway, and these three are used across the lenses. Alternative: append them to How we know.
+- Single lines: nine misconception ids in `misconceptions.json`, one bullet per course in `content/history-teachers.md`, pathway rows in `content/history/index.md`.
+- Class plans for every lesson; course `index.md` with Preview; no clips.
+- Tests as in the handoff: `npm ci`, `validate`, `check-nodes`, `WP_NO_MAKECODE=1` build, every check answered in Chromium at 1280 and 390 px (task pills and `smaller:` folds opened), `check-decks -- history/<course>`, `check-lesson-boards -- history` if a board is added.
+- **Publish:** whole-site (pathway and teacher page; also the widget if `years:` is added). Ask Matthew first.
+
+### Questions for Matthew
+1. **Timeline board:** add the small `years: on` option to the `numberline` widget for S05 n1 (default), or no board for now?
+2. **Pathway:** new **Thinking historically** pathway (default), or add the three courses to How we know?
+3. **Order:** build S05, S06, S07 in that order, one push each after a self-check (default), or all three in one push?
