@@ -25,7 +25,7 @@ Today: Curriculum and Lessons.
 BEFORE THE MEETING
 - Pre-open the tabs: Unpack at AC9HG7K01, the live lesson, Lesson resources; test them on the school network
 - Export this deck to PDF from Prepare (offline fallback)
-- Click through all five slides after publishing
+- Click through all six slides after publishing
 -->
 
 <!--
@@ -66,16 +66,14 @@ BEFORE THE MEETING
 
 ## Experience a waypoint
 
-**Lessons › Tutorials and Prepare:** try a check, read the feedback, explore a smaller step, then see the teacher-led version.
+**Lessons › Tutorials:** try a check, read the feedback and explore a smaller step.
 
 ![The actual resource-types task and smaller check](https://tutorials.learningwaypoints.com/teach/teachers/getting-started/presentation-assets/tutorial.png)
 
 [Live: Renewable, non-renewable or continuous?](https://tutorials.learningwaypoints.com/geography/water-7/resource-types/)
 
-[Teacher version: slides and worksheet](https://tutorials.learningwaypoints.com/teach/geography/water-7/resource-types/)
-
 <!--
-2:30–5:30 · hands-on demo (lesson and Lesson resources open in other tabs)
+2:30–5:00 · hands-on demo (lesson open in another tab)
 - 0:00 Predict: pick an answer, Lock in my prediction, compare with the explanation under Try
 - 0:30 Worked example "Comes back, or always there?": students lump renewable and continuous together because both are there tomorrow; one question splits them: can our use make it run out?
 - Choose "Fish are a continuous resource", Check answer, read the feedback aloud
@@ -83,9 +81,26 @@ BEFORE THE MEETING
 - 1:20 2 · Find Nib's mistake: open Build up to it, answer it, then back to Nib, pick line 3
 - The smaller step supports the same idea; it is not a separate track
 - 2:00 Width: Minimum → Typical, show Typical: more resources (more examples, same idea); you choose which and how long
-- 2:30 "And here's the teacher-led version": Lesson resources › Open in Prepare (slides), Open in Print (worksheet; Teacher edition shows answers)
-- They support your teaching; they don't replace discussion, investigation or writing
 - Fallback: screenshot. Skip clips and recording.
+-->
+
+---
+
+## From waypoint to teaching resources
+
+**Lessons › Prepare:** the same lesson as ready-made slides and handouts.
+
+![A slide opened in the actual Prepare tool](https://tutorials.learningwaypoints.com/teach/teachers/getting-started/presentation-assets/prepare.png)
+
+[Lesson resources](https://tutorials.learningwaypoints.com/teach/geography/water-7/resource-types/)
+
+<!--
+5:00–5:30 · live: click Lesson resources (screenshot = fallback)
+- "And here's the teacher-led version of the same lesson"
+- Open in Prepare: its slides, ready to present or export
+- Open in Print: the worksheet; Teacher edition shows answers
+- They support your teaching; they don't replace discussion, investigation or writing
+- One click each, then move on
 -->
 
 ---

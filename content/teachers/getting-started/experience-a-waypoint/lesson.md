@@ -98,7 +98,7 @@ time: 7
 timing: "Think first 1 min · Live lesson 3 min · Feedback and width 2 min · Apply 1 min"
 goals:
   - "I can distinguish feedback, support and optional width."
-before: "Open the published Geography lesson in a second tab. The same lesson is used in the five-slide talk. It is a preview and has not yet been tried with classes. No clip is needed."
+before: "Open the published Geography lesson in a second tab. The same lesson is used in the six-slide talk. It is a preview and has not yet been tried with classes. No clip is needed."
 running:
   - "Choose a realistic wrong fishing answer, read its specific feedback, then correct it."
   - "Open Nib's task and Build up to it; return to the original line check."

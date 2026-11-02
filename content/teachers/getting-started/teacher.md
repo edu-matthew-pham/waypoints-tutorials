@@ -1,8 +1,8 @@
 ## Learning Waypoints in 10 Minutes
 
-[Open the five-slide Humanities presentation in Prepare](https://prepare.learningwaypoints.com/?src=https%3A%2F%2Ftutorials.learningwaypoints.com%2Fteach%2Fteachers%2Fgetting-started%2Fcourse-deck.md) · [Download its Markdown](https://tutorials.learningwaypoints.com/teach/teachers/getting-started/course-deck.md) · [Humanities pilot companion](https://tutorials.learningwaypoints.com/humanities-pilot/).
+[Open the six-slide Humanities presentation in Prepare](https://prepare.learningwaypoints.com/?src=https%3A%2F%2Ftutorials.learningwaypoints.com%2Fteach%2Fteachers%2Fgetting-started%2Fcourse-deck.md) · [Download its Markdown](https://tutorials.learningwaypoints.com/teach/teachers/getting-started/course-deck.md) · [Humanities pilot companion](https://tutorials.learningwaypoints.com/humanities-pilot/).
 
-The talk takes ten minutes including live interactions: **1:00, 1:30, 3:00, 2:00, 2:30** (the last includes questions). The three minutes on Tutorials let teachers try an activity that uses the curriculum analysis and teaching suggestions, and end with its teacher-led version: ready-made slides and a worksheet. The extra demonstration time does not mean Tutorials matters more than the other parts. Teachers can use Curriculum, Planning and preparation, or Tutorials independently.
+The talk takes ten minutes including live interactions: **1:00, 1:30, 2:30, 0:30, 2:00, 2:30** (the last includes questions). The Tutorials demo lets teachers try an activity that uses the curriculum analysis and teaching suggestions; the 30-second Prepare slide then shows the same lesson's ready-made slides and worksheet. The extra demonstration time does not mean Tutorials matters more than the other parts. Teachers can use Curriculum, Planning and preparation, or Tutorials independently.
 
 ### Printable takeaway
 
@@ -10,11 +10,11 @@ Print the [teacher quick reference](https://tutorials.learningwaypoints.com/teac
 
 ### Before the meeting
 
-**Checklist:** pre-open the three tabs below, test them on the school network, export the deck to PDF from Prepare as an offline fallback, and click through all five slides after publishing. Print the speaker notes with **📝 Speaker notes (print)** if you want them on paper.
+**Checklist:** pre-open the three tabs below, test them on the school network, export the deck to PDF from Prepare as an offline fallback, and click through all six slides after publishing. Print the speaker notes with **📝 Speaker notes (print)** if you want them on paper.
 
-Open the deck in Prepare and open presenter view to see the speaker notes. Keep three tabs ready: [Unpack](https://acara.learningwaypoints.com/hass/year/7) (open at AC9HG7K01), the [resource-types tutorial](https://tutorials.learningwaypoints.com/geography/water-7/resource-types/) and its [Lesson resources](https://tutorials.learningwaypoints.com/teach/geography/water-7/resource-types/). Slide 2 is a quick live pass through Unpack; slide 3 is the hands-on Tutorials demo, ending with the lesson's slides and worksheet. Each slide keeps a screenshot as a fallback. If the tutorial is slow, use its screenshot and continue within the allotted time. No video demonstration is needed.
+Open the deck in Prepare and open presenter view to see the speaker notes. Keep three tabs ready: [Unpack](https://acara.learningwaypoints.com/hass/year/7) (open at AC9HG7K01), the [resource-types tutorial](https://tutorials.learningwaypoints.com/geography/water-7/resource-types/) and its [Lesson resources](https://tutorials.learningwaypoints.com/teach/geography/water-7/resource-types/). Slide 2 is a quick live pass through Unpack; slide 3 is the hands-on Tutorials demo; slide 4 is a 30-second click into the lesson's slides and worksheet. Each slide keeps a screenshot as a fallback. If the tutorial is slow, use its screenshot and continue within the allotted time. No video demonstration is needed.
 
-Prepare reads the Markdown through the **Open** link above. Alternatively, download **Opening and closing slides (Markdown)** from this page and **Import** it in Prepare, or paste the file address into **Load URL**. The five-slide talk has its own running order. The individual lesson decks are below.
+Prepare reads the Markdown through the **Open** link above. Alternatively, download **Opening and closing slides (Markdown)** from this page and **Import** it in Prepare, or paste the file address into **Load URL**. The six-slide talk has its own running order. The individual lesson decks are below.
 
 ### For independent use or a longer staff session
 
