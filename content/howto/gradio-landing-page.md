@@ -15,6 +15,23 @@ Your app opens on a starting page that says what it is and how to use it, with a
 
 **What you should already know:** making an app from a function with `gr.Interface` ([Your first app](../../code/gradio/intro/)). You'll keep that app exactly as it is.
 
+## Just a title and some text?
+
+If you only want words above and below your app, you don't need any of the layouts below. `gr.Interface` has its own spots for them, in the same app:
+
+```python
+demo = gr.Interface(
+    fn=greet,
+    inputs=[gr.Textbox(label="Name"), gr.Checkbox(label="Excited?")],
+    outputs=gr.Textbox(label="Greeting"),
+    title="Greeter",
+    description="Type a name and get a greeting. **Markdown** works here.",
+    article="Made by Sam for Digital Technologies.",
+)
+```
+
+`title` goes at the top, `description` under it and `article` below the app. Both `description` and `article` take Markdown. Want pictures, more pages or more room? Read on.
+
 ## Write the words in Markdown
 
 You don't need HTML. Gradio pages take **Markdown**: plain text with a few marks.
@@ -27,6 +44,29 @@ You don't need HTML. Gradio pages take **Markdown**: plain text with a few marks
 1. a numbered step
 [a link](https://example.com)
 ```
+
+**Line breaks matter.** Each heading needs its own line, and a blank line starts a new paragraph. In Python there are two ways to get them:
+
+```python
+description="""
+# Welcome
+## How it works
+Type a name and get a greeting.
+
+This is a new paragraph.
+"""
+```
+
+Three quote marks (`"""`) let the text run over several lines, just as you'd see it. Or keep it on one line and write `\n` wherever you want a new line:
+
+```python
+description="# Welcome\n## How it works\nType a name and get a greeting."
+```
+
+Two things that catch people out:
+
+- `# Welcome ## How it works` on one line is one heading. A heading only counts at the start of a line.
+- One line break inside ordinary text is ignored: the lines join into one paragraph. Leave a blank line between paragraphs, or use `gr.Markdown("...", line_breaks=True)` to keep every line break.
 
 A good starting page says three things: **what it does**, **how to use it**, and **who made it**. A screenshot helps too.
 
