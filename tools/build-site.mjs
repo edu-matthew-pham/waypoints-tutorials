@@ -38,6 +38,7 @@ import { prerequisites, theoryLinks } from './concepts.mjs';
 import { CONCEPTS, CORE_IDEAS, sameIdea } from './concepts-core.mjs';
 import { ideasTable, ideasPageHtml } from './ideas-page.mjs';
 import { threadsTable, threadsPageHtml } from './threads-page.mjs';
+import { howtoBlocks, contextSwitch, HOWTO_CSS, HOWTO_JS } from './howto.mjs';
 import { IDEAS, PATHWAY_IDEAS } from './ideas-map.mjs';
 import { PRACTICE_JS } from './practice-core.mjs';
 import { PRACTICE_CSS, PRACTICE_UI_JS, practiceBody } from './practice-view.mjs';
@@ -1068,6 +1069,20 @@ for (const f of readdirSync(CONTENT_ROOT).filter((n) => n.endsWith('.md') && n !
   writeFileSync(join(OUT, name, 'index.html'), page(title,
     `<style>.approach table{display:block;max-width:100%;overflow-x:auto}</style><header class="top"><a class="crumb" href="../">← Tutorials</a><h1>${esc(title)}</h1>${meta.summary ? `<p class="lede">${esc(meta.summary)}</p>` : ''}</header><div class="pabout approach">${body}</div>`,
     '', navFor(name, 'home')));
+}
+
+// ---------- how-to pages: content/howto/<name>.md becomes /howto/<name>/ (tools/howto.mjs; unlisted, noindex) ----------
+if (existsSync(join(CONTENT_ROOT, 'howto'))) for (const f of readdirSync(join(CONTENT_ROOT, 'howto')).filter((n) => n.endsWith('.md'))) {
+  const name = f.replace(/\.md$/, ''), path = `howto/${name}`;
+  const raw = readFileSync(join(CONTENT_ROOT, 'howto', f), 'utf8').replace(/\r\n/g, '\n');
+  const fm = raw.match(/^---\n([\s\S]*?)\n---\n?/);
+  const meta = fm ? (YAMLparse(fm[1]) || {}) : {};
+  const title = meta.title || titleCase(name);
+  const body = new Marked().parse(howtoBlocks(fm ? raw.slice(fm[0].length) : raw));
+  mkdirSync(join(OUT, path), { recursive: true });
+  writeFileSync(join(OUT, path, 'index.html'), page(title,
+    `<style>${HOWTO_CSS}</style><header class="top"><a class="crumb" href="../../">← Tutorials</a><h1>${esc(title)}</h1>${meta.summary ? `<p class="lede">${esc(meta.summary)}</p>` : ''}</header>${contextSwitch(meta.contexts)}<div class="pabout wpt-ht">${body}</div>`,
+    `<script>${HOWTO_JS}</script>`, navFor(path, 'home'), '<meta name="robots" content="noindex">'));
 }
 
 // ---------- teacher guide: /teach/<course>/ and /teach/<lesson>/ with decks, worksheets and cheat sheets ----------
