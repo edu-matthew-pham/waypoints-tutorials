@@ -8,6 +8,7 @@
 //   ::: teacher                      "For teachers" (folded)
 // A `contexts:` list in the frontmatter ({ id, label }) sets the switch; `switch:` changes its label (default "My project uses"). `?for=<id>` in the link picks the context
 // (a teacher shares the link for their student's project); the student can still switch.
+// `courses:` lists the courses whose page shows it under "Project how-tos" (3 Nov 2026); one course also sets the crumb.
 
 const FENCE = /^:::\s*(for|full|teacher)\b\s*(\S*)\s*$/;
 
@@ -65,3 +66,23 @@ var q=new URLSearchParams(location.search).get('for');if(q)pick(q,false)}
 [].forEach.call(document.querySelectorAll('.wpt-ht pre'),function(p){var b=document.createElement('button');b.type='button';b.className='wpt-ht-copy';b.textContent='Copy';
 b.addEventListener('click',function(){var t=p.querySelector('code')?p.querySelector('code').textContent:p.textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){b.textContent='Select and copy'});setTimeout(function(){b.textContent='Copy'},1500)});p.appendChild(b)});
 })();`;
+
+/** Every how-to's frontmatter, for course pages: [{ name, title, summary, courses, contexts, switch, raw, fm }]. */
+export function loadHowtos(contentRoot, { readdirSync, readFileSync, existsSync, join, YAMLparse }) {
+  const dir = join(contentRoot, 'howto');
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir).filter((n) => n.endsWith('.md')).sort().map((f) => {
+    const raw = readFileSync(join(dir, f), 'utf8').replace(/\r\n/g, '\n');
+    const fm = raw.match(/^---\n([\s\S]*?)\n---\n?/);
+    const meta = fm ? (YAMLparse(fm[1]) || {}) : {};
+    return { ...meta, name: f.replace(/\.md$/, ''), courses: Array.isArray(meta.courses) ? meta.courses : [], body: fm ? raw.slice(fm[0].length) : raw };
+  });
+}
+
+/** A course page's "Project how-tos" list (up: the path back to the site root). Not lessons: no progress, never Done. */
+export function courseHowtos(howtos, coursePath, up, esc) {
+  const list = howtos.filter((h) => h.courses.includes(coursePath));
+  if (!list.length) return '';
+  return `<style>.wpt-howtos{margin:30px 0 0;padding:16px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}.wpt-howtos h2{font-size:1.1rem;margin:0 0 4px}.wpt-howtos p{margin:0 0 8px;color:var(--muted);font-size:14px}.wpt-howtos ul{margin:0;padding-left:20px}.wpt-howtos li{margin:4px 0}.wpt-howtos a{color:var(--accent);font-weight:600}.wpt-howtos small{color:var(--muted)}</style>` +
+    `<section class="wpt-howtos" id="howtos"><h2>Project how-tos</h2><p>Recipes for your own project, not lessons: nothing here is checked or counted.</p><ul>${list.map((h) => `<li><a href="${up}howto/${esc(h.name)}/">${esc(h.title || h.name)}</a>${h.summary ? ` <small>${esc(h.summary)}</small>` : ''}</li>`).join('')}</ul></section>`;
+}

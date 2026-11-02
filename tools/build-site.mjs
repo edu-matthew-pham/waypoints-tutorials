@@ -38,7 +38,7 @@ import { prerequisites, theoryLinks } from './concepts.mjs';
 import { CONCEPTS, CORE_IDEAS, sameIdea } from './concepts-core.mjs';
 import { ideasTable, ideasPageHtml } from './ideas-page.mjs';
 import { threadsTable, threadsPageHtml } from './threads-page.mjs';
-import { howtoBlocks, contextSwitch, HOWTO_CSS, HOWTO_JS } from './howto.mjs';
+import { howtoBlocks, contextSwitch, HOWTO_CSS, HOWTO_JS, loadHowtos, courseHowtos } from './howto.mjs';
 import { IDEAS, PATHWAY_IDEAS } from './ideas-map.mjs';
 import { PRACTICE_JS } from './practice-core.mjs';
 import { PRACTICE_CSS, PRACTICE_UI_JS, practiceBody } from './practice-view.mjs';
@@ -657,6 +657,7 @@ function writeRecap(node, courseLessons) {
 // Open projects (tools/projects.mjs): <course>/projects/ lists the course's briefs, <course>/projects/<id>/ is one brief
 // with its playground(s). Each "You'll use" chip links to where the skill was taught: the course's recap card, or the lesson.
 const PROJECTS = new Map(loadProjects(CONTENT_ROOT, (c) => PLAY[c]?.kind || 'turtle').map((s) => [s.course, s]));
+const HOWTOS = loadHowtos(CONTENT_ROOT, { readdirSync, readFileSync, existsSync, join, YAMLparse });   // how-to pages, listed on the courses they name (tools/howto.mjs)
 const PREREQS = prerequisites(loadDirMeta, CONTENT_ROOT);
 // Project briefs without code (tools/briefs.mjs): <course>/briefs/ lists them, <course>/briefs/<id>/ is a printable task sheet.
 const BRIEFS = new Map(loadBriefs(CONTENT_ROOT).map((s) => [s.course, s]));
@@ -858,7 +859,7 @@ for (const node of dirs.values()) {
     writeFileSync(join(outDir, 'index.html'), page(node.title,
       `<header class="top">${crumb}<div class="ctop"><h1>${esc(node.title)}</h1><nav class="chips" aria-label="Tools">${tools}</nav></div>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}${challenge}${strip}</header>` +
       (hasChecks ? `<a class="continue" id="continue" href="${esc(courseLessons[0].slug.split('/').pop())}/"><span class="ck">Start</span><b>${esc(`${courseLessons[0].order != null ? `${courseLessons[0].order}. ` : ''}${courseLessons[0].title}`)}</b><span class="cstep"></span></a>` : '') +
-      `<div class="course" id="course" data-kind="${play?.kind || ''}">${rows}</div>` +
+      `<div class="course" id="course" data-kind="${play?.kind || ''}">${rows}</div>` + courseHowtos(HOWTOS, node.path, up, esc) +
       (hasChecks ? `<p class="cfoot" id="cfoot">Progress is saved in this browser only. Nothing is sent anywhere.</p>` : '') +
       (courseLessons.some((l) => l.teacher) ? `<p class="ptools">For teachers: <a href="${up}teach/${node.path}/">Teacher guide</a> (notes, answers, solutions, slides and worksheets)</p>` : ''),
       `<script src="${up}progress.js" data-root="${up}" defer></script>` + (PROJECTS.has(node.path) ? `<script type="module" src="${up}project.js"></script>` : '') + COPY_JS, navFor(node.path, 'course', node.path)));
@@ -1072,17 +1073,16 @@ for (const f of readdirSync(CONTENT_ROOT).filter((n) => n.endsWith('.md') && n !
 }
 
 // ---------- how-to pages: content/howto/<name>.md becomes /howto/<name>/ (tools/howto.mjs; unlisted, noindex) ----------
-if (existsSync(join(CONTENT_ROOT, 'howto'))) for (const f of readdirSync(join(CONTENT_ROOT, 'howto')).filter((n) => n.endsWith('.md'))) {
-  const name = f.replace(/\.md$/, ''), path = `howto/${name}`;
-  const raw = readFileSync(join(CONTENT_ROOT, 'howto', f), 'utf8').replace(/\r\n/g, '\n');
-  const fm = raw.match(/^---\n([\s\S]*?)\n---\n?/);
-  const meta = fm ? (YAMLparse(fm[1]) || {}) : {};
-  const title = meta.title || titleCase(name);
-  const body = new Marked().parse(howtoBlocks(fm ? raw.slice(fm[0].length) : raw));
+for (const h of HOWTOS) {
+  const path = `howto/${h.name}`, title = h.title || titleCase(h.name);
+  const body = new Marked().parse(howtoBlocks(h.body));
+  // Crumb: back to its course when it names one (where teachers and students find it); with several, the home page.
+  const named = h.courses.filter((c) => dirs.has(c)), course = named.length === 1 ? named[0] : null;
+  const crumb = course ? `<a class="crumb" href="../../${course}/#howtos">← ${esc(dirNode(course).title)}</a>` : '<a class="crumb" href="../../">← Tutorials</a>';
   mkdirSync(join(OUT, path), { recursive: true });
   writeFileSync(join(OUT, path, 'index.html'), page(title,
-    `<style>${HOWTO_CSS}</style><header class="top"><a class="crumb" href="../../">← Tutorials</a><h1>${esc(title)}</h1>${meta.summary ? `<p class="lede">${esc(meta.summary)}</p>` : ''}</header>${contextSwitch(meta.contexts, meta.switch)}<div class="pabout wpt-ht">${body}</div>`,
-    `<script>${HOWTO_JS}</script>`, navFor(path, 'home'), '<meta name="robots" content="noindex">'));
+    `<style>${HOWTO_CSS}</style><header class="top">${crumb}<h1>${esc(title)}</h1>${h.summary ? `<p class="lede">${esc(h.summary)}</p>` : ''}</header>${contextSwitch(h.contexts, h.switch)}<div class="pabout wpt-ht">${body}</div>`,
+    `<script>${HOWTO_JS}</script>`, navFor(path, 'home', course || null), '<meta name="robots" content="noindex">'));
 }
 
 // ---------- teacher guide: /teach/<course>/ and /teach/<lesson>/ with decks, worksheets and cheat sheets ----------

@@ -1,6 +1,7 @@
 ---
 title: Add live weather to your project
 summary: "Ask a free weather service for the weather right now, and show it in your app or web page."
+courses: [code/gradio, code/data, code/dom]
 contexts:
   - { id: gradio, label: "Gradio (Python)" }
   - { id: web, label: "HTML and JavaScript" }
