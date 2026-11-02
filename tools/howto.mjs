@@ -84,5 +84,5 @@ export function courseHowtos(howtos, coursePath, up, esc) {
   const list = howtos.filter((h) => h.courses.includes(coursePath));
   if (!list.length) return '';
   return `<style>.wpt-howtos{margin:30px 0 0;padding:16px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}.wpt-howtos h2{font-size:1.1rem;margin:0 0 4px}.wpt-howtos p{margin:0 0 8px;color:var(--muted);font-size:14px}.wpt-howtos ul{margin:0;padding-left:20px}.wpt-howtos li{margin:4px 0}.wpt-howtos a{color:var(--accent);font-weight:600}.wpt-howtos small{color:var(--muted)}</style>` +
-    `<section class="wpt-howtos" id="howtos"><h2>Project how-tos</h2><p>Recipes for your own project, not lessons: nothing here is checked or counted.</p><ul>${list.map((h) => `<li><a href="${up}howto/${esc(h.name)}/">${esc(h.title || h.name)}</a>${h.summary ? ` <small>${esc(h.summary)}</small>` : ''}</li>`).join('')}</ul></section>`;
+    `<section class="wpt-howtos" id="howtos"><h2>Project how-tos</h2><p>Help for your own project. Open the one you need.</p><ul>${list.map((h) => `<li><a href="${up}howto/${esc(h.name)}/">${esc(h.title || h.name)}</a>${h.summary ? ` <small>${esc(h.summary)}</small>` : ''}</li>`).join('')}</ul></section>`;
 }

@@ -1925,3 +1925,27 @@ includes the selected widget’s documented settings, a working example and an o
 `AUTHORING.md` and existing lesson examples. Builds fail if a widget lacks an example; browser tests initialise
 every advertised example. Preview confirms startup, not completion of tasks requiring hardware, camera access
 or external services. Those activities still require their normal devices/permissions. No new lesson fields are added.
+
+## 14. How-to pages
+
+A how-to (`content/howto/<name>.md`, built to `/howto/<name>/` by `tools/howto.mjs`) helps a student partway through their **own** project get one thing working: live weather, a starting page, a gallery of pictures. It is not a lesson: no steps to complete, no checks, no progress. Plan and history: Project doc `claude/howto-poc.md`, `roadmap/shared.md` › How-to pages.
+
+### Who it's for and how it should sound (3 Nov 2026)
+
+These are defaults with their reasons, not rules. Leave one out when it doesn't help the task.
+
+- **Write to the student, as a teacher leaning over their shoulder.** They have a project open and want this working. Warm, short sentences, plain words, Australian spelling. Reason: the first drafts read like documentation about a format, not help for a person.
+- **Start from what they want to do.** One or two sentences in their terms ("You've got a word, you want its picture. Now you want a whole sentence of them."), then a picture of the result. Reason: a student decides in seconds whether this page is for them.
+- **Each step adds one thing and says what they should now see.** The code, then "Run it: you should see…", then one plain line on why it works. Not every line needs explaining. Reason: a visible checkpoint after each step is what tells a student they're on track, and where it broke if they're not.
+- **Explain new code in plain words the first time it appears.** Say "copy this as it is" rarely, and when you do, say why that's fine ("you don't need to know how `.join` works to use it"). Reason: unexplained magic is where students stop trusting the page.
+- **Never talk about the page itself to students.** What a how-to is, what isn't counted, how the switch works and which version to send all go in the `::: teacher` block. Reason: it's noise to the student, and it made every page open the same way.
+- **The headings are a menu, not a form.** "What you'll end up with", "Make it yours" and "When it goes wrong" are useful often, not always. Name headings for what the student does ("Find one picture", "Now do every word"). Reason: identical headings on every page read as a template.
+- **"Make it yours" invites.** "Want each picture only once? …", not a list of settings. Reason: it should spark the student's own idea, which is the point of a project.
+- **"When it goes wrong" starts from what they'll actually see**: the real error message or symptom, then what to do. Reason: students search by the error they've got.
+- **Test the code.** Run every full program on the version named in the teacher notes, and say which version and date. Reason: libraries change (Gradio 6 moved `theme` to `launch()`), and a recipe that doesn't run is worse than none.
+
+### Format
+
+Frontmatter: `title` (what the student wants, as they'd say it), `summary` (one line), `courses:` (course pages that list it under Project how-tos; one course also sets the crumb), `keywords:` (extra words for site search), and optionally `contexts:` (`{ id, label }` choices), `switch:` (the choice's label, default "My project uses"), `default:` (the choice it opens on). `?for=<id>` in a link picks a choice.
+
+Blocks, each closed by a line of `:::`, nestable: `::: for <id>` (shown only for that choice), `::: full` (folded "Show the full code"), `::: teacher` (folded "For teachers"). Pictures and files go in `content/howto/<name>/` and are copied beside the page. Every code block gets a Copy button. Pages are `noindex`; they're found from course pages, the `/howto/` index (Teachers menu) and search. Publishing needs a whole-site (quick) publish.
