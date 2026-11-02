@@ -40,4 +40,4 @@ Trials with classes, and fixes from what teachers see. Some facts in the ancient
 
 ## For you
 
-Questions, finding and sharing skills are shared with the other humanities subjects: see [Humanities skills](../humanities-teachers/) and the printable [Year 7 History inquiry skeleton](../hass/inquiry-7/briefs/history/). Each lesson's **Teacher guide** link is at the bottom of the course page.
+Questions, finding and sharing skills are shared with the other humanities subjects: see [Humanities skills](../humanities-teachers/) and the printable [Year 7 History inquiry template](../hass/inquiry-7/briefs/history/). Each lesson's **Teacher guide** link is at the bottom of the course page.

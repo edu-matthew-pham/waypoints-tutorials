@@ -29,4 +29,4 @@ These are plans, not promises. What water is worth (AC9HG7K03), then water hazar
 
 ## For you
 
-Questions, finding and sharing skills are shared with the other humanities subjects: see [Humanities skills](../humanities-teachers/) and the printable [Year 7 Geography inquiry skeleton](../hass/inquiry-7/briefs/geography/). Each lesson's **Teacher guide** link is at the bottom of the course page.
+Questions, finding and sharing skills are shared with the other humanities subjects: see [Humanities skills](../humanities-teachers/) and the printable [Year 7 Geography inquiry template](../hass/inquiry-7/briefs/geography/). Each lesson's **Teacher guide** link is at the bottom of the course page.

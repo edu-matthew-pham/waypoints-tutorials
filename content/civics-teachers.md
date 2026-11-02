@@ -31,4 +31,4 @@ Every Year 7 Civics standard has a course. Both skills are covered too: *Whose v
 
 ## For you
 
-Questions, finding and sharing skills are shared with the other humanities subjects: see [Humanities skills](../humanities-teachers/) and the printable [Year 7 Civics and Citizenship inquiry skeleton](../hass/inquiry-7/briefs/civics/). Each lesson's **Teacher guide** link is at the bottom of the course page.
+Questions, finding and sharing skills are shared with the other humanities subjects: see [Humanities skills](../humanities-teachers/) and the printable [Year 7 Civics and Citizenship inquiry template](../hass/inquiry-7/briefs/civics/). Each lesson's **Teacher guide** link is at the bottom of the course page.

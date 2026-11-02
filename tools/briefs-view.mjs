@@ -20,7 +20,7 @@ export const BRIEF_CSS = PROJECT_CSS + `
 /** The list of a course's briefs or inquiry skeletons. cards: [{ id, title, after, goalText }] */
 export function briefListBody({ esc, title, cards, kind = 'brief' }) {
   const isSkel = kind === 'skeleton';
-  const heading = isSkel ? `${esc(title)}: inquiry skeletons` : `${esc(title)}: project briefs`;
+  const heading = isSkel ? `${esc(title)}: inquiry templates` : `${esc(title)}: project briefs`;
   const lede = isSkel
     ? 'One inquiry outline per subject for a full class investigation on your teacher\'s topic. Write your topic, question, notes and response in your own book or document; each stage below shows what good work looks like and which short lessons here can help.'
     : 'Use what you learned to make something and explain your choices. Each brief says what to make, what to hand in and what to show you can do. Print one or share its link.';
@@ -47,8 +47,8 @@ export function briefPageBody({ esc, md, courseTitle, b, after, nodes, stages = 
         (crit ? `<p class="wpt-skel-good">Good looks like</p>${crit}` : '') +
         `${tries}</section>`;
     }).join('');
-    return `<header class="top"><a class="crumb" href="../">← ${esc(courseTitle)}: inquiry skeletons</a><button type="button" class="bfprint" onclick="window.print()">Print</button><h1>${esc(b.title)}</h1></header>` +
-      `<p class="pjafter">Inquiry skeleton · ${esc(b.subject || after)}</p><div class="pjgoal">${md(String(b.goal || ''))}</div>` +
+    return `<header class="top"><a class="crumb" href="../">← ${esc(courseTitle)}: inquiry templates</a><button type="button" class="bfprint" onclick="window.print()">Print</button><h1>${esc(b.title)}</h1></header>` +
+      `<p class="pjafter">Inquiry template · ${esc(b.subject || after)}</p><div class="pjgoal">${md(String(b.goal || ''))}</div>` +
       stageBoxes +
       `<section class="pjbox bfbox plain"><h2>Hand in</h2>${list(b.handin || [])}</section>` +
       ((b.stretch || []).length ? `<section class="pjbox bfbox plain"><h2>Make it yours</h2>${list(b.stretch)}</section>` : '');

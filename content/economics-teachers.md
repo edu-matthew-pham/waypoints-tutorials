@@ -29,4 +29,4 @@ These are plans, not promises. All Year 7 standards are built. Next: a Year 6 ca
 
 ## For you
 
-Questions, finding and sharing skills are shared with the other humanities subjects: see [Humanities skills](../humanities-teachers/) and the printable [Year 7 Economics and Business inquiry skeleton](../hass/inquiry-7/briefs/economics/). Each lesson's **Teacher guide** link is at the bottom of the course page.
+Questions, finding and sharing skills are shared with the other humanities subjects: see [Humanities skills](../humanities-teachers/) and the printable [Year 7 Economics and Business inquiry template](../hass/inquiry-7/briefs/economics/). Each lesson's **Teacher guide** link is at the bottom of the course page.

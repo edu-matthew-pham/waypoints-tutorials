@@ -1245,7 +1245,7 @@ for (const coursePath of teachCourses) {
     return out.join('\n\n') + '\n';
   };
   const briefsGuide = bset ? (bset.kind === 'skeleton'
-    ? `<section class="tunit" id="briefs"><h2>Inquiry skeletons</h2><p class="muted">Outlines for a full class investigation in each humanities subject. Where a stage covers many waypoints, the student page shows 2 to 3 culminating waypoints so it stays concise; the full waypoint list for every stage is shown below so no curriculum coverage is hidden. <a href="${bFromRoot}${coursePath}/briefs/">Open the inquiry skeletons page</a></p>` +
+    ? `<section class="tunit" id="briefs"><h2>Inquiry templates</h2><p class="muted">Outlines for a full class investigation in each humanities subject. Where a stage covers many waypoints, the student page shows 2 to 3 culminating waypoints so it stays concise; the full waypoint list for every stage is shown below so no curriculum coverage is hidden. <a href="${bFromRoot}${coursePath}/briefs/">Open the inquiry skeletons page</a></p>` +
       bset.briefs.map((b) => {
         const mdName = `skeleton-${b.id}.md`, mdUrl = `${SITE_URL}/teach/${coursePath}/${mdName}`;
         writeFileSync(join(courseDir, mdName), skeletonPrintMd(b));
