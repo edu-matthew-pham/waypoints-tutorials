@@ -41,7 +41,7 @@ Choose one part that helps with a unit you already teach. Any thoughts are welco
 3. What helped, what got in the way, and what would make you use it again?
 4. Where would your students learn more by doing something on screen than by reading about it?
 
-Share feedback by talking to the pilot facilitator or through the feedback form (link on the Humanities pilot page). No student information is needed. **Humanities is a preview and has not yet been tried with classes.**
+Share feedback by talking to the pilot facilitator or sending them a message or email. No student information is needed. **Humanities is a preview and has not yet been tried with classes.**
 
 **Continue:** [Teachers hub](https://tutorials.learningwaypoints.com/teachers/) · [Self-paced introduction](https://tutorials.learningwaypoints.com/teachers/getting-started/) · [Humanities pilot](https://tutorials.learningwaypoints.com/humanities-pilot/).
 

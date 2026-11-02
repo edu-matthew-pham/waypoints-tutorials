@@ -151,7 +151,7 @@ Try one useful part in a unit you already teach. Any thoughts are welcome:
 - Feedback on any part counts, Curriculum and Plan too, not just Tutorials
 - Pilot page has more prompts, including where a board would help (tuckshop oven = example)
 - Ask: what would you like to try, and what do you hope it helps with?
-- Feedback two ways: talk with Matthew, or the feedback form (only Matthew sees replies; link on the pilot page)
+- Feedback: talk with Matthew, or a Teams message or email, whenever suits
 - No student information
 - Missed the meeting? Self-paced guide
 - End at 10:00
