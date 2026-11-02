@@ -21,7 +21,7 @@ ACARA defines the destination for student learning. Waypoints maps the steps to 
 
 Today: Curriculum and Lessons.
 
-<!-- 0:00–1:00 (1 minute, including transition). Say: The waypoints draw on ACARA descriptors. Their sequence and teaching suggestions reflect professional judgement; ACARA does not prescribe them. Use them alongside the unit you already teach. You can benefit from any part without using all three. We will spend three minutes trying Tutorials so you can see how the curriculum analysis and planning work in an activity. That extra demo time does not mean it matters more than the other parts. The three-lesson self-paced guide is linked at the end. These are the same three menus as learningwaypoints.com: Curriculum (Unpack is listed there as ACARA Progressions), Plan (Planner and Kit) and Lessons (Tutorials and Prepare). Mention Plan in one line; today shows Curriculum and Lessons. Before the meeting: pre-open the three tabs, test the Unpack link on the school network, export this deck to PDF from Prepare as an offline fallback, and click through all six slides after publishing. -->
+<!-- 0:00–1:00 (1 minute, including transition). Say: The waypoints draw on ACARA content descriptions. Their sequence and teaching suggestions reflect professional judgement; ACARA does not prescribe them. Use them alongside the unit you already teach. You can benefit from any part without using all three. We will spend three minutes trying Tutorials so you can see how the curriculum analysis and planning work in an activity. That extra demo time does not mean it matters more than the other parts. The three-lesson self-paced guide is linked at the end. These are the same three menus as learningwaypoints.com: Curriculum (Unpack is listed there as ACARA Progressions), Plan (Planner and Kit) and Lessons (Tutorials and Prepare). Mention Plan in one line; today shows Curriculum and Lessons. Before the meeting: pre-open the three tabs, test the Unpack link on the school network, export this deck to PDF from Prepare as an offline fallback, and click through all six slides after publishing. -->
 
 ---
 
@@ -53,19 +53,19 @@ Today: Curriculum and Lessons.
 
 ## From waypoint to teaching resources
 
-**Lessons › Prepare:** the same lesson as slides and printouts.
+**Lessons › Prepare:** the same lesson as ready-made slides and handouts.
 
 ![A slide opened in the actual Prepare tool](https://tutorials.learningwaypoints.com/teach/teachers/getting-started/presentation-assets/prepare.png)
 
-Optional links: [Geography: List for teachers](https://tutorials.learningwaypoints.com/geography/) → [Water Teacher guide](https://tutorials.learningwaypoints.com/teach/geography/water-7/) → [Lesson resources](https://tutorials.learningwaypoints.com/teach/geography/water-7/resource-types/)
+[Lesson resources](https://tutorials.learningwaypoints.com/teach/geography/water-7/resource-types/)
 
-<!-- 5:30–7:00 (1:30). Talk from the screenshot; do not navigate live. Trace the route in the links: Geography, List for teachers, Water as a resource, Teacher guide, then the lesson's Classroom resources. The screenshot is that lesson's Slides opened in Prepare. Beside it, Open in Print gives the Worksheet; the student copy hides answers and the Teacher edition shows them. Say these resources support your teaching strategy; they do not replace discussion, investigation or writing. The links are there for teachers to follow after the meeting. -->
+<!-- 5:30–7:00 (1:30). Talk from the screenshot; do not navigate live. Trace the route in the links: Geography, List for teachers, Water as a resource, Teacher guide, then the lesson's Lesson resources. The screenshot is that lesson's Slides opened in Prepare. Beside it, Open in Print gives the Worksheet; the student copy hides answers and the Teacher edition shows them. Say these resources support your teaching strategy; they do not replace discussion, investigation or writing. The links are there for teachers to follow after the meeting. -->
 
 ---
 
 ## Where Humanities teachers can begin
 
-**Preview:** built resources, not yet tried with classes.
+**Pilot:** ready to try, not yet tested with classes.
 
 | Start with your subject | An available introduction |
 |---|---|
@@ -73,9 +73,9 @@ Optional links: [Geography: List for teachers](https://tutorials.learningwaypoin
 | [Geography](https://tutorials.learningwaypoints.com/geography/) | Water as a resource |
 | [Civics](https://tutorials.learningwaypoints.com/civics/) | How Australia is governed |
 | [Economics](https://tutorials.learningwaypoints.com/economics/) | Scarcity and opportunity cost |
-| [Humanities skills](https://tutorials.learningwaypoints.com/hass/) | Shared inquiry and printable skeletons |
+| [Humanities skills](https://tutorials.learningwaypoints.com/hass/) | Shared inquiry and inquiry templates |
 
-[Find the subject lists, guides and inquiry skeletons again](https://tutorials.learningwaypoints.com/humanities-pilot/)
+[Humanities pilot page](https://tutorials.learningwaypoints.com/humanities-pilot/)
 
 <!-- 7:00–8:30 (1:30). Open the companion only if useful; it contains each subject's teacher-list route, built introductory course, course guide and subject inquiry skeleton. Show that the subject list can be found again after the meeting: select List for teachers, choose a built course, then Teacher guide. The contextual onboarding links in that view also lead back to this presentation and the pilot companion. Planned courses are Coming later, not lessons to promise. Try whichever part helps with your unit. You could explore how the ideas build or try a Prepare resource without using a Tutorials lesson. The complete inquiry, local knowledge, source selection and extended writing remain class work. Fallback: all direct subject links are on this slide and the companion. First Nations perspectives are teacher-led, starting from ACARA's elaborations and local, community-approved material; the site writes no student-facing explanations, and a First Nations educator will review before use beyond CGGS. -->
 
@@ -84,17 +84,15 @@ Optional links: [Geography: List for teachers](https://tutorials.learningwaypoin
 ## Try one thing
 
 Choose **Curriculum**, **Plan** or **Lessons**.
-Try one useful part in a unit you already teach. Any thoughts are welcome; some prompts if they help:
+Try one useful part in a unit you already teach. Any thoughts are welcome:
 
-1. Did it save you planning or prep time? Roughly how much?
-2. Did a check show you a misunderstanding you wouldn't otherwise have noticed?
-3. What helped, what got in the way, and what would make you use it again?
-4. Where would your students learn more by doing something on screen than by reading about it?
+1. Did it save you time, or show you something about student thinking?
+2. What would make you use it again?
 
 [Humanities pilot: starting points and reflection](https://tutorials.learningwaypoints.com/humanities-pilot/)
 
 [Getting Started: optional self-paced guide](https://tutorials.learningwaypoints.com/teachers/getting-started/)
 
-[A humanities board: the tuckshop oven](https://tutorials.learningwaypoints.com/economics/scarcity-7/opportunity-cost/)
+[Example: an interactive board (the tuckshop oven)](https://tutorials.learningwaypoints.com/economics/scarcity-7/opportunity-cost/)
 
-<!-- 8:30–10:00 (1:30). Invite teachers to try whichever part best suits their needs. They do not need to complete a course. Feedback from someone who explores the curriculum or tries a planning resource is just as useful as feedback from someone who tries a tutorial check. We want feedback on the broader Learning Waypoints approach, not just Tutorials. Question 4 asks where a board (something students move or count on screen) would help; the tuckshop oven link shows one. Ask what they would like to try and what they hope it will help them do or find out. Colleagues can keep their own notes for a conversation; the collection route is still to be decided. Do not request student information or create accounts/forms. Teachers who missed the meeting can use the three independent self-paced lessons. End at 10:00. -->
+<!-- 8:30–10:00 (1:30). Invite teachers to try whichever part best suits their needs. They do not need to complete a course. Feedback from someone who explores the curriculum or tries a planning resource is just as useful as feedback from someone who tries a tutorial check. We want feedback on the broader Learning Waypoints approach, not just Tutorials. The pilot page has more prompts, including where a board (something students move or count on screen) would help; the tuckshop oven link shows one. Ask what they would like to try and what they hope it will help them do or find out. Feedback comes three ways, whichever suits: talk with Matthew, add to the shared pilot notes doc, or use the form (the doc and form links go on the pilot page before the pilot starts). Do not request student information. Teachers who missed the meeting can use the three independent self-paced lessons. End at 10:00. -->
