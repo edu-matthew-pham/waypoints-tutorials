@@ -34,7 +34,7 @@ check:
 In the [live resource-types lesson](https://tutorials.learningwaypoints.com/geography/water-7/resource-types/):
 
 1. Choose a prediction and press **Lock in my prediction**. Read the explanation under **Try** and compare it with your choice.
-2. In **Worked example: two ways of coming back**, choose **Fish are a continuous resource** for the fishing question, then **Check answer**. Read the feedback before correcting it.
+2. In **Worked example: comes back, or always there?**, choose **Fish are a continuous resource** for the fishing question, then **Check answer**. Read the feedback before correcting it.
 3. Open **2 · Find Nib's mistake**. Nib treats renewable and continuous as the same because both “come back”. Look at the reason Nib gives for putting them in the same group.
 4. Open **Build up to it**. Answer the question about which resource people can use up, then return to Nib's explanation and find the faulty line.
 5. Set **Width** to **Minimum**, then **Typical** to try **Typical: more resources**. The extra examples ask you to use the same idea. **Wider** adds a discussion you could have with your class. Choose which examples to use and how long to spend.

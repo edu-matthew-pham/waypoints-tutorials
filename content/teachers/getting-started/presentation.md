@@ -13,13 +13,13 @@ style: |
 
 # Learning Waypoints in 10 Minutes
 
-Work out what students need to understand and what to teach first. Use that to **plan, teach and check their thinking**.
+ACARA defines the destination for student learning. Waypoints maps the steps to get there, in the order they're best learned.
 
-- **Curriculum:** what students need to understand, and how ideas build (Unpack).
-- **Plan:** shape a unit (Planner and Kit).
-- **Lessons:** Tutorials to check students' thinking, and Prepare for slides and printouts.
+- **Curriculum:** unpack a content description into its steps
+- **Plan:** shape a unit from those steps
+- **Lessons:** interactive tutorials that check student thinking, plus ready-made slides and handouts
 
-Use whichever part helps you. Today we look at Curriculum and Lessons.
+Today: Curriculum and Lessons.
 
 <!-- 0:00–1:00 (1 minute, including transition). Say: The waypoints draw on ACARA descriptors. Their sequence and teaching suggestions reflect professional judgement; ACARA does not prescribe them. Use them alongside the unit you already teach. You can benefit from any part without using all three. We will spend three minutes trying Tutorials so you can see how the curriculum analysis and planning work in an activity. That extra demo time does not mean it matters more than the other parts. The three-lesson self-paced guide is linked at the end. These are the same three menus as learningwaypoints.com: Curriculum (Unpack is listed there as ACARA Progressions), Plan (Planner and Kit) and Lessons (Tutorials and Prepare). Mention Plan in one line; today shows Curriculum and Lessons. Before the meeting: pre-open the three tabs, test the Unpack link on the school network, export this deck to PDF from Prepare as an offline fallback, and click through all six slides after publishing. -->
 
@@ -31,7 +31,7 @@ Use whichever part helps you. Today we look at Curriculum and Lessons.
 
 ![The actual Year 7 Geography curriculum view](https://tutorials.learningwaypoints.com/teach/teachers/getting-started/presentation-assets/unpack.png)
 
-[Optional live link: Unpack Year 7 Geography](https://acara.learningwaypoints.com/hass/year/7)
+[Unpack Year 7 Geography](https://acara.learningwaypoints.com/hass/year/7)
 
 <small>Curriculum content © ACARA, used under CC BY 4.0</small>
 
@@ -47,7 +47,7 @@ Use whichever part helps you. Today we look at Curriculum and Lessons.
 
 [Live: Renewable, non-renewable or continuous?](https://tutorials.learningwaypoints.com/geography/water-7/resource-types/)
 
-<!-- 2:30–5:30 (3:00, including transitions). This is the only live demo. Keep the real lesson ready in another tab. 0:00–0:30: choose a prediction and Lock in my prediction; compare your choice with the written explanation under Try. 0:30–1:20: in Worked example, choose Fish are a continuous resource, press Check answer and read its answer-specific feedback before correcting it. Ask what the choice might tell you, and what you would ask the student to find out more. 1:20–2:30: select 2 · Find Nib's mistake. Nib says both come back so they are both renewable. Open Build up to it, answer which people can use up, then return to the original Nib line task and select line 3. The smaller step supports the same concept; it is not an alternative track. 2:30–3:00: switch Minimum to Typical and point to Typical: more resources: more examples of the same idea. You choose which examples to use and how long to spend. Say: this is one way to use the curriculum analysis and teaching suggestions in an activity. Fallback: screenshot shows the original task and support. Use the direct link later; do not demonstrate clips or recording. -->
+<!-- 2:30–5:30 (3:00, including transitions). This is the only live demo. Keep the real lesson ready in another tab. 0:00–0:30: choose a prediction and Lock in my prediction; compare your choice with the written explanation under Try. 0:30–1:20: the Worked example heading asks "comes back, or always there?": most students lump renewable and continuous together because both are there tomorrow, and this section separates them with one question, can our use make it run out? In Worked example, choose Fish are a continuous resource, press Check answer and read its answer-specific feedback before correcting it. Ask what the choice might tell you, and what you would ask the student to find out more. 1:20–2:30: select 2 · Find Nib's mistake. Nib says both come back so they are both renewable. Open Build up to it, answer which people can use up, then return to the original Nib line task and select line 3. The smaller step supports the same concept; it is not an alternative track. 2:30–3:00: switch Minimum to Typical and point to Typical: more resources: more examples of the same idea. You choose which examples to use and how long to spend. Say: this is one way to use the curriculum analysis and teaching suggestions in an activity. Fallback: screenshot shows the original task and support. Use the direct link later; do not demonstrate clips or recording. -->
 
 ---
 

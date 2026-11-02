@@ -45,7 +45,7 @@ check:
 
 Was your guess right? The two groups people mix up most are renewable and continuous. Both are "there tomorrow", but only one of them can be used up.
 
-## Worked example: two ways of coming back
+## Worked example: comes back, or always there?
 
 ```step
 stage: investigate
@@ -77,7 +77,7 @@ tasks:
       explain: "The question that separates them is: can our use make it run out?"
 ```
 
-### Two ways of coming back
+### Comes back, or always there?
 
 ```worked
 \text{Ask: can our use make it run out?} :: Sunlight and wind, no. They keep coming whatever we do. That is continuous.
