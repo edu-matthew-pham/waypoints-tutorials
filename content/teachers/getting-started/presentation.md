@@ -25,7 +25,7 @@ Today: Curriculum and Lessons.
 BEFORE THE MEETING
 - Pre-open the tabs: Unpack at AC9HG7K01, the live lesson, Lesson resources; test them on the school network
 - Export this deck to PDF from Prepare (offline fallback)
-- Click through all six slides after publishing
+- Click through all five slides after publishing
 -->
 
 <!--
@@ -66,43 +66,26 @@ BEFORE THE MEETING
 
 ## Experience a waypoint
 
-**Lessons › Tutorials:** try a check, read the feedback and explore a smaller step.
+**Lessons › Tutorials and Prepare:** try a check, read the feedback, explore a smaller step, then see the teacher-led version.
 
 ![The actual resource-types task and smaller check](https://tutorials.learningwaypoints.com/teach/teachers/getting-started/presentation-assets/tutorial.png)
 
 [Live: Renewable, non-renewable or continuous?](https://tutorials.learningwaypoints.com/geography/water-7/resource-types/)
 
+[Teacher version: slides and worksheet](https://tutorials.learningwaypoints.com/teach/geography/water-7/resource-types/)
+
 <!--
-2:30–5:30 · the hands-on demo (real lesson open in another tab)
+2:30–5:30 · hands-on demo (lesson and Lesson resources open in other tabs)
 - 0:00 Predict: pick an answer, Lock in my prediction, compare with the explanation under Try
 - 0:30 Worked example "Comes back, or always there?": students lump renewable and continuous together because both are there tomorrow; one question splits them: can our use make it run out?
 - Choose "Fish are a continuous resource", Check answer, read the feedback aloud
 - Ask: what might this choice tell you? What would you ask the student next?
 - 1:20 2 · Find Nib's mistake: open Build up to it, answer it, then back to Nib, pick line 3
 - The smaller step supports the same idea; it is not a separate track
-- 2:30 Width: Minimum → Typical, show Typical: more resources (more examples, same idea)
-- You choose which examples and how long
+- 2:00 Width: Minimum → Typical, show Typical: more resources (more examples, same idea); you choose which and how long
+- 2:30 "And here's the teacher-led version": Lesson resources › Open in Prepare (slides), Open in Print (worksheet; Teacher edition shows answers)
+- They support your teaching; they don't replace discussion, investigation or writing
 - Fallback: screenshot. Skip clips and recording.
--->
-
----
-
-## From waypoint to teaching resources
-
-**Lessons › Prepare:** the same lesson as ready-made slides and handouts.
-
-![A slide opened in the actual Prepare tool](https://tutorials.learningwaypoints.com/teach/teachers/getting-started/presentation-assets/prepare.png)
-
-[Lesson resources](https://tutorials.learningwaypoints.com/teach/geography/water-7/resource-types/)
-
-<!--
-5:30–7:00 · live: click Lesson resources (screenshot = fallback)
-- Normally reached via Geography › List for teachers › Water as a resource › Teacher guide
-- Open in Prepare: the lesson's slides, ready to present or export
-- Open in Print: the worksheet; student copy hides answers, Teacher edition shows them
-- Quick pass only: show one slide and one worksheet, then move on
-- Say: these support your teaching; they don't replace discussion, investigation or writing
-- Move on at 7:00
 -->
 
 ---
@@ -122,7 +105,7 @@ BEFORE THE MEETING
 [Humanities pilot page](https://tutorials.learningwaypoints.com/humanities-pilot/)
 
 <!--
-7:00–8:30
+5:30–7:30
 - Show the subject list can be found again: List for teachers › a built course › Teacher guide
 - Pilot page has each subject's route, intro course, guide and inquiry template
 - "Coming later" courses are planned, not promised
@@ -148,7 +131,7 @@ Try one useful part in a unit you already teach. Any thoughts are welcome:
 [Example: an interactive board (the tuckshop oven)](https://tutorials.learningwaypoints.com/economics/scarcity-7/opportunity-cost/)
 
 <!--
-8:30–10:00
+7:30–10:00 (includes time for questions)
 - Try whichever part suits; no need to finish a course
 - Feedback on any part counts, Curriculum and Plan too, not just Tutorials
 - Pilot page has more prompts, including where a board would help (tuckshop oven = example)
