@@ -23,7 +23,7 @@ Today: Curriculum and Lessons.
 
 <!--
 BEFORE THE MEETING
-- Pre-open the three tabs (Unpack open at AC9HG7K01); test the Unpack link on the school network
+- Pre-open the tabs: Unpack at AC9HG7K01, the live lesson, Lesson resources; test them on the school network
 - Export this deck to PDF from Prepare (offline fallback)
 - Click through all six slides after publishing
 -->
@@ -35,7 +35,7 @@ BEFORE THE MEETING
 - Use alongside the unit you already teach; any part helps on its own
 - Same three menus as learningwaypoints.com (Unpack = ACARA Progressions)
 - Plan in one line; today is Curriculum and Lessons
-- Tutorials get 3 minutes because it's the live demo, not because it matters more
+- Tutorials get 3 minutes because it's the hands-on demo, not because it matters more
 - Self-paced guide is linked at the end
 -->
 
@@ -73,7 +73,7 @@ BEFORE THE MEETING
 [Live: Renewable, non-renewable or continuous?](https://tutorials.learningwaypoints.com/geography/water-7/resource-types/)
 
 <!--
-2:30–5:30 · the only live demo (real lesson open in another tab)
+2:30–5:30 · the hands-on demo (real lesson open in another tab)
 - 0:00 Predict: pick an answer, Lock in my prediction, compare with the explanation under Try
 - 0:30 Worked example "Comes back, or always there?": students lump renewable and continuous together because both are there tomorrow; one question splits them: can our use make it run out?
 - Choose "Fish are a continuous resource", Check answer, read the feedback aloud
@@ -96,12 +96,13 @@ BEFORE THE MEETING
 [Lesson resources](https://tutorials.learningwaypoints.com/teach/geography/water-7/resource-types/)
 
 <!--
-5:30–7:00 · screenshot only, don't navigate
-- Route: Geography › List for teachers › Water as a resource › Teacher guide › Lesson resources
-- Screenshot = that lesson's slides opened in Prepare
-- Open in Print gives the worksheet: student copy hides answers, Teacher edition shows them
+5:30–7:00 · live: click Lesson resources (screenshot = fallback)
+- Normally reached via Geography › List for teachers › Water as a resource › Teacher guide
+- Open in Prepare: the lesson's slides, ready to present or export
+- Open in Print: the worksheet; student copy hides answers, Teacher edition shows them
+- Quick pass only: show one slide and one worksheet, then move on
 - Say: these support your teaching; they don't replace discussion, investigation or writing
-- Link is for after the meeting
+- Move on at 7:00
 -->
 
 ---
