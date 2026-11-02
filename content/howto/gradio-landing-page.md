@@ -9,17 +9,13 @@ contexts:
   - { id: tabs, label: "Tabs" }
   - { id: pages, label: "Separate pages" }
 ---
-This is a how-to, not a lesson: a recipe for your own project. Read it, copy what you need, change it to fit.
+Your app works. Now you want it to feel finished: a welcome that says what it is, how to use it, and who made it, and maybe an About or Help page too. You can do all of it without any HTML, and without changing the app you've already built.
 
-## What you'll end up with
-
-Your app opens on a starting page that says what it is and how to use it, with a way to get to the app itself. The same steps add more pages, such as **About** or **Help**.
-
-**What you should already know:** making an app from a function with `gr.Interface` ([Your first app](../../code/gradio/intro/)). You'll keep that app exactly as it is.
+You'll need an app made with `gr.Interface` ([Your first app](../../code/gradio/intro/)). The examples use a small greeting app; swap in yours.
 
 ## Just a title and some text?
 
-If you only want words above and below your app, you don't need any of the layouts below. `gr.Interface` has its own spots for them, in the same app:
+If all you want is a heading and a few words, you might not need a starting page at all. `gr.Interface` already has spots for them:
 
 ```python
 demo = gr.Interface(
@@ -32,11 +28,11 @@ demo = gr.Interface(
 )
 ```
 
-`title` goes at the top, `description` under it and `article` below the app. Both `description` and `article` take Markdown. Want pictures, more pages or more room? Read on.
+Run it: `title` sits at the top, `description` just under it, and `article` below the app. If that's enough, you're done. Want pictures, more pages or more room? Keep going.
 
 ## Write the words in Markdown
 
-You don't need HTML. Gradio pages take **Markdown**: plain text with a few marks.
+Gradio pages take **Markdown**: ordinary text with a few marks for headings, bold and lists. It's much quicker to learn than HTML.
 
 ```text
 # Big heading
@@ -47,7 +43,7 @@ You don't need HTML. Gradio pages take **Markdown**: plain text with a few marks
 [a link](https://example.com)
 ```
 
-**Line breaks matter.** Each heading needs its own line, and a blank line starts a new paragraph. In Python there are two ways to get them:
+**Line breaks matter.** Each heading needs its own line, and a blank line starts a new paragraph. Inside Python there are two ways to get them. Three quote marks let your text run over several lines, just as it'll look:
 
 ```python
 description="""
@@ -59,7 +55,7 @@ This is a new paragraph.
 """
 ```
 
-Three quote marks (`"""`) let the text run over several lines, just as you'd see it. Or keep it on one line and write `\n` wherever you want a new line:
+Or keep it on one line and write `\n` wherever you want a new line:
 
 ```python
 description="# Welcome\n## How it works\nType a name and get a greeting."
@@ -67,26 +63,24 @@ description="# Welcome\n## How it works\nType a name and get a greeting."
 
 Two things that catch people out:
 
-- `# Welcome ## How it works` on one line is one heading. A heading only counts at the start of a line.
-- One line break inside ordinary text is ignored: the lines join into one paragraph. Leave a blank line between paragraphs, or use `gr.Markdown("...", line_breaks=True)` to keep every line break.
+- `# Welcome ## How it works` on one line is one heading, not two. A heading only counts at the start of a line.
+- A single line break inside ordinary text disappears: the lines join into one paragraph. Leave a blank line between paragraphs, or use `gr.Markdown("...", line_breaks=True)` to keep every line break.
 
-A good starting page says three things: **what it does**, **how to use it**, and **who made it**. A screenshot helps too.
+Stuck on what to write? A good starting page says **what your app does**, **how to use it**, and **who made it**. A screenshot of it working helps too.
 
-## Three ways to lay it out
+## Choose your layout
 
-Choose one at the top of the page:
+There are three ways to arrange it. Pick one at the top of this page:
 
-- **One page with sections:** everything on one long page, with links at the top that jump down to each part. Simplest.
-- **Tabs:** a row of tabs (Welcome, App, About). One page, but only one part shows at a time.
-- **Separate pages:** each page has its own address, and Gradio adds a menu at the top. The closest to a real website.
+- **One page with sections:** everything on one long page, with links at the top that jump down to each part. The simplest.
+- **Tabs:** a row of tabs (Welcome, App, About), showing one part at a time.
+- **Separate pages:** each page gets its own address, and Gradio adds a menu at the top. The closest to a real website.
 
-All three use `gr.Blocks`, which lets you put Markdown, pictures and your app together. `with` lines say what goes inside what, so **indentation matters**, like `if` and `for`.
+All three use `gr.Blocks`, which lets you put Markdown, pictures and your app together on one page. `with` lines say what goes inside what, so **indentation matters**, just like with `if` and `for`.
 
-::: for sections
+## Get your app ready
 
-## 1. Start from your app
-
-Keep your app, but don't `.launch()` it any more. Give it a name instead:
+Take the `.launch()` off the end of your app and give it a name instead, like `app`. You'll launch the whole site later, with your app inside it.
 
 ```python
 import gradio as gr
@@ -104,9 +98,11 @@ app = gr.Interface(
 )
 ```
 
-## 2. Add the starting section
+::: for sections
 
-`gr.Blocks` holds the whole page. `gr.Markdown` shows your words; `app.render()` puts your app where it is written.
+## Add your welcome
+
+`gr.Blocks` holds the whole page. Inside it, `gr.Markdown` shows your words, and `app.render()` drops your app in wherever you write it.
 
 ```python
 with gr.Blocks(title="Greeter") as site:
@@ -121,11 +117,11 @@ with gr.Blocks(title="Greeter") as site:
 site.launch()
 ```
 
-Three quote marks (`"""`) let your Markdown run over several lines.
+Run it: you should see your welcome at the top, then "Try it", then your app working just as before.
 
-## 3. Add another section
+## Add About and Help
 
-More sections are more Markdown, after the app or before it:
+Another section is just more Markdown. Put this inside the `with` block, after `app.render()`:
 
 ```python
     gr.Markdown("""
@@ -139,9 +135,11 @@ I made this to learn how apps turn a function into buttons and boxes.
 """)
 ```
 
-## 4. Add links that jump down
+Run it again: About and Help now sit under your app.
 
-Add `header_links=True` to each `gr.Markdown` that has headings. Gradio then gives every heading an address: `h-` and the heading in lower case, with dashes for spaces. So `## Try it` becomes `#h-try-it`.
+## Add links that jump down
+
+On a long page, links at the top save scrolling. First add `header_links=True` to each `gr.Markdown` that has headings. That gives every heading its own address: `h-`, then the heading in lower case with dashes for spaces. So `## Try it` becomes `#h-try-it`, and you can link to it:
 
 ```python
     gr.Markdown("""
@@ -152,7 +150,7 @@ Add `header_links=True` to each `gr.Markdown` that has headings. Gradio then giv
 """, header_links=True)
 ```
 
-Another section later? Add a heading, then add its link to that top line.
+Run it and click **Help**: the page should jump straight down to it. Add a section later? Give it a heading, then add its link to that top line.
 
 ::: full
 
@@ -201,29 +199,9 @@ site.launch()
 
 ::: for tabs
 
-## 1. Start from your app
+## Make a Welcome tab and an App tab
 
-Keep your app, but don't `.launch()` it any more. Give it a name instead:
-
-```python
-import gradio as gr
-
-def greet(name, excited):
-    message = "Hello, " + name
-    if excited:
-        return message + "!!!"
-    return message + "."
-
-app = gr.Interface(
-    fn=greet,
-    inputs=[gr.Textbox(label="Name"), gr.Checkbox(label="Excited?")],
-    outputs=gr.Textbox(label="Greeting"),
-)
-```
-
-## 2. Make a Welcome tab and an App tab
-
-`gr.Blocks` holds the whole page and `gr.Tabs` holds the tabs. Each `gr.Tab` is one tab; what's indented under it goes inside. `app.render()` puts your app in its tab.
+`gr.Blocks` holds the whole page, and `gr.Tabs` holds the row of tabs. Each `gr.Tab` is one tab, and whatever is indented under it goes inside. `app.render()` drops your app into its tab.
 
 ```python
 with gr.Blocks(title="Greeter") as site:
@@ -239,32 +217,34 @@ with gr.Blocks(title="Greeter") as site:
 site.launch()
 ```
 
-The tab names are the navigation: Gradio draws them, and clicking one switches page.
+Run it: you should see two tabs, Welcome and App. Click **App** and your app is there, working as before. The tabs are your navigation, and Gradio draws them for you.
 
-## 3. Add a "Try it" button
+## Add a "Try it" button
 
-A button on the Welcome tab that jumps to the App tab. Put the button inside the Welcome tab, and the `.click` line at the end, inside `gr.Blocks` but outside the tabs. Copy this shape as it is:
+A button on the Welcome tab that jumps straight to your app is a nice touch. It takes two lines in two places. The button goes inside the Welcome tab, under your Markdown:
 
 ```python
             start = gr.Button("Try it")
 ```
 
+And this line goes at the very end, still inside `gr.Blocks` but not inside the tabs (four spaces in):
+
 ```python
     start.click(lambda: gr.Tabs(selected="app"), outputs=tabs)
 ```
 
-`selected="app"` is the `id` of the tab to open.
+It says: when `start` is clicked, switch `tabs` to the tab whose `id` is `"app"`. You can copy it as it is; just change `"app"` if your tab has a different `id`. Run it and press **Try it**: you should land on the App tab.
 
-## 4. Add another tab
+## Add an About tab
 
-Another tab is another `with gr.Tab(...)`, at the same indent as the others:
+Another tab is another `with gr.Tab(...)`, lined up with the others:
 
 ```python
         with gr.Tab("About", id="about"):
             gr.Markdown("I made this to learn how apps turn a function into buttons and boxes.")
 ```
 
-Help, Credits or anything else: the same again.
+Run it: a third tab appears. Help, Credits or anything else works the same way.
 
 ::: full
 
@@ -307,29 +287,9 @@ site.launch()
 
 ::: for pages
 
-## 1. Start from your app
+## Make the starting page
 
-Keep your app, but don't `.launch()` it any more. Give it a name instead:
-
-```python
-import gradio as gr
-
-def greet(name, excited):
-    message = "Hello, " + name
-    if excited:
-        return message + "!!!"
-    return message + "."
-
-app = gr.Interface(
-    fn=greet,
-    inputs=[gr.Textbox(label="Name"), gr.Checkbox(label="Excited?")],
-    outputs=gr.Textbox(label="Greeting"),
-)
-```
-
-## 2. Make the starting page
-
-What's inside `gr.Blocks` is your first page, the one people see when they open your app.
+Whatever you put inside `gr.Blocks` becomes your first page: the one people see when they open your app.
 
 ```python
 with gr.Blocks(title="Greeter") as site:
@@ -341,9 +301,9 @@ Choose **App** at the top to try it.
 """)
 ```
 
-## 3. Put your app on its own page
+## Put your app on its own page
 
-`site.route("App")` makes a new page called App, with its own address (`/app`). `app.render()` puts your app on it. Then launch the whole site.
+`site.route("App")` makes a new page called App, with its own address ending in `/app`. `app.render()` puts your app on it. Then launch the whole site:
 
 ```python
 with site.route("App"):
@@ -352,18 +312,18 @@ with site.route("App"):
 site.launch()
 ```
 
-Gradio adds a menu at the top right (Home, App) by itself: that's your navigation.
+Run it: you should see your welcome, with a small menu in the top right corner, **Home** and **App**. Gradio made that menu for you. Click **App** and there's your app.
 
-## 4. Add another page
+## Add an About page
 
-Another page is another `with site.route(...)`, before `site.launch()`:
+Another page is another `with site.route(...)`, written before `site.launch()`:
 
 ```python
 with site.route("About"):
     gr.Markdown("I made this to learn how apps turn a function into buttons and boxes.")
 ```
 
-It appears in the menu straight away. Help, Credits or anything else: the same again.
+Run it: About appears in the menu straight away. Help, Credits or anything else works the same way.
 
 ::: full
 
@@ -405,20 +365,20 @@ site.launch()
 
 ## Make it yours
 
-- **A screenshot or logo:** put the picture file beside your program and add `gr.Image("screenshot.png", show_label=False)` where you want it.
-- **Side by side:** `with gr.Row():` puts the things indented under it next to each other, such as a picture beside your welcome words.
-- **A different look:** Gradio has ready-made themes. Try `site.launch(theme=gr.themes.Soft())`, or `Glass()` or `Monochrome()`.
-- **Your own words for the tab or page names:** change the text in `gr.Tab("...")` or `site.route("...")`.
+- **Want a screenshot or logo on your welcome?** Put the picture file next to your program and add `gr.Image("screenshot.png", show_label=False)` where you want it to appear.
+- **Want a picture beside your words?** `with gr.Row():` puts whatever is indented under it side by side.
+- **Want a different look?** Gradio has ready-made themes. Try `site.launch(theme=gr.themes.Soft())`, or swap `Soft` for `Glass` or `Monochrome`.
+- **Want different names on your tabs or pages?** Change the words in `gr.Tab("...")` or `site.route("...")`.
 
 ## When it goes wrong
 
-- **`IndentationError`, or things on the wrong page.** Everything that belongs inside a `with` is indented one step further than that `with` line. Line them up carefully.
-- **Your app doesn't appear.** Check for `app.render()` where you want it, and that `app` no longer has `.launch()` on the end.
-- **Two apps open, or an error about launching.** Only `site.launch()` should be in your program.
-- **A jump link does nothing.** Check `header_links=True` is on the `gr.Markdown` with the heading, and the link is `#h-` plus the heading in lower case with dashes: `## Try it` is `#h-try-it`.
-- **An error about `theme`.** Older versions of Gradio put it in `gr.Blocks(theme=...)` instead of `launch`. Try it there.
-- **An error about `route`.** Separate pages need a recent Gradio: run `pip install --upgrade gradio`, or use tabs instead.
-- **Picture not found.** The picture file must be in the same folder as your program, with exactly the same name.
+- **`IndentationError`, or something shows up on the wrong tab or page.** Everything that belongs inside a `with` must be indented one step further than its `with` line. Line them up carefully.
+- **Your app is missing.** Check `app.render()` is where you want the app, and that `app = gr.Interface(...)` doesn't still have `.launch()` on the end.
+- **Your app opens on its own, without your welcome.** There's an old `.launch()` left over. Only `site.launch()` should be in your program.
+- **A jump link does nothing.** Check that the `gr.Markdown` with that heading has `header_links=True`, and that the link is `#h-` plus the heading in lower case with dashes: `## Try it` is `#h-try-it`.
+- **`TypeError: ... unexpected keyword argument 'theme'`.** Your Gradio is older than version 6. Move the theme into `gr.Blocks(theme=...)` instead, or update Gradio with `pip install --upgrade gradio`.
+- **An error saying `Blocks` has no attribute `route`.** Separate pages need a recent Gradio. Run `pip install --upgrade gradio`, or use tabs instead.
+- **A blank space where your picture should be.** The picture file must be in the same folder as your program, with exactly the same name, including `.png` and any capitals.
 
 ::: teacher
 
@@ -430,7 +390,7 @@ site.launch()
 - Indentation inside `with` blocks, especially the Try it button's `.click` line in the tabs version (inside `gr.Blocks`, outside the tabs).
 - Leaving `.launch()` on the old app as well as the new site.
 - Section links in the one-page version: Gradio prefixes heading addresses with `h-`.
-- Gradio versions: written and tested against Gradio 6 on 3 Nov 2026. Themes moved from `gr.Blocks(...)` to `launch(...)` in Gradio 6, and separate pages need a recent version, so a school laptop with an older Gradio may need `pip install --upgrade gradio`. The in-browser stand-in in the Gradio course doesn't run these: they run on the student's computer (`pip install gradio`, then `python app.py`).
+- Gradio versions: written and tested against Gradio 6 on 3 Nov 2026. Themes moved from `gr.Blocks(...)` to `launch(...)` in Gradio 6 (Gradio 6 warns if it's left in `gr.Blocks`; older versions reject it in `launch`), and separate pages need a recent version, so a school laptop with an older Gradio may need `pip install --upgrade gradio`. The in-browser stand-in in the Gradio course doesn't run these: they run on the student's computer (`pip install gradio`, then `python app.py`).
 
 **Markdown.** This is the one new thing for students who haven't met HTML, and it's enough for a landing page. The site has no Markdown lesson yet; the short cheat sheet above covers what's needed.
 

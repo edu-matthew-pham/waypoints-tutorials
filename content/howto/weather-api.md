@@ -7,21 +7,17 @@ contexts:
   - { id: gradio, label: "Gradio (Python)" }
   - { id: web, label: "HTML and JavaScript" }
 ---
-This is a how-to, not a lesson: a recipe for your own project. Read it, copy what you need, change it to fit.
-
-## What you'll end up with
-
-Your app or page shows the weather for a place right now, something like:
+Want your app or page to know what the weather's doing right now? By the end of this page it will show something like:
 
 > Canberra: 18.4 °C, wind 12.6 km/h
 
-The numbers come live from **Open-Meteo**, a free weather service. It needs no sign-up and no key, so there is nothing secret to keep out of your code.
+The numbers come live from **Open-Meteo**, a free weather service. You don't need to sign up or get a key, so there's nothing secret to keep out of your code. Choose at the top whether you're building a Gradio app or a web page.
 
 ::: for gradio
 
-**What you should already know:** making an app from a function with `gr.Interface` ([Your first app](../../code/gradio/intro/)). Reading data from a web service helps but isn't needed: [Ask an API](../../code/data/data-api/) is the full lesson.
+You'll need an app made with `gr.Interface` ([Your first app](../../code/gradio/intro/)). If you'd like the longer version of the idea, [Ask an API](../../code/data/data-api/) is a whole lesson on it, but you don't need it first.
 
-This runs on your own computer, not in the tutorials' playground. Install the two libraries once:
+This runs on your own computer, not in the tutorials' playground, and needs two libraries. Install them once:
 
 ```text
 pip install requests gradio
@@ -31,19 +27,19 @@ pip install requests gradio
 
 ::: for web
 
-**What you should already know:** changing a page with JavaScript (`querySelector`, `textContent`). Using `fetch` helps but isn't needed: [Data from the web: fetch](../../code/dom/dom-fetch/) is the full lesson.
+You'll need a page you can change with JavaScript (`querySelector` and `textContent`). If you'd like the longer version of the idea, [Data from the web: fetch](../../code/dom/dom-fetch/) is a whole lesson on it, but you don't need it first.
 
 :::
 
 ## Find your place
 
-Open-Meteo works from a place's **latitude and longitude**, not its name. Search for your place's name followed by "latitude longitude", or right-click a spot on an online map. South of the equator, latitude is negative: Canberra is about -35.28, 149.13.
+Open-Meteo doesn't know place names. It wants a **latitude and longitude**: two numbers that pin a spot on the map. Search for your town's name followed by "latitude longitude", or right-click a spot on an online map. Anywhere south of the equator, the latitude has a minus sign: Canberra is about -35.28, 149.13.
 
 ::: for gradio
 
-## 1. Ask for the weather
+## Ask for the weather
 
-`requests.get` sends the address and the details; `.json()` turns the reply into Python dictionaries.
+Start by just asking and printing whatever comes back. `requests.get` sends your question to Open-Meteo, and `.json()` turns its reply into Python dictionaries you can read.
 
 ```python
 import requests
@@ -55,20 +51,20 @@ reply = requests.get(URL, params=details, timeout=10).json()
 print(reply)
 ```
 
-Run it and look at what comes back. The part you want is inside `"current"`.
+Run it. You should see a long dictionary printed out. Somewhere in it is `'current'`, with the temperature and wind inside. That's the part you want.
 
-## 2. Pull out what you need
+## Pick out the temperature and wind
 
 ```python
 now = reply["current"]
 print(str(now["temperature_2m"]) + " °C, wind " + str(now["wind_speed_10m"]) + " km/h")
 ```
 
-Follow the square brackets from left to right: the reply, then `"current"`, then the value.
+Add these lines under the others and run it again: you should see one tidy line, like `18.4 °C, wind 12.6 km/h`. Read the square brackets left to right: the reply, then its `"current"` part, then the value inside that.
 
-## 3. Put it in a function
+## Turn it into a function
 
-Gradio needs a function: a place name in, a line of text out. A dictionary keeps each place's latitude and longitude.
+Gradio runs a function when someone presses Submit, so the weather needs to be one: a place name goes in, a line of text comes out. A dictionary keeps the latitude and longitude for each place you want to offer.
 
 ```python
 PLACES = {
@@ -84,7 +80,9 @@ def weather(place_name):
     return place_name + ": " + str(now["temperature_2m"]) + " °C, wind " + str(now["wind_speed_10m"]) + " km/h"
 ```
 
-## 4. Show it in Gradio
+## Put it in your app
+
+Use your function in an Interface. A Dropdown lets people pick a place:
 
 ```python
 import gradio as gr
@@ -98,11 +96,11 @@ gr.Interface(
 ).launch()
 ```
 
-The `article` line credits Open-Meteo, which is the one thing their free use asks for.
+Run it, pick a place and press Submit: you should see that place's weather right now. The `article` line puts a small credit to Open-Meteo under your app, which is the one thing they ask for in return.
 
-## 5. Cope with no internet
+## Cope when the internet drops out
 
-If the connection drops, `requests.get` stops the program with an error. `try` and `except` catch it so your app says something useful instead. Copy this shape as it is:
+Right now, if the connection drops, your app shows a red Error and nothing useful. `try` and `except` catch that problem so your app can say what happened instead. Put them around the line that asks for the weather:
 
 ```python
 def weather(place_name):
@@ -154,9 +152,9 @@ gr.Interface(
 
 ::: for web
 
-## 1. Ask for the weather
+## Ask for the weather
 
-The details go in the address after the `?`. `fetch` asks, and `.json()` turns the reply into JavaScript objects. Both take a moment, so they need `await` inside an `async` function.
+Start by just asking and logging whatever comes back. Your question goes in the address, after the `?`. `fetch` sends it, and `.json()` turns the reply into JavaScript objects. Both take a moment to arrive, so they go inside an `async` function with `await` in front.
 
 ```javascript
 const URL = "https://api.open-meteo.com/v1/forecast?latitude=-35.28&longitude=149.13&current=temperature_2m,wind_speed_10m";
@@ -169,23 +167,29 @@ async function load() {
 load();
 ```
 
-Open the console and look at what comes back. The part you want is inside `current`.
+Open your page, then the browser's console. You should see an object you can click to open up. Inside it, `current` holds the temperature and wind. That's the part you want.
 
-## 2. Pull out what you need
+## Pick out the temperature and wind
+
+Put these lines inside `load`, under the `console.log(data)` line:
 
 ```javascript
 const now = data.current;
 console.log(now.temperature_2m + " °C, wind " + now.wind_speed_10m + " km/h");
 ```
 
-## 3. Show it on your page
+Reload: the console should now show one tidy line, like `18.4 °C, wind 12.6 km/h`.
 
-Give your page somewhere for the weather to go, then fill it in.
+## Show it on your page
+
+The console is only for you. To put the weather on the page, give it somewhere to go:
 
 ```html
 <p id="weather">Loading the weather…</p>
 <p><small>Weather data by Open-Meteo.com (CC BY 4.0)</small></p>
 ```
+
+Then change `load` so it fills that paragraph in:
 
 ```javascript
 async function load() {
@@ -196,11 +200,13 @@ async function load() {
 load();
 ```
 
-The small line credits Open-Meteo, which is the one thing their free use asks for.
+The small line credits Open-Meteo, which is the one thing they ask for in return.
 
-## 4. Cope with no internet
+Reload your page: "Loading the weather…" should change to the weather after a moment.
 
-If the connection drops, `fetch` fails and nothing changes on the page. `try` and `catch` let you say so instead:
+## Cope when the internet drops out
+
+If the connection drops, `fetch` fails and your page is stuck on "Loading the weather…" forever. `try` and `catch` let it say what happened instead:
 
 ```javascript
 async function load() {
@@ -218,7 +224,7 @@ load();
 
 ## Try it here
 
-This button runs the same code on this page.
+Not sure the weather service works on your school's network? This button runs the same code right here. If it shows the weather, your network is fine, and any problem is in your code.
 
 <p><button type="button" id="wpt-ht-try">Get Canberra's weather now</button></p>
 <p class="wpt-ht-out" id="wpt-ht-try-out">Nothing yet.</p>
@@ -276,18 +282,18 @@ document.getElementById('wpt-ht-try').addEventListener('click', async function (
 
 ## Make it yours
 
-- **Another place:** change the latitude and longitude.
-- **°F instead of °C:** add `temperature_unit=fahrenheit` to the details.
-- **Something other than temperature:** add names to `current`, separated by commas, such as `relative_humidity_2m` or `precipitation`. Open-Meteo's documentation lists them all.
-- **Sunny, cloudy or rain:** add `weather_code` to `current`. It's a number: 0 is clear sky, 61 is light rain, and the documentation lists the rest. An `if` can turn it into words or an icon.
-- **The week ahead:** ask for `daily` instead of `current`. You get lists, one value per day, so you need a loop.
+- **Your own town?** Swap in its latitude and longitude.
+- **Want °F?** Add `temperature_unit=fahrenheit` to your details.
+- **Want rain or humidity too?** Add more names to `current`, with commas between, like `precipitation` or `relative_humidity_2m`. Open-Meteo's documentation lists every one.
+- **Want "sunny" or "raining" instead of numbers?** Add `weather_code` to `current`. It's a number (0 is clear sky, 61 is light rain; the documentation has the rest), and an `if` can turn it into words or a picture.
+- **Want the week ahead?** Ask for `daily` instead of `current`. You get a list of values, one per day, so you'll need a loop to show them.
 
 ## When it goes wrong
 
-- **Nothing comes back, or a connection error.** Your school's network may block the weather service. Try at home or on another network; your code may be fine.
-- **An error about `current`** (a `KeyError` in Python, `undefined` in JavaScript). Print or log the whole reply first. If it says `"error": true`, its `"reason"` tells you what's wrong, often a typo in the address or a latitude that isn't between -90 and 90.
-- **The wrong numbers.** Check your latitude isn't missing its minus sign: without it, Canberra lands in the sea off Japan.
-- **It worked, then stopped.** Ask only when someone clicks or loads the page, never in a loop that runs every second. The free service has a daily limit, far above what a class needs, unless a program asks nonstop.
+- **"Couldn't reach the weather service", or a connection error.** Your school's network might block Open-Meteo. Try it at home or on another network: your code may be fine.
+- **`KeyError: 'current'` in Python, or `undefined` in JavaScript.** Print or log the whole reply. If it says `"error": true`, the `"reason"` next to it tells you what's wrong: often a typo in the address, or a latitude that isn't between -90 and 90.
+- **The numbers look wrong for your town.** Check the minus sign on your latitude. Without it, Canberra ends up in the Pacific Ocean, east of Japan.
+- **It worked, then stopped.** Only ask when someone presses a button or opens the page, never in a loop that asks every second. The free service has a daily limit that a class won't get near, unless a program asks nonstop.
 
 ::: teacher
 
