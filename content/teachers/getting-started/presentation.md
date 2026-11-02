@@ -23,7 +23,7 @@ Today: Curriculum and Lessons.
 
 <!--
 BEFORE THE MEETING
-- Pre-open the three tabs; test the Unpack link on the school network
+- Pre-open the three tabs (Unpack open at AC9HG7K01); test the Unpack link on the school network
 - Export this deck to PDF from Prepare (offline fallback)
 - Click through all six slides after publishing
 -->
@@ -52,12 +52,14 @@ BEFORE THE MEETING
 <small>Curriculum content © ACARA, used under CC BY 4.0</small>
 
 <!--
-1:00–2:30 · screenshot only, don't navigate
+1:00–2:30 · live: click Unpack Year 7 Geography (screenshot = fallback)
 - Geography Concepts › AC9HG7K01 Water as an environmental resource
-- Point to: descriptor, insight, prerequisite and hinge / hard part
-- Key distinction: can people's use run it out, even if it is replenished?
-- Say: this analysis shapes the checks and teaching we'll see next, and helps planning on its own
-- Link is for later (open live only if ahead of time)
+- Open the waypoint sequence: the steps to the descriptor, in order
+- Quick pass only: descriptor, insight, prerequisites, hinge / hard part
+- Hinge = a step students need before moving on
+- Waypoint 1: can people's use run it out, even if it is replenished?
+- Say: this shapes the checks and teaching we'll see next, and helps planning on its own
+- Don't go deep; move on at 2:30
 -->
 
 ---
