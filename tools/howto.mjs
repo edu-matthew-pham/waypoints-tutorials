@@ -6,7 +6,7 @@
 //   ::: for gradio Gradio (Python)   only shown when that context is chosen; the first `for` names the switch's buttons
 //   ::: full                         "Show the full code" (folded)
 //   ::: teacher                      "For teachers" (folded)
-// A `contexts:` list in the frontmatter ({ id, label }) sets the switch. `?for=<id>` in the link picks the context
+// A `contexts:` list in the frontmatter ({ id, label }) sets the switch; `switch:` changes its label (default "My project uses"). `?for=<id>` in the link picks the context
 // (a teacher shares the link for their student's project); the student can still switch.
 
 const FENCE = /^:::\s*(for|full|teacher)\b\s*(\S*)\s*$/;
@@ -31,11 +31,11 @@ export function howtoBlocks(text) {
   return out.join('\n');
 }
 
-/** The context switch: "My project uses…" with one button per context. */
-export function contextSwitch(contexts = []) {
+/** The context switch: "My project uses…" (or the frontmatter's `switch:` label) with one button per context. */
+export function contextSwitch(contexts = [], label = 'My project uses') {
   if (!contexts.length) return '';
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-  return `<div class="wpt-ht-switch" role="group" aria-label="My project uses"><span>My project uses</span>${contexts.map((c) => `<button type="button" data-ctx="${esc(c.id)}" aria-pressed="false">${esc(c.label)}</button>`).join('')}</div><p class="wpt-ht-pick">Choose one above to see the steps for your project.</p>`;
+  return `<div class="wpt-ht-switch" role="group" aria-label="${esc(label)}"><span>${esc(label)}</span>${contexts.map((c) => `<button type="button" data-ctx="${esc(c.id)}" aria-pressed="false">${esc(c.label)}</button>`).join('')}</div><p class="wpt-ht-pick">Choose one above to see the steps.</p>`;
 }
 
 export const HOWTO_CSS = `.wpt-ht-switch{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0 18px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;position:sticky;top:var(--nav,0px);z-index:5}

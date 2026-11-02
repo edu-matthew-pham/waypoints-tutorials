@@ -1081,7 +1081,7 @@ if (existsSync(join(CONTENT_ROOT, 'howto'))) for (const f of readdirSync(join(CO
   const body = new Marked().parse(howtoBlocks(fm ? raw.slice(fm[0].length) : raw));
   mkdirSync(join(OUT, path), { recursive: true });
   writeFileSync(join(OUT, path, 'index.html'), page(title,
-    `<style>${HOWTO_CSS}</style><header class="top"><a class="crumb" href="../../">← Tutorials</a><h1>${esc(title)}</h1>${meta.summary ? `<p class="lede">${esc(meta.summary)}</p>` : ''}</header>${contextSwitch(meta.contexts)}<div class="pabout wpt-ht">${body}</div>`,
+    `<style>${HOWTO_CSS}</style><header class="top"><a class="crumb" href="../../">← Tutorials</a><h1>${esc(title)}</h1>${meta.summary ? `<p class="lede">${esc(meta.summary)}</p>` : ''}</header>${contextSwitch(meta.contexts, meta.switch)}<div class="pabout wpt-ht">${body}</div>`,
     `<script>${HOWTO_JS}</script>`, navFor(path, 'home'), '<meta name="robots" content="noindex">'));
 }
 
