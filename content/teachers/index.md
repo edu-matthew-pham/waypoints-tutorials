@@ -22,6 +22,7 @@ links:
   - { title: Code, href: code-teachers/, group: Technologies, summary: "Which Code course to start with, how a lesson runs, what you need, and a review sheet." }
   - { title: Engineering, href: engineering-teachers/, group: Technologies, summary: "What each course needs (browser only, or kits) and where to start." }
   - { title: ICT skills, href: ict-teachers/, group: Technologies, summary: "What is built so far (a pilot), how it teaches, and what is planned." }
+  - { title: Project how-tos, href: howto/, group: Technologies, summary: "Recipes for students' own projects, by course: live data, extra pages, several pictures and more." }
   - { title: Learning with AI, href: ai-teachers/, group: Technologies, summary: "The five AI courses, the rules for using real AI, and where to start." }
   - { title: AI and your tasks, href: teachers/ai-and-your-tasks/, group: AI, summary: "Redesign a task you're setting so it keeps the thinking, and tell students clearly how much AI it allows." }
   - { title: Choosing AI tools, href: choosing-ai-tools/, group: AI, summary: "Compare AI tools fairly, check whether they support learning and decide whether they are safe to use." }

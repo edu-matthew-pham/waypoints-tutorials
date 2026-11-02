@@ -2,6 +2,7 @@
 title: Add a starting page (and more pages) to your Gradio app
 summary: "Give your app a welcome page, plus About or Help pages if you want them, without writing any HTML."
 courses: [code/gradio]
+keywords: "landing page home page welcome tabs navigation menu about help markdown blocks"
 switch: "I want"
 contexts:
   - { id: sections, label: "One page with sections" }

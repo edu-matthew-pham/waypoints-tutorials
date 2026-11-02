@@ -510,9 +510,13 @@ copyFileSync(join('site', 'check.js'), join(OUT, 'check.js')); // the Check your
 // Search (25 Oct 2026): the index is built here from the same data the pages use; site/search.js searches it in the browser.
 const COVERAGE = loadCoverage('.', COURSES.map((c) => c.path).filter((p) => p.startsWith('code/')));
 for (const e of COVERAGE.std.values()) for (const p of [...e.focus, ...e.touches]) if (!COURSES.some((c) => c.path === p)) throw new Error(`data/curriculum/code-coverage.yml: ${e.code} names "${p}", which is not a course`);
+const HOWTOS = loadHowtos(CONTENT_ROOT, { readdirSync, readFileSync, existsSync, join, YAMLparse });   // how-to pages, listed on the courses they name (tools/howto.mjs)
 const SEARCH = makeSearch({ lessons, dirNode, courses: [...COURSES, ...loadProjects(CONTENT_ROOT, () => 'turtle').filter((st) => !COURSES.some((c) => c.path === st.course)).map((st) => ({ path: st.course, title: dirNode(st.course).title, order: dirNode(st.course).order }))], subjects: SUBJECTS, pathwayOf, play: PLAY, coverage: COVERAGE });
 // ICT cards are found by search too, beside their lessons.
 for (const [path, cards] of ICT_CARDS) for (const c of cards) SEARCH.entries.push({ t: c.title, u: `${path}/reference/#${c.id}`, s: dirNode(path.split('/')[0]).title, sp: path.split('/')[0], c: dirNode(path).title, y: '', ty: 'card', d: c.idea.length > 150 ? c.idea.slice(0, 147).replace(/\s+\S*$/, '') + '…' : c.idea, k: normSearch(ictCardText(c)) });
+// How-tos (3 Nov 2026): one entry each, plus the /howto/ index as a teacher page; found by title, summary and the words of their courses.
+SEARCH.entries.push({ t: 'Project how-tos', u: 'howto/', s: 'Teachers', sp: 'teachers', c: '', y: '', ty: 'page', d: 'Recipes for students\' own projects, by course: live data, extra pages, several pictures and more.', k: normSearch('project how-tos how to recipes faq teacher teachers') });
+for (const h of HOWTOS) { const cs = h.courses.filter((c) => dirs.has(c)); SEARCH.entries.push({ t: h.title || h.name, u: `howto/${h.name}/`, s: cs.length ? dirNode(cs[0].split('/')[0]).title : 'Tutorials', sp: cs.length ? cs[0].split('/')[0] : '', c: cs.map((c) => dirNode(c).title).join(', '), y: '', ty: 'howto', d: h.summary || '', k: normSearch(`${h.title} ${h.summary || ''} ${h.keywords || ''} how to project ${cs.map((c) => dirNode(c).title).join(' ')} ${(h.contexts || []).map((x) => x.label).join(' ')}`) }); }
 writeFileSync(join(OUT, 'search-index.json'), JSON.stringify(SEARCH.entries));
 copyFileSync(join('site', 'search.js'), join(OUT, 'search.js'));
 // Course names a course's pathway says to do first (its `after:`), for the teacher strip on a course page.
@@ -657,7 +661,6 @@ function writeRecap(node, courseLessons) {
 // Open projects (tools/projects.mjs): <course>/projects/ lists the course's briefs, <course>/projects/<id>/ is one brief
 // with its playground(s). Each "You'll use" chip links to where the skill was taught: the course's recap card, or the lesson.
 const PROJECTS = new Map(loadProjects(CONTENT_ROOT, (c) => PLAY[c]?.kind || 'turtle').map((s) => [s.course, s]));
-const HOWTOS = loadHowtos(CONTENT_ROOT, { readdirSync, readFileSync, existsSync, join, YAMLparse });   // how-to pages, listed on the courses they name (tools/howto.mjs)
 const PREREQS = prerequisites(loadDirMeta, CONTENT_ROOT);
 // Project briefs without code (tools/briefs.mjs): <course>/briefs/ lists them, <course>/briefs/<id>/ is a printable task sheet.
 const BRIEFS = new Map(loadBriefs(CONTENT_ROOT).map((s) => [s.course, s]));
@@ -1073,15 +1076,30 @@ for (const f of readdirSync(CONTENT_ROOT).filter((n) => n.endsWith('.md') && n !
 }
 
 // ---------- how-to pages: content/howto/<name>.md becomes /howto/<name>/ (tools/howto.mjs; unlisted, noindex) ----------
+// The /howto/ index (3 Nov 2026): every how-to, grouped by the courses it names; linked from the Teachers menu.
+if (HOWTOS.length) {
+  const groups = new Map();
+  for (const h of HOWTOS) for (const c of (h.courses.filter((x) => dirs.has(x)).length ? h.courses.filter((x) => dirs.has(x)) : [''])) { if (!groups.has(c)) groups.set(c, []); groups.get(c).push(h); }
+  const item = (h) => `<li><a href="${esc(h.name)}/">${esc(h.title || h.name)}</a>${h.summary ? ` <small>${esc(h.summary)}</small>` : ''}</li>`;
+  const sections = [...groups.entries()].sort(([a], [b]) => (a ? dirNode(a).title : 'zzz').localeCompare(b ? dirNode(b).title : 'zzz'))
+    .map(([c, list]) => `<section class="wpt-howtos"><h2>${c ? `<a href="../${c}/">${esc(dirNode(c).title)}</a>` : 'Other'}</h2><ul>${list.map(item).join('')}</ul></section>`).join('');
+  mkdirSync(join(OUT, 'howto'), { recursive: true });
+  writeFileSync(join(OUT, 'howto', 'index.html'), page('Project how-tos',
+    `<style>.wpt-howtos{margin:18px 0;padding:14px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}.wpt-howtos h2{font-size:1.1rem;margin:0 0 6px}.wpt-howtos h2 a{color:var(--ink)}.wpt-howtos ul{margin:0;padding-left:20px}.wpt-howtos li{margin:5px 0}.wpt-howtos li a{color:var(--accent);font-weight:600}.wpt-howtos small{color:var(--muted)}</style>` +
+    `<header class="top"><a class="crumb" href="../teachers/">← Teachers</a><h1>Project how-tos</h1><p class="lede">Recipes for a student partway through their own project, not lessons: nothing is checked or counted. Send a student the one they need; many have a choice at the top (their project or what they've learnt) that you can set in the link.</p></header>${sections}`,
+    '', navFor('howto', 'home'), '<meta name="robots" content="noindex">'));
+}
 for (const h of HOWTOS) {
   const path = `howto/${h.name}`, title = h.title || titleCase(h.name);
+  // A folder beside the page (content/howto/<name>/) holds its pictures and files, copied next to it.
+  if (existsSync(join(CONTENT_ROOT, 'howto', h.name))) cpSync(join(CONTENT_ROOT, 'howto', h.name), join(OUT, path), { recursive: true });
   const body = new Marked().parse(howtoBlocks(h.body));
   // Crumb: back to its course when it names one (where teachers and students find it); with several, the home page.
   const named = h.courses.filter((c) => dirs.has(c)), course = named.length === 1 ? named[0] : null;
   const crumb = course ? `<a class="crumb" href="../../${course}/#howtos">← ${esc(dirNode(course).title)}</a>` : '<a class="crumb" href="../../">← Tutorials</a>';
   mkdirSync(join(OUT, path), { recursive: true });
   writeFileSync(join(OUT, path, 'index.html'), page(title,
-    `<style>${HOWTO_CSS}</style><header class="top">${crumb}<h1>${esc(title)}</h1>${h.summary ? `<p class="lede">${esc(h.summary)}</p>` : ''}</header>${contextSwitch(h.contexts, h.switch)}<div class="pabout wpt-ht">${body}</div>`,
+    `<style>${HOWTO_CSS}</style><header class="top">${crumb}<h1>${esc(title)}</h1>${h.summary ? `<p class="lede">${esc(h.summary)}</p>` : ''}</header>${contextSwitch(h.contexts, h.switch, h.default)}<div class="pabout wpt-ht">${body}</div>`,
     `<script>${HOWTO_JS}</script>`, navFor(path, 'home', course || null), '<meta name="robots" content="noindex">'));
 }
 

@@ -6,9 +6,9 @@
 //   ::: for gradio Gradio (Python)   only shown when that context is chosen; the first `for` names the switch's buttons
 //   ::: full                         "Show the full code" (folded)
 //   ::: teacher                      "For teachers" (folded)
-// A `contexts:` list in the frontmatter ({ id, label }) sets the switch; `switch:` changes its label (default "My project uses"). `?for=<id>` in the link picks the context
+// A `contexts:` list in the frontmatter ({ id, label }) sets the switch; `switch:` changes its label (default "My project uses"); `default:` opens on one context when the link has no ?for=. `?for=<id>` in the link picks the context
 // (a teacher shares the link for their student's project); the student can still switch.
-// `courses:` lists the courses whose page shows it under "Project how-tos" (3 Nov 2026); one course also sets the crumb.
+// `keywords:` adds words site search matches. `courses:` lists the courses whose page shows it under "Project how-tos" (3 Nov 2026); one course also sets the crumb.
 
 const FENCE = /^:::\s*(for|full|teacher)\b\s*(\S*)\s*$/;
 
@@ -33,10 +33,10 @@ export function howtoBlocks(text) {
 }
 
 /** The context switch: "My project uses…" (or the frontmatter's `switch:` label) with one button per context. */
-export function contextSwitch(contexts = [], label = 'My project uses') {
+export function contextSwitch(contexts = [], label = 'My project uses', dflt = '') {
   if (!contexts.length) return '';
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-  return `<div class="wpt-ht-switch" role="group" aria-label="${esc(label)}"><span>${esc(label)}</span>${contexts.map((c) => `<button type="button" data-ctx="${esc(c.id)}" aria-pressed="false">${esc(c.label)}</button>`).join('')}</div><p class="wpt-ht-pick">Choose one above to see the steps.</p>`;
+  return `<div class="wpt-ht-switch" role="group" aria-label="${esc(label)}"${dflt ? ` data-default="${esc(dflt)}"` : ''}><span>${esc(label)}</span>${contexts.map((c) => `<button type="button" data-ctx="${esc(c.id)}" aria-pressed="false">${esc(c.label)}</button>`).join('')}</div><p class="wpt-ht-pick">Choose one above to see the steps.</p>`;
 }
 
 export const HOWTO_CSS = `.wpt-ht-switch{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0 18px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;position:sticky;top:var(--nav,0px);z-index:5}
@@ -62,7 +62,7 @@ if(sw){sw.addEventListener('click',function(e){var b=e.target.closest('button[da
 var cl=document.createElement('button');cl.type='button';cl.className='wpt-ht-link';cl.textContent='Copy link to this version';
 cl.addEventListener('click',function(){var t=location.href;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){cl.textContent='Link copied'},function(){window.prompt('Copy this link',t)});setTimeout(function(){cl.textContent='Copy link to this version'},2000)});
 sw.appendChild(cl);
-var q=new URLSearchParams(location.search).get('for');if(q)pick(q,false)}
+var q=new URLSearchParams(location.search).get('for')||sw.dataset.default;if(q)pick(q,false)}
 [].forEach.call(document.querySelectorAll('.wpt-ht pre'),function(p){var b=document.createElement('button');b.type='button';b.className='wpt-ht-copy';b.textContent='Copy';
 b.addEventListener('click',function(){var t=p.querySelector('code')?p.querySelector('code').textContent:p.textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){b.textContent='Select and copy'});setTimeout(function(){b.textContent='Copy'},1500)});p.appendChild(b)});
 })();`;
