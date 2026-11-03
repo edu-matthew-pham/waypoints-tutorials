@@ -2,7 +2,7 @@
 title: Humanities pilot
 summary: "Try whichever part of Learning Waypoints helps your teaching: the curriculum view, unit planning, or lessons (tutorials and slides)."
 ---
-Learning Waypoints helps you work out what students need to understand, what to teach first and how to check their thinking. The waypoints draw on ACARA descriptors; their sequence and teaching suggestions reflect professional judgement.
+Learning Waypoints helps you work out what students need to understand, what to teach first and how to check their thinking. The waypoints draw on ACARA content descriptions; their sequence and teaching suggestions reflect professional judgement.
 
 [Learning Waypoints in 10 Minutes: presentation and facilitator guide](https://tutorials.learningwaypoints.com/teach/teachers/getting-started/) · [Getting Started: self-paced introduction](https://tutorials.learningwaypoints.com/teachers/getting-started/) · [Teachers hub](https://tutorials.learningwaypoints.com/teachers/).
 
