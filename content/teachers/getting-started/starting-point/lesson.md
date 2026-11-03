@@ -11,7 +11,7 @@ Learning Waypoints helps you work out what students need to understand, what to 
 
 A **waypoint** is an idea students need to understand to meet a curriculum expectation. In our Geography example, one waypoint is understanding that a renewable resource can still be used up. That matters when students explain why a river can run low.
 
-The waypoints draw on ACARA descriptors. Their sequence, examples and teaching suggestions reflect professional judgement; ACARA does not prescribe them. You can use them alongside your learning intentions and success criteria to think through what students already know and where they might need help.
+The waypoints draw on ACARA content descriptions. Their sequence, examples and teaching suggestions reflect professional judgement; ACARA does not prescribe them. You can use them alongside your learning intentions and success criteria to think through what students already know and where they might need help.
 
 The teacher situations in this lesson are made up.
 
