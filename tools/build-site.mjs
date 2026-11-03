@@ -1082,7 +1082,7 @@ if (HOWTOS.length) {
   for (const h of HOWTOS) for (const c of (h.courses.filter((x) => dirs.has(x)).length ? h.courses.filter((x) => dirs.has(x)) : [''])) { if (!groups.has(c)) groups.set(c, []); groups.get(c).push(h); }
   const item = (h) => `<li><a href="${esc(h.name)}/">${esc(h.title || h.name)}</a>${h.summary ? ` <small>${esc(h.summary)}</small>` : ''}</li>`;
   const sections = [...groups.entries()].sort(([a], [b]) => (a ? dirNode(a).title : 'zzz').localeCompare(b ? dirNode(b).title : 'zzz'))
-    .map(([c, list]) => `<section class="wpt-howtos"><h2>${c ? `<a href="../${c}/">${esc(dirNode(c).title)}</a>` : 'Other'}</h2><ul>${list.map(item).join('')}</ul></section>`).join('');
+    .map(([c, list]) => `<section class="wpt-howtos"><h2>${c ? `<a href="../${c}/">${esc(dirNode(c).title)}</a>` : 'Any project'}</h2><ul>${list.map(item).join('')}</ul></section>`).join('');
   mkdirSync(join(OUT, 'howto'), { recursive: true });
   writeFileSync(join(OUT, 'howto', 'index.html'), page('Project how-tos',
     `<style>.wpt-howtos{margin:18px 0;padding:14px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}.wpt-howtos h2{font-size:1.1rem;margin:0 0 6px}.wpt-howtos h2 a{color:var(--ink)}.wpt-howtos ul{margin:0;padding-left:20px}.wpt-howtos li{margin:5px 0}.wpt-howtos li a{color:var(--accent);font-weight:600}.wpt-howtos small{color:var(--muted)}</style>` +
