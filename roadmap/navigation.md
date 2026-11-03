@@ -168,3 +168,10 @@ English's purpose cards and start suggestion; Code's "How coding ideas build", R
 - Tested: validate, build, `check-purposes`; headless Chromium on all 14 subject pages at 1280 and 390 px, light and dark, both views (no page errors, no sideways scroll, English cards only in the list view); maths, science and Code pathway pages (stage words gone for maths and science, kept for Code). Screenshots of Maths, English and History looked right.
 - Left to subject chats: Geography's Preview label; Engineering's "Capstone projects · 0 lessons" row and rows with no years; AI Foundations and Does AI Help Us Learn? have no years.
 - Publish: whole-site (or quick) publish, since subject and pathway pages change. No clips or pictures change.
+
+## Next: link audit after the Humanities pilot (3 Nov 2026, proposed)
+Matthew: the teacher side has "lots of links everywhere"; usable and fine for the Term 4 Humanities pilot, but worth an audit once the pilot is running.
+- **Watch first:** which routes pilot teachers actually use to find things again (Teachers menu, subject "New to Learning Waypoints?" line, Humanities pilot page, course Reference chip, companion page, quick reference). Ask in the pilot conversations rather than guess.
+- **Then trim:** one obvious route to each teacher page (deck, speaker notes, quick reference, pilot page, Getting Started), others removed or demoted; the pilot page stays the single link shared after the talk.
+- **Keep in mind:** the printed quick reference points to the main site's Curriculum, Plan and Lessons pages, so those are the stable front doors; tutorials-site links can change underneath them.
+- Related, suite-wide: waypoints-framework roadmap E6 (feedback route).
