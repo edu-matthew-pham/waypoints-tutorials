@@ -7,22 +7,21 @@ Tools to **unpack curriculum, plan, teach and check understanding**. Use whichev
 
 The same three menus as [learningwaypoints.com](https://learningwaypoints.com/).
 
-| Way in | Tool | Helps you… | Open |
+| Way in | Tools | Helps you… | Start here |
 |---|---|---|---|
-| **Curriculum** | Unpack (ACARA Progressions) | See what students need to understand first. | [acara.learningwaypoints.com](https://acara.learningwaypoints.com/) |
-| **Plan** | Planner and Kit | Shape a unit from the standards. | [learningwaypoints.com](https://learningwaypoints.com/) |
-| **Lessons** | Tutorials | Try checks, feedback and smaller steps with your class. | [tutorials.learningwaypoints.com](https://tutorials.learningwaypoints.com/) |
-| | Prepare | Make slides and printouts from a lesson. | [prepare.learningwaypoints.com](https://prepare.learningwaypoints.com/) |
+| **Curriculum** | Unpack (ACARA Progressions) | See what students need to understand first. | [learningwaypoints.com/curriculum](https://learningwaypoints.com/curriculum/) |
+| **Plan** | Planner and Kit | Shape a unit from the standards. | [learningwaypoints.com/plan](https://learningwaypoints.com/plan/) |
+| **Lessons** | Tutorials and Prepare | Try checks, feedback and smaller steps; get ready-made slides and handouts. | [learningwaypoints.com/lessons](https://learningwaypoints.com/lessons/) |
 
-A **waypoint** is an idea students need to understand to meet a curriculum expectation. The waypoints draw on ACARA descriptors; their sequence and teaching suggestions reflect professional judgement.
+A **waypoint** is an idea students need to understand to meet a curriculum expectation. The waypoints draw on ACARA content descriptions; their sequence and teaching suggestions reflect professional judgement.
 
 ## Find teaching resources again
 
-**Subject → List for teachers → course → Teacher guide → lesson → Classroom resources.**
+**Subject → List for teachers → course → Teacher guide → lesson → Lesson resources.**
 
 Choose **Open in Prepare** for Slides or **Open in Print** for the Worksheet. Print’s **Teacher edition** shows answers; the student copy hides them.
 
-From the **Teachers hub**, open **Getting Started**, **Learning Waypoints in 10 Minutes**, or **Humanities pilot**. The pilot page links subject lists, course guides and inquiry skeletons.
+From the **Teachers hub**, open **Getting Started**, **Learning Waypoints in 10 Minutes**, or **Humanities pilot**. The pilot page links subject lists, course guides and inquiry templates.
 
 ## Read a tutorial check
 
