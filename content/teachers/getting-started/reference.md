@@ -1,47 +1,71 @@
 ---
 title: "Learning Waypoints: teacher quick reference"
 ---
-Tools to **unpack curriculum, plan, teach and check understanding**. Use whichever part helps you; there is no required sequence.
+ACARA sets the destination for student learning. **Learning Waypoints maps the steps to get there**, in the order they're best learned. Use whichever part helps you; there is no required sequence.
 
 ## Three ways in
 
-The same three menus as [learningwaypoints.com](https://learningwaypoints.com/).
+| Way in | Helps you… | Start here |
+|---|---|---|
+| **Curriculum**<br>ACARA Progressions | See what students need to understand, and in what order. | [learningwaypoints.com/curriculum](https://learningwaypoints.com/curriculum/) |
+| **Plan**<br>Planner and Kit | Shape a unit from those steps. | [learningwaypoints.com/plan](https://learningwaypoints.com/plan/) |
+| **Lessons**<br>Tutorials and Prepare | Interactive checks of student thinking, plus ready-made slides and handouts. | [learningwaypoints.com/lessons](https://learningwaypoints.com/lessons/) |
 
-| Way in | Tools | Helps you… | Start here |
-|---|---|---|---|
-| **Curriculum** | ACARA Progressions | See what students need to understand first. | [learningwaypoints.com/curriculum](https://learningwaypoints.com/curriculum/) |
-| **Plan** | Planner and Kit | Shape a unit from the standards. | [learningwaypoints.com/plan](https://learningwaypoints.com/plan/) |
-| **Lessons** | Tutorials and Prepare | Try checks, feedback and smaller steps; get ready-made slides and handouts. | [learningwaypoints.com/lessons](https://learningwaypoints.com/lessons/) |
+Each page lists more tools; start with the one named here.
 
-A **waypoint** is an idea students need to understand to meet a curriculum expectation. The waypoints draw on ACARA content descriptions; their sequence and teaching suggestions reflect professional judgement.
+## Curriculum: ACARA Progressions
 
-## Find teaching resources again
+Choose your subject and year, open a **content description**, then its **waypoint sequence**: the steps towards it, in order.
+
+- Each **waypoint** is an idea students need to understand to meet the content description.
+- Each step shows what it **builds on**: what students need first. Gaps often start there.
+- A **hinge** is a step students need before moving on, often where they get stuck. Worth checking before you go further.
+
+The waypoints draw on ACARA content descriptions; their sequence and teaching suggestions reflect professional judgement, not ACARA's.
+
+## Plan: Planner and Kit
+
+- **Planner** builds a unit from the curriculum's sequence of waypoints: lessons, resources, slides and handouts.
+- **Kit** works inside the AI you already use: paste one link, then ask for a lesson-by-lesson plan, a review of your own plan, or where a misunderstanding could cause trouble later.
+
+{{break}}
+
+## Lessons: Tutorials
+
+Short interactive lessons, each on one waypoint. When a student answers a check:
+
+- **Feedback:** read the explanation for their choice, then ask how they chose it.
+- **Build up to it:** a smaller question on the same idea, then back to the original task.
+- **Minimum** covers the main understanding. **Typical** and **Wider** add more examples of the same idea; you choose who would benefit and how long to spend.
+
+You still guide discussion and inquiry, select sources and assess extended reasoning. A check is one piece of evidence.
+
+## Lessons: Prepare
 
 **Subject → List for teachers → course → Teacher guide → lesson → Lesson resources.**
 
-Choose **Open in Prepare** for Slides or **Open in Print** for the Worksheet. Print’s **Teacher edition** shows answers; the student copy hides them.
+- **Open in Prepare:** the lesson's slides, ready to present or export.
+- **Open in Print:** the worksheet. The **Teacher edition** shows answers; the student copy hides them.
 
-From the **Teachers hub**, open **Getting Started**, **Learning Waypoints in 10 Minutes**, or **Humanities pilot**. The pilot page links subject lists, course guides and inquiry templates.
+## Where Humanities teachers can begin
 
-## Read a tutorial check
+| Subject | An available introduction |
+|---|---|
+| [History](https://tutorials.learningwaypoints.com/history/) | Source origin and purpose |
+| [Geography](https://tutorials.learningwaypoints.com/geography/) | Water as a resource |
+| [Civics and Citizenship](https://tutorials.learningwaypoints.com/civics/) | How Australia is governed |
+| [Economics and Business](https://tutorials.learningwaypoints.com/economics/) | Scarcity and opportunity cost |
+| [Humanities skills](https://tutorials.learningwaypoints.com/hass/) | Shared inquiry and inquiry templates |
 
-- **Feedback:** read the explanation, then ask the student how they chose their answer.
-- **Build up to it:** try the smaller question, then return to the original task.
-- **Minimum** covers the main understanding. **Typical / Wider** add more examples of the same idea. You choose who would benefit from them and how long to spend.
+All links again on the [Humanities pilot page](https://tutorials.learningwaypoints.com/humanities-pilot/). **Humanities is a pilot: ready to try, not yet tested with classes.**
 
-You still guide discussion and inquiry, select sources and assess extended reasoning. A tutorial check is one piece of evidence.
+## Try one thing
 
-## Try one useful part, then tell us how it went
+Choose one part that helps with a unit you already teach. Any thoughts are welcome:
 
-Choose one part that helps with a unit you already teach. Any thoughts are welcome; if a prompt helps:
+1. Did it save you time, or show you something about student thinking?
+2. What would make you use it again?
 
-1. Did it save you planning or prep time? Roughly how much?
-2. Did a check show you a misunderstanding you wouldn't otherwise have noticed?
-3. What helped, what got in the way, and what would make you use it again?
-4. Where would your students learn more by doing something on screen than by reading about it?
-
-Share feedback by talking to the pilot facilitator or sending them a message or email. No student information is needed. **Humanities is a preview and has not yet been tried with classes.**
-
-**Continue:** [Teachers hub](https://tutorials.learningwaypoints.com/teachers/) · [Self-paced introduction](https://tutorials.learningwaypoints.com/teachers/getting-started/) · [Humanities pilot](https://tutorials.learningwaypoints.com/humanities-pilot/).
+Share feedback by talking to the pilot facilitator, or by message or email. No student information is needed.
 
 Curriculum content © ACARA, used under CC BY 4.0.
