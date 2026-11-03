@@ -19,7 +19,7 @@ ACARA defines the destination for student learning. Waypoints maps the steps to 
 - **Plan:** shape a unit from those steps
 - **Lessons:** interactive tutorials that check student thinking, plus ready-made slides and handouts
 
-Today: Curriculum and Lessons.
+**Today: Curriculum and Lessons.**
 
 <!--
 BEFORE THE MEETING
