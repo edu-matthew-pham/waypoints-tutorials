@@ -23,8 +23,8 @@ insight: "Start with the part that helps with the lesson you are planning."
 check:
   type: predict
   q: "You already know the concept and need slides for tomorrow. Where would you look first?"
-  options: ["Curriculum › Unpack", "Plan › Planner and Kit", "Lessons › Prepare", "Lessons › Tutorials"]
-  actual: "Start in Lessons › Prepare for slides. You can also use Unpack to revisit the idea, Planner or Kit to see where it sits in the unit, or Tutorials to find a check, whenever those would help."
+  options: ["Curriculum › ACARA Progressions", "Plan › Planner and Kit", "Lessons › Prepare", "Lessons › Tutorials"]
+  actual: "Start in Lessons › Prepare for slides. You can also use ACARA Progressions to revisit the idea, Planner or Kit to see where it sits in the unit, or Tutorials to find a check, whenever those would help."
 ```
 
 ## The idea: three ways in
@@ -34,7 +34,7 @@ stage: investigate
 insight: "Curriculum, Plan and Lessons serve different needs and can be used independently."
 ```
 
-- **Curriculum:** [Unpack](https://acara.learningwaypoints.com/) shows how ideas build on each other and what students need to understand first.
+- **Curriculum:** [ACARA Progressions](https://acara.learningwaypoints.com/) shows how ideas build on each other and what students need to understand first.
 - **Plan:** Planner and Kit on [learningwaypoints.com](https://learningwaypoints.com/) help you shape a unit from the standards.
 - **Lessons:** [Tutorials](https://tutorials.learningwaypoints.com/geography/water-7/resource-types/) use activities, checks and feedback to explore what students understand, on their own or as a class; [Prepare](https://prepare.learningwaypoints.com/) turns a lesson into slides and printouts.
 
@@ -49,11 +49,11 @@ check:
   type: match
   q: "Where would you start in each of these situations?"
   pairs:
-    - ["Find out what students need to understand before a Year 7 Geography topic", "Curriculum › Unpack"]
+    - ["Find out what students need to understand before a Year 7 Geography topic", "Curriculum › ACARA Progressions"]
     - ["Shape a term's unit on water from the Year 7 standards", "Plan › Planner and Kit"]
     - ["Prepare slides for tomorrow's lesson", "Lessons › Prepare"]
     - ["Find a check to explore why students confuse renewable and continuous resources", "Lessons › Tutorials"]
-  explain: "Curriculum (Unpack) shows how the ideas build. Plan (Planner and Kit) shapes a unit. Lessons holds Prepare, for teaching resources, and Tutorials, for activities, checks and feedback. Choose the part that helps you now."
+  explain: "Curriculum (ACARA Progressions) shows how the ideas build. Plan (Planner and Kit) shapes a unit. Lessons holds Prepare, for teaching resources, and Tutorials, for activities, checks and feedback. Choose the part that helps you now."
 hint:
   - "Does the teacher need help with the ideas, the shape of a unit, a teaching resource or a check to try?"
 ```
@@ -68,14 +68,14 @@ check:
   q: "A colleague already has a unit plan and wants one misconception check. Which advice fits?"
   options:
     - "Use the relevant Tutorials check alongside the unit."
-    - "Complete Unpack and Prepare before opening Tutorials."
-    - "Use Unpack because its curriculum map is a ready-made slide deck."
+    - "Complete ACARA Progressions and Prepare before opening Tutorials."
+    - "Use ACARA Progressions because its curriculum map is a ready-made slide deck."
     - "Use Tutorials only for homework; classroom teaching needs another tool."
   answer: 0
   feedback:
     - null
     - "Your colleague can go straight to the check they need."
-    - "Unpack shows how ideas build on each other. Look in Prepare for slides."
+    - "ACARA Progressions shows how ideas build on each other. Look in Prepare for slides."
     - "A tutorial check can also support a whole-class prediction or discussion."
   explain: "Use the check where it fits the unit you already teach."
 ```

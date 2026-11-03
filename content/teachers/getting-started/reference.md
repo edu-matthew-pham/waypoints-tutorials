@@ -9,7 +9,7 @@ The same three menus as [learningwaypoints.com](https://learningwaypoints.com/).
 
 | Way in | Tools | Helps you… | Start here |
 |---|---|---|---|
-| **Curriculum** | ACARA Progressions (Unpack) | See what students need to understand first. | [learningwaypoints.com/curriculum](https://learningwaypoints.com/curriculum/) |
+| **Curriculum** | ACARA Progressions | See what students need to understand first. | [learningwaypoints.com/curriculum](https://learningwaypoints.com/curriculum/) |
 | **Plan** | Planner and Kit | Shape a unit from the standards. | [learningwaypoints.com/plan](https://learningwaypoints.com/plan/) |
 | **Lessons** | Tutorials and Prepare | Try checks, feedback and smaller steps; get ready-made slides and handouts. | [learningwaypoints.com/lessons](https://learningwaypoints.com/lessons/) |
 

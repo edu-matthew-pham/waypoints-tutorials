@@ -23,7 +23,7 @@ Today: Curriculum and Lessons.
 
 <!--
 BEFORE THE MEETING
-- Pre-open the tabs: Unpack at AC9HG7K01, the live lesson, Lesson resources; test them on the school network
+- Pre-open the tabs: ACARA Progressions at AC9HG7K01, the live lesson, Lesson resources; test them on the school network
 - Export this deck to PDF from Prepare (offline fallback)
 - Click through all six slides after publishing
 -->
@@ -33,7 +33,7 @@ BEFORE THE MEETING
 - Waypoints draw on ACARA content descriptions
 - Sequence and teaching suggestions are professional judgement, not ACARA's
 - Use alongside the unit you already teach; any part helps on its own
-- Same three menus as learningwaypoints.com (Unpack = ACARA Progressions)
+- Same three menus as learningwaypoints.com
 - Plan in one line; today is Curriculum and Lessons
 - Tutorials get 3 minutes because it's the hands-on demo, not because it matters more
 - Self-paced guide is linked at the end
@@ -47,12 +47,12 @@ BEFORE THE MEETING
 
 ![The actual Year 7 Geography curriculum view](https://tutorials.learningwaypoints.com/teach/teachers/getting-started/presentation-assets/unpack.png)
 
-[Unpack Year 7 Geography](https://acara.learningwaypoints.com/hass/year/7)
+[Year 7 Geography in ACARA Progressions](https://acara.learningwaypoints.com/hass/year/7)
 
 <small>Curriculum content © ACARA, used under CC BY 4.0</small>
 
 <!--
-1:00–2:30 · live: click Unpack Year 7 Geography (screenshot = fallback)
+1:00–2:30 · live: click Year 7 Geography in ACARA Progressions (screenshot = fallback)
 - Geography Concepts › AC9HG7K01 Water as an environmental resource
 - Open the waypoint sequence: the steps to the descriptor, in order
 - Quick pass only: descriptor, insight, prerequisites, hinge / hard part
