@@ -15,11 +15,12 @@ Each page lists more tools; start with the one named here.
 
 ## Curriculum: ACARA Progressions
 
-Choose your subject and year, open a **content description**, then its **waypoint sequence**: the steps towards it, in order.
+Choose your subject and year. Each content description is a row of **waypoints**: the ideas students need to understand to meet it, in order.
 
-- Each **waypoint** is an idea students need to understand to meet the content description.
-- Each step shows what it **builds on**: what students need first. Gaps often start there.
-- A **hinge** is a step students need before moving on, often where they get stuck. Worth checking before you go further.
+- The content description's panel shows **Prior Knowledge** (what students need first) and the **Progression Endpoint**.
+- Click a waypoint for its **Checkpoint**: what students should be able to show at that step.
+- **⚑ Hinge:** a step students need before moving on; the panel says why. Worth checking before you go further.
+- **★ Width opportunity:** a good place for more examples of the same idea (Minimum, Typical, Wider).
 
 The waypoints draw on ACARA content descriptions; their sequence and teaching suggestions reflect professional judgement, not ACARA's.
 

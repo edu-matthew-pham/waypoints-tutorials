@@ -55,7 +55,7 @@ BEFORE THE MEETING
 1:00–2:30 · live: click Year 7 Geography in ACARA Progressions (screenshot = fallback)
 - Geography Concepts › AC9HG7K01 Water as an environmental resource
 - Open the waypoint sequence: the steps to the descriptor, in order
-- Quick pass only: descriptor, insight, prerequisites, hinge / hard part
+- Quick pass only: Prior Knowledge, a waypoint's Checkpoint, ⚑ Hinge and why
 - Hinge = a step students need before moving on
 - Waypoint 1: can people's use run it out, even if it is replenished?
 - Say: this shapes the checks and teaching we'll see next, and helps planning on its own
