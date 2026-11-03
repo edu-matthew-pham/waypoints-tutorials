@@ -31,6 +31,12 @@ You'll need a page you can change with JavaScript (`querySelector` and `textCont
 
 :::
 
+## How it works
+
+A weather service like Open-Meteo is an **API**: a website made for programs instead of people. Your program sends it a question written as a web address, much like typing an address into a browser. Instead of a page, it sends back data: the numbers you asked for, in a format your program can read.
+
+Your question has three parts: **where** (the place), **what** (which measurements you want) and **when** (right now, or a forecast). The steps below build that question, send it, and pick the answer apart.
+
 ## Find your place
 
 Open-Meteo doesn't know place names. It wants a **latitude and longitude**: two numbers that pin a spot on the map. Search for your town's name followed by "latitude longitude", or right-click a spot on an online map. Anywhere south of the equator, the latitude has a minus sign: Canberra is about -35.28, 149.13.
@@ -39,7 +45,7 @@ Open-Meteo doesn't know place names. It wants a **latitude and longitude**: two 
 
 ## Ask for the weather
 
-Start by just asking and printing whatever comes back. `requests.get` sends your question to Open-Meteo, and `.json()` turns its reply into Python dictionaries you can read.
+Start by just asking and printing whatever comes back.
 
 ```python
 import requests
@@ -51,7 +57,17 @@ reply = requests.get(URL, params=details, timeout=10).json()
 print(reply)
 ```
 
-Run it. You should see a long dictionary printed out. Somewhere in it is `'current'`, with the temperature and wind inside. That's the part you want.
+Here's what each part does:
+
+- **`URL`** is where the question goes: Open-Meteo's forecast service.
+- **`details`** is the question itself, as a dictionary:
+  - `"latitude"` and `"longitude"` say **where**.
+  - `"current"` says **when** (right now, not a forecast) and **what**: the names of the measurements you want, with commas between. `temperature_2m` is the air temperature 2 metres above the ground, which is how weather stations measure it. `wind_speed_10m` is the wind speed 10 metres up. Those are Open-Meteo's names, so they have to be spelt exactly like that.
+- **`requests.get(URL, params=details)`** sends the question. `params=` turns your dictionary into the end of the web address for you, so you don't have to write it out.
+- **`timeout=10`** means give up after 10 seconds if there's no answer, instead of waiting forever.
+- **`.json()`** turns the reply into Python dictionaries and lists you can read.
+
+Run it. You should see a long dictionary printed out. It has some extra information, such as the place's height above sea level and the units used (`'°C'`, `'km/h'`), and somewhere in it is `'current'`, with the temperature and wind inside. That's the part you want.
 
 ## Pick out the temperature and wind
 
@@ -154,7 +170,7 @@ gr.Interface(
 
 ## Ask for the weather
 
-Start by just asking and logging whatever comes back. Your question goes in the address, after the `?`. `fetch` sends it, and `.json()` turns the reply into JavaScript objects. Both take a moment to arrive, so they go inside an `async` function with `await` in front.
+Start by just asking and logging whatever comes back.
 
 ```javascript
 const URL = "https://api.open-meteo.com/v1/forecast?latitude=-35.28&longitude=149.13&current=temperature_2m,wind_speed_10m";
@@ -167,7 +183,16 @@ async function load() {
 load();
 ```
 
-Open your page, then the browser's console. You should see an object you can click to open up. Inside it, `current` holds the temperature and wind. That's the part you want.
+Here's what each part does:
+
+- **The address** before the `?` is where the question goes: Open-Meteo's forecast service.
+- **After the `?`** is the question itself, as `name=value` pairs with `&` between them:
+  - `latitude=-35.28&longitude=149.13` says **where**.
+  - `current=...` says **when** (right now, not a forecast) and **what**: the names of the measurements you want, with commas between. `temperature_2m` is the air temperature 2 metres above the ground, which is how weather stations measure it. `wind_speed_10m` is the wind speed 10 metres up. Those are Open-Meteo's names, so they have to be spelt exactly like that.
+- **`fetch(URL)`** sends the question, and **`.json()`** turns the reply into JavaScript objects you can read.
+- Both take a moment to arrive over the internet, so they go inside an `async` function, with `await` in front to wait for each one.
+
+Open your page, then the browser's console. You should see an object you can click to open up. It has some extra information, such as the place's height above sea level and the units used (°C, km/h), and inside it `current` holds the temperature and wind. That's the part you want.
 
 ## Pick out the temperature and wind
 
