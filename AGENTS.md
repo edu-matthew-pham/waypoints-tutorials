@@ -6,6 +6,8 @@ Waypoints tutorials: a static site (GitHub Pages) of markdown lessons with live 
 
 Then read `ROADMAP.md` (index and rules for parallel work) and the roadmap file for your subject: `roadmap/<subject>.md` (`maths`, `science`, `code`, `english`, `economics`, `history`, `geography`, `civics`, `humanities-inquiry`, `ict`, `systems`, `engineering`, `learning-with-ai`, or `shared.md` for the build and shared tools). Authoring format is in `AUTHORING.md`, how to build a course in `BUILDING.md`, testing and review steps in `roadmap/checklist.md`, every rule with its reason in `roadmap/rules.md`.
 
+**Feedback: fix what was meant, not everything near it.** When Matthew flags a problem, say back in a line what you think he objects to before changing course, then fix that. *Why:* feedback read too broadly becomes an overcorrection (4 Nov 2026: "History defaulted to predict-first" was read as "predict is bad in History", when the point was that the shape was copied without asking what History needs).
+
 ## Rules that matter most
 
 Each rule is **firm** (don't depart without asking Matthew) or a **default** (use judgement; if you depart, say why in your roadmap file). Matthew's stance is defaults with reasons, not blanket rules. The full list, with reasons, scope and who decided: `roadmap/rules.md` (T = teaching, W = working).
