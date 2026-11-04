@@ -6,7 +6,7 @@
 
 Shared rules (First Nations T1, made-up cases T2, writing T5, contestable or simplified ideas T8, pace-agnostic T9, lesson shape T11, and the rest) are in `roadmap/rules.md`, with their reasons; they are not copied here (1 Nov 2026). Subject rules:
 
-- One course per standard, folder `civics/<short-name>-7`, one lesson per waypoint. Copy the pattern of `content/economics/scarcity-7/needs-and-wants/` (ICT lesson shape, `language: maths`, `node:` on every lesson, made-up cases and writing as in rules T2 and T5; this shape is the default, not a rule (T11)).
+- One course per standard, folder `civics/<short-name>-7`, one lesson per waypoint. (4 Nov 2026: check rules T11 and T23 first; this subject's own way of inquiry may need a different shape than Economics') Copy the pattern of `content/economics/scarcity-7/needs-and-wants/` (ICT lesson shape, `language: maths`, `node:` on every lesson, made-up cases and writing as in rules T2 and T5; this shape is the default, not a rule (T11)).
 - Contestable or simplified ideas (rules T8), in this subject: How a system works or should work is described, with the views people hold, not endorsed.
 - First Nations content: rules T1 (firm). Quote the relevant ACARA elaboration in the lesson's teacher notes (see `content/economics/scarcity-7/needs-and-wants/teacher.yml`); items about First Nations values or connection to Country are pointer pages.
 - Inquiry skills: questions, locating and organising, and creating explanations belong to the shared course (`roadmap/humanities-inquiry.md`); this subject builds only its own skills (below). The full investigation is class work.

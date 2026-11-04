@@ -6,7 +6,7 @@
 
 Shared rules (First Nations T1, made-up cases T2, writing T5, contestable or simplified ideas T8, pace-agnostic T9, lesson shape T11, and the rest) are in `roadmap/rules.md`, with their reasons; they are not copied here (1 Nov 2026). Subject rules:
 
-- One course per standard, folder `history/<short-name>-7`, one lesson per waypoint. Copy the pattern of `content/economics/scarcity-7/needs-and-wants/` (ICT lesson shape, `language: maths`, `node:` on every lesson, made-up cases and writing as in rules T2 and T5; this shape is the default, not a rule (T11)).
+- One course per standard, folder `history/<short-name>-7`, one lesson per waypoint. (4 Nov 2026: check rules T11 and T23 first; this subject's own way of inquiry may need a different shape than Economics') Copy the pattern of `content/economics/scarcity-7/needs-and-wants/` (ICT lesson shape, `language: maths`, `node:` on every lesson, made-up cases and writing as in rules T2 and T5; this shape is the default, not a rule (T11)).
 - Contestable or simplified ideas (rules T8), in this subject: Interpretations and causes are "historians argue...", with the evidence, not facts.
 - First Nations content: rules T1 (firm). Quote the relevant ACARA elaboration in the lesson's teacher notes (see `content/economics/scarcity-7/needs-and-wants/teacher.yml`); items about First Nations values or connection to Country are pointer pages.
 - Inquiry skills: questions, locating and organising, and creating explanations belong to the shared course (`roadmap/humanities-inquiry.md`); this subject builds only its own skills (below). The full investigation is class work.
@@ -703,3 +703,16 @@ Course `content/history/interpretations-7/` (tagline *Why do historians tell it 
 **Tested (all three skills courses together):** `validate` (no warnings in these lessons), `check-nodes` (only the 2 known Civics warnings), build, `check-lesson-boards -- history` (8 boards), `check-cohesion -- history`, `check-decks` for each course, every check answered in Chromium at 1280 and 390 px with wider steps and `smaller:` folds open (180 answered, 142 wrong answers tried with feedback, all required checks ticked; the colouring board via `check-cohesion`), and the History subject page, the Thinking historically pathway page, the History teacher page and the guides load with no errors or sideways scroll. Editorial pass on all nine lessons. Not tried with a class.
 
 **Publish:** one whole-site run covers all three courses (new pathway, teacher page, `numberline` widget). Ask Matthew (W1).
+
+## Review (4 Nov 2026, Matthew): historical inquiry was missed
+
+Matthew asked why History got a PRIMM-like predict-first shape by default. Findings:
+- **The shape was copied, not chosen.** Economics' `needs-and-wants` pattern was written into the History, Civics and Geography plans by the 30 Oct humanities chat; nobody asked what History's equivalent of 5E is. Science's 5E builds inquiry into every lesson; History's lessons tell the conclusion, then check it.
+- **Topics without skills.** Skills got their own courses (S02–S07) and topic courses tag only their K-node, so no topic lesson practises a historical skill.
+- **Skills without sources.** The plan allowed short public-domain translations on source cards; every build used our own summaries, so students practise sourcing on a description of a source.
+- **Humanities treated as one block** (now T11).
+
+Rule added: T23 Core skills first. Research behind a History shape (cited from memory, re-check before quoting): Reisman 2012 (Reading Like a Historian: background, central question, sourcing and corroboration of a few documents, claim, discussion); Wineburg 1991 (novices don't source); the knowledge-rich counterweight (Counsell; Ofsted 2021 history review): background comes before sources.
+
+**Trial (agreed 4 Nov):** the existing Year 7 lessons stay as they are. Alternative versions in a source-led shape (question, background, two or three real extracts, judge what each can and can't show, claim from evidence; checks still planted-answer) for `sources-7/what-can-it-tell-us` and `people-7/womens-roles`, linked only from each original's teacher notes (an optional field shown in the lesson's For teachers box and the teacher guide, not in decks: `before` and `leads` reach the slides). Not on maps or course lists. First job: find usable extracts (First Emperor's inscriptions via Sima Qian, Ban Zhao's Lessons for Women, Han tomb figures as openly licensed photos). After the trial: decide whether all History topic lessons get a skill line and real extracts, whichever shape wins. A harder second round: `contact-7/causes-of-contact` (causation).
+
