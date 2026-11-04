@@ -3,7 +3,7 @@
 // checks, no progress, not on trail maps, not in search, noindex. Unlisted until Matthew decides otherwise.
 //
 // Fenced blocks (each on its own line, closed by a line of just `:::`):
-//   ::: for gradio Gradio (Python)   only shown when that context is chosen; the first `for` names the switch's buttons
+//   ::: for gradio                   only shown when that context is chosen (`::: for gradio,console` shows for either)
 //   ::: full                         "Show the full code" (folded)
 //   ::: teacher                      "For teachers" (folded)
 // A `contexts:` list in the frontmatter ({ id, label }) sets the switch; `switch:` changes its label (default "My project uses"); `default:` opens on one context when the link has no ?for=. `?for=<id>` in the link picks the context
@@ -20,7 +20,7 @@ export function howtoBlocks(text) {
     if (m) {
       const [, kind, arg] = m;
       open.push(kind);
-      if (kind === 'for') out.push('', `<div class="wpt-ht-for" data-for="${arg.replace(/[^a-z0-9-]/gi, '')}">`, '');
+      if (kind === 'for') out.push('', `<div class="wpt-ht-for" data-for="${arg.replace(/[^a-z0-9,-]/gi, '')}">`, '');
       else if (kind === 'full') out.push('', '<details class="wpt-ht-full"><summary>Show the full code</summary>', '');
       else out.push('', '<details class="wpt-ht-teacher"><summary>For teachers</summary>', '');
     } else if (/^:::\s*$/.test(line) && open.length) {
@@ -56,7 +56,7 @@ body[data-ctx] .wpt-ht-pick{display:none}
 export const HOWTO_JS = `(function(){
 var sw=document.querySelector('.wpt-ht-switch');
 function pick(id,push){var ok=false;[].forEach.call(document.querySelectorAll('.wpt-ht-switch button'),function(b){var on=b.dataset.ctx===id;b.setAttribute('aria-pressed',on);ok=ok||on});
-if(!ok)return;document.body.dataset.ctx=id;[].forEach.call(document.querySelectorAll('.wpt-ht-for'),function(d){d.style.display=d.dataset.for===id?'block':'none'});
+if(!ok)return;document.body.dataset.ctx=id;[].forEach.call(document.querySelectorAll('.wpt-ht-for'),function(d){d.style.display=d.dataset.for.split(',').indexOf(id)>=0?'block':'none'});
 if(push){try{var u=new URL(location.href);u.searchParams.set('for',id);history.replaceState(null,'',u)}catch(e){}}}
 if(sw){sw.addEventListener('click',function(e){var b=e.target.closest('button[data-ctx]');if(b)pick(b.dataset.ctx,true)});
 var cl=document.createElement('button');cl.type='button';cl.className='wpt-ht-link';cl.textContent='Copy link to this version';
