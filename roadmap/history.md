@@ -784,9 +784,9 @@ Best done as one filter where the lesson list is built (`build-site.mjs`, and th
 
 `validate`, `check-nodes`, build, `check-decks` for the course; in Chromium at 1280 and 390 px: every check of the new lesson answered (right and wrong), source cards and "Read more" links, the `trial:` line in the original's For teachers box and guide but not its deck; the course page, trail, search, look-back and curriculum map unchanged (no new lesson shows, counts the same). Then a whole-site publish, which I'll ask about (W1).
 
-### Questions for Matthew (defaults in brackets)
+### Questions for Matthew (answered 4 Nov 2026: the defaults)
 
-1. **Slug and place:** inside `sources-7` as `what-can-it-tell-us-sources`? [yes]
-2. **Three extracts from two entries** (Langya split in two, Sima Qian as the contrast), rather than adding a third source now (the Qin law slips need their own check)? [yes]
-3. **Show the Chinese original** on the card, folded under the translation, so students see it is a real text? [yes, folded]
-4. **Opening vote:** keep a short predict-style vote on the question, or open with the question only? [keep, locked and compared at the end, since it makes the change in thinking visible]
+1. **Place:** inside `sources-7` as `what-can-it-tell-us-sources`, hidden by `unlisted: true`.
+2. **Sources:** three extracts from the two checked entries; the Qin law slips can come later if teachers want a third.
+3. **Chinese original:** on the card, folded under the translation.
+4. **Opening vote:** kept as a plain predict on the lesson's question, locked and compared in step 6. Matthew: predict is not bad in History; what he disliked was predict-first being the default without asking what historical inquiry needs. Here it earns its place (it makes the change in thinking visible), so it stays named as a predict, not reframed to look like something else.
