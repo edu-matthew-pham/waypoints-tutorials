@@ -47,6 +47,7 @@ Revise the text, rather than only noting concerns. In the handover, briefly stat
 
 ## Review pass for a lesson (checks the writing, not just that it runs)
 - **Voice.** Student text reads as you'd say it at their desk: no labels, no stage directions, the term named once (`roadmap/maths-when-where-why.md` › Voice).
+- **Context.** Each step starts from what the student is trying to do. Anything they type or change says what each part is for, shows it as it is and what it can become, and says what they should see (`roadmap/rules.md` T22). Try it: could a student change this for their own project from the page alone?
 - **Checks.** Each question has per-option `feedback` that answers that wrong idea; options are not led by length or order; the answer is not in the question.
 - **Hints.** Up to three, escalating, none giving the line or the answer. Where students stick (`stuck:` in teacher notes, or a hinge node), add a `smaller:` lead-in (AUTHORING › Smaller step).
 - **Effort.** `npm run effort` for the lesson: `struggle:` in `teacher.yml`, goals a student would recognise, hints that escalate.

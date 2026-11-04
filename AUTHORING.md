@@ -294,6 +294,16 @@ hook: "Loops are how a program draws 100 tiles without 100 lines of code."
 
 - `hook`: one or two sentences shown at the top of the lesson: where the skill appears in real life. No project, just the "why".
 
+### Give the context (lessons and how-tos)
+
+A default for every lesson, how-to and MakeCode tutorial (`roadmap/rules.md` T22), learnt from the first how-tos (3–4 Nov 2026):
+
+- **Start from what the student is trying to do.** The hook and the step's opening line say why this step matters to them, before the technique.
+- **Say what each part is for.** When a step hands over something to type or set (a request's details, a function's arguments, a block's dropdowns, a name that must match another program), say in plain words what each part does and why it's written that way. A short list under the code works well.
+- **Show what's being changed.** If a step says "change X to Y", show X as it is now (the code or the block) and an example of Y. A MakeCode step that says "change the duck in *set bot to sprite*" needs that block in its `blocks` section, and a hint showing a different picture swapped in.
+- **Say what they should see.** After a step, one line on what running it shows ("you should see three pictures side by side"), so students know they're on track and where it broke if not.
+- **Keep page mechanics out of student text.** What the format is, how a switch works and what's counted go in teacher notes.
+
 ### Lesson authoring preflight (before publishing)
 
 The site has a dedicated GitHub Actions **Validate tutorial content** workflow, separate from the expensive manual build-and-publish workflow. It runs on pull requests and on content changes pushed to `main`. For reliable authoring, work on a branch, open a pull request, and **check that validation passes before merging**. A direct GitHub file edit is not a substitute for running validation; a failed main-branch check still needs a fix.
@@ -1938,7 +1948,7 @@ These are defaults with their reasons, not rules. Leave one out when it doesn't 
 - **Start from what they want to do.** One or two sentences in their terms ("You've got a word, you want its picture. Now you want a whole sentence of them."), then a picture of the result. Reason: a student decides in seconds whether this page is for them.
 - **Each step adds one thing and says what they should now see.** The code, then "Run it: you should see…", then one plain line on why it works. Not every line needs explaining. Reason: a visible checkpoint after each step is what tells a student they're on track, and where it broke if they're not.
 - **Explain new code in plain words the first time it appears.** Say "copy this as it is" rarely, and when you do, say why that's fine ("you don't need to know how `.join` works to use it"). Reason: unexplained magic is where students stop trusting the page.
-- **Give the why, not just what to type.** When a step sets something up (a request to a web service, a list of settings), say what each part is for: where it goes, what it asks for, why it's spelt that way. Reason: copying code you don't understand works until the student needs to change it, which is the point of their own project (added 4 Nov 2026 after the weather page sent `details` with no explanation).
+- **Give the why, not just what to type** (the how-to form of `roadmap/rules.md` T22, which applies to lessons too). When a step sets something up (a request to a web service, a list of settings), say what each part is for: where it goes, what it asks for, why it's spelt that way. Reason: copying code you don't understand works until the student needs to change it, which is the point of their own project (added 4 Nov 2026 after the weather page sent `details` with no explanation).
 - **Never talk about the page itself to students.** What a how-to is, what isn't counted, how the switch works and which version to send all go in the `::: teacher` block. Reason: it's noise to the student, and it made every page open the same way.
 - **The headings are a menu, not a form.** "What you'll end up with", "Make it yours" and "When it goes wrong" are useful often, not always. Name headings for what the student does ("Find one picture", "Now do every word"). Reason: identical headings on every page read as a template.
 - **"Make it yours" invites.** "Want each picture only once? …", not a list of settings. Reason: it should spark the student's own idea, which is the point of a project.
