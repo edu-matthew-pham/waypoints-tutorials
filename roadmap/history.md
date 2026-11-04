@@ -728,3 +728,65 @@ No free, open, ACARA-aligned source bank exists for the ancient world (aligned p
 - **First entries:** only the trial's (the First Emperor's inscription; two short Ban Zhao extracts; a Sima Qian line on Empress Lü; two or three Met Han tomb figures). Plan the entries, then stop for Matthew's go before building.
 - **Draft entries (4 Nov 2026):** Project doc `claude/history-source-entries-draft.md` (five entries). Originals checked against ctext.org: Langya inscription, Sima Qian on Empress Lü. **Still to do before building:** check the two Ban Zhao originals (ctext search 女有四行 and 古者生女三日); have all our translations checked by someone who reads classical Chinese; find one public-domain Han tomb figure of everyday women's work.
 
+## Plan (4 Nov 2026; awaiting Matthew's "go"): source-led trial, step 1
+
+Handoff: Project doc `claude/handoff-history-source-led-trial.md`. Sources: Project doc `claude/history-source-entries-draft.md` (entries 1 and 4, originals checked against ctext.org). The existing Year 7 History lessons do not change.
+
+### 1. Source collection (minimal)
+
+- **Files:** `data/sources/qin-langya-inscription.yml` and `data/sources/sima-qian-empress-lu.yml`, copied from the draft entries in the format above (› Proposed: a source collection), plus `original:` (the Chinese) so a checker can compare. Only these two; the Ban Zhao and tomb-figure entries wait for `people-7/womens-roles`.
+- **Source card in a lesson:** a fenced block in `lesson.md`, ```` ```source qin-langya-inscription ```` with an optional `lines:` (which part of `extract` to show, so one entry can give two short extracts). The card shows a short label (Source 1, 2…), title and date, the extract, the credit line, a "Translated for this lesson" note when the entry says so, and **Read more of this source** (the entry's `full` link, new tab). `about` shows as one line above the extract; `teacher` goes only to the teacher notes and guide. Cards also print in the worksheet and show on the deck (the extract and credit, not the teacher note).
+- **Validate:** every `data/sources/*.yml` has `licence`, `credit` and `checked`; every card id in a lesson exists. A `checked` that says "not yet" is a warning, not an error, so a draft can be tried locally but is visible.
+- **Not yet:** no `/sources/` page, no search entries for sources.
+
+### 2. The alternative lesson: *What can this source tell us?* (source-led)
+
+Same node (AC9HH7S03 n3), same goals and exit ticket as the original, so the two can be compared fairly. Proposed slug `history/sources-7/what-can-it-tell-us-sources` (inside the course folder so it keeps the course crumb, cheat sheet and progress store; hidden by the unlisted flag, part 3).
+
+**Question first.** "The First Emperor said his new empire was at peace. How can we find out what his rule was really like, and what can one source tell us about that?"
+
+**Background (does not give the answer), about 6 lines.** Qin conquers the last rival kingdoms in 221 BCE; the First Emperor tours his empire; the stone at Langya was set up in 219 BCE and is lost, so we know it from Sima Qian's copy about 100 years later, under the Han, the family that replaced the Qin. Says what an inscription is for in general (to be read by many, to last), not what this one's purpose was. Context, not just instructions (T22): one line on why historians bother with a source that praises its maker.
+
+**Sources (two entries, three short extracts):**
+- Source 1: Langya, the praise lines (laws set straight; farming first; families safe, no bandits; no need for weapons).
+- Source 2: Langya, the "one standard" line (tools, measures and writing made the same). Same stone, but a claim other evidence (Qin weights, coins, script) backs up, so students see one source can be strong on one claim and weak on another.
+- Source 3 (contrast): Sima Qian on Empress Lü (the land at peace, few punishments, food plentiful). A Han historian praising a ruler's peace, but in a chapter that also tells of her cruelty to rivals (said in the background, not quoted).
+
+**Steps (shape: question, background, read, judge, claim; stage names kept so the site's machinery still works, but the order and jobs follow History, T11):**
+1. **The question** (info + one predict-style vote, kept short): "Can the stone tell us whether people really lived in peace?" Locked, compared at the end. Nib's slip ("it was carved in stone, so it must be true") sits here as the wrong thinking students can correct later.
+2. **Read Source 1.** The four questions as a match against the card itself (origin from the credit and date, content from the extract, context from the background, purpose not stated, so "probably", as in the original). Purpose is the one students must infer, said plainly.
+3. **What can it show, and what can't it?** A `sort` of claims into "Source 1 is good evidence for this" / "weak evidence for this" (how he wanted to be seen; that laws were written down; that there were no bandits; what farmers thought of the new laws). Feedback names the reason (purpose, who made it).
+4. **Read Source 2: same stone, different claim.** A `question`: why is "one standard for measures and writing" better supported than "no bandits"? (Other evidence agrees; it is a policy, not a boast.) This is the step the original can't do, because it needs the words.
+5. **Read Source 3 against Sources 1 and 2.** A `match` or `question`: which source supports which claim; and what it means that a Han historian also describes a ruler's reign as peaceful (both kinds of source can praise; ask who wrote it and when).
+6. **Claim from evidence (the point of the lesson).** A `question` choosing the best claim for the opening question, each option a real student-style claim of similar length (T8b): the best one names what the sources show, cites a source, and names a limit. Then the original's sentence frame ("It can tell us ..., but it cannot tell us ...") for the student's own book, `reflect` tick (T5). Back to the locked vote: what changed?
+7. **Typical / wider:** typical keeps the original's museum-label question (a modern source). Wider: what one more source would help answer the opening question, and why (a planted choice: Qin law slips, a farmer's letter if one existed, a later Han history), showing corroboration without free writing.
+
+Every check is planted-answer (sort, match, question, reflect); nothing marks writing (T3, T5). About three checks per step at most (T18). Time about the same as the original (40 min); if it runs long, step 7 is the give.
+
+**Teacher notes** (`teacher.yml`): what changed from the original and why (question first, real extracts, claim as the outcome); `teacher` lines from both entries; **the translations are drafts made for this lesson and not yet checked by someone who reads classical Chinese** (with the scholarly translations to check against); the Han-copy point as a discussion prompt; a line asking the teacher which shape they'd use. No `trial:` field on this one (it points back with a plain link to the original instead).
+
+### 3. Unlisted
+
+The site has one unlisted kind of page, the how-to (`tools/howto.mjs`: noindex, not on trail maps, search or course progress). How-tos are not lessons (no steps or checks), so the trial reuses the idea, not the code: a lesson frontmatter flag `unlisted: true` that
+- adds `<meta name="robots" content="noindex">` (the same tag how-tos and draft pointer pages use, through the page `head` option in `lesson-view.mjs`);
+- drops the lesson from every list built from `loadLessons()`: course page rows and counts, unit counts, Continue card, trail and trailhead progress, look-back and recap cards, search index, curriculum map dots and pointer pages (`node:`), Code coverage, Create's lesson list and My path search, the course teacher guide's lesson list and cheat sheets.
+- still builds its own page, its teacher guide (`/teach/.../`), deck and worksheet, so a teacher who follows the link gets the full kit.
+
+Best done as one filter where the lesson list is built (`build-site.mjs`, and the same in `search-index`, `build-create`, `pointer-pages`, `curriculum-map`, `coverage`), plus a validate check that an unlisted lesson is linked from some lesson's `trial:` (so it is never orphaned). I'll list every place it touches in the build commit.
+
+### 4. Link from the original's teacher notes only
+
+- New optional `teacher.yml` field `trial:` with `href` (lesson slug) and optional `text`. Default text: "Trial: the same lesson in a source-led shape. Which would you use, and why?"
+- Shown in the lesson's **For teachers** box (`lesson-view.mjs`) and in the teacher guide (`lessonGuideBody` in `teach.mjs`), as a short line with the link. **Not** in decks or worksheets (`before` and `leads` reach the slides, so it's a separate field the deck code doesn't read). Validate checks the slug exists.
+- The only change to the original lesson is this one line in its `teacher.yml`; its student page, checks and deck stay the same.
+
+### Testing and publishing
+
+`validate`, `check-nodes`, build, `check-decks` for the course; in Chromium at 1280 and 390 px: every check of the new lesson answered (right and wrong), source cards and "Read more" links, the `trial:` line in the original's For teachers box and guide but not its deck; the course page, trail, search, look-back and curriculum map unchanged (no new lesson shows, counts the same). Then a whole-site publish, which I'll ask about (W1).
+
+### Questions for Matthew (defaults in brackets)
+
+1. **Slug and place:** inside `sources-7` as `what-can-it-tell-us-sources`? [yes]
+2. **Three extracts from two entries** (Langya split in two, Sima Qian as the contrast), rather than adding a third source now (the Qin law slips need their own check)? [yes]
+3. **Show the Chinese original** on the card, folded under the translation, so students see it is a real text? [yes, folded]
+4. **Opening vote:** keep a short predict-style vote on the question, or open with the question only? [keep, locked and compared at the end, since it makes the change in thinking visible]
