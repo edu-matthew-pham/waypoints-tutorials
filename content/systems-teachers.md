@@ -12,7 +12,7 @@ The subject follows the Digital Technologies **Knowledge and understanding** str
 
 - **New to the ideas, or Years 5–6:** [Starting out](../systems/starting/): letters as codes, on and off, counting, the parts inside, and how computers join up.
 - **Data:** [Data representation](../systems/data/) (text, colour, images, sound as numbers, then binary), then [Making data smaller](../systems/compression/) and [How a web page is made](../systems/web/).
-- **Networks and security:** [Networks](../systems/networks/) (follow a packet) and [Cyber safety and privacy](../systems/cyber/) (passwords, phishing, privacy) are the two foundations. [Security and privacy](../systems/security/) and [Capture the flag](../systems/ctf/) come after.
+- **Networks and security:** [Networks](../systems/networks/) (follow a packet) and [Cyber safety and privacy](../systems/cyber/) (passwords, phishing, privacy) are the two foundations. [Security and privacy](../systems/security/) and [Capture the flag](../systems/ctf/) come after, then [Security lab](../systems/seclab/) for Years 9–10 (also on the command line trail).
 - **Hardware and logic:** [Inside a computer](../systems/hardware/), then [From gates to a processor](../systems/logic/).
 - **The command line:** [The command line](../systems/shell/), then [System admin on a Raspberry Pi](../systems/sysadmin/) or [Security lab](../systems/seclab/) (Years 9–10).
 

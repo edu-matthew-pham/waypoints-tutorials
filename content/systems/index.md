@@ -33,6 +33,7 @@ pathways:
       - { path: systems/cyber, id: cyber, stage: foundations, tagline: "Keep the club's app, and yourself, safe." }
       - { path: systems/ctf, id: ctf, stage: extensions, after: [cyber, networks, web-docs], tagline: "Find what's exposed before anyone else does." }
       - { path: systems/security, id: security, stage: extensions, after: [networks], tagline: "What keeps your data safe, and what doesn't." }
+      - { path: systems/seclab, id: seclab, stage: extensions, after: [security], tagline: "Find what is open, fix it, prove it." }   # also on the command line trail (4 Nov 2026): students looking for security look here
   - id: hardware
     title: Hardware and logic
     summary: What is inside a computer, and how simple on-off switches add up to logic.
