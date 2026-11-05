@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.101 --> 00:00:04.176
+A button is three things: a rectangle, a label, and a check.
+
+2
+00:00:05.126 --> 00:00:09.376
+The rectangle and the label are drawn already. Now for the check.
+
+3
+00:00:10.356 --> 00:00:15.856
+Inside means x is between the side edges, and y between bottom and top.
+
+4
+00:00:16.907 --> 00:00:20.407
+All four must be true, so they are joined with and.
+
+5
+00:00:25.285 --> 00:00:29.185
+A real app would then change something, and redraw the screen.

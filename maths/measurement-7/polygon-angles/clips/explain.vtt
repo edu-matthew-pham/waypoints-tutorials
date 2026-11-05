@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:03.800
+To find a polygon's angle sum, split it into triangles.
+
+2
+00:00:04.676 --> 00:00:08.101
+A square's four angles add to three hundred and sixty.
+
+3
+00:00:08.979 --> 00:00:12.554
+Split it from A: two triangles, two times one eighty.
+
+4
+00:00:15.287 --> 00:00:19.162
+Five sides make three triangles: five hundred and forty.
+
+5
+00:00:21.994 --> 00:00:25.944
+Six sides, four triangles. Always two fewer than the sides.

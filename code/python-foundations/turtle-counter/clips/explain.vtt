@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.101 --> 00:00:03.676
+The counter i is a different number on every pass.
+
+2
+00:00:04.452 --> 00:00:08.002
+i is zero on the first pass, one on the second.
+
+3
+00:00:09.323 --> 00:00:13.148
+Each line is longer than the last, so it spirals out.

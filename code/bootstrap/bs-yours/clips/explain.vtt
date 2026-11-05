@@ -1,0 +1,29 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:03.600
+Your own rules go after the Bootstrap link, so they win
+
+2
+00:00:04.353 --> 00:00:07.453
+A Bootstrap card, with Bootstrap's grey border.
+
+3
+00:00:08.155 --> 00:00:10.680
+Your style block comes after the link.
+
+4
+00:00:11.407 --> 00:00:14.682
+A rule for the same class: a thicker teal border.
+
+5
+00:00:15.256 --> 00:00:19.181
+Both rules match the card, and the later one wins: yours.
+
+6
+00:00:20.082 --> 00:00:22.957
+One more rule, and the title is teal too.
+
+7
+00:00:24.925 --> 00:00:28.325
+Bootstrap gives the shapes. Your rules give the look.

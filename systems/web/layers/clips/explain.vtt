@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.625
+The same page, three style sheets.
+
+2
+00:00:04.521 --> 00:00:07.296
+A new style sheet changes only the look.
+
+3
+00:00:09.337 --> 00:00:11.862
+The structure underneath never changed.
+
+4
+00:00:15.088 --> 00:00:18.963
+Switch the style off, and the words and structure are still there.

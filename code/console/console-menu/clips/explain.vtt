@@ -1,0 +1,9 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.850
+While true keeps going until a break runs.
+
+2
+00:00:03.951 --> 00:00:07.901
+While true never becomes false. Only a break ends the loop.

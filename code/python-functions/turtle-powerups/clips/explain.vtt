@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:04.375
+Games are built from two kinds of parts: an interface, and rules.
+
+2
+00:00:05.301 --> 00:00:09.251
+The interface is what you see: the status bar and buttons.
+
+3
+00:00:10.156 --> 00:00:14.756
+One label function draws each part. Three calls, no copies.
+
+4
+00:00:15.436 --> 00:00:19.236
+Rules decide what events mean: a miss costs a life.
+
+5
+00:00:20.191 --> 00:00:24.666
+A fair power-up is worth wanting, and costly enough to think about.
