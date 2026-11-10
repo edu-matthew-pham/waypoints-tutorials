@@ -17,7 +17,7 @@ const t = (name, fn) => { fn(); n++; console.log(`  ✓ ${name}`); };
 // The real blocks.
 const { blocks, errors } = loadRefreshers({ readdirSync, readFileSync, existsSync, join, parse });
 t('every block in data/refreshers/ is valid', () => assert.deepEqual(errors, []));
-t('the five first blocks are there', () => assert.deepEqual(Object.keys(blocks).sort(), ['delta', 'graph-over-time', 'kelvin', 'percentage', 'rate']));
+t('the five first blocks are there (new blocks may join them)', () => { for (const id of ['delta', 'graph-over-time', 'kelvin', 'percentage', 'rate']) assert.ok(blocks[id], id); });
 t('maths blocks open "From maths" and name what they cover', () => { for (const id of ['rate', 'percentage', 'graph-over-time']) { assert.equal(blocks[id].from, 'maths'); assert.ok(blocks[id].covers.length); } });
 
 // Bad blocks are caught.

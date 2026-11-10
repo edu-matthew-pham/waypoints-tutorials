@@ -1,0 +1,33 @@
+title: Changing the subject
+from: maths
+summary: To get a different letter on its own, undo the steps in reverse order, doing the same to both sides.
+keywords: changing the subject rearrange rearranging formula undo inverse both sides F = ma solve for
+covers: [AC9M8A01 n3]
+fold: >-
+  to get a different letter on its own, **undo the steps in reverse order, doing the same to both sides**. If
+  36 = 9 × a, then a is being multiplied by 9, so divide both sides by 9: a = 36 ÷ 9 = 4.
+check:
+  type: number
+  q: "A formula says 24 = 6 × m. Undo the × 6. What is m?"
+  answer: 4
+  tolerance: 0
+  explain: "m is multiplied by 6, so divide both sides by 6: m = 24 ÷ 6 = 4. Check: 6 × 4 = 24."
+page: |
+  A formula gives one letter from the others. The letter on its own is the **subject**. Sometimes you know the
+  subject and need one of the other letters, so the formula has to be turned around.
+
+  **Undo the steps in reverse order, doing the same to both sides.** Ask what has been done to the letter you
+  want, then undo it.
+  - Multiplied by something? Divide both sides by it.
+  - Divided by something? Multiply both sides by it.
+  - Something added? Take it away from both sides.
+
+  **One example, two ways round.** F = m × a.
+  - To find a: a is multiplied by m, so divide both sides by m. a = F ÷ m.
+  - To find m: m is multiplied by a, so divide both sides by a. m = F ÷ a.
+
+  **Two steps.** P = 2l + 2w, and you want w. The last thing done to w was "add 2l", so undo that first:
+  P − 2l = 2w. Then undo the × 2: w = (P − 2l) ÷ 2.
+
+  **Check by substituting.** Put your answer back into the first formula and see that it works.
+lessons: [maths/algebra-8/rearranging]

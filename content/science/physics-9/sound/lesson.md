@@ -1,6 +1,7 @@
 ---
 order: 2
 node: AC9S9U04 n2
+uses: [AC9TDI8K03 n4]   # sound as samples (How computers work, Year 8)
 unit: models
 title: How does sound travel?
 summary: "Sound is a longitudinal wave: a vibrating source makes compressions (particles squashed together) and rarefactions (particles spread out) that travel through a medium. Each particle keeps its random motion and is just nudged to and fro on top of it. Frequency sets the pitch and amplitude sets the loudness. Without particles, as in a vacuum, there is nothing to carry the wave."

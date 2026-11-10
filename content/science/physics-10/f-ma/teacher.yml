@@ -28,7 +28,7 @@ stuck:
     ask: "For the same acceleration, what did you need for 8 kg compared with 4 kg?"
     fix: "Twice the force. Same force on double the mass gives half the acceleration."
 stretch: "Rockets lose mass as they burn fuel. With the same thrust, what happens to their acceleration during the launch?"
-support: "Give the formula triangle (F at the top, m and a below) with one worked example of each rearrangement."
+support: "Rearrange the way maths teaches it (Algebra 8, Changing the subject): undo the steps in reverse order, doing the same to both sides. a is multiplied by m, so divide both sides by m: a = F ÷ m. Then m = F ÷ a the same way. The 'Build up to it: changing the subject' fold on the Explain step uses the same words. Use this rather than a formula triangle, so students meet one method in both subjects."
 leads: |
   Next: Newton's third law (node 5), then free body diagrams with several forces (node 6) and quantitative problems (node 7).
 

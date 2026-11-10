@@ -1,6 +1,7 @@
 ---
 order: 1
 node: AC9S10U03 n2
+uses: [AC9S7U03 n1, AC9M7N03 n1, AC9M9M02 n1]   # AC9S7U03 n1 is a lighter link (agreed 10 Nov): Earth in space, background only
 woven: [AC9S9H01, AC9S9I06]
 assumes: [AC9S10U03 n1]   # scale and structure of the universe: taught in class (no tutorial yet)
 unit: universe

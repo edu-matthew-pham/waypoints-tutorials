@@ -1,6 +1,7 @@
 ---
 order: 1
 node: AC9S9U06 n1
+uses: [AC9S8U06 n1, AC9S7U05 n1, AC9M7N07 n2]   # integers: +11 and −10 make +1
 woven: [AC9S9H01]
 unit: atoms
 title: What's inside an atom?

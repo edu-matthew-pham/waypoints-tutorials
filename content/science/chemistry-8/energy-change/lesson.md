@@ -50,6 +50,7 @@ tasks:
     check: { type: board, text: "Run the hydrogen and oxygen reaction. Note the temperature before and after.", expect: { done: true } }
   - starter: "boards.yml#endo"
     check: { type: board, text: "Now nitrogen and oxygen at 1800 K, about as hot as the flame inside a car engine. Note the temperature before and after.", expect: { done: true } }
+    refresher: { block: kelvin, example: "Here, 1800 K is about 1500 °C." }
 ```
 
 ### Energy out

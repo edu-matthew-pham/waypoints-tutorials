@@ -1,6 +1,7 @@
 ---
 order: 4
 node: AC9S9U06 n4
+uses: [AC9HH7K08 n2, AC9M7P02 n2]   # look back: History 7 radiocarbon dating; Probability 7 many trials (relative frequency)
 woven: [AC9S9H02, AC9S9I04, AC9S9I07]
 unit: atoms
 title: How long does radioactivity last?
@@ -115,6 +116,8 @@ tasks:
 
 ### One nucleus
 
+This is **relative frequency** from maths: you can't say how one coin flip will land, but over many flips about half come up heads. One nucleus is one flip; a sample is billions of flips.
+
 ### Nothing changes it
 
 ### In your own words
@@ -177,6 +180,8 @@ tasks:
 ```
 
 ### Carbon-14
+
+You may have met radiocarbon dating in History, dating charcoal, wood or bone from an ancient site. This is the half-life behind it.
 
 ### An old fireplace
 

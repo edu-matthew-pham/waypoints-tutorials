@@ -1,6 +1,7 @@
 ---
 order: 8
 node: AC9S9U05 n1
+uses: [AC9S8U05 n3]
 woven: [AC9S9I06]
 unit: conservation
 title: Where does the energy go?

@@ -1,6 +1,7 @@
 ---
 order: 7
 node: AC9S10U05 n7
+uses: [AC9M8A01 n3]
 woven: [AC9S9I04, AC9S9I06, AC9S9I07]
 unit: newton
 title: Solving force and motion problems
@@ -40,11 +41,13 @@ tasks:
       q: "It accelerates at 2 m/s² from rest. What is its speed after 6 s (m/s)?"
       answer: 12
       explain: "Δv = a × t = 2 × 6 = 12 m/s."
+    refresher: { block: rearrange, example: "Here, a = Δv ÷ t. Δv is divided by t, so multiply both sides by t: Δv = a × t." }
   - check:
       type: number
       q: "A 1200 kg car travelling at 20 m/s brakes to a stop in 8 s. What is its acceleration (m/s²)? Use a negative sign for slowing down."
       answer: -2.5
       explain: "a = Δv ÷ t = (0 − 20) ÷ 8 = −2.5 m/s²."
+    refresher: { block: delta, example: "Here, the car starts at 20 m/s and ends at 0 m/s." }
   - check:
       type: number
       q: "What braking force does the 1200 kg car need (N)? Give the size only."

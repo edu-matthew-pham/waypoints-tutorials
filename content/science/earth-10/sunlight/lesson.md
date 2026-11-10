@@ -1,6 +1,7 @@
 ---
 order: 3
 node: AC9S10U04 n1
+uses: [AC9S9U03 n4]   # Year 9 light (AC9S9U04 n4) left out: it names two lessons and would fill both slots
 unit: climate
 title: Where does the sunlight go?
 summary: "The sun is Earth's main energy source. Some sunlight is reflected straight back to space and the rest is absorbed and warms the planet. How much is reflected (the albedo) depends on the surface: ice reflects most, oceans and forests absorb most."

@@ -1,6 +1,7 @@
 ---
 order: 4
 node: AC9S10U02 n1
+uses: [AC9S9U02 n3, AC9M7ST02 n2]
 woven: [AC9S9I03, AC9S9I06]
 unit: evolution
 title: How different are individuals?

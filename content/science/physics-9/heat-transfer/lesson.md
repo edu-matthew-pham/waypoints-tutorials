@@ -1,6 +1,7 @@
 ---
 order: 1
 node: AC9S9U04 n1
+uses: [AC9S8U05 n3, AC9S7U05 n2]
 woven: [AC9S9I01]
 unit: energy
 title: How does heat get through?

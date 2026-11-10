@@ -1,6 +1,7 @@
 ---
 order: 3
 node: AC9S9U03 n3
+uses: [AC9S8U07 n2]   # Year 9 word equations left out: same year, not reliably taught first
 woven: [AC9S9I05]
 unit: carbon
 title: Where does the carbon in a tree go?

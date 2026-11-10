@@ -1,6 +1,7 @@
 ---
 order: 6
 node: AC9S8U07 n1
+uses: [AC9S7U05 n4]
 unit: changes
 title: Same particles, new look?
 summary: "In a physical change (melting, boiling, dissolving) the particles move, spread out or pack together, but every particle stays the same: no new substance is made. Steam is still made of water particles."

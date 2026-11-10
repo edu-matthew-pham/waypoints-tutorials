@@ -1,6 +1,7 @@
 ---
 order: 9
 node: AC9S9U05 n2
+uses: [AC9S8U05 n5, AC9M7N06 n3]
 woven: [AC9S9I04]
 unit: conservation
 title: How much is useful?
@@ -81,6 +82,7 @@ tasks:
       answer: 90
       explain: "1800 ÷ 2000 × 100% = 90%."
     hint: ["Which goes on top of the fraction: the energy that heats the water, or all the energy that goes in?", "The answer is a percentage, so if you end up with a decimal, think about what it would be out of 100."]
+    refresher: { block: percentage, part: share, example: "Here, the useful energy out is the part and the total energy in is the whole." }
   - check:
       type: number
       q: "An electric motor takes in 500 J and does 150 J of useful work lifting a load. What is its efficiency (%)?"

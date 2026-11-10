@@ -1,6 +1,7 @@
 ---
 order: 2
 node: AC9S8U03 n1
+uses: [AC9S7U05 n3]   # lighter link (agreed 10 Nov): Year 7 density helps explain the layers, but the lesson does not depend on it
 woven: [AC9S7H01, AC9S7I07]
 unit: plates
 title: What's inside the Earth?

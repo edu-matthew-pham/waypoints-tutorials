@@ -1,6 +1,7 @@
 ---
 order: 14
 node: [AC9S10U07 n1, AC9S10U07 n2, AC9S10U07 n3, AC9S10U07 n4]
+uses: [AC9S9U07 n1, AC9S8U07 n2]
 unit: rates
 title: What kind of reaction is it?
 summary: "Many reactions follow one of three patterns. Synthesis: two substances join into one (A + B → AB). Decomposition: one substance breaks into simpler ones (AB → A + B). Displacement: a more reactive element takes the place of a less reactive one (A + BC → AC + B). Spotting the pattern lets you predict the products."

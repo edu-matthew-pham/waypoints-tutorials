@@ -1,6 +1,7 @@
 ---
 order: 3
 node: AC9S10U05 n3
+uses: [AC9M8M05 n1, AC9M8A04 n1]
 woven: [AC9S9I04, AC9S9I05]
 unit: newton
 title: What is acceleration, exactly?
@@ -71,6 +72,7 @@ tasks:
       answer: 3
       explain: "a = change in velocity ÷ time = (12 − 0) ÷ 4 = 3 m/s². Its speed went up by 3 m/s every second."
     hint: ["How much did the speed go up altogether, and how many seconds did that take?", "Acceleration is the change in speed for each second, and the heading of this part of the lesson shows how to work it out."]
+    refresher: { block: rate, example: "Here, acceleration is a rate: the speed gained for each second, in m/s per second (m/s²)." }
   - check:
       type: question
       q: "On the speed–time graph, where can you see the acceleration?"
@@ -91,6 +93,7 @@ tasks:
       q: "A cyclist goes from 2 m/s to 10 m/s in 4 s. Acceleration, in m/s²?"
       answer: 2
       explain: "(10 − 2) ÷ 4 = 2 m/s²."
+    refresher: { block: delta, example: "Here, the cyclist starts at 2 m/s and ends at 10 m/s." }
   - check:
       type: sort
       q: "Is it accelerating?"

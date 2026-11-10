@@ -1,6 +1,7 @@
 ---
 order: 10
 node: [AC9S9U05 n3, AC9S9U05 n4]
+uses: [AC9S8U05 n5, AC9M7N08 n1]
 woven: [AC9S9I04]
 unit: conservation
 title: What does a Sankey diagram show?

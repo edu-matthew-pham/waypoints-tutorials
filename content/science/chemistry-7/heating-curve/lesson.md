@@ -1,6 +1,7 @@
 ---
 order: 4
 node: AC9S7U05 n4
+uses: [AC9M5ST02]   # reading a graph over time (Maths): short page
 assumes: [AC9S3U04 n2, AC9S3U04 n3]
 woven: [AC9S7I05]
 unit: particles
@@ -65,6 +66,7 @@ try: { playground: board, starter: "boards.yml#curve", height: 560 }
 tasks:
   - check: { type: board, text: "This is a heating curve for 1 kg of ice, heated steadily until it is steam. Move the cursor R along the whole curve, to 74 minutes. Where is the line flat?", when: "x(R) = 74" }
     hint: "Move R slowly along the curve with its slider, and notice where the temperature stops changing even though the minutes keep ticking over."
+    refresher: { block: graph-over-time, example: "Here, minutes go along the bottom and temperature (°C) goes up the side." }
   - check:
       type: sort
       q: "Does the substance take energy in, or give energy out?"

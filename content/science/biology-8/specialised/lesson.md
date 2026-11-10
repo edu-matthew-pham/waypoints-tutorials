@@ -1,6 +1,7 @@
 ---
 order: 5
 node: AC9S8U02 n1
+uses: [AC9S8U01 n3]
 unit: systems
 title: Why are cells different shapes?
 summary: "Almost all your cells have the same DNA, but they specialise: each develops a shape and contents that suit its job, like a red blood cell packed with haemoglobin or a nerve cell with a long axon."

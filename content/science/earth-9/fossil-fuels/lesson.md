@@ -1,6 +1,7 @@
 ---
 order: 4
 node: AC9S9U03 n4
+uses: [AC9S8U07 n2]   # Year 9 word equations left out: same year, not reliably taught first
 woven: [AC9S9I06]
 unit: carbon
 title: What does burning fossil fuels do to the carbon cycle?

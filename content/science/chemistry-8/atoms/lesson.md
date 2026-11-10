@@ -1,6 +1,7 @@
 ---
 order: 1
 node: AC9S8U06 n1
+uses: [AC9S7U05 n1, AC9S7U06 n1]
 woven: [AC9S7H01]
 unit: atoms
 title: What are particles made of?

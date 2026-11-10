@@ -1,6 +1,7 @@
 ---
 order: 1
 node: AC9S10U05 n1
+uses: [AC9S7U04 n1, AC9S7U04 n3, AC9M7N07 n2]
 unit: newton
 title: What is the net force?
 summary: "A force is a vector: it has a size and a direction. Forces along one line add if they point the same way and subtract if they point opposite ways. What is left is the net (resultant) force, and that is what changes motion."

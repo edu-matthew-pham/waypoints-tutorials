@@ -1,6 +1,7 @@
 ---
 order: 7
 node: [AC9S10U04 n4, AC9S10U04 n5, AC9S10U04 n6]
+uses: [AC9M5ST02]   # reading a graph over time (Maths): short page
 woven: [AC9S9I05]
 unit: climate
 optional: true
@@ -37,6 +38,7 @@ tasks:
   - check: {"type":"sort","q":"Is it an indicator of climate change?","options":["Indicator","Not an indicator"],"items":[["Rising global average air temperature","Indicator"],["Rising sea level","Indicator"],["Shrinking Arctic sea ice","Indicator"],["Warming oceans","Indicator"],["A single cold day in winter","Not an indicator","Weather varies day to day; climate indicators are long-term trends."]]}
   - check: {"type":"question","q":"How does the energy imbalance cause sea levels to rise?","options":["Warmer water expands, and melting land ice adds water","More rain falls into the oceans from the sky","Floating sea ice melts","The sea floor is sinking"],"answer":0,"feedback":[null,"Rain comes from water already evaporated from the sea, so it doesn't add water overall.","Floating ice already displaces its own weight, so melting it barely changes sea level; ice on land is what adds water.","The sea floor isn't sinking fast enough to matter; the water itself is rising."],"explain":"Extra energy warms the oceans and melts glaciers and ice sheets on land, both raising the sea."}
   - check: {"type":"question","q":"A graph shows global average temperature rising over 100 years, with ups and downs. What does it show?","options":["A warming trend, with natural ups and downs","That every year is warmer than the last","That temperature does not change","That one cold year disproves warming"],"answer":0,"feedback":[null,"There are still variations.","The graph shows a rise.","One year is not a trend."],"explain":"The trend is the key. Yearly ups and downs are normal weather and climate variability on top of it."}
+    refresher: { block: graph-over-time, example: "Here, years go along the bottom and global average temperature goes up the side." }
   - check: {"type":"question","q":"Why does shrinking Arctic sea ice make the Arctic warm faster than elsewhere?","options":["Dark ocean absorbs sunlight the white ice used to reflect","Less ice means more greenhouse gases","Ice blocks the Sun's rays from entering the atmosphere","Melting ice gives out heat"],"answer":0,"feedback":[null,"Sea ice doesn't hold much greenhouse gas; the change is in how much sunlight is reflected.","Ice sits on the surface; it reflects light that has already passed through the air.","Melting takes in energy; it doesn't give it out."],"explain":"Less ice lowers the albedo, so more sunlight is absorbed, which melts more ice. This is why the Arctic is warming faster than the global average."}
   - check: {"type":"reflect","text":"I can name three indicators of climate change and explain one using energy in and out."}
 ```

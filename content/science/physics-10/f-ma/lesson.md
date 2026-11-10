@@ -1,6 +1,7 @@
 ---
 order: 4
 node: AC9S10U05 n4
+uses: [AC9M8A01 n3, AC9M9M05 n1]
 woven: [AC9S9I01, AC9S9I04]
 unit: newton
 title: How hard do you need to push?
@@ -92,6 +93,7 @@ tasks:
       q: "A net force of 50 N acts on a 10 kg box. Its acceleration, in m/s²?"
       answer: 5
       explain: "a = F ÷ m = 50 ÷ 10 = 5 m/s²."
+    refresher: { block: rearrange, example: "Here, F = m × a. a is multiplied by m, so divide both sides by m: a = F ÷ m." }
   - check:
       type: number
       q: "A net force of 600 N gives a sprinter an acceleration of 10 m/s². Her mass, in kg?"

@@ -1,6 +1,7 @@
 ---
 order: 10
 node: AC9S10U06 n1
+uses: [AC9S9U06 n1]
 unit: periodic
 title: How are the electrons arranged?
 summary: "Electrons fill shells around the nucleus in order: 2 in the first, 8 in the second, 8 in the third (the Bohr model for elements 1 to 20; in heavier atoms the third shell holds more). The electrons in the outer shell decide how an element behaves."

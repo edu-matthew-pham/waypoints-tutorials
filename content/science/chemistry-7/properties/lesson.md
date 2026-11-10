@@ -81,6 +81,7 @@ tasks:
       feedback: ["Surprisingly, a water particle is lighter than an average air particle, so that isn't the reason.", null, "Particles don't change size between states, so air particles aren't smaller.", "Air does have mass, about 1.2 g in every litre, so that can't be the reason."]
       explain: "Air has far fewer particles in each cm³, so there is less mass in each cm³ and the density is lower."
     hint: ["Think about how many particles are in the same small space for air and for water, and what that does to the mass in each cm³.", "Pull the plunger right out, switch between Water and Air, and compare the particle count in the dashed window."]
+    refresher: { block: rate, example: "Here, density is a rate: grams for each cm³ (g/cm³). Fewer particles in each cm³ means fewer grams for each cm³." }
   - check: { type: reflect, text: "I explained why air can be squashed and why air is less dense than water, naming a particle feature for each, not just 'because it's a gas'." }
 ```
 

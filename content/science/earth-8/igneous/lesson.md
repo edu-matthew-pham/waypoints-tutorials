@@ -1,6 +1,7 @@
 ---
 order: 1
 node: AC9S8U04 n2
+uses: [AC9S7U05 n4]
 woven: [AC9S7I07]
 assumes: [AC9S8U04 n1]   # sedimentary rocks: taught in class (no tutorial yet)
 unit: rocks

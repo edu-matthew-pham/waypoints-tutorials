@@ -1,6 +1,7 @@
 ---
 order: 3
 node: AC9S10U01 n4
+uses: [AC9M8P02 n1, AC9M7N08 n1]
 woven: [AC9S9I03]
 unit: genetics
 title: Can you predict the offspring?

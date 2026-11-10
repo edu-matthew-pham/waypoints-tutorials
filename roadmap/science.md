@@ -2,6 +2,19 @@
 
 The science chat's file. Lessons live in `content/science/` (see CLAUDE.md › Science).
 
+## Done: prior-knowledge support in science lessons (10 Nov 2026, science chat; Matthew approved the plan)
+
+From the handoff `claude/handoff-prior-knowledge-next.md` › B (Science), checked against the node pass's link tables and the 9 Nov prerequisite audit (finding 1, plus finding 2's cross-strand links). Tools: AUTHORING › Refreshers.
+
+- **Folds** (closed, never counted, one-line lesson example): graph over time (heating-curve, climate-check), rate (properties density, fold only since rates are Year 8; acceleration; collision-theory), percentage (energy-flow `of`, efficiency `share`), Δ (acceleration, problems), kelvin (energy-change, collision-theory), and a new block **`rearrange`** (changing the subject, the maths "undo" method; f-ma, problems). Cascades got none: it traces a food web and has no graph over time.
+- **F = ma:** the formula-triangle teacher note is replaced by the undo method, in the same words as Algebra 8 "Changing the subject" and the fold.
+- **Half-life:** the "one nucleus" task names relative frequency (Probability 7 "Many trials").
+- **Look-backs** where History or Geography teach it first: half-life (radiocarbon dating), rocks-check (erosion and deposition; stratigraphy), natural-selection (theories of human origins). Each is the labelled link plus one sentence.
+- **`uses:`** on 43 lessons: the 21 openers (curated, one or two nodes each), cross-subject links to earlier years only (at most two, lightest level first: short page, else recap card), and finding 2's cross-strand links. Two are marked **lighter** in their frontmatter comments (agreed 10 Nov): earth-8/layers → Year 7 density, earth-10/big-bang → Year 7 Earth in space.
+- **Left out, with reasons in frontmatter comments:** Year 9 light (AC9S9U04 n4) on the earth-10 lessons and redshift (it names two lessons, so it fills both same-subject slots and pushes out the lesson before); Year 9 word equations on the earth-9 carbon lessons (same year, not reliably taught first: validate warns). No link where nothing on the site teaches it (AC9TDI6P02 keys, AC9M5M04 seasons, AC9M6M01 metric conversion). Balancing keeps its wording note and gets no maths link.
+- `tools/check-refreshers.mjs` now requires the first five blocks rather than exactly five, so new blocks don't break it.
+- Needs a **whole-site publish** (the new `rearrange` block and its short page live in `data/`); the lesson changes alone could go by publish-lessons.
+
 ## Done: one chemistry course per year, and year look-back pages (29 Oct 2026, Matthew said do it)
 
 Plan: Project doc year-recaps-and-course-split-plan. Courses now follow ACARA, one strand per year: `chemistry` became `chemistry-7`, and `chemistry-9-10` split into `chemistry-9` (atoms, equations) and `chemistry-10` (periodic table, rates). Old addresses forward (`tools/moved.mjs`, a forwarding page per old address plus `404.html`); clips and pictures are reused from the old live addresses, so nothing re-records. `science/look-back/year-7/` to `year-10/` gather each year's recap cards (four courses each); not marked, never counts towards Done. Needs a whole-site publish. Lesson `order:` numbers in `chemistry-10` still start at 10 (cards on the look-back page show no numbers; course pages number by position).

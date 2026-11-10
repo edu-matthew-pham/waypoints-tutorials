@@ -1,6 +1,7 @@
 ---
 order: 1
 node: AC9S8U01 n1
+uses: [AC9S7U01 n2, AC9M7N03 n1]
 woven: [AC9S7H01, AC9S7I03]
 unit: cells
 title: How small is a cell?

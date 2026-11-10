@@ -1,6 +1,7 @@
 ---
 order: 5
 node: AC9S7U02 n2
+uses: [AC9M5N04]   # percentages (Maths): short page
 unit: foodwebs
 title: Where does the energy go?
 summary: "Energy enters a food web as sunlight captured by producers and flows one way along the arrows. At each step only about 10% is passed on; the rest is used for living or lost as heat. Matter is different: decomposers return it to be used again."
@@ -65,6 +66,7 @@ tasks:
       q: "A lizard gets 100 kJ from the grasshoppers it eats. About how much reaches a kookaburra that eats the lizard, in kJ?"
       answer: 10
       explain: "About 10% passes on, so 100 × 0.1 gives 10 kJ."
+    refresher: { block: percentage, part: of, example: "Here, the lizard's 100 kJ is the whole, and the kookaburra gets about 10% of it." }
     hint: ["Look at the kJ numbers under the organisms on the board and see what happens to the amount each time you go up one level.", "The board's line shows how much of the producer's energy reached each organism, so you can compare one level with the next."]
   - check:
       type: sort

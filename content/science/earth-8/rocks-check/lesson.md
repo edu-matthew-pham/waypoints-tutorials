@@ -1,6 +1,7 @@
 ---
 order: 5
 node: [AC9S8U04 n1, AC9S8U04 n3, AC9S8U04 n4, AC9S8U04 n5]
+uses: [AC9HG7K01 n4, AC9HH7K08 n1]   # look back: Geography 7 erosion and deposition, History 7 stratigraphy (both taught before Year 8 science)
 woven: [AC9S7H02]
 unit: rocks
 optional: true
@@ -26,6 +27,8 @@ tasks:
 ### The sequence
 
 ### Layers and fossils
+
+You may have met these ideas already: erosion and deposition in Geography (how moving water changes the land) and layers in History (reading an excavation, oldest at the bottom).
 
 ### Properties and formation
 

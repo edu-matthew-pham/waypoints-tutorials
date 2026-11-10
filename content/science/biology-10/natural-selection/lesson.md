@@ -1,6 +1,7 @@
 ---
 order: 5
 node: AC9S10U02 n2
+uses: [AC9HH7K01 n1]   # look back: History 7 theories of human origins
 woven: [AC9S9H01]
 unit: evolution
 title: Why did the beetles change?
@@ -126,6 +127,8 @@ tasks:
 ### A branching tree
 
 ### Closest DNA
+
+You may have met theories of human origins in History, where a theory meant an explanation built on evidence. Natural selection is the same kind of theory: it explains how species change and branch.
 
 ### Back to the kingdoms
 

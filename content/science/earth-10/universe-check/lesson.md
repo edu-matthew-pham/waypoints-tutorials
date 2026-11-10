@@ -1,6 +1,7 @@
 ---
 order: 6
 node: [AC9S10U03 n1, AC9S10U03 n4, AC9S10U03 n5]
+uses: [AC9M7N06 n3, AC9M9M02 n1]
 woven: [AC9S9H01, AC9S9I06, AC9S9I07]
 unit: universe
 optional: true

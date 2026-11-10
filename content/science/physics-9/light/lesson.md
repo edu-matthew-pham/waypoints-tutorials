@@ -1,6 +1,7 @@
 ---
 order: 5
 node: AC9S9U04 n4
+uses: [AC9TDI8K03 n3]   # RGB colour (How computers work, Year 8)
 woven: [AC9S9H02, AC9S9H03]
 unit: models
 title: What is the electromagnetic spectrum?

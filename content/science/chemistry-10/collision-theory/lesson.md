@@ -1,6 +1,7 @@
 ---
 order: 15
 node: [AC9S10U07 n5, AC9S10U07 n6]
+uses: [AC9M8M05 n1, AC9M7A04 n1]
 woven: [AC9S9I02, AC9S9I03]
 unit: rates
 title: Why does heat speed up reactions?
@@ -50,6 +51,7 @@ insight: "Comparing times and the percentage of collisions that react shows ener
 try: { playground: science, starter: "boards.yml#compare", height: 600 }
 check: { type: board, text: "Run the reaction at two different temperatures and compare.", expect: { done: true } }
 hint: ["Do one run, then change only the temperature before you run it again, so you know that's what made the difference.", "Move the temperature slider first and then press Reset, because a run only counts if the temperature stays the same from start to finish."]
+refresher: { block: kelvin, example: "Here, 300 K is about room temperature and 500 K is about 227 °C." }
 ```
 
 Run it at 300 K first. Then move the temperature (try 500 K), press **Reset** so the new run starts clean, and run it again. Watch two numbers in the panel: **collisions** and **reactions**.
@@ -93,6 +95,7 @@ tasks:
       answer: 0
       feedback: [null, "Then you can't tell which change made it faster: change only one thing.", "Runs vary, as they did on the board: repeat each temperature and compare averages."]
       explain: "Change one factor, measure the rate (time until the fizzing stops, or gas made each minute) and keep everything else the same. Repeats show how much the results vary."
+    refresher: { block: rate, example: "Here, a reaction's rate could be the millilitres of gas made for each minute (mL/min)." }
   - check:
       type: match
       q: "Each change speeds up a reaction. Match it to the reason, in collision terms."
