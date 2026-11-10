@@ -11,6 +11,8 @@ before: |
   The hinge errors are systematic: changing subscripts (H₂O to H₂O₂) and miscounting atoms in a coefficient (2 H₂O as 2 hydrogen). The board makes both visible: formulas can't be edited, and every molecule is drawn, so students can count rather than compute.
 
   Board notes: formulas without brackets only; coefficients 1 to 6. The board accepts a balance only with the smallest whole numbers (4 H₂ + 2 O₂ → 4 H₂O balances but is not accepted). Word equations (node 3) and open and closed systems (node 5) are class work; the Wider step is one open-system case.
+
+  Words across subjects: in maths, the balance method keeps an equation true by doing the same thing to both sides. Here, balancing means making the number of each kind of atom equal on both sides, by changing only the numbers in front (coefficients). A student who brings the maths habit may try to add the same thing to both sides; ask what that would do to the atoms.
 running:
   - "Engage: count who chose H₂O₂. Ask them what H₂O₂ is."
   - "Explore: ask what changed in the drawing when they pressed + on H₂O (a whole molecule, two H and one O)."
