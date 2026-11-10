@@ -89,7 +89,7 @@ Feedback is most useful in a loop:
 **try → get feedback → do something with it → try again**
 
 - **A try is evidence.** What you write shows what you understand now. One try doesn't show everything.
-- **Choose a next step.** Practise more, look at a diagram, check a source, try a harder question, or ask a person. Picking a good next step for yourself is called **self-regulation**.
+- **Choose a next step.** Practise more, look at a diagram, check a source, try a harder question, or ask a person. Picking your own next step from feedback is part of **self-regulation**: being your own learning coach.
 - **Check the feedback.** Feedback from AI is evidence too, and it can be wrong. Check it before you act on it.
 
 Feedback that helps you improve, not just tells you a mark, is called **formative** feedback.

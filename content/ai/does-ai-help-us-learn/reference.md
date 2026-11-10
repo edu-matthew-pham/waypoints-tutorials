@@ -20,7 +20,7 @@ Use this page to check what a word means or what a study found. It does **not** 
 | **The skill or the edge** | Is this job the skill you're learning, or on the edge of it? (Nakamura's words: *constitutive* and *peripheral*) | A sliding scale, not two boxes; it changes with the goal and the learner |
 | **Metacognition** | Thinking about your own thinking | Feeling sure isn't the same as being able to do it |
 | **Confidence that matches** | Feeling as sure as your results justify (researchers say *calibration*) | One try is a small sample |
-| **Self-regulation** | Choosing your own goals and next steps, and checking how it's going | It's hard to judge what you don't know yet |
+| **Self-regulation** | Being your own learning coach: you plan, check how it's going and look back, and change what you do when it isn't working, whether you chose the task or someone else did | It's hard to judge what you don't know yet |
 | **Scaffolding** | Support for a skill that is meant to come down | Hints aren't always better than worked examples |
 | **Fading support** | Less help each time | A good plan doesn't prove you'll remember |
 
