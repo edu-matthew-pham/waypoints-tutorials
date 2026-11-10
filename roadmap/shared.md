@@ -2,6 +2,10 @@
 
 Things more than one subject depends on: the build, publishing, the home and plain pages, and shared tools (`tools/*.mjs`, `tools/lesson-view.mjs`, `playground-shared/`, `playground-board/core.js`). Before changing one of these, check this file and `git log` for work in progress, and note here what you are changing.
 
+## In progress (10 Nov 2026, shared-tools chat; Matthew said go): prior-knowledge tools
+
+From the handoff `claude/handoff-prior-knowledge-next.md` › A. Changing `tools/lesson-core.mjs`, `tools/lesson-view.mjs`, `tools/build-site.mjs` (recap), `tools/prior-links.mjs`, `tools/search-index.mjs`, plus new `data/refreshers/` and `tools/refreshers.mjs`. Please hold changes to those until this note says done.
+
 ## Built (1 Nov 2026, navigation chat; Matthew said go): subject pages in one pass
 
 Plan in `roadmap/navigation.md`: shorter List for teachers rows (say a shared strand or year once), a contents line per course, years only where they tell courses apart, no "Then" or Foundations/Extensions for maths and science. Changed `tools/build-site.mjs`, `tools/trail.mjs`, `site/trail.js`, and dropped `stage:` from maths and science. Needs a whole-site publish; no clips re-recorded. New subjects: courses in a year-by-year subject need no `stage:`; check `roadmap/navigation.md` before changing the List for teachers or stage words.
