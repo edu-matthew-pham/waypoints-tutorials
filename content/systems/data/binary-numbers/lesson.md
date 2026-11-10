@@ -1,6 +1,7 @@
 ---
 order: 5
 node: AC9TDI8K04 n1
+uses: [AC9M7N03 n1]   # place value as powers of 10 (Maths, Year 7 "Place value and powers of 10"): binary is place value in base 2
 unit: binary
 introduces: [binary]
 title: Bits and binary numbers
@@ -90,6 +91,8 @@ tasks:
 ```
 
 ### Read the places
+
+This is place value, like in ordinary numbers, except each place is worth double the one on its right, not ten times.
 
 Here is 10110 read one place at a time. The places start at 1 on the right and double each time.
 

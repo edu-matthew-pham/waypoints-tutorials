@@ -14,6 +14,8 @@ before: |
   Inclusive 'or' is the maths meaning; everyday 'or' is often exclusive ("tea or coffee?"). Name the difference once. The addition rule P(A or B) = P(A) + P(B) − P(A and B) appears as a routine, not a formula to memorise.
 
   Wider: Venn diagrams with three circles, and checking 'or' with a complement (neither).
+
+  Across subjects: Year 8 Digital Technologies teaches the same logic as AND, OR and NOT gates ("Why binary: logic gates", `systems/data/logic-gates`), where OR is also inclusive: the lamp lights when one switch, the other or both are on. Same year, so it's a mention, not a link: students may or may not have met it yet.
 running:
   - "Predict: ask whether a probability can be more than 1."
   - "Run: ask how many times the 8 are counted now."

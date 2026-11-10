@@ -36,7 +36,7 @@ explainClip:
     - wait: 1200
     - expect: { selector: "#out h2", contains: "Running" }
 ---
-The plane moved only while you held a key. Many things in a game move with nobody pressing anything: clouds, cars, enemies. They have a **velocity**: a speed across (**vx**) and down (**vy**), in pixels per second. The **game engine** moves the sprite a little every **frame** (one redraw of the screen, about 30 times a second).
+The plane moved only while you held a key. Many things in a game move with nobody pressing anything: clouds, cars, enemies. They have a **velocity**: a speed across (**vx**) and down (**vy**), in pixels per second. A minus sign means the other way: a vx of −30 moves left, and a vy of −20 moves up. The **game engine** moves the sprite a little every **frame** (one redraw of the screen, about 30 times a second).
 
 ## Predict
 

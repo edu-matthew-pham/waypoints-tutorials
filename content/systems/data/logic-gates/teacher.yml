@@ -12,6 +12,8 @@ before: |
   The one idea (the kit's chain for this node): electronic components have two reliable states → those states are 0 and 1 → gates combine them → so binary is the foundation of all computing. The half adder in Make shows gates doing the binary addition students know from lesson 5.
 
   Simplifications: real gates are made of transistors, not mechanical switches; the circuit view is an analogy that holds for AND and OR.
+
+  Across subjects: Year 8 maths teaches the same logic in "And, or and not" (`maths/probability-8/and-or-not`), with Venn diagrams and two-way tables. Its 'or' includes both, like the OR gate, and Sam's mistake (one or the other, not both) turns up there too. Same year, so it's a mention, not a link: students may or may not have met it yet.
 running:
   - "Predict: students who chose \"yes\" picture parallel wiring. Ask them to trace the current."
   - "Try: have students fill a paper truth table as the board's fills."

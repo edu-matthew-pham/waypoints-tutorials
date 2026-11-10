@@ -270,3 +270,4 @@ Do this one in your book, not on the screen. The hill is made up for the task, a
 - **Roads and ramps.** A sign of 8% says the same thing as a line with $m = 0.08$.
 - **Roofs.** A roof pitch is the rise for each step along, so a steeper roof has a bigger $m$.
 - **Skiing and cycling.** Runs and hill climbs are rated by how much they go up for each distance along.
+- **Travel graphs.** On a graph of distance against time, $m$ is the distance for each hour: the speed. A steeper line is a faster trip.

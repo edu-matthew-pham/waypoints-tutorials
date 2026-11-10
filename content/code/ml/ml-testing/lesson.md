@@ -2,6 +2,7 @@
 order: 3
 unit: hand
 assumes: [random]
+uses: [AC9M8ST02 n1]   # random sampling (Maths, Year 8 "Ways to choose a sample"): shuffle-then-split is a random sample
 recipes: [import-module, dotted-call]
 title: A fair test
 summary: "Hold back some penguins to test on: a model tested on the data it learned from looks perfect, and only new data shows how good it really is."
@@ -31,6 +32,7 @@ stage: run
 code: testing.py#run
 try: { playground: python, starter: "testing.py#run", files: [../sets/penguins.csv], height: 480 }
 check: { type: reflect, text: "I can explain why the model scores 100% on its own training penguins." }
+refresher: { block: percentage, part: share, example: "Here, the penguins guessed right are the part and all the test penguins are the whole." }
 unlocks: [test-a-model]
 ```
 
@@ -73,7 +75,7 @@ Why it means nothing.
 
 ### Why shuffle
 
-A fair mix.
+A fair mix. Shuffling first is like choosing a **random sample** in maths: every penguin has the same chance of landing in the test set, so the test looks like the whole data.
 
 ### Spot the bug
 
