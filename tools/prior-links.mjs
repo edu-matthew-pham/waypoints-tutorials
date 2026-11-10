@@ -96,6 +96,67 @@ export function priorLessons(lessons, { data, prereqs, read, isChallenge = () =>
   return out;
 }
 
+// ---------- Cross-subject links (10 Nov 2026, roadmap/shared.md › Prior-knowledge tools) ----------
+// A lesson's `uses:` may name another subject's node or descriptor (science `uses: [AC9M8M05 n1]`). The link goes in
+// the same "What you should already know" row, with these defaults (handoff claude/handoff-prior-knowledge-next.md › A4):
+// - earlier years only, never forward: a link to something not yet taught sends a student nowhere useful (same year
+//   counts as not earlier; the lesson teaches the small piece itself instead, and validate says so);
+// - at most MAX_CROSS per lesson, so the row stays short;
+// - labelled with the subject and year ("Maths, Year 8"), done by the page;
+// - the lightest level that exists: a shared refresher's short page if one covers the node, else (decided by the build)
+//   the earlier lesson's recap card, else the lesson.
+// Reverse links (a later science lesson back to an earlier History lesson) work the same way: only the years matter.
+// Later, Kit's cross-subject field (handoff › C) can feed the same refs in.
+export const MAX_CROSS = 2;
+
+/** A lesson's year, for "never link forward": its earliest node, else the first year of its course's `years:`. */
+export function lessonYearFn(loadDirMeta, root) {
+  const cache = new Map();
+  const courseYears = (c) => { if (!cache.has(c)) { let y = null; try { const m = String(loadDirMeta(`${root}/${c}`).years ?? '').match(/\d+/); y = m ? Number(m[0]) : null; } catch { y = null; } cache.set(c, y); } return cache.get(c); };
+  return (l) => {
+    const ys = list(l.node).map(parseRef).filter(Boolean).map((r) => yearOfCode(r.code)).filter((y) => y != null);
+    return ys.length ? Math.min(...ys) : courseYears(course(l.slug));
+  };
+}
+const yearOfCode = (code) => { const m = String(code).match(/^AC9[A-Z]+?(F(?=[A-Z0-9])|\d{1,2}(?=[A-Z]))/); return m ? (m[1] === 'F' ? 0 : Number(m[1])) : null; };
+
+/**
+ * slug -> [{ kind: 'refresh' | 'lesson', block?, slug?, ref, year }] and warnings.
+ * lessonYear(l) -> year or null; refreshers: id -> block (with `covers`).
+ */
+export function crossLinks(lessons, { data, lessonYear, refreshers = {}, isChallenge = () => false }) {
+  const byNode = new Map(), byCode = new Map();
+  for (const l of lessons) for (const s of list(l.node)) {
+    const r = parseRef(s); if (!r?.n) continue;
+    byNode.set(`${r.code} n${r.n}`, [...(byNode.get(`${r.code} n${r.n}`) || []), l]);
+    byCode.set(r.code, [...(byCode.get(r.code) || []), { n: r.n, l }]);
+  }
+  const covering = (r) => Object.values(refreshers).find((b) => (b.covers || []).some((c) => { const x = parseRef(c); return x && x.code === r.code && (x.n == null || r.n == null || x.n === r.n); }));
+  const out = new Map(), warnings = [];
+  for (const l of lessons) {
+    const mine = subject(l.slug), ly = lessonYear(l), links = [];
+    for (const s of list(l.uses)) {
+      const r = parseRef(s); if (!r) continue;
+      // Lessons that teach it: the node's lessons, or for a whole descriptor the lesson on its highest node.
+      const teach = r.n ? (byNode.get(`${r.code} n${r.n}`) || []) : (byCode.get(r.code) || []).slice().sort((a, b) => b.n - a.n).map((x) => x.l);
+      if (teach.some((e) => subject(e.slug) === mine)) continue;   // taught in this subject: the same-subject links handle it
+      const other = teach.filter((e) => e !== l && !isChallenge(e)).sort((a, b) => (!!a.optional) - (!!b.optional));
+      const block = covering(r);
+      if (!other.length && !block) continue;   // nothing on the site to link to
+      const ty = data.get(r.code)?.year ?? yearOfCode(r.code);
+      const ref = r.n ? `${r.code} n${r.n}` : r.code;
+      if (ly == null) { warnings.push(`${l.slug} › uses: ${ref} is in another subject, but this lesson's year is unknown (no node: and no years: on its course), so no link is shown`); continue; }
+      if (ty == null || ty >= ly) { warnings.push(`${l.slug} › uses: ${ref} is ${ty == null ? 'from an unknown year' : `Year ${ty}`} in another subject, not earlier than this lesson (Year ${ly}), so no link is shown (never link forward); teach the small piece in the lesson, or use a refresher fold`); continue; }
+      const link = block ? { kind: 'refresh', block: block.id, ref, year: ty } : { kind: 'lesson', slug: other[0].slug, ref, year: ty };
+      const id = link.block || link.slug;
+      if (!links.some((x) => (x.block || x.slug) === id)) links.push(link);
+    }
+    if (links.length > MAX_CROSS) warnings.push(`${l.slug} › uses: ${links.length} links to other subjects; only the first ${MAX_CROSS} are shown (more becomes a reading list)`);
+    if (links.length) out.set(l.slug, links.slice(0, MAX_CROSS));
+  }
+  return { links: out, warnings };
+}
+
 // CLI: node tools/prior-links.mjs [--sample N] prints each lesson's links (or a random sample) for review.
 if (import.meta.url === `file://${process.argv[1]}`) {
   const { loadLessons, loadDirMeta, getSnippet, CONTENT_ROOT } = await import('./lesson.mjs');

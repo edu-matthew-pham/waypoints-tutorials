@@ -1,0 +1,44 @@
+title: Percentages
+from: maths
+summary: A percentage is a share out of 100, used two ways.
+keywords: percent percentage per cent out of 100 share efficiency accuracy 10%
+covers: [AC9M5N04, AC9M7N06 n3]
+fold: "a percentage is a share out of 100."
+parts:
+  share:
+    text: "*What percentage is it?* Divide the part by the whole, then × 100: 8 out of 20 is 8 ÷ 20 × 100 = 40%."
+    check:
+      type: number
+      q: "A device takes in 50 J and gives out 20 J of useful energy. What percentage is useful?"
+      answer: 40
+      tolerance: 0
+      explain: "20 ÷ 50 × 100 = 40, so 40% is useful."
+  of:
+    text: "*What is 10% of it?* Multiply: 10% of 500 is 0.1 × 500 = 50."
+    check:
+      type: number
+      q: "A plant stores 500 J. About 10% of it passes to the animal that eats it. How many joules is that?"
+      answer: 50
+      tolerance: 0
+      explain: "10% is 0.1, and 0.1 × 500 = 50, so about 50 J."
+check:
+  type: number
+  q: "A device takes in 50 J and gives out 20 J of useful energy. What percentage is useful?"
+  answer: 40
+  tolerance: 0
+  explain: "20 ÷ 50 × 100 = 40, so 40% is useful."
+page: |
+  **Percent means "out of 100".** 100% is the whole; 50% is half; 25% is a quarter.
+
+  You'll use percentages in two directions.
+
+  **What percentage is this?** Divide the part by the whole, then × 100. 8 out of 20 is 8 ÷ 20 × 100 = 40%. That's
+  how you find a machine's efficiency (useful energy out of energy in) or a model's accuracy (right answers out of all
+  the answers).
+
+  **What is 10% of this?** Change the percentage to a decimal and multiply. 10% of 500 is 0.1 × 500 = 50. That's how
+  you find the energy passed along a food chain, when about 10% goes to the next animal.
+
+  **A percentage is a share, not an amount.** A bigger amount isn't always a bigger share. One light bulb wastes 60 J
+  out of 100 J; another wastes 90 J out of 300 J. The second wastes more joules, but a smaller share: 30%, not 60%.
+lessons: [maths/before-year-7/hundred-percent-is-the-whole, maths/number-7/percentages]

@@ -144,6 +144,21 @@ else console.log('✓ error tasks: every planted error names its fault and an on
   warnings.forEach((w) => console.warn('⚠ ' + w));
   if (!warnings.length) console.log('✓ progression nodes: every prerequisite is taught earlier, assumed or from an earlier year');
 }
+// Shared refresher blocks (data/refreshers/, AUTHORING › Refreshers): each block is valid (a failure), and links to
+// other subjects in uses: point back in years, never forward (warnings: the page leaves those links out).
+{
+  const { getRefreshers, loadDirMeta: ldm } = await import('./lesson.mjs');
+  const { crossLinks, lessonYearFn, challengeTest } = await import('./prior-links.mjs');
+  const { loadProgressions } = await import('./progressions.mjs');
+  const { blocks, errors } = getRefreshers();
+  const slugs = new Set(lessons.map((l) => l.slug));
+  const lessonErrs = Object.values(blocks).flatMap((b) => b.lessons.filter((x) => !slugs.has(x)).map((x) => `data/refreshers/${b.id}.yml › lessons: no lesson "${x}"`));
+  for (const e of [...errors, ...lessonErrs]) { console.error('✗ ' + e); bad++; }
+  if (!errors.length && !lessonErrs.length) console.log(`✓ refreshers: ${Object.keys(blocks).length} shared blocks, ${lessons.filter((l) => [l.steps.map((st) => [st.config, ...st.tasks.map((t) => t.config)])].flat(2).some((c) => c.refresher)).length} lessons use them`);
+  const { links, warnings } = crossLinks(lessons, { data: loadProgressions(), lessonYear: lessonYearFn(ldm, CONTENT_ROOT), refreshers: blocks, isChallenge: challengeTest(ldm, CONTENT_ROOT) });
+  warnings.forEach((w) => console.warn('⚠ ' + w));
+  console.log(`✓ cross-subject links: ${[...links.values()].flat().length} on ${links.size} lessons${warnings.length ? `, ${warnings.length} left out (see above)` : ''}`);
+}
 // Woven strands (science Human endeavour and Inquiry): woven: lists descriptor codes from the subject's curriculum data,
 // each in a woven strand, so the curriculum map can show where they are practised.
 {

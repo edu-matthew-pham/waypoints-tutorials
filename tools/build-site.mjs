@@ -18,7 +18,8 @@ import { lessonPageHtml, tryEmbed, esc, titleCase, page, codeBlock, siteNav, NAV
 import { readFileSync } from 'node:fs';
 import { diagramSpec } from './diagram-core.mjs';
 import { snippetId, unlockKind, pictureSpec, usesBoardPictures, pictureBoard, makecodePackage, makecodeExtensions, captionText, voiceSpec, CLIP_VOICES, VOICE_LABELS } from './lesson-core.mjs';
-import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, loadSharedModules, CONTENT_ROOT } from './lesson.mjs';
+import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, loadSharedModules, CONTENT_ROOT, getRefreshers } from './lesson.mjs';
+import { refresherPageBody, REFRESH_CSS, REFRESH_JS } from './refreshers.mjs';
 import { buildPlayground, buildPyPlayground, buildMicrostudioPlayground, buildP5Playground, buildSqlPlayground, buildDomPlayground, buildHtmlPlayground, buildMathsPlayground, buildSciencePlayground, buildKatex, buildNumbas, buildMakecodePlayground, buildExplainStage } from './build-playground.mjs';
 import { buildCreate } from './build-create.mjs';
 import { layoutTrail, trailHtml, TRAIL_CSS, trailheadsHtml, TRAILHEADS_CSS } from './trail.mjs';
@@ -45,7 +46,7 @@ import { PRACTICE_CSS, PRACTICE_UI_JS, practiceBody } from './practice-view.mjs'
 import { MATH_JS } from './math-expr.mjs';
 import { forwardRules, forwardPage, notFoundPage } from './moved.mjs';
 import { loadProgressions } from './progressions.mjs';
-import { priorLessons, challengeTest } from './prior-links.mjs';
+import { priorLessons, challengeTest, crossLinks, lessonYearFn } from './prior-links.mjs';
 import { markedMath, textWithMath, workedHtml } from './maths.mjs';
 import { FORMS_JS, NUMBAS_VERSION } from './maths-forms.mjs';
 import { loadCardsFile, ictCardsBody, ictCardText } from './ict-cards.mjs';
@@ -193,7 +194,7 @@ function catchUpIndex() {
 
 // "Builds on" and "Put to work in": lessons linked by a theory concept (tools/concepts-core.mjs THEORY), across subjects;
 // plus "What you should already know" and "Leads into" for Before Year 7 lessons (by assumed node).
-let THEORY_LINKS = null, PRIOR = null;
+let THEORY_LINKS = null, PRIOR = null, CROSS = null;
 function conceptLinks(lesson) {
   const tl = (THEORY_LINKS ||= theoryLinks(lessons)).get(lesson.slug) || { on: [], in: [] };
   const up = '../'.repeat(lesson.depth), bySlug = (s) => lessons.find((x) => x.slug === s);
@@ -213,7 +214,18 @@ function conceptLinks(lesson) {
     const names = p.labels.map((t) => t.replace(/\s*\([^)]*\)/g, '').trim()), shown = names.slice(0, 2).join(', ') + (names.length > 2 ? ' …' : '');
     // The page shows the linked lesson's own summary sentence; why it was linked (node or idea) goes in the hover text.
     return o && { ...o, why: (p.kind === 'idea' ? 'idea: ' : 'node: ') + shown }; }).filter(Boolean);
-  return on.length || used.length || catchUp.length || leads.length || prior.length ? { on, in: used, catchUp, leads, prior } : null;
+  // Other subjects' lessons this one relies on (tools/prior-links.mjs › crossLinks): earlier years only, at most two,
+  // labelled with subject and year, at the lightest level there is (short refresher page, recap card, then the lesson).
+  CROSS ||= crossLinks(lessons, { data: loadProgressions(), lessonYear, refreshers: REFRESHERS, isChallenge: challengeTest(loadDirMeta, CONTENT_ROOT) }).links;
+  const tag = (subj, y) => `${dirNode(subj).title}, ${y === 0 ? 'Foundation' : `Year ${y}`}`;
+  const cross = (CROSS.get(lesson.slug) || []).map((x) => {
+    if (x.kind === 'refresh') { const b = REFRESHERS[x.block];
+      return { href: `${up}refresh/${b.id}/?from=${lessonYear(lesson)}`, title: b.title, where: tag(b.from || 'maths', x.year), level: 'quick refresher', reason: b.summary, why: `uses: ${x.ref}`, kind: 'summary' }; }
+    const l = bySlug(x.slug); if (!l) return null;
+    const rc = recapTarget(l);
+    return { href: `${up}${rc || `${l.slug}/`}`, title: l.title, where: tag(l.slug.split('/')[0], x.year), level: rc ? 'recap' : '', reason: brief(l), why: `uses: ${x.ref}`, kind: 'summary' };
+  }).filter(Boolean);
+  return on.length || used.length || catchUp.length || leads.length || prior.length || cross.length ? { on, in: used, catchUp, leads, prior, cross } : null;
 }
 
 function buildLesson(lesson, parentTitle, course) {
@@ -234,6 +246,8 @@ function buildLesson(lesson, parentTitle, course) {
     course,
     siteRoot: '../'.repeat(lesson.depth),
     conceptLinks: conceptLinks(lesson),
+    refreshers: REFRESHERS,
+    year: lessonYear(lesson),
     source: `content/${lesson.slug}/lesson.md`,
     createHref: `${'../'.repeat(lesson.depth)}code/create/?open=${lesson.slug}`,
     teacherGuide: lesson.teacher ? `${'../'.repeat(lesson.depth)}${teachPath(lesson)}` : '',
@@ -253,6 +267,11 @@ iframe{flex:1;width:100%;border:0;min-height:0}`;
 // ---------- build ----------
 const orderOf = (l) => (l.order ?? Infinity);
 const lessons = loadLessons().sort((a, b) => (a.slug.split('/').slice(0, -1).join('/')).localeCompare(b.slug.split('/').slice(0, -1).join('/')) || orderOf(a) - orderOf(b) || a.slug.localeCompare(b.slug));
+// Shared refresher blocks (data/refreshers/, tools/refreshers.mjs): folds in lessons and short pages at /refresh/<id>/.
+const { blocks: REFRESHERS, errors: REFRESHER_ERRORS } = getRefreshers();
+if (REFRESHER_ERRORS.length) throw new Error(`refresher blocks:\n${REFRESHER_ERRORS.join('\n')}`);
+// A lesson's year, for "never link forward": its earliest curriculum node, else the first year of its course's `years:`.
+const lessonYear = lessonYearFn(loadDirMeta, CONTENT_ROOT);
 const snippetFiles = loadSnippetFiles();
 // microStudio cards are read on their own (not in loadSnippetFiles), so their ids never shadow turtle cards of the same name.
 const MS_SNIPS = JSON.parse(readFileSync(join('snippets', 'microstudio.json'), 'utf8'));
@@ -517,6 +536,10 @@ for (const [path, cards] of ICT_CARDS) for (const c of cards) SEARCH.entries.pus
 // How-tos (3 Nov 2026): one entry each, plus the /howto/ index as a teacher page; found by title, summary and the words of their courses.
 SEARCH.entries.push({ t: 'Project how-tos', u: 'howto/', s: 'Teachers', sp: 'teachers', c: '', y: '', ty: 'page', d: 'Recipes for students\' own projects, by course: live data, extra pages, several pictures and more.', k: normSearch('project how-tos how to recipes faq teacher teachers') });
 for (const h of HOWTOS) { const cs = h.courses.filter((c) => dirs.has(c)); SEARCH.entries.push({ t: h.title || h.name, u: `howto/${h.name}/`, s: cs.length ? dirNode(cs[0].split('/')[0]).title : 'Tutorials', sp: cs.length ? cs[0].split('/')[0] : '', c: cs.map((c) => dirNode(c).title).join(', '), y: '', ty: 'howto', d: h.summary || '', k: normSearch(`${h.title} ${h.summary || ''} ${h.keywords || ''} how to project ${cs.map((c) => dirNode(c).title).join(' ')} ${(h.contexts || []).map((x) => x.label).join(' ')}`) }); }
+// Short refresher pages (10 Nov 2026): one entry each, plus the /refresh/ index as a teacher page.
+{ const paged = Object.values(REFRESHERS).filter((b) => b.page !== false);
+  if (paged.length) SEARCH.entries.push({ t: 'Quick refreshers', u: 'refresh/', s: 'Teachers', sp: 'teachers', c: '', y: '', ty: 'page', d: 'One idea from an earlier year or another subject, in a minute or two: rates, percentages, reading a graph over time.', k: normSearch('quick refreshers refresher build up to it prior knowledge what you need to know teacher teachers') });
+  for (const b of paged) SEARCH.entries.push({ t: b.title, u: `refresh/${b.id}/`, s: b.from ? titleCase(b.from) : 'Tutorials', sp: b.from || '', c: 'Quick refreshers', y: '', ty: 'refresher', d: b.summary, k: normSearch(`${b.title} ${b.summary} ${b.keywords} refresher what you need to know`) }); }
 writeFileSync(join(OUT, 'search-index.json'), JSON.stringify(SEARCH.entries));
 copyFileSync(join('site', 'search.js'), join(OUT, 'search.js'));
 // Course names a course's pathway says to do first (its `after:`), for the teacher strip on a course page.
@@ -559,6 +582,7 @@ ${NAV_JS}
 const RECAP_CSS = `
 .rcunit{margin:28px 0 8px}.rcunit h2{font-size:1.15rem;margin:0 0 4px}.rcunit>p{margin:0 0 10px;color:var(--muted);font-size:15px}
 .rc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:10px 0}
+.rc:target{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}.rc{scroll-margin-top:calc(var(--nav,0px) + 12px)}.rcrev{margin:10px 0;padding:8px 12px;border-left:3px solid var(--accent)}.rcrev ul{margin:.3em 0;padding-left:20px}
 .rc h3{margin:0 0 6px;font-size:1.05rem}.rc h3 a{color:inherit;text-decoration:none}.rcunit h2 a{color:inherit;text-decoration:none}.rcunit h2 a:hover{color:var(--accent)}.rc h3 a:hover{text-decoration:underline}
 .rcq{margin:0;font-size:16px}.rcq b{color:var(--predict,#7c3aed);font-size:13px;letter-spacing:.04em;text-transform:uppercase;margin-right:6px}
 .rc details{margin-top:8px}.rc summary{cursor:pointer;font-weight:600;color:var(--investigate);padding:4px 0}
@@ -599,7 +623,28 @@ function writePractice(node, skills) {
     `<script>${MATH_JS}${PRACTICE_JS}${PRACTICE_UI_JS}</script>` + (forms ? `<script src="${'../'.repeat(pp.split('/').length)}_numbas/numbas-jme.min.js?v=${NUMBAS_VERSION()}" defer></script><script>${FORMS_JS}</script>` : ''), navFor(pp, 'course', node.path)));
 }
 
-// One recap card: the lesson's exit question, then its explanation, picture and clip behind "Check your answer".
+// The lesson's revision summary: the list after a "**Revision summary**" line in its steps (science's Evaluate step,
+// 104 lessons on 10 Nov 2026), shown on its recap card so a "Build up to this" link lands on the clip and the summary together.
+function revisionOf(l) {
+  for (const st of l.steps || []) {
+    const i = String(st.body || '').indexOf('**Revision summary**');
+    if (i < 0) continue;
+    const rest = st.body.slice(i + '**Revision summary**'.length).replace(/^\s*\n/, '');
+    const block = rest.split(/\n\s*\n/)[0].trim();
+    if (block) return block;
+  }
+  return '';
+}
+
+// Where a link can land on a lesson's recap (level 3 of the four ways to handle a leap): its card on the course's recap
+// page, `<course>/recap/#<lesson>`, or '' when there is none (an optional lesson, or a card with nothing on it).
+function recapTarget(l) {
+  const c = l.slug.split('/').slice(0, -1).join('/'), meta = dirs.get(c)?.meta || {};
+  if (l.optional || meta.recap === false || dirs.get(c.split('/')[0])?.meta?.audience === 'teachers' || !(l.teacher?.exit?.q || l.teacher?.explain)) return '';
+  return `${c}/recap/#${l.slug.split('/').pop()}`;
+}
+
+// One recap card: the lesson's exit question, then its explanation, revision summary, picture and clip behind "Check your answer".
 // `to` is the lesson's folder relative to the page (the page must sit at the lesson's own depth, for pictures);
 // `id` the card's anchor; `numbered` shows the lesson's order before its title.
 function recapCard(l, to, id, mdp, numbered = true) {
@@ -611,7 +656,8 @@ function recapCard(l, to, id, mdp, numbered = true) {
   const clip = hasClip ? clipHtml(l, st).replace(/(src|poster)="clips\//g, `$1="${to}clips/`).replace('preload="metadata"', 'preload="none"') : '';
   const pic = l.explainPicture ? pictureHtml(l, l.explainPicture, 'explain') : '';
   const dia = l.explainDiagram ? diagramHtml(l, l.explainDiagram, 'explain') : '';
-  const body = (T.exit?.a ? `<p class="rca">${esc(T.exit.a)}</p>` : '') + (T.explain ? `<div class="rcx">${mdp.parse(String(T.explain))}</div>` : '') + dia + pic + clip +
+  const rev = revisionOf(l);
+  const body = (T.exit?.a ? `<p class="rca">${esc(T.exit.a)}</p>` : '') + (T.explain ? `<div class="rcx">${mdp.parse(String(T.explain))}</div>` : '') + (rev ? `<div class="rcrev"><b>Revision summary</b>${mdp.parse(rev)}</div>` : '') + dia + pic + clip +
     `<a class="rcgo" href="${esc(to)}">Open the lesson →</a>` +
     (l.coach ? `<div class="rccoach" hidden><p><b>Still stuck?</b> Try the lesson again first. Then, if your teacher has said you can, copy a coach prompt into the AI tool your school allows. It asks you questions; it won't give you the answers.</p><button type="button">Copy a coach prompt</button><textarea readonly hidden>${esc(l.coach)}</textarea></div>` : '');
   return `<article class="rc" id="${esc(id)}"><h3><a href="${esc(to)}">${numbered && l.order != null ? `${l.order}. ` : ''}${esc(l.title)}</a></h3>` +
@@ -788,7 +834,10 @@ for (const node of dirs.values()) {
     // A course page: progress first. Continue card, one compact row per lesson with a segment per check
     // (filled from this browser's progress by progress.js), and the playground and reference as small links.
     // recap: true in a course's index.md: a short recap page at <course>/recap/ (recapHtml, below), linked as a chip.
-    const recap = node.meta?.recap === true;
+    // Recap pages are on by default (10 Nov 2026, Matthew): wherever a required lesson has an exit question or explain text,
+    // so a "Build up to this" link can land on that lesson's card. `recap: false` in the course index.md turns it off.
+    // Not for teacher courses (a folder with audience: teachers), which are for teachers, not revision.
+    const recap = node.meta?.recap !== false && dirs.get(node.path.split('/')[0])?.meta?.audience !== 'teachers' && courseLessons.some((l) => !l.optional && (l.teacher?.exit?.q || l.teacher?.explain));
     const practice = practiceSkills(node, courseLessons);
     const tools = (play ? `<a class="chip" href="playground/">Playground</a>` : '') + (ref || conceptualRef ? `<a class="chip" href="reference/">Reference</a>` : '') + (recap ? `<a class="chip" href="recap/">Recap</a>` : '') + (practice.length ? `<a class="chip" href="practice/">Practice</a>` : '') + (PROJECTS.has(node.path) ? `<a class="chip" href="projects/" data-projects="${esc(node.path)}">Projects</a>` : '') + (BRIEFS.has(node.path) ? `<a class="chip" href="briefs/">${BRIEFS.get(node.path).kind === 'skeleton' ? 'Inquiry skeletons' : 'Project briefs'}</a>` : '');
     if (recap) writeRecap(node, courseLessons);
@@ -1103,6 +1152,32 @@ for (const h of HOWTOS) {
   writeFileSync(join(OUT, path, 'index.html'), page(title,
     `<style>${HOWTO_CSS}</style><header class="top">${crumb}<h1>${esc(title)}</h1>${h.summary ? `<p class="lede">${esc(h.summary)}</p>` : ''}</header>${contextSwitch(h.contexts, h.switch, h.default)}<div class="pabout wpt-ht">${body}</div>`,
     `<script>${HOWTO_JS}</script>`, navFor(path, 'home', course || null), '<meta name="robots" content="noindex">'));
+}
+
+// ---------- short refresher pages: data/refreshers/<id>.yml becomes /refresh/<id>/ (tools/refreshers.mjs) ----------
+// Level 2 of the four ways to handle a leap: one idea, a minute or two, with the earlier lesson's recap card and the
+// full lesson a click further. Like how-tos: in site search and on an index under Teachers, not on trails; noindex.
+{
+  const rmd = new Marked();
+  const subjectYear = (l) => { const y = lessonYear(l); return `${dirNode(l.slug.split('/')[0]).title}${y != null ? `, ${y === 0 ? 'Foundation' : `Year ${y}`}` : ''}`; };
+  const paged = Object.values(REFRESHERS).filter((b) => b.page !== false);
+  for (const b of paged) {
+    const links = b.lessons.map((slug) => lessons.find((l) => l.slug === slug)).filter(Boolean)
+      .map((l) => ({ title: l.title, href: `${l.slug}/`, year: lessonYear(l), label: subjectYear(l), recap: recapTarget(l) }));
+    const path = `refresh/${b.id}`;
+    mkdirSync(join(OUT, path), { recursive: true });
+    writeFileSync(join(OUT, path, 'index.html'), page(b.title,
+      `<style>${REFRESH_CSS}</style><header class="top"><a class="crumb" href="../">← Quick refreshers</a><h1>${esc(b.title)}</h1><p class="lede">${esc(b.summary)}</p></header>` +
+      refresherPageBody(b, { md: (t) => rmd.parse(t), links, up: '../../' }),
+      `<script>${REFRESH_JS}</script>`, navFor(path, 'home'), '<meta name="robots" content="noindex">'));
+  }
+  if (paged.length) {
+    mkdirSync(join(OUT, 'refresh'), { recursive: true });
+    writeFileSync(join(OUT, 'refresh', 'index.html'), page('Quick refreshers',
+      `<style>${REFRESH_CSS}</style><header class="top"><a class="crumb" href="../teachers/">← Teachers</a><h1>Quick refreshers</h1><p class="lede">One idea from an earlier year or another subject, in a minute or two: what a student needs before a lesson that uses it, with the full lesson a click further. The same words appear in the "Build up to it" folds inside lessons.</p></header>` +
+      `<section class="wpt-rf-list"><ul>${paged.map((b) => `<li><a href="${esc(b.id)}/">${esc(b.title)}</a> <small>${esc(b.from ? `From ${b.from}. ` : '')}${esc(b.summary)}</small></li>`).join('')}</ul></section>`,
+      '', navFor('refresh', 'home'), '<meta name="robots" content="noindex">'));
+  }
 }
 
 // ---------- teacher guide: /teach/<course>/ and /teach/<lesson>/ with decks, worksheets and cheat sheets ----------

@@ -5,6 +5,7 @@ import YAML from 'yaml';
 import { parseLessonText, snippetFrom, snippetId, unlockKind, FEATURES } from './lesson-core.mjs';
 import {validateLessonSource,validationReport} from './lesson-validation.mjs';
 import { lessonPageHtml, tryEmbed } from './lesson-view.mjs';
+import { REFRESHERS } from './refresher-blocks.mjs';
 import { diagramPreviewHtml } from './diagram-core.mjs';
 import { scanModule } from './modules-scan.mjs';
 import { highlightCode } from './highlight.js';
@@ -153,7 +154,7 @@ function render() {
     try { return tryEmbed(lesson, s, snippetFrom(read, t.starter || s.config.code), siteRoot, locksFor(unlockKind(lesson, s)), modsFor(lesson)); } catch { return ''; }
   };
   const keep = $('preview').contentWindow?.scrollY || 0;
-  $('preview').srcdoc = lessonPageHtml(lesson, { Marked, highlightCode, snippet: (r) => snippetFrom(read, r), clipHtml, tryHtml, maths, siteRoot, crumb: null, source: '', diagramHtml: (v) => diagramPreviewHtml(v, (r) => snippetFrom(read, r), new URL('vendor/mermaid.min.js', import.meta.url).href) });
+  $('preview').srcdoc = lessonPageHtml(lesson, { Marked, highlightCode, refreshers: REFRESHERS, snippet: (r) => snippetFrom(read, r), clipHtml, tryHtml, maths, siteRoot, crumb: null, source: '', diagramHtml: (v) => diagramPreviewHtml(v, (r) => snippetFrom(read, r), new URL('vendor/mermaid.min.js', import.meta.url).href) });
   $('preview').onload = () => { try { $('preview').contentWindow.scrollTo(0, keep); } catch { /* ignore */ } };
 }
 $('copyValidation').onclick = async () => {

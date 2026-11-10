@@ -3,7 +3,7 @@
 import { cpSync, mkdirSync, copyFileSync, rmSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { loadLessons, loadDirMeta, CONTENT_ROOT } from './lesson.mjs';
+import { loadLessons, loadDirMeta, CONTENT_ROOT, getRefreshers } from './lesson.mjs';
 import { projectIdeas } from './project-ideas.mjs';
 import { browserClip } from './export-browser-clip.mjs';
 import { buildBoardCatalogue } from './board-catalogue.mjs';
@@ -57,7 +57,9 @@ export async function buildCreate(out = 'dist') {
     subjects.push({ id, label: c.label, status: c.status, kit: c.kit, years: [...new Set(c.descriptors.map((d) => d.year))].sort((a, b) => a - b) });
   }
   writeFileSync(join(dest, 'curriculum', 'index.json'), JSON.stringify(subjects));
-  for (const f of ['kit-nodes.mjs', 'lesson-core.mjs', 'lesson-validation.mjs', 'lesson-view.mjs', 'playground-registry.mjs', 'modules-scan.mjs', 'math-expr.mjs', 'maths.mjs', 'diagram-core.mjs', 'context-core.mjs']) copyFileSync(join(root, 'tools', f), join(dest, f));
+  for (const f of ['kit-nodes.mjs', 'lesson-core.mjs', 'lesson-validation.mjs', 'lesson-view.mjs', 'playground-registry.mjs', 'modules-scan.mjs', 'math-expr.mjs', 'maths.mjs', 'diagram-core.mjs', 'context-core.mjs', 'refreshers.mjs']) copyFileSync(join(root, 'tools', f), join(dest, f));
+  // Shared refresher blocks (data/refreshers/, tools/refreshers.mjs), so a draft's `refresher:` folds show in the preview.
+  writeFileSync(join(dest, 'refresher-blocks.mjs'), `export const REFRESHERS = ${JSON.stringify(getRefreshers().blocks)};\n`);
   const validatorVersion=await buildValidator(dest);
   for(const file of ['index.html','validate.html']) {
     const page=join(dest,file);

@@ -700,6 +700,27 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     validateCheck(k, w, c);
   };
 
+  // refresher: a shared refresher block (data/refreshers/<id>.yml) folded above the hints (AUTHORING › Refreshers).
+  // `rate`, or { block, part?, example? }. known.refreshers (id -> block) checks the id and part when the caller has them.
+  const validateRefresherUse = (v, where) => {
+    if (v === undefined) return;
+    const w = `${where} refresher`;
+    if (!(typeof v === 'string' || (v && typeof v === 'object' && !Array.isArray(v)))) return err(w, 'refresher must be a block id (refresher: rate) or { block, part?, example? }');
+    if (typeof v === 'object') for (const k of Object.keys(v)) if (!['block', 'part', 'example'].includes(k)) err(w, `unknown field "${k}" (use block, part, example)`);
+    const id = String(typeof v === 'string' ? v : v.block || '').trim();
+    if (!id) return err(w, 'name the block: refresher: rate, or { block: rate }');
+    const ex = typeof v === 'object' ? v.example : undefined;
+    if (ex !== undefined && !(typeof ex === 'string' && ex.trim() && !ex.includes('\n') && ex.length <= 200)) err(w, 'example must be one line (200 characters at most): the lesson\'s own example beside the block, e.g. "Here, time is in minutes and up the side is temperature."');
+    const b = known?.refreshers?.[id];
+    if (known?.refreshers && !b) return err(w, `no refresher block "${id}" (data/refreshers/ has ${Object.keys(known.refreshers).join(', ') || 'none'})`);
+    const part = typeof v === 'object' ? v.part : undefined;
+    if (part !== undefined) {
+      const ps = [].concat(part);
+      if (!ps.every((p) => typeof p === 'string' && p)) err(w, 'part must be a part id, or a list of them');
+      else if (b) for (const p of ps) if (!b.parts?.[p]) err(w, `block "${id}" has no part "${p}"${Object.keys(b.parts || {}).length ? ` (it has ${Object.keys(b.parts).join(', ')})` : ' (it has no parts)'}`);
+    }
+  };
+
   for (const s of [...lesson.steps, ...(lesson.explainStep ? [lesson.explainStep] : [])]) {
     const where = `${s.id} "${s.title}"`;
     if (s.extraSteps) err(where, `${s.extraSteps + 1} step blocks under one ## heading: only the first is used and the others show as text. Give each its own ## heading, or make them tasks`);
@@ -801,6 +822,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
       validatePicture(tc.picture, tw, c.stage);
       if (tc.check !== undefined) validateCheck(tc.check, tw, c);
       validateSmaller(tc.smaller, tw, c, tc);
+      validateRefresherUse(tc.refresher, tw);
       if (tc.unlocks !== undefined) {
         if (!Array.isArray(tc.unlocks) || !tc.unlocks.every((u) => typeof u === 'string')) err(tw, 'unlocks must be a list of snippet ids');
         else {
@@ -817,6 +839,10 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
     if (c.smaller !== undefined) {
       if (s.tasks.length) err(where, 'this step has tasks (### headings): put smaller: on the task it leads into, under tasks:');
       else validateSmaller(c.smaller, where, c, c);
+    }
+    if (c.refresher !== undefined) {
+      if (s.tasks.length) err(where, 'this step has tasks (### headings): put refresher: on the task that needs it, under tasks:');
+      else validateRefresherUse(c.refresher, where);
     }
     if (c.reveal !== undefined && typeof c.reveal !== 'boolean' && !(typeof c.reveal === 'string' && c.reveal.trim())) err(where, 'reveal must be true, or the text of the button, e.g. "Show the expected result"');
     if (c.reveal && !c.clip) err(where, '"reveal" only makes sense on a step with a clip');

@@ -1,0 +1,39 @@
+title: Reading a graph of change over time
+from: maths
+summary: Read the labels, then each point and the shape of the line.
+keywords: graph line graph time axis axes labels trend increasing steep flat
+covers: [AC9M5ST02, AC9M7A04 n1]
+fold: >-
+  read the labels first: what is along the bottom (often time) and what is up the side. Each point says: at this time,
+  it was this much. A line going up means it's increasing, a flat line means it isn't changing, and a steeper line means
+  it's changing faster.
+check:
+  type: question
+  q: "On a graph of temperature against time, the line is flat from 2 to 5 minutes. What is the temperature doing?"
+  options: ["Staying the same", "Going up", "Going down", "Going up fast"]
+  answer: 0
+  explain: "A flat line means it isn't changing: the temperature stays the same from 2 to 5 minutes."
+page: |
+  Lots of subjects use graphs that show how something changes over time: a heating curve in science, rainfall over a
+  year in geography, shoppers over ten years in economics. They're all read the same way.
+
+  **Read the two labels first.** What is along the bottom? That's often time (seconds, minutes, years). What is up the
+  side? That's the thing being measured (temperature, millimetres of rain, number of shoppers). Check the units too.
+
+  **Read one point.** Each point says: at this time, it was this much. Go along the bottom to the time, up to the line,
+  then across to the side: "at 15 hours it was 24 °C".
+
+  **Read the shape.**
+  - Going up: it's increasing.
+  - Flat: it isn't changing.
+  - Going down: it's decreasing.
+  - Steeper: it's changing faster. Gentler: it's changing more slowly.
+
+  **Two examples side by side.** On a heating curve, time is in minutes along the bottom and temperature is up the
+  side; a flat part means the temperature stays the same while the substance melts or boils. On a graph of shoppers
+  per year, years go along the bottom and the number of shoppers up the side; a steep rise means shoppers grew fast
+  in those years.
+
+  **One caution.** A graph shows what changed, not why it changed. The reason comes from what you know about the
+  situation.
+lessons: [maths/algebra-7/reading-graphs]

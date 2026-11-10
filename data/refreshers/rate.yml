@@ -1,0 +1,30 @@
+title: Rates
+from: maths
+summary: A rate is how much of one thing for each one of another, such as km per hour.
+keywords: rate per speed km/h m/s unit rate divide units bandwidth flow density
+covers: [AC9M8M05]
+fold: >-
+  a rate tells you how much of one thing for each one of another, such as 60 km **per** hour: 60 km for each hour. To
+  find it, divide the first amount by the second, and keep both units.
+check:
+  type: number
+  q: "A tap fills 20 L in 4 minutes. How many litres per minute?"
+  answer: 5
+  tolerance: 0
+  explain: "20 ÷ 4 = 5, so 5 L per minute: 5 litres for each minute."
+page: |
+  A rate compares two amounts measured in different units: kilometres and hours, litres and minutes, megabits and
+  seconds.
+
+  **"Per" means "for each".** 60 km per hour means 60 km for each hour.
+
+  **Divide the first by the second, and keep the units.** A car goes 240 km in 3 hours: 240 ÷ 3 = 80, so 80 km per
+  hour. The units come along too: km ÷ h gives km/h.
+
+  **The same idea in other places:**
+  - Speed: metres per second (m/s).
+  - A download: megabits per second (Mb/s).
+  - A reaction: millilitres of gas per minute (mL/min).
+
+  **A rate can itself change.** Acceleration is how fast the speed changes: metres per second, *per second* (m/s²).
+lessons: [maths/measurement-8/rates]

@@ -3,6 +3,7 @@ import { PLAYGROUNDS } from './playground-registry.mjs';
 // Pure: Marked and highlightCode are injected; no fs, no DOM.
 import { unlockKind, evalRules, parseTrace, splitFiles, bugKeys, makecodePackage, makecodeExtensions, sourceList } from './lesson-core.mjs';
 import { MATH_JS } from './math-expr.mjs';
+import { refresherUse, refresherView, yearFromNodes } from './refreshers.mjs';
 export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export const titleCase = (s) => s.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
@@ -178,6 +179,7 @@ details.expected figure{margin:8px 0 14px}details.expected img{max-width:100%;he
 details.reveal{margin:16px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
 .wpt-strat{font-size:.9em;color:var(--muted);margin:.2em 0 .6em}details.hints{margin:12px 0;border:1px solid var(--line);border-radius:10px;padding:0 16px}
 details.smaller{margin:12px 0;border:1px dashed var(--line);border-radius:10px;padding:0 16px}details.smaller>summary{cursor:pointer;font-weight:600;padding:10px 0}details.smaller[open]>summary{border-bottom:1px solid var(--line);margin-bottom:6px}details.smaller .check{margin:8px 0 12px}
+.wpt-refresh .wpt-rex{border-left:3px solid var(--accent);padding:2px 0 2px 10px;margin:8px 0}.wpt-refresh .wpt-rmore{font-size:14px;margin:4px 0 12px}.wpt-refresh .wpt-rmore a{color:var(--accent)}.wpt-refresh ul{margin:.3em 0}
 details.hints summary{cursor:pointer;font-weight:600;padding:10px 0}
 details.hints[open] summary{border-bottom:1px solid var(--line);margin-bottom:6px}
 .tasks{margin:14px 0}
@@ -209,7 +211,7 @@ details.teachers{margin:28px 0 0;border:1px solid var(--line);border-radius:8px;
 details.teachers summary{cursor:pointer;font-weight:600;padding:12px 0}
 details.teachers h3{font-size:1rem;margin:16px 0 4px}.tguide{background:color-mix(in srgb,var(--accent) 8%,transparent);border-radius:8px;padding:8px 12px}
 .xbtn{flex:none;display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13px;font-weight:600;color:var(--investigate);border:1px solid var(--investigate);background:var(--card);padding:4px 11px 4px 5px;border-radius:99px;cursor:pointer}.xbtn b{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--investigate);color:#fff;font-size:12px}.xbtn[aria-expanded=true]{box-shadow:inset 0 0 0 1px var(--investigate)}.xdrawer{position:fixed;z-index:40;right:0;top:var(--nav,0px);bottom:0;width:min(520px,100vw);overflow:auto;background:var(--card);border-left:1px solid var(--line);box-shadow:-8px 0 24px rgba(0,0,0,.12);padding:0 20px 24px}.xd-head{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--card);padding:14px 0 10px;border-bottom:1px solid var(--line);margin-bottom:12px}.xd-head h2{margin:0;font-size:1.1rem;color:var(--investigate)}.xd-close{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:4px 10px;cursor:pointer}.xpop{position:fixed;z-index:41;max-width:min(300px,calc(100vw - 32px));margin:0;padding:9px 13px;font-size:14px;line-height:1.4;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--predict,#7c3aed);border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.14)}.xd-body video{max-width:100%}details.explain{margin:12px 0 4px;border:1px solid var(--line);border-left:4px solid var(--investigate);border-radius:8px;padding:0 16px;background:var(--card)}details.explain summary{cursor:pointer;font-weight:600;padding:10px 0;color:var(--investigate)}
-.wpt-backfrom{margin:0 0 10px;font-size:14px;font-weight:600}.wpt-backfrom a{color:inherit}.clinks{margin:-6px 0 14px;font-size:14px;color:var(--muted,#5d6675)}.clinks p{margin:2px 0}.wpt-prior ul{margin:2px 0 6px;padding-left:1.3em}.wpt-prior li{margin:1px 0}.clinks .clw{opacity:.8}.clinks a{color:inherit;text-decoration:underline}
+.wpt-backfrom{margin:0 0 10px;font-size:14px;font-weight:600}.wpt-backfrom a{color:inherit}.clinks{margin:-6px 0 14px;font-size:14px;color:var(--muted,#5d6675)}.clinks p{margin:2px 0}.wpt-prior ul{margin:2px 0 6px;padding-left:1.3em}.wpt-prior li{margin:1px 0}.clinks .clw{opacity:.8}.clinks a{color:inherit;text-decoration:underline}.wpt-xs{font-weight:600}
 .hook{margin:0 0 16px;padding:8px 14px;border-left:4px solid var(--c,#2563eb);background:rgba(37,99,235,.07);border-radius:4px}
 details.reveal summary{cursor:pointer;font-weight:600;padding:12px 0;color:var(--c)}
 details.reveal[open] summary{border-bottom:1px solid var(--line);margin-bottom:6px}
@@ -725,8 +727,12 @@ function linksHtml(cl) {
     ? `<a href="${esc(x.href)}" title="${esc([x.where, x.why].filter(Boolean).join(' · '))}">${esc(x.title)}</a> <span class="clw">· ${esc(x.reason)}</span>`
     : `<a href="${esc(x.href)}" title="${esc(x.label)}">${esc(x.title)}</a> <span class="clw">(${esc(x.where)})</span>`;
   const row = (name, xs) => (xs.length ? `<p><b>${name}:</b> ${xs.map((x) => a({ ...x, reason: '' })).join(' · ')}</p>` : '');
+  // Cross-subject links (10 Nov 2026) say which subject and year they come from, and when they land on a quick
+  // refresher or a recap rather than the whole lesson: "Rates (Maths, Year 8 · quick refresher)".
+  const xa = (x) => `<a href="${esc(x.href)}" title="${esc(x.why || '')}">${esc(x.title)}</a> <span class="wpt-xs">(${esc([x.where, x.level].filter(Boolean).join(' · '))})</span>${x.reason ? ` <span class="clw">· ${esc(x.reason)}</span>` : ''}`;
   const seen = new Set(), before = [...(cl.catchUp || []), ...(cl.on || []), ...(cl.prior || [])].filter((x) => !seen.has(x.href) && seen.add(x.href));
-  const back = before.length ? `<div class="wpt-prior"><b>What you should already know:</b><ul>${before.map((x) => `<li>${a(x)}</li>`).join('')}</ul></div>` : '';
+  const cross = (cl.cross || []).filter((x) => !seen.has(x.href) && seen.add(x.href));
+  const back = before.length || cross.length ? `<div class="wpt-prior"><b>What you should already know:</b><ul>${before.map((x) => `<li>${a(x)}</li>`).join('')}${cross.map((x) => `<li class="wpt-xsub">${xa(x)}</li>`).join('')}</ul></div>` : '';
   return `<div class="clinks">${back}${row('Put to work in', cl.in)}${row('Leads into', cl.leads || [])}</div>`;
 }
 
@@ -753,7 +759,7 @@ export function promptHtml(p, id = '') {
     + `<p class="aip-row"><button type="button" class="aip-copy">Copy prompt</button> <span class="aip-note">Use an AI tool your school allows, and only if your teacher says you can. Check its reply with what you practised here.</span></p></div>`;
 }
 export function lessonPageHtml(lesson, deps) {
-  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, createHref = '', snippetNames, course = null, siteRoot = '', siteNavHtml = '', teacherGuide = '', conceptLinks = null, expectedHtml = () => '', pictureHtml = () => '', diagramHtml = () => '', maths = null, blocksPicture = () => null } = deps;
+  const { Marked, highlightCode, snippet, clipHtml, tryHtml, crumb, source, createHref = '', snippetNames, course = null, siteRoot = '', siteNavHtml = '', teacherGuide = '', conceptLinks = null, expectedHtml = () => '', pictureHtml = () => '', diagramHtml = () => '', maths = null, blocksPicture = () => null, refreshers = null, year = undefined } = deps;
   // Maths lessons: $...$ is rendered at build time (deps.maths, from tools/maths.mjs). Without it (the create page) it stays text.
   const isMaths = lesson.language === 'maths' && !!maths;
   // Answer checks with form: are marked by Numbas, loaded only on lessons that have one (tools/maths-forms.mjs).
@@ -810,6 +816,25 @@ export function lessonPageHtml(lesson, deps) {
     const lead = checkHtml(lesson, s, snippetNames, snippet, null, tx, { k: v.check, key: `${lesson.slug}/${id}~smaller`, play: `${lesson.slug}/${id}~smaller` });
     return `<details class="smaller"><summary>Build up to it</summary>${v.code ? codeOf(v.code) : ''}${board}${lead}</details>`;
   };
+  // refresher: a shared block (data/refreshers/, tools/refreshers.mjs) as a closed "Build up to it: <idea>" fold above the
+  // hints: "From maths:" and the block's sentence, the lesson's own example beside it, one easy check (key ~refresh,
+  // never counted, like smaller:), and a link to the short page. The link carries ?from=<this lesson's year> so the
+  // short page hides lessons from this year on (never link forward).
+  const lessonYear = year !== undefined ? year : yearFromNodes(lesson.node);
+  const refresherOf = (s, owner, id) => {
+    const use = refresherUse(owner?.refresher);
+    if (!use?.block) return '';
+    const b = refreshers?.[use.block];
+    if (!b) return `<details class="smaller wpt-refresh"><summary>Build up to it</summary><p>Shared refresher "${esc(use.block)}": shown on the published site.</p></details>`;
+    const lc = (t) => (/^[A-Z][a-z]/.test(t) ? t.charAt(0).toLowerCase() + t.slice(1) : t);
+    const v = refresherView(b, use);
+    const first = md.parse(`${b.from ? `**From ${b.from}:** ` : ''}${b.fold}`);
+    const lines = v.lines.length ? (v.lines.length > 1 ? `<ul>${v.lines.map((t) => `<li>${md.parseInline(t)}</li>`).join('')}</ul>` : md.parse(v.lines[0])) : '';
+    const ex = use.example ? `<p class="wpt-rex">${tx(use.example)}</p>` : '';
+    const lead = v.check ? checkHtml(lesson, s, snippetNames, snippet, null, tx, { k: v.check, key: `${lesson.slug}/${id}~refresh`, play: `${lesson.slug}/${id}~refresh` }) : '';
+    const more = b.page !== false && siteRoot ? `<p class="wpt-rmore"><a href="${esc(siteRoot)}refresh/${esc(b.id)}/${lessonYear != null ? `?from=${lessonYear}` : ''}">More on ${esc(lc(b.title))}</a></p>` : '';
+    return `<details class="smaller wpt-refresh"><summary>Build up to it: ${esc(lc(b.title))}</summary>${first}${lines}${ex}${lead}${more}</details>`;
+  };
   const steps = lesson.steps.map((s) => {
     const c = s.config;
     const [label, hint] = SI[c.stage] || SI.info;
@@ -822,7 +847,7 @@ export function lessonPageHtml(lesson, deps) {
     // Predict steps: code first, then the questions, then the hidden reveal. Others: text, code, clip.
     // Hints are nudges, one click each: "Need a hint?", then "Another hint".
     const hintsOf = (h) => (h === undefined ? [] : [].concat(h)).map((t, i) => `<details class="hints"><summary>${i ? 'Another hint' : 'Need a hint?'}</summary>${i || !siteRoot ? '' : `<p class="wpt-strat">Before a hint: what kind of stuck is this? <a href="${esc(siteRoot)}learning/how-you-learn/reference/#when-youre-stuck">Try a strategy first</a></p>`}${md.parse(t)}</details>`).join('');
-    const hints = smallerOf(s, s.tasks.length ? null : c, s.id) + hintsOf(c.hint);
+    const hints = refresherOf(s, s.tasks.length ? null : c, s.id) + smallerOf(s, s.tasks.length ? null : c, s.id) + hintsOf(c.hint);
     const checks = checkHtml(lesson, s, snippetNames, snippet, null, tx);
     // A Run step after a Predict step with a predict check shows "You predicted X. It actually did Y." after Run.
     let compare = '';
@@ -841,7 +866,7 @@ export function lessonPageHtml(lesson, deps) {
       const bodies = s.tasks.map((t, n) => {
         let reset = '';
         if (t.config.starter) { try { reset = `<button type="button" class="resetstart" data-code="${esc(snippet(t.config.starter))}">Reset to this task's start</button>`; } catch { /* reported by validation */ } }
-        return `<div class="tpanel${n ? '' : ' active'}" data-i="${n}" role="tabpanel">${md.parse(t.body)}${t.config.diagram ? diagramHtml(t.config.diagram, t.id.replace('#', '-')) : ''}${t.config.picture ? pictureHtml(t.config.picture, t.id.replace('#', '-')) : ''}${smallerOf(s, t.config, t.id)}${hintsOf(t.config.hint)}${expectedHtml(t.config, t.id.replace('#', '-'))}${reset}</div>`;
+        return `<div class="tpanel${n ? '' : ' active'}" data-i="${n}" role="tabpanel">${md.parse(t.body)}${t.config.diagram ? diagramHtml(t.config.diagram, t.id.replace('#', '-')) : ''}${t.config.picture ? pictureHtml(t.config.picture, t.id.replace('#', '-')) : ''}${refresherOf(s, t.config, t.id)}${smallerOf(s, t.config, t.id)}${hintsOf(t.config.hint)}${expectedHtml(t.config, t.id.replace('#', '-'))}${reset}</div>`;
       }).join('');
       const taskChecks = s.tasks.map((t, n) => `<div class="tpanel${n ? '' : ' active'}" data-i="${n}">${checkHtml(lesson, s, snippetNames, snippet, t, tx)}</div>`).join('');
       const wrap = `<div class="tasks" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})" data-step="${s.id}" data-stepkey="${esc(`${lesson.slug}/${s.id}`)}" data-kind="${kind}" data-keys="${esc(keys.join('|'))}" data-unlocks="${esc((c.unlocks || []).join(','))}" data-names="${esc(names.join('|'))}"><div class="taskpills" role="tablist" aria-label="Tasks">${pills}</div>${bodies}${tryHtml(s)}${taskChecks}<p class="tmsg" aria-live="polite"></p></div>`;

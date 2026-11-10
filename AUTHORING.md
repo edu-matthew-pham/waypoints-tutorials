@@ -403,6 +403,42 @@ smaller:
 - **Voice** (the maths voice rules, roadmap/maths-when-where-why.md › Voice, for every subject): read it aloud; one short question, not a worksheet; no labels or stage directions ("Smaller step:", "Hint:", "Think about:"); talk about the turtle, the fence or the torch and name the term once; contractions are fine.
 - **Checked:** validate (kinds, place, Predict rule, `code:` region); `npm run check-html` answers lead-ins in the web courses; `npm run effort` lists lessons on a hinge node or with a `stuck:` list that have no `smaller:` (one line per lesson, never in validate's summary).
 
+### Refreshers (`refresher:`) and links to other subjects
+
+Built 10 Nov 2026 (roadmap/shared.md › Prior-knowledge tools; handoff `claude/handoff-prior-knowledge-next.md` › A). For an idea a lesson leans on from an earlier year or another subject. There are four ways to handle that leap, lightest first, and "Build up to this" links land on the lightest one that exists:
+
+1. **Fold**: a shared refresher folded in the lesson ("Build up to it: rates").
+2. **Short page**: the same refresher as a page at `/refresh/<id>/`, one idea in a minute or two.
+3. **Recap**: the earlier lesson's card on its course recap page (`<course>/recap/#<lesson>`): its try-first question, explanation, revision summary and clip.
+4. **The full lesson.**
+
+**Shared refresher blocks.** One file per idea in `data/refreshers/<id>.yml` (fields in that folder's README), written once and used by every lesson that needs it, so the wording can't drift. A lesson pulls one into a step or task, beside `hint:`:
+
+```yaml
+refresher: rate
+# or, with the lesson's own example and only the line it needs:
+refresher: { block: percentage, part: share, example: "Here, the useful energy is the part and the energy in is the whole." }
+```
+
+- **What shows:** a closed "Build up to it: rates" fold above the hints (and above any `smaller:` fold): "**From maths:**" and the block's one or two sentences, the lesson's example line beside them, one easy check, and "More on rates", a link to the short page. A student who doesn't need it skips it in seconds.
+- **Never counted:** like `smaller:`, its check's key ends `~refresh` and is left out of progress, the course row, the task pills and the drawer.
+- **Never forward:** the fold's link carries the lesson's year (`?from=7`), and the short page hides any lesson from that year or later. So Year 7 density can use the rate fold and its page, but is never sent on to the Year 8 maths lesson.
+- **The example is one line** (200 characters at most), in the lesson's own context: speed, bandwidth, rainfall. The block stays general.
+- **Words match the maths lesson** the block links to, so a student who follows the link meets the same language. Edit the block, not the lesson, when the wording needs to change.
+- **New blocks:** write one when a lesson needs it. The draft text for the next ones is in the Project doc `claude/shared-refreshers-draft.md` › Lower priority. A one-liner with nothing to add on a page (Δ, kelvin) sets `page: false`.
+
+**Links to other subjects in "What you should already know".** A lesson's `uses:` may name another subject's node or descriptor (`uses: [AC9M8M05 n1]` in Year 10 science). The link joins the same row, after the same-subject lessons, labelled with the subject and year: "Rates (Maths, Year 8 · quick refresher)". Defaults, each with its reason:
+
+- **Earlier years only, never forward.** A link to something not yet taught sends a student nowhere useful. The same year counts as not earlier: teach the small piece in the lesson instead, or use a refresher fold. Validate warns and the page leaves the link out.
+- **At most two per lesson.** More becomes a reading list. Validate warns about the rest.
+- **The lightest level that exists:** the short page if a block `covers:` that node, else the lesson's recap card, else the lesson.
+- **Reverse links are fine** when they point back in years (a Year 9 science lesson to a Year 7 History lesson).
+- A lesson's year is its earliest `node:`, else the first year of its course's `years:`. A lesson with neither gets no cross-subject links (validate says so).
+
+**Recap pages** are on for every course with an exit question or explain text in a required lesson (`recap: false` in the course `index.md` turns one off; teacher courses have none). Each card shows the lesson's revision summary when it has one: the list after a `**Revision summary**` line in its steps.
+
+**Checked:** validate (block files, block ids and parts, the example line, cross-subject years and the limit of two); `npm run check-refreshers` (blocks, uses, the link rules).
+
 ### Effort and struggle
 
 Students often expect coding to be fun and easy, and read being stuck as "this isn't for me". Lessons should remove the friction that teaches nothing (typos, unexplained syntax, setup) and keep the difficulty that is the thinking, and say plainly that it is meant to be hard.

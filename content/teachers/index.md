@@ -13,6 +13,7 @@ links:
   - { title: Maths, href: maths-teachers/, group: Core, summary: "One course per strand per year for Years 7 to 10, how a lesson runs and a ten-minute tour." }
   - { title: Science, href: science-teachers/, group: Core, summary: "How the science boards sit beside your class practicals, and a draft list of common practicals to correct." }
   - { title: Learning skills, href: learning-teachers/, group: Core, summary: "Self-regulation in any subject: the cycle, think-alouds, teaching a strategy, and when to prompt it." }
+  - { title: Quick refreshers, href: refresh/, group: Core, summary: "One idea from an earlier year or another subject, in a minute or two: rates, percentages, reading a graph over time." }
   - { title: Humanities skills, href: humanities-teachers/, group: Humanities, summary: "The shared Year 7 inquiry lessons (a preview): asking and finding, and how they fit beside your unit." }
   - { title: History, href: history-teachers/, group: Humanities, summary: "A preview on working with sources, with ancient China as the worked example, and what is planned." }
   - { title: Geography, href: geography-teachers/, group: Humanities, summary: "Water as a resource and water in Australia, how real places are used, and what is planned." }

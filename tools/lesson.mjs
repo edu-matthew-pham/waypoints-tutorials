@@ -9,6 +9,7 @@ import { join, resolve, relative, sep } from 'node:path';
 import YAML from 'yaml';
 import { createRequire } from 'node:module';
 import { expandContext } from './context-core.mjs';
+import { loadRefreshers } from './refreshers.mjs';
 import { snippetFrom, extractInlineCode, parseLessonText, validateLessonCore, snippetId, FEATURES, setSqlRunner } from './lesson-core.mjs';
 
 // SQL lessons: run a solution against its starting database (the same sql.js the playground uses), so a check on the rows can be tested.
@@ -110,9 +111,16 @@ export function loadSharedModules() {
   return out;
 }
 
+/** Shared refresher blocks (data/refreshers/, tools/refreshers.mjs): id -> block, read once. */
+let REFRESHERS = null;
+export function getRefreshers() {
+  return (REFRESHERS ||= loadRefreshers({ readdirSync, readFileSync, existsSync, join, parse: YAML.parse }, { root: resolve(import.meta.dirname, '..', 'data', 'refreshers') }));
+}
+
 export function validateLesson(lesson) {
   const files = loadSnippetFiles();
   const known = Object.fromEntries(Object.entries(files).map(([k, d]) => [k, new Set(d.groups.flatMap((g) => g.items.map((i) => snippetId(i.label))))]));
+  known.refreshers = getRefreshers().blocks;
   if (known.turtle) for (const f of FEATURES) known.turtle.add(f.id);
   return validateLessonCore(lesson, readIn(lesson.dir), known, loadSharedModules());
 }
