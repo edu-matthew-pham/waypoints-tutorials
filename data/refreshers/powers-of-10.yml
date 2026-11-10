@@ -1,0 +1,49 @@
+title: Powers of 10
+from: maths
+summary: Each place is ten times the one to its right, so very big and very small numbers can be written with a power of 10.
+keywords: powers of 10 place value zeros 10⁶ million billion scientific notation standard form very large very small numbers
+covers: [AC9M7N03 n1, AC9M9M02 n1]
+fold: "each place is **ten times** the one to its right."
+parts:
+  place:
+    text: "The power counts the zeros: 10³ = 1000 (three zeros), 10⁶ = 1 000 000 (a million, six zeros)."
+    check:
+      type: number
+      q: "How many zeros does 10⁹ (a billion) have?"
+      answer: 9
+      tolerance: 0
+      explain: "10⁹ is 1 followed by nine zeros: 1 000 000 000."
+  notation:
+    text: "Scientific notation writes a number as a number from 1 to 10 times a power of 10. A positive power moves the point right (big numbers); a negative power moves it left (small numbers): 3 × 10⁻⁴ = 0.0003."
+    check:
+      type: question
+      q: "Which is bigger: 2 × 10⁵ or 9 × 10³?"
+      options: ["2 × 10⁵", "9 × 10³"]
+      answer: 0
+      explain: "Compare the powers first. 2 × 10⁵ = 200 000 and 9 × 10³ = 9000, so the bigger power wins."
+check:
+  type: number
+  q: "How many zeros does 10⁹ (a billion) have?"
+  answer: 9
+  tolerance: 0
+  explain: "10⁹ is 1 followed by nine zeros: 1 000 000 000."
+page: |
+  **Each place is ten times the one to its right.** Ones, tens, hundreds, thousands: every step left is × 10.
+  So the places are powers of 10, and the power counts the zeros.
+  - 10² = 100 (two zeros)
+  - 10³ = 1000 (a thousand)
+  - 10⁶ = 1 000 000 (a million)
+  - 10⁹ = 1 000 000 000 (a billion)
+
+  **Why it helps.** Science works with numbers far too big or small to say comfortably: the age of the Earth
+  (about 4 500 000 000 years) or the width of a cell (about 0.00001 m). Counting the places in powers of 10
+  stops the zeros getting lost.
+
+  **Scientific notation** (taught in Year 9 maths) writes such a number as a number from 1 to 10 times a power of
+  10. The power says how far the decimal point moves.
+  - A positive power moves it right: 4.5 × 10³ = 4500.
+  - A negative power moves it left: 4.5 × 10⁻³ = 0.0045.
+
+  **Comparing two numbers.** Look at the powers first; the bigger power is the bigger number. 2 × 10⁵ beats
+  9 × 10³.
+lessons: [maths/number-7/expanded-notation, maths/measurement-9/scientific-notation]

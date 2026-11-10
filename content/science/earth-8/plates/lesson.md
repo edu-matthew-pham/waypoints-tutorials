@@ -103,6 +103,7 @@ tasks:
       q: "Australia moves about 7 cm north each year. How many kilometres is that in a million years? (100,000 cm = 1 km)"
       answer: 70
       explain: "7 cm × 1,000,000 = 7,000,000 cm = 70 km. Slow, but over 50 million years that is 3,500 km."
+    refresher: { block: powers-of-10, part: place, example: "Here, a million is 10⁶, so × 1,000,000 puts six zeros on the end: 7 becomes 7,000,000." }
   - check: { type: reflect, text: "I explained, step by step, how Earth's inner heat ends up moving a plate." }
 ```
 

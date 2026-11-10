@@ -53,6 +53,7 @@ tasks:
     check: { type: board, text: "Zoom in from the person to one cell.", when: "l >= 1" }
   - starter: "boards.yml#cells"
     check: { type: board, text: "These cells are drawn about 1000 times life size. Find the nucleus in each.", when: "n = k" }
+    refresher: { block: powers-of-10, part: place, example: "Here, 1000 times life size is 10³: three places bigger, so a cell 0.02 mm wide is drawn 20 mm wide." }
     hint: ["Which part holds the cell's DNA? You need to find it in both cells.", "In the leaf cell the big vacuole pushes it off to one side, so look near the edges."]
 ```
 
