@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:04.275
+Both micro:bits run the same program, and agree a code.
+
+2
+00:00:05.099 --> 00:00:09.524
+Zero means get ready, one means go, two means I pressed first.
+
+3
+00:00:10.354 --> 00:00:15.204
+racing is true only while a round is on, so only the first press counts.
+
+4
+00:00:17.794 --> 00:00:22.319
+The go function keeps one copy of the signal, so both see the same.

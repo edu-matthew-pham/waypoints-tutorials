@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:04.225
+A variable made above the handler keeps its value from click to click
+
+2
+00:00:05.025 --> 00:00:08.025
+The number on the page, and a button to raise it.
+
+3
+00:00:08.877 --> 00:00:12.952
+clicks is made above the handler, so it keeps its value between clicks.
+
+4
+00:00:13.828 --> 00:00:17.178
+Each click: add one to clicks, then show it on the page.
+
+5
+00:00:26.433 --> 00:00:29.433
+Three clicks, and the variable remembered each one.

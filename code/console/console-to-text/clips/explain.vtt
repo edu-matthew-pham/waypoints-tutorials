@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.101 --> 00:00:04.951
+Str turns a number into text, so plus can join it to other text.
+
+2
+00:00:05.877 --> 00:00:10.527
+Plus joins text to text. A number is not text, so this fails.
+
+3
+00:00:11.532 --> 00:00:14.782
+Str of score turns the number into text.
