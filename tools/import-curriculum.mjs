@@ -8,7 +8,11 @@
 // Each node keeps everything a teacher pointer page (tools/pointer-pages.mjs) and Create's node picker need: checkpoint,
 // success criteria, width (minimum, typical, wider), hinge and its reason, response modes with Kit's reasons, related
 // standards. The standard keeps its prior knowledge text, progression endpoint and ACARA elaborations (when the kit has them); its `prior` list (what it builds on)
-// joins the codes that text names with its parents in the kit's progression maps. Kit holds what the curriculum says:
+// joins the codes that text names with its parents in the kit's progression maps. Cross-subject links (Kit's
+// data/cross-subject/links.json, 10 Nov 2026) come in beside it as `cross` (this standard's links to earlier ideas in other
+// subjects), `usedBy` (the same links read backwards) and `threads` (shared threads it belongs to, with its frame); the
+// thread titles go to data/curriculum/threads.json. Nothing on the site links from these automatically: lessons choose
+// their links with `uses:` (roadmap/rules.md T24); validate and `npm run cross-links` read them. Kit holds what the curriculum says:
 // corrections go to Kit and are re-imported, never edited here.
 //
 // waypoints-kit holds one JSON file per descriptor in data/<subject>/ (copied from ACARA Progressions). Descriptor
@@ -139,6 +143,25 @@ const mapPrior = (code) => [...(fromMap.get(code) || [])].filter((c) => all.has(
 const prior = (s) => [...new Set([...(String(s.prior_knowledge || '').match(CODE) || []), ...mapPrior(s.code)])].filter((c) => c !== s.code);
 for (const c of [...want]) for (const p of prior(all.get(c))) if (!want.includes(p) && all.has(p)) want.push(p);
 
+// Cross-subject links and shared threads (Kit data/cross-subject/, 10 Nov 2026). One record per link, on the later
+// standard; "used by" is worked out here, so a maths standard lists the science standards that build on it.
+const readKit = (f) => { try { return JSON.parse(readFileSync(join(kit, 'data', 'cross-subject', f), 'utf8')); } catch { return null; } };
+const LINKS = readKit('links.json')?.links || [], THREADS = readKit('threads.json')?.threads || [];
+const crossOf = new Map(), usedOf = new Map(), threadsOf = new Map();
+const push = (m, k, v) => { if (!m.has(k)) m.set(k, []); m.get(k).push(v); };
+const nums = (v) => (Array.isArray(v) ? v.map(Number).filter(Number.isFinite) : []);
+for (const l of LINKS) {
+  if (!l?.standard || !l?.links_to) continue;
+  const shared = { relationship: l.relationship || '', overlap: l.overlap || '', ...(l.shared_foundation ? { shared_foundation: true } : {}), ...(l.wording_watch ? { wording_watch: l.wording_watch } : {}), timing: l.timing || '', ...(l.thread ? { thread: l.thread } : {}), note: l.note || '' };
+  push(crossOf, l.standard, { to: l.links_to, nodes: nums(l.nodes), to_nodes: nums(l.links_to_nodes), ...shared });
+  push(usedOf, l.links_to, { by: l.standard, nodes: nums(l.links_to_nodes), by_nodes: nums(l.nodes), ...shared });
+}
+for (const t of THREADS) for (const m of t.members || []) if (m?.standard) push(threadsOf, m.standard, { id: t.id, nodes: nums(m.nodes), frame: m.frame || '' });
+if (THREADS.length) writeFileSync(join('data', 'curriculum', 'threads.json'), JSON.stringify({
+  note: 'Shared threads from waypoints-kit data/cross-subject/threads.json; members are on each standard as threads. Made by tools/import-curriculum.mjs; do not edit by hand.',
+  threads: THREADS.map((t) => ({ id: t.id, title: t.title, description: t.description || '', ...(t.outside_kit ? { outside_kit: t.outside_kit } : {}) })),
+}, null, 1) + '\n');
+
 // A title already in the committed file wins when only its capitals differ (fixed by hand: "3D", "Earth-Sun-Moon").
 const before = new Map();
 try { for (const d of JSON.parse(readFileSync(join('data', 'curriculum', `${subject}.json`), 'utf8')).descriptors) before.set(d.code, d.title); } catch { /* first import */ }
@@ -149,6 +172,7 @@ const out = want.sort((a, b) => yearOf(a) - yearOf(b) || a.localeCompare(b)).map
     code: c, kit: s.kitFile, year: yearOf(c), span: spanOf(c), ...(spanOf(c) > 1 ? { years: bandOf(c) } : {}), strand: strandOf(s.strand, c), title: keepCase(c, sentence(pageTitles.get(c) || s.title)), description: s.description,
     prior: prior(s),
     knowledge: s.prior_knowledge || '', endpoint: s.progression_endpoint || '',
+    ...(crossOf.has(c) ? { cross: crossOf.get(c) } : {}), ...(usedOf.has(c) ? { usedBy: usedOf.get(c) } : {}), ...(threadsOf.has(c) ? { threads: threadsOf.get(c) } : {}),
     ...(elaborations.has(c) ? { elaborations: elaborations.get(c) } : {}),
     nodes: (s.nodes || []).map((n) => ({
       n: Number(n.id), label: n.label, checkpoint: n.progression_checkpoint, hinge: truthy(n.hinge), criteria: list(n.success_criteria),
@@ -168,4 +192,4 @@ writeFileSync(join('data', 'curriculum', `${subject}.json`), JSON.stringify({
   subject, source, note: 'Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.',
   descriptors: out,
 }, null, 1) + '\n');
-console.log(`data/curriculum/${subject}.json: ${out.filter((d) => d.year >= 7).length} Years 7–10 descriptors, ${out.filter((d) => d.year < 7).length} Foundation to Year 6 (${source})`);
+console.log(`data/curriculum/${subject}.json: ${out.filter((d) => d.year >= 7).length} Years 7–10 descriptors, ${out.filter((d) => d.year < 7).length} Foundation to Year 6, ${out.reduce((n, d) => n + (d.cross?.length || 0), 0)} cross-subject links, ${out.reduce((n, d) => n + (d.usedBy?.length || 0), 0)} used by, ${out.filter((d) => d.threads).length} in threads (${source})`);

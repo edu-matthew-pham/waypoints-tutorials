@@ -435,9 +435,15 @@ refresher: { block: percentage, part: share, example: "Here, the useful energy i
 - **Reverse links are fine** when they point back in years (a Year 9 science lesson to a Year 7 History lesson).
 - A lesson's year is its earliest `node:`, else the first year of its course's `years:`. A lesson with neither gets no cross-subject links (validate says so).
 
+**What Kit says a lesson builds on, and deciding each one** (10 Nov 2026). Kit's cross-subject links are imported into `data/curriculum/<subject>.json` beside `prior`: `cross` (this standard's links to ideas in other subjects, with relationship, timing and a note), `usedBy` (the same links read backwards) and `threads` (shared threads such as evidence and claims; titles in `data/curriculum/threads.json`). Nothing links from them automatically. Instead, `npm run cross-links [subject]` lists two kinds of open decision, and validate prints how many are left:
+- a Kit link to an **earlier year** in another subject that no lesson of the standard has answered yet, where the site has something to link to (a lesson or a refresher block);
+- an **opener** (a standard's first lesson) that names none of the Years 7+ standards in Kit's prior knowledge that have lessons here, so it links back to nothing.
+
+Answer each in the lesson's frontmatter: `uses: [AC9M7P01]` to link it (the page picks the lightest level), or `assumes: [AC9M7P01]` to say "no link: this lesson teaches it, or class does". Choose `assumes:` only when the lesson really does teach the idea; the later lesson check looks at these.
+
 **Recap pages** are on for every course with an exit question or explain text in a required lesson (`recap: false` in the course `index.md` turns one off; teacher courses have none). Each card shows the lesson's revision summary when it has one: the list after a `**Revision summary**` line in its steps.
 
-**Checked:** validate (block files, block ids and parts, the example line, cross-subject years and the limit of two); `npm run check-refreshers` (blocks, uses, the link rules).
+**Checked:** validate (block files, block ids and parts, the example line, cross-subject years and the limit of two, and a count of open decisions); `npm run check-refreshers` (blocks, uses, the link rules, the open-decision lists); `npm run cross-links` (the open decisions themselves).
 
 ### Effort and struggle
 

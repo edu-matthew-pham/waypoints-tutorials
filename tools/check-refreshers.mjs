@@ -9,6 +9,7 @@ import { parse } from 'yaml';
 import { loadRefreshers, validateRefresher, prepareRefresher, refresherUse, refresherView, yearFromNodes } from './refreshers.mjs';
 import { crossLinks, MAX_CROSS } from './prior-links.mjs';
 import { validateLessonCore } from './lesson-core.mjs';
+import { openDecisions } from './cross-links.mjs';
 
 let n = 0;
 const t = (name, fn) => { fn(); n++; console.log(`  ✓ ${name}`); };
@@ -71,5 +72,25 @@ t('no year known: no link, and a warning', () => { const r = run(L('code/x/y', u
 
 // prepareRefresher keeps question answers right after arranging the options.
 t('arranged question options keep the right answer', () => { const k = prepareRefresher('g', parse(readFileSync('data/refreshers/graph-over-time.yml', 'utf8'))).check; assert.equal(k.options[k.answer], 'Staying the same'); });
+
+// Open decisions from Kit's cross-subject links (tools/cross-links.mjs).
+{
+  const D = (year, extra = {}) => ({ year, prior: [], cross: [], ...extra });
+  const kitData = (lessonUses = {}) => new Map([
+    ['AC9S10U01', D(10, { cross: [{ to: 'AC9M7P01', nodes: [4], to_nodes: [], timing: 'earlier' }, { to: 'AC9M10P01', nodes: [], to_nodes: [], timing: 'earlier' }, { to: 'AC9M9N01', nodes: [], to_nodes: [], timing: 'same_year' }], prior: ['AC9S9U02'] })],
+    ['AC9S9U02', D(9)], ['AC9M7P01', D(7)], ['AC9M10P01', D(10)], ['AC9M9N01', D(9)], ['AC9M7N08', D(7)],
+    ['AC9S8U01', D(8, { cross: [{ to: 'AC9M7N08', nodes: [], to_nodes: [], timing: 'earlier' }] })],
+  ]);
+  const base = [L('maths/p7/sample', 'AC9M7P01 n1'), L('maths/p10/x', 'AC9M10P01 n1'), L('maths/n9/x', 'AC9M9N01 n1'), L('science/b9/gametes', 'AC9S9U02 n1')];
+  const sci = (uses = [], assumes = []) => [{ ...L('science/b10/dna', 'AC9S10U01 n1', uses), assumes, order: 1 }, { ...L('science/b10/punnett', 'AC9S10U01 n4'), order: 3 }];
+  const run2 = (ls) => openDecisions([...base, ...ls], { data: kitData(), refreshers: blocks });
+  t('open link shown on the lesson for the linked node', () => { const r = run2(sci()); assert.deepEqual(r.cross.map((x) => [x.lesson, x.to]), [['science/b10/punnett', 'AC9M7P01']]); });
+  t('a same-year or later link is never listed', () => { const r = run2(sci()); assert.ok(!r.cross.some((x) => ['AC9M10P01', 'AC9M9N01'].includes(x.to))); });
+  t('uses: answers it (on any lesson of the standard)', () => assert.equal(run2(sci(['AC9M7P01 n1'])).cross.length, 0));
+  t('assumes: answers it too (no link: taught in the lesson)', () => assert.equal(run2(sci([], ['AC9M7P01'])).cross.length, 0));
+  t('nothing on the site to link to: not listed', () => { const r = openDecisions([...sci(), L('science/b8/cells', 'AC9S8U01 n1')], { data: kitData(), refreshers: blocks }); assert.ok(!r.cross.some((x) => x.to === 'AC9M7N08')); });
+  t('opener with an on-site Years 7+ prior and no answer is listed', () => { const r = run2(sci()); assert.deepEqual(r.openers.map((x) => [x.lesson, x.prior.map((p) => p.code)]), [['science/b10/dna', ['AC9S9U02']]]); });
+  t('opener answered by uses: is not listed', () => assert.equal(run2(sci(['AC9S9U02 n1'])).openers.length, 0));
+}
 
 console.log(`check-refreshers: ${n} passed`);

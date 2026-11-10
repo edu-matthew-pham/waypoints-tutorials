@@ -1,0 +1,42 @@
+{
+ "note": "Shared threads from waypoints-kit data/cross-subject/threads.json; members are on each standard as threads. Made by tools/import-curriculum.mjs; do not edit by hand.",
+ "threads": [
+  {
+   "id": "evidence-and-claims",
+   "title": "Evidence and claims",
+   "description": "Telling a claim from evidence for it: fact or opinion, who says so and how they know, how far the evidence goes, and whether several independent lines support it. The biggest overlap across subjects; fact versus opinion alone is taught in four places.",
+   "outside_kit": "The ACARA Digital Literacy general capability (investigating information) teaches it too; Kit has no node files for general capabilities."
+  },
+  {
+   "id": "perspective-and-bias",
+   "title": "Perspective and bias",
+   "description": "Whose view a source or text gives, and how that view shapes what it says."
+  },
+  {
+   "id": "idea-structures",
+   "title": "Idea structures",
+   "description": "Common ways of organising ideas: sorting into groups and subgroups, cause and effect, time order, problem and solution, compare and contrast. English names the structures; other subjects use them."
+  },
+  {
+   "id": "inquiry-questions",
+   "title": "Inquiry questions",
+   "description": "Asking a question you can actually answer by testing or researching. The four humanities subjects share one framing; science asks for investigable questions separately."
+  },
+  {
+   "id": "searching-and-organising",
+   "title": "Searching and organising information",
+   "description": "Finding sources with a search strategy, choosing what's relevant, and organising it, including choosing a table or graph.",
+   "outside_kit": "The ACARA Digital Literacy general capability teaches search and choosing a chart too; Kit has no node files for general capabilities."
+  },
+  {
+   "id": "classification",
+   "title": "Classification",
+   "description": "Sorting things into groups by their features: useful, with trade-offs, and open to change. All three members are in Year 7."
+  },
+  {
+   "id": "logic",
+   "title": "Logic: and, or, not",
+   "description": "The same three logical operations, taught in two subjects in the same year."
+  }
+ ]
+}

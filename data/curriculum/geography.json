@@ -1,6 +1,6 @@
 {
  "subject": "geography",
- "source": "waypoints-kit c6fbf22",
+ "source": "waypoints-kit 834ceb8",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -17,6 +17,137 @@
    ],
    "knowledge": "Students enter Year 7 Geography from the F–6 HASS curriculum. They have a working understanding of basic geographical concepts (place, space, environment, interconnections, scale, sustainability, change), can identify natural and managed environments, and have located Australia within the Asia-Pacific region. They have met renewable and non-renewable resources and their sustainable use (AC9HS4K06) and the types of resources that satisfy needs and wants: natural, human and capital (AC9HS5K08). They have not previously met a formal classification that adds continuous resources and asks whether use can run a resource down, or the concept of the hydrological cycle as an agent of landscape change.",
    "endpoint": "Students explain how water is classified as an environmental resource and how its movement through environments connects and changes places.",
+   "cross": [
+    {
+     "to": "AC9S7U01",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "classification",
+     "note": "Purpose of classification."
+    },
+    {
+     "to": "AC9S4U02",
+     "nodes": [
+      2
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "note": "The water cycle."
+    },
+    {
+     "to": "AC9S5U02",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Weathering, erosion and deposition."
+    },
+    {
+     "to": "AC9S8U04",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "reinforce",
+     "timing": "later",
+     "note": "Geography teaches it a year before science's rock cycle."
+    }
+   ],
+   "usedBy": [
+    {
+     "by": "AC9S7U01",
+     "nodes": [
+      1
+     ],
+     "by_nodes": [
+      1,
+      5
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "classification",
+     "note": "Classification as useful sorting, with trade-offs."
+    },
+    {
+     "by": "AC9S7U05",
+     "nodes": [
+      2
+     ],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "note": "Evaporation and condensation in the water cycle."
+    },
+    {
+     "by": "AC9S8U04",
+     "nodes": [
+      4
+     ],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "note": "Geography teaches erosion and deposition a year before the rock cycle."
+    },
+    {
+     "by": "AC9HH7K08",
+     "nodes": [
+      4
+     ],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Layers laid down in order."
+    },
+    {
+     "by": "AC9HH7K09",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "note": "Water and landforms."
+    }
+   ],
+   "threads": [
+    {
+     "id": "classification",
+     "nodes": [
+      1
+     ],
+     "frame": "Geography: classify resources as renewable, non-renewable or continuous."
+    }
+   ],
    "elaborations": [
     "classifying resources into renewable, non-renewable and continuous resources, and identifying examples of each type",
     "explaining how the movement of water, such as groundwater, soil moisture (green water), surface water in dams, rivers and lakes (blue water), through the environment connects places and how water is a potential resource when it exists as salt water, ice or water vapour",
@@ -186,6 +317,122 @@
    ],
    "knowledge": "Students have completed AC9HG7K01 — they can classify water as a renewable/continuous/non-renewable resource, trace water movement connecting places, and explain environmental, economic and social effects. They can locate Australia broadly but have not previously examined the spatial distribution of Australia's water resources or the concept of sustainability applied specifically to water.",
    "endpoint": "Students explain the location and distribution of water resources in Australia, their implications for people, and strategies to manage water sustainability.",
+   "cross": [
+    {
+     "to": "AC9M4SP02",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Grid references."
+    },
+    {
+     "to": "AC9M5SP02",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Grid coordinates."
+    },
+    {
+     "to": "AC9M7N08",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Map scale as a ratio."
+    },
+    {
+     "to": "AC9M5ST02",
+     "nodes": [
+      2
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Climate graphs are line graphs over time."
+    }
+   ],
+   "usedBy": [
+    {
+     "by": "AC9HE7K01",
+     "nodes": [
+      2
+     ],
+     "by_nodes": [
+      2
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "wording_watch": "scarcity",
+     "timing": "same_year",
+     "note": "Economics: limited resources for unlimited wants. Geography: not enough water."
+    },
+    {
+     "by": "AC9HE7K01",
+     "nodes": [
+      4
+     ],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "note": "Sustainability of water."
+    },
+    {
+     "by": "AC9HE7S04",
+     "nodes": [
+      4
+     ],
+     "by_nodes": [
+      1,
+      2
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "note": "Trade-offs in water management."
+    },
+    {
+     "by": "AC9E8LY04",
+     "nodes": [
+      4
+     ],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "idea-structures",
+     "note": "Problem and solution: water management strategies."
+    }
+   ],
+   "threads": [
+    {
+     "id": "idea-structures",
+     "nodes": [
+      4
+     ],
+     "frame": "Geography: strategies for water sustainability (problem and solution)."
+    }
+   ],
    "elaborations": [
     "representing the location of Australia's water resources, such as surface water and groundwater",
     "describing the distribution of Australia's water resources, and its implications for people; for example, limited access to water for people in rural and remote places and its implications",
@@ -1228,6 +1475,29 @@
    ],
    "knowledge": "Students have developed general inquiry questions in F–6 HASS (AC9HS6S01: develop questions to investigate people, events, developments, places and systems). This standard requires them to apply question development specifically within a geographical inquiry framework — questions must be oriented to geographical phenomena, use geographical concepts as organisers, and be plannable as a geographical investigation.",
    "endpoint": "Students develop questions to guide a geographical inquiry into a phenomenon or challenge.",
+   "cross": [
+    {
+     "to": "AC9S7I01",
+     "nodes": [],
+     "to_nodes": [
+      1,
+      2
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "inquiry-questions",
+     "note": "Investigable questions in science."
+    }
+   ],
+   "threads": [
+    {
+     "id": "inquiry-questions",
+     "nodes": [],
+     "frame": "Geography: ask a geographical question rather than a general one, and plan how to investigate it."
+    }
+   ],
    "elaborations": [
     "developing questions to investigate why a geographical phenomenon has changed or a challenge may arise; for example, the causes of water scarcity in different places, or measuring the liveability of a place and the factors affecting the liveability of a place",
     "planning an investigation of a geographical phenomenon or challenge being studied, using digital planning tools; for example, analysing statistics on variation in water quantity and quality over time in Central Australia, or using fieldwork to survey perceptions of the liveability of a local place"
@@ -1333,6 +1603,68 @@
    ],
    "knowledge": "Students have prior data collection and organisation skills from F–6 HASS (AC9HS6S02: locate, collect and organise information and data from primary and secondary sources in a range of formats). This standard introduces geospatial technologies, specialist digital tools, cartographic conventions and the distinction between primary fieldwork methods and secondary research materials in a specifically geographical context.",
    "endpoint": "Students collect, organise and represent geographical data from primary and secondary sources using appropriate geospatial technologies, digital tools and cartographic conventions.",
+   "cross": [
+    {
+     "to": "AC9M6ST01",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "thread": "searching-and-organising",
+     "note": "Data displays."
+    },
+    {
+     "to": "AC9M7ST02",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "thread": "searching-and-organising",
+     "note": "Data displays."
+    },
+    {
+     "to": "AC9M9ST04",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "later",
+     "thread": "searching-and-organising",
+     "note": "Choosing a display comes later in maths: don't link."
+    },
+    {
+     "to": "AC9HH7S02",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "wording_watch": "primary",
+     "timing": "same_year",
+     "note": "Geography and maths statistics: data you collect yourself. History: from the time of the event."
+    }
+   ],
+   "threads": [
+    {
+     "id": "searching-and-organising",
+     "nodes": [
+      2,
+      3
+     ],
+     "frame": "Geography: find secondary materials and represent data in geographical formats."
+    }
+   ],
    "elaborations": [
     "identifying appropriate primary research methods, including fieldwork, and using specialised digital tools to collect original materials; for example, interview and survey data, photographs of streetscapes, annotated field sketches, diagrams and statistics related to liveability",
     "collecting relevant secondary research materials, such as print and online publications, photographs and images, using advanced search functions; for example, 'allintitle: community opinion on water scarcity in Australia' or 'Australia's most liveable city'",
@@ -1958,6 +2290,24 @@
    ],
    "knowledge": "Students explain how water connects and changes places as it moves through environments (AC9HG7K01), and the causes and impacts of atmospheric/hydrological hazards (AC9HG7K04). They have not yet encountered tectonic, volcanic, or rock-weathering processes at this scale.",
    "endpoint": "Students explain geomorphological processes — including tectonics, volcanism, folding, faulting, weathering, erosion, transportation and deposition — that produce different landscapes and significant landforms.",
+   "usedBy": [
+    {
+     "by": "AC9S8U03",
+     "nodes": [
+      2
+     ],
+     "by_nodes": [
+      2,
+      3,
+      4,
+      5
+     ],
+     "relationship": "",
+     "overlap": "open",
+     "timing": "same_year",
+     "note": "Endogenic processes in Geography's landforms; whether to reinforce or share is open."
+    }
+   ],
    "elaborations": [
     "explaining the diversity of landscapes, such as wetlands, grasslands, forests, cold and hot deserts, and landforms at the national scale; for example, mountains – Himalayan Mountains, Nepal; grasslands – the Steppe, central Asia; forests – Daintree, Australia; cold deserts – Gobi, China",
     "explaining how tectonics, volcanism, folding, faulting, chemical weathering and physical weathering such as erosion, transportation and deposition shape places; for example, folding – MacDonnell Ranges, Northern Territory, Australia; faulting – Great Sumatran Fault (Semangko Fault), Indonesia; volcanism – Krakatoa, Indonesia",
@@ -2405,6 +2755,23 @@
    ],
    "knowledge": "Students explain causes and impacts of atmospheric/hydrological hazards and community/government responses (AC9HG7K04). They now extend this cause-impact-response framework to geomorphological hazards (volcanic eruptions, earthquakes, tsunamis, landslides, avalanches).",
    "endpoint": "Students explain the causes and impacts of a geomorphological hazard on people, places and environments, and the effects of responses including prevention, mitigation and preparedness strategies.",
+   "usedBy": [
+    {
+     "by": "AC9S8U03",
+     "nodes": [
+      1
+     ],
+     "by_nodes": [
+      3,
+      4,
+      5
+     ],
+     "relationship": "",
+     "overlap": "open",
+     "timing": "same_year",
+     "note": "Volcanoes and earthquakes as hazards in Geography; whether to reinforce or share is open."
+    }
+   ],
    "elaborations": [
     "identifying the causes of a geomorphological hazard such as a volcanic eruption, earthquake, tsunami, landslide or avalanche",
     "examining the environmental, economic or social impacts of a hazard at the local scale; for example, where people choose to live; the negative consequences for human wellbeing including loss of industry and unemployment; and lack of infrastructure and resources to prepare and respond to hazards",
@@ -5012,6 +5379,17 @@
    ],
    "knowledge": "Students understand the effects on environments of human alteration of biomes (AC9HG9K02), challenges to sustainable food production and management strategies (AC9HG9K04), and the impacts of production and consumption on places with sustainability strategies (AC9HG9K08). They can describe human-environment interconnections and identify sustainability challenges at a general level.",
    "endpoint": "Students explain the nature of human-induced environmental changes that challenge the sustainability of places and environments, and identify tensions between conflicting perspectives of individuals, communities and governments on sustainable practices.",
+   "usedBy": [
+    {
+     "by": "AC9S10U04",
+     "nodes": [],
+     "by_nodes": [],
+     "relationship": "",
+     "overlap": "open",
+     "timing": "same_year",
+     "note": "Same topic in the same year (human-induced environmental change); whether to reinforce or share is open."
+    }
+   ],
    "elaborations": [
     "identifying tensions between the conflicting perspectives of individuals, communities and governments on the use of sustainable practices",
     "explaining the nature of human-induced environmental changes (for example, water and atmospheric pollution; loss of biodiversity; degradation of land and aquatic environments) and the challenge they pose for sustainability",
@@ -5323,6 +5701,17 @@
    ],
    "knowledge": "Students understand human-induced environmental changes and sustainability (AC9HG10K01), environmental world views (AC9HG10K02), and First Nations custodial approaches (AC9HG10K03). They have engaged with sustainability strategies for biomes (AC9HG9K04) and urban places (AC9HG8K09), providing a prior framework for evaluating management strategies.",
    "endpoint": "Students explain the causes and effects of a change in an identified environment and propose and compare strategies to manage sustainability, drawing on environmental, economic and social criteria and considering trade-offs and the perspectives of different stakeholders.",
+   "usedBy": [
+    {
+     "by": "AC9S10U04",
+     "nodes": [],
+     "by_nodes": [],
+     "relationship": "",
+     "overlap": "open",
+     "timing": "same_year",
+     "note": "Same topic in the same year (causes and management of environmental change); whether to reinforce or share is open."
+    }
+   ],
    "elaborations": [
     "identifying a context to be studied, describing the causes of the environmental change and impacts for the sustainability of its functions (resource, service or spiritual)",
     "recognising and discussing the influence of people's world views on how management strategies are developed and implemented",

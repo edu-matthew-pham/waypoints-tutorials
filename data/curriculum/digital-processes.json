@@ -1,6 +1,6 @@
 {
  "subject": "digital-processes",
- "source": "waypoints-kit d93e6e5",
+ "source": "waypoints-kit 834ceb8",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -1741,6 +1741,20 @@
    ],
    "knowledge": "Students can follow and describe algorithms involving sequencing, comparison operators (branching) and iteration (AC9TDI4P02). They have worked with existing algorithms and described how they work. They have not yet designed algorithms themselves — the shift from reading/describing to creating is the new demand at this band.",
    "endpoint": "Students design algorithms that include multiple branches (more than two alternatives) and loops (repetition until a condition is met), representing their logic as structured steps.",
+   "usedBy": [
+    {
+     "by": "AC9S7U01",
+     "nodes": [],
+     "by_nodes": [
+      3,
+      4
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "A dichotomous key is a branching algorithm."
+    }
+   ],
    "elaborations": [
     "designing an algorithm or understanding and modifying an existing algorithm to fix an error or change functionality, for example exploring issues in drought-prone areas to decide when to water a garden, taking into account humidity as well as soil moisture level",
     "creating the steps, decisions and loops in algorithms and knowing what step they are up to, for example repeating the steps to add 2 digits for each column in multi-digit addition, knowing which column they are adding and when to stop",
@@ -5822,6 +5836,22 @@
    ],
    "knowledge": "Students can investigate and manage the digital footprint that existing systems and student solutions collect (AC9TDI8P14). They can identify what data systems collect about them. They have not yet applied the Australian Privacy Principles as a formal framework to critique systems, or used cryptographic techniques to protect user data in student solutions.",
    "endpoint": "Students apply the Australian Privacy Principles to critique existing systems and manage the digital footprint collected by student solutions, including using appropriate technical controls to protect user data.",
+   "cross": [
+    {
+     "to": "AC9HC8K03",
+     "nodes": [
+      1,
+      2
+     ],
+     "to_nodes": [
+      1
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "What laws are and how they are made; the Australian Privacy Principles sit under the Privacy Act."
+    }
+   ],
    "elaborations": [
     "critiquing the extent to which online services allow them to control access to their data in line with the Australian Privacy Principles",
     "using the Australian Privacy Principles as a reference to evaluate the steps they are taking to protect user information in their application, for example explaining how they are storing passwords using cryptographic hashing algorithms so that a data breach does not expose their users to security vulnerabilities due to password re-use"

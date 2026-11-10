@@ -71,7 +71,8 @@ export function auditConcepts(lessons, read, prereqs) {
   for (const l of scoped) {
     const scanned = !!CONCEPTS[l.language];
     const ids = new Set([...conceptIds(l.language), ...theoryIds]);
-    const keep = (v) => (scanned ? v : v.filter((id) => theoryIds.has(id)));
+    // Curriculum codes in assumes: (AC9…, a prior-knowledge decision: tools/cross-links.mjs) are not concept ids.
+    const keep = (v) => (scanned ? v.filter((id) => !/^AC9/.test(id)) : v.filter((id) => theoryIds.has(id)));
     const intro = list(l.introduces), assumes = keep(list(l.assumes)), recipes = keep(list(l.recipes));
     for (const [k, v] of [['introduces', intro], ['assumes', assumes], ['recipes', recipes]]) for (const id of v) if (!ids.has(id)) warnings.push(`${l.slug} › ${k}: "${id}" is not a concept id (tools/concepts.mjs)`);
     const known = new Map();   // id -> slug of the earlier lesson that introduces it

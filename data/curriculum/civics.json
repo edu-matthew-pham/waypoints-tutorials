@@ -1,6 +1,6 @@
 {
  "subject": "civics",
- "source": "waypoints-kit d93e6e5",
+ "source": "waypoints-kit 834ceb8",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -303,6 +303,15 @@
    ],
    "knowledge": "Students understand that Australia's Constitution established the framework of government (AC9HC7K01). They know about democratic values including fairness and equality from primary HASS (AC9HS6K06). This is the first systematic treatment of Australia's legal system as a distinct institution.",
    "endpoint": "Students explain the key principles and features of the Australian legal system, including the Constitution, the rule of law, principles of justice and the court hierarchy.",
+   "threads": [
+    {
+     "id": "evidence-and-claims",
+     "nodes": [
+      2
+     ],
+     "frame": "Civics: burden of proof and evidence in court."
+    }
+   ],
    "elaborations": [
     "exploring the origins of Australia's legal system, including British common law, the Magna Carta, an independent judiciary and the Court hierarchies, both federal and state/territory",
     "explaining the principles of justice, fairness, equality, the rule of law and the importance of equal access to the protections provided by the law",
@@ -435,6 +444,30 @@
    ],
    "knowledge": "Students understand Australia's system of government and democratic freedoms (AC9HC7K01, AC9HC7K02). From primary HASS they know about migration and Australian society (AC9HS6K03) and diversity in communities. This descriptor extends that to the concept of secular democracy and the religious and cultural dimensions of Australian identity.",
    "endpoint": "Students explain how Australia's secular democracy and pluralist, multi-faith society draws upon diverse cultural origins including Christian and Western heritage, distinct First Nations histories and cultures, and migrant communities.",
+   "cross": [
+    {
+     "to": "AC9M5ST02",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Trends in data over time."
+    },
+    {
+     "to": "AC9M7N06",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Percentages of a population."
+    }
+   ],
    "elaborations": [
     "defining the terms 'secular', 'multi-faith', 'diverse society', 'culturally diverse', 'Christian heritage', 'Western heritage' and 'pluralist', and discussing their relevance to Australia today",
     "exploring the diversity of First Nations Australian communities and discussing the distinctiveness of a community linked to their Country/Place",
@@ -689,6 +722,29 @@
    ],
    "knowledge": "Students can develop questions to investigate people, events, developments, places and systems (AC9HS6S01). At Y7 the shift is from general HASS inquiry questions to discipline-specific civics questions grounded in understanding of political and legal systems.",
    "endpoint": "Students develop focused questions to investigate Australia's political and legal systems and contemporary civic issues.",
+   "cross": [
+    {
+     "to": "AC9S7I01",
+     "nodes": [],
+     "to_nodes": [
+      1,
+      2
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "inquiry-questions",
+     "note": "Investigable questions in science."
+    }
+   ],
+   "threads": [
+    {
+     "id": "inquiry-questions",
+     "nodes": [],
+     "frame": "Civics: develop a civic inquiry question, often from current events."
+    }
+   ],
    "elaborations": [
     "developing a key question related to a specific investigation; for example, 'What is the rule of law and how does it apply to Australia's legal system?' or 'How does Australia's federal system of government divide powers between states and territories?'",
     "using current events to generate questions that apply to the wider investigation; for example, 'How is Australians' freedom of expression protected and limited in cases of incorrect information being published or distributed?'"
@@ -785,6 +841,16 @@
    ],
    "knowledge": "Students can locate, collect and organise information and data from primary and secondary sources in a range of formats (AC9HS6S02). The Y7 shift is to civics-specific source types (government websites, specialist reports, legislation) and a more deliberate approach to source selection and organisation.",
    "endpoint": "Students locate, select and organise information, data and ideas from different sources relevant to political, legal and civic investigations.",
+   "threads": [
+    {
+     "id": "searching-and-organising",
+     "nodes": [
+      2,
+      3
+     ],
+     "frame": "Civics: locate information with search strategies, then select and organise it."
+    }
+   ],
    "elaborations": [
     "locating information in online sources by exploring advanced search functions; for example, using advanced search functions or targeted criteria: 'allintext: cultural and religious diversity in Australian society'",
     "selecting print and online sources, such as articles, graphs, charts and statistics to identify information, data and ideas; for example, map cultural and religious diversity in Australian society",
@@ -884,6 +950,34 @@
    ],
    "knowledge": "Students can evaluate information to identify patterns, trends, and relationships (AC9HS6S03) and evaluate sources and perspectives (AC9HS6S04). The Y7 shift is to explicitly civic analytical work — identifying how perspectives on political and legal issues differ and why, and what challenges arise from this.",
    "endpoint": "Students analyse information, data and ideas about civic issues to identify and explain differences in perspectives and potential challenges.",
+   "cross": [
+    {
+     "to": "AC9E6LA02",
+     "nodes": [
+      1,
+      2
+     ],
+     "to_nodes": [
+      3
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "perspective-and-bias",
+     "note": "Identifying bias; perspective in texts."
+    }
+   ],
+   "threads": [
+    {
+     "id": "perspective-and-bias",
+     "nodes": [
+      1,
+      2
+     ],
+     "frame": "Civics: identify perspectives in civic sources and explain why they differ."
+    }
+   ],
    "elaborations": [
     "examining online publications to find examples of how the system of government protects respect for human rights and the rule of law, and compare these examples with other publications that have different perspectives or challenge these views",
     "evaluating data from surveys or reports to draw conclusions about a current issue of challenge; for example, a Lowy Institute poll on important issues facing Australia or media reports on the effectiveness of the court system"
@@ -1469,6 +1563,22 @@
    ],
    "knowledge": "Students know the key principles and features of the Australian legal system, including the Constitution, the rule of law and the court system (AC9HC7K03). They understand that democratic systems have structures and checks. The gap this descriptor fills is specifically how law is made — the characteristics that define a law and the two distinct sources (parliament and courts) through which Australian law is created.",
    "endpoint": "Students explain the characteristics of laws in Australia and how laws are made through both parliamentary processes (statutory law) and through the courts (common law), including the role of delegated legislation and the relationship between parliament and the courts.",
+   "usedBy": [
+    {
+     "by": "AC9TDI10P14",
+     "nodes": [
+      1
+     ],
+     "by_nodes": [
+      1,
+      2
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "What laws are and how they are made; the Australian Privacy Principles sit under the Privacy Act."
+    }
+   ],
    "elaborations": [
     "exploring the characteristics of laws, such as reflecting society's values; being enforceable; being known, clear and understood; and being relatively stable",
     "understanding how governments can introduce new rules and regulations without parliament voting on them (for example, delegated or subordinate legislation is not made directly by an Act of parliament, but under the authority of an Act of parliament)",

@@ -1,6 +1,6 @@
 {
  "subject": "history",
- "source": "waypoints-kit d93e6e5",
+ "source": "waypoints-kit 834ceb8",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -17,6 +17,32 @@
    ],
    "knowledge": "Students can describe significant individuals, events and ideas in Australia's post-Federation history and explain how migration to Australia changed society (AC9HS6K01, AC9HS6K03). They have not yet studied human prehistory, early human evolution, or the movement of peoples before written records. They have not worked with geological or archaeological timescales, or with theories about human origins.",
    "endpoint": "Students identify and describe competing theories of early human evolution and migration, explain how environmental changes drove the movement of peoples out of Africa and into other parts of the world including Australia, and identify how different types of evidence — excavation and stratigraphy, oral history, and radiocarbon dating — inform historical interpretations about these events.",
+   "cross": [
+    {
+     "to": "AC9S10U02",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "",
+     "overlap": "reinforce",
+     "timing": "later",
+     "note": "History comes first: teach what's needed, never link forward. Science can look back to History."
+    },
+    {
+     "to": "AC9S9U06",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [
+      4
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "later",
+     "note": "Radiocarbon dating before half-life: History comes first; science can look back to History."
+    }
+   ],
    "elaborations": [
     "identifying different theories regarding human evolution such as the Out of Africa Theory and the Modern Theory of Evolution",
     "describing how environmental changes, such as climate change and desertification, triggered the movement of peoples from Africa",
@@ -776,6 +802,60 @@
    ],
    "knowledge": "Students can explain the cultural obligations of First Nations Australians regarding heritage sites and ancestral remains, and describe how collaboration between Traditional Owners and researchers supports cultural preservation (AC9HH7K07). Students also bring prior understanding of evidence types from AC9HH7K01 (stratigraphy, radiocarbon dating, oral history as evidence for early human migration). They have not yet examined the full range of methods used to investigate early (ancient) societies, nor the specific roles of archaeology and heritage conservation in that investigation.",
    "endpoint": "Students describe the different methods and sources of evidence used by historians and archaeologists to investigate early societies — including stratigraphy, DNA testing, and written sources — evaluate their value for understanding the past, and explain why archaeology and the conservation of remains, material culture, and heritage sites matter.",
+   "cross": [
+    {
+     "to": "AC9S9U06",
+     "nodes": [
+      2
+     ],
+     "to_nodes": [
+      4
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "later",
+     "note": "Radiocarbon dating before half-life: History comes first; science can look back to History."
+    },
+    {
+     "to": "AC9S8U04",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [
+      1
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "later",
+     "note": "Layers laid down in order."
+    },
+    {
+     "to": "AC9HG7K01",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [
+      4
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Layers laid down in order."
+    },
+    {
+     "to": "AC9S10U01",
+     "nodes": [
+      2
+     ],
+     "to_nodes": [
+      1
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "later",
+     "note": "DNA."
+    }
+   ],
    "elaborations": [
     "evaluating various methods for investigating the ancient past; for example, stratigraphy to date discoveries, and DNA testing to identify common diseases and past individuals from their remains, such as Egyptian mummies",
     "creating a cross-sectional drawing of the earth's surface from an archaeological excavation to identify the evidence located at various layers (stratigraphy) and what it reveals about change over time; for example, a charcoal layer containing human remains and weapons may indicate the capture and destruction of an ancient settlement such as Troy",
@@ -911,6 +991,20 @@
    ],
    "knowledge": "Students can describe the methods and sources of evidence used by historians and archaeologists to investigate early societies, and explain the importance of conservation (AC9HH7K08). They have not yet examined how the physical environment and geography specifically shaped the development of an ancient society — the cause-and-effect relationship between landscape and civilisation.",
    "endpoint": "Students describe how the physical environment and geographical features of an ancient society's location influenced its development — including how landforms, waterways, climate, and resources shaped settlement patterns, agriculture, trade, and cultural development.",
+   "cross": [
+    {
+     "to": "AC9HG7K01",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "note": "Water and landforms."
+    }
+   ],
    "elaborations": [
     "explaining the role of topography in providing barriers of defence for city-states, such as the surrounding seas, mountain ranges and river systems; for example, the Axios (Vardar), Strimonas (Struma) and Nestos rivers",
     "explaining the role of the fertile soil of the Po and Tiber River regions in enabling trade through surplus production",
@@ -1476,6 +1570,29 @@
    ],
    "knowledge": "Students can develop questions about objects, people, places, and events in the past and present (AC9HS6S01). They have not yet distinguished historical inquiry questions from general questions — specifically the disciplinary requirements of historical questions: they must be investigable using evidence, focused on historical significance, causation, continuity/change, or perspective, and they must be open enough to require analysis rather than simple recall.",
    "endpoint": "Students develop historical questions that can inform historical inquiry — questions that are focused on historically significant issues, investigable using historical evidence, and framed around historical concepts such as causation, continuity and change, perspective, or significance.",
+   "cross": [
+    {
+     "to": "AC9S7I01",
+     "nodes": [],
+     "to_nodes": [
+      1,
+      2
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "inquiry-questions",
+     "note": "Investigable questions in science."
+    }
+   ],
+   "threads": [
+    {
+     "id": "inquiry-questions",
+     "nodes": [],
+     "frame": "History: what makes a question historical, and its scope."
+    }
+   ],
    "elaborations": [
     "developing a key question such as 'How were the pyramids at Giza built?' and understanding that there may not be a definitive answer; identifying related questions to inform the inquiry, including 'What evidence is there?' and 'What theories have been developed?'",
     "developing questions using historical concepts such as cause, effect, change, continuity, perspectives, interpretations and significance; for example, 'What were the effects of rising sea levels on the movements of early First Nations Australians?'"
@@ -1581,6 +1698,32 @@
    ],
    "knowledge": "Students can locate, collect, and organise information from primary and secondary sources (AC9HS6S02). They have not yet applied the primary/secondary distinction specifically to historical inquiry — including the disciplinary definition of primary sources as sources from the time of the event being investigated, and the practical skills of locating sources in digital repositories and research databases.",
    "endpoint": "Students locate and identify primary and secondary sources to use in historical inquiry, demonstrating understanding of the primary/secondary distinction, ability to use search strategies to find sources in repositories and databases, and the capacity to sort and organise sources by type.",
+   "usedBy": [
+    {
+     "by": "AC9HG7S02",
+     "nodes": [
+      1
+     ],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "wording_watch": "primary",
+     "timing": "same_year",
+     "note": "Geography and maths statistics: data you collect yourself. History: from the time of the event."
+    }
+   ],
+   "threads": [
+    {
+     "id": "searching-and-organising",
+     "nodes": [
+      2,
+      3
+     ],
+     "frame": "History: find sources in archives and collections with search strategies, then sort them for the inquiry."
+    }
+   ],
    "elaborations": [
     "locating digital repositories of archaeological sources and records, and using search functions to identify evidence; for example, Rome ceramics – religion",
     "identifying categories for sorting primary and secondary sources, such as scrolls, coins, artwork, human remains, primary perspectives and/or historical interpretations",
@@ -1688,6 +1831,27 @@
    ],
    "knowledge": "Students can evaluate primary and secondary sources to determine origin, purpose, and perspectives (AC9HS6S04). They have not yet applied these skills specifically to historical sources in the context of historical inquiry — distinguishing origin, content, context, and purpose as four distinct analytical dimensions, and applying disciplinary questions ('Who wrote/produced this?', 'When?', 'Why?', 'What does it show about the past?') systematically.",
    "endpoint": "Students identify and explain the origin, content, context, and purpose of primary and secondary sources by applying disciplinary analytical questions, demonstrating understanding of how each dimension contributes to interpreting what a source can and cannot tell us about the past.",
+   "usedBy": [
+    {
+     "by": "AC9E8LY03",
+     "nodes": [],
+     "by_nodes": [
+      2
+     ],
+     "relationship": "",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Source origin and purpose."
+    }
+   ],
+   "threads": [
+    {
+     "id": "evidence-and-claims",
+     "nodes": [],
+     "frame": "History: who made the source, when and why."
+    }
+   ],
    "elaborations": [
     "developing and applying questions such as 'Who wrote/produced this?', 'When?', 'Why?' and 'What does it show about the past?' to photographs, artefacts, stories, buildings and other sources to explain context and purpose",
     "identifying and explaining the origin, content, features and purposes of different sources in understanding the impact and legacy of a key individual such as Leonidas (King of Sparta), Pericles or Alexander the Great",
@@ -1794,6 +1958,101 @@
    ],
    "knowledge": "Students can identify the origin, content, context, and purpose of primary and secondary sources (AC9HH7S03). They have not yet applied the concepts of accuracy and usefulness as distinct analytical lenses — understanding what makes a source accurate (factually reliable) vs what makes it useful (valuable for a specific inquiry, even if biased or partial).",
    "endpoint": "Students identify and describe the accuracy and usefulness of primary and secondary sources as evidence — distinguishing fact from opinion, examining whether sources are reliable or partial, and explaining that a source can be useful as evidence even when its accuracy is limited.",
+   "cross": [
+    {
+     "to": "AC9E4LA02",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Fact and opinion."
+    }
+   ],
+   "usedBy": [
+    {
+     "by": "AC9S10U02",
+     "nodes": [
+      1
+     ],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Corroboration: several independent lines of evidence support a claim."
+    },
+    {
+     "by": "AC9S10U03",
+     "nodes": [
+      1
+     ],
+     "by_nodes": [
+      5
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Corroboration: several independent lines of evidence support a claim."
+    },
+    {
+     "by": "AC9S8U03",
+     "nodes": [
+      1
+     ],
+     "by_nodes": [
+      6
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Corroboration: several independent lines of evidence support a claim."
+    },
+    {
+     "by": "AC9E7LA02",
+     "nodes": [],
+     "by_nodes": [
+      2
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "evidence-and-claims",
+     "note": "Substantiating evaluations with sources."
+    },
+    {
+     "by": "AC9E8LY03",
+     "nodes": [],
+     "by_nodes": [
+      2
+     ],
+     "relationship": "",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Source accuracy."
+    }
+   ],
+   "threads": [
+    {
+     "id": "evidence-and-claims",
+     "nodes": [
+      1
+     ],
+     "frame": "History: is it a factual claim or an opinion? Check it against other sources; accuracy versus usefulness."
+    }
+   ],
    "elaborations": [
     "examining the accuracy of sources by asking questions such as 'Where does it come from?', 'What information is provided?', 'Is the information factual or an opinion?' and 'What other sources may be needed to support/challenge this source?'",
     "recognising that, while evidence may be limited for a particular group of people, such evidence can provide useful insights into the power structures in an ancient society",
@@ -1903,6 +2162,58 @@
    ],
    "knowledge": "Students can develop evidence-based conclusions and identify patterns and trends in historical information (AC9HS6S03, AC9HS6S05). They have not yet applied the historical concepts of causation and continuity/change as distinct analytical frameworks — specifically the multi-causal nature of historical events, the difference between short-term and long-term causes, or the distinction between continuity and change within the same period.",
    "endpoint": "Students describe causes and effects of historical events and explain continuities and changes — applying chronological reasoning, using timelines to sequence events, working with historical dating conventions, and identifying gaps in historical narratives.",
+   "cross": [
+    {
+     "to": "AC9M6N01",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "A timeline is a number line with no year zero."
+    },
+    {
+     "to": "AC9M7N07",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "A timeline is a number line with no year zero."
+    }
+   ],
+   "usedBy": [
+    {
+     "by": "AC9E7LY04",
+     "nodes": [
+      1,
+      2
+     ],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "idea-structures",
+     "note": "Chronology; cause and effect."
+    }
+   ],
+   "threads": [
+    {
+     "id": "idea-structures",
+     "nodes": [
+      1,
+      2
+     ],
+     "frame": "History: putting events in time order (chronology), and their causes and effects."
+    }
+   ],
    "elaborations": [
     "sequencing events from early Australia and the ancient society in order, using timelines to identify and describe causes and effects",
     "defining terms such as 'BC' (Before Christ), 'AD' (Anno Domini), 'BCE' (Before Common Era), 'CE' (Common Era), 'BP' (Before Present) and 'history' (the period beginning with named individuals and textual recording)",
@@ -2012,6 +2323,34 @@
    ],
    "knowledge": "Students can discuss perspectives related to objects, people, places, and events (AC9HS6S04). They have not yet applied perspective analysis specifically to historical sources — distinguishing the perspective embedded in a source from the events the source describes, and examining how attitudes and values of a historical period are expressed in its sources.",
    "endpoint": "Students identify perspectives, attitudes, and values of the past in sources — recognising that sources express the viewpoints of their producers, that some groups are underrepresented in historical sources, and that reading sources for perspective is a distinct historical skill from reading them for factual information.",
+   "cross": [
+    {
+     "to": "AC9E6LA02",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [
+      3
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "perspective-and-bias",
+     "note": "Identifying bias; perspective in texts."
+    }
+   ],
+   "threads": [
+    {
+     "id": "perspective-and-bias",
+     "nodes": [
+      1,
+      2,
+      3
+     ],
+     "frame": "History: the perspective in a historical source, the values behind it, and who is missing."
+    }
+   ],
    "elaborations": [
     "identifying perspectives in a historical source, such as the saying of Confucius, 'Women and underlings are especially difficult to handle', and discussing the values and attitudes of the society that produced it",
     "identifying that, while evidence may be limited for a particular group of people such as women, slaves, peoples living in newly conquered areas and ethnic groups, such evidence can provide useful insights into the power structures of a society",
@@ -2119,6 +2458,65 @@
    ],
    "knowledge": "Students can identify perspectives, attitudes, and values of the past in sources (AC9HH7S06). They have not yet applied the concept of historical interpretation — understanding that historians construct different interpretations of the same events, that interpretations are argument-based rather than simply 'what happened', and that explaining why different interpretations exist is a distinct historical skill.",
    "endpoint": "Students explain historical interpretations about significant events, individuals, and groups — demonstrating understanding that interpretations are constructed from evidence and argument, that different interpretations of the same event can coexist, and that developing a historical argument about why something is interpreted in different ways is a key historical skill.",
+   "cross": [
+    {
+     "to": "AC9S7U05",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [
+      5
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "evidence-and-claims",
+     "note": "Fact versus interpretation; models and theories in science."
+    },
+    {
+     "to": "AC9E7LA02",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [
+      2
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "evidence-and-claims",
+     "note": "Argument: substantiating a judgement."
+    }
+   ],
+   "usedBy": [
+    {
+     "by": "AC9E8LA04",
+     "nodes": [
+      3
+     ],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Claim, evidence and explanation: historical argument."
+    }
+   ],
+   "threads": [
+    {
+     "id": "evidence-and-claims",
+     "nodes": [
+      1,
+      3
+     ],
+     "frame": "History: fact versus interpretation; building an argument from evidence."
+    }
+   ],
    "elaborations": [
     "examining different interpretations to explain short-term triggers and/or turning points of the decline of an empire or society, such as failing economy, political upheaval, foreign invasion or conflict",
     "developing a historical argument about why an event, individual or group is interpreted in different ways"

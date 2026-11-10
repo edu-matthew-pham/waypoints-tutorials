@@ -1,6 +1,6 @@
 {
  "subject": "systems",
- "source": "waypoints-kit d93e6e5",
+ "source": "waypoints-kit 834ceb8",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -814,6 +814,32 @@
    ],
    "knowledge": "Students can identify and explain the main internal components of common digital systems and their functions (AC9TDI6K01). They understand that digital systems form networks to transmit data (AC9TDI6K02). They have not yet connected hardware specifications to performance outcomes or made selection decisions based on workload requirements.",
    "endpoint": "Students explain how specific hardware specifications (RAM, bandwidth, storage, GPU/CPU) affect the speed and capability of digital systems, and select appropriate hardware for particular tasks by matching specifications to workload requirements.",
+   "cross": [
+    {
+     "to": "AC9M7N03",
+     "nodes": [
+      1,
+      2
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Prefixes and powers of 10 (GB, GHz, Mbps)."
+    },
+    {
+     "to": "AC9M8M05",
+     "nodes": [
+      1,
+      2
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Bandwidth is a rate."
+    }
+   ],
    "elaborations": [
     "explaining how hardware specifications affect what, and how quickly, a digital system can perform tasks, for example how different bandwidth networks affect download speed and lag or how much random access memory (RAM) is needed for multimedia authoring",
     "selecting appropriate hardware for particular tasks, for example choosing a powerful graphics card for computer gaming or large external storage for video editing",
@@ -917,6 +943,19 @@
    ],
    "knowledge": "Students can explain how digital systems form networks to transmit data (AC9TDI6K02). They have not yet compared wired and wireless network properties, explored encryption, or investigated how protocols handle transmission errors.",
    "endpoint": "Students investigate how data is transmitted across wired and wireless networks including the internet, by comparing network properties (bandwidth, latency, reliability), explaining how protocols handle packet transmission and errors, and explaining why and how encryption secures data in transit.",
+   "cross": [
+    {
+     "to": "AC9M8M05",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Bandwidth and latency."
+    }
+   ],
    "elaborations": [
     "describing physical networks and comparing their properties, for example the bandwidth, latency and reliability of wired versus wireless networks",
     "explaining why cryptography is necessary for securing data, for example transmitting credit card details over the internet",
@@ -1081,6 +1120,59 @@
    ],
    "knowledge": "Students can explain how digital systems use numbers to represent all types of data (AC9TDI6K03) and how data is represented using binary through off and on states (AC9TDI6K04). They understand the general principle that all data is numbers, but have not yet investigated the specific encoding schemes for text, image, or audio.",
    "endpoint": "Students investigate how digital systems use integers to represent text (Unicode character values), images (RGB pixel values for bitmaps, geometry for SVG), and audio (amplitude samples at a given sampling rate and bit depth), and explain the encoding scheme for each data type.",
+   "cross": [
+    {
+     "to": "AC9M6SP02",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "A pixel grid uses Cartesian coordinates."
+    },
+    {
+     "to": "AC9M8M05",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Sampling rate is a rate."
+    }
+   ],
+   "usedBy": [
+    {
+     "by": "AC9S9U04",
+     "nodes": [
+      4
+     ],
+     "by_nodes": [
+      2
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "note": "Sound as amplitudes; audio as sampled amplitudes."
+    },
+    {
+     "by": "AC9S9U04",
+     "nodes": [
+      3
+     ],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "RGB colour."
+    }
+   ],
    "elaborations": [
     "explaining how digital systems represent text as a sequence of individual characters numbered using the Unicode character set, for example upper-case and lower-case letters, punctuation and emoji",
     "explaining how digital systems represent audio using whole numbers for the amplitude of the soundwave at a given sampling rate, for example -32,768 to 32,767 for 16-bit audio at 44,100 Hz",
@@ -1210,6 +1302,65 @@
    ],
    "knowledge": "Students can explain how data is represented using binary through off and on states (AC9TDI6K04) and how digital systems use integers to represent text, image and audio data (AC9TDI8K03). They understand the concept of binary as on/off, but have not yet explained binary place value, the relationship between bits and representable range, or how circuits perform binary operations.",
    "endpoint": "Students explain how integers are represented in binary using place value (powers of 2), the relationship between bits, bytes and representable range, and why digital systems use binary — connecting electronic on/off states to logic gates and data encoding.",
+   "cross": [
+    {
+     "to": "AC9M7N03",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Binary is place value in base 2."
+    },
+    {
+     "to": "AC9M7N02",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Exponent notation for place values."
+    },
+    {
+     "to": "AC9M7N02",
+     "nodes": [
+      2
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Range with n bits is 2 to the power n."
+    },
+    {
+     "to": "AC9M8P02",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [
+      2
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "logic",
+     "note": "AND, OR and NOT: the same logic in two subjects in the same year."
+    }
+   ],
+   "threads": [
+    {
+     "id": "logic",
+     "nodes": [
+      3
+     ],
+     "frame": "Digital Technologies: logic gates (circuits that do AND, OR, NOT) and why computers use binary."
+    }
+   ],
    "elaborations": [
     "explaining how whole numbers can be represented in binary, for example counting in binary from 0 to 31, and recognising that one byte = 8 bits, which can represent from 0 to 255",
     "explaining how digital systems represent data in binary, for example by converting a character to its Unicode value, then converting that value into binary",
@@ -1335,6 +1486,30 @@
    ],
    "knowledge": "Students can investigate how data is transmitted and secured in wired and wireless networks, including the use of protocols (AC9TDI8K02). They can explain how hardware specifications affect performance (AC9TDI8K01). They have not yet examined the software layer (OS, access control, cryptography) that manages and secures data in networked systems.",
    "endpoint": "Students investigate how hardware and software components — including operating systems, access control mechanisms, and cryptographic protocols — work together to manage, control and secure access to data in networked digital systems.",
+   "cross": [
+    {
+     "to": "AC9M7N02",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Prime numbers and factors."
+    },
+    {
+     "to": "AC9M6N02",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Prime numbers."
+    }
+   ],
    "elaborations": [
     "explaining how the operating system hides the complexity of different hardware from applications, for example applications can treat input from a mouse and touch screen in the same way",
     "exploring how public key cryptography, for example TLS, and hashing, such as SHA-1, secure the storage and transmission of data",
@@ -1582,6 +1757,30 @@
    ],
    "knowledge": "Students can explain how digital systems represent text, image and audio data using binary (AC9TDI8K03) and how integers are represented in binary (AC9TDI8K04). They understand that different data types require different amounts of storage. They have not yet investigated how data can be compressed to reduce storage and transmission requirements.",
    "endpoint": "Students investigate simple data compression techniques, including lossless methods such as run-length encoding and lossy methods, and explain the difference between lossy and lossless compression and the consequences of each.",
+   "cross": [
+    {
+     "to": "AC9M7N08",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "How much compression saves, as a ratio."
+    },
+    {
+     "to": "AC9M7N06",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "How much compression saves, as a percentage."
+    }
+   ],
    "elaborations": [
     "using an algorithm to identify patterns in data and represent them in a compressed way, for example repeated pixels in an image with run-length encoding",
     "exploring the difference between lossy and lossless compression and the consequences of each, for example exploring codecs for audiovisual compression such as MP3, MP4 and WAV formats, considering energy requirements of file sizes",

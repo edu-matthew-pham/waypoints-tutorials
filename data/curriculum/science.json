@@ -1,6 +1,6 @@
 {
  "subject": "science",
- "source": "waypoints-kit d93e6e5",
+ "source": "waypoints-kit 834ceb8",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -2713,6 +2713,19 @@
    ],
    "knowledge": "Students can describe observable properties of solids and liquids and explain how adding or removing heat energy causes changes of state (AC9S3U04). They can compare properties of soils, rocks and minerals as Earth resources (AC9S3U02). They have not yet connected state changes to the movement of water through the environment as a continuous cycle.",
    "endpoint": "Students describe the key processes of the water cycle — evaporation, condensation and precipitation — trace the movement of water through sky, landscape and ocean, and identify sources of water including how First Nations Australians and others understand and manage water resources.",
+   "usedBy": [
+    {
+     "by": "AC9HG7K01",
+     "nodes": [],
+     "by_nodes": [
+      2
+     ],
+     "relationship": "application",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "note": "The water cycle."
+    }
+   ],
    "elaborations": [
     "identifying everyday examples of precipitation (rain or snow), evaporation (wet washing or paint drying) and condensation of water (water droplets on a cold water bottle)",
     "identifying local water sources and exploring how they change over time, such as rain puddles that evaporate or a local creek that flows faster after rain",
@@ -3863,6 +3876,19 @@
    ],
    "knowledge": "Students can compare observable properties of soils and rocks and explain their importance as Earth resources (AC9S3U02). They have not yet distinguished weathering from erosion, examined the agents driving each, or connected these processes to landscape change over time.",
    "endpoint": "Students describe how weathering breaks down rock material and how erosion, transportation and deposition move and redistribute that material to change Earth's surface — across both slow geological and rapid event-driven timescales — and examine human impacts on these processes.",
+   "usedBy": [
+    {
+     "by": "AC9HG7K01",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Weathering, erosion and deposition."
+    }
+   ],
    "elaborations": [
     "identifying types of weathering caused by mechanical means such as by wind abrasion, cycles of extreme heat or cold, and frost wedging; and biological means such as by plants and tree roots",
     "exploring how erosion can be caused by moving air or moving water and how substances such as surface soil are relocated, and identifying examples of erosion on a local or regional scale",
@@ -5233,6 +5259,74 @@
    ],
    "knowledge": "Students can pose investigable questions to identify patterns and test relationships and make predictions based on experiences (AC9S5I01). They have not yet developed hypotheses with explicit variable-outcome-reasoning structure or generated questions to explore scientific models.",
    "endpoint": "Students develop investigable questions, reasoned predictions and hypotheses to explore scientific models, identify patterns and test relationships.",
+   "usedBy": [
+    {
+     "by": "AC9HC7S01",
+     "nodes": [
+      1,
+      2
+     ],
+     "by_nodes": [],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "inquiry-questions",
+     "note": "Investigable questions in science."
+    },
+    {
+     "by": "AC9HE7S01",
+     "nodes": [
+      1,
+      2
+     ],
+     "by_nodes": [],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "inquiry-questions",
+     "note": "Investigable questions in science."
+    },
+    {
+     "by": "AC9HG7S01",
+     "nodes": [
+      1,
+      2
+     ],
+     "by_nodes": [],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "inquiry-questions",
+     "note": "Investigable questions in science."
+    },
+    {
+     "by": "AC9HH7S01",
+     "nodes": [
+      1,
+      2
+     ],
+     "by_nodes": [],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "inquiry-questions",
+     "note": "Investigable questions in science."
+    }
+   ],
+   "threads": [
+    {
+     "id": "inquiry-questions",
+     "nodes": [
+      1,
+      2
+     ],
+     "frame": "Science: questions you can answer by testing (investigable) versus ones you can't."
+    }
+   ],
    "elaborations": [
     "discussing the features of investigable and non-investigable questions, including consideration of school and web-based resources available, and examining their own and others' questions",
     "consulting with First Nations Australians to clarify questions based on their traditional ecological knowledges, such as predictions regarding the impact of invasive species",
@@ -5822,6 +5916,30 @@
    ],
    "knowledge": "Students can compare methods, recognise sources of error and select evidence to draw reasoned conclusions (AC9S5I05). They have not yet analysed conclusions and claims for assumptions, conflicting evidence and unanswered questions.",
    "endpoint": "Students analyse methods, conclusions and claims for assumptions, possible sources of error, conflicting evidence and unanswered questions.",
+   "usedBy": [
+    {
+     "by": "AC9E8LA04",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Claim, evidence and explanation: conclusions from evidence in science."
+    }
+   ],
+   "threads": [
+    {
+     "id": "evidence-and-claims",
+     "nodes": [
+      3
+     ],
+     "frame": "Science inquiry: check a claim for hidden assumptions and evidence that disagrees."
+    }
+   ],
    "elaborations": [
     "identifying and considering indicators of the quality of the data when analysing results to identify unanswered questions",
     "evaluating the method used in an investigation, identifying assumptions made about variables that should be controlled, suggesting ways it could be improved and giving reasons for the suggested changes",
@@ -6174,6 +6292,100 @@
    ],
    "knowledge": "Students can group living things by their external features (AC9SFU01), compare living and non-living things and the life cycles of plants and animals (AC9S3U01), and explain how structural features and behaviours help living things survive in their habitats (AC9S5U01). They have not studied formal taxonomy or constructed classification tools.",
    "endpoint": "Students investigate why classification systems are used, apply and construct dichotomous keys, and evaluate how classification tools order and organise biodiversity.",
+   "cross": [
+    {
+     "to": "AC9TDI6P02",
+     "nodes": [
+      3,
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "A dichotomous key is a branching algorithm."
+    },
+    {
+     "to": "AC9M7SP04",
+     "nodes": [
+      3,
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "classification",
+     "note": "Binary sorting decisions in both."
+    },
+    {
+     "to": "AC9HG7K01",
+     "nodes": [
+      1,
+      5
+     ],
+     "to_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "classification",
+     "note": "Classification as useful sorting, with trade-offs."
+    }
+   ],
+   "usedBy": [
+    {
+     "by": "AC9HG7K01",
+     "nodes": [
+      1
+     ],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "classification",
+     "note": "Purpose of classification."
+    },
+    {
+     "by": "AC9E7LY04",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "idea-structures",
+     "note": "Taxonomies."
+    }
+   ],
+   "threads": [
+    {
+     "id": "idea-structures",
+     "nodes": [
+      1,
+      2
+     ],
+     "frame": "Science: sort living things into groups and subgroups (a taxonomy)."
+    },
+    {
+     "id": "classification",
+     "nodes": [
+      1,
+      3,
+      4,
+      5
+     ],
+     "frame": "Science: why we sort living things into groups, using yes/no keys (dichotomous keys), and how the groups change over time."
+    }
+   ],
    "elaborations": [
     "observing and identifying the similarities and differences of particular features within and between groups of organisms",
     "creating and modifying a dichotomous key to classify organisms into groups and groups within groups",
@@ -6362,6 +6574,31 @@
    ],
    "knowledge": "Students can explain the roles of producers, consumers and decomposers in a habitat and construct simple food chains (AC9S4U01), and know that a habitat's physical conditions affect the growth and survival of living things (AC9S6U01). They have not studied energy flow quantitatively or modelled multi-factor ecosystem changes.",
    "endpoint": "Students use food web models to represent matter and energy flow, and predict the impact of changes to abiotic and biotic factors on populations.",
+   "cross": [
+    {
+     "to": "AC9M6N07",
+     "nodes": [
+      2
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "About 10% of energy passes to the next level."
+    },
+    {
+     "to": "AC9M5ST02",
+     "nodes": [
+      3,
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Population change on a line graph over time."
+    }
+   ],
    "elaborations": [
     "analysing food webs to show feeding relationships between organisms in an ecosystem and the role of microorganisms",
     "modelling how energy flows into and out of an ecosystem via the pathways of food webs",
@@ -6545,6 +6782,19 @@
    ],
    "knowledge": "Students can identify patterns in the changing positions of the sun, moon and stars in the sky and observe moon phases (AC9S2U01), and can relate Earth's tilt, rotation and revolution around the sun to day and night and day length (AC9S6U02). They have not modelled the Earth, sun and moon together as one system or explained eclipses, seasons and tides mechanistically.",
    "endpoint": "Students model and explain how cyclic changes in Earth-sun-moon positions cause eclipses, seasons and tides.",
+   "cross": [
+    {
+     "to": "AC9M5M04",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Solar angle in degrees."
+    }
+   ],
    "elaborations": [
     "using physical models or virtual simulations to explain how Earth's tilt and position relative to the sun causes differences in light intensity on Earth's surface, resulting in seasons",
     "examining the effect of the gravitational attraction of the moon and the sun on Earth's oceans and describing how the relative positions of the moon and sun with respect to Earth result in tidal variations",
@@ -6729,6 +6979,52 @@
    ],
    "knowledge": "Students can identify pushes and pulls as forces and have investigated how frictional, gravitational and magnetic forces affect the motion of objects (AC9S4U03). They have not represented forces as vectors, analysed balanced and unbalanced forces, or related changes in motion to an object's mass and the size and direction of the forces on it.",
    "endpoint": "Students represent and explain how balanced and unbalanced forces, including gravity, relate to changes in an object's motion in terms of mass, magnitude and direction.",
+   "cross": [
+    {
+     "to": "AC9M7N07",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Signed numbers for direction; teach in the lesson."
+    },
+    {
+     "to": "AC9M7N06",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Multiplying decimals to get weight from mass."
+    },
+    {
+     "to": "AC9M6M01",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Units in weight from mass."
+    },
+    {
+     "to": "AC9M7A04",
+     "nodes": [
+      5
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Describing relationships in graphs of investigation data."
+    }
+   ],
    "elaborations": [
     "investigating the effects of applying different forces to familiar objects of the same and different mass",
     "analysing the effect of balanced and unbalanced forces on an object's motion, such as starting, stopping and changing direction",
@@ -6916,10 +7212,88 @@
    "prior": [
     "AC9S3U04",
     "AC9S3U03",
+    "AC9S4U02",
     "AC9S5U04"
    ],
-   "knowledge": "Students know that matter exists as solids, liquids and gases, can describe observable properties, and know that adding or removing heat energy changes state (AC9S3U04) and changes temperature (AC9S3U03). They have used a simple particle model of motion and arrangement to explain the properties of solids, liquids and gases (AC9S5U04). They have not included attraction between particles, or used the model to explain a wider range of properties such as compressibility, density and diffusion, or energy in changes of state.",
+   "knowledge": "Students know that matter exists as solids, liquids and gases, can describe observable properties, and know that adding or removing heat energy changes state (AC9S3U04) and changes temperature (AC9S3U03). They have described evaporation and condensation in the water cycle (AC9S4U02). They have used a simple particle model of motion and arrangement to explain the properties of solids, liquids and gases (AC9S5U04). They have not included attraction between particles, or used the model to explain a wider range of properties such as compressibility, density and diffusion, or energy in changes of state.",
    "endpoint": "Students use particle theory to describe the arrangement, motion and attraction of particles in substances and relate this to observable physical properties, including changes of state.",
+   "cross": [
+    {
+     "to": "AC9M8M05",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "later",
+     "note": "Density is a rate (mass per unit volume). Maths teaches rates later: teach it in the lesson, never link forward."
+    },
+    {
+     "to": "AC9M7M02",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Volume in cm3."
+    },
+    {
+     "to": "AC9M6M01",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Metric units for volume."
+    },
+    {
+     "to": "AC9M5ST02",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "A heating curve is a line graph over time."
+    },
+    {
+     "to": "AC9HG7K01",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [
+      2
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "note": "Evaporation and condensation in the water cycle."
+    }
+   ],
+   "usedBy": [
+    {
+     "by": "AC9HH7S07",
+     "nodes": [
+      5
+     ],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "evidence-and-claims",
+     "note": "Fact versus interpretation; models and theories in science."
+    }
+   ],
    "elaborations": [
     "using and constructing models, diagrams or virtual simulations to represent changes in particle arrangement as substances change state",
     "relating motion and energy of particles to distances between particles of the same substance in different states",
@@ -7099,9 +7473,10 @@
    "prior": [
     "AC9S4U04",
     "AC9S6U04",
+    "AC9S4U02",
     "AC9S7U05"
    ],
-   "knowledge": "Students know how the properties of materials influence their use (AC9S4U04), have compared reversible changes including dissolving and changes of state (AC9S6U04), and have an introductory particle model from AC9S7U05. They have not formally distinguished pure substances from mixtures at the particle level or applied separation techniques systematically.",
+   "knowledge": "Students know how the properties of materials influence their use (AC9S4U04), have compared reversible changes including dissolving and changes of state (AC9S6U04), have described evaporation and condensation in the water cycle (AC9S4U02), and have an introductory particle model from AC9S7U05. They have not formally distinguished pure substances from mixtures at the particle level or applied separation techniques systematically.",
    "endpoint": "Students use a particle model to describe the difference between pure substances and mixtures, and select and apply appropriate separation techniques based on properties of substances.",
    "elaborations": [
     "using representations of particles to show the difference between samples of pure substances and mixtures, and identifying examples of each",
@@ -7290,6 +7665,52 @@
    ],
    "knowledge": "Students can group living things by external features (AC9SFU01), compare living and non-living things and life cycles (AC9S3U01), explain how structural features enable survival (AC9S5U01), and classify organisms using dichotomous keys (AC9S7U01). All prior learning is at the organism level — external structures, observable features, habitat relationships. There is no prior curriculum treatment of internal cell structure, cellular scale, or sub-organism organisation.",
    "endpoint": "Students recognise that all living things are made of cells, compare plant and animal cells identifying structures present in each, and describe the functions of key organelles including nucleus, cell membrane, cell wall, cytoplasm, chloroplasts and vacuoles.",
+   "cross": [
+    {
+     "to": "AC9M6N06",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Multiplying by powers of 10 for cell scale and magnification."
+    },
+    {
+     "to": "AC9M6M01",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Metric conversion for cell scale."
+    },
+    {
+     "to": "AC9M7N03",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Powers of 10."
+    },
+    {
+     "to": "AC9M9M02",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "later",
+     "note": "Scientific notation comes later in maths: don't link."
+    }
+   ],
    "elaborations": [
     "exploring an augmented or virtual reality tour of a plant or animal to 'zoom in' and understand the scale of cells",
     "identifying the structure and function of organelles in cells including the nucleus, cell membrane, cell wall, cytoplasm, chloroplasts and vacuoles",
@@ -7605,6 +8026,63 @@
    ],
    "knowledge": "Students can describe observable properties of rocks and minerals (AC9S3U02) and explain how weathering, erosion, transportation and deposition change Earth's surface (AC9S5U02). Prior learning is entirely surface-level — there is no curriculum treatment of Earth's interior at any prior year level. Earth-Sun-Moon cycles (AC9S7U03) address celestial geometry, not geological interior. Students have no prior exposure to Earth's internal structure, plates, or tectonic processes.",
    "endpoint": "Students describe the formation of geological features at divergent, convergent and transform plate boundaries and explain the scientific evidence — including seafloor spreading, continental fit, fossil distribution and earthquake/volcanic patterns — that supports the theory of plate tectonics.",
+   "cross": [
+    {
+     "to": "AC9HH7S04",
+     "nodes": [
+      6
+     ],
+     "to_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Corroboration: several independent lines of evidence support a claim."
+    },
+    {
+     "to": "AC9HG8K01",
+     "nodes": [
+      2,
+      3,
+      4,
+      5
+     ],
+     "to_nodes": [
+      2
+     ],
+     "relationship": "",
+     "overlap": "open",
+     "timing": "same_year",
+     "note": "Endogenic processes in Geography's landforms; whether to reinforce or share is open."
+    },
+    {
+     "to": "AC9HG8K05",
+     "nodes": [
+      3,
+      4,
+      5
+     ],
+     "to_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "open",
+     "timing": "same_year",
+     "note": "Volcanoes and earthquakes as hazards in Geography; whether to reinforce or share is open."
+    }
+   ],
+   "threads": [
+    {
+     "id": "evidence-and-claims",
+     "nodes": [
+      6
+     ],
+     "frame": "Science: several independent lines of evidence support plate tectonics."
+    }
+   ],
    "elaborations": [
     "examining patterns of earthquake and volcanic activity over time and proposing explanations",
     "evaluating the impact of tectonic events on human populations and examining engineering solutions designed to reduce the impact",
@@ -7804,6 +8282,71 @@
    ],
    "knowledge": "Students can compare observable properties of rocks and minerals (AC9S3U02) and describe weathering, erosion, transportation and deposition as surface processes (AC9S5U02). Plate tectonics provides heat, pressure and uplift mechanisms (AC9S8U03). Prior learning covers surface rock identification and surface processes only — rock formation processes (igneous crystallisation, metamorphism, lithification) and the rock cycle as a system are entirely new.",
    "endpoint": "Students describe the rock cycle as an interconnected system linking sedimentary, igneous and metamorphic formation, explain the geological timescales involved, and examine how each rock type's properties reflect its formation history and determine appropriate use.",
+   "cross": [
+    {
+     "to": "AC9HG7K01",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [
+      4
+     ],
+     "relationship": "",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "note": "Geography teaches erosion and deposition a year before the rock cycle."
+    },
+    {
+     "to": "AC9M7N03",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Very large numbers for geological time."
+    },
+    {
+     "to": "AC9M9M02",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "later",
+     "note": "Scientific notation comes later in maths: don't link."
+    }
+   ],
+   "usedBy": [
+    {
+     "by": "AC9HG7K01",
+     "nodes": [
+      1
+     ],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "",
+     "overlap": "reinforce",
+     "timing": "later",
+     "note": "Geography teaches it a year before science's rock cycle."
+    },
+    {
+     "by": "AC9HH7K08",
+     "nodes": [
+      1
+     ],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "later",
+     "note": "Layers laid down in order."
+    }
+   ],
    "elaborations": [
     "comparing the observable properties of different types of rocks and identifying them using a provided dichotomous key",
     "exploring the major processes of the rock cycle including weathering, erosion, deposition, melting, crystallisation, uplift, heat and pressure in the formation of different types of rocks",
@@ -8185,6 +8728,30 @@
    ],
    "knowledge": "Students can describe observable material properties (AC9SFU03), recognise physical change preserves material composition (AC9S2U03), explain solid/liquid/gas properties using a particle model (AC9S5U04), distinguish pure substances from mixtures and apply separation techniques (AC9S7U06), and describe particle arrangement, motion and attraction forces (AC9S7U05). The particle model treats particles as undifferentiated — particles have no identity (atom type). The concept of atom type, element as one atom type, and compound as chemically combined different atom types are all new. Chemical symbols and molecular formulas are new.",
    "endpoint": "Students classify matter as elements (one atom type), compounds (two or more atom types chemically combined in fixed ratios) or mixtures (substances not chemically combined), and use chemical symbols, formulas and 2D/3D models to represent each — selecting representations based on what information each conveys.",
+   "cross": [
+    {
+     "to": "AC9M7N08",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Atoms in fixed ratios in formulas."
+    },
+    {
+     "to": "AC9M7SP01",
+     "nodes": [
+      5
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "The same move: judging what a representation shows and hides."
+    }
+   ],
    "elaborations": [
     "using virtual and physical models to distinguish between elements and compounds in terms of types of atoms",
     "examining how Dmitri Mendeleev arranged the elements in the first version of the periodic table and comparing his arrangement with the current version",
@@ -10295,6 +10862,46 @@
    ],
    "knowledge": "Students can explain how light travels in straight paths and describe reflection and refraction (AC9S5U03). They can explain energy transfer and transformation in electrical circuits (AC9S6U03) and classify energy as kinetic or potential (AC9S8U05). They can use particle theory to explain physical properties of substances (AC9S7U05). They have encountered both particle and wave ideas separately but have not yet applied them as competing or complementary models for explaining energy transfer, or evaluated which model is more useful for a given phenomenon.",
    "endpoint": "Students use wave and particle models to describe how energy is transferred through different mediums — including sound, heat and light — and examine the usefulness and limitations of each model for explaining phenomena including electromagnetic radiation.",
+   "cross": [
+    {
+     "to": "AC9TDI8K03",
+     "nodes": [
+      2
+     ],
+     "to_nodes": [
+      4
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "note": "Sound as amplitudes; audio as sampled amplitudes."
+    },
+    {
+     "to": "AC9M9M02",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Very large and very small numbers for the EM spectrum; teach in the lesson."
+    },
+    {
+     "to": "AC9TDI8K03",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [
+      3
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "RGB colour."
+    }
+   ],
    "elaborations": [
     "describing the processes underlying convection and conduction of heat in terms of the particle model",
     "modelling the transfer of sound energy as waves using slinky springs and relating to the medium through which the sound is transferred",
@@ -10471,6 +11078,41 @@
    ],
    "knowledge": "Students can classify energy as kinetic or potential and explain energy transfers and transformations in simple systems (AC9S8U05). They can explain energy transfer and transformation in electrical circuits (AC9S6U03). They have qualitative understanding of energy transformation but have not yet applied conservation of energy as a quantitative law, or analysed system efficiency — the proportion of useful output energy — as a calculated quantity.",
    "endpoint": "Students apply the law of conservation of energy to account for all energy inputs and outputs in a system, calculate efficiency as useful output divided by total input, and use Sankey diagrams to represent energy flow — applying this analysis to real systems including electricity generation and appliances.",
+   "cross": [
+    {
+     "to": "AC9M6N07",
+     "nodes": [
+      2
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Efficiency as a percentage."
+    },
+    {
+     "to": "AC9M7N06",
+     "nodes": [
+      2
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Efficiency as a percentage."
+    },
+    {
+     "to": "AC9M7N08",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Sankey widths are proportional."
+    }
+   ],
    "elaborations": [
     "explaining that the law of conservation of energy explains that total energy is maintained in energy transfer and transformation in a system",
     "explaining efficiency and recognising that in energy transfer and transformation a variety of processes can occur, so that the amount of usable energy is reduced and the system is not 100% efficient",
@@ -10618,6 +11260,58 @@
    ],
    "knowledge": "Students can use particle theory to explain physical properties of substances (AC9S7U05) and classify matter as elements, compounds and mixtures using symbols and formulas (AC9S8U06). They have a functional particle model but it is the simple undifferentiated particle model — particles have no internal structure. They have not yet encountered subatomic particles, the historical development of atomic models, or the concept of nuclear instability and radioactive decay.",
    "endpoint": "Students explain how experimental evidence drove the development of the nuclear model of the atom through the discovery of electrons, protons and neutrons, and describe how unstable isotopes undergo radioactive decay (alpha, beta, gamma) to produce stable atoms — including half-life as a measure of decay rate.",
+   "cross": [
+    {
+     "to": "AC9M7N07",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Charges such as +11 and -10 are integers."
+    },
+    {
+     "to": "AC9M7P02",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Random events over many trials; half-life also uses repeated halving (fractions, Years 5 to 7)."
+    }
+   ],
+   "usedBy": [
+    {
+     "by": "AC9HH7K01",
+     "nodes": [
+      4
+     ],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "later",
+     "note": "Radiocarbon dating before half-life: History comes first; science can look back to History."
+    },
+    {
+     "by": "AC9HH7K08",
+     "nodes": [
+      4
+     ],
+     "by_nodes": [
+      2
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "later",
+     "note": "Radiocarbon dating before half-life: History comes first; science can look back to History."
+    }
+   ],
    "elaborations": [
     "comparing the mass and charge of protons, neutrons and electrons",
     "examining how the discovery of electrons, protons and neutrons resulted from experimental evidence",
@@ -10793,6 +11487,20 @@
    ],
    "knowledge": "Students can compare physical and chemical changes and identify indicators of energy change in chemical reactions (AC9S8U07). They can classify matter as elements, compounds and mixtures and use chemical symbols and formulas (AC9S8U06). They can compare reversible and irreversible changes (AC9S6U04). They have not yet modelled atom rearrangement as the mechanism of chemical change, written balanced symbolic equations, or applied conservation of mass as a quantitative principle to chemical reactions.",
    "endpoint": "Students model chemical reactions as atom rearrangement using word equations, molecular models and balanced symbolic equations, and use conservation of mass — demonstrated through atom counting — to explain why equations must be balanced.",
+   "cross": [
+    {
+     "to": "AC9M7A03",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "background",
+     "overlap": "",
+     "wording_watch": "balance",
+     "timing": "earlier",
+     "note": "Balancing equations in chemistry versus the balance method for solving equations in maths."
+    }
+   ],
    "elaborations": [
     "identifying reactants and products in chemical reactions",
     "using models and representations to show the rearrangement of atoms in chemical reactions",
@@ -10966,6 +11674,58 @@
    ],
    "knowledge": "Students can describe reproductive structures and processes in animals and plants and analyse how sexual and asexual reproduction enable species survival (AC9S9U02). They can recognise cells as the basic units of living things and describe specialised cell structures (AC9S8U01). They have not yet examined the molecular basis of heredity — chromosomes, DNA and genes as functional units — or the mechanics of meiosis and mitosis as cell division processes, or Mendelian inheritance as a predictive model.",
    "endpoint": "Students explain the roles of meiosis and mitosis in heredity, describe the structural relationship between chromosomes, DNA and genes, and predict genotype and phenotype ratios in monohybrid crosses including dominant/recessive and sex-linked patterns.",
+   "cross": [
+    {
+     "to": "AC9M7P01",
+     "nodes": [
+      4,
+      6
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "note": "A Punnett square is a two-way table of equally likely outcomes."
+    },
+    {
+     "to": "AC9M8P02",
+     "nodes": [
+      4,
+      6
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "note": "A Punnett square is a two-way table of equally likely outcomes."
+    },
+    {
+     "to": "AC9M7N08",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Ratios such as 3:1."
+    }
+   ],
+   "usedBy": [
+    {
+     "by": "AC9HH7K08",
+     "nodes": [
+      1
+     ],
+     "by_nodes": [
+      2
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "later",
+     "note": "DNA."
+    }
+   ],
    "elaborations": [
     "using models and diagrams to represent the relationship between genes, chromosomes, and DNA",
     "explaining how genetic information passed on to offspring from both parents by meiosis and fertilisation increases variation",
@@ -11175,6 +11935,69 @@
    ],
    "knowledge": "Students can explain how specific structural features and behaviours are adaptations enabling survival in particular habitats (AC9S5U01), analyse how physical conditions affect organism survival (AC9S6U01), and explain classification systems and biodiversity (AC9S7U01). They understand sexual and asexual reproduction and the role of variation in species survival (AC9S9U02). They have not yet encountered natural selection as a mechanistic explanation for how populations change over time, or engaged with the evidence base — fossil record, anatomical and chemical similarities, geographical distribution — that supports the theory.",
    "endpoint": "Students use the theory of evolution by natural selection to explain both past and present biological diversity, and analyse multiple lines of scientific evidence — fossil record, anatomical and chemical similarities, geographical distribution — that support the theory.",
+   "cross": [
+    {
+     "to": "AC9M7ST02",
+     "nodes": [
+      1,
+      5
+     ],
+     "to_nodes": [],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Describing distributions."
+    },
+    {
+     "to": "AC9M9ST03",
+     "nodes": [
+      1,
+      5
+     ],
+     "to_nodes": [],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Describing distributions."
+    },
+    {
+     "to": "AC9HH7S04",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Corroboration: several independent lines of evidence support a claim."
+    }
+   ],
+   "usedBy": [
+    {
+     "by": "AC9HH7K01",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "reinforce",
+     "timing": "later",
+     "note": "History comes first: teach what's needed, never link forward. Science can look back to History."
+    }
+   ],
+   "threads": [
+    {
+     "id": "evidence-and-claims",
+     "nodes": [
+      3
+     ],
+     "frame": "Science: several independent lines of evidence support evolution."
+    }
+   ],
    "elaborations": [
     "outlining processes involved in natural selection including variation, isolation and selection",
     "examining biodiversity as a function of evolution",
@@ -11352,6 +12175,67 @@
    ],
    "knowledge": "Students can model and explain how Earth-sun-moon positions cause eclipses, seasons and tides (AC9S7U03) and describe daily and seasonal environmental changes (AC9S1U02, AC9S2U01). They have scale and cyclic-phenomenon understanding at the solar system level. They have not yet encountered cosmological scale (galaxies, light-years, astronomical units), the origin and timeline of the universe, or the evidence base for the big bang — cosmic microwave background radiation, redshift of galaxies, or Hubble's observations.",
    "endpoint": "Students describe how the big bang theory models the origin and evolution of the universe — including its major stages and the formation of stars and galaxies — and analyse the supporting evidence including redshift, cosmic microwave background radiation and the observed proportions of matter.",
+   "cross": [
+    {
+     "to": "AC9HH7S04",
+     "nodes": [
+      5
+     ],
+     "to_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Corroboration: several independent lines of evidence support a claim."
+    },
+    {
+     "to": "AC9M7N03",
+     "nodes": [
+      1,
+      2
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Powers of 10 for the scale of the universe and its timescales."
+    },
+    {
+     "to": "AC9M9M02",
+     "nodes": [
+      1,
+      2
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Scientific notation."
+    },
+    {
+     "to": "AC9M7N06",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Percentages for matter proportions."
+    }
+   ],
+   "threads": [
+    {
+     "id": "evidence-and-claims",
+     "nodes": [
+      5
+     ],
+     "frame": "Science: several independent lines of evidence support the big bang theory."
+    }
+   ],
    "elaborations": [
     "describing the major components of the universe using appropriate scientific terminology including light-years",
     "constructing a timeline of major changes from Big Bang to formation of stars and galaxies",
@@ -11528,6 +12412,60 @@
    ],
    "knowledge": "Students can represent the carbon cycle and explain how combustion, photosynthesis and respiration depend on interactions between Earth's spheres (AC9S9U03). They can describe how Earth's tilt and revolution produce seasonal change (AC9S6U02) and model food web energy flow through ecosystems (AC9S7U02). They have not yet examined energy exchange mechanisms between spheres (radiation, conduction, convection), the greenhouse effect as a quantitative balance, or how perturbations to that balance produce measurable global-scale patterns.",
    "endpoint": "Students use models of energy flow between the geosphere, biosphere, hydrosphere and atmosphere to explain patterns of global climate change, including analysing indicators of change and evaluating strategies to reduce or mitigate effects.",
+   "cross": [
+    {
+     "to": "AC9M5ST02",
+     "nodes": [
+      5
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Reading change over time in line graphs."
+    },
+    {
+     "to": "AC9M10ST03",
+     "nodes": [
+      5
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Association in scatterplots."
+    },
+    {
+     "to": "AC9M10ST01",
+     "nodes": [
+      6
+     ],
+     "to_nodes": [],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "same_year",
+     "thread": "evidence-and-claims",
+     "note": "Analysing claims in media reports."
+    },
+    {
+     "to": "AC9HG10K01",
+     "nodes": [],
+     "to_nodes": [],
+     "relationship": "",
+     "overlap": "open",
+     "timing": "same_year",
+     "note": "Same topic in the same year (human-induced environmental change); whether to reinforce or share is open."
+    },
+    {
+     "to": "AC9HG10K04",
+     "nodes": [],
+     "to_nodes": [],
+     "relationship": "",
+     "overlap": "open",
+     "timing": "same_year",
+     "note": "Same topic in the same year (causes and management of environmental change); whether to reinforce or share is open."
+    }
+   ],
    "elaborations": [
     "examining the role of radiation from the sun and how its interactions with atmosphere, ocean and land are the foundation for the global climate system",
     "investigating indicators of climate change such as changes in ocean and atmospheric temperatures, sea levels, biodiversity, species distribution, permafrost and sea ice",
@@ -11732,6 +12670,75 @@
    ],
    "knowledge": "Students can represent and explain how balanced and unbalanced forces, including gravity, relate to changes in an object's motion in terms of mass, magnitude and direction (AC9S7U04). There is a two-year gap in the physical sciences strand (Years 8–9 address energy, not force/motion), so force and motion knowledge has had no curriculum reinforcement for three years. Students carry the Aristotelian misconception that moving objects require a continuous applied force to maintain motion. They have no prior exposure to Newton's named laws, acceleration as a defined quantity, F=ma as a quantitative relationship, or action-reaction pairs.",
    "endpoint": "Students apply Newton's three laws of motion to analyse object behaviour and quantitatively solve problems using F=ma, including multi-force scenarios, free body diagrams, and real-world applications such as vehicle safety features and sport.",
+   "cross": [
+    {
+     "to": "AC9M7N07",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Net force along a line is integer addition with direction."
+    },
+    {
+     "to": "AC9M8M05",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Acceleration is a rate: change in velocity per second."
+    },
+    {
+     "to": "AC9M8A04",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "note": "Gradient as a rate over time."
+    },
+    {
+     "to": "AC9M9A03",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "note": "Gradient as a rate over time."
+    },
+    {
+     "to": "AC9M8A01",
+     "nodes": [
+      4,
+      7
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "share",
+     "timing": "earlier",
+     "note": "Changing the subject of F = ma: one rearranging method shared with maths."
+    },
+    {
+     "to": "AC9M9M05",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Direct proportion: doubling and halving."
+    }
+   ],
    "elaborations": [
     "investigating a moving object to analyse relationships between distance, time, speed, force and acceleration",
     "using mathematical representations to quantitatively relate force, speed, acceleration and mass",
@@ -12149,6 +13156,31 @@
    ],
    "knowledge": "Students can model atom rearrangement in chemical reactions using word and balanced equations and demonstrate conservation of mass (AC9S9U07). They can compare physical and chemical changes and identify energy change indicators (AC9S8U07). They understand elements, compounds and mixtures and can use chemical symbols and formulas (AC9S8U06). They have not yet categorised reactions by structural type (synthesis, decomposition, displacement), identified patterns within those categories, or examined what variables control how fast reactions proceed.",
    "endpoint": "Students identify structural patterns in synthesis, decomposition and single and double displacement reactions, predict reaction products from type, and explain how temperature, concentration, surface area and catalysts affect reaction rates in terms of particle collision theory.",
+   "cross": [
+    {
+     "to": "AC9M8M05",
+     "nodes": [
+      5,
+      6
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Reaction rate is a rate."
+    },
+    {
+     "to": "AC9M7A04",
+     "nodes": [
+      6
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Reading rate curves."
+    }
+   ],
    "elaborations": [
     "defining and representing synthesis, decomposition and displacement reactions",
     "identifying reaction type and predicting products",

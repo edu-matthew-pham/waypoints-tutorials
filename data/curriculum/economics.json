@@ -1,6 +1,6 @@
 {
  "subject": "economics",
- "source": "waypoints-kit d93e6e5",
+ "source": "waypoints-kit 834ceb8",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -16,6 +16,37 @@
    ],
    "knowledge": "Students have explored influences on consumer choices and strategies for making informed personal consumer and financial choices (AC9HS6K08). They can identify that people make decisions about spending and saving but have not formally engaged with the economic concepts of scarcity, resource allocation, or opportunity cost.",
    "endpoint": "Students explain why opportunity cost exists as decisions are made to allocate limited resources to meet unlimited needs and wants.",
+   "cross": [
+    {
+     "to": "AC9HG7K02",
+     "nodes": [
+      2
+     ],
+     "to_nodes": [
+      2
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "wording_watch": "scarcity",
+     "timing": "same_year",
+     "note": "Economics: limited resources for unlimited wants. Geography: not enough water."
+    },
+    {
+     "to": "AC9HG7K02",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [
+      4
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "note": "Sustainability of water."
+    }
+   ],
    "elaborations": [
     "explaining the concept of 'economic scarcity' in relation to 'What to produce?', 'How to produce?' or 'For whom to produce?'",
     "identifying the needs and wants of a local community, and exploring how limited resources are currently used to meet unlimited needs and wants",
@@ -494,6 +525,52 @@
    ],
    "knowledge": "Students have explored consumer choices and strategies for making informed financial decisions (AC9HS6K08) and are developing understanding of work and income (AC9HE7K04). They are familiar with making purchases but have not formally examined the legal and ethical framework of rights and responsibilities that governs consumer and financial transactions.",
    "endpoint": "Students explain the rights and responsibilities of individuals and businesses in relation to consumer and financial products and services.",
+   "cross": [
+    {
+     "to": "AC9M6N09",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Money arithmetic, Years 3 to 6 (AC9M3N06 to AC9M6N09)."
+    },
+    {
+     "to": "AC9M7N09",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "",
+     "overlap": "reinforce",
+     "timing": "same_year",
+     "note": "Financial modelling with percentages."
+    },
+    {
+     "to": "AC9M9A05",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "later",
+     "note": "Interest and growth come later in maths (buy now, pay later): don't link."
+    },
+    {
+     "to": "AC9M10A04",
+     "nodes": [
+      4
+     ],
+     "to_nodes": [],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "later",
+     "note": "Interest and growth come later in maths: don't link."
+    }
+   ],
    "elaborations": [
     "distinguishing the difference between rights and responsibilities, and creating a list of the rights and responsibilities of individuals and businesses",
     "explaining the rights of individuals and businesses in relation to consumer and financial products and services; for example, warranties, cooling-off periods and processes for returning goods",
@@ -632,6 +709,29 @@
    ],
    "knowledge": "Students have developed questions about people, events, developments, places and systems in primary HASS (AC9HS6S01). They can form basic inquiry questions but have not yet applied economic and business concepts and vocabulary systematically to question construction, nor targeted their questions specifically at contemporary issues.",
    "endpoint": "Students develop questions to investigate a contemporary economic and business issue.",
+   "cross": [
+    {
+     "to": "AC9S7I01",
+     "nodes": [],
+     "to_nodes": [
+      1,
+      2
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "inquiry-questions",
+     "note": "Investigable questions in science."
+    }
+   ],
+   "threads": [
+    {
+     "id": "inquiry-questions",
+     "nodes": [],
+     "frame": "Economics: what makes a question one you can research, using economics ideas."
+    }
+   ],
    "elaborations": [
     "developing questions to form the basis of an investigation; for example, 'How does an understanding of consumer rights and responsibilities impact on decision-making?' and 'What are the attributes of an entrepreneur?'",
     "developing questions, using economic and business concepts and terms; for example, 'How do businesses decide what to produce?', 'What is economic scarcity?' and 'Why can individuals not have all the items they want, meaning they must choose?'"
@@ -710,6 +810,55 @@
    ],
    "knowledge": "Students can locate, collect and organise information from primary and secondary sources in a range of formats (AC9HS6S02). At Year 7, the demand shifts to selecting from a wider range of source types — including government and NGO websites and digital tools — and to organising using more specialised formats such as tables, graphs and visual displays.",
    "endpoint": "Students locate, select and organise information and data from a range of sources.",
+   "cross": [
+    {
+     "to": "AC9M6ST01",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "thread": "searching-and-organising",
+     "note": "Data displays."
+    },
+    {
+     "to": "AC9M7ST02",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "thread": "searching-and-organising",
+     "note": "Data displays."
+    },
+    {
+     "to": "AC9M9ST04",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "later",
+     "thread": "searching-and-organising",
+     "note": "Choosing a display comes later in maths: don't link."
+    }
+   ],
+   "threads": [
+    {
+     "id": "searching-and-organising",
+     "nodes": [
+      1,
+      2,
+      3
+     ],
+     "frame": "Economics: search with a clear aim, pick what's relevant, and organise data in a suitable format."
+    }
+   ],
    "elaborations": [
     "locating online sources; for example, using advanced search functions: 'define: market' or targeted criteria: 'allintext: successful Australian entrepreneurs'",
     "selecting relevant information and data from sources by asking questions such as 'How will the data or information help answer the question?' about websites of government departments or non-government organisations",
@@ -820,6 +969,102 @@
    ],
    "knowledge": "Students can evaluate information and data to identify and describe patterns and trends, and infer relationships (AC9HS6S03). The Year 7 demand adds specific economic frames — identifying issues, identifying multi-variable trends using interactive digital tools, and reasoning about cause-and-effect relationships in economic contexts.",
    "endpoint": "Students interpret information and data to identify economic and business issues, trends and economic cause-and-effect relationships.",
+   "cross": [
+    {
+     "to": "AC9M5ST02",
+     "nodes": [
+      2
+     ],
+     "to_nodes": [],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Trends over time on line graphs."
+    },
+    {
+     "to": "AC9M10ST03",
+     "nodes": [
+      3
+     ],
+     "to_nodes": [],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "later",
+     "note": "Association in scatterplots comes later in maths: teach in the lesson, with the caution that a link between two variables isn't always a cause."
+    },
+    {
+     "to": "AC9M6ST02",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Inference beyond the data; claims in media reports."
+    },
+    {
+     "to": "AC9M10ST01",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "later",
+     "thread": "evidence-and-claims",
+     "note": "Claims in media reports, later in maths: don't link."
+    }
+   ],
+   "usedBy": [
+    {
+     "by": "AC9E7LA02",
+     "nodes": [],
+     "by_nodes": [
+      2
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "evidence-and-claims",
+     "note": "Substantiating evaluations with sources."
+    },
+    {
+     "by": "AC9E7LY04",
+     "nodes": [
+      3
+     ],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "idea-structures",
+     "note": "Cause and effect."
+    }
+   ],
+   "threads": [
+    {
+     "id": "evidence-and-claims",
+     "nodes": [
+      1
+     ],
+     "frame": "Economics: what the data shows, a reasonable inference, or a claim that goes too far."
+    },
+    {
+     "id": "idea-structures",
+     "nodes": [
+      3
+     ],
+     "frame": "Economics: cause-and-effect relationships in economic data."
+    }
+   ],
    "elaborations": [
     "interpreting information to identify economic and business issues; for example, inferring the effect of growth in shopping online on the number of customers entering stores",
     "interpreting multi-variable data by using interactive digital tools to identify trends and to answer questions such as 'For a 10-year period, to what extent has the number of people in casual work changed?'",
@@ -925,10 +1170,50 @@
    "description": "develop a response to an economic and business issue, identifying potential costs and benefits",
    "prior": [
     "AC9HS6S05",
-    "AC9HS6S06"
+    "AC9HS6S06",
+    "AC9HE7K01"
    ],
-   "knowledge": "Students can develop evidence-based conclusions and propose actions with assessed effects (AC9HS6S05, AC9HS6S06). The Year 7 demand adds the economic frame of costs and benefits — structuring a response to an issue by explicitly identifying and weighing the trade-offs involved, and explaining that a decision selects one alternative over another.",
+   "knowledge": "Students can develop evidence-based conclusions and propose actions with assessed effects (AC9HS6S05, AC9HS6S06). They have met opportunity cost: choosing one option means giving up the next best one (AC9HE7K01). The Year 7 demand adds the economic frame of costs and benefits — structuring a response to an issue by explicitly identifying and weighing the trade-offs involved, and explaining that a decision selects one alternative over another.",
    "endpoint": "Students develop a response to an economic and business issue, identifying potential costs and benefits.",
+   "cross": [
+    {
+     "to": "AC9HG7K02",
+     "nodes": [
+      1,
+      2
+     ],
+     "to_nodes": [
+      4
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "note": "Trade-offs in water management."
+    }
+   ],
+   "usedBy": [
+    {
+     "by": "AC9E8LY04",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "idea-structures",
+     "note": "Problem and solution: responding to an issue."
+    }
+   ],
+   "threads": [
+    {
+     "id": "idea-structures",
+     "nodes": [],
+     "frame": "Economics: respond to an issue by weighing costs and benefits (problem and solution)."
+    }
+   ],
    "elaborations": [
     "developing a response to an issue by combining known knowledge with new ideas; for example, when purchasing a mobile phone, use the product statement and personal budget to identify benefits and costs",
     "identifying and describing reasons that inform the response to an issue; for example, the reasons for using recyclable materials in packaging as a way to support sustainable use of economic resources to meet needs and wants into the future",

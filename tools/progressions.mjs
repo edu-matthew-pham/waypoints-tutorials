@@ -31,6 +31,7 @@ export function loadProgressions(root = 'data/curriculum') {
     const cur = JSON.parse(readFileSync(join(root, f), 'utf8'));
     for (const d of cur.descriptors || []) out.set(d.code, {
       code: d.code, title: d.title, year: d.year, prior: d.prior || [], subject: cur.subject,
+      cross: d.cross || [], usedBy: d.usedBy || [], threads: d.threads || [],   // Kit's cross-subject links (10 Nov 2026; tools/cross-links.mjs)
       nodes: (d.nodes || []).map((n) => ({ n: n.n, title: n.label, hinge: !!n.hinge, criteria: n.criteria || [], checkpoint: n.checkpoint || '' })),
     });
   }

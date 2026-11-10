@@ -52,7 +52,9 @@ export function findNode(cur, ref) {
   return n ? withContext(cur, d, n) : null;
 }
 export function withContext(cur, d, n) {
-  return { ...n, code: d.code, subject: cur.subject, year: d.year, ...(d.years ? { years: d.years } : {}), title: d.title, strand: d.strand, description: d.description, knowledge: d.knowledge || '', ...(d.elaborations?.length ? { elaborations: d.elaborations } : {}), kit: d.kit || '' };
+  // Kit's cross-subject links to earlier years for this node (10 Nov 2026; links without nodes apply to every node).
+  const cross = (d.cross || []).filter((k) => k.timing === 'earlier' && (!k.nodes?.length || k.nodes.includes(n.n)));
+  return { ...n, code: d.code, subject: cur.subject, year: d.year, ...(d.years ? { years: d.years } : {}), title: d.title, strand: d.strand, description: d.description, knowledge: d.knowledge || '', ...(d.elaborations?.length ? { elaborations: d.elaborations } : {}), ...(cross.length ? { cross } : {}), kit: d.kit || '' };
 }
 
 /** Review status (data/review/<subject>.yml, parsed): subject-level now, node-level allowed. */
@@ -198,6 +200,9 @@ export function nodesPromptText(nodes, pick = {}, kitVersion = '') {
   for (const n of nodes) {
     L.push('', `${nodeKey(n)}: ${yearText(n)} ${labelOf(n.subject)}, ${n.code} ${n.title} (${n.strand})`, `Descriptor: ${n.description}`, `Waypoint ${n.n}: ${n.label}`, `Checkpoint: ${n.checkpoint}`);
     if (n.knowledge) L.push(`Prior knowledge (the standard's): ${n.knowledge}`);
+    // Earlier ideas from other subjects (Kit's cross-subject links): the author decides each one (BUILDING › 2 step 4; rules T24).
+    if (n.cross?.length) L.push('Earlier ideas from other subjects (Kit\'s cross-subject links): for each, link it with uses: (the page shows the lightest help that exists), or name it in assumes: if the lesson teaches it itself:',
+      ...n.cross.map((k) => `- ${k.to}${k.to_nodes?.length ? ` n${k.to_nodes.join(', n')}` : ''}${k.title ? `: ${k.year != null ? `${yearText(k)} ` : ''}${k.subject ? `${labelOf(k.subject)}, ` : ''}${k.title}` : ''}${k.relationship ? ` (${k.relationship})` : ''}${k.note ? `. ${k.note}` : ''}`));
     if (n.elaborations?.length && !shown.has(n.code)) { shown.add(n.code); L.push(`ACARA elaborations for ${n.code} (examples that illustrate the whole standard, not a checklist and not tied to one waypoint):`, ...n.elaborations.map((e) => `- ${e}`)); }
     if (n.criteria?.length) L.push('Success criteria:', ...n.criteria.map((c) => `- ${c}`));
     if (n.width) {
@@ -214,12 +219,15 @@ export function nodesPromptText(nodes, pick = {}, kitVersion = '') {
   return L.join('\n') + '\n\n';
 }
 
-/** Create's compact copy of a subject's data (only what the picker and pre-fill use). */
-export function compactCurriculum(cur, review) {
+/** Create's compact copy of a subject's data (only what the picker and pre-fill use). lookup (optional): code ->
+ *  { title, year, subject } across every subject, so a cross-subject link can be named (10 Nov 2026). */
+export function compactCurriculum(cur, review, lookup = null) {
   return {
     subject: cur.subject, label: labelOf(cur.subject), source: cur.source, kit: review?.kit || '', status: review?.status || 'draft',
     descriptors: cur.descriptors.map((d) => ({
       code: d.code, year: d.year, ...(d.years ? { years: d.years } : {}), strand: d.strand, title: d.title, description: d.description, knowledge: d.knowledge || '', ...(d.elaborations?.length ? { elaborations: d.elaborations } : {}), kit: d.kit || '',
+      // Only links to earlier years: the ones an author can link to (rules T24).
+      ...((d.cross || []).some((k) => k.timing === 'earlier') ? { cross: d.cross.filter((k) => k.timing === 'earlier').map((k) => ({ to: k.to, nodes: k.nodes || [], to_nodes: k.to_nodes || [], timing: k.timing, relationship: k.relationship || '', note: k.note || '', ...(lookup?.get(k.to) || {}) })) } : {}),
       nodes: d.nodes.map((n) => ({ n: n.n, label: n.label, checkpoint: n.checkpoint, hinge: n.hinge, ...(n.hinge_reason ? { hinge_reason: n.hinge_reason } : {}), criteria: n.criteria || [], ...(n.width ? { width: n.width } : {}), modes: n.modes || [] })),
     })),
   };

@@ -33,7 +33,8 @@
     "check-lesson-boards": "node tools/check-lesson-boards.mjs",
     "check-blockers": "node tools/check-blockers.mjs",
     "check-options": "node tools/check-options.mjs",
-    "check-refreshers": "node tools/check-refreshers.mjs"
+    "check-refreshers": "node tools/check-refreshers.mjs",
+    "cross-links": "node tools/cross-links.mjs"
   },
   "engines": {
     "node": ">=20"

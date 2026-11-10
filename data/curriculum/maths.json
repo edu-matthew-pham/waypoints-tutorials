@@ -1,6 +1,6 @@
 {
  "subject": "maths",
- "source": "waypoints-kit d93e6e5",
+ "source": "waypoints-kit 834ceb8",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -7671,6 +7671,19 @@
    ],
    "knowledge": "Students can interpret and create 2D representations of familiar environments (AC9M3SP02). They have not yet used formal grid reference systems to precisely locate and communicate positions.",
    "endpoint": "Students create and interpret grid reference systems using grid references and directional language to locate positions and describe pathways.",
+   "usedBy": [
+    {
+     "by": "AC9HG7K02",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Grid references."
+    }
+   ],
    "elaborations": [
     "interpreting a grid reference map of a familiar location and writing instructions using grid references",
     "recognising that a spreadsheet uses a grid reference system, locating and entering data in cells",
@@ -8517,6 +8530,19 @@
    ],
    "knowledge": "Students can identify and name angle types (acute, right, obtuse, straight, reflex) (AC9M4M04). They have not yet measured angles in degrees or used a protractor to construct angles.",
    "endpoint": "Students estimate, construct and measure angles in degrees using a protractor, and relate measures to angle names.",
+   "usedBy": [
+    {
+     "by": "AC9S7U03",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Solar angle in degrees."
+    }
+   ],
    "elaborations": [
     "using a protractor to measure angles in degrees and classifying these angles using angle names; for example, an acute angle is less than \n90\n90°, an obtuse angle is more than \n90\n90° and less than \n180\n180°, a right angle is equal to \n90\n90° and a reflex angle is more than \n180\n180° and less than \n360\n360°",
     "estimating the size of angles in the environment using a clinometer and describing the angles using angle names",
@@ -9936,6 +9962,19 @@
    ],
    "knowledge": "Students can use grid reference systems (letter-number) to locate positions (AC9M4SP02). They have not yet used a coordinate system with ordered pairs or distinguished between the two coordinate axes.",
    "endpoint": "Students construct a grid coordinate system and use coordinates and directional language to locate positions and describe movement.",
+   "usedBy": [
+    {
+     "by": "AC9HG7K02",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Grid coordinates."
+    }
+   ],
    "elaborations": [
     "understanding how the numbers on the axes on a grid coordinate system are numbers on a number line and are used to pinpoint locations",
     "discussing the conventions of indicating a point in a grid coordinate system; for example, writing the horizontal axis number first and the vertical axis number second, using brackets and commas",
@@ -10259,6 +10298,75 @@
    ],
    "knowledge": "Students can acquire and represent data in frequency tables and charts (AC9M5ST01). They have not yet interpreted line graphs as representations of change over time.",
    "endpoint": "Students interpret line graphs representing change over time and discuss the relationships and conclusions they represent.",
+   "usedBy": [
+    {
+     "by": "AC9S10U04",
+     "nodes": [],
+     "by_nodes": [
+      5
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Reading change over time in line graphs."
+    },
+    {
+     "by": "AC9S7U02",
+     "nodes": [],
+     "by_nodes": [
+      3,
+      4
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Population change on a line graph over time."
+    },
+    {
+     "by": "AC9S7U05",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "A heating curve is a line graph over time."
+    },
+    {
+     "by": "AC9HC7K04",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Trends in data over time."
+    },
+    {
+     "by": "AC9HE7S03",
+     "nodes": [],
+     "by_nodes": [
+      2
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Trends over time on line graphs."
+    },
+    {
+     "by": "AC9HG7K02",
+     "nodes": [],
+     "by_nodes": [
+      2
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Climate graphs are line graphs over time."
+    }
+   ],
    "elaborations": [
     "reading and interpreting different line graphs, discussing how the horizontal axis represents measures of time such as days of the week or times of the day, and the vertical axis represents numerical quantities or ordinal categorical variables such as percentages, money, measurements or ratings such as fire hazard ratings",
     "interpreting real-life data represented as a line graph showing how measurements change over a period of time and make simple inferences",
@@ -10730,6 +10838,41 @@
    ],
    "knowledge": "Students can choose appropriate metric units when measuring length, mass and capacity (AC9M5M01). They can multiply and divide by powers of 10 (AC9M6N06). They have not yet systematically applied decimal representations in metric conversions or selected appropriate units for problem contexts.",
    "endpoint": "Students can convert between common metric units of length, mass and capacity and choose and use decimal representations of metric measurements relevant to a problem context.",
+   "usedBy": [
+    {
+     "by": "AC9S7U04",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Units in weight from mass."
+    },
+    {
+     "by": "AC9S7U05",
+     "nodes": [],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Metric units for volume."
+    },
+    {
+     "by": "AC9S8U01",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Metric conversion for cell scale."
+    }
+   ],
    "elaborations": [
     "recognising the significance of the prefixes in units of measurement",
     "identifying and using correct operations when converting between units",
@@ -11124,6 +11267,19 @@
    ],
    "knowledge": "Students can express natural numbers as products of factors, recognise multiples and determine divisibility (AC9M5N02). They can use mathematical modelling to solve additive and multiplicative problems including financial contexts (AC9M5N09). They have not yet encountered negative integers or coordinate systems extending beyond positive values.",
    "endpoint": "Students can recognise real-world situations that require integers, locate positive and negative integers on a number line, and represent integer coordinates on all regions of the Cartesian plane.",
+   "usedBy": [
+    {
+     "by": "AC9HH7S05",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "A timeline is a number line with no year zero."
+    }
+   ],
    "elaborations": [
     "extending the number line in the negative direction to locate and represent integers, recognising the difference in location between negative and positive integers",
     "using integers to represent quantities in financial contexts, including the concept of profit and loss for a planned event",
@@ -11251,6 +11407,19 @@
    ],
    "knowledge": "Students can express natural numbers as products of their factors and determine if one number is divisible by another (AC9M5N02). They can recognise multiples. They have not yet classified numbers as prime or composite, nor explored square numbers as a distinct number class.",
    "endpoint": "Students can identify and describe the properties of prime, composite and square numbers and use these properties to simplify calculations and solve problems.",
+   "usedBy": [
+    {
+     "by": "AC9TDI10K01",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Prime numbers."
+    }
+   ],
    "elaborations": [
     "using the definition of a prime number to explain why one is not a prime number",
     "testing numbers by using division to distinguish between prime and composite numbers, recording the results on a number chart to identify any patterns",
@@ -11676,6 +11845,19 @@
    ],
    "knowledge": "Students can solve multiplication of larger numbers by one- or two-digit numbers (AC9M5N06) and division with remainders (AC9M5N07). They can interpret and compare numbers with more than 2 decimal places (AC9M5N01). They have not yet systematically multiplied or divided decimals by powers of 10 or used these as place value operations.",
    "endpoint": "Students can multiply and divide decimals by multiples of powers of 10 without a calculator using place value knowledge, and use estimation and rounding to check reasonableness.",
+   "usedBy": [
+    {
+     "by": "AC9S8U01",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Multiplying by powers of 10 for cell scale and magnification."
+    }
+   ],
    "elaborations": [
     "applying place value knowledge including that the value of the digit is 10 times smaller each time a place is moved to the right",
     "applying and explaining estimation strategies in multiplicative situations involving a decimal multiplied by a two- or three-digit number",
@@ -11772,6 +11954,30 @@
    ],
    "knowledge": "Students can recognise that 100% represents the whole and connect familiar percentages to decimal and fraction equivalents (AC9M5N04). They can use mathematical modelling to solve additive and multiplicative problems including financial contexts (AC9M5N09). They have not yet found fractions, decimals or percentages of quantities systematically or applied percentage discount calculations.",
    "endpoint": "Students can solve problems that require finding a familiar fraction, decimal or percentage of a quantity, including percentage discounts, selecting efficient strategies.",
+   "usedBy": [
+    {
+     "by": "AC9S7U02",
+     "nodes": [],
+     "by_nodes": [
+      2
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "About 10% of energy passes to the next level."
+    },
+    {
+     "by": "AC9S9U05",
+     "nodes": [],
+     "by_nodes": [
+      2
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Efficiency as a percentage."
+    }
+   ],
    "elaborations": [
     "explaining how 1/3 of a quantity can be achieved by dividing by 3, and how 1/3 can be used to find other fractions of the same quantity",
     "investigating percentage discounts of 15%, 30% and 45% using their decimal representations",
@@ -11964,6 +12170,19 @@
    ],
    "knowledge": "Students can use mathematical modelling to solve additive and multiplicative problems including financial contexts (AC9M5N09). They can formulate problems and interpret solutions in terms of the situation. They have not yet modelled problems involving rational numbers and percentages using the full modelling cycle (formulate → calculate → interpret → justify).",
    "endpoint": "Students can use mathematical modelling to solve practical problems involving rational numbers and percentages, formulating problems, choosing strategies, interpreting solutions, and justifying choices.",
+   "usedBy": [
+    {
+     "by": "AC9HE7K05",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Money arithmetic, Years 3 to 6 (AC9M3N06 to AC9M6N09)."
+    }
+   ],
    "elaborations": [
     "modelling situations that represent mathematical problems involving natural numbers, integers, fractions, decimals and percentages",
     "using mathematical modelling to solve practical problems including problems involving money and percentage discounts",
@@ -12343,6 +12562,19 @@
    ],
    "knowledge": "Students can construct and use grid coordinate systems to describe position and movement in the first quadrant (AC9M5SP02). Students can locate integers on a number line (AC9M6N01). They have not yet extended the coordinate system to all four quadrants using negative integers.",
    "endpoint": "Students can locate points in all 4 quadrants of a Cartesian plane and describe how coordinates change when a point is moved.",
+   "usedBy": [
+    {
+     "by": "AC9TDI8K03",
+     "nodes": [],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "A pixel grid uses Cartesian coordinates."
+    }
+   ],
    "elaborations": [
     "locating and plotting points with integer coordinates in all four quadrants",
     "describing the movement required to move from one point to another in the Cartesian plane",
@@ -12513,6 +12745,32 @@
    ],
    "knowledge": "Students can acquire and represent nominal and ordinal data and report on distributions in terms of mode and shape (AC9M5ST01). They can interpret line graphs representing change over time (AC9M5ST02). They have not yet formally compared distributions across two data sets or used range as a comparative measure.",
    "endpoint": "Students can interpret and compare data sets for ordinal, nominal categorical, discrete and continuous numerical variables using comparative displays; compare distributions in terms of mode, range and shape.",
+   "usedBy": [
+    {
+     "by": "AC9HE7S02",
+     "nodes": [],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "thread": "searching-and-organising",
+     "note": "Data displays."
+    },
+    {
+     "by": "AC9HG7S02",
+     "nodes": [],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "thread": "searching-and-organising",
+     "note": "Data displays."
+    }
+   ],
    "elaborations": [
     "using comparative displays such as side-by-side column graphs, dot plots and two-way tables to compare distributions",
     "comparing distributions for the same variable across different groups",
@@ -12607,6 +12865,28 @@
    ],
    "knowledge": "Students can interpret line graphs and discuss relationships (AC9M5ST02). They have not yet critically evaluated statistical claims in media sources or examined the connection between data collection methods and conclusions.",
    "endpoint": "Students can identify statistically informed arguments in media, discuss and critique the methods, data representations, and conclusions.",
+   "usedBy": [
+    {
+     "by": "AC9HE7S03",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Inference beyond the data; claims in media reports."
+    }
+   ],
+   "threads": [
+    {
+     "id": "evidence-and-claims",
+     "nodes": [],
+     "frame": "Maths statistics: critique statistical arguments in the media."
+    }
+   ],
    "elaborations": [
     "identifying statistical arguments presented in media including newspapers, magazines and digital sources",
     "discussing and critiquing the methods used to collect and represent data in media",
@@ -13018,6 +13298,20 @@
    ],
    "knowledge": "Students can find unknown values in equations using backtracking and balance (from AC9M6A02). Students can formulate algebraic expressions (from AC9M7A02).",
    "endpoint": "Students solve one-variable linear equations with natural number solutions using algebraic methods and verify solutions by substitution.",
+   "usedBy": [
+    {
+     "by": "AC9S9U07",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "wording_watch": "balance",
+     "timing": "earlier",
+     "note": "Balancing equations in chemistry versus the balance method for solving equations in maths."
+    }
+   ],
    "elaborations": [
     "recognising that solving an equation is a process of determining a value that makes the equation true; using substitution to determine whether a given value is a solution",
     "solving equations using concrete materials, the balance model, and backtracking, explaining the process",
@@ -13123,6 +13417,30 @@
    ],
    "knowledge": "Students can locate points in all four quadrants of the Cartesian plane and describe coordinate changes (from AC9M6SP02). Students understand dependent and independent variables in patterns.",
    "endpoint": "Students describe relationships between variables in graphs from authentic data, identifying key features and interpreting what the graph communicates about the relationship.",
+   "usedBy": [
+    {
+     "by": "AC9S10U07",
+     "nodes": [],
+     "by_nodes": [
+      6
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Reading rate curves."
+    },
+    {
+     "by": "AC9S7U04",
+     "nodes": [],
+     "by_nodes": [
+      5
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Describing relationships in graphs of investigation data."
+    }
+   ],
    "elaborations": [
     "using graphs to analyse a building's electricity or gas usage over a period of time, the value of shares on a stock market, or the temperature during the day",
     "using travel graphs to compare the distance travelled to and from school, interpreting and discussing features of travel graphs such as the slope of lines",
@@ -13479,6 +13797,19 @@
    ],
    "knowledge": "Students can calculate area of triangles, rectangles and parallelograms (from AC9M7M01, AC9M6M02). Students understand volume as the measure of 3D space and have worked with rectangular prisms using unit cubes.",
    "endpoint": "Students solve problems involving the volume of right prisms (rectangular and triangular) using V = Ah with appropriate units.",
+   "usedBy": [
+    {
+     "by": "AC9S7U05",
+     "nodes": [],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Volume in cm3."
+    }
+   ],
    "elaborations": [
     "building a rectangular prism out of unit cubes and showing that the measure of volume is the same as would be found by multiplying the 3 edge lengths",
     "developing the connection between the area of the parallel cross-section (base), the height and volume of a rectangular or triangular prism",
@@ -14089,6 +14420,41 @@
    ],
    "knowledge": "Students can identify prime and composite numbers and know their basic properties (from AC9M6N02). Students can use factor trees to find factors of numbers.",
    "endpoint": "Students represent any natural number as a product of powers of prime factors using exponent notation, and apply this to find lowest common multiples and greatest common divisors.",
+   "usedBy": [
+    {
+     "by": "AC9TDI8K04",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Exponent notation for place values."
+    },
+    {
+     "by": "AC9TDI8K04",
+     "nodes": [],
+     "by_nodes": [
+      2
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Range with n bits is 2 to the power n."
+    },
+    {
+     "by": "AC9TDI10K01",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Prime numbers and factors."
+    }
+   ],
    "elaborations": [
     "applying knowledge of factors to strategies for expressing natural numbers as products of powers of prime factors, such as repeated division by prime factors or creating factor trees",
     "developing familiarity with the sequence 1, 2, 4, 8, 16, 32, 64, 128, 256, 512 and powers of 2; the sequence 1, 3, 9, 27, 81 and powers of 3; the sequence 1, 5, 25, 125 and powers of 5",
@@ -14199,6 +14565,65 @@
    ],
    "knowledge": "Students understand place value for large whole numbers and can multiply and divide by powers of 10 (from AC9M6N06). Students can write numbers in expanded form using place value (e.g. 7000 = 7 × 1000).",
    "endpoint": "Students represent natural numbers in expanded notation using powers of 10, and explain the connection between place value and exponent notation.",
+   "usedBy": [
+    {
+     "by": "AC9S10U03",
+     "nodes": [],
+     "by_nodes": [
+      1,
+      2
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Powers of 10 for the scale of the universe and its timescales."
+    },
+    {
+     "by": "AC9S8U01",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Powers of 10."
+    },
+    {
+     "by": "AC9S8U04",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Very large numbers for geological time."
+    },
+    {
+     "by": "AC9TDI8K01",
+     "nodes": [],
+     "by_nodes": [
+      1,
+      2
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Prefixes and powers of 10 (GB, GHz, Mbps)."
+    },
+    {
+     "by": "AC9TDI8K04",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Binary is place value in base 2."
+    }
+   ],
    "elaborations": [
     "investigating exponent notation for powers of 10 such as 'one hundred thousand' is 100,000 = 10×10×10×10×10 = 10⁵",
     "relating the sequences 10, 100, 1000, 10,000 ... and 10¹, 10², 10³, 10⁴ ...",
@@ -14495,6 +14920,63 @@
    ],
    "knowledge": "Students can add and subtract fractions using equivalence, and multiply and divide decimals (from AC9M6N05, AC9M6N06). Students can find percentages of quantities (from AC9M6N07).",
    "endpoint": "Students apply all four operations to positive rational numbers including fractions, decimals and percentages, selecting efficient strategies appropriate to the numbers and context.",
+   "usedBy": [
+    {
+     "by": "AC9S10U03",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Percentages for matter proportions."
+    },
+    {
+     "by": "AC9S7U04",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Multiplying decimals to get weight from mass."
+    },
+    {
+     "by": "AC9S9U05",
+     "nodes": [],
+     "by_nodes": [
+      2
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Efficiency as a percentage."
+    },
+    {
+     "by": "AC9TDI10K03",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "How much compression saves, as a percentage."
+    },
+    {
+     "by": "AC9HC7K04",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Percentages of a population."
+    }
+   ],
    "elaborations": [
     "solving addition and subtraction problems involving fractions and decimals",
     "choosing an appropriate numerical representation for a problem so that efficient computations can be made, such as 12.5%, 1/8, 0.125",
@@ -14631,6 +15113,52 @@
    ],
    "knowledge": "Students can locate integers on a number line and recognise negative integers in context (from AC9M6N01). Students understand magnitude and direction in simple contexts (above/below zero, gain/loss).",
    "endpoint": "Students compare and order integers using inequality notation and solve problems involving addition and subtraction of integers.",
+   "usedBy": [
+    {
+     "by": "AC9S10U05",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Net force along a line is integer addition with direction."
+    },
+    {
+     "by": "AC9S7U04",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Signed numbers for direction; teach in the lesson."
+    },
+    {
+     "by": "AC9S9U06",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Charges such as +11 and -10 are integers."
+    },
+    {
+     "by": "AC9HH7S05",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "A timeline is a number line with no year zero."
+    }
+   ],
    "elaborations": [
     "using less-than and greater-than notation in expressions when comparing and ordering integers; for example, negative 5 is less than positive 2 and is represented as -5 < 2",
     "discussing language such as 'addition', 'subtraction', 'magnitude', 'difference', 'sign' and synonyms of these terms",
@@ -14716,6 +15244,63 @@
    ],
    "knowledge": "Students can find fractions and percentages of quantities (from AC9M6N07). Students have experience with part-whole relationships and multiplicative thinking (from AC9M6N08, AC9M6N09).",
    "endpoint": "Students recognise and represent ratios, distinguish part-part from part-whole relationships, share quantities in given ratios, and apply ratios to practical problems.",
+   "usedBy": [
+    {
+     "by": "AC9S10U01",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Ratios such as 3:1."
+    },
+    {
+     "by": "AC9S8U06",
+     "nodes": [],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Atoms in fixed ratios in formulas."
+    },
+    {
+     "by": "AC9S9U05",
+     "nodes": [],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Sankey widths are proportional."
+    },
+    {
+     "by": "AC9TDI10K03",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "How much compression saves, as a ratio."
+    },
+    {
+     "by": "AC9HG7K02",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Map scale as a ratio."
+    }
+   ],
    "elaborations": [
     "using diagrams, physical or virtual materials to represent ratios, recognising that ratios express the quantitative relationship between 2 or more groups",
     "using fractions to solve ratio problems involving comparison of quantities and considering part-part and part-whole relations",
@@ -14828,6 +15413,19 @@
    ],
    "knowledge": "Students can apply the four operations to rational numbers, work with percentages, and solve ratio problems (from AC9M7N06, AC9M7N08). Students have experience with mathematical modelling in prior years (from AC9M6N09).",
    "endpoint": "Students formulate, solve and interpret mathematical models involving rational numbers and percentages in practical contexts, justifying representation choices and communicating solutions in terms of the situation.",
+   "usedBy": [
+    {
+     "by": "AC9HE7K05",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "",
+     "overlap": "reinforce",
+     "timing": "same_year",
+     "note": "Financial modelling with percentages."
+    }
+   ],
    "elaborations": [
     "modelling additive situations involving positive and negative quantities; for example, a lift travelling up and down floors in a high-rise apartment",
     "modelling contexts involving proportion, such as the proportion of students attending the school disco, proportion of bottle cost to recycling refund",
@@ -14938,6 +15536,20 @@
    ],
    "knowledge": "Students can assign probabilities on a 0–1 scale using fractions, percentages and decimals (from AC9M6P01). Students have experience with probability language and listing outcomes.",
    "endpoint": "Students identify sample spaces for single-stage events, assign probabilities to outcomes, and use these to predict relative frequencies.",
+   "usedBy": [
+    {
+     "by": "AC9S10U01",
+     "nodes": [],
+     "by_nodes": [
+      4,
+      6
+     ],
+     "relationship": "application",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "note": "A Punnett square is a two-way table of equally likely outcomes."
+    }
+   ],
    "elaborations": [
     "discussing the meaning of probability terminology; for example, 'probability', 'sample space', 'favourable outcome', 'trial', 'experiment' and 'event'",
     "listing sample spaces for games involving throwing a coin or a dice, spinners, or lucky dip",
@@ -15044,6 +15656,19 @@
    ],
    "knowledge": "Students can assign probabilities and predict relative frequencies (from AC9M7P01). Students have run simulations with increasing trials (from AC9M6P02).",
    "endpoint": "Students conduct repeated experiments and simulations to observe that relative frequencies approach theoretical probability as the number of trials increases, and explain differences between predicted and observed results.",
+   "usedBy": [
+    {
+     "by": "AC9S9U06",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Random events over many trials; half-life also uses repeated halving (fractions, Years 5 to 7)."
+    }
+   ],
    "elaborations": [
     "developing an understanding of the law of large numbers through using experiments and simulations to conduct large numbers of trials for seemingly random events",
     "conducting simulations using online simulation tools and comparing the combined results of a large number of trials to predicted results",
@@ -15119,6 +15744,19 @@
    ],
    "knowledge": "Students can compare parallel cross-sections and recognise their relationship to right prisms (from AC9M6SP01). Students have informal experience with drawings of 3D objects.",
    "endpoint": "Students represent 3D objects using nets, isometric drawings, and plan/elevation views, and reason about the advantages and disadvantages of each representation.",
+   "usedBy": [
+    {
+     "by": "AC9S8U06",
+     "nodes": [],
+     "by_nodes": [
+      5
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "The same move: judging what a representation shows and hides."
+    }
+   ],
    "elaborations": [
     "deconstructing packaging to identify shapes and nets",
     "using different nets to construct prisms and determining which nets will make a cube, rectangular prism, triangular prism or pyramid",
@@ -15423,6 +16061,29 @@
    ],
    "knowledge": "Students can classify triangles, quadrilaterals and polygons by properties (from AC9M7SP02). Students have experience writing step-by-step instructions and using decision trees informally.",
    "endpoint": "Students design and describe algorithms (using flowcharts or pseudocode) that sort and classify shapes by their attributes.",
+   "usedBy": [
+    {
+     "by": "AC9S7U01",
+     "nodes": [],
+     "by_nodes": [
+      3,
+      4
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "classification",
+     "note": "Binary sorting decisions in both."
+    }
+   ],
+   "threads": [
+    {
+     "id": "classification",
+     "nodes": [],
+     "frame": "Maths: step-by-step yes/no rules (algorithms) that sort shapes."
+    }
+   ],
    "elaborations": [
     "creating a classification scheme for triangles based on sides and angles, using a flow chart using sequences and decisions",
     "creating a flow chart or hierarchy for quadrilaterals that shows the relationships between trapeziums, parallelograms, rhombuses, rectangles, squares and kites",
@@ -15610,6 +16271,51 @@
    ],
    "knowledge": "Students can calculate range, median, mean and mode (from AC9M7ST01). Students can interpret distributions using mode and range (from AC9M6ST01).",
    "endpoint": "Students create and interpret stem-and-leaf plots and other numerical data displays, describing and comparing distributions in terms of shape, centre, spread and outliers.",
+   "usedBy": [
+    {
+     "by": "AC9S10U02",
+     "nodes": [],
+     "by_nodes": [
+      1,
+      5
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Describing distributions."
+    },
+    {
+     "by": "AC9HE7S02",
+     "nodes": [],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "thread": "searching-and-organising",
+     "note": "Data displays."
+    },
+    {
+     "by": "AC9HG7S02",
+     "nodes": [],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "thread": "searching-and-organising",
+     "note": "Data displays."
+    }
+   ],
+   "threads": [
+    {
+     "id": "searching-and-organising",
+     "nodes": [],
+     "frame": "Maths: tables and graphs, and what they show about how data is spread."
+    }
+   ],
    "elaborations": [
     "using ordered stem-and-leaf plots to record and display numerical data collected in a class investigation",
     "comparing variation in attributes by category using split stem-and-leaf plots or dot plots",
@@ -15802,6 +16508,20 @@
    ],
    "knowledge": "Students can formulate algebraic expressions and apply the distributive property informally (from AC9M7A02). Students understand variables, constants and operations in expressions.",
    "endpoint": "Students fluently expand, factorise, rearrange and simplify linear expressions, applying algebraic properties explicitly.",
+   "usedBy": [
+    {
+     "by": "AC9S10U05",
+     "nodes": [],
+     "by_nodes": [
+      4,
+      7
+     ],
+     "relationship": "prerequisite",
+     "overlap": "share",
+     "timing": "earlier",
+     "note": "Changing the subject of F = ma: one rearranging method shared with maths."
+    }
+   ],
    "elaborations": [
     "rearranging and simplifying linear expressions involving variables with integer coefficients and constants; using manipulatives such as algebra tiles",
     "demonstrating the relationship between factorising and expanding linear expressions using manipulatives, such as algebra tiles or area models",
@@ -16106,6 +16826,19 @@
    ],
    "knowledge": "Students can graph linear relations and describe relationships (from AC9M8A02, AC9M7A04, AC9M7A06). Students have used digital tools to vary parameters.",
    "endpoint": "Students systematically vary parameters of linear functions using digital tools, make and test conjectures, and generalise the effect of parameter changes on the graph.",
+   "usedBy": [
+    {
+     "by": "AC9S10U05",
+     "nodes": [],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "application",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "note": "Gradient as a rate over time."
+    }
+   ],
    "elaborations": [
     "using graphing software to investigate the effect of systematically varying parameters of linear functions on the corresponding graphs, making and testing conjectures",
     "using graphing software to systematically contrast the graphs of y = 2x, y = −2x, y = 2x and y = −2x",
@@ -16499,6 +17232,76 @@
    ],
    "knowledge": "Students can solve ratio problems (from AC9M7N08). Students understand proportional reasoning and unit conversion.",
    "endpoint": "Students recognise rates as comparisons of two different quantity types, apply rates to solve conversion and practical problems, and distinguish rates from ratios.",
+   "usedBy": [
+    {
+     "by": "AC9S10U05",
+     "nodes": [],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Acceleration is a rate: change in velocity per second."
+    },
+    {
+     "by": "AC9S10U07",
+     "nodes": [],
+     "by_nodes": [
+      5,
+      6
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Reaction rate is a rate."
+    },
+    {
+     "by": "AC9S7U05",
+     "nodes": [],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "later",
+     "note": "Density is a rate (mass per unit volume). Maths teaches rates later: teach it in the lesson, never link forward."
+    },
+    {
+     "by": "AC9TDI8K01",
+     "nodes": [],
+     "by_nodes": [
+      1,
+      2
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Bandwidth is a rate."
+    },
+    {
+     "by": "AC9TDI8K02",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Bandwidth and latency."
+    },
+    {
+     "by": "AC9TDI8K03",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Sampling rate is a rate."
+    }
+   ],
    "elaborations": [
     "identifying examples of rates in the real world, including constant rates, rate of pay, cost per kilogram, recipes, simple interest and average rates",
     "applying rates to solve problems involving the conversion between different units of measure",
@@ -17264,6 +18067,44 @@
    ],
    "knowledge": "Students can list sample spaces and assign probabilities for single-stage events (from AC9M7P01). Students understand complementary events (from AC9M8P01).",
    "endpoint": "Students represent all combinations for two events using two-way tables, tree diagrams and Venn diagrams, and calculate probabilities of compound events.",
+   "usedBy": [
+    {
+     "by": "AC9S10U01",
+     "nodes": [],
+     "by_nodes": [
+      4,
+      6
+     ],
+     "relationship": "application",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "note": "A Punnett square is a two-way table of equally likely outcomes."
+    },
+    {
+     "by": "AC9TDI8K04",
+     "nodes": [
+      2
+     ],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "logic",
+     "note": "AND, OR and NOT: the same logic in two subjects in the same year."
+    }
+   ],
+   "threads": [
+    {
+     "id": "logic",
+     "nodes": [
+      2
+     ],
+     "frame": "Maths: \"and\", \"or\" and \"not\" for combined events in probability."
+    }
+   ],
    "elaborations": [
     "describing events using language of 'at least', exclusive 'or', inclusive 'or' and 'and'",
     "using Venn diagrams or two-way tables to demonstrate the difference between mutually exclusive events and non-mutually exclusive events",
@@ -18359,6 +19200,19 @@
    ],
    "knowledge": "Students can graph linear relations on the Cartesian plane and solve linear equations (AC9M8A02). They have not yet formally derived gradient from two coordinate pairs, calculated midpoints algebraically, or applied Pythagoras' theorem to find distance between points.",
    "endpoint": "Students calculate the gradient, midpoint and distance for any two distinct points on the Cartesian plane and apply these in context.",
+   "usedBy": [
+    {
+     "by": "AC9S10U05",
+     "nodes": [],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "application",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "note": "Gradient as a rate over time."
+    }
+   ],
    "elaborations": [
     "recognising that the gradient of a line is independent of which 2 distinct points on the line are used for the calculation",
     "using digital tools to illustrate that parallel lines have the same gradient and that perpendicular lines have gradients whose product is −1",
@@ -18648,6 +19502,19 @@
    ],
    "knowledge": "Students can identify and graph quadratic functions and solve quadratic equations (AC9M9A04). They have not yet applied the full mathematical modelling cycle — formulating, choosing a function type, solving, interpreting and evaluating — to applied problems involving change.",
    "endpoint": "Students use the mathematical modelling cycle to formulate and solve applied problems involving change using linear or quadratic functions, interpreting solutions in context and evaluating the model.",
+   "usedBy": [
+    {
+     "by": "AC9HE7K05",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "later",
+     "note": "Interest and growth come later in maths (buy now, pay later): don't link."
+    }
+   ],
    "elaborations": [
     "modelling practical contexts using linear functions such as cooking times including resting or cooling times, or water leakage from water tanks",
     "modelling measurement situations: perimeter and areas of rectangles where length is a linear function of width",
@@ -18953,6 +19820,53 @@
    ],
    "knowledge": "Students can recognise and use rates to solve problems involving the comparison of related quantities (AC9M8M05). They have not yet represented very large or very small quantities in scientific notation or performed calculations with values in scientific notation.",
    "endpoint": "Students represent very large and very small measurements in scientific notation, convert between forms, and solve problems using scientific notation.",
+   "usedBy": [
+    {
+     "by": "AC9S10U03",
+     "nodes": [],
+     "by_nodes": [
+      1,
+      2
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Scientific notation."
+    },
+    {
+     "by": "AC9S8U01",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "later",
+     "note": "Scientific notation comes later in maths: don't link."
+    },
+    {
+     "by": "AC9S8U04",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "later",
+     "note": "Scientific notation comes later in maths: don't link."
+    },
+    {
+     "by": "AC9S9U04",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Very large and very small numbers for the EM spectrum; teach in the lesson."
+    }
+   ],
    "elaborations": [
     "representing very large and small real numbers in scientific notation; converting between forms; e.g. geological age of earth 4.6×10⁹ years, sugar molecule mass 5.68×10⁻²¹ grams",
     "using place value knowledge and exponent laws to operate with numbers in scientific notation in applied contexts",
@@ -19280,6 +20194,19 @@
    ],
    "knowledge": "Students can calculate and interpret absolute, relative and percentage errors in measurements (AC9M9M04). They have not yet applied the full mathematical modelling cycle to applied problems involving direct proportion, rates, ratio and scale across diverse real-world contexts.",
    "endpoint": "Students apply the mathematical modelling cycle to solve practical problems involving direct proportion, rates, ratio and scale, interpreting solutions in context and evaluating the model.",
+   "usedBy": [
+    {
+     "by": "AC9S10U05",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Direct proportion: doubling and halving."
+    }
+   ],
    "elaborations": [
     "modelling situations involving direct proportion: pro rata pay, exchange rates, multiple quotes, unit conversion, Hooke's law",
     "modelling image editing on social media where proportion is not maintained, resulting in distorted images",
@@ -20240,6 +21167,20 @@
    ],
    "knowledge": "Students can analyse how sampling methods affect survey results and how representation choices support a point of view (AC9M9ST02). They have not yet formally described and compared distributions across multiple data sets using shape, centre, spread and outlier effects simultaneously.",
    "endpoint": "Students represent and compare multiple data distributions considering centre, spread, shape and the effect of outliers.",
+   "usedBy": [
+    {
+     "by": "AC9S10U02",
+     "nodes": [],
+     "by_nodes": [
+      1,
+      5
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "earlier",
+     "note": "Describing distributions."
+    }
+   ],
    "elaborations": [
     "describing the shape of data distributions using terms: positive skew, negative skew, symmetric, bi-modal",
     "using stem-and-leaf plots to compare 2 like sets of data; e.g. heights of girls and boys",
@@ -20336,6 +21277,39 @@
    ],
    "knowledge": "Students can represent and compare multiple data distributions using comparative representations (AC9M9ST03). They have not yet systematically matched display type to data type and purpose, or justified visualisation choices for a given audience and context.",
    "endpoint": "Students choose appropriate data displays for given data types, justify their selections, and interpret displays in context.",
+   "usedBy": [
+    {
+     "by": "AC9HE7S02",
+     "nodes": [],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "later",
+     "thread": "searching-and-organising",
+     "note": "Choosing a display comes later in maths: don't link."
+    },
+    {
+     "by": "AC9HG7S02",
+     "nodes": [],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "later",
+     "thread": "searching-and-organising",
+     "note": "Choosing a display comes later in maths: don't link."
+    }
+   ],
+   "threads": [
+    {
+     "id": "searching-and-organising",
+     "nodes": [],
+     "frame": "Maths: choose the right table or graph for the data and the purpose."
+    }
+   ],
    "elaborations": [
     "comparing data displays using mean, median and range to describe and interpret numerical data sets using histograms, dot plots or stem-and-leaf plots",
     "choosing representation type based on data type: categorical (nominal or ordinal) or numerical (discrete or continuous)",
@@ -20927,6 +21901,19 @@
    ],
    "knowledge": "Students can connect algebraic and graphical representations of exponential relations and solve exponential equations (AC9M10A03). They have not yet chosen between linear, quadratic and exponential models for a given applied context, nor evaluated and modified models, nor reported assumptions and findings in a full modelling cycle.",
    "endpoint": "Students use mathematical modelling to solve applied growth and decay problems by selecting, applying, evaluating and reporting linear, quadratic or exponential models; interpret solutions in terms of the situation; and report assumptions, methods and findings.",
+   "usedBy": [
+    {
+     "by": "AC9HE7K05",
+     "nodes": [],
+     "by_nodes": [
+      4
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "later",
+     "note": "Interest and growth come later in maths: don't link."
+    }
+   ],
    "elaborations": [
     "modelling situations and choosing between linear, quadratic and exponential models by representing relationships in a table of values and recognising constant first differences, constant second differences, and constant ratio",
     "modelling situations involving exponential growth and decay; determining doubling time and half-life",
@@ -22304,6 +23291,40 @@
    ],
    "knowledge": "Students can choose and justify appropriate data displays for given contexts (AC9M9ST04). They have not yet systematically analysed statistical claims in media for bias, misleading representations, or ethical considerations — moving from producing displays to critically reading others' statistical arguments.",
    "endpoint": "Students analyse statistical claims, inferences and conclusions in media reports, identifying misleading representations, potential sources of bias, and ethical considerations.",
+   "usedBy": [
+    {
+     "by": "AC9S10U04",
+     "nodes": [],
+     "by_nodes": [
+      6
+     ],
+     "relationship": "background",
+     "overlap": "",
+     "timing": "same_year",
+     "thread": "evidence-and-claims",
+     "note": "Analysing claims in media reports."
+    },
+    {
+     "by": "AC9HE7S03",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "later",
+     "thread": "evidence-and-claims",
+     "note": "Claims in media reports, later in maths: don't link."
+    }
+   ],
+   "threads": [
+    {
+     "id": "evidence-and-claims",
+     "nodes": [],
+     "frame": "Maths statistics: critique statistical reports in the media."
+    }
+   ],
    "elaborations": [
     "identifying potentially misleading representations (broken axes, nonlinear scales); recognising when data is not representative or deliberately misleading",
     "investigating source and size of sample; deciding whether representative of population",
@@ -22513,6 +23534,30 @@
    ],
    "knowledge": "Students can compare continuous distributions using boxplots discussing centre, spread, shape and outliers (AC9M10ST02). They have not yet constructed scatterplots or described association between two numerical variables in terms of strength, direction and linearity.",
    "endpoint": "Students construct scatterplots and comment on the association between two numerical variables in terms of strength, direction and linearity.",
+   "usedBy": [
+    {
+     "by": "AC9S10U04",
+     "nodes": [],
+     "by_nodes": [
+      5
+     ],
+     "relationship": "prerequisite",
+     "overlap": "",
+     "timing": "same_year",
+     "note": "Association in scatterplots."
+    },
+    {
+     "by": "AC9HE7S03",
+     "nodes": [],
+     "by_nodes": [
+      3
+     ],
+     "relationship": "application",
+     "overlap": "",
+     "timing": "later",
+     "note": "Association in scatterplots comes later in maths: teach in the lesson, with the caution that a link between two variables isn't always a cause."
+    }
+   ],
    "elaborations": [
     "discussing the difference between association and cause and effect in contexts such as health, diversity and climate",
     "using statistical evidence to make, justify and critique claims about association (climate change, migration, social media)",

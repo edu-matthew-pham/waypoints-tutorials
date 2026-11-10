@@ -49,10 +49,16 @@ export async function buildCreate(out = 'dist') {
   // imported subject (data/curriculum/), with its review status, so Create never needs Kit.
   mkdirSync(join(dest, 'curriculum'), { recursive: true });
   const subjects = [];
+  // Every standard's title, year and subject, so a cross-subject link names what it points to (10 Nov 2026).
+  const lookup = new Map();
+  for (const { id } of KIT_SUBJECTS) {
+    const f = join(root, 'data', 'curriculum', `${id}.json`);
+    if (existsSync(f)) for (const d of JSON.parse(readFileSync(f, 'utf8')).descriptors) lookup.set(d.code, { title: d.title, year: d.year, ...(d.years ? { years: d.years } : {}), subject: id });
+  }
   for (const { id } of KIT_SUBJECTS) {
     const f = join(root, 'data', 'curriculum', `${id}.json`);
     if (!existsSync(f)) continue;
-    const c = compactCurriculum(JSON.parse(readFileSync(f, 'utf8')), loadReview(id, root));
+    const c = compactCurriculum(JSON.parse(readFileSync(f, 'utf8')), loadReview(id, root), lookup);
     writeFileSync(join(dest, 'curriculum', `${id}.json`), JSON.stringify(c));
     subjects.push({ id, label: c.label, status: c.status, kit: c.kit, years: [...new Set(c.descriptors.map((d) => d.year))].sort((a, b) => a - b) });
   }

@@ -1,6 +1,6 @@
 {
  "subject": "english",
- "source": "waypoints-kit d93e6e5",
+ "source": "waypoints-kit 834ceb8",
  "note": "Descriptor text: Australian Curriculum v9 (ACARA, CC BY 4.0). Waypoints and prior knowledge: Learning Waypoints. Made by tools/import-curriculum.mjs; do not edit by hand.",
  "descriptors": [
   {
@@ -9642,6 +9642,30 @@
    ],
    "knowledge": "Students understand how evaluative and emotive language including modal verbs can vary in forcefulness (AC9E3LA02). They have not yet distinguished subjective language of opinion/feeling from objective language of factual reporting as distinct registers with different purposes.",
    "endpoint": "Students can identify subjective language (opinion, feeling, thinking verbs) and objective language (factual reporting, summary verbs) in texts, explain the different purposes each serves, and recognise when each is appropriate.",
+   "usedBy": [
+    {
+     "by": "AC9HH7S04",
+     "nodes": [],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Fact and opinion."
+    }
+   ],
+   "threads": [
+    {
+     "id": "evidence-and-claims",
+     "nodes": [
+      1,
+      2
+     ],
+     "frame": "English: fact or feeling? The language of opinion versus factual reporting."
+    }
+   ],
    "elaborations": [
     "identifying ways thinking verbs are used to express opinions; for example, \"I think\", \"I believe\", and ways summary verbs are used to report findings; for example, \"we concluded\"",
     "comparing statements that have similar information presented objectively and subjectively; for example, \"The man has 6 cats.\" \"The man has too many noisy cats.\""
@@ -14242,6 +14266,48 @@
    ],
    "knowledge": "Students understand how to move beyond making bare assertions by taking account of differing ideas or perspectives (AC9E5LA02). They have not yet examined the distinction between objective and subjective language, or how language choices construct bias in texts.",
    "endpoint": "Students understand the distinction between objective and subjective language, and can identify how language choices construct bias in a range of texts.",
+   "usedBy": [
+    {
+     "by": "AC9HC7S03",
+     "nodes": [
+      3
+     ],
+     "by_nodes": [
+      1,
+      2
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "perspective-and-bias",
+     "note": "Identifying bias; perspective in texts."
+    },
+    {
+     "by": "AC9HH7S06",
+     "nodes": [
+      3
+     ],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "perspective-and-bias",
+     "note": "Identifying bias; perspective in texts."
+    }
+   ],
+   "threads": [
+    {
+     "id": "perspective-and-bias",
+     "nodes": [
+      3
+     ],
+     "frame": "English: identify bias in the language of a text."
+    }
+   ],
    "elaborations": [
     "identifying language choices that evoke emotion and judgements in direct and indirect ways, and how they are used to persuade different audiences to take a position and/or action",
     "understanding when to share feelings and opinions; for example, in a personal recount, and when to remain more objective; for example, in a factual recount",
@@ -16496,6 +16562,60 @@
    ],
    "knowledge": "Students understand how objective and subjective language can reveal bias (AC9E6LA02). They have not yet developed a systematic vocabulary for evaluative language across the three dimensions (affect, judgement, appreciation) or examined how textual reference and outside sources function as substantiation.",
    "endpoint": "Students recognise evaluative language and understand how evaluations of a text can be substantiated by reference to the text and other sources.",
+   "cross": [
+    {
+     "to": "AC9HH7S04",
+     "nodes": [
+      2
+     ],
+     "to_nodes": [],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "evidence-and-claims",
+     "note": "Substantiating evaluations with sources."
+    },
+    {
+     "to": "AC9HE7S03",
+     "nodes": [
+      2
+     ],
+     "to_nodes": [],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "evidence-and-claims",
+     "note": "Substantiating evaluations with sources."
+    }
+   ],
+   "usedBy": [
+    {
+     "by": "AC9HH7S07",
+     "nodes": [
+      2
+     ],
+     "by_nodes": [
+      1
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "evidence-and-claims",
+     "note": "Argument: substantiating a judgement."
+    }
+   ],
+   "threads": [
+    {
+     "id": "evidence-and-claims",
+     "nodes": [
+      2
+     ],
+     "frame": "English: back up a judgement with evidence from the text and other sources."
+    }
+   ],
    "elaborations": [
     "building knowledge about words of evaluation, including words to express emotional responses to texts, judgement of characters and their actions, and appreciation of the aesthetic qualities of text",
     "analysing how evaluative language can be used to assess the qualities of a narrative or persuasive text; for example, its impact on the reader or the author's skill in the use of language",
@@ -17989,6 +18109,61 @@
    ],
    "knowledge": "Students can select, navigate and read texts for a range of purposes, monitoring meaning and evaluating structural features (AC9E6LY04). They have not yet explicitly explained how ideas themselves are structured — the logical or rhetorical patterns (taxonomy, cause-effect, metaphor, chronology) that organise thinking within and across texts.",
    "endpoint": "Students explain how ideas are structured using taxonomies, cause and effect, metaphors and chronology.",
+   "cross": [
+    {
+     "to": "AC9S7U01",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "idea-structures",
+     "note": "Taxonomies."
+    },
+    {
+     "to": "AC9HH7S05",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [
+      1,
+      2
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "idea-structures",
+     "note": "Chronology; cause and effect."
+    },
+    {
+     "to": "AC9HE7S03",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [
+      3
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "same_year",
+     "thread": "idea-structures",
+     "note": "Cause and effect."
+    }
+   ],
+   "threads": [
+    {
+     "id": "idea-structures",
+     "nodes": [
+      1
+     ],
+     "frame": "English: name the ways texts organise ideas: groups and subgroups (taxonomies), cause and effect, and time order (chronology)."
+    }
+   ],
    "elaborations": [
     "identifying cause and effect in explanations and how these are used to convince an audience of a course of action"
    ],
@@ -18637,6 +18812,45 @@
    ],
    "knowledge": "Students can identify how cohesive devices (e.g. connectives, reference chains) create flow within and between paragraphs (AC9E7LA04). They have not yet examined how the internal structure of paragraphs — claim, example, quotation, substantiation — creates the logical coherence that cohesion depends on.",
    "endpoint": "Students understand how strengthening paragraph internal structure through examples, quotations and substantiation improves textual cohesion.",
+   "cross": [
+    {
+     "to": "AC9HH7S07",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [
+      3
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Claim, evidence and explanation: historical argument."
+    },
+    {
+     "to": "AC9S7I06",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Claim, evidence and explanation: conclusions from evidence in science."
+    }
+   ],
+   "threads": [
+    {
+     "id": "evidence-and-claims",
+     "nodes": [
+      1
+     ],
+     "frame": "English: a paragraph that makes a claim and backs it with an example, evidence and explanation."
+    }
+   ],
    "elaborations": [
     "writing paragraphs of extended length that explain, substantiate and exemplify a particular viewpoint"
    ],
@@ -19726,6 +19940,41 @@
    ],
    "knowledge": "Students can analyse how language features are shaped by purpose and audience, and identify how authors use supporting evidence in texts (AC9E7LY03). They have not yet evaluated the effectiveness of language feature choices or the use of sources and quotations — moving from analysis to evaluative judgement.",
    "endpoint": "Students analyse and evaluate how language features vary according to purpose and audience, and how sources and quotations are used to support ideas in texts.",
+   "cross": [
+    {
+     "to": "AC9HH7S03",
+     "nodes": [
+      2
+     ],
+     "to_nodes": [],
+     "relationship": "",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Source origin and purpose."
+    },
+    {
+     "to": "AC9HH7S04",
+     "nodes": [
+      2
+     ],
+     "to_nodes": [],
+     "relationship": "",
+     "overlap": "reinforce",
+     "timing": "earlier",
+     "thread": "evidence-and-claims",
+     "note": "Source accuracy."
+    }
+   ],
+   "threads": [
+    {
+     "id": "evidence-and-claims",
+     "nodes": [
+      2
+     ],
+     "frame": "English: evaluate how a text uses sources and quotations."
+    }
+   ],
    "elaborations": [
     "evaluating an author's use of language features to present an opinion about those features",
     "evaluating the use of sources and quotations and presenting an opinion about how an author has supported an idea"
@@ -19807,6 +20056,45 @@
    ],
    "knowledge": "Students can identify how authors structure texts and organise information to achieve purpose (AC9E7LY04). They have not yet analysed the specific organisational logics — proposition and support, cause and effect, compare and contrast, problem and solution — and how these structures shape the meaning a text produces.",
    "endpoint": "Students analyse how authors organise ideas — using structures such as proposition/support, cause/effect and compare/contrast — to develop and shape meaning.",
+   "cross": [
+    {
+     "to": "AC9HE7S04",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "idea-structures",
+     "note": "Problem and solution: responding to an issue."
+    },
+    {
+     "to": "AC9HG7K02",
+     "nodes": [
+      1
+     ],
+     "to_nodes": [
+      4
+     ],
+     "relationship": "",
+     "overlap": "",
+     "shared_foundation": true,
+     "timing": "earlier",
+     "thread": "idea-structures",
+     "note": "Problem and solution: water management strategies."
+    }
+   ],
+   "threads": [
+    {
+     "id": "idea-structures",
+     "nodes": [
+      1
+     ],
+     "frame": "English: add problem and solution, and compare and contrast."
+    }
+   ],
    "elaborations": [
     "identifying the structure of ideas in a range of texts",
     "examining texts that structure ideas according to proposition and support, cause and effect, and compare and contrast, and determine their effectiveness",

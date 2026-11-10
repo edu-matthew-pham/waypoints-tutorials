@@ -158,6 +158,10 @@ else console.log('✓ error tasks: every planted error names its fault and an on
   const { links, warnings } = crossLinks(lessons, { data: loadProgressions(), lessonYear: lessonYearFn(ldm, CONTENT_ROOT), refreshers: blocks, isChallenge: challengeTest(ldm, CONTENT_ROOT) });
   warnings.forEach((w) => console.warn('⚠ ' + w));
   console.log(`✓ cross-subject links: ${[...links.values()].flat().length} on ${links.size} lessons${warnings.length ? `, ${warnings.length} left out (see above)` : ''}`);
+  // Open decisions (tools/cross-links.mjs): one summary line, not a warning per lesson, so real problems stay visible.
+  const { openDecisions } = await import('./cross-links.mjs');
+  const open = openDecisions(lessons, { data: loadProgressions(), refreshers: blocks });
+  if (open.cross.length || open.openers.length) console.log(`… prior knowledge still to decide: ${open.cross.length} cross-subject links Kit lists, ${open.openers.length} openers that link back to nothing: npm run cross-links [subject]`);
 }
 // Woven strands (science Human endeavour and Inquiry): woven: lists descriptor codes from the subject's curriculum data,
 // each in a woven strand, so the curriculum map can show where they are practised.
