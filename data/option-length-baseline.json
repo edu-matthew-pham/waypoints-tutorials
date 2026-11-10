@@ -1,8 +1,6 @@
 {
  "about": "Known questions whose right answer is much longer than the wrong ones (tools/option-length.mjs). validate skips these; the list only shrinks. Regenerate with npm run check-options -- --update.",
  "keys": [
-  "learning/how-you-learn/when-easy-fools-you#step-4",
-  "learning/how-you-learn/when-easy-fools-you#step-5#t1",
   "teachers/ai-and-your-tasks/could-ai-do-it#step-3",
   "teachers/ai-and-your-tasks/make-it-visible#step-3",
   "teachers/ai-and-your-tasks/say-it-clearly#step-3",

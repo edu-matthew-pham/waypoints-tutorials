@@ -1,0 +1,48 @@
+summary: "Students take a position on six beliefs about learning (no right answers), match made-up learners' beliefs to what those beliefs make them do, find Nib's slip (slower than a friend, so bad at maths), sort statements by what research usually finds, and write the learning coach's reply to an unhelpful belief. The workshop names self-regulated learning as being your own learning coach. Students finish by privately looking back at their own answers."
+time: 40
+timing: "Think first 8 min · The idea 14 min · Check 8 min · Apply 5 min (plus the class discussion)"
+goals:
+  - I can explain how a belief about learning can change what I do.
+  - I can name a common belief about learning that is often wrong, and say why.
+  - I can say what being my own learning coach means.
+struggle: "Some students will strongly agree with 'some people are just maths people', often from their own experience. Don't argue them out of it: ask what that belief makes someone do, and whether that helps."
+before: |
+  **Why beliefs first.** Students already have beliefs about learning, so the course starts by drawing them out before naming anything (elicit, then teach). Beliefs about learning are one of the lenses Barr uses to look at self-regulated learning; the specific beliefs here come from research on epistemic beliefs (Schommer: quick learning, fixed ability) and on illusions of competence and desirable difficulties (Bjork).
+
+  **Kept honest on mindset.** The lesson doesn't promise that believing you can grow is enough. Large reviews find growth mindset interventions have small average effects, larger for some groups (Sisk and colleagues 2018; Yeager and colleagues 2019). The claim here is narrower and better supported: beliefs steer behaviour (giving up, rereading, guessing), and practice with good strategies usually helps. Keep "usually" and "often".
+
+  **The definition.** Self-regulated learning means understanding and adjusting your own thinking, motivation, emotions and behaviour in learning (Barr). Students meet it as "being your own learning coach", and workshop 2 builds the coach in full.
+
+  **No right answers in Think first.** Accept every reasoned view. The Check sort uses clearer statements than the opening six on purpose.
+
+  **Personal reflection.** Apply asks students to look back at their own answers privately. They share only what they're comfortable with, and the class discussion stays on the made-up learners. Nothing is collected.
+running:
+  - "Think first: run it as a line across the room (agree at one end, disagree at the other) for two or three statements. Ask for reasons from both ends."
+  - "The idea: after the match, ask what Zara, Omar, Lucy and Theo could each believe instead, and what they'd do then."
+  - "The idea: read the definition aloud and write 'be your own learning coach' on the board for the rest of the course."
+  - "Apply is private. Don't ask which statements students agreed with."
+stuck:
+  - see: "A student says some people really are better at maths."
+    ask: "Maybe. Does believing 'I'm not a maths person' help someone get better, or stop them trying?"
+    fix: "People differ. The belief to watch is the one that stops you trying."
+  - see: "A student thinks the lesson is saying effort is all you need."
+    ask: "If someone tries hard with a strategy that doesn't work, what happens?"
+    fix: "Effort plus good strategies, and sometimes help. Workshop 5 is about strategies."
+  - see: "A student is upset about a subject they find hard."
+    ask: "What's one small part of it you've got better at?"
+    fix: "Hard now doesn't mean hard forever. Follow up privately if it seems to matter more than the lesson."
+stretch: "Pick one of the six statements and write a better version, one you think is usually true."
+support: "Three beliefs on a card with what to say instead: fast means smart → slow can mean learning; hard means bad at it → hard can mean learning; mistakes are bad → mistakes show where to work."
+leads: |
+  Next: your learning coach. Whoever chose the task, you plan, check and look back.
+
+  Links: When easy fools you (workshop 4) takes the 'familiar means known' belief further.
+exit:
+  q: "Name one belief about learning that's often wrong, and what it might make someone do."
+  a: "Any reasoned pair, such as 'fast means smart', which might make someone give up when a task is slow."
+explain: |
+  Everyone has **beliefs about learning**, and they steer what you do: keep going, check, try another way, or give up.
+
+  Some common ones are often wrong: **fast means smart**, **hard work means you're not good at it**, **familiar means known**, and **mistakes mean you're doing it wrong**.
+
+  Being your own **learning coach** means noticing what's going on in your learning, beliefs included, and changing what you do when it isn't working.

@@ -1,0 +1,8 @@
+# Nib's thinking for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib learns a new way to revise: cover the notes and write what you remember.
+Nib tries it once. It's slower than rereading, and Nib only remembers half.
+Nib thinks: that didn't work, so I'll go back to rereading.
+In the next test, Nib has the same gaps as before.
+# endregion

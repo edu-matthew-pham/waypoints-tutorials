@@ -658,10 +658,13 @@ cards:
     idea: One or two sentences.
     steps: [ ... ]            # 1 to 6 steps that work in any app
     watch: Optional. The usual slip.
+    why: Optional, one line. Why it works.            # Learning skills strategy cards (10 Nov 2026)
+    cost: Optional, one line. What it costs.
+    coach: Optional, one line. A question to ask yourself.
     apps: { Excel: ..., Sheets: ... }   # where to find it; menus that rarely change
 ```
 
-Keep to core functions; every card says other apps work the same. `npm run validate` checks the fields, the lesson and the unit.
+Keep to core functions; every card says other apps work the same. `npm run validate` checks the fields, the lesson and the unit. The Learning skills strategy cards (`content/learning/how-you-learn/cards.yml`) use the same format with top-level `groups`, `lede`, `search` and `more`, and fill `why`, `cost` and `coach` on every card (shown as Why it works, What it costs and Ask yourself; a strategy taught without its why is easy to drop). A Teach it deck insert puts the card's `why` on its Name and Explain slide.
 
 ## 11. Maths lessons
 

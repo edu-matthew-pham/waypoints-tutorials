@@ -1,15 +1,15 @@
 ---
 title: For Learning skills teachers
-summary: "Self-regulation in any subject: the plan, check and look back cycle, think-alouds, teaching a strategy (NEMO-T), and when to prompt it."
+summary: "Self-regulation in any subject: being your own learning coach, the plan, check and look back cycle, think-alouds, teaching a strategy (NEMO-T), when to prompt it, and keeping any assessment of it formative."
 ---
 ## What is here
 
-**Self-regulated learning** is how students plan, check and look back on their own learning. It's a skill to keep practising in every subject, like spelling, rather than a topic to finish. Most of it happens in students' heads, so the work is making it visible.
+**Self-regulated learning** is how students understand and adjust their own thinking, motivation, feelings and actions as they learn: planning, checking and looking back. Students meet it as **being your own learning coach**, whoever chose the task. It's a skill to keep practising in every subject, like spelling, rather than a topic to finish. Most of it happens in students' heads, so the work is making it visible.
 
 Two things are built so far, as a pilot (not yet tried with a class):
 
-- [How you learn best](../learning/how-you-learn/): an optional introduction for Years 6 to 8, four discussion workshops (about 40 minutes each). Students meet the ideas through made-up tasks with a trap in them, tell steering their learning apart from choosing it, see why studying that feels easy can fool them, and plan one strategy to try on a real task in another subject.
-- [Strategy cards](../learning/how-you-learn/reference/): one screen per strategy, for before, during and after a task, with what it looks like in maths, science, English and Code. Plus four cards for each subject in its own words: maths (estimate first, is it reasonable?, try a simpler case, check by working backwards), science (predict then compare with the data, is the test fair?, check the data, explain it with the model), English (purpose and audience first, plan your points, reread aloud, check each paragraph's job) and Code (say what it should do, test a small piece, read the error, trace it).
+- [How you learn best](../learning/how-you-learn/): an optional introduction for Years 6 to 8, five short discussion workshops (about 40 minutes each) plus a "did it help?" follow-up. Students look at what they believe about learning, learn to be their own learning coach whoever chose the task, think about why they do schoolwork (marks included), see why study that feels easy can fool them, and use NEMO-T on one strategy before planning it for a real task in another subject.
+- [Strategy cards](../learning/how-you-learn/reference/): one screen per strategy, for before, during and after a task: the steps, why it works, what it costs, a question to ask yourself, and what it looks like in maths, science, English and Code. Plus four cards for each subject in its own words: maths (estimate first, is it reasonable?, try a simpler case, check by working backwards), science (predict then compare with the data, is the test fair?, check the data, explain it with the model), English (purpose and audience first, plan your points, reread aloud, check each paragraph's job) and Code (say what it should do, test a small piece, read the error, trace it).
 
 The course is optional. The cards and the way you prompt them in your own lessons are what build the habit.
 
@@ -30,8 +30,8 @@ The research is clear on one thing: these strategies work best taught **inside**
 **Teach a strategy once, properly (NEMO-T).** Shyam Barr's sequence (*Educate to Self-Regulate*, 2024) works for any strategy card:
 
 1. **Name** the strategy ("Today: predict first").
-2. **Explain** what it is, and when and why it helps.
-3. **Model** it with a think-aloud (below).
+2. **Explain** what it is, how to do it, and when and why it helps. Each card has a "why it works" line: a strategy taught without its why (strategy stripping) is easy to drop.
+3. **Model** it with a think-aloud (below): the learning coach's voice.
 4. **Opportunity** to practise it on today's task.
 5. **Transfer:** ask where else it would help, in this subject or another.
 
@@ -51,8 +51,17 @@ The research is clear on one thing: these strategies work best taught **inside**
 
 - **It depends on subject knowledge.** Students can't check their understanding of something they know nothing about. Teach the content; use the strategies on it.
 - **Keep it light during hard tasks.** Reflection prompts compete for the same working memory as the task. One prompt, not a checklist.
-- **Feelings matter.** Frustration is often when students stop checking and start guessing. "This is the hard part, and that's normal" can do more than a strategy.
-- **It's the student's own record.** Plans and reflections are for the student, not something to collect or mark.
+- **Feelings matter.** Frustration is often when students stop checking and start guessing. "This is the hard part, and that's normal" can do more than a strategy. Managing feelings is part of the coach's job, not a separate behaviour skill.
+- **Expect the dip.** A new strategy usually feels slower before it helps, and students drop it. Warn them, and ask them to give it a few goes.
+- **It's the student's own record.** Plans and reflections are for the student, not something to collect or mark. Invite students to apply ideas to themselves and share only what they're comfortable with; keep class discussion on made-up learners.
+
+## Marks and assessing it
+
+Marks pull on how students study. Students in a grade-driven system are self-regulating, often toward the grade: picking easy tasks, steering to the rubric, doing the moves for the teacher (surface compliance) rather than for themselves. Name this openly with students; workshop 3 does.
+
+If your school wants to assess self-regulated learning alongside the subject, keep it **formative**: self-assessment, learning journals, think-alouds, goal-setting conferences, or a school-level diagnostic. Marking it tends to invite the same surface compliance it's meant to replace.
+
+**Where support sits.** Barr's SEE is a useful check on a classroom: the **Setting** (what's on the walls and in the routines), the **Exchanges** (how you and students talk about learning) and the **Events** (planned moments such as a NEMO-T insert or a look-back).
 
 ## In the lessons and decks
 
@@ -67,4 +76,6 @@ These are plans, not promises:
 
 ## The research
 
-Zimmerman (the self-regulated learning cycle); Winne and Hadwin (understanding the task); Dunlosky, and Nelson and Narens (monitoring and calibration); Bjork (illusions of competence, desirable difficulties); Dunlosky and colleagues (2013, a review of study techniques); Harris and Graham (SRSD, strategy instruction); Veenman (what, when, why and how); Loksa, Ko and Prather (novice programmers' problem solving); Knowles (self-directed learning); Shyam Barr (NEMO-T; availability and production of strategies); and the EEF's Metacognition and self-regulation guidance. The course simplifies these for Years 6 to 8.
+**Shyam Barr** (*Educate to Self-Regulate*, 2024; blog and podcast) is the spine: the definition of self-regulated learning (thinking, motivation, emotions and behaviour), NEMO-T, having a strategy versus using it (availability and production deficiencies), strategy stripping, surface compliance versus genuine self-regulated learning, mastery and performance goals, growth and process goals, task value, the shift to coaching and fading, SEE, and learning journals and think-alouds for seeing it.
+
+Other sources, under their own names: Zimmerman (the cycle) and the EEF's Metacognition and self-regulation guidance; Loyens, Magda and Rikers, Jossberger and colleagues, and Knowles (self-directed versus externally directed learning); Meichenbaum and Goodman, and Collins, Brown and Newman (self-instruction and cognitive apprenticeship, behind the learning coach analogy); Winne and Hadwin (understanding the task); Dunlosky, and Nelson and Narens (monitoring and calibration); Bjork (illusions of competence, desirable difficulties); Schommer (beliefs about learning); Sisk and colleagues, and Yeager and colleagues (growth mindset, small average effects); Ryan and Deci, and Vansteenkiste and colleagues (motivation); Elliot and McGregor (achievement goals); Eccles (expectancy, value and cost); Torrance (criteria compliance); Dunlosky and colleagues (2013, study techniques); Harris and Graham (SRSD); Paris, Lipson and Wixson, Schraw, and Veenman (what, how, when and why); Miller (utilisation deficiency); Gollwitzer (if-then plans); Loksa, Ko and Prather (novice programmers' problem solving). The course simplifies these for Years 6 to 8 and says "usually" and "often" where the evidence has limits.

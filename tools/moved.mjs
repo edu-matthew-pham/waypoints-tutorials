@@ -36,9 +36,18 @@ for (const [old, to] of Object.entries(MATHS_MOVED)) {
   };
 }
 
+// Single lessons renamed inside the same course: old slug -> new slug. Only the addresses forward; a renamed lesson
+// is usually rewritten, so its old clips and pictures are not reused (10 Nov 2026: How you learn best rebuilt as five
+// primers; none of its lessons has clips).
+export const RENAMED_LESSONS = {
+  'learning/how-you-learn/noticing-your-thinking': 'learning/how-you-learn/what-you-believe',
+  'learning/how-you-learn/who-is-steering': 'learning/how-you-learn/your-learning-coach',
+  'learning/how-you-learn/your-strategies': 'learning/how-you-learn/knowing-vs-using',
+};
+
 // Every moved lesson: old slug -> new slug.
 export function movedLessons(lessonSlugs) {
-  const out = {};
+  const out = { ...RENAMED_LESSONS };
   for (const [from, to] of Object.entries(MOVED_COURSES))
     for (const s of lessonSlugs) if (s.startsWith(`${to}/`)) out[`${from}/${s.slice(to.length + 1)}`] = s;
   for (const [from, { lessons }] of Object.entries(SPLIT_COURSES))

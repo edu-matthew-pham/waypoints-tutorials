@@ -1,0 +1,49 @@
+summary: "Students compare a learner who chose her task but never checks with one who was set a task and checks it, sort made-up learners by who chose the task and whether they coach themselves through it, sort the coach's thoughts into before, during and after, find Nib's slip (someone else chose the task, so checking isn't my job), and write the coach's voice for a made-up learner. They finish by privately thinking what their own coach would say before a task this week."
+time: 40
+timing: "Think first 5 min · The idea 15 min · Check 6 min · Vary 8 min · Apply 3 min (plus the class discussion)"
+goals:
+  - I can explain that whoever chose the task, I'm my own learning coach.
+  - I can say what my coach does before, during and after a task.
+  - I can say what my learning coach would say when I'm stuck.
+struggle: "Students may hear 'your own coach' as 'do it without help'. Coaching yourself includes deciding to ask for help, and the coach's voice is a habit you build, not something you either have or don't."
+before: |
+  **The core idea.** Two questions: who chose the task (you or someone else) and who coaches you through it (always you). Who chose the task is a feature of the task: in the research, self-directed versus externally directed (Loyens, Magda and Rikers 2008; Jossberger and colleagues 2010, after Knowles). Coaching yourself through it, planning, monitoring and reflecting, is self-regulated learning, and it applies at both ends. Self-directed learning isn't the better version, and at Years 6 to 8 it mostly means choosing a topic, a video, a tutorial or who to ask.
+
+  **The coach analogy** is the site's own. It builds on the teacher shifting into a coaching role and then fading (Barr), self-instructional training, where adult talk-aloud becomes the child's whisper and then silent self-talk (Meichenbaum and Goodman 1971), and cognitive apprenticeship (Collins, Brown and Newman 1989). That's why the coach's voice is a think-aloud: model it yourself today (see the class plan).
+
+  **Feelings** belong to the coach. Managing frustration and worry is part of self-regulated learning (Barr's definition includes emotion), not a separate behaviour skill.
+
+  **Personal reflection.** The last step asks students to think about their own task and coach privately. Share only what they're comfortable with; class discussion stays on the made-up learners. Nothing is collected.
+
+  Year 6: give the link with `?width=minimum` to hide the bridge project.
+running:
+  - "Think first: take a quick vote, then ask a Jun voter and a Mei voter to give their reasons."
+  - "The idea: draw the grid on the board (who chose it across the top, coaches it down the side) and place the learners as a class. Linger on Mei."
+  - "The idea: do a two-minute think-aloud on a question from your own subject, in the coach's voice (see the class plan)."
+  - "Vary: read out two or three Jun's-coach lines that sound like Jun, not a teacher telling her off."
+  - "Apply is private. Don't ask students to share their own task unless they offer."
+stuck:
+  - see: "A student thinks any task a teacher sets can't be coached by the student."
+    ask: "Who decides how Mei does the worksheet, minute by minute?"
+    fix: "The teacher chose the task. Mei is the one checking her answers as she goes."
+  - see: "A student thinks coaching yourself means never asking for help."
+    ask: "Would a good coach ever say 'go and ask someone'?"
+    fix: "Yes. Deciding when to ask for help is one of the coach's jobs."
+  - see: "A student says Jun is fine because she enjoys it."
+    ask: "Is enjoying it the same as getting better at it?"
+    fix: "Both matter. If she wants to get better, her coach needs a plan and a check."
+stretch: "Pick a task you chose outside school (a game, a sport, an instrument). What would your coach plan, check and look back on?"
+support: "Two questions on a card: Who chose the task? Who coaches me through it? (Always me.)"
+leads: |
+  Next: why do you do it? Reasons, goals and marks.
+
+  Teachers: For Learning skills teachers has more on think-alouds and on fading your prompts.
+exit:
+  q: "Your teacher sets a task you didn't choose. Name one thing your learning coach could do during it."
+  a: "Check an answer makes sense, mark the first few before doing the rest, notice frustration and take a short break, or check the work against the task halfway."
+explain: |
+  Two questions: **who chose the task**, and **who coaches you through it?**
+
+  Sometimes you choose the task, sometimes someone else does. Either way, **you're your own learning coach.**
+
+  The coach plans **before** (what is it asking? what's my first step?), checks **during** (is this working? how am I feeling?) and looks back **after** (what would I change?). Thinking out loud is the coach's voice: "If I were coaching myself right now, what would I say?"

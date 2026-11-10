@@ -1,6 +1,6 @@
-# Strategy cards for How you learn best (27 Oct 2026). Same shape as the ICT cards (tools/ict-cards.mjs), but grouped by
+# Strategy cards for How you learn best (27 Oct 2026; why, cost and coach lines added 10 Nov 2026). Same shape as the ICT cards (tools/ict-cards.mjs), but grouped by
 # when you use a strategy (groups, below) instead of by unit, and the "apps" notes are what it looks like in each subject.
-lede: "One screen for each strategy, to look up when you need one, in any subject. Each card says when to use it, what to do, one thing to watch for, and what it looks like in different subjects. Pick the one that fits the kind of stuck you're in."
+lede: "One screen for each strategy, to look up when you need one, in any subject. Each card says when to use it, what to do, one thing to watch for, why it works, what it costs, a question to ask yourself, and what it looks like in different subjects. Pick the one that fits the kind of stuck you're in."
 search: "Search: a strategy, a subject, or a kind of stuck"
 more: ""
 groups:
@@ -15,7 +15,7 @@ cards:
   - id: what-is-it-asking
     title: "What is it asking?"
     unit: before
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "Use it when you're not sure what to do or hand in. Many mistakes start with answering a different question."
     steps:
       - "Read the task once all the way through."
@@ -23,6 +23,9 @@ cards:
       - "Underline the words that tell you how: 'explain', 'compare', 'show working', 'by Friday'."
       - "Check: if you did exactly that, would you be finished?"
     watch: "A task can look like one you've done before and ask for something different."
+    why: "Saying the task in your own words shows whether you've understood it before you spend time on it."
+    cost: "A minute at the start, when you'd rather just begin."
+    coach: "Could I tell someone in one line what I'm meant to hand in?"
     apps:
       "Maths": "Which number is the answer meant to be? Check the units it asks for."
       "Science": "What is the experiment trying to find out? Say it as a question."
@@ -31,7 +34,7 @@ cards:
   - id: make-a-plan
     title: "Make a plan"
     unit: before
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "Use it when you understand the task but don't know where to start. A plan can be one line."
     steps:
       - "Write your first step, only the first."
@@ -39,6 +42,9 @@ cards:
       - "Stuck on the first step? Try a smaller or simpler version first."
       - "Decide how you'll know each part is done."
     watch: "A plan isn't a promise. Change it when you learn something."
+    why: "A first step turns a big, vague task into something you can start, and gives you something to check your progress against."
+    cost: "A few minutes before you start, and changing it when you learn more."
+    coach: "What's my first step, and how will I know it's done?"
     apps:
       "Maths": "Try the same question with smaller, easier numbers."
       "Science": "List the steps of the method before you start."
@@ -47,7 +53,7 @@ cards:
   - id: predict-first
     title: "Predict first"
     unit: during
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "Use it before you work something out or run it. A guess gives you something to check against."
     steps:
       - "Before you work it out, guess the rough answer or what will happen."
@@ -55,6 +61,9 @@ cards:
       - "Work it out or try it."
       - "Compare: if it's very different, find out why."
     watch: "A wrong prediction isn't a failure. It's the most useful kind, because it shows what you didn't expect."
+    why: "Committing to a guess makes you notice when the result is different, and that surprise is where you learn something."
+    cost: "Being wrong out loud, or on paper, some of the time."
+    coach: "What do I expect, and why?"
     apps:
       "Maths": "Estimate first: about how big should the answer be?"
       "Science": "Predict the result before the experiment."
@@ -71,6 +80,9 @@ cards:
       - "Do the check: put the answer back, try a question, or explain it."
       - "If the check and the feeling disagree, trust the check."
     watch: "Rereading makes things look familiar, which feels like knowing."
+    why: "Feeling sure comes from things looking familiar. A check without help shows what you can actually do."
+    cost: "It can give you bad news: you may find you know less than you thought."
+    coach: "How sure am I, and what would prove it?"
     apps:
       "Maths": "Put your answer back into the question. Does it work?"
       "Science": "Does the answer make sense? A 400 kg apple doesn't."
@@ -79,7 +91,7 @@ cards:
   - id: explain-it-to-yourself
     title: "Explain it to yourself"
     unit: during
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "Use it when you can follow something but aren't sure why it works. Explaining shows the gaps."
     steps:
       - "Say each step out loud, or write it in your own words."
@@ -87,6 +99,9 @@ cards:
       - "Mark the step you can't explain yet."
       - "Go back to that step only."
     watch: "Copying an explanation isn't the same as giving one. Close the book first."
+    why: "Putting it in your own words makes you link the steps together, and the bits you can't explain are the gaps."
+    cost: "It's slower than reading, and it can feel awkward at first."
+    coach: "Can I say why this step comes next?"
     apps:
       "Maths": "Say why each line of working follows from the one before."
       "Science": "Explain the result using the model or idea, not just what happened."
@@ -95,7 +110,7 @@ cards:
   - id: when-youre-stuck
     title: "When you're stuck"
     unit: during
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "Use it when you've been stuck for a while. First work out what kind of stuck it is."
     steps:
       - "Pause. Take a breath: frustration makes people guess."
@@ -103,6 +118,9 @@ cards:
       - "Try the strategy that fits, for a few minutes."
       - "Still stuck? Try another, or ask someone what kind of stuck they think it is."
     watch: "Reading the same thing again and again rarely helps. Change what you're doing."
+    why: "Different kinds of stuck need different moves. Naming the kind tells you which move to try."
+    cost: "Stopping to think when you'd rather keep going, or ask for the answer."
+    coach: "What kind of stuck is this, and what haven't I tried yet?"
     apps:
       "Maths": "Try a smaller example, or draw it."
       "Science": "Go back to the question the experiment was asking."
@@ -111,7 +129,7 @@ cards:
   - id: look-back
     title: "Look back"
     unit: after
-    lesson: noticing-your-thinking
+    lesson: your-learning-coach
     idea: "Use it when you finish something or get it back marked. Next time starts here."
     steps:
       - "Ask: did it work? Did I do what the task asked?"
@@ -119,6 +137,9 @@ cards:
       - "Ask: is this a mistake I've made before?"
       - "Write the one change somewhere you'll see it next time."
     watch: "Looking back isn't about the mark. It's about what you'll do differently."
+    why: "What you notice now is what changes next time. Without it, the same slip comes back."
+    cost: "Looking at mistakes, which isn't always fun."
+    coach: "What's one thing I'll do differently next time?"
     apps:
       "Maths": "Which kind of question lost marks? Practise that kind."
       "Science": "Did the conclusion use the data?"
@@ -127,7 +148,7 @@ cards:
   - id: code-say-what-it-does
     title: "Say what it should do"
     unit: code
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "Before you code: say what the program should do, with a few examples, so you know what 'working' means."
     steps:
       - "Write in one line what the program should do."
@@ -135,6 +156,9 @@ cards:
       - "Include one awkward case: zero, an empty answer, a very big number."
       - "Keep the examples to test with later."
     watch: "If you can't say what it should do, coding it won't help yet."
+    why: "Examples of what should go in and come out give you a test before you've written any code."
+    cost: "A few minutes of thinking before the fun part."
+    coach: "What should happen for this input?"
     apps:
       "Python": "Write the examples as comments at the top."
       "MakeCode": "Say what the micro:bit should show when each button is pressed."
@@ -142,7 +166,7 @@ cards:
   - id: code-test-small
     title: "Test a small piece"
     unit: code
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "During: add a little, run it, check it. Small steps mean a problem is always in the last thing you changed."
     steps:
       - "Add one small piece: a line, a block, a tag."
@@ -150,6 +174,9 @@ cards:
       - "Check it against your examples."
       - "Only then add the next piece."
     watch: "Writing a lot before running anything makes bugs hard to find."
+    why: "If you only changed a little, any new problem is in that little bit, so it's quick to find."
+    cost: "More runs, and it can feel slower than writing it all at once."
+    coach: "What's the smallest piece I can run now?"
     apps:
       "Python": "Run after every few lines. Use print to see a value."
       "MakeCode": "Watch the simulator after each block you add."
@@ -157,7 +184,7 @@ cards:
   - id: code-read-the-error
     title: "Read the error"
     unit: code
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "When it breaks: the error message is a clue, not a telling-off. It usually says where to look."
     steps:
       - "Find the line number in the message."
@@ -165,6 +192,9 @@ cards:
       - "Say in your own words what the message means."
       - "Change one thing, then run it again."
     watch: "The real mistake is often on the line before the one the error names, such as a missing bracket."
+    why: "The message names the kind of problem and the line where the computer noticed it, so you know where to start."
+    cost: "Reading something that looks unfriendly, slowly."
+    coach: "What is the error actually saying, and which line does it point to?"
     apps:
       "Python": "The playground puts the line and a hint first: start there."
       "MakeCode": "Look for red or grey blocks, or a block that isn't connected."
@@ -172,7 +202,7 @@ cards:
   - id: code-trace-it
     title: "Trace it"
     unit: code
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "When it runs but does the wrong thing: be the computer. Step through it by hand and track every value."
     steps:
       - "Pick a small input."
@@ -180,6 +210,9 @@ cards:
       - "Stop at the first line where a value isn't what you expected."
       - "That's where to fix it."
     watch: "Tracing what you meant to write instead of what you wrote. Read the actual code."
+    why: "Stepping through by hand shows what the code really does, not what you meant it to do."
+    cost: "Time and patience: it's slow on purpose."
+    coach: "What is each value at this line?"
     apps:
       "Python": "Use a table: one column per variable, one row per line run."
       "MakeCode": "Follow each block in order, especially loops and ifs."
@@ -187,7 +220,7 @@ cards:
   - id: maths-estimate-first
     title: "Estimate first"
     unit: maths
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "Before you work it out: round the numbers and guess roughly how big the answer should be, so a wrong answer stands out."
     steps:
       - "Round each number to something easy."
@@ -195,6 +228,9 @@ cards:
       - "Write the estimate down, then do the real working."
       - "Compare: if they're far apart, look for the slip."
     watch: "An estimate isn't the answer. Use it to check, then do the real working."
+    why: "A rough answer gives you something to compare with, so a slip in the working shows up."
+    cost: "A quick extra step before the real working."
+    coach: "Roughly how big should this be?"
     apps:
       "Number": "19.8 × 4.1 is about 20 × 4 = 80."
       "Measurement": "A classroom floor is tens of square metres, not thousands."
@@ -202,7 +238,7 @@ cards:
   - id: maths-is-it-reasonable
     title: "Is it reasonable?"
     unit: maths
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "During and after: read your answer as a real thing. Does the size, sign and unit make sense?"
     steps:
       - "Say the answer in words, with its unit: '400 kilograms'."
@@ -210,6 +246,9 @@ cards:
       - "Check the sign: can it be negative here?"
       - "Check the unit: is it the one the question asked for?"
     watch: "A neat answer can still be wrong. A messy one can still be right."
+    why: "Reading the answer as a real amount catches slips that the working hides."
+    cost: "A few seconds at the end, when you want to be finished."
+    coach: "Would this answer make sense in real life?"
     apps:
       "Number": "A discount can't make a price go up."
       "Measurement": "Area is in square units; volume in cubic units."
@@ -217,7 +256,7 @@ cards:
   - id: maths-simpler-case
     title: "Try a simpler case"
     unit: maths
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "When you don't know where to start: shrink the problem until you can do it, then grow it back."
     steps:
       - "Swap in small, friendly numbers."
@@ -225,6 +264,9 @@ cards:
       - "Use the same steps on the real numbers."
       - "Or draw it: a sketch, a number line or a table."
     watch: "Check the simpler case really is the same problem with smaller numbers."
+    why: "Smaller numbers let you see the pattern, then you use the same steps on the real problem."
+    cost: "Solving an extra problem first."
+    coach: "What's a smaller version I can do?"
     apps:
       "Algebra": "Try x = 1, 2 and 3 to see the pattern."
       "Geometry": "Sketch it, then label what you know."
@@ -232,7 +274,7 @@ cards:
   - id: maths-work-backwards
     title: "Check by working backwards"
     unit: maths
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "After: put your answer back into the question and see if it works."
     steps:
       - "Take your answer."
@@ -240,6 +282,9 @@ cards:
       - "Work it through."
       - "Does it give what the question said? If not, find the slip."
     watch: "Check against the original question, not your own working: the slip may be in the working."
+    why: "Undoing the problem tests the answer in a different way from the working, so it catches different slips."
+    cost: "Doing a bit of the problem a second time."
+    coach: "If I put my answer back in, does it work?"
     apps:
       "Algebra": "Substitute x back into the equation."
       "Number": "Check a division by multiplying."
@@ -247,7 +292,7 @@ cards:
   - id: science-predict-compare
     title: "Predict, then compare with the data"
     unit: science
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "Before an experiment: write what you expect and why. After: compare it with what happened."
     steps:
       - "Write a prediction with a reason: 'I think… because…'."
@@ -255,6 +300,9 @@ cards:
       - "Compare: did the data match?"
       - "If not, ask what that tells you. It's often the most interesting part."
     watch: "Don't change the prediction afterwards. A wrong prediction is a result too."
+    why: "A prediction written down first gives you something honest to compare with, and the difference is the interesting part."
+    cost: "Writing down a guess that may be wrong."
+    coach: "What did I expect, and what actually happened?"
     apps:
       "Practical": "Write the prediction before you touch the equipment."
       "Simulation": "Predict before you press Run or move the slider."
@@ -262,7 +310,7 @@ cards:
   - id: science-fair-test
     title: "Is the test fair?"
     unit: science
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "Before and during: change one thing, measure one thing, and keep everything else the same."
     steps:
       - "Name the one thing you'll change."
@@ -270,6 +318,9 @@ cards:
       - "List what you'll keep the same."
       - "Partway through, check: has anything else changed by accident?"
     watch: "Small things sneak in: a different cup, a warmer room, a later time."
+    why: "If only one thing changes, any difference in the results is probably because of that one thing."
+    cost: "Planning and care, and sometimes more equipment or time."
+    coach: "What else could have changed besides the thing I'm testing?"
     apps:
       "Practical": "Use the same equipment and amounts each time."
       "Planning": "Write the changed, measured and kept-same lists before you start."
@@ -277,7 +328,7 @@ cards:
   - id: science-check-the-data
     title: "Check the data"
     unit: science
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "After collecting results: look for anything odd before you draw a conclusion."
     steps:
       - "Look for a result that doesn't fit the pattern."
@@ -285,6 +336,9 @@ cards:
       - "Repeat it if you can."
       - "Say how sure you are, and why."
     watch: "Don't quietly delete an odd result. Say what you did about it."
+    why: "Odd results are often a sign of a mistake or something interesting, and both change what you can conclude."
+    cost: "Time, and sometimes redoing a measurement."
+    coach: "Is anything here surprising, and why might it be?"
     apps:
       "Practical": "Three repeats show whether a result is a one-off."
       "Graphs": "A point far from the line is worth a second look."
@@ -292,7 +346,7 @@ cards:
   - id: science-use-the-model
     title: "Explain it with the model"
     unit: science
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "When explaining a result: use the science idea (particles, forces, energy, cells), not just what you saw."
     steps:
       - "Say what happened."
@@ -300,6 +354,9 @@ cards:
       - "Link them: 'This happened because…' using the model."
       - "Check: could a classmate follow the link?"
     watch: "Describing what happened isn't explaining why it happened."
+    why: "The model is what lets you explain why, and use the idea again on something new."
+    cost: "Thinking harder than just describing what you saw."
+    coach: "Which science idea explains this?"
     apps:
       "Chemistry": "Use particles: what are they doing?"
       "Physics": "Name the forces or the energy transfers."
@@ -307,7 +364,7 @@ cards:
   - id: english-purpose-audience
     title: "Purpose and audience first"
     unit: english
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "Before writing: say what the text is for and who will read it. Every later choice depends on it."
     steps:
       - "Say the purpose: to persuade, explain, entertain, analyse."
@@ -315,6 +372,9 @@ cards:
       - "Pick the form: essay, report, story, speech."
       - "Keep the purpose and audience at the top of your page."
     watch: "Writing well for the wrong audience still misses."
+    why: "Knowing who reads it and why tells you what to include, what to leave out and how to sound."
+    cost: "A moment of thinking before you write."
+    coach: "Who is this for, and what should they think or do after reading it?"
     apps:
       "Persuasive": "Who do you need to convince, and what will they object to?"
       "Imaginative": "What do you want the reader to feel?"
@@ -322,7 +382,7 @@ cards:
   - id: english-plan-the-points
     title: "Plan your points"
     unit: english
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "Before drafting: jot your main points in order, so each paragraph has one job."
     steps:
       - "Write your main idea in one sentence."
@@ -330,6 +390,9 @@ cards:
       - "Put them in the best order."
       - "Give each paragraph one point."
     watch: "A plan can change as you write. Update it, don't abandon it."
+    why: "A plan lets you check the order and the gaps before you've written whole paragraphs."
+    cost: "Time before drafting, and it can feel like it slows you down."
+    coach: "What is each paragraph's one job?"
     apps:
       "Persuasive": "Strongest point first or last, not in the middle."
       "Imaginative": "Beginning, problem, turning point, ending."
@@ -337,7 +400,7 @@ cards:
   - id: english-reread-aloud
     title: "Reread aloud"
     unit: english
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "During and after: read your writing out loud, as a reader would hear it. Your ears catch what your eyes skip."
     steps:
       - "Read it out loud, or quietly under your breath."
@@ -345,6 +408,9 @@ cards:
       - "Mark anywhere you lose track of what 'it' or 'this' means."
       - "Fix the marked spots first."
     watch: "Reading it in your head, you read what you meant, not what you wrote."
+    why: "Hearing it slows you down, so you notice missing words, clumsy sentences and things that don't make sense."
+    cost: "It can feel awkward, and you need somewhere you can read out loud, even quietly."
+    coach: "Does this sound right to someone hearing it for the first time?"
     apps:
       "Persuasive": "Does each paragraph push the same way?"
       "Imaginative": "Do the sentences vary in length and rhythm?"
@@ -352,7 +418,7 @@ cards:
   - id: english-check-each-paragraph
     title: "Check each paragraph's job"
     unit: english
-    lesson: your-strategies
+    lesson: knowing-vs-using
     idea: "After drafting: check that each paragraph does one job and links to the next."
     steps:
       - "Read just the first sentence of each paragraph."
@@ -360,6 +426,9 @@ cards:
       - "In each paragraph, check every sentence belongs to its point."
       - "Check the links between paragraphs: does each lead into the next?"
     watch: "A new point in the conclusion is a sign it belongs earlier."
+    why: "Checking each paragraph's job shows where the writing wanders or repeats."
+    cost: "Rereading your own work critically."
+    coach: "What does this paragraph do that the others don't?"
     apps:
       "Persuasive": "Each paragraph should give one reason."
       "Analytical": "Claim, evidence, explanation in each body paragraph."

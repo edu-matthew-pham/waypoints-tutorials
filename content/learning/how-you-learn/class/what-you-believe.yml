@@ -1,0 +1,30 @@
+inquiry:
+  q: "Where do our beliefs about learning come from?"
+  prompts:
+    - "Things people say to you, like 'you're a natural'?"
+    - "How fast other people seem to get things?"
+    - "Marks?"
+  notes: "Keep it general. The aim is to notice that beliefs are learned, so they can change. Nobody has to say what they believe."
+activities:
+  - at: predict
+    kind: activity
+    title: "Take a stand"
+    minutes: 8
+    do: |
+      Agree at one end of the room, disagree at the other, not sure in the middle. Move for each statement your teacher reads out. Be ready to give a reason.
+    notes: "Do two or three of the six. Ask for reasons from both ends and let people move if they're persuaded. Students can stay in the middle if they'd rather not say. This is the only time the class shares a position on their own beliefs, and it's on general statements."
+  - at: end
+    kind: discussion
+    title: "Zara's coach"
+    minutes: 5
+    do: |
+      In pairs: Zara stops when a question gets hard. Write one thing her learning coach could say to her.
+    notes: "Take a few aloud. Good ones turn the belief into a next step: 'Hard means I'm learning. Which part is hard?'"
+questions:
+  - at: investigate
+    title: "What would they do?"
+    type: question
+    q: "Ari believes mistakes mean you're doing it wrong. What might Ari do in a test?"
+    options: ["Leave questions blank rather than risk a wrong answer", "Check every answer twice", "Ask for help more often"]
+    answer: 0
+    explain: "If mistakes feel like proof you're bad at it, avoiding them can matter more than learning."

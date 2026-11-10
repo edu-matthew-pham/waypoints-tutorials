@@ -1,0 +1,8 @@
+# Nib's thinking for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib's teacher sets a worksheet of ten area questions.
+Nib thinks: the teacher chose this, so checking how I'm going is the teacher's job.
+Nib does all ten questions as fast as it can and hands them in.
+Nib used the wrong formula from question 2 onwards.
+# endregion

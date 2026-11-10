@@ -1,0 +1,8 @@
+# Nib's thinking for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib has a fractions quiz next week and can choose which practice questions to do.
+Nib thinks: a good score is what counts, so I'll only practise the easy ones I always get right.
+Nib gets every practice question right and feels ready.
+In the quiz, Nib gets stuck on all the harder questions.
+# endregion

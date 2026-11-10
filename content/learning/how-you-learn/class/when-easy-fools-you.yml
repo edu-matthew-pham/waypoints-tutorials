@@ -5,7 +5,7 @@ inquiry:
     - "Which one tells you bad news?"
   notes: "Rereading feels good and gives no bad news. Self-testing feels harder and shows the gaps, which is exactly why it's useful."
 activities:
-  - at: run
+  - at: investigate
     kind: activity
     title: "Ten words"
     minutes: 5
@@ -18,7 +18,7 @@ activities:
     minutes: 5
     do: |
       In pairs: if you could add one check to the way people usually study, what would it be?
-    notes: "Keep it general ('people usually…'), not 'how do you study?'. Collect a few on the board."
+    notes: "Talk about how people usually study, not about anyone in the room. Students can think about their own habits privately, and share only if they want to. Collect a few on the board."
 questions:
   - at: investigate
     title: "Familiar or known?"

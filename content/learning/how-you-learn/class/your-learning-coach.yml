@@ -1,0 +1,37 @@
+inquiry:
+  q: "Is it easier to coach yourself through a task you chose, or one someone else set?"
+  prompts:
+    - "Which one do you care about more?"
+    - "Which one has clearer instructions?"
+    - "Does a task you chose ever get boring or hard?"
+  notes: "No right answer: chosen tasks often feel more worth it, set tasks often come with clearer criteria. Bring it back to the point that you're the coach either way. Keep examples general or about made-up learners."
+activities:
+  - at: investigate
+    kind: activity
+    title: "The grid"
+    minutes: 5
+    do: |
+      Draw a grid: who chose the task (me / someone else) across the top, and coaches it (yes / no) down the side. Place each learner in it.
+    notes: "On the board, as a class. Mei (someone else chose it, coaches it) is the one to linger on."
+  - at: investigate
+    kind: activity
+    title: "Watch me coach myself"
+    minutes: 3
+    do: |
+      Watch your teacher work through a question out loud, in the voice of a learning coach.
+    notes: "Use a question from your own subject. Say what you notice, which job you're doing (planning, checking, looking back) and how you feel: 'OK, what's it asking… my first step is… that answer looks too big… I'm getting a bit annoyed, so let me slow down and check one line.' Let one thing go wrong and be fixed."
+  - at: end
+    kind: discussion
+    title: "Chose it or set it?"
+    minutes: 6
+    do: |
+      In pairs: is it easier to be your own coach on a task you chose, or one someone else set? Give one reason.
+    notes: "Take a few reasons from each side. Students can talk about tasks in general; nobody has to name their own."
+questions:
+  - at: investigate
+    title: "Coach or not?"
+    type: question
+    q: "Taking three slow breaths before trying a hard question again is…"
+    options: ["Part of the coach's job: noticing a feeling and dealing with it", "Not about learning at all", "Only for tasks you chose"]
+    answer: 0
+    explain: "Frustration is often when people stop checking and start guessing. Dealing with it keeps the learning going."

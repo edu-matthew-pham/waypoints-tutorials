@@ -1,0 +1,54 @@
+summary: "Students try a task-reading question before any strategy is named (many miss the second part), then meet one strategy, What is it asking?, with its what, how, when and why, and hear it in the coach's voice. They match kinds of stuck to strategies, find Nib's slip (a new strategy didn't help first time, so drop it), and meet having a strategy versus using it, and the dip. Checks cover prompting rather than reteaching, choosing a strategy and the dip. They finish with an if-then plan to use one strategy on a real task in another subject this week."
+time: 40
+timing: "Try 5 min · The idea 15 min · Check 8 min · Apply (own task) 10 min (plus the think-aloud)"
+goals:
+  - I can say what a strategy is, how to do it, when it fits and why it works.
+  - I can explain the difference between knowing a strategy and using it, and why a new one can feel worse at first.
+  - I can make an if-then plan to use one strategy on a real task.
+struggle: "Students may treat the seven strategies as a checklist for every task, or drop a strategy after one awkward go. Stress: pick the one that fits, and give a new one a few goes."
+before: |
+  **NEMO-T inside the primer.** Barr's routine for teaching a strategy: Name, Explain, Model, Opportunity, Transfer (his podcast adds Time for reflection). Here, the Try step lets students hit the problem first; The idea names What is it asking? and explains it (what, how, when and why); the coach's think-aloud is the Model; Check is the Opportunity; Apply is the Transfer. The "did it help?" follow-up is the reflection.
+
+  **Having it vs using it.** Barr's availability versus production deficiency: a student who doesn't have a strategy needs teaching; one who has it but doesn't use it needs prompts at the right moment, not reteaching. (He describes it as the difference between having the umbrella and taking it out of the bag.) Mo's question in Check is this point. It's also why the stuck link on every lesson page and the deck nudges ask "what might help you here?" instead of naming a strategy.
+
+  **What, how, when and why.** Declarative, procedural and conditional knowledge (Paris, Lipson and Wixson; Schraw). Teaching a strategy without the how and why is what Barr calls strategy stripping; that's why each strategy card now carries why it works and what it costs.
+
+  **The dip.** Using a new strategy before it pays off, so it gets dropped: utilisation deficiency (Miller, building on Flavell). Kit's question and Nib's slip are this point.
+
+  **If-then plans.** Implementation intentions (Gollwitzer): "When ___, I'll ___" links a strategy to a moment, which usually makes it more likely to happen.
+
+  **Personal reflection.** The own task stays in the student's browser and isn't collected. Plan the "did it help?" follow-up a week or two later: ask the class as a whole, hands up; nobody has to say what they chose.
+running:
+  - "Try: before revealing, ask how many people included the fairer-test part. Name it as a very common slip, kindly."
+  - "The idea: do the think-aloud yourself on a task from your own subject (see the class plan), then show the cards page."
+  - "Check: for Mo, ask what kind of help would work. Reteaching vs a reminder at the right moment."
+  - "Apply: give students quiet time. Circulate and help anyone without a task choose from the list. Don't collect."
+  - "Close by saying when you'll ask 'did it help?'."
+stuck:
+  - see: "A student can't think of a task."
+    ask: "What's due in any subject in the next week? Or pick one from the list."
+    fix: "The list in the lesson has a task for each subject."
+  - see: "A student picks every strategy."
+    ask: "Which one fits the hardest part of that task?"
+    fix: "One is enough. You can try another next time."
+  - see: "A student writes an if-then plan with no real moment ('When I do homework, I'll try harder')."
+    ask: "What's the exact moment? When you open the task sheet? When you get your first answer?"
+    fix: "A specific moment, and a specific strategy."
+  - see: "A student says they never get stuck."
+    ask: "When do you lose marks, or take longest?"
+    fix: "That's where Look back or Check your confidence helps."
+stretch: "Write a strategy card of your own for a subject the course doesn't cover yet: when to use it, three or four steps, why it works, what it costs, and a question to ask yourself."
+support: "The seven strategies on a card, with the 'ask yourself' question for each, and the if-then starter: 'When ___, I'll ___.'"
+leads: |
+  Next: use the strategy cards in any subject, and come back to "did it help?" in a week or two.
+
+  Teachers: For Learning skills teachers has ideas for bringing a strategy into your own lessons, and the deck inserts (teach, show, nudge) that follow NEMO-T.
+exit:
+  q: "Write an if-then plan for one strategy you could use this week."
+  a: "Any plan with a specific moment and a fitting strategy, such as 'When I finish a maths question, I'll check if the answer makes sense.'"
+explain: |
+  **Knowing a strategy isn't the same as using it.** It's easier to use one when you know **what** it is, **how** to do it, **when** it fits and **why** it works.
+
+  A new strategy often feels slower or clumsier at first (**the dip**), so give it a few goes before deciding.
+
+  Make an **if-then plan** for the moment you'll use it: "When I start a task, I'll write what it's asking in one line."

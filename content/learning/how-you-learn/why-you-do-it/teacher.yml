@@ -1,0 +1,52 @@
+summary: "Students guess why a made-up learner did her homework (a mix), sort reasons into pushed and owned, sort goals into the four boxes of the goals grid, find Nib's slip (practising only easy questions to get a good score), and meet marks as the scoreboard. They sort goals into what you'll do and what you'll get, pick the coach's response to a disappointing mark, privately place their own reasons and goals, and write a what-you'll-do goal for a real task this week."
+time: 40
+timing: "Think first 4 min · The idea 16 min · Check 7 min · Apply 4 min · Try 6 min (plus the class discussion)"
+goals:
+  - I can tell reasons that push me from outside apart from reasons I own.
+  - I can explain the difference between getting better and looking good, and why marks aren't the same as getting better.
+  - I can set a goal about what I'll do, not just what I'll get.
+struggle: "Students may hear 'reasons you own are better' as 'wanting a good mark is bad'. Keep saying: a mix is normal, pushed reasons get things done, and marks are worth knowing. The thing to watch is steering only toward the scoreboard, or only away from looking bad."
+before: |
+  **Grades, named openly.** This workshop says plainly that marks pull on how students study. Students in a grade-driven system are self-regulating, often toward the grade; the coach still asks what they're steering toward. Barr's distinctions give the language: surface compliance (doing the moves for the teacher) versus genuine self-regulated learning (using them for yourself), and mastery versus performance goals. Torrance's "criteria compliance" (steering to the rubric rather than the learning) describes the same pull from the assessment side.
+
+  **Reasons.** Pushed versus owned is a plain version of the motivation continuum in self-determination theory (Ryan and Deci): reasons range from external (detention, rewards), through guilt and worry (pushed, though inside your head), to "identified" reasons (external in origin but owned, like needing fractions for next year) and interest. Most students hold a mix (Vansteenkiste and colleagues 2009, motivational profiles). Barr cautions against "intrinsic good, extrinsic bad", and so does this lesson.
+
+  **Goals grid.** Elliot and McGregor's (2001) 2×2 of achievement goals: mastery-approach (getting better), mastery-avoidance (not slipping back), performance-approach (looking good) and performance-avoidance (not looking bad). Shown in full, with emphasis on three boxes; mastery-avoidance is shown lightly. Goals are what you aim for, and reasons are why: they're linked, not the same. Several goals at once is normal, and getting better and doing well often sit together (Barron and Harackiewicz, multiple goals). Performance-avoidance is the one most linked to avoiding challenge and giving up; performance-approach has mixed findings.
+
+  **Two moves.** Growth goals, or beating your own best (Martin; NSW growth goal setting), and process goals before outcome goals (Zimmerman and Kitsantas 1999), both from Barr's goal-setting work. "Is this worth it to me?" is task value (Barr; Eccles's expectancy, value and cost: can I do it, is it worth it, what does it cost me).
+
+  **Feelings.** Worry about looking bad is part of this lesson; the coach notices it and points back at getting better.
+
+  **Personal reflection.** The discussion uses only made-up learners. Apply is private, and the Try box stays in the student's browser. Students share only what they're comfortable with; nothing is collected or marked. If a student says something that suggests real distress about marks or pressure at home, follow your school's wellbeing process.
+running:
+  - "Think first: take a show of hands for each option, then read Ava's three reasons aloud."
+  - "The idea: put the goals grid on the board. Place one made-up learner's thought in each box as a class before students sort the rest."
+  - "The idea: say plainly that marks matter and are worth knowing. The point is what you steer toward."
+  - "Check: for Raj, ask what each of the other three thoughts would lead him to do next week."
+  - "Apply is private. Don't ask which box students are in."
+  - "Try: offer the two models to anyone stuck. Nothing is handed in."
+stuck:
+  - see: "A student says they only do homework because they have to."
+    ask: "That's honest, and a lot of people would say the same. Is there any part of it that's useful to you, even a small bit?"
+    fix: "Pushed reasons are normal. See if there's one reason of your own as well; if not, that's fine for now."
+  - see: "A student thinks wanting a good mark is bad."
+    ask: "Can you want a good mark and want to get better at the same time?"
+    fix: "Yes. Marks are worth knowing. The trouble is steering only toward the mark."
+  - see: "A student can't turn 'get an A' into something they'll do."
+    ask: "What would someone who gets an A in that subject actually do each week?"
+    fix: "Pick one of those things and make it the goal."
+stretch: "Think of something you do outside school because you want to. What makes that reason your own, and could any of it carry over to a school subject?"
+support: "The goals grid on a card with one example in each box, and two goal starters: 'This week I will…' and 'Better than last time at…'."
+leads: |
+  Next: when easy fools you. Why some study feels like learning but isn't much.
+
+  Teachers: For Learning skills teachers has notes on assessing self-regulated learning (keep it formative).
+exit:
+  q: "Turn 'get a better mark in science' into a goal about what you'll do."
+  a: "Any specific action the student controls, such as 'test myself on the key words twice this week' or 'redo the questions I got wrong'."
+explain: |
+  People do schoolwork for a **mix of reasons**: some **push** you from outside, some you **own**. Both are normal.
+
+  Goals differ too: **getting better**, **not slipping back**, **looking good** or **not looking bad**. Watch out for "not looking bad": it can make you avoid hard things.
+
+  **Marks are the scoreboard**: worth knowing, but not the same as getting better. Your learning coach asks "why does this matter to me?", tries to beat your own best, and sets goals about **what you'll do**, not just what you'll get.

@@ -85,7 +85,7 @@ export function strategySlides(S, card) {
   }
   const apps = Object.entries(card.apps || {}).map(([k, v]) => `- **${pt(k)}:** ${pt(v)}`).join('\n');
   return [
-    `${BADGE.discussion}\n\n## A strategy: ${pt(card.title)}\n\n${pt(card.idea)}\n\n${steps}` + note(`Name it and explain it (NEMO-T: Name, Explain). Say why it works, not only what to do. ${S.notes || ''}`),
+    `${BADGE.discussion}\n\n## A strategy: ${pt(card.title)}\n\n${pt(card.idea)}\n\n${steps}${card.why ? `\n\n**Why it works:** ${pt(card.why)}` : ''}` + note(`Name it and explain it (NEMO-T: Name, Explain). Say why it works, not only what to do.${card.cost ? ` Be honest about what it costs: ${oneLine(card.cost)}` : ''} ${S.notes || ''}`),
     `${BADGE.activity}\n\n## Watch me use it\n\n${S.task ? `**${pt(S.task)}**\n\n` : ''}Listen for each step of ${pt(card.title)}.` + note(`Model it with a think-aloud. ${aloud} Let one thing go slightly wrong so students hear you notice and recover.`),
     `${BADGE.activity}\n\n## Now you try it\n\nUse ${pt(card.title)} on today's task. Tell your partner which step you did first.` + note('Opportunity: students use it straight away on the real task. Walk round and listen for the steps; do not rescue early.'),
     `${BADGE.discussion}\n\n## Where else would this help?\n\n${apps || 'Think of another subject where you could use it.'}\n\n${link}` + note('Transfer: ask for one task from another class where it would help. Come back to this in a later lesson with a nudge, not a re-teach.'),

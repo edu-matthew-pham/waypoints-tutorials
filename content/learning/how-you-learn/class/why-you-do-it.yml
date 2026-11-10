@@ -1,0 +1,30 @@
+inquiry:
+  q: "If there were no marks at all, would people learn more or less at school?"
+  prompts:
+    - "What do marks tell you that's useful?"
+    - "What do marks make people do that doesn't help them learn?"
+    - "Would you still do the work?"
+  notes: "An open debate with good arguments both ways. Bring it back to the scoreboard: worth knowing, not the same as getting better. Keep it about people in general."
+activities:
+  - at: investigate
+    kind: activity
+    title: "The grid"
+    minutes: 5
+    do: |
+      Draw the goals grid. Where would each of these go? "Beat my last score." "Top of the class." "Just don't be the worst."
+    notes: "On the board, as a class, with made-up thoughts only. Point out that one learner can have thoughts in several boxes."
+  - at: end
+    kind: discussion
+    title: "For the teacher or for yourself?"
+    minutes: 6
+    do: |
+      In pairs: Mia writes a plan for her essay because the teacher checks it. Kai writes one because it helps him. The plans look the same. Does it matter which reason they had?
+    notes: "Aim for: the plan is the same, but Kai will probably keep doing it when nobody checks. That's the difference between doing it for the teacher and for yourself."
+questions:
+  - at: investigate
+    title: "Which box?"
+    type: question
+    q: "Sam doesn't put his hand up in case he's wrong. Which goal is that?"
+    options: ["Not looking bad", "Getting better", "Looking good"]
+    answer: 0
+    explain: "Avoiding looking bad can mean missing the chance to find out and get better."

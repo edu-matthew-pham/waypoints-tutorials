@@ -2,6 +2,25 @@
 
 `content/learning/`: self-regulation across subjects (proposal and research: `roadmap/shared.md` › Proposed: self-regulation strategies as an optional toolkit). Teacher page `content/learning-teachers.md`.
 
+## Rebuilt (10 Nov 2026; Matthew said go; still not tried with a class)
+
+Plan, decisions and terms: Project doc `claude/learning-skills-audit.md` (handoff `claude/handoff-learning-skills-rebuild.md`). Barr's public terms are the spine; other sources fill gaps only, cited under their own names.
+
+- **Why.** The audit found the course strong on the plan, check, look back cycle but treating self-directed learning as a skill beside self-regulated learning; beliefs only incidental; motivation, goals and grades absent; strategies taught without why or cost; and all four `shape: 5e` workshops opening with the same predict question (two of them maths trap puzzles, which framed self-regulation as maths and being caught out).
+- **Five workshops, `shape: primer`, each using only the stages it needs** (Matthew, 10 Nov: no template-as-checklist): 1 What do you believe about learning? (`what-you-believe`, new: belief statements, made-up learners, names self-regulated learning as being your own learning coach), 2 Your learning coach (`your-learning-coach`, replaces Who's steering?: who chose the task vs who coaches, the coach's three jobs, feelings, think-aloud as the coach's voice), 3 Why do you do it? (`why-you-do-it`, new: pushed vs owned reasons, the goals grid shown in full with emphasis on getting better, looking good and not looking bad, marks as the scoreboard, beat your own best, what you'll do vs what you'll get; opens on a made-up learner, Ava, with own reasons only in Apply), 4 When easy fools you (mostly kept; adds why the checks work), 5 Knowing it vs using it (`knowing-vs-using`, replaces Your strategies: try-first task, NEMO-T on What is it asking?, having it vs using it, the dip, if-then plan for the transfer task). The "did it help?" follow-up is in the last class plan and the course teacher page, not a sixth lesson.
+- **Approach: loosely explicit teaching.** The course teacher page says primer is the site's own shape, consistent with explicit teaching, not a named research model.
+- **Nib's slips:** new ids `fast-means-smart`, `set-task-no-coaching`, `good-mark-means-learned`, `didnt-help-first-time`; `easy-means-learned` kept; `fast-means-right`, `chose-it-so-regulated` and `one-strategy-for-everything` retired with their lessons.
+- **Personal reflection invited** (decision 2): students apply each idea to themselves and share only what they're comfortable with; discussion on made-up learners; nothing collected or marked. Recorded as `roadmap/rules.md` T4a (T4 stays firm).
+- **Grades named openly;** teacher pages recommend any assessment of self-regulated learning stays formative.
+- **Strategy cards:** every card has `why`, `cost` and `coach` lines (shown on the Reference page as "Why it works", "What it costs", "Ask yourself", and searchable); validate checks they're text. A deck's Teach it insert shows the card's why on the Name and Explain slide and its cost in the speaker note. Card ids unchanged, so the stuck link and the three Python Foundations inserts still resolve.
+- **Renamed lessons forward:** `RENAMED_LESSONS` in `tools/moved.mjs` (noticing-your-thinking → what-you-believe, who-is-steering → your-learning-coach, your-strategies → knowing-vs-using).
+- **Course pages:** new tagline "Be your own learning coach: plan it, check it, look back." (Matthew, 10 Nov), course and subject summaries, `teacher.md` (five workshops, personal reflection, grades, research with Barr as the spine), `content/learning-teachers.md` (definition, NEMO-T with why, the dip, marks and formative assessment, SEE, research).
+- **Needs a whole-site publish** (card display in `tools/ict-cards.mjs`, deck slide in `tools/teach.mjs`, forwarding pages, subject page).
+
+### Still to check
+
+- Barr's book: the self-directed vs self-regulated section, and whether the five lenses are his SRL Knowledge Framework (assumed, from Matthew's conversation with him; adjust wording if it differs). Also the umbrella line in workshop 5's teacher notes, carried over from the first build.
+
 ## Built (27 Oct 2026; Matthew said go; not yet tried with a class)
 
 - **Subject** Learning skills (order 7.5, `trail: units`), pathway How you learn.
@@ -33,5 +52,5 @@
 
 ## Open
 
-- Pilot with a class; follow up the workshop-4 "did it help?".
+- Pilot with a class; follow up the workshop-5 "did it help?".
 - Whether Code lesson guides should point at the Code cards.

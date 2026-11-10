@@ -1,0 +1,8 @@
+# Nib's thinking for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib starts a maths question about sharing pizzas fairly.
+Nib's friend finishes it in two minutes. Nib has been going for ten.
+Nib thinks: I'm much slower, so I must be bad at maths.
+Nib stops working on it and copies the friend's answer.
+# endregion
