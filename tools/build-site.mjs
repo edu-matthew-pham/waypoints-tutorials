@@ -580,6 +580,7 @@ ${NAV_JS}
 // question first ("Try first"); the answer, the Explain-it-to-me text, its picture and its clip open only after.
 // Short on purpose: retrieval first, then the explanation students already met in the lesson.
 const RECAP_CSS = `
+.wpt-lbbefore{margin:6px 0 0;font-size:15px}
 .rcunit{margin:28px 0 8px}.rcunit h2{font-size:1.15rem;margin:0 0 4px}.rcunit>p{margin:0 0 10px;color:var(--muted);font-size:15px}
 .rc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:10px 0}
 .rc:target{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}.rc{scroll-margin-top:calc(var(--nav,0px) + 12px)}.rcrev{margin:10px 0;padding:8px 12px;border-left:3px solid var(--accent)}.rcrev ul{margin:.3em 0;padding-left:20px}
@@ -647,8 +648,14 @@ function recapTarget(l) {
 // One recap card: the lesson's exit question, then its explanation, revision summary, picture and clip behind "Check your answer".
 // `to` is the lesson's folder relative to the page (the page must sit at the lesson's own depth, for pictures);
 // `id` the card's anchor; `numbered` shows the lesson's order before its title.
+// Maths lessons (`language: maths`) write $...$ in their exit and explain text: render it as on the lesson page (19 Nov 2026).
+let RECAP_MMD;
+const recapMaths = (l) => l.language === 'maths';
+const recapKatex = (ls, up) => ls.some(recapMaths) ? `<link rel="stylesheet" href="${up}_katex/katex.min.css">` : '';
 function recapCard(l, to, id, mdp, numbered = true) {
   const T = l.teacher || {};
+  if (recapMaths(l)) mdp = RECAP_MMD ||= new Marked().use(markedMath);
+  const tx = (t) => recapMaths(l) ? textWithMath(t, esc) : esc(t);
   if (!T.exit?.q && !T.explain) return '';
   const st = l.explainStep;
   const hasClip = st?.config.clip && existsSync(join(OUT, l.slug, 'clips', `${st.id}.mp4`));
@@ -657,11 +664,11 @@ function recapCard(l, to, id, mdp, numbered = true) {
   const pic = l.explainPicture ? pictureHtml(l, l.explainPicture, 'explain') : '';
   const dia = l.explainDiagram ? diagramHtml(l, l.explainDiagram, 'explain') : '';
   const rev = revisionOf(l);
-  const body = (T.exit?.a ? `<p class="rca">${esc(T.exit.a)}</p>` : '') + (T.explain ? `<div class="rcx">${mdp.parse(String(T.explain))}</div>` : '') + (rev ? `<div class="rcrev"><b>Revision summary</b>${mdp.parse(rev)}</div>` : '') + dia + pic + clip +
+  const body = (T.exit?.a ? `<p class="rca">${tx(T.exit.a)}</p>` : '') + (T.explain ? `<div class="rcx">${mdp.parse(String(T.explain))}</div>` : '') + (rev ? `<div class="rcrev"><b>Revision summary</b>${mdp.parse(rev)}</div>` : '') + dia + pic + clip +
     `<a class="rcgo" href="${esc(to)}">Open the lesson →</a>` +
     (l.coach ? `<div class="rccoach" hidden><p><b>Still stuck?</b> Try the lesson again first. Then, if your teacher has said you can, copy a coach prompt into the AI tool your school allows. It asks you questions; it won't give you the answers.</p><button type="button">Copy a coach prompt</button><textarea readonly hidden>${esc(l.coach)}</textarea></div>` : '');
   return `<article class="rc" id="${esc(id)}"><h3><a href="${esc(to)}">${numbered && l.order != null ? `${l.order}. ` : ''}${esc(l.title)}</a></h3>` +
-    (T.exit?.q ? `<p class="rcq"><b>Try first</b>${esc(T.exit.q)}</p><details><summary>Check your answer</summary>${body}</details>` : `<details><summary>Show the explanation</summary>${body}</details>`) +
+    (T.exit?.q ? `<p class="rcq"><b>Try first</b>${tx(T.exit.q)}</p><details><summary>Check your answer</summary>${body}</details>` : `<details><summary>Show the explanation</summary>${body}</details>`) +
     `</article>`;
 }
 
@@ -671,6 +678,12 @@ function recapCard(l, to, id, mdp, numbered = true) {
 function writeYearRecap(node, entry, courseOf) {
   const mdp = new Marked();
   const yp = `${node.path}/look-back/year-${entry.year}`, up = '../'.repeat(yp.split('/').length);
+  // Look-backs are for after a year. To get ready for a year, point back (never forward): the year before's look-back,
+  // or for the first year, the subject's Before Year 7 recap when there is one.
+  const prev = (node.meta.lookback || []).find((e) => String(e.year) === String(Number(entry.year) - 1));
+  const b7 = `${node.path}/before-year-7`;
+  const before = prev ? { href: `${node.path}/look-back/year-${prev.year}/`, label: `the Year ${prev.year} look-back` }
+    : dirs.has(b7) && existsSync(join(CONTENT_ROOT, b7)) ? { href: `${b7}/recap/`, label: 'the Before Year 7 recap' } : null;
   const sections = (entry.courses || []).map((c) => {
     if (!dirs.has(c)) throw new Error(`${node.path}/index.md: lookback year ${entry.year} names no course "${c}"`);
     const ls = courseOf(c).filter((l) => !l.optional);
@@ -679,8 +692,9 @@ function writeYearRecap(node, entry, courseOf) {
   }).join('');
   mkdirSync(join(OUT, yp), { recursive: true });
   writeFileSync(join(OUT, yp, 'index.html'), page(`Year ${entry.year} ${node.title.toLowerCase()}: look back`,
-    `<style>${RECAP_CSS}</style><header class="top"><a class="crumb" href="${up}${esc(node.path)}/">← ${esc(node.title)}</a><h1>Year ${esc(String(entry.year))} ${esc(node.title.toLowerCase())}: look back</h1>` +
-    `<p class="lede">Every idea from Year ${esc(String(entry.year))} ${esc(node.title.toLowerCase())} in one place. Answer each question in your head or on paper first, then check it. Nothing here is marked. If one is shaky, open the lesson and go over it again.</p></header>` +
+    `${recapKatex((entry.courses || []).flatMap((c) => courseOf(c)), up)}<style>${RECAP_CSS}</style><header class="top"><a class="crumb" href="${up}${esc(node.path)}/">← ${esc(node.title)}</a><h1>Year ${esc(String(entry.year))} ${esc(node.title.toLowerCase())}: look back</h1>` +
+    `<p class="lede">Every idea from Year ${esc(String(entry.year))} ${esc(node.title.toLowerCase())} in one place, for after you've done the year (or part of it). Answer each question in your head or on paper first, then check it. Nothing here is marked. If one is shaky, open the lesson and go over it again.</p>` +
+    (before ? `<p class="wpt-lbbefore">Getting ready for Year ${esc(String(entry.year))}? Start with <a href="${up}${esc(before.href)}">${esc(before.label)}</a>.</p>` : '') + `</header>` +
     sections + (sections.includes('rccoach') ? `<script>${RECAP_COACH_JS}</script>` : ''),
     '', navFor(yp, 'home')));
 }
@@ -694,10 +708,13 @@ function writeRecap(node, courseLessons) {
   const loose = required.filter((l) => !units.some((u) => u.id === l.unit));
   if (loose.length) groups.push({ u: { title: units.length ? 'More lessons' : '' }, ls: loose });
   const rp = `${node.path}/recap`, rup = '../'.repeat(rp.split('/').length);
+  const subj = dirs.get(node.path.split('/')[0]);
+  const yearOf = (Array.isArray(subj?.meta?.lookback) ? subj.meta.lookback : []).find((e) => (e.courses || []).includes(node.path));
   mkdirSync(join(OUT, rp), { recursive: true });
   writeFileSync(join(OUT, rp, 'index.html'), page(`Recap: ${node.title}`,
-    `<style>${RECAP_CSS}</style><header class="top"><a class="crumb" href="../">← ${esc(node.title)}</a><h1>${esc(node.title)}: recap</h1>` +
-    `<p class="lede">Answer each question in your head or on paper first, then check it.</p></header>` +
+    `${recapKatex(courseLessons, rup)}<style>${RECAP_CSS}</style><header class="top"><a class="crumb" href="../">← ${esc(node.title)}</a><h1>${esc(node.title)}: recap</h1>` +
+    `<p class="lede">For after the lessons: one card per lesson, to check what you remember. Answer each question in your head or on paper first, then check it. Nothing here is marked.</p>` +
+    (yearOf ? `<p class="wpt-lbbefore">Looking back over the whole year? See <a href="${rup}${esc(subj.path)}/look-back/year-${esc(String(yearOf.year))}/">the Year ${esc(String(yearOf.year))} look-back</a>.</p>` : '') + `</header>` +
     (existsSync(join(CONTENT_ROOT, node.path, 'recap.md')) ? `<section class="rcunit rc-synthesis">${mdp.parse(readFileSync(join(CONTENT_ROOT, node.path, 'recap.md'), 'utf8'))}</section>` : '') +
     groups.map((g) => `<section class="rcunit">${g.u.title ? `<h2>${esc(g.u.title)}</h2>` : ''}${g.ls.map(card).join('')}</section>`).join('') +
     (courseLessons.some((l) => l.coach) ? `<script>${RECAP_COACH_JS}</script>` : ''),
@@ -980,7 +997,7 @@ for (const node of dirs.values()) {
     const lookback = Array.isArray(node.meta?.lookback) ? node.meta.lookback : [];
     for (const e of lookback) writeYearRecap(node, e, (c) => lessons.filter((l) => l.slug.split('/').slice(0, -1).join('/') === c).sort((a, b) => (a.order ?? 0) - (b.order ?? 0)));
     const lookbackLinks = lookback.length ? `<style>.wpt-lookback{margin:18px 0 4px}.wpt-lookback h2{font-size:1.1rem;margin:0 0 2px}.wpt-lookback>p{color:var(--muted);font-size:14px;margin:0 0 8px}.wpt-lbrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}.wpt-lbrow .pcard b::after{content:' →';color:var(--accent)}</style>` +
-      `<section class="wpt-lookback"><h2>Look back over a year</h2><p>Every idea from a year's courses on one page, to check what you remember. Nothing is marked.</p><div class="wpt-lbrow">${lookback.map((e) => `<a class="pcard" href="look-back/year-${esc(String(e.year))}/"><b>Year ${esc(String(e.year))}</b><span>${(e.courses || []).length} courses</span></a>`).join('')}</div></section>` : '';
+      `<section class="wpt-lookback"><h2>Look back over a year</h2><p>For after a year: every idea from that year's courses on one page, to check what you remember. Nothing is marked. Getting ready for a new year? Look back over the year before.</p><div class="wpt-lbrow">${lookback.map((e) => `<a class="pcard" href="look-back/year-${esc(String(e.year))}/"><b>Year ${esc(String(e.year))}</b><span>After Year ${esc(String(e.year))} · ${(e.courses || []).length} courses</span></a>`).join('')}</div></section>` : '';
     // trail: true: the subject page opens on trailheads (Continue, then a card per pathway with a picture of its
     // trail and a "Start here" line from the pathway's fit:), with today's list as "List for teachers".
     // trail: units makes each unit a stop (science: one standard per unit); trail: true keeps one stop per course.
