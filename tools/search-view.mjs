@@ -8,7 +8,12 @@ export const SEARCH_CSS = `.wp-search{margin:14px 0 18px;max-width:680px}.wp-sea
 .wp-results{list-style:none;margin:8px 0 0;padding:0;border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}.wp-results:empty{display:none}
 .wp-results li+li{border-top:1px solid var(--line)}.wp-results a{display:block;padding:9px 12px;text-decoration:none;color:var(--ink)}
 .wp-results a:hover,.wp-results a:focus-visible{background:var(--bg)}.wp-results b{display:block}.wp-results span{display:block;color:var(--muted);font-size:13px}
-.wp-none{padding:10px 12px;color:var(--muted)}.wp-extra{margin:8px 0 0;font-size:14px}.wp-extra a{color:var(--accent)}`;
+.wp-none{padding:10px 12px;color:var(--muted)}.wp-extra{margin:8px 0 0;font-size:14px}.wp-extra a{color:var(--accent)}
+.wpt-sf{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:10px 0 0;font-size:14px}.wpt-sf[hidden]{display:none}.wpt-sf-l{display:inline-flex!important;gap:6px;align-items:center;font-weight:600!important;margin:0!important}
+.wpt-sf select{font:inherit;font-weight:400;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+.wpt-sf-y{display:inline-flex;flex-wrap:wrap;gap:4px;align-items:center}.wpt-sf-yl{font-weight:600;margin-right:2px}.wpt-sf-y button,.wpt-sf-clear{font:inherit;font-size:13px;font-weight:600;padding:4px 10px;border:1px solid var(--line);border-radius:99px;background:var(--card);color:var(--ink);cursor:pointer}
+.wpt-sf-y button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}.wpt-sf-y button:focus-visible,.wpt-sf select:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.wpt-sf-more{display:block;padding:0 12px 8px 24px;color:var(--muted);font-size:13px}`;
 
 export function searchBoxHtml({ root = '', subject = '', label = 'Find a lesson', hint = '', extra = '' } = {}) {
   const id = `wp-q-${subject || 'all'}`;
@@ -31,4 +36,9 @@ export const SEARCH_HINTS = {
   ai: 'Try how AI works, ethics, prompts',
   learning: 'Try planning, checking your work, stuck, revision, self-regulation',
   teachers: 'Try guides, Create, Make a lesson, AI tools',
+  history: 'Try sources, perspectives, ancient China, Year 7, or a code such as AC9HH7S03',
+  geography: 'Try water, liveability, maps, Year 7',
+  civics: 'Try democracy, laws, citizenship, Year 7',
+  economics: 'Try needs and wants, choices, money, Year 7',
+  hass: 'Try questions, sources, Before Year 7, Year 6',
 };

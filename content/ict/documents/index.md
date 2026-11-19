@@ -1,6 +1,7 @@
 ---
 title: Documents and slides
 summary: "Documents and slides for Years 6 to 8, taught by the ideas every word processor and slide app shares. A heading is a style that says what a part is, one change to a style reaches every part that uses it, and a slide carries one idea. Each idea is tried on a page or slide on the screen, then repeated in the app your school uses."
+keywords: "Word Google Docs PowerPoint Google Slides Keynote"
 tagline: "Headings, lists, layout and slides that people can read."
 years: "6-8"
 order: 2

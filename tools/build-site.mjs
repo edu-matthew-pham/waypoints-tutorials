@@ -44,7 +44,7 @@ import { IDEAS, PATHWAY_IDEAS } from './ideas-map.mjs';
 import { PRACTICE_JS } from './practice-core.mjs';
 import { PRACTICE_CSS, PRACTICE_UI_JS, practiceBody } from './practice-view.mjs';
 import { MATH_JS } from './math-expr.mjs';
-import { forwardRules, forwardPage, notFoundPage } from './moved.mjs';
+import { forwardRules, forwardPage, notFoundScript } from './moved.mjs';
 import { loadProgressions } from './progressions.mjs';
 import { priorLessons, challengeTest, crossLinks, lessonYearFn } from './prior-links.mjs';
 import { markedMath, textWithMath, workedHtml } from './maths.mjs';
@@ -406,16 +406,19 @@ const COURSES = [...new Set(lessons.map((l) => l.slug.split('/').slice(0, -1).jo
 const SUBJECTS = [...dirNode('').kids.entries()].filter(([, k]) => k.kind === 'dir')
   .map(([name, k]) => ({ path: name, title: k.title, order: k.order, group: typeof dirNode(name).meta?.group === 'string' ? dirNode(name).meta.group : undefined, pathways: Array.isArray(dirNode(name).meta?.pathways) ? dirNode(name).meta.pathways : [], map: dirNode(name).meta?.map === true && !!loadCurriculum(name), links: linksOf(name), teachers: k.audience === 'teachers' }))
   .sort((a, b) => a.teachers - b.teachers || (a.order ?? Infinity) - (b.order ?? Infinity) || a.title.localeCompare(b.title));
+// A course's student tagline: its own index.md, else its entry in the subject's pathways (shown on trails and as the
+// course page's lede in student view, 20 Nov 2026).
+const taglineOf = (coursePath) => { const hit = pathwayOf(coursePath); return dirs.get(coursePath)?.meta?.tagline || (hit?.pw.courses || []).find((c) => c.path === coursePath)?.tagline || ''; };
 const pathwayOf = (coursePath) => { for (const sub of SUBJECTS) for (const pw of sub.pathways) if ((pw.courses || []).some((c) => c.path === coursePath)) return { sub, pw }; return null; };
 // Subjects menu order (25 Oct 2026): the order of the `order:` in each subject's index.md; the home page uses it too.
-const navFor = (pagePath, here, coursePath = null) => {
+const navFor = (pagePath, here, coursePath = null, rootAt = null) => {
   const c = coursePath && COURSES.find((x) => x.path === coursePath);
   const at = (p) => pagePath === p || pagePath.startsWith(p + '/');
   const inPw = coursePath ? pathwayOf(coursePath) : null;
   const subjectOn = (sub) => at(sub.path) || inPw?.sub === sub || sub.links.some((l) => at(l.href.slice(0, -1)));
   const tsub = SUBJECTS.find((x) => x.teachers);
   return siteNav({
-    root: '../'.repeat(pagePath ? pagePath.split('/').length : 0), here, homeOn: pagePath === '', aboutOn: at('about') || at('approach') || at('behind-the-scenes'),
+    root: rootAt ?? '../'.repeat(pagePath ? pagePath.split('/').length : 0), here, homeOn: pagePath === '', aboutOn: at('about') || at('approach') || at('behind-the-scenes'),
     subjects: SUBJECTS.filter((x) => !x.teachers).map((sub) => ({ title: sub.title, href: `${sub.path}/`, on: subjectOn(sub), group: sub.group,
       // Each pathway with a built course, linking to its trail map (one click from anywhere, for students).
       pathways: sub.pathways.filter((pw) => pw.id && (pw.courses || []).some((c) => c.path)).map((pw) => ({ title: pw.title, href: `${sub.path}/paths/${pw.id}/`, on: at(`${sub.path}/paths/${pw.id}`) || inPw?.pw === pw })) })),
@@ -489,6 +492,13 @@ const segmentsOf = (l) => l.steps.filter((s) => !s.config.tier).flatMap((s) => {
     ? s.tasks.filter((t) => t.config.check).map((t) => ({ key: `${l.slug}/${t.id}`, href: `#${s.id}`, label: s.tasks.length > 1 ? `${step} › ${t.title}` : step, stage }))
     : s.config.check ? [{ key: `${l.slug}/${s.id}`, href: `#${s.id}`, label: step, stage }] : [];
 });
+function recapAfter(coursePath, depth) {
+  const subj = coursePath.split('/')[0], ly = (dirs.get(subj)?.meta?.lookback || []).find((e) => (e.courses || []).includes(coursePath));
+  if (ly) return { href: `${'../'.repeat(depth)}${subj}/recap/year-${ly.year}/`, title: `Year ${ly.year} ${dirs.get(subj).title.toLowerCase()} recap`, year: true };
+  const cl = lessons.filter((x) => x.slug.split('/').slice(0, -1).join('/') === coursePath);
+  const on = dirs.get(coursePath)?.meta?.recap !== false && dirs.get(subj)?.meta?.audience !== 'teachers' && cl.some((x) => !x.optional && (x.teacher?.exit?.q || x.teacher?.explain));
+  return on ? { href: '../recap/', title: `${dirs.get(coursePath)?.title || 'Course'} recap`, year: false } : null;
+}
 // Steps with a width tier (typical, wider) are extra contexts: their checks are not needed to finish a lesson.
 const checkKeys = (l) => l.steps.filter((s) => !s.config.tier).flatMap((s) => s.tasks.length ? s.tasks.filter((t) => t.config.check).map((t) => `${l.slug}/${t.id}`) : s.config.check ? [`${l.slug}/${s.id}`] : []);
 for (const l of lessons) {
@@ -504,6 +514,9 @@ for (const l of lessons) {
     playground: PLAY[parentPath] ? '../playground/' : '',
     // A practice set for this lesson (content/<course>/practice/<lesson>.yml) gets a card at the end of the lesson.
     practice: existsSync(join(CONTENT_ROOT, parentPath, 'practice', `${l.slug.split('/').pop()}.yml`)) ? `../practice/?skill=${l.slug.split('/').pop()}` : '',
+    // The last lesson of a course also points to a recap (20 Nov 2026, roadmap/student-nav.md Q4): the year's recap when
+    // the course is in its subject's lookback:, else the course's own recap page. "Back to the trail" stays beside it.
+    recap: i === sibs.length - 1 ? recapAfter(parentPath, l.slug.split('/').length) : null,
   });
 }
 
@@ -540,6 +553,18 @@ for (const h of HOWTOS) { const cs = h.courses.filter((c) => dirs.has(c)); SEARC
 { const paged = Object.values(REFRESHERS).filter((b) => b.page !== false);
   if (paged.length) SEARCH.entries.push({ t: 'Quick refreshers', u: 'refresh/', s: 'Teachers', sp: 'teachers', c: '', y: '', ty: 'page', d: 'One idea from an earlier year or another subject, in a minute or two: rates, percentages, reading a graph over time.', k: normSearch('quick refreshers refresher build up to it prior knowledge what you need to know teacher teachers') });
   for (const b of paged) SEARCH.entries.push({ t: b.title, u: `refresh/${b.id}/`, s: b.from ? titleCase(b.from) : 'Tutorials', sp: b.from || '', c: 'Quick refreshers', y: '', ty: 'refresher', d: b.summary, k: normSearch(`${b.title} ${b.summary} ${b.keywords} refresher what you need to know`) }); }
+// Recap pages in search (20 Nov 2026, roadmap/student-nav.md): each course recap and each year recap, as kind "recap",
+// so "recap", "revision" and "year 8 recap" find them. Same rule as the pages themselves (writeRecap, writeYearRecap).
+for (const c of COURSES) {
+  const cl = lessons.filter((x) => x.slug.split('/').slice(0, -1).join('/') === c.path);
+  if (!(dirs.get(c.path)?.meta?.recap !== false && dirs.get(c.path.split('/')[0])?.meta?.audience !== 'teachers' && cl.some((x) => !x.optional && (x.teacher?.exit?.q || x.teacher?.explain)))) continue;
+  const ce = SEARCH.entries.find((e) => e.ty === 'course' && e.u === `${c.path}/`);
+  SEARCH.entries.push({ t: `${dirs.get(c.path).title}: recap`, u: `${c.path}/recap/`, s: ce?.s || '', sp: c.path.split('/')[0], c: dirs.get(c.path).title, y: ce?.y || '', ty: 'recap', d: 'Every idea in the course in one place: try each question, then check it. Nothing is marked.', k: normSearch(`${dirs.get(c.path).title} recap revision revise review check ${ce?.k || ''}`) });
+}
+for (const sub of SUBJECTS) for (const e of (dirs.get(sub.path)?.meta?.lookback || [])) {
+  const y = String(e.year);
+  SEARCH.entries.push({ t: `Year ${y} ${sub.title.toLowerCase()}: recap`, u: `${sub.path}/recap/year-${y}/`, s: sub.title, sp: sub.path, c: '', y: `Year ${y}`, ty: 'recap', d: `Every idea from Year ${y} ${sub.title.toLowerCase()} in one place, for after the year. Nothing is marked.`, k: normSearch(`year ${y} ${sub.title} recap revision revise review exam check`) });
+}
 writeFileSync(join(OUT, 'search-index.json'), JSON.stringify(SEARCH.entries));
 copyFileSync(join('site', 'search.js'), join(OUT, 'search.js'));
 // Course names a course's pathway says to do first (its `after:`), for the teacher strip on a course page.
@@ -689,13 +714,16 @@ function writeYearRecap(node, entry, courseOf) {
     if (!dirs.has(c)) throw new Error(`${node.path}/index.md: lookback year ${entry.year} names no course "${c}"`);
     const ls = courseOf(c).filter((l) => !l.optional);
     const cards = ls.map((l) => recapCard(l, `${up}${l.slug}/`, l.slug.replace(/\//g, '-'), mdp, false)).join('');
-    return cards ? `<section class="rcunit"><h2><a href="${up}${esc(c)}/">${esc(dirs.get(c).title)}</a></h2>${cards}</section>` : '';
+    return cards ? `<section class="rcunit" id="c-${esc(c.split('/').pop())}"><h2><a href="${up}${esc(c)}/">${esc(dirs.get(c).title)}</a></h2>${cards}</section>` : '';
   }).join('');
+  // A contents row (20 Nov 2026): one jump link per course, since a year recap can run to sixty cards.
+  const contents = (entry.courses || []).filter((c) => courseOf(c).some((l) => !l.optional)).map((c) => `<a href="#c-${esc(c.split('/').pop())}">${esc(dirs.get(c).title)}</a>`).join('');
   mkdirSync(join(OUT, yp), { recursive: true });
   writeFileSync(join(OUT, yp, 'index.html'), page(`Year ${entry.year} ${node.title.toLowerCase()}: recap`,
     `${recapKatex((entry.courses || []).flatMap((c) => courseOf(c)), up)}<style>${RECAP_CSS}</style><header class="top"><a class="crumb" href="${up}${esc(node.path)}/">← ${esc(node.title)}</a><h1>Year ${esc(String(entry.year))} ${esc(node.title.toLowerCase())}: recap</h1>` +
     `<p class="lede">Every idea from Year ${esc(String(entry.year))} ${esc(node.title.toLowerCase())} in one place, for after you've done the year (or part of it). Answer each question in your head or on paper first, then check it. Nothing here is marked. If one is shaky, open the lesson and go over it again.</p>` +
-    (before ? `<p class="wpt-lbbefore">Getting ready for Year ${esc(String(entry.year))}? Start with <a href="${up}${esc(before.href)}">${esc(before.label)}</a>.</p>` : '') + `</header>` +
+    (before ? `<p class="wpt-lbbefore">Getting ready for Year ${esc(String(entry.year))}? Start with <a href="${up}${esc(before.href)}">${esc(before.label)}</a>.</p>` : '') +
+    (contents ? `<style>.wpt-rcjump{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}.wpt-rcjump a{border:1px solid var(--line);border-radius:99px;padding:4px 12px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;background:var(--card)}.wpt-rcjump a:hover{border-color:var(--accent)}.rcunit{scroll-margin-top:calc(var(--nav,0px) + 12px)}</style><nav class="wpt-rcjump" aria-label="Courses on this page">${contents}</nav>` : '') + `</header>` +
     sections + (sections.includes('rccoach') ? `<script>${RECAP_COACH_JS}</script>` : ''),
     '', navFor(yp, 'home')));
 }
@@ -857,7 +885,10 @@ for (const node of dirs.values()) {
     // Not for teacher courses (a folder with audience: teachers), which are for teachers, not revision.
     const recap = node.meta?.recap !== false && dirs.get(node.path.split('/')[0])?.meta?.audience !== 'teachers' && courseLessons.some((l) => !l.optional && (l.teacher?.exit?.q || l.teacher?.explain));
     const practice = practiceSkills(node, courseLessons);
-    const tools = (play ? `<a class="chip" href="playground/">Playground</a>` : '') + (ref || conceptualRef ? `<a class="chip" href="reference/">Reference</a>` : '') + (recap ? `<a class="chip" href="recap/">Recap</a>` : '') + (practice.length ? `<a class="chip" href="practice/">Practice</a>` : '') + (PROJECTS.has(node.path) ? `<a class="chip" href="projects/" data-projects="${esc(node.path)}">Projects</a>` : '') + (BRIEFS.has(node.path) ? `<a class="chip" href="briefs/">${BRIEFS.get(node.path).kind === 'skeleton' ? 'Inquiry skeletons' : 'Project briefs'}</a>` : '');
+    // Playground and Reference are in the navbar on every page of the course (navFor), so the chips leave them out
+    // (20 Nov 2026, roadmap/student-nav.md Q3); a reference the navbar doesn't know about keeps its chip.
+    const navRef = REFS.some((r) => r.path === `${node.path}/reference`) || ICT_CARDS.has(node.path);
+    const tools = ((ref || conceptualRef) && !navRef ? `<a class="chip" href="reference/">Reference</a>` : '') + (recap ? `<a class="chip" href="recap/">Recap</a>` : '') + (practice.length ? `<a class="chip" href="practice/">Practise</a>` : '') + (PROJECTS.has(node.path) ? `<a class="chip" href="projects/" data-projects="${esc(node.path)}">Projects</a>` : '') + (BRIEFS.has(node.path) ? `<a class="chip" href="briefs/">${BRIEFS.get(node.path).kind === 'skeleton' ? 'Inquiry skeletons' : 'Project briefs'}</a>` : '');
     if (recap) writeRecap(node, courseLessons);
     if (conceptualRef && !ref) {
       const refDir = `${node.path}/reference`;
@@ -903,8 +934,10 @@ for (const node of dirs.values()) {
     const groups = units.map((u) => ({ ...u, lessons: courseLessons.filter((l) => l.unit === u.id), planned: normPlanned(u) })).filter((g) => g.lessons.length || g.planned.length);
     const loose = courseLessons.filter((l) => !units.some((u) => u.id === l.unit));
     if (loose.length) groups.push({ id: '', title: units.length ? 'More lessons' : '', lessons: loose, planned: [] });
+    const norm = (t) => String(t).toLowerCase().replace(/^optional:\s*/, '').replace(/[^a-z0-9]+/g, ' ').trim();
     const rows = groups.map((g) => `<section class="unit"${g.id ? ` id="unit-${esc(g.id)}" data-unit="${esc(g.id)}"` : ''}>` +
-      (g.title ? `<div class="uhead"><h2>${esc(g.title)}</h2><span class="ustat">${!g.lessons.length && g.planned.length ? (g.planned.every((p) => p.label && p.label === g.planned[0].label) ? esc(g.planned[0].label) : 'Coming later') : ''}</span>${g.summary ? `<p>${esc(g.summary)}</p>` : ''}</div>` : '') +
+      // A one-lesson unit named like its lesson shows no heading of its own (20 Nov 2026: it only repeated the title).
+      (g.title && !(g.lessons.length === 1 && !g.planned.length && norm(g.title) === norm(g.lessons[0].title)) ? `<div class="uhead"><h2>${esc(g.title)}</h2><span class="ustat">${!g.lessons.length && g.planned.length ? (g.planned.every((p) => p.label && p.label === g.planned[0].label) ? esc(g.planned[0].label) : 'Coming later') : ''}</span>${g.summary ? `<p>${esc(g.summary)}</p>` : ''}</div>` : '') +
       `<div class="urows">${g.lessons.map(row).join('')}${(g.planned || []).map(plannedRow).join('')}</div></section>`).join('');
     const challenge = node.meta?.challenge ? `<span class="badge" id="badge" data-unit="${esc(node.meta.challenge)}" hidden>★ Challenge complete</span>` : '';
     const hasChecks = courseLessons.some((l) => segmentsOf(l).length);
@@ -923,14 +956,19 @@ for (const node of dirs.values()) {
       // Before Year 7 (26 Oct 2026): a course whose lessons link to catch-up lessons says so, with a link to that course.
       const cuIdx = catchUpIndex(), cuSlugs = new Set(courseLessons.flatMap((l) => (cuIdx.first.get(l.slug) || []).map((c) => c.slug)));
       const cuCourse = [...cuSlugs][0]?.split('/').slice(0, -1).join('/');
-      const catchCard = cuSlugs.size ? `<p class="wpt-catch"><b>Before Year 7</b> ${cuSlugs.size} short catch-up ${cuSlugs.size === 1 ? 'lesson leads' : 'lessons lead'} into this course, for students who need the earlier idea first: <a href="${up}${cuCourse}/">see them</a>. Each lesson links to its own catch-up lesson.</p>` : '';
-      return `<style>.wpt-catch{flex-basis:100%;margin:0;color:var(--muted)}.wpt-catch a{color:var(--accent)}.cstd{flex-basis:100%;margin:0;color:var(--muted)}.cstd a{color:var(--accent)}.cstrip{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;margin:12px 0 0;padding:10px 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:14px}.cfacts{display:flex;flex-wrap:wrap;gap:4px 18px;list-style:none;margin:0;padding:0}.cfacts b{color:var(--muted);font-weight:600;margin-right:4px}.wpt-teach{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin-left:auto}.wpt-teach a{color:var(--accent);font-weight:600}.copylink{font:inherit;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer}.copylink:hover{background:var(--bg)}.copymsg{color:var(--muted)}.wpt-crow-soon{padding:11px 16px;opacity:.78;cursor:default}.wpt-crow-head{display:flex;align-items:baseline;gap:10px}.wpt-crow-head .cnum{color:var(--muted);min-width:1.4em}.wpt-crow-head .ctitle{font-weight:600;color:var(--muted);flex:1}.wpt-crow-head .cstat{font-size:13px;color:var(--muted);font-style:italic}.wpt-crow-soon .csum{margin:4px 0 0 2.1em;font-size:14px;color:var(--muted)}@media print{.cstrip{display:none}}</style>` +
-        `<div class="cstrip"><ul class="cfacts">${facts.map(([k, v]) => `<li><b>${k}</b> ${esc(v)}</li>`).join('')}</ul><div class="wpt-teach">${guide}<button type="button" class="copylink" hidden>Copy link for students</button><span class="copymsg" role="status"></span></div>${catchCard}${stds}</div>`;
+      const catchCard = cuSlugs.size ? `<p class="wpt-catch"><b>Need a catch-up first?</b> ${cuSlugs.size === 1 ? 'One short Before Year 7 lesson leads' : `${cuSlugs.size} short Before Year 7 lessons lead`} into this course: <a href="${up}${cuCourse}/">Before Year 7 lessons</a>. Each lesson here links to its own catch-up lesson.</p>` : '';
+      // Student view first (20 Nov 2026, roadmap/student-nav.md Q1): the strip is one closed "For teachers" line below the
+      // Start card; teacher view opens it. The course summary (often written for teachers) goes inside when a tagline leads.
+      const tsum = taglineOf(node.path) && node.summary ? `<p class="wpt-tsum">${esc(node.summary)}</p>` : '';
+      const yf = facts.find(([k]) => k === 'Usually' || k === 'For');
+      const line = [yf ? `${yf[0]} ${yf[1]}` : '', `${core} lesson${core === 1 ? '' : 's'}${opt ? ` (and ${opt} optional)` : ''}`].filter(Boolean).join(' · ');
+      return `<style>.wpt-catch{flex-basis:100%;margin:0;color:var(--muted)}.wpt-catch a{color:var(--accent)}.cstd{flex-basis:100%;margin:0;color:var(--muted)}.cstd a{color:var(--accent)}.cstrip{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;margin:12px 0 0;padding:10px 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:14px}.cfacts{display:flex;flex-wrap:wrap;gap:4px 18px;list-style:none;margin:0;padding:0}.cfacts b{color:var(--muted);font-weight:600;margin-right:4px}.wpt-teach{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin-left:auto}.wpt-teach a{color:var(--accent);font-weight:600}.copylink{font:inherit;font-weight:600;color:var(--ink);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer}.copylink:hover{background:var(--bg)}.copymsg{color:var(--muted)}.wpt-crow-soon{padding:11px 16px;opacity:.78;cursor:default}.wpt-crow-head{display:flex;align-items:baseline;gap:10px}.wpt-crow-head .cnum{color:var(--muted);min-width:1.4em}.wpt-crow-head .ctitle{font-weight:600;color:var(--muted);flex:1}.wpt-crow-head .cstat{font-size:13px;color:var(--muted);font-style:italic}.wpt-crow-soon .csum{margin:4px 0 0 2.1em;font-size:14px;color:var(--muted)}.wpt-tline{margin:4px 0 18px;font-size:14px}.wpt-tline>summary{cursor:pointer;color:var(--muted);padding:6px 2px;list-style:revert}.wpt-tline>summary b{color:var(--ink);margin-right:4px}.wpt-tline .cstrip{margin-top:6px}.wpt-tsum{flex-basis:100%;margin:0;color:var(--ink)}.chips{flex-wrap:wrap}@media print{.cstrip,.wpt-tline{display:none}}</style>` +
+        `<details class="wpt-tline"><summary><b>For teachers</b> <span>${esc(line)}</span></summary><div class="cstrip">${tsum}<ul class="cfacts">${facts.map(([k, v]) => `<li><b>${k}</b> ${esc(v)}</li>`).join('')}</ul><div class="wpt-teach">${guide}<button type="button" class="copylink" hidden>Copy link for students</button><span class="copymsg" role="status"></span></div>${catchCard}${stds}</div></details>`;
     })();
-    const COPY_JS = `<script>(function(){var b=document.querySelector('.copylink');if(!b)return;b.hidden=false;var m=document.querySelector('.copymsg');b.addEventListener('click',function(){var u=location.origin+location.pathname;function ok(){m.textContent='Link copied';setTimeout(function(){m.textContent=''},2000)}function fb(){var t=document.createElement('textarea');t.value=u;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');ok()}catch(e){m.textContent=u}document.body.removeChild(t)}if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(ok,fb);else fb()})})();</script>`;
+    const COPY_JS = `<script>(function(){var t=document.querySelector('.wpt-tline');function o(){if(t)t.open=!!(window.wptView&&window.wptView())}o();document.addEventListener('wpt-view',o)})();(function(){var b=document.querySelector('.copylink');if(!b)return;b.hidden=false;var m=document.querySelector('.copymsg');b.addEventListener('click',function(){var u=location.origin+location.pathname;function ok(){m.textContent='Link copied';setTimeout(function(){m.textContent=''},2000)}function fb(){var t=document.createElement('textarea');t.value=u;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');ok()}catch(e){m.textContent=u}document.body.removeChild(t)}if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(ok,fb);else fb()})})();</script>`;
     writeFileSync(join(outDir, 'index.html'), page(node.title,
-      `<header class="top">${crumb}<div class="ctop"><h1>${esc(node.title)}</h1><nav class="chips" aria-label="Tools">${tools}</nav></div>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}${challenge}${strip}</header>` +
-      (hasChecks ? `<a class="continue" id="continue" href="${esc(courseLessons[0].slug.split('/').pop())}/"><span class="ck">Start</span><b>${esc(`${courseLessons[0].order != null ? `${courseLessons[0].order}. ` : ''}${courseLessons[0].title}`)}</b><span class="cstep"></span></a>` : '') +
+      `<header class="top">${crumb}<div class="ctop"><h1>${esc(node.title)}</h1>${tools ? `<nav class="chips" aria-label="Tools">${tools}</nav>` : ''}</div>${taglineOf(node.path) || node.summary ? `<p class="lede">${esc(taglineOf(node.path) || node.summary)}</p>` : ''}${challenge}</header>` +
+      (hasChecks ? `<a class="continue" id="continue" href="${esc(courseLessons[0].slug.split('/').pop())}/"><span class="ck">Start</span><b>${esc(`${courseLessons[0].order != null ? `${courseLessons[0].order}. ` : ''}${courseLessons[0].title}`)}</b><span class="cstep"></span></a>` : '') + strip +
       `<div class="course" id="course" data-kind="${play?.kind || ''}">${rows}</div>` + courseHowtos(HOWTOS, node.path, up, esc) +
       (hasChecks ? `<p class="cfoot" id="cfoot">Progress is saved in this browser only. Nothing is sent anywhere.</p>` : '') +
       (courseLessons.some((l) => l.teacher) ? `<p class="ptools">For teachers: <a href="${up}teach/${node.path}/">Teacher guide</a> (notes, answers, solutions, slides and worksheets)</p>` : ''),
@@ -1052,8 +1090,8 @@ for (const node of dirs.values()) {
         const cs = pw.courses || [], f = cs.filter((c) => (c.stage || 'foundations') === 'foundations'), x = cs.filter((c) => c.stage === 'extensions');
         return `<section><h2><a href="paths/${esc(pw.id)}/">${esc(pw.title)} <span aria-hidden="true">›</span></a></h2><ul>${f.map(row).join('')}${x.length ? `${f.length ? '<li class="pst">After the foundations</li>' : ''}${x.map(row).join('')}` : ''}</ul></section>`;
       }).join('') + `</div><p class="pmore">Each pathway's page has the full course descriptions, in order.</p>`;
-    const viewToggle = `<script>(function(){var d=document.documentElement;d.classList.add('js-on');try{if(localStorage.getItem('wp-pathview')!=='list')d.classList.add('trail-on')}catch(e){d.classList.add('trail-on')}})()</script>` +
-      `<div class="ptoggle" role="group" aria-label="View"><button type="button" data-view="map">Trails</button><button type="button" data-view="list">List for teachers</button></div>`;
+    const viewToggle = `<script>(function(){var d=document.documentElement;d.classList.add('js-on');if(!d.classList.contains('wpt-tv'))d.classList.add('trail-on')})()</script>` +
+      `<div class="ptoggle" role="group" aria-label="View"><button type="button" data-wpt-view="student">Student view</button><button type="button" data-wpt-view="teacher">Teacher view</button></div>`;
     // Find a lesson (25 Oct 2026): the search box limited to this subject, with the ways teachers also look beside it.
     const finders = [cur ? `<a href="map/">Curriculum map</a>` : '', node.path === 'code' ? `<a href="${up}teach/code/ideas/">How coding ideas build</a> · <a href="${up}teach/code/review/">Review sheet</a>` : ''].filter(Boolean);
     const subjSearch = searchBoxHtml({ root: up, subject: node.path, hint: SEARCH_HINTS[node.path] || SEARCH_HINTS[''], extra: finders.length ? `Or browse: ${finders.join(' · ')}` : '' });
@@ -1062,7 +1100,8 @@ for (const node of dirs.values()) {
       href: (p) => `${up}${p}/`, titleOf: (p) => { if (!dirs.has(p)) throw new Error(`${node.path}/index.md: purposes names no course "${p}"`); return dirs.get(p).title; } }) : '';
     writeFileSync(join(outDir, 'index.html'), page(node.title,
       (heads ? `<style>${TRAIL_CSS}${TRAILHEADS_CSS}</style>` : '') +
-      `<header class="top">${crumb}<h1>${esc(node.title)}</h1>${node.summary ? `<p class="lede">${esc(node.summary)}</p>` : ''}</header>${subjSearch}${heads ? '' : purposesBlock + mapLink}` +
+      // Student view (20 Nov 2026, roadmap/student-nav.md): one plain line; the summary, written for teachers, in teacher view.
+      `<header class="top">${crumb}<h1>${esc(node.title)}</h1>${node.summary ? (heads ? `<p class="lede wpt-s-only">${esc(node.meta?.students || 'Find your lesson below, or pick a trail and follow it.')}</p><p class="lede wpt-t-only">${esc(node.summary)}</p>` : `<p class="lede">${esc(node.summary)}</p>`) : ''}</header>${subjSearch}${heads ? '' : purposesBlock + mapLink}` +
       // With trails, students start on the trailheads; the curriculum map card follows them (both views).
       (heads ? `${viewToggle}<div class="pview-map">${heads}</div><div class="pview-list">${teacherStartLinks(up)}${purposesBlock}${pindex}</div>${mapLink}${lookbackLinks}` : body + lookbackLinks) + create,
       `<script src="${up}progress.js" data-root="${up}" defer></script>` + (heads ? `<script src="${up}trailheads.js" data-root="${up}" defer></script>` : ''), navFor(node.path, 'home')));
@@ -1079,8 +1118,8 @@ for (const node of dirs.values()) {
       // is remembered per browser; without JavaScript the list shows. tools/trail.mjs, site/trail.js.
       // trail: units opens courses into their units on the map (one at a time); trailheads keep one dot per course.
       const trail = useTrail && trailHtml(layoutTrail(pw, pathways, dirs, lessonCount, { stops: trailOpts.stops === 'units' ? 'expand' : 'courses' }), pup, esc, { projects: (path) => PROJECTS.get(path)?.projects.length || 0, back: { href: '../../', label: `All ${node.title} pathways` } });
-      const view = `<script>(function(){var d=document.documentElement;d.classList.add('js-on');try{if(localStorage.getItem('wp-pathview')!=='list')d.classList.add('trail-on')}catch(e){d.classList.add('trail-on')}})()</script>` +
-        `<div class="ptoggle" role="group" aria-label="View"><button type="button" data-view="map">Trail map</button><button type="button" data-view="list">List for teachers</button></div>`;
+      const view = `<script>(function(){var d=document.documentElement;d.classList.add('js-on');if(!d.classList.contains('wpt-tv'))d.classList.add('trail-on')})()</script>` +
+        `<div class="ptoggle" role="group" aria-label="View"><button type="button" data-wpt-view="student">Student view</button><button type="button" data-wpt-view="teacher">Teacher view</button></div>`;
       writeFileSync(join(OUT, pp, 'index.html'), page(`${pw.title}: ${node.title}`,
         (useTrail ? `<style>${TRAIL_CSS}</style>` : '') + `<style>.pswitch{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:2px 0 10px}.pswitch a{border:1px solid var(--line);border-radius:99px;padding:4px 12px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;background:var(--card)}.pswitch a:hover{border-color:var(--accent)}.pswitch a[aria-current]{background:var(--ink);color:var(--card);border-color:var(--ink)}.pswitch .pall{border-style:dashed}</style>` +
         `<header class="top"><nav class="pswitch" aria-label="Pathways in ${esc(node.title)}"><a class="pall" href="../../">← All ${esc(node.title)} pathways</a>${pathways.map((x) => `<a href="../${esc(x.id)}/"${x === pw ? ' aria-current="page"' : ''}>${esc(x.title)}</a>`).join('')}</nav><h1>${esc(pw.title)}</h1>${pw.summary ? `<p class="lede">${esc(pw.summary)}</p>` : ''}</header>` +
@@ -1435,7 +1474,12 @@ for (const [from, to] of FORWARDS) {
   mkdirSync(join(OUT, from), { recursive: true });
   writeFileSync(join(OUT, from, 'index.html'), forwardPage(to));
 }
-writeFileSync(join(OUT, '404.html'), notFoundPage(FORWARDS));
+// 404 (20 Nov 2026, roadmap/student-nav.md): forwards old addresses first; else the navbar, a search box with the last
+// word of the address filled in, and a link home. Links are from the site root, since the page answers at any depth.
+writeFileSync(join(OUT, '404.html'), page('Page not found',
+  `<header class="top"><h1>Page not found</h1><p class="lede">This page doesn't exist, or it has moved. Search for the lesson below, or <a href="/">go to the home page</a>.</p></header>` +
+  searchBoxHtml({ root: '/', hint: SEARCH_HINTS[''] }) + `<script>(function(){var w=location.pathname.split('/').filter(Boolean).pop()||'';w=decodeURIComponent(w).replace(/[-_]+/g,' ').replace(/\.html?$/,'');var i=document.querySelector('.wp-search input');if(i&&w&&!/^index$/.test(w)&&!new URLSearchParams(location.search).get('q'))i.value=w})()</script>`,
+  '', navFor('', 'home', null, '/'), notFoundScript(FORWARDS) + '<meta name="robots" content="noindex">'));
 writeFileSync(join(OUT, '.nojekyll'), '');
 // Pages keeps its custom domain only while the published branch has this file, and a rebuild publish replaces the branch.
 writeFileSync(join(OUT, 'CNAME'), 'tutorials.learningwaypoints.com\n');

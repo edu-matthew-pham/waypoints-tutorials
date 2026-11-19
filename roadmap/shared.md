@@ -2,7 +2,10 @@
 
 Things more than one subject depends on: the build, publishing, the home and plain pages, and shared tools (`tools/*.mjs`, `tools/lesson-view.mjs`, `playground-shared/`, `playground-board/core.js`). Before changing one of these, check this file and `git log` for work in progress, and note here what you are changing.
 
-## Proposed (19 Nov 2026, Matthew asked; plan only, waiting for go): student navigation and search filters
+## Built (20 Nov 2026, Matthew's go; whole-site publish needed): student navigation, teacher view and search filters
+Built as planned with Matthew's decisions (`roadmap/student-nav.md` › Built): a site-wide student view / teacher view switch (`wp-view`), student-first course and lesson pages, and search filters kept in the URL.
+
+## Planned (19 Nov 2026): student navigation and search filters
 Plan in `roadmap/student-nav.md`: 26 findings from walking six subjects as a student (dark-mode footer buttons unreadable, teacher strip and footer ahead of student content, Width and 5E words, Code chip row overflowing on phones, trails drawing later years as next stops), fixes grouped by cost, and a search proposal (Subject, Year and "For students / Everything" filters in the URL, recap pages indexed, typo and question-word tolerance, results grouped by course). Will change `build-site.mjs`, `lesson-view.mjs`, `search-view.mjs`, `search-index.mjs`, `site/search.js`, `site/progress.js` and possibly `trail.mjs`/`site/trail.js`; no clips. Note: the search index is now 1.25 MB (243 KB gzipped).
 
 ## Built (19 Nov 2026, Matthew asked): year recaps (were look-backs), maths on recap cards

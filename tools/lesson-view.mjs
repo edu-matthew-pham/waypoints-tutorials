@@ -79,8 +79,11 @@ export const STAGE_INFO_SPEECH = {
   practise: ['Rehearse', 'Say it aloud to a partner or a mirror, then change one thing.'],
   info: ['Present and check', 'Present in class, then check it against your plan.'],
 };
-const TIER_LABEL = { typical: 'Typical', wider: 'Wider' };
+// Step tags for extra-example steps: plain words for students, the tier name in teacher view (20 Nov 2026).
+const TIER_LABEL = { typical: 'Extra<span class="wpt-t-only"> · typical</span>', wider: 'More<span class="wpt-t-only"> · wider</span>' };
 export const STAGE_PREFIX = /^(Predict|Run|Investigate|Modify|Practise|Make|Info):\s*/i;
+const FIVE_E_PREFIX = /^(Engage|Explore|Explain|Elaborate|Evaluate):\s*/;
+const FIVE_E = new Set(['Engage', 'Explore', 'Explain', 'Elaborate', 'Evaluate']);
 
 
 export function codeBlock(highlightCode, src, lang, label) {
@@ -129,7 +132,7 @@ section.step{scroll-margin-top:calc(var(--nav,0px) + var(--cb,0px) + 64px)}
 .coursebar{position:sticky;top:var(--nav,0px);z-index:11;display:flex;align-items:center;justify-content:space-between;gap:8px;height:46px;background:var(--bg);border-bottom:1px solid var(--line)}
 .coursebar a,.cb-toggle{font:inherit;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;background:none;border:0;cursor:pointer;padding:6px 8px;border-radius:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:34vw}
 .coursebar a:hover,.cb-toggle:hover{background:var(--card)}
-.cb-prev,.cb-next{flex:0 1 auto;min-width:34px}.cb-next{text-align:right}
+.cb-prev,.cb-next{flex:0 1 auto;min-width:34px}.cb-next{text-align:right}.coursebar a.cb-prev,.coursebar a.cb-next{max-width:26%}
 .cb-mid{position:relative;flex:1;min-width:0;text-align:center}.cb-toggle{max-width:100%}
 .cb-menu{position:absolute;left:50%;transform:translateX(-50%);top:42px;width:min(92vw,440px);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:0 8px 28px rgba(0,0,0,.18);text-align:left}
 .cb-menu[hidden]{display:none}.cb-menu ul{list-style:none;margin:0;padding:0}
@@ -291,6 +294,14 @@ footer{margin-top:50px;color:var(--muted);font-size:14px}
  */
 export const MAIN_SITE = 'https://learningwaypoints.com/';
 export const PREPARE_SITE = 'https://prepare.learningwaypoints.com/';
+export const TV_JS = `(function(){var d=document.documentElement,K='wp-view',t=false;
+try{var q=new URLSearchParams(location.search).get('teacher');if(q==='1'||q==='0')localStorage.setItem(K,q==='1'?'teacher':'student');var v=localStorage.getItem(K);
+if(!v&&localStorage.getItem('wp-pathview')==='list'){v='teacher';localStorage.setItem(K,v)}t=v==='teacher'}catch(e){}
+function marks(){[].forEach.call(document.querySelectorAll('[data-wpt-view]'),function(b){if(b.tagName==='BUTTON'&&!b.classList.contains('wpt-tvon'))b.setAttribute('aria-pressed',String((b.dataset.wptView==='teacher')===t))})}
+function set(x,save){t=!!x;d.classList.toggle('wpt-tv',t);if(d.classList.contains('js-on'))d.classList.toggle('trail-on',!t);if(save)try{localStorage.setItem(K,t?'teacher':'student')}catch(e){}marks();try{document.dispatchEvent(new CustomEvent('wpt-view',{detail:{teacher:t}}))}catch(e){}}
+window.wptView=function(x){if(x!==undefined)set(x,true);return t};set(t,false);
+if(!window.wptViewClick){window.wptViewClick=1;document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-wpt-view],[data-wpt-flip]');if(!b)return;set(b.hasAttribute('data-wpt-flip')?!t:b.dataset.wptView==='teacher',true)});
+document.addEventListener('DOMContentLoaded',marks)}})();`;
 export function siteNav({ root = '', subjects = [], teachers = null, current = null, here = 'home', homeOn = false, aboutOn = false }) {
   const link = (href, text, on, cls = '') => `<a${cls ? ` class="${cls}"` : ''} href="${esc(root + href)}"${on ? ' aria-current="page"' : ''}>${esc(text)}</a>`;
   const dd = (id, top, label, items, on, cls = '') => `<div class="sn-dd${on ? ' on' : ''}">${top}<button type="button" class="sn-caret" aria-expanded="false" aria-controls="${id}" aria-label="${esc(label)}">▾</button><div class="sn-sub${cls}" id="${id}">${items}</div></div>`;
@@ -298,6 +309,7 @@ export function siteNav({ root = '', subjects = [], teachers = null, current = n
   // Teachers (the teacher pages and Prepare), About. Curriculum maps are reached from each subject's own page.
   // Grouped (30 Oct 2026): subjects carry `group:` from their index.md; groups show in the order they first appear.
   // Subject names only: each subject's own page opens on its pathways. Without groups, the older layout is used.
+  const tvFlip = `<button type="button" class="wpt-vflip" data-wpt-flip><span class="wpt-s-only">Turn on teacher view</span><span class="wpt-t-only">Teacher view is on: turn off</span></button>`;
   const hasGroups = subjects.some((s) => s.group);
   const grouped = subjects.some((s) => s.pathways?.length);
   let subjectsItems;
@@ -310,7 +322,7 @@ export function siteNav({ root = '', subjects = [], teachers = null, current = n
     : link(s.href, s.title, s.on)).join('');
   const subjectsMenu = dd('sn-subjects', link('', 'Subjects', homeOn, 'sn-top'), 'Subjects menu', subjectsItems, homeOn || subjects.some((s) => s.on), grouped || hasGroups ? ' sn-grid' : '');
   const teachersMenu = teachers ? dd('sn-teachers', link(teachers.href, 'Teachers', teachers.on && !teachers.items.some((x) => x.on), 'sn-top'), 'Teachers menu',
-    teachersItems(teachers.items), teachers.on, teachers.items.some((x) => x.group) ? ' sn-grid sn-grid2' : '') : '';
+    `<div class="sn-tvrow">${tvFlip}</div>` + teachersItems(teachers.items), teachers.on, teachers.items.some((x) => x.group) ? ' sn-grid sn-grid2' : '').replace('<div class="sn-dd', '<div class="sn-dd sn-tdd') : '';
   // Teachers menu items may carry `group:` (content/teachers/index.md): shown as headed groups, in the order the
   // groups first appear; Prepare (another site) joins the "Make your own" group, or ends the list without groups.
   function teachersItems(items) {
@@ -326,11 +338,15 @@ export function siteNav({ root = '', subjects = [], teachers = null, current = n
     (current.playground ? link(`${current.href}playground/`, 'Playground', here === 'playground') : '') +
     (current.reference ? link(`${current.href}reference/`, 'Reference', here === 'reference') : '') +
     link(current.href, 'My progress', here === 'course');
-  return `<nav class="sitenav" data-here="${esc(here)}" aria-label="Site"><div class="sn-in">` +
+  // Teacher view (20 Nov 2026, roadmap/student-nav.md): one per-browser switch (localStorage wp-view, nothing sent;
+  // ?teacher=1 or 0 sets it). This script sits first in the navbar, so it marks <html> before the page below is drawn:
+  // .wpt-tv in teacher view; .wpt-t-only parts show only then, .wpt-s-only parts only in student view. It tidies pages
+  // and hides nothing secret. Any element with data-wpt-view="teacher|student" sets it, data-wpt-flip flips it.
+  return `<nav class="sitenav" data-here="${esc(here)}" aria-label="Site"><script>${TV_JS}</script><div class="sn-in">` +
     `<a class="sn-brand" href="${MAIN_SITE}" title="Learning Waypoints: the main site">Learning Waypoints <span aria-hidden="true">↗</span></a>` +
     `<button type="button" class="sn-menu" aria-expanded="false" aria-controls="sn-main">Menu ▾</button>` +
     `<div class="sn-main" id="sn-main">${subjectsMenu}${teachersMenu}${about}</div>` +
-    `<span class="sn-grow"></span><a class="sn-back" href="#" hidden></a><div class="sn-tools">${tools}</div></div></nav>`;
+    `<span class="sn-grow"></span><a class="sn-back" href="#" hidden></a><div class="sn-tools">${tools}<button type="button" class="wpt-tvon wpt-t-only" data-wpt-view="student" title="You are in teacher view. Press to see pages as students do.">Teacher view ✕</button></div></div></nav>`;
 }
 export const NAV_CSS = `/*wp-nav-css*/.sitenav{background:var(--card);border-bottom:1px solid var(--line);font-size:14px;position:sticky;top:0;z-index:20}
 html{scroll-padding-top:var(--nav,0px)}
@@ -353,11 +369,15 @@ html{scroll-padding-top:var(--nav,0px)}
 @media(max-width:700px){.sn-menu{display:inline-block;margin-left:auto}.sn-main{display:none;order:9;flex-basis:100%;flex-direction:column;align-items:stretch;padding:4px 0 8px}.sitenav.open .sn-main{display:flex;max-height:calc(100vh - 120px);overflow-y:auto}
 .sn-dd{flex-direction:column;align-items:stretch}.sn-caret{display:none}.sn-sub{display:flex;position:static;border:0;box-shadow:none;padding:0 0 0 16px;min-width:0;background:none}.sn-dd .sn-grid{display:flex!important;width:auto;max-width:none}.sitenav .sn-grp .sn-pw{padding:4px 10px 4px 22px}
 .sitenav a[aria-current]{box-shadow:none}.sn-tools{order:8;flex-basis:100%;justify-content:flex-start;padding-bottom:6px;overflow-x:auto}.sitenav .sn-back{order:7;flex-basis:100%;max-width:none;margin:2px 0 6px;text-align:center}}
+html:not(.wpt-tv) .wpt-t-only{display:none!important}html.wpt-tv .wpt-s-only{display:none!important}
+.sn-tvrow{grid-column:1/-1;padding:2px 4px 6px;border-bottom:1px solid var(--line);margin-bottom:4px}.wpt-vflip{font:inherit;font-weight:600;font-size:13px;color:var(--accent);background:none;border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:99px;padding:5px 12px;cursor:pointer}.wpt-vflip:hover{background:var(--bg)}
+.wpt-tvon{font:inherit;font-size:12px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent);border:0;border-radius:99px;padding:4px 10px;margin-left:6px;cursor:pointer;white-space:nowrap}
+@media(max-width:700px){.sn-tvrow{border:0;padding:4px 0 8px 16px}.sn-dd.sn-tdd{flex-direction:row;flex-wrap:wrap;align-items:center}.sn-tdd .sn-caret{display:inline-block;margin-left:0}.sn-dd.sn-tdd .sn-sub{display:none!important;flex-basis:100%}.sn-dd.sn-tdd.open .sn-sub{display:flex!important}.sn-open .coursebar,.sn-open nav.steps{visibility:hidden}}
 @media print{.sitenav{display:none}}/*wp-nav-css-end*/`;
 export const NAV_JS = `/*wp-nav-js*/(function(){var n=document.querySelector('.sitenav');if(!n)return;var K='wp-from',here=n.dataset.here;
 // Sticky navbar: publish its height as --nav (course bar, step pills and anchors sit below it).
 var nh=function(){document.documentElement.style.setProperty('--nav',n.offsetHeight+'px')};nh();if(window.ResizeObserver)new ResizeObserver(nh).observe(n);else window.addEventListener('resize',nh);
-var mb=n.querySelector('.sn-menu');if(mb)mb.addEventListener('click',function(){var o=n.classList.toggle('open');mb.setAttribute('aria-expanded',String(o))});
+var mb=n.querySelector('.sn-menu');if(mb)mb.addEventListener('click',function(){var o=n.classList.toggle('open');document.documentElement.classList.toggle('sn-open',o);mb.setAttribute('aria-expanded',String(o))});
 [].forEach.call(n.querySelectorAll('.sn-caret'),function(c){var d=c.parentNode;c.addEventListener('click',function(){var o=d.classList.toggle('open');c.setAttribute('aria-expanded',String(o))})});
 document.addEventListener('click',function(e){[].forEach.call(n.querySelectorAll('.sn-dd.open'),function(d){if(!d.contains(e.target)){d.classList.remove('open');d.querySelector('.sn-caret').setAttribute('aria-expanded','false')}})});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')[].forEach.call(n.querySelectorAll('.sn-dd.open'),function(d){d.classList.remove('open')})});
@@ -774,8 +794,10 @@ export function lessonPageHtml(lesson, deps) {
   });
   // "Predict: what will `greet` return?" -> "What will <code>greet</code> return?"
   if (isMaths) md.use(maths.markedMath);
+  // 5E words at the start of a step title ("Engage: …") show in teacher view only (20 Nov 2026, roadmap/student-nav.md Q6).
   const heading = (t) => {
-    const s = t.replace(STAGE_PREFIX, '');
+    const s = t.replace(STAGE_PREFIX, ''), e = s.match(FIVE_E_PREFIX);
+    if (e) { const r = s.slice(e[0].length); return `<span class="wpt-t-only">${esc(e[0])}</span>${md.parseInline(r.charAt(0).toUpperCase() + r.slice(1))}`; }
     return md.parseInline(s.charAt(0).toUpperCase() + s.slice(1));
   };
   const isSci = (lesson.language === 'science' && lesson.shape !== 'primer' && lesson.shape !== 'speech') || lesson.shape === '5e';
@@ -786,11 +808,13 @@ export function lessonPageHtml(lesson, deps) {
   // Width tiers: steps marked typical or wider are extra contexts. A teacher sets the starting width with ?width=;
   // students can widen but not narrow. Tiered checks are not needed to finish the lesson.
   const tiered = lesson.steps.some((s) => s.config.tier);
-  const widthBar = !tiered ? '' : `<div class="widthbar" aria-label="Lesson width"><div><b>Width</b><span class="wnote">More contexts, same idea.</span></div><div class="wseg" role="group" aria-label="Choose width">${TIERS_UI.map((t) => `<button type="button" data-w="${t}" aria-pressed="false">${t[0].toUpperCase() + t.slice(1)}</button>`).join('')}</div></div>`;
+  // Students see a plain choice of how many extra examples (20 Nov 2026, roadmap/student-nav.md Q5); teacher view adds
+  // the tier names. Width stays a teacher planning idea (rules T9, T10).
+  const widthBar = !tiered ? '' : `<div class="widthbar" aria-label="Extra examples"><div><b>Extra examples</b><span class="wnote">Your teacher may tell you which.</span></div><div class="wseg" role="group" aria-label="How many extra examples">${TIERS_UI.map((t) => `<button type="button" data-w="${t}" aria-pressed="false">${TIER_WORDS[t]}<span class="wpt-t-only"> (${t})</span></button>`).join('')}</div></div>`;
   const legendKeys = stagesUsed.filter((k, i) => SI[k] && stagesUsed.findIndex((j) => SI[j]?.[0] === SI[k][0]) === i);
   const legend = legendKeys.map((k) => `<li style="--c:var(--${k})"><b>${SI[k][0]}</b>: ${esc(SI[k][1])}</li>`).join('');
   // Folded by default: the same list is on every lesson, and the step pills already name the stages.
-  const legendBox = legend ? `<details class="legendbox"><summary>How this lesson works: ${legendKeys.map((k) => esc(SI[k][0])).join(', ')}</summary><ul class="legend">${legend}</ul></details>` : '';
+  const legendBox = legend ? `<details class="legendbox${legendKeys.some((k) => FIVE_E.has(SI[k][0])) ? ' wpt-t-only' : ''}"><summary>How this lesson works: ${legendKeys.map((k) => esc(SI[k][0])).join(', ')}</summary><ul class="legend">${legend}</ul></details>` : '';
 
   // Display code for a step's (or a lead-in's) code: file#region.
   const codeOf = (ref) => {
@@ -877,7 +901,7 @@ export function lessonPageHtml(lesson, deps) {
         : c.reveal ? `${body}${dia}${showCode}${shown}${tryHtml(s)}${compare}${hints}${expectedHtml(c, s.id)}${clip}${checks}`
         : `${body}${dia}${showCode}${shown}${clip}${tryHtml(s)}${compare}${hints}${expectedHtml(c, s.id)}${checks}`;
     }
-    return `<section class="step" id="${s.id}" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})"${tierAttr(c)}><div class="chip">${esc(label)}${c.tier ? ` <span class="tierchip">${TIER_LABEL[c.tier]}</span>` : ''}<small>${esc(hint)}</small></div><h2>${heading(s.title)}</h2>${inner}</section>`;
+    return `<section class="step" id="${s.id}" style="--c:var(--${STAGE_INFO[c.stage] ? c.stage : 'info'})"${tierAttr(c)}><div class="chip">${FIVE_E.has(label) ? `<span class="wpt-t-only">${esc(label)}</span>` : esc(label)}${c.tier ? ` <span class="tierchip">${TIER_LABEL[c.tier]}</span>` : ''}<small>${esc(hint)}</small></div><h2>${heading(s.title)}</h2>${inner}</section>`;
   }).join('');
 
   // Course bar (prev / where am I / next) and the card at the end. course: { index, total, prev, next, list, pathHref, pathTitle, playground }
@@ -936,6 +960,10 @@ export function lessonPageHtml(lesson, deps) {
   const needAip = lesson.steps.some((x) => x.config.prompt || x.config.video);
   const extraHead = (needRs ? `<style>${RS_CSS}</style>` : '') + (needAip ? `<style>${AIP_CSS}</style><script>${AIP_JS}</script>` : '');
   const mathsHead = isMaths ? `<link rel="stylesheet" href="${esc(siteRoot)}_katex/katex.min.css"><style>${MATHS_CSS}</style>` : '';
+  // Make your own version and Add to my path are teacher features (20 Nov 2026, roadmap/student-nav.md Q2): in student
+  // view they sit inside the closed For teachers section; teacher view shows them after it.
+  const mineHtml = (cls) => !createHref ? '' : `<aside class="wpt-mine${cls ? ` ${cls}` : ''}"><a class="wpt-mine-btn" href="${esc(createHref)}">Make your own version</a><span>Opens a copy in Create, with its boards and marking, to change for your class. The original stays as it is.</span><a class="wpt-mine-btn" href="${esc(createHref.replace(/code\/create\/\?open=(.*)$/, 'my-path/?add=$1'))}">Add to my path</a></aside>`;
+  const recapCard = course?.recap ? `<a class="nextcard" href="${esc(course.recap.href)}"><small>${course.recap.year ? 'Finished the year?' : 'Finished the course?'}</small><b>Go over it: ${esc(course.recap.title)}</b><span>Every idea in one place, to check you've got it.</span></a>` : '';
   return page(lesson.title, `
 ${mathsHead}${cb}<header class="top">${crumb ? `<a class="crumb" href="${esc(crumb.href)}">← ${esc(crumb.title)}</a>` : ''}<h1>${esc(lesson.title)}</h1>${lesson.summary ? `<p class="lede">${esc(lesson.summary)}</p>` : ''}${lesson.author ? `<p class="by">By ${esc(lesson.author)}</p>` : ''}</header>
 ${lesson.hook ? `<p class="hook">${esc(lesson.hook)}</p>` : ''}
@@ -945,9 +973,9 @@ ${widthBar}
 <nav class="steps">${explainBtn}${nav}</nav>
 ${explainHtml}
 ${steps}${tiered ? `<script>${WIDTH_JS}</script>` : ''}${extraHead}
-${teachersHtml}
-${recapHtml}${practiceCard}${nextCard}
-${createHref ? `<aside class="wpt-mine"><a class="wpt-mine-btn" href="${esc(createHref)}">Make your own version</a><span>Opens a copy in Create, with its boards and marking, to change for your class. The original stays as it is.</span><a class="wpt-mine-btn" href="${esc(createHref.replace(/code\/create\/\?open=(.*)$/, 'my-path/?add=$1'))}">Add to my path</a></aside><style>.wpt-mine{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;margin:2rem 0 .5rem;padding:.7rem 1rem;border:1px solid var(--line,#ddd);border-radius:10px;font-size:.9rem}.wpt-mine-btn{font-weight:600;padding:.4rem .8rem;border:1px solid currentColor;border-radius:8px;text-decoration:none}.wpt-mine span{opacity:.8}@media print{.wpt-mine{display:none}}</style>` : ''}${source ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}${mk ? `<style>${MAKECODE_CSS}</style>` : ''}`, (siteRoot ? `<script src="${esc(siteRoot)}progress.js" data-root="${esc(siteRoot)}" defer></script>` : '') + (mk ? `<script>${MAKECODE_JS}</script>` : '') + (hasForms && maths.forms ? `<script src="${esc(siteRoot)}${esc(maths.forms.src)}" defer></script><script>${maths.forms.js}</script>` : ''), siteNavHtml);
+<p class="wpt-ldone" hidden role="status"><b>Lesson done.</b> You've finished every step you need.</p><script>${DONE_JS}</script>
+${recapHtml}${practiceCard}${recapCard}${nextCard}
+${teachersHtml.replace(/<\/details>$/, mineHtml('wpt-s-only') + '</details>')}${createHref ? mineHtml(teachersHtml ? 'wpt-t-only' : '') : ''}${createHref ? `<style>.wpt-mine{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;margin:2rem 0 .5rem;padding:.7rem 1rem;border:1px solid var(--line,#ddd);border-radius:10px;font-size:.9rem}.wpt-mine-btn{font-weight:600;padding:.4rem .8rem;border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);border-radius:8px;text-decoration:none;color:var(--accent)}.wpt-mine-btn:hover{background:var(--bg)}.wpt-mine span{color:var(--muted)}.teachers .wpt-mine{margin:1rem 0 0}.wpt-ldone{margin:34px 0 0;padding:12px 18px;border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:12px;background:var(--card)}.wpt-ldone b{color:var(--accent)}@media print{.wpt-mine{display:none}}</style>` : ''}${source && !siteNavHtml ? `<footer>Source: <code>${esc(source)}</code></footer>` : ''}${mk ? `<style>${MAKECODE_CSS}</style>` : ''}`, (siteRoot ? `<script src="${esc(siteRoot)}progress.js" data-root="${esc(siteRoot)}" defer></script>` : '') + (mk ? `<script>${MAKECODE_JS}</script>` : '') + (hasForms && maths.forms ? `<script src="${esc(siteRoot)}${esc(maths.forms.src)}" defer></script><script>${maths.forms.js}</script>` : ''), siteNavHtml);
 }
 
 // A choice of voices on voiced clips (roadmap/shared.md): the lesson's own voice is mixed into the .mp4; another
@@ -1009,13 +1037,19 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){hidePop();i
 
 export { PLAYGROUNDS };
 
+/** "Lesson done" line: shown once every check outside extra-example steps (and folds such as Smaller step) is done. */
+const DONE_JS = `(function(){var el=document.querySelector('.wpt-ldone');if(!el)return;
+var ks=[].filter.call(document.querySelectorAll('.check[data-key]'),function(c){return !c.closest('[data-tier]')&&c.dataset.key.indexOf('~')<0}).map(function(c){return c.dataset.key});
+function chk(){if(!ks.length)return;var d={};try{d=(JSON.parse(localStorage.getItem('wp-progress'))||{}).done||{}}catch(e){}el.hidden=!ks.every(function(k){return d[k]})}
+chk();['click','input','change','keyup'].forEach(function(ev){document.addEventListener(ev,function(){setTimeout(chk,300)},true)});window.addEventListener('storage',chk)})();`;
 const TIERS_UI = ['minimum', 'typical', 'wider'];
+const TIER_WORDS = { minimum: 'Fewer', typical: 'Usual', wider: 'More' };
 /** Width control: hides steps above the chosen width. ?width= sets the floor (a teacher's link); the choice is kept per lesson in this tab. */
 const WIDTH_JS = `(function(){var R={minimum:0,typical:1,wider:2};var q=new URLSearchParams(location.search).get('width');var floor=q in R?q:'minimum';
 var key='wp-width:'+location.pathname,cur;try{cur=sessionStorage.getItem(key)}catch(e){}if(!(cur in R)||R[cur]<R[floor])cur=q in R?q:'typical';
 var bar=document.querySelector('.widthbar');function apply(){document.querySelectorAll('[data-tier]').forEach(function(el){el.hidden=R[el.dataset.tier]>R[cur]});
 bar.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.w===cur));b.disabled=R[b.dataset.w]<R[floor]});
-bar.querySelector('.wnote').textContent=(q in R?'Your teacher set '+floor+'. You can add more contexts. ':'More contexts, same idea. ')+'Showing '+cur+'.';try{sessionStorage.setItem(key,cur)}catch(e){}}
+var W={minimum:'Fewer',typical:'Usual',wider:'More'};bar.querySelector('.wnote').textContent=q in R?'Your teacher chose '+W[floor].toLowerCase()+'. You can add more.':'Your teacher may tell you which.';try{sessionStorage.setItem(key,cur)}catch(e){}}
 bar.addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.disabled)return;cur=b.dataset.w;apply()});apply()})();`;
 
 /** Extra styles for maths lessons: display maths, worked examples, typed answers. */

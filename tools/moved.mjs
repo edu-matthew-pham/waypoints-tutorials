@@ -90,6 +90,11 @@ export function forwardPage(to) {
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moved</title><meta name="robots" content="noindex"><link rel="canonical" href="${href}"><meta http-equiv="refresh" content="0; url=${href}"><script>location.replace(${JSON.stringify(href)} + location.search + location.hash)</script></head><body><p>This page has moved: <a href="${href}">${href}</a></p></body></html>\n`;
 }
 
+// The 404 page's forwarding script on its own (20 Nov 2026): build-site puts it in the head of a full site page
+// (navbar and search box), so a missing address still forwards first.
+export function notFoundScript(rules) {
+  return `<script>(function(){var p=location.pathname.replace(/^\\//,'');if(!/\\/$/.test(p)&&!/\\.[a-z0-9]+$/i.test(p))p+='/';var r=${JSON.stringify(rules)};for(var i=0;i<r.length;i++)if(p.indexOf(r[i][0])===0){location.replace('/'+r[i][1]+p.slice(r[i][0].length)+location.search+location.hash);return;}})()</script>`;
+}
 // The site's 404 page: forwards anything under an old address, else says the page was not found.
 export function notFoundPage(rules) {
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Page not found</title><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width, initial-scale=1"><script>(function(){var p=location.pathname.replace(/^\\//,'');if(!/\\/$/.test(p)&&!/\\.[a-z0-9]+$/i.test(p))p+='/';var r=${JSON.stringify(rules)};for(var i=0;i<r.length;i++)if(p.indexOf(r[i][0])===0){location.replace('/'+r[i][1]+p.slice(r[i][0].length)+location.search+location.hash);return;}})()</script><style>body{font:16px/1.5 system-ui,sans-serif;max-width:40em;margin:4em auto;padding:0 16px;color:#1f2328;background:#fff}@media (prefers-color-scheme:dark){body{color:#e6e6e6;background:#16181c}a{color:#7cc4b4}}</style></head><body><h1>Page not found</h1><p>This page doesn't exist, or it has moved. <a href="/">Go to the tutorials home page</a> and search for the lesson.</p></body></html>\n`;

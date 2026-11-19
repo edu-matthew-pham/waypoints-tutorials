@@ -60,7 +60,10 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
   const span = (ys) => (ys.length ? [Math.min(...ys), Math.max(...ys)] : [null, null]);
   // A year in a title ("Year 8 Chemistry") beats the band of the standards (Years 7-8). Without one, the years of the
   // tagged standards and any named in the summaries, together (Algebra: Years 7 to 9).
+  // "Before Year 7" in a title or summary is not a year (20 Nov 2026): those courses are for the years before it.
   const yearsOf = (codes, texts, titles = []) => {
+    const strip = (t) => String(t || '').replace(/\bbefore year \d+\b/gi, '');
+    titles = titles.map(strip); texts = texts.map(strip);
     const named = titles.flatMap(yearsInText);
     return named.length ? span(named) : span([...codes.flatMap((c) => dyears(desc.get(c))), ...texts.flatMap(yearsInText)]);
   };
@@ -72,7 +75,9 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
     // `years: "6-8"` in a course's index.md (Code, 25 Oct 2026): its typical fit, which beats the standards' years.
     const ty = String(dirNode(c.path).meta?.years || '').match(/^(\d{1,2})\s*[-–]\s*(\d{1,2})$|^(\d{1,2})$/);
     if (ty) { courseYears.set(c.path, ty[3] ? [+ty[3], +ty[3]] : [+ty[1], +ty[2]]); typical.add(c.path); continue; }
-    courseYears.set(c.path, yearsOf(codes, [dirNode(c.path).summary, ...(dirNode(c.path).meta?.units || []).map((u) => `${u.title} ${u.summary || ''}`)], [c.title]));
+    const cy = yearsOf(codes, [dirNode(c.path).summary, ...(dirNode(c.path).meta?.units || []).map((u) => `${u.title} ${u.summary || ''}`)], [c.title]);
+    // A Before Year 7 course is for the years before 7, whatever its summary names (it says what Year 7 builds on).
+    courseYears.set(c.path, /before-year-7/.test(c.path) && cy[1] != null && cy[1] >= 7 ? (cy[0] >= 7 ? [null, null] : [cy[0], 6]) : cy);
   }
   const entries = [];
   const short = (s) => { const t = String(s || '').replace(/\s+/g, ' ').trim(); return t.length > 150 ? t.slice(0, 147).replace(/\s+\S*$/, '') + '…' : t; };
@@ -87,7 +92,7 @@ export function makeSearch({ lessons, dirNode, courses, subjects, pathwayOf, pla
     const d = dirNode(c.path), [lo, hi] = courseYears.get(c.path);
     const first = lessons.find((l) => l.slug.startsWith(c.path + '/'));
     add({ t: c.title, u: `${c.path}/`, s: subjTitle(c.path), sp: c.path.split('/')[0], c: '', y: yearsLabel(lo, hi, typical.has(c.path)), ty: 'course', d: short(d.summary),
-      k: [pwOf(c.path), play[c.path]?.label, LANG[first?.language], subjTitle(c.path), yearTokens(lo, hi), stdWords(courseCodes.get(c.path)), d.meta?.tagline, d.summary].filter(Boolean).join(' ') });
+      k: [pwOf(c.path), play[c.path]?.label, LANG[first?.language], subjTitle(c.path), yearTokens(lo, hi), stdWords(courseCodes.get(c.path)), d.meta?.tagline, d.meta?.keywords, d.summary].filter(Boolean).join(' ') });
     for (const u of d.meta?.units || []) {
       if (!lessons.some((l) => l.slug.startsWith(c.path + '/') && l.unit === u.id)) continue;
       const [ulo, uhi] = typical.has(c.path) ? [null, null] : yearsOf(lessons.filter((l) => l.slug.startsWith(c.path + '/') && l.unit === u.id).flatMap(codesOf), [u.summary], [u.title]);

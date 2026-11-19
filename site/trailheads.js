@@ -1,21 +1,13 @@
 // Trailheads on a subject page (tools/trail.mjs › trailheadsHtml): marks each pathway's trail picture with this
 // browser's progress (wp-progress via progress.js), shows "n of m courses done", fills Continue with the course of
-// the last lesson opened (else one in progress), and switches between trails and the list (wp-pathview).
+// the last lesson opened (else one in progress), and follows the teacher view switch (wp-view): trails in student view, the list in teacher view.
 (function () {
   var dataEl = document.getElementById('trailheads-data');
   if (!dataEl) return;
   var script = document.currentScript, root = (script && script.dataset.root) || '';
   var pws = JSON.parse(dataEl.textContent), doc = document.documentElement;
 
-  [].forEach.call(document.querySelectorAll('.ptoggle button'), function (b) {
-    b.setAttribute('aria-pressed', String(doc.classList.contains('trail-on') === (b.dataset.view === 'map')));
-    b.addEventListener('click', function () {
-      var on = b.dataset.view === 'map';
-      doc.classList.toggle('trail-on', on);
-      try { localStorage.setItem('wp-pathview', on ? 'map' : 'list'); } catch (e) { /* ignore */ }
-      [].forEach.call(document.querySelectorAll('.ptoggle button'), function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-    });
-  });
+  // Student view (trails) or teacher view (list) is the site-wide teacher view switch (TV_JS in tools/lesson-view.mjs).
 
   function apply(sum) {
     var last = null; try { last = JSON.parse(localStorage.getItem('wp-last-lesson')); } catch (e) { /* ignore */ }

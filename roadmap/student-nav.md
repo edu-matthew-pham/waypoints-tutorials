@@ -4,12 +4,23 @@ Raised by Matthew on 19 Nov 2026 (Project doc `claude/handoff-student-nav-audit.
 
 Touches shared builders and site scripts (`tools/build-site.mjs`, `tools/lesson-view.mjs`, `tools/search-view.mjs`, `tools/search-index.mjs`, `site/search.js`, `site/progress.js`, `site/trail.js`), so it is linked from ROADMAP.md and `roadmap/shared.md`. Checked `git log` on those files on 19 Nov: the last changes are the year recaps rename (dc06b0d, 059a262) and the prior-knowledge tools (d027472). Nothing else is in progress on them, so no clash.
 
-## Decisions (20 Nov 2026, Matthew; still waiting for go)
+## Built (20 Nov 2026, after Matthew's go; needs a whole-site publish)
+
+All of Part 2 A and B and the search work, with the decisions below, in one batch:
+- **Teacher view** (`TV_JS`, `wp-view`, `?teacher=1`; CLAUDE.md › Layout): course teacher line, lesson end order and footer, 5E words, extra-examples labels and tier tags, subject-page student line (`students:` in a subject's index.md overrides the default), search default. The subject and pathway toggle is now Student view · Teacher view; an old List for teachers choice becomes teacher view.
+- **Course pages:** tagline as the lede, Start, then the closed For teachers line; chips Recap, Practise, Projects (wrap on phones); "Need a catch-up first? Before Year 7 lessons"; one-lesson units named like their lesson lose the repeated heading; Code footer says "Code cards unlocked" and hides My tools and My modules at 0.
+- **Lesson pages:** themed footer buttons (dark mode fixed), no Source line outside Create, "Lesson done" line, a recap card on each course's last lesson beside "Back to the trail" (year recap where the course is in `lookback:`), course bar keeps room for the current lesson, phone menu hides the course bar and folds Teachers.
+- **Year recaps:** a contents row of jump links. **404:** navbar, search box filled with the address's last word, forwarding unchanged.
+- **Search:** Subject, Year and Show filters, URL parameters, recap pages indexed (146 entries), Before Year 7 years fixed, question words dropped, whole-word ranking, one-typo fallback, three per course, clear-filters suggestion, humanities hints, `keywords:` on ICT Working with data and Documents and slides, "microbit" matches micro:bit.
+- **Tests run:** validate, build, `check-blockers` (17 pages), `check-html`, `make-own-smoke` and `my-path-smoke` (updated to open lessons in teacher view), and a headless walk (55 checks at 1280 and 390 px, light and dark, student and teacher view: no sideways scroll or page errors on 12 page kinds).
+- Left for later (Part 2 C): faded later years on trails, ticks and "shaky" marks on year recaps. Q7 (ledes that state the answer before Predict) is for the subject chats.
+
+## Decisions (20 Nov 2026, Matthew)
 
 - **Teacher view (new, replaces the separate fixes for Q1, Q2, Q6, Q8 and Q9's default):** one switch, remembered per browser (localStorage `wp-view`, nothing sent), off by default; `?teacher=1` turns it on (for guide links and decks). A tiny script in the page head sets it before drawing, so pages don't flash. It tidies the page and keeps nothing secret: teacher material stays in the page and any student can flip it.
   - Off (student view): the course teacher box is one closed "For teachers ▸" line; Make your own version and Add to my path sit inside the closed For teachers section, which comes after Now you can and Next lesson; science step pills show step titles only; subject pages show one student line; search starts on For students.
   - On (teacher view): the box is open, the footer buttons show, the 5E words show on pills, the teacher paragraph shows, search starts on Everything, the tier names show beside the extra-examples choice.
-  - Subject pages: the Trails / List for teachers toggle becomes this switch ("Student view · Teacher view"), so teacher view opens subject pages on the List. One setting everywhere (proposed 20 Nov; Matthew leaning yes).
+  - Subject pages: the Trails / List for teachers toggle becomes this switch ("Student view · Teacher view"), so teacher view opens subject pages on the List. One setting everywhere (decided 20 Nov).
 - **Q3:** Playground and Reference stay in the navbar and leave the course page chip row; Recap, Practice and Projects chips stay and wrap on phones.
 - **Q4:** don't police going ahead: trails and "Back to the trail" stay as they are; a student may try Year 8 if they choose. The year's recap is added as an extra link on the last lesson of a year, beside the trail link.
 - **Q5:** the Width bar becomes a plain choice for students, "Extra examples: Fewer · Usual · More" (Usual by default, or what a teacher's `?width=` link sets); teacher view adds the tier names. Width stays a teacher planning idea.

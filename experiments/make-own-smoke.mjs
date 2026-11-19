@@ -6,7 +6,7 @@ const srv = http.createServer((q, r) => { let p = join('dist', decodeURIComponen
 const b = await chromium.launch({ executablePath: process.env.CHROME_PATH, args: ['--no-sandbox'] });
 for (const slug of ['code/python-foundations/turtle-intro', 'science/chemistry-7/distil-chroma', 'ict/data/a-formula-keeps-up']) {
   const pg = await (await b.newContext()).newPage(), errs = []; pg.on('pageerror', (e) => errs.push(e.message));
-  await pg.goto('http://localhost:8391/' + slug + '/'); await pg.click('.wpt-mine-btn'); await pg.waitForURL(/create/);
+  await pg.goto('http://localhost:8391/' + slug + '/?teacher=1'); await pg.click('.wpt-mine.wpt-t-only .wpt-mine-btn'); // teacher view shows it (20 Nov 2026) await pg.waitForURL(/create/);
   await pg.waitForFunction(() => /Opened a copy|Could not/.test(document.body.innerText), null, { timeout: 15000 });
   assert.match(await pg.locator('#packageStatus').innerText(), /Opened a copy/, slug);
   const md = await pg.evaluate(() => JSON.parse(localStorage.getItem('wp-create-v1') || '{}')['lesson.md'] || '');

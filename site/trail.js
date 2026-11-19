@@ -1,7 +1,7 @@
 // Trail map on a pathway page: marks each course (and each unit of an expandable course) with this browser's
 // progress (wp-progress via progress.js), picks "You are here", fills the card (hover or focus a waypoint to preview
 // it), opens one course at a time into its units (the current course, else the first; click another to open it),
-// draws the trail between waypoints and switches between the map and the list (remembered in wp-pathview).
+// draws the trail between waypoints and shows the map in student view and the list in teacher view (wp-view).
 // Nothing is sent anywhere.
 (function () {
   var dataEl = document.getElementById('trail-data'), map = document.getElementById('tmap'), card = document.getElementById('tcard');
@@ -27,16 +27,8 @@
 
   // ---- views: map or list ----
   var doc = document.documentElement;
-  [].forEach.call(document.querySelectorAll('.ptoggle button'), function (b) {
-    b.setAttribute('aria-pressed', String(doc.classList.contains('trail-on') === (b.dataset.view === 'map')));
-    b.addEventListener('click', function () {
-      var on = b.dataset.view === 'map';
-      doc.classList.toggle('trail-on', on);
-      try { localStorage.setItem('wp-pathview', on ? 'map' : 'list'); } catch (e) { /* ignore */ }
-      [].forEach.call(document.querySelectorAll('.ptoggle button'), function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-      if (on) draw();
-    });
-  });
+  // Student view (trails) or teacher view (list) is the site-wide teacher view switch (TV_JS in tools/lesson-view.mjs).
+  document.addEventListener('wpt-view', function (e) { if (!e.detail.teacher) draw(); });
 
   // ---- opening a course into its units ----
   function setOpen(id) {

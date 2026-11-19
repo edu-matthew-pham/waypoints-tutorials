@@ -105,10 +105,11 @@
       var bits = [];
       if (path.snippets.length) {
         var got = path.snippets.filter(function (x) { return x.got; }).length, nx = path.snippets.filter(function (x) { return !x.got; })[0];
-        bits.push(['Snippets unlocked: ', got + ' of ' + path.snippets.length]);
-        if (nx) bits.push(['Next unlock: ', nx.label]);
+        // Plain words for students (20 Nov 2026): code cards, not snippets; My tools and My modules only once there are some.
+        bits.push(['Code cards unlocked: ', got + ' of ' + path.snippets.length]);
+        if (nx) bits.push(['Next: ', nx.label]);
       }
-      if (path.kind === 'turtle') { bits.push(['My tools: ', String(tools('turtle'))]); bits.push(['My modules: ', String(modules())]); }
+      if (path.kind === 'turtle') { var nt = tools('turtle'), nm = modules(); if (nt) bits.push(['My tools: ', String(nt)]); if (nm) bits.push(['My modules: ', String(nm)]); }
       bits.forEach(function (b, i) { if (i) foot.append(' · '); foot.append(b[0]); foot.append(el('b', null, b[1])); });
       foot.append(el('br')); foot.append('Progress is saved in this browser only. Nothing is sent anywhere.');
     }).catch(function () { /* footer stays as built */ });

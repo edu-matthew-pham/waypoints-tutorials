@@ -13,8 +13,8 @@ const ok = (c, m) => { if (!c) { console.error('FAIL', m); process.exitCode = 1;
 await pg.goto(base + 'my-path/');
 await pg.fill('#wpt-path-q', 'python loops'); await pg.waitForSelector('.wpt-path-add');
 await pg.click('.wpt-path-add'); await pg.waitForFunction(() => /Added/.test(document.querySelector('.wp-results').textContent));
-await pg.goto(base + 'code/python-foundations/turtle-intro/');
-await pg.click('a:has-text("Add to my path")'); await pg.waitForURL(/my-path\/$/);
+await pg.goto(base + 'code/python-foundations/turtle-intro/?teacher=1'); // teacher view shows the footer (20 Nov 2026)
+await pg.click('.wpt-mine.wpt-t-only a:has-text("Add to my path")'); await pg.waitForURL(/my-path\/$/);
 await pg.waitForFunction(() => document.querySelectorAll('#wpt-path-list li').length === 2);
 ok(true, 'two lessons added (search, lesson page)');
 await pg.click('#wpt-path-list li:nth-child(2) button:has-text("Up")');
