@@ -2,13 +2,14 @@
 
 Things more than one subject depends on: the build, publishing, the home and plain pages, and shared tools (`tools/*.mjs`, `tools/lesson-view.mjs`, `playground-shared/`, `playground-board/core.js`). Before changing one of these, check this file and `git log` for work in progress, and note here what you are changing.
 
-## Built (19 Nov 2026, Matthew asked): recap and look-back wording, maths on recap cards
+## Built (19 Nov 2026, Matthew asked): year recaps (were look-backs), maths on recap cards
 Matthew couldn't tell whether the Year 10 look-back was for before or after Year 10.
 - `tools/build-site.mjs`: the subject page's Look back section and cards say "For after a year" and "After Year N"; each look-back page says so and points back (never forward) to get ready: the year before's look-back, or for Year 7 the Before Year 7 recap. Course recap pages say "For after the lessons" and link to their year's look-back.
 - Bug fixed: recap cards (course recap and look-back pages) printed `$...$` raw for maths lessons. They now render maths as the lesson page does (`markedMath`, `textWithMath`) and load KaTeX's stylesheet.
 - Audit (built site): 108 recap-anchor links, none broken. Every required lesson has a card. Optional quick checks (science `*-check`, maths `statistics-10/ethics-check`) have none, by design.
 - Open, for the maths chat: no maths lesson has a `**Revision summary**` block (science's Evaluate steps do), so maths cards show the exit question, explanation and clip but no summary.
-- Publish: whole-site or quick publish (recap, look-back and subject pages). No clips or pictures change.
+- Renamed (same day, Matthew): "look-back" becomes "recap" everywhere students and teachers see it. Year pages moved from `<subject>/look-back/year-<n>/` to `<subject>/recap/year-<n>/`, and the old addresses forward (with their `#card` anchors). The subject page section is "Year recaps" with "Year N recap" cards. `maths-teachers.md`, `science-teachers.md` and `CLAUDE.md` are updated. The `lookback:` key in the subject `index.md` files is unchanged. "Look back" as the learning-skills step (plan, check, look back) and science's "Evaluate: look back" is a different idea and stays.
+- Publish: whole-site or quick publish (recap, year recap, forwarding and subject pages). No clips or pictures change.
 
 ## Built (10 Nov 2026, shared-tools chat; Matthew said go): Kit's cross-subject links, open-decision lists, Create prompt
 

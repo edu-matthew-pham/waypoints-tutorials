@@ -672,17 +672,18 @@ function recapCard(l, to, id, mdp, numbered = true) {
     `</article>`;
 }
 
-// Year look-back pages (29 Oct 2026): a subject's `lookback:` list in its index.md, each { year, courses: [paths] },
-// makes <subject>/look-back/year-<n>/: the recap cards of every required lesson in those courses, course by course.
+// Year recap pages (29 Oct 2026; called look-back pages and served at <subject>/look-back/year-<n>/ until 19 Nov 2026,
+// which now forwards): a subject's `lookback:` list in its index.md, each { year, courses: [paths] }, makes
+// <subject>/recap/year-<n>/: the recap cards of every required lesson in those courses, course by course.
 // A free extra for looking back over a year: nothing is marked and it never counts towards Done.
 function writeYearRecap(node, entry, courseOf) {
   const mdp = new Marked();
-  const yp = `${node.path}/look-back/year-${entry.year}`, up = '../'.repeat(yp.split('/').length);
-  // Look-backs are for after a year. To get ready for a year, point back (never forward): the year before's look-back,
+  const yp = `${node.path}/recap/year-${entry.year}`, up = '../'.repeat(yp.split('/').length);
+  // Year recaps are for after a year. To get ready for a year, point back (never forward): the year before's recap,
   // or for the first year, the subject's Before Year 7 recap when there is one.
   const prev = (node.meta.lookback || []).find((e) => String(e.year) === String(Number(entry.year) - 1));
   const b7 = `${node.path}/before-year-7`;
-  const before = prev ? { href: `${node.path}/look-back/year-${prev.year}/`, label: `the Year ${prev.year} look-back` }
+  const before = prev ? { href: `${node.path}/recap/year-${prev.year}/`, label: `the Year ${prev.year} recap` }
     : dirs.has(b7) && existsSync(join(CONTENT_ROOT, b7)) ? { href: `${b7}/recap/`, label: 'the Before Year 7 recap' } : null;
   const sections = (entry.courses || []).map((c) => {
     if (!dirs.has(c)) throw new Error(`${node.path}/index.md: lookback year ${entry.year} names no course "${c}"`);
@@ -691,8 +692,8 @@ function writeYearRecap(node, entry, courseOf) {
     return cards ? `<section class="rcunit"><h2><a href="${up}${esc(c)}/">${esc(dirs.get(c).title)}</a></h2>${cards}</section>` : '';
   }).join('');
   mkdirSync(join(OUT, yp), { recursive: true });
-  writeFileSync(join(OUT, yp, 'index.html'), page(`Year ${entry.year} ${node.title.toLowerCase()}: look back`,
-    `${recapKatex((entry.courses || []).flatMap((c) => courseOf(c)), up)}<style>${RECAP_CSS}</style><header class="top"><a class="crumb" href="${up}${esc(node.path)}/">← ${esc(node.title)}</a><h1>Year ${esc(String(entry.year))} ${esc(node.title.toLowerCase())}: look back</h1>` +
+  writeFileSync(join(OUT, yp, 'index.html'), page(`Year ${entry.year} ${node.title.toLowerCase()}: recap`,
+    `${recapKatex((entry.courses || []).flatMap((c) => courseOf(c)), up)}<style>${RECAP_CSS}</style><header class="top"><a class="crumb" href="${up}${esc(node.path)}/">← ${esc(node.title)}</a><h1>Year ${esc(String(entry.year))} ${esc(node.title.toLowerCase())}: recap</h1>` +
     `<p class="lede">Every idea from Year ${esc(String(entry.year))} ${esc(node.title.toLowerCase())} in one place, for after you've done the year (or part of it). Answer each question in your head or on paper first, then check it. Nothing here is marked. If one is shaky, open the lesson and go over it again.</p>` +
     (before ? `<p class="wpt-lbbefore">Getting ready for Year ${esc(String(entry.year))}? Start with <a href="${up}${esc(before.href)}">${esc(before.label)}</a>.</p>` : '') + `</header>` +
     sections + (sections.includes('rccoach') ? `<script>${RECAP_COACH_JS}</script>` : ''),
@@ -714,7 +715,7 @@ function writeRecap(node, courseLessons) {
   writeFileSync(join(OUT, rp, 'index.html'), page(`Recap: ${node.title}`,
     `${recapKatex(courseLessons, rup)}<style>${RECAP_CSS}</style><header class="top"><a class="crumb" href="../">← ${esc(node.title)}</a><h1>${esc(node.title)}: recap</h1>` +
     `<p class="lede">For after the lessons: one card per lesson, to check what you remember. Answer each question in your head or on paper first, then check it. Nothing here is marked.</p>` +
-    (yearOf ? `<p class="wpt-lbbefore">Looking back over the whole year? See <a href="${rup}${esc(subj.path)}/look-back/year-${esc(String(yearOf.year))}/">the Year ${esc(String(yearOf.year))} look-back</a>.</p>` : '') + `</header>` +
+    (yearOf ? `<p class="wpt-lbbefore">Looking back over the whole year? See <a href="${rup}${esc(subj.path)}/recap/year-${esc(String(yearOf.year))}/">the Year ${esc(String(yearOf.year))} recap</a>.</p>` : '') + `</header>` +
     (existsSync(join(CONTENT_ROOT, node.path, 'recap.md')) ? `<section class="rcunit rc-synthesis">${mdp.parse(readFileSync(join(CONTENT_ROOT, node.path, 'recap.md'), 'utf8'))}</section>` : '') +
     groups.map((g) => `<section class="rcunit">${g.u.title ? `<h2>${esc(g.u.title)}</h2>` : ''}${g.ls.map(card).join('')}</section>`).join('') +
     (courseLessons.some((l) => l.coach) ? `<script>${RECAP_COACH_JS}</script>` : ''),
@@ -993,11 +994,15 @@ for (const node of dirs.values()) {
         `<script src="${mup}progress.js" data-root="${mup}" defer></script><script src="${mup}curriculum-map.js" defer></script>`, navFor(mp, 'home')));
     }
     const mapLink = cur ? `<a class="pcard pmap" href="map/"><b>Curriculum map</b><span>Every Years 7–10 descriptor by strand and year: how they connect, and which have lessons.</span></a>` : '';
-    // lookback: in the subject's index.md: one look-back page per year (writeYearRecap), linked under the map card.
+    // lookback: in the subject's index.md: one year recap page per year (writeYearRecap), linked under the map card.
     const lookback = Array.isArray(node.meta?.lookback) ? node.meta.lookback : [];
+    for (const e of lookback) {   // the old look-back address forwards (renamed 19 Nov 2026)
+      const from = `${node.path}/look-back/year-${e.year}`; mkdirSync(join(OUT, from), { recursive: true });
+      writeFileSync(join(OUT, from, 'index.html'), forwardPage(`${node.path}/recap/year-${e.year}/`));
+    }
     for (const e of lookback) writeYearRecap(node, e, (c) => lessons.filter((l) => l.slug.split('/').slice(0, -1).join('/') === c).sort((a, b) => (a.order ?? 0) - (b.order ?? 0)));
     const lookbackLinks = lookback.length ? `<style>.wpt-lookback{margin:18px 0 4px}.wpt-lookback h2{font-size:1.1rem;margin:0 0 2px}.wpt-lookback>p{color:var(--muted);font-size:14px;margin:0 0 8px}.wpt-lbrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}.wpt-lbrow .pcard b::after{content:' →';color:var(--accent)}</style>` +
-      `<section class="wpt-lookback"><h2>Look back over a year</h2><p>For after a year: every idea from that year's courses on one page, to check what you remember. Nothing is marked. Getting ready for a new year? Look back over the year before.</p><div class="wpt-lbrow">${lookback.map((e) => `<a class="pcard" href="look-back/year-${esc(String(e.year))}/"><b>Year ${esc(String(e.year))}</b><span>After Year ${esc(String(e.year))} · ${(e.courses || []).length} courses</span></a>`).join('')}</div></section>` : '';
+      `<section class="wpt-lookback"><h2>Year recaps</h2><p>For after a year: every idea from that year's courses on one page, to check what you remember. Nothing is marked. Getting ready for a new year? Use the recap of the year before.</p><div class="wpt-lbrow">${lookback.map((e) => `<a class="pcard" href="recap/year-${esc(String(e.year))}/"><b>Year ${esc(String(e.year))} recap</b><span>After Year ${esc(String(e.year))} · ${(e.courses || []).length} courses</span></a>`).join('')}</div></section>` : '';
     // trail: true: the subject page opens on trailheads (Continue, then a card per pathway with a picture of its
     // trail and a "Start here" line from the pathway's fit:), with today's list as "List for teachers".
     // trail: units makes each unit a stop (science: one standard per unit); trail: true keeps one stop per course.

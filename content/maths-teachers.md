@@ -17,7 +17,7 @@ A few topics sit where the curriculum puts them, which may not be where you expe
 
 Some courses are small (Year 7 Probability has 3 lessons, Year 10 Number has 3). They stay as their own course rather than being merged into another strand.
 
-**Looking back over a year.** Each year has a look-back page that gathers the recap cards from all six of its courses: [Year 7](../maths/look-back/year-7/) · [Year 8](../maths/look-back/year-8/) · [Year 9](../maths/look-back/year-9/) · [Year 10](../maths/look-back/year-10/). Nothing on it is marked, and it never counts towards Done.
+**Year recaps.** Each year has a recap page that gathers the recap cards from all six of its courses: [Year 7](../maths/recap/year-7/) · [Year 8](../maths/recap/year-8/) · [Year 9](../maths/recap/year-9/) · [Year 10](../maths/recap/year-10/). Nothing on it is marked, and it never counts towards Done. It's for after the year; to get a class ready for a year, use the recap of the year before.
 
 **Before Year 7.** Short optional catch-up lessons for the primary ideas Year 7 relies on are in [Before Year 7](../maths/before-year-7/).
 
