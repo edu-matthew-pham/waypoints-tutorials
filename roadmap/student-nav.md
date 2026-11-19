@@ -4,6 +4,20 @@ Raised by Matthew on 19 Nov 2026 (Project doc `claude/handoff-student-nav-audit.
 
 Touches shared builders and site scripts (`tools/build-site.mjs`, `tools/lesson-view.mjs`, `tools/search-view.mjs`, `tools/search-index.mjs`, `site/search.js`, `site/progress.js`, `site/trail.js`), so it is linked from ROADMAP.md and `roadmap/shared.md`. Checked `git log` on those files on 19 Nov: the last changes are the year recaps rename (dc06b0d, 059a262) and the prior-knowledge tools (d027472). Nothing else is in progress on them, so no clash.
 
+## Decisions (20 Nov 2026, Matthew; still waiting for go)
+
+- **Teacher view (new, replaces the separate fixes for Q1, Q2, Q6, Q8 and Q9's default):** one switch, remembered per browser (localStorage `wp-view`, nothing sent), off by default; `?teacher=1` turns it on (for guide links and decks). A tiny script in the page head sets it before drawing, so pages don't flash. It tidies the page and keeps nothing secret: teacher material stays in the page and any student can flip it.
+  - Off (student view): the course teacher box is one closed "For teachers ▸" line; Make your own version and Add to my path sit inside the closed For teachers section, which comes after Now you can and Next lesson; science step pills show step titles only; subject pages show one student line; search starts on For students.
+  - On (teacher view): the box is open, the footer buttons show, the 5E words show on pills, the teacher paragraph shows, search starts on Everything, the tier names show beside the extra-examples choice.
+  - Subject pages: the Trails / List for teachers toggle becomes this switch ("Student view · Teacher view"), so teacher view opens subject pages on the List. One setting everywhere (proposed 20 Nov; Matthew leaning yes).
+- **Q3:** Playground and Reference stay in the navbar and leave the course page chip row; Recap, Practice and Projects chips stay and wrap on phones.
+- **Q4:** don't police going ahead: trails and "Back to the trail" stay as they are; a student may try Year 8 if they choose. The year's recap is added as an extra link on the last lesson of a year, beside the trail link.
+- **Q5:** the Width bar becomes a plain choice for students, "Extra examples: Fewer · Usual · More" (Usual by default, or what a teacher's `?width=` link sets); teacher view adds the tier names. Width stays a teacher planning idea.
+- **Q7:** ledes that give the answer before Predict are noted for the subject chats, not fixed here.
+- **Q9:** search Show is two-way: For students / Everything.
+- **Q10:** one batch (page fixes, teacher view and search), one whole-site publish; the bigger ideas (fading later years on trails, ticks on year recaps) wait.
+- The "just do" list in Part 2 A and Part 3's quick wins go ahead as proposed.
+
 ## How it was walked
 
 Built the site from main (dc06b0d, `WP_NO_MAKECODE=1`), served `dist/`, and walked it in headless Chromium at 1280 and 390 px, light and dark, first with empty progress and then after finishing one lesson per course (every check key set in `wp-progress`). Routes, as a student who arrived by a link:
