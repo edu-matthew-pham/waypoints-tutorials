@@ -19,6 +19,7 @@ Split by workstream on 11 Oct 2026 so separate chats can work at the same time (
 - [`roadmap/humanities-inquiry.md`](roadmap/humanities-inquiry.md): the shared inquiry-skills course for the four humanities subjects (not built yet), added 30 Oct 2026.
 - [`roadmap/rules.md`](roadmap/rules.md): every rule for chats and agents, with its reason, scope, who decided and whether it is firm or a default (1 Nov 2026). Subject roadmaps point here instead of copying rules.
 - [`roadmap/navigation.md`](roadmap/navigation.md): subject pages in one consistent pass (List for teachers rows, contents lines, when years and "Then" show); plan 1 Nov 2026, waiting for Matthew's go.
+- [`roadmap/student-nav.md`](roadmap/student-nav.md): the site walked as a student (findings, fixes) and a search proposal with filters (subject, year, for students or everything); plan 19 Nov 2026, waiting for Matthew's go.
 - [`roadmap/shared.md`](roadmap/shared.md): shared and general: the build, publishing, home and plain pages, and shared tools.
 - [`roadmap/diagrams-plan.md`](roadmap/diagrams-plan.md): Mermaid diagrams across lesson parts, decks and worksheets (proposed 19 Oct 2026); the tools to follow it are in `shared.md` › Proposed: visual and quality tools.
 - [`roadmap/maths-when-where-why.md`](roadmap/maths-when-where-why.md): the when, where and why of maths: a library of purposes and real situations per node (`data/connections/maths.yml`), how lessons use it, and pictures (hand SVG, Mermaid, charts) (decided 22–23 Oct 2026).
