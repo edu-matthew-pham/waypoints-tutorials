@@ -1,0 +1,3697 @@
+{
+ "about": "Coding ideas the Learning Waypoints Code pathways teach, with the first lesson in each pathway that introduces each one. An idea with no taughtIn entry is not taught as its own lesson yet. Courses are listed in pathway order; \"after\" names the courses that come first.",
+ "site": "https://tutorials.learningwaypoints.com",
+ "pathways": [
+  {
+   "id": "python",
+   "title": "Python",
+   "courses": [
+    {
+     "path": "code/python-foundations",
+     "title": "Python Foundations with Turtle",
+     "stage": "foundations",
+     "after": [],
+     "url": "https://tutorials.learningwaypoints.com/code/python-foundations/"
+    },
+    {
+     "path": "code/python-functions",
+     "title": "Python functions and events",
+     "stage": "foundations",
+     "after": [
+      "code/python-foundations"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/python-functions/"
+    },
+    {
+     "path": "code/console",
+     "title": "Console bridge: text in, text out",
+     "stage": "foundations",
+     "after": [
+      "code/python-functions"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/console/"
+    },
+    {
+     "path": "code/objects",
+     "title": "Objects with turtles",
+     "stage": "extensions",
+     "after": [
+      "code/console"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/objects/"
+    },
+    {
+     "path": "code/data",
+     "title": "Data detective",
+     "stage": "extensions",
+     "after": [
+      "code/console"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/data/"
+    },
+    {
+     "path": "code/deeper",
+     "title": "Deeper Python in the console",
+     "stage": "extensions",
+     "after": [
+      "code/console"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/deeper/"
+    },
+    {
+     "path": "code/gradio",
+     "title": "Apps with Gradio",
+     "stage": "extensions",
+     "after": [
+      "code/console"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/gradio/"
+    },
+    {
+     "path": "code/ml",
+     "title": "Machine learning with Gradio",
+     "stage": "extensions",
+     "after": [
+      "code/data"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/ml/"
+    },
+    {
+     "path": "code/pattern-detector",
+     "title": "Pattern Detector projects",
+     "stage": "extensions",
+     "after": [
+      "code/gradio"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/pattern-detector/"
+    },
+    {
+     "path": "code/games",
+     "title": "Games with microStudio",
+     "stage": "extensions",
+     "after": [
+      "code/objects"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/games/"
+    },
+    {
+     "path": "code/sql",
+     "title": "SQL and databases",
+     "stage": "extensions",
+     "after": [
+      "code/data"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/sql/"
+    },
+    {
+     "path": "code/flask",
+     "title": "Web apps with Flask",
+     "stage": "extensions",
+     "after": [
+      "code/console",
+      "code/html"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/flask/"
+    }
+   ]
+  },
+  {
+   "id": "web",
+   "title": "Web",
+   "courses": [
+    {
+     "path": "code/html",
+     "title": "Structure and style a page",
+     "stage": "foundations",
+     "after": [],
+     "url": "https://tutorials.learningwaypoints.com/code/html/"
+    },
+    {
+     "path": "code/css",
+     "title": "Layout and components",
+     "stage": "foundations",
+     "after": [
+      "code/html"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/css/"
+    },
+    {
+     "path": "code/bootstrap",
+     "title": "Pages with Bootstrap",
+     "stage": "extensions",
+     "after": [
+      "code/css"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/bootstrap/"
+    },
+    {
+     "path": "code/p5",
+     "title": "Drawing and animation with p5.js",
+     "stage": "extensions",
+     "after": [
+      "code/html"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/p5/"
+    },
+    {
+     "path": "code/dom",
+     "title": "The DOM and the browser console",
+     "stage": "extensions",
+     "after": [
+      "code/p5",
+      "code/css"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/dom/"
+    },
+    {
+     "path": "code/vue",
+     "title": "Apps with Vue",
+     "stage": "extensions",
+     "after": [
+      "code/dom"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/vue/"
+    },
+    {
+     "path": "code/site",
+     "title": "Your site, for real",
+     "stage": "extensions",
+     "after": [
+      "code/css"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/site/"
+    },
+    {
+     "path": "code/flask",
+     "title": "Web apps with Flask",
+     "stage": "extensions",
+     "after": [
+      "code/html",
+      "code/console"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/flask/"
+    }
+   ]
+  },
+  {
+   "id": "makecode",
+   "title": "MakeCode",
+   "courses": [
+    {
+     "path": "code/microbit",
+     "title": "micro:bit Foundations",
+     "stage": "foundations",
+     "after": [],
+     "url": "https://tutorials.learningwaypoints.com/code/microbit/"
+    },
+    {
+     "path": "code/microbit-play",
+     "title": "micro:bit: talk and play",
+     "stage": "foundations",
+     "after": [
+      "code/microbit"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/microbit-play/"
+    },
+    {
+     "path": "code/arcade",
+     "title": "Arcade Foundations",
+     "stage": "foundations",
+     "after": [],
+     "url": "https://tutorials.learningwaypoints.com/code/arcade/"
+    },
+    {
+     "path": "code/arcade-advanced",
+     "title": "Arcade advanced skills",
+     "stage": "foundations",
+     "after": [
+      "code/arcade"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/arcade-advanced/"
+    },
+    {
+     "path": "code/robotics",
+     "title": "Robotics challenges",
+     "stage": "extensions",
+     "after": [
+      "code/microbit-play"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/robotics/"
+    },
+    {
+     "path": "code/microbit-computer",
+     "title": "micro:bit and the computer",
+     "stage": "extensions",
+     "after": [
+      "code/microbit-play"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/microbit-computer/"
+    },
+    {
+     "path": "code/ai-robots",
+     "title": "AI robots",
+     "stage": "extensions",
+     "after": [
+      "code/robotics",
+      "code/microbit-computer"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/ai-robots/"
+    },
+    {
+     "path": "code/microbit-security",
+     "title": "Secret messages",
+     "stage": "extensions",
+     "after": [
+      "code/microbit-play"
+     ],
+     "url": "https://tutorials.learningwaypoints.com/code/microbit-security/"
+    }
+   ]
+  }
+ ],
+ "languages": {
+  "makecode": {
+   "name": "MakeCode (blocks and the JavaScript they compile to)",
+   "ideas": [
+    {
+     "id": "variable",
+     "label": "a variable (set)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Name a value",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-variables/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Making it move",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-move/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Count with a variable",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-counting/"
+      }
+     ]
+    },
+    {
+     "id": "variable-update",
+     "label": "change a variable from itself (x = x + 1, change by)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "A value that grows",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-grow/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Making it move",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-move/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Count with a variable",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-counting/"
+      }
+     ]
+    },
+    {
+     "id": "callback",
+     "label": "event blocks (on button pressed, on shake, on radio received)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Events",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-events/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Final challenge: Catch the circle",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-game/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Wait for a press",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-buttons/"
+      }
+     ]
+    },
+    {
+     "id": "if",
+     "label": "if",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "If and else",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-decisions/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Deciding what to do",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-decide/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "If",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-if/"
+      }
+     ]
+    },
+    {
+     "id": "else",
+     "label": "else / else if",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "If and else",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-decisions/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Deciding what to do",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-decide/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "If and else",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-else/"
+      }
+     ]
+    },
+    {
+     "id": "and-or",
+     "label": "and / or",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Build a button",
+       "number": 8,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-buttons/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Deciding what to do",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-decide/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Robotics challenges",
+       "coursePath": "code/robotics",
+       "lesson": "Follow the line",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/robotics/robot-line/"
+      }
+     ]
+    },
+    {
+     "id": "not",
+     "label": "not (!)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Deeper Python in the console",
+       "coursePath": "code/deeper",
+       "lesson": "A text adventure",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/deeper/deeper-adventure/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Robotics challenges",
+       "coursePath": "code/robotics",
+       "lesson": "Report back",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/robotics/robot-report/"
+      }
+     ]
+    },
+    {
+     "id": "random",
+     "label": "pick random (randint)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Catch the turtle",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-catch/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Lists and loops",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-lists/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Pick from a list",
+       "number": 10,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-pick/"
+      }
+     ]
+    },
+    {
+     "id": "repeat",
+     "label": "repeat n times",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Repeat with a loop",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-repeat/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Lists and loops",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-lists/"
+      }
+     ]
+    },
+    {
+     "id": "loop-index",
+     "label": "for index from … to … (a loop that uses its counter)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Use the counter",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-counter/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Secret messages",
+       "coursePath": "code/microbit-security",
+       "lesson": "Scrambling is not a secret",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-security/scramble/"
+      }
+     ]
+    },
+    {
+     "id": "for-of",
+     "label": "for element of list",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "For each item",
+       "number": 10,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-for-each/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Objects and stars",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-objects/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Arcade advanced skills",
+       "coursePath": "code/arcade-advanced",
+       "lesson": "Every one of a kind",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/arcade-advanced/arcade-every-one/"
+      }
+     ]
+    },
+    {
+     "id": "while",
+     "label": "while",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Console bridge: text in, text out",
+       "coursePath": "code/console",
+       "lesson": "Repeat until",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/console/console-while/"
+      }
+     ]
+    },
+    {
+     "id": "list",
+     "label": "a list (array)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Lists",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-lists/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Lists and loops",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-lists/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Lists",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-lists/"
+      }
+     ]
+    },
+    {
+     "id": "list-index",
+     "label": "list[index] (get or set an item)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Lists",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-lists/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Lists and loops",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-lists/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Lists",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-lists/"
+      }
+     ]
+    },
+    {
+     "id": "list-change",
+     "label": "add or remove list items",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Objects with turtles",
+       "coursePath": "code/objects",
+       "lesson": "Lists of stars",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/objects/objects-lists/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Web apps with Flask",
+       "coursePath": "code/flask",
+       "lesson": "Join the club",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/flask/flask-forms/"
+      }
+     ]
+    },
+    {
+     "id": "length",
+     "label": "length of a list or text",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Lists",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-lists/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Lists and loops",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-lists/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Pick from a list",
+       "number": 10,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-pick/"
+      }
+     ]
+    },
+    {
+     "id": "function",
+     "label": "a named function (define and call)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Functions",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-functions/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Functions of your own",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-functions/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit: talk and play",
+       "coursePath": "code/microbit-play",
+       "lesson": "Name a job",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-play/microbit-functions/"
+      }
+     ]
+    },
+    {
+     "id": "param",
+     "label": "a function with parameters",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Functions with parameters",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-parameters/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Functions of your own",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-functions/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Arcade advanced skills",
+       "coursePath": "code/arcade-advanced",
+       "lesson": "Parameters",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/arcade-advanced/arcade-parameters/"
+      }
+     ]
+    },
+    {
+     "id": "return-value",
+     "label": "a function that returns a value",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Functions that give answers",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-returns/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Functions of your own",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-functions/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Secret messages",
+       "coursePath": "code/microbit-security",
+       "lesson": "Scrambling is not a secret",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-security/scramble/"
+      }
+     ]
+    },
+    {
+     "id": "text-join",
+     "label": "join text (\"a\" + b)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Console bridge: text in, text out",
+       "coursePath": "code/console",
+       "lesson": "Print text",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/console/console-print/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Final challenge: Catch the circle",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-game/"
+      }
+     ]
+    },
+    {
+     "id": "text-compare",
+     "label": "compare text (== \"A\")",
+     "taughtIn": [
+      {
+       "pathway": "MakeCode",
+       "course": "Robotics challenges",
+       "coursePath": "code/robotics",
+       "lesson": "One robot, many jobs",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/robotics/robot-modes/"
+      }
+     ]
+    },
+    {
+     "id": "text-char",
+     "label": "the letter at a place (charAt)",
+     "taughtIn": [
+      {
+       "pathway": "MakeCode",
+       "course": "Secret messages",
+       "coursePath": "code/microbit-security",
+       "lesson": "Scrambling is not a secret",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-security/scramble/"
+      }
+     ]
+    },
+    {
+     "id": "index-of",
+     "label": "find a place (indexOf)",
+     "taughtIn": [
+      {
+       "pathway": "MakeCode",
+       "course": "Secret messages",
+       "coursePath": "code/microbit-security",
+       "lesson": "The Caesar cipher",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-security/caesar/"
+      }
+     ]
+    },
+    {
+     "id": "text-slice",
+     "label": "part of a text (substr)",
+     "taughtIn": []
+    },
+    {
+     "id": "char-code",
+     "label": "character codes (charCodeAt, fromCharCode)",
+     "taughtIn": []
+    },
+    {
+     "id": "parse-number",
+     "label": "text to number (parseFloat)",
+     "taughtIn": []
+    },
+    {
+     "id": "remainder",
+     "label": "remainder (%)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Every other",
+       "number": 8,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-every-other/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Secret messages",
+       "coursePath": "code/microbit-security",
+       "lesson": "The Caesar cipher",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-security/caesar/"
+      }
+     ]
+    },
+    {
+     "id": "int-divide",
+     "label": "whole-number division (idiv, floor)",
+     "taughtIn": []
+    },
+    {
+     "id": "xor",
+     "label": "XOR (^)",
+     "taughtIn": [
+      {
+       "pathway": "MakeCode",
+       "course": "Secret messages",
+       "coursePath": "code/microbit-security",
+       "lesson": "One key to lock and unlock",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-security/shared-key/"
+      }
+     ]
+    },
+    {
+     "id": "bitwise",
+     "label": "bit operations (&, |, <<, >>)",
+     "taughtIn": []
+    },
+    {
+     "id": "math-fn",
+     "label": "absolute value, min, max",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Moving art",
+       "number": 8,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-art/"
+      }
+     ]
+    },
+    {
+     "id": "bool-value",
+     "label": "true / false stored in a variable",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Catch the turtle",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-catch/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit: talk and play",
+       "coursePath": "code/microbit-play",
+       "lesson": "True or false",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-play/microbit-flag/"
+      }
+     ]
+    },
+    {
+     "id": "running-time",
+     "label": "running time (ms)",
+     "taughtIn": [
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit: talk and play",
+       "coursePath": "code/microbit-play",
+       "lesson": "Time between",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-play/microbit-time/"
+      }
+     ]
+    },
+    {
+     "id": "radio",
+     "label": "radio group",
+     "taughtIn": [
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit: talk and play",
+       "coursePath": "code/microbit-play",
+       "lesson": "Send and receive",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-play/microbit-radio/"
+      }
+     ]
+    },
+    {
+     "id": "radio-number",
+     "label": "radio send / receive number",
+     "taughtIn": [
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit: talk and play",
+       "coursePath": "code/microbit-play",
+       "lesson": "Send and receive",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-play/microbit-radio/"
+      }
+     ]
+    },
+    {
+     "id": "radio-string",
+     "label": "radio send / receive string",
+     "taughtIn": [
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit: talk and play",
+       "coursePath": "code/microbit-play",
+       "lesson": "Which message?",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-play/microbit-which/"
+      }
+     ]
+    },
+    {
+     "id": "radio-value",
+     "label": "radio send / receive value (name and number)",
+     "taughtIn": [
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit and the computer",
+       "coursePath": "code/microbit-computer",
+       "lesson": "A radio bridge",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-computer/radio-bridge/"
+      }
+     ]
+    },
+    {
+     "id": "value-name-limit",
+     "label": "sendValue names: 8 characters at most (longer names are cut)",
+     "taughtIn": [
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit and the computer",
+       "coursePath": "code/microbit-computer",
+       "lesson": "A radio bridge",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-computer/radio-bridge/"
+      }
+     ]
+    },
+    {
+     "id": "serial-write",
+     "label": "serial write",
+     "taughtIn": [
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit and the computer",
+       "coursePath": "code/microbit-computer",
+       "lesson": "Send data to the computer",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-computer/send-data/"
+      }
+     ]
+    },
+    {
+     "id": "serial-read",
+     "label": "serial read (on data received, read line)",
+     "taughtIn": [
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit and the computer",
+       "coursePath": "code/microbit-computer",
+       "lesson": "Commands from the computer",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-computer/commands/"
+      }
+     ]
+    }
+   ]
+  },
+  "python": {
+   "name": "Python",
+   "ideas": [
+    {
+     "id": "import-star",
+     "label": "from x import *",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Modules",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-modules/"
+      }
+     ]
+    },
+    {
+     "id": "import-from",
+     "label": "from x import name",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Modules",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-modules/"
+      }
+     ]
+    },
+    {
+     "id": "import-module",
+     "label": "import x",
+     "taughtIn": []
+    },
+    {
+     "id": "dotted-call",
+     "label": "a call like x.f()",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Console bridge: text in, text out",
+       "coursePath": "code/console",
+       "lesson": "Check first",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/console/console-check/"
+      }
+     ]
+    },
+    {
+     "id": "random",
+     "label": "the random module",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Catch the turtle",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-catch/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Lists and loops",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-lists/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Pick from a list",
+       "number": 10,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-pick/"
+      }
+     ]
+    },
+    {
+     "id": "variable",
+     "label": "naming a value (x = 5)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Name a value",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-variables/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Making it move",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-move/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Count with a variable",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-counting/"
+      }
+     ]
+    },
+    {
+     "id": "arithmetic",
+     "label": "calculating (+ - * /)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Name a value",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-variables/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Making it move",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-move/"
+      }
+     ]
+    },
+    {
+     "id": "variable-update",
+     "label": "change a variable from itself (x = x + 1, +=)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "A value that grows",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-grow/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Making it move",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-move/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Count with a variable",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-counting/"
+      }
+     ]
+    },
+    {
+     "id": "string",
+     "label": "text in quotes",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Console bridge: text in, text out",
+       "coursePath": "code/console",
+       "lesson": "Print text",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/console/console-print/"
+      }
+     ]
+    },
+    {
+     "id": "text-join",
+     "label": "join text (\"a\" + b, f-strings)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Console bridge: text in, text out",
+       "coursePath": "code/console",
+       "lesson": "Print text",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/console/console-print/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Final challenge: Catch the circle",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-game/"
+      }
+     ]
+    },
+    {
+     "id": "to-text",
+     "label": "str(), int(), float()",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Console bridge: text in, text out",
+       "coursePath": "code/console",
+       "lesson": "Numbers into text",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/console/console-to-text/"
+      }
+     ]
+    },
+    {
+     "id": "print",
+     "label": "print()",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Console bridge: text in, text out",
+       "coursePath": "code/console",
+       "lesson": "Print text",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/console/console-print/"
+      }
+     ]
+    },
+    {
+     "id": "input",
+     "label": "input(), textinput(), numinput()",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Console bridge: text in, text out",
+       "coursePath": "code/console",
+       "lesson": "Ask and store",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/console/console-input/"
+      },
+      {
+       "pathway": "Web",
+       "course": "The DOM and the browser console",
+       "coursePath": "code/dom",
+       "lesson": "Inputs",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/dom/dom-input/"
+      }
+     ]
+    },
+    {
+     "id": "write",
+     "label": "write(text, move, align, font)",
+     "taughtIn": []
+    },
+    {
+     "id": "repeat",
+     "label": "for i in range(n)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Repeat with a loop",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-repeat/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Lists and loops",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-lists/"
+      }
+     ]
+    },
+    {
+     "id": "range-args",
+     "label": "range(start, stop)",
+     "taughtIn": []
+    },
+    {
+     "id": "loop-index",
+     "label": "the loop counter used inside the loop",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Use the counter",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-counter/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Secret messages",
+       "coursePath": "code/microbit-security",
+       "lesson": "Scrambling is not a secret",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-security/scramble/"
+      }
+     ]
+    },
+    {
+     "id": "for-of",
+     "label": "for item in a list",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "For each item",
+       "number": 10,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-for-each/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Objects and stars",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-objects/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Arcade advanced skills",
+       "coursePath": "code/arcade-advanced",
+       "lesson": "Every one of a kind",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/arcade-advanced/arcade-every-one/"
+      }
+     ]
+    },
+    {
+     "id": "while",
+     "label": "while",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Console bridge: text in, text out",
+       "coursePath": "code/console",
+       "lesson": "Repeat until",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/console/console-while/"
+      }
+     ]
+    },
+    {
+     "id": "break",
+     "label": "break",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Console bridge: text in, text out",
+       "coursePath": "code/console",
+       "lesson": "A menu that keeps showing",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/console/console-menu/"
+      }
+     ]
+    },
+    {
+     "id": "if",
+     "label": "if",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "If and else",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-decisions/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Deciding what to do",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-decide/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "If",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-if/"
+      }
+     ]
+    },
+    {
+     "id": "else",
+     "label": "else",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "If and else",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-decisions/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Deciding what to do",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-decide/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "If and else",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-else/"
+      }
+     ]
+    },
+    {
+     "id": "elif",
+     "label": "elif",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Every other",
+       "number": 8,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-every-other/"
+      }
+     ]
+    },
+    {
+     "id": "compare",
+     "label": "comparing (== != < >)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "If and else",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-decisions/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Deciding what to do",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-decide/"
+      }
+     ]
+    },
+    {
+     "id": "and-or",
+     "label": "and / or",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Build a button",
+       "number": 8,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-buttons/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Deciding what to do",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-decide/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Robotics challenges",
+       "coursePath": "code/robotics",
+       "lesson": "Follow the line",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/robotics/robot-line/"
+      }
+     ]
+    },
+    {
+     "id": "not",
+     "label": "not",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Deeper Python in the console",
+       "coursePath": "code/deeper",
+       "lesson": "A text adventure",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/deeper/deeper-adventure/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Robotics challenges",
+       "coursePath": "code/robotics",
+       "lesson": "Report back",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/robotics/robot-report/"
+      }
+     ]
+    },
+    {
+     "id": "bool-value",
+     "label": "True / False as values",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Catch the turtle",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-catch/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit: talk and play",
+       "coursePath": "code/microbit-play",
+       "lesson": "True or false",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-play/microbit-flag/"
+      }
+     ]
+    },
+    {
+     "id": "none",
+     "label": "None",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Data detective",
+       "coursePath": "code/data",
+       "lesson": "Clean it, test it",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/data/data-clean/"
+      }
+     ]
+    },
+    {
+     "id": "remainder",
+     "label": "remainder (%)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Every other",
+       "number": 8,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-every-other/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Secret messages",
+       "coursePath": "code/microbit-security",
+       "lesson": "The Caesar cipher",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-security/caesar/"
+      }
+     ]
+    },
+    {
+     "id": "int-divide",
+     "label": "whole-number division (//)",
+     "taughtIn": []
+    },
+    {
+     "id": "power",
+     "label": "powers (**)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Machine learning with Gradio",
+       "coursePath": "code/ml",
+       "lesson": "The nearest penguin",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/ml/ml-nearest/"
+      }
+     ]
+    },
+    {
+     "id": "function",
+     "label": "def (a function)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Functions",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-functions/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Functions of your own",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-functions/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit: talk and play",
+       "coursePath": "code/microbit-play",
+       "lesson": "Name a job",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-play/microbit-functions/"
+      }
+     ]
+    },
+    {
+     "id": "param",
+     "label": "a function with parameters",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Functions with parameters",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-parameters/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Functions of your own",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-functions/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Arcade advanced skills",
+       "coursePath": "code/arcade-advanced",
+       "lesson": "Parameters",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/arcade-advanced/arcade-parameters/"
+      }
+     ]
+    },
+    {
+     "id": "default-arg",
+     "label": "default values for parameters",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Web apps with Flask",
+       "coursePath": "code/flask",
+       "lesson": "The same API in FastAPI",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/flask/flask-fastapi/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Web apps with Flask",
+       "coursePath": "code/flask",
+       "lesson": "The same API in FastAPI",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/flask/flask-fastapi/"
+      }
+     ]
+    },
+    {
+     "id": "return-value",
+     "label": "return",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Functions that give answers",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-returns/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Functions of your own",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-functions/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Secret messages",
+       "coursePath": "code/microbit-security",
+       "lesson": "Scrambling is not a secret",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-security/scramble/"
+      }
+     ]
+    },
+    {
+     "id": "global",
+     "label": "global",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Events",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-events/"
+      }
+     ]
+    },
+    {
+     "id": "callback",
+     "label": "passing a function to an event (onscreenclick(fn))",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Events",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-events/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Final challenge: Catch the circle",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-game/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Wait for a press",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-buttons/"
+      }
+     ]
+    },
+    {
+     "id": "lambda",
+     "label": "lambda",
+     "taughtIn": []
+    },
+    {
+     "id": "list",
+     "label": "a list ([1, 2])",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Lists",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-lists/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Lists and loops",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-lists/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Lists",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-lists/"
+      }
+     ]
+    },
+    {
+     "id": "list-index",
+     "label": "a place in a list (a[0])",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Lists",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-lists/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Lists and loops",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-lists/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Lists",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-lists/"
+      }
+     ]
+    },
+    {
+     "id": "length",
+     "label": "len()",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Lists",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-lists/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Lists and loops",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-lists/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Pick from a list",
+       "number": 10,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-pick/"
+      }
+     ]
+    },
+    {
+     "id": "list-change",
+     "label": ".append() and friends",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Objects with turtles",
+       "coursePath": "code/objects",
+       "lesson": "Lists of stars",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/objects/objects-lists/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Web apps with Flask",
+       "coursePath": "code/flask",
+       "lesson": "Join the club",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/flask/flask-forms/"
+      }
+     ]
+    },
+    {
+     "id": "dict",
+     "label": "a dictionary ({k: v})",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Objects with turtles",
+       "coursePath": "code/objects",
+       "lesson": "One dictionary per star",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/objects/objects-dicts/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Web apps with Flask",
+       "coursePath": "code/flask",
+       "lesson": "Pages from data",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/flask/flask-templates/"
+      }
+     ]
+    },
+    {
+     "id": "tuple-assign",
+     "label": "assigning two names at once",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Apps with Gradio",
+       "coursePath": "code/gradio",
+       "lesson": "More inputs, more outputs",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/gradio/gradio-inputs/"
+      }
+     ]
+    },
+    {
+     "id": "file",
+     "label": "open() and with (reading and writing a file)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Deeper Python in the console",
+       "coursePath": "code/deeper",
+       "lesson": "Save the game",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/deeper/deeper-save/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Web apps with Flask",
+       "coursePath": "code/flask",
+       "lesson": "Keep the sign-ups",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/flask/flask-save/"
+      }
+     ]
+    },
+    {
+     "id": "json",
+     "label": "json.dump() and json.load()",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Data detective",
+       "coursePath": "code/data",
+       "lesson": "Ask an API",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/data/data-api/"
+      }
+     ]
+    },
+    {
+     "id": "csv",
+     "label": "csv.DictReader (rows of a CSV file)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Data detective",
+       "coursePath": "code/data",
+       "lesson": "Rows of data",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/data/data-rows/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Web apps with Flask",
+       "coursePath": "code/flask",
+       "lesson": "Keep the sign-ups",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/flask/flask-save/"
+      }
+     ]
+    },
+    {
+     "id": "assert",
+     "label": "assert (a test case)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Data detective",
+       "coursePath": "code/data",
+       "lesson": "Clean it, test it",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/data/data-clean/"
+      }
+     ]
+    },
+    {
+     "id": "pandas",
+     "label": "pandas (pd.read_csv, filtering a table)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Data detective",
+       "coursePath": "code/data",
+       "lesson": "The same job in pandas",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/data/data-pandas/"
+      }
+     ]
+    },
+    {
+     "id": "numpy",
+     "label": "numpy (np.array, a test inside square brackets)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Data detective",
+       "coursePath": "code/data",
+       "lesson": "Whole lists of numbers with numpy",
+       "number": 8,
+       "url": "https://tutorials.learningwaypoints.com/code/data/data-numpy/"
+      }
+     ]
+    },
+    {
+     "id": "decorator",
+     "label": "a decorator (@app.route above a function)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Web apps with Flask",
+       "coursePath": "code/flask",
+       "lesson": "A page from Python",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/flask/flask-routes/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Web apps with Flask",
+       "coursePath": "code/flask",
+       "lesson": "A page from Python",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/flask/flask-routes/"
+      }
+     ]
+    },
+    {
+     "id": "try",
+     "label": "try and except (catching an error)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Data detective",
+       "coursePath": "code/data",
+       "lesson": "Clean it, test it",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/data/data-clean/"
+      }
+     ]
+    },
+    {
+     "id": "object",
+     "label": "making an object (t = Turtle(), e = Enemy(5))",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Objects with turtles",
+       "coursePath": "code/objects",
+       "lesson": "Many turtles",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/objects/objects-turtles/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Objects and stars",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-objects/"
+      }
+     ]
+    },
+    {
+     "id": "attribute",
+     "label": "an object's own value (e.speed, self.speed)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Objects with turtles",
+       "coursePath": "code/objects",
+       "lesson": "A Star class",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/objects/objects-classes/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Attributes and links",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/html/links/"
+      }
+     ]
+    },
+    {
+     "id": "class",
+     "label": "class (with __init__ and self)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Objects with turtles",
+       "coursePath": "code/objects",
+       "lesson": "A Star class",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/objects/objects-classes/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Pick some with a class",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/html/classes/"
+      }
+     ]
+    },
+    {
+     "id": "method",
+     "label": "a method (def inside a class, with self)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Objects with turtles",
+       "coursePath": "code/objects",
+       "lesson": "Stars that move themselves",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/objects/objects-methods/"
+      }
+     ]
+    }
+   ]
+  },
+  "html": {
+   "name": "HTML and CSS",
+   "ideas": [
+    {
+     "id": "page-wrapper",
+     "label": "the page wrapper (<!DOCTYPE>, <html>, <head>, <body>)",
+     "taughtIn": []
+    },
+    {
+     "id": "heading",
+     "label": "headings (<h1> to <h6>)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Tags label text",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/html/first-page/"
+      }
+     ]
+    },
+    {
+     "id": "paragraph",
+     "label": "paragraphs (<p>)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Tags label text",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/html/first-page/"
+      }
+     ]
+    },
+    {
+     "id": "emphasis",
+     "label": "important and stressed words (<strong>, <em>)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Tags inside tags",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/html/html-nesting/"
+      }
+     ]
+    },
+    {
+     "id": "line-break",
+     "label": "a line break (<br>)",
+     "taughtIn": []
+    },
+    {
+     "id": "list",
+     "label": "lists (<ul>, <ol>, <li>)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Lists",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/html/lists/"
+      }
+     ]
+    },
+    {
+     "id": "attribute",
+     "label": "attributes (name=\"value\" in a tag)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Objects with turtles",
+       "coursePath": "code/objects",
+       "lesson": "A Star class",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/objects/objects-classes/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Attributes and links",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/html/links/"
+      }
+     ]
+    },
+    {
+     "id": "link",
+     "label": "links (<a href>)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Attributes and links",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/html/links/"
+      }
+     ]
+    },
+    {
+     "id": "link-in-page",
+     "label": "links to a place on the page (href=\"#name\", id)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "A place on the page",
+       "number": 11,
+       "url": "https://tutorials.learningwaypoints.com/code/html/jump-links/"
+      }
+     ]
+    },
+    {
+     "id": "image",
+     "label": "pictures (<img src alt>)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Pictures",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/html/images/"
+      }
+     ]
+    },
+    {
+     "id": "table",
+     "label": "tables (<table>, <tr>, <td>, <th>)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Tables",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/html/tables/"
+      }
+     ]
+    },
+    {
+     "id": "div-span",
+     "label": "plain boxes (<div>, <span>)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Layout and components",
+       "coursePath": "code/css",
+       "lesson": "Block and inline boxes",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/css/div-span/"
+      }
+     ]
+    },
+    {
+     "id": "semantic",
+     "label": "page sections (<header>, <nav>, <main>, <section>, <footer>)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Name the parts of a page",
+       "number": 10,
+       "url": "https://tutorials.learningwaypoints.com/code/html/sections/"
+      }
+     ]
+    },
+    {
+     "id": "form",
+     "label": "forms (<form>, <label>, <input>, <select>, <textarea>)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Forms",
+       "number": 12,
+       "url": "https://tutorials.learningwaypoints.com/code/html/forms/"
+      }
+     ]
+    },
+    {
+     "id": "button",
+     "label": "buttons (<button>)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Forms",
+       "number": 12,
+       "url": "https://tutorials.learningwaypoints.com/code/html/forms/"
+      }
+     ]
+    },
+    {
+     "id": "class",
+     "label": "class=\"…\" on a tag",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Objects with turtles",
+       "coursePath": "code/objects",
+       "lesson": "A Star class",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/objects/objects-classes/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Pick some with a class",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/html/classes/"
+      }
+     ]
+    },
+    {
+     "id": "id",
+     "label": "id=\"…\" on a tag",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "A place on the page",
+       "number": 11,
+       "url": "https://tutorials.learningwaypoints.com/code/html/jump-links/"
+      }
+     ]
+    },
+    {
+     "id": "script",
+     "label": "JavaScript (<script>)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "The DOM and the browser console",
+       "coursePath": "code/dom",
+       "lesson": "Find and change",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/dom/dom-change/"
+      }
+     ]
+    },
+    {
+     "id": "style-block",
+     "label": "a <style> block",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Rules and selectors",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/html/selectors/"
+      }
+     ]
+    },
+    {
+     "id": "style-attr",
+     "label": "style=\"…\" on a tag",
+     "taughtIn": []
+    },
+    {
+     "id": "css-rule",
+     "label": "a CSS rule (selector { property: value; })",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Rules and selectors",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/html/selectors/"
+      }
+     ]
+    },
+    {
+     "id": "class-selector",
+     "label": "class selectors (.name)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Pick some with a class",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/html/classes/"
+      }
+     ]
+    },
+    {
+     "id": "id-selector",
+     "label": "id selectors (#name)",
+     "taughtIn": []
+    },
+    {
+     "id": "descendant-selector",
+     "label": "a selector inside a selector (nav a)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Layout and components",
+       "coursePath": "code/css",
+       "lesson": "Style the links in the menu",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/css/menu-links/"
+      }
+     ]
+    },
+    {
+     "id": "group-selector",
+     "label": "several selectors at once (h1, h2)",
+     "taughtIn": []
+    },
+    {
+     "id": "pseudo-class",
+     "label": "states such as :hover",
+     "taughtIn": []
+    },
+    {
+     "id": "text-colour",
+     "label": "colours (color, background)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Rules and selectors",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/html/selectors/"
+      }
+     ]
+    },
+    {
+     "id": "hex-colour",
+     "label": "colours as hex (#1e90ff)",
+     "taughtIn": []
+    },
+    {
+     "id": "colour-function",
+     "label": "colours as rgb() or hsl()",
+     "taughtIn": []
+    },
+    {
+     "id": "font",
+     "label": "text styles (font-size, font-family, font-weight, text-align)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Rules and selectors",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/html/selectors/"
+      }
+     ]
+    },
+    {
+     "id": "box",
+     "label": "the box (padding, border, margin, width, height)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Layout and components",
+       "coursePath": "code/css",
+       "lesson": "Boxes",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/css/boxes/"
+      }
+     ]
+    },
+    {
+     "id": "rounded",
+     "label": "rounded corners and shadows (border-radius, box-shadow)",
+     "taughtIn": []
+    },
+    {
+     "id": "display",
+     "label": "block or inline (display: block, inline, inline-block, none)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Layout and components",
+       "coursePath": "code/css",
+       "lesson": "Block and inline boxes",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/css/div-span/"
+      }
+     ]
+    },
+    {
+     "id": "flex",
+     "label": "Flexbox (display: flex)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Layout and components",
+       "coursePath": "code/css",
+       "lesson": "A row with Flexbox",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/css/flexbox/"
+      }
+     ]
+    },
+    {
+     "id": "flex-options",
+     "label": "Flexbox settings (flex-wrap, gap, justify-content, align-items, flex)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Layout and components",
+       "coursePath": "code/css",
+       "lesson": "Space out a row",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/css/flex-space/"
+      }
+     ]
+    },
+    {
+     "id": "grid",
+     "label": "Grid (display: grid, grid-template-columns)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Layout and components",
+       "coursePath": "code/css",
+       "lesson": "Page layout with Grid",
+       "number": 11,
+       "url": "https://tutorials.learningwaypoints.com/code/css/grid/"
+      }
+     ]
+    },
+    {
+     "id": "css-units",
+     "label": "units other than px and % (em, rem, vh, vw, fr)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Layout and components",
+       "coursePath": "code/css",
+       "lesson": "Page layout with Grid",
+       "number": 11,
+       "url": "https://tutorials.learningwaypoints.com/code/css/grid/"
+      }
+     ]
+    },
+    {
+     "id": "position",
+     "label": "positioning (position, top, left)",
+     "taughtIn": []
+    },
+    {
+     "id": "media-query",
+     "label": "screen-size rules (@media)",
+     "taughtIn": []
+    },
+    {
+     "id": "js-event",
+     "label": "JavaScript events (addEventListener)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Events",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-events/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Final challenge: Catch the circle",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-game/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Wait for a press",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-buttons/"
+      }
+     ]
+    },
+    {
+     "id": "text-content",
+     "label": "changing text (textContent)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "The DOM and the browser console",
+       "coursePath": "code/dom",
+       "lesson": "Find and change",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/dom/dom-change/"
+      }
+     ]
+    },
+    {
+     "id": "style-prop",
+     "label": "changing style from JavaScript (el.style.color = …)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "The DOM and the browser console",
+       "coursePath": "code/dom",
+       "lesson": "Find and change",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/dom/dom-change/"
+      }
+     ]
+    },
+    {
+     "id": "class-list",
+     "label": "classList (add, remove, toggle)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "The DOM and the browser console",
+       "coursePath": "code/dom",
+       "lesson": "Classes and themes",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/dom/dom-style/"
+      }
+     ]
+    },
+    {
+     "id": "input-value",
+     "label": "reading an input (.value)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Console bridge: text in, text out",
+       "coursePath": "code/console",
+       "lesson": "Ask and store",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/console/console-input/"
+      },
+      {
+       "pathway": "Web",
+       "course": "The DOM and the browser console",
+       "coursePath": "code/dom",
+       "lesson": "Inputs",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/dom/dom-input/"
+      }
+     ]
+    },
+    {
+     "id": "console-log",
+     "label": "console.log",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "The DOM and the browser console",
+       "coursePath": "code/dom",
+       "lesson": "Find and change",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/dom/dom-change/"
+      }
+     ]
+    },
+    {
+     "id": "create-element",
+     "label": "making an element (createElement)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "The DOM and the browser console",
+       "coursePath": "code/dom",
+       "lesson": "Building a list",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/dom/dom-list/"
+      }
+     ]
+    },
+    {
+     "id": "append-element",
+     "label": "adding to the page (append, remove)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "The DOM and the browser console",
+       "coursePath": "code/dom",
+       "lesson": "Building a list",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/dom/dom-list/"
+      }
+     ]
+    },
+    {
+     "id": "js-query",
+     "label": "JavaScript finding an element (querySelector, getElementById)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "The DOM and the browser console",
+       "coursePath": "code/dom",
+       "lesson": "Find and change",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/dom/dom-change/"
+      }
+     ]
+    },
+    {
+     "id": "bootstrap",
+     "label": "Bootstrap (its stylesheet and class names: btn, container, alert)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Pages with Bootstrap",
+       "coursePath": "code/bootstrap",
+       "lesson": "Style by class names",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/bootstrap/bs-classes/"
+      }
+     ]
+    },
+    {
+     "id": "bs-grid",
+     "label": "Bootstrap's grid (row, col)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Pages with Bootstrap",
+       "coursePath": "code/bootstrap",
+       "lesson": "Navbar, cards and a grid",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/bootstrap/bs-components/"
+      }
+     ]
+    },
+    {
+     "id": "bs-component",
+     "label": "Bootstrap components (navbar, card)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Pages with Bootstrap",
+       "coursePath": "code/bootstrap",
+       "lesson": "Navbar, cards and a grid",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/bootstrap/bs-components/"
+      }
+     ]
+    },
+    {
+     "id": "vue-app",
+     "label": "a Vue app (createApp, setup, mount)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Apps with Vue",
+       "coursePath": "code/vue",
+       "lesson": "Data on the page",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/vue/vue-data/"
+      }
+     ]
+    },
+    {
+     "id": "vue-ref",
+     "label": "data Vue watches (ref)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Apps with Vue",
+       "coursePath": "code/vue",
+       "lesson": "Data on the page",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/vue/vue-data/"
+      }
+     ]
+    },
+    {
+     "id": "vue-text",
+     "label": "showing data ({{ score }})",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Apps with Vue",
+       "coursePath": "code/vue",
+       "lesson": "Data on the page",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/vue/vue-data/"
+      }
+     ]
+    },
+    {
+     "id": "vue-on",
+     "label": "Vue events (@click)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Apps with Vue",
+       "coursePath": "code/vue",
+       "lesson": "Events and inputs",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/vue/vue-events/"
+      }
+     ]
+    },
+    {
+     "id": "vue-for",
+     "label": "a tag for each item (v-for)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Apps with Vue",
+       "coursePath": "code/vue",
+       "lesson": "Lists and choices: v-for and v-if",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/vue/vue-lists/"
+      }
+     ]
+    },
+    {
+     "id": "vue-if",
+     "label": "a tag only when (v-if, v-else)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Apps with Vue",
+       "coursePath": "code/vue",
+       "lesson": "Lists and choices: v-for and v-if",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/vue/vue-lists/"
+      }
+     ]
+    },
+    {
+     "id": "vue-model",
+     "label": "a box joined to data (v-model)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Apps with Vue",
+       "coursePath": "code/vue",
+       "lesson": "Events and inputs",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/vue/vue-events/"
+      }
+     ]
+    },
+    {
+     "id": "vue-computed",
+     "label": "a value worked out from data (computed)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Apps with Vue",
+       "coursePath": "code/vue",
+       "lesson": "Values worked out from data: computed",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/vue/vue-computed/"
+      }
+     ]
+    },
+    {
+     "id": "vue-component",
+     "label": "a component of your own (app.component)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Apps with Vue",
+       "coursePath": "code/vue",
+       "lesson": "Components and props",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/vue/vue-components/"
+      }
+     ]
+    },
+    {
+     "id": "vue-props",
+     "label": "props, and :name=\"value\" to pass data in",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Apps with Vue",
+       "coursePath": "code/vue",
+       "lesson": "Components and props",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/vue/vue-components/"
+      }
+     ]
+    },
+    {
+     "id": "preact",
+     "label": "Preact or React state (useState)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Apps with Vue",
+       "coursePath": "code/vue",
+       "lesson": "Same app, three frameworks",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/vue/vue-compare/"
+      }
+     ]
+    },
+    {
+     "id": "svelte",
+     "label": "a Svelte component",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Apps with Vue",
+       "coursePath": "code/vue",
+       "lesson": "Same app, three frameworks",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/vue/vue-compare/"
+      }
+     ]
+    },
+    {
+     "id": "fetch",
+     "label": "loading data (fetch)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "The DOM and the browser console",
+       "coursePath": "code/dom",
+       "lesson": "Data from the web: fetch",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/dom/dom-fetch/"
+      }
+     ]
+    },
+    {
+     "id": "async-await",
+     "label": "async and await (waiting for something slow)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "The DOM and the browser console",
+       "coursePath": "code/dom",
+       "lesson": "Data from the web: fetch",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/dom/dom-fetch/"
+      }
+     ]
+    },
+    {
+     "id": "json-data",
+     "label": "JSON (response.json(), JSON.parse)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "The DOM and the browser console",
+       "coursePath": "code/dom",
+       "lesson": "Data from the web: fetch",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/dom/dom-fetch/"
+      }
+     ]
+    },
+    {
+     "id": "try-catch",
+     "label": "try and catch (a plan B when something fails)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "The DOM and the browser console",
+       "coursePath": "code/dom",
+       "lesson": "Data from the web: fetch",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/dom/dom-fetch/"
+      }
+     ]
+    },
+    {
+     "id": "local-storage",
+     "label": "saving between visits (localStorage)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "The DOM and the browser console",
+       "coursePath": "code/dom",
+       "lesson": "Saving between visits",
+       "number": 10,
+       "url": "https://tutorials.learningwaypoints.com/code/dom/dom-save/"
+      }
+     ]
+    }
+   ]
+  },
+  "javascript": {
+   "name": "JavaScript (p5.js, the DOM, Vue)",
+   "ideas": [
+    {
+     "id": "setup",
+     "label": "function setup()",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Shapes on a canvas",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-shapes/"
+      }
+     ]
+    },
+    {
+     "id": "draw-loop",
+     "label": "function draw() (runs again and again)",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Making it move",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-move/"
+      }
+     ]
+    },
+    {
+     "id": "variable",
+     "label": "making a variable (let x = 5)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Name a value",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-variables/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Making it move",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-move/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Count with a variable",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-counting/"
+      }
+     ]
+    },
+    {
+     "id": "variable-update",
+     "label": "change a variable from itself (x = x + 1, +=)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "A value that grows",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-grow/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Making it move",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-move/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Count with a variable",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-counting/"
+      }
+     ]
+    },
+    {
+     "id": "arithmetic",
+     "label": "calculating (+ - * /)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Name a value",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-variables/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Making it move",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-move/"
+      }
+     ]
+    },
+    {
+     "id": "text-join",
+     "label": "join text (\"Score: \" + score)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Console bridge: text in, text out",
+       "coursePath": "code/console",
+       "lesson": "Print text",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/console/console-print/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Final challenge: Catch the circle",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-game/"
+      }
+     ]
+    },
+    {
+     "id": "if",
+     "label": "if",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "If and else",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-decisions/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Deciding what to do",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-decide/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "If",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-if/"
+      }
+     ]
+    },
+    {
+     "id": "else",
+     "label": "else",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "If and else",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-decisions/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Deciding what to do",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-decide/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "If and else",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-else/"
+      }
+     ]
+    },
+    {
+     "id": "compare",
+     "label": "comparing (>, <, ===)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "If and else",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-decisions/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Deciding what to do",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-decide/"
+      }
+     ]
+    },
+    {
+     "id": "and-or",
+     "label": "&& and ||",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Build a button",
+       "number": 8,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-buttons/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Deciding what to do",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-decide/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Robotics challenges",
+       "coursePath": "code/robotics",
+       "lesson": "Follow the line",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/robotics/robot-line/"
+      }
+     ]
+    },
+    {
+     "id": "for-count",
+     "label": "a counting loop (for (let i = 0; i < 6; i++))",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Repeat with a loop",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-repeat/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Lists and loops",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-lists/"
+      }
+     ]
+    },
+    {
+     "id": "for-of",
+     "label": "a loop over a list (for (let x of list))",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "For each item",
+       "number": 10,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-for-each/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Objects and stars",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-objects/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Arcade advanced skills",
+       "coursePath": "code/arcade-advanced",
+       "lesson": "Every one of a kind",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/arcade-advanced/arcade-every-one/"
+      }
+     ]
+    },
+    {
+     "id": "array",
+     "label": "an array ([1, 2, 3])",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Lists",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-lists/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Lists and loops",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-lists/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Lists",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-lists/"
+      }
+     ]
+    },
+    {
+     "id": "array-index",
+     "label": "a place in an array (list[i])",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Lists",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-lists/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Lists and loops",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-lists/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Lists",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-lists/"
+      }
+     ]
+    },
+    {
+     "id": "length",
+     "label": ".length",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python Foundations with Turtle",
+       "coursePath": "code/python-foundations",
+       "lesson": "Lists",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/python-foundations/turtle-lists/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Lists and loops",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-lists/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Pick from a list",
+       "number": 10,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-pick/"
+      }
+     ]
+    },
+    {
+     "id": "push",
+     "label": ".push()",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Lists and loops",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-lists/"
+      }
+     ]
+    },
+    {
+     "id": "object",
+     "label": "an object ({ x: 5, y: 8 })",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Objects with turtles",
+       "coursePath": "code/objects",
+       "lesson": "Many turtles",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/objects/objects-turtles/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Objects and stars",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-objects/"
+      }
+     ]
+    },
+    {
+     "id": "property",
+     "label": "a property (star.y)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Objects with turtles",
+       "coursePath": "code/objects",
+       "lesson": "A Star class",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/objects/objects-classes/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Structure and style a page",
+       "coursePath": "code/html",
+       "lesson": "Attributes and links",
+       "number": 5,
+       "url": "https://tutorials.learningwaypoints.com/code/html/links/"
+      }
+     ]
+    },
+    {
+     "id": "random",
+     "label": "random()",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Catch the turtle",
+       "number": 9,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-catch/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Lists and loops",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-lists/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Pick from a list",
+       "number": 10,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-pick/"
+      }
+     ]
+    },
+    {
+     "id": "function",
+     "label": "a function of your own",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Functions",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-functions/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Functions of your own",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-functions/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit: talk and play",
+       "coursePath": "code/microbit-play",
+       "lesson": "Name a job",
+       "number": 1,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-play/microbit-functions/"
+      }
+     ]
+    },
+    {
+     "id": "param",
+     "label": "a function with parameters",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Functions with parameters",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-parameters/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Functions of your own",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-functions/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Arcade advanced skills",
+       "coursePath": "code/arcade-advanced",
+       "lesson": "Parameters",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/arcade-advanced/arcade-parameters/"
+      }
+     ]
+    },
+    {
+     "id": "return",
+     "label": "return",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Functions that give answers",
+       "number": 4,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-returns/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Functions of your own",
+       "number": 6,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-functions/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "Secret messages",
+       "coursePath": "code/microbit-security",
+       "lesson": "Scrambling is not a secret",
+       "number": 2,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit-security/scramble/"
+      }
+     ]
+    },
+    {
+     "id": "event",
+     "label": "events (mousePressed, keyPressed)",
+     "taughtIn": [
+      {
+       "pathway": "Python",
+       "course": "Python functions and events",
+       "coursePath": "code/python-functions",
+       "lesson": "Events",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/python-functions/turtle-events/"
+      },
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Final challenge: Catch the circle",
+       "number": 7,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-game/"
+      },
+      {
+       "pathway": "MakeCode",
+       "course": "micro:bit Foundations",
+       "coursePath": "code/microbit",
+       "lesson": "Wait for a press",
+       "number": 3,
+       "url": "https://tutorials.learningwaypoints.com/code/microbit/microbit-buttons/"
+      }
+     ]
+    },
+    {
+     "id": "math",
+     "label": "sin, cos, map",
+     "taughtIn": [
+      {
+       "pathway": "Web",
+       "course": "Drawing and animation with p5.js",
+       "coursePath": "code/p5",
+       "lesson": "Moving art",
+       "number": 8,
+       "url": "https://tutorials.learningwaypoints.com/code/p5/p5-art/"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

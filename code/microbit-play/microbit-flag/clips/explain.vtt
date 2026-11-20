@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:04.225
+A variable can hold true or false, a yes or no fact.
+
+2
+00:00:05.150 --> 00:00:08.200
+waiting is true only while the heart is showing.
+
+3
+00:00:11.030 --> 00:00:15.505
+A asks, are we waiting? If yes, time it. If not, it's too early.
+
+4
+00:00:16.385 --> 00:00:20.010
+Then set it back to false, so only one press counts.

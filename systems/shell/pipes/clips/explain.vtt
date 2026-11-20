@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:03.600
+One command's output becomes the next one's input.
+
+2
+00:00:05.261 --> 00:00:07.161
+grep prints three lines.
+
+3
+00:00:13.519 --> 00:00:17.394
+With a pipe, the lines go into w c, which counts them.

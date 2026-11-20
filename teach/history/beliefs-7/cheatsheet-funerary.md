@@ -1,0 +1,10 @@
+---
+title: "Death and funerary customs: cheat sheet"
+subtitle: "Beliefs and practices"
+---
+
+# Death and funerary customs
+
+> The words and methods from this unit, with an example of each.
+
+_This unit has no new words or methods._
