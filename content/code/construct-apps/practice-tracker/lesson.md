@@ -5,6 +5,28 @@ title: A practice tracker
 summary: "Build a prototype of a practice tracker: type how many minutes you practised, click Save, and the app adds it to your total. A global variable remembers the total, a button event changes it, and the screen only shows the new total when an event sets the text."
 language: maths
 hook: "Apps that track things, like steps, screen time or practice, all do the same small job underneath: remember a number, change it when you do something, and show it."
+voice: { name: af_heart, speed: 1.1 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8741
+  url: http://127.0.0.1:8741/index.html
+  readySelector: ".asapp"
+  layout: full
+explainClip:
+  query: { code: "@app.yml#explain", fresh: 1, id: explain }
+  caption: "Save, then show"
+  say: "The Save event changes the variable, then sets the text."
+  clip:
+    - caption: { text: "Minutes is a variable: it starts at 0.", say: "Minutes is a variable. It starts at zero." }
+    - wait: 800
+    - type: { into: Minutes practised, text: "15" }
+    - click: Save
+    - caption: { text: "Save runs one event: add 15 to Minutes, then set the text.", say: "Clicking Save runs one event. It adds fifteen to Minutes, then sets the text." }
+    - wait: 900
+    - click: Save
+    - click: Save
+    - expect: { selector: "#astotal", contains: "45" }
+    - caption: { text: "Three saves: 45 minutes. The screen changes because the event sets the text.", say: "Three saves make forty-five. The screen changes because the event sets the text." }
+    - wait: 1600
 ---
 A **prototype** is an early version of an app that you can click through and test, before anyone spends weeks building the real thing. In this course you'll build prototypes with **Construct 3**, a tool that runs in your browser.
 
@@ -32,6 +54,18 @@ check:
 | When (condition) | Do (actions) |
 |---|---|
 | Save: on clicked | System: add 15 to Minutes |
+
+
+## Try it: an app with no Set text
+
+```step
+stage: run
+insight: "Clicking Save on a version with no Set text settles the prediction on the page: the variable changes, the screen doesn't."
+try: { playground: board, starter: "app.yml#try", height: 540 }
+check: { type: board, text: "Click Save three times. Watch the variable and the screen. Then try a different number.", when: "k >= 3", explain: "Minutes goes up with every Save, but the screen still says 0 minutes: this version's Save event has no Set text." }
+```
+
+This is the version from the prediction. The event sheet beside it lights up each time an event runs, and the line under the app shows the variable's real value. You'll build the version that works.
 
 ## Build it: the practice tracker
 

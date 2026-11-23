@@ -1,0 +1,11 @@
+# Boards for "Creature stats" (widget: appscreen).
+
+# region: try
+widget: appscreen
+app: creatures
+# endregion
+
+# region: explain
+widget: appscreen
+app: creatures
+# endregion

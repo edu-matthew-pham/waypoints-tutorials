@@ -1,0 +1,11 @@
+# Boards for "A values journal" (widget: appscreen).
+
+# region: try
+widget: appscreen
+app: journal
+# endregion
+
+# region: explain
+widget: appscreen
+app: journal
+# endregion

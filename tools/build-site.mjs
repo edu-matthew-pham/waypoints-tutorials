@@ -50,6 +50,7 @@ import { priorLessons, challengeTest, crossLinks, lessonYearFn } from './prior-l
 import { markedMath, textWithMath, workedHtml } from './maths.mjs';
 import { FORMS_JS, NUMBAS_VERSION } from './maths-forms.mjs';
 import { loadCardsFile, ictCardsBody, ictCardText } from './ict-cards.mjs';
+import { highlightConstructPage } from './construct-highlight.mjs';
 import { loadAllMathsCards, mathsRefItem, mathsCheatBody, mathsCheatMd, MATHS_CARD_CSS } from './maths-cards.mjs';
 import { deckFor, worksheetFor, cheatSheetFor, cheatSheetBody, unitSnippets, CHEAT_CSS, lessonGuideBody, teachPath, stepUrl, SITE_URL, prepareLink, TEACH_CSS, TEACH_JS, blocksId } from './teach.mjs';
 
@@ -235,7 +236,8 @@ function buildLesson(lesson, parentTitle, course) {
   // Not in source.json (text only), so Create's copy of the lesson shows the alt text instead.
   for (const name of readdirSync(lesson.dir)) if (/\.(png|jpe?g|webp|gif|svg)$/i.test(name)) copyFileSync(join(lesson.dir, name), join(dir, name));
   writeFileSync(join(dir, 'source.json'), JSON.stringify(lessonSource(lesson))); // Make your own version (opens in Create)
-  writeFileSync(join(dir, 'index.html'), lessonPageHtml(lesson, {
+  const pageHtml = (h) => (/^code\/construct/.test(lesson.slug) ? highlightConstructPage(h) : h);   // Construct expressions coloured (tools/construct-highlight.mjs)
+  writeFileSync(join(dir, 'index.html'), pageHtml(lessonPageHtml(lesson, {
     Marked, highlightCode,
     snippet: (ref) => getSnippet(lesson.dir, ref),
     clipHtml: (s) => clipHtml(lesson, s),
@@ -256,7 +258,7 @@ function buildLesson(lesson, parentTitle, course) {
     teacherGuide: lesson.teacher ? `${'../'.repeat(lesson.depth)}${teachPath(lesson)}` : '',
     siteNavHtml: navFor(lesson.slug, 'lesson', lesson.slug.split('/').slice(0, -1).join('/')),
     maths: lesson.language === 'maths' ? { markedMath, textWithMath, workedHtml, forms: { js: FORMS_JS, src: `_numbas/numbas-jme.min.js?v=${NUMBAS_VERSION()}` } } : null,
-  }));
+  })));
 }
 
 const PLAYGROUND_PAGE_CSS = `:root{--bg:#fbfaf8;--ink:#1d2430;--line:#e4e1da;--card:#fff;--accent:#c2570a}

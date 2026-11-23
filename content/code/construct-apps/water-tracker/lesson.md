@@ -5,6 +5,33 @@ title: A water tracker
 summary: "Build a water tracker with a goal: add a glass, reset the day, and see a message and a progress bar. An Every tick event keeps the display in step without setting the text in every button's event. A condition that isn't a trigger, such as Compare variable, is checked every tick, and an action only waits for a sub-event's condition if it sits inside that sub-event."
 language: maths
 hook: "Most apps show the same numbers in several places. Keeping them all up to date by hand in every button gets messy fast; there's a simpler way."
+voice: { name: af_heart, speed: 1.1 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8743
+  url: http://127.0.0.1:8743/index.html
+  readySelector: ".asapp"
+  layout: full
+explainClip:
+  query: { code: "@app.yml#explain", fresh: 1, id: explain }
+  caption: "Every tick keeps it in step"
+  say: "Every tick sets the text, so the screen keeps up with the variable."
+  clip:
+    - caption: { text: "Every tick sets the text and the bar, about 60 times a second.", say: "Every tick sets the text and the bar, about sixty times a second." }
+    - wait: 1200
+    - click: Add a glass
+    - click: Add a glass
+    - click: Add a glass
+    - caption: { text: "The Add event only changes Glasses. Every tick shows it.", say: "The Add event only changes Glasses. Every tick shows it." }
+    - wait: 900
+    - click: Add a glass
+    - click: Add a glass
+    - click: Add a glass
+    - click: Add a glass
+    - click: Add a glass
+    - click: Add a glass
+    - expect: { selector: "#ascount", contains: "8 of 8" }
+    - caption: { text: "Nine clicks, but it stops at 8: the Add 1 is inside the sub-event.", say: "Nine clicks, but it stops at eight, because the add is inside the sub-event." }
+    - wait: 1600
 ---
 In the practice tracker, the Save event changed the total *and* set the text. That works with one button, but with three or four buttons you'd need a Set text in every one, and it's easy to miss one.
 
@@ -28,6 +55,18 @@ check:
 |---|---|
 | Every tick | GlassText: set text to "Glasses: " & Glasses & " of " & Goal |
 | AddButton: on clicked | System: add 1 to Glasses |
+
+
+## Try the finished app
+
+```step
+stage: run
+insight: "Using the finished tracker, with its event sheet beside it, gives a target for the build and shows Every tick running all the time."
+try: { playground: board, starter: "app.yml#try", height: 540 }
+check: { type: board, text: "Add glasses until you reach the goal, then try to go past it. Watch the Every tick row on the event sheet.", when: "g = 8", explain: "Every tick keeps the count, the bar and the message in step. The cap is inside a sub-event here, so it stops at 8." }
+```
+
+This is the finished app you'll build. The Every tick row keeps flashing: it runs all the time, not just when you click.
 
 ## Build it: the water tracker
 

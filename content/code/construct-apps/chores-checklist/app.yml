@@ -1,0 +1,12 @@
+# Boards for "A chores checklist" (widget: appscreen).
+
+# region: try
+widget: appscreen
+app: chores
+flat: on
+# endregion
+
+# region: explain
+widget: appscreen
+app: chores
+# endregion

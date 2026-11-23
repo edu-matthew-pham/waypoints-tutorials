@@ -5,6 +5,27 @@ title: A values journal
 summary: "Build a journal app with three screens: pick a value you showed today, say what you did, then see every entry in a list. A global variable carries your choice from one screen to the next, an array keeps the entries, and a Repeat loop puts them in the list."
 language: maths
 hook: "Almost every app has more than one screen: sign in, choose, confirm, see your list. Something has to remember what you did on the screen before."
+voice: { name: af_heart, speed: 1.1 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8744
+  url: http://127.0.0.1:8744/index.html
+  readySelector: ".asapp"
+  layout: full
+explainClip:
+  query: { code: "@app.yml#explain", fresh: 1, id: explain }
+  caption: "The choice travels with you"
+  say: "A global variable keeps the choice when the app changes screen."
+  clip:
+    - caption: { text: "Screen 1: choose a value. The event sets Chosen, then goes to screen 2.", say: "On screen one, the event sets Chosen, then goes to screen two." }
+    - wait: 800
+    - click: Courage
+    - caption: { text: "Screen 2 reads Chosen, so it knows you picked Courage.", say: "Screen two reads Chosen, so it knows you picked Courage." }
+    - wait: 1000
+    - type: { into: What did you do, text: "I asked a question in class" }
+    - click: Add to my journal
+    - expect: { selector: "#aslist", contains: "COURAGE" }
+    - caption: { text: "Screen 3 clears the list, then adds each entry from the array.", say: "Screen three clears the list, then adds each entry from the array." }
+    - wait: 1600
 ---
 Today's prototype has three screens. In Construct each screen is a **layout**, with its own event sheet.
 
@@ -25,6 +46,18 @@ check:
   options: ["What did you do to show Courage?", "What did you do to show ?", "What did you do to show Chosen?", "Nothing: screen 2 can't see screen 1's variables"]
   actual: "It says Courage. A global variable belongs to the whole app, not one screen, so it keeps its value when the app goes to another layout."
 ```
+
+
+## Try the finished app
+
+```step
+stage: run
+insight: "Using the finished three-screen app first gives a target for the long build and shows the global variable carrying the choice."
+try: { playground: board, starter: "app.yml#try", height: 540 }
+check: { type: board, text: "Add two entries with different values. Watch Chosen and Journal.Width under the event sheet.", when: "n >= 2", explain: "Chosen keeps its value from screen 1 to screen 2, and Journal.Width goes up by one with each entry." }
+```
+
+This is the finished app you'll build. Each screen shows its own event sheet.
 
 ## Build it: three screens
 

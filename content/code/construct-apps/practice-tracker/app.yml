@@ -1,0 +1,12 @@
+# Boards for "A practice tracker": a working copy of the app beside its event sheet (widget: appscreen).
+
+# region: try
+widget: appscreen
+app: tracker
+settext: off
+# endregion
+
+# region: explain
+widget: appscreen
+app: tracker
+# endregion

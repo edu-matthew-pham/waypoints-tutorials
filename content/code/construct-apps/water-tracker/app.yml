@@ -1,0 +1,13 @@
+# Boards for "A water tracker" (widget: appscreen).
+
+# region: try
+widget: appscreen
+app: water
+cap: right
+# endregion
+
+# region: explain
+widget: appscreen
+app: water
+cap: right
+# endregion

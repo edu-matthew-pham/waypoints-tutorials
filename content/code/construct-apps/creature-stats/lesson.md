@@ -5,6 +5,26 @@ title: Creature stats
 summary: "Build a character viewer: click a creature and see its stats as text and bars. All three creatures are copies of one sprite, each with its own instance variables, and clicking one picks just that copy, so the event reads the stats of the one you clicked."
 language: maths
 hook: "Character select screens, product pages and contact lists all work the same way: one design, many copies, each with its own details."
+voice: { name: af_heart, speed: 1.1 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8745
+  url: http://127.0.0.1:8745/index.html
+  readySelector: ".asapp"
+  layout: full
+explainClip:
+  query: { code: "@app.yml#explain", fresh: 1, id: explain }
+  caption: "Clicking picks one copy"
+  say: "Clicking a creature picks that copy, so its values are the ones shown."
+  clip:
+    - caption: { text: "One Creature sprite, three copies, each with its own values.", say: "One Creature sprite, three copies, each with its own values." }
+    - wait: 900
+    - click: Emberfox
+    - caption: { text: "The click picks the Emberfox, so Creature.name means Emberfox.", say: "The click picks the Emberfox, so Creature dot name means Emberfox." }
+    - wait: 1000
+    - click: Tidecrab
+    - expect: { selector: "#asname", contains: "Tidecrab" }
+    - caption: { text: "Same event, a different pick: now it reads the Tidecrab's values.", say: "Same event, a different pick. Now it reads the Tidecrab's values." }
+    - wait: 1600
 ---
 Today's prototype shows three made-up creatures: an Emberfox, a Tidecrab and a Mossbear. Click one, and its name, stats and special ability appear below.
 
@@ -23,6 +43,18 @@ check:
   options: ["Tidecrab", "Emberfox, the first copy", "All three names", "Creature.name"]
   actual: "Tidecrab. On object clicked picks the copy you clicked, so for the rest of that event Creature.name means that copy's name."
 ```
+
+
+## Try the finished app
+
+```step
+stage: run
+insight: "Clicking each creature in the finished viewer shows the move before it's built: one event, a different result for each copy."
+try: { playground: board, starter: "app.yml#try", height: 540 }
+check: { type: board, text: "Click each creature in turn. One event shows all three.", when: "c = 2", explain: "One click event shows whichever creature you click, because the click picks that copy." }
+```
+
+This is the finished app you'll build. Click the Tidecrab last.
 
 ## Build it: the creature viewer
 

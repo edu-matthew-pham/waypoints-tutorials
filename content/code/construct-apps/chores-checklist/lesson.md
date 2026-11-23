@@ -5,6 +5,29 @@ title: A chores checklist
 summary: "Build a checklist where clicking a box ticks it, and clicking again unticks it. Two separate events with the same trigger both run on one click and undo each other, so the toggle is one event with a sub-event and an Else: one trigger, two branches, and only one branch runs."
 language: maths
 hook: "A tick box looks like the simplest thing on a screen. Making one that turns on and off shows how apps choose between two things to do."
+voice: { name: af_heart, speed: 1.1 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-board" 8742
+  url: http://127.0.0.1:8742/index.html
+  readySelector: ".asapp"
+  layout: full
+explainClip:
+  query: { code: "@app.yml#explain", fresh: 1, id: explain }
+  caption: "One click, one branch"
+  say: "One click runs the event once, and only one branch."
+  clip:
+    - caption: { text: "One On clicked event with two branches.", say: "One On clicked event, with two branches." }
+    - wait: 800
+    - click: "Tick box: Make my bed"
+    - caption: { text: "The box was empty, so the first branch ticks it.", say: "The box was empty, so the first branch ticks it." }
+    - wait: 1000
+    - click: "Tick box: Make my bed"
+    - caption: { text: "Now it's ticked, so Else runs and unticks it.", say: "Now it's ticked, so the Else runs and unticks it." }
+    - wait: 1000
+    - click: "Tick box: Homework"
+    - expect: { selector: "#asdone", contains: "Done: 1 of 3" }
+    - caption: { text: "Each click, exactly one branch runs.", say: "Each click, exactly one branch runs." }
+    - wait: 1400
 ---
 Today's prototype is a list of jobs, each with a box beside it. Click the box and it shows a tick. Click again and the tick goes.
 
@@ -28,6 +51,18 @@ check:
 |---|---|
 | BedBox: on clicked · BedBox: text is "⬜" | BedBox: set text to "✅" |
 | BedBox: on clicked · BedBox: text is "✅" | BedBox: set text to "⬜" |
+
+
+## Try it: two events, one click
+
+```step
+stage: run
+insight: "Clicking the two-event version settles the prediction on the page: both rows light up on one click and the box ends where it started."
+try: { playground: board, starter: "app.yml#try", height: 540 }
+check: { type: board, text: "This version has two separate On clicked events. Click a box a few times and watch both events light up.", when: "t >= 2", explain: "Both events run on one click: the first ticks the box, the second sees the tick and takes it away, so nothing seems to change." }
+```
+
+This is the version from the prediction. Watch the event sheet: which rows light up on one click?
 
 ## Build it: the checklist
 

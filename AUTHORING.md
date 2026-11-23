@@ -360,6 +360,12 @@ sources:                       # where real-world facts came from (rates, dates,
 
 **Pictures in a lesson folder (23 Nov 2026).** A screenshot or photo saved beside `lesson.md` (.png, .jpg, .webp, .gif, .svg) is copied next to the lesson page, so `![What the picture shows](event-sheet.png)` works in lesson text. Write the alt text as what a student needs from the picture, credit borrowed material under it, and keep files small. Create's copy of the lesson leaves pictures out.
 
+**Construct lessons (24 Nov 2026).** Moving pictures only where the point is movement or a sequence a pair of stills can't show. Otherwise:
+- *Editor steps:* a before-and-after pair of screenshots (taken by hand for this site, never copied from other tutorials), which also makes a prediction prompt: here's before, what will after look like?
+- *What the app does:* the shared board's `appscreen` widget (`app: tracker | chores | water | journal | creatures`, with `settext: off`, `flat: on`, `cap: wrong | right` for the slips the lessons teach; header of `playground-board/widgets/appscreen.js`). It is our own working copy of the app beside its event sheet, rows lighting up as events run. It drives the "try the finished app" steps and the explain clips (voiced, recorded by the publish run like any board clip). It is not a copy of Construct's editor.
+- *Where to click:* hand-recorded walkthroughs, only for a few key moments per course.
+- Inline code on lessons under `code/construct*` is coloured as Construct's expression box colours it (text in quotes dark red, `&` blue, names navy and bold; `tools/construct-highlight.mjs`), so write expressions in backticks.
+
 - `picture: page.html#combos` (or `{ ref: page.html#combos, boxes: true }`) on an Investigate, Modify, Make or info step or task, in an HTML lesson: a picture of what that code makes, shown beside it (not hidden), drawn by the playground itself so Boxes looks as students see it. Not allowed on Predict or Run (it would give the answer away). `explainPicture:` (lesson frontmatter, same form) puts one in the Explain it to me panel, after the text.
 - `expected: page.html#sol-x` (HTML steps and tasks with a playground) shows a picture of that region's page, no code, under a collapsed "Show the expected result". `npm run render` draws it (cached in `dist/_pictures/expected/`); until then the reveal is left out. Use a picture for static results and an output-only clip (below) for results that move.
 
