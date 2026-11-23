@@ -1,0 +1,29 @@
+inquiry:
+  q: "You played Spell Caster. Which parts of it do you think were the most work to make, and which did the engine do for you?"
+  prompts:
+    - "Which things in the game never stop happening?"
+    - "Which things only happen at a certain moment?"
+  notes: "The engine does the repeated, every-moment work (behaviours). The maker writes the rules of the game (events). Most of the work in a Construct game is deciding the rules."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Do the arrow keys work?"
+    minutes: 3
+    do: |
+      Show the three events from the top of the lesson. Tell the class no event mentions the arrow keys. Hands up: will the arrow keys move the player? Leave the answer open until they've built and played it.
+    notes: "Most will say no. Playing it is the reveal."
+  - at: investigate
+    kind: activity
+    title: "Where would you look?"
+    minutes: 5
+    do: |
+      Show Spell Caster running. Point at one thing happening (the player turning, a goblin walking, a spell appearing). Students point to where they'd look to change it: the object's behaviours, or the event sheet.
+    notes: "Behaviours: every moment, done by the engine. Events: a moment or every tick, written by you."
+questions:
+  - at: modify
+    title: "What happens if…"
+    type: question
+    q: "You delete the Every tick event. What stops working?"
+    options: ["The player stops turning toward the mouse, and the score text stops updating", "The player stops moving", "Goblins stop arriving", "Nothing"]
+    answer: 0
+    explain: "Every tick set the player's angle and the status text. Movement is the 8 Direction behaviour, and goblins arrive from the Every 3 seconds event."

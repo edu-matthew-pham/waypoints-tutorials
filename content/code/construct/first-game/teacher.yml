@@ -1,0 +1,50 @@
+summary: "Students build Spell Caster with Construct 3's guided tour or its written Beginner's guide (the same game either way), then sort what the game does into behaviours (the engine moves the object every moment) and events (a condition, then actions). They change one event, find where damage is set, and make a change of their own."
+time: 60
+timing: "Predict 3 min · Build it 25–30 min · Investigate 10 min · Modify 7 min · Make 10 min"
+goals:
+  - I can build a small game in Construct by following a tutorial.
+  - I can say whether a behaviour or an event makes something happen in a game.
+  - I can find the event that sets a rule and change it.
+struggle: "The build takes most of the lesson, and fast builders click through the tour without reading what each step is for. Stop the class once the first event is added and ask what the left side and the right side of the row each mean."
+before: |
+  Try it first on a student laptop: open editor.construct.net and choose Take a guided tour. Construct needs WebGL (graphics support in the browser). Without it the editor loads but warns that it can't open any layout views, and nothing can be built. Locked-down or old laptops are the usual cause; try another browser or an updated one.
+
+  The free edition is enough: no sign-in, no seats. Spell Caster uses 10 events, and the free edition allows 50. Students should save a copy of their project to their device before closing the tab (Construct keeps nothing for them unless they sign in), so a second lesson can carry on from it.
+
+  Two routes, one game: the guided tour, inside the editor, points at each thing to click; the Beginner's guide on construct.net is the written version. Students who were away, or who want to go back over a step, can use the guide. Construct updates itself, so a step may look slightly different from the guide's screenshots.
+
+  The one idea: a behaviour is something the engine does for an object every moment; an event says when something happens and what to do then. Picking (the wider step) is the next big idea and gets its own lesson later; here it's only a first look.
+
+  The Beginner's guide is by Scirra (Construct's makers), licensed CC BY 4.0. This lesson links to it and does not copy it.
+running:
+  - "Predict: most students say nothing happens because no event uses the keys. Leave it open until they play."
+  - "Build it: circulate during the first event. Ask which side is when and which side is what to do."
+  - "Investigate: for each sorted item, ask where in Construct you'd look to change it: the object's behaviours, or the event sheet."
+  - "Modify: insist on a prediction before they change the 3. Then ask them to change it back."
+  - "Make: ask each student to name their own change as a behaviour change or an event change."
+stuck:
+  - see: "The editor says it failed to initialise WebGL."
+    ask: "Which browser are you using?"
+    fix: "Try an up-to-date Chrome or Edge, or another laptop. If none work, pair the student with someone whose laptop does."
+  - see: "A student lost their place in the guided tour."
+    ask: "What's the last thing you added?"
+    fix: "Open the Beginner's guide and find that step. It's the same game, so they can carry on from there."
+  - see: "A student thinks an event is needed for every movement."
+    ask: "Which object moves, and what behaviours does it have?"
+    fix: "Click the object and look at Behaviors in the Properties panel. The behaviour is doing the moving."
+  - see: "A student can't find where to change damage."
+    ask: "At what moment does a goblin get hurt?"
+    fix: "When a spell hits it, so look for the event with Spell on collision with Goblin."
+stretch: "Make a goblin that's harder to beat (more health) and worth more points, without adding a new event. Which existing events and properties do you change?"
+support: "Pair students for the build: one reads the step, one clicks, swapping each event."
+leads: |
+  Next in Construct Foundations (planned): Objects and layouts, then Behaviours, which is the home of the idea planted here.
+
+  For students who did MakeCode Arcade: Arcade moves sprites with velocity blocks and a controller block, where Construct uses behaviours. Same job, different tool.
+exit:
+  q: "In Spell Caster, a spell flies forward after you click. What makes it appear, and what makes it fly?"
+  a: "An event makes it appear (on left button clicked, spawn a Spell). Its Bullet behaviour makes it fly."
+explain: |
+  A **behaviour** is something the engine does for an object every moment, such as moving it with the arrow keys (8 Direction) or flying it forward (Bullet). No event is needed for it.
+
+  An **event** is a row on the event sheet: on the left, when something happens; on the right, what to do then. A green arrow means it happens once, at the moment, like a click. **Every tick** runs again and again, many times a second.

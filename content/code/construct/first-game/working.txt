@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the wrong line, nothing runs.
+
+# region: nib
+Nib wants the player to move with the arrow keys.
+Nib gives the Player object the 8 Direction behaviour.
+Nib also adds an event: Every tick, move the Player forward 5 pixels.
+Nib plays the game, and the player drifts forward on its own, even with no key pressed.
+# endregion
