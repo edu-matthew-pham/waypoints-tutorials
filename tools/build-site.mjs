@@ -468,10 +468,10 @@ for (const r of REFS) {
     `<header class="top"><a class="crumb" href="../">← ${esc(dirs.get(parent)?.title || titleCase(parent.split('/').pop()))}</a><h1>${esc(r.title || data.title)}</h1><p class="lede">${esc(r.summary || data.summary)}</p></header>${body}`, '', navFor(r.path, 'reference', parent)));
 }
 
-// ICT cards (26 Oct 2026): content/ict/<course>/cards.yml makes <course>/reference/ (tools/ict-cards.mjs).
+// ICT cards (26 Oct 2026): content/ict/<course>/cards.yml makes <course>/reference/ (tools/ict-cards.mjs). Code courses may have cards too (24 Nov 2026: Construct apps).
 // Learning skills (27 Oct 2026) uses the same cards for its strategy cards, with its own `groups`, `lede` and `more`.
 const ICT_CARDS = new Map();
-for (const path of [...new Set(lessons.map((l) => l.slug.split('/').slice(0, -1).join('/')))].filter((p) => /^(ict|learning)\/[^/]+$/.test(p))) {
+for (const path of [...new Set(lessons.map((l) => l.slug.split('/').slice(0, -1).join('/')))].filter((p) => /^(ict|learning|code)\/[^/]+$/.test(p))) {
   const node = dirNode(path);
   if ( !existsSync(join(CONTENT_ROOT, path, 'cards.yml'))) continue;
   const file = loadCardsFile(join(CONTENT_ROOT, path)), cards = file.cards;

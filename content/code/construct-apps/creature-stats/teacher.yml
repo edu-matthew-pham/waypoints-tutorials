@@ -1,0 +1,43 @@
+summary: "Students build a character viewer: one Creature sprite with three animation frames, three copies (instances) each with its own instance variables, and one Mouse on object clicked event that shows the clicked creature's name, stats as text and bars, and ability. They predict and test that clicking picks one copy, find Nib's mistake (expecting an action to fade every creature), add a fourth creature without changing the event sheet, then design their own set."
+time: 75
+timing: "Predict 3 min · Build it 35 min · Investigate 12 min · Modify 8 min · Make 17 min"
+goals:
+  - I can make several characters from one sprite, each with its own values.
+  - I can explain the difference between an object type, an instance and an instance variable.
+  - I can use one click event that works for whichever character is clicked.
+struggle: "Filling in instance variables for each copy: students set the values on one creature and assume the others have them. Each copy must be selected and filled in separately."
+before: |
+  A sprite can't be clicked on its own. Insert the Mouse object (and Touch for tablets) and use Mouse, On object clicked; this is how any sprite becomes a button, and it's worth naming as a general trick.
+
+  The creatures are made up (Emberfox, Tidecrab, Mossbear). Students' own sets in Make should be made up or everyday things too; steer away from real people.
+
+  Vocabulary (for teachers, and for students who ask): the sprite is the object type (a class in other languages), each copy is an instance (an object), and instance variables are its properties.
+
+  Picking is Construct's big idea: a condition picks the instances it's true for, and actions in that event apply only to those. The games course builds on it.
+
+  These steps were written fresh for this site and have not yet been checked click by click in the current editor. Run through them once before class; Construct updates itself, so a menu name may differ slightly.
+running:
+  - "Predict: ask how Construct could know which creature you mean."
+  - "Build it: check at step 7 that every creature has its own values before anyone builds the stats area."
+  - "Investigate: act it out: three students are creatures, one clicks; only the clicked one obeys the next instruction."
+  - "Modify: ask for a prediction before anyone opens the event sheet."
+stuck:
+  - see: "Clicking a creature does nothing."
+    ask: "Is the Mouse object in the project, and does the event use Mouse, On object clicked?"
+    fix: "Insert Mouse (Insert new object, Mouse), then make the event from Mouse, not from the sprite."
+  - see: "Every creature shows the same stats."
+    ask: "Did you fill in the values on each creature separately?"
+    fix: "Select each copy on the layout and set its own instance variables in Properties."
+  - see: "All three creatures look the same."
+    ask: "What's each copy's Initial frame?"
+    fix: "Set 0, 1 and 2, and animation Speed to 0."
+stretch: "A comparison mode: click two creatures and show their stats side by side (hint: remember the first one's values in global variables)."
+support: "Give pairs the instance variable table filled in, so they can spend the time on the event."
+leads: "Next: the challenge, a prototype of their own for a real user. In the games course, picking and instance variables come back with many enemies on screen."
+exit:
+  q: "A game has 10 coins, each a copy of Coin with an instance variable value. The player touches one coin. The event adds Coin.value to Score. Whose value is added?"
+  a: "Only the touched coin's: the collision picked that copy, so Coin.value means its value."
+explain: |
+  One sprite is an **object type**; each copy on the layout is an **instance**. **Instance variables** belong to the type, but each instance keeps its own values.
+
+  A condition such as **Mouse, On object clicked** **picks** the instance you clicked. For the rest of that event, Creature.name and the actions on Creature mean that one copy only. That's why one event works for every creature, even a new one.

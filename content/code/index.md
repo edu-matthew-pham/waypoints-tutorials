@@ -54,11 +54,11 @@ pathways:
       - { path: code/microbit-security, stage: extensions, after: [code/microbit-play] }
   - id: construct
     title: Construct
-    summary: Games and app prototypes with behaviours and events, no code to type.
-    fit: "Start here to make games or try out app ideas in the browser, with events instead of typed code."
-    about: "Construct 3 is a game engine in the browser. Objects get **behaviours**, so the engine moves them, and you write **events**: when something happens, then what to do. It runs beside MakeCode Arcade, so students can start with either; students who did Arcade see the same game ideas in a different tool. **Construct Foundations** starts with a game built from Construct's own guided tour, then one idea per lesson (planned). **Prototype it** (planned) uses the same skills to mock up an app or website: screens, buttons, input and state. **Events to JavaScript** (planned, needs paid seats) turns events into code and leads into the Web pathway. The free edition, with no sign-in, covers Foundations and Prototype it."
+    summary: App prototypes and games with events and behaviours, no code to type.
+    fit: "Start here to make apps or games in the browser, with events instead of typed code."
+    about: "Construct 3 runs in the browser. You lay out screens and write **events**: when something happens, then what to do. **Construct apps** (usually Year 7) builds small app prototypes, such as a tracker, a checklist and a journal, then one of your own tested with a real user; it teaches variables, events, sub-events, screens, lists and picking. **Construct games** adds **behaviours**, so the engine moves objects, and builds games; start there or after the apps course. It runs beside MakeCode Arcade, so students can start with either. **Events to JavaScript** (planned, needs paid seats) turns events into code and leads into the Web pathway. The free edition, with no sign-in, covers the apps and games courses."
     courses:
+      - { path: code/construct-apps, stage: foundations }
       - { path: code/construct, stage: foundations }
-      - { title: Prototype it, summary: "Mock up an app or website: screens as layouts, buttons, text input, state that carries across screens, and a flow tested with a user.", tagline: "Try out an app idea before anyone builds it.", stage: foundations, after: [code/construct] }
       - { title: Events to JavaScript, summary: "Script blocks inside events, then whole events rewritten as JavaScript. Needs paid Construct seats.", tagline: "Turn your events into real code.", stage: extensions, after: [code/construct] }
 ---

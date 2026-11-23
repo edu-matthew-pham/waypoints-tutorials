@@ -1,0 +1,177 @@
+# Reference cards for Construct apps: one screen each, no ticks. Written for this site (not copied from any school's tutorials).
+lede: "One card for each thing you'll need in Construct, to look up while you build. Each says what it's for, how to do it, and links to the lesson that teaches it."
+search: "Search the cards, such as variable, button or list"
+more: "Construct updates itself, so a menu name may differ slightly."
+cards:
+  - id: event-sheet-linked
+    title: "Nothing happens? Check the event sheet"
+    unit: respond
+    lesson: practice-tracker
+    idea: "Each layout runs one event sheet. If a screen's events never seem to run, that layout is probably using the wrong sheet, or none."
+    steps:
+      - "Click an empty part of the layout."
+      - "In Properties, find Event sheet."
+      - "Choose the sheet that has this screen's events."
+      - "Preview again."
+    watch: "This is the first thing to check whenever a screen does nothing at all."
+    apps:
+      "Construct 3": "Adding a layout usually offers to add an event sheet too; say yes, then check it's linked."
+  - id: event-and-action
+    title: "Add an event and its actions"
+    unit: respond
+    lesson: practice-tracker
+    idea: "An event is a row: on the left, when something happens (the condition); on the right, what to do then (the actions)."
+    steps:
+      - "In the event sheet, choose Add event."
+      - "Pick the object, then the condition, such as On clicked."
+      - "Choose Add action beside it."
+      - "Pick the object, then the action, such as Set text."
+      - "Add more actions to the same event if needed: they run top to bottom."
+    apps:
+      "Construct 3": "Name objects before you start (SaveButton, TotalText) so you can find them in the lists."
+  - id: global-variable
+    title: "Remember a value: global variable"
+    unit: respond
+    lesson: practice-tracker
+    idea: "A global variable is a named box that holds one value for the whole app, and keeps it when the app changes screen."
+    steps:
+      - "Right-click the event sheet and choose Add global variable."
+      - "Give it a name, a type (Number or String for text) and a starting value."
+      - "Change it with System, Add to or Set value."
+      - "Read it by typing its name in an expression."
+    apps:
+      "Construct 3": "Global variables sit at the top of the event sheet."
+  - id: show-a-value
+    title: "Show a value on screen"
+    unit: respond
+    lesson: practice-tracker
+    idea: "The screen only changes when an event sets the text. Join words and values with &."
+    steps:
+      - "Add the action: your Text object, Set text."
+      - "Put words to show in quote marks: \"Total: \"."
+      - "Join a variable with &: \"Total: \" & Minutes."
+      - "Put it in the same event that changes the variable, or in Every tick."
+    watch: "A Text Input always holds text: use int(TextInput.Text) to add what was typed."
+    apps:
+      "Construct 3": "If the screen shows the word Minutes, it's inside the quote marks by mistake."
+  - id: toggle
+    title: "On and off: sub-event and Else"
+    unit: respond
+    lesson: chores-checklist
+    idea: "One trigger, two branches: a sub-event runs only if its condition is true, and an Else runs only if it was false."
+    steps:
+      - "Add the trigger on its own, such as Box on clicked."
+      - "Select it and press S for a sub-event; give it a condition and actions."
+      - "Select the sub-event and press X for an Else; give it actions."
+      - "Preview: one click runs one branch."
+    watch: "Two separate events with the same trigger both run on one click and undo each other."
+    apps:
+      "Construct 3": "Keys: S sub-event, B blank sub-event, X Else. Select the event first."
+  - id: every-tick
+    title: "Keep the screen up to date: Every tick"
+    unit: track
+    lesson: water-tracker
+    idea: "Every tick runs about 60 times a second, so it keeps what's on screen in step with the variables, whatever changed them."
+    steps:
+      - "Add event: System, Every tick."
+      - "Add actions that show values: Set text, Set width."
+      - "Change variables in button events, not here."
+    watch: "Don't add to a variable in Every tick: it would add about 60 a second."
+    apps:
+      "Construct 3": "Every tick is under System."
+  - id: compare-variable
+    title: "Check a value: Compare variable"
+    unit: track
+    lesson: water-tracker
+    idea: "Compare variable is true while a variable meets a test, such as Glasses = Goal. It has no green arrow, so it's checked every tick."
+    steps:
+      - "Add a condition: System, Compare variable."
+      - "Choose the variable, the comparison (=, <, ≥ …) and the value."
+      - "Add actions; press X to add an Else for when it's false."
+      - "To limit a button, put this in a sub-event and move the action inside it."
+    watch: "An action on the event above a sub-event isn't controlled by the sub-event's condition."
+    apps:
+      "Construct 3": "Compare variable is under System."
+  - id: progress-bar
+    title: "Make a progress bar"
+    unit: track
+    lesson: water-tracker
+    idea: "A coloured sprite whose width is worked out from a value, over a grey copy of the full bar."
+    steps:
+      - "Draw a coloured rectangle sprite at full width (say 400)."
+      - "Draw a grey one the same size and send it to the back."
+      - "Every tick: set the coloured bar's width to value / goal * 400."
+    apps:
+      "Construct 3": "Send to back is on the right-click menu of an object on the layout."
+  - id: show-hide
+    title: "Show or hide something"
+    unit: track
+    lesson: water-tracker
+    idea: "Start an object hidden, then show it from an event when it's needed."
+    steps:
+      - "Select the object and untick Initial visibility in Properties."
+      - "In an event, add the action: the object, Set visible, Visible."
+      - "To hide it again, Set visible, Invisible."
+    apps:
+      "Construct 3": "Hidden objects still show on the layout while you edit; they're hidden in the preview."
+  - id: screens
+    title: "More than one screen"
+    unit: screens
+    lesson: values-journal
+    idea: "Each screen is a layout with its own event sheet. Go to layout moves between them."
+    steps:
+      - "In the Project panel, right-click Layouts and add one."
+      - "Check its Event sheet property."
+      - "On a button's On clicked, add System, Go to layout."
+      - "Use On start of layout to set a screen's text as it opens."
+    watch: "Objects on one layout aren't on the next. Use a global variable to carry a value across."
+    apps:
+      "Construct 3": "Preview starts from the layout you have open; open Layout 1 before you preview."
+  - id: array-list
+    title: "Keep a list: array and List"
+    unit: screens
+    lesson: values-journal
+    idea: "An array keeps many values in order; a List object shows them on screen."
+    steps:
+      - "Insert an Array: Width 0, Height 1, Depth 1, Global ticked."
+      - "Add an entry: Array, Push, back, X axis, the value."
+      - "On start of layout: List, Clear (its own event)."
+      - "A separate event: On start of layout + Repeat Array.Width times → List, Add item Array.At(loopindex)."
+    watch: "loopindex counts from 0. Keep Clear out of the Repeat event, or only the last entry is left."
+    apps:
+      "Construct 3": "Repeat is a condition under System; add it with Add another condition."
+  - id: sprite-button
+    title: "Make a sprite clickable"
+    unit: characters
+    lesson: creature-stats
+    idea: "A sprite can't be clicked on its own. Add the Mouse object, and any sprite can be a button."
+    steps:
+      - "Insert new object: Mouse (and Touch for tablets)."
+      - "Add event: Mouse, On object clicked."
+      - "Choose left button, clicked, and the sprite."
+      - "Add actions as for any button."
+    apps:
+      "Construct 3": "Mouse and Touch have no picture on the layout; they're listed in the Project panel."
+  - id: instance-variables
+    title: "Each copy, its own values: instance variables"
+    unit: characters
+    lesson: creature-stats
+    idea: "Instance variables belong to an object type, but each copy (instance) keeps its own values."
+    steps:
+      - "Select any copy; in Properties find Instance variables and add them."
+      - "Select each copy in turn and fill in its own values."
+      - "Read one with Object.name, such as Creature.power."
+    watch: "Every copy needs its values set separately."
+    apps:
+      "Construct 3": "One sprite with several animation frames (speed 0, Initial frame per copy) gives copies different looks."
+  - id: picking
+    title: "Which copy? Picking"
+    unit: characters
+    lesson: creature-stats
+    idea: "A condition picks the copies it's true for. Actions and expressions in that event use only the picked copies."
+    steps:
+      - "Use a condition that picks, such as Mouse on object clicked or On collision."
+      - "Actions on that object in the same event apply to the picked copy only."
+      - "Object.variable reads the picked copy's value."
+    apps:
+      "Construct 3": "An event that picks nothing applies an action to every copy."

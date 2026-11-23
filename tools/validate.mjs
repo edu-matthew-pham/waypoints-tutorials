@@ -59,7 +59,7 @@ for (const cards of loadAllMathsCards()) {
 // ICT cards (and Learning skills strategy cards): fields present, lesson and unit (or group) exist.
 import { loadCardsFile, validateIctCards } from './ict-cards.mjs';
 import { readdirSync as rdirI, existsSync as exI } from 'node:fs';
-for (const sub of ['ict', 'learning']) for (const c of (exI(pjoin(CONTENT_ROOT, sub)) ? rdirI(pjoin(CONTENT_ROOT, sub)) : [])) {
+for (const sub of ['ict', 'learning', 'code']) for (const c of (exI(pjoin(CONTENT_ROOT, sub)) ? rdirI(pjoin(CONTENT_ROOT, sub)) : [])) {
   const dir = pjoin(CONTENT_ROOT, sub, c), file = loadCardsFile(dir), cards = file.cards;
   if (!cards.length) continue;
   const units = file.groups || loadDirMeta(dir).units;

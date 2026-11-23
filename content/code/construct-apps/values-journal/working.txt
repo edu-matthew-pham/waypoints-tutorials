@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib wants screen 3 to show every journal entry.
+Nib makes one event: On start of layout and Repeat Journal.Width times, then List clear.
+In the same event Nib adds a second action: List add item Journal.At(loopindex).
+Nib adds three entries, and the list only shows the last one.
+# endregion

@@ -1,14 +1,14 @@
 ---
-title: Construct Foundations
-summary: "Make games with Construct 3, a game engine that runs in the browser. Instead of writing code line by line, you give objects behaviours (so the engine moves them) and write events: rows that say when something happens, then what to do. The first lesson builds a small game with Construct's own guided tour and works out what makes each part happen. The free edition, with no sign-in, is enough for every lesson planned here."
+title: Construct games
+summary: "Make games with Construct 3, a game engine that runs in the browser. Instead of writing code line by line, you give objects behaviours (so the engine moves them) and write events: rows that say when something happens, then what to do. The first lesson builds a small game with Construct's own guided tour and works out what makes each part happen. You can start here, or after Construct apps, which teaches events, variables and picking with apps; those ideas then come back here as review in a game. The free edition, with no sign-in, is enough for every lesson planned here."
 tagline: "Build games in the browser with behaviours and events."
 years: "7-8"
-order: 1
+order: 2
 units:
   - { id: start, title: Start here, summary: "Build a first game with Construct's guided tour, then work out which parts the engine moves and which an event makes happen." }
   - id: events
     title: Objects, behaviours and events
-    summary: "One idea per lesson: copies of an object, behaviours, the event sheet, triggers, picking, variables, sub-events and time."
+    summary: "One idea per lesson: copies of an object, behaviours, the event sheet, triggers, picking, variables, sub-events and time. Events, picking, variables and sub-events are review for students who did Construct apps."
     planned:
       - { title: Objects and layouts, summary: "One object type, many copies, each with its own position." }
       - { title: Behaviours, summary: "Give an object a behaviour and the engine moves it." }

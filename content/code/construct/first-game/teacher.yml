@@ -38,7 +38,7 @@ stuck:
 stretch: "Make a goblin that's harder to beat (more health) and worth more points, without adding a new event. Which existing events and properties do you change?"
 support: "Pair students for the build: one reads the step, one clicks, swapping each event."
 leads: |
-  Next in Construct Foundations (planned): Objects and layouts, then Behaviours, which is the home of the idea planted here.
+  Next in Construct games (planned): Objects and layouts, then Behaviours, which is the home of the idea planted here. Students who did Construct apps already know events, variables, sub-events and picking.
 
   For students who did MakeCode Arcade: Arcade moves sprites with velocity blocks and a controller block, where Construct uses behaviours. Same job, different tool.
 exit:

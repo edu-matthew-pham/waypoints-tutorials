@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib wants the box to tick on one click and untick on the next.
+Nib adds an event: BedBox on clicked, and text is "⬜", set text to "✅".
+Nib adds a second event: BedBox on clicked, and text is "✅", set text to "⬜".
+Nib clicks the box, and it still shows ⬜.
+# endregion

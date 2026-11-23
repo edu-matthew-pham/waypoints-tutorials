@@ -1,0 +1,43 @@
+summary: "Students build a checklist of jobs where each box is a Button whose text is ⬜ or ✅. They first build a tick that stays on, then try two separate On clicked events (which cancel each other on one click), then fix it with one On clicked event, a sub-event and an Else."
+time: 60
+timing: "Predict 3 min · Build it 30 min · Investigate 10 min · Modify 10 min · Make 7 min"
+goals:
+  - I can make a button change its own text when it's clicked.
+  - I can explain why two separate events with the same trigger undo each other.
+  - I can use a sub-event and Else so that only one of two things happens.
+struggle: "Building the version that doesn't work on purpose (steps 8 to 10) feels like wasted effort, and some students skip it. It's the point of the lesson: they need to see two flat events cancel before the sub-event makes sense."
+before: |
+  The box characters ⬜ and ✅ are emoji. On most laptops they paste fine into a Button's Text property; if a laptop shows empty squares, use [ ] and [x] instead, and change the conditions to match.
+
+  Keyboard shortcuts in the event sheet: S adds a sub-event, X adds an Else, B adds a blank sub-event (no condition). Select the event first.
+
+  These steps were written fresh for this site and have not yet been checked click by click in the current editor. Run through them once before class; Construct updates itself, so a menu name may differ slightly.
+
+  A Button's Type property can be Checkbox, which ticks and unticks by itself (On checked, On unchecked). Mention it, but the lesson builds the toggle by hand so the logic is visible.
+
+  The one idea: on one click, every event whose conditions are true runs, top to bottom. One trigger with two branches (a sub-event and an Else) means exactly one runs.
+running:
+  - "Predict: most choose ✅. Leave it open; step 10 is the reveal."
+  - "Build it: at step 10, ask a pair to explain what happened in order: first event, then second event."
+  - "Investigate: draw the event on the board with the two branches as arrows. Only one arrow is taken per click."
+  - "Modify: this is the review step. Ask which branch means 'just finished a job'."
+stuck:
+  - see: "The box doesn't tick at all."
+    ask: "What does the Compare text condition check for?"
+    fix: "It must be exactly the same character as the button's text. Copy and paste ⬜ from the button's Text property."
+  - see: "S or X does nothing."
+    ask: "Is the event selected (highlighted)?"
+    fix: "Click the event's condition first, then press the key."
+  - see: "Done goes up when unticking."
+    ask: "Which branch has the add 1?"
+    fix: "Add 1 belongs in the ⬜ branch (it's becoming ticked); subtract 1 in the Else."
+stretch: "Show \"All done!\" when Done equals the number of jobs. Which event checks it, and when?"
+support: "Give pairs the finished event as a picture (the table at the end of Build it) to copy, then ask them to explain each row."
+leads: "Next: Water tracker, which keeps a display up to date every tick and checks a goal."
+exit:
+  q: "A light switch app has two events: On clicked and light is off → turn on; On clicked and light is on → turn off. What happens when you click, and how do you fix it?"
+  a: "Both run on one click, so it turns on then straight off. Fix: one On clicked event with a sub-event (light is off → turn on) and an Else (turn off)."
+explain: |
+  On one click, **every** event whose conditions are true runs, from top to bottom. Two separate On clicked events both run: the first ticks the box, the second sees the tick and takes it away.
+
+  The fix is **one** On clicked event with two branches. A **sub-event** (press S) runs only if its condition is true: the box shows ⬜, so tick it. An **Else** (press X) runs only when that condition was false: untick it. Exactly one branch runs per click.

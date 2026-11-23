@@ -1,0 +1,47 @@
+summary: "Students build a three-screen journal: choose a value, describe what they did, and see every entry in a list. A global variable (Chosen) carries the choice between layouts, an Array (Journal) stores entries with Push, and screen 3 rebuilds a List from the array with Repeat and loopindex in a separate event from Clear."
+time: 75
+timing: "Predict 3 min · Build it 40 min · Investigate 12 min · Modify 5 min · Make 15 min"
+goals:
+  - I can make an app with more than one screen and buttons that move between them.
+  - I can use a global variable to carry a choice from one screen to the next.
+  - I can store entries in an array and show them in a list.
+struggle: "This is the longest build in the course, and the most common failure is a layout using the wrong event sheet, so nothing on that screen happens. Check each layout's Event sheet property before anyone debugs further."
+before: |
+  The values are examples. Use your school's own values if it has them, or let students choose four that matter to them. Entries are personal: students keep the app on their own device and nothing is collected or shared. Keep any class discussion on made-up entries.
+
+  Check before class: the Array's Global property. If the array isn't kept between layouts, entries pushed on screen 2 won't be there on screen 3. Step 4 tells students to make sure Global is ticked; confirm the property name in the current editor.
+
+  When a layout is added, Construct usually offers to add an event sheet too. If a student has extra or missing sheets, click an empty part of each layout and set its Event sheet property.
+
+  Step 12 and 13 must be two separate events. If Clear sits in the same event as the Repeat, it runs on every repeat and only the last entry is left (the Investigate bug).
+
+  The journal forgets everything when the preview closes. That's fine for a prototype; saving between sessions (Local Storage) is a stretch.
+
+  These steps were written fresh for this site and have not yet been checked click by click in the current editor. Run through them once before class.
+running:
+  - "Predict: ask what 'global' might mean before the reveal."
+  - "Build it: checkpoint after step 10: does screen 2 show the chosen value? Fix that before arrays."
+  - "Investigate: write loopindex 0, 1, 2 under three entries on the board, and point to At(0), At(1), At(2)."
+  - "Make: pair students from different tables, so the tester hasn't seen the app built."
+stuck:
+  - see: "A screen's buttons do nothing."
+    ask: "Which event sheet does this layout use?"
+    fix: "Click empty space on the layout and set its Event sheet property to the sheet with its events."
+  - see: "Screen 3's list is empty."
+    ask: "Is the Journal array Global, and does the Push run before Go to layout?"
+    fix: "Tick Global on the array, and keep Push above Go to layout in AddButton's event."
+  - see: "Only the last entry shows."
+    ask: "Are Clear and Add item in the same event?"
+    fix: "Move Clear into its own On start of layout event above the Repeat event."
+stretch: "Save the journal between sessions with the Local Storage object (Array AsJSON and Load), or show the newest entry first."
+support: "Build screens 1 and 2 as a class first, then let students build screen 3 in pairs."
+leads: "Next: Creature stats, where one object has many copies, each with its own values."
+exit:
+  q: "A shopping app has a Cart screen and a Pay screen. The Cart screen sets a variable Total to 25. How can the Pay screen show $25?"
+  a: "Make Total a global variable; it keeps its value when the app goes to the Pay layout, so the Pay screen can set its text from it."
+explain: |
+  Each screen is a **layout** with its own event sheet. **Go to layout** moves between them.
+
+  A **global variable** belongs to the whole app, so it keeps its value when the app changes screen. That's how screen 2 knows what you chose on screen 1.
+
+  An **Array** keeps a list of entries; **Push** adds one at the back, and **Width** is how many there are. To show them, clear the List once, then **Repeat** Width times, adding **At(loopindex)** each time: loopindex counts 0, 1, 2 …

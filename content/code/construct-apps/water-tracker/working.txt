@@ -1,0 +1,8 @@
+# The cap as built in step 7, for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: cap
+Event: AddButton on clicked.
+   Action on that event: System, add 1 to Glasses.
+   Sub-event below it: System, Glasses < Goal.
+   The sub-event has no actions.
+# endregion

@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib wants the two creatures you didn't click to fade, so the clicked one stands out.
+Nib uses the event: Mouse on object clicked, Creature.
+Nib adds the action: Creature, set opacity to 40, so the other creatures fade.
+Nib clicks the Tidecrab, and only the Tidecrab fades.
+# endregion

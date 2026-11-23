@@ -1,0 +1,14 @@
+inquiry:
+  q: "A light switch, a mute button, a like button: what do they all have in common, and how does each one know what to do when you press it?"
+  prompts:
+    - "What does the button need to check before it does anything?"
+    - "What are the two things it could do?"
+  notes: "Each is a toggle: one press, then one of two outcomes depending on what it is now. In Construct that's one event with a sub-event and an Else."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Be the event sheet"
+    minutes: 5
+    do: |
+      Two students stand up as the two flat events, each with a card: "If ⬜, make it ✅" and "If ✅, make it ⬜". Hold up ⬜ and say "click". They act in order. The class watches the box end where it started. Then redo it with one student as the event and two as the branches, where only one may act.
+    notes: "Every matching event runs on one click, in order."

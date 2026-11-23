@@ -1,0 +1,22 @@
+inquiry:
+  q: "Think of an app that counts something for you (steps, screen time, a streak). What does it have to remember, and when does the number on the screen change?"
+  prompts:
+    - "What happens the moment you do the thing it counts?"
+    - "Does the number on screen change before, at the same time, or after?"
+  notes: "Every tracker remembers a number (a variable), changes it when something happens (an event), and shows it (setting the text). Today's prototype does all three."
+activities:
+  - at: predict
+    kind: discussion
+    title: "Does the total change?"
+    minutes: 3
+    do: |
+      Show the one-event table. Hands up for each option after three clicks. Don't settle it: step 10 of the build is the reveal.
+    notes: "Most say 45. Minutes is 45; the screen still says 0."
+questions:
+  - at: investigate
+    title: "Read the text"
+    type: question
+    q: "Minutes is 20. The text is set to \"Total: \" & Minutes. What shows?"
+    options: ["Total: 20", "Total: Minutes", "Total: & 20", "20"]
+    answer: 0
+    explain: "Quoted words are shown as they are; Minutes is replaced by its value; & joins them."
