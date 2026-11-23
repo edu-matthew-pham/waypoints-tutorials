@@ -358,6 +358,8 @@ sources:                       # where real-world facts came from (rates, dates,
 
 ### Hints and expected results
 
+**Pictures in a lesson folder (23 Nov 2026).** A screenshot or photo saved beside `lesson.md` (.png, .jpg, .webp, .gif, .svg) is copied next to the lesson page, so `![What the picture shows](event-sheet.png)` works in lesson text. Write the alt text as what a student needs from the picture, credit borrowed material under it, and keep files small. Create's copy of the lesson leaves pictures out.
+
 - `picture: page.html#combos` (or `{ ref: page.html#combos, boxes: true }`) on an Investigate, Modify, Make or info step or task, in an HTML lesson: a picture of what that code makes, shown beside it (not hidden), drawn by the playground itself so Boxes looks as students see it. Not allowed on Predict or Run (it would give the answer away). `explainPicture:` (lesson frontmatter, same form) puts one in the Explain it to me panel, after the text.
 - `expected: page.html#sol-x` (HTML steps and tasks with a playground) shows a picture of that region's page, no code, under a collapsed "Show the expected result". `npm run render` draws it (cached in `dist/_pictures/expected/`); until then the reveal is left out. Use a picture for static results and an output-only clip (below) for results that move.
 

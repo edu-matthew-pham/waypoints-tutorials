@@ -231,6 +231,9 @@ function conceptLinks(lesson) {
 function buildLesson(lesson, parentTitle, course) {
   const dir = join(OUT, lesson.slug);
   mkdirSync(dir, { recursive: true });
+  // A lesson's own pictures (screenshots, photos) sit beside lesson.md and are linked by name: ![alt](event-sheet.png).
+  // Not in source.json (text only), so Create's copy of the lesson shows the alt text instead.
+  for (const name of readdirSync(lesson.dir)) if (/\.(png|jpe?g|webp|gif|svg)$/i.test(name)) copyFileSync(join(lesson.dir, name), join(dir, name));
   writeFileSync(join(dir, 'source.json'), JSON.stringify(lessonSource(lesson))); // Make your own version (opens in Create)
   writeFileSync(join(dir, 'index.html'), lessonPageHtml(lesson, {
     Marked, highlightCode,

@@ -54,6 +54,14 @@ Before you close the tab, save a copy of your project to your computer. You'll u
 
 Was your guess right? Nothing on the event sheet mentions the arrow keys, and the player still moves. That's the 8 Direction behaviour.
 
+When you've finished, your event sheet should look like this. Each yellow line is a comment saying what the event below it is for. Check yours against it, top to bottom. Keep it open: you'll use it in the next steps.
+
+![Spell Caster's event sheet, events 1 to 6: two global numbers, GoblinSpeed and Score, then On start of layout, Every tick, Mouse on left button clicked, Spell on collision with Goblin, Goblin health 0 or less, and Goblin is outside layout. Conditions are on the left, actions on the right.](event-sheet-1.png)
+
+![Spell Caster's event sheet, events 7 to 10: for each Goblin within 200 pixels of the player, rotate toward the player; every 3 seconds, create a Goblin; Goblin on collision with Player, destroy the player and show Game Over; on Space pressed when there is no player, reset and restart.](event-sheet-2.png)
+
+*Spell Caster is the demo game from Scirra's Beginner's guide to Construct 3 (CC BY 4.0). Screenshots of the finished event sheet in Construct 3.*
+
 ## Investigate: behaviour or event?
 
 ```step
