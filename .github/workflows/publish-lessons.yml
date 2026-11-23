@@ -110,7 +110,7 @@ jobs:
             for f in $(find "content/$s" -name package.json -not -path '*/node_modules/*'); do (cd "$(dirname "$f")" && npm ci); done
             grep -q '^voice:' "content/$s/lesson.md" && touch .needs-voice || true
           done
-          if [ -f .needs-voice ]; then npm install --no-save --no-audit --no-fund kokoro-js@1.2.1; fi
+          if [ -f .needs-voice ]; then ONNXRUNTIME_NODE_INSTALL_CUDA=skip npm_config_onnxruntime_node_install_cuda=skip npm install --no-save --no-audit --no-fund kokoro-js@1.2.1; fi   # skip the GPU (CUDA) download: its 1.21.0 binaries 404 and broke every recording job from 20 Nov 2026
 
       # Same caches as the full publish: the voice model, and spoken lines reused when the words are unchanged.
       - name: Cache the voice model

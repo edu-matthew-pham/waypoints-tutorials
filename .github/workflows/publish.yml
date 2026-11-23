@@ -241,7 +241,7 @@ jobs:
             (cd "$(dirname "$f")" && npm ci)
           done
           # Voiceover (lessons with voice:): Kokoro runs in Node; not a site dependency, so install it only here.
-          if grep -rlq '^voice:' content --include=lesson.md; then npm install --no-save --no-audit --no-fund kokoro-js@1.2.1; fi
+          if grep -rlq '^voice:' content --include=lesson.md; then ONNXRUNTIME_NODE_INSTALL_CUDA=skip npm_config_onnxruntime_node_install_cuda=skip npm install --no-save --no-audit --no-fund kokoro-js@1.2.1; fi   # skip the GPU (CUDA) download: its 1.21.0 binaries 404 and broke every recording job from 20 Nov 2026
 
       # Restored after kokoro-js is installed (installing it would clear the folder). The key changes only with the model
       # (MODEL_ID and dtype in tools/voice.mjs), so the 90 MB download from Hugging Face happens once.
