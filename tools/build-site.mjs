@@ -20,7 +20,7 @@ import { diagramSpec } from './diagram-core.mjs';
 import { snippetId, unlockKind, pictureSpec, usesBoardPictures, pictureBoard, makecodePackage, makecodeExtensions, captionText, voiceSpec, CLIP_VOICES, VOICE_LABELS } from './lesson-core.mjs';
 import { loadLessons, validateLesson, getSnippet, loadDirMeta, loadSnippetFiles, loadSharedModules, CONTENT_ROOT, getRefreshers } from './lesson.mjs';
 import { refresherPageBody, REFRESH_CSS, REFRESH_JS } from './refreshers.mjs';
-import { buildPlayground, buildPyPlayground, buildMicrostudioPlayground, buildP5Playground, buildSqlPlayground, buildDomPlayground, buildHtmlPlayground, buildMathsPlayground, buildSciencePlayground, buildKatex, buildNumbas, buildMakecodePlayground, buildExplainStage } from './build-playground.mjs';
+import { buildPlayground, buildPyPlayground, buildMicrostudioPlayground, buildP5Playground, buildSqlPlayground, buildDomPlayground, buildHtmlPlayground, buildMathsPlayground, buildSciencePlayground, buildKatex, buildNumbas, buildMakecodePlayground, buildAppBuilderPlayground, buildExplainStage } from './build-playground.mjs';
 import { buildCreate } from './build-create.mjs';
 import { layoutTrail, trailHtml, TRAIL_CSS, trailheadsHtml, TRAILHEADS_CSS } from './trail.mjs';
 import { loadCurriculum, curriculumMapHtml, CMAP_CSS } from './curriculum-map.mjs';
@@ -236,7 +236,7 @@ function buildLesson(lesson, parentTitle, course) {
   // Not in source.json (text only), so Create's copy of the lesson shows the alt text instead.
   for (const name of readdirSync(lesson.dir)) if (/\.(png|jpe?g|webp|gif|svg)$/i.test(name)) copyFileSync(join(lesson.dir, name), join(dir, name));
   writeFileSync(join(dir, 'source.json'), JSON.stringify(lessonSource(lesson))); // Make your own version (opens in Create)
-  const pageHtml = (h) => (/^code\/construct/.test(lesson.slug) ? highlightConstructPage(h) : h);   // Construct expressions coloured (tools/construct-highlight.mjs)
+  const pageHtml = (h) => (/^code\/(construct|apps\/)/.test(lesson.slug) ? highlightConstructPage(h) : h);   // Construct expressions coloured (tools/construct-highlight.mjs)
   writeFileSync(join(dir, 'index.html'), pageHtml(lessonPageHtml(lesson, {
     Marked, highlightCode,
     snippet: (ref) => getSnippet(lesson.dir, ref),
@@ -299,9 +299,10 @@ buildSciencePlayground(OUT);
 buildKatex(OUT);
 buildNumbas(OUT);
 buildMakecodePlayground(OUT);
+buildAppBuilderPlayground(OUT);
 buildExplainStage(OUT);
 // Each playground's build stamp, added to the iframe URLs so a deploy is picked up at once.
-const VERSIONS = Object.fromEntries(['_playground', '_playground-py', '_playground-microstudio', '_playground-p5', '_playground-sql', '_playground-dom', '_playground-html', '_playground-board', '_playground-makecode', '_playground-science'].map((d) => [d, readFileSync(join(OUT, d, 'version.txt'), 'utf8').trim()]));
+const VERSIONS = Object.fromEntries(['_playground', '_playground-py', '_playground-microstudio', '_playground-p5', '_playground-sql', '_playground-dom', '_playground-html', '_playground-board', '_playground-makecode', '_playground-science', '_playground-appbuilder'].map((d) => [d, readFileSync(join(OUT, d, 'version.txt'), 'utf8').trim()]));
 await buildCreate(OUT);
 
 // Which lesson step unlocks which snippet: the playgrounds lock exactly these until the check is passed.
@@ -548,7 +549,11 @@ copyFileSync(join('site', 'check.js'), join(OUT, 'check.js')); // the Check your
 const COVERAGE = loadCoverage('.', COURSES.map((c) => c.path).filter((p) => p.startsWith('code/')));
 for (const e of COVERAGE.std.values()) for (const p of [...e.focus, ...e.touches]) if (!COURSES.some((c) => c.path === p)) throw new Error(`data/curriculum/code-coverage.yml: ${e.code} names "${p}", which is not a course`);
 const HOWTOS = loadHowtos(CONTENT_ROOT, { readdirSync, readFileSync, existsSync, join, YAMLparse });   // how-to pages, listed on the courses they name (tools/howto.mjs)
-const SEARCH = makeSearch({ lessons, dirNode, courses: [...COURSES, ...loadProjects(CONTENT_ROOT, () => 'turtle').filter((st) => !COURSES.some((c) => c.path === st.course)).map((st) => ({ path: st.course, title: dirNode(st.course).title, order: dirNode(st.course).order }))], subjects: SUBJECTS, pathwayOf, play: PLAY, coverage: COVERAGE });
+// A course with `hidden: true` in its index.md (a fork being tried before it goes on a pathway) builds at its own address
+// but is left out of search, so only people given the link find it.
+const HIDDEN = new Set(COURSES.filter((c) => dirNode(c.path)?.meta?.hidden).map((c) => c.path));
+const shown = (path) => ![...HIDDEN].some((h) => path === h || path.startsWith(h + '/'));
+const SEARCH = makeSearch({ lessons: lessons.filter((l) => shown(l.slug)), dirNode, courses: [...COURSES.filter((c) => shown(c.path)), ...loadProjects(CONTENT_ROOT, () => 'turtle').filter((st) => !COURSES.some((c) => c.path === st.course)).map((st) => ({ path: st.course, title: dirNode(st.course).title, order: dirNode(st.course).order }))], subjects: SUBJECTS, pathwayOf, play: PLAY, coverage: COVERAGE });
 // ICT cards are found by search too, beside their lessons.
 for (const [path, cards] of ICT_CARDS) for (const c of cards) SEARCH.entries.push({ t: c.title, u: `${path}/reference/#${c.id}`, s: dirNode(path.split('/')[0]).title, sp: path.split('/')[0], c: dirNode(path).title, y: '', ty: 'card', d: c.idea.length > 150 ? c.idea.slice(0, 147).replace(/\s+\S*$/, '') + '…' : c.idea, k: normSearch(ictCardText(c)) });
 // How-tos (3 Nov 2026): one entry each, plus the /howto/ index as a teacher page; found by title, summary and the words of their courses.

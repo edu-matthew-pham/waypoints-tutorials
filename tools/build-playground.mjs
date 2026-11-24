@@ -221,6 +221,16 @@ export function buildMakecodePlayground(out = 'dist') {
   return dest;
 }
 
+/** App Builder (vendor/app-builder), served from this site so it can report the student's project to the lesson page. */
+export function buildAppBuilderPlayground(out = 'dist') {
+  const dest = join(out, '_playground-appbuilder');
+  rmSync(dest, { recursive: true, force: true });
+  mkdirSync(dest, { recursive: true });
+  for (const f of ['index.html', 'README.md']) copyFileSync(join(root, 'vendor', 'app-builder', f), join(dest, f));
+  stampPlayground(dest);
+  return dest;
+}
+
 /** The explain stage: a static page that MakeCode lessons' "Explain it to me" clips record (blocks, then what it makes). */
 export function buildExplainStage(out = 'dist') {
   const dest = join(out, '_playground-explain');
@@ -258,6 +268,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   console.log('Web page and JavaScript playground built into ' + buildDomPlayground(out));
   console.log('Board built into ' + await buildMathsPlayground(out));
   console.log('MakeCode playground built into ' + buildMakecodePlayground(out));
+  console.log('App Builder playground built into ' + buildAppBuilderPlayground(out));
   console.log('Explain stage built into ' + buildExplainStage(out));
   console.log('Science board built into ' + buildSciencePlayground(out));
   console.log('Python playground built into ' + buildPyPlayground(out));

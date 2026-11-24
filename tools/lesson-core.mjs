@@ -32,7 +32,7 @@ export function voiceSpec(v) {
 export const captionText = (v) => (v && typeof v === 'object' ? String(v.text ?? '') : String(v ?? ''));
 export const captionSay = (v) => (v && typeof v === 'object' && v.say !== undefined ? String(v.say) : captionText(v));
 // board: interactive diagrams (balance, machine, graph…); maths is its old name and still works.
-export const PLAYGROUND_KINDS = ['turtle', 'python', 'microstudio', 'p5', 'sql', 'dom', 'html', 'board', 'maths', 'microbit', 'arcade', 'science'];
+export const PLAYGROUND_KINDS = ['turtle', 'python', 'microstudio', 'p5', 'sql', 'dom', 'html', 'board', 'maths', 'microbit', 'arcade', 'science', 'appbuilder'];
 const isBoard = (pg) => ['board', 'maths', 'science'].includes(pg);
 /** What a board check can expect from a board's report: the board (balance, machine), and the science board (done: the widget's task is finished). Newer boards use when: conditions. */
 export const BOARD_KEYS = ['balanced', 'solved', 'x'];
@@ -93,7 +93,12 @@ export const SQL_RULES = ['contains', 'rows', 'columns', 'result'];
 /** Node only: lesson.mjs installs a function (dbName, query) => the result table as text, so a solution can be checked against the rows it makes. Absent in the browser (Create), where such checks are skipped. */
 let sqlRunner = null;
 export const setSqlRunner = (fn) => { sqlRunner = fn; };
+// App Builder solutions are project JSON; the page's checks read the project as plain text. lesson.mjs sets the converter
+// (vendor/app-builder/sheet-text.mjs); without it (Create in the browser) App Builder solutions are not checked here.
+let appBuilderText = null;
+export const setAppBuilderText = (fn) => { appBuilderText = fn; };
 export const MAKECODE_RULES = ['contains', 'inside', 'count', 'defs', 'calls', 'params'];
+export const APPBUILDER_RULES = ['contains', 'event', 'lacks']; // App Builder's project as plain text (evalRules, kind appbuilder)
 
 /**
  * Evaluates a code check's rules against the student's code (all their files joined). Pure and
@@ -155,6 +160,22 @@ export function evalRules(rules, text, kind, output) {
   //   defs / params / calls                      named functions (`function name (points: number)`); event blocks
   //                                              are anonymous `function ()`, so they never count as a definition
   // Labels are for teachers and the validator; students working in blocks see the check's own text instead.
+  // kind 'appbuilder': App Builder's project as plain text, one line per event (vendor/app-builder/README.md):
+  //   `event: when SaveButton is clicked > when BedBox text = "⬜" | do: Set BedBox text to "✅"; Add 1 to variable Glasses`
+  //   contains: [fragments]          somewhere in the project (spaces ignored, as elsewhere)
+  //   event: [[fragments], ...]      each list must all be on ONE event line (its conditions, its parents' and its actions)
+  //   lacks: [fragments]             must not appear (for "the cap is not on the click event any more")
+  // Labels are for teachers and the validator; students see the check's own text.
+  if (kind === 'appbuilder') {
+    const flatA = (s) => String(s).replace(/\s+/g, '');
+    const lines = String(text).split('\n').filter((l) => l.startsWith('event:')).map(flatA);
+    const all = flatA(text);
+    const out = [];
+    (rules.contains || []).forEach((frag) => out.push({ label: `Has ${frag}`, ok: all.includes(flatA(frag)) }));
+    (rules.event || []).forEach((frags) => { const fs = [].concat(frags); out.push({ label: `One event with ${fs.join(' + ')}`, ok: lines.some((l) => fs.every((f) => l.includes(flatA(f)))) }); });
+    (rules.lacks || []).forEach((frag) => out.push({ label: `No ${frag}`, ok: !all.includes(flatA(frag)) }));
+    return out;
+  }
   if (kind === 'microbit' || kind === 'arcade') {
     const plain = String(text).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '');
     const flatM = (s) => String(s).replace(/\s+/g, '');
@@ -515,7 +536,7 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
       const r = k.rules;
       if (!r || typeof r !== 'object' || Array.isArray(r)) err(where, `check (code) needs rules, a mapping using ${CODE_RULES.join(', ')}`);
       else {
-        for (const key of Object.keys(r)) if (![...CODE_RULES, ...SQL_RULES].includes(key)) err(where, `unknown code rule "${key}" (use ${CODE_RULES.join(', ')})`);
+        for (const key of Object.keys(r)) if (![...CODE_RULES, ...SQL_RULES, ...APPBUILDER_RULES].includes(key)) err(where, `unknown code rule "${key}" (use ${CODE_RULES.join(', ')})`);
         for (const key of ['defs', 'calls', 'loops', 'returns', 'params']) if (r[key] !== undefined && !(Number.isInteger(r[key]) && r[key] > 0)) err(where, `code rule ${key} must be a whole number above 0`);
         if (r.uses !== undefined && !(Array.isArray(r.uses) && r.uses.every((m) => /^\w+$/.test(String(m))))) err(where, 'code rule uses must be a list of names, such as [pencolor]');
         if (r.imports !== undefined && !(Array.isArray(r.imports) && r.imports.every((m) => /^\w+$/.test(String(m))))) err(where, 'code rule imports must be a list of module names');
@@ -529,7 +550,12 @@ export function validateLessonCore(lesson, read, known, shared = {}) {
         if (!Object.keys(r).length) err(where, 'check (code) needs at least one rule');
       }
       const pk = c.try ? ({ python: 'turtle', dom: 'html' }[c.try.playground] || c.try.playground || (lesson.language === 'html' ? 'html' : lesson.language === 'javascript' ? 'p5' : lesson.language === 'sql' ? 'sql' : 'turtle')) : null;
-      if (!pk || !['turtle', 'html', 'p5', 'sql', ...MAKECODE_KINDS].includes(pk)) err(where, 'a code check needs a playground on the step (try: { starter: ... })');
+      if (!pk || !['turtle', 'html', 'p5', 'sql', 'appbuilder', ...MAKECODE_KINDS].includes(pk)) err(where, 'a code check needs a playground on the step (try: { starter: ... })');
+      else if (pk === 'appbuilder') {
+        for (const key of Object.keys(r || {})) if (!APPBUILDER_RULES.includes(key)) err(where, `code rule ${key} does not work in App Builder (use ${APPBUILDER_RULES.join(', ')})`);
+        if (r?.event !== undefined && !(Array.isArray(r.event) && r.event.every((e) => Array.isArray(e) && e.length && e.every((f) => typeof f === 'string' && f.trim())))) err(where, 'code rule event must be a list of fragment lists, such as [["when SaveButton is clicked", "Add 1 to variable Minutes"]]');
+        if (r?.lacks !== undefined && !(Array.isArray(r.lacks) && r.lacks.every((f) => typeof f === 'string' && f.trim()))) err(where, 'code rule lacks must be a list of fragments');
+      }
       else if (r && typeof r === 'object') {
         const allowedR = pk === 'sql' ? SQL_RULES : pk === 'html' ? HTML_RULES : pk === 'p5' ? P5_RULES : MAKECODE_KINDS.includes(pk) ? MAKECODE_RULES : CODE_RULES.filter((x) => !['tags', 'inside', 'count'].includes(x));
         const pname = pk === 'sql' ? 'SQL' : pk === 'html' ? 'HTML' : pk === 'p5' ? 'p5.js' : MAKECODE_KINDS.includes(pk) ? 'MakeCode' : 'turtle';
@@ -1014,6 +1040,7 @@ function validateTeacher(lesson, snip, err) {
       if (item.check?.type === 'code' && item.check.rules) {
         const uk = unlockKind(lesson, item.step);
         if (uk === 'sql' && !sqlRunner) continue;
+        if (uk === 'appbuilder') { if (!appBuilderText) continue; try { code = appBuilderText(code); } catch (e) { err(w, `solutions.${id}: not an App Builder project: ${e.message}`); continue; } }
         let out; if (uk === 'sql') { try { out = sqlRunner(item.step.config.try?.db, code); } catch (e) { err(w, `solutions.${id}: the query fails: ${e.message}`); continue; } }
         const failed = evalRules(item.check.rules, code, uk, out).filter((r) => !r.ok).map((r) => r.label);
         if (failed.length) err(w, `solutions.${id} fails its own check: ${failed.join('; ')}`);

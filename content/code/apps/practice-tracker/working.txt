@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib adds a variable, Minutes, starting at 0.
+Nib adds an event: On start of screen, set TotalText text to "You've practised " & Minutes & " minutes".
+Nib adds an event: when SaveButton is clicked, add int(TextInput.text) to variable Minutes.
+Nib types 20, clicks Save, and the screen still says 0 minutes.
+# endregion

@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib wants the two creatures you didn't click to hide, so the clicked one stands out.
+Nib uses the event: Creature is clicked.
+Nib adds the action: Hide Creature, so the other creatures disappear.
+Nib clicks Tide, and only Tide disappears.
+# endregion

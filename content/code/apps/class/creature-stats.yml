@@ -1,0 +1,14 @@
+inquiry:
+  q: "A game's character select screen has 20 characters. Did someone write 20 separate click events? How else could it work?"
+  prompts:
+    - "What's the same about every character card?"
+    - "What's different about each one?"
+  notes: "One design (an object), many copies, each with its own details (object variables). One event that reads whichever copy was clicked."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Be the creatures"
+    minutes: 5
+    do: |
+      Three students stand at the front, each holding a card with a name and three stats. You "click" one by pointing. Read out the event's actions ("Creature: hold up your power card", "Creature: sit down"). Only the picked student acts.
+    notes: "Creature is clicked picks one copy; the event's actions apply to it alone."

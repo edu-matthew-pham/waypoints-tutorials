@@ -449,6 +449,7 @@ if(m.quiet&&!(load().done||{})[key]){}
 else if(res.every(function(r){return r.ok})&&(m.status==='done'||m.status==='stopped')){pass()}
 else if(m.kind==='html'){if(!m.quiet){msg.className='msg';msg.textContent='Not quite yet. Keep going: the list shows what your page still needs.'}}
 else if(m.kind==='microbit'||m.kind==='arcade'){if(!m.quiet){msg.className='msg';msg.textContent='Not quite yet. Keep building: this ticks by itself when your blocks do what is asked.'}}
+else if(m.kind==='appbuilder'){if(!m.quiet){msg.className='msg';msg.textContent='Not quite yet. Keep building: this ticks by itself when your events do what is asked.'}}
 else{msg.className='msg';msg.textContent=m.status==='done'?'Not quite yet. Change your code, then run it again.':'Fix the error, then run it again.'}})}
 var cb=box.querySelector('input[type=checkbox]');
 if(cb){if((load().done||{})[key])cb.checked=true;cb.addEventListener('change',function(){if(cb.checked)pass()})}
@@ -1075,6 +1076,7 @@ export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = nul
   if (t.boxes) q.set('boxes', '1'); // HTML playground: start with the Boxes view on
   if (t.boxmodel) q.set('boxmodel', '1'); // ... or with the Box model view on
   if (t.db) q.set('db', t.db); // SQL playground: the starting database, data/<name>.sql
+  if (t.playground === 'appbuilder') { if (t.level) q.set('level', t.level); if (t.tab) q.set('tab', t.tab); q.set('lock', '1'); } // App Builder: blocks offered, opening tab; lessons keep the level switch and Samples menu away
   if (t.playground === 'microbit' || t.playground === 'arcade') {
     q.set('target', t.playground); // one MakeCode playground, two editors
     const pkg = makecodePackage(lesson); if (pkg) q.set('pkg', pkg); // the lesson's extensions (robot), added to the step's project

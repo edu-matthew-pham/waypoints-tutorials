@@ -34,7 +34,8 @@
     "check-blockers": "node tools/check-blockers.mjs",
     "check-options": "node tools/check-options.mjs",
     "check-refreshers": "node tools/check-refreshers.mjs",
-    "cross-links": "node tools/cross-links.mjs"
+    "cross-links": "node tools/cross-links.mjs",
+    "check-appbuilder": "node tools/check-appbuilder.mjs"
   },
   "engines": {
     "node": ">=20"

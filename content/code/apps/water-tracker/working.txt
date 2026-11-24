@@ -1,0 +1,8 @@
+# The cap as built in step 5, for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: cap
+Event: when AddButton is clicked.
+   Action on that event: add 1 to variable Glasses.
+   Sub-event below it: Variable Glasses < Goal.
+   The sub-event has no actions.
+# endregion

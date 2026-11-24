@@ -1,0 +1,47 @@
+summary: "Students build a three-screen journal: choose a value, describe what they did, and see every entry in a list. A whole-app variable (Chosen) carries the choice between screens, a list variable (Journal) stores entries with Add to the end of list, and a List object on screen 3 shows the list."
+time: 75
+timing: "Predict 3 min · Build it 35 min · Investigate 12 min · Modify 10 min · Make 15 min"
+goals:
+  - I can make an app with more than one screen and buttons that move between them.
+  - I can use a whole-app variable to carry a choice from one screen to the next.
+  - I can store entries in a list and show them with a List object.
+struggle: "This is the longest build in the course, and the most common failure is adding events on the wrong screen. The Events tab shows the events of the screen open in the sidebar; check its heading before anyone debugs further."
+before: |
+  The values are examples. Use your school's own values if it has them, or let students choose four that matter to them. Entries are personal: the app keeps them in the browser on the student's own device and nothing is collected or shared. Keep any class discussion on made-up entries.
+
+  Each screen has its own events. The Events tab's heading names the screen; switch screens by clicking a screen's name in the sidebar.
+
+  Run starts on the screen you were editing. To test the whole flow, open the Choose screen first.
+
+  The List object shows a list variable by itself (its Shows property), so no loop is needed to fill it. Loops (For each, LoopIndex) come up in Investigate, and for real in the next lesson.
+
+  The journal forgets entries when the project is restarted. That's fine for a prototype.
+running:
+  - "Predict: ask what 'whole app' might mean before the reveal."
+  - "Build it: checkpoint after step 5: does screen 2 show the chosen value? Fix that before lists."
+  - "Investigate: write LoopIndex 1, 2, 3 under three entries on the board, and point to item(Journal, 1), item(Journal, 2), item(Journal, 3)."
+  - "Make: pair students from different tables, so the tester hasn't seen the app built."
+stuck:
+  - see: "A screen's buttons do nothing."
+    ask: "Which screen were the events added to?"
+    fix: "Look at the Events tab's heading. Move the event by rebuilding it on the right screen."
+  - see: "Screen 3's list is empty."
+    ask: "What does the List's Shows property say, and does the Add run before Go to screen?"
+    fix: "Set Shows to Journal, and keep Add to the end of list above Go to screen in AddButton's event."
+  - see: "The question says 'What did you do to show ?'"
+    ask: "Did you run from the Choose screen?"
+    fix: "Open the Choose screen, then Run, so a value is chosen first."
+stretch: "Show only the Courage entries: on the Journal screen, use For each item in list Journal with a condition on LoopItem, and add matching ones to a second list."
+support: "Build screens 1 and 2 as a class first, then let students build screen 3 in pairs."
+leads: "Next: Creature stats, where one object has many copies, each with its own values."
+exit:
+  q: "A shopping app has a Cart screen and a Pay screen. The Cart screen sets a variable Total to 25. How can the Pay screen show $25?"
+  a: "Make Total a whole-app variable (in the sidebar); it keeps its value when the app goes to the Pay screen, so the Pay screen can set its text from it."
+explain: |
+  Each screen has its own objects and events. **Go to screen** moves between them.
+
+  A variable in the sidebar belongs to the **whole app**, so it keeps its value when the app changes screen. That's how screen 2 knows what you chose on screen 1.
+
+  A **list variable** keeps many entries; **Add … to the end of list** adds one at the back, and **count(Journal)** is how many there are. A **List** object shows a list, one row per entry.
+solutions:
+  step-6#t2: app.json#sol-count

@@ -1,0 +1,14 @@
+inquiry:
+  q: "Why do app makers show people a rough prototype instead of waiting until the app is finished?"
+  prompts:
+    - "What could a user tell you from a prototype?"
+    - "What would it cost to find that out after the app was finished?"
+  notes: "A prototype is cheap to change. Watching someone use it shows problems the builder can't see, because the builder already knows how it works."
+activities:
+  - at: make
+    kind: activity
+    title: "Silent testing"
+    minutes: 15
+    do: |
+      Pairs swap laptops with another pair. Each tester gets one task written on a sticky note from the builder. Builders watch in silence and write down every pause and wrong click. Swap back and share one surprise each.
+    notes: "No pointing, no explaining. The notes are the evidence for Milestone 5."

@@ -1,0 +1,159 @@
+# Reference cards for App Builder apps: one screen each, no ticks. Written for this site (not copied from any school's tutorials).
+lede: "One card for each thing you'll need in App Builder, to look up while you build. Each says what it's for, how to do it, and links to the lesson that teaches it."
+search: "Search the cards, such as variable, button or list"
+cards:
+  - id: right-screen
+    title: "Nothing happens? Check the screen"
+    unit: respond
+    lesson: practice-tracker
+    idea: "Each screen has its own events. If a screen's events never seem to run, they're probably on another screen."
+    steps:
+      - "Look at the Events tab's heading: it names the screen."
+      - "Click a screen's name in the sidebar to open it."
+      - "Run starts on the screen you have open: open the first screen before you run."
+    watch: "Under the app on the Run tab, each event lights up when it runs. An event that never lights up is a clue."
+    apps:
+      "App Builder": "Restart on the Events tab runs the preview again from the start of the screen."
+  - id: event-and-action
+    title: "Add an event and its actions"
+    unit: respond
+    lesson: practice-tracker
+    idea: "An event is a row: on the left, when something happens (the condition); on the right, what to do then (the actions)."
+    steps:
+      - "On the Events tab, choose + Add event."
+      - "Choose + Condition, then the object, then the condition, such as is clicked."
+      - "Choose + Action, then the object, then the action, such as Set text."
+      - "Add more actions to the same event if needed: they run top to bottom."
+    apps:
+      "App Builder": "Name objects before you start (SaveButton, TotalText) so you can find them in the lists. ⚡ marks a one-off event."
+  - id: variable
+    title: "Remember a value: a variable"
+    unit: respond
+    lesson: practice-tracker
+    idea: "A variable is a named box that holds one value for the whole app, and keeps it when the app changes screen."
+    steps:
+      - "In the sidebar under Variables, type a name and a starting value, then +."
+      - "Change it with Variables, Add to variable or Set variable."
+      - "Read it by typing its name in an expression."
+    watch: "The Watch box on the Run tab shows each variable as it changes."
+    apps:
+      "App Builder": "Start with \"\" for text or 0 for a number. Rename a variable by clicking its name; every event that uses it changes too."
+  - id: show-a-value
+    title: "Show a value on screen"
+    unit: respond
+    lesson: practice-tracker
+    idea: "The screen only changes when an event sets the text. Join words and values with &."
+    steps:
+      - "Add the action: your Text object, Set text."
+      - "Put words to show in quote marks: \"Total: \"."
+      - "Join a variable with &: \"Total: \" & Minutes."
+      - "Put it in the same event that changes the variable, or in Every tick."
+    watch: "A Text input always holds text: use int(TextInput.text) to add what was typed."
+    apps:
+      "App Builder": "If the screen shows the word Minutes, it's inside the quote marks by mistake. Find expressions lists everything you can type."
+  - id: toggle
+    title: "On and off: sub-event and Else"
+    unit: respond
+    lesson: chores-checklist
+    idea: "One trigger, two branches: a sub-event runs only if its condition is true, and an Else runs only if it was false."
+    steps:
+      - "Add the trigger on its own, such as BedBox is clicked."
+      - "Click the event, then ⋯, Add a sub-event; give it a condition and actions."
+      - "Click the sub-event, then ⋯, Add an Else below; give it actions."
+      - "Run it: one click runs one branch."
+    watch: "Two separate events with the same trigger both run on one click and undo each other."
+    apps:
+      "App Builder": "Sub-events and Else need level 2 or more; a lesson sets the level for you."
+  - id: every-tick
+    title: "Keep the screen up to date: Every tick"
+    unit: track
+    lesson: water-tracker
+    idea: "Every tick runs about 60 times a second, so it keeps what's on screen in step with the variables, whatever changed them."
+    steps:
+      - "Add a condition: System, Every tick."
+      - "Add actions that show values: Set text, Set width."
+      - "Change variables in button events, not here."
+    watch: "Don't add to a variable in Every tick: it would add about 60 a second."
+    apps:
+      "App Builder": "Every tick is under System. Its row on the Run tab keeps flashing: it runs all the time."
+  - id: compare-variable
+    title: "Check a value"
+    unit: track
+    lesson: water-tracker
+    idea: "A Variable condition is true while a variable meets a test, such as Glasses < Goal. Without ⚡ it's checked every time the event runs."
+    steps:
+      - "Add a condition: Variables, then the variable, a comparison (=, <, ≥ …) and a value."
+      - "Add actions; ⋯, Add an Else below for when it's false."
+      - "To limit a button, put the check in a sub-event and move the action inside it."
+    watch: "An action on the event above a sub-event isn't controlled by the sub-event's condition."
+    apps:
+      "App Builder": "To compare two expressions, use Variables, Compare … …."
+  - id: progress-bar
+    title: "Make a progress bar"
+    unit: track
+    lesson: water-tracker
+    idea: "A coloured Box whose width is worked out from a value, over a grey Box the full width."
+    steps:
+      - "Add a grey Box at full width (say 300), then a coloured Box on top, in the same place."
+      - "Every tick: set the coloured bar's width to value / goal * 300."
+    apps:
+      "App Builder": "Objects added later sit on top. Arrow keys nudge the selected object; Alt and arrows resize it."
+  - id: show-hide
+    title: "Show or hide something"
+    unit: track
+    lesson: water-tracker
+    idea: "Hide an object when the screen starts, then show it from an event when it's needed."
+    steps:
+      - "Add an event: Screen, On start of screen, with the action: the object, Hide."
+      - "In the event where it's needed, add the action: the object, Show."
+    apps:
+      "App Builder": "Name.visible is true while it's showing, so a condition can check it."
+  - id: screens
+    title: "More than one screen"
+    unit: screens
+    lesson: values-journal
+    idea: "Each screen has its own objects and events. Go to screen moves between them."
+    steps:
+      - "In the sidebar, choose + Screen."
+      - "On a button's click event, add Screen, Go to screen."
+      - "Use Screen, On start of screen to set a screen's text as it opens."
+    watch: "Objects on one screen aren't on the next. Use a variable in the sidebar to carry a value across."
+    apps:
+      "App Builder": "The Events tab shows the events of the screen open in the sidebar."
+  - id: list
+    title: "Keep a list: list variable and List"
+    unit: screens
+    lesson: values-journal
+    idea: "A list variable keeps many values in order; a List object shows one on screen."
+    steps:
+      - "In the sidebar under Lists, add a list, such as Journal."
+      - "Add an entry: Lists, Add … to the end of list."
+      - "Add a List object and set its Shows property to the list."
+      - "count(Journal) is how many; item(Journal, 1) is the first."
+    watch: "Items are numbered from 1. For each item in list runs once per item, with LoopItem and LoopIndex."
+    apps:
+      "App Builder": "A list can start with items: type them in the sidebar, separated by commas."
+  - id: object-variables
+    title: "Each copy, its own values: object variables"
+    unit: characters
+    lesson: creature-stats
+    idea: "Object variables belong to an object, but each copy keeps its own values."
+    steps:
+      - "Click any copy; in Properties under Object variables, add them."
+      - "Click each copy in turn and fill in its own values."
+      - "Read one with Object.name, such as Creature.power."
+    watch: "Every copy needs its values set separately."
+    apps:
+      "App Builder": "⋯, Duplicate in the sidebar makes another copy. Give each copy its own picture in Properties."
+  - id: picking
+    title: "Which copy? Picking"
+    unit: characters
+    lesson: creature-stats
+    idea: "A condition picks the copies it's true for. Actions and expressions in that event use only the picked copies."
+    steps:
+      - "Use a condition that picks, such as Creature is clicked."
+      - "Actions on that object in the same event apply to the picked copy only."
+      - "Object.variable reads the picked copy's value."
+    watch: "An event that picks nothing applies an action to every copy."
+    apps:
+      "App Builder": "Copies share one name, so Creature.name means the picked copy."

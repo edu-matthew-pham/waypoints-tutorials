@@ -1,0 +1,14 @@
+inquiry:
+  q: "Think of an app you use with several screens, such as ordering food. What does each screen need to know from the screen before?"
+  prompts:
+    - "What would go wrong if the next screen forgot it?"
+    - "Where might the app keep it?"
+  notes: "Something has to outlast the screen change. In App Builder that's a variable in the sidebar (one value) or a list variable (many)."
+activities:
+  - at: run
+    kind: activity
+    title: "Sketch the flow first"
+    minutes: 5
+    do: |
+      Before building, students draw the three screens as boxes on paper and an arrow for every button that moves between them. Label each arrow with the event that causes it.
+    notes: "One screen per box, one Go to screen per arrow. The sketch is the plan the events follow."

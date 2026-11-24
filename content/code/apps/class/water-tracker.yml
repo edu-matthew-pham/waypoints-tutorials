@@ -1,0 +1,14 @@
+inquiry:
+  q: "A screen shows the same number in three places: a count, a bar and a message. How could you make sure all three always agree?"
+  prompts:
+    - "What if a new button changes the number? What would you have to remember?"
+    - "Is there a way to update them without remembering?"
+  notes: "Setting the display in every event is easy to forget. An Every tick event keeps everything in step with the variables, whatever changed them."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Which actions does the condition control?"
+    minutes: 5
+    do: |
+      Draw the AddButton event with its sub-event as two boxes, one inside the other. Ask students to place the Add 1 action where step 7 put it. Ask: when the condition Glasses < Goal is false, which box is skipped? Is the action in it?
+    notes: "A sub-event's condition only controls what's inside the sub-event."

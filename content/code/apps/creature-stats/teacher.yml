@@ -1,0 +1,45 @@
+summary: "Students build a character viewer: one Creature Image with three copies, each with its own object variables, and one Creature is clicked event that shows the clicked creature's name, stats as text and bars, and ability. They predict and test that clicking picks one copy, find Nib's mistake (expecting Hide to hide every creature), add a fourth creature without changing the events, then design their own set."
+time: 75
+timing: "Predict 3 min · Build it 35 min · Investigate 12 min · Modify 8 min · Make 17 min"
+goals:
+  - I can make several characters from one Image, each with its own values.
+  - I can explain the difference between an object, its copies and its object variables.
+  - I can use one click event that works for whichever character is clicked.
+struggle: "Filling in object variables for each copy: students set the values on one creature and assume the others have them. Each copy must be clicked and filled in separately."
+before: |
+  The creatures are made up (Blaze, Tide, Zip). Students' own sets in Make should be made up or everyday things too; steer away from real people. Built-in pictures are fine; students can upload their own drawings on an Image.
+
+  Object variables are added once (they belong to the object) but filled in per copy: click a copy, then set its values in Properties.
+
+  Vocabulary (for teachers, and for students who ask): the object is like a class in other languages, each copy is an instance, and object variables are its properties.
+
+  Picking is the big idea: a condition picks the copies it's true for, and actions in that event apply only to those. App Builder picks like Construct, so this carries over to the games course.
+
+  The code checks read the object variables' names, not each copy's values, so the reflect in step 2 (each creature has its own values) is worth checking by eye.
+running:
+  - "Predict: ask how the app could know which creature you mean."
+  - "Build it: check at step 2 that every creature has its own values before anyone builds the event."
+  - "Investigate: act it out: three students are creatures, one clicks; only the clicked one obeys the next instruction."
+  - "Modify: ask for a prediction before anyone opens the Events tab."
+stuck:
+  - see: "Every creature shows the same stats."
+    ask: "Did you fill in the values on each creature separately?"
+    fix: "Click each copy on the Design tab and set its own object variables in Properties."
+  - see: "Creature.power shows an error: there's no object called Creature."
+    ask: "Is the event on the screen that has the creatures?"
+    fix: "Check the Events tab's heading names the creatures' screen."
+  - see: "A bar is far too long or too short."
+    ask: "What should 100 power give?"
+    fix: "Creature.power / 100 * 200: 100 power is the full 200 width."
+stretch: "A comparison mode: click two creatures and show their stats side by side (hint: remember the first one's values in sidebar variables)."
+support: "Give pairs the object variable values filled in (open the Try it app), so they can spend the time on the event."
+leads: "Next: the challenge, a prototype of their own for a real user. In the games course, picking and copies come back with many enemies on screen."
+exit:
+  q: "An app has 10 coins, each a copy of Coin with an object variable value. The player clicks one coin. The event adds Coin.value to Score. Whose value is added?"
+  a: "Only the clicked coin's: the click picked that copy, so Coin.value means its value."
+explain: |
+  One Image object can have many **copies**. **Object variables** belong to the object, but each copy keeps its own values.
+
+  A condition such as **Creature is clicked** **picks** the copy you clicked. For the rest of that event, Creature.name and the actions on Creature mean that one copy only. That's why one event works for every creature, even a new one.
+solutions:
+  step-6#t2: app.json#sol-four

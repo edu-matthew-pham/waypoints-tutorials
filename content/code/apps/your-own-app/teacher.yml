@@ -1,0 +1,41 @@
+summary: "The course challenge: students plan, build and test a small app prototype for a real person, in five milestones (plan on paper, one screen works, everything connected, test with a user, improve one thing). A sort at the start matches needs to the course's tools. No new Construct ideas."
+time: 180
+timing: "About three lessons: plan and first screen (lesson 1), connect and count events (lesson 2), test with a user and improve (lesson 3)."
+goals:
+  - I can plan an app's screens, flow, variables and events before I build it.
+  - I can build a prototype with more than one screen that works as planned.
+  - I can test my prototype with a real person and improve it from what I saw.
+struggle: "Scope. Students pick an app that's too big (a full social network). Hold them to one job, two or three screens, and the 50-event limit; the plan in Milestone 1 is where to say no."
+before: |
+  The user is a real person the student can ask: a classmate, family member, club or younger student. A classmate is fine when nobody else is available; the point is that someone else uses it without help.
+
+  Apps that collect personal details are out: keep any personal content (moods, check-ins) on the student's own device, made up for testing, or not stored at all. Nothing is shared or collected.
+
+  These steps use only what the earlier lessons taught. Students who want something new (sound, saving between sessions, timers) can explore App Builder's other objects and events (timers, keys, sliders, toggles: Level 4); treat it as a stretch, not a requirement.
+
+  Suggested checkpoints: see each plan before building; see Milestone 2 working before anyone adds screens; collect the three-line write-up from Milestone 5.
+running:
+  - "Milestone 1: approve each plan in one or two minutes; cut anything over three screens."
+  - "Milestone 2: 'Try it after every event' is the rule. Ask to see the last run."
+  - "Milestone 4: testers come from another table and haven't seen the app built."
+  - "Milestone 5: ask what they saw first, then what they changed."
+stuck:
+  - see: "A student can't choose an idea."
+    ask: "Who do you know who keeps track of something, or forgets something?"
+    fix: "Pick one of the listed ideas and change it for that person."
+  - see: "The app has grown past three screens."
+    ask: "Which screen would the user miss most if it were gone?"
+    fix: "Keep that one and the start screen; the rest go on a 'later' list."
+  - see: "Nothing works after building a lot at once."
+    ask: "When did you last try it?"
+    fix: "Disable events (right-click, Toggle disabled) until it works again, then turn them back on one at a time."
+stretch: "Test with a second user after the change, and compare what each did."
+support: "Offer a starter plan: a score keeper with a Players screen and a Scores screen, one sidebar variable per player, and a Reset button."
+leads: "Students can go on to the games course (behaviours, collisions, spawning) or, with paid seats, Events to JavaScript."
+exit:
+  q: "What did your user do that you didn't expect, and what did you change because of it?"
+  a: "Any specific answer tied to what they watched, not a general opinion."
+explain: |
+  A **prototype** is an early version you can click through and test with someone, before building the real thing.
+
+  The design loop: **plan** (who, screens, flow, variables, events), **build** in small steps and try it often, **test** by watching a real user without helping, then **improve** one thing based on what you saw.
