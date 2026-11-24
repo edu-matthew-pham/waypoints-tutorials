@@ -482,3 +482,12 @@ From a discussion with Matthew while building App Builder: beginners carry three
 - **Web:** HTML & CSS is notation-heavy with no algorithms; the DOM course adds systems and algorithms together. Check the DOM course's first lessons separate them (one event, one change) before loops over elements.
 - **MakeCode:** blocks remove most notation load and `on button pressed` / `forever` are systems-first, close to App Builder. Check that the algorithmic moves (counters, if/else, loops, lists) are named as such when they arrive, so students can carry them to Python, and that the blocks-to-Python bridge says which load is new (notation only).
 - **Event sheets (App Builder, Construct):** systems-first by design; algorithmic load arrives with sub-events and Else, loops over lists and picking. Keep naming them as algorithm ideas, not tool features.
+
+## Proposed (24 Nov 2026, Matthew agreed to track): process walkthroughs for Python and Web
+
+App Builder apps uses walkthrough clips because there the hard part is where to click. In Python and Web the code on the page already shows the product, so clips that only type it add little; walkthroughs earn a place where the hard part is how you work. Follow-up for the Python and Web chats, small and deliberate (most lessons still have none):
+- **Build in small steps** (one per course): add a line, run, check, add the next.
+- **Fix an error** (one per course): read the friendly error, Show line N, look at the line before, fix, run again.
+- **Tools, first time each appears:** the Reference drawer and Copy, Boxes and Box model, Download, full screen; for Web, the browser inspector (which CSS rule wins) and resizing to see layout respond.
+- **Worked example thinking aloud** where a move is new ("it needs to repeat, so a loop"), close to the existing explain clips.
+Keep each under about 30 s, recorded by `render.mjs` like other clips (Python playground clicks and typing already work; inspector clips may need a picture instead, since DevTools can't be driven in a clip). Not built.
