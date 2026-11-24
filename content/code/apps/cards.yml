@@ -35,7 +35,7 @@ cards:
       - "In the sidebar under Variables, type a name and a starting value, then +."
       - "Change it with Variables, Add to variable or Set variable."
       - "Read it by typing its name in an expression."
-    watch: "The Watch box on the Run tab shows each variable as it changes."
+    watch: "While the app runs, each variable on the left shows its value now beside the value it starts at."
     apps:
       "App Builder": "Start with \"\" for text or 0 for a number. Rename a variable by clicking its name; every event that uses it changes too."
   - id: show-a-value

@@ -1,5 +1,5 @@
 // Projects for "A water tracker".
-// One App Builder project per region, as JSON (vendor/app-builder/README.md). Regions: start, done, built, sol-step-4-t1, sol-step-4-t2, sol-step-4-t3, sol-fix, sol-make.
+// One App Builder project per region, as JSON (playground-appbuilder/README.md). Regions: start, done, built, sol-step-4-t1, sol-step-4-t2, sol-step-4-t3, sol-fix, sol-make.
 
 // region: start
 {"version":1,"name":"Water tracker","features":{"level":2},"variables":[],"screens":[{"id":"main","name":"Water","objects":[{"name":"GlassText","kind":"text","instanceVars":[],"instances":[{"id":"w1","x":229,"y":40,"w":342,"h":36,"text":"Glasses: 0 of 8","visible":true,"vars":{}}]},{"name":"AddButton","kind":"button","instanceVars":[],"instances":[{"id":"w2","x":229,"y":100,"w":342,"h":52,"text":"Add a glass","visible":true,"vars":{}}]},{"name":"ResetButton","kind":"button","instanceVars":[],"instances":[{"id":"w3","x":229,"y":170,"w":342,"h":46,"text":"Reset","visible":true,"vars":{}}]}],"events":[]}],"device":"web"}

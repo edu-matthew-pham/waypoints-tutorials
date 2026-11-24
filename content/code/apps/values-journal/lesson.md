@@ -53,10 +53,10 @@ check:
 stage: run
 insight: "Using the finished three-screen app first gives a target for the long build and shows the variable carrying the choice."
 try: { playground: appbuilder, starter: "app.json#try", tab: run, level: 3, height: 640 }
-check: { type: reflect, text: "I added two entries with different values, and watched Chosen and Journal change in the Watch box." }
+check: { type: reflect, text: "I added two entries with different values, and watched Chosen and Journal change on the left." }
 ```
 
-This is the finished app you'll build, open on the **Run** tab. The **Watch** box shows Chosen and Journal as they change.
+This is the finished app you'll build, open on the **Run** tab. On the left, beside *Chosen* and *Journal*, you can see their values now.
 
 ## Watch first: a list of entries
 

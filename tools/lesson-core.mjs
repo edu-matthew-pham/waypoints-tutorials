@@ -94,7 +94,7 @@ export const SQL_RULES = ['contains', 'rows', 'columns', 'result'];
 let sqlRunner = null;
 export const setSqlRunner = (fn) => { sqlRunner = fn; };
 // App Builder solutions are project JSON; the page's checks read the project as plain text. lesson.mjs sets the converter
-// (vendor/app-builder/sheet-text.mjs); without it (Create in the browser) App Builder solutions are not checked here.
+// (playground-appbuilder/sheet-text.mjs); without it (Create in the browser) App Builder solutions are not checked here.
 let appBuilderText = null;
 export const setAppBuilderText = (fn) => { appBuilderText = fn; };
 export const MAKECODE_RULES = ['contains', 'inside', 'count', 'defs', 'calls', 'params'];
@@ -160,7 +160,7 @@ export function evalRules(rules, text, kind, output) {
   //   defs / params / calls                      named functions (`function name (points: number)`); event blocks
   //                                              are anonymous `function ()`, so they never count as a definition
   // Labels are for teachers and the validator; students working in blocks see the check's own text instead.
-  // kind 'appbuilder': App Builder's project as plain text, one line per event (vendor/app-builder/README.md):
+  // kind 'appbuilder': App Builder's project as plain text, one line per event (playground-appbuilder/README.md):
   //   `event: when SaveButton is clicked > when BedBox text = "⬜" | do: Set BedBox text to "✅"; Add 1 to variable Glasses`
   //   contains: [fragments]          somewhere in the project (spaces ignored, as elsewhere)
   //   event: [[fragments], ...]      each list must all be on ONE event line (its conditions, its parents' and its actions)

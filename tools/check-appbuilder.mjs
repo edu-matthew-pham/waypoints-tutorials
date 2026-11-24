@@ -1,6 +1,6 @@
 // `npm run check-appbuilder`: every code-checked task on an App Builder step (Run steps too, not only Modify and Make), checked statically with the same rules the
 // lesson page uses (lesson-core evalRules, kind 'appbuilder') on the project turned into plain text by App Builder's own
-// sheet-text module (vendor/app-builder/sheet-text.mjs), so no browser is needed:
+// sheet-text module (playground-appbuilder/sheet-text.mjs), so no browser is needed:
 //   1. the teacher solution (a project JSON region) passes;
 //   2. the starter the student begins from does not;
 //   3. no earlier task's solution in the same step does (a step keeps one project, so its tasks build on each other).
@@ -8,7 +8,7 @@
 // App Builder's own checker when the student opens it, so here only JSON and the check rules). Exit 1 on any failure.
 //   node tools/check-appbuilder.mjs [course]
 import { loadLessons, getSnippet, evalRules, unlockKind } from './lesson.mjs';
-import { sheetText } from '../vendor/app-builder/sheet-text.mjs';
+import { sheetText } from '../playground-appbuilder/sheet-text.mjs';
 
 const only = process.argv[2];
 const lessons = loadLessons().filter((l) => l.steps.some((s) => s.config.try?.playground === 'appbuilder' || s.tasks.some((t) => t.config.try?.playground === 'appbuilder')) && (!only || l.slug.startsWith(only + '/')))

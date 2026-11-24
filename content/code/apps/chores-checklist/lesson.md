@@ -35,6 +35,17 @@ A **Button** can be the box: its text is just an empty-box character, ⬜, and a
 
 ![The chores checklist: a title "My jobs today" and three jobs, each with a box beside it. Two are ticked.](app.svg)
 
+## Try the finished app
+
+```step
+stage: run
+insight: "Using the working app first gives students the goal before anything is taken apart: every later step builds back towards it."
+try: { playground: appbuilder, starter: "app.json#done", tab: run, level: 2, height: 600 }
+check: { type: reflect, text: "I ticked and unticked each box, and saw which events lit up." }
+```
+
+This is the checklist you'll build, open on the **Run** tab. Click each box a few times: it ticks, then unticks. The event list beside the app lights up each time an event runs.
+
 ## Predict: two events, one click
 
 ```step

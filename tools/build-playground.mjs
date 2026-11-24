@@ -221,12 +221,12 @@ export function buildMakecodePlayground(out = 'dist') {
   return dest;
 }
 
-/** App Builder (vendor/app-builder), served from this site so it can report the student's project to the lesson page. */
+/** App Builder (playground-appbuilder), served from this site so it can report the student's project to the lesson page. */
 export function buildAppBuilderPlayground(out = 'dist') {
   const dest = join(out, '_playground-appbuilder');
   rmSync(dest, { recursive: true, force: true });
   mkdirSync(dest, { recursive: true });
-  for (const f of ['index.html', 'README.md']) copyFileSync(join(root, 'vendor', 'app-builder', f), join(dest, f));
+  for (const f of ['index.html', 'README.md']) copyFileSync(join(root, 'playground-appbuilder', f), join(dest, f));
   stampPlayground(dest);
   return dest;
 }

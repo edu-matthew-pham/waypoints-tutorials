@@ -8,7 +8,7 @@ and clips can be recorded with no network.
 - `index.html`: App Builder built into one file (`npm run build` in a local copy of app-builder: esbuild bundles `src/` into `dist/index.html`).
 - `sheet-text.mjs`: `src/core/sheet-text.js` bundled for Node (`npx esbuild src/core/sheet-text.js --bundle --format=esm`),
   used by `tools/check-appbuilder.mjs` to turn a solution project into the same plain text the page checks read.
-- Built from commit **c822094** (24 Nov 2026). To update: build both files from a newer commit, copy them here, change the
+- Built from commit **eddec5e** (24 Nov 2026). To update: build both files from a newer commit, copy them here, change the
   commit above and in the first line of `sheet-text.mjs`, then `npm run check-appbuilder` and record any clips again.
 
 Licence: PolyForm Noncommercial 1.0.0 (free for education; commercial use by permission), Matthew Pham.

@@ -1,4 +1,4 @@
-// Built from edu-matthew-pham/waypoints-tools app-builder/src/core/sheet-text.js at c822094. Do not edit: see vendor/app-builder/README.md.
+// Built from edu-matthew-pham/waypoints-tools app-builder/src/core/sheet-text.js at eddec5e. Do not edit: see vendor/app-builder/README.md.
 // src/core/components.js
 var COMPONENTS = {
   button: { id: "button", label: "Button", category: "Basics", hint: "Something to tap or click.", base: "Button", props: { text: "Button", w: 150, h: 46 } },

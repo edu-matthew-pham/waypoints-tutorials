@@ -42,4 +42,4 @@ explain: |
 
   The fix is **one** click event with two branches. A **sub-event** (⋯, Add a sub-event) runs only if its condition is true: the box shows ⬜, so tick it. An **Else** (⋯, Add an Else below) runs only when that condition was false: untick it. Exactly one branch runs per click.
 solutions:
-  step-6#t2: app.json#sol-done
+  step-7#t2: app.json#sol-done

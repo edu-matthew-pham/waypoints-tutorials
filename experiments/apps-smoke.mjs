@@ -17,13 +17,13 @@ const srv = createServer((q, r) => {
 const base = `http://127.0.0.1:${srv.address().port}`;
 const exe = existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : '/usr/bin/google-chrome';
 const browser = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] });
-const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+const page = await browser.newPage({ viewport: { width: 1280, height: 1100 } });
 page.setDefaultTimeout(15000);
 const errors = [];
 page.on('pageerror', (e) => errors.push(e.message));
 
 await page.goto(base + '/code/apps/practice-tracker/');
-const step = page.locator('#step-4');
+const step = page.locator('#step-5');
 await step.scrollIntoViewIfNeeded();
 const f = step.frameLocator('iframe').first();
 await f.locator('.stage.design').waitFor();
@@ -49,6 +49,7 @@ await step.locator('.taskpills [role=tab]').nth(1).click();
 await f.locator('[data-ab="new-variable-name"]').fill('Minutes');
 await f.locator('[data-ab="new-variable-name"]').press('Enter');
 await f.locator('[data-ab="tab:events"]').click();
+await step.locator('iframe').first().evaluate((el) => el.scrollIntoView({ block: 'start' })); // keep the editor's dialogs in view
 const ev = f.locator('.view-events');
 await ev.locator('[data-ab="add-event"]').click();
 await ev.locator('.ev.sel [data-ab="add-condition"]').click();

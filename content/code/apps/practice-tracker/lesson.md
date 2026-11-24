@@ -39,6 +39,17 @@ Today's app remembers your practice total in a **variable**: a named box that ho
 
 ![The practice tracker: a title, a box to type minutes, a Save button, and a line saying "You've practised 45 minutes".](app.svg)
 
+## Try the finished app
+
+```step
+stage: run
+insight: "Using the working app first gives students the goal before anything is taken apart: every later step builds back towards it."
+try: { playground: appbuilder, starter: "app.json#done", tab: run, level: 2, height: 600 }
+check: { type: reflect, text: "I saved some minutes and watched the total and the Minutes value change." }
+```
+
+This is the app you'll build, open on the **Run** tab. Type some minutes and click **Save** a few times. On the left, beside *Minutes*, you can see its value now, next to the value it started at.
+
 ## Predict: does the total change?
 
 ```step
@@ -61,17 +72,17 @@ check:
 stage: run
 insight: "Clicking Save on a version with no Set text settles the prediction on the page: the variable changes, the screen doesn't."
 try: { playground: appbuilder, starter: "app.json#nosettext", tab: run, level: 2, height: 600 }
-check: { type: reflect, text: "I clicked Save three times. Minutes went up (under Watch), but the screen still said 0 minutes." }
+check: { type: reflect, text: "I clicked Save three times. Minutes went up (on the left, under now), but the screen still said 0 minutes." }
 ```
 
-This is the version from the prediction, open on the **Run** tab. Click **Save** three times. The **Watch** list beside the app shows the variable's real value; the event list under it lights up each time an event runs. You'll build the version that works.
+This is the version from the prediction, open on the **Run** tab. Click **Save** three times. On the left, beside *Minutes*, is its value now; the event list beside the app lights up each time an event runs.
 
 ## Watch first: adding an event
 
 ```step
 stage: info
 app: true
-query: { code: "@app.json#sol-step-4-t1", id: walkthrough }
+query: { code: "@app.json#sol-step-5-t1", id: walkthrough }
 caption: "Add a variable, then an event"
 clip:
   - caption: { text: "The screen is made. First the variable: type its name, then Enter.", say: "The screen is already made. First, the variable. Type its name, then press Enter." }
@@ -134,7 +145,7 @@ Drag things where you want them, or select one and use the arrow keys (Alt and t
 7. Open the **Events** tab and choose **+ Add event**.
 8. Choose **+ Condition**, then **SaveButton**, then **SaveButton is clicked**, then **Add**.
 9. Choose **+ Action**, then **Variables**, then **Add … to variable**. Type 15, check it says Minutes, and choose **Add**.
-10. The preview on the right restarts by itself. Click **Save** in it a few times. Does the screen change? Open **Watch values and problems** under it to see Minutes.
+10. The preview on the right restarts by itself. Click **Save** in it a few times. Does the screen change? On the left, beside *Minutes*, is its value now.
 
 ### Show the total
 

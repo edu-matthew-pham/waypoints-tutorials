@@ -1,5 +1,5 @@
 // Projects for "A practice tracker".
-// One App Builder project per region, as JSON (vendor/app-builder/README.md). Regions: start, nosettext, done, sol-step-4-t1, sol-step-4-t2, sol-step-4-t3, sol-reset, sol-sessions.
+// One App Builder project per region, as JSON (playground-appbuilder/README.md). Regions: start, nosettext, done, sol-step-5-t1, sol-step-5-t2, sol-step-5-t3, sol-reset, sol-sessions.
 
 // region: start
 {"version":1,"name":"Practice tracker","device":"web","features":{"level":2},"variables":[],"assets":[],"screens":[{"id":"main","name":"Home","objects":[],"events":[]}]}
@@ -13,15 +13,15 @@
 {"version":1,"name":"Practice tracker","features":{"level":2},"variables":[{"name":"Minutes","value":0}],"screens":[{"id":"main","name":"Tracker","objects":[{"name":"Title","kind":"text","instanceVars":[],"instances":[{"id":"t1","x":229,"y":40,"w":342,"h":36,"text":"Practice tracker","visible":true,"vars":{}}]},{"name":"TextInput","kind":"input","instanceVars":[],"instances":[{"id":"t2","x":229,"y":100,"w":200,"h":42,"text":"","visible":true,"vars":{}}]},{"name":"SaveButton","kind":"button","instanceVars":[],"instances":[{"id":"t3","x":441,"y":98,"w":130,"h":46,"text":"Save","visible":true,"vars":{}}]},{"name":"TotalText","kind":"text","instanceVars":[],"instances":[{"id":"t4","x":229,"y":170,"w":342,"h":32,"text":"You've practised 0 minutes","visible":true,"vars":{}}]}],"events":[{"id":"p1","else":false,"conds":[{"type":"onClicked","target":"SaveButton"}],"actions":[{"type":"addTo","value":"int(TextInput.text)","var":"Minutes"},{"type":"setText","target":"TotalText","value":"\"You've practised \" & Minutes & \" minutes\""}],"children":[]}]}],"device":"web"}
 // endregion
 
-// region: sol-step-4-t1
+// region: sol-step-5-t1
 {"version":1,"name":"Practice tracker","features":{"level":2},"variables":[],"screens":[{"id":"main","name":"Tracker","objects":[{"name":"Title","kind":"text","instanceVars":[],"instances":[{"id":"t1","x":229,"y":40,"w":342,"h":36,"text":"Practice tracker","visible":true,"vars":{}}]},{"name":"TextInput","kind":"input","instanceVars":[],"instances":[{"id":"t2","x":229,"y":100,"w":200,"h":42,"text":"","visible":true,"vars":{}}]},{"name":"SaveButton","kind":"button","instanceVars":[],"instances":[{"id":"t3","x":441,"y":98,"w":130,"h":46,"text":"Save","visible":true,"vars":{}}]},{"name":"TotalText","kind":"text","instanceVars":[],"instances":[{"id":"t4","x":229,"y":170,"w":342,"h":32,"text":"You've practised 0 minutes","visible":true,"vars":{}}]}],"events":[]}],"device":"web"}
 // endregion
 
-// region: sol-step-4-t2
+// region: sol-step-5-t2
 {"version":1,"name":"Practice tracker","features":{"level":2},"variables":[{"name":"Minutes","value":0}],"screens":[{"id":"main","name":"Tracker","objects":[{"name":"Title","kind":"text","instanceVars":[],"instances":[{"id":"t1","x":229,"y":40,"w":342,"h":36,"text":"Practice tracker","visible":true,"vars":{}}]},{"name":"TextInput","kind":"input","instanceVars":[],"instances":[{"id":"t2","x":229,"y":100,"w":200,"h":42,"text":"","visible":true,"vars":{}}]},{"name":"SaveButton","kind":"button","instanceVars":[],"instances":[{"id":"t3","x":441,"y":98,"w":130,"h":46,"text":"Save","visible":true,"vars":{}}]},{"name":"TotalText","kind":"text","instanceVars":[],"instances":[{"id":"t4","x":229,"y":170,"w":342,"h":32,"text":"You've practised 0 minutes","visible":true,"vars":{}}]}],"events":[{"id":"p1","else":false,"conds":[{"type":"onClicked","target":"SaveButton"}],"actions":[{"type":"addTo","value":"15","var":"Minutes"}],"children":[]}]}],"device":"web"}
 // endregion
 
-// region: sol-step-4-t3
+// region: sol-step-5-t3
 {"version":1,"name":"Practice tracker","features":{"level":2},"variables":[{"name":"Minutes","value":0}],"screens":[{"id":"main","name":"Tracker","objects":[{"name":"Title","kind":"text","instanceVars":[],"instances":[{"id":"t1","x":229,"y":40,"w":342,"h":36,"text":"Practice tracker","visible":true,"vars":{}}]},{"name":"TextInput","kind":"input","instanceVars":[],"instances":[{"id":"t2","x":229,"y":100,"w":200,"h":42,"text":"","visible":true,"vars":{}}]},{"name":"SaveButton","kind":"button","instanceVars":[],"instances":[{"id":"t3","x":441,"y":98,"w":130,"h":46,"text":"Save","visible":true,"vars":{}}]},{"name":"TotalText","kind":"text","instanceVars":[],"instances":[{"id":"t4","x":229,"y":170,"w":342,"h":32,"text":"You've practised 0 minutes","visible":true,"vars":{}}]}],"events":[{"id":"p1","else":false,"conds":[{"type":"onClicked","target":"SaveButton"}],"actions":[{"type":"addTo","value":"int(TextInput.text)","var":"Minutes"},{"type":"setText","target":"TotalText","value":"\"You've practised \" & Minutes & \" minutes\""}],"children":[]}]}],"device":"web"}
 // endregion
 

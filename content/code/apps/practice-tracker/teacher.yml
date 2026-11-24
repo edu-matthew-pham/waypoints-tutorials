@@ -45,5 +45,5 @@ explain: |
 
   The screen doesn't change by itself. It shows whatever the last **Set text** said, so the same event needs a Set text action to show the new total. Words in quote marks are shown as they are; a variable outside the quotes is replaced by its value; **&** joins the pieces.
 solutions:
-  step-6#t2: app.json#sol-reset
-  step-7: app.json#sol-sessions
+  step-7#t2: app.json#sol-reset
+  step-8: app.json#sol-sessions

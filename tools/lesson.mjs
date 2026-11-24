@@ -11,7 +11,7 @@ import { createRequire } from 'node:module';
 import { expandContext } from './context-core.mjs';
 import { loadRefreshers } from './refreshers.mjs';
 import { snippetFrom, extractInlineCode, parseLessonText, validateLessonCore, snippetId, FEATURES, setSqlRunner, setAppBuilderText } from './lesson-core.mjs';
-import { sheetText } from '../vendor/app-builder/sheet-text.mjs';
+import { sheetText } from '../playground-appbuilder/sheet-text.mjs';
 setAppBuilderText((src) => sheetText(JSON.parse(src)));
 
 // SQL lessons: run a solution against its starting database (the same sql.js the playground uses), so a check on the rows can be tested.
