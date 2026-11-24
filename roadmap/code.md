@@ -491,3 +491,9 @@ App Builder apps uses walkthrough clips because there the hard part is where to 
 - **Tools, first time each appears:** the Reference drawer and Copy, Boxes and Box model, Download, full screen; for Web, the browser inspector (which CSS rule wins) and resizing to see layout respond.
 - **Worked example thinking aloud** where a move is new ("it needs to repeat, so a loop"), close to the existing explain clips.
 Keep each under about 30 s, recorded by `render.mjs` like other clips (Python playground clicks and typing already work; inspector clips may need a picture instead, since DevTools can't be driven in a clip). Not built.
+
+## Proposed (24 Nov 2026, Matthew agreed to track): after App Builder apps
+
+Two follow-on courses, neither built. App Builder apps itself stays as is (it ends with the student's own prototype for a real user).
+- **Data apps (advanced, Years 8–9):** a playlist store as the anchor (title, artist, length per song). Lessons: parallel lists (work until you sort or delete one: the bug motivates the next step), a table (rows and columns; links to ICT Working with data), a list of records (named fields: the shape of JSON and Python dictionaries), saving between visits, search, filter and sort with For each, then a data app of their own. This is where the algorithmic load joins the systems load (design note above). Needs App Builder's tables, saving and sort/filter (waypoints-tools app-builder/ROADMAP.md › Data). Matthew may have a CGGS playlist tutorial (not yet found); if so, ideas only, fresh words.
+- **App Builder → web bridge (short):** share it (export a standalone page), see the code (each event's JavaScript beside it), change the code in the Web playground and add something App Builder can't do; hands on to the DOM course. The apps route from events to code, free; Construct's Events to JavaScript (paid seats) stays the games route after Construct games.
