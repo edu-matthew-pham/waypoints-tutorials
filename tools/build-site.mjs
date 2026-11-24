@@ -575,7 +575,7 @@ for (const sub of SUBJECTS) for (const e of (dirs.get(sub.path)?.meta?.lookback 
   const y = String(e.year);
   SEARCH.entries.push({ t: `Year ${y} ${sub.title.toLowerCase()}: recap`, u: `${sub.path}/recap/year-${y}/`, s: sub.title, sp: sub.path, c: '', y: `Year ${y}`, ty: 'recap', d: `Every idea from Year ${y} ${sub.title.toLowerCase()} in one place, for after the year. Nothing is marked.`, k: normSearch(`year ${y} ${sub.title} recap revision revise review exam check`) });
 }
-writeFileSync(join(OUT, 'search-index.json'), JSON.stringify(SEARCH.entries));
+writeFileSync(join(OUT, 'search-index.json'), JSON.stringify(SEARCH.entries.filter((e) => shown(String(e.u).split('/').slice(0, 2).join('/')))));
 copyFileSync(join('site', 'search.js'), join(OUT, 'search.js'));
 // Course names a course's pathway says to do first (its `after:`), for the teacher strip on a course page.
 const afterOf = (coursePath) => {
