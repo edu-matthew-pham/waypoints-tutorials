@@ -39,3 +39,4 @@ explain: |
 solutions:
   step-6#t1: app.json#sol-artist
   step-6#t2: app.json#sol-show-all
+  step-7: app.json#sol-sound

@@ -18,7 +18,7 @@ app:
 Some apps need two kinds of record: **playlists** and **songs**. Instead of putting a list of songs inside each playlist, keep two flat tables and **link** them:
 
 - **Playlists** has one row per playlist: its *name*.
-- **Songs** has one row per song, and a field *playlist* that names the playlist it belongs to.
+- **Songs** has one row per song, and a field *playlist* that names the playlist it belongs to. In the tables on the left it says **→ Playlists**: it's a **linked field**, so you choose its value from a dropdown of playlist names.
 
 To show a playlist, go through Songs and keep the rows whose *playlist* matches. That's a filter, which you already know. Databases work the same way, and the SQL course shows how they search linked tables.
 
@@ -33,7 +33,7 @@ try: { playground: appbuilder, starter: "app.json#try", tab: run, level: 4, heig
 check: { type: reflect, text: "I clicked each playlist and saw its songs, and found the playlist field in the Songs table on the left." }
 ```
 
-This is the app you'll build, open on the **Run** tab. Click each playlist. On the left, open the **{ } JSON** view of Songs: two flat lists of records, linked only by the playlist's name.
+This is the app you'll build, open on the **Run** tab. Click each playlist. On the left, open the **{ } JSON** view of Songs: two flat lists of records, linked only by the playlist's name. In the Songs table, click a playlist cell: it's a dropdown of the names in Playlists.
 
 ## Build 1: show a playlist's songs
 
@@ -131,8 +131,21 @@ check:
   options: ["No songs show: the songs still say Gym", "Gym's songs show, under the new name", "Every song shows", "The app shows an error"]
   answer: 0
   feedback: [null, "The loop compares each song's playlist field with the clicked name, and no song says Workout.", "Only songs whose playlist matches are copied.", "Nothing is wrong with either table on its own: they just don't match any more."]
-  explain: "The only link between the tables is the name they share. Change it in one table and the songs no longer match. Real databases give each playlist a number that never changes, and link by that."
+  explain: "The only link between the tables is the name they share. Change it in one table and the songs no longer match. When you rename a playlist in the tables on the left, App Builder changes the songs' playlist field for you, because it's a linked field; an event in your app changing a name doesn't. Real databases give each playlist a number that never changes, and link by that."
 ```
+
+## Look at it nested
+
+```step
+stage: info
+insight: "Seeing the same data nested, built from the flat tables, shows that nesting is a way to send or show data, while flat tables are the way to keep it."
+try: { playground: appbuilder, starter: "app.json#sol-step-3", keep: build, level: 4, height: 640 }
+check: { type: reflect, text: "I saw Playlists nested, with each playlist's songs inside it, and can say why the app keeps the two tables flat." }
+```
+
+On the left, open **{ } JSON** under **Playlists**, and choose **Songs grouped by playlist**. Now each playlist has its songs *inside* it, the way an app often sends data to another app.
+
+You can't edit this view: App Builder builds it from the two flat tables each time. The app keeps the tables flat because then each song is stored once, in one place. Change a song's artist and every view of it changes too.
 
 ## Make it yours: add to a playlist
 

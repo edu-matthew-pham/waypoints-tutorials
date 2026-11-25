@@ -16,7 +16,7 @@ Your app needs:
 - **Remember between visits**, so the records are still there next time,
 - at least one way to **find** something: search, a filter, a sort, a total or a best-so-far.
 
-Some ideas: a reading log (title, author, pages), a training log (date, activity, minutes), sport scores (player, team, points), a collection (item, type, year), a practice log (piece, minutes). Keep made-up or your own records: no one else's personal details.
+Some ideas: a reading log (title, author, pages), a training log (date, activity, minutes), sport scores (player, team, points), a collection (item, type, year), a practice log (piece, minutes). Keep made-up or your own records: no one else's personal details. If you have time at the end, a **Sound** or **Video** object can add to it (see the cards on the Reference page).
 
 ## Plan: which tool for which job?
 
@@ -60,6 +60,8 @@ check: { type: reflect, text: "I can add a record and see it in the Table object
 ```
 
 Build in [App Builder](https://tools.learningwaypoints.com/app-builder/?level=4) (it keeps your project in this browser; **Save** downloads a copy to hand in or carry to another computer). Make the table, the boxes, an Add button and a Table object. Try it after every event.
+
+Already have your records in a spreadsheet? Copy the rows and paste them into the table's first cell, or use **Paste rows** under the table. The columns go into the fields in order, and a first row of field names is skipped.
 
 ## Milestone 3: remember and find
 

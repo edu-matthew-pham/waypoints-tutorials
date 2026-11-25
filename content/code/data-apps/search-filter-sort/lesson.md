@@ -197,3 +197,25 @@ Change Search's test so it looks in the title and the artist. One way: `contains
 ### Show all
 
 There's a **Show all** button. Make it copy every song into Results. Which part of the pattern does it not need?
+
+## Extra: play the clicked song
+
+```step
+stage: modify
+tier: typical
+insight: "A field can hold the name of something to use, so the clicked row's sound field chooses which sound plays: the same ClickedItem read as before, put to a new job."
+try: { playground: appbuilder, starter: "app.json#sound", keep: sound, level: 4, height: 680 }
+check:
+  type: code
+  text: "Clicking a song in SongTable sets Music's sound to that row's sound field, then plays it."
+  rules: { event: [["when An item in SongTable is clicked", "Set Music sound to the one named ClickedItem.sound", "Play Music"]] }
+```
+
+Songs now has a **sound** field naming one of App Builder's built-in sounds (*calm*, *upbeat*, *sleepy*, *beat*), and there's a **Sound** object called *Music* under the tables.
+
+1. Add an event: **An item in SongTable is clicked**.
+2. Action: **Set Music sound to the one named** `ClickedItem.sound`.
+3. Action: **Play Music**.
+4. Run it and click a few songs. Search still copies the sound field into Results, so a found song plays too if you do the same for ResultsTable.
+
+The sounds are short tracks made for App Builder, free to use. A browser only plays sound after you've clicked something in the app, which a row click is.

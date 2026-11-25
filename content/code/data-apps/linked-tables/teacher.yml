@@ -33,4 +33,4 @@ explain: |
 
   To show a playlist's songs, go through Songs and copy the rows whose playlist matches: the same loop as a filter. The shared value is the only link, so it has to match exactly in both tables.
 solutions:
-  step-5#t1: app.json#sol-add
+  step-6#t1: app.json#sol-add

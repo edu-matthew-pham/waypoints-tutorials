@@ -113,8 +113,45 @@ cards:
     lesson: linked-tables
     idea: "Two kinds of record go in two flat tables, linked by a value they share, such as each song's playlist."
     steps:
-      - "Give the second table a field that names a row of the first."
-      - "To show the matches: Clear, For each row, Compare the shared field with the chosen value, Add a row."
-    watch: "The shared value must match exactly in both tables. Rename it in one and the link breaks."
+      - "In the second table, open a field's menu and choose Links to (the first table). Its cells become a dropdown of the first table's first field."
+      - "To show the matches: Clear, For each row, Compare the linked field with the chosen value, Add a row."
+      - "To see it nested, open { } JSON under the first table and choose the grouped view. It's read only."
+    watch: "Renaming a value in the tables on the left updates the rows that link to it. An event that renames it while the app runs doesn't, so the link breaks."
     apps:
-      "App Builder": "{ } JSON under each table shows both as flat lists of records, linked by the shared value."
+      "App Builder": "A link that matches no row shows as missing. Deleting the first table turns the linked field back into plain text."
+  - id: paste-rows
+    title: "Bring in data from a spreadsheet"
+    unit: challenge
+    lesson: your-own-data-app
+    idea: "Records you already have in a spreadsheet can go straight into a table, instead of being typed again."
+    steps:
+      - "Make the table and its fields first, in the same order as the spreadsheet's columns."
+      - "Copy the rows in the spreadsheet."
+      - "Paste into the table's first cell, or press Paste rows under the table and paste there."
+    watch: "A first row of field names is skipped. If a number field gets text, nothing is pasted and App Builder says which row."
+    apps:
+      "App Builder": "Pasting into a cell fills from that cell, adding rows as needed. Paste rows adds after the last row."
+  - id: sound
+    title: "Play a sound"
+    unit: finding
+    lesson: search-filter-sort
+    idea: "A Sound object plays music or a sound effect when an event says so, or when the user presses its own button."
+    steps:
+      - "Add a Sound object (Media) and choose its sound in Properties. Listen plays it there."
+      - "Actions: Play, Stop, Set sound to. Conditions: is playing, finishes playing."
+      - "To play a row's own sound, give the table a sound field and use Set sound to the one named ClickedItem.sound."
+    watch: "A browser plays sound only after the user has clicked or pressed something in the app."
+    apps:
+      "App Builder": "The built-in sounds are made for App Builder and free to use. + Upload sound adds your own (under about 1 MB)."
+  - id: video
+    title: "Show a video"
+    unit: challenge
+    lesson: your-own-data-app
+    idea: "A Video object plays a video from a link. Videos are linked, never uploaded."
+    steps:
+      - "Find a video on Wikimedia Commons, open its page and copy the address."
+      - "Add a Video object (Media) and paste the address into Video link in Properties."
+      - "Play and Stop work as for a Sound. Set video to can take a link from a table field."
+    watch: "Commons pages say who made each video and its licence: the player links to that page, so keep the credit."
+    apps:
+      "App Builder": "YouTube links stay off unless Allow YouTube links is ticked, which is your school's call."

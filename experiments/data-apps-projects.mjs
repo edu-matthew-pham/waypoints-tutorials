@@ -23,7 +23,7 @@ const clear = (table) => ({ type: 'tableClear', table });
 const sort = (table, field, dir) => ({ type: 'tableSort', table, field, dir });
 const listAdd = (list, value) => ({ type: 'listAdd', list, value });
 const listRemoveAt = (list, index) => ({ type: 'listRemoveAt', list, index });
-const table = (name, fields, rows, extra = {}) => ({ name, table: { fields: fields.map(([n, t]) => ({ name: n, type: t || 'text' })) }, value: rows, ...extra });
+const table = (name, fields, rows, extra = {}) => ({ name, table: { fields: fields.map(([n, t, to]) => ({ name: n, type: t || 'text', ...(to ? { to } : {}) })) }, value: rows, ...extra });
 const SONG = [['title'], ['artist'], ['length', 'number']];
 const songs = (rows) => rows.map(([title, artist, length]) => ({ title, artist, length }));
 const project = (name, level, variables, objects, events = [], screen = 'Home') =>
@@ -195,7 +195,17 @@ const addSong = (id = 'e1') => ev(id, [clicked('AddButton')], [addRow('Songs', {
   artist.screens[0].events[2].children[0].conds[1].left = 'contains(lower(LoopItem.title & " " & LoopItem.artist), lower(SearchInput.text))';
   const all = clone(built);
   all.screens[0].events.push(ev('e5', [clicked('AllButton')], [clear('Results')], [ev('e5a', [eachRow('Songs')], [copyRow()])]));
-  write('search-filter-sort', 'Search, filter and sort', { try: s4, start, 'sol-step-2': s2, 'sol-step-3': s3, 'sol-step-4': s4, built, 'sol-artist': artist, 'sol-show-all': all });
+  // optional: a sound field per song, and clicking a song plays it (built-in sounds)
+  const sound = clone(built);
+  const SOUNDS = ['calm', 'upbeat', 'sleepy', 'beat', 'upbeat', 'calm'];
+  sound.variables[0].table.fields.push({ name: 'sound', type: 'text' });
+  sound.variables[0].value.forEach((r, i) => { r.sound = SOUNDS[i]; });
+  sound.variables[1].table.fields.push({ name: 'sound', type: 'text' });
+  sound.screens[0].objects.push(o('Music', 'sound', 's1', 24, 462, 360, 52, '', { sound: 'calm' }));
+  for (const e of sound.screens[0].events) for (const c of e.children) for (const a of c.actions) if (a.type === 'tableAdd') a.values.sound = 'LoopItem.sound';
+  const play = clone(sound);
+  play.screens[0].events.push(ev('e6', [itemClicked('SongTable')], [{ type: 'setSoundNamed', target: 'Music', name: 'ClickedItem.sound' }, { type: 'playSound', target: 'Music' }]));
+  write('search-filter-sort', 'Search, filter and sort', { try: s4, start, 'sol-step-2': s2, 'sol-step-3': s3, 'sol-step-4': s4, built, 'sol-artist': artist, 'sol-show-all': all, sound, 'sol-sound': play });
 }
 
 // ---------- 6. Challenge: your own data app (level 4) ----------
@@ -221,7 +231,7 @@ const addSong = (id = 'e1') => ev(id, [clicked('AddButton')], [addRow('Songs', {
 // ---------- 7. Two tables that link (level 4, optional) ----------
 {
   const lists = () => table('Playlists', [['name']], [{ name: 'Study' }, { name: 'Gym' }, { name: 'Chill' }]);
-  const allSongs = () => table('Songs', [['title'], ['artist'], ['playlist']], [
+  const allSongs = () => table('Songs', [['title'], ['artist'], ['playlist', 'link', 'Playlists']], [
     { title: 'Blue Sky', artist: 'Kai', playlist: 'Study' }, { title: 'Arc', artist: 'Mo', playlist: 'Gym' },
     { title: 'Cove', artist: 'Lu', playlist: 'Chill' }, { title: 'Nova', artist: 'Kai', playlist: 'Study' },
     { title: 'Tidal', artist: 'Rae', playlist: 'Gym' }, { title: 'Lanterns', artist: 'Mo', playlist: 'Study' }]);
