@@ -1,6 +1,6 @@
 summary: "Students build a character viewer: one Creature Image with three copies, each with its own object variables, and one Creature is clicked event that shows the clicked creature's name, stats as text and bars, and ability. They predict and test that clicking picks one copy, find Nib's mistake (expecting Hide to hide every creature), add a fourth creature without changing the events, then design their own set."
 time: 75
-timing: "Predict 3 min · Build it 35 min · Investigate 12 min · Modify 8 min · Make 17 min"
+timing: "Try 5 min · Build 1–3 35 min · Check 8 min · Make it yours 25 min"
 goals:
   - I can make several characters from one Image, each with its own values.
   - I can explain the difference between an object, its copies and its object variables.
@@ -15,12 +15,12 @@ before: |
 
   Picking is the big idea: a condition picks the copies it's true for, and actions in that event apply only to those. App Builder picks like Construct, so this carries over to the games course.
 
-  The code checks read the object variables' names, not each copy's values, so the reflect in step 2 (each creature has its own values) is worth checking by eye.
+  The code checks read the object variables' names, not each copy's values, so Build 1 (each creature has its own values) is worth checking by eye.
 running:
-  - "Predict: ask how the app could know which creature you mean."
-  - "Build it: check at step 2 that every creature has its own values before anyone builds the event."
-  - "Investigate: act it out: three students are creatures, one clicks; only the clicked one obeys the next instruction."
-  - "Modify: ask for a prediction before anyone opens the Events tab."
+  - "Before Build 2 (whole class, on the deck): one click event, three creatures. Click Tide: whose name shows? Ask how the app could know which creature you mean."
+  - "Build 1: check that every creature has its own values before anyone builds the event."
+  - "Check: act it out: three students are creatures, one clicks; only the clicked one obeys the next instruction."
+  - "Make it yours: ask what will need changing on the Events tab before anyone adds the fourth creature."
 stuck:
   - see: "Every creature shows the same stats."
     ask: "Did you fill in the values on each creature separately?"
@@ -42,4 +42,4 @@ explain: |
 
   A condition such as **Creature is clicked** **picks** the copy you clicked. For the rest of that event, Creature.name and the actions on Creature mean that one copy only. That's why one event works for every creature, even a new one.
 solutions:
-  step-6#t2: app.json#sol-four
+  step-6#t1: app.json#sol-four

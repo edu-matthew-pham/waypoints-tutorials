@@ -4,7 +4,9 @@ unit: screens
 title: A values journal
 summary: "Build a journal app with three screens: pick a value you showed today, say what you did, then see every entry in a list. A variable carries your choice from one screen to the next, a list variable keeps the entries, and a List object shows them."
 language: maths
+shape: build
 hook: "Almost every app has more than one screen: sign in, choose, confirm, see your list. Something has to remember what you did on the screen before."
+pacing: { keyDelayMs: 40, cursorMs: 500, afterActionMs: 300, postRollMs: 1200 }
 voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-appbuilder" 8754
@@ -35,22 +37,10 @@ Today's prototype has three screens. Each screen has its own objects and its own
 
 ![Three screens side by side: four value buttons; a question with a typing box and an Add button; and a list of entries such as "COURAGE: I asked a question in class".](app.svg)
 
-## Predict: does the choice survive?
-
-```step
-stage: predict
-insight: "Predicting whether the chosen value reaches screen 2 sets up the move: a whole-app variable keeps its value when the app goes to another screen."
-check:
-  type: predict
-  q: "On screen 1 you click Courage. Its event sets the variable Chosen to \"Courage\", then goes to screen 2. Screen 2's On start of screen event sets its question to \"What did you do to show \" & Chosen & \"?\". What does the question say?"
-  options: ["What did you do to show Courage?", "What did you do to show ?", "What did you do to show Chosen?", "Nothing: screen 2 can't see screen 1's variables"]
-  actual: "It says Courage. Variables in the sidebar belong to the whole app, not one screen, so Chosen keeps its value when the app goes to another screen."
-```
-
 ## Try the finished app
 
 ```step
-stage: run
+stage: info
 insight: "Using the finished three-screen app first gives a target for the long build and shows the variable carrying the choice."
 try: { playground: appbuilder, starter: "app.json#try", tab: run, level: 3, height: 640 }
 check: { type: reflect, text: "I added two entries with different values, and watched Chosen and Journal change on the left." }
@@ -58,12 +48,87 @@ check: { type: reflect, text: "I added two entries with different values, and wa
 
 This is the finished app you'll build, open on the **Run** tab. On the left, beside *Chosen* and *Journal*, you can see their values now.
 
-## Watch first: a list of entries
+## Build 1: choose a value
 
 ```step
-stage: info
+stage: run
 app: true
-query: { code: "@app.json#walk-start", level: 3, id: walkthrough }
+query: { code: "@app.json#start", level: 3, id: build-1 }
+caption: "Remember the choice"
+clip:
+  - caption: { text: "A variable for the choice, Chosen, starting empty.", say: "A variable for the choice. Chosen, starting empty." }
+  - type: { selector: "[data-ab='new-variable-name']", text: "Chosen" }
+  - type: { selector: "[data-ab='new-variable-value']", text: "" }
+  - press: Enter
+  - click: { selector: "[data-ab='tab:events']" }
+  - caption: { text: "When CourageButton is clicked, set Chosen to \"Courage\".", say: "When CourageButton is clicked, set Chosen to Courage." }
+  - click: { selector: ".view-events [data-ab='add-event']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-condition']" }
+  - click: { selector: "[data-ab='group:object:CourageButton']" }
+  - click: { selector: "[data-ab='entry:onClicked']" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
+  - click: { selector: "[data-ab='group:Variables']" }
+  - click: { selector: "[data-ab='entry:setVar']" }
+  - type: { selector: "dialog[open] [data-ab='param:value']", text: "\"Courage\"" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - expect: { selector: ".view-events event-sheet", contains: "Chosen" }
+  - caption: { text: "Then a second action: Go to screen Describe.", say: "Then a second action. Go to screen Describe." }
+  - wait: 900
+insight: "A variable in the sidebar belongs to the whole app, so the choice made here can be read on the next screen."
+try: { playground: appbuilder, starter: "app.json#start", keep: build, level: 3, height: 640 }
+check:
+  type: code
+  text: "A variable Chosen, and each value button sets it and goes to the Describe screen."
+  rules: { contains: ["variable Chosen ="], event: [["when KindnessButton is clicked", "Set variable Chosen to \"Kindness\"", "Go to screen Describe"], ["when CourageButton is clicked", "Set variable Chosen to \"Courage\"", "Go to screen Describe"], ["when HonestyButton is clicked", "Set variable Chosen to \"Honesty\"", "Go to screen Describe"], ["when RespectButton is clicked", "Set variable Chosen to \"Respect\"", "Go to screen Describe"]] }
+```
+
+The three screens are made for you: **Choose**, **Describe** and **Journal**. Click a screen's name in the sidebar to open it.
+
+1. In the sidebar, add a variable *Chosen* with an empty starting value (delete the 0).
+2. On the **Choose** screen's Events tab: **KindnessButton is clicked** → **Variables**, **Set variable Chosen to** `"Kindness"`, then **Screen**, **Go to screen** Describe.
+3. Do the same for each value button.
+
+## Build 2: the next screen reads it
+
+```step
+stage: run
+app: true
+query: { code: "@app.json#sol-step-2", level: 3, id: build-2 }
+caption: "On start of screen"
+clip:
+  - click: { selector: "[data-ab='screen:Describe']" }
+  - click: { selector: "[data-ab='tab:events']" }
+  - caption: { text: "On the Describe screen: On start of screen, set the question.", say: "On the Describe screen. On start of screen, set the question." }
+  - click: { selector: ".view-events [data-ab='add-event']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-condition']" }
+  - click: { selector: "[data-ab='group:Screen']" }
+  - click: { selector: "[data-ab='entry:onStart']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
+  - click: { selector: "[data-ab='group:object:Question']" }
+  - click: { selector: "[data-ab='entry:setText']" }
+  - type: { selector: "dialog[open] [data-ab='param:value']", text: "\"What did you do to show \" & Chosen & \"?\"" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - expect: { selector: ".view-events event-sheet", contains: "Chosen" }
+  - caption: { text: "Chosen still holds the value from screen 1.", say: "Chosen still holds the value from screen one." }
+  - wait: 900
+insight: "Seeing the chosen value appear on the next screen shows a whole-app variable keeps its value across screens."
+try: { playground: appbuilder, starter: "app.json#sol-step-2", keep: build, level: 3, height: 640 }
+check:
+  type: code
+  text: "On start of the Describe screen, the question shows Chosen."
+  rules: { event: [["when On start of screen", "Set Question text to", "& Chosen &"]] }
+```
+
+1. Open the **Describe** screen. Add an event: **Screen**, **On start of screen** → **Question**, **Set Question text to** `"What did you do to show " & Chosen & "?"`
+2. Open the Choose screen, then Run, and click a value. Does the question name it?
+
+## Build 3: keep the entries
+
+```step
+stage: run
+app: true
+query: { code: "@app.json#walk-start", level: 3, id: build-3 }
 caption: "Add to the end of a list"
 clip:
   - caption: { text: "A list variable keeps many entries. Name it Journal.", say: "A list variable keeps many entries. Name it Journal." }
@@ -77,7 +142,7 @@ clip:
   - click: { selector: "[data-ab='group:object:AddButton']" }
   - click: { selector: "[data-ab='entry:onClicked']" }
   - click: { selector: "dialog[open] [data-ab='done']" }
-  - caption: { text: "Lists, Add … to the end of list: the value and what was typed.", say: "Its action is in Lists. Add to the end of list: the value, and what was typed." }
+  - caption: { text: "Lists, Add … to the end of list: the value and what was typed.", say: "Its action is in Lists. Add to the end of list, with what was typed." }
   - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
   - click: { selector: "[data-ab='group:Lists']" }
   - click: { selector: "[data-ab='entry:listAdd']" }
@@ -85,63 +150,37 @@ clip:
   - click: { selector: "dialog[open] [data-ab='done']" }
   - expect: { selector: ".view-events event-sheet", contains: "Journal" }
   - caption: { text: "Each click adds one entry at the end. Next: go to the Journal screen.", say: "Each click adds one entry at the end. Next, go to the Journal screen." }
-  - wait: 1400
+  - wait: 900
+insight: "A list variable keeps every entry, and a List object shows it, one row per entry."
+try: { playground: appbuilder, starter: "app.json#sol-step-3", keep: build, level: 3, height: 640 }
+check:
+  type: code
+  text: "A list Journal; AddButton adds an entry to it and goes to the Journal screen; the List shows Journal."
+  rules: { contains: ["list Journal =", "object List (list) text \"\" shows Journal"], event: [["when AddButton is clicked", "to the end of list Journal", "Go to screen Journal"]] }
 ```
 
-The clip shows steps 7 to 9 below.
+1. In the sidebar, under the variables, add a list called *Journal*.
+2. On the Describe screen, add an event: **AddButton is clicked**.
+3. Add the action **Lists**, **Add … to the end of list**, list Journal, value `uppercase(Chosen) & ": " & TextInput.text`
+4. Add a second action: **Go to screen** Journal.
+5. Open the **Journal** screen, click the **List** object, and in Properties set **Shows** to Journal.
 
-## Build it: three screens
+## Build 4: back to the start
 
 ```step
 stage: run
-insight: "Building the events screen by screen, and seeing the chosen value appear on the next screen, settles the prediction before the list."
-try: { playground: appbuilder, starter: "app.json#start", level: 3, height: 640 }
-tasks:
-  - check:
-      type: code
-      text: "A variable Chosen, and each value button sets it and goes to the Describe screen."
-      rules: { contains: ["variable Chosen ="], event: [["when KindnessButton is clicked", "Set variable Chosen to \"Kindness\"", "Go to screen Describe"], ["when CourageButton is clicked", "Set variable Chosen to \"Courage\"", "Go to screen Describe"], ["when HonestyButton is clicked", "Set variable Chosen to \"Honesty\"", "Go to screen Describe"], ["when RespectButton is clicked", "Set variable Chosen to \"Respect\"", "Go to screen Describe"]] }
-  - check:
-      type: code
-      text: "On start of the Describe screen, the question shows Chosen."
-      rules: { event: [["when On start of screen", "Set Question text to", "& Chosen &"]] }
-  - check:
-      type: code
-      text: "A list Journal; AddButton adds an entry to it and goes to the Journal screen; the List shows Journal."
-      rules: { contains: ["list Journal =", "object List (list) text \"\" shows Journal"], event: [["when AddButton is clicked", "to the end of list Journal", "Go to screen Journal"]] }
-  - check:
-      type: code
-      text: "Add another goes back to the Choose screen."
-      rules: { event: [["when AnotherButton is clicked", "Go to screen Choose"]] }
+insight: "Closing the loop between screens makes it a whole app a user can move through."
+try: { playground: appbuilder, starter: "app.json#sol-step-4", keep: build, level: 3, height: 640 }
+check:
+  type: code
+  text: "Add another goes back to the Choose screen."
+  rules: { event: [["when AnotherButton is clicked", "Go to screen Choose"]] }
 ```
 
-The three screens are made for you: **Choose**, **Describe** and **Journal**. Click a screen's name in the sidebar to open it.
+1. On the Journal screen: **AnotherButton is clicked** → **Go to screen** Choose.
+2. Open the Choose screen, then Run, and add three entries.
 
-### Screen 1: choose
-
-1. In the sidebar, add a variable *Chosen* with an empty starting value (delete the 0).
-2. On the **Choose** screen's Events tab: **KindnessButton is clicked** → **Variables**, **Set variable Chosen to** `"Kindness"`, then **Screen**, **Go to screen** Describe.
-3. Do the same for each value button.
-
-### Screen 2: describe
-
-4. Open the **Describe** screen. Add an event: **Screen**, **On start of screen** → **Question**, **Set Question text to** `"What did you do to show " & Chosen & "?"`
-5. Run it from the Choose screen: click a value. Does the question name it?
-
-### Keep the entries
-
-6. In the sidebar, under the variables, add a list called *Journal*.
-7. On the Describe screen, add an event: **AddButton is clicked**.
-8. Add the action **Lists**, **Add … to the end of list**, list Journal, value `uppercase(Chosen) & ": " & TextInput.text`
-9. Add a second action: **Go to screen** Journal.
-10. Open the **Journal** screen, click the **List** object, and in Properties set **Shows** to Journal.
-
-### Back to the start
-
-11. On the Journal screen: **AnotherButton is clicked** → **Go to screen** Choose.
-12. Run from the Choose screen and add three entries.
-
-## Investigate: lists and loops
+## Check: lists and loops
 
 ```step
 stage: investigate
@@ -162,54 +201,30 @@ tasks:
       fault: logic
       misconception: list-clear-before-add
       explain: "Line 2: Clear list Journal runs on every click, just before the new entry is added, so the list only ever holds one entry. Adding to the end is enough: the list keeps the old entries."
-  - check:
-      type: question
-      q: "What if Chosen were an object variable on the Courage button, not a variable in the sidebar?"
-      options: ["Screen 2 couldn't read it", "It would work the same way", "Screen 2 would read it faster", "It would show every value at once"]
-      answer: 0
-      feedback: [null, "Not quite: the button, and its variable, stay behind on screen 1.", "Speed isn't the difference here.", "A variable holds one value at a time."]
-      explain: "When the app goes to the Describe screen, screen 1's objects (and their variables) aren't there. Sidebar variables belong to the whole app, so every screen can read them."
 ```
 
 ### Count with LoopIndex
 
 ### Find Nib's mistake
 
-### Why the whole app?
-
-## Modify: count the entries
+## Make it yours: count, then test the flow
 
 ```step
 stage: modify
-insight: "Showing the count reuses the list itself with count(), rather than a new variable, which checks students know what the list holds."
-try: { playground: appbuilder, starter: "app.json#built", level: 3, height: 640 }
+insight: "Showing the count reuses the list itself with count(), then watching a user move through three screens is the design half of a prototype."
+try: { playground: appbuilder, starter: "app.json#built", keep: build, level: 3, height: 640 }
 tasks:
-  - check:
-      type: question
-      q: "The Journal screen should say \"Entries: 5\". Which expression gives the 5?"
-      options: ["count(Journal)", "LoopIndex", "Chosen", "item(Journal, 1)"]
-      answer: 0
-      feedback: [null, "LoopIndex only means something inside a loop.", "Chosen is the last value picked, not a count.", "That's the first entry's text."]
-      explain: "The list grows by one each time you add an entry, so count(Journal) is the number of entries."
   - check:
       type: code
       text: "When the Journal screen starts, Count shows how many entries there are."
       rules: { event: [["when On start of screen", "Set Count text to", "count(Journal)"]] }
+  - check: { type: reflect, text: "Someone used my journal without help. I wrote down one place they got stuck, and I changed the app to fix it." }
 ```
 
-### Choose the expression
+### Count the entries
 
-### Build it
+The Journal screen has an empty Text called *Count*. Add an event: **On start of screen** → **Set Count text to** `"Entries: " & count(Journal)`. The list grows by one each time you add an entry, so `count(Journal)` is how many there are.
 
-The Journal screen has an empty Text called *Count*. Add an event: **On start of screen** → **Set Count text to** `"Entries: " & count(Journal)`
-
-## Make: test the flow
-
-```step
-stage: make
-check: { type: reflect, text: "Someone used my journal without help. I wrote down one place they got stuck, and I changed the app to fix it." }
-insight: "Watching a user move through three screens is the design half of a prototype: the flow that made sense to the builder isn't always clear to someone else."
-try: { playground: appbuilder, starter: "app.json#done", level: 3, height: 640 }
-```
+### Test the flow
 
 Change the values to your school's own, or to four that matter to you. Then ask someone to add an entry without any help from you. Write down one place they paused or got stuck, and change the app so the next person doesn't.

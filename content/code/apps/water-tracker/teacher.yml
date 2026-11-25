@@ -1,24 +1,24 @@
 summary: "Students build a water tracker with two variables (Glasses, Goal), an Every tick event that keeps the display up to date, Add and Reset buttons, and a cap. The cap is first built the way beginners often write it (Add 1 left on the AddButton event, the check in a sub-event), so it fails at the goal; students find why and move the action into the sub-event. The Make step adds a goal message with Else and a progress bar."
 time: 60
-timing: "Predict 3 min · Build it 20 min · Investigate 12 min · Modify 5 min · Make 20 min"
+timing: "Try 5 min · Build 1–3 20 min · Check 8 min · Build 4 5 min · Make it yours 20 min"
 goals:
   - I can use Every tick to keep what's on screen up to date.
   - I can say which actions a sub-event's condition controls.
   - I can make a progress bar from a number.
-struggle: "The deliberate slip in step 5 can feel like a trick. Say up front that the build includes one mistake beginners often make, and the class will find it together."
+struggle: "The deliberate slip in Build 2 can feel like a trick. Say up front that the build includes one mistake beginners often make, and the class will find it together."
 before: |
-  The cap in step 5 is wrong on purpose: Add 1 stays on the parent AddButton event, so it runs on every click and the sub-event's condition (Glasses < Goal) controls nothing. The Investigate step finds it; the Modify step fixes it by deleting the action and adding it again inside the sub-event (App Builder has no drag between events; the ⋯ menu and + Action do it).
+  The cap in Build 2 is wrong on purpose: Add 1 stays on the parent AddButton event, so it runs on every click and the sub-event's condition (Glasses < Goal) controls nothing. The Investigate step finds it; the Modify step fixes it by deleting the action and adding it again inside the sub-event (App Builder has no drag between events; the ⋯ menu and + Action do it).
 
   Every tick runs about 60 times a second. Setting text there is fine. Adding to a variable there is not (it would add 60 a second), which is why the exit question asks about it.
 
-  The Build step's tick boxes accept the slip on purpose (they check the cap as built); the Modify step's tick only comes once Add 1 is inside the sub-event.
+  The Build step's tick boxes accept the slip on purpose (they check the cap as built); Build 4's tick only comes once Add 1 is inside the sub-event.
 
   Pick any goal and thing to track if water doesn't suit your class (pages read, laps, minutes outside). The app is about counting towards a goal, not health advice.
 running:
-  - "Predict: compare with lesson 1, where the screen didn't change without Set text. What's different now?"
-  - "Build it: everyone clicks 12 times at step 7 before anyone explains."
-  - "Investigate: draw the event and its sub-event on the board; circle which actions belong to which."
-  - "Make: work out one bar width together before students build it."
+  - "Before Build 2 (whole class, on the deck): the Add event only adds 1, with no Set text. Does the count change? Compare with lesson 1."
+  - "Build 3: everyone clicks 12 times before anyone explains."
+  - "Check: draw the event and its sub-event on the board; circle which actions belong to which."
+  - "Make it yours: work out one bar width together before students build it."
 stuck:
   - see: "The count shows the word Glasses or the & signs."
     ask: "Which parts are inside the quote marks?"
@@ -42,5 +42,4 @@ explain: |
 
   A **sub-event's** condition only controls the actions inside the sub-event. An action on the event above it runs whenever that event runs.
 solutions:
-  step-6: app.json#sol-fix
   step-7#t2: app.json#sol-make

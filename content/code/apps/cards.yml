@@ -102,10 +102,11 @@ cards:
     title: "Show or hide something"
     unit: track
     lesson: water-tracker
-    idea: "Hide an object when the screen starts, then show it from an event when it's needed."
+    idea: "Start an object hidden, then show it from an event when it's needed."
     steps:
-      - "Add an event: Screen, On start of screen, with the action: the object, Hide."
+      - "Click the object and untick Visible at start in Properties."
       - "In the event where it's needed, add the action: the object, Show."
+      - "To hide it again, Hide."
     apps:
       "App Builder": "Name.visible is true while it's showing, so a condition can check it."
   - id: screens

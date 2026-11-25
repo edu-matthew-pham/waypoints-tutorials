@@ -5,7 +5,7 @@ inquiry:
     - "Does the number on screen change before, at the same time, or after?"
   notes: "Every tracker remembers a number (a variable), changes it when something happens (an event), and shows it (setting the text). Today's prototype does all three."
 activities:
-  - at: predict
+  - at: run
     kind: discussion
     title: "Does the total change?"
     minutes: 3

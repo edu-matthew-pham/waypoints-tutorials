@@ -56,6 +56,17 @@ export const STAGE_INFO_DESIGN = {
   practise: ['Evaluate', 'Judge it against each criterion, and say what you would change.'],
   info: ['Info', ''],
 };
+/** Build-along (shape: build, 25 Nov 2026; App Builder apps): see the finished thing, build it in short steps (a clip and
+ * the same app carried from step to step), a quick check, then make it yours. PRIMM talk lives on the class deck. */
+export const STAGE_INFO_BUILD = {
+  predict: ['Predict', 'Say what you think will happen before you try it. A wrong guess is fine: it shows you what to look for.'],
+  run: ['Build', 'Watch the short clip, then do the steps. Your app carries on from the step before.'],
+  investigate: ['Check', 'A quick check that the idea has stuck.'],
+  modify: ['Make it yours', 'Change your app on purpose, then try it on someone.'],
+  practise: ['Practise', 'A few on your own, to check you have it.'],
+  make: ['Make it yours', 'Change your app on purpose, then try it on someone.'],
+  info: ['See it', 'Try the finished thing first, so you know what you are building.'],
+};
 /** Primers (shape: primer, 18 Oct 2026): one idea for any subject, text-light (English, HASS and other non-coding concepts).
  * Same stages: predict = Think first, investigate = The idea (and its worked example), practise = Check, make = Apply. */
 export const STAGE_INFO_PRIMER = {
@@ -802,10 +813,10 @@ export function lessonPageHtml(lesson, deps) {
     return md.parseInline(s.charAt(0).toUpperCase() + s.slice(1));
   };
   const isSci = (lesson.language === 'science' && lesson.shape !== 'primer' && lesson.shape !== 'speech') || lesson.shape === '5e';
-  const stagesUsed = [...new Set(lesson.steps.map((s) => s.config.stage).filter((s) => s !== 'info' || isSci || lesson.shape === 'speech'))];
+  const stagesUsed = [...new Set(lesson.steps.map((s) => s.config.stage).filter((s) => s !== 'info' || isSci || lesson.shape === 'speech' || lesson.shape === 'build'))];
   const tierAttr = (c) => (c.tier ? ` data-tier="${esc(c.tier)}"` : '');
   const nav = lesson.steps.map((s) => `<a href="#${s.id}" style="--c:var(--${s.config.stage})"${tierAttr(s.config)}><i></i>${heading(s.title)}${s.tasks.length ? '<span class="cnt"></span>' : ''}</a>`).join('');
-  const SI = lesson.shape === 'speech' ? STAGE_INFO_SPEECH : lesson.shape === 'primer' ? STAGE_INFO_PRIMER : lesson.shape === 'design' ? STAGE_INFO_DESIGN : lesson.shape === '5e' ? STAGE_INFO_5E : lesson.language === 'maths' ? STAGE_INFO_MATHS : isSci ? STAGE_INFO_SCIENCE : STAGE_INFO;
+  const SI = lesson.shape === 'build' ? STAGE_INFO_BUILD : lesson.shape === 'speech' ? STAGE_INFO_SPEECH : lesson.shape === 'primer' ? STAGE_INFO_PRIMER : lesson.shape === 'design' ? STAGE_INFO_DESIGN : lesson.shape === '5e' ? STAGE_INFO_5E : lesson.language === 'maths' ? STAGE_INFO_MATHS : isSci ? STAGE_INFO_SCIENCE : STAGE_INFO;
   // Width tiers: steps marked typical or wider are extra contexts. A teacher sets the starting width with ?width=;
   // students can widen but not narrow. Tiered checks are not needed to finish the lesson.
   const tiered = lesson.steps.some((s) => s.config.tier);
@@ -1076,7 +1087,7 @@ export function tryEmbed(lesson, step, starter, siteRoot, locks = '', mods = nul
   if (t.boxes) q.set('boxes', '1'); // HTML playground: start with the Boxes view on
   if (t.boxmodel) q.set('boxmodel', '1'); // ... or with the Box model view on
   if (t.db) q.set('db', t.db); // SQL playground: the starting database, data/<name>.sql
-  if (t.playground === 'appbuilder') { if (t.level) q.set('level', t.level); if (t.tab) q.set('tab', t.tab); q.set('lock', '1'); } // App Builder: blocks offered, opening tab; lessons keep the level switch and Samples menu away
+  if (t.playground === 'appbuilder') { if (t.level) q.set('level', t.level); if (t.tab) q.set('tab', t.tab); q.set('lock', '1'); if (t.keep) q.set('store', `${lesson.slug}/${t.keep}`); } // keep: steps with the same keep share one project (a build in short steps) // App Builder: blocks offered, opening tab; lessons keep the level switch and Samples menu away
   if (t.playground === 'microbit' || t.playground === 'arcade') {
     q.set('target', t.playground); // one MakeCode playground, two editors
     const pkg = makecodePackage(lesson); if (pkg) q.set('pkg', pkg); // the lesson's extensions (robot), added to the step's project

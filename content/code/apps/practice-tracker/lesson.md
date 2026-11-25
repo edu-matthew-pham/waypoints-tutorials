@@ -4,7 +4,9 @@ unit: respond
 title: A practice tracker
 summary: "Build a prototype of a practice tracker: type how many minutes you practised, click Save, and the app adds it to your total. A variable remembers the total, a button event changes it, and the screen only shows the new total when an event sets the text."
 language: maths
+shape: build
 hook: "Apps that track things, like steps, screen time or practice, all do the same small job underneath: remember a number, change it when you do something, and show it."
+pacing: { keyDelayMs: 40, cursorMs: 500, afterActionMs: 300, postRollMs: 1200 }
 voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-appbuilder" 8751
@@ -42,7 +44,7 @@ Today's app remembers your practice total in a **variable**: a named box that ho
 ## Try the finished app
 
 ```step
-stage: run
+stage: info
 insight: "Using the working app first gives students the goal before anything is taken apart: every later step builds back towards it."
 try: { playground: appbuilder, starter: "app.json#done", tab: run, level: 2, height: 600 }
 check: { type: reflect, text: "I saved some minutes and watched the total and the Minutes value change." }
@@ -50,112 +52,119 @@ check: { type: reflect, text: "I saved some minutes and watched the total and th
 
 This is the app you'll build, open on the **Run** tab. Type some minutes and click **Save** a few times. On the left, beside *Minutes*, you can see its value now, next to the value it started at.
 
-## Predict: does the total change?
-
-```step
-stage: predict
-insight: "Committing to an answer sets up the lesson's move: changing a variable doesn't change what's on the screen. An event has to set the text."
-check:
-  type: predict
-  q: "The total starts at 0, and the screen says \"You've practised 0 minutes\". The only event is: when SaveButton is clicked, add 15 to Minutes. You click Save three times. What does the screen say now?"
-  options: ["You've practised 0 minutes", "You've practised 45 minutes", "You've practised 15 minutes", "Nothing: the text disappears"]
-  actual: "It still says 0 minutes. Minutes is now 45, but nothing told the text to change. The screen only shows a new total when an event sets the text."
-```
-
-| When (condition) | Do (actions) |
-|---|---|
-| SaveButton is clicked | Add 15 to variable Minutes |
-
-## Try it: an app with no Set text
+## Build 1: make the screen
 
 ```step
 stage: run
-insight: "Clicking Save on a version with no Set text settles the prediction on the page: the variable changes, the screen doesn't."
-try: { playground: appbuilder, starter: "app.json#nosettext", tab: run, level: 2, height: 600 }
-check: { type: reflect, text: "I clicked Save three times. Minutes went up (on the left, under now), but the screen still said 0 minutes." }
+app: true
+query: { code: "@app.json#start", level: 2, id: build-1 }
+caption: "Add, then name"
+clip:
+  - caption: { text: "Add object, then Button.", say: "Add an object. This one is a Button." }
+  - click: { selector: "[data-ab='add-object']" }
+  - click: { selector: "[data-ab='kind:button']" }
+  - caption: { text: "Give it a name that says what it is: SaveButton.", say: "Give it a name that says what it is. SaveButton." }
+  - click: { selector: ".side [data-ab='object-menu']" }
+  - click: { selector: "[data-ab='menu:rename']" }
+  - type: { selector: ".side input.rename", text: "SaveButton" }
+  - press: Enter
+  - expect: { selector: ".side", contains: "SaveButton" }
+  - wait: 800
+insight: "Laying out the screen first, with names that say what each thing is, makes the events in the next steps easy to read."
+try: { playground: appbuilder, starter: "app.json#start", keep: build, level: 2, height: 640 }
+check:
+  type: code
+  text: "The screen has a text input, a button called SaveButton and a text called TotalText."
+  rules: { contains: ["(text input)", "object SaveButton (button)", "object TotalText (text)"] }
 ```
 
-This is the version from the prediction, open on the **Run** tab. Click **Save** three times. On the left, beside *Minutes*, is its value now; the event list beside the app lights up each time an event runs.
+1. On the **Design** tab, choose **+ Add object**, then **Text**. In **Properties**, change its text to *Practice tracker*.
+2. Add a **Text input**: the box the user types in.
+3. Add a **Button** and set its text to *Save*.
+4. Add one more **Text** below. Set its text to *You've practised 0 minutes*.
+5. Name things for what they are: select the button, click **⋯** beside it, choose **Rename** and call it *SaveButton*. Rename the last text *TotalText*.
 
-## Watch first: adding an event
+Drag things where you want them, or use the arrow keys (Alt and the arrows change the size). Your work carries on into the next steps.
+
+## Build 2: count with a variable
 
 ```step
-stage: info
+stage: run
 app: true
-query: { code: "@app.json#sol-step-5-t1", id: walkthrough }
-caption: "Add a variable, then an event"
+query: { code: "@app.json#sol-step-2", level: 2, id: build-2 }
+caption: "A variable and a click event"
 clip:
-  - caption: { text: "The screen is made. First the variable: type its name, then Enter.", say: "The screen is already made. First, the variable. Type its name, then press Enter." }
+  - caption: { text: "A variable remembers a number: Minutes, starting at 0.", say: "A variable remembers a number. Minutes, starting at zero." }
   - type: { selector: "[data-ab='new-variable-name']", text: "Minutes" }
   - press: Enter
   - click: { selector: "[data-ab='tab:events']" }
-  - caption: { text: "Add an event, then its condition: SaveButton is clicked.", say: "Add an event, then its condition. SaveButton is clicked." }
+  - caption: { text: "When SaveButton is clicked…", say: "When SaveButton is clicked." }
   - click: { selector: ".view-events [data-ab='add-event']" }
   - click: { selector: ".view-events .ev.sel [data-ab='add-condition']" }
   - click: { selector: "[data-ab='group:object:SaveButton']" }
   - click: { selector: "[data-ab='entry:onClicked']" }
   - click: { selector: "dialog[open] [data-ab='done']" }
-  - caption: { text: "Now an action on the right: add 15 to the variable Minutes.", say: "Now an action on the right. Add fifteen to the variable Minutes." }
+  - caption: { text: "…add 15 to Minutes.", say: "Add fifteen to Minutes." }
   - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
   - click: { selector: "[data-ab='group:Variables']" }
   - click: { selector: "[data-ab='entry:addTo']" }
   - type: { selector: "dialog[open] [data-ab='param:value']", text: "15" }
   - click: { selector: "dialog[open] [data-ab='done']" }
   - expect: { selector: ".view-events event-sheet", contains: "Minutes" }
-  - caption: { text: "One row: when SaveButton is clicked, add 15 to Minutes.", say: "One row. When SaveButton is clicked, add fifteen to Minutes." }
-  - wait: 1600
+  - wait: 800
+insight: "Students hit the lesson's idea themselves: the variable changes but the screen doesn't, because nothing sets the text."
+try: { playground: appbuilder, starter: "app.json#sol-step-2", keep: build, level: 2, height: 640 }
+check:
+  type: code
+  text: "A variable called Minutes, and an event: when SaveButton is clicked, add to Minutes."
+  rules: { contains: ["variable Minutes ="], event: [["when SaveButton is clicked", "to variable Minutes"]] }
 ```
 
-The clip shows the clicks for steps 6 to 9 below. Everything you add is a click on a **+** button, then a choice from a short list.
+1. Under **Variables** on the left, type *Minutes* in the New variable box, keep its starting value 0, and press **Enter**.
+2. Open the **Events** tab and choose **+ Add event**.
+3. Choose **+ Condition**, then **SaveButton**, then **SaveButton is clicked**.
+4. Choose **+ Action**, then **Variables**, then **Add … to variable**. Type 15, check it says Minutes, and choose **Done**.
+5. Click **Save** in the preview a few times. Does the screen change?
 
-## Build it: the practice tracker
+It doesn't. On the left, beside *Minutes*, its value now goes up, but nothing has told the text to change. The screen only shows something new when an event sets the text.
+
+## Build 3: show the total
 
 ```step
 stage: run
-insight: "Building the first version settles the prediction (the total changes but the screen doesn't), then adding Set text fixes it."
-try: { playground: appbuilder, starter: "app.json#start", level: 2, height: 640 }
-tasks:
-  - check:
-      type: code
-      text: "The screen has a text input, a button called SaveButton and a text called TotalText."
-      rules: { contains: ["(text input)", "object SaveButton (button)", "object TotalText (text)"] }
-  - check:
-      type: code
-      text: "A variable called Minutes, and an event: when SaveButton is clicked, add to Minutes."
-      rules: { contains: ["variable Minutes ="], event: [["when SaveButton is clicked", "to variable Minutes"]] }
-  - check:
-      type: code
-      text: "The same event sets TotalText to show the total, and adds what was typed: int(TextInput.text)."
-      rules: { event: [["when SaveButton is clicked", "to variable Minutes", "Set TotalText text to", "Minutes"], ["when SaveButton is clicked", "Add int(TextInput.text) to variable Minutes"]] }
+app: true
+query: { code: "@app.json#sol-step-3", level: 2, id: build-3 }
+caption: "Set the text"
+clip:
+  - click: { selector: "[data-ab='tab:events']" }
+  - caption: { text: "The same event: set TotalText's text to show Minutes.", say: "In the same event, set TotalText's text to show Minutes." }
+  - click: { selector: ".view-events [data-ab='item:addTo']" }
+  - click: { selector: "dialog[open] [data-ab='cancel']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
+  - click: { selector: "[data-ab='group:object:TotalText']" }
+  - click: { selector: "[data-ab='entry:setText']" }
+  - type: { selector: "dialog[open] [data-ab='param:value']", text: "\"You've practised \" & Minutes & \" minutes\"" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - wait: 600
+  - click: { selector: ".view-events .preview-col [data-ab='widget:SaveButton']" }
+  - expect: { selector: ".view-events .preview-col [data-ab='widget:TotalText']", contains: "15" }
+  - caption: { text: "Now the screen changes, because the event sets the text.", say: "Now the screen changes, because the event sets the text." }
+  - wait: 900
+insight: "Adding Set text fixes what students just saw, and int() makes the typed number count."
+try: { playground: appbuilder, starter: "app.json#sol-step-3", keep: build, level: 2, height: 640 }
+check:
+  type: code
+  text: "The same event sets TotalText to show the total, and adds what was typed: int(TextInput.text)."
+  rules: { event: [["when SaveButton is clicked", "to variable Minutes", "Set TotalText text to", "Minutes"], ["when SaveButton is clicked", "Add int(TextInput.text) to variable Minutes"]] }
 ```
 
-### Make the screen
+1. Click the event, choose **+ Action**, then **TotalText**, then **Set TotalText text to …**. Type exactly: `"You've practised " & Minutes & " minutes"`
+2. Click Save in the preview. Now it changes.
+3. Use what the user typed: click the **Add 15** action and change 15 to `int(TextInput.text)`. A text input holds text, even when you type 20; `int()` turns it into a number.
 
-1. On the **Design** tab, choose **+ Add object**, then **Text**. In **Properties** on the right, change its text to *Practice tracker*.
-2. Add a **Text input**: the box the user types in.
-3. Add a **Button** and set its text to *Save*.
-4. Add one more **Text** below. Set its text to *You've practised 0 minutes*.
-5. Give the button and the last text proper names. In the left panel, select the button, click **⋯** beside it and choose **Rename**: call it *SaveButton*. Rename the last text *TotalText*, and the text input *TextInput*.
+Your work is kept in this browser. **Save** at the top downloads a copy if you want one.
 
-Drag things where you want them, or select one and use the arrow keys (Alt and the arrows change its size). Names that say what things are pay off in the next part: you'll pick them from a list, and *Text3* won't tell you which one it is.
-
-### Make it work
-
-6. Under **Variables** on the left, type *Minutes* in the New variable box, keep its starting value 0, and press **Enter**.
-7. Open the **Events** tab and choose **+ Add event**.
-8. Choose **+ Condition**, then **SaveButton**, then **SaveButton is clicked**, then **Add**.
-9. Choose **+ Action**, then **Variables**, then **Add … to variable**. Type 15, check it says Minutes, and choose **Add**.
-10. The preview on the right restarts by itself. Click **Save** in it a few times. Does the screen change? On the left, beside *Minutes*, is its value now.
-
-### Show the total
-
-11. Click the event, choose **+ Action**, then **TotalText**, then **Set TotalText text to …**. Type exactly: `"You've practised " & Minutes & " minutes"`
-12. Click Save in the preview. Now it changes.
-13. Last, use what the user typed. Click the **Add 15** action and change 15 to `int(TextInput.text)`. Type a number in the preview and click Save.
-
-Your work is kept in this browser, in this step. **Save** at the top downloads a copy if you want one.
-
-## Investigate: how the text is made
+## Check: how the text is made
 
 ```step
 stage: investigate
@@ -169,13 +178,6 @@ tasks:
       feedback: [null, "Minutes isn't inside the quote marks, so App Builder uses its value, not the word.", "The & signs join the pieces. They don't appear on the screen.", "The words inside the quote marks are shown too."]
       explain: "Words in quote marks are shown as they are. Minutes, outside the quotes, is replaced by its value. The & signs join the pieces into one line."
   - check:
-      type: question
-      q: "Why does the add action use int(TextInput.text) and not just TextInput.text?"
-      options: ["A typed box holds text; int() makes it a number", "int() checks that the box isn't empty", "int() rounds the number to the nearest 10", "App Builder needs int() before any action"]
-      answer: 0
-      feedback: [null, "An empty box gives 0 with int(), but checking isn't its job.", "Rounding is round(). int() turns text into a whole number.", "Set text and many other actions don't need it."]
-      explain: "A text input always holds text, even when you type 20. int() turns the text \"20\" into the number 20, so it can be added to Minutes. Without it, App Builder stops and says it can't add text to a number."
-  - check:
       type: bug
       code: "working.txt#nib"
       text: "Nib's screen never changes from 0 minutes. Click the line that explains why."
@@ -187,48 +189,31 @@ tasks:
 
 ### Read the text
 
-### Why int()?
-
 ### Find Nib's mistake
 
-## Modify: a Reset button
+## Make it yours: Reset and sessions
 
 ```step
 stage: modify
-insight: "A Reset button needs both moves again: change the variable, then set the text. Choosing both is the check that the move has stuck."
-try: { playground: appbuilder, starter: "app.json#done", level: 2, height: 640 }
+insight: "A Reset button and a second counter need both moves again: change a variable, then set the text. Doing them without steps is the check that the move has stuck."
+try: { playground: appbuilder, starter: "app.json#done", keep: build, level: 2, height: 640 }
 tasks:
-  - check:
-      type: question
-      q: "You add a Reset button. Which actions does its event need?"
-      options: ["Set Minutes to 0, then set the text to show the total", "Set Minutes to 0, and nothing else", "Set the text to 0 minutes, and nothing else", "Delete the Minutes variable"]
-      answer: 0
-      feedback: [null, "Minutes would be 0, but the screen would still show the old total.", "The screen would say 0, but Minutes would still hold the old total, and the next Save would add to it.", "Variables are made on the left, not deleted by actions."]
-      explain: "Reset changes the variable and the screen, so it needs both: Set variable Minutes to 0, then Set TotalText text to show the total."
   - check:
       type: code
       text: "A button called ResetButton whose event sets Minutes to 0 and sets TotalText's text."
       rules: { contains: ["object ResetButton (button)"], event: [["when ResetButton is clicked", "Set variable Minutes to 0", "Set TotalText text to"]] }
+  - check:
+      type: code
+      text: "A second variable, Sessions, goes up by 1 on each Save and is shown on the screen, and Reset sets it back to 0."
+      rules: { contains: ["variable Sessions ="], event: [["when SaveButton is clicked", "Add 1 to variable Sessions", "Sessions"], ["when ResetButton is clicked", "Set variable Sessions to 0"]] }
 ```
 
-### Choose the actions
+### A Reset button
 
-### Build it
+Carry on with your tracker. Add a **Button** with the text *Reset* and rename it *ResetButton*. Its event needs two actions: **Set variable Minutes to 0**, then set TotalText's text again (or the screen keeps the old total).
 
-This is the finished tracker. Add a **Button** with the text *Reset* and rename it *ResetButton*. On the Events tab, add an event: **ResetButton is clicked**, then the two actions. To set a variable, choose **Variables**, then **Set variable … to …**.
+### Count the sessions
 
-## Make: count the sessions
-
-```step
-stage: make
-insight: "A second variable and a second Set text show that each number the app remembers needs its own variable, changed and shown by events."
-try: { playground: appbuilder, starter: "app.json#sol-reset", level: 2, height: 640 }
-check:
-  type: code
-  text: "A second variable, Sessions, goes up by 1 on each Save and is shown on the screen, and Reset sets it back to 0."
-  rules: { contains: ["variable Sessions ="], event: [["when SaveButton is clicked", "Add 1 to variable Sessions", "Sessions"], ["when ResetButton is clicked", "Set variable Sessions to 0"]] }
-```
-
-This starts from the tracker with Reset. Add a second variable, *Sessions*, that goes up by 1 each time you click Save. Show it in a new Text, such as *Sessions: 3*. Make Reset clear it too.
+Add a second variable, *Sessions*, that goes up by 1 each time you click Save. Show it in a new Text, such as *Sessions: 3*. Make Reset clear it too.
 
 Then show your tracker to someone. Ask them to use it without help. What did they try that you didn't expect?

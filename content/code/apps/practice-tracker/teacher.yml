@@ -1,6 +1,6 @@
-summary: "Students build a practice tracker in App Builder: a text input, a Save button and a total. A variable holds the total, the button's On clicked event adds to it, and a Set text action shows it. The first build leaves out Set text on purpose, so students see the variable change while the screen doesn't."
+summary: "Students build a practice tracker in App Builder: a text input, a Save button and a total. A variable holds the total, the button's On clicked event adds to it, and a Set text action shows it. The build adds Set text last, so students see the variable change while the screen doesn't, then fix it."
 time: 60
-timing: "Predict 3 min · Build it 30 min · Investigate 10 min · Modify 7 min · Make 10 min"
+timing: "Try 5 min · Build (three short steps) 35 min · Check 5 min · Make it yours 15 min"
 goals:
   - I can lay out a screen in App Builder with text, a text box and a button.
   - I can make a button change a number the app remembers.
@@ -11,14 +11,14 @@ before: |
 
   The steps below have tick boxes that tick by themselves when the student's events match (the page reads the app as plain text). They say what to build, not how the screen looks, so layouts can differ.
 
-  The one idea: a variable remembers a number, an event changes it, and the screen only shows the new number when an event sets the text. Step 10 is the reveal: the total changes, the screen doesn't.
+  The one idea: a variable remembers a number, an event changes it, and the screen only shows the new number when an event sets the text. Build 2 is the reveal: the total changes, the screen doesn't.
 
   If students type words instead of a number, int() gives 0, so nothing is added. That's a good question for later (checking input), not this lesson.
 running:
-  - "Predict: most say 45. Leave it open until step 10."
-  - "Build it: stop the class at step 10. Ask: is Minutes 45? How would we know? What did we never tell the screen to do?"
-  - "Investigate: read the Set text expression aloud together, piece by piece."
-  - "Modify: before they build Reset, ask what would go wrong with only one of the two actions."
+  - "Before the build (whole class, on the deck): does the total on screen change if the event only adds to Minutes? Most say yes. Leave it open until Build 2, where the screen doesn't change."
+  - "Build 2: stop the class at the last step. Ask: is Minutes 45? How would we know? What did we never tell the screen to do?"
+  - "Check: read the Set text expression aloud together, piece by piece."
+  - "Make it yours: before they build Reset, ask what would go wrong with only one of the two actions."
 stuck:
   - see: "Nothing happens when Save is clicked."
     ask: "Which object did you pick for the condition?"
@@ -45,5 +45,5 @@ explain: |
 
   The screen doesn't change by itself. It shows whatever the last **Set text** said, so the same event needs a Set text action to show the new total. Words in quote marks are shown as they are; a variable outside the quotes is replaced by its value; **&** joins the pieces.
 solutions:
-  step-7#t2: app.json#sol-reset
-  step-8: app.json#sol-sessions
+  step-6#t1: app.json#sol-reset
+  step-6#t2: app.json#sol-sessions

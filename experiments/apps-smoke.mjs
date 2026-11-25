@@ -23,9 +23,9 @@ const errors = [];
 page.on('pageerror', (e) => errors.push(e.message));
 
 await page.goto(base + '/code/apps/practice-tracker/');
-const step = page.locator('#step-5');
+let step = page.locator('#step-2'); // Build 1
 await step.scrollIntoViewIfNeeded();
-const f = step.frameLocator('iframe').first();
+let f = step.frameLocator('iframe').first();
 await f.locator('.stage.design').waitFor();
 const ticked = (i) => step.locator('.check').nth(i).evaluate((el) => el.classList.contains('done') || !!el.querySelector('.rules li.ok:last-child') && [...el.querySelectorAll('.rules li')].every((li) => li.classList.contains('ok')));
 
@@ -42,10 +42,14 @@ const rename = async (from, to) => {
 };
 await rename(names[0], 'TextInput'); await rename(names[1], 'SaveButton'); await rename(names[2], 'TotalText');
 await page.waitForTimeout(800);
-assert.ok(await ticked(0), 'task 1 ticks when the screen has the three objects: ' + (await step.locator('.check').nth(0).innerText()));
+assert.ok(await ticked(0), 'Build 1 ticks when the screen has the three objects: ' + (await step.locator('.check').nth(0).innerText()));
 
-// task 2: the variable and the event (the clicks the walkthrough clip shows)
-await step.locator('.taskpills [role=tab]').nth(1).click();
+// Build 2 shares Build 1's project (try.keep): the three objects are already there
+step = page.locator('#step-3');
+await step.scrollIntoViewIfNeeded();
+f = step.frameLocator('iframe').first();
+await f.locator('.stage.design').waitFor();
+await f.locator('[data-ab="object:SaveButton"]').waitFor();
 await f.locator('[data-ab="new-variable-name"]').fill('Minutes');
 await f.locator('[data-ab="new-variable-name"]').press('Enter');
 await f.locator('[data-ab="tab:events"]').click();
@@ -62,7 +66,7 @@ await f.locator('[data-ab="entry:addTo"]').click();
 await f.locator('dialog[open] [data-ab="param:value"]').fill('15');
 await f.locator('dialog[open] [data-ab="done"]').click();
 await page.waitForTimeout(800);
-assert.ok(await ticked(1), 'task 2 ticks: ' + (await step.locator('.check').nth(1).innerText()));
+assert.ok(await ticked(0), 'Build 2 ticks: ' + (await step.locator('.check').nth(0).innerText()));
 await page.screenshot({ path: 'experiments/apps-smoke.png' });
 assert.deepEqual(errors, []);
 console.log('apps smoke test passed');

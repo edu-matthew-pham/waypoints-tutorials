@@ -1,11 +1,11 @@
 summary: "Students build a checklist of jobs where each box is a Button whose text is ⬜ or ✅. They first build a tick that stays on, then try two separate click events (which cancel each other on one click), then fix it with one click event, a sub-event and an Else."
 time: 60
-timing: "Predict 3 min · Build it 30 min · Investigate 10 min · Modify 10 min · Make 7 min"
+timing: "Try 5 min · Build (four short steps) 30 min · Check 8 min · Make it yours 17 min"
 goals:
   - I can make a button change its own text when it's clicked.
   - I can explain why two separate events with the same trigger undo each other.
   - I can use a sub-event and Else so that only one of two things happens.
-struggle: "Building the version that doesn't work on purpose (steps 4 to 6) feels like wasted effort, and some students skip it. It's the point of the lesson: they need to see two flat events cancel before the sub-event makes sense."
+struggle: "Building the version that doesn't work on purpose (Build 2) feels like wasted effort, and some students skip it. It's the point of the lesson: they need to see two flat events cancel before the sub-event makes sense."
 before: |
   The box characters ⬜ and ✅ are emoji. On most laptops they paste fine; if a laptop shows empty squares, use [ ] and [x] instead, and change the conditions to match.
 
@@ -17,10 +17,10 @@ before: |
 
   The one idea: on one click, every event whose conditions are true runs, top to bottom. One trigger with two branches (a sub-event and an Else) means exactly one runs.
 running:
-  - "Predict: most choose ✅. Leave it open; step 6 is the reveal."
-  - "Build it: at step 6, ask a pair to explain what happened in order: first event, then second event."
-  - "Investigate: draw the event on the board with the two branches as arrows. Only one arrow is taken per click."
-  - "Modify: this is the review step. Ask which branch means 'just finished a job'."
+  - "Before Build 2 (whole class, on the deck): two events, one click: what does the box show? Most choose ✅. Leave it open; Build 2 is the reveal."
+  - "Build 2: ask a pair to explain what happened in order: first event, then second event."
+  - "Check: draw the event on the board with the two branches as arrows. Only one arrow is taken per click."
+  - "Make it yours: this is the review step. Ask which branch means 'just finished a job'."
 stuck:
   - see: "The box doesn't tick at all."
     ask: "What does the text condition check for?"
@@ -42,4 +42,4 @@ explain: |
 
   The fix is **one** click event with two branches. A **sub-event** (⋯, Add a sub-event) runs only if its condition is true: the box shows ⬜, so tick it. An **Else** (⋯, Add an Else below) runs only when that condition was false: untick it. Exactly one branch runs per click.
 solutions:
-  step-7#t2: app.json#sol-done
+  step-7#t1: app.json#sol-done

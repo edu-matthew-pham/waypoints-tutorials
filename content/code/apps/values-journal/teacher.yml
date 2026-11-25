@@ -1,6 +1,6 @@
 summary: "Students build a three-screen journal: choose a value, describe what they did, and see every entry in a list. A whole-app variable (Chosen) carries the choice between screens, a list variable (Journal) stores entries with Add to the end of list, and a List object on screen 3 shows the list."
 time: 75
-timing: "Predict 3 min · Build it 35 min · Investigate 12 min · Modify 10 min · Make 15 min"
+timing: "Try 5 min · Build 1–4 35 min · Check 8 min · Make it yours 20 min"
 goals:
   - I can make an app with more than one screen and buttons that move between them.
   - I can use a whole-app variable to carry a choice from one screen to the next.
@@ -13,14 +13,14 @@ before: |
 
   Run starts on the screen you were editing. To test the whole flow, open the Choose screen first.
 
-  The List object shows a list variable by itself (its Shows property), so no loop is needed to fill it. Loops (For each, LoopIndex) come up in Investigate, and for real in the next lesson.
+  The List object shows a list variable by itself (its Shows property), so no loop is needed to fill it. Loops (For each, LoopIndex) come up in the Check step, and for real in the next lesson.
 
   The journal forgets entries when the project is restarted. That's fine for a prototype.
 running:
-  - "Predict: ask what 'whole app' might mean before the reveal."
-  - "Build it: checkpoint after step 5: does screen 2 show the chosen value? Fix that before lists."
-  - "Investigate: write LoopIndex 1, 2, 3 under three entries on the board, and point to item(Journal, 1), item(Journal, 2), item(Journal, 3)."
-  - "Make: pair students from different tables, so the tester hasn't seen the app built."
+  - "Before Build 2 (whole class, on the deck): will screen 2 know which value was clicked on screen 1? Ask what 'whole app' might mean."
+  - "Build 2: checkpoint: does screen 2 show the chosen value? Fix that before lists."
+  - "Check: write LoopIndex 1, 2, 3 under three entries on the board, and point to item(Journal, 1), item(Journal, 2), item(Journal, 3)."
+  - "Make it yours: pair students from different tables, so the tester hasn't seen the app built."
 stuck:
   - see: "A screen's buttons do nothing."
     ask: "Which screen were the events added to?"
@@ -44,4 +44,4 @@ explain: |
 
   A **list variable** keeps many entries; **Add … to the end of list** adds one at the back, and **count(Journal)** is how many there are. A **List** object shows a list, one row per entry.
 solutions:
-  step-6#t2: app.json#sol-count
+  step-7#t1: app.json#sol-count

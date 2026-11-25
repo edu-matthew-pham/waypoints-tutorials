@@ -4,7 +4,9 @@ unit: characters
 title: Creature stats
 summary: "Build a viewer for three made-up creatures: click one and its name, stats and special ability appear, with bars for each stat. One Image object has three copies, each with its own object variables, and one click event shows whichever copy you clicked."
 language: maths
+shape: build
 hook: "Games, shops and sports apps all show cards of things with stats. Behind them, one design is copied many times, and each copy keeps its own values."
+pacing: { keyDelayMs: 40, cursorMs: 500, afterActionMs: 300, postRollMs: 1200 }
 voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-appbuilder" 8755
@@ -32,22 +34,10 @@ You could make three separate Images, each with its own events. Instead you'll u
 
 ![The creature viewer: three creatures in a row, and below them Tide's name, its power, speed and defence as bars, and its special ability.](app.svg)
 
-## Predict: whose name shows?
-
-```step
-stage: predict
-insight: "Predicting which name appears sets up the move: clicking a copy picks it, so the event reads that copy's object variables."
-check:
-  type: predict
-  q: "Three copies of the Creature image have the object variable name: Blaze, Tide and Zip. The event is: Creature is clicked → Set NameText text to Creature.name. You click Tide. What does NameText show?"
-  options: ["Tide", "Blaze, the first copy", "All three names", "Creature.name"]
-  actual: "Tide. Creature is clicked picks the copy you clicked, so for the rest of that event Creature.name means that copy's name."
-```
-
 ## Try the finished app
 
 ```step
-stage: run
+stage: info
 insight: "Clicking each creature in the finished viewer shows the move before it's built: one event, a different result for each copy."
 try: { playground: appbuilder, starter: "app.json#done", tab: run, level: 3, height: 640 }
 check: { type: reflect, text: "I clicked each creature in turn. One event showed all three." }
@@ -55,12 +45,46 @@ check: { type: reflect, text: "I clicked each creature in turn. One event showed
 
 This is the finished app you'll build, open on the **Run** tab. The event list under the app has only one event.
 
-## Watch first: read the clicked copy
+## Build 1: each creature's own values
 
 ```step
-stage: info
+stage: run
 app: true
-query: { code: "@app.json#walk-start", level: 3, id: walkthrough }
+query: { code: "@app.json#start", level: 3, id: build-1 }
+caption: "Object variables"
+clip:
+  - caption: { text: "Click a creature. Give the object a variable: power.", say: "Click a creature. Give the object a variable, power." }
+  - click: { selector: ".stage.design [data-id='k0']" }
+  - type: { selector: "[data-ab='new-objvar-name']", text: "power" }
+  - press: Enter
+  - caption: { text: "Each copy keeps its own value: Blaze 80…", say: "Each copy keeps its own value. Blaze, eighty." }
+  - type: { selector: "[data-ab='objvar:power']", text: "80" }
+  - press: Tab
+  - click: { selector: ".stage.design [data-id='k1']" }
+  - caption: { text: "…and Tide 50.", say: "And Tide, fifty." }
+  - type: { selector: "[data-ab='objvar:power']", text: "50" }
+  - press: Tab
+  - expect: { selector: "[data-ab='objvar:power']", contains: "" }
+  - wait: 800
+insight: "Adding a variable to the object once, then filling it in on each copy, is what lets one event show different values later."
+try: { playground: appbuilder, starter: "app.json#start", keep: build, level: 3, height: 640 }
+check:
+  type: code
+  text: "Creature has the object variables name, power, speed, defence and ability."
+  rules: { contains: ["object variable Creature.name =", "object variable Creature.power =", "object variable Creature.speed =", "object variable Creature.defence =", "object variable Creature.ability ="] }
+```
+
+The screen is made for you: three copies of one Image called *Creature*, Texts for the stats, and three Boxes for the bars (*PowerBar*, *SpeedBar*, *DefenceBar*). Click any copy: the sidebar says *Creature*, with *3 copies*.
+
+1. Click a creature. In Properties, under **Object variables**, add *name* and *ability* (start them empty), then *power*, *speed* and *defence* (start them at 0).
+2. Click each creature in turn and fill in its own values: Blaze, Tide and Zip, numbers from 0 to 100, and an ability each. Make up the numbers, but be ready to say why each creature has them.
+
+## Build 2: show the clicked creature
+
+```step
+stage: run
+app: true
+query: { code: "@app.json#walk-start", level: 3, id: build-2 }
 caption: "Creature.name means the clicked copy"
 clip:
   - click: { selector: "[data-ab='tab:events']" }
@@ -70,7 +94,7 @@ clip:
   - click: { selector: "[data-ab='group:object:Creature']" }
   - click: { selector: "[data-ab='entry:onClicked']" }
   - click: { selector: "dialog[open] [data-ab='done']" }
-  - caption: { text: "Set NameText's text to Creature.name: the name of the copy that was clicked.", say: "Set NameText's text to Creature dot name. That's the name of the copy that was clicked." }
+  - caption: { text: "Set NameText's text to Creature.name: the name of the copy that was clicked.", say: "Set NameText's text to Creature dot name: the clicked copy's name." }
   - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
   - click: { selector: "[data-ab='group:object:NameText']" }
   - click: { selector: "[data-ab='entry:setText']" }
@@ -79,52 +103,36 @@ clip:
   - expect: { selector: ".view-events event-sheet", contains: "Creature.name" }
   - click: { selector: ".view-events .preview-col [data-ab='widget:Creature'][data-id='k2']" }
   - caption: { text: "Click Zip in the preview: NameText shows Zip.", say: "Click Zip in the preview. NameText shows Zip." }
-  - wait: 1500
+  - wait: 900
+insight: "One click event shows whichever copy was clicked: the click picks that copy, so Creature.name means its name."
+try: { playground: appbuilder, starter: "app.json#sol-step-2", keep: build, level: 3, height: 640 }
+check:
+  type: code
+  text: "Creature is clicked shows the clicked copy's name, power, speed, defence and ability."
+  rules: { event: [["when Creature is clicked", "Set NameText text to Creature.name", "Set PowerText text to", "& Creature.power", "Set SpeedText text to", "& Creature.speed", "Set DefenceText text to", "& Creature.defence", "Set AbilityText text to", "& Creature.ability"]] }
 ```
 
-The clip shows steps 6 and 7 below.
+1. On the Events tab: **Creature is clicked**.
+2. Add **Set NameText text to** `Creature.name`
+3. Add **Set PowerText text to** `"Power: " & Creature.power`, and the same for speed and defence.
+4. Add **Set AbilityText text to** `"Special: " & Creature.ability`
+5. Click each creature in the preview.
 
-## Build it: the creature viewer
+## Build 3: bars
 
 ```step
 stage: run
-insight: "Filling in object variables, then one click event, makes picking visible: the same event shows different stats for each creature."
-try: { playground: appbuilder, starter: "app.json#start", level: 3, height: 640 }
-tasks:
-  - check:
-      type: code
-      text: "Creature has the object variables name, power, speed, defence and ability."
-      rules: { contains: ["object variable Creature.name =", "object variable Creature.power =", "object variable Creature.speed =", "object variable Creature.defence =", "object variable Creature.ability ="] }
-  - check:
-      type: code
-      text: "Creature is clicked shows the clicked copy's name, power, speed, defence and ability."
-      rules: { event: [["when Creature is clicked", "Set NameText text to Creature.name", "Set PowerText text to", "& Creature.power", "Set SpeedText text to", "& Creature.speed", "Set DefenceText text to", "& Creature.defence", "Set AbilityText text to", "& Creature.ability"]] }
-  - check:
-      type: code
-      text: "The same event sets each bar's width from the stat."
-      rules: { event: [["when Creature is clicked", "Set PowerBar width to Creature.power", "Set SpeedBar width to Creature.speed", "Set DefenceBar width to Creature.defence"]] }
+insight: "Bars reuse the same picked values, turned into a width."
+try: { playground: appbuilder, starter: "app.json#sol-step-3", keep: build, level: 3, height: 640 }
+check:
+  type: code
+  text: "The same event sets each bar's width from the stat."
+  rules: { event: [["when Creature is clicked", "Set PowerBar width to Creature.power", "Set SpeedBar width to Creature.speed", "Set DefenceBar width to Creature.defence"]] }
 ```
 
-The screen is made for you: three copies of one Image called *Creature*, Texts for the stats, and three Boxes for the bars (*PowerBar*, *SpeedBar*, *DefenceBar*). Click any copy: the sidebar says *Creature*, with *3 copies*.
+A full bar is 200 wide. In the same event, add **PowerBar**, **Set PowerBar width to** `Creature.power / 100 * 200`, and the same for the other two bars.
 
-### Object variables
-
-1. Click a creature. In Properties, under **Object variables**, add *name* and *ability* (start them empty), then *power*, *speed* and *defence* (start them at 0).
-2. Click each creature in turn and fill in its own values: Blaze, Tide and Zip, numbers from 0 to 100, and an ability each. Make up the numbers, but be ready to say why each creature has them.
-
-### Show the clicked creature
-
-3. On the Events tab: **Creature is clicked**.
-4. Add **Set NameText text to** `Creature.name`
-5. Add **Set PowerText text to** `"Power: " & Creature.power`, and the same for speed and defence.
-6. Add **Set AbilityText text to** `"Special: " & Creature.ability`
-7. Click each creature in the preview.
-
-### Bars
-
-8. A full bar is 200 wide. Add **PowerBar**, **Set PowerBar width to** `Creature.power / 100 * 200`, and the same for the other two bars.
-
-## Investigate: one event, many creatures
+## Check: one event, many creatures
 
 ```step
 stage: investigate
@@ -145,54 +153,30 @@ tasks:
       fault: logic
       misconception: action-hits-all
       explain: "Line 3: in this event the click has picked Tide, so Hide Creature only hides Tide. To hide the others you'd hide every creature in an event that doesn't pick, then show the clicked one."
-  - check:
-      type: question
-      q: "Why use object variables here, not variables in the sidebar?"
-      options: ["Each creature needs its own values", "Sidebar variables can't hold text", "Object variables are quicker to type", "Sidebar variables reset on every click"]
-      answer: 0
-      feedback: [null, "Sidebar variables can hold text.", "Typing speed isn't it.", "They keep their value until an event changes it."]
-      explain: "A sidebar variable holds one value for the whole app. Each creature needs its own power, speed and so on, so they're object variables: same names, different values in each copy."
 ```
 
 ### Which ones hide?
 
 ### Find Nib's mistake
 
-### Why object variables?
-
-## Modify: a fourth creature
+## Make it yours: a fourth creature, then your own set
 
 ```step
 stage: modify
-insight: "Adding a creature without touching the events shows the payoff of object variables and picking: the event already works for any copy."
-try: { playground: appbuilder, starter: "app.json#done", level: 3, height: 640 }
+insight: "Adding a creature without touching the events shows the payoff of object variables and picking; a set of their own uses the whole pattern in a new context."
+try: { playground: appbuilder, starter: "app.json#done", keep: build, level: 3, height: 640 }
 tasks:
-  - check:
-      type: question
-      q: "You add a fourth copy of Creature with its own values. What do you change on the Events tab?"
-      options: ["Nothing", "Add a new click event for it", "Add a fourth Set text for its name", "Change Creature to Creature4"]
-      answer: 0
-      feedback: [null, "The existing event already works for any copy of Creature.", "Creature.name reads the clicked copy, whichever it is.", "It's another copy of the same object."]
-      explain: "The click event picks whichever copy is clicked and reads that copy's variables, so a new copy works straight away."
   - check:
       type: code
       text: "Four copies of Creature, and still one click event."
       rules: { contains: ["copies 4"], event: [["when Creature is clicked", "Set NameText text to Creature.name"]] }
+  - check: { type: reflect, text: "I made my own viewer: at least three characters (copies of one Image), at least three stats shown as bars, and an ability and a weakness for each. I can explain why each one has its numbers." }
 ```
 
-### Predict the change
+### A fourth creature
 
-### Try it
+Click a creature, then choose **⋯**, **Duplicate** in the sidebar to make a fourth copy. Move it into the row, choose its picture, and fill in its object variables. Then run it and click it. What did you change on the Events tab? Nothing: the click event already works for any copy.
 
-Click a creature, then choose **⋯**, **Duplicate** in the sidebar to make a fourth copy. Move it into the row, choose its picture, and fill in its object variables. Then run it and click it.
-
-## Make: your own character cards
-
-```step
-stage: make
-check: { type: reflect, text: "I made my own viewer: at least three characters (copies of one Image), at least three stats shown as bars, and an ability and a weakness for each. I can explain why each one has its numbers." }
-insight: "A viewer of their own choosing uses the whole pattern (one object, object variables, a picking click event) in a new context."
-try: { playground: appbuilder, starter: "app.json#done", level: 3, height: 640 }
-```
+### Your own set
 
 Choose your own set: made-up creatures, pets, robots, plants or anything with at least three characters. Upload your own pictures if you like. Give each one at least three stats and a weakness as well as an ability. Make the numbers fair: be ready to say why the strongest one isn't the best at everything.

@@ -4,7 +4,9 @@ unit: track
 title: A water tracker
 summary: "Build a water tracker with a goal: add a glass, reset the day, and see a message and a progress bar. An Every tick event keeps the display in step without setting the text in every button's event. A condition that isn't a trigger, such as comparing a variable, is checked every tick, and an action only waits for a sub-event's condition if it sits inside that sub-event."
 language: maths
+shape: build
 hook: "Most apps show the same numbers in several places. Keeping them all up to date by hand in every button gets messy fast; there's a simpler way."
+pacing: { keyDelayMs: 40, cursorMs: 500, afterActionMs: 300, postRollMs: 1200 }
 voice: { name: af_heart, speed: 1.1 }
 app:
   command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-appbuilder" 8753
@@ -37,27 +39,10 @@ This time you'll use **Every tick**. App Builder checks the events over and over
 
 ![The water tracker: "Glasses: 5 of 8", a progress bar five-eighths full, Add a glass and Reset buttons, and the message "Keep going".](app.svg)
 
-## Predict: who sets the text?
-
-```step
-stage: predict
-insight: "Predicting whether the count changes with no Set text in the button's event sets up the move: Every tick keeps the display in step on its own."
-check:
-  type: predict
-  q: "The Add button's event only adds 1 to Glasses. It has no Set text. You click Add. Does the count on the screen change?"
-  options: ["Yes, straight away", "No, the screen stays at 0", "Only after the next click", "Only after you press Reset"]
-  actual: "Yes. The Every tick event sets the text again about 60 times a second, so as soon as Glasses changes, the screen shows it."
-```
-
-| When (condition) | Do (actions) |
-|---|---|
-| Every tick | Set GlassText text to "Glasses: " & Glasses & " of " & Goal |
-| ⚡ AddButton is clicked | Add 1 to variable Glasses |
-
 ## Try the finished app
 
 ```step
-stage: run
+stage: info
 insight: "Using the finished tracker, with its events beside it, gives a target for the build and shows Every tick running all the time."
 try: { playground: appbuilder, starter: "app.json#done", tab: run, level: 2, height: 600 }
 check: { type: reflect, text: "I added glasses until I reached the goal and tried to go past it. It stopped at 8, and the Every tick row kept lighting up." }
@@ -65,12 +50,12 @@ check: { type: reflect, text: "I added glasses until I reached the goal and trie
 
 This is the finished app you'll build, open on the **Run** tab. Under it, the Every tick row keeps flashing: it runs all the time, not just when you click.
 
-## Watch first: an Every tick event
+## Build 1: the display, every tick
 
 ```step
-stage: info
+stage: run
 app: true
-query: { code: "@app.json#start", id: walkthrough }
+query: { code: "@app.json#start", level: 2, id: build-1 }
 caption: "Every tick keeps the text right"
 clip:
   - caption: { text: "Two variables first: Glasses starts at 0.", say: "Two variables first. Glasses starts at zero." }
@@ -94,52 +79,73 @@ clip:
   - click: { selector: "dialog[open] [data-ab='done']" }
   - expect: { selector: ".view-events .preview-col .stage", contains: "Glasses: 0 of 8" }
   - caption: { text: "The preview already shows it: Every tick set the text.", say: "The preview already shows it. Every tick set the text." }
-  - wait: 1600
-```
-
-The clip shows steps 1 to 3 below.
-
-## Build it: the water tracker
-
-```step
-stage: run
-insight: "The build includes the cap exactly as many beginners write it, so the next step can test it and find why it doesn't stop at the goal."
-try: { playground: appbuilder, starter: "app.json#start", level: 2, height: 640 }
-tasks:
-  - check:
-      type: code
-      text: "Variables Glasses (0) and Goal (8), and an Every tick event that sets GlassText from them."
-      rules: { contains: ["variable Glasses = 0", "variable Goal = 8"], event: [["when Every tick", "Set GlassText text to", "Glasses", "Goal"]] }
-  - check:
-      type: code
-      text: "AddButton is clicked adds 1 to Glasses, with a sub-event that checks Glasses < Goal (built as set out, slip and all)."
-      rules: { event: [["when AddButton is clicked", "Add 1 to variable Glasses"], ["when AddButton is clicked > when Variable Glasses < Goal"]] }
-  - check:
-      type: code
-      text: "ResetButton is clicked sets Glasses to 0."
-      rules: { event: [["when ResetButton is clicked", "Set variable Glasses to 0"]] }
+  - wait: 900
+insight: "An Every tick event keeps the display in step with the variables on its own, whatever changes them."
+try: { playground: appbuilder, starter: "app.json#start", keep: build, level: 2, height: 640 }
+check:
+  type: code
+  text: "Variables Glasses (0) and Goal (8), and an Every tick event that sets GlassText from them."
+  rules: { contains: ["variable Glasses = 0", "variable Goal = 8"], event: [["when Every tick", "Set GlassText text to", "Glasses", "Goal"]] }
 ```
 
 The screen is made for you: GlassText, AddButton and ResetButton.
-
-### Variables and the display
 
 1. Under **Variables** on the left, add *Glasses* starting at 0, and *Goal* starting at 8.
 2. On the **Events** tab, choose **+ Add event**, **+ Condition**, **System**, **Every tick**.
 3. Add the action **GlassText**, **Set GlassText text to …**: `"Glasses: " & Glasses & " of " & Goal`
 
-### The buttons
+## Build 2: the Add button, with a cap
 
-4. Add an event: **AddButton**, **AddButton is clicked**. Add the action **Variables**, **Add … to variable**: 1 to Glasses.
-5. Now a cap, so it stops at the goal. Click the AddButton event, then its **⋯** button, and choose **Add a sub-event**. Give the sub-event the condition **Variables**, **Variable … … …**: Glasses **<** Goal. Leave the Add 1 action where it is, on the AddButton event.
-### Reset, then test
+```step
+stage: run
+app: true
+query: { code: "@app.json#sol-step-2", level: 2, id: build-2 }
+caption: "The button only changes Glasses"
+clip:
+  - click: { selector: "[data-ab='tab:events']" }
+  - caption: { text: "AddButton adds 1 to Glasses. No Set text needed.", say: "AddButton adds one to Glasses. No Set text needed." }
+  - click: { selector: ".view-events [data-ab='add-event']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-condition']" }
+  - click: { selector: "[data-ab='group:object:AddButton']" }
+  - click: { selector: "[data-ab='entry:onClicked']" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
+  - click: { selector: "[data-ab='group:Variables']" }
+  - click: { selector: "[data-ab='entry:addTo']" }
+  - type: { selector: "dialog[open] [data-ab='param:value']", text: "1" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - wait: 600
+  - click: { selector: ".view-events .preview-col [data-ab='widget:AddButton']" }
+  - expect: { selector: ".view-events .preview-col [data-ab='widget:GlassText']", contains: "Glasses: 1 of 8" }
+  - caption: { text: "Every tick showed the new count.", say: "Every tick showed the new count." }
+  - wait: 800
+insight: "The build includes the cap exactly as many beginners write it, so the next steps can test it and find why it doesn't stop at the goal."
+try: { playground: appbuilder, starter: "app.json#sol-step-2", keep: build, level: 2, height: 640 }
+check:
+  type: code
+  text: "AddButton is clicked adds 1 to Glasses, with a sub-event that checks Glasses < Goal (built as set out, slip and all)."
+  rules: { event: [["when AddButton is clicked", "Add 1 to variable Glasses"], ["when AddButton is clicked > when Variable Glasses < Goal"]] }
+```
 
-6. Add an event: **ResetButton is clicked**, with the action **Set variable … to …**: Glasses to 0.
-7. In the preview, click Add 12 times. What does the screen say? Then click Reset.
+1. Add an event: **AddButton**, **AddButton is clicked**. Add the action **Variables**, **Add … to variable**: 1 to Glasses. Click Add in the preview: the count changes, because Every tick sets the text.
+2. Now a cap, so it stops at the goal. Click the AddButton event, then its **⋯** button, and choose **Add a sub-event**. Give the sub-event the condition **Variables**, **Variable … … …**: Glasses **<** Goal. Leave the Add 1 action where it is, on the AddButton event.
 
-Keep this version: you'll find out what happened in the next step.
+## Build 3: Reset, then test
 
-## Investigate: did the cap work?
+```step
+stage: run
+insight: "Testing past the goal shows the cap doesn't hold, which the Check step explains."
+try: { playground: appbuilder, starter: "app.json#sol-step-3", keep: build, level: 2, height: 640 }
+check:
+  type: code
+  text: "ResetButton is clicked sets Glasses to 0."
+  rules: { event: [["when ResetButton is clicked", "Set variable Glasses to 0"]] }
+```
+
+1. Add an event: **ResetButton is clicked**, with the action **Set variable … to …**: Glasses to 0.
+2. In the preview, click Add 12 times. What does the screen say? Then click Reset.
+
+## Check: did the cap work?
 
 ```step
 stage: investigate
@@ -147,7 +153,7 @@ insight: "Tracing the cap and reading the goal message test the two halves of th
 tasks:
   - check:
       type: question
-      q: "You built the cap as in step 5 and clicked Add 12 times, with a goal of 8. What did the screen say?"
+      q: "You built the cap as in Build 2 and clicked Add 12 times, with a goal of 8. What did the screen say?"
       options: ["Glasses: 12 of 8", "Glasses: 8 of 8", "Glasses: 7 of 8", "Glasses: 0 of 8"]
       answer: 0
       feedback: [null, "Try it again, and count. Did it stop at 8?", "The cap didn't hold it back at all.", "Reset sets it to 0, but only when you click Reset."]
@@ -160,46 +166,37 @@ tasks:
       fault: logic
       misconception: action-outside-subevent
       explain: "Line 2: the action is on the parent event, so it runs on every click. The sub-event's condition below it only controls actions inside the sub-event. Move Add 1 into the sub-event."
-  - check:
-      type: question
-      q: "Another event: Variable Glasses = Goal → set Message to \"Goal reached!\". It has no ⚡. When does it run?"
-      options: ["Every tick, while Glasses equals Goal", "Once, the moment Glasses reaches Goal", "Only when you click Add", "Only when the app starts"]
-      answer: 0
-      feedback: [null, "Only triggers (marked ⚡) happen once at a moment. This condition is checked every tick.", "It isn't tied to a button. Nothing about it mentions AddButton.", "That would be On start of screen."]
-      explain: "Conditions without a ⚡ are checked every tick. While Glasses equals Goal, the action runs about 60 times a second. That's fine for setting the same text; it would be a problem for adding to a score."
 ```
 
 ### What did you see?
 
 ### Find the slip
 
-### When does it run?
-
-## Modify: fix the cap
+## Build 4: fix the cap
 
 ```step
-stage: modify
+stage: run
 insight: "Moving the action into the sub-event is the fix, and testing at the goal confirms students now know which actions a condition controls."
-try: { playground: appbuilder, starter: "app.json#built", level: 2, height: 640 }
+try: { playground: appbuilder, starter: "app.json#built", keep: build, level: 2, height: 640 }
 check:
   type: code
   text: "Add 1 to Glasses is inside the sub-event, and no longer on the AddButton event itself."
   rules: { event: [["when AddButton is clicked > when Variable Glasses < Goal", "Add 1 to variable Glasses"]], lacks: ["event: when AddButton is clicked | do: Add 1 to variable Glasses"] }
 ```
 
-This is the tracker as you built it. Move **Add 1** into the sub-event: click the action on the AddButton event and choose **Delete**, then click the sub-event, choose **+ Action** and add it there. Then click Add 12 times in the preview again.
+Move **Add 1** into the sub-event: click the action on the AddButton event and choose **Delete**, then click the sub-event, choose **+ Action** and add it there. Then click Add 12 times in the preview again.
 
 | When (condition) | Do (actions) |
 |---|---|
 | ⚡ AddButton is clicked | |
 | ↳ Variable Glasses < Goal | Add 1 to variable Glasses |
 
-## Make: a message and a progress bar
+## Make it yours: a message and a progress bar
 
 ```step
-stage: make
+stage: modify
 insight: "The message and progress bar use the every-tick idea twice, plus an Else from last lesson, so the move is used in a new place."
-try: { playground: appbuilder, starter: "app.json#sol-fix", level: 2, height: 640 }
+try: { playground: appbuilder, starter: "app.json#sol-step-6", keep: build, level: 2, height: 640 }
 tasks:
   - check:
       type: question
