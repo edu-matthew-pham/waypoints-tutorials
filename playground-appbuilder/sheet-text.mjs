@@ -1,4 +1,4 @@
-// Built from edu-matthew-pham/waypoints-tools app-builder/src/core/sheet-text.js at 297c7a2. Do not edit: see vendor/app-builder/README.md.
+// Built from edu-matthew-pham/waypoints-tools app-builder/src/core/sheet-text.js at 365dde9. Do not edit: see vendor/app-builder/README.md.
 // src/core/components.js
 var COMPONENTS = {
   button: { id: "button", label: "Button", category: "Basics", hint: "Something to tap or click.", base: "Button", props: { text: "Button", w: 150, h: 46 } },
@@ -6,6 +6,8 @@ var COMPONENTS = {
   input: { id: "input", label: "Text input", category: "Basics", hint: "A box where the user types.", base: "Input", props: { text: "", w: 220, h: 42 } },
   shape: { id: "shape", label: "Box", category: "Basics", hint: "A coloured rectangle: bars, backgrounds, dividers.", base: "Box", props: { text: "", w: 200, h: 24 }, extra: { color: "#2f6fdd" } },
   image: { id: "image", label: "Image", category: "Media", hint: "A picture: upload one or pick a built-in.", base: "Image", props: { text: "", w: 120, h: 120 }, extra: { image: "star" } },
+  sound: { id: "sound", label: "Sound", category: "Media", hint: "Music or a sound effect, with a play button.", base: "Sound", props: { text: "", w: 260, h: 52 }, extra: { sound: "calm" }, exposes: ["playing"] },
+  video: { id: "video", label: "Video", category: "Media", hint: "Plays a video from a link, e.g. Wikimedia Commons.", base: "Video", props: { text: "", w: 320, h: 200 }, extra: { link: "" }, exposes: ["playing"] },
   list: { id: "list", label: "List", category: "Data", hint: "Shows the items of a list, one per row.", base: "List", props: { text: "", w: 342, h: 220 }, extra: { source: "" } },
   table: { id: "table", label: "Table", category: "Data", hint: "Shows a table: a row for each record, a column for each field.", base: "Table", props: { text: "", w: 460, h: 240 }, extra: { source: "", columns: "" } },
   toggle: { id: "toggle", label: "Toggle", category: "Choices", hint: "An on/off switch with a label.", base: "Toggle", props: { text: "Switch", w: 180, h: 32 }, extra: { on: false }, exposes: ["on"] },
@@ -203,6 +205,24 @@ var CONDITIONS = {
       return keep.length > 0;
     }
   },
+  isPlaying: {
+    category: "Object",
+    label: "{target} is playing",
+    params: [obj({ kinds: ["sound", "video"] })],
+    // Picking: keeps only the sounds (or videos) that are playing.
+    test: (rt, ctx, p) => {
+      const keep = rt.pickList(ctx, p.target).filter((inst) => !!inst.props.playing);
+      ctx.picked.set(p.target, keep);
+      return keep.length > 0;
+    }
+  },
+  onEnded: {
+    category: "Object",
+    label: "{target} finishes playing",
+    trigger: "ended",
+    object: "target",
+    params: [obj({ kinds: ["sound", "video"] })]
+  },
   onEvery: {
     category: "System",
     label: "Every {seconds} seconds",
@@ -302,6 +322,61 @@ var ACTIONS = {
     label: "Set {target} picture to {image}",
     params: [obj({ kinds: ["image"] }), { name: "image", type: "picture" }],
     run: (rt, ctx, p) => rt.each(ctx, p.target, (inst) => rt.setProp(inst, "image", p.image))
+  },
+  playSound: {
+    category: "Object",
+    label: "Play {target}",
+    params: [obj({ kinds: ["sound", "video"] })],
+    help: "Plays from the start. A browser only plays sound after the user has clicked or pressed something in the app.",
+    run: (rt, ctx, p) => rt.each(ctx, p.target, (inst) => rt.media(inst, "play"))
+  },
+  stopSound: {
+    category: "Object",
+    label: "Stop {target}",
+    params: [obj({ kinds: ["sound", "video"] })],
+    run: (rt, ctx, p) => rt.each(ctx, p.target, (inst) => rt.media(inst, "stop"))
+  },
+  setSound: {
+    category: "Object",
+    label: "Set {target} sound to {sound}",
+    params: [obj({ kinds: ["sound"] }), { name: "sound", type: "sound" }],
+    run: (rt, ctx, p) => rt.each(ctx, p.target, (inst) => {
+      rt.media(inst, "stop");
+      rt.setProp(inst, "sound", p.sound);
+    })
+  },
+  setSoundNamed: {
+    category: "Object",
+    label: "Set {target} sound to the one named {name}",
+    params: [obj({ kinds: ["sound"] }), expr("name", "ClickedItem.sound")],
+    help: "The name is worked out when the app runs, so a table can have a field naming each row's sound: ClickedItem.sound.",
+    run: (rt, ctx, p) => rt.each(ctx, p.target, (inst, c) => {
+      const name = fmt(rt.evalExpr(p.name, c));
+      if (!rt.hasSound(name)) throw new ExprError(`There is no sound called "${name}"`);
+      rt.media(inst, "stop");
+      rt.setProp(inst, "sound", name);
+    })
+  },
+  setVideo: {
+    category: "Object",
+    label: "Set {target} video to {link}",
+    params: [obj({ kinds: ["video"] }), expr("link", "ClickedItem.link")],
+    help: "A link to a video file, such as one on Wikimedia Commons. The name is worked out when the app runs, so a table field can hold each row's link.",
+    run: (rt, ctx, p) => rt.each(ctx, p.target, (inst, c) => {
+      rt.media(inst, "stop");
+      rt.setProp(inst, "link", fmt(rt.evalExpr(p.link, c)).trim());
+    })
+  },
+  openLink: {
+    category: "System",
+    label: "Open link {link} in a new tab",
+    params: [expr("link", '"https://commons.wikimedia.org"')],
+    help: "Opens a web page in a new browser tab (the app keeps running). Only http and https links open.",
+    run: (rt, ctx, p) => {
+      const link = fmt(rt.evalExpr(p.link, ctx)).trim();
+      if (!/^https?:\/\//i.test(link)) throw new ExprError(`"${link}" isn't a web link (it should start with https://)`);
+      rt.openLink(link);
+    }
   },
   setSize: {
     category: "Object",
@@ -542,14 +617,14 @@ function sheetText(project) {
   const out = [];
   const val = (v) => JSON.stringify(v);
   for (const v of project.variables || []) {
-    const line = v.table ? `table ${v.name} = [${(v.table.fields || []).map((f) => f.name).join(", ")}] ${v.value.length} row${v.value.length === 1 ? "" : "s"}` : Array.isArray(v.value) ? `list ${v.name} = ${val(v.value)}` : `variable ${v.name} = ${val(v.value)}`;
+    const line = v.table ? `table ${v.name} = [${(v.table.fields || []).map((f) => f.type === "link" ? `${f.name} (links to ${f.to})` : f.name).join(", ")}] ${v.value.length} row${v.value.length === 1 ? "" : "s"}` : Array.isArray(v.value) ? `list ${v.name} = ${val(v.value)}` : `variable ${v.name} = ${val(v.value)}`;
     out.push(line + (v.remember ? " (remembered)" : ""));
   }
   for (const s of project.screens || []) {
     out.push(`screen ${s.name}`);
     for (const o of s.objects || []) {
       const i = o.instances[0] || {};
-      out.push(`object ${o.name} (${COMPONENTS[o.kind]?.label.toLowerCase() ?? o.kind}) text ${val(i.text ?? "")}${(o.kind === "list" || o.kind === "table") && i.source ? ` shows ${i.source}` : ""}${o.instances.length > 1 ? ` copies ${o.instances.length}` : ""}`);
+      out.push(`object ${o.name} (${COMPONENTS[o.kind]?.label.toLowerCase() ?? o.kind}) text ${val(i.text ?? "")}${(o.kind === "list" || o.kind === "table") && i.source ? ` shows ${i.source}` : ""}${o.kind === "sound" ? ` sound ${i.sound ?? ""}` : ""}${o.kind === "video" && i.link ? ` link ${val(i.link)}` : ""}${o.instances.length > 1 ? ` copies ${o.instances.length}` : ""}`);
       for (const iv of o.instanceVars || []) out.push(`object variable ${o.name}.${iv.name} = ${val(iv.value)}`);
     }
     const walk = (events, path) => {

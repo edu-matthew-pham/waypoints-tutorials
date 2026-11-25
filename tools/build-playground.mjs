@@ -227,6 +227,7 @@ export function buildAppBuilderPlayground(out = 'dist') {
   rmSync(dest, { recursive: true, force: true });
   mkdirSync(dest, { recursive: true });
   for (const f of ['index.html', 'README.md']) copyFileSync(join(root, 'playground-appbuilder', f), join(dest, f));
+  cpSync(join(root, 'playground-appbuilder', 'sounds'), join(dest, 'sounds'), { recursive: true }); // built-in sounds (Sound object)
   stampPlayground(dest);
   return dest;
 }
