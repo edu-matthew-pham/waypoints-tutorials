@@ -6,6 +6,13 @@ summary: "Use the songs in a table: show the clicked song as Now playing, add up
 language: maths
 shape: build
 hook: "A music app tells you the playlist's total time and its longest track. Somewhere, a loop goes through every song and keeps a running total."
+pacing: { keyDelayMs: 40, cursorMs: 500, afterActionMs: 300, postRollMs: 1200 }
+voice: { name: af_heart, speed: 1.1 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-appbuilder" 8758
+  url: http://127.0.0.1:8758/index.html
+  readySelector: "[data-ab='tab:design']"
+  layout: full
 ---
 A table is a list of **records**. Today you'll read the fields of one record:
 
@@ -48,6 +55,37 @@ check:
 
 ```step
 stage: run
+app: true
+query: { code: "@app.json#sol-step-2", level: 4, id: build-2 }
+caption: "A running total"
+clip:
+  - click: { selector: "[data-ab='tab:events']" }
+  - caption: { text: "Total length: first, set total to 0.", say: "Total length. First, set total to zero." }
+  - click: { selector: ".view-events [data-ab='add-event']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-condition']" }
+  - click: { selector: "[data-ab='group:object:TotalButton']" }
+  - click: { selector: "[data-ab='entry:onClicked']" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
+  - click: { selector: "[data-ab='group:Variables']" }
+  - click: { selector: "[data-ab='entry:setVar']" }
+  - type: { selector: "dialog[open] [data-ab='param:value']", text: "0" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - caption: { text: "A sub-event: For each row in table Songs.", say: "A sub-event. For each row in table Songs." }
+  - click: { selector: ".view-events .ev.sel [data-ab='event-menu']" }
+  - click: { selector: "[data-ab='menu:add-a-sub-event']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-condition']" }
+  - click: { selector: "[data-ab='group:Tables']" }
+  - click: { selector: "[data-ab='entry:forEachRow']" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - caption: { text: "Each time round, add this row's length to total.", say: "Each time round, add this row's length to total." }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
+  - click: { selector: "[data-ab='group:Variables']" }
+  - click: { selector: "[data-ab='entry:addTo']" }
+  - type: { selector: "dialog[open] [data-ab='param:value']", text: "LoopItem.length" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - expect: { selector: ".view-events event-sheet", contains: "LoopItem.length" }
+  - wait: 900
 insight: "Starting the total at 0, adding one length per row, then showing it after the loop is the accumulator pattern; For each row makes the event run once per song."
 try: { playground: appbuilder, starter: "app.json#sol-step-2", keep: build, level: 4, height: 640 }
 check:

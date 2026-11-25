@@ -6,6 +6,13 @@ summary: "Make the playlist remember its songs when the app is closed and opened
 language: maths
 shape: build
 hook: "Close a notes app and open it tomorrow: your notes are still there. An app that forgets everything when it closes isn't much use for keeping a list."
+pacing: { keyDelayMs: 40, cursorMs: 500, afterActionMs: 300, postRollMs: 1200 }
+voice: { name: af_heart, speed: 1.1 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-appbuilder" 8759
+  url: http://127.0.0.1:8759/index.html
+  readySelector: "[data-ab='tab:design']"
+  layout: full
 ---
 So far, every time the app starts, the table goes back to the rows you typed in the sidebar. Today the playlist will **remember** what was added, so a song added today is still there tomorrow.
 
@@ -30,6 +37,21 @@ This is the app you'll build, open on the **Run** tab. Add a song, then press **
 
 ```step
 stage: run
+app: true
+query: { code: "@app.json#start", level: 4, id: build-1 }
+caption: "Remember between visits"
+clip:
+  - caption: { text: "Click the disk beside Songs: it's remembered now.", say: "Click the disk beside Songs. It's remembered now." }
+  - click: { selector: "[data-ab='remember:Songs']" }
+  - click: { selector: "[data-ab='tab:run']" }
+  - caption: { text: "Add a song while the app runs…", say: "Add a song while the app runs." }
+  - type: { selector: ".view-run [data-ab='widget:TitleInput'] input", text: "Cove" }
+  - type: { selector: ".view-run [data-ab='widget:LengthInput'] input", text: "4" }
+  - click: { selector: ".view-run [data-ab='widget:AddButton']" }
+  - caption: { text: "…then Restart. The song is still there.", say: "Then restart. The song is still there." }
+  - click: { selector: ".view-run [data-ab='restart']" }
+  - expect: { selector: ".view-run [data-ab='widget:SongTable']", contains: "Cove" }
+  - wait: 1200
 insight: "One tick makes the table persist; testing with Restart, then Forget saved data, is how to check a saving app without waiting for tomorrow."
 try: { playground: appbuilder, starter: "app.json#start", keep: build, level: 4, height: 640 }
 check:

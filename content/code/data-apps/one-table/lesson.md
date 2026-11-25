@@ -6,6 +6,13 @@ summary: "Rebuild the playlist with a table: one row per song, a column for each
 language: maths
 shape: build
 hook: "Spreadsheets, school timetables and music libraries all keep data the same way: one row for each thing, a column for each detail."
+pacing: { keyDelayMs: 40, cursorMs: 500, afterActionMs: 300, postRollMs: 1200 }
+voice: { name: af_heart, speed: 1.1 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-appbuilder" 8757
+  url: http://127.0.0.1:8757/index.html
+  readySelector: "[data-ab='tab:design']"
+  layout: full
 ---
 Last lesson, a song's title and artist were linked only by sitting at the same place in two lists. Today they live **together** in one **table**:
 
@@ -32,6 +39,36 @@ This is the app you'll build, open on the **Run** tab. Add a song, then click a 
 
 ```step
 stage: run
+app: true
+query: { code: "@app.json#start", level: 4, id: build-1 }
+caption: "Make a table"
+clip:
+  - caption: { text: "A table for the songs: type its name, then +.", say: "A table for the songs. Type its name, then plus." }
+  - type: { selector: "[data-ab='new-table-name']", text: "Songs" }
+  - click: { selector: "[data-ab='new-table-add']" }
+  - caption: { text: "Click a field to rename it: title.", say: "Click a field to rename it. Title." }
+  - click: { selector: "[data-ab='field-menu:Songs.name']" }
+  - click: { selector: "[data-ab='menu:rename']" }
+  - type: { selector: "input[aria-label='Field name']", text: "title" }
+  - press: Enter
+  - caption: { text: "+ adds a field: artist, then length.", say: "Plus adds a field. Artist, then length." }
+  - click: { selector: "[data-ab='add-field:Songs']" }
+  - type: { selector: "input[aria-label='Field name']", text: "artist" }
+  - press: Enter
+  - click: { selector: "[data-ab='add-field:Songs']" }
+  - type: { selector: "input[aria-label='Field name']", text: "length" }
+  - press: Enter
+  - caption: { text: "length holds numbers, so choose Number.", say: "Length holds numbers, so choose Number." }
+  - click: { selector: "[data-ab='field-menu:Songs.length']" }
+  - click: { selector: "[data-ab='menu:number']" }
+  - caption: { text: "+ Row, then type one song along the row.", say: "Plus row, then type one song along the row." }
+  - click: { selector: "[data-ab='add-row:Songs']" }
+  - type: { selector: "[data-ab='cell:Songs:1:title']", text: "Blue Sky" }
+  - type: { selector: "[data-ab='cell:Songs:1:artist']", text: "Kai" }
+  - type: { selector: "[data-ab='cell:Songs:1:length']", text: "3" }
+  - press: Tab
+  - expect: { selector: "[data-ab='cell:Songs:1:title']", value: "Blue Sky" }
+  - wait: 900
 insight: "Making the table by hand, field by field, shows its shape before any event touches it: the same fields in every row, each with a type."
 try: { playground: appbuilder, starter: "app.json#start", keep: build, level: 4, height: 640 }
 check:
@@ -50,6 +87,18 @@ check:
 
 ```step
 stage: run
+app: true
+query: { code: "@app.json#sol-step-2", level: 4, id: build-2 }
+caption: "Show the table"
+clip:
+  - caption: { text: "Click the empty table on the screen.", say: "Click the empty table on the screen." }
+  - click: { selector: ".view-design [data-ab='widget:SongTable']" }
+  - caption: { text: "In Properties, Shows table: Songs.", say: "In Properties, Shows table. Songs." }
+  - click: { selector: "[data-ab='prop:source']" }
+  - press: S
+  - press: Enter
+  - expect: { selector: ".view-design [data-ab='widget:SongTable']", contains: "Blue Sky" }
+  - wait: 900
 insight: "The Table object shows a table by itself, a column per field, so the screen keeps up with the table with no extra events."
 try: { playground: appbuilder, starter: "app.json#sol-step-2", keep: build, level: 4, height: 640 }
 check:
@@ -64,6 +113,27 @@ On the **Design** tab, click the empty table on the screen (*SongTable*). In **P
 
 ```step
 stage: run
+app: true
+query: { code: "@app.json#sol-step-3", level: 4, id: build-3 }
+caption: "Add a row"
+clip:
+  - click: { selector: "[data-ab='tab:events']" }
+  - caption: { text: "When AddButton is clicked…", say: "When AddButton is clicked." }
+  - click: { selector: ".view-events [data-ab='add-event']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-condition']" }
+  - click: { selector: "[data-ab='group:object:AddButton']" }
+  - click: { selector: "[data-ab='entry:onClicked']" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - caption: { text: "Tables, Add a row: one box for each field.", say: "Tables, Add a row. One box for each field." }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
+  - click: { selector: "[data-ab='group:Tables']" }
+  - click: { selector: "[data-ab='entry:tableAdd']" }
+  - type: { selector: "dialog[open] [data-ab='value:title']", text: "TitleInput.text" }
+  - type: { selector: "dialog[open] [data-ab='value:artist']", text: "ArtistInput.text" }
+  - type: { selector: "dialog[open] [data-ab='value:length']", text: "int(LengthInput.text)" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - expect: { selector: ".view-events event-sheet", contains: "Add a row to table Songs" }
+  - wait: 900
 insight: "Add a row takes one value for each field, so a new song arrives as a whole record and lands at the end of the table."
 try: { playground: appbuilder, starter: "app.json#sol-step-3", keep: build, level: 4, height: 640 }
 check:
@@ -81,6 +151,25 @@ check:
 
 ```step
 stage: run
+app: true
+query: { code: "@app.json#sol-step-4", level: 4, id: build-4 }
+caption: "Remove the clicked row"
+clip:
+  - click: { selector: "[data-ab='tab:events']" }
+  - caption: { text: "When a row of SongTable is clicked…", say: "When a row of SongTable is clicked." }
+  - click: { selector: ".view-events [data-ab='add-event']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-condition']" }
+  - click: { selector: "[data-ab='group:object:SongTable']" }
+  - click: { selector: "[data-ab='entry:onItemClicked']" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - caption: { text: "Remove row ClickedIndex: the number of the clicked row.", say: "Remove row ClickedIndex. The number of the clicked row." }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
+  - click: { selector: "[data-ab='group:Tables']" }
+  - click: { selector: "[data-ab='entry:tableRemove']" }
+  - type: { selector: "dialog[open] [data-ab='param:index']", text: "ClickedIndex" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - expect: { selector: ".view-events event-sheet", contains: "Remove row ClickedIndex" }
+  - wait: 900
 insight: "Removing row ClickedIndex takes the whole record away, so one action does what needed two in the parallel lists."
 try: { playground: appbuilder, starter: "app.json#sol-step-4", keep: build, level: 4, height: 640 }
 check:

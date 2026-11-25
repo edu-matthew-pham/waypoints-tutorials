@@ -6,6 +6,13 @@ summary: "Build a playlist that keeps song titles in one list and artists in ano
 language: maths
 shape: build
 hook: "A music app knows who sang every song. Underneath, something has to keep each title and its artist together."
+pacing: { keyDelayMs: 40, cursorMs: 500, afterActionMs: 300, postRollMs: 1200 }
+voice: { name: af_heart, speed: 1.1 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-appbuilder" 8756
+  url: http://127.0.0.1:8756/index.html
+  readySelector: "[data-ab='tab:design']"
+  layout: full
 ---
 Today's playlist keeps its songs in **two lists**: one for titles and one for artists. A song's title and its artist sit at the **same place** in each list: item 1 of *Titles* goes with item 1 of *Artists*, item 2 with item 2, and so on. The place number is the only thing linking them.
 
@@ -26,6 +33,33 @@ This is the app you'll build, open on the **Run** tab. Add a song, then click a 
 
 ```step
 stage: run
+app: true
+query: { code: "@app.json#start", level: 3, id: build-1 }
+caption: "Add to both lists"
+clip:
+  - click: { selector: "[data-ab='tab:events']" }
+  - caption: { text: "When AddButton is clicked: two actions, one for each list.", say: "When AddButton is clicked, two actions. One for each list." }
+  - click: { selector: ".view-events [data-ab='add-event']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-condition']" }
+  - click: { selector: "[data-ab='group:object:AddButton']" }
+  - click: { selector: "[data-ab='entry:onClicked']" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
+  - click: { selector: "[data-ab='group:Lists']" }
+  - click: { selector: "[data-ab='entry:listAdd']" }
+  - type: { selector: "dialog[open] [data-ab='param:value']", text: "TitleInput.text" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - caption: { text: "The artist goes on the end of Artists, at the same place.", say: "The artist goes on the end of Artists, at the same place." }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
+  - click: { selector: "[data-ab='group:Lists']" }
+  - click: { selector: "[data-ab='entry:listAdd']" }
+  - type: { selector: "dialog[open] [data-ab='param:value']", text: "ArtistInput.text" }
+  - click: { selector: "dialog[open] [data-ab='param:list']" }
+  - press: A
+  - press: Enter
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - expect: { selector: ".view-events event-sheet", contains: "end of list Artists" }
+  - wait: 900
 insight: "Adding to both lists in one event is how the two stay in step: the new title and artist both land at the end, at the same place."
 try: { playground: appbuilder, starter: "app.json#start", keep: build, level: 3, height: 600 }
 check:

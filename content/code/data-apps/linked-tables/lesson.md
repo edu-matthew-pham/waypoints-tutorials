@@ -7,6 +7,13 @@ summary: "Keep playlists and songs in two tables joined by a shared value: each 
 language: maths
 shape: build
 hook: "A music app has playlists, and every playlist has songs. Behind the screen, the playlists and the songs are usually kept in two separate tables."
+pacing: { keyDelayMs: 40, cursorMs: 500, afterActionMs: 300, postRollMs: 1200 }
+voice: { name: af_heart, speed: 1.1 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-appbuilder" 8761
+  url: http://127.0.0.1:8761/index.html
+  readySelector: "[data-ab='tab:design']"
+  layout: full
 ---
 Some apps need two kinds of record: **playlists** and **songs**. Instead of putting a list of songs inside each playlist, keep two flat tables and **link** them:
 
@@ -32,6 +39,60 @@ This is the app you'll build, open on the **Run** tab. Click each playlist. On t
 
 ```step
 stage: run
+app: true
+query: { code: "@app.json#start", level: 4, id: build-1 }
+caption: "Join two tables"
+clip:
+  - click: { selector: "[data-ab='tab:events']" }
+  - caption: { text: "When a playlist is clicked: remember its name in Chosen.", say: "When a playlist is clicked, remember its name in Chosen." }
+  - click: { selector: ".view-events [data-ab='add-event']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-condition']" }
+  - click: { selector: "[data-ab='group:object:PlaylistTable']" }
+  - click: { selector: "[data-ab='entry:onItemClicked']" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
+  - click: { selector: "[data-ab='group:Variables']" }
+  - click: { selector: "[data-ab='entry:setVar']" }
+  - type: { selector: "dialog[open] [data-ab='param:value']", text: "ClickedItem.name" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
+  - click: { selector: "[data-ab='group:Tables']" }
+  - click: { selector: "[data-ab='entry:tableClear']" }
+  - click: { selector: "dialog[open] [data-ab='param:table']" }
+  - press: S
+  - press: h
+  - press: Enter
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - caption: { text: "For each song whose playlist is Chosen, copy it into Shown.", say: "For each song whose playlist is Chosen, copy it into Shown." }
+  - click: { selector: ".view-events .ev.sel [data-ab='event-menu']" }
+  - click: { selector: "[data-ab='menu:add-a-sub-event']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-condition']" }
+  - click: { selector: "[data-ab='group:Tables']" }
+  - click: { selector: "[data-ab='entry:forEachRow']" }
+  - click: { selector: "dialog[open] [data-ab='param:table']" }
+  - press: S
+  - press: o
+  - press: Enter
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-condition']" }
+  - click: { selector: "[data-ab='group:Variables']" }
+  - click: { selector: "[data-ab='entry:compareValues']" }
+  - type: { selector: "dialog[open] [data-ab='param:left']", text: "LoopItem.playlist" }
+  - type: { selector: "dialog[open] [data-ab='param:right']", text: "Chosen" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
+  - click: { selector: "[data-ab='group:Tables']" }
+  - click: { selector: "[data-ab='entry:tableAdd']" }
+  - click: { selector: "dialog[open] [data-ab='param:table']" }
+  - press: S
+  - press: h
+  - press: Enter
+  - type: { selector: "dialog[open] [data-ab='value:title']", text: "LoopItem.title" }
+  - type: { selector: "dialog[open] [data-ab='value:artist']", text: "LoopItem.artist" }
+  - type: { selector: "dialog[open] [data-ab='value:playlist']", text: "LoopItem.playlist" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - expect: { selector: ".view-events event-sheet", contains: "LoopItem.playlist = Chosen" }
+  - wait: 900
 insight: "Remembering the clicked name, then copying the songs whose playlist field matches it, joins the two tables with the filter pattern."
 try: { playground: appbuilder, starter: "app.json#start", keep: build, level: 4, height: 640 }
 check:

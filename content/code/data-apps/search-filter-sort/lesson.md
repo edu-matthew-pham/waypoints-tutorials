@@ -6,6 +6,13 @@ summary: "Find songs in a bigger playlist: sort the table by title or by length,
 language: maths
 shape: build
 hook: "Every app with a list has a search box and a sort button. Underneath, a search is a loop that checks every row."
+pacing: { keyDelayMs: 40, cursorMs: 500, afterActionMs: 300, postRollMs: 1200 }
+voice: { name: af_heart, speed: 1.1 }
+app:
+  command: node "$REPO_ROOT/tools/serve.mjs" "$REPO_ROOT/dist/_playground-appbuilder" 8760
+  url: http://127.0.0.1:8760/index.html
+  readySelector: "[data-ab='tab:design']"
+  layout: full
 ---
 The playlist has more songs now. Today you'll help a user find one:
 
@@ -31,6 +38,23 @@ This is the app you'll build, open on the **Run** tab. Sort both ways, then type
 
 ```step
 stage: run
+app: true
+query: { code: "@app.json#start", level: 4, id: build-1 }
+caption: "Sort by a field"
+clip:
+  - click: { selector: "[data-ab='tab:events']" }
+  - caption: { text: "When Sort by title is clicked: Tables, Sort table.", say: "When Sort by title is clicked. Tables, Sort table." }
+  - click: { selector: ".view-events [data-ab='add-event']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-condition']" }
+  - click: { selector: "[data-ab='group:object:SortTitleButton']" }
+  - click: { selector: "[data-ab='entry:onClicked']" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
+  - click: { selector: "[data-ab='group:Tables']" }
+  - click: { selector: "[data-ab='entry:tableSort']" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - expect: { selector: ".view-events event-sheet", contains: "Sort table Songs by title" }
+  - wait: 900
 insight: "Sort by a field moves whole rows; a number field sorts by size, which is why length was made a number."
 try: { playground: appbuilder, starter: "app.json#start", keep: build, level: 4, height: 640 }
 check:
@@ -47,6 +71,50 @@ check:
 
 ```step
 stage: run
+app: true
+query: { code: "@app.json#sol-step-2", level: 4, id: build-2 }
+caption: "Search every row"
+clip:
+  - click: { selector: "[data-ab='tab:events']" }
+  - caption: { text: "Search: first clear the Results table.", say: "Search. First, clear the Results table." }
+  - click: { selector: ".view-events [data-ab='add-event']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-condition']" }
+  - click: { selector: "[data-ab='group:object:SearchButton']" }
+  - click: { selector: "[data-ab='entry:onClicked']" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
+  - click: { selector: "[data-ab='group:Tables']" }
+  - click: { selector: "[data-ab='entry:tableClear']" }
+  - click: { selector: "dialog[open] [data-ab='param:table']" }
+  - press: R
+  - press: Enter
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - caption: { text: "A sub-event: For each row in Songs, if the title contains the search.", say: "A sub-event. For each row in Songs, if the title contains the search." }
+  - click: { selector: ".view-events .ev.sel [data-ab='event-menu']" }
+  - click: { selector: "[data-ab='menu:add-a-sub-event']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-condition']" }
+  - click: { selector: "[data-ab='group:Tables']" }
+  - click: { selector: "[data-ab='entry:forEachRow']" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-condition']" }
+  - click: { selector: "[data-ab='group:Variables']" }
+  - click: { selector: "[data-ab='entry:compareValues']" }
+  - type: { selector: "dialog[open] [data-ab='param:left']", text: "contains(lower(LoopItem.title), lower(SearchInput.text))" }
+  - type: { selector: "dialog[open] [data-ab='param:right']", text: "true" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - caption: { text: "A match? Copy the row into Results.", say: "A match? Copy the row into Results." }
+  - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
+  - click: { selector: "[data-ab='group:Tables']" }
+  - click: { selector: "[data-ab='entry:tableAdd']" }
+  - click: { selector: "dialog[open] [data-ab='param:table']" }
+  - press: R
+  - press: Enter
+  - type: { selector: "dialog[open] [data-ab='value:title']", text: "LoopItem.title" }
+  - type: { selector: "dialog[open] [data-ab='value:artist']", text: "LoopItem.artist" }
+  - type: { selector: "dialog[open] [data-ab='value:length']", text: "LoopItem.length" }
+  - click: { selector: "dialog[open] [data-ab='done']" }
+  - expect: { selector: ".view-events event-sheet", contains: "Add a row to table Results" }
+  - wait: 900
 insight: "Clearing Results, then copying every row whose title contains the search text, is the linear search: one test per row, the matches kept."
 try: { playground: appbuilder, starter: "app.json#sol-step-2", keep: build, level: 4, height: 640 }
 check:
