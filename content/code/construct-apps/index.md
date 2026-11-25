@@ -1,4 +1,5 @@
 ---
+hidden: true   # 25 Nov 2026: App Builder apps (code/apps) replaced it on the pathway; kept at its address for classes already using it
 title: Construct apps
 summary: "Build small apps with Construct 3, a tool that runs in the browser, and learn how an app works underneath: screens you lay out, variables that remember things, and events that say when something happens and what to do then. Each lesson builds a prototype, an early working version of an app you can click through and test: a practice tracker, a chores checklist, a water tracker, a journal with three screens, and a set of character cards. The challenge is a prototype of your own, tested with a real user. The free edition, with no sign-in, is enough."
 tagline: "Build apps you can click, and see how they work."

@@ -1,6 +1,5 @@
 ---
 title: App Builder apps
-hidden: true   # a fork of Construct apps being tried before it goes on a pathway (roadmap/code.md › App Builder apps)
 summary: "Build small apps with App Builder, right here on the page, and learn how an app works underneath: screens you lay out, variables that remember things, and events that say when something happens and what to do then. Each lesson builds a prototype, an early working version of an app you can click through and test: a practice tracker, a chores checklist, a water tracker, a journal with three screens, and a set of character cards. The challenge is a prototype of your own, tested with a real user. Nothing to install, no sign-in, no limit on events."
 tagline: "Build apps you can click, and see how they work."
 years: "7-8"

@@ -53,12 +53,12 @@ pathways:
       - { path: code/ai-robots, stage: extensions, after: [code/robotics, code/microbit-computer] }
       - { path: code/microbit-security, stage: extensions, after: [code/microbit-play] }
   - id: construct
-    title: Construct
-    summary: App prototypes and games with events and behaviours, no code to type.
+    title: App Builder and Construct
+    summary: App prototypes in App Builder, then games in Construct, with events instead of typed code.
     fit: "Start here to make apps or games in the browser, with events instead of typed code."
-    about: "Construct 3 runs in the browser. You lay out screens and write **events**: when something happens, then what to do. **Construct apps** (usually Year 7) builds small app prototypes, such as a tracker, a checklist and a journal, then one of your own tested with a real user; it teaches variables, events, sub-events, screens, lists and picking. **Construct games** adds **behaviours**, so the engine moves objects, and builds games; start there or after the apps course. It runs beside MakeCode Arcade, so students can start with either. **Events to JavaScript** (planned, needs paid seats) turns events into code and leads into the Web pathway. The free edition, with no sign-in, covers the apps and games courses."
+    about: "Both tools run in the browser with nothing to install. You lay out screens and write **events**: when something happens, then what to do. **App Builder apps** (usually Year 7) builds small app prototypes in App Builder, a free event-sheet tool that runs on the page, such as a tracker, a checklist and a journal, then one of your own tested with a real user; it teaches variables, events, sub-events, screens, lists and picking. **Construct games** uses Construct 3 and adds **behaviours**, so the engine moves objects, and builds games; start there or after the apps course. It runs beside MakeCode Arcade, so students can start with either. **Events to JavaScript** (planned, needs paid Construct seats) turns events into code and leads into the Web pathway. The free edition of Construct, with no sign-in, covers the games course."
     courses:
-      - { path: code/construct-apps, stage: foundations }
+      - { path: code/apps, stage: foundations }
       - { path: code/construct, stage: foundations }
       - { title: Events to JavaScript, summary: "Script blocks inside events, then whole events rewritten as JavaScript. Needs paid Construct seats.", tagline: "Turn your events into real code.", stage: extensions, after: [code/construct] }
 ---

@@ -8,11 +8,11 @@
 standards:
   AC9TDI8P09: { focus: [code/python-functions, code/microbit-play, code/arcade-advanced], touches: [code/python-foundations, code/console, code/p5, code/dom] }
   AC9TDI8P06: { focus: all, touches: [], note: "Every Code lesson starts by asking students to predict what a program will do." }
-  AC9TDI8P05: { focus: [], touches: [code/python-foundations, code/microbit, code/arcade, code/construct-apps] }
+  AC9TDI8P05: { focus: [], touches: [code/python-foundations, code/microbit, code/arcade, code/apps] }
   AC9TDI8P01: { focus: [code/data], touches: [code/sql, code/deeper, code/flask, code/dom] }
   AC9TDI8P02: { focus: [code/data], touches: [code/ml] }
   AC9TDI8P03: { focus: [code/objects, code/deeper], touches: [code/data, code/sql] }
-  AC9TDI8P07: { focus: [code/site, code/construct-apps], touches: [code/html, code/css, code/bootstrap] }
+  AC9TDI8P07: { focus: [code/site, code/apps], touches: [code/html, code/css, code/bootstrap] }
   AC9TDI8P08: { focus: [], touches: [code/bootstrap] }
   AC9TDI10P09: { focus: [code/objects], touches: [code/games, code/vue, code/p5, code/flask] }
   AC9TDI10P06: { focus: [code/data], touches: [code/deeper] }
