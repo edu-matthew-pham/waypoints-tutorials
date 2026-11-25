@@ -1,0 +1,40 @@
+summary: "Students rebuild the playlist as a table: Songs, with the fields title, artist and length (a number field), made in App Builder's sidebar spreadsheet. A Table object shows it; Add a row takes one value per field; clicking a row removes it with Remove row ClickedIndex. The Check traces row numbers after a removal and asks why a table can't split a song."
+time: 60
+timing: "Try 5 min · Build 1–4 30 min · Check 8 min · Make it yours 15 min"
+goals:
+  - I can make a table with fields of the right type, and add rows to it.
+  - I can show a table with a Table object and add a row from what the user types.
+  - I can explain why a table keeps each record's details together.
+struggle: "Making the table: rename the first field, add fields, change length to Number. The sidebar is narrow; the field's own menu (click its name) does rename, type and delete."
+before: |
+  Tables are an App Builder Level 4 feature; these lessons open App Builder at Level 4.
+
+  A table is a list of records: each row is one record, each column a field. Field types matter: length is a number so it can be added up (next lesson) and sorted by size (lesson 5). int(LengthInput.text) turns the typed text into a number; a number field also accepts text that is a number.
+
+  Removing a row renumbers the rows below it, as a list does.
+running:
+  - "Before Build 1 (whole class): draw the two lists from last lesson, then redraw them as one table. What's the same, what's better?"
+  - "Build 1: checkpoint: everyone's Songs table has three fields and length shows 123 (number)."
+  - "Check: act it out: three students hold cards for three rows; remove the middle one, and the third steps up."
+stuck:
+  - see: "The Table object says Choose a table in Properties."
+    ask: "Which table does SongTable show?"
+    fix: "Click SongTable on the Design tab and set Shows table to Songs."
+  - see: "Add a row shows a box for name, not title."
+    ask: "Did the first field get renamed?"
+    fix: "Click the field's name in the sidebar, Rename, and call it title; the action's boxes follow."
+  - see: "A message says length holds numbers."
+    ask: "What was typed in the Minutes box?"
+    fix: "Type a number such as 4, or use int(LengthInput.text)."
+stretch: "Use Columns to show to hide length on the screen. Does the table still keep it?"
+support: "Make the table together on the projector; pairs build the events."
+leads: "Next: Records and fields: read one field of a row, add up a column, find the longest song."
+exit:
+  q: "A table Books has the fields title, author and pages. What does one row hold, and what does item(Books, 3).author give?"
+  a: "One row holds one book's title, author and pages. item(Books, 3).author is the author of the third book."
+explain: |
+  A **table** keeps records: one **row** per thing (here, a song), one **field** per detail (title, artist, length). Every row has the same fields, and each field holds text or a number.
+
+  **Add a row** takes one value for each field, so a new song arrives whole. **Remove row** takes the whole row away, so a title can never lose its artist.
+solutions:
+  step-7#t1: app.json#sol-genre

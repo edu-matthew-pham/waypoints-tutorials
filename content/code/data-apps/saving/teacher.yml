@@ -1,0 +1,38 @@
+summary: "Students make the playlist remember its songs between visits with App Builder's Remember toggle (💾) on the Songs table, test return visits with Restart and first visits with Forget saved data, and greet the user differently on each with count(Songs) in an On start of screen event with Else. The Check separates what the browser keeps from the project file and from other computers."
+time: 45
+timing: "Try 5 min · Build 1–2 20 min · Check 8 min · Make it yours 12 min"
+goals:
+  - I can make an app remember a table or variable between visits, and test it.
+  - I can make an app behave differently on a first visit and a return visit.
+  - I can explain where remembered data is kept, and what that means on a shared computer.
+struggle: "Testing: students expect to close the page. Restart (a return visit) and Forget saved data (a first visit) test both without waiting."
+before: |
+  Remember between visits keeps values in the browser's local storage, under this lesson step's own key: on this computer, for this browser user. Nothing is sent anywhere, and nothing goes into the project file (Save keeps the starting rows).
+
+  On shared computers, the next person in the same browser sees what was remembered. Keep data made up, and talk about it: it's a real design question for any app.
+running:
+  - "Before Build 1 (whole class): which apps remember things between visits? Where do you think they keep it?"
+  - "Build 2: test both visits before moving on: Restart with songs, then Forget saved data."
+  - "Check: the Kai question is worth a minute's discussion: who else could see a saved journal?"
+stuck:
+  - see: "Songs are gone after Restart."
+    ask: "Is the 💾 on Songs lit?"
+    fix: "Click it so it's lit, add songs again, then Restart."
+  - see: "The welcome message never changes."
+    ask: "Is the condition on a sub-event of On start of screen, with the Else below it?"
+    fix: "On start of screen has no actions; its sub-event compares count(Songs) = 0, and the Else sits right under that sub-event."
+  - see: "Forget saved data isn't there."
+    ask: "Is anything remembered yet?"
+    fix: "It shows once a variable, list or table has its 💾 lit; switch tabs and come back to Run."
+stretch: "Remember how many times the app has been opened: a remembered variable that goes up by 1 on start of screen."
+support: "Demonstrate a return visit and a first visit on the projector before students build."
+leads: "Next: Search, filter and sort."
+exit:
+  q: "Your app remembers a table of scores. A friend opens it on their own laptop. What will they see, and why?"
+  a: "Only the starting rows: remembered data is kept in the browser where it was added, not in the project or online."
+explain: |
+  **Remember between visits** keeps a value in this browser, so it's still there when the app is opened again on this computer. The project file still holds the starting values.
+
+  Test both visits: **Restart** is a return visit, and **Forget saved data** makes the next start a first visit. `count(Songs) = 0` tells them apart.
+solutions:
+  step-5#t1: app.json#sol-last-added

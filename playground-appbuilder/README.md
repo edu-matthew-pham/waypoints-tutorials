@@ -5,10 +5,10 @@ The event-sheet app builder from [edu-matthew-pham/waypoints-tools](https://gith
 the lesson page and App Builder can then talk (project reports for code checks), its saved work sits in this site's storage,
 and clips can be recorded with no network.
 
-- `index.html`: App Builder built into one file (`npm run build` in a local copy of app-builder: esbuild bundles `src/` into `dist/index.html`).
+- `index.html`: App Builder built into one file (`npm install && npm run build` in app-builder: esbuild bundles `src/` into `index.html`).
 - `sheet-text.mjs`: `src/core/sheet-text.js` bundled for Node (`npx esbuild src/core/sheet-text.js --bundle --format=esm`),
   used by `tools/check-appbuilder.mjs` to turn a solution project into the same plain text the page checks read.
-- Built from commit **6359984** (24 Nov 2026). To update: build both files from a newer commit, copy them here, change the
+- Built from commit **297c7a2** (25 Nov 2026: tables, the Table object, remember between visits). To update: build both files from a newer commit, copy them here, change the
   commit above and in the first line of `sheet-text.mjs`, then `npm run check-appbuilder` and record any clips again.
 
 Licence: PolyForm Noncommercial 1.0.0 (free for education; commercial use by permission), Matthew Pham.

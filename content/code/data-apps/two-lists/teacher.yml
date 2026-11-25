@@ -1,0 +1,40 @@
+summary: "Students build a playlist kept in two parallel lists, Titles and Artists, where a song's title and artist sit at the same place in each. Add puts a value on the end of both lists; clicking a title removes ClickedIndex from both. The Check shows what happens when only one list changes: every later song gets the wrong artist. This is the problem the next lesson's table solves."
+time: 50
+timing: "Try 5 min · Build 1–2 15 min · Check 10 min · Make it yours 15 min"
+goals:
+  - I can keep two lists in step by changing both in the same event.
+  - I can explain why a title and its artist must be at the same place in each list.
+  - I can predict what goes wrong when only one list changes.
+struggle: "The bug is invisible until the second list is looked at: each list is fine on its own. Have students read the two lists side by side, row by row, after every removal."
+before: |
+  This lesson uses only what App Builder apps taught (lists, List objects, ClickedIndex), at Level 3. Its point is the problem, not the solution: keep the lesson short and let the third list in Make it yours feel clumsy.
+
+  Songs and artists are made up. Students can use their own made-up songs; keep real song lyrics out.
+
+  Lists count from 1 in App Builder (ClickedIndex, item(list, 1)). Python counts from 0; that's for later.
+running:
+  - "Before Build 2 (whole class, on the deck): if we remove Arc from Titles only, who sang Cove? Vote, then try it."
+  - "Check: draw the two lists as columns on the board, cross out one item in one column, and draw the arrows that are now wrong."
+  - "Make it yours: ask what a Sort button would need to do with three lists."
+stuck:
+  - see: "Nothing is added."
+    ask: "Which event runs when Add song is clicked, and does it name both lists?"
+    fix: "Check the event's condition is AddButton is clicked, with two Add to the end of list actions."
+  - see: "Clicking a title does nothing."
+    ask: "Which List's items does the event listen to?"
+    fix: "Use An item in TitleList is clicked, and Remove item ClickedIndex (not 1) from each list."
+  - see: "The lists are different lengths."
+    ask: "Is there an event that changes only one list?"
+    fix: "Every add and every remove must change both lists. Press Start again to get the starting lists back."
+stretch: "Add a Sort A to Z button. With only the list actions, how close can you get, and what goes wrong? (A table, next lesson, sorts whole rows.)"
+support: "Build 1 together as a class; pairs do Build 2."
+leads: "Next: One table instead, where each song is one row and can't be split up."
+exit:
+  q: "Two lists: Names (Ana, Ben, Cy) and Scores (7, 4, 9). Ben is removed from Names only. What score does the app now show for Cy?"
+  a: "4: Cy moved up to place 2 in Names, and place 2 in Scores is still Ben's 4."
+explain: |
+  **Parallel lists** describe the same things: item 1 of Titles goes with item 1 of Artists, and so on. The place number is the only link between them.
+
+  So every change has to happen to both lists, at the same place: add to the end of both, remove the same item from both. Change one and every item after it lines up with the wrong partner.
+solutions:
+  step-5#t1: app.json#sol-lengths

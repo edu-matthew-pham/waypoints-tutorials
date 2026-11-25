@@ -1,0 +1,14 @@
+inquiry:
+  q: "Which apps on your device remember things between visits? Where do you think they keep them?"
+  prompts:
+    - "Would they still be there on another device?"
+    - "Who else could see them on a shared computer?"
+  notes: "Some apps keep things in the browser or on the device, some online. App Builder's Remember keeps them in this browser only."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "A shared computer"
+    minutes: 5
+    do: |
+      Kai's playlist remembers songs on a library computer. Who sees them next? What should the app tell its user?
+    notes: "Keep it practical: a note on the screen, a Clear button, not storing anything private."

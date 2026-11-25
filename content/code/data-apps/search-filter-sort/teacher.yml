@@ -1,0 +1,41 @@
+summary: "Students sort the Songs table by a field (titles A to Z, longest first), then build search and filter with one algorithm: clear a Results table, go through every row of Songs with For each row, and copy the rows whose test passes. The Check finds Nib removing the non-matching rows (data lost) and shows why numbers kept as text sort wrongly. Make it yours: search two fields, and Show all."
+time: 60
+timing: "Try 5 min · Build 1–3 30 min · Check 10 min · Make it yours 15 min"
+goals:
+  - I can sort a table by a field, and explain why whole rows move together.
+  - I can search or filter a table by copying the rows that match into a second table.
+  - I can explain why a filter shouldn't remove rows from the original table.
+struggle: "The search condition: contains(lower(LoopItem.title), lower(SearchInput.text)) = true is long. Build it in parts in the Find expressions browser, and test with a single letter."
+before: |
+  Search and filter are the same algorithm (a **linear search**: test every row, keep the matches), with a different test. Name it as an algorithm students will meet again in Python and SQL.
+
+  Results starts empty and is cleared at the start of each search, so old results don't stay (the same idea as list-clear-before-add, the other way round).
+
+  App Builder's Sort is a tool, not an algorithm students write: it sorts numbers by size, text A to Z ignoring capitals, and keeps equal rows in their order.
+running:
+  - "Before Build 2 (whole class): find every song with 'o' in the title on a printed list. How did you do it? That's the loop."
+  - "Check: Nib's filter is worth acting out: remove the long songs from the class list. Where did they go?"
+  - "Sort question: write 10, 9 and 3 on cards as words and sort them like a dictionary."
+stuck:
+  - see: "Search finds nothing."
+    ask: "What does the condition compare, and with what?"
+    fix: "Compare contains(lower(LoopItem.title), lower(SearchInput.text)) = true, inside the For each row sub-event."
+  - see: "Results keeps the last search's songs too."
+    ask: "Where is Results cleared?"
+    fix: "Clear table Results as the parent event's action, before the loop."
+  - see: "Sorting by length puts 10 before 9."
+    ask: "What type is the length field?"
+    fix: "Make length a Number field (click its name in the sidebar)."
+stretch: "Search with a minimum length too: two conditions in the same sub-event."
+support: "Build Search together; pairs build Short songs by changing only the test."
+leads: "Next: the challenge, a data app of their own."
+exit:
+  q: "Describe, in steps, how to show only the books with more than 300 pages, without losing any books."
+  a: "Clear a results table; for each row of Books, if pages > 300, add that row to the results table; show the results table. Books itself isn't changed."
+explain: |
+  **Sort** puts whole rows in order by one field: number fields by size, text A to Z.
+
+  **Search and filter** are one algorithm: clear a results table, go through **every row**, and copy the rows that pass a test. The original table is never changed, so nothing is lost. Only the test changes: contains(...) for a search, a comparison for a filter.
+solutions:
+  step-6#t1: app.json#sol-artist
+  step-6#t2: app.json#sol-show-all

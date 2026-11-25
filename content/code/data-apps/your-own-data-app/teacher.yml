@@ -1,0 +1,42 @@
+summary: "The course challenge: students plan, build and test a data app for a real person in five milestones (plan the table, add and show, remember and find, test with a user, improve one thing). A sort at the start matches jobs to the course's tools. Milestone 3 has an automatic check: a remembered table and a For each row loop."
+time: 180
+timing: "About three lessons: plan and add/show (lesson 1), remember and find (lesson 2), test with a user and improve (lesson 3)."
+goals:
+  - I can design a table, choosing fields and their types for a real user's records.
+  - I can build a data app that remembers its records and helps the user find something in them.
+  - I can test my app with a real person and improve it from what I saw.
+struggle: "Choosing fields. Students want too many; three or four is plenty. The three example rows in Milestone 1 show whether the fields work before anything is built."
+before: |
+  The user is a real person the student can ask: a classmate, family member, club or younger student.
+
+  Records stay made up or the student's own: no one else's personal details (names, contacts, health, grades). A reading log or training log of their own is ideal.
+
+  Remembered data stays in the browser it was added in. Students hand in the project with Save; if the teacher should see real records, students add them as starting rows in the sidebar before saving.
+
+  Suggested checkpoints: see each table plan (fields and types) before building; see Milestone 2 working; collect the three-line write-up from Milestone 5.
+running:
+  - "Milestone 1: approve each table plan in a minute: fields, types, three example rows."
+  - "Milestone 3: try both visits (Restart, Forget saved data) before testing with a user."
+  - "Milestone 4: testers come from another table and haven't seen the app built."
+stuck:
+  - see: "A student can't choose an idea."
+    ask: "What do you or someone you know keep track of?"
+    fix: "Start from one of the listed ideas and change it for that person."
+  - see: "The table has many fields."
+    ask: "Which fields will the user actually search, sort or add up?"
+    fix: "Keep those and a name or title; the rest go on a 'later' list."
+  - see: "The search or filter finds nothing."
+    ask: "Does the test compare the right field, and is the field the right type?"
+    fix: "Reuse the pattern from lesson 5: clear results, For each row, test, add a row."
+stretch: "Add a second table linked by a shared value (lesson 7), such as Authors and Books."
+support: "Offer a starter plan: a reading log with title, author and pages, a Books over 300 pages filter, and a total of pages read."
+leads: "Students can go on to the optional linked tables lesson, then to SQL (databases) or Python's data courses."
+exit:
+  q: "What did your user try that you didn't expect, and what did you change because of it?"
+  a: "Any specific answer tied to what they watched, not a general opinion."
+explain: |
+  A **data app** keeps records in a table and helps someone find something out from them.
+
+  Plan the **table** first (fields and their types, with example rows), then build in small steps: add and show, remember, then search, filter, sort or total. Test by watching a real user without helping, and improve one thing based on what you saw.
+solutions:
+  step-4: app.json#example

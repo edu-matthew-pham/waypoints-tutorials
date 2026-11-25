@@ -1,0 +1,14 @@
+inquiry:
+  q: "Who do you know who keeps track of something: books read, training, scores, a collection? What do they want to find out from it?"
+  prompts:
+    - "What would each record need?"
+    - "What question would they ask the app?"
+  notes: "The question the user wants answered decides the fields and the search, filter, sort or total."
+activities:
+  - at: make
+    kind: activity
+    title: "Three example rows"
+    minutes: 5
+    do: |
+      Before building, students write their table's fields with a type each, and three example records as rows. A partner checks: does every row fit? Is anything a number that should be added up or sorted?
+    notes: "Fields are easiest to change on paper."

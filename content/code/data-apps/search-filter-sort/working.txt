@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib's event: when ShortButton is clicked.
+Its sub-event: For each row in table Songs, and Compare LoopItem.length > 3.
+The sub-event's action: Remove row LoopIndex from table Songs.
+Nib clicks Short songs. Only short songs are left in Songs, and the long ones are gone.
+# endregion

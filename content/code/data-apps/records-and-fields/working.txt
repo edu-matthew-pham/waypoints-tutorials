@@ -1,0 +1,9 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib's event: when TotalButton is clicked.
+Its sub-event: For each row in table Songs.
+The sub-event's first action: Set variable total to 0.
+Its second action: Add LoopItem.length to variable total.
+After the loop, Nib shows total. With lengths 3, 5, 4, 2 it says 2.
+# endregion

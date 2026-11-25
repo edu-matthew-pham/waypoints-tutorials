@@ -1,0 +1,14 @@
+inquiry:
+  q: "A music app says your playlist is 14 minutes long, and shows its longest song. How might it work those out?"
+  prompts:
+    - "What would you do, one song at a time, to get the total?"
+    - "How would you keep track of the longest so far?"
+  notes: "A running total and a best so far: two patterns that come back in every language."
+activities:
+  - at: run
+    kind: activity
+    title: "Say the running total"
+    minutes: 3
+    do: |
+      Read the lengths 3, 5, 4, 2 aloud. After each, the class says the total so far: 3, 8, 12, 14. Then do it again, holding up the longest so far.
+    notes: "Where does the total start, and when? That's the slip Nib makes in the Check."

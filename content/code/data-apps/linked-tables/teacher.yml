@@ -1,0 +1,36 @@
+summary: "Optional extension: students keep playlists and songs in two flat tables linked by a shared value (each song's playlist field names its playlist). Clicking a playlist sets Chosen and copies the songs whose playlist = Chosen into a Shown table: a join, built with the filter pattern from lesson 5. The Check shows the link breaking when a name changes in one table only. Make it yours: add a song to the open playlist."
+time: 45
+timing: "Try 5 min · Build 1–2 20 min · Check 5 min · Make it yours 15 min"
+goals:
+  - I can keep two kinds of record in two tables linked by a shared value.
+  - I can show the records of one table that belong to a chosen record of another.
+  - I can explain why changing the shared value in one table breaks the link.
+struggle: "Seeing that the link is just a value: open the JSON view of both tables side by side and point to the matching names."
+before: |
+  This is how relational databases keep data: flat tables, linked by a shared value, rather than tables inside tables. Real databases link by an id number that never changes; here the name does the job, which the Check shows is fragile.
+
+  The JSON view (the { } JSON button under each table) shows both tables as flat lists of records. Students who go on to Python or web will meet nested JSON, and building it from flat tables is a good exercise there.
+
+  The SQL course (code/sql) is the natural next step.
+running:
+  - "Before Build 1 (whole class): how would you store playlists and their songs? Collect ideas; then show the two tables."
+  - "Check: rename a playlist live on the projector and click it."
+stuck:
+  - see: "No songs show."
+    ask: "What does each song's playlist field say, exactly?"
+    fix: "The comparison is exact: Study and study are different. Check spelling and capitals in both tables."
+  - see: "Songs from the last playlist stay."
+    ask: "Where is Shown cleared?"
+    fix: "Clear table Shown on the parent event, before the loop."
+stretch: "Add a Delete playlist button that also removes its songs. Why does that need a loop over Songs too?"
+support: "Build 1 together; pairs do the heading and Make it yours."
+leads: "Next: the SQL course, where linked tables are searched with JOIN."
+exit:
+  q: "A school app has a Classes table and a Students table. What field would link each student to their class, and how would you show one class's students?"
+  a: "A class field on each student. For each student, if their class is the chosen class, add them to a results table."
+explain: |
+  Two kinds of record go in **two flat tables**, **linked** by a value they share: each song names its playlist.
+
+  To show a playlist's songs, go through Songs and copy the rows whose playlist matches: the same loop as a filter. The shared value is the only link, so it has to match exactly in both tables.
+solutions:
+  step-5#t1: app.json#sol-add

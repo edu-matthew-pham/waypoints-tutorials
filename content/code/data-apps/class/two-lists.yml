@@ -1,0 +1,14 @@
+inquiry:
+  q: "A contacts app shows names and phone numbers. If names and numbers were kept in two separate lists, what could go wrong?"
+  prompts:
+    - "What links a name to its number?"
+    - "What happens if one list changes and the other doesn't?"
+  notes: "Only their place in each list links them. Keep this question open: the next lesson answers it with a table."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Two columns on the board"
+    minutes: 5
+    do: |
+      Write Titles and Artists as two columns. Cross out Arc in Titles only, close the gap, and draw an arrow from each title to the artist beside it now.
+    notes: "Every arrow below the removed song points to the wrong artist. Each list is fine on its own: the mistake is in how they line up."

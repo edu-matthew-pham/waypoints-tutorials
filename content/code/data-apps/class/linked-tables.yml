@@ -1,0 +1,14 @@
+inquiry:
+  q: "A music app has playlists, and each playlist has songs. How would you store that?"
+  prompts:
+    - "Could a song be in a table of its own?"
+    - "How would a song say which playlist it belongs to?"
+  notes: "Two flat tables, linked by a value they share: the way databases do it."
+activities:
+  - at: investigate
+    kind: discussion
+    title: "Rename a playlist"
+    minutes: 3
+    do: |
+      Rename Gym to Workout in Playlists only, then click it. Why are its songs gone? How could a database avoid this?
+    notes: "Link by an id number that never changes, not by a name."

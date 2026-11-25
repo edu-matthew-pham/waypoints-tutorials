@@ -1,0 +1,14 @@
+inquiry:
+  q: "Think of a spreadsheet, a timetable or a scoreboard. How is each thing's information kept together?"
+  prompts:
+    - "What is a row? What is a column?"
+    - "Why might a column need to hold numbers, not text?"
+  notes: "One row per thing (a record), one column per detail (a field). Numbers can be added up and sorted by size."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Be the table"
+    minutes: 4
+    do: |
+      Three students each hold a card for one song (title, artist, length). Remove the middle song: the third student steps up and becomes row 2.
+    notes: "The whole card moves: a title can't leave its artist behind. Rows renumber, as list items do."

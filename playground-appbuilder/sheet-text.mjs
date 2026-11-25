@@ -1,4 +1,4 @@
-// Built from edu-matthew-pham/waypoints-tools app-builder/src/core/sheet-text.js at 6359984. Do not edit: see vendor/app-builder/README.md.
+// Built from edu-matthew-pham/waypoints-tools app-builder/src/core/sheet-text.js at 297c7a2. Do not edit: see vendor/app-builder/README.md.
 // src/core/components.js
 var COMPONENTS = {
   button: { id: "button", label: "Button", category: "Basics", hint: "Something to tap or click.", base: "Button", props: { text: "Button", w: 150, h: 46 } },
@@ -7,6 +7,7 @@ var COMPONENTS = {
   shape: { id: "shape", label: "Box", category: "Basics", hint: "A coloured rectangle: bars, backgrounds, dividers.", base: "Box", props: { text: "", w: 200, h: 24 }, extra: { color: "#2f6fdd" } },
   image: { id: "image", label: "Image", category: "Media", hint: "A picture: upload one or pick a built-in.", base: "Image", props: { text: "", w: 120, h: 120 }, extra: { image: "star" } },
   list: { id: "list", label: "List", category: "Data", hint: "Shows the items of a list, one per row.", base: "List", props: { text: "", w: 342, h: 220 }, extra: { source: "" } },
+  table: { id: "table", label: "Table", category: "Data", hint: "Shows a table: a row for each record, a column for each field.", base: "Table", props: { text: "", w: 460, h: 240 }, extra: { source: "", columns: "" } },
   toggle: { id: "toggle", label: "Toggle", category: "Choices", hint: "An on/off switch with a label.", base: "Toggle", props: { text: "Switch", w: 180, h: 32 }, extra: { on: false }, exposes: ["on"] },
   slider: { id: "slider", label: "Slider", category: "Choices", hint: "Drag to pick a number.", base: "Slider", props: { text: "", w: 240, h: 32 }, extra: { min: 0, max: 100, value: 50 }, exposes: ["value", "min", "max"] }
 };
@@ -38,8 +39,10 @@ function compare(a, op, b) {
   }
   throw new ExprError(`Unknown comparison "${op}"`);
 }
+var isRecord = (v) => !!v && typeof v === "object" && !Array.isArray(v);
 function fmt(v) {
   if (Array.isArray(v)) return v.map(fmt).join(", ");
+  if (isRecord(v)) return Object.values(v).map(fmt).join(", ");
   if (typeof v === "number") return Number.isInteger(v) ? String(v) : String(Math.round(v * 1e6) / 1e6);
   return String(v);
 }
@@ -82,6 +85,7 @@ FUNCS.item = { n: 2, f: (l, i) => {
   if (i < 1 || i > l.length || !Number.isInteger(i)) throw new ExprError(`The list has ${l.length} item${l.length === 1 ? "" : "s"}, so there is no item ${fmt(i)}. Items are numbered from 1.`);
   return l[i - 1];
 } };
+FUNCS.contains = { n: 2, f: (t, part) => fmt(t).includes(fmt(part)) };
 FUNCS.join = { n: 2, f: (l, sep) => needList(l, "join").map(fmt).join(fmt(sep)) };
 FUNCS.uppercase = FUNCS.upper;
 FUNCS.lowercase = FUNCS.lower;
@@ -226,8 +230,15 @@ var CONDITIONS = {
     label: "An item in {target} is clicked",
     trigger: "itemClicked",
     object: "target",
-    params: [obj({ kinds: ["list"] })],
-    help: "ClickedItem is the item that was clicked, and ClickedIndex is its number (from 1)."
+    params: [obj({ kinds: ["list", "table"] })],
+    help: "ClickedItem is the item (or row) that was clicked, and ClickedIndex is its number (from 1). For a table, ClickedItem.title is one field of that row."
+  },
+  forEachRow: {
+    category: "Tables",
+    label: "For each row in table {table}",
+    loop: "each",
+    params: [{ name: "table", type: "table" }],
+    help: "Runs the event once for every row. Inside it, LoopItem is the row (LoopItem.title is one field) and LoopIndex is its number (from 1)."
   },
   forEach: {
     category: "Lists",
@@ -400,6 +411,67 @@ var ACTIONS = {
       l.length = 0;
     })
   },
+  tableAdd: {
+    category: "Tables",
+    label: "Add a row to table {table}: {values}",
+    params: [{ name: "table", type: "table" }, { name: "values", type: "fields" }],
+    run: (rt, ctx, p) => {
+      const row = {};
+      for (const f of rt.fieldsOf(p.table)) {
+        const src = p.values?.[f.name];
+        row[f.name] = rt.toField(p.table, f.name, src == null || String(src).trim() === "" ? f.type === "number" ? 0 : "" : rt.evalExpr(src, ctx));
+      }
+      rt.tableChange(p.table, (t) => t.push(row));
+    }
+  },
+  tableSet: {
+    category: "Tables",
+    label: "Set {field} of row {index} in table {table} to {value}",
+    params: [{ name: "field", type: "field" }, expr("index", "1"), { name: "table", type: "table" }, expr()],
+    run: (rt, ctx, p) => {
+      const i = num(rt.evalExpr(p.index, ctx));
+      const v = rt.toField(p.table, p.field, rt.evalExpr(p.value, ctx));
+      rt.tableChange(p.table, (t) => {
+        rt.checkRow(t, i, p.table);
+        t[i - 1] = { ...t[i - 1], [p.field]: v };
+      });
+    }
+  },
+  tableRemove: {
+    category: "Tables",
+    label: "Remove row {index} from table {table}",
+    params: [expr("index", "1"), { name: "table", type: "table" }],
+    run: (rt, ctx, p) => {
+      const i = num(rt.evalExpr(p.index, ctx));
+      rt.tableChange(p.table, (t) => {
+        rt.checkRow(t, i, p.table);
+        t.splice(i - 1, 1);
+      });
+    }
+  },
+  tableClear: {
+    category: "Tables",
+    label: "Clear table {table}",
+    params: [{ name: "table", type: "table" }],
+    run: (rt, ctx, p) => rt.tableChange(p.table, (t) => {
+      t.length = 0;
+    })
+  },
+  tableSort: {
+    category: "Tables",
+    label: "Sort table {table} by {field} {dir}",
+    params: [{ name: "table", type: "table" }, { name: "field", type: "field" }, { name: "dir", type: "sortdir" }],
+    run: (rt, ctx, p) => {
+      const type = rt.fieldType(p.table, p.field);
+      const sign = p.dir === "down" ? -1 : 1;
+      const key = (r) => r[p.field];
+      const cmp = type === "number" ? (a, b) => (Number(key(a)) || 0) - (Number(key(b)) || 0) : (a, b) => String(key(a)).localeCompare(String(key(b)), void 0, { sensitivity: "base", numeric: true });
+      rt.tableChange(p.table, (t) => {
+        const sorted = [...t].sort((a, b) => sign * cmp(a, b));
+        t.splice(0, t.length, ...sorted);
+      });
+    }
+  },
   goToScreen: {
     category: "Screen",
     label: "Go to screen {screen}",
@@ -413,6 +485,7 @@ function num(v) {
   return v;
 }
 var entryFor = (kind, type) => (kind === "cond" ? CONDITIONS : ACTIONS)[type];
+var SORT_DIRS = [["up", "A to Z, smallest first"], ["down", "Z to A, biggest first"]];
 var NUM_OR_CALC = "A number, a variable, or a calculation like score + 1.";
 var PARAM_HELP = {
   "onEvery.seconds": "How many seconds between each time. A number like 2 or 0.5, or a variable.",
@@ -428,6 +501,9 @@ var PARAM_HELP = {
   "listRemoveValue.value": "The item to remove (the first one that matches).",
   "listSet.index": "Which item: 1 is the first.",
   "listSet.value": "The new value for that item.",
+  "tableSet.index": "Which row: 1 is the first, LoopIndex inside For each, ClickedIndex when a row is clicked.",
+  "tableSet.value": 'The new value for that field: a number, "text in quotes", or something like Name.text.',
+  "tableRemove.index": "Which row: 1 is the first, count(table) is the last, ClickedIndex is the clicked row.",
   "repeat.count": "How many times: a number or a variable.",
   "setSize.value": "A number of pixels, or a calculation like (water / goal) * 300.",
   "setText.value": 'The text to show. Put words in "quotes" and join pieces with &, e.g. "Total: " & minutes',
@@ -440,12 +516,13 @@ var PARAM_HELP = {
 };
 for (const table of [CONDITIONS, ACTIONS]) {
   for (const [id, e] of Object.entries(table)) {
+    for (const p of e.params) if (p.type === "fields") p.help = 'One value for each field: "text in quotes", a number, or something like Title.text. An empty box gives empty text (or 0 for a number field).';
     for (const p of e.params) if (p.type === "expr") p.help = PARAM_HELP[`${id}.${p.name}`] || 'A value: a number, "text in quotes", a variable, or a calculation.';
   }
 }
 
 // src/core/sheet-text.js
-var SHOW = { showhide: { show: "Show", hide: "Hide" }, onoff: { on: "on", off: "off" }, posSize: { w: "width", h: "height", x: "x position", y: "y position" } };
+var SHOW = { showhide: { show: "Show", hide: "Hide" }, onoff: { on: "on", off: "off" }, posSize: { w: "width", h: "height", x: "x position", y: "y position" }, sortdir: Object.fromEntries(SORT_DIRS) };
 var KEY_NAMES = Object.fromEntries(KEYS);
 function itemText(kind, item, screens) {
   const entry = entryFor(kind, item.type);
@@ -456,6 +533,7 @@ function itemText(kind, item, screens) {
     if (!prm) return m;
     if (prm.type === "screen") return screens.find((s) => s.id === v)?.name ?? v;
     if (prm.type === "key") return KEY_NAMES[v] ?? v;
+    if (prm.type === "fields") return Object.entries(v || {}).filter(([, x]) => String(x).trim() !== "").map(([f, x]) => `${f} = ${x}`).join(", ");
     if (SHOW[prm.type]) return SHOW[prm.type][v] ?? v;
     return String(v);
   });
@@ -463,12 +541,15 @@ function itemText(kind, item, screens) {
 function sheetText(project) {
   const out = [];
   const val = (v) => JSON.stringify(v);
-  for (const v of project.variables || []) out.push(Array.isArray(v.value) ? `list ${v.name} = ${val(v.value)}` : `variable ${v.name} = ${val(v.value)}`);
+  for (const v of project.variables || []) {
+    const line = v.table ? `table ${v.name} = [${(v.table.fields || []).map((f) => f.name).join(", ")}] ${v.value.length} row${v.value.length === 1 ? "" : "s"}` : Array.isArray(v.value) ? `list ${v.name} = ${val(v.value)}` : `variable ${v.name} = ${val(v.value)}`;
+    out.push(line + (v.remember ? " (remembered)" : ""));
+  }
   for (const s of project.screens || []) {
     out.push(`screen ${s.name}`);
     for (const o of s.objects || []) {
       const i = o.instances[0] || {};
-      out.push(`object ${o.name} (${COMPONENTS[o.kind]?.label.toLowerCase() ?? o.kind}) text ${val(i.text ?? "")}${o.kind === "list" && i.source ? ` shows ${i.source}` : ""}${o.instances.length > 1 ? ` copies ${o.instances.length}` : ""}`);
+      out.push(`object ${o.name} (${COMPONENTS[o.kind]?.label.toLowerCase() ?? o.kind}) text ${val(i.text ?? "")}${(o.kind === "list" || o.kind === "table") && i.source ? ` shows ${i.source}` : ""}${o.instances.length > 1 ? ` copies ${o.instances.length}` : ""}`);
       for (const iv of o.instanceVars || []) out.push(`object variable ${o.name}.${iv.name} = ${val(iv.value)}`);
     }
     const walk = (events, path) => {

@@ -1,0 +1,14 @@
+inquiry:
+  q: "You have a printed list of 100 songs. How do you find every song with 'love' in its title?"
+  prompts:
+    - "Do you have to look at every song?"
+    - "Where do you write down the ones you find?"
+  notes: "Look at every row, write down the matches: a linear search. The original list stays as it was."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Sort like a dictionary"
+    minutes: 3
+    do: |
+      Write 10, 9 and 3 on cards as words of text and sort them like a dictionary, by first character. Then sort them by size.
+    notes: "Text sorts character by character: 10, 3, 9. That's why length is a number field."

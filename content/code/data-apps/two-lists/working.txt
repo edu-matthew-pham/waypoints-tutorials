@@ -1,0 +1,8 @@
+# Nib's working for the "find the mistake" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib's event: when an item in TitleList is clicked.
+Its action: Remove item ClickedIndex from list Titles.
+Nib runs the app and clicks Arc to remove it.
+Now the app says Cove was sung by Mo.
+# endregion

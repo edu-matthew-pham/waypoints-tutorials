@@ -1,0 +1,120 @@
+# Reference cards for Data apps: one screen each, no ticks. Written for this site.
+lede: "One card for each data idea you'll use in App Builder, to look up while you build. Each says what it's for, how to do it, and links to the lesson that teaches it."
+search: "Search the cards, such as table, sort or remember"
+cards:
+  - id: parallel-lists
+    title: "Lists that must agree"
+    unit: lists
+    lesson: two-lists
+    idea: "Two lists can describe the same things when item 1 of one goes with item 1 of the other. Their place number is the only link."
+    steps:
+      - "Add to the end of every list in the same event."
+      - "Remove the same item number (such as ClickedIndex) from every list."
+      - "If the lists need sorting or more details, use a table instead."
+    watch: "While the app runs, the number of items in each list shows on the left: they should always match."
+    apps:
+      "App Builder": "Lists are under Lists (whole app). A List object shows one list."
+  - id: make-a-table
+    title: "Make a table"
+    unit: tables
+    lesson: one-table
+    idea: "A table keeps records: one row per thing, one field (column) per detail. Every row has the same fields."
+    steps:
+      - "Under Tables on the left, type a name and press +."
+      - "Click a field's name to rename it, change its type (Text or Number), move or delete it."
+      - "Press + after the field names to add a field, and + Row to add a row. Tab moves along."
+    watch: "{ } JSON shows the table as a list of records, the way JavaScript and Python keep it."
+    apps:
+      "App Builder": "Tables need Level 4 (a lesson sets the level for you)."
+  - id: table-object
+    title: "Show a table on the screen"
+    unit: tables
+    lesson: one-table
+    idea: "A Table object shows a table by itself: a column for each field, a row for each record."
+    steps:
+      - "Add a Table object (Data)."
+      - "In Properties, set Shows table, and choose the columns to show."
+      - "An item in ... is clicked runs when a row is clicked: ClickedIndex is its number, ClickedItem the row."
+    apps:
+      "App Builder": "Table is under Data in + Add object (Level 4). Columns to show can hide a field on screen; the table still keeps it."
+  - id: add-row
+    title: "Add, change and remove rows"
+    unit: tables
+    lesson: one-table
+    idea: "Rows change as a whole: a new song arrives with all its fields, and a removed song takes them all with it."
+    steps:
+      - "Tables, Add a row: one box for each field, such as TitleInput.text."
+      - "Tables, Set a field of row N: change one detail of one row."
+      - "Tables, Remove row N, or Clear table."
+    watch: "A number field won't take text that isn't a number: int(Box.text) turns typed text into a number."
+    apps:
+      "App Builder": "Add a row's boxes follow the table's fields: add or rename a field and the boxes change too."
+  - id: read-a-field
+    title: "Read a field: a dot"
+    unit: tables
+    lesson: records-and-fields
+    idea: "A row is a record; a dot and a field name read one detail of it."
+    steps:
+      - "item(Songs, 2).artist is the artist of row 2."
+      - "ClickedItem.title is the title of the clicked row."
+      - "Inside For each row, LoopItem.length is this row's length."
+    apps:
+      "App Builder": "A variable can hold a whole row: Set variable best to item(Songs, 1), then best.title."
+  - id: running-total
+    title: "Total or best so far: For each row"
+    unit: tables
+    lesson: records-and-fields
+    idea: "For each row in table runs a sub-event once per row. A running total adds each row's value; a best so far keeps the row that beats the rest."
+    steps:
+      - "On the event: start the total at 0 (or the best at item(Table, 1))."
+      - "Sub-event: For each row in table, then add LoopItem.field (or a Compare and Set variable best to LoopItem)."
+      - "A sub-event after it, with no condition, shows the answer."
+    watch: "Starting the total inside the loop wipes it every row."
+    apps:
+      "App Builder": "Add a sub-event from the event's ⋯ menu. A sub-event with no condition always runs."
+  - id: remember
+    title: "Remember between visits"
+    unit: saving
+    lesson: saving
+    idea: "A remembered variable, list or table is still there when the app is opened again, in this browser."
+    steps:
+      - "Click the 💾 beside it on the left so it lights up."
+      - "Test a return visit with Restart, and a first visit with Forget saved data."
+      - "count(Table) = 0 when the screen starts tells a first visit from a return visit."
+    watch: "It's kept in this browser only: not in the project file you Save, and not on other computers."
+    apps:
+      "App Builder": "Level 3 and up. Each lesson step keeps its own remembered values."
+  - id: sort
+    title: "Sort a table"
+    unit: finding
+    lesson: search-filter-sort
+    idea: "Sort puts whole rows in order by one field, so every row keeps its details."
+    steps:
+      - "Tables, Sort table ... by a field."
+      - "A to Z, smallest first; or Z to A, biggest first."
+    watch: "A number field sorts by size. Numbers kept as text sort character by character: 10 before 9."
+    apps:
+      "App Builder": "Sort ignores capitals and keeps rows with the same value in the order they were."
+  - id: search-filter
+    title: "Search or filter"
+    unit: finding
+    lesson: search-filter-sort
+    idea: "Go through every row and copy the ones that match into a second table. The original table stays whole."
+    steps:
+      - "On the event: Clear table Results."
+      - "Sub-event: For each row in table, and a Compare test, such as contains(lower(LoopItem.title), lower(Search.text)) = true."
+      - "Its action: Add a row to table Results, each field from LoopItem."
+    watch: "Never remove the rows that don't match from the original table: they'd be gone for good."
+    apps:
+      "App Builder": "lower(...) makes capitals not matter. Find expressions lists contains() and lower()."
+  - id: linked-tables
+    title: "Two tables that link"
+    unit: extension
+    lesson: linked-tables
+    idea: "Two kinds of record go in two flat tables, linked by a value they share, such as each song's playlist."
+    steps:
+      - "Give the second table a field that names a row of the first."
+      - "To show the matches: Clear, For each row, Compare the shared field with the chosen value, Add a row."
+    watch: "The shared value must match exactly in both tables. Rename it in one and the link breaks."
+    apps:
+      "App Builder": "{ } JSON under each table shows both as flat lists of records, linked by the shared value."
