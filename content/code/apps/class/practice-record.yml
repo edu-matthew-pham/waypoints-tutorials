@@ -1,0 +1,13 @@
+inquiry:
+  q: "Why do musicians and speakers record themselves when they practise?"
+  prompts:
+    - "What do you hear on a recording that you miss while playing or talking?"
+  notes: "A recording lets you listen from the outside. Today the practice tracker gets one: record, keep, play back."
+activities:
+  - at: investigate
+    kind: activity
+    title: "When does it exist?"
+    minutes: 4
+    do: |
+      Show Nib's events. Ask: when the screen starts, what is in Mic.sound? When does that change?
+    notes: "Nothing, until the user stops recording. That's why the recording is used in Mic finishes a recording."

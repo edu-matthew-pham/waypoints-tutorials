@@ -1,0 +1,8 @@
+# Nib's working for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib adds a Recorder, Mic, and a Sound, Playback, and allows the microphone.
+On start of screen: Set Playback sound to the one named Mic.sound, and Show Playback.
+Nib runs the app, clicks ● and records 5 seconds, then clicks ■.
+Nib presses ▶ on Playback. Nothing plays.
+# endregion

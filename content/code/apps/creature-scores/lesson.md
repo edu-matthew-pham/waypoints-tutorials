@@ -1,5 +1,5 @@
 ---
-order: 10
+order: 11
 unit: tidy
 title: Creature scores
 summary: "Functions that give back a value: BarWidth(stat) works out a bar's width once, for all three bars, and Overall(power, speed, defence) gives back one score for each creature. Find out what happens when a function works something out but never gives it back."

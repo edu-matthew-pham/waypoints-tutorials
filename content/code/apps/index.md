@@ -9,7 +9,7 @@ units:
   - { id: respond, title: Apps that respond, summary: "A button changes a number and the screen shows it; a tick that turns on and off." }
   - { id: track, title: Keep track, summary: "A display kept up to date every moment, a goal, a progress bar, and a cheer that plays once." }
   - { id: screens, title: Screens and lists, summary: "Three screens, a choice that carries between them, and a list that grows." }
-  - { id: media, title: Pictures from the user, summary: "A drawing or a photo the user makes, kept by the app and shown where it belongs." }
+  - { id: media, title: Pictures from the user, summary: "A drawing, a photo or a recording the user makes, kept by the app and used where it belongs." }
   - { id: characters, title: One object, many copies, summary: "Each copy of a character keeps its own stats; clicking one picks just that one." }
   - { id: tidy, title: Tidy up, summary: "Functions that do something and functions that give back a value, and an All screens event." }
   - { id: challenge, title: "Final challenge: your own app", summary: "Plan, build and test a prototype of your own for a real user." }

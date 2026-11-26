@@ -1,0 +1,46 @@
+summary: "Students add a recorder to the practice tracker: a Recorder (microphone allowed), a hidden Sound that gets the recording in Mic finishes a recording and is then shown, and a line with the recording's length. Nib sets the Sound from Mic.sound when the screen starts, before anything is recorded, so it never plays. Make it yours plays the recording as soon as it's ready."
+time: 40
+timing: "Try 5 min · Build 1 5 min · Build 2 10 min · Build 3 6 min · Check 7 min · Make it yours 4 min"
+goals:
+  - I can add a Recorder and use the recording it makes.
+  - I can use something the user makes in the event that runs when it's ready.
+  - I can play a recording back with a Sound and show how long it was.
+struggle: "Students expect to set up Playback once, at the start. The recording doesn't exist until the user stops, so ask: at the moment this action runs, has anything been recorded yet?"
+before: |
+  This lesson starts from the finished practice tracker (Level 3 for the Recorder) and completes the Pictures from the user unit: a drawing, a photo, now a recording. Each is used in the event that runs when it's ready.
+
+  Microphone: off unless Allow microphone is ticked in the Recorder's properties, and the browser asks too. Some school devices block microphones, and there's no "choose a file" for recordings; students without a microphone can still build every step and pass the checks, but won't hear their own recording. Recordings stay in this browser (nothing is uploaded), up to 20 seconds each.
+
+  Record instruments, humming or clapping, not other people. Headphones help, and so does spreading out: a room of microphones picks up everyone.
+
+  Playback starts hidden because a new Sound always has a built-in tune until something replaces it; the recording event shows it.
+
+  Trimming only changes which part plays; the whole recording is kept, so the handles can be dragged back out. Playback got Mic.sound when recording finished, so it plays the recording as it was then.
+running:
+  - "Before Try: agree what to record (instruments, humming, clapping) and that headphones go on."
+  - "Build 2: ask when Mic.sound has a value. Answer before building the event."
+  - "Check: vote on Nib's line before revealing."
+stuck:
+  - see: "The recorder says the microphone is off for this app."
+    ask: "Is Allow microphone ticked in Mic's properties? Did the browser ask, and was it allowed?"
+    fix: "Tick it, then allow the microphone when the browser asks. If it's blocked on this computer, carry on building; the checks still pass."
+  - see: "Playback plays a tune, not the recording."
+    ask: "Which set-sound action did you use?"
+    fix: "Use Set Playback sound to the one named, with Mic.sound."
+  - see: "Playback never appears."
+    ask: "Is there a Show Playback in the recording event?"
+    fix: "Add Show Playback after setting its sound."
+stretch: "Keep every recording: a list Recordings, Add Mic.sound to it when a recording finishes, and a List object that shows them (each shows as 🔊 Recording). Data apps does this properly with a table and a sound field."
+support: "Do Build 2 together; it's the one with the idea in it."
+leads: "Next: Creature stats. Using something in the event that runs when it's ready comes back with every kind of user input."
+exit:
+  q: "A language app records you saying a word, then plays it back next to the teacher's version. Where does it set up your recording to play, and why there?"
+  a: "In the event that runs when recording finishes, because the recording doesn't exist before then."
+explain: |
+  A **Recorder** records up to 20 seconds with the microphone: ● to start, ■ to stop.
+
+  When the user stops, **Mic finishes a recording** runs, and **Mic.sound** is the recording. It doesn't exist before then.
+
+  A **Sound** can play it: **Set Playback sound to the one named Mic.sound**. **Mic.length** is how long it was, in seconds.
+solutions:
+  step-6: app.json#sol-play
