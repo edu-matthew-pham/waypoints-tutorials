@@ -1,0 +1,13 @@
+inquiry:
+  q: "When you take a photo or draw something in an app, where does it go? How does another screen get to show it?"
+  prompts:
+    - "Is the picture inside the button, the screen, or somewhere else?"
+  notes: "The app keeps the picture and gives it a name. A variable can hold the name, so any screen can show it, just as Chosen carries the value."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Heart, then star"
+    minutes: 5
+    do: |
+      Vote: after a heart entry and then a star entry, what does the Journal show? Then try it.
+    notes: "Both entries in the list, only the star drawing. One variable holds one drawing. A table can keep one with every entry: that's Data apps."

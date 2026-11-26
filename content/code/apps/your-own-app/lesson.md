@@ -1,5 +1,5 @@
 ---
-order: 7
+order: 8
 unit: challenge
 title: "Challenge: your own app"
 summary: "Plan, build and test a prototype of an app for a real person. Choose a problem, sketch the screens and how they connect, decide which variables and events it needs, build it in milestones, then watch someone use it and improve one thing."

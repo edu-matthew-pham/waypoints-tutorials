@@ -1,0 +1,50 @@
+summary: "Students add drawing to the values journal: a Drawing object on Describe (cleared when the screen starts), Drawing.picture kept in a variable when Add is clicked, and an Image on the Journal screen that shows it with Set picture to the one in. They find out that action order matters (Nib clears the page before keeping it) and that one variable keeps only the latest drawing, which sets up tables in Data apps."
+time: 45
+timing: "Try 5 min · Build 1 10 min · Build 2 8 min · Build 3 10 min · Check 7 min · Make it yours 5 min"
+goals:
+  - I can add a Drawing and clear it when a screen starts.
+  - I can keep what the user drew in a variable with Drawing.picture.
+  - I can show a picture the app made in an Image.
+  - I can explain why one variable keeps only the latest drawing.
+struggle: "The two picture actions look alike. Set picture to picks a picture while you design; Set picture to the one in works one out while the app runs. If students pick the first, the list of choices has no drawing in it: that's the clue."
+before: |
+  This lesson starts from the finished values journal with room made for a drawing (Add moved down on Describe, the list shorter on Journal). Students who missed the journal lesson can still do it: the first step has them use the finished app.
+
+  A drawing is made while the app runs. Drawing.picture turns it into a picture the app keeps in the browser (on this device, nothing is sent) and names it, such as media:7f3a09c2. Variables, lists and tables hold that name. Drawings, not photos, so there are no faces.
+
+  If a student clicks Add without drawing anything, the Journal says "There is no picture yet". That's honest: there's nothing to show. An If (LastDrawing is not "") is a fine extra for a quick student.
+
+  The second check question is the set-up for Data apps › A journal with drawings, where a table keeps a drawing with every entry.
+
+  Handing in: drawings are made while the app runs, so a Share link carries the app but not the student's entries. To hand in entries with their drawings, students use Save and include what the app kept (a .zip).
+running:
+  - "Try it: ask students to watch LastDrawing on the left as they click Add. What does media:… mean?"
+  - "Build 3: checkpoint: does the drawing show on the Journal? If it says there's no picture, did they draw before Add?"
+  - "Check: take a vote on the two-entries question before anyone tries it."
+stuck:
+  - see: "The Journal says 'There is no picture yet'."
+    ask: "Did you draw before you clicked Add? Which runs first in your Add event: Clear or Set variable?"
+    fix: "Draw first; and keep the picture before clearing (or clear only on start of screen)."
+  - see: "The Image shows a star, not the drawing."
+    ask: "Which picture action did you use?"
+    fix: "Use Set LastImage picture to the one in, with LastDrawing."
+  - see: "The drawing from last time is still there on Describe."
+    ask: "What happens when the Describe screen starts?"
+    fix: "Add Clear Drawing to On start of screen."
+stretch: "Set the pen colour by value on Describe's start: an If on Chosen, with a colour for each value (Set pen colour of Drawing to \"red\")."
+support: "Do Build 1 together on the board; pairs do Builds 2 and 3."
+leads: "Next: Creature stats (copies of one object). In Data apps, A journal with drawings keeps a drawing with every entry, in a table."
+exit:
+  q: "Your app keeps a photo when a Take photo button is clicked, then clears the photo for next time. Which should come first, and why?"
+  a: "Keep the photo first (set the variable to Photo.picture), then clear. Actions run top to bottom; clearing first would keep an empty picture."
+explain: |
+  A **Drawing** is a space the user draws on while the app runs.
+
+  **Drawing.picture** turns the drawing into a picture the app keeps. A variable can hold it: **Set variable LastDrawing to Drawing.picture**.
+
+  An **Image** can show it on another screen: **Set LastImage picture to the one in LastDrawing**.
+
+  Actions run in order, so keep the picture *before* you clear the drawing. One variable holds one drawing: the next one replaces it.
+solutions:
+  step-6#t1: app.json#sol-mine-1
+  step-6#t2: app.json#sol-mine-2

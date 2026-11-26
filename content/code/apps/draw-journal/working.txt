@@ -1,0 +1,8 @@
+# Nib's working for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+AddButton is clicked: Add the entry to the end of list Journal.
+Then Clear Drawing, so the next entry starts with a clean page.
+Then Set variable LastDrawing to Drawing.picture.
+Then Go to screen Journal, which shows the picture in LastDrawing.
+# endregion

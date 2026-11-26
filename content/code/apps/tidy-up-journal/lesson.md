@@ -1,5 +1,5 @@
 ---
-order: 6
+order: 7
 unit: tidy
 title: Tidy up the journal
 summary: "Refactor the values journal: change how it's built without changing what it does. Four near-identical button events become one function, Pick(value), and the back buttons on two screens become one All screens event. Run the same journey before and after to check nothing changed, then share the finished app with your teacher."
