@@ -1,0 +1,44 @@
+summary: "Students give the chores checklist a photo per chore. A Photo object (camera allowed, or Choose a photo), a variable ForChore set when a chore is ticked, and one event, A photo is taken with Camera, whose sub-events check ForChore and show the photo beside the right chore. Nib's photo event skips the check, so every photo lands beside the bed."
+time: 45
+timing: "Try 5 min · Build 1 6 min · Build 2 8 min · Build 3 12 min · Check 6 min · Make it yours 6 min"
+goals:
+  - I can add a Photo and use the picture it takes or the one the user chooses.
+  - I can use a variable to remember something between two events.
+  - I can check that variable in sub-events, so one event does the right thing for each case.
+struggle: "The tick and the photo are two different moments, and students expect the photo event to just know which chore it's for. Ask: when the photo arrives, what does the app know? Only what something wrote down earlier: ForChore."
+before: |
+  This lesson starts from the finished chores checklist, with room made beside each chore for a hidden picture (BedPic, FeedPic, HomeworkPic). It's Level 3 (Photo); each step opens App Builder at Level 3. It follows Draw how you showed it, which met a picture the user makes, and the values journal, where a variable carried a choice between screens.
+
+  Camera: off unless Allow camera is ticked in the Photo's properties, and the browser asks too. Some school devices block cameras; Choose a photo (the button on every Photo) works everywhere, with no permission, and runs the same event. Photos stay in this browser (nothing is uploaded) and are shrunk to at most 1280 px.
+
+  Photos of things, not people: say so before the Try step. Students shouldn't photograph each other.
+
+  The second check question shows a gap on purpose: unticking doesn't clear ForChore, so a photo still goes to the last chore ticked. Make it yours hides the photo on untick; resetting ForChore to "" is in the ideas.
+running:
+  - "Before Try: photos of objects only. Choose a photo works if cameras are blocked."
+  - "Build 2: ask what the photo event will know when it runs. Write ForChore on the board."
+  - "Build 3: checkpoint: two chores, two photos, each beside its own chore."
+stuck:
+  - see: "The camera says it's off for this app."
+    ask: "Is Allow camera ticked in the Photo's properties? Is the camera blocked on this computer?"
+    fix: "Tick it, or use Choose a photo, which works either way."
+  - see: "Nothing appears after a photo."
+    ask: "Did you tick a chore first? What does ForChore say on the left?"
+    fix: "Tick a chore first (ForChore is set when ticking), and check each sub-event has Show as well as Set picture."
+  - see: "Every photo goes beside the bed."
+    ask: "Does each Set picture action sit inside a sub-event that checks ForChore?"
+    fix: "Put each one in its own sub-event: ForChore = \"Bed\", \"Feed\" or \"Homework\"."
+stretch: "Keep the photos in a table instead (chore, photo), so the app could show a history: that's how Data apps' A journal with drawings works."
+support: "Do Build 3's first sub-event together; pairs copy it for Feed and Homework."
+leads: "Next: Creature stats. A variable that remembers which one (ForChore here, ClickedItem later) comes back whenever an app handles several things with one event."
+exit:
+  q: "A parcel app takes a photo for whichever parcel was tapped last. What does the app need to remember, and where does it check it?"
+  a: "A variable with the tapped parcel (set when it's tapped), checked in the photo event's sub-events so the photo goes with the right parcel."
+explain: |
+  A **Photo** object takes a photo with the camera, or the user can **Choose a photo**. Either way, **A photo is taken with Camera** runs and **Camera.picture** is the photo.
+
+  The tick and the photo are separate moments, so a variable, **ForChore**, remembers which chore was ticked.
+
+  In the photo event, a sub-event for each chore checks ForChore and shows the photo in that chore's picture.
+solutions:
+  step-6: app.json#sol-hide

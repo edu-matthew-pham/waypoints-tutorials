@@ -185,4 +185,4 @@ check:
 
 If someone clicks Reset while the cheer is playing, stop it: in **ResetButton is clicked**, add **Cheer**, **Stop Cheer**.
 
-More ideas: a **Pop** sound on every glass (that one *should* play every click), your own sound with **+ Upload sound**, or hide the cheer's player: add an event **Screen**, **On start of screen** → **Cheer**, **Set Cheer visible** (hide). It still plays; the user just can't see the ▶.
+More ideas: a **Pop** sound on every glass (that one *should* play every click), your own sound with **+ Upload sound**, or hide the cheer's player: untick **Show a player** in Cheer's properties. It still plays from events and takes no space; its credit shows under the app.

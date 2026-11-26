@@ -33,7 +33,7 @@ stuck:
     fix: "Add Clear Drawing to On start of screen."
 stretch: "Set the pen colour by value on Describe's start: an If on Chosen, with a colour for each value (Set pen colour of Drawing to \"red\")."
 support: "Do Build 1 together on the board; pairs do Builds 2 and 3."
-leads: "Next: Creature stats (copies of one object). In Data apps, A journal with drawings keeps a drawing with every entry, in a table."
+leads: "Next: Show it's done: photos, the same idea with a Photo, a picture per chore. In Data apps, A journal with drawings keeps a drawing with every entry, in a table."
 exit:
   q: "Your app keeps a photo when a Take photo button is clicked, then clears the photo for next time. Which should come first, and why?"
   a: "Keep the photo first (set the variable to Photo.picture), then clear. Actions run top to bottom; clearing first would keep an empty picture."

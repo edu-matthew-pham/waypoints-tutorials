@@ -1,6 +1,6 @@
 ---
 order: 6
-unit: screens
+unit: media
 title: Draw how you showed it
 summary: "Add a drawing to the values journal: a Drawing object on the Describe screen, its picture kept in a variable when you click Add, and an Image on the Journal screen that shows it. Find out why the order of two actions matters, and what the journal still can't do."
 language: maths

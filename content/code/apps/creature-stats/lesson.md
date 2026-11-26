@@ -1,5 +1,5 @@
 ---
-order: 7
+order: 8
 unit: characters
 title: Creature stats
 summary: "Build a viewer for three made-up creatures: click one and its name, stats and special ability appear, with bars for each stat. One Image object has three copies, each with its own object variables, and one click event shows whichever copy you clicked."

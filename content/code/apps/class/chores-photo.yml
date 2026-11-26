@@ -1,0 +1,13 @@
+inquiry:
+  q: "A delivery driver takes a photo of each parcel at the door. How does the app know which parcel each photo belongs to?"
+  prompts:
+    - "What happens just before the photo is taken?"
+  notes: "The driver taps the parcel first; the app writes that down, then joins it to the photo. Today's chores app does the same with a variable."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Tick, untick, photo"
+    minutes: 4
+    do: |
+      Predict where the photo goes after ticking Homework, unticking it, then adding a photo. Then try it, watching ForChore on the left.
+    notes: "Beside Homework: unticking doesn't change ForChore. A variable keeps its value until something sets it again."

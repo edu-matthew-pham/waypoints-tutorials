@@ -1,0 +1,8 @@
+# Nib's working for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+BedBox is clicked, and BedBox text = "⬜": Set BedBox text to "✅" and Set variable ForChore to "Bed" (the same for Feed and Homework).
+A photo is taken with Camera: this event runs for every photo.
+In it: Set BedPic picture to the one in Camera.picture, then Show BedPic.
+Nib ticks Feed the dog and chooses a photo.
+# endregion
