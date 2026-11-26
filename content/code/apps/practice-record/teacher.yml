@@ -9,7 +9,7 @@ struggle: "Students expect to set up Playback once, at the start. The recording 
 before: |
   This lesson starts from the finished practice tracker (Level 3 for the Recorder) and completes the Pictures from the user unit: a drawing, a photo, now a recording. Each is used in the event that runs when it's ready.
 
-  Microphone: off unless Allow microphone is ticked in the Recorder's properties, and the browser asks too. Some school devices block microphones, and there's no "choose a file" for recordings; students without a microphone can still build every step and pass the checks, but won't hear their own recording. Recordings stay in this browser (nothing is uploaded), up to 20 seconds each.
+  Microphone: off unless Allow microphone is ticked in the Recorder's properties, and the browser asks too. Some school devices block microphones; 🎵 Choose on the recorder picks a sound file instead (MP3, M4A, WAV and similar, about 5 MB at most, with Allow microphone off too) and runs the same event, so every student can finish. Recordings stay in this browser (nothing is uploaded), up to 20 seconds each.
 
   Record instruments, humming or clapping, not other people. Headphones help, and so does spreading out: a room of microphones picks up everyone.
 
@@ -23,7 +23,7 @@ running:
 stuck:
   - see: "The recorder says the microphone is off for this app."
     ask: "Is Allow microphone ticked in Mic's properties? Did the browser ask, and was it allowed?"
-    fix: "Tick it, then allow the microphone when the browser asks. If it's blocked on this computer, carry on building; the checks still pass."
+    fix: "Tick it, then allow the microphone when the browser asks. If it's blocked on this computer, use 🎵 Choose to pick a sound file instead."
   - see: "Playback plays a tune, not the recording."
     ask: "Which set-sound action did you use?"
     fix: "Use Set Playback sound to the one named, with Mic.sound."
@@ -37,7 +37,7 @@ exit:
   q: "A language app records you saying a word, then plays it back next to the teacher's version. Where does it set up your recording to play, and why there?"
   a: "In the event that runs when recording finishes, because the recording doesn't exist before then."
 explain: |
-  A **Recorder** records up to 20 seconds with the microphone: ● to start, ■ to stop.
+  A **Recorder** records up to 20 seconds with the microphone (● to start, ■ to stop), or **🎵 Choose** picks a sound file instead.
 
   When the user stops, **Mic finishes a recording** runs, and **Mic.sound** is the recording. It doesn't exist before then.
 

@@ -16,8 +16,8 @@ app:
 ---
 The practice tracker from the first lesson adds up your minutes. Today it also **records** a short clip of your practice, so you can hear how it went.
 
-- A **Recorder** object records up to 20 seconds with the microphone: ● to record, ■ to stop.
-- When the user stops, the event **Mic finishes a recording** runs, and `Mic.sound` is the recording.
+- A **Recorder** object records up to 20 seconds with the microphone (● to record, ■ to stop), or lets the user **🎵 Choose** a sound file instead.
+- When the user stops (or chooses a file), the event **Mic finishes a recording** runs, and `Mic.sound` is the recording.
 - A **Sound** object can play it back: **Set Playback sound to the one named** `Mic.sound`.
 
 Record your instrument, humming or clapping, not other people. Recordings stay in this browser: nothing is sent anywhere. Headphones help in a busy room.
@@ -35,7 +35,7 @@ check: { type: reflect, text: "I recorded a few seconds, played it back, and saw
 2. A player appears with your recording, and the app says how long it was. Press **▶**.
 3. Drag the two handles under the recorder to trim the start and end, then play it again.
 
-No microphone, or it's blocked here? You can still build every step; you just won't hear your own recording.
+No microphone, or it's blocked here? Click **🎵 Choose** on the recorder and pick a sound file from your computer: the app treats it just like a recording.
 
 ## Build 1: a Recorder
 
@@ -72,7 +72,7 @@ check:
 
 1. **+ Add object**, **Recorder**. Rename it *Mic* and put it under the total (x 229, y 230, width 342).
 2. In its **Properties**, tick **Allow microphone in this app**.
-3. Run it, click **●**, record a few seconds, then **■**. The recorder can play it back itself, but nothing else in the app knows about it yet.
+3. Run it, click **●**, record a few seconds, then **■** (or **🎵 Choose** a sound file). The recorder can play it back itself, but nothing else in the app knows about it yet.
 
 ## Build 2: play it back
 

@@ -577,6 +577,22 @@ for (const sub of SUBJECTS) for (const e of (dirs.get(sub.path)?.meta?.lookback 
 }
 writeFileSync(join(OUT, 'search-index.json'), JSON.stringify(SEARCH.entries.filter((e) => shown(String(e.u).split('/').slice(0, 2).join('/')))));
 copyFileSync(join('site', 'search.js'), join(OUT, 'search.js'));
+// App Builder's Tutorials ▾ menu (27 Nov 2026, waypoints-tools 1.8): every lesson with an App Builder try box, by course
+// in pathway order, then lesson order. Generated from the lessons, so a new lesson joins the list by itself. App Builder
+// opens each with ?lesson=<slug> (guided mode reads <slug>/source.json). Fields: v (format), courses [{ path, title, units, lessons }].
+{
+  const ab = (x) => JSON.stringify(x.steps || []).includes('"appbuilder"');
+  const list = [];
+  for (const c of COURSES) {
+    if (!shown(c.path)) continue;
+    const cl = lessons.filter((x) => x.slug.split('/').slice(0, -1).join('/') === c.path && ab(x));
+    if (!cl.length) continue;
+    const meta = dirs.get(c.path)?.meta || {};
+    list.push({ path: c.path, title: dirs.get(c.path).title, units: (meta.units || []).map((u) => ({ id: u.id, title: u.title })),
+      lessons: cl.map((x) => ({ slug: x.slug, title: x.title, summary: x.summary || '', unit: x.unit || '', optional: !!x.optional })) });
+  }
+  writeFileSync(join(OUT, 'appbuilder-tutorials.json'), JSON.stringify({ v: 1, site: 'https://tutorials.learningwaypoints.com/', courses: list }, null, 1));
+}
 // Course names a course's pathway says to do first (its `after:`), for the teacher strip on a course page.
 const afterOf = (coursePath) => {
   const hit = pathwayOf(coursePath); if (!hit) return null;

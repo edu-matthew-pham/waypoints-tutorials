@@ -1,4 +1,4 @@
-// Built from edu-matthew-pham/waypoints-tools app-builder/src/core/sheet-text.js at 1234f7c (App Builder 1.6.0). Do not edit: see playground-appbuilder/README.md.
+// Built from edu-matthew-pham/waypoints-tools app-builder/src/core/sheet-text.js at d1b0ced (App Builder 1.7.0, tag app-builder-v1.7.0). Do not edit: see playground-appbuilder/README.md.
 // src/core/components.js
 var COMPONENTS = {
   button: { id: "button", label: "Button", category: "Basics", hint: "Something to tap or click.", base: "Button", props: { text: "Button", w: 150, h: 46 } },
