@@ -42,7 +42,7 @@ exit:
 explain: |
   A **table** can have a **picture field**: each row keeps its own picture, shown as a thumbnail.
 
-  **Add a row to Entries** with value `Chosen`, note `TextInput.text` and drawing `Drawing.picture` keeps all three together.
+  **Add a row to Entries** with value `Chosen`, note `NoteInput.text` and drawing `Drawing.picture` keeps all three together.
 
   When a row is clicked, **ClickedItem** is that row, so **ClickedItem.drawing** is its own drawing.
 

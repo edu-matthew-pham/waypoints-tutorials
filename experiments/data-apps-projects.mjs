@@ -276,7 +276,7 @@ console.log('written');
   s2.variables.push(table('Entries', [['value'], ['note'], ['drawing', 'picture']], []));
   // Build 2: Add also adds a row (the old list and LastDrawing still work)
   const s3 = clone(s2);
-  evById(s3, 'describe', 'jd2').actions.splice(2, 0, addRow('Entries', { value: 'Chosen', note: 'TextInput.text', drawing: 'Drawing.picture' }));
+  evById(s3, 'describe', 'jd2').actions.splice(2, 0, addRow('Entries', { value: 'Chosen', note: 'NoteInput.text', drawing: 'Drawing.picture' }));
   // Build 3: the Journal shows the table; clicking a row shows its drawing big
   const s4 = clone(s3);
   const jo = scr(s4, 'journal');

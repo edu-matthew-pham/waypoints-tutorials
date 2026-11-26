@@ -23,7 +23,7 @@ explainClip:
     - click: { selector: ".view-run [data-ab='widget:CourageButton']" }
     - caption: { text: "Screen 2 reads Chosen, so it knows you picked Courage.", say: "Screen two reads Chosen, so it knows you picked Courage." }
     - wait: 900
-    - type: { selector: ".view-run [data-ab='widget:TextInput'] input", text: "I asked a question in class" }
+    - type: { selector: ".view-run [data-ab='widget:NoteInput'] input", text: "I asked a question in class" }
     - click: { selector: ".view-run [data-ab='widget:AddButton']" }
     - expect: { selector: ".view-run [data-ab='widget:List']", contains: "COURAGE: I asked a question in class" }
     - caption: { text: "Screen 3's List shows the Journal list: one row per entry.", say: "Screen three's List shows the Journal list, one row per entry." }
@@ -146,7 +146,7 @@ clip:
   - click: { selector: ".view-events .ev.sel [data-ab='add-action']" }
   - click: { selector: "[data-ab='group:Lists']" }
   - click: { selector: "[data-ab='entry:listAdd']" }
-  - type: { selector: "dialog[open] [data-ab='param:value']", text: "uppercase(Chosen) & \": \" & TextInput.text" }
+  - type: { selector: "dialog[open] [data-ab='param:value']", text: "uppercase(Chosen) & \": \" & NoteInput.text" }
   - click: { selector: "dialog[open] [data-ab='done']" }
   - expect: { selector: ".view-events event-sheet", contains: "Journal" }
   - caption: { text: "Each click adds one entry at the end. Next: go to the Journal screen.", say: "Each click adds one entry at the end. Next, go to the Journal screen." }
@@ -161,7 +161,7 @@ check:
 
 1. In the sidebar, under the variables, add a list called *Journal*.
 2. On the Describe screen, add an event: **AddButton is clicked**.
-3. Add the action **Lists**, **Add … to the end of list**, list Journal, value `uppercase(Chosen) & ": " & TextInput.text`
+3. Add the action **Lists**, **Add … to the end of list**, list Journal, value `uppercase(Chosen) & ": " & NoteInput.text`
 4. Add a second action: **Go to screen** Journal.
 5. Open the **Journal** screen, click the **List** object, and in Properties set **Shows** to Journal.
 

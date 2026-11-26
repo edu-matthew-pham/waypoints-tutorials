@@ -89,11 +89,11 @@ try: { playground: appbuilder, starter: "app.json#sol-step-2", keep: build, leve
 check:
   type: code
   text: "When Add is clicked, a row is added to Entries with the value, the note and the drawing."
-  rules: { event: [["when AddButton is clicked", "Add a row to table Entries", "value = Chosen", "note = TextInput.text", "drawing = Drawing.picture"]] }
+  rules: { event: [["when AddButton is clicked", "Add a row to table Entries", "value = Chosen", "note = NoteInput.text", "drawing = Drawing.picture"]] }
 ```
 
 1. Open the **Describe** screen's events. In **AddButton is clicked**, add an action before *Go to screen*: **Tables**, **Add a row to** Entries.
-2. Fill in its fields: value `Chosen`, note `TextInput.text`, drawing `Drawing.picture`
+2. Fill in its fields: value `Chosen`, note `NoteInput.text`, drawing `Drawing.picture`
 3. Run it and add an entry. Watch Entries on the left: a row appears, with a thumbnail.
 
 The old list and LastDrawing still work for now. You'll tidy them away once the table does their job.

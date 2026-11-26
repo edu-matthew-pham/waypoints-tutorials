@@ -28,7 +28,7 @@ stuck:
     fix: "Only the words to show go in quotes. Minutes and the & signs go outside them."
   - see: "Typing a number adds 0."
     ask: "What does the add action use?"
-    fix: "It should be int(TextInput.text), with the text input's own name if it was called something else."
+    fix: "It should be int(MinutesInput.text), with the text input's own name if it was called something else."
 stretch: "Make the total read in hours and minutes once it's over 60 (hint: floor(Minutes / 60) and Minutes % 60)."
 support: "Pairs: one reads the step, one clicks, then swap for the Events half."
 leads: |

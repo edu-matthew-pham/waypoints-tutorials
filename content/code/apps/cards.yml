@@ -48,7 +48,7 @@ cards:
       - "Put words to show in quote marks: \"Total: \"."
       - "Join a variable with &: \"Total: \" & Minutes."
       - "Put it in the same event that changes the variable, or in Every tick."
-    watch: "A Text input always holds text: use int(TextInput.text) to add what was typed."
+    watch: "A Text input always holds text: use int(MinutesInput.text) (with your input's name) to add what was typed."
     apps:
       "App Builder": "If the screen shows the word Minutes, it's inside the quote marks by mistake. Find expressions lists everything you can type."
   - id: toggle

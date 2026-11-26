@@ -3,6 +3,6 @@
 # region: nib
 Nib wants the Journal screen to show every entry.
 Nib's AddButton event starts with the action Clear list Journal.
-Then it adds uppercase(Chosen) & ": " & TextInput.text to the end of list Journal.
+Then it adds uppercase(Chosen) & ": " & NoteInput.text to the end of list Journal.
 Nib adds three entries, and the list only shows the last one.
 # endregion
