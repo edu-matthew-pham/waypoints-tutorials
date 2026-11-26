@@ -1,0 +1,8 @@
+# Nib's working for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib makes a function, Pick(value).
+Pick's only action is Set variable Chosen to value.
+Each value button's event is now just Call Pick with its value, such as "Courage".
+Nib runs the app and clicks Courage. The app stays on the Choose screen.
+# endregion

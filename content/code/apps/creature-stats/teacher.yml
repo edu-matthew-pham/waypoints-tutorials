@@ -33,7 +33,7 @@ stuck:
     fix: "Creature.power / 100 * 200: 100 power is the full 200 width."
 stretch: "A comparison mode: click two creatures and show their stats side by side (hint: remember the first one's values in sidebar variables)."
 support: "Give pairs the object variable values filled in (open the Try it app), so they can spend the time on the event."
-leads: "Next: the challenge, a prototype of their own for a real user. In the games course, picking and copies come back with many enemies on screen."
+leads: "Next: Tidy up the journal (a function and an All screens event), then the challenge, a prototype of their own for a real user. In the games course, picking and copies come back with many enemies on screen."
 exit:
   q: "An app has 10 coins, each a copy of Coin with an object variable value. The player clicks one coin. The event adds Coin.value to Score. Whose value is added?"
   a: "Only the clicked coin's: the click picked that copy, so Coin.value means its value."

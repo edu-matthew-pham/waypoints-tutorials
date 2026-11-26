@@ -1,0 +1,57 @@
+summary: "Students refactor the values journal: they change how it's built without changing what it does. Four near-identical button events become one function, Pick(value), that each button calls with its own value; then a Home event written on two screens becomes one All screens event. A journey run before and after is the test that nothing changed. They hand in by sharing a link."
+time: 50
+timing: "Run it 5 min · Spot 5 min · Tidy 1 15 min · Nib 5 min · Tidy 2 12 min · Same journey 5 min · Hand in 3 min"
+goals:
+  - I can spot repetition in my events and say what's the same and what's different.
+  - I can make a function with a parameter and call it from several events.
+  - I can use one All screens event in place of the same event on several screens.
+  - I can check that a change didn't break anything by running the same test before and after.
+struggle: "The hard part is the parameter. Students often type \"value\" with quote marks inside Pick, which sets Chosen to the word value. Ask what Chosen shows on the left when they Run; a parameter is a plain name, like a variable."
+before: |
+  This lesson starts from the finished values journal, so students who did that lesson will recognise it. Students who missed it can still do this one: the first step has them use the app before changing it.
+
+  Refactoring is a real skill in any app or language: spot repetition, pull it into one place, then run the same test again. The point to land is the last part. A refactor that changes what the app does is a bug, however tidy it looks.
+
+  Functions and All screens are Level 4. Each step opens App Builder at Level 4, so both show in the sidebar.
+
+  Inside Pick, `value` is a plain name (no quote marks). The call gives it a value: `Call Pick with value = "Courage"` (quote marks, because there it's text).
+
+  An All screens event runs on every screen, matched by object name. On Choose there's no HomeButton, so the event never happens there. Renaming AnotherButton to HomeButton keeps its text ("Add another"): the name is what events use, the text is what the user sees.
+
+  Hand-in: Share puts the whole app inside the link (nothing is uploaded), and the link opens a play-only page with "Open a copy in App Builder". Save gives a file instead (a .json, or a .zip when the app has its own pictures or sounds).
+running:
+  - "Spot the repetition (whole class, on the deck): put the four events side by side. Circle what's the same, underline what's different."
+  - "Tidy 1: checkpoint: does each button still go to Describe with the right question? Fix that before Tidy 2."
+  - "Tidy 2: ask what would happen if we added a fourth screen with a HomeButton. (Nothing to add: the All screens event already covers it.)"
+  - "Same journey: pairs swap and do each other's journey, comparing with the notes from the start."
+stuck:
+  - see: "Clicking a value does nothing."
+    ask: "What did the old events do that Pick doesn't?"
+    fix: "Add Go to screen Describe to Pick, after Set variable Chosen to value."
+  - see: "The question says 'What did you do to show value?'"
+    ask: "In Pick, is value inside quote marks?"
+    fix: "Remove the quote marks: Set variable Chosen to value, with value as a plain name."
+  - see: "Home works on Describe but not on Journal."
+    ask: "What is the Journal screen's button called now?"
+    fix: "Rename AnotherButton to HomeButton; the All screens event looks for that name."
+  - see: "The check for Tidy 2 doesn't tick, but Home works."
+    ask: "Are the old Home events still on Describe or Journal?"
+    fix: "Delete them: the All screens event does the job on both screens."
+stretch: "Make the Describe screen's AddButton event shorter with a second function, SaveEntry(text), that adds the entry and goes to the Journal screen. Is it worth it for one event? (A function earns its place when it's used more than once, or when its name makes the event easier to read.)"
+support: "Do Tidy 1 together for Kindness on the board, then let pairs do the other three buttons."
+leads: "Next: the challenge, a prototype of their own. Encourage a tidy-up pass before they test with a real user."
+exit:
+  q: "A quiz app has five answer buttons. Each one's event adds 1 to Score, plays a sound and goes to the next question. How could you tidy it, and how would you know you hadn't broken it?"
+  a: "Make one function, such as Answer(), with those three actions, and have each button call it. Then play the same quiz before and after and check the score, sound and next question are the same."
+explain: |
+  **Refactoring** means changing how an app is built without changing what it does.
+
+  When several events do almost the same thing, put the same part in a **function** once. The part that changes becomes a **parameter**: Pick(value) sets Chosen to value, and each button calls it with its own value, such as `Call Pick with value = "Courage"`.
+
+  When the same event is on several screens, write it once on **All screens**. It runs on every screen that has an object with that name.
+
+  Then run the same journey as before. The same result means nothing broke.
+solutions:
+  step-3: app.json#sol-step-3
+  step-5#t1: app.json#sol-step-5-t1
+  step-5#t2: app.json#done

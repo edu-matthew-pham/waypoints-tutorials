@@ -1,0 +1,14 @@
+inquiry:
+  q: "Imagine your app has the same three actions copied into ten button events, and now every button should also play a sound. What could go wrong?"
+  prompts:
+    - "How many edits is that?"
+    - "What happens if you miss one?"
+  notes: "Ten edits, and one missed is a bug nobody notices straight away. Writing the job once means one change, in one place."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Same and different"
+    minutes: 5
+    do: |
+      Put the four Choose events side by side on the board. Students circle what's the same in all four and underline what's different.
+    notes: "Circled: Set variable Chosen, Go to screen Describe. Underlined: the value. Circled becomes the function's actions, underlined becomes its parameter."
