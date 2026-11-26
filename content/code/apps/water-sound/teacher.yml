@@ -1,0 +1,50 @@
+summary: "Students add a cheer to the water tracker: a Sound object and Play Cheer in an event about the goal. Because that event has no trigger, it runs every tick, so Play restarts the sound 60 times a second and they hear clicks or nothing. Trigger once while true fixes it: once each time the goal becomes reached. Then a Video object with NASA's The Water Cycle, and Reset stops the cheer."
+time: 40
+timing: "Try 4 min · Build 1 10 min · Why 5 min · Build 2 6 min · Check 6 min · Build 3 5 min · Make it yours 4 min"
+goals:
+  - I can add a sound and play it from an event.
+  - I can explain why an event with no trigger runs every tick while its condition is true.
+  - I can use Trigger once while true to make something happen once at the right moment.
+  - I can add a video from a link and say where it came from.
+struggle: "Hearing nothing at 8 looks like a broken sound, not a timing problem. Ask students to click the Sound object's ▶ in Design first: if that plays, the sound is fine and the question is when Play runs."
+before: |
+  This lesson starts from the finished water tracker (Level 2) and comes straight after it. Students need sound: headphones help in a busy room. Browsers play sound only after the user has clicked something, which every student will have done by the time they reach 8 glasses.
+
+  The broken version is deliberate. An event with a condition but no trigger (Variable Glasses = Goal) is checked every tick, about 60 times a second, and its actions run every tick while it's true. Play starts the sound from the beginning, so it never gets past the start. (Measured in a browser: about 60 Play calls in the second after reaching 8; with Trigger once, one.) The Goal reached! message has the same every-tick behaviour, but setting the same text again changes nothing, so nobody notices.
+
+  Trigger once while true runs once each time the conditions above it become true, then waits until they're false again. Keep it last in the event. It's the same idea as Construct's Trigger once.
+
+  The video is NASA/Goddard Space Flight Center's "The Water Cycle" (public domain, https://svs.gsfc.nasa.gov/10501), linked from NASA's site, so it needs the internet when it plays; nothing is uploaded. If NASA's site is blocked at school, any Wikimedia Commons video file page works the same way (App Builder turns the page link into the video).
+running:
+  - "After Build 1, everyone reaches 8 and listens. Ask: what did you expect, what did you hear?"
+  - "Why: link back to the water tracker's Every tick. Which events run every tick?"
+  - "Build 2: before running, predict what happens after Reset."
+stuck:
+  - see: "No sound at all, even after Build 2."
+    ask: "Does the ▶ on the Sound object play? Is the computer muted?"
+    fix: "Check the volume, and that Play is on Cheer (the Sound object), not another object."
+  - see: "It still clicks after adding Trigger once."
+    ask: "Which event did you add it to?"
+    fix: "Add it to the event that plays Cheer, as its last condition."
+  - see: "It cheers on every glass."
+    ask: "Which event is Play Cheer in?"
+    fix: "Move it out of the Add button's event into its own Glasses = Goal event with Trigger once."
+  - see: "The video doesn't play."
+    ask: "Is the link pasted in full, ending in .webm? Is NASA's site blocked here?"
+    fix: "Paste the whole link; if the site is blocked, use a Wikimedia Commons video page instead."
+stretch: "Add a Pop sound on every glass (it should play every click, so it goes in the Add button's event) and a Stop Pop when the goal is reached. Which events should each sound be in, and why?"
+support: "Do Build 1 together, then let everyone hear the clicks before explaining why."
+leads: "Next: a values journal with three screens. Trigger once comes back whenever an every-tick condition should act only once."
+exit:
+  q: "A quiz app checks every tick whether Score = 10 and shows a pop-up. The pop-up keeps flashing. What's happening, and what's the fix?"
+  a: "The Score = 10 event runs every tick while it's true, so the pop-up is shown again and again. Add Trigger once while true so it shows once when Score reaches 10."
+explain: |
+  A **Sound** object holds a sound; **Play** starts it from the beginning.
+
+  An event with a condition but no trigger, like **Variable Glasses = Goal**, is checked **every tick**. While it's true, its actions run every tick, so Play keeps starting the sound again.
+
+  **Trigger once while true** makes it happen once each time the condition becomes true, then wait until it's false again.
+
+  A **Video** object plays a video file from a link, such as NASA's *The Water Cycle*.
+solutions:
+  step-7: app.json#sol-stop

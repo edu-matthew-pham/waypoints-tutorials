@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 5
 unit: screens
 title: A values journal
 summary: "Build a journal app with three screens: pick a value you showed today, say what you did, then see every entry in a list. A variable carries your choice from one screen to the next, a list variable keeps the entries, and a List object shows them."

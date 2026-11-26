@@ -1,0 +1,8 @@
+# Nib's working for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+AddButton is clicked, and Glasses < Goal: Add 1 to variable Glasses.
+In the same event: Play Cheer, so it cheers when the goal is reached.
+Glasses = Goal: Set Message text to "Goal reached!"
+Nib adds 3 glasses and hears 3 cheers.
+# endregion

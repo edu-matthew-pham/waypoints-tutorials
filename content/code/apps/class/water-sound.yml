@@ -1,0 +1,13 @@
+inquiry:
+  q: "Your phone plays a sound when a timer ends. Why doesn't it keep playing the sound for as long as the timer says 0:00?"
+  prompts:
+    - "Is the timer at 0:00 for one moment, or for a while?"
+  notes: "The app reacts to the moment it reaches 0:00, not to every moment it stays there. Today's tracker needs the same: cheer when the goal is reached, not while it is."
+activities:
+  - at: investigate
+    kind: activity
+    title: "What did you hear?"
+    minutes: 5
+    do: |
+      Everyone reaches 8 glasses with Build 1 and listens. Collect what people heard: clicks, a buzz, nothing.
+    notes: "The event runs every tick, so Play starts the sound again 60 times a second. A condition with no trigger is checked every tick: the same reason the display in the water tracker stays up to date."

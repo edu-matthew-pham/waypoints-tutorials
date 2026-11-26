@@ -7,7 +7,7 @@ order: 1
 challenge: challenge
 units:
   - { id: respond, title: Apps that respond, summary: "A button changes a number and the screen shows it; a tick that turns on and off." }
-  - { id: track, title: Keep track, summary: "A display kept up to date every moment, a goal, and a progress bar." }
+  - { id: track, title: Keep track, summary: "A display kept up to date every moment, a goal, a progress bar, and a cheer that plays once." }
   - { id: screens, title: Screens and lists, summary: "Three screens, a choice that carries between them, and a list that grows." }
   - { id: characters, title: One object, many copies, summary: "Each copy of a character keeps its own stats; clicking one picks just that one." }
   - { id: tidy, title: Tidy up, summary: "Functions that do something and functions that give back a value, and an All screens event." }
