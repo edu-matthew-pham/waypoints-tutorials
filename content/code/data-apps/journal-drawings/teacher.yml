@@ -1,0 +1,50 @@
+summary: "Students give every values-journal entry its own drawing: a table Entries with a picture field, an Add a row action, a Table object on the Journal screen and a row click that shows ClickedItem.drawing big. They remember the table between visits, delete the old list and variable, and hand in a .zip made by Save with what the app kept."
+time: 50
+timing: "Try 5 min · Build 1 8 min · Build 2 7 min · Build 3 12 min · Build 4 8 min · Check 5 min · Hand in 5 min"
+goals:
+  - I can make a table with a picture field.
+  - I can add a row that keeps a value, some words and a drawing together.
+  - I can show a clicked row's own picture with ClickedItem.
+  - I can hand in an app with what it kept, and say why a Share link doesn't include it.
+struggle: "Build 3 changes three things on one screen (the Table, the count, the row click). Students who skip the count change see 'Entries: 0' forever; students who keep the old LastDrawing action see the newest drawing on every row. Point them back to step 3 of Build 3."
+before: |
+  This lesson continues App Builder apps › Draw how you showed it, which ends with "only the latest drawing is kept". Students who didn't do it can still follow: the first step uses the finished app, and the starting app is the journal with one drawing.
+
+  A picture field holds the name the app gave a drawing (such as media:7f3a09c2); the table shows it as a thumbnail. The drawings themselves are kept in this browser, beside the remembered rows. Forget saved data removes both.
+
+  The code checks can't see a field's type, so they can't tell whether drawing was set to Picture. A text field also shows thumbnails for drawings, so nothing breaks either way, but the 🖼 is the right habit: when students type rows into the sidebar, a picture field gives them a picture picker.
+
+  Handing in: a Share link carries the app, not what it kept while running, so the teacher sees an empty journal. Save asks whether to include what the app kept; yes gives one .zip (the app, the rows and the drawings) that Open brings back. Drawings, not photos, so there are no faces in what's handed in.
+running:
+  - "Try it: ask what changes when you click a different row. (Only the big picture: each row has its own.)"
+  - "Build 3: checkpoint: two entries, two different thumbnails, each click shows its own."
+  - "Build 4: before deleting the old list, ask what still uses it. (Nothing, once Build 3 is done.)"
+  - "Hand in: show where the Save box asks about what the app kept."
+stuck:
+  - see: "Every row shows the same big picture."
+    ask: "Which variable does your row click read?"
+    fix: "Use ClickedItem.drawing, the clicked row's own drawing, not LastDrawing."
+  - see: "The Journal says Entries: 0 though the table has rows."
+    ask: "What does the count count?"
+    fix: "Change count(Journal) to count(Entries) in On start of screen."
+  - see: "The table is empty on the Journal screen."
+    ask: "What does the Table show? Look at Shows in Properties."
+    fix: "Set Shows to Entries."
+  - see: "After Restart the entries are gone."
+    ask: "Is the 💾 beside Entries lit?"
+    fix: "Click it, as in Saving between visits."
+stretch: "Add a Remove button: when a row is clicked, remember its index, and Remove deletes that row (as in One table instead). What happens to its drawing?"
+support: "Do Build 1 together on the board. Pairs do Builds 2 to 4, one driving, one reading the steps."
+leads: "Next: Search, filter and sort, on the playlist. Students could search their journal by value with the same For each."
+exit:
+  q: "A plant log keeps a photo of each plant every week. Why a table with a picture field, not a list of names and a separate list of photos?"
+  a: "One row keeps the name, the date and the photo together, so they can't get out of step when a row is added or removed. Two lists have to be kept matching by hand."
+explain: |
+  A **table** can have a **picture field**: each row keeps its own picture, shown as a thumbnail.
+
+  **Add a row to Entries** with value `Chosen`, note `TextInput.text` and drawing `Drawing.picture` keeps all three together.
+
+  When a row is clicked, **ClickedItem** is that row, so **ClickedItem.drawing** is its own drawing.
+
+  **💾 Remember** keeps the rows and their drawings in this browser. A **Share** link carries the app, not what it kept; **Save** with what the app kept gives one file with everything.
+solutions: {}

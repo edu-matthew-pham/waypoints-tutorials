@@ -1,0 +1,13 @@
+inquiry:
+  q: "Your phone keeps every photo you take, with its date. How is that different from a frame that shows only the latest one?"
+  prompts:
+    - "Where does each photo's date live?"
+  notes: "Each photo is a row: the picture and its date travel together. Today the journal does the same with a picture field."
+activities:
+  - at: investigate
+    kind: activity
+    title: "What does the link carry?"
+    minutes: 5
+    do: |
+      Two students swap Share links of their finished journals and open them. Whose entries do they see?
+    notes: "None: the link carries the app, the entries stay in the browser that made them. Save with what the app kept hands in everything."

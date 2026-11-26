@@ -8,7 +8,7 @@ challenge: challenge
 units:
   - { id: lists, title: Lists that must agree, summary: "Two lists that describe the same songs, linked only by place." }
   - { id: tables, title: Tables and records, summary: "One row per song, a field for each detail; read fields, total a column, find the longest." }
-  - { id: saving, title: Saving between visits, summary: "Remember the table in the browser; tell a first visit from a return visit." }
+  - { id: saving, title: Saving between visits, summary: "Remember the table in the browser; tell a first visit from a return visit; keep a picture in every row." }
   - { id: finding, title: Search, filter and sort, summary: "Sort whole rows; copy the rows that match into a second table." }
   - { id: challenge, title: "Final challenge: your own data app", summary: "Plan, build and test a data app for a real user." }
   - { id: extension, title: Linked tables, summary: "Two flat tables joined by a shared value, as in a database." }

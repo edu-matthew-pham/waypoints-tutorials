@@ -1,5 +1,5 @@
 ---
-order: 5
+order: 6
 unit: finding
 title: Search, filter and sort
 summary: "Find songs in a bigger playlist: sort the table by title or by length, search the titles for some typed text, and filter the short songs. Searching and filtering both use the same algorithm: go through every row and copy the ones that match into a second table, so the original songs stay as they are."

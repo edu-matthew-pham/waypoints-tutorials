@@ -259,3 +259,38 @@ const addSong = (id = 'e1') => ev(id, [clicked('AddButton')], [addRow('Songs', {
   write('linked-tables', 'Two tables that link', { try: s3, start, 'sol-step-2': s2, 'sol-step-3': s3, built, 'sol-add': add });
 }
 console.log('written');
+
+// ---------- 4b. A journal with drawings (level 4; after Saving, before Search) ----------
+// Starts from App Builder apps › Draw how you showed it (its done region), so the two courses stay in step.
+{
+  const { readFileSync } = await import('node:fs');
+  const src = readFileSync(new URL('../content/code/apps/draw-journal/app.json', import.meta.url), 'utf8');
+  const done = JSON.parse(src.match(/\/\/ region: done\n(.*)\n\/\/ endregion/)[1]);
+  const scr = (p, id) => p.screens.find((s) => s.id === id);
+  const evById = (p, sid, id) => scr(p, sid).events.find((e) => e.id === id);
+  const start = clone(done);
+  start.name = 'Values journal (table)';
+  start.features = { level: 4 };
+  // Build 1: a table Entries (value, note, drawing as a picture field), no rows yet
+  const s2 = clone(start);
+  s2.variables.push(table('Entries', [['value'], ['note'], ['drawing', 'picture']], []));
+  // Build 2: Add also adds a row (the old list and LastDrawing still work)
+  const s3 = clone(s2);
+  evById(s3, 'describe', 'jd2').actions.splice(2, 0, addRow('Entries', { value: 'Chosen', note: 'TextInput.text', drawing: 'Drawing.picture' }));
+  // Build 3: the Journal shows the table; clicking a row shows its drawing big
+  const s4 = clone(s3);
+  const jo = scr(s4, 'journal');
+  jo.objects = jo.objects.filter((x) => x.name !== 'List');
+  jo.objects.splice(2, 0, o('EntriesTable', 'table', 'jt1', 229, 110, 342, 210, '', { source: 'Entries', columns: '' }));
+  const jStart = evById(s4, 'journal', 'jj1');
+  jStart.actions = [setText('Count', '"Entries: " & count(Entries)')];
+  jo.events.push(ev('jj3', [itemClicked('EntriesTable')], [{ type: 'setImageFrom', target: 'LastImage', value: 'ClickedItem.drawing' }]));
+  // Build 4 (built): remembered, and the old list and LastDrawing tidied away
+  const built = clone(s4);
+  built.variables = built.variables.filter((v) => v.name !== 'Journal' && v.name !== 'LastDrawing');
+  built.variables.find((v) => v.name === 'Entries').remember = true;
+  const add = evById(built, 'describe', 'jd2');
+  add.actions = add.actions.filter((a) => a.type !== 'listAdd' && !(a.type === 'setVar' && a.var === 'LastDrawing'));
+  // Nib: the drawing field left as text (shown in the find-the-slip question, not a starter)
+  write('journal-drawings', 'A journal with drawings', { try: built, start, 'sol-step-2': s2, 'sol-step-3': s3, 'sol-step-4': s4, 'sol-step-5': built, built });
+}

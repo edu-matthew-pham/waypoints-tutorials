@@ -1,0 +1,8 @@
+# Nib's working for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Add is clicked: add a row to Entries with value Chosen, note TextInput.text, drawing Drawing.picture.
+Add also still sets LastDrawing to Drawing.picture.
+An item in EntriesTable is clicked: Set LastImage picture to the one in LastDrawing.
+Nib clicks the first row, then the second. Both show the same drawing: the newest.
+# endregion

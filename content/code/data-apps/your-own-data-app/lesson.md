@@ -1,5 +1,5 @@
 ---
-order: 6
+order: 7
 unit: challenge
 title: "Challenge: your own data app"
 summary: "Plan, build and test a data app of your own for a real user: a reading log, sport stats, a collection, a practice log. It keeps records in a table that's remembered between visits, and helps the user find what they need with search, a filter, a sort or a total."
