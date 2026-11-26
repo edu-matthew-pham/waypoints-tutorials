@@ -1,0 +1,13 @@
+inquiry:
+  q: "A calculator's √ button doesn't change anything you've typed before; it gives you an answer. Where else does an app ask for an answer like that?"
+  prompts:
+    - "Price with tax? Damage in a game? A score?"
+  notes: "Each is a calculation used in many places. Written once as a function that gives back a value, it's asked for by name wherever the answer is needed."
+activities:
+  - at: investigate
+    kind: activity
+    title: "Blaze's score"
+    minutes: 4
+    do: |
+      Everyone works out Overall(80, 60, 30) on paper, then clicks Blaze to check.
+    notes: "170 / 3 = 56.67, rounded to 57. The click gives the same answer because the function does the same steps."

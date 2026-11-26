@@ -1,0 +1,8 @@
+# Nib's working for the "find the slip" task. Plain text: students click the line, nothing runs.
+
+# region: nib
+Nib makes a function, Overall(power, speed, defence).
+Inside it: Set variable Score to round((power + speed + defence) / 3).
+Creature is clicked: Set OverallText text to "Overall: " & Overall(Creature.power, Creature.speed, Creature.defence).
+Nib runs it and clicks Blaze.
+# endregion

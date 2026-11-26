@@ -1,0 +1,48 @@
+summary: "Students meet functions that give back a value. BarWidth(stat) replaces the same width calculation written three times, then Overall(power, speed, defence) gives back one score shown for the clicked creature. Nib's Overall works the answer out into a variable and never gives it back. Make it yours adds Rank(score), with an If inside the function."
+time: 45
+timing: "Try 3 min · Spot 4 min · Build 1 12 min · Trace 4 min · Build 2 10 min · Check 6 min · Make it yours 6 min"
+goals:
+  - I can make a function that gives back a value with Set return value.
+  - I can use a function in a value box, like BarWidth(Creature.power).
+  - I can say which value goes into which parameter when a function has several.
+  - I can explain why a function that only sets a variable doesn't give anything back.
+struggle: "Students mix up the two kinds of function. Pick (last lesson) does something and is used with Call; BarWidth gives back a value and is used inside a value box. If a student tries Call BarWidth, ask: where would its answer go?"
+before: |
+  This lesson grows the Creature stats app and comes after Tidy up the journal, which introduced functions that do something. It's Level 4 (Functions); each step opens App Builder at Level 4. The starting app is the finished creature stats viewer with an empty OverallText added at the bottom.
+
+  BarWidth is a refactor (the app looks the same afterwards), so the run in step 6 of Build 1 is the check, as in the journal lesson. Overall is new behaviour.
+
+  The call fills parameters in order: Overall(Creature.power, Creature.speed, Creature.defence) puts the first value into power and so on. Swapping them doesn't change an average, which is worth noticing: for most functions order matters (try a function Difference(a, b) giving back a - b).
+
+  Scores: Blaze 57, Tide 60, Zip 55.
+running:
+  - "Spot the repetition: same as the journal lesson. Circle what's the same, underline what's different."
+  - "Build 1: checkpoint: do the bars look exactly as before? That's the test for a refactor."
+  - "Trace: work out Zip's speed bar by hand before anyone clicks."
+  - "Check: vote on Blaze's score, then click."
+stuck:
+  - see: "The problem says BarWidth doesn't give a value back yet."
+    ask: "Is there a Set return value inside BarWidth?"
+    fix: "Click + Give back a value in the function, and fill in stat / 100 * 200."
+  - see: "All three bars are the same width."
+    ask: "What's inside the brackets of each BarWidth?"
+    fix: "Each bar passes its own stat: BarWidth(Creature.power), BarWidth(Creature.speed), BarWidth(Creature.defence)."
+  - see: "Overall shows a decimal like 56.666."
+    ask: "Which built-in function rounds a number?"
+    fix: "Wrap it: round((power + speed + defence) / 3)."
+stretch: "A function Stars(score) that gives back a row of stars: \"★\" for a score under 50, \"★★\" under 70, \"★★★\" otherwise (If, Else if, Else inside the function). Which is easier to read: Stars(Overall(…)) in the text, or the Ifs written out in the click event?"
+support: "Do Build 1 together for PowerBar on the board; pairs change the other two bars and do Build 2."
+leads: "Next: the challenge, a prototype of their own. A function that gives back a value is worth reaching for whenever the same calculation appears twice."
+exit:
+  q: "A canteen app works out price × quantity for every item on an order. What function would you make, what would it give back, and how would you use it?"
+  a: "Total(price, qty) gives back price * qty. Each item's line uses Total(item price, item quantity) in a value box, and the order total adds them up."
+explain: |
+  Some functions **give back a value**, like a calculator button. Inside, **Set return value to** is the answer it hands back.
+
+  You use it in a value box: `BarWidth(Creature.power)` asks BarWidth for a width, with Creature.power as its stat.
+
+  With several parameters, the call fills them **in order**: `Overall(Creature.power, Creature.speed, Creature.defence)`.
+
+  Working something out into a variable isn't giving it back: only **Set return value** hands the answer to the place that asked.
+solutions:
+  step-7: app.json#sol-rank

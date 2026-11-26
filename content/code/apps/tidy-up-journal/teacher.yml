@@ -39,7 +39,7 @@ stuck:
     fix: "Delete them: the All screens event does the job on both screens."
 stretch: "Make the Describe screen's AddButton event shorter with a second function, SaveEntry(text), that adds the entry and goes to the Journal screen. Is it worth it for one event? (A function earns its place when it's used more than once, or when its name makes the event easier to read.)"
 support: "Do Tidy 1 together for Kindness on the board, then let pairs do the other three buttons."
-leads: "Next: the challenge, a prototype of their own. Encourage a tidy-up pass before they test with a real user."
+leads: "Next: Creature scores, functions that give back a value. Then the challenge: encourage a tidy-up pass before they test with a real user."
 exit:
   q: "A quiz app has five answer buttons. Each one's event adds 1 to Score, plays a sound and goes to the next question. How could you tidy it, and how would you know you hadn't broken it?"
   a: "Make one function, such as Answer(), with those three actions, and have each button call it. Then play the same quiz before and after and check the score, sound and next question are the same."
