@@ -162,7 +162,7 @@ check:
 2. Click Save in the preview. Now it changes.
 3. Use what the user typed: click the **Add 15** action and change 15 to `int(TextInput.text)`. A text input holds text, even when you type 20; `int()` turns it into a number.
 
-Your work is kept in this browser. **Save** at the top downloads a copy if you want one.
+Your work is kept in this browser. **Save** at the top keeps a copy as a file on your computer if you want one.
 
 ## Check: how the text is made
 

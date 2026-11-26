@@ -59,7 +59,7 @@ insight: "Getting records in and on screen first gives a working app to test bef
 check: { type: reflect, text: "I can add a record and see it in the Table object, and every field holds the right kind of value." }
 ```
 
-Build in [App Builder](https://tools.learningwaypoints.com/app-builder/?level=4) (it keeps your project in this browser; **Save** downloads a copy to hand in or carry to another computer). Make the table, the boxes, an Add button and a Table object. Try it after every event.
+Build in [App Builder](https://tools.learningwaypoints.com/app-builder/?level=4) (it keeps your project in this browser; **Save** keeps a copy as a file to hand in or carry to another computer; **Share** gives a link you can send your teacher). Make the table, the boxes, an Add button and a Table object. Try it after every event.
 
 Already have your records in a spreadsheet? Copy the rows and paste them into the table's first cell, or use **Paste rows** under the table. The columns go into the fields in order, and a first row of field names is skipped.
 

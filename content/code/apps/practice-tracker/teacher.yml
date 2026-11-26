@@ -7,7 +7,7 @@ goals:
   - I can make the screen show the new number after it changes.
 struggle: "Finding things the first time: Properties on the right, renaming from the ⋯ menu on the left, and + Condition and + Action on the Events tab. Expect the first 10 minutes to be slow. Naming objects (SaveButton, TotalText) pays off as soon as students open the Events tab."
 before: |
-  App Builder runs inside the lesson page: nothing to install, no sign-in, no event limit. Each step keeps its own work in the browser, so a student who comes back carries on; **Start again** (press it twice) resets that step. Work is per browser and device: on a shared computer, use **Save** to download a copy.
+  App Builder runs inside the lesson page: nothing to install, no sign-in, no event limit. Each step keeps its own work in the browser, so a student who comes back carries on; **Start again** (press it twice) resets that step. Work is per browser and device: on a shared computer, use **Save** to keep a copy as a file (**Open** brings it back), or **Share** for a link to the working app.
 
   The steps below have tick boxes that tick by themselves when the student's events match (the page reads the app as plain text). They say what to build, not how the screen looks, so layouts can differ.
 

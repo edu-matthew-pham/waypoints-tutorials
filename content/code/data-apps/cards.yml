@@ -142,7 +142,7 @@ cards:
       - "To play a row's own sound, give the table a sound field and use Set sound to the one named ClickedItem.sound."
     watch: "A browser plays sound only after the user has clicked or pressed something in the app."
     apps:
-      "App Builder": "The built-in sounds are made for App Builder and free to use. + Upload sound adds your own (under about 1 MB)."
+      "App Builder": "The built-in sounds are made for App Builder and free to use. + Upload sound adds your own (under about 5 MB)."
   - id: video
     title: "Show a video"
     unit: challenge
