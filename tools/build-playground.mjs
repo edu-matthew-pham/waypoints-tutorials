@@ -226,7 +226,8 @@ export function buildAppBuilderPlayground(out = 'dist') {
   const dest = join(out, '_playground-appbuilder');
   rmSync(dest, { recursive: true, force: true });
   mkdirSync(dest, { recursive: true });
-  for (const f of ['index.html', 'README.md']) copyFileSync(join(root, 'playground-appbuilder', f), join(dest, f));
+  // auth.html: where Microsoft sends a student back after signing in to save to OneDrive; privacy.html: the privacy page (App Builder 1.6)
+  for (const f of ['index.html', 'auth.html', 'privacy.html', 'README.md']) copyFileSync(join(root, 'playground-appbuilder', f), join(dest, f));
   cpSync(join(root, 'playground-appbuilder', 'sounds'), join(dest, 'sounds'), { recursive: true }); // built-in sounds (Sound object)
   stampPlayground(dest);
   return dest;

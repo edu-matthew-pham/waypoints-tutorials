@@ -217,7 +217,7 @@ check: { type: reflect, text: "I saved my journal with what the app kept (a .zip
 ```
 
 1. Add two or three entries with drawings, if you haven't.
-2. Click **Save** at the top. When it asks, choose to **include what the app kept**. You get one file, a `.zip`, with the app, the rows and the drawings inside.
+2. Click **Save** at the top and choose **Save to this computer…**. When it asks, choose to **include what the app kept**. You get one file, a `.zip`, with the app, the rows and the drawings inside.
 3. Hand in the file the way your class usually does. Your teacher opens it with **Open** in App Builder.
 
 If your teacher only wants to try the app, **Share** gives a link instead, without your entries.

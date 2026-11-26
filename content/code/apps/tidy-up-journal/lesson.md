@@ -185,4 +185,4 @@ check: { type: reflect, text: "I sent my teacher a link to my tidied journal (or
 1. Click **Share** at the top of App Builder and copy the link.
 2. Send it to your teacher the way your class usually hands work in. The link opens your app ready to run, with **Open a copy in App Builder** if they want to look inside.
 
-If your teacher would rather have a file, **Save** keeps a copy as a file on your computer to upload instead.
+If your teacher would rather have a file, **Save** at the top, then **Save to this computer…**, keeps a copy to upload instead.

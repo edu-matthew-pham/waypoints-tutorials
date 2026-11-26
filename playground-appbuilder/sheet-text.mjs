@@ -1,4 +1,4 @@
-// Built from edu-matthew-pham/waypoints-tools app-builder/src/core/sheet-text.js at d1ecf58 (App Builder 1.0.0, tag app-builder-v1). Do not edit: see playground-appbuilder/README.md.
+// Built from edu-matthew-pham/waypoints-tools app-builder/src/core/sheet-text.js at 1234f7c (App Builder 1.6.0). Do not edit: see playground-appbuilder/README.md.
 // src/core/components.js
 var COMPONENTS = {
   button: { id: "button", label: "Button", category: "Basics", hint: "Something to tap or click.", base: "Button", props: { text: "Button", w: 150, h: 46 } },
@@ -6,7 +6,7 @@ var COMPONENTS = {
   input: { id: "input", label: "Text input", category: "Basics", hint: "A box where the user types.", base: "Input", props: { text: "", w: 220, h: 42 } },
   shape: { id: "shape", label: "Box", category: "Basics", hint: "A coloured rectangle: bars, backgrounds, dividers.", base: "Box", props: { text: "", w: 200, h: 24 }, extra: { color: "#2f6fdd" } },
   image: { id: "image", label: "Image", category: "Media", hint: "A picture: upload one or pick a built-in.", base: "Image", props: { text: "", w: 120, h: 120 }, extra: { image: "star" } },
-  sound: { id: "sound", label: "Sound", category: "Media", hint: "Music or a sound effect, with a play button.", base: "Sound", props: { text: "", w: 260, h: 52 }, extra: { sound: "calm" }, exposes: ["playing"] },
+  sound: { id: "sound", label: "Sound", category: "Media", hint: "Music or a sound effect, with a play button.", base: "Sound", props: { text: "", w: 260, h: 52 }, extra: { sound: "calm", player: true }, exposes: ["playing"] },
   video: { id: "video", label: "Video", category: "Media", hint: "Plays a video from a link, e.g. Wikimedia Commons.", base: "Video", props: { text: "", w: 320, h: 200 }, extra: { link: "" }, exposes: ["playing"] },
   // made while the app runs: picture is a media reference (core/media.js), '' until there is one
   drawing: { id: "drawing", label: "Drawing", category: "Media", hint: "A space to draw on with a finger or the mouse.", base: "Drawing", props: { text: "", w: 300, h: 300 }, extra: { color: "#222222", pen: 4, background: "" }, exposes: ["picture", "lines"] },
@@ -766,7 +766,7 @@ function sheetText(project) {
     out.push(`screen ${s.name}`);
     for (const o of s.objects || []) {
       const i = o.instances[0] || {};
-      out.push(`object ${o.name} (${COMPONENTS[o.kind]?.label.toLowerCase() ?? o.kind}) text ${val(i.text ?? "")}${(o.kind === "list" || o.kind === "table") && i.source ? ` shows ${i.source}` : ""}${o.kind === "sound" ? ` sound ${i.sound ?? ""}` : ""}${o.kind === "video" && i.link ? ` link ${val(i.link)}` : ""}${o.instances.length > 1 ? ` copies ${o.instances.length}` : ""}`);
+      out.push(`object ${o.name} (${COMPONENTS[o.kind]?.label.toLowerCase() ?? o.kind}) text ${val(i.text ?? "")}${(o.kind === "list" || o.kind === "table") && i.source ? ` shows ${i.source}` : ""}${o.kind === "sound" ? ` sound ${i.sound ?? ""}${i.player === false ? " (no player)" : ""}` : ""}${o.kind === "video" && i.link ? ` link ${val(i.link)}` : ""}${o.instances.length > 1 ? ` copies ${o.instances.length}` : ""}`);
       for (const iv of o.instanceVars || []) out.push(`object variable ${o.name}.${iv.name} = ${val(iv.value)}`);
     }
     walk(s.events, []);

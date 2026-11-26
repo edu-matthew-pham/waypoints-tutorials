@@ -60,7 +60,7 @@ insight: "Getting one screen fully working first keeps the build testable at eac
 check: { type: reflect, text: "My first screen works: its buttons do what my plan says, and the screen shows what it remembers." }
 ```
 
-Build in [App Builder](https://tools.learningwaypoints.com/app-builder/) (it opens and keeps your project in this browser; **Save** keeps a copy as a file to hand in or carry to another computer; **Share** gives a link you can send your teacher). Build the first screen and its events. Try it after every event you add, not just at the end.
+Build in [App Builder](https://tools.learningwaypoints.com/app-builder/) (it opens and keeps your project in this browser; **Save** keeps a copy as a file, or in your OneDrive or Google Drive if your school allows it, to hand in or carry to another computer; **Share** gives a link you can send your teacher). Build the first screen and its events. Try it after every event you add, not just at the end.
 
 ## Milestone 3: everything connected
 
