@@ -1,4 +1,4 @@
-// Built from edu-matthew-pham/waypoints-tools app-builder/src/core/sheet-text.js at 365dde9. Do not edit: see vendor/app-builder/README.md.
+// Built from edu-matthew-pham/waypoints-tools app-builder/src/core/sheet-text.js at d1ecf58 (App Builder 1.0.0, tag app-builder-v1). Do not edit: see playground-appbuilder/README.md.
 // src/core/components.js
 var COMPONENTS = {
   button: { id: "button", label: "Button", category: "Basics", hint: "Something to tap or click.", base: "Button", props: { text: "Button", w: 150, h: 46 } },
@@ -8,6 +8,10 @@ var COMPONENTS = {
   image: { id: "image", label: "Image", category: "Media", hint: "A picture: upload one or pick a built-in.", base: "Image", props: { text: "", w: 120, h: 120 }, extra: { image: "star" } },
   sound: { id: "sound", label: "Sound", category: "Media", hint: "Music or a sound effect, with a play button.", base: "Sound", props: { text: "", w: 260, h: 52 }, extra: { sound: "calm" }, exposes: ["playing"] },
   video: { id: "video", label: "Video", category: "Media", hint: "Plays a video from a link, e.g. Wikimedia Commons.", base: "Video", props: { text: "", w: 320, h: 200 }, extra: { link: "" }, exposes: ["playing"] },
+  // made while the app runs: picture is a media reference (core/media.js), '' until there is one
+  drawing: { id: "drawing", label: "Drawing", category: "Media", hint: "A space to draw on with a finger or the mouse.", base: "Drawing", props: { text: "", w: 300, h: 300 }, extra: { color: "#222222", pen: 4, background: "" }, exposes: ["picture", "lines"] },
+  photo: { id: "photo", label: "Photo", category: "Media", hint: "The camera: take a photo of something (camera on for this app only).", base: "Photo", props: { text: "", w: 300, h: 225 }, extra: { shutter: true }, exposes: ["picture", "ready"] },
+  recorder: { id: "recorder", label: "Recorder", category: "Media", hint: "Record a short sound with the microphone (mic on for this app only).", base: "Recorder", props: { text: "", w: 300, h: 104 }, exposes: ["sound", "length", "recording"] },
   list: { id: "list", label: "List", category: "Data", hint: "Shows the items of a list, one per row.", base: "List", props: { text: "", w: 342, h: 220 }, extra: { source: "" } },
   table: { id: "table", label: "Table", category: "Data", hint: "Shows a table: a row for each record, a column for each field.", base: "Table", props: { text: "", w: 460, h: 240 }, extra: { source: "", columns: "" } },
   toggle: { id: "toggle", label: "Toggle", category: "Choices", hint: "An on/off switch with a label.", base: "Toggle", props: { text: "Switch", w: 180, h: 32 }, extra: { on: false }, exposes: ["on"] },
@@ -161,6 +165,30 @@ var CONDITIONS = {
     trigger: "submitted",
     object: "target",
     params: [obj({ kinds: ["input"] })]
+  },
+  onDrawn: {
+    category: "Object",
+    label: "{target} is drawn on",
+    trigger: "changed",
+    object: "target",
+    params: [obj({ kinds: ["drawing"] })],
+    help: "Runs each time the user finishes a line. Drawing.lines is how many lines there are."
+  },
+  onPhotoTaken: {
+    category: "Object",
+    label: "A photo is taken with {target}",
+    trigger: "changed",
+    object: "target",
+    params: [obj({ kinds: ["photo"] })],
+    help: `Runs when the user taps the Photo's own take-photo button. Photo.picture is the photo. (A photo taken by the "Take a photo with" action doesn't run this: put what comes next in that same event.)`
+  },
+  onRecorded: {
+    category: "Object",
+    label: "{target} finishes a recording",
+    trigger: "changed",
+    object: "target",
+    params: [obj({ kinds: ["recorder"] })],
+    help: "Runs when the user stops recording (or it reaches 20 seconds). Recorder.sound is the recording, ready for a Sound or a table; Recorder.length is how long it is, in seconds."
   },
   onKey: {
     category: "Keyboard",
@@ -323,6 +351,61 @@ var ACTIONS = {
     params: [obj({ kinds: ["image"] }), { name: "image", type: "picture" }],
     run: (rt, ctx, p) => rt.each(ctx, p.target, (inst) => rt.setProp(inst, "image", p.image))
   },
+  setImageFrom: {
+    category: "Object",
+    label: "Set {target} picture to the one in {value}",
+    params: [obj({ kinds: ["image"] }), expr("value", "ClickedItem.picture")],
+    help: "Worked out when the app runs: a picture someone made (Drawing.picture, Photo.picture), a table field that holds one (ClickedItem.picture), or the name of a picture.",
+    run: (rt, ctx, p) => rt.each(ctx, p.target, (inst, c) => rt.setProp(inst, "image", rt.pictureValue(rt.evalExpr(p.value, c))))
+  },
+  clearDrawing: {
+    category: "Object",
+    label: "Clear {target}",
+    params: [obj({ kinds: ["drawing"] })],
+    run: (rt, ctx, p) => rt.each(ctx, p.target, (inst) => rt.drawing(inst, "clear"))
+  },
+  undoDrawing: {
+    category: "Object",
+    label: "Undo the last line on {target}",
+    params: [obj({ kinds: ["drawing"] })],
+    run: (rt, ctx, p) => rt.each(ctx, p.target, (inst) => rt.drawing(inst, "undo"))
+  },
+  setPenColour: {
+    category: "Object",
+    label: "Set {target} pen colour to {value}",
+    params: [obj({ kinds: ["drawing"] }), expr("value", '"red"')],
+    help: 'A colour name in quotes, like "red" or "blue", or a code like "#2f6fdd". Lines already drawn keep their colour.',
+    run: (rt, ctx, p) => rt.each(ctx, p.target, (inst, c) => rt.setProp(inst, "color", fmt(rt.evalExpr(p.value, c)).trim()))
+  },
+  setPenSize: {
+    category: "Object",
+    label: "Set {target} pen size to {value}",
+    params: [obj({ kinds: ["drawing"] }), expr("value", "8")],
+    help: "How thick the next lines are, in pixels: 1 to 40.",
+    run: (rt, ctx, p) => rt.each(ctx, p.target, (inst, c) => {
+      const n = Number(rt.evalExpr(p.value, c));
+      if (!Number.isFinite(n)) throw new ExprError("The pen size must be a number, like 8");
+      rt.setProp(inst, "pen", Math.max(1, Math.min(40, n)));
+    })
+  },
+  setDrawingBackground: {
+    category: "Object",
+    label: "Set {target} background to the picture in {value}",
+    params: [obj({ kinds: ["drawing"] }), expr("value", "Photo.picture")],
+    help: 'A picture to draw on top of, such as a photo to label. Drawing.picture then includes it. Use "" for none.',
+    run: (rt, ctx, p) => rt.each(ctx, p.target, (inst, c) => {
+      const v = rt.evalExpr(p.value, c);
+      rt.setProp(inst, "background", v === "" ? "" : rt.pictureValue(v));
+      rt.drawing(inst, "changed");
+    })
+  },
+  takePhoto: {
+    category: "Object",
+    label: "Take a photo with {target}",
+    params: [obj({ kinds: ["photo"] })],
+    help: "Photo.picture is then the photo, ready to show in an Image or keep in a table. The camera must be on first: the user taps the Photo to start it.",
+    run: (rt, ctx, p) => rt.each(ctx, p.target, (inst) => rt.takePhoto(inst))
+  },
   playSound: {
     category: "Object",
     label: "Play {target}",
@@ -349,7 +432,7 @@ var ACTIONS = {
     category: "Object",
     label: "Set {target} sound to the one named {name}",
     params: [obj({ kinds: ["sound"] }), expr("name", "ClickedItem.sound")],
-    help: "The name is worked out when the app runs, so a table can have a field naming each row's sound: ClickedItem.sound.",
+    help: "Worked out when the app runs: a recording (Recorder.sound), a table field that holds one or names a sound (ClickedItem.sound), or a sound's name.",
     run: (rt, ctx, p) => rt.each(ctx, p.target, (inst, c) => {
       const name = fmt(rt.evalExpr(p.name, c));
       if (!rt.hasSound(name)) throw new ExprError(`There is no sound called "${name}"`);
@@ -547,6 +630,20 @@ var ACTIONS = {
       });
     }
   },
+  callFunction: {
+    category: "Functions",
+    label: "Call {fn} {args}",
+    params: [{ name: "fn", type: "function" }, { name: "args", type: "args" }],
+    help: "Runs the function's actions now, then carries on with this event. Each value you give is a parameter: a plain name inside the function.",
+    run: (rt, ctx, p) => rt.callFunction(p.fn, rt.argValues(p.fn, p.args, ctx), ctx)
+  },
+  setReturn: {
+    category: "Functions",
+    label: "Set return value to {value}",
+    params: [expr()],
+    help: "Only inside a function. The value the function gives back when it is used in a value box, like Total(price, qty).",
+    run: (rt, ctx, p) => rt.setReturn(ctx, rt.evalExpr(p.value, ctx))
+  },
   goToScreen: {
     category: "Screen",
     label: "Go to screen {screen}",
@@ -587,14 +684,37 @@ var PARAM_HELP = {
   "addToInst.value": "How much to add. " + NUM_OR_CALC,
   "setVar.value": 'The new value: a number, "text in quotes", or a calculation like score + 1.',
   "addTo.value": "How much to add. " + NUM_OR_CALC,
-  "subtractFrom.value": "How much to take away. " + NUM_OR_CALC
+  "subtractFrom.value": "How much to take away. " + NUM_OR_CALC,
+  "setReturn.value": 'What the function gives back: a number, "text in quotes", or a calculation like price * qty.'
 };
 for (const table of [CONDITIONS, ACTIONS]) {
   for (const [id, e] of Object.entries(table)) {
+    for (const p of e.params) if (p.type === "args") p.help = 'One value for each parameter of the function: a number, "text in quotes", a variable, or something like Entry.text.';
     for (const p of e.params) if (p.type === "fields") p.help = 'One value for each field: "text in quotes", a number, or something like Title.text. An empty box gives empty text (or 0 for a number field).';
     for (const p of e.params) if (p.type === "expr") p.help = PARAM_HELP[`${id}.${p.name}`] || 'A value: a number, "text in quotes", a variable, or a calculation.';
   }
 }
+
+// src/core/shared.js
+var allScreensEvents = (project) => project?.allScreens?.events || [];
+
+// src/core/assets.js
+var svgUrl = (body, fill) => "data:image/svg+xml," + encodeURIComponent(
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g fill="${fill}" stroke="none">${body}</g></svg>`
+);
+var BUILTIN_IMAGES = {
+  star: svgUrl('<path d="M32 4l8.6 17.5 19.4 2.8-14 13.7 3.3 19.3L32 48.2 14.7 57.3 18 38 4 24.3l19.4-2.8z"/>', "#f5b301"),
+  heart: svgUrl('<path d="M32 56S6 40 6 22a13 13 0 0 1 26-4 13 13 0 0 1 26 4c0 18-26 34-26 34z"/>', "#e5484d"),
+  trophy: svgUrl('<path d="M18 6h28v14a14 14 0 0 1-28 0z"/><path d="M18 10H8v4a10 10 0 0 0 10 10zM46 10h10v4a10 10 0 0 1-10 10z" opacity=".7"/><rect x="28" y="34" width="8" height="12"/><rect x="18" y="46" width="28" height="8" rx="2"/>', "#e0a100"),
+  tick: svgUrl('<circle cx="32" cy="32" r="28"/><path d="M18 33l9 9 19-20" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>', "#2fa36b"),
+  cross: svgUrl('<circle cx="32" cy="32" r="28"/><path d="M22 22l20 20M42 22L22 42" stroke="#fff" stroke-width="7" stroke-linecap="round"/>', "#e5484d"),
+  water: svgUrl('<path d="M32 4C22 20 12 30 12 42a20 20 0 0 0 40 0C52 30 42 20 32 4z"/>', "#2f8fdd"),
+  music: svgUrl('<path d="M24 10l30-6v38a8 8 0 1 1-6-7.7V14l-18 3.6V48a8 8 0 1 1-6-7.7z"/>', "#7c3aed"),
+  smile: svgUrl('<circle cx="32" cy="32" r="28"/><circle cx="23" cy="26" r="4" fill="#4a3500"/><circle cx="41" cy="26" r="4" fill="#4a3500"/><path d="M20 38a14 14 0 0 0 24 0" fill="none" stroke="#4a3500" stroke-width="4" stroke-linecap="round"/>', "#f5c400")
+};
+
+// src/core/functions.js
+var functionsOf = (project) => project?.functions || [];
 
 // src/core/sheet-text.js
 var SHOW = { showhide: { show: "Show", hide: "Hide" }, onoff: { on: "on", off: "off" }, posSize: { w: "width", h: "height", x: "x position", y: "y position" }, sortdir: Object.fromEntries(SORT_DIRS) };
@@ -609,9 +729,13 @@ function itemText(kind, item, screens) {
     if (prm.type === "screen") return screens.find((s) => s.id === v)?.name ?? v;
     if (prm.type === "key") return KEY_NAMES[v] ?? v;
     if (prm.type === "fields") return Object.entries(v || {}).filter(([, x]) => String(x).trim() !== "").map(([f, x]) => `${f} = ${x}`).join(", ");
+    if (prm.type === "args") {
+      const set = Object.entries(v || {}).filter(([, x]) => String(x).trim() !== "");
+      return set.length ? "with " + set.map(([a, x]) => `${a} = ${x}`).join(", ") : "";
+    }
     if (SHOW[prm.type]) return SHOW[prm.type][v] ?? v;
     return String(v);
-  });
+  }).trim();
 }
 function sheetText(project) {
   const out = [];
@@ -620,6 +744,24 @@ function sheetText(project) {
     const line = v.table ? `table ${v.name} = [${(v.table.fields || []).map((f) => f.type === "link" ? `${f.name} (links to ${f.to})` : f.name).join(", ")}] ${v.value.length} row${v.value.length === 1 ? "" : "s"}` : Array.isArray(v.value) ? `list ${v.name} = ${val(v.value)}` : `variable ${v.name} = ${val(v.value)}`;
     out.push(line + (v.remember ? " (remembered)" : ""));
   }
+  const walk = (events, path) => {
+    for (const ev of events || []) {
+      const conds = (ev.conds || []).map((c) => "when " + itemText("cond", c, project.screens));
+      const here = [...ev.else ? ["else"] : [], ...conds].join(" and ") || "always";
+      const full = [...path, here];
+      const acts = (ev.actions || []).map((a) => itemText("act", a, project.screens)).join("; ");
+      out.push(`event: ${full.join(" > ")} | do: ${acts}`);
+      walk(ev.children, full);
+    }
+  };
+  if (allScreensEvents(project).length) {
+    out.push("all screens");
+    walk(allScreensEvents(project), []);
+  }
+  for (const f of functionsOf(project)) {
+    out.push(`function ${f.name}(${f.params.join(", ")})${f.copyPicked ? " (only the picked ones)" : ""}`);
+    walk(f.events, []);
+  }
   for (const s of project.screens || []) {
     out.push(`screen ${s.name}`);
     for (const o of s.objects || []) {
@@ -627,20 +769,11 @@ function sheetText(project) {
       out.push(`object ${o.name} (${COMPONENTS[o.kind]?.label.toLowerCase() ?? o.kind}) text ${val(i.text ?? "")}${(o.kind === "list" || o.kind === "table") && i.source ? ` shows ${i.source}` : ""}${o.kind === "sound" ? ` sound ${i.sound ?? ""}` : ""}${o.kind === "video" && i.link ? ` link ${val(i.link)}` : ""}${o.instances.length > 1 ? ` copies ${o.instances.length}` : ""}`);
       for (const iv of o.instanceVars || []) out.push(`object variable ${o.name}.${iv.name} = ${val(iv.value)}`);
     }
-    const walk = (events, path) => {
-      for (const ev of events || []) {
-        const conds = (ev.conds || []).map((c) => "when " + itemText("cond", c, project.screens));
-        const here = [...ev.else ? ["else"] : [], ...conds].join(" and ") || "always";
-        const full = [...path, here];
-        const acts = (ev.actions || []).map((a) => itemText("act", a, project.screens)).join("; ");
-        out.push(`event: ${full.join(" > ")} | do: ${acts}`);
-        walk(ev.children, full);
-      }
-    };
     walk(s.events, []);
   }
   return out.join("\n");
 }
 export {
+  itemText,
   sheetText
 };

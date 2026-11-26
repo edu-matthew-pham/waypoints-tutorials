@@ -9,7 +9,7 @@ and clips can be recorded with no network.
 - `sheet-text.mjs`: `src/core/sheet-text.js` bundled for Node (`npx esbuild src/core/sheet-text.js --bundle --format=esm`),
   used by `tools/check-appbuilder.mjs` to turn a solution project into the same plain text the page checks read.
 - `sounds/`: the Sound object's built-in sounds (App Builder's own, CC0) and `extra.json`, copied from `app-builder/sounds/`.
-- Built from commit **365dde9** (25 Nov 2026: tables, the Table object, remember between visits; paste rows, the highlighted row, linked tables and the nested view; Sound and Video objects). To update: build both files from a newer commit, copy them and `sounds/` here, change the
+- Built from commit **d1ecf58**, App Builder 1.0.0 (tag `app-builder-v1`, 26 Nov 2026): everything in 365dde9 (tables, linked tables, Sound and Video) plus All screens, Functions, the Map, the media store, Drawing, Photo, Recorder, picture and sound fields, `.zip` Save/Open, Recent apps and Share by link (inside the tutorials the link points at this copy). Fixes to v1 are 1.0.1, 1.0.2… (tags `app-builder-v1.0.1`…); take one only when it matters to a lesson, since every re-vendor re-records every App Builder clip. To update: build both files from a newer commit, copy them and `sounds/` here, change the
   commit above and in the first line of `sheet-text.mjs`, then `npm run check-appbuilder` and record any clips again.
 
 Licence: PolyForm Noncommercial 1.0.0 (free for education; commercial use by permission), Matthew Pham.
