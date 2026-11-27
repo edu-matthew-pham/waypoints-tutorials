@@ -14,7 +14,7 @@ app:
   readySelector: "[data-ab='tab:design']"
   layout: full
 ---
-The chores checklist from earlier ticks a box when you click it. Today each chore also gets a **photo** to show it's done: the made bed, the dog's bowl, the finished homework.
+The chores checklist from earlier has a tick box for each chore. Today each chore also gets a **photo** to show it's done: the made bed, the dog's bowl, the finished homework.
 
 - A **Photo** object takes a photo with the camera, or lets the user **Choose a photo** from the computer.
 - When a photo is taken (or chosen), the event **A photo is taken with Camera** runs, and `Camera.picture` is the photo.
@@ -52,10 +52,10 @@ clip:
   - click: { selector: "[data-ab='menu:rename']" }
   - type: { selector: ".side input.rename", text: "Camera" }
   - press: Enter
-  - caption: { text: "Under the chores: x 250, y 320.", say: "Put it under the chores." }
-  - type: { selector: "[data-ab='prop:x']", text: "250" }
+  - caption: { text: "Under the Dark button: x 229, y 372.", say: "Put it under the Dark button." }
+  - type: { selector: "[data-ab='prop:x']", text: "229" }
   - press: Tab
-  - type: { selector: "[data-ab='prop:y']", text: "320" }
+  - type: { selector: "[data-ab='prop:y']", text: "372" }
   - press: Tab
   - caption: { text: "Allow camera: off unless you tick it. Choose a photo works either way.", say: "Allow camera is off unless you tick it. Choose a photo works either way." }
   - click: { selector: "[data-ab='allow-camera']" }
@@ -68,7 +68,7 @@ check:
   rules: { contains: ["object Camera (photo)"] }
 ```
 
-1. **+ Add object**, **Photo**. Rename it *Camera* and put it under the chores (x 250, y 320).
+1. **+ Add object**, **Photo**. Rename it *Camera* and put it under the 🌙 Dark button (x 229, y 372).
 2. In its **Properties**, tick **Allow camera in this app**. The browser will ask too.
 3. Run it: tap the Photo to start the camera, or click **Choose a photo**.
 
@@ -83,13 +83,14 @@ try: { playground: appbuilder, starter: "app.json#sol-step-2", keep: build, leve
 check:
   type: code
   text: "A variable ForChore, set to \"Bed\", \"Feed\" or \"Homework\" when that chore is ticked."
-  rules: { contains: ["variable ForChore ="], event: [["BedBox text = \"⬜\"", "Set variable ForChore to \"Bed\""], ["FeedBox text = \"⬜\"", "Set variable ForChore to \"Feed\""], ["HomeworkBox text = \"⬜\"", "Set variable ForChore to \"Homework\""]] }
+  rules: { contains: ["variable ForChore ="], event: [["BedJob is switched", "BedJob is on", "Set variable ForChore to \"Bed\""], ["FeedJob is switched", "FeedJob is on", "Set variable ForChore to \"Feed\""], ["HomeworkJob is switched", "HomeworkJob is on", "Set variable ForChore to \"Homework\""]] }
 ```
 
 1. Add a variable *ForChore*. Leave it empty.
-2. In **BedBox is clicked**, find the sub-event that ticks it (*BedBox text = "⬜"*) and add **Set variable** ForChore to `"Bed"`
-3. Do the same for FeedBox (`"Feed"`) and HomeworkBox (`"Homework"`).
-4. Run it and tick a chore. Watch *ForChore* on the left.
+2. Add an event: **BedJob**, **BedJob is switched**. It runs when the tick box is ticked *or* unticked.
+3. From its **⋯** menu, **Add a sub-event**: **BedJob**, **BedJob is on** (it's just been ticked), with the action **Set variable** ForChore to `"Bed"`.
+4. Do the same for FeedJob (`"Feed"`) and HomeworkJob (`"Homework"`).
+5. Run it and tick a chore. Watch *ForChore* on the left.
 
 Why only when ticking, not unticking? A photo shows a chore is *done*.
 
@@ -184,9 +185,9 @@ try: { playground: appbuilder, starter: "app.json#done", keep: build, level: 3, 
 check:
   type: code
   text: "Unticking a chore hides its photo."
-  rules: { event: [["BedBox is clicked > else", "Hide BedPic"], ["FeedBox is clicked > else", "Hide FeedPic"], ["HomeworkBox is clicked > else", "Hide HomeworkPic"]] }
+  rules: { event: [["BedJob is switched > else", "Hide BedPic"], ["FeedJob is switched > else", "Hide FeedPic"], ["HomeworkJob is switched > else", "Hide HomeworkPic"]] }
 ```
 
-When a chore is unticked, its photo should go too. In each box's **Else** branch (the one that sets it back to ⬜), add **Hide BedPic** (or FeedPic, HomeworkPic). A new photo shows it again.
+When a chore is unticked, its photo should go too. Select each *is on* sub-event, choose **⋯**, **Add an Else below** (it runs when the chore is unticked), and give it **Hide BedPic** (or FeedPic, HomeworkPic). A new photo shows it again.
 
 More ideas: a **Take a photo** button of your own (untick *Show a take-photo button* on the Photo, then **Take a photo with Camera** in your button's event, with what comes next in that same event), or set ForChore back to `""` when unticking, so a photo with nothing ticked goes nowhere.

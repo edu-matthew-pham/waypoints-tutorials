@@ -1,45 +1,54 @@
-summary: "Students build a checklist of jobs where each box is a Button whose text is ⬜ or ✅. They first build a tick that stays on, then try two separate click events (which cancel each other on one click), then fix it with one click event, a sub-event and an Else."
+summary: "Students make a checklist of jobs as tick boxes (Toggles with the Tick box look, which switch themselves), then build a 🌙 Dark / ☀️ Light button by hand with a true/false variable Dark. They first build a button that goes dark and stays dark, then try two separate click events (which cancel each other on one click), then fix it with one click event, a sub-event and an Else."
 time: 60
-timing: "Try 5 min · Build (four short steps) 30 min · Check 8 min · Make it yours 17 min"
+timing: "Try 5 min · Build (five short steps) 32 min · Check 8 min · Make it yours 15 min"
 goals:
-  - I can make a button change its own text when it's clicked.
+  - I can turn a Toggle into a tick box and use it in a list.
+  - I can change colours while an app runs, and keep on or off in a true/false variable.
   - I can explain why two separate events with the same trigger undo each other.
   - I can use a sub-event and Else so that only one of two things happens.
-struggle: "Building the version that doesn't work on purpose (Build 2) feels like wasted effort, and some students skip it. It's the point of the lesson: they need to see two flat events cancel before the sub-event makes sense."
+struggle: "Building the version that doesn't work on purpose (Build 3) feels like wasted effort, and Build 4 asks students to delete it and type the actions again. That's the point: they need to see two flat events cancel before the sub-event makes sense. Pairs can share the typing."
 before: |
-  The box characters ⬜ and ✅ are emoji. On most laptops they paste fine; if a laptop shows empty squares, use [ ] and [x] instead, and change the conditions to match.
+  Needs App Builder 1.11 or later (the tick box look is 1.10, colours while the app runs are 1.11). The lesson's playground already has it.
+
+  The jobs are Toggles. Look: Tick box changes only how they look: BedJob.on is true or false either way, and "is switched" and "is on" work the same. A Toggle can't be given a colour, so the jobs sit on a light card (a Box) that stays light in dark mode.
 
   Sub-events and Else are added from an event's ⋯ menu (Add a sub-event, Add an Else below). Select the event first by clicking it.
 
-  App Builder has a Toggle object that switches by itself (Toggle is switched, Toggle is on). Mention it, but the lesson builds the toggle by hand so the logic is visible.
+  Dark is a true/false variable: it starts at false. Conditions compare it with = (Variable Dark = false). In a formula, App Builder's if() needs a comparison too: if(Dark = true, "On", "Off"), not if(Dark, …).
 
-  The Build step's third tick needs every box done the same way and the two flat BedBox events deleted.
+  The emoji ☀️ and 🌙 paste fine on most laptops; if one shows an empty square, use "Light" and "Dark" instead, in the actions and in the button's text.
 
   The one idea: on one click, every event whose conditions are true runs, top to bottom. One trigger with two branches (a sub-event and an Else) means exactly one runs.
 running:
-  - "Before Build 2 (whole class, on the deck): two events, one click: what does the box show? Most choose ✅. Leave it open; Build 2 is the reveal."
-  - "Build 2: ask a pair to explain what happened in order: first event, then second event."
+  - "Before Build 3 (whole class, on the deck): two events, one click: what does the screen show? Most say dark. Leave it open; Build 3 is the reveal."
+  - "Build 3: ask a pair to explain what happened in order: first event, then second event, and what Dark was each time."
   - "Check: draw the event on the board with the two branches as arrows. Only one arrow is taken per click."
+  - "After Build 5: point back to the tick boxes. Each one is the same switch, built in: it remembers on or off, and one click flips it."
   - "Make it yours: this is the review step. Ask which branch means 'just finished a job'."
 stuck:
-  - see: "The box doesn't tick at all."
-    ask: "What does the text condition check for?"
-    fix: "It must be exactly the same character as the button's text, in quote marks. Copy ⬜ from the button's text in Properties."
+  - see: "The screen doesn't go dark at all."
+    ask: "What does the condition check, and what does Dark start at?"
+    fix: "Dark starts at false, so the dark branch checks Variable Dark = false. Type false with no quote marks."
+  - see: "The colour action is missing for a job."
+    ask: "What kind of object is the job?"
+    fix: "Toggles can't be coloured; that's why the jobs sit on a light card. Set colours only on Texts, Boxes and Buttons."
   - see: "There's no Add a sub-event in the menu."
     ask: "Which level is the app on?"
     fix: "Sub-events need level 2 or more. In a lesson the level is set for you; if the menu lacks it, tell your teacher."
   - see: "Done goes up when unticking."
     ask: "Which branch has the add 1?"
-    fix: "Add 1 belongs in the ⬜ branch (it's becoming ticked); subtract 1 in the Else."
-stretch: "Show \"All done!\" when Done equals the number of jobs. Which event checks it, and when?"
-support: "Give pairs the finished event (the table at the end of Build it) to copy, then ask them to explain each row."
+    fix: "Add 1 belongs in the BedJob is on branch (it's just been ticked); subtract 1 in the Else."
+stretch: "Show \"All done!\" when Done is 3: set DoneText to if(Done = 3, \"All done!\", \"Done: \" & Done & \" of 3\"). Or swap ModeButton for a Toggle with the Switch look, and use ModeButton is switched with ModeButton is on."
+support: "Give pairs the finished event (the table at the end of Build 5) to copy, then ask them to explain each row."
 leads: "Next: Water tracker, which keeps a display up to date every tick and checks a goal."
 exit:
-  q: "A light switch app has two events: On clicked and light is off → turn on; clicked and light is on → turn off. What happens when you click, and how do you fix it?"
-  a: "Both run on one click, so it turns on then straight off. Fix: one click event with a sub-event (light is off → turn on) and an Else (turn off)."
+  q: "A mute button app has two events: Mute clicked and Muted = false → set Muted to true; clicked and Muted = true → set Muted to false. What happens when you click, and how do you fix it?"
+  a: "Both run on one click, so it mutes then straight away unmutes. Fix: one click event with a sub-event (Muted = false → mute) and an Else (unmute)."
 explain: |
-  On one click, **every** event whose conditions are true runs, from top to bottom. Two separate click events both run: the first ticks the box, the second sees the tick and takes it away.
+  On one click, **every** event whose conditions are true runs, from top to bottom. Two separate click events both run: the first goes dark and sets Dark to true, the second sees Dark is true and goes straight back.
 
-  The fix is **one** click event with two branches. A **sub-event** (⋯, Add a sub-event) runs only if its condition is true: the box shows ⬜, so tick it. An **Else** (⋯, Add an Else below) runs only when that condition was false: untick it. Exactly one branch runs per click.
+  The fix is **one** click event with two branches. A **sub-event** (⋯, Add a sub-event) runs only if its condition is true: Dark is false, so go dark. An **Else** (⋯, Add an Else below) runs only when that condition was false: go light. Exactly one branch runs per click.
+
+  A Toggle with the Tick box look is the same switch, built into App Builder.
 solutions:
-  step-7#t1: app.json#sol-done
+  step-8#t1: app.json#sol-done

@@ -1,8 +1,8 @@
 # Nib's working for the "find the mistake" task. Plain text: students click the line, nothing runs.
 
 # region: nib
-Nib wants the box to tick on one click and untick on the next.
-Nib adds an event: BedBox is clicked, and BedBox text = "⬜", set BedBox text to "✅".
-Nib adds a second event: BedBox is clicked, and BedBox text = "✅", set BedBox text to "⬜".
-Nib clicks the box, and it still shows ⬜.
+Nib wants the button to go dark on one click and light on the next.
+Nib adds an event: ModeButton is clicked, and Variable Dark = false: set Dark to true and go dark.
+Nib adds a second event: ModeButton is clicked, and Variable Dark = true: set Dark to false and go light.
+Nib clicks the button, and the screen stays light.
 # endregion

@@ -57,7 +57,7 @@ cards:
     lesson: chores-checklist
     idea: "One trigger, two branches: a sub-event runs only if its condition is true, and an Else runs only if it was false."
     steps:
-      - "Add the trigger on its own, such as BedBox is clicked."
+      - "Add the trigger on its own, such as ModeButton is clicked."
       - "Click the event, then ⋯, Add a sub-event; give it a condition and actions."
       - "Click the sub-event, then ⋯, Add an Else below; give it actions."
       - "Run it: one click runs one branch."

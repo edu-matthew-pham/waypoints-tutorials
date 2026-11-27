@@ -1,8 +1,8 @@
-// Built from edu-matthew-pham/waypoints-tools app-builder/src/core/sheet-text.js at d1b0ced (App Builder 1.7.0, tag app-builder-v1.7.0). Do not edit: see playground-appbuilder/README.md.
+// Built from edu-matthew-pham/waypoints-tools app-builder/src/core/sheet-text.js at ee37e85 (App Builder 1.11.0, tag app-builder-v1.11.0). Do not edit: see playground-appbuilder/README.md.
 // src/core/components.js
 var COMPONENTS = {
-  button: { id: "button", label: "Button", category: "Basics", hint: "Something to tap or click.", base: "Button", props: { text: "Button", w: 150, h: 46 } },
-  text: { id: "text", label: "Text", category: "Basics", hint: "Words on the screen. Events can change them.", base: "Text", props: { text: "Text", w: 220, h: 32 } },
+  button: { id: "button", label: "Button", category: "Basics", hint: "Something to tap or click.", base: "Button", props: { text: "Button", w: 150, h: 46 }, extra: { color: "" } },
+  text: { id: "text", label: "Text", category: "Basics", hint: "Words on the screen. Events can change them.", base: "Text", props: { text: "Text", w: 220, h: 32 }, extra: { color: "" } },
   input: { id: "input", label: "Text input", category: "Basics", hint: "A box where the user types.", base: "Input", props: { text: "", w: 220, h: 42 } },
   shape: { id: "shape", label: "Box", category: "Basics", hint: "A coloured rectangle: bars, backgrounds, dividers.", base: "Box", props: { text: "", w: 200, h: 24 }, extra: { color: "#2f6fdd" } },
   image: { id: "image", label: "Image", category: "Media", hint: "A picture: upload one or pick a built-in.", base: "Image", props: { text: "", w: 120, h: 120 }, extra: { image: "star" } },
@@ -14,7 +14,8 @@ var COMPONENTS = {
   recorder: { id: "recorder", label: "Recorder", category: "Media", hint: "Record a short sound with the microphone (mic on for this app only).", base: "Recorder", props: { text: "", w: 300, h: 104 }, exposes: ["sound", "length", "recording"] },
   list: { id: "list", label: "List", category: "Data", hint: "Shows the items of a list, one per row.", base: "List", props: { text: "", w: 342, h: 220 }, extra: { source: "" } },
   table: { id: "table", label: "Table", category: "Data", hint: "Shows a table: a row for each record, a column for each field.", base: "Table", props: { text: "", w: 460, h: 240 }, extra: { source: "", columns: "" } },
-  toggle: { id: "toggle", label: "Toggle", category: "Choices", hint: "An on/off switch with a label.", base: "Toggle", props: { text: "Switch", w: 180, h: 32 }, extra: { on: false }, exposes: ["on"] },
+  toggle: { id: "toggle", label: "Toggle", category: "Choices", hint: "An on/off switch with a label.", base: "Toggle", props: { text: "Switch", w: 180, h: 32 }, extra: { on: false, look: "switch" }, exposes: ["on"] },
+  // look: 'switch' or 'tick' (a tick box), the same on/off
   slider: { id: "slider", label: "Slider", category: "Choices", hint: "Drag to pick a number.", base: "Slider", props: { text: "", w: 240, h: 32 }, extra: { min: 0, max: 100, value: 50 }, exposes: ["value", "min", "max"] }
 };
 
@@ -95,6 +96,17 @@ FUNCS.contains = { n: 2, f: (t, part) => fmt(t).includes(fmt(part)) };
 FUNCS.join = { n: 2, f: (l, sep) => needList(l, "join").map(fmt).join(fmt(sep)) };
 FUNCS.uppercase = FUNCS.upper;
 FUNCS.lowercase = FUNCS.lower;
+
+// src/core/colour.js
+var NAMES = "black white red green blue yellow orange purple pink brown grey gray silver gold navy teal aqua cyan lime olive maroon magenta fuchsia violet indigo coral salmon tomato crimson khaki beige ivory lavender plum orchid tan chocolate turquoise skyblue lightblue darkblue lightgreen darkgreen lightgrey lightgray darkgrey darkgray dimgray dimgrey slategray slategrey whitesmoke gainsboro midnightblue royalblue steelblue dodgerblue deepskyblue seagreen forestgreen limegreen darkorange orangered hotpink deeppink lightpink lightyellow lemonchiffon mintcream honeydew aliceblue azure snow linen wheat peru sienna firebrick darkred darkviolet rebeccapurple transparent";
+var KNOWN = new Set(NAMES.split(" "));
+function colourValue(v) {
+  const s = String(v ?? "").trim();
+  if (/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(s)) return s.toLowerCase();
+  const name = s.toLowerCase().replace(/\s+/g, "");
+  if (KNOWN.has(name)) return name;
+  throw new ExprError(`"${s}" isn\u2019t a colour App Builder knows: try a name like "black" or "light blue", or a code like "#1c2333"`);
+}
 
 // src/core/catalog.js
 var KEYS = [
@@ -369,6 +381,21 @@ var ACTIONS = {
     label: "Undo the last line on {target}",
     params: [obj({ kinds: ["drawing"] })],
     run: (rt, ctx, p) => rt.each(ctx, p.target, (inst) => rt.drawing(inst, "undo"))
+  },
+  // Colours while the app runs (1.11): a Box's fill, a Text's letters, a Button's fill (its label stays readable).
+  setColour: {
+    category: "Object",
+    label: "Set {target} colour to {value}",
+    params: [obj({ kinds: ["shape", "text", "button"] }), expr("value", '"black"')],
+    help: 'A colour name in quotes, like "black" or "light blue", or a code like "#1c2333". For a Text it is the colour of the words; for a Box or a Button, its fill.',
+    run: (rt, ctx, p) => rt.each(ctx, p.target, (inst, c) => rt.setProp(inst, "color", colourValue(fmt(rt.evalExpr(p.value, c)))))
+  },
+  setBackground: {
+    category: "Screen",
+    label: "Set screen background to {value}",
+    params: [expr("value", '"black"')],
+    help: 'A colour name in quotes, like "black" or "white", or a code like "#1c2333". It stays until it is set again, on every screen.',
+    run: (rt, ctx, p) => rt.setBackground(colourValue(fmt(rt.evalExpr(p.value, ctx))))
   },
   setPenColour: {
     category: "Object",
@@ -766,7 +793,7 @@ function sheetText(project) {
     out.push(`screen ${s.name}`);
     for (const o of s.objects || []) {
       const i = o.instances[0] || {};
-      out.push(`object ${o.name} (${COMPONENTS[o.kind]?.label.toLowerCase() ?? o.kind}) text ${val(i.text ?? "")}${(o.kind === "list" || o.kind === "table") && i.source ? ` shows ${i.source}` : ""}${o.kind === "sound" ? ` sound ${i.sound ?? ""}${i.player === false ? " (no player)" : ""}` : ""}${o.kind === "video" && i.link ? ` link ${val(i.link)}` : ""}${o.instances.length > 1 ? ` copies ${o.instances.length}` : ""}`);
+      out.push(`object ${o.name} (${COMPONENTS[o.kind]?.label.toLowerCase() ?? o.kind}) text ${val(i.text ?? "")}${(o.kind === "list" || o.kind === "table") && i.source ? ` shows ${i.source}` : ""}${o.kind === "sound" ? ` sound ${i.sound ?? ""}${i.player === false ? " (no player)" : ""}` : ""}${o.kind === "toggle" && i.look === "tick" ? " (tick box)" : ""}${o.kind === "video" && i.link ? ` link ${val(i.link)}` : ""}${o.instances.length > 1 ? ` copies ${o.instances.length}` : ""}`);
       for (const iv of o.instanceVars || []) out.push(`object variable ${o.name}.${iv.name} = ${val(iv.value)}`);
     }
     walk(s.events, []);

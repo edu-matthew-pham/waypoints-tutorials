@@ -1,4 +1,4 @@
-summary: "Students give the chores checklist a photo per chore. A Photo object (camera allowed, or Choose a photo), a variable ForChore set when a chore is ticked, and one event, A photo is taken with Camera, whose sub-events check ForChore and show the photo beside the right chore. Nib's photo event skips the check, so every photo lands beside the bed."
+summary: "Students give the chores checklist a photo per chore. A Photo object (camera allowed, or Choose a photo), a variable ForChore set when a chore's tick box is switched on, and one event, A photo is taken with Camera, whose sub-events check ForChore and show the photo beside the right chore. Nib's photo event skips the check, so every photo lands beside the bed."
 time: 45
 timing: "Try 5 min · Build 1 6 min · Build 2 8 min · Build 3 12 min · Check 6 min · Make it yours 6 min"
 goals:
@@ -7,7 +7,7 @@ goals:
   - I can check that variable in sub-events, so one event does the right thing for each case.
 struggle: "The tick and the photo are two different moments, and students expect the photo event to just know which chore it's for. Ask: when the photo arrives, what does the app know? Only what something wrote down earlier: ForChore."
 before: |
-  This lesson starts from the finished chores checklist, with room made beside each chore for a hidden picture (BedPic, FeedPic, HomeworkPic). It's Level 3 (Photo); each step opens App Builder at Level 3. It follows Draw how you showed it, which met a picture the user makes, and the values journal, where a variable carried a choice between screens.
+  This lesson starts from the finished chores checklist (tick boxes and the dark mode button), with room made beside each chore for a hidden picture (BedPic, FeedPic, HomeworkPic). It's Level 3 (Photo); each step opens App Builder at Level 3. It follows Draw how you showed it, which met a picture the user makes, and the values journal, where a variable carried a choice between screens.
 
   Camera: off unless Allow camera is ticked in the Photo's properties, and the browser asks too. Some school devices block cameras; Choose a photo (the button on every Photo) works everywhere, with no permission, and runs the same event. Photos stay in this browser (nothing is uploaded) and are shrunk to at most 1280 px.
 
