@@ -12,4 +12,5 @@ units:
   - { id: finding, title: Search, filter and sort, summary: "Sort whole rows; copy the rows that match into a second table." }
   - { id: challenge, title: "Final challenge: your own data app", summary: "Plan, build and test a data app for a real user." }
   - { id: extension, title: Linked tables, summary: "Two flat tables joined by a shared value, as in a database." }
+  - { id: simulation, title: Build around a simulation, summary: "A ready-made simulation in an Embed: use the values it sends, send it values, record its results in a table." }
 ---

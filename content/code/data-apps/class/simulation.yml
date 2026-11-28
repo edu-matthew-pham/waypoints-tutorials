@@ -1,0 +1,14 @@
+inquiry:
+  q: "Someone has made a pendulum simulation. What would you need to know to build an app around it?"
+  prompts:
+    - "What could the simulation tell your app?"
+    - "What could your app tell the simulation?"
+  notes: "Its inputs and outputs: the names in Sends and Listens for. The app never needs to look inside the page."
+activities:
+  - at: end
+    kind: discussion
+    title: "What changes the period?"
+    minutes: 5
+    do: |
+      Collect readings from a few pairs on the board: length, gravity, period. What makes the period longer? What doesn't change it?
+    notes: "Longer string, longer period; less gravity, longer period. The bob's mass doesn't matter (for small swings)."

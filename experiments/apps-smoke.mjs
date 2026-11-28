@@ -40,7 +40,7 @@ const rename = async (from, to) => {
   await f.locator('input[aria-label="Object name"]').fill(to);
   await f.locator('input[aria-label="Object name"]').press('Enter');
 };
-await rename(names[0], 'TextInput'); await rename(names[1], 'SaveButton'); await rename(names[2], 'TotalText');
+await rename(names[0], 'MinutesInput'); await rename(names[1], 'SaveButton'); await rename(names[2], 'TotalText');
 await page.waitForTimeout(800);
 assert.ok(await ticked(0), 'Build 1 ticks when the screen has the three objects: ' + (await step.locator('.check').nth(0).innerText()));
 

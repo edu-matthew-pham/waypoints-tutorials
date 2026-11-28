@@ -294,3 +294,35 @@ console.log('written');
   // Nib: the drawing field left as text (shown in the find-the-slip question, not a starter)
   write('journal-drawings', 'A journal with drawings', { try: built, start, 'sol-step-2': s2, 'sol-step-3': s3, 'sol-step-4': s4, 'sol-step-5': built, built });
 }
+
+// ---------- 9. Build around a simulation (level 4; optional, App Builder 1.13's Embed) ----------
+// A ready-made pendulum page (simulation/pendulum.html, the same page as App Builder's Pendulum lab sample) sits in an
+// Embed; it sends period and length and listens for gravity. Students build the app around it with events.
+{
+  const { readFileSync } = await import('node:fs');
+  const html = readFileSync(new URL('simulation/pendulum.html', DIR), 'utf8');
+  const page = { name: 'pendulum', data: 'data:text/html;charset=utf-8;base64,' + Buffer.from(html).toString('base64') };
+  const planets = [['Earth', 9.8], ['Moon', 1.6], ['Mars', 3.7]];
+  const objects = () => [
+    o('Title', 'text', 'p0', 20, 12, 760, 32, 'Pendulum lab: what changes the period?'),
+    o('Sim', 'embed', 'p1', 20, 52, 460, 300, 'A pendulum: drag Length to change it', { page: 'pendulum', sends: 'period, length', listens: 'gravity' }),
+    { name: 'Planet', kind: 'button', instanceVars: [{ name: 'g', value: 0 }], instances: planets.map(([n, g], i) => inst('p2' + i, 500, 52 + i * 48, 130, 40, n, { vars: { g } })) },
+    o('GravityText', 'text', 'p3', 500, 200, 280, 26, 'Gravity: 9.8 m/s²'),
+    o('PeriodText', 'text', 'p4', 500, 230, 280, 26, 'Period: '),
+    o('Record', 'button', 'p5', 500, 270, 160, 44, 'Record reading'),
+    o('ReadingsView', 'table', 'p6', 20, 368, 460, 210, '', { source: 'Readings', columns: '' }),
+    o('Question', 'text', 'p7', 500, 368, 280, 140, 'Record two lengths on Earth, then the same lengths on the Moon. What makes the period longer? What doesn’t change it?'),
+  ];
+  const vars = () => [{ name: 'Gravity', value: 9.8 }, table('Readings', [['length', 'number'], ['gravity', 'number'], ['period', 'number']], [])];
+  const P = (events) => ({ ...project('Pendulum lab', 4, vars(), objects(), events, 'Lab'), pages: [clone(page)] });
+  const period = ev('s1', [{ type: 'onEmbedSends', target: 'Sim', message: 'period' }], [setText('PeriodText', '"Period: " & Sim.period & " s"')]);
+  const planet = ev('s2', [clicked('Planet')], [setVar('Gravity', 'Planet.g'), { type: 'sendToEmbed', target: 'Sim', message: 'gravity', value: 'Gravity' }, setText('GravityText', '"Gravity: " & Gravity & " m/s²"')]);
+  const record = ev('s3', [clicked('Record')], [addRow('Readings', { length: 'Sim.length', gravity: 'Gravity', period: 'Sim.period' })]);
+  const built = P([clone(period), clone(planet), clone(record)]);
+  // Make it yours: a Clear button that empties the readings
+  const mine = clone(built);
+  mine.screens[0].objects.push(o('ClearButton', 'button', 'p8', 670, 270, 110, 44, 'Clear'));
+  const clearSol = clone(mine);
+  clearSol.screens[0].events.push(ev('s4', [clicked('ClearButton')], [clear('Readings')]));
+  write('simulation', 'Build around a simulation', { try: built, start: P([]), 'sol-step-2': P([clone(period)]), 'sol-step-3': P([clone(period), clone(planet)]), 'sol-step-4': built, built, mine, 'sol-clear': clearSol });
+}

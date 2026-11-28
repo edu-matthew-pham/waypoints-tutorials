@@ -1,4 +1,20 @@
-// Built from edu-matthew-pham/waypoints-tools app-builder/src/core/sheet-text.js at ee37e85 (App Builder 1.11.0, tag app-builder-v1.11.0). Do not edit: see playground-appbuilder/README.md.
+// Built from edu-matthew-pham/waypoints-tools app-builder/src/core/sheet-text.js at 8ff839f (App Builder 1.13.0, tag app-builder-v1.13.0 to be created). Do not edit: see playground-appbuilder/README.md.
+// src/core/embed-bridge.js
+var MAX_TEXT = 1e3;
+var NAME = /^[A-Za-z][A-Za-z0-9_]{0,31}$/;
+var RESERVED = /* @__PURE__ */ new Set(["text", "x", "y", "w", "h", "visible", "page", "sends", "listens"]);
+function messageNames(s) {
+  const out = [];
+  for (const n of String(s ?? "").split(/[\s,;]+/)) if (NAME.test(n) && !RESERVED.has(n) && !out.includes(n)) out.push(n);
+  return out;
+}
+function plainValue(v) {
+  if (typeof v === "number") return Number.isFinite(v) ? v : void 0;
+  if (typeof v === "boolean") return v;
+  if (typeof v === "string") return v.length <= MAX_TEXT ? v : void 0;
+  return void 0;
+}
+
 // src/core/components.js
 var COMPONENTS = {
   button: { id: "button", label: "Button", category: "Basics", hint: "Something to tap or click.", base: "Button", props: { text: "Button", w: 150, h: 46 }, extra: { color: "" } },
@@ -12,6 +28,8 @@ var COMPONENTS = {
   drawing: { id: "drawing", label: "Drawing", category: "Media", hint: "A space to draw on with a finger or the mouse.", base: "Drawing", props: { text: "", w: 300, h: 300 }, extra: { color: "#222222", pen: 4, background: "" }, exposes: ["picture", "lines"] },
   photo: { id: "photo", label: "Photo", category: "Media", hint: "The camera: take a photo of something (camera on for this app only).", base: "Photo", props: { text: "", w: 300, h: 225 }, extra: { shutter: true }, exposes: ["picture", "ready"] },
   recorder: { id: "recorder", label: "Recorder", category: "Media", hint: "Record a short sound with the microphone (mic on for this app only).", base: "Recorder", props: { text: "", w: 300, h: 104 }, exposes: ["sound", "length", "recording"] },
+  // a web page (a simulation someone made, as one .html file) or a website, sandboxed; page: a name in project.pages or a link
+  embed: { id: "embed", label: "Embed", category: "Media", hint: "A simulation or web page: paste its HTML, upload it, or link a site like PhET.", base: "Embed", props: { text: "", w: 480, h: 320 }, extra: { page: "", sends: "", listens: "" } },
   list: { id: "list", label: "List", category: "Data", hint: "Shows the items of a list, one per row.", base: "List", props: { text: "", w: 342, h: 220 }, extra: { source: "" } },
   table: { id: "table", label: "Table", category: "Data", hint: "Shows a table: a row for each record, a column for each field.", base: "Table", props: { text: "", w: 460, h: 240 }, extra: { source: "", columns: "" } },
   toggle: { id: "toggle", label: "Toggle", category: "Choices", hint: "An on/off switch with a label.", base: "Toggle", props: { text: "Switch", w: 180, h: 32 }, extra: { on: false, look: "switch" }, exposes: ["on"] },
@@ -201,6 +219,15 @@ var CONDITIONS = {
     object: "target",
     params: [obj({ kinds: ["recorder"] })],
     help: "Runs when the user stops recording (or it reaches 20 seconds). Recorder.sound is the recording, ready for a Sound or a table; Recorder.length is how long it is, in seconds."
+  },
+  onEmbedSends: {
+    category: "Object",
+    label: "{target} sends {message}",
+    trigger: "embedSent",
+    object: "target",
+    message: "message",
+    params: [obj({ kinds: ["embed"] }), { name: "message", type: "message", list: "sends" }],
+    help: "Runs when the Embed's page sends this value (list the names it sends in its Properties). Sim.period is the latest value it sent."
   },
   onKey: {
     category: "Keyboard",
@@ -476,6 +503,20 @@ var ACTIONS = {
       rt.media(inst, "stop");
       rt.setProp(inst, "link", fmt(rt.evalExpr(p.link, c)).trim());
     })
+  },
+  sendToEmbed: {
+    category: "Object",
+    label: "Send {message} = {value} to {target}",
+    params: [obj({ kinds: ["embed"] }), { name: "message", type: "message", list: "listens" }, expr("value", "1")],
+    help: "Sends one value (a number, text, true or false) to the Embed's page (list the names it listens for in its Properties). The page decides what to do with it.",
+    run: (rt, ctx, p) => {
+      if (!p.message) throw new ExprError("Choose what to send (list the names the Embed listens for in its Properties)");
+      rt.each(ctx, p.target, (inst, c) => {
+        const v = plainValue(rt.evalExpr(p.value, c));
+        if (v === void 0) throw new ExprError("Send one value: a number, some text (up to 1000 letters), true or false");
+        rt.sendToEmbed(inst, p.message, v);
+      });
+    }
   },
   openLink: {
     category: "System",
@@ -793,7 +834,7 @@ function sheetText(project) {
     out.push(`screen ${s.name}`);
     for (const o of s.objects || []) {
       const i = o.instances[0] || {};
-      out.push(`object ${o.name} (${COMPONENTS[o.kind]?.label.toLowerCase() ?? o.kind}) text ${val(i.text ?? "")}${(o.kind === "list" || o.kind === "table") && i.source ? ` shows ${i.source}` : ""}${o.kind === "sound" ? ` sound ${i.sound ?? ""}${i.player === false ? " (no player)" : ""}` : ""}${o.kind === "toggle" && i.look === "tick" ? " (tick box)" : ""}${o.kind === "video" && i.link ? ` link ${val(i.link)}` : ""}${o.instances.length > 1 ? ` copies ${o.instances.length}` : ""}`);
+      out.push(`object ${o.name} (${COMPONENTS[o.kind]?.label.toLowerCase() ?? o.kind}) text ${val(i.text ?? "")}${(o.kind === "list" || o.kind === "table") && i.source ? ` shows ${i.source}` : ""}${o.kind === "sound" ? ` sound ${i.sound ?? ""}${i.player === false ? " (no player)" : ""}` : ""}${o.kind === "toggle" && i.look === "tick" ? " (tick box)" : ""}${o.kind === "video" && i.link ? ` link ${val(i.link)}` : ""}${o.kind === "embed" && i.page ? ` page ${val(i.page)}` : ""}${o.kind === "embed" && messageNames(i.sends).length ? ` sends ${messageNames(i.sends).join(", ")}` : ""}${o.kind === "embed" && messageNames(i.listens).length ? ` listens ${messageNames(i.listens).join(", ")}` : ""}${o.instances.length > 1 ? ` copies ${o.instances.length}` : ""}`);
       for (const iv of o.instanceVars || []) out.push(`object variable ${o.name}.${iv.name} = ${val(iv.value)}`);
     }
     walk(s.events, []);
