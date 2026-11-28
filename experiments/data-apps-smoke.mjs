@@ -1,4 +1,4 @@
-// Smoke test for the Data apps course (code/data-apps): after `npm run build`, open lessons, build in the embedded
+// Smoke test for the Data apps course (code/data-apps, including Build around a simulation): after `npm run build`, open lessons, build in the embedded
 // App Builder by clicking its labelled controls, and check that the step's code checks tick by themselves.
 //   node experiments/data-apps-smoke.mjs
 import { chromium } from 'playwright-core';
@@ -68,6 +68,37 @@ await f.locator('.view-run [data-ab="widget:SearchInput"] input').fill('an');
 await f.locator('.view-run [data-ab="widget:SearchButton"]').click();
 assert.equal(await f.locator('.view-run [data-ab="widget:ResultsTable"] tbody tr').count(), 1);
 console.log('✓ search-filter-sort: search copies one matching row');
+
+// Build around a simulation: the finished lab runs inside the lesson (a sandboxed page in an Embed, inside App Builder's
+// frame); the page reports its period, Moon sends gravity, Record adds a row. Then Build 1 by clicks, and its check ticks.
+await page.goto(base + '/code/data-apps/simulation/');
+step = page.locator('#step-1');
+await step.scrollIntoViewIfNeeded();
+f = step.frameLocator('iframe').first();
+await f.locator("[data-ab='widget:PeriodText']").filter({ hasText: 'Period: 2.01 s' }).waitFor();
+await f.locator(".view-run [data-ab='widget:Planet']").nth(1).click();
+await f.locator("[data-ab='widget:PeriodText']").filter({ hasText: 'Period: 4.97 s' }).waitFor();
+await f.locator(".view-run [data-ab='widget:Record']").click();
+await f.locator(".view-run [data-ab='widget:ReadingsView']").filter({ hasText: '4.97' }).waitFor();
+console.log('✓ simulation: the finished lab reports its period, Moon sends gravity, Record adds a row');
+step = page.locator('#step-2');
+await step.scrollIntoViewIfNeeded();
+f = step.frameLocator('iframe').first();
+await f.locator("[data-ab='tab:events']").click();
+await f.locator(".view-events [data-ab='add-event']").click();
+await f.locator(".view-events .ev.sel [data-ab='add-condition']").click();
+await f.locator("[data-ab='group:object:Sim']").click();
+await f.locator("[data-ab='entry:onEmbedSends']").click();
+await f.locator("dialog[open] [data-ab='done']").click();
+await f.locator(".view-events .ev.sel [data-ab='add-action']").click();
+await f.locator("[data-ab='group:object:PeriodText']").click();
+await f.locator("[data-ab='entry:setText']").click();
+await f.locator("dialog[open] [data-ab='param:value']").fill('"Period: " & Sim.period & " s"');
+await f.locator("dialog[open] [data-ab='done']").click();
+await page.waitForFunction(() => document.querySelector('#step-2 .check')?.classList.contains('done') || [...document.querySelectorAll('#step-2 .rules li')].every((li) => li.classList.contains('ok')), null, { timeout: 10000 });
+await f.locator("[data-ab='tab:run']").click();
+await f.locator("[data-ab='widget:PeriodText']").filter({ hasText: 'Period: 2.01 s' }).waitFor();
+console.log('✓ simulation: Build 1 by clicks ticks its check, and the period shows when it runs');
 
 assert.deepEqual(errors, []);
 console.log('no page errors');
