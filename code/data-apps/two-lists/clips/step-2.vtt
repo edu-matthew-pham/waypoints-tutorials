@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:01.725
+Add to both lists
+
+2
+00:00:02.326 --> 00:00:06.076
+When AddButton is clicked, two actions. One for each list.
+
+3
+00:00:17.812 --> 00:00:21.437
+The artist goes on the end of Artists, at the same place.

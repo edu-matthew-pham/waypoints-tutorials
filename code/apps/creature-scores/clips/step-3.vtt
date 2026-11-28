@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.500
+A function that gives back a value
+
+2
+00:00:03.150 --> 00:00:06.400
+Add a function, BarWidth, with a parameter, stat.
+
+3
+00:00:12.136 --> 00:00:18.286
+Give back a value adds Set return value. Stat divided by 100, times 200.
+
+4
+00:00:23.839 --> 00:00:29.439
+Back on the screen's events. The PowerBar width is now BarWidth of Creature dot power.
+
+5
+00:00:35.842 --> 00:00:38.217
+Then the same for speed and defence.

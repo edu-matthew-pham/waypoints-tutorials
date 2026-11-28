@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:01.700
+Click to go dark
+
+2
+00:00:02.200 --> 00:00:06.300
+When ModeButton is clicked, set Dark to true, and change the colours.
+
+3
+00:00:23.291 --> 00:00:26.466
+Then the title's colour, and the button's own text.
+
+4
+00:00:40.823 --> 00:00:44.023
+It goes dark. Click again, and it stays dark.

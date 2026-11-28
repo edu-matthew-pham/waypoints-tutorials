@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:04.850
+A class marks the elements you choose, and a dot rule styles only those
+
+2
+00:00:05.676 --> 00:00:09.526
+class="note" gives this paragraph a name of your choice.
+
+3
+00:00:10.504 --> 00:00:15.029
+In the style block, a dot and the name pick everything marked with that class.
+
+4
+00:00:15.780 --> 00:00:18.305
+Only the marked paragraph changes.
+
+5
+00:00:19.006 --> 00:00:21.906
+Any number of elements can share one class.

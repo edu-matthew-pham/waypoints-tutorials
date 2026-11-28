@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:01.975
+Add to the end of a list
+
+2
+00:00:02.852 --> 00:00:06.427
+A list variable keeps many entries. Name it Journal.
+
+3
+00:00:07.288 --> 00:00:11.163
+On the Describe screen, a new event. AddButton is clicked.
+
+4
+00:00:16.480 --> 00:00:20.730
+Its action is in Lists. Add to the end of list, with what was typed.
+
+5
+00:00:28.853 --> 00:00:33.403
+Each click adds one entry at the end. Next, go to the Journal screen.

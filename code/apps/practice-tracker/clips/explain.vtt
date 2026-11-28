@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:03.750
+The Save event changes the variable, then sets the text.
+
+2
+00:00:04.575 --> 00:00:07.550
+Minutes is a variable. It starts at zero.
+
+3
+00:00:08.464 --> 00:00:13.489
+Clicking Save runs one event. It adds fifteen to Minutes, then sets the text.
+
+4
+00:00:17.155 --> 00:00:22.430
+Three saves make forty-five. The screen changes because the event sets the text.

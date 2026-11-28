@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.225
+Use the recording when it's finished
+
+2
+00:00:03.100 --> 00:00:06.625
+A Sound called Playback, hidden until there's a recording.
+
+3
+00:00:18.458 --> 00:00:21.408
+A new event. Mic finishes a recording.
+
+4
+00:00:27.739 --> 00:00:31.889
+Set Playback's sound to the one named Mic dot sound, then show it.

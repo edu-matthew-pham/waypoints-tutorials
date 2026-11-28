@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.175
+A Table, and a click on a row
+
+2
+00:00:02.800 --> 00:00:07.000
+On the Journal screen, the List goes. A Table shows every field.
+
+3
+00:00:15.582 --> 00:00:18.382
+Put it where the list was. It shows Entries.
+
+4
+00:00:23.682 --> 00:00:27.732
+When a row is clicked, show its drawing. ClickedItem dot drawing.
+
+5
+00:00:41.437 --> 00:00:46.237
+Next, in On start, count Entries, and delete the old LastDrawing action.

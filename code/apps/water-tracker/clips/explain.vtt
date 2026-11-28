@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:03.425
+Every tick keeps the screen in step with the variables.
+
+2
+00:00:04.475 --> 00:00:08.650
+The Add button's event only adds one. Every tick sets the text.
+
+3
+00:00:11.401 --> 00:00:15.076
+The cap is inside the sub-event, so it stops at the goal.
+
+4
+00:00:23.379 --> 00:00:27.479
+Goal reached. The message and the bar follow the variable too.

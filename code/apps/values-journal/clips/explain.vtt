@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:04.150
+A variable belongs to the whole app, so the next screen can read it.
+
+2
+00:00:04.800 --> 00:00:09.050
+On screen one, the event sets Chosen, then goes to screen two.
+
+3
+00:00:10.663 --> 00:00:14.363
+Screen two reads Chosen, so it knows you picked Courage.
+
+4
+00:00:16.182 --> 00:00:20.157
+Screen three's List shows the Journal list, one row per entry.

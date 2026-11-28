@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:01.825
+Join two tables
+
+2
+00:00:02.376 --> 00:00:05.751
+When a playlist is clicked, remember its name in Chosen.
+
+3
+00:00:24.088 --> 00:00:27.863
+For each song whose playlist is Chosen, copy it into Shown.

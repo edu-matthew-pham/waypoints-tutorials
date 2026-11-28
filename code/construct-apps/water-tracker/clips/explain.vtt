@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:04.200
+Every tick sets the text, so the screen keeps up with the variable.
+
+2
+00:00:04.902 --> 00:00:09.302
+Every tick sets the text and the bar, about sixty times a second.
+
+3
+00:00:14.259 --> 00:00:18.259
+The Add event only changes Glasses. Every tick shows it.
+
+4
+00:00:28.428 --> 00:00:32.978
+Nine clicks, but it stops at eight, because the add is inside the sub-event.

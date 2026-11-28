@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.400
+A photo event that checks which chore
+
+2
+00:00:03.199 --> 00:00:06.199
+A new event. A photo is taken with Camera.
+
+3
+00:00:13.295 --> 00:00:17.345
+A sub-event for each chore. First, ForChore equals Bed.
+
+4
+00:00:25.199 --> 00:00:28.049
+Then BedPic shows the photo, and appears.
+
+5
+00:00:40.084 --> 00:00:42.434
+Then the same for Feed and Homework.

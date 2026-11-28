@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:01.700
+Remember the choice
+
+2
+00:00:02.477 --> 00:00:06.077
+A variable for the choice. Chosen, starting empty.
+
+3
+00:00:06.880 --> 00:00:10.380
+When CourageButton is clicked, set Chosen to Courage.
+
+4
+00:00:22.060 --> 00:00:25.110
+Then a second action. Go to screen Describe.

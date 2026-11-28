@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:04.000
+A global variable keeps the choice when the app changes screen.
+
+2
+00:00:05.000 --> 00:00:09.250
+On screen one, the event sets Chosen, then goes to screen two.
+
+3
+00:00:11.321 --> 00:00:15.021
+Screen two reads Chosen, so it knows you picked Courage.
+
+4
+00:00:20.941 --> 00:00:25.141
+Screen three clears the list, then adds each entry from the array.

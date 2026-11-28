@@ -1,0 +1,218 @@
+{
+ "v": 1,
+ "site": "https://tutorials.learningwaypoints.com/",
+ "courses": [
+  {
+   "path": "code/apps",
+   "title": "App Builder apps",
+   "units": [
+    {
+     "id": "respond",
+     "title": "Apps that respond"
+    },
+    {
+     "id": "track",
+     "title": "Keep track"
+    },
+    {
+     "id": "screens",
+     "title": "Screens and lists"
+    },
+    {
+     "id": "media",
+     "title": "Pictures from the user"
+    },
+    {
+     "id": "characters",
+     "title": "One object"
+    },
+    {
+     "id": "tidy",
+     "title": "Tidy up"
+    },
+    {
+     "id": "challenge",
+     "title": "Final challenge: your own app"
+    }
+   ],
+   "lessons": [
+    {
+     "slug": "code/apps/practice-tracker",
+     "title": "A practice tracker",
+     "summary": "Build a prototype of a practice tracker: type how many minutes you practised, click Save, and the app adds it to your total. A variable remembers the total, a button event changes it, and the screen only shows the new total when an event sets the text.",
+     "unit": "respond",
+     "optional": false
+    },
+    {
+     "slug": "code/apps/chores-checklist",
+     "title": "A chores checklist",
+     "summary": "Build a checklist of jobs as tick boxes, then a 🌙 Dark / ☀️ Light button that switches the screen and back. Two separate events with the same trigger both run on one click and undo each other, so the switch is one event with a sub-event and an Else: one trigger, two branches, and only one branch runs.",
+     "unit": "respond",
+     "optional": false
+    },
+    {
+     "slug": "code/apps/water-tracker",
+     "title": "A water tracker",
+     "summary": "Build a water tracker with a goal: add a glass, reset the day, and see a message and a progress bar. An Every tick event keeps the display in step without setting the text in every button's event. A condition that isn't a trigger, such as comparing a variable, is checked every tick, and an action only waits for a sub-event's condition if it sits inside that sub-event.",
+     "unit": "track",
+     "optional": false
+    },
+    {
+     "slug": "code/apps/water-sound",
+     "title": "Goal reached: sound and video",
+     "summary": "Give the water tracker a cheer when the goal is reached, and a video under it. A sound played from an event that's checked every tick starts again every tick; Trigger once while true plays it once, then waits until the goal isn't reached any more.",
+     "unit": "track",
+     "optional": false
+    },
+    {
+     "slug": "code/apps/values-journal",
+     "title": "A values journal",
+     "summary": "Build a journal app with three screens: pick a value you showed today, say what you did, then see every entry in a list. A variable carries your choice from one screen to the next, a list variable keeps the entries, and a List object shows them.",
+     "unit": "screens",
+     "optional": false
+    },
+    {
+     "slug": "code/apps/draw-journal",
+     "title": "Draw how you showed it",
+     "summary": "Add a drawing to the values journal: a Drawing object on the Describe screen, its picture kept in a variable when you click Add, and an Image on the Journal screen that shows it. Find out why the order of two actions matters, and what the journal still can't do.",
+     "unit": "media",
+     "optional": false
+    },
+    {
+     "slug": "code/apps/chores-photo",
+     "title": "Show it's done: photos",
+     "summary": "Give the chores checklist a photo for each chore: tick a chore, then take a photo or choose one, and it appears beside that chore. A variable remembers which chore was ticked, and the photo event checks it.",
+     "unit": "media",
+     "optional": false
+    },
+    {
+     "slug": "code/apps/practice-record",
+     "title": "Record your practice",
+     "summary": "Give the practice tracker a recorder: record a few seconds of today's practice, play it back, and see how long it was. The recording only exists once the user stops recording, so the app uses it in that event, not before.",
+     "unit": "media",
+     "optional": false
+    },
+    {
+     "slug": "code/apps/creature-stats",
+     "title": "Creature stats",
+     "summary": "Build a viewer for three made-up creatures: click one and its name, stats and special ability appear, with bars for each stat. One Image object has three copies, each with its own object variables, and one click event shows whichever copy you clicked.",
+     "unit": "characters",
+     "optional": false
+    },
+    {
+     "slug": "code/apps/tidy-up-journal",
+     "title": "Tidy up the journal",
+     "summary": "Refactor the values journal: change how it's built without changing what it does. Four near-identical button events become one function, Pick(value), and the back buttons on two screens become one All screens event. Run the same journey before and after to check nothing changed, then share the finished app with your teacher.",
+     "unit": "tidy",
+     "optional": false
+    },
+    {
+     "slug": "code/apps/creature-scores",
+     "title": "Creature scores",
+     "summary": "Functions that give back a value: BarWidth(stat) works out a bar's width once, for all three bars, and Overall(power, speed, defence) gives back one score for each creature. Find out what happens when a function works something out but never gives it back.",
+     "unit": "tidy",
+     "optional": false
+    }
+   ]
+  },
+  {
+   "path": "code/data-apps",
+   "title": "Data apps",
+   "units": [
+    {
+     "id": "lists",
+     "title": "Lists that must agree"
+    },
+    {
+     "id": "tables",
+     "title": "Tables and records"
+    },
+    {
+     "id": "saving",
+     "title": "Saving between visits"
+    },
+    {
+     "id": "finding",
+     "title": "Search"
+    },
+    {
+     "id": "challenge",
+     "title": "Final challenge: your own data app"
+    },
+    {
+     "id": "extension",
+     "title": "Linked tables"
+    },
+    {
+     "id": "simulation",
+     "title": "Build around a simulation"
+    }
+   ],
+   "lessons": [
+    {
+     "slug": "code/data-apps/two-lists",
+     "title": "Two lists that must agree",
+     "summary": "Build a playlist that keeps song titles in one list and artists in another, with each song's details at the same place in both lists. Adding and removing must change both lists together. Removing from just one shows why: every song after it gets the wrong artist.",
+     "unit": "lists",
+     "optional": false
+    },
+    {
+     "slug": "code/data-apps/one-table",
+     "title": "One table instead",
+     "summary": "Rebuild the playlist with a table: one row per song, a column for each field (title, artist, length). Each song's details live together in one row, so adding or removing a song can't split them up. A Table object shows the table, and clicking a row removes that song.",
+     "unit": "tables",
+     "optional": false
+    },
+    {
+     "slug": "code/data-apps/records-and-fields",
+     "title": "Records and fields",
+     "summary": "Use the songs in a table: show the clicked song as Now playing, add up every song's length with For each row, and find the longest song by keeping the best one so far. Each row is a record, and LoopItem.length or ClickedItem.title reads one field of it.",
+     "unit": "tables",
+     "optional": false
+    },
+    {
+     "slug": "code/data-apps/saving",
+     "title": "Saving between visits",
+     "summary": "Make the playlist remember its songs when the app is closed and opened again: tick Remember between visits on the Songs table, test a return visit and a first visit, and greet the user differently on each. The songs are kept in this browser only.",
+     "unit": "saving",
+     "optional": false
+    },
+    {
+     "slug": "code/data-apps/journal-drawings",
+     "title": "A journal with drawings",
+     "summary": "Give every journal entry its own drawing: a table Entries with a picture field, a row added for each entry, a Table on the Journal screen with a thumbnail per row, and a click to see one big. Remember it between visits, tidy away the old list, and hand it in as a file with the drawings inside.",
+     "unit": "saving",
+     "optional": false
+    },
+    {
+     "slug": "code/data-apps/search-filter-sort",
+     "title": "Search, filter and sort",
+     "summary": "Find songs in a bigger playlist: sort the table by title or by length, search the titles for some typed text, and filter the short songs. Searching and filtering both use the same algorithm: go through every row and copy the ones that match into a second table, so the original songs stay as they are.",
+     "unit": "finding",
+     "optional": false
+    },
+    {
+     "slug": "code/data-apps/your-own-data-app",
+     "title": "Challenge: your own data app",
+     "summary": "Plan, build and test a data app of your own for a real user: a reading log, sport stats, a collection, a practice log. It keeps records in a table that's remembered between visits, and helps the user find what they need with search, a filter, a sort or a total.",
+     "unit": "challenge",
+     "optional": false
+    },
+    {
+     "slug": "code/data-apps/linked-tables",
+     "title": "Two tables that link",
+     "summary": "Keep playlists and songs in two tables joined by a shared value: each song names the playlist it belongs to. Clicking a playlist shows its songs, found with the same For each and condition as a filter. This is how databases keep data: flat tables, linked by a value they share.",
+     "unit": "extension",
+     "optional": true
+    },
+    {
+     "slug": "code/data-apps/simulation",
+     "title": "Build around a simulation",
+     "summary": "An Embed shows a ready-made pendulum simulation, made as one web page. The page sends its period and length; the app sends it gravity. Students build the app around it with events: show the period when the page sends it, change gravity with planet buttons, and record readings in a table to answer a science question. The simulation is a component with inputs and outputs, the way real apps use parts other people made.",
+     "unit": "simulation",
+     "optional": true
+    }
+   ]
+  }
+ ]
+}

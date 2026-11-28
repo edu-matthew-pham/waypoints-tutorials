@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.375
+The button only changes Glasses
+
+2
+00:00:03.402 --> 00:00:07.102
+AddButton adds one to Glasses. No Set text needed.
+
+3
+00:00:20.332 --> 00:00:22.407
+Every tick showed the new count.

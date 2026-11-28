@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:01.875
+Remove the clicked row
+
+2
+00:00:02.525 --> 00:00:04.875
+When a row of SongTable is clicked.
+
+3
+00:00:10.764 --> 00:00:14.464
+Remove row ClickedIndex. The number of the clicked row.

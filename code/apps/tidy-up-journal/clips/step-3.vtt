@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.175
+A function with a parameter
+
+2
+00:00:02.851 --> 00:00:06.826
+In the sidebar, under Functions, add a function. Name it Pick.
+
+3
+00:00:09.864 --> 00:00:14.514
+Plus Parameter. Call it value. It stands for whichever value is picked.
+
+4
+00:00:17.270 --> 00:00:21.670
+Now the actions the four events shared. Set Chosen, but to value.
+
+5
+00:00:28.645 --> 00:00:32.945
+Then Go to screen Describe. Each button will call Pick with its own value.

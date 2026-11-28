@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.101 --> 00:00:01.826
+A Recorder object
+
+2
+00:00:02.276 --> 00:00:04.726
+Add a Recorder, and rename it Mic.
+
+3
+00:00:10.717 --> 00:00:12.467
+Put it under the total.
+
+4
+00:00:15.674 --> 00:00:19.999
+Allow microphone is off unless you tick it, and the browser asks too.

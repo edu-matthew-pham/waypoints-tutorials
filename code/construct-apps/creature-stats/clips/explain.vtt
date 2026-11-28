@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.101 --> 00:00:04.376
+Clicking a creature picks that copy, so its values are the ones shown.
+
+2
+00:00:05.026 --> 00:00:08.926
+One Creature sprite, three copies, each with its own values.
+
+3
+00:00:10.987 --> 00:00:15.362
+The click picks the Emberfox, so Creature dot name means Emberfox.
+
+4
+00:00:18.291 --> 00:00:22.666
+Same event, a different pick. Now it reads the Tidecrab's values.

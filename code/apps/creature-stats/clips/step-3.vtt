@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.525
+Creature.name means the clicked copy
+
+2
+00:00:03.250 --> 00:00:05.675
+One event. Creature is clicked.
+
+3
+00:00:11.056 --> 00:00:15.306
+Set NameText's text to Creature dot name: the clicked copy's name.
+
+4
+00:00:23.377 --> 00:00:26.452
+Click Zip in the preview. NameText shows Zip.

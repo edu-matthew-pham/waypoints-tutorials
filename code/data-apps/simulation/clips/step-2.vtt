@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.350
+When the simulation sends a value
+
+2
+00:00:03.101 --> 00:00:06.476
+When Sim sends period. It's a trigger, like a click.
+
+3
+00:00:12.237 --> 00:00:15.112
+Sim dot period is the value it sent.

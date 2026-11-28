@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.101 --> 00:00:02.176
+Watch the counters at the top.
+
+2
+00:00:02.952 --> 00:00:05.627
+Setup runs once, when the board starts.
+
+3
+00:00:09.130 --> 00:00:11.830
+Then loop runs again and again, for ever.

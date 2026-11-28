@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.175
+A variable and a click event
+
+2
+00:00:02.950 --> 00:00:06.800
+A variable remembers a number. Minutes, starting at zero.
+
+3
+00:00:07.751 --> 00:00:09.676
+When SaveButton is clicked.
+
+4
+00:00:15.465 --> 00:00:17.265
+Add fifteen to Minutes.

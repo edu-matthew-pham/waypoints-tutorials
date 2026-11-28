@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:01.475
+Both events run
+
+2
+00:00:02.226 --> 00:00:06.976
+Two events. Go dark if Dark is false, go light if it's true. Click once.
+
+3
+00:00:09.154 --> 00:00:12.779
+Both ran, top to bottom. Dark, then straight back.

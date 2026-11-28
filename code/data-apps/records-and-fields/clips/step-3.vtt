@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:01.650
+A running total
+
+2
+00:00:02.226 --> 00:00:05.401
+Total length. First, set total to zero.
+
+3
+00:00:16.409 --> 00:00:19.534
+A sub-event. For each row in table Songs.
+
+4
+00:00:26.384 --> 00:00:29.709
+Each time round, add this row's length to total.

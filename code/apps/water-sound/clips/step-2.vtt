@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.025
+A Sound object, and Play
+
+2
+00:00:02.826 --> 00:00:05.576
+Add a Sound object, and rename it Cheer.
+
+3
+00:00:11.596 --> 00:00:14.471
+Put it under the bar, and choose the Win jingle.
+
+4
+00:00:18.732 --> 00:00:22.882
+A new event. Variable Glasses equals Goal, then Play Cheer.
+
+5
+00:00:35.548 --> 00:00:37.973
+Now run it, get to eight, and listen.

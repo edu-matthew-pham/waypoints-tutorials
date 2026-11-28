@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:04.425
+One click, one event, and exactly one of its two branches runs.
+
+2
+00:00:05.125 --> 00:00:08.400
+One event for the click, with a sub-event and an Else.
+
+3
+00:00:09.974 --> 00:00:14.149
+Dark was false, so the sub-event runs, and the screen goes dark.
+
+4
+00:00:16.636 --> 00:00:20.261
+Now Dark is true, so the Else runs, and it's light again.
+
+5
+00:00:21.039 --> 00:00:23.839
+Each click, exactly one branch runs.

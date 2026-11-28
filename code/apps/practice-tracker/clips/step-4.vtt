@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:01.550
+Set the text
+
+2
+00:00:01.930 --> 00:00:05.555
+In the same event, set TotalText's text to show Minutes.
+
+3
+00:00:17.925 --> 00:00:21.650
+Now the screen changes, because the event sets the text.

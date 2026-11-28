@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:05.275
+The app works just as before. Inside, each repeated job is written once.
+
+2
+00:00:06.026 --> 00:00:10.326
+Each value button calls one function, Pick, and gives it its value.
+
+3
+00:00:11.898 --> 00:00:16.248
+Pick set Chosen to Courage and went to Describe, just as before.
+
+4
+00:00:17.472 --> 00:00:22.222
+Home is one All screens event. It works on every screen with a HomeButton.

@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:01.475
+Search every row
+
+2
+00:00:01.977 --> 00:00:04.852
+Search. First, clear the Results table.
+
+3
+00:00:16.068 --> 00:00:20.868
+A sub-event. For each row in Songs, if the title contains the search.
+
+4
+00:00:36.712 --> 00:00:39.287
+A match? Copy the row into Results.

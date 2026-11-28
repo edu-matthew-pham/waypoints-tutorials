@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.175
+Go dark only if it's light
+
+2
+00:00:02.801 --> 00:00:06.776
+One click event, with nothing in it yet. It needs two branches.
+
+3
+00:00:07.829 --> 00:00:11.579
+Select the event, then the three dots, then Add a sub-event.
+
+4
+00:00:15.202 --> 00:00:17.927
+The sub-event checks. Is Dark false?
+
+5
+00:00:35.822 --> 00:00:38.772
+Then the other two dark actions, as before.

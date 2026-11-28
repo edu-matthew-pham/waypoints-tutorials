@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:03.475
+One click runs the event once, and only one branch.
+
+2
+00:00:04.455 --> 00:00:07.205
+One On clicked event, with two branches.
+
+3
+00:00:09.312 --> 00:00:12.437
+The box was empty, so the first branch ticks it.
+
+4
+00:00:14.281 --> 00:00:17.456
+Now it's ticked, so the Else runs and unticks it.
+
+5
+00:00:20.456 --> 00:00:23.256
+Each click, exactly one branch runs.

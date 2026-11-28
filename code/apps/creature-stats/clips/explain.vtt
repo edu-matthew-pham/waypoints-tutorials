@@ -1,0 +1,17 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:04.375
+Clicking a creature picks that copy, so its values are the ones shown.
+
+2
+00:00:05.026 --> 00:00:09.526
+One Image object, three copies. Each copy has its own values.
+
+3
+00:00:10.925 --> 00:00:15.225
+Click Blaze. The event reads Blaze's power, speed and defence.
+
+4
+00:00:17.461 --> 00:00:21.536
+Same event, a different copy. Now it reads Tide's values.

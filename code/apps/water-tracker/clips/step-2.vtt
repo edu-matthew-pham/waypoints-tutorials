@@ -1,0 +1,25 @@
+WEBVTT
+
+1
+00:00:00.100 --> 00:00:02.300
+Every tick keeps the text right
+
+2
+00:00:03.076 --> 00:00:06.401
+Two variables first. Glasses starts at zero.
+
+3
+00:00:07.051 --> 00:00:10.876
+Goal starts at eight. Type the name, then the starting value.
+
+4
+00:00:11.628 --> 00:00:15.403
+A new event. Its condition is in System. Every tick.
+
+5
+00:00:19.852 --> 00:00:23.052
+Its action sets GlassText from both variables.
+
+6
+00:00:31.279 --> 00:00:34.729
+The preview already shows it. Every tick set the text.
